@@ -99,8 +99,8 @@ class CaptureApi
      */
     public function capturePayment($capturePaymentRequest, $id)
     {
-        list($response) = $this->capturePaymentWithHttpInfo($capturePaymentRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->capturePaymentWithHttpInfo($capturePaymentRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -199,8 +199,8 @@ class CaptureApi
      */
     public function getCapture($id)
     {
-        list($response) = $this->getCaptureWithHttpInfo($id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->getCaptureWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

@@ -5,9 +5,9 @@ Purpose: finding and Convertng request object
 
 namespace CyberSource;
 
-require_once '../CybersourceRestclientPHP/autoload.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/AuthException.php'; 
+require_once '../cybersource-rest-client-php/autoload.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/AuthException.php'; 
 
 class PayloadDigest
 {

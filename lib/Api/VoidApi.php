@@ -98,8 +98,8 @@ class VoidApi
      */
     public function getVoid($id)
     {
-        list($response) = $this->getVoidWithHttpInfo($id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->getVoidWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -181,8 +181,8 @@ class VoidApi
      */
     public function voidCapture($voidCaptureRequest, $id)
     {
-        list($response) = $this->voidCaptureWithHttpInfo($voidCaptureRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->voidCaptureWithHttpInfo($voidCaptureRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -282,8 +282,8 @@ class VoidApi
      */
     public function voidCredit($voidCreditRequest, $id)
     {
-        list($response) = $this->voidCreditWithHttpInfo($voidCreditRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->voidCreditWithHttpInfo($voidCreditRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -383,8 +383,8 @@ class VoidApi
      */
     public function voidPayment($voidPaymentRequest, $id)
     {
-        list($response) = $this->voidPaymentWithHttpInfo($voidPaymentRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->voidPaymentWithHttpInfo($voidPaymentRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -484,8 +484,8 @@ class VoidApi
      */
     public function voidRefund($voidRefundRequest, $id)
     {
-        list($response) = $this->voidRefundWithHttpInfo($voidRefundRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->voidRefundWithHttpInfo($voidRefundRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

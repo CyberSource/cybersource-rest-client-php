@@ -3,10 +3,10 @@
 *Purpose: Merchant Config contains credentials and8 keys for Authentication and API Information
 */
 namespace CyberSource;
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/log/Logger.php';
-require_once '../CybersourceRestclientPHP/autoload.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/AuthException.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/log/Logger.php';
+require_once '../cybersource-rest-client-php/autoload.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/AuthException.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
 
 class MerchantConfiguration
 {

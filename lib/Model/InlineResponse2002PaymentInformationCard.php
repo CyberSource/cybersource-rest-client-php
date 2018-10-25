@@ -174,9 +174,9 @@ class InlineResponse2002PaymentInformationCard implements ArrayAccess
             $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
         }
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
+        /*if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
             $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 3.";
-        }
+        }*/
 
         return $invalid_properties;
     }
@@ -199,9 +199,9 @@ class InlineResponse2002PaymentInformationCard implements ArrayAccess
         if (strlen($this->container['expirationYear']) > 4) {
             return false;
         }
-        if (strlen($this->container['type']) > 3) {
+        /*if (strlen($this->container['type']) > 3) {
             return false;
-        }
+        }*/
         return true;
     }
 
@@ -297,10 +297,10 @@ class InlineResponse2002PaymentInformationCard implements ArrayAccess
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 3)) {
+        /*if (!is_null($type) && (strlen($type) > 3)) {
             throw new \InvalidArgumentException('invalid length for $type when calling InlineResponse2002PaymentInformationCard., must be smaller than or equal to 3.');
         }
-
+        */
         $this->container['type'] = $type;
 
         return $this;

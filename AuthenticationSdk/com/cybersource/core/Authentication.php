@@ -5,10 +5,10 @@ Purpose : This is focusly on split the services HTTP or JWT
 
 namespace CyberSource;
 
-require_once '../CybersourceRestclientPHP/autoload.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/http/HttpSignatureGenerator.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/jwt/JsonWebTokenGenerator.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
+require_once '../cybersource-rest-client-php/autoload.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/http/HttpSignatureGenerator.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/jwt/JsonWebTokenGenerator.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
 
 class Authentication 
 {

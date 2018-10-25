@@ -98,8 +98,8 @@ class DefaultApi
      */
     public function octCreatePayment($octCreatePaymentRequest)
     {
-        list($response) = $this->octCreatePaymentWithHttpInfo($octCreatePaymentRequest);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->octCreatePaymentWithHttpInfo($octCreatePaymentRequest);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -118,12 +118,12 @@ class DefaultApi
             throw new \InvalidArgumentException('Missing the required parameter $octCreatePaymentRequest when calling octCreatePayment');
         }
         // parse inputs
-        $resourcePath = "/v2/payouts/";
+        $resourcePath = "/pts/v2/payouts/";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -150,7 +150,7 @@ class DefaultApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/v2/payouts/'
+                '/pts/v2/payouts/'
             );
 
             return [null, $statusCode, $httpHeader];
