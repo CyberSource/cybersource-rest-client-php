@@ -98,8 +98,8 @@ class TokenizationApi
      */
     public function tokenize($tokenizeRequest = null)
     {
-        list($response) = $this->tokenizeWithHttpInfo($tokenizeRequest);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->tokenizeWithHttpInfo($tokenizeRequest);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

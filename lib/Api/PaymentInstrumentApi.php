@@ -99,8 +99,8 @@ class PaymentInstrumentApi
      */
     public function paymentinstrumentsPost($profileId, $body)
     {
-        list($response) = $this->paymentinstrumentsPostWithHttpInfo($profileId, $body);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->paymentinstrumentsPostWithHttpInfo($profileId, $body);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -137,7 +137,7 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -212,8 +212,8 @@ class PaymentInstrumentApi
      */
     public function paymentinstrumentsTokenIdDelete($profileId, $tokenId)
     {
-        list($response) = $this->paymentinstrumentsTokenIdDeleteWithHttpInfo($profileId, $tokenId);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->paymentinstrumentsTokenIdDeleteWithHttpInfo($profileId, $tokenId);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -256,7 +256,7 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -334,8 +334,8 @@ class PaymentInstrumentApi
      */
     public function paymentinstrumentsTokenIdGet($profileId, $tokenId)
     {
-        list($response) = $this->paymentinstrumentsTokenIdGetWithHttpInfo($profileId, $tokenId);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->paymentinstrumentsTokenIdGetWithHttpInfo($profileId, $tokenId);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -378,7 +378,7 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -465,8 +465,8 @@ class PaymentInstrumentApi
      */
     public function paymentinstrumentsTokenIdPatch($profileId, $tokenId, $body)
     {
-        list($response) = $this->paymentinstrumentsTokenIdPatchWithHttpInfo($profileId, $tokenId, $body);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->paymentinstrumentsTokenIdPatchWithHttpInfo($profileId, $tokenId, $body);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

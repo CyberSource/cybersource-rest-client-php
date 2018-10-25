@@ -3,8 +3,8 @@
 * Purpose : passing merchant config object to the configuration
 */
 namespace CyberSource;
-require_once '../CybersourceRestclientPHP/autoload.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/MerchantConfiguration.php';
+require_once '../cybersource-rest-client-php/autoload.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/MerchantConfiguration.php';
 class TestConfiguration
 {
         //initialize variable on constructor
@@ -12,7 +12,7 @@ class TestConfiguration
         {
                 $this->enableLog = true;
                 $this->logSize = "1048576";
-                $this->logFile = "../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/Log/";
+                $this->logFile = "../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/Log/";
                 $this->logFilename = "Cybs.log";
                 $this->merchantID = "testrest";
                 $this->apiKeyID = "08c94330-f618-42a3-b09d-e1e43be5efda";
@@ -22,7 +22,7 @@ class TestConfiguration
                 $this->keyAlias = "testrest";
                 $this->keyPass = "testrest";
                 $this->keyFilename = "testrest";
-                $this->keyDirectory = "../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/resource/";
+                $this->keyDirectory = "../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/resource/";
                 $this->runEnv = "cyberSource.environment.SANDBOX";
                 $this->getMerchantConfigObjectJwt();
                 $this->getMerchantConfigObjectHttp();

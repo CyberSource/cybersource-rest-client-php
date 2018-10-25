@@ -99,8 +99,8 @@ class ReversalApi
      */
     public function authReversal($id, $authReversalRequest)
     {
-        list($response) = $this->authReversalWithHttpInfo($id, $authReversalRequest);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->authReversalWithHttpInfo($id, $authReversalRequest);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -199,8 +199,8 @@ class ReversalApi
      */
     public function getAuthReversal($id)
     {
-        list($response) = $this->getAuthReversalWithHttpInfo($id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->getAuthReversalWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

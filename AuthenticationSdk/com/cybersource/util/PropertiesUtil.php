@@ -3,7 +3,7 @@
 Purpose : Reading Input Config Json File
 */
 namespace CyberSource;
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/MerchantConfiguration.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/MerchantConfiguration.php';
 class PropertiesUtil
 {
 	

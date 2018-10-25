@@ -98,8 +98,8 @@ class KeyGenerationApi
      */
     public function generatePublicKey($generatePublicKeyRequest)
     {
-        list($response) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

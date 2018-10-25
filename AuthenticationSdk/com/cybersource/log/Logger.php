@@ -1,6 +1,6 @@
 <?php
 namespace CyberSource;
-require_once '../CybersourceRestclientPHP/autoload.php';
+require_once '../cybersource-rest-client-php/autoload.php';
 /*
 Log Logic has Finding , creating and roating log file.
 log file size : 5MB

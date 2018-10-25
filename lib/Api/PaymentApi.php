@@ -98,8 +98,8 @@ class PaymentApi
      */
     public function createPayment($createPaymentRequest)
     {
-        list($response) = $this->createPaymentWithHttpInfo($createPaymentRequest);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->createPaymentWithHttpInfo($createPaymentRequest);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -185,8 +185,8 @@ class PaymentApi
      */
     public function getPayment($id)
     {
-        list($response) = $this->getPaymentWithHttpInfo($id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->getPaymentWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

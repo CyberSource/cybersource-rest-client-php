@@ -377,8 +377,8 @@ class ApiClient
     *
     */
     public function callAuthenticationHeader($method, $postData, $resourcePath){
-        require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/authentication.php';
-        require_once '../CybersourceRestclientPHP/ExternalConfig.php';
+        require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/authentication.php';
+        require_once './ExternalConfig.php';
 
         $externalConfigObj = new ExternalConfig();
         $merchantConfig = $externalConfigObj->merchantConfigObject();

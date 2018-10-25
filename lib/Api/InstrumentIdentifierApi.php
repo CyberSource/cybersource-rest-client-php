@@ -99,8 +99,8 @@ class InstrumentIdentifierApi
      */
     public function instrumentidentifiersPost($profileId, $body = null)
     {
-        list($response) = $this->instrumentidentifiersPostWithHttpInfo($profileId, $body);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->instrumentidentifiersPostWithHttpInfo($profileId, $body);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -211,8 +211,8 @@ class InstrumentIdentifierApi
      */
     public function instrumentidentifiersTokenIdDelete($profileId, $tokenId)
     {
-        list($response) = $this->instrumentidentifiersTokenIdDeleteWithHttpInfo($profileId, $tokenId);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->instrumentidentifiersTokenIdDeleteWithHttpInfo($profileId, $tokenId);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -337,8 +337,8 @@ class InstrumentIdentifierApi
      */
     public function instrumentidentifiersTokenIdGet($profileId, $tokenId)
     {
-        list($response) = $this->instrumentidentifiersTokenIdGetWithHttpInfo($profileId, $tokenId);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->instrumentidentifiersTokenIdGetWithHttpInfo($profileId, $tokenId);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -468,8 +468,8 @@ class InstrumentIdentifierApi
      */
     public function instrumentidentifiersTokenIdPatch($profileId, $tokenId, $body)
     {
-        list($response) = $this->instrumentidentifiersTokenIdPatchWithHttpInfo($profileId, $tokenId, $body);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->instrumentidentifiersTokenIdPatchWithHttpInfo($profileId, $tokenId, $body);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -610,8 +610,8 @@ class InstrumentIdentifierApi
      */
     public function instrumentidentifiersTokenIdPaymentinstrumentsGet($profileId, $tokenId, $offset = null, $limit = '20')
     {
-        list($response) = $this->instrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo($profileId, $tokenId, $offset, $limit);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->instrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo($profileId, $tokenId, $offset, $limit);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -678,9 +678,9 @@ class InstrumentIdentifierApi
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // query params
-        if ($limit !== null) {
+        /*if ($limit !== null) {
             $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
-        }
+        }*/
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);

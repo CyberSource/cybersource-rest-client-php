@@ -98,8 +98,8 @@ class RefundApi
      */
     public function getRefund($id)
     {
-        list($response) = $this->getRefundWithHttpInfo($id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->getRefundWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -181,8 +181,8 @@ class RefundApi
      */
     public function refundCapture($refundCaptureRequest, $id)
     {
-        list($response) = $this->refundCaptureWithHttpInfo($refundCaptureRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->refundCaptureWithHttpInfo($refundCaptureRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -282,8 +282,8 @@ class RefundApi
      */
     public function refundPayment($refundPaymentRequest, $id)
     {
-        list($response) = $this->refundPaymentWithHttpInfo($refundPaymentRequest, $id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->refundPaymentWithHttpInfo($refundPaymentRequest, $id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

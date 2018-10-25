@@ -98,8 +98,8 @@ class CreditApi
      */
     public function createCredit($createCreditRequest)
     {
-        list($response) = $this->createCreditWithHttpInfo($createCreditRequest);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->createCreditWithHttpInfo($createCreditRequest);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**
@@ -185,8 +185,8 @@ class CreditApi
      */
     public function getCredit($id)
     {
-        list($response) = $this->getCreditWithHttpInfo($id);
-        return $response;
+        list($response, $statusCode, $httpHeader) = $this->getCreditWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
     }
 
     /**

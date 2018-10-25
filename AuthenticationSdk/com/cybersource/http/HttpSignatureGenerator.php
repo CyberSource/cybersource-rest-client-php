@@ -3,10 +3,10 @@
 *Purpose : Generating token for HTTP Signature
 */
 namespace CyberSource;
-require_once '../CybersourceRestclientPHP/autoload.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/payloadDigest/PayloadDigest.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/TokenGenerator.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/core/AuthException.php'; 
+require_once '../cybersource-rest-client-php/autoload.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/payloadDigest/PayloadDigest.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/TokenGenerator.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/core/AuthException.php'; 
 class HttpSignatureGenerator implements TokenGenerator
 {
 	private static $logger=null;

@@ -3,7 +3,7 @@ namespace CyberSource;
 require_once '../com/cybersource/core/Authentication.php'; 
 require_once 'TestConfiguration.php'; 
 require_once '../com/cybersource/payloadDigest/PayloadDigest.php';
-require_once '../CybersourceRestclientPHP/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
+require_once '../cybersource-rest-client-php/AuthenticationSdk/com/cybersource/util/GlobalParameter.php';
 class AuthenticationTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -43,7 +43,7 @@ class AuthenticationTest extends \PHPUnit_Framework_TestCase
         $method = "GET";
         $resourcePath="/pts/v2/payments/5293014742106817204104";
         $payload = new PayloadDigest();
-        $filepath ="../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/resource/CreatePayment.json";
+        $filepath ="../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/resource/CreatePayment.json";
         $payloadData = $payload->getPayloadDigest($filepath, $merchantConfig);
        
         $tokenGeneratorMock = $this->getMockBuilder(JsonWebTokenGenerator::class)
@@ -73,7 +73,7 @@ class AuthenticationTest extends \PHPUnit_Framework_TestCase
         $method = "GET";
         $resourcePath="/pts/v2/payments/5293014742106817204104";
         $payload = new PayloadDigest();
-        $filepath ="../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/resource/PutPayment.json";
+        $filepath ="../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/resource/PutPayment.json";
         $payloadData = $payload->getPayloadDigest($filepath, $merchantConfig);
        
         $tokenGeneratorMock = $this->getMockBuilder(JsonWebTokenGenerator::class)
@@ -131,7 +131,7 @@ class AuthenticationTest extends \PHPUnit_Framework_TestCase
         $method = "GET";
         $resourcePath="/pts/v2/payments/5293014742106817204104";
         $payload = new PayloadDigest();
-        $filepath ="../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/resource/CreatePayment.json";
+        $filepath ="../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/resource/CreatePayment.json";
         $payloadData = $payload->getPayloadDigest($filepath, $merchantConfig);
        
         $tokenGeneratorMock = $this->getMockBuilder(HttpSignatureGenerator::class)
@@ -161,7 +161,7 @@ class AuthenticationTest extends \PHPUnit_Framework_TestCase
         $method = "GET";
         $resourcePath="/pts/v2/payments/5293014742106817204104";
         $payload = new PayloadDigest();
-        $filepath ="../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/resource/PutPayment.json";
+        $filepath ="../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/resource/PutPayment.json";
         $payloadData = $payload->getPayloadDigest($filepath, $merchantConfig);
        
         $tokenGeneratorMock = $this->getMockBuilder(HttpSignatureGenerator::class)

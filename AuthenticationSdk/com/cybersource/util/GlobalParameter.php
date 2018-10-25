@@ -1,6 +1,6 @@
 <?php
 namespace CyberSource;
-require_once '../CybersourceRestclientPHP/autoload.php';
+require_once '../cybersource-rest-client-php/autoload.php';
 
 class GlobalParameter
 {
@@ -16,7 +16,7 @@ class GlobalParameter
 	const GMT ="GMT";
 	const HMACSHA256 = "HmacSHA256"; 
 	const DEFAULT_LOG_FILE = "Cybs.log";
-	const DEFAULT_LOG_DIR = "../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/Log/"; 
+	const DEFAULT_LOG_DIR = "../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/Log/"; 
 	const DEFAULT_LOG_FILE_SIZE = "1048576";
 	const SHA256 = "sha256";
 	const SHA256DIGEST = "SHA-256=";
@@ -25,7 +25,7 @@ class GlobalParameter
 	const SANDBOXURL = "apitest.cybersource.com";
 	const RUNENVIRONMENT = "cyberSource.environment.SANDBOX";
 	const RUNPRODENVIRONMENT = "cyberSource.environment.PRODUCTION";
-	const KEY_DIR_PATH_DEFAULT = "../CybersourceRestclientPHP/CybersourceAuthenticationSdkPhp/resource/";
+	const KEY_DIR_PATH_DEFAULT = "../cybersource-rest-client-php/CybersourceAuthenticationSdkPhp/resource/";
 	const HTTPS_PREFIX = "https://"; 
 	const SIGNATURE = "Signature:";
 	const POSTALGOHEADER = "host date (request-target) digest v-c-merchant-id";
