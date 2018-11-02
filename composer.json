@@ -1,5 +1,5 @@
 {
-    "name": "cybersource/cybersource",
+    "name": "cybersource/rest-client-php",
     "version": "0.0.1",
     "description": "Client SDK for CyberSource REST APIs",
     "keywords": [
