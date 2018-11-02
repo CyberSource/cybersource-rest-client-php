@@ -8,7 +8,7 @@ use CyberSource\Authentication\Core\AuthException as AuthException;
 use Firebase\JWT\JWT as JWT;
 use CyberSource\Authentication\Log\Logger as Logger;
 
-require_once('../cybersource-rest-client-php/vendor/autoload.php');
+require_once('vendor/autoload.php');
 
 class JsonWebTokenHeader 
 {
