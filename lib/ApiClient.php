@@ -158,8 +158,8 @@ class ApiClient
         } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($postData));
         }
-        //print_r($postData);die;
-		$authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
+
+        $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
         print_r($headers);
         $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
