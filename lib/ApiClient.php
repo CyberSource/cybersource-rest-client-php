@@ -183,6 +183,8 @@ class ApiClient
         if ($this->config->getSSLVerification() === false) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+        }else{
+            curl_setopt($curl, CURLOPT_CAINFO, "../lib/ssl/cert.pem")
         }
 
         if ($this->config->getCurlProxyHost()) {

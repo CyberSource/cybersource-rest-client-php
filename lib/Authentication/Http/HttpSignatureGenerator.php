@@ -7,6 +7,7 @@ use CyberSource\Authentication\PayloadDigest\PayloadDigest as PayloadDigest;
 use CyberSource\Authentication\Core\TokenGenerator as TokenGenerator;
 use CyberSource\Authentication\Core\AuthException as AuthException;
 use CyberSource\Authentication\Log\Logger as Logger;
+use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
  
 class HttpSignatureGenerator implements TokenGenerator
 {
