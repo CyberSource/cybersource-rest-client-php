@@ -33,7 +33,7 @@ override the new secure-http default setting)*.
 ```
 ## To set your API credentials for an API request,Configure the following information in ExternalConfiguration.php file:
 
-  Create a file in your application `ExternalConfiguration.php` inside a `Resources` folder and configure the following information as per requirement similar to [this one](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/ExternalConfiguration.php).
+  Create a file in your application `ExternalConfiguration.php` inside a `Resources` folder and configure the following information as per requirement similar to [**this one**](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/ExternalConfiguration.php).
   
   #### For Http Signature Authentication 
   
@@ -73,8 +73,8 @@ override the new secure-http default setting)*.
 *	Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
 *	keyAlias: Alias of the Merchant ID, to be used while generating the JWT token.
 *	keyPassword: Alias of the Merchant password, to be used while generating the JWT token.
-*	keyFileName: Path of the folder where the .P12 file is placed. This file has generated from the EBC portal.
-*   Keys Directory: path of the directory,where keys are placed.
+*	keyFileName: Filename of the key generated from the EBC portal, without the extension part .P12
+*   keysDirectory: path of the directory, where key is placed.
 *	Enable Log: To start the log entry provide _true_ else enter _false_.
 *   LogDirectory :Merchant will provide directory path where logs will be created.
 *   LogMaximumSize :Merchant will provide size value for log file.
@@ -119,7 +119,7 @@ The [API Reference Guide](https://developer.cybersource.com/api/reference/api-re
 using this SDK.
 
 
-## Using the Sample Code
+## Using the [Sample Code](https://github.com/CyberSource/cybersource-rest-samples-php)
 
 The samples are all completely independent and self-contained. You can analyze them to get an understanding of how a particular method works, or you can use the snippets as a starting point for your own project.
 
