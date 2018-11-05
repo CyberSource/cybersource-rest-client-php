@@ -184,7 +184,7 @@ class ApiClient
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
         }else{
-            curl_setopt($curl, CURLOPT_CAINFO, "../lib/ssl/cert.pem")
+            curl_setopt($curl, CURLOPT_CAINFO, dirname(dirname(__FILE__)) . '/lib/ssl/cacert.pem');
         }
 
         if ($this->config->getCurlProxyHost()) {
