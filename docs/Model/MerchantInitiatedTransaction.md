@@ -1,4 +1,4 @@
-# InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+# MerchantInitiatedTransaction
 
 ## Properties
 Name | Type | Description | Notes

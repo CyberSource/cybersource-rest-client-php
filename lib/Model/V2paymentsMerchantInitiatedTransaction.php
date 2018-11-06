@@ -1,6 +1,6 @@
 <?php
 /**
- * V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+ * V2paymentsMerchantInitiatedTransaction
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction Class Doc Comment
+ * V2paymentsMerchantInitiatedTransaction Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction implements ArrayAccess
+class V2paymentsMerchantInitiatedTransaction implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -197,7 +197,7 @@ class V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitia
     public function setReason($reason)
     {
         if (!is_null($reason) && (strlen($reason) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $reason when calling V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction., must be smaller than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $reason when calling V2paymentsMerchantInitiatedTransaction., must be smaller than or equal to 1.');
         }
 
         $this->container['reason'] = $reason;
@@ -222,7 +222,7 @@ class V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitia
     public function setPreviousTransactionId($previousTransactionId)
     {
         if (!is_null($previousTransactionId) && (strlen($previousTransactionId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $previousTransactionId when calling V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction., must be smaller than or equal to 15.');
+            throw new \InvalidArgumentException('invalid length for $previousTransactionId when calling V2paymentsMerchantInitiatedTransaction., must be smaller than or equal to 15.');
         }
 
         $this->container['previousTransactionId'] = $previousTransactionId;

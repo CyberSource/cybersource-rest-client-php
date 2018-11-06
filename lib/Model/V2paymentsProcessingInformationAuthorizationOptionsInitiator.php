@@ -57,7 +57,7 @@ class V2paymentsProcessingInformationAuthorizationOptionsInitiator implements Ar
         'type' => 'string',
         'credentialStoredOnFile' => 'bool',
         'storedCredentialUsed' => 'bool',
-        'merchantInitiatedTransaction' => '\CyberSource\Model\V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'
+        'merchantInitiatedTransaction' => '\CyberSource\Model\V2paymentsMerchantInitiatedTransaction'
     ];
 
     /**
@@ -278,7 +278,7 @@ class V2paymentsProcessingInformationAuthorizationOptionsInitiator implements Ar
 
     /**
      * Gets merchantInitiatedTransaction
-     * @return \CyberSource\Model\V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+     * @return \CyberSource\Model\V2paymentsMerchantInitiatedTransaction
      */
     public function getMerchantInitiatedTransaction()
     {
@@ -287,7 +287,7 @@ class V2paymentsProcessingInformationAuthorizationOptionsInitiator implements Ar
 
     /**
      * Sets merchantInitiatedTransaction
-     * @param \CyberSource\Model\V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction $merchantInitiatedTransaction
+     * @param \CyberSource\Model\V2paymentsMerchantInitiatedTransaction $merchantInitiatedTransaction
      * @return $this
      */
     public function setMerchantInitiatedTransaction($merchantInitiatedTransaction)

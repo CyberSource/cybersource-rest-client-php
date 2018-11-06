@@ -1,4 +1,4 @@
-# V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+# V2paymentsMerchantInitiatedTransaction
 
 ## Properties
 Name | Type | Description | Notes

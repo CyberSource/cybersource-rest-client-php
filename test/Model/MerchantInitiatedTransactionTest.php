@@ -1,6 +1,6 @@
 <?php
 /**
- * V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest
+ * MerchantInitiatedTransactionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest Class Doc Comment
+ * MerchantInitiatedTransactionTest Class Doc Comment
  *
  * @category    Class */
-// * @description V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+// * @description MerchantInitiatedTransaction
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest extends \PHPUnit_Framework_TestCase
+class MerchantInitiatedTransactionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,9 @@ class V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitia
     }
 
     /**
-     * Test "V2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction"
+     * Test "MerchantInitiatedTransaction"
      */
-    public function testV2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction()
-    {
-    }
-
-    /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
+    public function testMerchantInitiatedTransaction()
     {
     }
 
