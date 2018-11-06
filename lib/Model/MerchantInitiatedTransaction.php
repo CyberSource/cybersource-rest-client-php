@@ -1,6 +1,6 @@
 <?php
 /**
- * InstrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+ * MerchantInitiatedTransaction
  *
  * PHP version 5
  *
