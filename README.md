@@ -111,7 +111,7 @@ in Resources\ExternalConfiguration.php. For example:
 ```
 
 ## SDK Usage Examples and Sample Code
- * To get started using this SDK, it's highly recommended to download our sample code repository.
+ * To get started using this SDK, it's highly recommended to use our [sample code repository](https://github.com/CyberSource/cybersource-rest-samples-php).
  * In that respository, we have comprehensive sample code for all common uses of our API.
  * Additionally, you can find details and examples of how our API is structured in our API Reference Guide.
 
@@ -119,40 +119,3 @@ The [API Reference Guide](https://developer.cybersource.com/api/reference/api-re
 using this SDK.
 
 
-## Using the [Sample Code](https://github.com/CyberSource/cybersource-rest-samples-php)
-
-The samples are all completely independent and self-contained. You can analyze them to get an understanding of how a particular method works, or you can use the snippets as a starting point for your own project.
-
-You can also run each sample directly from the command line.
-
-## Running the Samples From the Command Line
-* Clone this repository:
-```
-    $ git clone https://github.com/CyberSource/cybersource-rest-samples-php
-```
-* Run composer with the "update" option in the root directory of the repository.
-```
-    $ composer update
-```
-* Run the individual samples by name. For example:
-```
-    $ php Samples/Payments/CoreServices/[Filename].php
-```
-e.g.
-```
-    $ php Samples/Payments/CoreServices/ProcessPayment.php
-```
-
-### Installation Notes
-Note: If during "composer update", you get the error "composer failed to open stream invalid argument", go to your php.ini file (present where you have installed PHP), and uncomment the following lines:
-```
-extension=php_openssl.dll
-extension=php_curl.dll
-extension=php_mbstring.dll
-extension=php_apcu.dll
-```
-On Windows systems, you also have to uncomment:
-```
-extension_dir = "ext"
-```
-Then run `composer update` again. You might have to restart your machine before the changes take effect.
