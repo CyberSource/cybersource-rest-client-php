@@ -383,10 +383,10 @@ class ApiClient
     */
     public function callAuthenticationHeader($method, $postData, $resourcePath)
     {
-        require_once './Resources/Configuration.php';
+        require_once './Resources/ExternalConfiguration.php';
 
-        $configurationObj = new Configuration();
-        $merchantConfig = $configurationObj->merchantConfigObject();
+        $ExternalConfigurationObj = new ExternalConfiguration();
+        $merchantConfig = $ExternalConfigurationObj->merchantConfigObject();
         $authentication = new Authentication();
         $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig); 
         if($merchantConfig->getAuthenticationType()==GlobalParameter::HTTP_SIGNATURE){

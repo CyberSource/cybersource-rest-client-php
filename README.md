@@ -31,13 +31,13 @@ override the new secure-http default setting)*.
   }
 }
 ```
-## To set your API credentials for an API request,Configure the following information in Configuration.php file:
+## To set your API credentials for an API request,Configure the following information in ExternalConfiguration.php file:
 
-  Create a file in your application `Configuration.php` inside a `Resources` folder and configure the following information as per requirement similar to [**this one**](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/Configuration.php).
+  Create a file in your application `ExternalConfiguration.php` inside a `Resources` folder and configure the following information as per requirement similar to [**this one**](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/ExternalConfiguration.php).
   
   #### For Http Signature Authentication 
   
-  Configure the following information in `Configuration.php` file
+  Configure the following information in `ExternalConfiguration.php` file
   
 *	Authentication Type:  Merchant should enter “HTTP_SIGNATURE” for HTTP authentication mechanism.
 *	Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
@@ -67,7 +67,7 @@ override the new secure-http default setting)*.
 ```
   #### For Jwt Signature Authentication
 
-  Configure the following information in the `Configuration.php` file
+  Configure the following information in the `ExternalConfiguration.php` file
   
 *	Authentication Type:  Merchant should enter “JWT” for JWT authentication mechanism.
 *	Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
@@ -103,7 +103,7 @@ override the new secure-http default setting)*.
 CyberSource maintains a complete sandbox environment for testing and development purposes. This sandbox environment is an exact 
 duplicate of our production environment with the transaction authorization and settlement process simulated. By default, this SDK is 
 configured to communicate with the sandbox environment. To switch to the production environment, set the appropriate property 
-in Resources\Configuration.php. For example:
+in Resources\ExternalConfiguration.php. For example:
 
 ```PHP
 // For PRODUCTION use
