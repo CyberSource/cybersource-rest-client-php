@@ -1,6 +1,8 @@
 # PHP Client SDK for CyberSource REST APIs
 PHP client library for the CyberSource REST API
 
+[![Packagist](https://img.shields.io/packagist/v/cybersource/rest-client-php.svg)](https://packagist.org/packages/cybersource/rest-client-php)
+
 ## Requirements
 * PHP 5.6+
 * Enable cURL PHP Extension
