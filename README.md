@@ -7,6 +7,7 @@ PHP client library for the CyberSource REST API
 * PHP 5.6+
 * Enable cURL PHP Extension
 * Enable JSON PHP Extension
+* Enable MBString PHP Extension
 * Enable PHP_APCU PHP Extension. You will need to download it for your platform (Windows/Linux/Mac) 
 * [CyberSource Account](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
 * [CyberSource API Keys](https://prod.developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration/createCertSharedKey.html)
