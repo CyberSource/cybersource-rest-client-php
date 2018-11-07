@@ -1,7 +1,7 @@
 # PHP Client SDK for CyberSource REST APIs
 PHP client library for the CyberSource REST API
 
-[![Packagist](https://img.shields.io/packagist/v/cybersource/rest-client-php.svg)](https://packagist.org/packages/cybersource/rest-client-php)
+[![Version         ][packagist_badge]][packagist]
 
 ## Requirements
 * PHP 5.6+
@@ -121,4 +121,5 @@ in Resources\ExternalConfiguration.php. For example:
 The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request
 using this SDK.
 
-
+[packagist_badge]: https://img.shields.io/packagist/v/cybersource/rest-client-php.svg
+[packagist]: https://packagist.org/packages/cybersource/rest-client-php
