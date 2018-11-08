@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\V2paymentsClientReferenceInformation**](V2paymentsClientReferenceInformation.md) |  | [optional] 
-**processingInformation** | [**\CyberSource\Model\V2creditsProcessingInformation**](V2creditsProcessingInformation.md) |  | [optional] 
-**paymentInformation** | [**\CyberSource\Model\V2paymentsidrefundsPaymentInformation**](V2paymentsidrefundsPaymentInformation.md) |  | [optional] 
-**orderInformation** | [**\CyberSource\Model\V2paymentsidrefundsOrderInformation**](V2paymentsidrefundsOrderInformation.md) |  | [optional] 
-**buyerInformation** | [**\CyberSource\Model\V2paymentsidcapturesBuyerInformation**](V2paymentsidcapturesBuyerInformation.md) |  | [optional] 
-**deviceInformation** | [**\CyberSource\Model\V2paymentsDeviceInformation**](V2paymentsDeviceInformation.md) |  | [optional] 
-**merchantInformation** | [**\CyberSource\Model\V2paymentsidrefundsMerchantInformation**](V2paymentsidrefundsMerchantInformation.md) |  | [optional] 
-**aggregatorInformation** | [**\CyberSource\Model\V2paymentsidcapturesAggregatorInformation**](V2paymentsidcapturesAggregatorInformation.md) |  | [optional] 
-**pointOfSaleInformation** | [**\CyberSource\Model\V2creditsPointOfSaleInformation**](V2creditsPointOfSaleInformation.md) |  | [optional] 
-**merchantDefinedInformation** | [**\CyberSource\Model\V2paymentsMerchantDefinedInformation[]**](V2paymentsMerchantDefinedInformation.md) | TBD | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\Ptsv2paymentsClientReferenceInformation**](Ptsv2paymentsClientReferenceInformation.md) |  | [optional] 
+**processingInformation** | [**\CyberSource\Model\Ptsv2creditsProcessingInformation**](Ptsv2creditsProcessingInformation.md) |  | [optional] 
+**paymentInformation** | [**\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformation**](Ptsv2paymentsidrefundsPaymentInformation.md) |  | [optional] 
+**orderInformation** | [**\CyberSource\Model\Ptsv2paymentsidrefundsOrderInformation**](Ptsv2paymentsidrefundsOrderInformation.md) |  | [optional] 
+**buyerInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation**](Ptsv2paymentsidcapturesBuyerInformation.md) |  | [optional] 
+**deviceInformation** | [**\CyberSource\Model\Ptsv2paymentsDeviceInformation**](Ptsv2paymentsDeviceInformation.md) |  | [optional] 
+**merchantInformation** | [**\CyberSource\Model\Ptsv2paymentsidrefundsMerchantInformation**](Ptsv2paymentsidrefundsMerchantInformation.md) |  | [optional] 
+**aggregatorInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation**](Ptsv2paymentsidcapturesAggregatorInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2creditsPointOfSaleInformation**](Ptsv2creditsPointOfSaleInformation.md) |  | [optional] 
+**merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | Description of this field is not available. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

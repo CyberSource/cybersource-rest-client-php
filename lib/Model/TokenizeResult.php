@@ -318,7 +318,7 @@ class TokenizeResult implements ArrayAccess
 
     /**
      * Sets signedFields
-     * @param string $signedFields Indicates which fields from the response make up the data that is used when verifying the response signature. See the [sample code] (https://github.com/CyberSource/cybersource-flex-samples/blob/master/java/spring-boot/src/main/java/flex/application/CheckoutController.java) on how to verify the signature.
+     * @param string $signedFields Indicates which fields from the response make up the data that is used when verifying the response signature. See the [sample code] (https://github.com/CyberSource/cybersource-flex-samples/blob/master/java/spring-boot/src/main/java/com/cybersource/flex/application/CheckoutController.java) on how to verify the signature.
      * @return $this
      */
     public function setSignedFields($signedFields)

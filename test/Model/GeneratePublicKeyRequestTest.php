@@ -83,4 +83,46 @@ class GeneratePublicKeyRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEncryptionType()
     {
     }
+
+    /**
+     * Test attribute "targetOrigin"
+     */
+    public function testPropertyTargetOrigin()
+    {
+    }
+
+    /**
+     * Test attribute "unmaskedLeft"
+     */
+    public function testPropertyUnmaskedLeft()
+    {
+    }
+
+    /**
+     * Test attribute "unmaskedRight"
+     */
+    public function testPropertyUnmaskedRight()
+    {
+    }
+
+    /**
+     * Test attribute "enableBillingAddress"
+     */
+    public function testPropertyEnableBillingAddress()
+    {
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+    }
+
+    /**
+     * Test attribute "enableAutoAuth"
+     */
+    public function testPropertyEnableAutoAuth()
+    {
+    }
 }

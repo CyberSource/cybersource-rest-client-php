@@ -95,7 +95,7 @@ class ReversalApi
      * @param string $id The payment ID returned from a previous payment request. (required)
      * @param \CyberSource\Model\AuthReversalRequest $authReversalRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2011
+     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201Response
      */
     public function authReversal($id, $authReversalRequest)
     {
@@ -111,7 +111,7 @@ class ReversalApi
      * @param string $id The payment ID returned from a previous payment request. (required)
      * @param \CyberSource\Model\AuthReversalRequest $authReversalRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2PaymentsReversalsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authReversalWithHttpInfo($id, $authReversalRequest)
     {
@@ -129,11 +129,11 @@ class ReversalApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
         if ($id !== null) {
@@ -163,105 +163,23 @@ class ReversalApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2011',
+                '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response',
                 '/pts/v2/payments/{id}/reversals'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2011', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2011', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsReversalsPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAuthReversal
-     *
-     * Retrieve an Authorization Reversal
-     *
-     * @param string $id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2003
-     */
-    public function getAuthReversal($id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->getAuthReversalWithHttpInfo($id);
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation getAuthReversalWithHttpInfo
-     *
-     * Retrieve an Authorization Reversal
-     *
-     * @param string $id The authorization reversal ID returned from a previous authorization reversal request. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getAuthReversalWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getAuthReversal');
-        }
-        // parse inputs
-        $resourcePath = "/pts/v2/reversals/{id}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\CyberSource\Model\InlineResponse2003',
-                '/pts/v2/reversals/{id}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -54,16 +54,16 @@ class RefundPaymentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\V2paymentsClientReferenceInformation',
-        'processingInformation' => '\CyberSource\Model\V2paymentsidrefundsProcessingInformation',
-        'paymentInformation' => '\CyberSource\Model\V2paymentsidrefundsPaymentInformation',
-        'orderInformation' => '\CyberSource\Model\V2paymentsidrefundsOrderInformation',
-        'buyerInformation' => '\CyberSource\Model\V2paymentsidcapturesBuyerInformation',
-        'deviceInformation' => '\CyberSource\Model\V2paymentsDeviceInformation',
-        'merchantInformation' => '\CyberSource\Model\V2paymentsidrefundsMerchantInformation',
-        'aggregatorInformation' => '\CyberSource\Model\V2paymentsidcapturesAggregatorInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\V2paymentsidrefundsPointOfSaleInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\V2paymentsMerchantDefinedInformation[]'
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
+        'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformation',
+        'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformation',
+        'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsOrderInformation',
+        'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation',
+        'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsDeviceInformation',
+        'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsMerchantInformation',
+        'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsPointOfSaleInformation',
+        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]'
     ];
 
     /**
@@ -216,7 +216,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\V2paymentsClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -225,7 +225,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\V2paymentsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -237,7 +237,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\V2paymentsidrefundsProcessingInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -246,7 +246,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\V2paymentsidrefundsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -258,7 +258,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets paymentInformation
-     * @return \CyberSource\Model\V2paymentsidrefundsPaymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformation
      */
     public function getPaymentInformation()
     {
@@ -267,7 +267,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets paymentInformation
-     * @param \CyberSource\Model\V2paymentsidrefundsPaymentInformation $paymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformation $paymentInformation
      * @return $this
      */
     public function setPaymentInformation($paymentInformation)
@@ -279,7 +279,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets orderInformation
-     * @return \CyberSource\Model\V2paymentsidrefundsOrderInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsOrderInformation
      */
     public function getOrderInformation()
     {
@@ -288,7 +288,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets orderInformation
-     * @param \CyberSource\Model\V2paymentsidrefundsOrderInformation $orderInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsOrderInformation $orderInformation
      * @return $this
      */
     public function setOrderInformation($orderInformation)
@@ -300,7 +300,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesBuyerInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -309,7 +309,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -321,7 +321,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets deviceInformation
-     * @return \CyberSource\Model\V2paymentsDeviceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsDeviceInformation
      */
     public function getDeviceInformation()
     {
@@ -330,7 +330,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets deviceInformation
-     * @param \CyberSource\Model\V2paymentsDeviceInformation $deviceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsDeviceInformation $deviceInformation
      * @return $this
      */
     public function setDeviceInformation($deviceInformation)
@@ -342,7 +342,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\V2paymentsidrefundsMerchantInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -351,7 +351,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\V2paymentsidrefundsMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)
@@ -363,7 +363,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets aggregatorInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesAggregatorInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation
      */
     public function getAggregatorInformation()
     {
@@ -372,7 +372,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets aggregatorInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesAggregatorInformation $aggregatorInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation $aggregatorInformation
      * @return $this
      */
     public function setAggregatorInformation($aggregatorInformation)
@@ -384,7 +384,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets pointOfSaleInformation
-     * @return \CyberSource\Model\V2paymentsidrefundsPointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPointOfSaleInformation
      */
     public function getPointOfSaleInformation()
     {
@@ -393,7 +393,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets pointOfSaleInformation
-     * @param \CyberSource\Model\V2paymentsidrefundsPointOfSaleInformation $pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPointOfSaleInformation $pointOfSaleInformation
      * @return $this
      */
     public function setPointOfSaleInformation($pointOfSaleInformation)
@@ -405,7 +405,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets merchantDefinedInformation
-     * @return \CyberSource\Model\V2paymentsMerchantDefinedInformation[]
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]
      */
     public function getMerchantDefinedInformation()
     {
@@ -414,7 +414,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\V2paymentsMerchantDefinedInformation[] $merchantDefinedInformation TBD
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation Description of this field is not available.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)

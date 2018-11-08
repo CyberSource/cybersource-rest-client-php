@@ -770,6 +770,16 @@ class MerchantConfiguration
             }
         }
 
+        if(empty($config->getCurlProxyHost())){
+            $warning_message .= GlobalParameter::INVALID_PROXY_URL.GlobalParameter::DEFAULT_PROXY_URL;
+            $config = $config->setCurlProxyHost(GlobalParameter::DEFAULT_PROXY_URL);
+        }
+
+        if(empty($config->getCurlProxyPort())){
+            $warning_message .= GlobalParameter::INVALID_PROXY_PORT.GlobalParameter::DEFAULT_PROXY_PORT;
+            $config = $config->setCurlProxyPort(GlobalParameter::DEFAULT_PROXY_PORT);
+        }
+
         if(empty($config->getKeyAlias()) && $config->getAuthenticationType() == GlobalParameter::JWT){
 
             $warning_message .= GlobalParameter::KEY_ALIAS_NULL_EMPTY;

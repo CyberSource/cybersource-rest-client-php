@@ -54,7 +54,7 @@ class VoidCaptureRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\V2paymentsidreversalsClientReferenceInformation'
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation'
     ];
 
     /**
@@ -162,7 +162,7 @@ class VoidCaptureRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\V2paymentsidreversalsClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -171,7 +171,7 @@ class VoidCaptureRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\V2paymentsidreversalsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

@@ -148,6 +148,11 @@ class ApiClient
             (array)$headerParams
         );
 
+        if (!empty($queryParams)) {
+            $resourcePath = ($resourcePath . '?' . http_build_query($queryParams));
+            $queryParams=null;
+        }
+
         foreach ($headerParams as $key => $val) {
             $headers[] = "$key: $val";
         }
@@ -158,7 +163,7 @@ class ApiClient
         } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($postData));
         }
-
+       
         $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
         print_r($headers);
@@ -183,8 +188,6 @@ class ApiClient
         if ($this->config->getSSLVerification() === false) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-        }else{
-            curl_setopt($curl, CURLOPT_CAINFO, dirname(dirname(__FILE__)) . '/lib/ssl/cacert.pem');
         }
 
         if ($this->config->getCurlProxyHost()) {
@@ -206,7 +209,7 @@ class ApiClient
         if (!empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
         }
-
+       
         if ($this->config->getAllowEncoding()) {
             curl_setopt($curl, CURLOPT_ENCODING, '');
         }
@@ -408,9 +411,8 @@ class ApiClient
         else{
             echo "Invalid Authentication type!";
         }
-
-        if($method == GlobalParameter::POST || $method == GlobalParameter::PUT){
-            $digestCon = new PayloadDigest();
+         if($method == GlobalParameter::POST || $method == GlobalParameter::PUT || $method== GlobalParameter::PATCH){
+             $digestCon = new PayloadDigest();
             $digest = $digestCon->generateDigest($postData);
             $digestArry = array(GlobalParameter::POSTHTTPDIGEST.$digest);
             $headers = array_merge($headers, $digestArry);

@@ -73,16 +73,6 @@ class VoidApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getVoid
-     *
-     * Retrieve A Void.
-     *
-     */
-    public function testGetVoid()
-    {
-    }
-
-    /**
      * Test case for voidCapture
      *
      * Void a Capture.

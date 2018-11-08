@@ -1,0 +1,15 @@
+# TssV2TransactionsGet200ResponseRiskInformation
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**profile** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  | [optional] 
+**rules** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[]**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  | [optional] 
+**passiveProfile** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  | [optional] 
+**passiveRules** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[]**](TssV2TransactionsGet200ResponseRiskInformationProfile.md) |  | [optional] 
+**score** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationScore**](TssV2TransactionsGet200ResponseRiskInformationScore.md) |  | [optional] 
+**localTime** | **string** | Time that the transaction was submitted in local time.. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -54,7 +54,7 @@ class Body1 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'processingInformation' => '\CyberSource\Model\InstrumentidentifiersProcessingInformation'
+        'processingInformation' => '\CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Body1 implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\InstrumentidentifiersProcessingInformation
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -171,7 +171,7 @@ class Body1 implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\InstrumentidentifiersProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)

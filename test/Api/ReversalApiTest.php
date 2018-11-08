@@ -81,14 +81,4 @@ class ReversalApiTest extends \PHPUnit_Framework_TestCase
     public function testAuthReversal()
     {
     }
-
-    /**
-     * Test case for getAuthReversal
-     *
-     * Retrieve an Authorization Reversal.
-     *
-     */
-    public function testGetAuthReversal()
-    {
-    }
 }
