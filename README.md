@@ -1,10 +1,13 @@
 # PHP Client SDK for CyberSource REST APIs
 PHP client library for the CyberSource REST API
 
+[![Version         ][packagist_badge]][packagist]
+
 ## Requirements
 * PHP 5.6+
 * Enable cURL PHP Extension
 * Enable JSON PHP Extension
+* Enable MBString PHP Extension
 * Enable PHP_APCU PHP Extension. You will need to download it for your platform (Windows/Linux/Mac) 
 * [CyberSource Account](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
 * [CyberSource API Keys](https://prod.developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration/createCertSharedKey.html)
@@ -118,4 +121,5 @@ in Resources\ExternalConfiguration.php. For example:
 The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request
 using this SDK.
 
-
+[packagist_badge]: https://img.shields.io/packagist/v/cybersource/rest-client-php.svg
+[packagist]: https://packagist.org/packages/cybersource/rest-client-php
