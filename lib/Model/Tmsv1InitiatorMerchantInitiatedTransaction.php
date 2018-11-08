@@ -1,6 +1,6 @@
 <?php
 /**
- * Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+ * Tmsv1InitiatorMerchantInitiatedTransaction
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction Class Doc Comment
+ * Tmsv1InitiatorMerchantInitiatedTransaction Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction implements ArrayAccess
+class Tmsv1InitiatorMerchantInitiatedTransaction implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 

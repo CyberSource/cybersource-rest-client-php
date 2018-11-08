@@ -1,4 +1,4 @@
-# Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+# Tmsv1InitiatorMerchantInitiatedTransaction
 
 ## Properties
 Name | Type | Description | Notes

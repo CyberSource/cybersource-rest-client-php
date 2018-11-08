@@ -1,8 +1,8 @@
 <?php
 /**
- * Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest
+ * Tmsv1InitiatorMerchantInitiatedTransactionTest
  *
- * PHP version 5
+ * PHP version 5t
  *
  * @category Class
  * @package  CyberSource
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest Class Doc Comment
+ * Tmsv1InitiatorMerchantInitiatedTransactionTest Class Doc Comment
  *
  * @category    Class */
-// * @description Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+// * @description Tmsv1InitiatorMerchantInitiatedTransaction
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest extends \PHPUnit_Framework_TestCase
+class Tmsv1InitiatorMerchantInitiatedTransactionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiat
     }
 
     /**
-     * Test "Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction"
+     * Test "Tmsv1InitiatorMerchantInitiatedTransaction"
      */
-    public function testTmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction()
+    public function testTmsv1InitiatorMerchantInitiatedTransaction()
     {
     }
 
