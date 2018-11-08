@@ -73,52 +73,32 @@ class InstrumentIdentifierApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for instrumentidentifiersPost
-     *
-     * Create an Instrument Identifier.
-     *
-     */
-    public function testInstrumentidentifiersPost()
-    {
-    }
-
-    /**
-     * Test case for instrumentidentifiersTokenIdDelete
+     * Test case for tmsV1InstrumentidentifiersTokenIdDelete
      *
      * Delete an Instrument Identifier.
      *
      */
-    public function testInstrumentidentifiersTokenIdDelete()
+    public function testTmsV1InstrumentidentifiersTokenIdDelete()
     {
     }
 
     /**
-     * Test case for instrumentidentifiersTokenIdGet
+     * Test case for tmsV1InstrumentidentifiersTokenIdGet
      *
      * Retrieve an Instrument Identifier.
      *
      */
-    public function testInstrumentidentifiersTokenIdGet()
+    public function testTmsV1InstrumentidentifiersTokenIdGet()
     {
     }
 
     /**
-     * Test case for instrumentidentifiersTokenIdPatch
+     * Test case for tmsV1InstrumentidentifiersTokenIdPatch
      *
      * Update a Instrument Identifier.
      *
      */
-    public function testInstrumentidentifiersTokenIdPatch()
-    {
-    }
-
-    /**
-     * Test case for instrumentidentifiersTokenIdPaymentinstrumentsGet
-     *
-     * Retrieve all Payment Instruments associated with an Instrument Identifier.
-     *
-     */
-    public function testInstrumentidentifiersTokenIdPaymentinstrumentsGet()
+    public function testTmsV1InstrumentidentifiersTokenIdPatch()
     {
     }
 }

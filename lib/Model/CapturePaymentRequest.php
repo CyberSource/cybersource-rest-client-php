@@ -54,16 +54,16 @@ class CapturePaymentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\V2paymentsClientReferenceInformation',
-        'processingInformation' => '\CyberSource\Model\V2paymentsidcapturesProcessingInformation',
-        'paymentInformation' => '\CyberSource\Model\V2paymentsidcapturesPaymentInformation',
-        'orderInformation' => '\CyberSource\Model\V2paymentsidcapturesOrderInformation',
-        'buyerInformation' => '\CyberSource\Model\V2paymentsidcapturesBuyerInformation',
-        'deviceInformation' => '\CyberSource\Model\V2paymentsDeviceInformation',
-        'merchantInformation' => '\CyberSource\Model\V2paymentsidcapturesMerchantInformation',
-        'aggregatorInformation' => '\CyberSource\Model\V2paymentsidcapturesAggregatorInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\V2paymentsidcapturesPointOfSaleInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\V2paymentsMerchantDefinedInformation[]'
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
+        'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformation',
+        'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformation',
+        'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesOrderInformation',
+        'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation',
+        'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsDeviceInformation',
+        'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation',
+        'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation',
+        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]'
     ];
 
     /**
@@ -216,7 +216,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\V2paymentsClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -225,7 +225,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\V2paymentsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -237,7 +237,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesProcessingInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -246,7 +246,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -258,7 +258,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets paymentInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesPaymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformation
      */
     public function getPaymentInformation()
     {
@@ -267,7 +267,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets paymentInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesPaymentInformation $paymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformation $paymentInformation
      * @return $this
      */
     public function setPaymentInformation($paymentInformation)
@@ -279,7 +279,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets orderInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesOrderInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesOrderInformation
      */
     public function getOrderInformation()
     {
@@ -288,7 +288,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets orderInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesOrderInformation $orderInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesOrderInformation $orderInformation
      * @return $this
      */
     public function setOrderInformation($orderInformation)
@@ -300,7 +300,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesBuyerInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -309,7 +309,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -321,7 +321,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets deviceInformation
-     * @return \CyberSource\Model\V2paymentsDeviceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsDeviceInformation
      */
     public function getDeviceInformation()
     {
@@ -330,7 +330,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets deviceInformation
-     * @param \CyberSource\Model\V2paymentsDeviceInformation $deviceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsDeviceInformation $deviceInformation
      * @return $this
      */
     public function setDeviceInformation($deviceInformation)
@@ -342,7 +342,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesMerchantInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -351,7 +351,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)
@@ -363,7 +363,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets aggregatorInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesAggregatorInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation
      */
     public function getAggregatorInformation()
     {
@@ -372,7 +372,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets aggregatorInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesAggregatorInformation $aggregatorInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation $aggregatorInformation
      * @return $this
      */
     public function setAggregatorInformation($aggregatorInformation)
@@ -384,7 +384,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets pointOfSaleInformation
-     * @return \CyberSource\Model\V2paymentsidcapturesPointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation
      */
     public function getPointOfSaleInformation()
     {
@@ -393,7 +393,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets pointOfSaleInformation
-     * @param \CyberSource\Model\V2paymentsidcapturesPointOfSaleInformation $pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation $pointOfSaleInformation
      * @return $this
      */
     public function setPointOfSaleInformation($pointOfSaleInformation)
@@ -405,7 +405,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets merchantDefinedInformation
-     * @return \CyberSource\Model\V2paymentsMerchantDefinedInformation[]
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]
      */
     public function getMerchantDefinedInformation()
     {
@@ -414,7 +414,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\V2paymentsMerchantDefinedInformation[] $merchantDefinedInformation TBD
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation Description of this field is not available.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)

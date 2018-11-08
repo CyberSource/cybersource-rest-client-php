@@ -54,11 +54,11 @@ class AuthReversalRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\V2paymentsidreversalsClientReferenceInformation',
-        'reversalInformation' => '\CyberSource\Model\V2paymentsidreversalsReversalInformation',
-        'processingInformation' => '\CyberSource\Model\V2paymentsidreversalsProcessingInformation',
-        'orderInformation' => '\CyberSource\Model\V2paymentsidreversalsOrderInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\V2paymentsidreversalsPointOfSaleInformation'
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation',
+        'reversalInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsReversalInformation',
+        'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsProcessingInformation',
+        'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsOrderInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation'
     ];
 
     /**
@@ -186,7 +186,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\V2paymentsidreversalsClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -195,7 +195,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\V2paymentsidreversalsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -207,7 +207,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Gets reversalInformation
-     * @return \CyberSource\Model\V2paymentsidreversalsReversalInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsReversalInformation
      */
     public function getReversalInformation()
     {
@@ -216,7 +216,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Sets reversalInformation
-     * @param \CyberSource\Model\V2paymentsidreversalsReversalInformation $reversalInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsReversalInformation $reversalInformation
      * @return $this
      */
     public function setReversalInformation($reversalInformation)
@@ -228,7 +228,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\V2paymentsidreversalsProcessingInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -237,7 +237,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\V2paymentsidreversalsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -249,7 +249,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Gets orderInformation
-     * @return \CyberSource\Model\V2paymentsidreversalsOrderInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsOrderInformation
      */
     public function getOrderInformation()
     {
@@ -258,7 +258,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Sets orderInformation
-     * @param \CyberSource\Model\V2paymentsidreversalsOrderInformation $orderInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsOrderInformation $orderInformation
      * @return $this
      */
     public function setOrderInformation($orderInformation)
@@ -270,7 +270,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Gets pointOfSaleInformation
-     * @return \CyberSource\Model\V2paymentsidreversalsPointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation
      */
     public function getPointOfSaleInformation()
     {
@@ -279,7 +279,7 @@ class AuthReversalRequest implements ArrayAccess
 
     /**
      * Sets pointOfSaleInformation
-     * @param \CyberSource\Model\V2paymentsidreversalsPointOfSaleInformation $pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation $pointOfSaleInformation
      * @return $this
      */
     public function setPointOfSaleInformation($pointOfSaleInformation)

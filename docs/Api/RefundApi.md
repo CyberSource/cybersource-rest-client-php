@@ -1,61 +1,15 @@
 # CyberSource\RefundApi
 
-All URIs are relative to *https://api.cybersource.com*
+All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRefund**](RefundApi.md#getRefund) | **GET** /v2/refunds/{id} | Retrieve a Refund
-[**refundCapture**](RefundApi.md#refundCapture) | **POST** /v2/captures/{id}/refunds | Refund a Capture
-[**refundPayment**](RefundApi.md#refundPayment) | **POST** /v2/payments/{id}/refunds | Refund a Payment
+[**refundCapture**](RefundApi.md#refundCapture) | **POST** /pts/v2/captures/{id}/refunds | Refund a Capture
+[**refundPayment**](RefundApi.md#refundPayment) | **POST** /pts/v2/payments/{id}/refunds | Refund a Payment
 
-
-# **getRefund**
-> \CyberSource\Model\InlineResponse2005 getRefund($id)
-
-Retrieve a Refund
-
-Include the refund ID in the GET request to to retrieve the refund details.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\RefundApi();
-$id = "id_example"; // string | The refund ID. This ID is returned from a previous refund request.
-
-try {
-    $result = $api_instance->getRefund($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->getRefund: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The refund ID. This ID is returned from a previous refund request. |
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **refundCapture**
-> \CyberSource\Model\InlineResponse2013 refundCapture($refundCaptureRequest, $id)
+> \CyberSource\Model\PtsV2PaymentsRefundPost201Response refundCapture($refundCaptureRequest, $id)
 
 Refund a Capture
 
@@ -88,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\CyberSource\Model\PtsV2PaymentsRefundPost201Response**](../Model/PtsV2PaymentsRefundPost201Response.md)
 
 ### Authorization
 
@@ -96,13 +50,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **refundPayment**
-> \CyberSource\Model\InlineResponse2013 refundPayment($refundPaymentRequest, $id)
+> \CyberSource\Model\PtsV2PaymentsRefundPost201Response refundPayment($refundPaymentRequest, $id)
 
 Refund a Payment
 
@@ -135,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\CyberSource\Model\PtsV2PaymentsRefundPost201Response**](../Model/PtsV2PaymentsRefundPost201Response.md)
 
 ### Authorization
 
@@ -143,8 +97,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

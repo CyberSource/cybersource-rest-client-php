@@ -36,7 +36,10 @@ class JsonWebTokenGenerator implements TokenGenerator
 		else if($method==GlobalParameter::POST || $method==GlobalParameter::PUT || $method==GlobalParameter::PATCH)
 		{
 			$digestObj = new PayloadDigest();
-	    	$digest = $digestObj->generateDigest($payloadData);		
+			$digest = $digestObj->generateDigest($payloadData);	
+			// echo "payload: \n";
+			// print_r($payloadData);
+			//die;	
 			$jwtBody = array("digest"=>$digest,"digestAlgorithm"=>"SHA-256","iat"=>$date);
 			
 		} 

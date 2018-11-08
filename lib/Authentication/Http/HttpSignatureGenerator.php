@@ -29,11 +29,10 @@ class HttpSignatureGenerator implements TokenGenerator
 		$date = date("D, d M Y G:i:s ").GlobalParameter::GMT;
 		$methodHeader = strtolower($method);
 		$signatureString ="";
-		if($method==GlobalParameter::GET || $method==GlobalParameter::DELETE){
-			
+		if($method==GlobalParameter::GET || $method==GlobalParameter::DELETE){		
 			//signature creation for GET/DELETE
 			$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\nv-c-merchant-id: ".$merchantConfig->getMerchantID();
-			$headerString = GlobalParameter::GETALGOHEADER;		
+			$headerString = GlobalParameter::GETALGOHEADER;	
 			
 		} else if($method==GlobalParameter::POST || $method==GlobalParameter::PUT || $method==GlobalParameter::PATCH){
 			//signature creation for POST/PUT

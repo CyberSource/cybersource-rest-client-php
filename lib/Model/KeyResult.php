@@ -55,8 +55,8 @@ class KeyResult implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'keyId' => 'string',
-        'der' => '\CyberSource\Model\InlineResponse200Der',
-        'jwk' => '\CyberSource\Model\InlineResponse200Jwk'
+        'der' => '\CyberSource\Model\FlexV1KeysPost200ResponseDer',
+        'jwk' => '\CyberSource\Model\FlexV1KeysPost200ResponseJwk'
     ];
 
     /**
@@ -195,7 +195,7 @@ class KeyResult implements ArrayAccess
 
     /**
      * Gets der
-     * @return \CyberSource\Model\InlineResponse200Der
+     * @return \CyberSource\Model\FlexV1KeysPost200ResponseDer
      */
     public function getDer()
     {
@@ -204,7 +204,7 @@ class KeyResult implements ArrayAccess
 
     /**
      * Sets der
-     * @param \CyberSource\Model\InlineResponse200Der $der
+     * @param \CyberSource\Model\FlexV1KeysPost200ResponseDer $der
      * @return $this
      */
     public function setDer($der)
@@ -216,7 +216,7 @@ class KeyResult implements ArrayAccess
 
     /**
      * Gets jwk
-     * @return \CyberSource\Model\InlineResponse200Jwk
+     * @return \CyberSource\Model\FlexV1KeysPost200ResponseJwk
      */
     public function getJwk()
     {
@@ -225,7 +225,7 @@ class KeyResult implements ArrayAccess
 
     /**
      * Sets jwk
-     * @param \CyberSource\Model\InlineResponse200Jwk $jwk
+     * @param \CyberSource\Model\FlexV1KeysPost200ResponseJwk $jwk
      * @return $this
      */
     public function setJwk($jwk)

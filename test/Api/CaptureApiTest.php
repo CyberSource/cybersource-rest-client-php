@@ -81,14 +81,4 @@ class CaptureApiTest extends \PHPUnit_Framework_TestCase
     public function testCapturePayment()
     {
     }
-
-    /**
-     * Test case for getCapture
-     *
-     * Retrieve a Capture.
-     *
-     */
-    public function testGetCapture()
-    {
-    }
 }
