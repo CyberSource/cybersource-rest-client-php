@@ -92,11 +92,11 @@ class KeyGenerationApi
      *
      * Generate Key
      *
-     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
+     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse200
+     * @return \CyberSource\Model\FlexV1KeysPost200Response
      */
-    public function generatePublicKey($generatePublicKeyRequest)
+    public function generatePublicKey($generatePublicKeyRequest = null)
     {
         list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest);
         return [$response, $statusCode, $httpHeader];
@@ -107,16 +107,12 @@ class KeyGenerationApi
      *
      * Generate Key
      *
-     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
+     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest)
+    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest = null)
     {
-        // verify the required parameter 'generatePublicKeyRequest' is set
-        if ($generatePublicKeyRequest === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $generatePublicKeyRequest when calling generatePublicKey');
-        }
         // parse inputs
         $resourcePath = "/flex/v1/keys/";
         $httpBody = '';
@@ -127,7 +123,7 @@ class KeyGenerationApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // body params
         $_tempBody = null;
@@ -149,15 +145,15 @@ class KeyGenerationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse200',
+                '\CyberSource\Model\FlexV1KeysPost200Response',
                 '/flex/v1/keys/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\FlexV1KeysPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\FlexV1KeysPost200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 default:

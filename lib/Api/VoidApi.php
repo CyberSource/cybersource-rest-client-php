@@ -88,88 +88,6 @@ class VoidApi
     }
 
     /**
-     * Operation getVoid
-     *
-     * Retrieve A Void
-     *
-     * @param string $id The void ID returned from a previous void request. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2015
-     */
-    public function getVoid($id)
-    {
-        list($response, $statusCode, $httpHeader) = $this->getVoidWithHttpInfo($id);
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation getVoidWithHttpInfo
-     *
-     * Retrieve A Void
-     *
-     * @param string $id The void ID returned from a previous void request. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getVoidWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getVoid');
-        }
-        // parse inputs
-        $resourcePath = "/pts/v2/voids/{id}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
-                '/pts/v2/voids/{id}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation voidCapture
      *
      * Void a Capture
@@ -177,7 +95,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidCaptureRequest $voidCaptureRequest  (required)
      * @param string $id The capture ID returned from a previous capture request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2015
+     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
      */
     public function voidCapture($voidCaptureRequest, $id)
     {
@@ -193,7 +111,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidCaptureRequest $voidCaptureRequest  (required)
      * @param string $id The capture ID returned from a previous capture request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidCaptureWithHttpInfo($voidCaptureRequest, $id)
     {
@@ -211,11 +129,11 @@ class VoidApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
         if ($id !== null) {
@@ -245,23 +163,23 @@ class VoidApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
+                '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
                 '/pts/v2/captures/{id}/voids'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -278,7 +196,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidCreditRequest $voidCreditRequest  (required)
      * @param string $id The credit ID returned from a previous credit request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2015
+     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
      */
     public function voidCredit($voidCreditRequest, $id)
     {
@@ -294,7 +212,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidCreditRequest $voidCreditRequest  (required)
      * @param string $id The credit ID returned from a previous credit request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidCreditWithHttpInfo($voidCreditRequest, $id)
     {
@@ -312,11 +230,11 @@ class VoidApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
         if ($id !== null) {
@@ -346,23 +264,23 @@ class VoidApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
+                '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
                 '/pts/v2/credits/{id}/voids'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -379,7 +297,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidPaymentRequest $voidPaymentRequest  (required)
      * @param string $id The payment ID returned from a previous payment request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2015
+     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
      */
     public function voidPayment($voidPaymentRequest, $id)
     {
@@ -395,7 +313,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidPaymentRequest $voidPaymentRequest  (required)
      * @param string $id The payment ID returned from a previous payment request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidPaymentWithHttpInfo($voidPaymentRequest, $id)
     {
@@ -413,11 +331,11 @@ class VoidApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
         if ($id !== null) {
@@ -447,23 +365,23 @@ class VoidApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
+                '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
                 '/pts/v2/payments/{id}/voids'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -480,7 +398,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidRefundRequest $voidRefundRequest  (required)
      * @param string $id The refund ID returned from a previous refund request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\InlineResponse2015
+     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
      */
     public function voidRefund($voidRefundRequest, $id)
     {
@@ -496,7 +414,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidRefundRequest $voidRefundRequest  (required)
      * @param string $id The refund ID returned from a previous refund request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidRefundWithHttpInfo($voidRefundRequest, $id)
     {
@@ -514,11 +432,11 @@ class VoidApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
         if ($id !== null) {
@@ -548,23 +466,23 @@ class VoidApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
+                '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
                 '/pts/v2/refunds/{id}/voids'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

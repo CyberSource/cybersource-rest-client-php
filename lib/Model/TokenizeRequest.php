@@ -55,7 +55,7 @@ class TokenizeRequest implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'keyId' => 'string',
-        'cardInfo' => '\CyberSource\Model\Paymentsflexv1tokensCardInfo'
+        'cardInfo' => '\CyberSource\Model\Flexv1tokensCardInfo'
     ];
 
     /**
@@ -189,7 +189,7 @@ class TokenizeRequest implements ArrayAccess
 
     /**
      * Gets cardInfo
-     * @return \CyberSource\Model\Paymentsflexv1tokensCardInfo
+     * @return \CyberSource\Model\Flexv1tokensCardInfo
      */
     public function getCardInfo()
     {
@@ -198,7 +198,7 @@ class TokenizeRequest implements ArrayAccess
 
     /**
      * Sets cardInfo
-     * @param \CyberSource\Model\Paymentsflexv1tokensCardInfo $cardInfo
+     * @param \CyberSource\Model\Flexv1tokensCardInfo $cardInfo
      * @return $this
      */
     public function setCardInfo($cardInfo)

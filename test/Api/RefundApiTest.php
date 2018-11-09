@@ -73,16 +73,6 @@ class RefundApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getRefund
-     *
-     * Retrieve a Refund.
-     *
-     */
-    public function testGetRefund()
-    {
-    }
-
-    /**
      * Test case for refundCapture
      *
      * Refund a Capture.

@@ -88,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.cybersource.com';
+    protected $host = 'https://apitest.cybersource.com';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout
@@ -116,7 +116,7 @@ class Configuration
      *
      * @var bool
      */
-    protected $debug = true;
+    protected $debug = false;
 
     /**
      * Debug file location (log to STDOUT by default)

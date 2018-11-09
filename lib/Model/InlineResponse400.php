@@ -54,11 +54,9 @@ class InlineResponse400 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'reason' => 'string',
+        'type' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse201ErrorInformationDetails[]'
+        'details' => '\CyberSource\Model\Tmsv1instrumentidentifiersDetails'
     ];
 
     /**
@@ -66,9 +64,7 @@ class InlineResponse400 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
-        'status' => null,
-        'reason' => null,
+        'type' => null,
         'message' => null,
         'details' => null
     ];
@@ -88,9 +84,7 @@ class InlineResponse400 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'reason' => 'reason',
+        'type' => 'type',
         'message' => 'message',
         'details' => 'details'
     ];
@@ -101,9 +95,7 @@ class InlineResponse400 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'reason' => 'setReason',
+        'type' => 'setType',
         'message' => 'setMessage',
         'details' => 'setDetails'
     ];
@@ -114,9 +106,7 @@ class InlineResponse400 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'reason' => 'getReason',
+        'type' => 'getType',
         'message' => 'getMessage',
         'details' => 'getDetails'
     ];
@@ -136,50 +126,8 @@ class InlineResponse400 implements ArrayAccess
         return self::$getters;
     }
 
-    const STATUS_REQUEST = 'INVALID_REQUEST';
-    const REASON_MISSING_FIELD = 'MISSING_FIELD';
-    const REASON_INVALID_DATA = 'INVALID_DATA';
-    const REASON_DUPLICATE_REQUEST = 'DUPLICATE_REQUEST';
-    const REASON_INVALID_CARD = 'INVALID_CARD';
-    const REASON_CARD_TYPE_NOT_ACCEPTED = 'CARD_TYPE_NOT_ACCEPTED';
-    const REASON_INVALID_MERCHANT_CONFIGURATION = 'INVALID_MERCHANT_CONFIGURATION';
-    const REASON_PROCESSOR_UNAVAILABLE = 'PROCESSOR_UNAVAILABLE';
-    const REASON_INVALID_AMOUNT = 'INVALID_AMOUNT';
-    const REASON_INVALID_CARD_TYPE = 'INVALID_CARD_TYPE';
-    const REASON_DEBIT_CARD_USEAGE_EXCEEDD_LIMIT = 'DEBIT_CARD_USEAGE_EXCEEDD_LIMIT';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_REQUEST,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_MISSING_FIELD,
-            self::REASON_INVALID_DATA,
-            self::REASON_DUPLICATE_REQUEST,
-            self::REASON_INVALID_CARD,
-            self::REASON_CARD_TYPE_NOT_ACCEPTED,
-            self::REASON_INVALID_MERCHANT_CONFIGURATION,
-            self::REASON_PROCESSOR_UNAVAILABLE,
-            self::REASON_INVALID_AMOUNT,
-            self::REASON_INVALID_CARD_TYPE,
-            self::REASON_DEBIT_CARD_USEAGE_EXCEEDD_LIMIT,
-        ];
-    }
     
 
     /**
@@ -194,9 +142,7 @@ class InlineResponse400 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
@@ -210,22 +156,6 @@ class InlineResponse400 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -238,95 +168,27 @@ class InlineResponse400 implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets submitTimeUtc
+     * Gets type
      * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getType()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * Sets type
+     * @param string $type
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setType($type)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status.
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['reason'] = $reason;
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -342,7 +204,7 @@ class InlineResponse400 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message The detailed message related to the type stated above.
      * @return $this
      */
     public function setMessage($message)
@@ -354,7 +216,7 @@ class InlineResponse400 implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\InlineResponse201ErrorInformationDetails[]
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersDetails
      */
     public function getDetails()
     {
@@ -363,7 +225,7 @@ class InlineResponse400 implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\InlineResponse201ErrorInformationDetails[] $details
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersDetails $details
      * @return $this
      */
     public function setDetails($details)

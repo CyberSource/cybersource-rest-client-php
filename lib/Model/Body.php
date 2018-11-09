@@ -54,14 +54,14 @@ class Body implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InstrumentidentifiersLinks',
+        'links' => '\CyberSource\Model\Tmsv1instrumentidentifiersLinks',
         'id' => 'string',
         'object' => 'string',
         'state' => 'string',
-        'card' => '\CyberSource\Model\InstrumentidentifiersCard',
-        'bankAccount' => '\CyberSource\Model\InstrumentidentifiersBankAccount',
-        'processingInformation' => '\CyberSource\Model\InstrumentidentifiersProcessingInformation',
-        'metadata' => '\CyberSource\Model\InstrumentidentifiersMetadata'
+        'card' => '\CyberSource\Model\Tmsv1instrumentidentifiersCard',
+        'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
+        'processingInformation' => '\CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation',
+        'metadata' => '\CyberSource\Model\Tmsv1instrumentidentifiersMetadata'
     ];
 
     /**
@@ -254,7 +254,7 @@ class Body implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\InstrumentidentifiersLinks
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersLinks
      */
     public function getLinks()
     {
@@ -263,7 +263,7 @@ class Body implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\InstrumentidentifiersLinks $links
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -356,7 +356,7 @@ class Body implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\InstrumentidentifiersCard
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersCard
      */
     public function getCard()
     {
@@ -365,7 +365,7 @@ class Body implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\InstrumentidentifiersCard $card
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersCard $card
      * @return $this
      */
     public function setCard($card)
@@ -377,7 +377,7 @@ class Body implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\InstrumentidentifiersBankAccount
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount
      */
     public function getBankAccount()
     {
@@ -386,7 +386,7 @@ class Body implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\InstrumentidentifiersBankAccount $bankAccount
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)
@@ -398,7 +398,7 @@ class Body implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\InstrumentidentifiersProcessingInformation
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -407,7 +407,7 @@ class Body implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\InstrumentidentifiersProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -419,7 +419,7 @@ class Body implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return \CyberSource\Model\InstrumentidentifiersMetadata
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersMetadata
      */
     public function getMetadata()
     {
@@ -428,7 +428,7 @@ class Body implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param \CyberSource\Model\InstrumentidentifiersMetadata $metadata
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersMetadata $metadata
      * @return $this
      */
     public function setMetadata($metadata)

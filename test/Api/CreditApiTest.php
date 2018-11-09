@@ -81,14 +81,4 @@ class CreditApiTest extends \PHPUnit_Framework_TestCase
     public function testCreateCredit()
     {
     }
-
-    /**
-     * Test case for getCredit
-     *
-     * Retrieve a Credit.
-     *
-     */
-    public function testGetCredit()
-    {
-    }
 }

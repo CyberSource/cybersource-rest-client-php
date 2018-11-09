@@ -54,18 +54,18 @@ class Body3 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InstrumentidentifiersLinks',
+        'links' => '\CyberSource\Model\Tmsv1instrumentidentifiersLinks',
         'id' => 'string',
         'object' => 'string',
         'state' => 'string',
-        'bankAccount' => '\CyberSource\Model\PaymentinstrumentsBankAccount',
-        'card' => '\CyberSource\Model\PaymentinstrumentsCard',
-        'buyerInformation' => '\CyberSource\Model\PaymentinstrumentsBuyerInformation',
-        'billTo' => '\CyberSource\Model\PaymentinstrumentsBillTo',
-        'processingInformation' => '\CyberSource\Model\PaymentinstrumentsProcessingInformation',
-        'merchantInformation' => '\CyberSource\Model\PaymentinstrumentsMerchantInformation',
-        'metaData' => '\CyberSource\Model\InstrumentidentifiersMetadata',
-        'instrumentIdentifier' => '\CyberSource\Model\PaymentinstrumentsInstrumentIdentifier'
+        'bankAccount' => '\CyberSource\Model\Tmsv1paymentinstrumentsBankAccount',
+        'card' => '\CyberSource\Model\Tmsv1paymentinstrumentsCard',
+        'buyerInformation' => '\CyberSource\Model\Tmsv1paymentinstrumentsBuyerInformation',
+        'billTo' => '\CyberSource\Model\Tmsv1paymentinstrumentsBillTo',
+        'processingInformation' => '\CyberSource\Model\Tmsv1paymentinstrumentsProcessingInformation',
+        'merchantInformation' => '\CyberSource\Model\Tmsv1paymentinstrumentsMerchantInformation',
+        'metaData' => '\CyberSource\Model\Tmsv1instrumentidentifiersMetadata',
+        'instrumentIdentifier' => '\CyberSource\Model\Tmsv1paymentinstrumentsInstrumentIdentifier'
     ];
 
     /**
@@ -278,7 +278,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\InstrumentidentifiersLinks
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersLinks
      */
     public function getLinks()
     {
@@ -287,7 +287,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\InstrumentidentifiersLinks $links
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -380,7 +380,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\PaymentinstrumentsBankAccount
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsBankAccount
      */
     public function getBankAccount()
     {
@@ -389,7 +389,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\PaymentinstrumentsBankAccount $bankAccount
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)
@@ -401,7 +401,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\PaymentinstrumentsCard
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsCard
      */
     public function getCard()
     {
@@ -410,7 +410,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\PaymentinstrumentsCard $card
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsCard $card
      * @return $this
      */
     public function setCard($card)
@@ -422,7 +422,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\PaymentinstrumentsBuyerInformation
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -431,7 +431,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\PaymentinstrumentsBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -443,7 +443,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\PaymentinstrumentsBillTo
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsBillTo
      */
     public function getBillTo()
     {
@@ -452,7 +452,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\PaymentinstrumentsBillTo $billTo
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)
@@ -464,7 +464,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\PaymentinstrumentsProcessingInformation
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -473,7 +473,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\PaymentinstrumentsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -485,7 +485,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\PaymentinstrumentsMerchantInformation
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -494,7 +494,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\PaymentinstrumentsMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)
@@ -506,7 +506,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets metaData
-     * @return \CyberSource\Model\InstrumentidentifiersMetadata
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersMetadata
      */
     public function getMetaData()
     {
@@ -515,7 +515,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets metaData
-     * @param \CyberSource\Model\InstrumentidentifiersMetadata $metaData
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersMetadata $metaData
      * @return $this
      */
     public function setMetaData($metaData)
@@ -527,7 +527,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\PaymentinstrumentsInstrumentIdentifier
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsInstrumentIdentifier
      */
     public function getInstrumentIdentifier()
     {
@@ -536,7 +536,7 @@ class Body3 implements ArrayAccess
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\PaymentinstrumentsInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsInstrumentIdentifier $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)
