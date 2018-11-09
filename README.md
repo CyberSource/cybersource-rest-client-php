@@ -30,7 +30,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/cybersource": "0.0.1"
+  "cybersource/cybersource": "0.0.2"
   }
 }
 ```
