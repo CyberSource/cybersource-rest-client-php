@@ -153,7 +153,7 @@ class ProcessAPayoutApi
                 '/pts/v2/payouts/'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:

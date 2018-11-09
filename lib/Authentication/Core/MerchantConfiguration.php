@@ -671,16 +671,6 @@ class MerchantConfiguration
         else
             $error_message .= GlobalParameter::MERCSECKEY;
 
-        if(isset($connectionDet->proxyUrl))
-            $config = $config->setCurlProxyHost($connectionDet->proxyUrl);
-        else
-            $warning_message .= GlobalParameter::PROXYURLFIELD;
-
-        if(isset($connectionDet->proxyPort))
-            $config = $config->setCurlProxyPort($connectionDet->proxyPort);
-        else
-            $warning_message .= GlobalParameter::PROXYPORTFIELD;
-
         if(isset($connectionDet->keyAlias))
             $config = $config->setKeyAlias($connectionDet->keyAlias);
         else
@@ -770,15 +760,6 @@ class MerchantConfiguration
             }
         }
 
-        if(empty($config->getCurlProxyHost())){
-            $warning_message .= GlobalParameter::INVALID_PROXY_URL.GlobalParameter::DEFAULT_PROXY_URL;
-            $config = $config->setCurlProxyHost(GlobalParameter::DEFAULT_PROXY_URL);
-        }
-
-        if(empty($config->getCurlProxyPort())){
-            $warning_message .= GlobalParameter::INVALID_PROXY_PORT.GlobalParameter::DEFAULT_PROXY_PORT;
-            $config = $config->setCurlProxyPort(GlobalParameter::DEFAULT_PROXY_PORT);
-        }
 
         if(empty($config->getKeyAlias()) && $config->getAuthenticationType() == GlobalParameter::JWT){
 
@@ -809,16 +790,13 @@ class MerchantConfiguration
         self::$logger->log($config, GlobalParameter::LOG_START_MSG);
         $printData = array(GlobalParameter::AUTHTYPE=>$config->getAuthenticationType(),GlobalParameter::ENBLOGFIELD=>$config->getDebug(), GlobalParameter::LOGDIR => $config->getDebugFile(), GlobalParameter::RUNENVFIELD=>$config->getRunEnvironment(), GlobalParameter::LOGSIZE=>$config->getLogSize(), GlobalParameter::PROXYPORTFIELD=>$config->getCurlProxyPort(), GlobalParameter::KEYFILEFIELDDIR=>$config->getKeysDirectory(), GlobalParameter::KEYFILEFIELD=>$config->getKeyFileName(), GlobalParameter::LOGFILENAME=>$config->getLogFileName());
         self::$logger->log($config, $printData);
-        //shashiK: since you are already printing authType above, is there any specific reason of printing it again?
-        //As per gaurav says we need to show additional one line for authentication type. We followed all the othe languages
         $messageAuthType = GlobalParameter::AUTHTYPE ."=>".$config->getAuthenticationType();
         self::$logger->log($config, $messageAuthType);
 
         if($error_message != null){
             $exception = new AuthException($error_message, 0);
             self::$logger->log($config, $exception);  
-            self::$logger->log($config, GlobalParameter::LOG_END_MSG); //shashiK: why are you printing this? and the start message as well.
-            //It will be helpful for pointing particular error easily, and this is common for all the other languages. 
+            self::$logger->log($config, GlobalParameter::LOG_END_MSG);
             throw $exception;
         }
         if($warning_message != null){
