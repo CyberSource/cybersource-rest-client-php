@@ -1,6 +1,6 @@
 <?php
 namespace CyberSource;
-require_once '../core/Authentication.php';
+require_once '../Core/Authentication.php';
 require_once 'TestConfiguration.php'; 
 require_once '../payloadDigest/PayloadDigest.php';
 require_once '../authentication-sdk/util/PropertiesUtil.php';
