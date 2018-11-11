@@ -1,5 +1,6 @@
 # PHP Client SDK for CyberSource REST APIs
-PHP client library for the CyberSource REST API
+
+The CyberSource PHP client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your PHP application.
 
 [![Version         ][packagist_badge]][packagist]
 
@@ -13,9 +14,9 @@ PHP client library for the CyberSource REST API
 * [CyberSource API Keys](https://prod.developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration/createCertSharedKey.html)
  
  ## Dependencies
-* PHP-JWT              			: JWT token Genearation
-* CURL          				: Http communication with the payment gateway
-* PHP_APCU						: Caching 
+* PHP-JWT              			      : JWT token Genearation
+* CURL          				            : Http communication with the payment gateway
+* PHP_APCU						                : Caching 
 * phpunit-5.7.25               	: unit testing
 * phpunit-5.7.25 code coverage 	: Sonar coverage
 
@@ -34,6 +35,27 @@ override the new secure-http default setting)*.
   }
 }
 ```
+
+## Registration & Configuration
+Use of this SDK and the CyberSource APIs requires having an account on our system. You can find details of getting a test account and creating your keys [here](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
+
+Once you have your keys, simply load them into the appropriate variables in your code, as per the below sample code dealing with the authentication part of the API request. 
+
+Remember this SDK is for use in server-side PHP applications that access the CyberSource REST API and credentials should always be securely stored and accessed appropriately. 
+
+## SDK Usage Examples and Sample Code
+To get started using this SDK, it's highly recommended to download our sample code repository:
+* [Cybersource PHP Sample Code Repository (on GitHub)](https://github.com/CyberSource/cybersource-rest-samples-php)
+
+In that respository, we have comprehensive sample code for all common uses of our API:
+
+Additionally, you can find details and examples of how our API is structured in our API Reference Guide:
+* [Developer Center API Reference](https://developer.cybersource.com/api/reference/api-reference.html)
+
+The API Reference Guide provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.
+
+
+
 ## To set your API credentials for an API request,Configure the following information in ExternalConfiguration.php file:
 
   Create a file in your application `ExternalConfiguration.php` inside a `Resources` folder and configure the following information as per requirement similar to [**this one**](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/ExternalConfiguration.php).
@@ -108,15 +130,12 @@ duplicate of our production environment with the transaction authorization and s
 configured to communicate with the sandbox environment. To switch to the production environment, set the appropriate property 
 in Resources\ExternalConfiguration.php. For example:
 
-```PHP
+```php
+// For TESTING use
+//  $this->runEnv = "cyberSource.environment.SANDBOX";
 // For PRODUCTION use
   $this->runEnv = "cyberSource.environment.PRODUCTION";
 ```
-
-## SDK Usage Examples and Sample Code
- * To get started using this SDK, it's highly recommended to use our [sample code repository](https://github.com/CyberSource/cybersource-rest-samples-php).
- * In that respository, we have comprehensive sample code for all common uses of our API.
- * Additionally, you can find details and examples of how our API is structured in our API Reference Guide.
 
 The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request
 using this SDK.
