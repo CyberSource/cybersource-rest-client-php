@@ -69,11 +69,11 @@ class MerchantConfiguration
     protected $keysDirectory = '';
 
     /**
-     * secreteKey for HTTP basic authentication
+     * secretKey for HTTP basic authentication
      *
      * @var string
      */
-    protected $secreteKey = '';
+    protected $secretKey = '';
 
     /**
      * The host
@@ -381,26 +381,26 @@ class MerchantConfiguration
     }
 
     /**
-     * Sets the secreteKey for HTTP basic authentication
+     * Sets the secretKey for HTTP basic authentication
      *
-     * @param string secreteKey for HTTP basic authentication
+     * @param string secretKey for HTTP basic authentication
      *
      * @return $this
      */
-    public function setSecreteKey($secreteKey)
+    public function setSecretKey($secretKey)
     {
-        $this->secreteKey = $secreteKey;
+        $this->secretKey = $secretKey;
         return $this;
     }
 
     /**
-     * Gets the secreteKey for HTTP basic authentication
+     * Gets the secretKey for HTTP basic authentication
      *
-     * @return string secreteKey for HTTP basic authentication
+     * @return string secretKey for HTTP basic authentication
      */
-    public function getSecreteKey()
+    public function getSecretKey()
     {
-        return $this->secreteKey;
+        return $this->secretKey;
     }
 
 
@@ -667,7 +667,7 @@ class MerchantConfiguration
             $error_message .= GlobalParameter::MERCKEYID;
 
         if(isset($connectionDet->merchantsecretKey))
-            $config = $config->setSecreteKey($connectionDet->merchantsecretKey);
+            $config = $config->setSecretKey($connectionDet->merchantsecretKey);
         else
             $error_message .= GlobalParameter::MERCSECKEY;
 
@@ -783,7 +783,7 @@ class MerchantConfiguration
             $error_message .= GlobalParameter::MERCHANT_KEY_ID_REQ;
         }
 
-        if(empty($config->getSecreteKey())){
+        if(empty($config->getSecretKey())){
             $error_message .= GlobalParameter::MERCHANT_SECRET_KEY_REQ;
         }
 
