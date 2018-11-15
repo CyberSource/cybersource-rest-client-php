@@ -69,11 +69,11 @@ class MerchantConfiguration
     protected $keysDirectory = '';
 
     /**
-     * secretKey for HTTP basic authentication
+     * secreteKey for HTTP basic authentication
      *
      * @var string
      */
-    protected $secretKey = '';
+    protected $secreteKey = '';
 
     /**
      * The host
@@ -381,26 +381,26 @@ class MerchantConfiguration
     }
 
     /**
-     * Sets the secretKey for HTTP basic authentication
+     * Sets the secreteKey for HTTP basic authentication
      *
-     * @param string secretKey for HTTP basic authentication
+     * @param string secreteKey for HTTP basic authentication
      *
      * @return $this
      */
-    public function setSecretKey($secretKey)
+    public function setSecreteKey($secreteKey)
     {
-        $this->secretKey = $secretKey;
+        $this->secreteKey = $secreteKey;
         return $this;
     }
 
     /**
-     * Gets the secretKey for HTTP basic authentication
+     * Gets the secreteKey for HTTP basic authentication
      *
-     * @return string secretKey for HTTP basic authentication
+     * @return string secreteKey for HTTP basic authentication
      */
-    public function getSecretKey()
+    public function getSecreteKey()
     {
-        return $this->secretKey;
+        return $this->secreteKey;
     }
 
 
@@ -666,8 +666,8 @@ class MerchantConfiguration
         else
             $error_message .= GlobalParameter::MERCKEYID;
 
-        if(isset($connectionDet->merchantsecretKey))
-            $config = $config->setSecretKey($connectionDet->merchantsecretKey);
+        if(isset($connectionDet->merchantsecreteKey))
+            $config = $config->setSecreteKey($connectionDet->merchantsecreteKey);
         else
             $error_message .= GlobalParameter::MERCSECKEY;
 
@@ -783,7 +783,7 @@ class MerchantConfiguration
             $error_message .= GlobalParameter::MERCHANT_KEY_ID_REQ;
         }
 
-        if(empty($config->getSecretKey())){
+        if(empty($config->getSecreteKey())){
             $error_message .= GlobalParameter::MERCHANT_SECRET_KEY_REQ;
         }
 

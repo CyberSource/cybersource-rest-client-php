@@ -60,7 +60,7 @@ class HttpSignatureGenerator implements TokenGenerator
 	function accessTokenHeader($signatureString, $headerString, $merchantConfig){
 
 		$signatureByteString = utf8_encode($signatureString);
-		$decodeKey = base64_decode($merchantConfig->getSecretKey());
+		$decodeKey = base64_decode($merchantConfig->getSecreteKey());
 		$signature = base64_encode(hash_hmac(GlobalParameter::SHA256, $signatureByteString, $decodeKey, true));	
 		$signatureHeader = array(
 			'keyid="'.$merchantConfig->getApiKeyID().'"',
