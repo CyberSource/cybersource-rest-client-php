@@ -169,7 +169,7 @@ class ReportSubscriptionsApi
                 '/reporting/v3/report-subscriptions/{reportName}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
@@ -261,7 +261,7 @@ class ReportSubscriptionsApi
                 '/reporting/v3/report-subscriptions/{reportName}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
