@@ -169,7 +169,7 @@ class ReportSubscriptionsApi
                 '/reporting/v3/report-subscriptions/{reportName}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
@@ -261,7 +261,7 @@ class ReportSubscriptionsApi
                 '/reporting/v3/report-subscriptions/{reportName}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
@@ -332,8 +332,7 @@ class ReportSubscriptionsApi
                 '\CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response',
                 '/reporting/v3/report-subscriptions'
             );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:

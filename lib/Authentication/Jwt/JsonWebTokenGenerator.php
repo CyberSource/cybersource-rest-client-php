@@ -37,9 +37,6 @@ class JsonWebTokenGenerator implements TokenGenerator
 		{
 			$digestObj = new PayloadDigest();
 			$digest = $digestObj->generateDigest($payloadData);	
-			// echo "payload: \n";
-			// print_r($payloadData);
-			//die;	
 			$jwtBody = array("digest"=>$digest,"digestAlgorithm"=>"SHA-256","iat"=>$date);
 			
 		} 
@@ -56,8 +53,8 @@ class JsonWebTokenGenerator implements TokenGenerator
 
 	public function accessTokenHeader($jwtBody, $merchantConfig){
 			$gToken = $this->getJsonWebTokenHeader();
-			$generateToken = $gToken->getJsonWebToken($jwtBody, $merchantConfig);
-			return "Bearer ".$generateToken;
+			$generatedToken = $gToken->getJsonWebToken($jwtBody, $merchantConfig); 
+			return "Bearer ".$generatedToken;
 	}
 
 	protected function getJsonWebTokenHeader() {

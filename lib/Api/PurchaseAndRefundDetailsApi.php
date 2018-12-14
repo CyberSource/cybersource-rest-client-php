@@ -215,7 +215,7 @@ class PurchaseAndRefundDetailsApi
                 '/reporting/v3/purchase-refund-details'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:

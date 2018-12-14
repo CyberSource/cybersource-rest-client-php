@@ -57,7 +57,7 @@ class HttpSignatureGenerator implements TokenGenerator
 		return $this->accessTokenHeader($signatureString, $headerString, $merchantConfig);
 	}
 	//Purpose: using for access and return the signature token
-	function accessTokenHeader($signatureString, $headerString, $merchantConfig){
+	protected function accessTokenHeader($signatureString, $headerString, $merchantConfig){
 
 		$signatureByteString = utf8_encode($signatureString);
 		$decodeKey = base64_decode($merchantConfig->getSecretKey());
@@ -70,6 +70,8 @@ class HttpSignatureGenerator implements TokenGenerator
 		);
 		return GlobalParameter::SIGNATURE.implode(", ",$signatureHeader);
 	}
+
+	
 
 }
 ?>
