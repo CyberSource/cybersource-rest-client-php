@@ -27,28 +27,28 @@ class Authentication
 		if(is_null($merchantConfig))
 		{
 			$exception = new AuthException(GlobalParameter::MERCHANTCONFIGERR, 0);
-			self::$logger->log($config, $exception);
+			self::$logger->log($merchantConfig, $exception);
 			throw $exception;
 		}
 	
-		$tokenGenerator = $this->getTokenGenerator($merchantConfig->getAuthenticationType());
+		$tokenGenerator = $this->getTokenGenerator($merchantConfig);
 		return $tokenGenerator->generateToken($resourcePath, $inputData, $method, $merchantConfig);		
 	}
 
-	function getTokenGenerator($authType) {
+	function getTokenGenerator($merchantConfig) {
+		$authType = $merchantConfig->getAuthenticationType();
 		if($authType == GlobalParameter::HTTP_SIGNATURE) {
 			return new HttpSignatureGenerator();
 		} else if($authType == GlobalParameter::JWT){
 			return new JsonWebTokenGenerator();
 		} else {
 			$exception = new AuthException(GlobalParameter::AUTH_ERROR, 0);
-			self::$logger->log($config, $exception);
+			self::$logger->log($merchantConfig, $exception);
 			throw $exception;
 		}
 	}
 	
 }
-
 
 
 ?>

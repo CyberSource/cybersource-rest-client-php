@@ -156,7 +156,7 @@ class TransactionBatchApi
                 '/pts/v1/transaction-batches/{id}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:

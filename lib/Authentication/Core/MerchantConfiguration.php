@@ -608,7 +608,7 @@ class MerchantConfiguration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 2.0.0' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultMerchantConfiguration()->getTempFolderPath() . PHP_EOL;
+       
 
         return $report;
     }
@@ -709,12 +709,13 @@ class MerchantConfiguration
         return $config;
     }
 
-    public static function validateMerchantData($config)
+    public function validateMerchantData($config)
     {
        
         $error_message = "";
         $warning_message = "";
         if(empty($config->getMerchantID())){
+
             $error_message .= GlobalParameter::MERCHANTID_REQ;
         }
 
@@ -726,6 +727,11 @@ class MerchantConfiguration
             $error_message .= GlobalParameter::RUNENV_REQ;
         }
 
+        if(!is_bool($config->getDebug())){
+            $warning_message .= GlobalParameter::REFER_LOG;
+            
+        }
+
         if($config->getDebug() == true && empty($config->getDebugFile()))
         {
             if(empty($config->getDebugFile())){
@@ -735,22 +741,17 @@ class MerchantConfiguration
 
             
         }else if($config->getDebug() == true && !empty($config->getDebugFile())){
-            $path =$config->getDebugFile();
-            
-             if(!file_exists($path)){
-                $warning_message .= GlobalParameter::KEY_LOG_DIR_INVALID.GlobalParameter::DEFAULT_LOG_DIR;;
-                $config = $config->setDebugFile(GlobalParameter::DEFAULT_LOG_DIR);
-             }
-        }
-        if($config->getDebug() == true && empty($config->getLogFileName()))
-        {
             if(empty($config->getLogFileName())){
                 $warning_message .= GlobalParameter::KEY_LOG_FILE_NULL.GlobalParameter::DEFAULT_LOG_FILE;
                 $config = $config->setLogFileName(GlobalParameter::DEFAULT_LOG_FILE);
             }
-
-            
+            $path = $config->getDebugFile(). DIRECTORY_SEPARATOR .$config->getLogFileName();
+             if(!file_exists($path)){
+                $warning_message .= GlobalParameter::KEY_LOG_DIR_INVALID.GlobalParameter::DEFAULT_LOG_DIR;
+                $config = $config->setDebugFile(GlobalParameter::DEFAULT_LOG_DIR);
+             }
         }
+        
         if($config->getDebug() == true && empty($config->getLogSize()))
         {
 
@@ -779,11 +780,11 @@ class MerchantConfiguration
             $warning_message .= GlobalParameter::KEY_DIRECTORY_EMPTY;
         }
 
-        if(empty($config->getApiKeyID())){
+        if(empty($config->getApiKeyID()) && $config->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE ){
             $error_message .= GlobalParameter::MERCHANT_KEY_ID_REQ;
         }
 
-        if(empty($config->getSecretKey())){
+        if(empty($config->getSecretKey()) && $config->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE ){
             $error_message .= GlobalParameter::MERCHANT_SECRET_KEY_REQ;
         }
 
@@ -792,14 +793,12 @@ class MerchantConfiguration
         self::$logger->log($config, $printData);
         $messageAuthType = GlobalParameter::AUTHTYPE ."=>".$config->getAuthenticationType();
         self::$logger->log($config, $messageAuthType);
-
-        if($error_message != null){
+        if(!empty($error_message)){
             $exception = new AuthException($error_message, 0);
-            self::$logger->log($config, $exception);  
-            self::$logger->log($config, GlobalParameter::LOG_END_MSG);
+            self::$logger->log($config, $error_message);
             throw $exception;
         }
-        if($warning_message != null){
+        if($warning_message != ""){
             trigger_error($warning_message, E_USER_WARNING);
             self::$logger->log($config, $warning_message); 
         }

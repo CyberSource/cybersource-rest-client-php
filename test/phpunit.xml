@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="phpunit.xsd"
+         cacheResult="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="AuthenticationUnitTest">
+            <directory suffix="Test.php">../test</directory>
+        </testsuite>
+        <testsuite name="AuthenticationUnitTestInnerClasses">
+            <directory suffix="Test.php">../lib/Authentication/*</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../lib/Authentication/</directory>
+            <exclude>
+                <directory suffix=".php">../lib/Authentication/jwt/php-jwt-master/</directory>
+                <directory suffix=".php">../lib/Authentication/util/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

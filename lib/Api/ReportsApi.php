@@ -153,7 +153,7 @@ class ReportsApi
                 '/reporting/v3/reports'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
@@ -399,7 +399,7 @@ class ReportsApi
                 '/reporting/v3/reports'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3ReportsGet200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:

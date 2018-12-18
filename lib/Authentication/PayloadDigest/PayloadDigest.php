@@ -35,8 +35,7 @@ class PayloadDigest
 		{
 			$warning_message = "Input Json is not valid, So its taking Payload Data.";
             trigger_error($warning_message, E_USER_WARNING);//
-            self::$logger->log($config, $warning_message); 
-			throw $exception;
+            self::$logger->log($merchantConfig, $warning_message); 
 			
 		}
 

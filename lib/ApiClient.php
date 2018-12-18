@@ -163,7 +163,7 @@ class ApiClient
         } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($postData));
         }
-       
+        $resourcePath= utf8_encode($resourcePath);
         $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
         print_r($headers);
@@ -183,11 +183,12 @@ class ApiClient
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
         // disable SSL verification, if needed
         if ($this->config->getSSLVerification() === false) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+        }else{
+            curl_setopt($curl, CURLOPT_CAINFO, __DIR__. DIRECTORY_SEPARATOR . 'ssl/cacert.pem');
         }
 
         if ($this->config->getCurlProxyHost()) {
@@ -386,7 +387,7 @@ class ApiClient
     */
     public function callAuthenticationHeader($method, $postData, $resourcePath)
     {
-        require_once './Resources/ExternalConfiguration.php';
+        require_once __DIR__. DIRECTORY_SEPARATOR .'../Resources/ExternalConfiguration.php';
 
         $ExternalConfigurationObj = new ExternalConfiguration();
         $merchantConfig = $ExternalConfigurationObj->merchantConfigObject();
