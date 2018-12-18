@@ -172,7 +172,7 @@ class SecureFileShareApi
                 '/v1/files/{fileId}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:

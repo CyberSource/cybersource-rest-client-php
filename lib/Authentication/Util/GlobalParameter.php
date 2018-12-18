@@ -15,7 +15,7 @@ class GlobalParameter
 	const GMT ="GMT";
 	const HMACSHA256 = "HmacSHA256"; 
 	const DEFAULT_LOG_FILE = "Cybs.log";
-	const DEFAULT_LOG_DIR = "./Log/"; 
+	const DEFAULT_LOG_DIR = "Log"; 
 	const DEFAULT_LOG_FILE_SIZE = "1048576";
 	const SHA256 = "sha256";
 	const SHA256DIGEST = "SHA-256=";
@@ -24,7 +24,7 @@ class GlobalParameter
 	const SANDBOXURL = "apitest.cybersource.com";
 	const RUNENVIRONMENT = "cyberSource.environment.SANDBOX";
 	const RUNPRODENVIRONMENT = "cyberSource.environment.PRODUCTION";
-	const KEY_DIR_PATH_DEFAULT = "./resource/";
+	const KEY_DIR_PATH_DEFAULT = "Resources/";
 	const HTTPS_PREFIX = "https://"; 
 	const SIGNATURE = "Signature:";
 	const POSTALGOHEADER = "host date (request-target) digest v-c-merchant-id";
@@ -48,7 +48,7 @@ class GlobalParameter
 	const INCORRECT_KEY_PASSWORD = "The Entered key_password is Incorrect\n";
 	const JWT_TOKEN_FAILS = " [ERROR] : Unable to generate JWT Token";
 	const AUTHENTICATION_REQ = "AuthenticationType is Mandatory\n";
-	const MERCHANT_KEY_ID_REQ = "MerchantKeyId is Mandatory\n";
+	const MERCHANT_KEY_ID_REQ = "Merchant ApikeyId is Mandatory\n";
 	const INVALID_PROXY_URL = "Proxy URL is Invalid! Assigining default proxy url: ";
 	const INVALID_PROXY_PORT = "Proxy URL is Invalid! Assigining default proxy port: ";
 	const DEFAULT_PROXY_URL = "userproxy.visa.com";
@@ -56,7 +56,7 @@ class GlobalParameter
 
 	const MERCHANT_SECRET_KEY_REQ = " MerchantSecretKey is Mandatory\n";
 	const KEY_PASSWORD_EMPTY = "KeyPassword Empty/Null. Assigining merchantID value\n";
-	const KEY_DIRECTORY_EMPTY = "KeysDirectory not provided. Using Default Path:";
+	const KEY_DIRECTORY_EMPTY = "KeysDirectory is Empty/Null. Using Default Path: Resources/ \n";
 	const REQUEST_JSON_EMPTY = "RequestJsonPath not provided\n";
 	const INPUTDIGESTERR = "[ERROR] : Unable to access the Input Json file!\n";
 	const INVALIDMETHOD = "[ERROR] : Invalid Method name!\n";

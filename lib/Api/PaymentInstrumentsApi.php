@@ -323,7 +323,7 @@ class PaymentInstrumentsApi
                 '/tms/v1/paymentinstruments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
@@ -445,7 +445,7 @@ class PaymentInstrumentsApi
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
@@ -567,7 +567,7 @@ class PaymentInstrumentsApi
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -708,7 +708,7 @@ class PaymentInstrumentsApi
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
