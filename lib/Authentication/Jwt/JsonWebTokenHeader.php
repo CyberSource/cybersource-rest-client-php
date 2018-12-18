@@ -7,7 +7,7 @@ use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\Core\AuthException as AuthException;
 use Firebase\JWT\JWT as JWT;
 use CyberSource\Authentication\Log\Logger as Logger;
-require_once __DIR__. DIRECTORY_SEPARATOR .'../../../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 class JsonWebTokenHeader 
 {
 	private static $logger=null;
