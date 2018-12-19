@@ -243,7 +243,7 @@ class SearchTransactionsApi
                 '/tss/v2/searches/{id}'
             );
 
-            return [$response, $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
