@@ -41,7 +41,7 @@ class JsonWebTokenHeader
 		} 
 		
 		if(empty($keyDir)){
-			$keyDir = __DIR__. DIRECTORY_SEPARATOR ."../../../".GlobalParameter::KEY_DIR_PATH_DEFAULT;
+			$keyDir = GlobalParameter::KEY_DIR_PATH_DEFAULT;
 		}
 		if(empty($keyPass)){
 			$keyPass = $merchantID;
