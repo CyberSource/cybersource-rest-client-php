@@ -153,7 +153,7 @@ class SearchTransactionsApi
                 '/tss/v2/searches'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
@@ -243,7 +243,7 @@ class SearchTransactionsApi
                 '/tss/v2/searches/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
