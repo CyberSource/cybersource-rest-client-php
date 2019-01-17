@@ -152,6 +152,7 @@ class ApiClient
         } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\{{invokerPackage}}\ObjectSerializer::sanitizeForSerialization($postData));
         }
+		$resourcePath= utf8_encode($resourcePath);
 		$authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
         $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
@@ -175,6 +176,8 @@ class ApiClient
         if ($this->config->getSSLVerification() === false) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+        }else{
+            curl_setopt($curl, CURLOPT_CAINFO, __DIR__. DIRECTORY_SEPARATOR . 'ssl/cacert.pem');
         }
 
         if ($this->config->getCurlProxyHost()) {
