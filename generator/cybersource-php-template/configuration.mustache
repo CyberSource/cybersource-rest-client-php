@@ -72,6 +72,13 @@ class Configuration
      * @var array
      */
     protected $defaultHeaders = [];
+	
+	/**
+     * The default header(s)
+     *
+     * @var array
+     */
+    protected $requestHeaders = [];
 
     /**
      * The host
@@ -331,8 +338,7 @@ class Configuration
     {
         return $this->defaultHeaders;
     }
-
-    /**
+	/**
      * Deletes a default header
      *
      * @param string $headerName the header to delete
@@ -342,6 +348,48 @@ class Configuration
     public function deleteDefaultHeader($headerName)
     {
         unset($this->defaultHeaders[$headerName]);
+        return $this;
+    }
+	
+	/**
+     * Adds a request header
+     *
+     * @param string $headerName  header name (e.g. Token)
+     * @param string $headerValue header value (e.g. 1z8wp3)
+     *
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function addRequestHeader($headerName, $headerValue)
+    {
+        if (!is_string($headerName)) {
+            throw new \InvalidArgumentException('Header name must be a string.');
+        }
+
+        $this->requestHeaders[$headerName] =  $headerValue;
+        return $this;
+    }
+
+    /**
+     * Gets the request header
+     *
+     * @return array An array of request header(s)
+     */
+    public function getRequestHeaders()
+    {
+        return $this->requestHeaders;
+    }
+
+    /**
+     * Deletes a request header
+     *
+     * @param string $headerName the header to delete
+     *
+     * @return $this
+     */
+    public function deleteRequestHeader($headerName)
+    {
+        unset($this->requestHeaders[$headerName]);
         return $this;
     }
 

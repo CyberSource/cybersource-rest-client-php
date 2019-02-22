@@ -288,7 +288,7 @@ use \{{invokerPackage}}\ObjectSerializer;
             return [$this->apiClient->getSerializer()->deserialize($response, '{{returnType}}', $httpHeader), $statusCode, $httpHeader];
             {{/returnType}}
             {{^returnType}}
-            return [null, $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
             {{/returnType}}
         } catch (ApiException $e) {
             switch ($e->getCode()) {

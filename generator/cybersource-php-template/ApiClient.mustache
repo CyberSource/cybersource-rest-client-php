@@ -155,6 +155,10 @@ class ApiClient
 		$resourcePath= utf8_encode($resourcePath);
 		$authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
+		foreach ($headers as $value) {
+            $splitArr= explode(":", $value, 2);
+            $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+        }
         $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
 
         $curl = curl_init();
@@ -231,6 +235,7 @@ class ApiClient
 
         // debugging for curl
         if ($this->config->getDebug()) {
+			//$postData = $this->dataMasking($postData);
             error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
@@ -247,6 +252,7 @@ class ApiClient
         $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
         $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
         $http_body = substr($response, $http_header_size);
+		//$http_body = $this->dataMasking($http_body);
         $response_info = curl_getinfo($curl);
 
         // debug HTTP response body
@@ -407,6 +413,44 @@ class ApiClient
             $headers = array_merge($headers, $digestArry);
         }
         return $headers;
+
+    }
+	
+	//set Fields to be mask
+    public function dataMasking($postData_json_raw)
+    {
+        $toBeMask = array("number"=>"XXXXX","expirationMonth"=>"XXXXX","expirationYear"=>"XXXX","email"=>"XXXXX","firstName"=>"XXXXX","lastName"=>"XXXXX","phoneNumber"=>"XXXXX","type"=>"XXXXX","securityCode"=>"XXXXX", "totalAmount" => "XXXXX", "token" => "XXXXX", "signature" => "XXXXX");
+        
+        $postData_json = json_decode($postData_json_raw, JSON_UNESCAPED_SLASHES);
+        if($postData_json == null){
+            return $postData_json_raw;
+        }else {
+            $postData_json = $this->dataMaskingIterate($postData_json, $toBeMask);
+            return json_encode($postData_json);
+
+        }
+        
+    }
+
+    //Data masking iteration
+    public function dataMaskingIterate($responceArr, $callback)
+    { 
+        if(!empty($responceArr)){
+            foreach ($responceArr as $k => $v) 
+            {
+                if(is_array($v)) {
+                    $responceArr[$k] = $this->dataMaskingIterate($v, $callback);
+                } 
+                else 
+                {
+                    if(array_key_exists($k, $callback)) 
+                    {
+                        $responceArr[$k]="XXXXXX";
+                    }
+                }
+            }
+        }
+        return $responceArr;
 
     }
 }
