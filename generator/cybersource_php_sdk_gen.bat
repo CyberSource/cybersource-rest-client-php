@@ -40,6 +40,13 @@ powershell -Command " rename-item -Path ..\CyberSource\test\Model\Tmsv1instrumen
 
 powershell -Command " rename-item -Path ..\CyberSource\test\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname Ptsv2paymentsMerchantInitiatedTransactionTest.php"
 
+xcopy ..\CyberSource ..\ /s /e /y
+
+rd /s /q ..\CyberSource
+
+git checkout ..\README.md
+
+git checkout ..\composer.json
 
 pause
 
