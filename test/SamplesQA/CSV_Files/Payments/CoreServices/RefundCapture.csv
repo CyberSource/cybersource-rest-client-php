@@ -1,0 +1,4 @@
+testCaseId,captureId,amount,message
+RACap_01,5385744437056874104002,100.00,Success
+RACap_02,5385745526926012304003,100,Fails due to mismatch amount
+RACap_03,1234567898726221234599,100.00,Fails due to invalid captureId

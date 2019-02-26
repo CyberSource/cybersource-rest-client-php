@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CMSC1_01,105.00,Success
+CMSC1_02,200,Fails due to mismatch amount
+CMSC1_03,RWT2,Fails due to invalid amount

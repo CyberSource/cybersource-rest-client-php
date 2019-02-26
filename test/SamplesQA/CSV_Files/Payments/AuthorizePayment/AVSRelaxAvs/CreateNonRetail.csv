@@ -1,0 +1,3 @@
+testCaseId,amount,message
+CNR_01,2401.00,Success
+CNR_02,FDE32,Fails due to invalid amount

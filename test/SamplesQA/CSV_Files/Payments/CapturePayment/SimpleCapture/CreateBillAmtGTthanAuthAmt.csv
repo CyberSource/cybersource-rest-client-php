@@ -1,0 +1,3 @@
+testCaseId,paymentId,amount,message
+CBAGAA_01,5332058267566110304101,1000.00,Fails due to billAmtGtthanAuthAmount
+CBAGAA_02,1234567898726221234567,1002.21,Fails due to invalid paymentId

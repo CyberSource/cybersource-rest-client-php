@@ -1,0 +1,4 @@
+testCaseId,paymentId,amount,message
+CCaP_01,5402270212336207404005,100.00,Success
+CCaP_02,5402270576246209004005,100,Fails due to mismatch amount
+CCaP_03,1234567898726221234567,102.21,Fails due to invalid paymentId

@@ -1,0 +1,3 @@
+testCaseId,captureId,amount,message
+CFC_01,5387118630696300304001,100.00,Success
+CFC_02,1234567898726221234567,102.21,Fails due to invalid captureId

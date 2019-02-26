@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CV_01,112.00,Success
+CV_02,200,Fails due to mismatch amount
+CV_03,OIUYT69,Fails due to invalid amount

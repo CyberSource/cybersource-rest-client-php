@@ -1,0 +1,4 @@
+testCaseId,amount,message
+PAPay_01,100.00,Success
+PAPay_02,100,Success decimal validation
+PAPay_03,KLGT4,Fails due to invalid amount

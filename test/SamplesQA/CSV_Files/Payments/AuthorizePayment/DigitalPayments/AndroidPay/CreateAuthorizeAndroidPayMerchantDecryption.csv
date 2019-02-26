@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CAAnMD_01,100.00,Success
+CAAnMD_02,200.0,Fails due to mismatch amount
+CAAnMD_03,GHKF39,Fails due to invalid amount

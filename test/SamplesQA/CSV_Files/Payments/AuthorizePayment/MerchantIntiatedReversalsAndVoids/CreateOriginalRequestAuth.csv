@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CORA_01,3000.00,Success
+CORA_02,200,Fails due to mismatch amount
+CORA_03,HJK6,Fails due to invalid amount

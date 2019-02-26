@@ -1,0 +1,4 @@
+testCaseId,amount,message
+PACre_01,200.00,Success
+PACre_02,200,Fails due to mismatch amount
+PACre_03,GHTR25,Fails due to invalid amount

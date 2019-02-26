@@ -1,0 +1,3 @@
+testCaseId,encryptionType,message
+CKeyGen_01,None,Success
+CKeyGen_02,SSRT,Fails due to invalid encryptionType
