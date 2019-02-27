@@ -431,7 +431,7 @@ class ApiClient
     //Added infy for masking
     public function dataMasking($postData_json_raw)
     {
-        $toBeMask = array("expirationMonth"=>"XXXXX","expirationYear"=>"XXXX","email"=>"XXXXX","firstName"=>"XXXXX","lastName"=>"XXXXX","phoneNumber"=>"XXXXX","type"=>"XXXXX","securityCode"=>"XXXXX");
+        $toBeMask = array("email"=>"XXXXX","firstName"=>"XXXXX","lastName"=>"XXXXX","phoneNumber"=>"XXXXX","type"=>"XXXXX","securityCode"=>"XXXXX");
         
         $postData_json = json_decode($postData_json_raw, JSON_UNESCAPED_SLASHES);
         if($postData_json == null){
