@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CAVSO_01,2861.00,Success
+CAVSO_02,2500,Fails due to mismatch amount
+CAVSO_03,LKA9,Fails due to invalid amount

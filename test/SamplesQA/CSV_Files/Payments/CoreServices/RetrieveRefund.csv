@@ -1,0 +1,3 @@
+testCaseId,refundId,message
+RARef_01,5335504389516958903526,Success
+RARef_02,9964302033846812355655,Fails due to invalid refundId

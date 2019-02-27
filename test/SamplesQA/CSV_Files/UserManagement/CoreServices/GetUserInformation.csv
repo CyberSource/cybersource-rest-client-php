@@ -1,0 +1,3 @@
+testCaseId,orgId,userName,permissionId,roleId,message
+GUI_01,testrest,tesrest,CustomerProfileViewPermission,admin,Success
+GUI_02,testre,tesrest,CustomerProfileViewPermission,admin,Fail due to invalid organizationId

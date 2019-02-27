@@ -1,0 +1,3 @@
+testCaseId,captureId,message
+RACap_01,5332051835286063504108,Success
+RACap_02,9964123433846812345644,Fails due to invalid captureId

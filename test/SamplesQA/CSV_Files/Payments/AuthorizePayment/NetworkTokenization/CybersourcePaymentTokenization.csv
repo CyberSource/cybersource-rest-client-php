@@ -1,0 +1,3 @@
+testCaseId,amount,message
+CPT_01,2719.00,Success
+CPT_02,FBDS45,Fails due to invalid amount

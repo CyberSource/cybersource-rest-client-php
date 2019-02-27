@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CAC_01,2854.00,Success
+CAC_02,200.0,Fails due to mismatch amount
+CAC_03,ZDFRT6,Fails due to invalid amount

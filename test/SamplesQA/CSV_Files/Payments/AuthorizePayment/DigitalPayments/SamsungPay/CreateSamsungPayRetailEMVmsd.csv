@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CSREM_01,100.00,Success
+CSREM_02,200.0,Fails due to mismatch amount
+CSREM_03,GHJ34,Fails due to invalid amount

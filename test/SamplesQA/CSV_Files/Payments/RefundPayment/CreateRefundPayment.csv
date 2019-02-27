@@ -1,0 +1,4 @@
+testCaseId,paymentId,amount,message
+CRP_01,5397854164186266404001,100.00,Success
+CRP_02,5397854498326025604002,100,Fails due to mismatch amount
+CRP_03,1234567898726221234599,100.00,Fails due to invalid paymentId

@@ -1,0 +1,4 @@
+testCaseId,paymentId,amount,message
+CVBP_01,5402270919736314504004,100.00,Success
+CVBP_02,5402271202106523504001,100,Fails due to mismatch amount
+CVBP_03,1234567898726221234599,200.00,Fails due to invalid paymentId

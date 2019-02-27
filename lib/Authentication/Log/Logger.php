@@ -42,8 +42,9 @@ class Logger
             if($fileMemory >= $logSize){
                 $updateOldFile = $path."Cybs_".date("YmdHis").".log";
                 rename($filePath, $updateOldFile);
+				fopen($filePath, "w");
             }
-            fopen($filePath, "w");
+            
             
         }
     }

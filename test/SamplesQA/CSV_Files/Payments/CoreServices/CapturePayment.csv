@@ -1,0 +1,4 @@
+testCaseId,paymentId,amount,message
+CapAPay_01,5470112151566861803002,100.00,Success
+CapAPay_02,5470112158056348503004,100,Fails due to mismatch amount
+CapAPay_03,1234567898726221234599,100.00,Fails due to invalid paymentId

@@ -1,0 +1,4 @@
+testCaseId,amount,message
+CPC_01,10.00,Success
+CPC_02,20,Fails due to mismatch amount
+CPC_03,GORT49,Fails due to invalid amount
