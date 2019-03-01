@@ -73,12 +73,22 @@ class TransactionBatchesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for ptsV1TransactionBatchesGet
+     * Test case for getTransactionBatchId
      *
-     * Get a list of batch files processed through the Offline Transaction Submission Services.
+     * Get individual batch file.
      *
      */
-    public function testPtsV1TransactionBatchesGet()
+    public function testGetTransactionBatchId()
+    {
+    }
+
+    /**
+     * Test case for getTransactionBatches
+     *
+     * Get a list of batch files.
+     *
+     */
+    public function testGetTransactionBatches()
     {
     }
 }

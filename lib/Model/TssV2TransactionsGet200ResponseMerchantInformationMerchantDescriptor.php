@@ -144,10 +144,6 @@ class TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor imple
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 23)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 23.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor imple
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 23) {
-            return false;
-        }
         return true;
     }
 
@@ -183,10 +176,6 @@ class TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor imple
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 23)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling TssV2TransactionsGet200ResponseMerchantInformationMerchantDescriptor., must be smaller than or equal to 23.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

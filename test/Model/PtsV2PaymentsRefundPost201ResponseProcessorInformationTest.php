@@ -90,4 +90,25 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationTest extends \PHPUni
     public function testPropertyForwardedAcquirerCode()
     {
     }
+
+    /**
+     * Test attribute "merchantNumber"
+     */
+    public function testPropertyMerchantNumber()
+    {
+    }
+
+    /**
+     * Test attribute "responseCode"
+     */
+    public function testPropertyResponseCode()
+    {
+    }
+
+    /**
+     * Test attribute "achVerification"
+     */
+    public function testPropertyAchVerification()
+    {
+    }
 }

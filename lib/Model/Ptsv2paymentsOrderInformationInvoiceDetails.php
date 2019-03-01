@@ -64,7 +64,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'vatInvoiceReferenceNumber' => 'string',
         'commodityCode' => 'string',
         'merchandiseCode' => 'float',
-        'transactionAdviceAddendum' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum[]'
+        'transactionAdviceAddendum' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum[]',
+        'referenceDataCode' => 'string',
+        'referenceDataNumber' => 'string'
     ];
 
     /**
@@ -82,7 +84,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'vatInvoiceReferenceNumber' => null,
         'commodityCode' => null,
         'merchandiseCode' => null,
-        'transactionAdviceAddendum' => null
+        'transactionAdviceAddendum' => null,
+        'referenceDataCode' => null,
+        'referenceDataNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +114,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'vatInvoiceReferenceNumber' => 'vatInvoiceReferenceNumber',
         'commodityCode' => 'commodityCode',
         'merchandiseCode' => 'merchandiseCode',
-        'transactionAdviceAddendum' => 'transactionAdviceAddendum'
+        'transactionAdviceAddendum' => 'transactionAdviceAddendum',
+        'referenceDataCode' => 'referenceDataCode',
+        'referenceDataNumber' => 'referenceDataNumber'
     ];
 
 
@@ -129,7 +135,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'vatInvoiceReferenceNumber' => 'setVatInvoiceReferenceNumber',
         'commodityCode' => 'setCommodityCode',
         'merchandiseCode' => 'setMerchandiseCode',
-        'transactionAdviceAddendum' => 'setTransactionAdviceAddendum'
+        'transactionAdviceAddendum' => 'setTransactionAdviceAddendum',
+        'referenceDataCode' => 'setReferenceDataCode',
+        'referenceDataNumber' => 'setReferenceDataNumber'
     ];
 
 
@@ -148,7 +156,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'vatInvoiceReferenceNumber' => 'getVatInvoiceReferenceNumber',
         'commodityCode' => 'getCommodityCode',
         'merchandiseCode' => 'getMerchandiseCode',
-        'transactionAdviceAddendum' => 'getTransactionAdviceAddendum'
+        'transactionAdviceAddendum' => 'getTransactionAdviceAddendum',
+        'referenceDataCode' => 'getReferenceDataCode',
+        'referenceDataNumber' => 'getReferenceDataNumber'
     ];
 
     public static function attributeMap()
@@ -193,6 +203,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         $this->container['commodityCode'] = isset($data['commodityCode']) ? $data['commodityCode'] : null;
         $this->container['merchandiseCode'] = isset($data['merchandiseCode']) ? $data['merchandiseCode'] : null;
         $this->container['transactionAdviceAddendum'] = isset($data['transactionAdviceAddendum']) ? $data['transactionAdviceAddendum'] : null;
+        $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
+        $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
     }
 
     /**
@@ -224,6 +236,14 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
             $invalid_properties[] = "invalid value for 'commodityCode', the character length must be smaller than or equal to 4.";
         }
 
+        if (!is_null($this->container['referenceDataCode']) && (strlen($this->container['referenceDataCode']) > 3)) {
+            $invalid_properties[] = "invalid value for 'referenceDataCode', the character length must be smaller than or equal to 3.";
+        }
+
+        if (!is_null($this->container['referenceDataNumber']) && (strlen($this->container['referenceDataNumber']) > 30)) {
+            $invalid_properties[] = "invalid value for 'referenceDataNumber', the character length must be smaller than or equal to 30.";
+        }
+
         return $invalid_properties;
     }
 
@@ -249,6 +269,12 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
             return false;
         }
         if (strlen($this->container['commodityCode']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['referenceDataCode']) > 3) {
+            return false;
+        }
+        if (strlen($this->container['referenceDataNumber']) > 30) {
             return false;
         }
         return true;
@@ -404,7 +430,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
 
     /**
      * Sets taxable
-     * @param bool $taxable Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any _lineItems[].taxAmount_ values in your request, CyberSource does not include _invoiceDetails.taxable_ in the data it sends to the processor.  For processor-specific information, see the tax_indicator field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html)
+     * @param bool $taxable Flag that indicates whether an order is taxable. This value must be true if the sum of all _lineItems[].taxAmount_ values > 0.  If you do not include any _lineItems[].taxAmount_ values in your request, CyberSource does not include _invoiceDetails.taxable_ in the data it sends to the processor.  For processor-specific information, see the tax_indicator field in [Level II and Level III Processing Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html)  Possible values:  - **true**  - **false**
      * @return $this
      */
     public function setTaxable($taxable)
@@ -502,6 +528,56 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
     public function setTransactionAdviceAddendum($transactionAdviceAddendum)
     {
         $this->container['transactionAdviceAddendum'] = $transactionAdviceAddendum;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceDataCode
+     * @return string
+     */
+    public function getReferenceDataCode()
+    {
+        return $this->container['referenceDataCode'];
+    }
+
+    /**
+     * Sets referenceDataCode
+     * @param string $referenceDataCode Code that identifies the value of the reference_data_number field. For the possible values, see Reference Data Codes.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
+     * @return $this
+     */
+    public function setReferenceDataCode($referenceDataCode)
+    {
+        if (!is_null($referenceDataCode) && (strlen($referenceDataCode) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $referenceDataCode when calling Ptsv2paymentsOrderInformationInvoiceDetails., must be smaller than or equal to 3.');
+        }
+
+        $this->container['referenceDataCode'] = $referenceDataCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceDataNumber
+     * @return string
+     */
+    public function getReferenceDataNumber()
+    {
+        return $this->container['referenceDataNumber'];
+    }
+
+    /**
+     * Sets referenceDataNumber
+     * @param string $referenceDataNumber Reference number. The meaning of this value is identified by the value of the referenceDataCode field.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
+     * @return $this
+     */
+    public function setReferenceDataNumber($referenceDataNumber)
+    {
+        if (!is_null($referenceDataNumber) && (strlen($referenceDataNumber) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $referenceDataNumber when calling Ptsv2paymentsOrderInformationInvoiceDetails., must be smaller than or equal to 30.');
+        }
+
+        $this->container['referenceDataNumber'] = $referenceDataNumber;
 
         return $this;
     }

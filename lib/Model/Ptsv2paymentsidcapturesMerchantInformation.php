@@ -57,7 +57,9 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         'merchantDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationMerchantDescriptor',
         'cardAcceptorReferenceNumber' => 'string',
         'categoryCode' => 'int',
-        'vatRegistrationNumber' => 'string'
+        'vatRegistrationNumber' => 'string',
+        'serviceFeeDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor',
+        'taxId' => 'string'
     ];
 
     /**
@@ -68,7 +70,9 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         'merchantDescriptor' => null,
         'cardAcceptorReferenceNumber' => null,
         'categoryCode' => null,
-        'vatRegistrationNumber' => null
+        'vatRegistrationNumber' => null,
+        'serviceFeeDescriptor' => null,
+        'taxId' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +93,9 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'merchantDescriptor',
         'cardAcceptorReferenceNumber' => 'cardAcceptorReferenceNumber',
         'categoryCode' => 'categoryCode',
-        'vatRegistrationNumber' => 'vatRegistrationNumber'
+        'vatRegistrationNumber' => 'vatRegistrationNumber',
+        'serviceFeeDescriptor' => 'serviceFeeDescriptor',
+        'taxId' => 'taxId'
     ];
 
 
@@ -101,7 +107,9 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'setMerchantDescriptor',
         'cardAcceptorReferenceNumber' => 'setCardAcceptorReferenceNumber',
         'categoryCode' => 'setCategoryCode',
-        'vatRegistrationNumber' => 'setVatRegistrationNumber'
+        'vatRegistrationNumber' => 'setVatRegistrationNumber',
+        'serviceFeeDescriptor' => 'setServiceFeeDescriptor',
+        'taxId' => 'setTaxId'
     ];
 
 
@@ -113,7 +121,9 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'getMerchantDescriptor',
         'cardAcceptorReferenceNumber' => 'getCardAcceptorReferenceNumber',
         'categoryCode' => 'getCategoryCode',
-        'vatRegistrationNumber' => 'getVatRegistrationNumber'
+        'vatRegistrationNumber' => 'getVatRegistrationNumber',
+        'serviceFeeDescriptor' => 'getServiceFeeDescriptor',
+        'taxId' => 'getTaxId'
     ];
 
     public static function attributeMap()
@@ -151,6 +161,8 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         $this->container['cardAcceptorReferenceNumber'] = isset($data['cardAcceptorReferenceNumber']) ? $data['cardAcceptorReferenceNumber'] : null;
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
+        $this->container['serviceFeeDescriptor'] = isset($data['serviceFeeDescriptor']) ? $data['serviceFeeDescriptor'] : null;
+        $this->container['taxId'] = isset($data['taxId']) ? $data['taxId'] : null;
     }
 
     /**
@@ -174,6 +186,10 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 21.";
         }
 
+        if (!is_null($this->container['taxId']) && (strlen($this->container['taxId']) > 15)) {
+            $invalid_properties[] = "invalid value for 'taxId', the character length must be smaller than or equal to 15.";
+        }
+
         return $invalid_properties;
     }
 
@@ -193,6 +209,9 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['vatRegistrationNumber']) > 21) {
+            return false;
+        }
+        if (strlen($this->container['taxId']) > 15) {
             return false;
         }
         return true;
@@ -256,7 +275,7 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
 
     /**
      * Sets categoryCode
-     * @param int $categoryCode Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param int $categoryCode Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  See \"Aggregator Support,\" page 100.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR4 - Position: 150-153 - Field: Merchant Category Code
      * @return $this
      */
     public function setCategoryCode($categoryCode)
@@ -292,6 +311,52 @@ class Ptsv2paymentsidcapturesMerchantInformation implements ArrayAccess
         }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceFeeDescriptor
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor
+     */
+    public function getServiceFeeDescriptor()
+    {
+        return $this->container['serviceFeeDescriptor'];
+    }
+
+    /**
+     * Sets serviceFeeDescriptor
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor $serviceFeeDescriptor
+     * @return $this
+     */
+    public function setServiceFeeDescriptor($serviceFeeDescriptor)
+    {
+        $this->container['serviceFeeDescriptor'] = $serviceFeeDescriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxId
+     * @return string
+     */
+    public function getTaxId()
+    {
+        return $this->container['taxId'];
+    }
+
+    /**
+     * Sets taxId
+     * @param string $taxId Your Cadastro Nacional da Pessoa Jurídica (CNPJ) number.  This field is supported only for BNDES transactions on CyberSource through VisaNet. See BNDES.  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR6 - Position: 40-59 - Field: BNDES Reference Field 1
+     * @return $this
+     */
+    public function setTaxId($taxId)
+    {
+        if (!is_null($taxId) && (strlen($taxId) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $taxId when calling Ptsv2paymentsidcapturesMerchantInformation., must be smaller than or equal to 15.');
+        }
+
+        $this->container['taxId'] = $taxId;
 
         return $this;
     }

@@ -95,7 +95,7 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAllSubscriptions
      *
-     * Retrieve all subscriptions by organization.
+     * Get all subscriptions.
      *
      */
     public function testGetAllSubscriptions()
@@ -105,7 +105,7 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSubscription
      *
-     * Retrieve subscription for a report name by organization.
+     * Get subscription for report name.
      *
      */
     public function testGetSubscription()

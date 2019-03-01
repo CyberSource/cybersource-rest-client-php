@@ -4,18 +4,18 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSubscription**](ReportSubscriptionsApi.md#createSubscription) | **PUT** /reporting/v3/report-subscriptions/{reportName} | Create Report Subscription for a report name by organization
+[**createSubscription**](ReportSubscriptionsApi.md#createSubscription) | **PUT** /reporting/v3/report-subscriptions | Create Report Subscription for a report name by organization
 [**deleteSubscription**](ReportSubscriptionsApi.md#deleteSubscription) | **DELETE** /reporting/v3/report-subscriptions/{reportName} | Delete subscription of a report name by organization
-[**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Retrieve all subscriptions by organization
-[**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Retrieve subscription for a report name by organization
+[**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Get all subscriptions
+[**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Get subscription for report name
 
 
 # **createSubscription**
-> createSubscription($reportName, $requestBody)
+> createSubscription($requestBody, $organizationId)
 
 Create Report Subscription for a report name by organization
 
-
+Create a report subscription for your organization. The report name must be unique.
 
 ### Example
 ```php
@@ -23,11 +23,11 @@ Create Report Subscription for a report name by organization
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
-$reportName = "reportName_example"; // string | Name of the Report to Create
-$requestBody = new \CyberSource\Model\RequestBody(); // \CyberSource\Model\RequestBody | Report subscription request payload
+$requestBody = new \CyberSource\Model\RequestBody1(); // \CyberSource\Model\RequestBody1 | Report subscription request payload
+$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $api_instance->createSubscription($reportName, $requestBody);
+    $api_instance->createSubscription($requestBody, $organizationId);
 } catch (Exception $e) {
     echo 'Exception when calling ReportSubscriptionsApi->createSubscription: ', $e->getMessage(), PHP_EOL;
 }
@@ -38,8 +38,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reportName** | **string**| Name of the Report to Create |
- **requestBody** | [**\CyberSource\Model\RequestBody**](../Model/RequestBody.md)| Report subscription request payload |
+ **requestBody** | [**\CyberSource\Model\RequestBody1**](../Model/RequestBody1.md)| Report subscription request payload |
+ **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 
@@ -61,7 +61,7 @@ No authorization required
 
 Delete subscription of a report name by organization
 
-
+Delete a report subscription for your organization. You must know the unique name of the report you want to delete.
 
 ### Example
 ```php
@@ -103,9 +103,9 @@ No authorization required
 # **getAllSubscriptions**
 > \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions()
 
-Retrieve all subscriptions by organization
+Get all subscriptions
 
-
+View a summary of all report subscriptions.
 
 ### Example
 ```php
@@ -144,9 +144,9 @@ No authorization required
 # **getSubscription**
 > \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription($reportName)
 
-Retrieve subscription for a report name by organization
+Get subscription for report name
 
-
+View the details of a report subscription, such as the report format or report frequency, using the report’s unique name.
 
 ### Example
 ```php

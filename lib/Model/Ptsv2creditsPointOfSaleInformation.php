@@ -54,7 +54,16 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emv' => '\CyberSource\Model\Ptsv2creditsPointOfSaleInformationEmv'
+        'emv' => '\CyberSource\Model\Ptsv2creditsPointOfSaleInformationEmv',
+        'partnerSdkVersion' => 'string',
+        'storeAndForwardIndicator' => 'string',
+        'cardholderVerificationMethod' => 'string[]',
+        'terminalInputCapability' => 'string[]',
+        'terminalSerialNumber' => 'string',
+        'terminalCardCaptureCapability' => 'string',
+        'terminalOutputCapability' => 'string',
+        'terminalPinCapability' => 'int',
+        'deviceId' => 'string'
     ];
 
     /**
@@ -62,7 +71,16 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emv' => null
+        'emv' => null,
+        'partnerSdkVersion' => null,
+        'storeAndForwardIndicator' => null,
+        'cardholderVerificationMethod' => null,
+        'terminalInputCapability' => null,
+        'terminalSerialNumber' => null,
+        'terminalCardCaptureCapability' => null,
+        'terminalOutputCapability' => null,
+        'terminalPinCapability' => null,
+        'deviceId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +98,16 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emv' => 'emv'
+        'emv' => 'emv',
+        'partnerSdkVersion' => 'partnerSdkVersion',
+        'storeAndForwardIndicator' => 'storeAndForwardIndicator',
+        'cardholderVerificationMethod' => 'cardholderVerificationMethod',
+        'terminalInputCapability' => 'terminalInputCapability',
+        'terminalSerialNumber' => 'terminalSerialNumber',
+        'terminalCardCaptureCapability' => 'terminalCardCaptureCapability',
+        'terminalOutputCapability' => 'terminalOutputCapability',
+        'terminalPinCapability' => 'terminalPinCapability',
+        'deviceId' => 'deviceId'
     ];
 
 
@@ -89,7 +116,16 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emv' => 'setEmv'
+        'emv' => 'setEmv',
+        'partnerSdkVersion' => 'setPartnerSdkVersion',
+        'storeAndForwardIndicator' => 'setStoreAndForwardIndicator',
+        'cardholderVerificationMethod' => 'setCardholderVerificationMethod',
+        'terminalInputCapability' => 'setTerminalInputCapability',
+        'terminalSerialNumber' => 'setTerminalSerialNumber',
+        'terminalCardCaptureCapability' => 'setTerminalCardCaptureCapability',
+        'terminalOutputCapability' => 'setTerminalOutputCapability',
+        'terminalPinCapability' => 'setTerminalPinCapability',
+        'deviceId' => 'setDeviceId'
     ];
 
 
@@ -98,7 +134,16 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emv' => 'getEmv'
+        'emv' => 'getEmv',
+        'partnerSdkVersion' => 'getPartnerSdkVersion',
+        'storeAndForwardIndicator' => 'getStoreAndForwardIndicator',
+        'cardholderVerificationMethod' => 'getCardholderVerificationMethod',
+        'terminalInputCapability' => 'getTerminalInputCapability',
+        'terminalSerialNumber' => 'getTerminalSerialNumber',
+        'terminalCardCaptureCapability' => 'getTerminalCardCaptureCapability',
+        'terminalOutputCapability' => 'getTerminalOutputCapability',
+        'terminalPinCapability' => 'getTerminalPinCapability',
+        'deviceId' => 'getDeviceId'
     ];
 
     public static function attributeMap()
@@ -133,6 +178,15 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
+        $this->container['partnerSdkVersion'] = isset($data['partnerSdkVersion']) ? $data['partnerSdkVersion'] : null;
+        $this->container['storeAndForwardIndicator'] = isset($data['storeAndForwardIndicator']) ? $data['storeAndForwardIndicator'] : null;
+        $this->container['cardholderVerificationMethod'] = isset($data['cardholderVerificationMethod']) ? $data['cardholderVerificationMethod'] : null;
+        $this->container['terminalInputCapability'] = isset($data['terminalInputCapability']) ? $data['terminalInputCapability'] : null;
+        $this->container['terminalSerialNumber'] = isset($data['terminalSerialNumber']) ? $data['terminalSerialNumber'] : null;
+        $this->container['terminalCardCaptureCapability'] = isset($data['terminalCardCaptureCapability']) ? $data['terminalCardCaptureCapability'] : null;
+        $this->container['terminalOutputCapability'] = isset($data['terminalOutputCapability']) ? $data['terminalOutputCapability'] : null;
+        $this->container['terminalPinCapability'] = isset($data['terminalPinCapability']) ? $data['terminalPinCapability'] : null;
+        $this->container['deviceId'] = isset($data['deviceId']) ? $data['deviceId'] : null;
     }
 
     /**
@@ -143,6 +197,30 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['partnerSdkVersion']) && (strlen($this->container['partnerSdkVersion']) > 32)) {
+            $invalid_properties[] = "invalid value for 'partnerSdkVersion', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['storeAndForwardIndicator']) && (strlen($this->container['storeAndForwardIndicator']) > 1)) {
+            $invalid_properties[] = "invalid value for 'storeAndForwardIndicator', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['terminalSerialNumber']) && (strlen($this->container['terminalSerialNumber']) > 32)) {
+            $invalid_properties[] = "invalid value for 'terminalSerialNumber', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['terminalCardCaptureCapability']) && (strlen($this->container['terminalCardCaptureCapability']) > 1)) {
+            $invalid_properties[] = "invalid value for 'terminalCardCaptureCapability', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['terminalOutputCapability']) && (strlen($this->container['terminalOutputCapability']) > 1)) {
+            $invalid_properties[] = "invalid value for 'terminalOutputCapability', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['deviceId']) && (strlen($this->container['deviceId']) > 32)) {
+            $invalid_properties[] = "invalid value for 'deviceId', the character length must be smaller than or equal to 32.";
+        }
 
         return $invalid_properties;
     }
@@ -156,6 +234,24 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['partnerSdkVersion']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['storeAndForwardIndicator']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['terminalSerialNumber']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['terminalCardCaptureCapability']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['terminalOutputCapability']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['deviceId']) > 32) {
+            return false;
+        }
         return true;
     }
 
@@ -177,6 +273,219 @@ class Ptsv2creditsPointOfSaleInformation implements ArrayAccess
     public function setEmv($emv)
     {
         $this->container['emv'] = $emv;
+
+        return $this;
+    }
+
+    /**
+     * Gets partnerSdkVersion
+     * @return string
+     */
+    public function getPartnerSdkVersion()
+    {
+        return $this->container['partnerSdkVersion'];
+    }
+
+    /**
+     * Sets partnerSdkVersion
+     * @param string $partnerSdkVersion Version of the software installed on the POS terminal. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.
+     * @return $this
+     */
+    public function setPartnerSdkVersion($partnerSdkVersion)
+    {
+        if (!is_null($partnerSdkVersion) && (strlen($partnerSdkVersion) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $partnerSdkVersion when calling Ptsv2creditsPointOfSaleInformation., must be smaller than or equal to 32.');
+        }
+
+        $this->container['partnerSdkVersion'] = $partnerSdkVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeAndForwardIndicator
+     * @return string
+     */
+    public function getStoreAndForwardIndicator()
+    {
+        return $this->container['storeAndForwardIndicator'];
+    }
+
+    /**
+     * Sets storeAndForwardIndicator
+     * @param string $storeAndForwardIndicator When connectivity is unavailable, the client software that is installed on the POS terminal can store a transaction in its memory and send it for authorization when connectivity is restored. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  Possible values: - Y: Transaction was stored and then forwarded. - N (default): Transaction was not stored and then forwarded.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.
+     * @return $this
+     */
+    public function setStoreAndForwardIndicator($storeAndForwardIndicator)
+    {
+        if (!is_null($storeAndForwardIndicator) && (strlen($storeAndForwardIndicator) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $storeAndForwardIndicator when calling Ptsv2creditsPointOfSaleInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['storeAndForwardIndicator'] = $storeAndForwardIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardholderVerificationMethod
+     * @return string[]
+     */
+    public function getCardholderVerificationMethod()
+    {
+        return $this->container['cardholderVerificationMethod'];
+    }
+
+    /**
+     * Sets cardholderVerificationMethod
+     * @param string[] $cardholderVerificationMethod
+     * @return $this
+     */
+    public function setCardholderVerificationMethod($cardholderVerificationMethod)
+    {
+        $this->container['cardholderVerificationMethod'] = $cardholderVerificationMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalInputCapability
+     * @return string[]
+     */
+    public function getTerminalInputCapability()
+    {
+        return $this->container['terminalInputCapability'];
+    }
+
+    /**
+     * Sets terminalInputCapability
+     * @param string[] $terminalInputCapability
+     * @return $this
+     */
+    public function setTerminalInputCapability($terminalInputCapability)
+    {
+        $this->container['terminalInputCapability'] = $terminalInputCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalSerialNumber
+     * @return string
+     */
+    public function getTerminalSerialNumber()
+    {
+        return $this->container['terminalSerialNumber'];
+    }
+
+    /**
+     * Sets terminalSerialNumber
+     * @param string $terminalSerialNumber Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.
+     * @return $this
+     */
+    public function setTerminalSerialNumber($terminalSerialNumber)
+    {
+        if (!is_null($terminalSerialNumber) && (strlen($terminalSerialNumber) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $terminalSerialNumber when calling Ptsv2creditsPointOfSaleInformation., must be smaller than or equal to 32.');
+        }
+
+        $this->container['terminalSerialNumber'] = $terminalSerialNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalCardCaptureCapability
+     * @return string
+     */
+    public function getTerminalCardCaptureCapability()
+    {
+        return $this->container['terminalCardCaptureCapability'];
+    }
+
+    /**
+     * Sets terminalCardCaptureCapability
+     * @param string $terminalCardCaptureCapability Indicates whether the terminal can capture the card.  Possible values: - 1: Terminal can capture card. - 0: Terminal cannot capture card.  This field is supported only on American Express Direct.
+     * @return $this
+     */
+    public function setTerminalCardCaptureCapability($terminalCardCaptureCapability)
+    {
+        if (!is_null($terminalCardCaptureCapability) && (strlen($terminalCardCaptureCapability) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $terminalCardCaptureCapability when calling Ptsv2creditsPointOfSaleInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['terminalCardCaptureCapability'] = $terminalCardCaptureCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalOutputCapability
+     * @return string
+     */
+    public function getTerminalOutputCapability()
+    {
+        return $this->container['terminalOutputCapability'];
+    }
+
+    /**
+     * Sets terminalOutputCapability
+     * @param string $terminalOutputCapability Indicates whether the terminal can print or display messages.  Possible values: - 1: Neither - 2: Print only - 3: Display only - 4: Print and display  This field is supported only on American Express Direct.
+     * @return $this
+     */
+    public function setTerminalOutputCapability($terminalOutputCapability)
+    {
+        if (!is_null($terminalOutputCapability) && (strlen($terminalOutputCapability) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $terminalOutputCapability when calling Ptsv2creditsPointOfSaleInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['terminalOutputCapability'] = $terminalOutputCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalPinCapability
+     * @return int
+     */
+    public function getTerminalPinCapability()
+    {
+        return $this->container['terminalPinCapability'];
+    }
+
+    /**
+     * Sets terminalPinCapability
+     * @param int $terminalPinCapability Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported only on American Express Direct and SIX.
+     * @return $this
+     */
+    public function setTerminalPinCapability($terminalPinCapability)
+    {
+        $this->container['terminalPinCapability'] = $terminalPinCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceId
+     * @return string
+     */
+    public function getDeviceId()
+    {
+        return $this->container['deviceId'];
+    }
+
+    /**
+     * Sets deviceId
+     * @param string $deviceId Value created by the client software that uniquely identifies the POS device. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.
+     * @return $this
+     */
+    public function setDeviceId($deviceId)
+    {
+        if (!is_null($deviceId) && (strlen($deviceId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $deviceId when calling Ptsv2creditsPointOfSaleInformation., must be smaller than or equal to 32.');
+        }
+
+        $this->container['deviceId'] = $deviceId;
 
         return $this;
     }

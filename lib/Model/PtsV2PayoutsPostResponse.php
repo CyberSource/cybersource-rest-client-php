@@ -54,7 +54,7 @@ class PtsV2PayoutsPostResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2payoutsClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2payoutsOrderInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2payoutsMerchantInformation',
         'recipientInformation' => '\CyberSource\Model\Ptsv2payoutsRecipientInformation',
@@ -198,7 +198,7 @@ class PtsV2PayoutsPostResponse implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2payoutsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -207,7 +207,7 @@ class PtsV2PayoutsPostResponse implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2payoutsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

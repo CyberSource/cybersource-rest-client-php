@@ -56,7 +56,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard',
-        'accountFeatures' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures'
+        'accountFeatures' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures',
+        'bank' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank'
     ];
 
     /**
@@ -66,7 +67,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'card' => null,
         'tokenizedCard' => null,
-        'accountFeatures' => null
+        'accountFeatures' => null,
+        'bank' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $attributeMap = [
         'card' => 'card',
         'tokenizedCard' => 'tokenizedCard',
-        'accountFeatures' => 'accountFeatures'
+        'accountFeatures' => 'accountFeatures',
+        'bank' => 'bank'
     ];
 
 
@@ -97,7 +100,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $setters = [
         'card' => 'setCard',
         'tokenizedCard' => 'setTokenizedCard',
-        'accountFeatures' => 'setAccountFeatures'
+        'accountFeatures' => 'setAccountFeatures',
+        'bank' => 'setBank'
     ];
 
 
@@ -108,7 +112,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $getters = [
         'card' => 'getCard',
         'tokenizedCard' => 'getTokenizedCard',
-        'accountFeatures' => 'getAccountFeatures'
+        'accountFeatures' => 'getAccountFeatures',
+        'bank' => 'getBank'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['accountFeatures'] = isset($data['accountFeatures']) ? $data['accountFeatures'] : null;
+        $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
     }
 
     /**
@@ -231,6 +237,27 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function setAccountFeatures($accountFeatures)
     {
         $this->container['accountFeatures'] = $accountFeatures;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank
+     */
+    public function getBank()
+    {
+        return $this->container['bank'];
+    }
+
+    /**
+     * Sets bank
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank $bank
+     * @return $this
+     */
+    public function setBank($bank)
+    {
+        $this->container['bank'] = $bank;
 
         return $this;
     }

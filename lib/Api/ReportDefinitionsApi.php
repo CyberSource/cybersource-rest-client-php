@@ -90,7 +90,7 @@ class ReportDefinitionsApi
     /**
      * Operation getResourceInfoByReportDefinition
      *
-     * Get a single report definition information
+     * Get report definition
      *
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
@@ -106,7 +106,7 @@ class ReportDefinitionsApi
     /**
      * Operation getResourceInfoByReportDefinitionWithHttpInfo
      *
-     * Get a single report definition information
+     * Get report definition
      *
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
@@ -180,7 +180,7 @@ class ReportDefinitionsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -268,7 +268,7 @@ class ReportDefinitionsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

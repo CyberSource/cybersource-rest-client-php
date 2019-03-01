@@ -90,4 +90,11 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformationTest extends 
     public function testPropertyReasonCode()
     {
     }
+
+    /**
+     * Test attribute "reversalSubmitted"
+     */
+    public function testPropertyReversalSubmitted()
+    {
+    }
 }

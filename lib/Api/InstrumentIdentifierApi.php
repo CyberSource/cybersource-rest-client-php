@@ -116,26 +116,26 @@ class InstrumentIdentifierApi
     public function tmsV1InstrumentidentifiersTokenIdDeleteWithHttpInfo($profileId, $tokenId)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1InstrumentidentifiersTokenIdDelete');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1InstrumentidentifiersTokenIdDelete');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdDelete, must be bigger than or equal to 16.');
+        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{tokenId}";
@@ -184,11 +184,11 @@ class InstrumentIdentifierApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 409:
@@ -196,15 +196,15 @@ class InstrumentIdentifierApi
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -242,26 +242,26 @@ class InstrumentIdentifierApi
     public function tmsV1InstrumentidentifiersTokenIdGetWithHttpInfo($profileId, $tokenId)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1InstrumentidentifiersTokenIdGet');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1InstrumentidentifiersTokenIdGet');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdGet, must be bigger than or equal to 16.');
+        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{tokenId}";
@@ -314,27 +314,27 @@ class InstrumentIdentifierApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -374,26 +374,26 @@ class InstrumentIdentifierApi
     public function tmsV1InstrumentidentifiersTokenIdPatchWithHttpInfo($profileId, $tokenId, $body)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1InstrumentidentifiersTokenIdPatch');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1InstrumentidentifiersTokenIdPatch');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.tmsV1InstrumentidentifiersTokenIdPatch, must be bigger than or equal to 16.');
+        }
 
         // verify the required parameter 'body' is set
         if ($body === null) {
@@ -455,27 +455,27 @@ class InstrumentIdentifierApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

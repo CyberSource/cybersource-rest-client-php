@@ -58,7 +58,7 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
         'status' => 'string',
         'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
+        'details' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[]'
     ];
 
     /**
@@ -313,7 +313,7 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
+     * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[]
      */
     public function getDetails()
     {
@@ -322,7 +322,7 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
+     * @param \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[] $details
      * @return $this
      */
     public function setDetails($details)

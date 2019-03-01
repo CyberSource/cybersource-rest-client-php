@@ -137,7 +137,7 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
     }
 
     const SUPPORTED_FORMATS_APPLICATIONXML = 'application/xml';
-    const SUPPORTED_FORMATS_TEXTCSV = 'text/csv';
+    const SUPPORTED_FORMATS_TEXTCSV = 'text/csv';const SUPPORTED_FORMATS_JSON ='application/json';
     
 
     
@@ -149,7 +149,7 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
     {
         return [
             self::SUPPORTED_FORMATS_APPLICATIONXML,
-            self::SUPPORTED_FORMATS_TEXTCSV,
+            self::SUPPORTED_FORMATS_TEXTCSV,self::SUPPORTED_FORMATS_JSON,
         ];
     }
     
@@ -230,7 +230,7 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
 
     /**
      * Sets reportDefinitionId
-     * @param int $reportDefinitionId
+     * @param int $reportDefinitionId | Id  |         Definition Class          | | --- | --------------------------------- | | 210 | TransactionRequestClass           | | 211 | PaymentBatchDetailClass           | | 212 | ExceptionDetailClass              | | 213 | ProcessorSettlementDetailClass    | | 214 | ProcessorEventsDetailClass        | | 215 | FundingDetailClass                | | 216 | AgingDetailClass                  | | 217 | ChargebackAndRetrievalDetailClass | | 218 | DepositDetailClass                | | 219 | FeeDetailClass                    | | 220 | InvoiceSummaryClass               | | 221 | PayerAuthDetailClass              | | 222 | ConversionDetailClass             | | 270 | JPTransactionDetailClass          | | 271 | ServiceFeeDetailClass             | | 310 | GatewayTransactionRequestClass    | | 400 | DecisionManagerEventDetailClass   | | 401 | DecisionManagerDetailClass        | | 410 | FeeSummaryClass                   | | 420 | TaxCalculationClass               | | 520 | POSTerminalExceptionClass         | | 620 | SubscriptionDetailClass           |
      * @return $this
      */
     public function setReportDefinitionId($reportDefinitionId)
@@ -277,16 +277,16 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
      */
     public function setSupportedFormats($supportedFormats)
     {
-        $allowed_values = $this->getSupportedFormatsAllowableValues();
-        // if (!is_null($supportedFormats) && array_diff($supportedFormats, $allowed_values)) {
-        //     throw new \InvalidArgumentException(
-        //         sprintf(
-        //             "Invalid value for 'supportedFormats', must be one of '%s'",
-        //             implode("', '", $allowed_values)
-        //         )
-        //     );
-        // }
-        $this->container['supportedFormats'] = $supportedFormats;
+        $allowed_values = $this->getSupportedFormatsAllowableValues();foreach ($allowed_values as &$value) {
+        if (!is_null($supportedFormats) && array_diff($supportedFormats, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'supportedFormats', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
+        } $this->container['supportedFormats'] = $supportedFormats;
 
         return $this;
     }

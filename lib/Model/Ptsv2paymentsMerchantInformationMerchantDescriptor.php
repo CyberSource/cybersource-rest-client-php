@@ -186,10 +186,6 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 23)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 23.";
-        }
-
         if (!is_null($this->container['alternateName']) && (strlen($this->container['alternateName']) > 13)) {
             $invalid_properties[] = "invalid value for 'alternateName', the character length must be smaller than or equal to 13.";
         }
@@ -230,9 +226,6 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 23) {
-            return false;
-        }
         if (strlen($this->container['alternateName']) > 13) {
             return false;
         }
@@ -274,10 +267,6 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 23)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Ptsv2paymentsMerchantInformationMerchantDescriptor., must be smaller than or equal to 23.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

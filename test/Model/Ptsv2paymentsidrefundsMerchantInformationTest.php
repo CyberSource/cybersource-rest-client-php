@@ -104,4 +104,11 @@ class Ptsv2paymentsidrefundsMerchantInformationTest extends \PHPUnit_Framework_T
     public function testPropertyCardAcceptorReferenceNumber()
     {
     }
+
+    /**
+     * Test attribute "taxId"
+     */
+    public function testPropertyTaxId()
+    {
+    }
 }

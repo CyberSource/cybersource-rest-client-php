@@ -146,4 +146,18 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     public function testPropertyInitiator()
     {
     }
+
+    /**
+     * Test attribute "billPayment"
+     */
+    public function testPropertyBillPayment()
+    {
+    }
+
+    /**
+     * Test attribute "billPaymentType"
+     */
+    public function testPropertyBillPaymentType()
+    {
+    }
 }

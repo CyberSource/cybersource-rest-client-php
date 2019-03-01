@@ -127,9 +127,23 @@ class PtsV2CreditsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
+
+    /**
      * Test attribute "processorInformation"
      */
     public function testPropertyProcessorInformation()
+    {
+    }
+
+    /**
+     * Test attribute "paymentInformation"
+     */
+    public function testPropertyPaymentInformation()
     {
     }
 

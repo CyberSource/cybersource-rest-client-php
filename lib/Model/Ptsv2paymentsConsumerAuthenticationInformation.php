@@ -294,7 +294,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets cavvAlgorithm
-     * @param string $cavvAlgorithm Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard SecureCode.
+     * @param string $cavvAlgorithm Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard Identity Check.
      * @return $this
      */
     public function setCavvAlgorithm($cavvAlgorithm)
@@ -319,7 +319,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets eciRaw
-     * @param string $eciRaw Raw electronic commerce indicator (ECI).
+     * @param string $eciRaw Raw electronic commerce indicator (ECI). For the description and requirements, see \"Payer Authentication,\" page 180.
      * @return $this
      */
     public function setEciRaw($eciRaw)
@@ -344,7 +344,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets paresStatus
-     * @param string $paresStatus Payer authentication response status.
+     * @param string $paresStatus Payer authentication response status. For the description and requirements, see \"Payer Authentication,\" page 180.
      * @return $this
      */
     public function setParesStatus($paresStatus)
@@ -369,7 +369,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets veresEnrolled
-     * @param string $veresEnrolled Verification response enrollment status.
+     * @param string $veresEnrolled Verification response enrollment status. For the description and requirements, see \"Payer Authentication,\" page 180.
      * @return $this
      */
     public function setVeresEnrolled($veresEnrolled)
@@ -394,7 +394,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets xid
-     * @param string $xid Transaction identifier.
+     * @param string $xid Transaction identifier. For the description and requirements, see \"Payer Authentication,\" page 180.
      * @return $this
      */
     public function setXid($xid)
@@ -419,7 +419,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets ucafAuthenticationData
-     * @param string $ucafAuthenticationData Universal cardholder authentication field (UCAF) data.
+     * @param string $ucafAuthenticationData Universal cardholder authentication field (UCAF) data.  For the description and requirements, see \"Payer Authentication,\" page 180.
      * @return $this
      */
     public function setUcafAuthenticationData($ucafAuthenticationData)
@@ -444,7 +444,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets ucafCollectionIndicator
-     * @param string $ucafCollectionIndicator Universal cardholder authentication field (UCAF) collection indicator.
+     * @param string $ucafCollectionIndicator Universal cardholder authentication field (UCAF) collection indicator.  For the description and requirements, see \"Payer Authentication,\" page 180.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—-UCAF Collection Indicator
      * @return $this
      */
     public function setUcafCollectionIndicator($ucafCollectionIndicator)

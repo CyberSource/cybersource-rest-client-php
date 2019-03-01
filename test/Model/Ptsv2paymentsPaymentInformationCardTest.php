@@ -160,4 +160,11 @@ class Ptsv2paymentsPaymentInformationCardTest extends \PHPUnit_Framework_TestCas
     public function testPropertyStartYear()
     {
     }
+
+    /**
+     * Test attribute "productName"
+     */
+    public function testPropertyProductName()
+    {
+    }
 }

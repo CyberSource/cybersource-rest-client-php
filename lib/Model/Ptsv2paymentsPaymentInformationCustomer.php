@@ -144,10 +144,6 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['customerId']) && (strlen($this->container['customerId']) > 26)) {
-            $invalid_properties[] = "invalid value for 'customerId', the character length must be smaller than or equal to 26.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['customerId']) > 26) {
-            return false;
-        }
         return true;
     }
 
@@ -178,15 +171,11 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
 
     /**
      * Sets customerId
-     * @param string $customerId Unique identifier for the customer's card and billing information.
+     * @param string $customerId Unique identifier for the customer's card and billing information.  When you use Payment Tokenization or Recurring Billing and you include this value in your request, many of the fields that are normally required for an authorization or credit become optional.  **NOTE** When you use Payment Tokenization or Recurring Billing, the value for the Customer ID is actually the Cybersource payment token for a customer. This token stores information such as the consumer’s card number so it can be applied towards bill payments, recurring payments, or one-time payments. By using this token in a payment API request, the merchant doesn't need to pass in data such as the card number or expiration date in the request itself.  See \"Payment Tokenization,\" page 222, and \"Recurring Billing,\" page 225.
      * @return $this
      */
     public function setCustomerId($customerId)
     {
-        if (!is_null($customerId) && (strlen($customerId) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $customerId when calling Ptsv2paymentsPaymentInformationCustomer., must be smaller than or equal to 26.');
-        }
-
         $this->container['customerId'] = $customerId;
 
         return $this;

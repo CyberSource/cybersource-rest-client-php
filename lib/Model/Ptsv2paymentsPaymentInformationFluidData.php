@@ -210,7 +210,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
 
     /**
      * Sets key
-     * @param string $key Description of this field is not available.
+     * @param string $key The name of the merchant-defined data field. The range of this field starts at 1 and terminiates at 100.
      * @return $this
      */
     public function setKey($key)
@@ -231,7 +231,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
 
     /**
      * Sets descriptor
-     * @param string $descriptor Format of the encrypted payment data.
+     * @param string $descriptor The specific string for identifying the payment solution that is sending the encrypted payment data to CyberSource. Valid values: - `Apple Pay` - `Samsung Pay` **NOTE**: For other payment solutions, the value may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Merchant needs to pass in this value.
      * @return $this
      */
     public function setDescriptor($descriptor)
@@ -256,7 +256,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
 
     /**
      * Sets value
-     * @param string $value The encrypted payment data value. If using Apple Pay or Samsung Pay, the values are:   - Apple Pay: RklEPUNPTU1PTi5BUFBMRS5JTkFQUC5QQVlNRU5U   - Samsung Pay: RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=
+     * @param string $value Represents the encrypted payment data BLOB. The entry for this field is dependent on the payment solution a merchant uses.  Valid values: - Apple Pay: `RklEPUNPTU1PTi5BUFBMRS5JTkFQUC5QQVlNRU5U` - Samsung Pay: `RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ=` **NOTE**: For other payment solutions, the value of the descriptor may be specific to the customer's mobile device. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Merchant needs to pass in this value.
      * @return $this
      */
     public function setValue($value)
@@ -281,7 +281,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
 
     /**
      * Sets encoding
-     * @param string $encoding Encoding method used to encrypt the payment data.  Possible value: Base64
+     * @param string $encoding Encoding method used to encrypt the payment data.  Valid value: Base64
      * @return $this
      */
     public function setEncoding($encoding)

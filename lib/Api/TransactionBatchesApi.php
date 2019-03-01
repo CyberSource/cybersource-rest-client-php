@@ -88,40 +88,142 @@ class TransactionBatchesApi
     }
 
     /**
-     * Operation ptsV1TransactionBatchesGet
+     * Operation getTransactionBatchId
      *
-     * Get a list of batch files processed through the Offline Transaction Submission Services
+     * Get individual batch file
+     *
+     * @param string $id The batch id assigned for the template. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response
+     */
+    public function getTransactionBatchId($id)
+    {
+        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchIdWithHttpInfo($id);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation getTransactionBatchIdWithHttpInfo
+     *
+     * Get individual batch file
+     *
+     * @param string $id The batch id assigned for the template. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTransactionBatchIdWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling getTransactionBatchId');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v1/transaction-batches/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response',
+                '/pts/v1/transaction-batches/{id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet500Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTransactionBatches
+     *
+     * Get a list of batch files
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return \CyberSource\Model\PtsV1TransactionBatchesGet200Response
      */
-    public function ptsV1TransactionBatchesGet($startTime, $endTime)
+    public function getTransactionBatches($startTime, $endTime)
     {
-        list($response, $statusCode, $httpHeader) = $this->ptsV1TransactionBatchesGetWithHttpInfo($startTime, $endTime);
+        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchesWithHttpInfo($startTime, $endTime);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation ptsV1TransactionBatchesGetWithHttpInfo
+     * Operation getTransactionBatchesWithHttpInfo
      *
-     * Get a list of batch files processed through the Offline Transaction Submission Services
+     * Get a list of batch files
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PtsV1TransactionBatchesGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function ptsV1TransactionBatchesGetWithHttpInfo($startTime, $endTime)
+    public function getTransactionBatchesWithHttpInfo($startTime, $endTime)
     {
         // verify the required parameter 'startTime' is set
         if ($startTime === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $startTime when calling ptsV1TransactionBatchesGet');
+            throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getTransactionBatches');
         }
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $endTime when calling ptsV1TransactionBatchesGet');
+            throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getTransactionBatches');
         }
         // parse inputs
         $resourcePath = "/pts/v1/transaction-batches";

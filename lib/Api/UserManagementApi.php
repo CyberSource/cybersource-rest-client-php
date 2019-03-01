@@ -174,7 +174,7 @@ class UserManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsRefundPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\UmsV1UsersGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

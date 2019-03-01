@@ -78,6 +78,13 @@ class Ptsv2paymentsidreversalsOrderInformationTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "amountDetails"
+     */
+    public function testPropertyAmountDetails()
+    {
+    }
+
+    /**
      * Test attribute "lineItems"
      */
     public function testPropertyLineItems()

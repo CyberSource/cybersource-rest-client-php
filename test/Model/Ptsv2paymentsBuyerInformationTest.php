@@ -99,6 +99,13 @@ class Ptsv2paymentsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "companyTaxId"
+     */
+    public function testPropertyCompanyTaxId()
+    {
+    }
+
+    /**
      * Test attribute "personalIdentification"
      */
     public function testPropertyPersonalIdentification()

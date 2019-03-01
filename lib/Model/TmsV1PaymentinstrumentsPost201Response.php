@@ -59,7 +59,7 @@ class TmsV1PaymentinstrumentsPost201Response implements ArrayAccess
         'object' => 'string',
         'state' => 'string',
         'bankAccount' => '\CyberSource\Model\Tmsv1paymentinstrumentsBankAccount',
-        'card' => '\CyberSource\Model\Tmsv1paymentinstrumentsCard',
+        'card' => '\CyberSource\Model\TmsV1PaymentinstrumentsPost201ResponseCard',
         'buyerInformation' => '\CyberSource\Model\Tmsv1paymentinstrumentsBuyerInformation',
         'billTo' => '\CyberSource\Model\Tmsv1paymentinstrumentsBillTo',
         'processingInformation' => '\CyberSource\Model\Tmsv1paymentinstrumentsProcessingInformation',
@@ -401,7 +401,7 @@ class TmsV1PaymentinstrumentsPost201Response implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\Tmsv1paymentinstrumentsCard
+     * @return \CyberSource\Model\TmsV1PaymentinstrumentsPost201ResponseCard
      */
     public function getCard()
     {
@@ -410,7 +410,7 @@ class TmsV1PaymentinstrumentsPost201Response implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\Tmsv1paymentinstrumentsCard $card
+     * @param \CyberSource\Model\TmsV1PaymentinstrumentsPost201ResponseCard $card
      * @return $this
      */
     public function setCard($card)

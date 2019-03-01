@@ -120,26 +120,26 @@ class PaymentInstrumentsApi
     public function tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGetWithHttpInfo($profileId, $tokenId, $offset = null, $limit = '20')
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be bigger than or equal to 16.');
+        }
 
         if (!is_null($offset) && ($offset < 0)) {
             throw new \InvalidArgumentException('invalid value for "$offset" when calling PaymentInstrumentsApi.tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet, must be bigger than or equal to 0.');
@@ -211,27 +211,27 @@ class PaymentInstrumentsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -269,15 +269,15 @@ class PaymentInstrumentsApi
     public function tmsV1PaymentinstrumentsPostWithHttpInfo($profileId, $body)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1PaymentinstrumentsPost');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsPost, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsPost, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsPost, must be bigger than or equal to 36.');
-        }*/
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsPost, must be bigger than or equal to 36.');
+        }
 
         // verify the required parameter 'body' is set
         if ($body === null) {
@@ -323,7 +323,7 @@ class PaymentInstrumentsApi
                 '/tms/v1/paymentinstruments'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
@@ -331,19 +331,19 @@ class PaymentInstrumentsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -381,26 +381,26 @@ class PaymentInstrumentsApi
     public function tmsV1PaymentinstrumentsTokenIdDeleteWithHttpInfo($profileId, $tokenId)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1PaymentinstrumentsTokenIdDelete');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1PaymentinstrumentsTokenIdDelete');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdDelete, must be bigger than or equal to 16.');
+        }
 
         // parse inputs
         $resourcePath = "/tms/v1/paymentinstruments/{tokenId}";
@@ -449,23 +449,23 @@ class PaymentInstrumentsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -482,7 +482,7 @@ class PaymentInstrumentsApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response
+     * @return \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response
      */
     public function tmsV1PaymentinstrumentsTokenIdGet($profileId, $tokenId)
     {
@@ -498,31 +498,31 @@ class PaymentInstrumentsApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1PaymentinstrumentsTokenIdGetWithHttpInfo($profileId, $tokenId)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1PaymentinstrumentsTokenIdGet');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1PaymentinstrumentsTokenIdGet');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdGet, must be bigger than or equal to 16.');
+        }
 
         // parse inputs
         $resourcePath = "/tms/v1/paymentinstruments/{tokenId}";
@@ -563,39 +563,39 @@ class PaymentInstrumentsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response',
+                '\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response',
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -613,7 +613,7 @@ class PaymentInstrumentsApi
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @param \CyberSource\Model\Body3 $body Please specify the customers payment details. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response
+     * @return \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response
      */
     public function tmsV1PaymentinstrumentsTokenIdPatch($profileId, $tokenId, $body)
     {
@@ -630,31 +630,31 @@ class PaymentInstrumentsApi
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @param \CyberSource\Model\Body3 $body Please specify the customers payment details. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1PaymentinstrumentsTokenIdPatchWithHttpInfo($profileId, $tokenId, $body)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1PaymentinstrumentsTokenIdPatch');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be bigger than or equal to 36.');
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be bigger than or equal to 36.');
         }
 
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling tmsV1PaymentinstrumentsTokenIdPatch');
         }
-        if (($tokenId > 32)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be smaller than or equal to 32.');
+        if ((strlen($tokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be smaller than or equal to 32.');
         }
-        if (($tokenId < 16)) {
-            throw new \InvalidArgumentException('invalid value for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be bigger than or equal to 16.');
-        }*/
+        if ((strlen($tokenId) < 16)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentsApi.tmsV1PaymentinstrumentsTokenIdPatch, must be bigger than or equal to 16.');
+        }
 
         // verify the required parameter 'body' is set
         if ($body === null) {
@@ -704,39 +704,39 @@ class PaymentInstrumentsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response',
+                '\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response',
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

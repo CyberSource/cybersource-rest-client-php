@@ -171,7 +171,7 @@ class Ptsv2paymentsidrefundsProcessingInformationRecurringOptions implements Arr
 
     /**
      * Sets loanPayment
-     * @param bool $loanPayment Flag that indicates whether this is a payment towards an existing contractual loan.
+     * @param bool $loanPayment Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values: - **true** Loan payment - **false** (default) Not a loan payment  See \"Visa Debt Repayments,\" page 218, for a list of processors that support this feature.
      * @return $this
      */
     public function setLoanPayment($loanPayment)

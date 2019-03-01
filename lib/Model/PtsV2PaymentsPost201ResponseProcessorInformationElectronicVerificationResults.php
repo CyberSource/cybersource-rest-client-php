@@ -571,7 +571,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets name
-     * @param string $name TODO
+     * @param string $name The description for this field is not available.
      * @return $this
      */
     public function setName($name)
@@ -596,7 +596,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets nameRaw
-     * @param string $nameRaw TODO
+     * @param string $nameRaw The description for this field is not available.
      * @return $this
      */
     public function setNameRaw($nameRaw)

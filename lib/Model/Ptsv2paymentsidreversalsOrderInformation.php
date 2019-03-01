@@ -54,6 +54,7 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'amountDetails' => '\CyberSource\Model\Ptsv2paymentsidreversalsOrderInformationAmountDetails',
         'lineItems' => '\CyberSource\Model\Ptsv2paymentsidreversalsOrderInformationLineItems[]'
     ];
 
@@ -62,6 +63,7 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'amountDetails' => null,
         'lineItems' => null
     ];
 
@@ -80,6 +82,7 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'amountDetails' => 'amountDetails',
         'lineItems' => 'lineItems'
     ];
 
@@ -89,6 +92,7 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'amountDetails' => 'setAmountDetails',
         'lineItems' => 'setLineItems'
     ];
 
@@ -98,6 +102,7 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'amountDetails' => 'getAmountDetails',
         'lineItems' => 'getLineItems'
     ];
 
@@ -132,6 +137,7 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
     }
 
@@ -159,6 +165,27 @@ class Ptsv2paymentsidreversalsOrderInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets amountDetails
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsOrderInformationAmountDetails
+     */
+    public function getAmountDetails()
+    {
+        return $this->container['amountDetails'];
+    }
+
+    /**
+     * Sets amountDetails
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsOrderInformationAmountDetails $amountDetails
+     * @return $this
+     */
+    public function setAmountDetails($amountDetails)
+    {
+        $this->container['amountDetails'] = $amountDetails;
+
+        return $this;
+    }
 
     /**
      * Gets lineItems

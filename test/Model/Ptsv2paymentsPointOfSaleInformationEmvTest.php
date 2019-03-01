@@ -85,9 +85,9 @@ class Ptsv2paymentsPointOfSaleInformationEmvTest extends \PHPUnit_Framework_Test
     }
 
     /**
-     * Test attribute "cardholderVerificationMethod"
+     * Test attribute "cardholderVerificationMethodUsed"
      */
-    public function testPropertyCardholderVerificationMethod()
+    public function testPropertyCardholderVerificationMethodUsed()
     {
     }
 

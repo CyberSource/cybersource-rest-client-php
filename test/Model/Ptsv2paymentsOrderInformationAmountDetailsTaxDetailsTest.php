@@ -118,4 +118,11 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetailsTest extends \PHPUnit_
     public function testPropertyApplied()
     {
     }
+
+    /**
+     * Test attribute "exemptionCode"
+     */
+    public function testPropertyExemptionCode()
+    {
+    }
 }

@@ -55,7 +55,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
       */
     protected static $swaggerTypes = [
         'paymentMethod' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod',
-        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'
     ];
 
@@ -195,7 +195,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer
      */
     public function getCustomer()
     {
@@ -204,7 +204,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer $customer
      * @return $this
      */
     public function setCustomer($customer)

@@ -56,7 +56,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformation implements ArrayA
     protected static $swaggerTypes = [
         'billTo' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo',
         'shipTo' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo',
-        'amountDetails' => '\CyberSource\Model\Ptsv2paymentsidreversalsReversalInformationAmountDetails'
+        'amountDetails' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails'
     ];
 
     /**
@@ -216,7 +216,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformation implements ArrayA
 
     /**
      * Gets amountDetails
-     * @return \CyberSource\Model\Ptsv2paymentsidreversalsReversalInformationAmountDetails
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails
      */
     public function getAmountDetails()
     {
@@ -225,7 +225,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformation implements ArrayA
 
     /**
      * Sets amountDetails
-     * @param \CyberSource\Model\Ptsv2paymentsidreversalsReversalInformationAmountDetails $amountDetails
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails $amountDetails
      * @return $this
      */
     public function setAmountDetails($amountDetails)

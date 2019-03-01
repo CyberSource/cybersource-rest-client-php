@@ -164,10 +164,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
             $invalid_properties[] = "invalid value for 'prefix', the character length must be smaller than or equal to 6.";
         }
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -184,9 +180,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
             return false;
         }
         if (strlen($this->container['prefix']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['type']) > 3) {
             return false;
         }
         return true;
@@ -259,10 +252,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard., must be smaller than or equal to 3.');
-        }
-
         $this->container['type'] = $type;
 
         return $this;

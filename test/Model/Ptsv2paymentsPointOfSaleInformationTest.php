@@ -99,13 +99,6 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
-     * Test attribute "cardPresent"
-     */
-    public function testPropertyCardPresent()
-    {
-    }
-
-    /**
      * Test attribute "catLevel"
      */
     public function testPropertyCatLevel()
@@ -158,6 +151,83 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
      * Test attribute "trackData"
      */
     public function testPropertyTrackData()
+    {
+    }
+
+    /**
+     * Test attribute "storeAndForwardIndicator"
+     */
+    public function testPropertyStoreAndForwardIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "cardholderVerificationMethod"
+     */
+    public function testPropertyCardholderVerificationMethod()
+    {
+    }
+
+    /**
+     * Test attribute "terminalInputCapability"
+     */
+    public function testPropertyTerminalInputCapability()
+    {
+    }
+
+    /**
+     * Test attribute "terminalCardCaptureCapability"
+     */
+    public function testPropertyTerminalCardCaptureCapability()
+    {
+    }
+
+    /**
+     * Test attribute "terminalOutputCapability"
+     */
+    public function testPropertyTerminalOutputCapability()
+    {
+    }
+
+    /**
+     * Test attribute "terminalPinCapability"
+     */
+    public function testPropertyTerminalPinCapability()
+    {
+    }
+
+    /**
+     * Test attribute "deviceId"
+     */
+    public function testPropertyDeviceId()
+    {
+    }
+
+    /**
+     * Test attribute "pinBlockEncodingFormat"
+     */
+    public function testPropertyPinBlockEncodingFormat()
+    {
+    }
+
+    /**
+     * Test attribute "encryptedPin"
+     */
+    public function testPropertyEncryptedPin()
+    {
+    }
+
+    /**
+     * Test attribute "encryptedKeySerialNumber"
+     */
+    public function testPropertyEncryptedKeySerialNumber()
+    {
+    }
+
+    /**
+     * Test attribute "partnerSdkVersion"
+     */
+    public function testPropertyPartnerSdkVersion()
     {
     }
 }

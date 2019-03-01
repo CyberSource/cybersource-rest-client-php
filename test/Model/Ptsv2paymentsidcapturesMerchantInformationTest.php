@@ -104,4 +104,18 @@ class Ptsv2paymentsidcapturesMerchantInformationTest extends \PHPUnit_Framework_
     public function testPropertyVatRegistrationNumber()
     {
     }
+
+    /**
+     * Test attribute "serviceFeeDescriptor"
+     */
+    public function testPropertyServiceFeeDescriptor()
+    {
+    }
+
+    /**
+     * Test attribute "taxId"
+     */
+    public function testPropertyTaxId()
+    {
+    }
 }

@@ -61,10 +61,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'reconciliationId' => 'string',
         'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
+        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformation',
+        'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseIssuerInformation',
         'paymentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation'
+        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation',
+        'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation'
     ];
 
     /**
@@ -79,10 +82,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'reconciliationId' => null,
         'errorInformation' => null,
         'clientReferenceInformation' => null,
+        'processingInformation' => null,
         'processorInformation' => null,
+        'issuerInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
-        'pointOfSaleInformation' => null
+        'pointOfSaleInformation' => null,
+        'installmentInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -107,10 +113,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'errorInformation' => 'errorInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
+        'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
+        'issuerInformation' => 'issuerInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
-        'pointOfSaleInformation' => 'pointOfSaleInformation'
+        'pointOfSaleInformation' => 'pointOfSaleInformation',
+        'installmentInformation' => 'installmentInformation'
     ];
 
 
@@ -126,10 +135,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'errorInformation' => 'setErrorInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
+        'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
+        'issuerInformation' => 'setIssuerInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
-        'pointOfSaleInformation' => 'setPointOfSaleInformation'
+        'pointOfSaleInformation' => 'setPointOfSaleInformation',
+        'installmentInformation' => 'setInstallmentInformation'
     ];
 
 
@@ -145,10 +157,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'errorInformation' => 'getErrorInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
+        'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
+        'issuerInformation' => 'getIssuerInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
-        'pointOfSaleInformation' => 'getPointOfSaleInformation'
+        'pointOfSaleInformation' => 'getPointOfSaleInformation',
+        'installmentInformation' => 'getInstallmentInformation'
     ];
 
     public static function attributeMap()
@@ -170,6 +185,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     const STATUS_PARTIAL_AUTHORIZED = 'PARTIAL_AUTHORIZED';
     const STATUS_AUTHORIZED_PENDING_REVIEW = 'AUTHORIZED_PENDING_REVIEW';
     const STATUS_DECLINED = 'DECLINED';
+    const STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
+    const STATUS_PENDING = 'PENDING';
     
 
     
@@ -184,6 +201,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
             self::STATUS_PARTIAL_AUTHORIZED,
             self::STATUS_AUTHORIZED_PENDING_REVIEW,
             self::STATUS_DECLINED,
+            self::STATUS_INVALID_REQUEST,
+            self::STATUS_PENDING,
         ];
     }
     
@@ -207,10 +226,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
+        $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
     }
 
     /**
@@ -342,7 +364,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - AUTHORIZED  - PARTIAL_AUTHORIZED  - AUTHORIZED_PENDING_REVIEW  - DECLINED  - INVALID_REQUEST
      * @return $this
      */
     public function setStatus($status)
@@ -429,6 +451,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     }
 
     /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets processorInformation
      * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformation
      */
@@ -445,6 +488,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setProcessorInformation($processorInformation)
     {
         $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseIssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseIssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
 
         return $this;
     }
@@ -508,6 +572,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setPointOfSaleInformation($pointOfSaleInformation)
     {
         $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets installmentInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation
+     */
+    public function getInstallmentInformation()
+    {
+        return $this->container['installmentInformation'];
+    }
+
+    /**
+     * Sets installmentInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation $installmentInformation
+     * @return $this
+     */
+    public function setInstallmentInformation($installmentInformation)
+    {
+        $this->container['installmentInformation'] = $installmentInformation;
 
         return $this;
     }

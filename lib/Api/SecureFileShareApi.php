@@ -119,7 +119,7 @@ class SecureFileShareApi
         if ($fileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $fileId when calling getFile');
         }
-        /*if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$organizationId" when calling SecureFileShareApi.getFile, must be smaller than or equal to 32.');
         }
         if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
@@ -127,7 +127,7 @@ class SecureFileShareApi
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling SecureFileShareApi.getFile, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-        }*/
+        }
 
         // parse inputs
         $resourcePath = "/sfs/v1/files/{fileId}";
@@ -139,7 +139,7 @@ class SecureFileShareApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/hal+json;charset=utf-8']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
 
         // query params
         if ($organizationId !== null) {
@@ -169,14 +169,14 @@ class SecureFileShareApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/v1/files/{fileId}'
+                '/sfs/v1/files/{fileId}'
             );
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -223,7 +223,7 @@ class SecureFileShareApi
         if ($endDate === null) {
             throw new \InvalidArgumentException('Missing the required parameter $endDate when calling getFileDetails');
         }
-        /*if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetails, must be smaller than or equal to 32.');
         }
         if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
@@ -231,7 +231,7 @@ class SecureFileShareApi
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-        }*/
+        }
 
         // parse inputs
         $resourcePath = "/sfs/v1/file-details";
@@ -243,7 +243,7 @@ class SecureFileShareApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
 
         // query params
         if ($startDate !== null) {
@@ -273,7 +273,7 @@ class SecureFileShareApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\V1FileDetailsGet200Response',
-                '/v1/file-details'
+                '/sfs/v1/file-details'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\V1FileDetailsGet200Response', $httpHeader), $statusCode, $httpHeader];
@@ -284,19 +284,19 @@ class SecureFileShareApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

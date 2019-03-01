@@ -153,4 +153,18 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTest extends \PHPUnit_Framework
     public function testPropertyTransactionAdviceAddendum()
     {
     }
+
+    /**
+     * Test attribute "referenceDataCode"
+     */
+    public function testPropertyReferenceDataCode()
+    {
+    }
+
+    /**
+     * Test attribute "referenceDataNumber"
+     */
+    public function testPropertyReferenceDataNumber()
+    {
+    }
 }

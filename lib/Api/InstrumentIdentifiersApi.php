@@ -116,15 +116,15 @@ class InstrumentIdentifiersApi
     public function tmsV1InstrumentidentifiersPostWithHttpInfo($profileId, $body)
     {
         // verify the required parameter 'profileId' is set
-        /*if ($profileId === null) {
+        if ($profileId === null) {
             throw new \InvalidArgumentException('Missing the required parameter $profileId when calling tmsV1InstrumentidentifiersPost');
         }
-        if (($profileId > 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifiersApi.tmsV1InstrumentidentifiersPost, must be smaller than or equal to 36.');
+        if ((strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifiersApi.tmsV1InstrumentidentifiersPost, must be smaller than or equal to 36.');
         }
-        if (($profileId < 36)) {
-            throw new \InvalidArgumentException('invalid value for "$profileId" when calling InstrumentIdentifiersApi.tmsV1InstrumentidentifiersPost, must be bigger than or equal to 36.');
-        }*/
+        if ((strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifiersApi.tmsV1InstrumentidentifiersPost, must be bigger than or equal to 36.');
+        }
 
         // verify the required parameter 'body' is set
         if ($body === null) {
@@ -182,19 +182,19 @@ class InstrumentIdentifiersApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

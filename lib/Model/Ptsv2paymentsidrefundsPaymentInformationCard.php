@@ -198,10 +198,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
             $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
         }
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['accountEncoderId']) && (strlen($this->container['accountEncoderId']) > 3)) {
             $invalid_properties[] = "invalid value for 'accountEncoderId', the character length must be smaller than or equal to 3.";
         }
@@ -237,9 +233,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
             return false;
         }
         if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['type']) > 3) {
             return false;
         }
         if (strlen($this->container['accountEncoderId']) > 3) {
@@ -294,7 +287,7 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the credit card expires. `Format: MM`. Possible values: 01 through 12.  **Encoded Account Numbers**  For encoded account numbers (_type_=039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $expirationMonth Two-digit month in which the credit card expires. `Format: MM`. Possible values: 01 through 12.  **Barclays and Streamline**\\ For Maestro (UK Domestic) and Maestro (International) cards on Barclays and Streamline, this must be a valid value (01 through 12) but is not required to be a valid expiration date. In other words, an expiration date that is in the past does not cause CyberSource to reject your request. However, an invalid expiration date might cause the issuer to reject your request.  **Encoded Account Numbers**\\ For encoded account numbers (_type_=039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
@@ -319,7 +312,7 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets expirationYear
-     * @param string $expirationYear Four-digit year in which the credit card expires. `Format: YYYY`.  **Encoded Account Numbers**  For encoded account numbers (_type_=039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $expirationYear Four-digit year in which the credit card expires. `Format: YYYY`.  **Barclays and Streamline**\\ For Maestro (UK Domestic) and Maestro (International) cards on Barclays and Streamline, this must be a valid value (1900 through 3000) but is not required to be a valid expiration date. In other words, an expiration date that is in the past does not cause CyberSource to reject your request. However, an invalid expiration date might cause the issuer to reject your request.  **FDC Nashville Global and FDMS South**\\ You can send in 2 digits or 4 digits. If you send in 2 digits, they must be the last 2 digits of the year.  **Encoded Account Numbers**\\ For encoded account numbers (_type_=039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setExpirationYear($expirationYear)
@@ -349,10 +342,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 3.');
-        }
-
         $this->container['type'] = $type;
 
         return $this;
@@ -394,7 +383,7 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets issueNumber
-     * @param string $issueNumber Number of times a Maestro (UK Domestic) card has been issued to the account holder. The card might or might not have an issue number. The number can consist of one or two digits, and the first digit might be a zero. When you include this value in your request, include exactly what is printed on the card. A value of 2 is different than a value of 02. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card.  The issue number is not required for Maestro (UK Domestic) transactions.
+     * @param string $issueNumber Number of times a Maestro (UK Domestic) card has been issued to the account holder. The card might or might not have an issue number. The number can consist of one or two digits, and the first digit might be a zero. When you include this value in your request, include exactly what is printed on the card. A value of 2 is different than a value of 02. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card.  **Note** The issue number is not required for Maestro (UK Domestic) transactions.
      * @return $this
      */
     public function setIssueNumber($issueNumber)
@@ -419,7 +408,7 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets startMonth
-     * @param string $startMonth Month of the start of the Maestro (UK Domestic) card validity period. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card. `Format: MM`. Possible values: 01 through 12.  The start date is not required for Maestro (UK Domestic) transactions.
+     * @param string $startMonth Month of the start of the Maestro (UK Domestic) card validity period. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card. `Format: MM`. Possible values: 01 through 12.  **Note** The start date is not required for Maestro (UK Domestic) transactions.
      * @return $this
      */
     public function setStartMonth($startMonth)
@@ -444,7 +433,7 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets startYear
-     * @param string $startYear Year of the start of the Maestro (UK Domestic) card validity period. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card. `Format: YYYY`.  The start date is not required for Maestro (UK Domestic) transactions.
+     * @param string $startYear Year of the start of the Maestro (UK Domestic) card validity period. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card. `Format: YYYY`.  **Note** The start date is not required for Maestro (UK Domestic) transactions.
      * @return $this
      */
     public function setStartYear($startYear)

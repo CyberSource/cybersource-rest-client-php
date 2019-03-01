@@ -216,7 +216,7 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
 
     /**
      * Sets currency
-     * @param string $currency Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal or a capture, you must use the same currency that you used in your request for Payment API.
+     * @param string $currency Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your request for Payment API.  **DCC for First Data**\\ Your local currency. For details, see \"Dynamic Currency Conversion for First Data,\" page 113.
      * @return $this
      */
     public function setCurrency($currency)

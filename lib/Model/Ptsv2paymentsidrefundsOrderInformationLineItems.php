@@ -411,7 +411,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productCode
-     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required.
+     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required.  See Appendix O, \"Product Codes,\" on page 373 for a list of valid values.
      * @return $this
      */
     public function setProductCode($productCode)
@@ -436,7 +436,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productName
-     * @param string $productName For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and handling.
+     * @param string $productName For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false` respectively), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setProductName($productName)
@@ -461,7 +461,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productSku
-     * @param string $productSku Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling.
+     * @param string $productSku Identification code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setProductSku($productSku)
@@ -486,7 +486,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param float $quantity For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling.
+     * @param float $quantity For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setQuantity($quantity)
@@ -515,7 +515,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitPrice
-     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in: - Table 12, \"Authorization Information for Specific Processors,\" on page 36 - Table 16, \"Capture Information for Specific Processors,\" on page 51 - Table 20, \"Credit Information for Specific Processors,\" on page 65  **DCC for First Data**\\ This value is the original amount in your local currency. You must include this field. You cannot use grand_total_amount. See \"Dynamic Currency Conversion for First Data,\" page 113.  **FDMS South**\\ If you accept IDR or CLP currencies, see the entry for FDMS South in Table 12, \"Authorization Information for Specific Processors,\" on page 36.  **Zero Amount Authorizations**\\ If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 220.
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -590,7 +590,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxAmount
-     * @param string $taxAmount Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  This field is frequently used for Level II and Level III transactions.
+     * @param string $taxAmount Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  If you want to include the tax amount and also request the ics_tax service, see Tax Calculation Service Using the SCMP API.  This field is frequently used for Level II and Level III transactions. See Level II and Level III Processing Using the SCMP API.
      * @return $this
      */
     public function setTaxAmount($taxAmount)
@@ -690,7 +690,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxTypeCode
-     * @param string $taxTypeCode Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item.
+     * @param string $taxTypeCode Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax (VAT)  - 0011: goods and services tax (GST)  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - 0023: city tax  - 0024: county or parish sales tax  - 0025: county tax  - 0026: environment tax  - 0027: state and local sales tax (combined)  - Blank: Tax not supported on line item.
      * @return $this
      */
     public function setTaxTypeCode($taxTypeCode)
@@ -715,7 +715,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets amountIncludesTax
-     * @param bool $amountIncludesTax Flag that indicates whether the tax amount is included in the Line Item Total.
+     * @param bool $amountIncludesTax Flag that indicates whether the tax amount is included in the Line Item Total.  Possible values:  - **true**  - **false**
      * @return $this
      */
     public function setAmountIncludesTax($amountIncludesTax)
@@ -811,7 +811,7 @@ class Ptsv2paymentsidrefundsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets discountApplied
-     * @param bool $discountApplied Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.
+     * @param bool $discountApplied Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.  Possible values:  - **true**  - **false**
      * @return $this
      */
     public function setDiscountApplied($discountApplied)

@@ -99,6 +99,20 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "categoryCodeDomestic"
+     */
+    public function testPropertyCategoryCodeDomestic()
+    {
+    }
+
+    /**
+     * Test attribute "taxId"
+     */
+    public function testPropertyTaxId()
+    {
+    }
+
+    /**
      * Test attribute "vatRegistrationNumber"
      */
     public function testPropertyVatRegistrationNumber()
@@ -116,6 +130,13 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "transactionLocalDateTime"
      */
     public function testPropertyTransactionLocalDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "serviceFeeDescriptor"
+     */
+    public function testPropertyServiceFeeDescriptor()
     {
     }
 }

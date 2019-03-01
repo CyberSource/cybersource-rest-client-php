@@ -65,9 +65,9 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         'startTime' => '\DateTime',
         'startDay' => 'int',
         'reportFields' => 'string[]',
-        'reportFilters' => 'string[]',
-        'reportPreferences' => '\CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences',
-        'selectedMerchantGroupName' => 'string'
+        'reportFilters' => 'map[string,string[]]',
+        'reportPreferences' => '\CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences',
+        'groupId' => 'string'
     ];
 
     /**
@@ -87,7 +87,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         'reportFields' => null,
         'reportFilters' => null,
         'reportPreferences' => null,
-        'selectedMerchantGroupName' => null
+        'groupId' => null
     ];
 
     public static function swaggerTypes()
@@ -117,7 +117,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         'reportFields' => 'reportFields',
         'reportFilters' => 'reportFilters',
         'reportPreferences' => 'reportPreferences',
-        'selectedMerchantGroupName' => 'selectedMerchantGroupName'
+        'groupId' => 'groupId'
     ];
 
 
@@ -138,7 +138,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         'reportFields' => 'setReportFields',
         'reportFilters' => 'setReportFilters',
         'reportPreferences' => 'setReportPreferences',
-        'selectedMerchantGroupName' => 'setSelectedMerchantGroupName'
+        'groupId' => 'setGroupId'
     ];
 
 
@@ -159,7 +159,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         'reportFields' => 'getReportFields',
         'reportFilters' => 'getReportFilters',
         'reportPreferences' => 'getReportPreferences',
-        'selectedMerchantGroupName' => 'getSelectedMerchantGroupName'
+        'groupId' => 'getGroupId'
     ];
 
     public static function attributeMap()
@@ -235,7 +235,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         $this->container['reportFields'] = isset($data['reportFields']) ? $data['reportFields'] : null;
         $this->container['reportFilters'] = isset($data['reportFilters']) ? $data['reportFilters'] : null;
         $this->container['reportPreferences'] = isset($data['reportPreferences']) ? $data['reportPreferences'] : null;
-        $this->container['selectedMerchantGroupName'] = isset($data['selectedMerchantGroupName']) ? $data['selectedMerchantGroupName'] : null;
+        $this->container['groupId'] = isset($data['groupId']) ? $data['groupId'] : null;
     }
 
     /**
@@ -298,7 +298,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets organizationId
-     * @param string $organizationId Organization Id
+     * @param string $organizationId Selected Organization Id
      * @return $this
      */
     public function setOrganizationId($organizationId)
@@ -340,7 +340,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets reportDefinitionName
-     * @param string $reportDefinitionName Report Definition
+     * @param string $reportDefinitionName Report Definition Class
      * @return $this
      */
     public function setReportDefinitionName($reportDefinitionName)
@@ -517,7 +517,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Gets reportFilters
-     * @return string[]
+     * @return map[string,string[]]
      */
     public function getReportFilters()
     {
@@ -526,7 +526,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets reportFilters
-     * @param string[] $reportFilters List of filters to apply
+     * @param map[string,string[]] $reportFilters List of filters to apply
      * @return $this
      */
     public function setReportFilters($reportFilters)
@@ -538,7 +538,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Gets reportPreferences
-     * @return \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences
+     * @return \CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences
      */
     public function getReportPreferences()
     {
@@ -547,7 +547,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets reportPreferences
-     * @param \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences $reportPreferences
+     * @param \CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences $reportPreferences
      * @return $this
      */
     public function setReportPreferences($reportPreferences)
@@ -558,22 +558,22 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
     }
 
     /**
-     * Gets selectedMerchantGroupName
+     * Gets groupId
      * @return string
      */
-    public function getSelectedMerchantGroupName()
+    public function getGroupId()
     {
-        return $this->container['selectedMerchantGroupName'];
+        return $this->container['groupId'];
     }
 
     /**
-     * Sets selectedMerchantGroupName
-     * @param string $selectedMerchantGroupName Selected name of the group.
+     * Sets groupId
+     * @param string $groupId Id for the selected group.
      * @return $this
      */
-    public function setSelectedMerchantGroupName($selectedMerchantGroupName)
+    public function setGroupId($groupId)
     {
-        $this->container['selectedMerchantGroupName'] = $selectedMerchantGroupName;
+        $this->container['groupId'] = $groupId;
 
         return $this;
     }

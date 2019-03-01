@@ -62,7 +62,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
         'purchaseLevel' => 'string',
-        'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'
+        'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions',
+        'bankTransferOptions' => '\CyberSource\Model\Ptsv2creditsProcessingInformationBankTransferOptions'
     ];
 
     /**
@@ -78,7 +79,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => null,
         'visaCheckoutId' => null,
         'purchaseLevel' => null,
-        'recurringOptions' => null
+        'recurringOptions' => null,
+        'bankTransferOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -104,7 +106,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
         'purchaseLevel' => 'purchaseLevel',
-        'recurringOptions' => 'recurringOptions'
+        'recurringOptions' => 'recurringOptions',
+        'bankTransferOptions' => 'bankTransferOptions'
     ];
 
 
@@ -121,7 +124,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
         'purchaseLevel' => 'setPurchaseLevel',
-        'recurringOptions' => 'setRecurringOptions'
+        'recurringOptions' => 'setRecurringOptions',
+        'bankTransferOptions' => 'setBankTransferOptions'
     ];
 
 
@@ -138,7 +142,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
         'purchaseLevel' => 'getPurchaseLevel',
-        'recurringOptions' => 'getRecurringOptions'
+        'recurringOptions' => 'getRecurringOptions',
+        'bankTransferOptions' => 'getBankTransferOptions'
     ];
 
     public static function attributeMap()
@@ -181,6 +186,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
         $this->container['purchaseLevel'] = isset($data['purchaseLevel']) ? $data['purchaseLevel'] : null;
         $this->container['recurringOptions'] = isset($data['recurringOptions']) ? $data['recurringOptions'] : null;
+        $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
     }
 
     /**
@@ -300,7 +306,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
 
     /**
      * Sets processorId
-     * @param string $processorId Value that identifies the processor/acquirer to use for the transaction. This value is supported only for **CyberSource through VisaNet**.
+     * @param string $processorId Value that identifies the processor/acquirer to use for the transaction. This value is supported only for **CyberSource through VisaNet**.  Contact CyberSource Customer Support to get the value for this field.
      * @return $this
      */
     public function setProcessorId($processorId)
@@ -325,7 +331,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
 
     /**
      * Sets paymentSolution
-     * @param string $paymentSolution Type of digital payment solution that is being used for the transaction. Possible Values:   - **visacheckout**: Visa Checkout.  - **001**: Apple Pay.  - **005**: Masterpass. Required for Masterpass transactions on OmniPay Direct.  - **006**: Android Pay.  - **008**: Samsung Pay.
+     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - **visacheckout**: Visa Checkout. This value is required for Visa Checkout transactions. See Visa Checkout Using the SCMP API.  - **005**: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. See \"Masterpass,\" page 153.
      * @return $this
      */
     public function setPaymentSolution($paymentSolution)
@@ -375,7 +381,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
 
     /**
      * Sets linkId
-     * @param string $linkId Value that links the current payment request to the original request. Set this value to the ID that was returned in the reply message from the original payment request.  This value is used for:   - Partial authorizations.  - Split shipments.
+     * @param string $linkId Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:   - Partial authorizations: See \"Partial Authorizations,\" page 88.  - Split shipments: See \"Split Shipments,\" page 210.
      * @return $this
      */
     public function setLinkId($linkId)
@@ -400,7 +406,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
 
     /**
      * Sets reportGroup
-     * @param string $reportGroup Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Litle**.
+     * @param string $reportGroup Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  See \"Report Groups,\" page 234.
      * @return $this
      */
     public function setReportGroup($reportGroup)
@@ -425,7 +431,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
 
     /**
      * Sets visaCheckoutId
-     * @param string $visaCheckoutId Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.
+     * @param string $visaCheckoutId Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For more details, see Visa Checkout Using the SCMP API.
      * @return $this
      */
     public function setVisaCheckoutId($visaCheckoutId)
@@ -481,6 +487,27 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
     public function setRecurringOptions($recurringOptions)
     {
         $this->container['recurringOptions'] = $recurringOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets bankTransferOptions
+     * @return \CyberSource\Model\Ptsv2creditsProcessingInformationBankTransferOptions
+     */
+    public function getBankTransferOptions()
+    {
+        return $this->container['bankTransferOptions'];
+    }
+
+    /**
+     * Sets bankTransferOptions
+     * @param \CyberSource\Model\Ptsv2creditsProcessingInformationBankTransferOptions $bankTransferOptions
+     * @return $this
+     */
+    public function setBankTransferOptions($bankTransferOptions)
+    {
+        $this->container['bankTransferOptions'] = $bankTransferOptions;
 
         return $this;
     }

@@ -188,10 +188,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
             $invalid_properties[] = "invalid value for 'suffix', the character length must be smaller than or equal to 4.";
         }
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['assuranceLevel']) && (strlen($this->container['assuranceLevel']) > 2)) {
             $invalid_properties[] = "invalid value for 'assuranceLevel', the character length must be smaller than or equal to 2.";
         }
@@ -224,9 +220,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
             return false;
         }
         if (strlen($this->container['suffix']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['type']) > 3) {
             return false;
         }
         if (strlen($this->container['assuranceLevel']) > 2) {
@@ -311,10 +304,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 3.');
-        }
-
         $this->container['type'] = $type;
 
         return $this;
@@ -356,7 +345,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the payment network token expires. `Format: MM`. Possible values: 01 through 12.
+     * @param string $expirationMonth Two-digit month in which the payment network token expires. `Format: MM`. Possible values: 01 through 12.  **Barclays and Streamline**\\ For Maestro (UK Domestic) and Maestro (International) cards on Barclays and Streamline, this must be a valid value (01 through 12) but is not required to be a valid expiration date. In other words, an expiration date that is in the past does not cause CyberSource to reject your request. However, an invalid expiration date might cause the issuer to reject your request.  **Encoded Account Numbers**\\ For encoded account numbers (_type_=039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
@@ -381,7 +370,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
 
     /**
      * Sets expirationYear
-     * @param string $expirationYear Four-digit year in which the payment network token expires. `Format: YYYY`.
+     * @param string $expirationYear Four-digit year in which the payment network token expires. `Format: YYYY`.  **Barclays and Streamline**\\ For Maestro (UK Domestic) and Maestro (International) cards on Barclays and Streamline, this must be a valid value (1900 through 3000) but is not required to be a valid expiration date. In other words, an expiration date that is in the past does not cause CyberSource to reject your request. However, an invalid expiration date might cause the issuer to reject your request.  **FDC Nashville Global and FDMS South**\\ You can send in 2 digits or 4 digits. If you send in 2 digits, they must be the last 2 digits of the year.  **Encoded Account Numbers**\\ For encoded account numbers (card_type=039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setExpirationYear($expirationYear)

@@ -54,6 +54,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'authIndicator' => 'string',
         'approvalCode' => 'string',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
@@ -67,9 +68,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationCardVerification',
         'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice',
         'electronicVerificationResults' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults',
+        'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
         'customer' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationCustomer',
         'consumerAuthenticationResponse' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResponse',
-        'issuer' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationIssuer',
         'systemTraceAuditNumber' => 'string',
         'paymentAccountReferenceNumber' => 'string',
         'transactionIntegrityCode' => 'string',
@@ -78,7 +79,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardServiceCode' => 'string',
         'masterCardServiceReplyCode' => 'string',
         'masterCardAuthenticationType' => 'string',
-        'name' => 'string'
+        'name' => 'string',
+        'routing' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting',
+        'merchantNumber' => 'string'
     ];
 
     /**
@@ -86,6 +89,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'authIndicator' => null,
         'approvalCode' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
@@ -99,9 +103,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => null,
         'merchantAdvice' => null,
         'electronicVerificationResults' => null,
+        'achVerification' => null,
         'customer' => null,
         'consumerAuthenticationResponse' => null,
-        'issuer' => null,
         'systemTraceAuditNumber' => null,
         'paymentAccountReferenceNumber' => null,
         'transactionIntegrityCode' => null,
@@ -110,7 +114,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardServiceCode' => null,
         'masterCardServiceReplyCode' => null,
         'masterCardAuthenticationType' => null,
-        'name' => null
+        'name' => null,
+        'routing' => null,
+        'merchantNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -128,6 +134,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'authIndicator' => 'authIndicator',
         'approvalCode' => 'approvalCode',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
@@ -141,9 +148,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => 'cardVerification',
         'merchantAdvice' => 'merchantAdvice',
         'electronicVerificationResults' => 'electronicVerificationResults',
+        'achVerification' => 'achVerification',
         'customer' => 'customer',
         'consumerAuthenticationResponse' => 'consumerAuthenticationResponse',
-        'issuer' => 'issuer',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
         'paymentAccountReferenceNumber' => 'paymentAccountReferenceNumber',
         'transactionIntegrityCode' => 'transactionIntegrityCode',
@@ -152,7 +159,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardServiceCode' => 'masterCardServiceCode',
         'masterCardServiceReplyCode' => 'masterCardServiceReplyCode',
         'masterCardAuthenticationType' => 'masterCardAuthenticationType',
-        'name' => 'name'
+        'name' => 'name',
+        'routing' => 'routing',
+        'merchantNumber' => 'merchantNumber'
     ];
 
 
@@ -161,6 +170,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'authIndicator' => 'setAuthIndicator',
         'approvalCode' => 'setApprovalCode',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
@@ -174,9 +184,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => 'setCardVerification',
         'merchantAdvice' => 'setMerchantAdvice',
         'electronicVerificationResults' => 'setElectronicVerificationResults',
+        'achVerification' => 'setAchVerification',
         'customer' => 'setCustomer',
         'consumerAuthenticationResponse' => 'setConsumerAuthenticationResponse',
-        'issuer' => 'setIssuer',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
         'paymentAccountReferenceNumber' => 'setPaymentAccountReferenceNumber',
         'transactionIntegrityCode' => 'setTransactionIntegrityCode',
@@ -185,7 +195,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardServiceCode' => 'setMasterCardServiceCode',
         'masterCardServiceReplyCode' => 'setMasterCardServiceReplyCode',
         'masterCardAuthenticationType' => 'setMasterCardAuthenticationType',
-        'name' => 'setName'
+        'name' => 'setName',
+        'routing' => 'setRouting',
+        'merchantNumber' => 'setMerchantNumber'
     ];
 
 
@@ -194,6 +206,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'authIndicator' => 'getAuthIndicator',
         'approvalCode' => 'getApprovalCode',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
@@ -207,9 +220,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => 'getCardVerification',
         'merchantAdvice' => 'getMerchantAdvice',
         'electronicVerificationResults' => 'getElectronicVerificationResults',
+        'achVerification' => 'getAchVerification',
         'customer' => 'getCustomer',
         'consumerAuthenticationResponse' => 'getConsumerAuthenticationResponse',
-        'issuer' => 'getIssuer',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
         'paymentAccountReferenceNumber' => 'getPaymentAccountReferenceNumber',
         'transactionIntegrityCode' => 'getTransactionIntegrityCode',
@@ -218,7 +231,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardServiceCode' => 'getMasterCardServiceCode',
         'masterCardServiceReplyCode' => 'getMasterCardServiceReplyCode',
         'masterCardAuthenticationType' => 'getMasterCardAuthenticationType',
-        'name' => 'getName'
+        'name' => 'getName',
+        'routing' => 'getRouting',
+        'merchantNumber' => 'getMerchantNumber'
     ];
 
     public static function attributeMap()
@@ -252,6 +267,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
@@ -265,9 +281,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
         $this->container['electronicVerificationResults'] = isset($data['electronicVerificationResults']) ? $data['electronicVerificationResults'] : null;
+        $this->container['achVerification'] = isset($data['achVerification']) ? $data['achVerification'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['consumerAuthenticationResponse'] = isset($data['consumerAuthenticationResponse']) ? $data['consumerAuthenticationResponse'] : null;
-        $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['paymentAccountReferenceNumber'] = isset($data['paymentAccountReferenceNumber']) ? $data['paymentAccountReferenceNumber'] : null;
         $this->container['transactionIntegrityCode'] = isset($data['transactionIntegrityCode']) ? $data['transactionIntegrityCode'] : null;
@@ -277,6 +293,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['masterCardServiceReplyCode'] = isset($data['masterCardServiceReplyCode']) ? $data['masterCardServiceReplyCode'] : null;
         $this->container['masterCardAuthenticationType'] = isset($data['masterCardAuthenticationType']) ? $data['masterCardAuthenticationType'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
+        $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
     }
 
     /**
@@ -287,6 +305,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['authIndicator']) && (strlen($this->container['authIndicator']) > 1)) {
+            $invalid_properties[] = "invalid value for 'authIndicator', the character length must be smaller than or equal to 1.";
+        }
 
         if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 50)) {
             $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 50.";
@@ -348,6 +370,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
         }
 
+        if (!is_null($this->container['merchantNumber']) && (strlen($this->container['merchantNumber']) > 15)) {
+            $invalid_properties[] = "invalid value for 'merchantNumber', the character length must be smaller than or equal to 15.";
+        }
+
         return $invalid_properties;
     }
 
@@ -360,6 +386,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['authIndicator']) > 1) {
+            return false;
+        }
         if (strlen($this->container['transactionId']) > 50) {
             return false;
         }
@@ -405,9 +434,37 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         if (strlen($this->container['name']) > 30) {
             return false;
         }
+        if (strlen($this->container['merchantNumber']) > 15) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets authIndicator
+     * @return string
+     */
+    public function getAuthIndicator()
+    {
+        return $this->container['authIndicator'];
+    }
+
+    /**
+     * Sets authIndicator
+     * @param string $authIndicator Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  For processor-specific information, see the auth_indicator field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @return $this
+     */
+    public function setAuthIndicator($authIndicator)
+    {
+        if (!is_null($authIndicator) && (strlen($authIndicator) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $authIndicator when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['authIndicator'] = $authIndicator;
+
+        return $this;
+    }
 
     /**
      * Gets approvalCode
@@ -441,7 +498,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets transactionId
-     * @param string $transactionId Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value.
+     * @param string $transactionId Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value.
      * @return $this
      */
     public function setTransactionId($transactionId)
@@ -466,7 +523,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets networkTransactionId
-     * @param string $networkTransactionId Description of this field is not available.
+     * @param string $networkTransactionId The description for this field is not available.
      * @return $this
      */
     public function setNetworkTransactionId($networkTransactionId)
@@ -487,7 +544,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets providerTransactionId
-     * @param string $providerTransactionId Description of this field is not available.
+     * @param string $providerTransactionId The description for this field is not available.
      * @return $this
      */
     public function setProviderTransactionId($providerTransactionId)
@@ -707,6 +764,27 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     }
 
     /**
+     * Gets achVerification
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification
+     */
+    public function getAchVerification()
+    {
+        return $this->container['achVerification'];
+    }
+
+    /**
+     * Sets achVerification
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification $achVerification
+     * @return $this
+     */
+    public function setAchVerification($achVerification)
+    {
+        $this->container['achVerification'] = $achVerification;
+
+        return $this;
+    }
+
+    /**
      * Gets customer
      * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationCustomer
      */
@@ -744,27 +822,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setConsumerAuthenticationResponse($consumerAuthenticationResponse)
     {
         $this->container['consumerAuthenticationResponse'] = $consumerAuthenticationResponse;
-
-        return $this;
-    }
-
-    /**
-     * Gets issuer
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationIssuer
-     */
-    public function getIssuer()
-    {
-        return $this->container['issuer'];
-    }
-
-    /**
-     * Sets issuer
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationIssuer $issuer
-     * @return $this
-     */
-    public function setIssuer($issuer)
-    {
-        $this->container['issuer'] = $issuer;
 
         return $this;
     }
@@ -991,6 +1048,52 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets routing
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting
+     */
+    public function getRouting()
+    {
+        return $this->container['routing'];
+    }
+
+    /**
+     * Sets routing
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting $routing
+     * @return $this
+     */
+    public function setRouting($routing)
+    {
+        $this->container['routing'] = $routing;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantNumber
+     * @return string
+     */
+    public function getMerchantNumber()
+    {
+        return $this->container['merchantNumber'];
+    }
+
+    /**
+     * Sets merchantNumber
+     * @param string $merchantNumber Identifier that was assigned to you by your acquirer.  This value must be printed on the receipt.  This field is supported only on **American Express Direct**, **FDC Nashville Global**, and **SIX**.
+     * @return $this
+     */
+    public function setMerchantNumber($merchantNumber)
+    {
+        if (!is_null($merchantNumber) && (strlen($merchantNumber) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $merchantNumber when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 15.');
+        }
+
+        $this->container['merchantNumber'] = $merchantNumber;
 
         return $this;
     }
