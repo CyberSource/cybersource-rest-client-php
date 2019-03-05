@@ -224,7 +224,7 @@ class PtsV2PaymentsPost201ResponseErrorInformationDetails implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason Possible reasons for the error.
+     * @param string $reason Possible reasons for the error.  Possible values:  - MISSING_FIELD  - INVALID_DATA
      * @return $this
      */
     public function setReason($reason)

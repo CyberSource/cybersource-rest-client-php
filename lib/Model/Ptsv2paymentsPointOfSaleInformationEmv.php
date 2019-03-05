@@ -55,7 +55,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'tags' => 'string',
-        'cardholderVerificationMethod' => 'float',
+        'cardholderVerificationMethodUsed' => 'float',
         'cardSequenceNumber' => 'string',
         'fallback' => 'bool',
         'fallbackCondition' => 'float'
@@ -67,7 +67,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'tags' => null,
-        'cardholderVerificationMethod' => null,
+        'cardholderVerificationMethodUsed' => null,
         'cardSequenceNumber' => null,
         'fallback' => null,
         'fallbackCondition' => null
@@ -89,7 +89,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
      */
     protected static $attributeMap = [
         'tags' => 'tags',
-        'cardholderVerificationMethod' => 'cardholderVerificationMethod',
+        'cardholderVerificationMethodUsed' => 'cardholderVerificationMethodUsed',
         'cardSequenceNumber' => 'cardSequenceNumber',
         'fallback' => 'fallback',
         'fallbackCondition' => 'fallbackCondition'
@@ -102,7 +102,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
      */
     protected static $setters = [
         'tags' => 'setTags',
-        'cardholderVerificationMethod' => 'setCardholderVerificationMethod',
+        'cardholderVerificationMethodUsed' => 'setCardholderVerificationMethodUsed',
         'cardSequenceNumber' => 'setCardSequenceNumber',
         'fallback' => 'setFallback',
         'fallbackCondition' => 'setFallbackCondition'
@@ -115,7 +115,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
      */
     protected static $getters = [
         'tags' => 'getTags',
-        'cardholderVerificationMethod' => 'getCardholderVerificationMethod',
+        'cardholderVerificationMethodUsed' => 'getCardholderVerificationMethodUsed',
         'cardSequenceNumber' => 'getCardSequenceNumber',
         'fallback' => 'getFallback',
         'fallbackCondition' => 'getFallbackCondition'
@@ -153,7 +153,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
-        $this->container['cardholderVerificationMethod'] = isset($data['cardholderVerificationMethod']) ? $data['cardholderVerificationMethod'] : null;
+        $this->container['cardholderVerificationMethodUsed'] = isset($data['cardholderVerificationMethodUsed']) ? $data['cardholderVerificationMethodUsed'] : null;
         $this->container['cardSequenceNumber'] = isset($data['cardSequenceNumber']) ? $data['cardSequenceNumber'] : null;
         $this->container['fallback'] = isset($data['fallback']) ? $data['fallback'] : false;
         $this->container['fallbackCondition'] = isset($data['fallbackCondition']) ? $data['fallbackCondition'] : null;
@@ -209,7 +209,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets tags
-     * @param string $tags EMV data that is transmitted from the chip card to the issuer, and from the issuer to the chip card. The EMV data is in the tag-length-value format and includes chip card tags, terminal tags, and transaction detail tags.  `Important` The following tags contain sensitive information and **must not** be included in this field:   - **56**: Track 1 equivalent data  - **57**: Track 2 equivalent data  - **5A**: Application PAN  - **5F20**: Cardholder name  - **5F24**: Application expiration date (This sensitivity has been relaxed for cmcic, amexdirect, fdiglobal, opdfde, six)  - **99**: Transaction PIN  - **9F0B**: Cardholder name (extended)  - **9F1F**: Track 1 discretionary data  - **9F20**: Track 2 discretionary data  For captures, this field is required for contact EMV transactions. Otherwise, it is optional.  For credits, this field is required for contact EMV stand-alone credits and contactless EMV stand-alone credits. Otherwise, it is optional.  `Important` For contact EMV captures, contact EMV stand-alone credits, and contactless EMV stand-alone credits, you must include the following tags in this field. For all other types of EMV transactions, the following tags are optional.   - **95**: Terminal verification results  - **9F10**: Issuer application data  - **9F26**: Application cryptogram
+     * @param string $tags EMV data that is transmitted from the chip card to the issuer, and from the issuer to the chip card. The EMV data is in the tag-length-value format and includes chip card tags, terminal tags, and transaction detail tags.  See \"Europay, MasterCard, Visa (EMV),\" page 10. For information about the individual tags, see the “Application Specification” section in the EMV 4.3 Specifications: http://emvco.com  **Important** The following tags contain sensitive information and **must not** be included in this field:   - **56**: Track 1 equivalent data  - **57**: Track 2 equivalent data  - **5A**: Application PAN  - **5F20**: Cardholder name  - **5F24**: Application expiration date (This sensitivity has been relaxed for cmcic, amexdirect, fdiglobal, opdfde, and six)  - **99**: Transaction PIN  - **9F0B**: Cardholder name (extended)  - **9F1F**: Track 1 discretionary data  - **9F20**: Track 2 discretionary data  For captures, this field is required for contact EMV transactions. Otherwise, it is optional.  For credits, this field is required for contact EMV stand-alone credits and contactless EMV stand-alone credits. Otherwise, it is optional.  **Important** For contact EMV captures, contact EMV stand-alone credits, and contactless EMV stand-alone credits, you must include the following tags in this field. For all other types of EMV transactions, the following tags are optional.   - **95**: Terminal verification results  - **9F10**: Issuer application data  - **9F26**: Application cryptogram
      * @return $this
      */
     public function setTags($tags)
@@ -224,22 +224,22 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
     }
 
     /**
-     * Gets cardholderVerificationMethod
+     * Gets cardholderVerificationMethodUsed
      * @return float
      */
-    public function getCardholderVerificationMethod()
+    public function getCardholderVerificationMethodUsed()
     {
-        return $this->container['cardholderVerificationMethod'];
+        return $this->container['cardholderVerificationMethodUsed'];
     }
 
     /**
-     * Sets cardholderVerificationMethod
-     * @param float $cardholderVerificationMethod Method that was used to verify the cardholder's identity. Possible values:   - **0**: No verification  - **1**: Signature  This field is supported only on **American Express Direct**.
+     * Sets cardholderVerificationMethodUsed
+     * @param float $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity.  Possible values:  - **0**: No verification  - **1**: Signature  This field is supported only on **American Express Direct**.
      * @return $this
      */
-    public function setCardholderVerificationMethod($cardholderVerificationMethod)
+    public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)
     {
-        $this->container['cardholderVerificationMethod'] = $cardholderVerificationMethod;
+        $this->container['cardholderVerificationMethodUsed'] = $cardholderVerificationMethodUsed;
 
         return $this;
     }
@@ -255,7 +255,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets cardSequenceNumber
-     * @param string $cardSequenceNumber Number assigned to a specific card when two or more cards are associated with the same primary account number. This value enables issuers to distinguish among multiple cards that are linked to the same account. This value can also act as a tracking tool when reissuing cards. When this value is available, it is provided by the chip reader. When the chip reader does not provide this value, do not include this field in your request.
+     * @param string $cardSequenceNumber Number assigned to a specific card when two or more cards are associated with the same primary account number. This value enables issuers to distinguish among multiple cards that are linked to the same account. This value can also act as a tracking tool when reissuing cards. When this value is available, it is provided by the chip reader. When the chip reader does not provide this value, do not include this field in your request.  See \"Europay, MasterCard, Visa (EMV),\" page 10.
      * @return $this
      */
     public function setCardSequenceNumber($cardSequenceNumber)
@@ -280,7 +280,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets fallback
-     * @param bool $fallback Indicates whether a fallback method was used to enter credit card information into the POS terminal. When a technical problem prevents a successful exchange of information between a chip card and a chip-capable terminal:   1. Swipe the card or key the credit card information into the POS terminal.  2. Use the pos_entry_mode field to indicate whether the information was swiped or keyed.  This field is supported only on **Chase Paymentech Solutions** and **GPN**.
+     * @param bool $fallback Indicates whether a fallback method was used to enter credit card information into the POS terminal. When a technical problem prevents a successful exchange of information between a chip card and a chip-capable terminal:   1. Swipe the card or key the credit card information into the POS terminal.  2. Use the pointOfSaleInformation.entryMode field to indicate whether the information was swiped or keyed.  Possible values:  - **true**  - **false** (default)  This field is supported only on **Chase Paymentech Solutions** and **GPN**.
      * @return $this
      */
     public function setFallback($fallback)
@@ -301,7 +301,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets fallbackCondition
-     * @param float $fallbackCondition Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - **1**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - **2**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN**.
+     * @param float $fallbackCondition Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - **1**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - **2**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN**.  **NOTE**: Merchants must include this field in a request whenever a transaction must fall back to swiped mode.
      * @return $this
      */
     public function setFallbackCondition($fallbackCondition)

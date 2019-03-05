@@ -92,6 +92,13 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
+    {
+    }
+
+    /**
      * Test attribute "paymentInformation"
      */
     public function testPropertyPaymentInformation()
@@ -158,6 +165,13 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "merchantDefinedInformation"
      */
     public function testPropertyMerchantDefinedInformation()
+    {
+    }
+
+    /**
+     * Test attribute "installmentInformation"
+     */
+    public function testPropertyInstallmentInformation()
     {
     }
 }

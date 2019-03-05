@@ -228,6 +228,14 @@ class Tmsv1paymentinstrumentsInstrumentIdentifier implements ArrayAccess
             );
         }
 
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 32)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 16)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 16.";
+        }
+
         return $invalid_properties;
     }
 
@@ -246,6 +254,12 @@ class Tmsv1paymentinstrumentsInstrumentIdentifier implements ArrayAccess
         }
         $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
+            return false;
+        }
+        if (strlen($this->container['id']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['id']) < 16) {
             return false;
         }
         return true;
@@ -349,6 +363,13 @@ class Tmsv1paymentinstrumentsInstrumentIdentifier implements ArrayAccess
      */
     public function setId($id)
     {
+        if (!is_null($id) && (strlen($id) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling Tmsv1paymentinstrumentsInstrumentIdentifier., must be smaller than or equal to 32.');
+        }
+        if (!is_null($id) && (strlen($id) < 16)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling Tmsv1paymentinstrumentsInstrumentIdentifier., must be bigger than or equal to 16.');
+        }
+
         $this->container['id'] = $id;
 
         return $this;

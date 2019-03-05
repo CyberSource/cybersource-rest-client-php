@@ -264,7 +264,7 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - SERVER_ERROR
      * @return $this
      */
     public function setStatus($status)
@@ -294,7 +294,7 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.
+     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG  - PROCESSOR_TIMEOUT
      * @return $this
      */
     public function setReason($reason)

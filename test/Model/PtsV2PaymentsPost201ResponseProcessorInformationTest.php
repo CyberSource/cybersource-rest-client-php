@@ -78,6 +78,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "authIndicator"
+     */
+    public function testPropertyAuthIndicator()
+    {
+    }
+
+    /**
      * Test attribute "approvalCode"
      */
     public function testPropertyApprovalCode()
@@ -169,6 +176,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "achVerification"
+     */
+    public function testPropertyAchVerification()
+    {
+    }
+
+    /**
      * Test attribute "customer"
      */
     public function testPropertyCustomer()
@@ -179,13 +193,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
      * Test attribute "consumerAuthenticationResponse"
      */
     public function testPropertyConsumerAuthenticationResponse()
-    {
-    }
-
-    /**
-     * Test attribute "issuer"
-     */
-    public function testPropertyIssuer()
     {
     }
 
@@ -249,6 +256,20 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
      * Test attribute "name"
      */
     public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "routing"
+     */
+    public function testPropertyRouting()
+    {
+    }
+
+    /**
+     * Test attribute "merchantNumber"
+     */
+    public function testPropertyMerchantNumber()
     {
     }
 }

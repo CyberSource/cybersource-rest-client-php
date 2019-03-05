@@ -57,6 +57,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'merchantCustomerId' => 'string',
         'dateOfBirth' => 'string',
         'vatRegistrationNumber' => 'string',
+        'companyTaxId' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]',
         'hashedPassword' => 'string'
     ];
@@ -69,6 +70,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'merchantCustomerId' => null,
         'dateOfBirth' => null,
         'vatRegistrationNumber' => null,
+        'companyTaxId' => null,
         'personalIdentification' => null,
         'hashedPassword' => null
     ];
@@ -91,6 +93,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'merchantCustomerId' => 'merchantCustomerId',
         'dateOfBirth' => 'dateOfBirth',
         'vatRegistrationNumber' => 'vatRegistrationNumber',
+        'companyTaxId' => 'companyTaxId',
         'personalIdentification' => 'personalIdentification',
         'hashedPassword' => 'hashedPassword'
     ];
@@ -104,6 +107,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'merchantCustomerId' => 'setMerchantCustomerId',
         'dateOfBirth' => 'setDateOfBirth',
         'vatRegistrationNumber' => 'setVatRegistrationNumber',
+        'companyTaxId' => 'setCompanyTaxId',
         'personalIdentification' => 'setPersonalIdentification',
         'hashedPassword' => 'setHashedPassword'
     ];
@@ -117,6 +121,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'merchantCustomerId' => 'getMerchantCustomerId',
         'dateOfBirth' => 'getDateOfBirth',
         'vatRegistrationNumber' => 'getVatRegistrationNumber',
+        'companyTaxId' => 'getCompanyTaxId',
         'personalIdentification' => 'getPersonalIdentification',
         'hashedPassword' => 'getHashedPassword'
     ];
@@ -155,6 +160,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
+        $this->container['companyTaxId'] = isset($data['companyTaxId']) ? $data['companyTaxId'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
     }
@@ -178,6 +184,10 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
 
         if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 20)) {
             $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['companyTaxId']) && (strlen($this->container['companyTaxId']) > 9)) {
+            $invalid_properties[] = "invalid value for 'companyTaxId', the character length must be smaller than or equal to 9.";
         }
 
         if (!is_null($this->container['hashedPassword']) && (strlen($this->container['hashedPassword']) > 100)) {
@@ -205,6 +215,9 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         if (strlen($this->container['vatRegistrationNumber']) > 20) {
             return false;
         }
+        if (strlen($this->container['companyTaxId']) > 9) {
+            return false;
+        }
         if (strlen($this->container['hashedPassword']) > 100) {
             return false;
         }
@@ -223,7 +236,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
 
     /**
      * Sets merchantCustomerId
-     * @param string $merchantCustomerId Your identifier for the customer.  For processor-specific information, see the customer_account_id field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $merchantCustomerId Your identifier for the customer.  When a subscription or customer profile is being created, the maximum length for this field for most processors is 30. Otherwise, the maximum length is 100.  **Comercio Latino**\\ For recurring payments in Mexico, the value is the customer’s contract number. Note Before you request the authorization, you must inform the issuer of the customer contract numbers that will be used for recurring transactions.  **Litle**\\ For a follow-on credit with Litle, CyberSource checks the following locations, in the order given, for a customer account ID value and uses the first value it finds: 1. `customer_account_id` value in the follow-on credit request 2. Customer account ID value that was used for the capture that is being credited 3. Customer account ID value that was used for the original authorization If a customer account ID value cannot be found in any of these locations, then no value is used.  For processor-specific information, see the customer_account_id field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setMerchantCustomerId($merchantCustomerId)
@@ -248,7 +261,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
 
     /**
      * Sets dateOfBirth
-     * @param string $dateOfBirth Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
+     * @param string $dateOfBirth Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see \"Recipients,\" page 224.
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)
@@ -288,6 +301,31 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     }
 
     /**
+     * Gets companyTaxId
+     * @return string
+     */
+    public function getCompanyTaxId()
+    {
+        return $this->container['companyTaxId'];
+    }
+
+    /**
+     * Sets companyTaxId
+     * @param string $companyTaxId Company’s tax identifier. This is only used for eCheck service.  ** TeleCheck ** Contact your TeleCheck representative to find out whether this field is required or optional.  ** All Other Processors ** Not used
+     * @return $this
+     */
+    public function setCompanyTaxId($companyTaxId)
+    {
+        if (!is_null($companyTaxId) && (strlen($companyTaxId) > 9)) {
+            throw new \InvalidArgumentException('invalid length for $companyTaxId when calling Ptsv2paymentsBuyerInformation., must be smaller than or equal to 9.');
+        }
+
+        $this->container['companyTaxId'] = $companyTaxId;
+
+        return $this;
+    }
+
+    /**
      * Gets personalIdentification
      * @return \CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]
      */
@@ -319,7 +357,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
 
     /**
      * Sets hashedPassword
-     * @param string $hashedPassword TODO
+     * @param string $hashedPassword The description for this field is not available.
      * @return $this
      */
     public function setHashedPassword($hashedPassword)

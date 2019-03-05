@@ -4,16 +4,16 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getResourceInfoByReportDefinition**](ReportDefinitionsApi.md#getResourceInfoByReportDefinition) | **GET** /reporting/v3/report-definitions/{reportDefinitionName} | Get a single report definition information
+[**getResourceInfoByReportDefinition**](ReportDefinitionsApi.md#getResourceInfoByReportDefinition) | **GET** /reporting/v3/report-definitions/{reportDefinitionName} | Get report definition
 [**getResourceV2Info**](ReportDefinitionsApi.md#getResourceV2Info) | **GET** /reporting/v3/report-definitions | Get reporting resource information
 
 
 # **getResourceInfoByReportDefinition**
 > \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response getResourceInfoByReportDefinition($reportDefinitionName, $organizationId)
 
-Get a single report definition information
+Get report definition
 
-The report definition name must be used as path parameter exclusive of each other
+View the attributes of an individual report type. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation/)
 
 ### Example
 ```php
@@ -60,7 +60,7 @@ No authorization required
 
 Get reporting resource information
 
-
+View a list of supported reports and their attributes before subscribing to them.
 
 ### Example
 ```php

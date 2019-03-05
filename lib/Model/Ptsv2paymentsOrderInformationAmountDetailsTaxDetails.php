@@ -59,7 +59,8 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         'rate' => 'string',
         'code' => 'string',
         'taxId' => 'string',
-        'applied' => 'bool'
+        'applied' => 'bool',
+        'exemptionCode' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         'rate' => null,
         'code' => null,
         'taxId' => null,
-        'applied' => null
+        'applied' => null,
+        'exemptionCode' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         'rate' => 'rate',
         'code' => 'code',
         'taxId' => 'taxId',
-        'applied' => 'applied'
+        'applied' => 'applied',
+        'exemptionCode' => 'exemptionCode'
     ];
 
 
@@ -109,7 +112,8 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         'rate' => 'setRate',
         'code' => 'setCode',
         'taxId' => 'setTaxId',
-        'applied' => 'setApplied'
+        'applied' => 'setApplied',
+        'exemptionCode' => 'setExemptionCode'
     ];
 
 
@@ -123,7 +127,8 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         'rate' => 'getRate',
         'code' => 'getCode',
         'taxId' => 'getTaxId',
-        'applied' => 'getApplied'
+        'applied' => 'getApplied',
+        'exemptionCode' => 'getExemptionCode'
     ];
 
     public static function attributeMap()
@@ -181,6 +186,7 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['taxId'] = isset($data['taxId']) ? $data['taxId'] : null;
         $this->container['applied'] = isset($data['applied']) ? $data['applied'] : null;
+        $this->container['exemptionCode'] = isset($data['exemptionCode']) ? $data['exemptionCode'] : null;
     }
 
     /**
@@ -216,6 +222,10 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
             $invalid_properties[] = "invalid value for 'taxId', the character length must be smaller than or equal to 15.";
         }
 
+        if (!is_null($this->container['exemptionCode']) && (strlen($this->container['exemptionCode']) > 1)) {
+            $invalid_properties[] = "invalid value for 'exemptionCode', the character length must be smaller than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -244,6 +254,9 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
         if (strlen($this->container['taxId']) > 15) {
             return false;
         }
+        if (strlen($this->container['exemptionCode']) > 1) {
+            return false;
+        }
         return true;
     }
 
@@ -259,7 +272,7 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
 
     /**
      * Sets type
-     * @param string $type This is used to determine what type of tax related data should be inclued under _taxDetails_ object.
+     * @param string $type This is used to determine what type of tax related data should be inclued under _taxDetails_ object.  Possible values:  - alternate  - local  - national  - vat
      * @return $this
      */
     public function setType($type)
@@ -289,7 +302,7 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
 
     /**
      * Sets amount
-     * @param string $amount Please see below table for related decription based on above _type_ field.  | type      | amount description | |-----------|--------------------| | alternate | Total amount of alternate tax for the order. | | local     | Sales tax for the order. | | national  | National tax for the order. | | vat       | Total amount of VAT or other tax included in the order. |
+     * @param string $amount Please see below table for related decription based on above _type_ field.  | type      | type description | |-----------|--------------------| | alternate | Total amount of alternate tax for the order. | | local     | Sales tax for the order. | | national  | National tax for the order. | | vat       | Total amount of VAT or other tax included in the order. | | other     | Other tax. |
      * @return $this
      */
     public function setAmount($amount)
@@ -339,7 +352,7 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
 
     /**
      * Sets code
-     * @param string $code Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item.
+     * @param string $code Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax (VAT)  - 0011: goods and services tax (GST)  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - 0023: city tax  - 0024: county or parish sales tax  - 0025: county tax  - 0026: environment tax  - 0027: state and local sales tax (combined)  - Blank: Tax not supported on line item.
      * @return $this
      */
     public function setCode($code)
@@ -395,6 +408,31 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
     public function setApplied($applied)
     {
         $this->container['applied'] = $applied;
+
+        return $this;
+    }
+
+    /**
+     * Gets exemptionCode
+     * @return string
+     */
+    public function getExemptionCode()
+    {
+        return $this->container['exemptionCode'];
+    }
+
+    /**
+     * Sets exemptionCode
+     * @param string $exemptionCode Code for exemption from sales and use tax. This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  For possible values, see Exemption Status Values. See Numbered Elements.  Important For information about using this field, see Item-Level Tax Fields.
+     * @return $this
+     */
+    public function setExemptionCode($exemptionCode)
+    {
+        if (!is_null($exemptionCode) && (strlen($exemptionCode) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $exemptionCode when calling Ptsv2paymentsOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 1.');
+        }
+
+        $this->container['exemptionCode'] = $exemptionCode;
 
         return $this;
     }

@@ -123,7 +123,7 @@ class SearchTransactionsApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['*/*']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -153,7 +153,7 @@ class SearchTransactionsApi
                 '/tss/v2/searches'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
@@ -165,7 +165,7 @@ class SearchTransactionsApi
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PayoutsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -210,7 +210,7 @@ class SearchTransactionsApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['*/*']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -243,7 +243,7 @@ class SearchTransactionsApi
                 '/tss/v2/searches/{id}'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:

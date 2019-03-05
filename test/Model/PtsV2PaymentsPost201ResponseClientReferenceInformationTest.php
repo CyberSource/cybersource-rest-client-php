@@ -83,4 +83,18 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformationTest extends \PHPUni
     public function testPropertyCode()
     {
     }
+
+    /**
+     * Test attribute "submitLocalDateTime"
+     */
+    public function testPropertySubmitLocalDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "ownerMerchantId"
+     */
+    public function testPropertyOwnerMerchantId()
+    {
+    }
 }

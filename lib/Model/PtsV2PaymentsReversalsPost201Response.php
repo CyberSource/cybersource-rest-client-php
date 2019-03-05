@@ -62,6 +62,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'reversalAmountDetails' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseProcessorInformation',
+        'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseIssuerInformation',
         'authorizationInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation'
     ];
@@ -79,6 +80,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         'clientReferenceInformation' => null,
         'reversalAmountDetails' => null,
         'processorInformation' => null,
+        'issuerInformation' => null,
         'authorizationInformation' => null,
         'pointOfSaleInformation' => null
     ];
@@ -106,6 +108,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'reversalAmountDetails' => 'reversalAmountDetails',
         'processorInformation' => 'processorInformation',
+        'issuerInformation' => 'issuerInformation',
         'authorizationInformation' => 'authorizationInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation'
     ];
@@ -124,6 +127,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'reversalAmountDetails' => 'setReversalAmountDetails',
         'processorInformation' => 'setProcessorInformation',
+        'issuerInformation' => 'setIssuerInformation',
         'authorizationInformation' => 'setAuthorizationInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation'
     ];
@@ -142,6 +146,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'reversalAmountDetails' => 'getReversalAmountDetails',
         'processorInformation' => 'getProcessorInformation',
+        'issuerInformation' => 'getIssuerInformation',
         'authorizationInformation' => 'getAuthorizationInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation'
     ];
@@ -197,6 +202,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['reversalAmountDetails'] = isset($data['reversalAmountDetails']) ? $data['reversalAmountDetails'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['authorizationInformation'] = isset($data['authorizationInformation']) ? $data['authorizationInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
     }
@@ -330,7 +336,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - REVERSED
      * @return $this
      */
     public function setStatus($status)
@@ -433,6 +439,27 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
     public function setProcessorInformation($processorInformation)
     {
         $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseIssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseIssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
 
         return $this;
     }

@@ -83,4 +83,18 @@ class Ptsv2paymentsidrefundsPaymentInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyCard()
     {
     }
+
+    /**
+     * Test attribute "bank"
+     */
+    public function testPropertyBank()
+    {
+    }
+
+    /**
+     * Test attribute "customer"
+     */
+    public function testPropertyCustomer()
+    {
+    }
 }

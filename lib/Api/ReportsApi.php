@@ -92,13 +92,14 @@ class ReportsApi
      *
      * Create Adhoc Report
      *
-     * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return void
      */
-    public function createReport($requestBody)
+    public function createReport($requestBody, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->createReportWithHttpInfo($requestBody);
+        list($response, $statusCode, $httpHeader) = $this->createReportWithHttpInfo($requestBody, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -107,16 +108,27 @@ class ReportsApi
      *
      * Create Adhoc Report
      *
-     * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createReportWithHttpInfo($requestBody)
+    public function createReportWithHttpInfo($requestBody, $organizationId = null)
     {
         // verify the required parameter 'requestBody' is set
         if ($requestBody === null) {
             throw new \InvalidArgumentException('Missing the required parameter $requestBody when calling createReport');
         }
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportsApi.createReport, must be smaller than or equal to 32.');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportsApi.createReport, must be bigger than or equal to 1.');
+        }
+        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportsApi.createReport, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
         // parse inputs
         $resourcePath = "/reporting/v3/reports";
         $httpBody = '';
@@ -129,6 +141,10 @@ class ReportsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
+        // query params
+        if ($organizationId !== null) {
+            $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
         // body params
         $_tempBody = null;
         if (isset($requestBody)) {
@@ -157,7 +173,7 @@ class ReportsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -259,7 +275,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -275,7 +291,7 @@ class ReportsApi
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
-     * @param string $timeQueryType Specify time you woud like to search (required)
+     * @param string $timeQueryType Specify time you would like to search (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $reportMimeType Valid Report Format (optional)
      * @param string $reportFrequency Valid Report Frequency (optional)
@@ -298,7 +314,7 @@ class ReportsApi
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
-     * @param string $timeQueryType Specify time you woud like to search (required)
+     * @param string $timeQueryType Specify time you would like to search (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $reportMimeType Valid Report Format (optional)
      * @param string $reportFrequency Valid Report Frequency (optional)
@@ -399,7 +415,7 @@ class ReportsApi
                 '/reporting/v3/reports'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3ReportsGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -407,7 +423,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

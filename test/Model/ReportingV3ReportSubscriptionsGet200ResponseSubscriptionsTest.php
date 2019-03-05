@@ -162,9 +162,9 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptionsTest extends \PHP
     }
 
     /**
-     * Test attribute "selectedMerchantGroupName"
+     * Test attribute "groupId"
      */
-    public function testPropertySelectedMerchantGroupName()
+    public function testPropertyGroupId()
     {
     }
 }

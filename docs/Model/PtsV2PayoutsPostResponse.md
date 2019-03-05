@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation**](PtsV2PaymentsPost201ResponseClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\Ptsv2payoutsClientReferenceInformation**](Ptsv2payoutsClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Ptsv2payoutsOrderInformation**](Ptsv2payoutsOrderInformation.md) |  | [optional] 
 **merchantInformation** | [**\CyberSource\Model\Ptsv2payoutsMerchantInformation**](Ptsv2payoutsMerchantInformation.md) |  | [optional] 
 **recipientInformation** | [**\CyberSource\Model\Ptsv2payoutsRecipientInformation**](Ptsv2payoutsRecipientInformation.md) |  | [optional] 

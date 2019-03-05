@@ -188,4 +188,18 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetailsTest extends \PHPUnit_
     public function testPropertyTaxDetails()
     {
     }
+
+    /**
+     * Test attribute "serviceFeeAmount"
+     */
+    public function testPropertyServiceFeeAmount()
+    {
+    }
+
+    /**
+     * Test attribute "originalCurrency"
+     */
+    public function testPropertyOriginalCurrency()
+    {
+    }
 }

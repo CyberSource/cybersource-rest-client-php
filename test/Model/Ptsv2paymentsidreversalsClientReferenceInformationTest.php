@@ -90,4 +90,11 @@ class Ptsv2paymentsidreversalsClientReferenceInformationTest extends \PHPUnit_Fr
     public function testPropertyComments()
     {
     }
+
+    /**
+     * Test attribute "partner"
+     */
+    public function testPropertyPartner()
+    {
+    }
 }

@@ -168,10 +168,6 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['number']) && (strlen($this->container['number']) > 20)) {
             $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 20.";
         }
@@ -200,9 +196,6 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['type']) > 3) {
-            return false;
-        }
         if (strlen($this->container['number']) > 20) {
             return false;
         }
@@ -235,10 +228,6 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling Ptsv2payoutsPaymentInformationCard., must be smaller than or equal to 3.');
-        }
-
         $this->container['type'] = $type;
 
         return $this;

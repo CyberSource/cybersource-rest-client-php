@@ -282,7 +282,7 @@ class PtsV2PaymentsPost400Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - INVALID_REQUEST
      * @return $this
      */
     public function setStatus($status)
@@ -312,7 +312,7 @@ class PtsV2PaymentsPost400Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.
+     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_AMOUNT  - INVALID_CARD_TYPE  - INVALID_PAYMENT_ID  - DEBIT_CARD_USEAGE_EXCEEDD_LIMIT
      * @return $this
      */
     public function setReason($reason)

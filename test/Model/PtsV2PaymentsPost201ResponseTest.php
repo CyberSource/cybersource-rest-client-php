@@ -127,9 +127,23 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
+
+    /**
      * Test attribute "processorInformation"
      */
     public function testPropertyProcessorInformation()
+    {
+    }
+
+    /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
     {
     }
 
@@ -151,6 +165,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "pointOfSaleInformation"
      */
     public function testPropertyPointOfSaleInformation()
+    {
+    }
+
+    /**
+     * Test attribute "installmentInformation"
+     */
+    public function testPropertyInstallmentInformation()
     {
     }
 }

@@ -169,9 +169,16 @@ class ReportingV3ReportsGet200ResponseReportsTest extends \PHPUnit_Framework_Tes
     }
 
     /**
-     * Test attribute "selectedMerchantGroupName"
+     * Test attribute "subscriptionType"
      */
-    public function testPropertySelectedMerchantGroupName()
+    public function testPropertySubscriptionType()
+    {
+    }
+
+    /**
+     * Test attribute "groupId"
+     */
+    public function testPropertyGroupId()
     {
     }
 }

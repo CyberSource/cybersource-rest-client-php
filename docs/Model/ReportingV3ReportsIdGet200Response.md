@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **reportStartTime** | [**\DateTime**](\DateTime.md) | Report Start Time Value | [optional] 
 **reportEndTime** | [**\DateTime**](\DateTime.md) | Report End Time Value | [optional] 
 **timezone** | **string** | Time Zone Value | [optional] 
-**reportFilters** | [**map[string,string[]]**](array.md) | Report Filters | [optional] 
-**reportPreferences** | [**\CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences**](ReportingV3ReportSubscriptionsGet200ResponseReportPreferences.md) |  | [optional] 
-**selectedMerchantGroupName** | **string** | Selected Merchant Group name | [optional] 
+**reportFilters** | [**map[string,string[]]**](array.md) | List of filters to apply | [optional] 
+**reportPreferences** | [**\CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences**](ReportingV3ReportsIdGet200ResponseReportPreferences.md) |  | [optional] 
+**groupId** | **string** | Id for selected group. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

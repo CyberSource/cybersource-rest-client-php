@@ -94,7 +94,7 @@ class ProcessAPayoutApi
      *
      * @param \CyberSource\Model\PtsV2PayoutsPostResponse $octCreatePaymentRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return \CyberSource\Model\PtsV2PayoutsPost201Response
      */
     public function octCreatePayment($octCreatePaymentRequest)
     {
@@ -109,7 +109,7 @@ class ProcessAPayoutApi
      *
      * @param \CyberSource\Model\PtsV2PayoutsPostResponse $octCreatePaymentRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2PayoutsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function octCreatePaymentWithHttpInfo($octCreatePaymentRequest)
     {
@@ -149,19 +149,23 @@ class ProcessAPayoutApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                null,
+                '\CyberSource\Model\PtsV2PayoutsPost201Response',
                 '/pts/v2/payouts/'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PayoutsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PayoutsPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PayoutsPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PayoutsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -144,6 +144,14 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 19)) {
+            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 19.";
+        }
+
+        if (!is_null($this->container['number']) && (strlen($this->container['number']) < 12)) {
+            $invalid_properties[] = "invalid value for 'number', the character length must be bigger than or equal to 12.";
+        }
+
         return $invalid_properties;
     }
 
@@ -156,6 +164,12 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['number']) > 19) {
+            return false;
+        }
+        if (strlen($this->container['number']) < 12) {
+            return false;
+        }
         return true;
     }
 
@@ -176,6 +190,13 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
      */
     public function setNumber($number)
     {
+        if (!is_null($number) && (strlen($number) > 19)) {
+            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv1instrumentidentifiersCard., must be smaller than or equal to 19.');
+        }
+        if (!is_null($number) && (strlen($number) < 12)) {
+            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv1instrumentidentifiersCard., must be bigger than or equal to 12.');
+        }
+
         $this->container['number'] = $number;
 
         return $this;

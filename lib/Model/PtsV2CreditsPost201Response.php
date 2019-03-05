@@ -61,7 +61,9 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'reconciliationId' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'creditAmountDetails' => '\CyberSource\Model\PtsV2CreditsPost201ResponseCreditAmountDetails',
+        'processingInformation' => '\CyberSource\Model\PtsV2CreditsPost201ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformation',
+        'paymentInformation' => '\CyberSource\Model\PtsV2CreditsPost201ResponsePaymentInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation'
     ];
 
@@ -77,7 +79,9 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'reconciliationId' => null,
         'clientReferenceInformation' => null,
         'creditAmountDetails' => null,
+        'processingInformation' => null,
         'processorInformation' => null,
+        'paymentInformation' => null,
         'orderInformation' => null
     ];
 
@@ -103,7 +107,9 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'creditAmountDetails' => 'creditAmountDetails',
+        'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
+        'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation'
     ];
 
@@ -120,7 +126,9 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'creditAmountDetails' => 'setCreditAmountDetails',
+        'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
+        'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation'
     ];
 
@@ -137,7 +145,9 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'creditAmountDetails' => 'getCreditAmountDetails',
+        'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
+        'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation'
     ];
 
@@ -191,7 +201,9 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['creditAmountDetails'] = isset($data['creditAmountDetails']) ? $data['creditAmountDetails'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
     }
 
@@ -324,7 +336,7 @@ class PtsV2CreditsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - PENDING
      * @return $this
      */
     public function setStatus($status)
@@ -411,6 +423,27 @@ class PtsV2CreditsPost201Response implements ArrayAccess
     }
 
     /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PtsV2CreditsPost201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PtsV2CreditsPost201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets processorInformation
      * @return \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformation
      */
@@ -427,6 +460,27 @@ class PtsV2CreditsPost201Response implements ArrayAccess
     public function setProcessorInformation($processorInformation)
     {
         $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     * @return \CyberSource\Model\PtsV2CreditsPost201ResponsePaymentInformation
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     * @param \CyberSource\Model\PtsV2CreditsPost201ResponsePaymentInformation $paymentInformation
+     * @return $this
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }

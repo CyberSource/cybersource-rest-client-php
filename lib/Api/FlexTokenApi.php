@@ -148,7 +148,7 @@ class FlexTokenApi
                 '\CyberSource\Model\FlexV1TokensPost200Response',
                 '/flex/v1/tokens/'
             );
-            print_r($response);
+
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\FlexV1TokensPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {

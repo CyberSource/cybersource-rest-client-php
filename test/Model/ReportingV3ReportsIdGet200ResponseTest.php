@@ -169,9 +169,9 @@ class ReportingV3ReportsIdGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "selectedMerchantGroupName"
+     * Test attribute "groupId"
      */
-    public function testPropertySelectedMerchantGroupName()
+    public function testPropertyGroupId()
     {
     }
 }

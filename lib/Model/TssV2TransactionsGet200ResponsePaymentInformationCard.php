@@ -198,10 +198,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['suffix']) && (strlen($this->container['suffix']) > 4)) {
-            $invalid_properties[] = "invalid value for 'suffix', the character length must be smaller than or equal to 4.";
-        }
-
         if (!is_null($this->container['prefix']) && (strlen($this->container['prefix']) > 6)) {
             $invalid_properties[] = "invalid value for 'prefix', the character length must be smaller than or equal to 6.";
         }
@@ -226,10 +222,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
             $invalid_properties[] = "invalid value for 'issueNumber', the character length must be smaller than or equal to 5.";
         }
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 3)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['accountEncoderId']) && (strlen($this->container['accountEncoderId']) > 3)) {
             $invalid_properties[] = "invalid value for 'accountEncoderId', the character length must be smaller than or equal to 3.";
         }
@@ -250,9 +242,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['suffix']) > 4) {
-            return false;
-        }
         if (strlen($this->container['prefix']) > 6) {
             return false;
         }
@@ -269,9 +258,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
             return false;
         }
         if (strlen($this->container['issueNumber']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['type']) > 3) {
             return false;
         }
         if (strlen($this->container['accountEncoderId']) > 3) {
@@ -300,10 +286,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
      */
     public function setSuffix($suffix)
     {
-        if (!is_null($suffix) && (strlen($suffix) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $suffix when calling TssV2TransactionsGet200ResponsePaymentInformationCard., must be smaller than or equal to 4.');
-        }
-
         $this->container['suffix'] = $suffix;
 
         return $this;
@@ -475,10 +457,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
      */
     public function setType($type)
     {
-        // if (!is_null($type) && (strlen($type) > 3)) {
-        //     throw new \InvalidArgumentException('invalid length for $type when calling TssV2TransactionsGet200ResponsePaymentInformationCard., must be smaller than or equal to 3.');
-        // }
-
         $this->container['type'] = $type;
 
         return $this;

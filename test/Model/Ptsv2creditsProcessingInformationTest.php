@@ -139,4 +139,11 @@ class Ptsv2creditsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyRecurringOptions()
     {
     }
+
+    /**
+     * Test attribute "bankTransferOptions"
+     */
+    public function testPropertyBankTransferOptions()
+    {
+    }
 }

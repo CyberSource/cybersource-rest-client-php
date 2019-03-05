@@ -10,11 +10,11 @@ Method | HTTP request | Description
 
 
 # **createReport**
-> createReport($requestBody)
+> createReport($requestBody, $organizationId)
 
 Create Adhoc Report
 
-Create one time report
+Create a one-time report. You must specify the type of report in reportDefinitionName. For a list of values for reportDefinitionName, see the [Reporting Developer Guide](https://www.cybersource.com/developers/documentation/reporting_and_reconciliation)
 
 ### Example
 ```php
@@ -22,10 +22,11 @@ Create one time report
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportsApi();
-$requestBody = new \CyberSource\Model\RequestBody1(); // \CyberSource\Model\RequestBody1 | Report subscription request payload
+$requestBody = new \CyberSource\Model\RequestBody(); // \CyberSource\Model\RequestBody | Report subscription request payload
+$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $api_instance->createReport($requestBody);
+    $api_instance->createReport($requestBody, $organizationId);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->createReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -36,7 +37,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**\CyberSource\Model\RequestBody1**](../Model/RequestBody1.md)| Report subscription request payload |
+ **requestBody** | [**\CyberSource\Model\RequestBody**](../Model/RequestBody.md)| Report subscription request payload |
+ **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 
@@ -58,7 +60,7 @@ No authorization required
 
 Get Report based on reportId
 
-ReportId is mandatory input
+Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call.
 
 ### Example
 ```php
@@ -105,7 +107,7 @@ No authorization required
 
 Retrieve available reports
 
-Retrieve list of available reports
+Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report.
 
 ### Example
 ```php
@@ -115,7 +117,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\ReportsApi();
 $startTime = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ssXXX
 $endTime = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd'T'HH:mm:ssXXX
-$timeQueryType = "timeQueryType_example"; // string | Specify time you woud like to search
+$timeQueryType = "timeQueryType_example"; // string | Specify time you would like to search
 $organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 $reportMimeType = "reportMimeType_example"; // string | Valid Report Format
 $reportFrequency = "reportFrequency_example"; // string | Valid Report Frequency
@@ -138,7 +140,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startTime** | **\DateTime**| Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX |
  **endTime** | **\DateTime**| Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX |
- **timeQueryType** | **string**| Specify time you woud like to search |
+ **timeQueryType** | **string**| Specify time you would like to search |
  **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
  **reportMimeType** | **string**| Valid Report Format | [optional]
  **reportFrequency** | **string**| Valid Report Frequency | [optional]

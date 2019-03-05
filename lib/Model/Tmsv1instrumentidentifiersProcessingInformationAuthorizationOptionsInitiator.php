@@ -54,7 +54,7 @@ class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiat
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantInitiatedTransaction' => '\CyberSource\Model\Tmsv1InitiatorMerchantInitiatedTransaction'
+        'merchantInitiatedTransaction' => '\CyberSource\Model\Tmsv1instrumentidentifiersMerchantInitiatedTransaction'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiat
 
     /**
      * Gets merchantInitiatedTransaction
-     * @return \CyberSource\Model\Tmsv1InitiatorMerchantInitiatedTransaction
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersMerchantInitiatedTransaction
      */
     public function getMerchantInitiatedTransaction()
     {
@@ -171,7 +171,7 @@ class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiat
 
     /**
      * Sets merchantInitiatedTransaction
-     * @param \CyberSource\Model\Tmsv1InitiatorMerchantInitiatedTransaction $merchantInitiatedTransaction
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersMerchantInitiatedTransaction $merchantInitiatedTransaction
      * @return $this
      */
     public function setMerchantInitiatedTransaction($merchantInitiatedTransaction)

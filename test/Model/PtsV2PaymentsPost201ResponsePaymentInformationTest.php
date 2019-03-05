@@ -97,4 +97,11 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTest extends \PHPUnit_Framew
     public function testPropertyAccountFeatures()
     {
     }
+
+    /**
+     * Test attribute "bank"
+     */
+    public function testPropertyBank()
+    {
+    }
 }

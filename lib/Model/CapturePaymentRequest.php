@@ -63,7 +63,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation',
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]'
+        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
+        'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation'
     ];
 
     /**
@@ -80,7 +81,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantInformation' => null,
         'aggregatorInformation' => null,
         'pointOfSaleInformation' => null,
-        'merchantDefinedInformation' => null
+        'merchantDefinedInformation' => null,
+        'installmentInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +109,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantInformation' => 'merchantInformation',
         'aggregatorInformation' => 'aggregatorInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
-        'merchantDefinedInformation' => 'merchantDefinedInformation'
+        'merchantDefinedInformation' => 'merchantDefinedInformation',
+        'installmentInformation' => 'installmentInformation'
     ];
 
 
@@ -125,7 +128,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantInformation' => 'setMerchantInformation',
         'aggregatorInformation' => 'setAggregatorInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
-        'merchantDefinedInformation' => 'setMerchantDefinedInformation'
+        'merchantDefinedInformation' => 'setMerchantDefinedInformation',
+        'installmentInformation' => 'setInstallmentInformation'
     ];
 
 
@@ -143,7 +147,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantInformation' => 'getMerchantInformation',
         'aggregatorInformation' => 'getAggregatorInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
-        'merchantDefinedInformation' => 'getMerchantDefinedInformation'
+        'merchantDefinedInformation' => 'getMerchantDefinedInformation',
+        'installmentInformation' => 'getInstallmentInformation'
     ];
 
     public static function attributeMap()
@@ -187,6 +192,7 @@ class CapturePaymentRequest implements ArrayAccess
         $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
+        $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
     }
 
     /**
@@ -414,12 +420,33 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation Description of this field is not available.
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)
     {
         $this->container['merchantDefinedInformation'] = $merchantDefinedInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets installmentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation
+     */
+    public function getInstallmentInformation()
+    {
+        return $this->container['installmentInformation'];
+    }
+
+    /**
+     * Sets installmentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation $installmentInformation
+     * @return $this
+     */
+    public function setInstallmentInformation($installmentInformation)
+    {
+        $this->container['installmentInformation'] = $installmentInformation;
 
         return $this;
     }

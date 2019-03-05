@@ -197,7 +197,7 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
 
     /**
      * Sets giftWrap
-     * @param bool $giftWrap Description of this field is not available.
+     * @param bool $giftWrap The description for this field is not available.
      * @return $this
      */
     public function setGiftWrap($giftWrap)
@@ -218,7 +218,7 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
 
     /**
      * Sets shippingMethod
-     * @param string $shippingMethod Shipping method for the product. Possible values:   - lowcost: Lowest-cost service  - sameday: Courier or same-day service  - oneday: Next-day or overnight service  - twoday: Two-day service  - threeday: Three-day service  - pickup: Store pick-up  - other: Other shipping method  - none: No shipping method because product is a service or subscription
+     * @param string $shippingMethod Shipping method for the product. Possible values:   - `lowcost`: Lowest-cost service  - `sameday`: Courier or same-day service  - `oneday`: Next-day or overnight service  - `twoday`: Two-day service  - `threeday`: Three-day service  - `pickup`: Store pick-up  - `other`: Other shipping method  - `none`: No shipping method because product is a service or subscription
      * @return $this
      */
     public function setShippingMethod($shippingMethod)

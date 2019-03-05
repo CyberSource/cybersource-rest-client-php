@@ -150,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tmsV1PaymentinstrumentsTokenIdGet**
-> \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsTokenIdGet($profileId, $tokenId)
+> \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response tmsV1PaymentinstrumentsTokenIdGet($profileId, $tokenId)
 
 Retrieve a Payment Instrument
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response**](../Model/TmsV1PaymentinstrumentsPost201Response.md)
+[**\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response**](../Model/TmsV1PaymentinstrumentsGet200Response.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tmsV1PaymentinstrumentsTokenIdPatch**
-> \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response tmsV1PaymentinstrumentsTokenIdPatch($profileId, $tokenId, $body)
+> \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response tmsV1PaymentinstrumentsTokenIdPatch($profileId, $tokenId, $body)
 
 Update a Payment Instrument
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV1PaymentinstrumentsPost201Response**](../Model/TmsV1PaymentinstrumentsPost201Response.md)
+[**\CyberSource\Model\TmsV1PaymentinstrumentsGet200Response**](../Model/TmsV1PaymentinstrumentsGet200Response.md)
 
 ### Authorization
 

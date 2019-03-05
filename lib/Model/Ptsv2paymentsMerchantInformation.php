@@ -57,9 +57,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationMerchantDescriptor',
         'salesOrganizationId' => 'string',
         'categoryCode' => 'int',
+        'categoryCodeDomestic' => 'int',
+        'taxId' => 'string',
         'vatRegistrationNumber' => 'string',
         'cardAcceptorReferenceNumber' => 'string',
-        'transactionLocalDateTime' => 'string'
+        'transactionLocalDateTime' => 'string',
+        'serviceFeeDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor'
     ];
 
     /**
@@ -70,9 +73,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => null,
         'salesOrganizationId' => null,
         'categoryCode' => null,
+        'categoryCodeDomestic' => null,
+        'taxId' => null,
         'vatRegistrationNumber' => null,
         'cardAcceptorReferenceNumber' => null,
-        'transactionLocalDateTime' => null
+        'transactionLocalDateTime' => null,
+        'serviceFeeDescriptor' => null
     ];
 
     public static function swaggerTypes()
@@ -93,9 +99,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'merchantDescriptor',
         'salesOrganizationId' => 'salesOrganizationId',
         'categoryCode' => 'categoryCode',
+        'categoryCodeDomestic' => 'categoryCodeDomestic',
+        'taxId' => 'taxId',
         'vatRegistrationNumber' => 'vatRegistrationNumber',
         'cardAcceptorReferenceNumber' => 'cardAcceptorReferenceNumber',
-        'transactionLocalDateTime' => 'transactionLocalDateTime'
+        'transactionLocalDateTime' => 'transactionLocalDateTime',
+        'serviceFeeDescriptor' => 'serviceFeeDescriptor'
     ];
 
 
@@ -107,9 +116,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'setMerchantDescriptor',
         'salesOrganizationId' => 'setSalesOrganizationId',
         'categoryCode' => 'setCategoryCode',
+        'categoryCodeDomestic' => 'setCategoryCodeDomestic',
+        'taxId' => 'setTaxId',
         'vatRegistrationNumber' => 'setVatRegistrationNumber',
         'cardAcceptorReferenceNumber' => 'setCardAcceptorReferenceNumber',
-        'transactionLocalDateTime' => 'setTransactionLocalDateTime'
+        'transactionLocalDateTime' => 'setTransactionLocalDateTime',
+        'serviceFeeDescriptor' => 'setServiceFeeDescriptor'
     ];
 
 
@@ -121,9 +133,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'getMerchantDescriptor',
         'salesOrganizationId' => 'getSalesOrganizationId',
         'categoryCode' => 'getCategoryCode',
+        'categoryCodeDomestic' => 'getCategoryCodeDomestic',
+        'taxId' => 'getTaxId',
         'vatRegistrationNumber' => 'getVatRegistrationNumber',
         'cardAcceptorReferenceNumber' => 'getCardAcceptorReferenceNumber',
-        'transactionLocalDateTime' => 'getTransactionLocalDateTime'
+        'transactionLocalDateTime' => 'getTransactionLocalDateTime',
+        'serviceFeeDescriptor' => 'getServiceFeeDescriptor'
     ];
 
     public static function attributeMap()
@@ -160,9 +175,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
         $this->container['salesOrganizationId'] = isset($data['salesOrganizationId']) ? $data['salesOrganizationId'] : null;
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
+        $this->container['categoryCodeDomestic'] = isset($data['categoryCodeDomestic']) ? $data['categoryCodeDomestic'] : null;
+        $this->container['taxId'] = isset($data['taxId']) ? $data['taxId'] : null;
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
         $this->container['cardAcceptorReferenceNumber'] = isset($data['cardAcceptorReferenceNumber']) ? $data['cardAcceptorReferenceNumber'] : null;
         $this->container['transactionLocalDateTime'] = isset($data['transactionLocalDateTime']) ? $data['transactionLocalDateTime'] : null;
+        $this->container['serviceFeeDescriptor'] = isset($data['serviceFeeDescriptor']) ? $data['serviceFeeDescriptor'] : null;
     }
 
     /**
@@ -180,6 +198,14 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
 
         if (!is_null($this->container['categoryCode']) && ($this->container['categoryCode'] > 9999)) {
             $invalid_properties[] = "invalid value for 'categoryCode', must be smaller than or equal to 9999.";
+        }
+
+        if (!is_null($this->container['categoryCodeDomestic']) && ($this->container['categoryCodeDomestic'] > 9999)) {
+            $invalid_properties[] = "invalid value for 'categoryCodeDomestic', must be smaller than or equal to 9999.";
+        }
+
+        if (!is_null($this->container['taxId']) && (strlen($this->container['taxId']) > 15)) {
+            $invalid_properties[] = "invalid value for 'taxId', the character length must be smaller than or equal to 15.";
         }
 
         if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 21)) {
@@ -210,6 +236,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
             return false;
         }
         if ($this->container['categoryCode'] > 9999) {
+            return false;
+        }
+        if ($this->container['categoryCodeDomestic'] > 9999) {
+            return false;
+        }
+        if (strlen($this->container['taxId']) > 15) {
             return false;
         }
         if (strlen($this->container['vatRegistrationNumber']) > 21) {
@@ -257,7 +289,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
 
     /**
      * Sets salesOrganizationId
-     * @param string $salesOrganizationId Company ID assigned to an independent sales organization. Get this value from Mastercard.  For processor-specific information, see the sales_organization_ID field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $salesOrganizationId Company ID assigned to an independent sales organization. Get this value from Mastercard.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 106-116 - Field: Mastercard Independent Sales Organization ID  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.  For processor-specific information, see the sales_organization_ID field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setSalesOrganizationId($salesOrganizationId)
@@ -282,7 +314,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
 
     /**
      * Sets categoryCode
-     * @param int $categoryCode Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param int $categoryCode Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  See \"Aggregator Support,\" page 100.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR4 - Position: 150-153 - Field: Merchant Category Code
      * @return $this
      */
     public function setCategoryCode($categoryCode)
@@ -293,6 +325,57 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         }
 
         $this->container['categoryCode'] = $categoryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets categoryCodeDomestic
+     * @return int
+     */
+    public function getCategoryCodeDomestic()
+    {
+        return $this->container['categoryCodeDomestic'];
+    }
+
+    /**
+     * Sets categoryCodeDomestic
+     * @param int $categoryCodeDomestic Merchant category code for domestic transactions. The value for this field is a four-digit number that the payment card industry uses to classify merchants into market segments. A payment card company assigned one or more of these values to your business when you started accepting the payment card company’s cards. Including this field in a request for a domestic transaction might reduce interchange fees.  When you include this field in a request: - Do not include the merchantCategoryCode field. - The value for this field overrides the value in your CyberSource account.  This field is supported only for: - Domestic transactions with Mastercard in Spain. Domestic means that you and the cardholder are in the same country. - Merchants enrolled in the OmniPay Direct interchange program. - First Data Merchant Solutions (Europe) on OmniPay Direct.
+     * @return $this
+     */
+    public function setCategoryCodeDomestic($categoryCodeDomestic)
+    {
+
+        if (!is_null($categoryCodeDomestic) && ($categoryCodeDomestic > 9999)) {
+            throw new \InvalidArgumentException('invalid value for $categoryCodeDomestic when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 9999.');
+        }
+
+        $this->container['categoryCodeDomestic'] = $categoryCodeDomestic;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxId
+     * @return string
+     */
+    public function getTaxId()
+    {
+        return $this->container['taxId'];
+    }
+
+    /**
+     * Sets taxId
+     * @param string $taxId Your Cadastro Nacional da Pessoa Jurídica (CNPJ) number.  This field is supported only for BNDES transactions on CyberSource through VisaNet. See BNDES.  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR6 - Position: 40-59 - Field: BNDES Reference Field 1
+     * @return $this
+     */
+    public function setTaxId($taxId)
+    {
+        if (!is_null($taxId) && (strlen($taxId) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $taxId when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 15.');
+        }
+
+        $this->container['taxId'] = $taxId;
 
         return $this;
     }
@@ -358,7 +441,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
 
     /**
      * Sets transactionLocalDateTime
-     * @param string $transactionLocalDateTime Local date and time at your physical location. Include both the date and time in this field or leave it blank. This field is supported only for **CyberSource through VisaNet**.  For processor-specific information, see the transaction_local_date_time field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  `Format: YYYYMMDDhhmmss`, where:   - YYYY = year  - MM = month  - DD = day  - hh = hour  - mm = minutes  - ss = seconds
+     * @param string $transactionLocalDateTime Local date and time at your physical location. Include both the date and time in this field or leave it blank. This field is supported only for **CyberSource through VisaNet**.  For processor-specific information, see the transaction_local_date_time field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  `Format: YYYYMMDDhhmmss`, where:   - YYYY = year  - MM = month  - DD = day  - hh = hour  - mm = minutes  - ss = seconds   For processor-specific information, see the _transaction_local_date_time_ field in Credit Card Services Using the SCMP API.
      * @return $this
      */
     public function setTransactionLocalDateTime($transactionLocalDateTime)
@@ -368,6 +451,27 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         }
 
         $this->container['transactionLocalDateTime'] = $transactionLocalDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceFeeDescriptor
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor
+     */
+    public function getServiceFeeDescriptor()
+    {
+        return $this->container['serviceFeeDescriptor'];
+    }
+
+    /**
+     * Sets serviceFeeDescriptor
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor $serviceFeeDescriptor
+     * @return $this
+     */
+    public function setServiceFeeDescriptor($serviceFeeDescriptor)
+    {
+        $this->container['serviceFeeDescriptor'] = $serviceFeeDescriptor;
 
         return $this;
     }

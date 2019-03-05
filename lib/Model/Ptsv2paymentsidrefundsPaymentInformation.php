@@ -54,7 +54,9 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationCard'
+        'card' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationCard',
+        'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
     ];
 
     /**
@@ -62,7 +64,9 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'card' => null
+        'card' => null,
+        'bank' => null,
+        'customer' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'card' => 'card'
+        'card' => 'card',
+        'bank' => 'bank',
+        'customer' => 'customer'
     ];
 
 
@@ -89,7 +95,9 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'card' => 'setCard'
+        'card' => 'setCard',
+        'bank' => 'setBank',
+        'customer' => 'setCustomer'
     ];
 
 
@@ -98,7 +106,9 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'card' => 'getCard'
+        'card' => 'getCard',
+        'bank' => 'getBank',
+        'customer' => 'getCustomer'
     ];
 
     public static function attributeMap()
@@ -133,6 +143,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
     }
 
     /**
@@ -177,6 +189,48 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBank
+     */
+    public function getBank()
+    {
+        return $this->container['bank'];
+    }
+
+    /**
+     * Sets bank
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBank $bank
+     * @return $this
+     */
+    public function setBank($bank)
+    {
+        $this->container['bank'] = $bank;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
 
         return $this;
     }

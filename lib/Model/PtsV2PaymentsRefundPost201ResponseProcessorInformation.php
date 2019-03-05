@@ -55,7 +55,10 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
       */
     protected static $swaggerTypes = [
         'transactionId' => 'string',
-        'forwardedAcquirerCode' => 'string'
+        'forwardedAcquirerCode' => 'string',
+        'merchantNumber' => 'string',
+        'responseCode' => 'string',
+        'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'
     ];
 
     /**
@@ -64,7 +67,10 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
       */
     protected static $swaggerFormats = [
         'transactionId' => null,
-        'forwardedAcquirerCode' => null
+        'forwardedAcquirerCode' => null,
+        'merchantNumber' => null,
+        'responseCode' => null,
+        'achVerification' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +89,10 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     protected static $attributeMap = [
         'transactionId' => 'transactionId',
-        'forwardedAcquirerCode' => 'forwardedAcquirerCode'
+        'forwardedAcquirerCode' => 'forwardedAcquirerCode',
+        'merchantNumber' => 'merchantNumber',
+        'responseCode' => 'responseCode',
+        'achVerification' => 'achVerification'
     ];
 
 
@@ -93,7 +102,10 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     protected static $setters = [
         'transactionId' => 'setTransactionId',
-        'forwardedAcquirerCode' => 'setForwardedAcquirerCode'
+        'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
+        'merchantNumber' => 'setMerchantNumber',
+        'responseCode' => 'setResponseCode',
+        'achVerification' => 'setAchVerification'
     ];
 
 
@@ -103,7 +115,10 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     protected static $getters = [
         'transactionId' => 'getTransactionId',
-        'forwardedAcquirerCode' => 'getForwardedAcquirerCode'
+        'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
+        'merchantNumber' => 'getMerchantNumber',
+        'responseCode' => 'getResponseCode',
+        'achVerification' => 'getAchVerification'
     ];
 
     public static function attributeMap()
@@ -139,6 +154,9 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     {
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['forwardedAcquirerCode'] = isset($data['forwardedAcquirerCode']) ? $data['forwardedAcquirerCode'] : null;
+        $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
+        $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
+        $this->container['achVerification'] = isset($data['achVerification']) ? $data['achVerification'] : null;
     }
 
     /**
@@ -158,6 +176,14 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'forwardedAcquirerCode', the character length must be smaller than or equal to 32.";
         }
 
+        if (!is_null($this->container['merchantNumber']) && (strlen($this->container['merchantNumber']) > 15)) {
+            $invalid_properties[] = "invalid value for 'merchantNumber', the character length must be smaller than or equal to 15.";
+        }
+
+        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 10)) {
+            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
+        }
+
         return $invalid_properties;
     }
 
@@ -174,6 +200,12 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
             return false;
         }
         if (strlen($this->container['forwardedAcquirerCode']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['merchantNumber']) > 15) {
+            return false;
+        }
+        if (strlen($this->container['responseCode']) > 10) {
             return false;
         }
         return true;
@@ -226,6 +258,77 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         }
 
         $this->container['forwardedAcquirerCode'] = $forwardedAcquirerCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantNumber
+     * @return string
+     */
+    public function getMerchantNumber()
+    {
+        return $this->container['merchantNumber'];
+    }
+
+    /**
+     * Sets merchantNumber
+     * @param string $merchantNumber Identifier that was assigned to you by your acquirer.  This value must be printed on the receipt.  This field is supported only on **American Express Direct**, **FDC Nashville Global**, and **SIX**.
+     * @return $this
+     */
+    public function setMerchantNumber($merchantNumber)
+    {
+        if (!is_null($merchantNumber) && (strlen($merchantNumber) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $merchantNumber when calling PtsV2PaymentsRefundPost201ResponseProcessorInformation., must be smaller than or equal to 15.');
+        }
+
+        $this->container['merchantNumber'] = $merchantNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseCode
+     * @return string
+     */
+    public function getResponseCode()
+    {
+        return $this->container['responseCode'];
+    }
+
+    /**
+     * Sets responseCode
+     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  Important Do not use this field to evaluate the result of the authorization.
+     * @return $this
+     */
+    public function setResponseCode($responseCode)
+    {
+        if (!is_null($responseCode) && (strlen($responseCode) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PaymentsRefundPost201ResponseProcessorInformation., must be smaller than or equal to 10.');
+        }
+
+        $this->container['responseCode'] = $responseCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets achVerification
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification
+     */
+    public function getAchVerification()
+    {
+        return $this->container['achVerification'];
+    }
+
+    /**
+     * Sets achVerification
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification $achVerification
+     * @return $this
+     */
+    public function setAchVerification($achVerification)
+    {
+        $this->container['achVerification'] = $achVerification;
 
         return $this;
     }

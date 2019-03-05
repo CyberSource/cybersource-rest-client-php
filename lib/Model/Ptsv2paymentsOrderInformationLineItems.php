@@ -74,7 +74,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'discountRate' => 'string',
         'invoiceNumber' => 'string',
         'taxDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsTaxDetails[]',
-        'fulfillmentType' => 'string'
+        'fulfillmentType' => 'string',
+        'weight' => 'string',
+        'weightIdentifier' => 'string',
+        'weightUnit' => 'string',
+        'referenceDataCode' => 'string',
+        'referenceDataNumber' => 'string'
     ];
 
     /**
@@ -102,7 +107,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'discountRate' => null,
         'invoiceNumber' => null,
         'taxDetails' => null,
-        'fulfillmentType' => null
+        'fulfillmentType' => null,
+        'weight' => null,
+        'weightIdentifier' => null,
+        'weightUnit' => null,
+        'referenceDataCode' => null,
+        'referenceDataNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -140,7 +150,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'discountRate' => 'discountRate',
         'invoiceNumber' => 'invoiceNumber',
         'taxDetails' => 'taxDetails',
-        'fulfillmentType' => 'fulfillmentType'
+        'fulfillmentType' => 'fulfillmentType',
+        'weight' => 'weight',
+        'weightIdentifier' => 'weightIdentifier',
+        'weightUnit' => 'weightUnit',
+        'referenceDataCode' => 'referenceDataCode',
+        'referenceDataNumber' => 'referenceDataNumber'
     ];
 
 
@@ -169,7 +184,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'discountRate' => 'setDiscountRate',
         'invoiceNumber' => 'setInvoiceNumber',
         'taxDetails' => 'setTaxDetails',
-        'fulfillmentType' => 'setFulfillmentType'
+        'fulfillmentType' => 'setFulfillmentType',
+        'weight' => 'setWeight',
+        'weightIdentifier' => 'setWeightIdentifier',
+        'weightUnit' => 'setWeightUnit',
+        'referenceDataCode' => 'setReferenceDataCode',
+        'referenceDataNumber' => 'setReferenceDataNumber'
     ];
 
 
@@ -198,7 +218,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'discountRate' => 'getDiscountRate',
         'invoiceNumber' => 'getInvoiceNumber',
         'taxDetails' => 'getTaxDetails',
-        'fulfillmentType' => 'getFulfillmentType'
+        'fulfillmentType' => 'getFulfillmentType',
+        'weight' => 'getWeight',
+        'weightIdentifier' => 'getWeightIdentifier',
+        'weightUnit' => 'getWeightUnit',
+        'referenceDataCode' => 'getReferenceDataCode',
+        'referenceDataNumber' => 'getReferenceDataNumber'
     ];
 
     public static function attributeMap()
@@ -253,6 +278,11 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         $this->container['invoiceNumber'] = isset($data['invoiceNumber']) ? $data['invoiceNumber'] : null;
         $this->container['taxDetails'] = isset($data['taxDetails']) ? $data['taxDetails'] : null;
         $this->container['fulfillmentType'] = isset($data['fulfillmentType']) ? $data['fulfillmentType'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
+        $this->container['weightIdentifier'] = isset($data['weightIdentifier']) ? $data['weightIdentifier'] : null;
+        $this->container['weightUnit'] = isset($data['weightUnit']) ? $data['weightUnit'] : null;
+        $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
+        $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
     }
 
     /**
@@ -336,6 +366,26 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
             $invalid_properties[] = "invalid value for 'invoiceNumber', the character length must be smaller than or equal to 23.";
         }
 
+        if (!is_null($this->container['weight']) && (strlen($this->container['weight']) > 9)) {
+            $invalid_properties[] = "invalid value for 'weight', the character length must be smaller than or equal to 9.";
+        }
+
+        if (!is_null($this->container['weightIdentifier']) && (strlen($this->container['weightIdentifier']) > 1)) {
+            $invalid_properties[] = "invalid value for 'weightIdentifier', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['weightUnit']) && (strlen($this->container['weightUnit']) > 2)) {
+            $invalid_properties[] = "invalid value for 'weightUnit', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['referenceDataCode']) && (strlen($this->container['referenceDataCode']) > 2)) {
+            $invalid_properties[] = "invalid value for 'referenceDataCode', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['referenceDataNumber']) && (strlen($this->container['referenceDataNumber']) > 30)) {
+            $invalid_properties[] = "invalid value for 'referenceDataNumber', the character length must be smaller than or equal to 30.";
+        }
+
         return $invalid_properties;
     }
 
@@ -402,6 +452,21 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         if (strlen($this->container['invoiceNumber']) > 23) {
             return false;
         }
+        if (strlen($this->container['weight']) > 9) {
+            return false;
+        }
+        if (strlen($this->container['weightIdentifier']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['weightUnit']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['referenceDataCode']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['referenceDataNumber']) > 30) {
+            return false;
+        }
         return true;
     }
 
@@ -417,7 +482,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productCode
-     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required.
+     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**.  If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required.  See Appendix O, \"Product Codes,\" on page 373 for a list of valid values.
      * @return $this
      */
     public function setProductCode($productCode)
@@ -442,7 +507,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productName
-     * @param string $productName For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and handling.
+     * @param string $productName For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false` respectively), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setProductName($productName)
@@ -467,7 +532,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productSku
-     * @param string $productSku Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling.
+     * @param string $productSku Identification code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setProductSku($productSku)
@@ -492,7 +557,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param float $quantity For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling.
+     * @param float $quantity For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setQuantity($quantity)
@@ -521,7 +586,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitPrice
-     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in: - Table 12, \"Authorization Information for Specific Processors,\" on page 36 - Table 16, \"Capture Information for Specific Processors,\" on page 51 - Table 20, \"Credit Information for Specific Processors,\" on page 65  **DCC for First Data**\\ This value is the original amount in your local currency. You must include this field. You cannot use grand_total_amount. See \"Dynamic Currency Conversion for First Data,\" page 113.  **FDMS South**\\ If you accept IDR or CLP currencies, see the entry for FDMS South in Table 12, \"Authorization Information for Specific Processors,\" on page 36.  **Zero Amount Authorizations**\\ If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 220.
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -596,7 +661,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxAmount
-     * @param string $taxAmount Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  This field is frequently used for Level II and Level III transactions.
+     * @param string $taxAmount Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  If you want to include the tax amount and also request the ics_tax service, see Tax Calculation Service Using the SCMP API.  This field is frequently used for Level II and Level III transactions. See Level II and Level III Processing Using the SCMP API.
      * @return $this
      */
     public function setTaxAmount($taxAmount)
@@ -696,7 +761,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxTypeCode
-     * @param string $taxTypeCode Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax  - 0011: goods and services tax  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - Blank: Tax not supported on line item.
+     * @param string $taxTypeCode Type of tax being applied to the item. Possible values:  Below values are used by **RBS WorldPay Atlanta**, **FDC Nashville Global**, **Litle**   - 0000: unknown tax type  - 0001: federal/national sales tax  - 0002: state sales tax  - 0003: city sales tax  - 0004: local sales tax  - 0005: municipal sales tax  - 0006: other tax  - 0010: value-added tax (VAT)  - 0011: goods and services tax (GST)  - 0012: provincial sales tax  - 0013: harmonized sales tax  - 0014: Quebec sales tax (QST)  - 0020: room tax  - 0021: occupancy tax  - 0022: energy tax  - 0023: city tax  - 0024: county or parish sales tax  - 0025: county tax  - 0026: environment tax  - 0027: state and local sales tax (combined)  - Blank: Tax not supported on line item.
      * @return $this
      */
     public function setTaxTypeCode($taxTypeCode)
@@ -721,7 +786,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets amountIncludesTax
-     * @param bool $amountIncludesTax Flag that indicates whether the tax amount is included in the Line Item Total.
+     * @param bool $amountIncludesTax Flag that indicates whether the tax amount is included in the Line Item Total.  Possible values:  - **true**  - **false**
      * @return $this
      */
     public function setAmountIncludesTax($amountIncludesTax)
@@ -817,7 +882,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets discountApplied
-     * @param bool $discountApplied Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.
+     * @param bool $discountApplied Flag that indicates whether the amount is discounted.  If you do not provide a value but you set Discount Amount to a value greater than zero, then CyberSource sets this field to **true**.  Possible values:  - **true**  - **false**
      * @return $this
      */
     public function setDiscountApplied($discountApplied)
@@ -909,12 +974,137 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets fulfillmentType
-     * @param string $fulfillmentType TODO
+     * @param string $fulfillmentType The description for this field is not available.
      * @return $this
      */
     public function setFulfillmentType($fulfillmentType)
     {
         $this->container['fulfillmentType'] = $fulfillmentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight
+     * @return string
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     * @param string $weight Weight of the item. See Numbered Elements.
+     * @return $this
+     */
+    public function setWeight($weight)
+    {
+        if (!is_null($weight) && (strlen($weight) > 9)) {
+            throw new \InvalidArgumentException('invalid length for $weight when calling Ptsv2paymentsOrderInformationLineItems., must be smaller than or equal to 9.');
+        }
+
+        $this->container['weight'] = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Gets weightIdentifier
+     * @return string
+     */
+    public function getWeightIdentifier()
+    {
+        return $this->container['weightIdentifier'];
+    }
+
+    /**
+     * Sets weightIdentifier
+     * @param string $weightIdentifier Type of weight. See Numbered Elements.  Possible values: - B: Billed weight - N: Actual net weight
+     * @return $this
+     */
+    public function setWeightIdentifier($weightIdentifier)
+    {
+        if (!is_null($weightIdentifier) && (strlen($weightIdentifier) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $weightIdentifier when calling Ptsv2paymentsOrderInformationLineItems., must be smaller than or equal to 1.');
+        }
+
+        $this->container['weightIdentifier'] = $weightIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets weightUnit
+     * @return string
+     */
+    public function getWeightUnit()
+    {
+        return $this->container['weightUnit'];
+    }
+
+    /**
+     * Sets weightUnit
+     * @param string $weightUnit Code that specifies the unit of measurement for the weight amount. For example, OZ specifies ounce and LB specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  See Numbered Elements.
+     * @return $this
+     */
+    public function setWeightUnit($weightUnit)
+    {
+        if (!is_null($weightUnit) && (strlen($weightUnit) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $weightUnit when calling Ptsv2paymentsOrderInformationLineItems., must be smaller than or equal to 2.');
+        }
+
+        $this->container['weightUnit'] = $weightUnit;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceDataCode
+     * @return string
+     */
+    public function getReferenceDataCode()
+    {
+        return $this->container['referenceDataCode'];
+    }
+
+    /**
+     * Sets referenceDataCode
+     * @param string $referenceDataCode Code that identifies the value of the corresponding item_#_referenceData_#_number field. See Numbered Elements.  Possible values: - AN: Client-defined asset code - MG: Manufacturer's part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
+     * @return $this
+     */
+    public function setReferenceDataCode($referenceDataCode)
+    {
+        if (!is_null($referenceDataCode) && (strlen($referenceDataCode) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $referenceDataCode when calling Ptsv2paymentsOrderInformationLineItems., must be smaller than or equal to 2.');
+        }
+
+        $this->container['referenceDataCode'] = $referenceDataCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceDataNumber
+     * @return string
+     */
+    public function getReferenceDataNumber()
+    {
+        return $this->container['referenceDataNumber'];
+    }
+
+    /**
+     * Sets referenceDataNumber
+     * @param string $referenceDataNumber Reference number.  The meaning of this value is identified by the value of the corresponding `referenceDataCode` field. See Numbered Elements.  The maximum length for this field depends on the value of the corresponding `referenceDataCode` field: - When the code is `PO`, the maximum length for the reference number is 22. - When the code is `VC`, the maximum length for the reference number is 20. - For all other codes, the maximum length for the reference number is 30.  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
+     * @return $this
+     */
+    public function setReferenceDataNumber($referenceDataNumber)
+    {
+        if (!is_null($referenceDataNumber) && (strlen($referenceDataNumber) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $referenceDataNumber when calling Ptsv2paymentsOrderInformationLineItems., must be smaller than or equal to 30.');
+        }
+
+        $this->container['referenceDataNumber'] = $referenceDataNumber;
 
         return $this;
     }

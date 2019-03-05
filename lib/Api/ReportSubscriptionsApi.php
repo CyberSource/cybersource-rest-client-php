@@ -92,14 +92,14 @@ class ReportSubscriptionsApi
      *
      * Create Report Subscription for a report name by organization
      *
-     * @param string $reportName Name of the Report to Create (required)
-     * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return void
      */
-    public function createSubscription($reportName, $requestBody)
+    public function createSubscription($requestBody, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->createSubscriptionWithHttpInfo($reportName, $requestBody);
+        list($response, $statusCode, $httpHeader) = $this->createSubscriptionWithHttpInfo($requestBody, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -108,23 +108,29 @@ class ReportSubscriptionsApi
      *
      * Create Report Subscription for a report name by organization
      *
-     * @param string $reportName Name of the Report to Create (required)
-     * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSubscriptionWithHttpInfo($reportName, $requestBody)
+    public function createSubscriptionWithHttpInfo($requestBody, $organizationId = null)
     {
-        // verify the required parameter 'reportName' is set
-        if ($reportName === null) {
-           // throw new \InvalidArgumentException('Missing the required parameter $reportName when calling createSubscription');
-        }
         // verify the required parameter 'requestBody' is set
         if ($requestBody === null) {
             throw new \InvalidArgumentException('Missing the required parameter $requestBody when calling createSubscription');
         }
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.createSubscription, must be smaller than or equal to 32.');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.createSubscription, must be bigger than or equal to 1.');
+        }
+        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportSubscriptionsApi.createSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
         // parse inputs
-        $resourcePath = "/reporting/v3/report-subscriptions/{reportName}";
+        $resourcePath = "/reporting/v3/report-subscriptions";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -135,16 +141,10 @@ class ReportSubscriptionsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
-        
-        // path params
-        if ($reportName === null) {
-            $resourcePath = str_replace(
-                "{" . "reportName" . "}",
-                $this->apiClient->getSerializer()->toPathValue($reportName),
-                $resourcePath
-            );
+        // query params
+        if ($organizationId !== null) {
+            $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
         }
-       
         // body params
         $_tempBody = null;
         if (isset($requestBody)) {
@@ -166,14 +166,14 @@ class ReportSubscriptionsApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reporting/v3/report-subscriptions/{reportName}'
+                '/reporting/v3/report-subscriptions'
             );
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -265,11 +265,11 @@ class ReportSubscriptionsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -281,7 +281,7 @@ class ReportSubscriptionsApi
     /**
      * Operation getAllSubscriptions
      *
-     * Retrieve all subscriptions by organization
+     * Get all subscriptions
      *
      * @throws \CyberSource\ApiException on non-2xx response
      * @return \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response
@@ -295,7 +295,7 @@ class ReportSubscriptionsApi
     /**
      * Operation getAllSubscriptionsWithHttpInfo
      *
-     * Retrieve all subscriptions by organization
+     * Get all subscriptions
      *
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response, HTTP status code, HTTP response headers (array of strings)
@@ -332,7 +332,8 @@ class ReportSubscriptionsApi
                 '\CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response',
                 '/reporting/v3/report-subscriptions'
             );
-            return [$response, $statusCode, $httpHeader];
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -340,7 +341,7 @@ class ReportSubscriptionsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -352,7 +353,7 @@ class ReportSubscriptionsApi
     /**
      * Operation getSubscription
      *
-     * Retrieve subscription for a report name by organization
+     * Get subscription for report name
      *
      * @param string $reportName Name of the Report to Retrieve (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -367,7 +368,7 @@ class ReportSubscriptionsApi
     /**
      * Operation getSubscriptionWithHttpInfo
      *
-     * Retrieve subscription for a report name by organization
+     * Get subscription for report name
      *
      * @param string $reportName Name of the Report to Retrieve (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -436,7 +437,7 @@ class ReportSubscriptionsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3NotificationofChangesGet400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

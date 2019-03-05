@@ -67,8 +67,8 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         'reportEndTime' => '\DateTime',
         'timezone' => 'string',
         'reportFilters' => 'map[string,string[]]',
-        'reportPreferences' => '\CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences',
-        'selectedMerchantGroupName' => 'string'
+        'reportPreferences' => '\CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences',
+        'groupId' => 'string'
     ];
 
     /**
@@ -89,7 +89,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         'timezone' => null,
         'reportFilters' => null,
         'reportPreferences' => null,
-        'selectedMerchantGroupName' => null
+        'groupId' => null
     ];
 
     public static function swaggerTypes()
@@ -120,7 +120,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         'timezone' => 'timezone',
         'reportFilters' => 'reportFilters',
         'reportPreferences' => 'reportPreferences',
-        'selectedMerchantGroupName' => 'selectedMerchantGroupName'
+        'groupId' => 'groupId'
     ];
 
 
@@ -142,7 +142,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         'timezone' => 'setTimezone',
         'reportFilters' => 'setReportFilters',
         'reportPreferences' => 'setReportPreferences',
-        'selectedMerchantGroupName' => 'setSelectedMerchantGroupName'
+        'groupId' => 'setGroupId'
     ];
 
 
@@ -164,7 +164,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         'timezone' => 'getTimezone',
         'reportFilters' => 'getReportFilters',
         'reportPreferences' => 'getReportPreferences',
-        'selectedMerchantGroupName' => 'getSelectedMerchantGroupName'
+        'groupId' => 'getGroupId'
     ];
 
     public static function attributeMap()
@@ -187,6 +187,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
     const REPORT_FREQUENCY_DAILY = 'DAILY';
     const REPORT_FREQUENCY_WEEKLY = 'WEEKLY';
     const REPORT_FREQUENCY_MONTHLY = 'MONTHLY';
+    const REPORT_FREQUENCY_ADHOC = 'ADHOC';
     const REPORT_STATUS_COMPLETED = 'COMPLETED';
     const REPORT_STATUS_PENDING = 'PENDING';
     const REPORT_STATUS_QUEUED = 'QUEUED';
@@ -219,6 +220,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
             self::REPORT_FREQUENCY_DAILY,
             self::REPORT_FREQUENCY_WEEKLY,
             self::REPORT_FREQUENCY_MONTHLY,
+            self::REPORT_FREQUENCY_ADHOC,
         ];
     }
     
@@ -265,7 +267,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
         $this->container['reportFilters'] = isset($data['reportFilters']) ? $data['reportFilters'] : null;
         $this->container['reportPreferences'] = isset($data['reportPreferences']) ? $data['reportPreferences'] : null;
-        $this->container['selectedMerchantGroupName'] = isset($data['selectedMerchantGroupName']) ? $data['selectedMerchantGroupName'] : null;
+        $this->container['groupId'] = isset($data['groupId']) ? $data['groupId'] : null;
     }
 
     /**
@@ -460,14 +462,14 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
     public function setReportFrequency($reportFrequency)
     {
         $allowed_values = $this->getReportFrequencyAllowableValues();
-        // if (!is_null($reportFrequency) && !in_array($reportFrequency, $allowed_values)) {
-        //     throw new \InvalidArgumentException(
-        //         sprintf(
-        //             "Invalid value for 'reportFrequency', must be one of '%s'",
-        //             implode("', '", $allowed_values)
-        //         )
-        //     );
-        // }
+        if (!is_null($reportFrequency) && !in_array($reportFrequency, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'reportFrequency', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
         $this->container['reportFrequency'] = $reportFrequency;
 
         return $this;
@@ -598,7 +600,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Sets reportFilters
-     * @param map[string,string[]] $reportFilters Report Filters
+     * @param map[string,string[]] $reportFilters List of filters to apply
      * @return $this
      */
     public function setReportFilters($reportFilters)
@@ -610,7 +612,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Gets reportPreferences
-     * @return \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences
+     * @return \CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences
      */
     public function getReportPreferences()
     {
@@ -619,7 +621,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Sets reportPreferences
-     * @param \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseReportPreferences $reportPreferences
+     * @param \CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences $reportPreferences
      * @return $this
      */
     public function setReportPreferences($reportPreferences)
@@ -630,22 +632,22 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
     }
 
     /**
-     * Gets selectedMerchantGroupName
+     * Gets groupId
      * @return string
      */
-    public function getSelectedMerchantGroupName()
+    public function getGroupId()
     {
-        return $this->container['selectedMerchantGroupName'];
+        return $this->container['groupId'];
     }
 
     /**
-     * Sets selectedMerchantGroupName
-     * @param string $selectedMerchantGroupName Selected Merchant Group name
+     * Sets groupId
+     * @param string $groupId Id for selected group.
      * @return $this
      */
-    public function setSelectedMerchantGroupName($selectedMerchantGroupName)
+    public function setGroupId($groupId)
     {
-        $this->container['selectedMerchantGroupName'] = $selectedMerchantGroupName;
+        $this->container['groupId'] = $groupId;
 
         return $this;
     }

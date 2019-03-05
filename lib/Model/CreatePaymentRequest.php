@@ -56,6 +56,7 @@ class CreatePaymentRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2paymentsProcessingInformation',
+        'issuerInformation' => '\CyberSource\Model\Ptsv2paymentsIssuerInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsOrderInformation',
         'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsBuyerInformation',
@@ -65,7 +66,8 @@ class CreatePaymentRequest implements ArrayAccess
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsAggregatorInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]'
+        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
+        'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation'
     ];
 
     /**
@@ -75,6 +77,7 @@ class CreatePaymentRequest implements ArrayAccess
     protected static $swaggerFormats = [
         'clientReferenceInformation' => null,
         'processingInformation' => null,
+        'issuerInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
         'buyerInformation' => null,
@@ -84,7 +87,8 @@ class CreatePaymentRequest implements ArrayAccess
         'aggregatorInformation' => null,
         'consumerAuthenticationInformation' => null,
         'pointOfSaleInformation' => null,
-        'merchantDefinedInformation' => null
+        'merchantDefinedInformation' => null,
+        'installmentInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -104,6 +108,7 @@ class CreatePaymentRequest implements ArrayAccess
     protected static $attributeMap = [
         'clientReferenceInformation' => 'clientReferenceInformation',
         'processingInformation' => 'processingInformation',
+        'issuerInformation' => 'issuerInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
         'buyerInformation' => 'buyerInformation',
@@ -113,7 +118,8 @@ class CreatePaymentRequest implements ArrayAccess
         'aggregatorInformation' => 'aggregatorInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
-        'merchantDefinedInformation' => 'merchantDefinedInformation'
+        'merchantDefinedInformation' => 'merchantDefinedInformation',
+        'installmentInformation' => 'installmentInformation'
     ];
 
 
@@ -124,6 +130,7 @@ class CreatePaymentRequest implements ArrayAccess
     protected static $setters = [
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'processingInformation' => 'setProcessingInformation',
+        'issuerInformation' => 'setIssuerInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
         'buyerInformation' => 'setBuyerInformation',
@@ -133,7 +140,8 @@ class CreatePaymentRequest implements ArrayAccess
         'aggregatorInformation' => 'setAggregatorInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
-        'merchantDefinedInformation' => 'setMerchantDefinedInformation'
+        'merchantDefinedInformation' => 'setMerchantDefinedInformation',
+        'installmentInformation' => 'setInstallmentInformation'
     ];
 
 
@@ -144,6 +152,7 @@ class CreatePaymentRequest implements ArrayAccess
     protected static $getters = [
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'processingInformation' => 'getProcessingInformation',
+        'issuerInformation' => 'getIssuerInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
         'buyerInformation' => 'getBuyerInformation',
@@ -153,7 +162,8 @@ class CreatePaymentRequest implements ArrayAccess
         'aggregatorInformation' => 'getAggregatorInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
-        'merchantDefinedInformation' => 'getMerchantDefinedInformation'
+        'merchantDefinedInformation' => 'getMerchantDefinedInformation',
+        'installmentInformation' => 'getInstallmentInformation'
     ];
 
     public static function attributeMap()
@@ -189,6 +199,7 @@ class CreatePaymentRequest implements ArrayAccess
     {
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
@@ -199,6 +210,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
+        $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
     }
 
     /**
@@ -264,6 +276,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setProcessingInformation($processingInformation)
     {
         $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\Ptsv2paymentsIssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\Ptsv2paymentsIssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
 
         return $this;
     }
@@ -468,12 +501,33 @@ class CreatePaymentRequest implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation Description of this field is not available.
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)
     {
         $this->container['merchantDefinedInformation'] = $merchantDefinedInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets installmentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsInstallmentInformation
+     */
+    public function getInstallmentInformation()
+    {
+        return $this->container['installmentInformation'];
+    }
+
+    /**
+     * Sets installmentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsInstallmentInformation $installmentInformation
+     * @return $this
+     */
+    public function setInstallmentInformation($installmentInformation)
+    {
+        $this->container['installmentInformation'] = $installmentInformation;
 
         return $this;
     }

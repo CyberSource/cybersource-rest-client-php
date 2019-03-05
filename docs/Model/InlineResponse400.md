@@ -3,9 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional] 
-**message** | **string** | The detailed message related to the type stated above. | [optional] 
-**details** | [**\CyberSource\Model\Tmsv1instrumentidentifiersDetails**](Tmsv1instrumentidentifiersDetails.md) |  | [optional] 
+**code** | **string** | Error code | 
+**message** | **string** | Error message | 
+**localizationKey** | **string** | Localization Key Name | [optional] 
+**correlationId** | **string** | Correlation Id | [optional] 
+**detail** | **string** | Error Detail | [optional] 
+**fields** | [**\CyberSource\Model\InlineResponse400Fields[]**](InlineResponse400Fields.md) | Error fields List | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

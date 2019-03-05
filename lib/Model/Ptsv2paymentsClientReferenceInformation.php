@@ -56,7 +56,8 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'transactionId' => 'string',
-        'comments' => 'string'
+        'comments' => 'string',
+        'partner' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'code' => null,
         'transactionId' => null,
-        'comments' => null
+        'comments' => null,
+        'partner' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     protected static $attributeMap = [
         'code' => 'code',
         'transactionId' => 'transactionId',
-        'comments' => 'comments'
+        'comments' => 'comments',
+        'partner' => 'partner'
     ];
 
 
@@ -97,7 +100,8 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     protected static $setters = [
         'code' => 'setCode',
         'transactionId' => 'setTransactionId',
-        'comments' => 'setComments'
+        'comments' => 'setComments',
+        'partner' => 'setPartner'
     ];
 
 
@@ -108,7 +112,8 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     protected static $getters = [
         'code' => 'getCode',
         'transactionId' => 'getTransactionId',
-        'comments' => 'getComments'
+        'comments' => 'getComments',
+        'partner' => 'getPartner'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
 
     /**
@@ -190,7 +196,7 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.
+     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see Getting Started with CyberSource Advanced for the SCMP API.  **FDC Nashville Global**\\ Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
     public function setCode($code)
@@ -215,7 +221,7 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets transactionId
-     * @param string $transactionId Identifier that you assign to the transaction. See \"Merchant-Initiated Reversals and Voids,\" page 176
+     * @param string $transactionId Identifier that you assign to the transaction.  **Note** Use this field only if you want to support merchant-initiated reversal and void operations . See \"Merchant-Initiated Reversals and Voids,\" page 176.
      * @return $this
      */
     public function setTransactionId($transactionId)
@@ -242,6 +248,27 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     public function setComments($comments)
     {
         $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

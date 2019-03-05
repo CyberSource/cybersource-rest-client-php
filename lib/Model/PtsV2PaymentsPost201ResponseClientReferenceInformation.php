@@ -54,7 +54,9 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string'
+        'code' => 'string',
+        'submitLocalDateTime' => 'string',
+        'ownerMerchantId' => 'string'
     ];
 
     /**
@@ -62,7 +64,9 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null
+        'code' => null,
+        'submitLocalDateTime' => null,
+        'ownerMerchantId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code'
+        'code' => 'code',
+        'submitLocalDateTime' => 'submitLocalDateTime',
+        'ownerMerchantId' => 'ownerMerchantId'
     ];
 
 
@@ -89,7 +95,9 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode'
+        'code' => 'setCode',
+        'submitLocalDateTime' => 'setSubmitLocalDateTime',
+        'ownerMerchantId' => 'setOwnerMerchantId'
     ];
 
 
@@ -98,7 +106,9 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode'
+        'code' => 'getCode',
+        'submitLocalDateTime' => 'getSubmitLocalDateTime',
+        'ownerMerchantId' => 'getOwnerMerchantId'
     ];
 
     public static function attributeMap()
@@ -133,6 +143,8 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['submitLocalDateTime'] = isset($data['submitLocalDateTime']) ? $data['submitLocalDateTime'] : null;
+        $this->container['ownerMerchantId'] = isset($data['ownerMerchantId']) ? $data['ownerMerchantId'] : null;
     }
 
     /**
@@ -146,6 +158,10 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
 
         if (!is_null($this->container['code']) && (strlen($this->container['code']) > 50)) {
             $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
+        }
+
+        if (!is_null($this->container['submitLocalDateTime']) && (strlen($this->container['submitLocalDateTime']) > 14)) {
+            $invalid_properties[] = "invalid value for 'submitLocalDateTime', the character length must be smaller than or equal to 14.";
         }
 
         return $invalid_properties;
@@ -163,6 +179,9 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
         if (strlen($this->container['code']) > 50) {
             return false;
         }
+        if (strlen($this->container['submitLocalDateTime']) > 14) {
+            return false;
+        }
         return true;
     }
 
@@ -178,7 +197,7 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
 
     /**
      * Sets code
-     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.
+     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see Getting Started with CyberSource Advanced for the SCMP API.  **FDC Nashville Global**\\ Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
     public function setCode($code)
@@ -188,6 +207,52 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
         }
 
         $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitLocalDateTime
+     * @return string
+     */
+    public function getSubmitLocalDateTime()
+    {
+        return $this->container['submitLocalDateTime'];
+    }
+
+    /**
+     * Sets submitLocalDateTime
+     * @param string $submitLocalDateTime Date and time at your physical location.  Format: `YYYYMMDDhhmmss`, where YYYY = year, MM = month, DD = day, hh = hour, mm = minutes ss = seconds
+     * @return $this
+     */
+    public function setSubmitLocalDateTime($submitLocalDateTime)
+    {
+        if (!is_null($submitLocalDateTime) && (strlen($submitLocalDateTime) > 14)) {
+            throw new \InvalidArgumentException('invalid length for $submitLocalDateTime when calling PtsV2PaymentsPost201ResponseClientReferenceInformation., must be smaller than or equal to 14.');
+        }
+
+        $this->container['submitLocalDateTime'] = $submitLocalDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets ownerMerchantId
+     * @return string
+     */
+    public function getOwnerMerchantId()
+    {
+        return $this->container['ownerMerchantId'];
+    }
+
+    /**
+     * Sets ownerMerchantId
+     * @param string $ownerMerchantId Merchant ID that was used to create the subscription or customer profile for which the service was requested.  If your CyberSource account is enabled for Recurring Billing, this field is returned only if you are using subscription sharing and if your merchant ID is in the same merchant ID pool as the owner merchant ID.  See the subscription sharing information in Recurring Billing Using the Simple Order API.  If your CyberSource account is enabled for Payment Tokenization, this field is returned only if you are using profile sharing and if your merchant ID is in the same merchant ID pool as the owner merchant ID.  See the profile sharing information in Payment Tokenization Using the Simple Order API.
+     * @return $this
+     */
+    public function setOwnerMerchantId($ownerMerchantId)
+    {
+        $this->container['ownerMerchantId'] = $ownerMerchantId;
 
         return $this;
     }

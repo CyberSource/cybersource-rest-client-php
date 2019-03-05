@@ -148,13 +148,6 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "issuer"
-     */
-    public function testPropertyIssuer()
-    {
-    }
-
-    /**
      * Test attribute "authorizationOptions"
      */
     public function testPropertyAuthorizationOptions()
@@ -172,6 +165,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "recurringOptions"
      */
     public function testPropertyRecurringOptions()
+    {
+    }
+
+    /**
+     * Test attribute "bankTransferOptions"
+     */
+    public function testPropertyBankTransferOptions()
     {
     }
 }

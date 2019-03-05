@@ -270,7 +270,7 @@ class ReportingV3ReportDefinitionsNameGet200ResponseAttributes implements ArrayA
 
     /**
      * Sets filterType
-     * @param string $filterType
+     * @param string $filterType Attribute Filter Type.
      * @return $this
      */
     public function setFilterType($filterType)
@@ -333,7 +333,7 @@ class ReportingV3ReportDefinitionsNameGet200ResponseAttributes implements ArrayA
 
     /**
      * Sets supportedType
-     * @param string $supportedType
+     * @param string $supportedType Valid values for the filter.
      * @return $this
      */
     public function setSupportedType($supportedType)

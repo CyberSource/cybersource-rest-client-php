@@ -31,7 +31,6 @@ namespace CyberSource;
 use CyberSource\Authentication\Core\Authentication as Authentication;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\PayloadDigest\PayloadDigest as PayloadDigest;
-
 /**
  * ApiClient Class Doc Comment
  *
@@ -147,12 +146,12 @@ class ApiClient
             (array)$this->config->getDefaultHeaders(),
             (array)$headerParams
         );
-
-        if (!empty($queryParams)) {
+		
+		if (!empty($queryParams)) {
             $resourcePath = ($resourcePath . '?' . http_build_query($queryParams));
             $queryParams=null;
         }
-
+		
         foreach ($headerParams as $key => $val) {
             $headers[] = "$key: $val";
         }
@@ -163,10 +162,13 @@ class ApiClient
         } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($postData));
         }
-        $resourcePath= utf8_encode($resourcePath);
-        $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
+		$resourcePath= utf8_encode($resourcePath);
+		$authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
-        print_r($headers);
+		foreach ($headers as $value) {
+            $splitArr= explode(":", $value, 2);
+            $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+        }
         $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
 
         $curl = curl_init();
@@ -183,6 +185,7 @@ class ApiClient
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
         // disable SSL verification, if needed
         if ($this->config->getSSLVerification() === false) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
@@ -210,7 +213,7 @@ class ApiClient
         if (!empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
         }
-       
+
         if ($this->config->getAllowEncoding()) {
             curl_setopt($curl, CURLOPT_ENCODING, '');
         }
@@ -242,6 +245,7 @@ class ApiClient
 
         // debugging for curl
         if ($this->config->getDebug()) {
+			//$postData = $this->dataMasking($postData);
             error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
@@ -258,6 +262,7 @@ class ApiClient
         $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
         $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
         $http_body = substr($response, $http_header_size);
+		//$http_body = $this->dataMasking($http_body);
         $response_info = curl_getinfo($curl);
 
         // debug HTTP response body
@@ -387,8 +392,7 @@ class ApiClient
     */
     public function callAuthenticationHeader($method, $postData, $resourcePath)
     {
-        require_once 'Resources/ExternalConfiguration.php';
-
+        require_once './Resources/ExternalConfiguration.php';
         $ExternalConfigurationObj = new ExternalConfiguration();
         $merchantConfig = $ExternalConfigurationObj->merchantConfigObject();
         $authentication = new Authentication();
@@ -419,6 +423,44 @@ class ApiClient
             $headers = array_merge($headers, $digestArry);
         }
         return $headers;
+
+    }
+	
+	//set Fields to be mask
+    public function dataMasking($postData_json_raw)
+    {
+        $toBeMask = array("number"=>"XXXXX","expirationMonth"=>"XXXXX","expirationYear"=>"XXXX","email"=>"XXXXX","firstName"=>"XXXXX","lastName"=>"XXXXX","phoneNumber"=>"XXXXX","type"=>"XXXXX","securityCode"=>"XXXXX", "totalAmount" => "XXXXX", "token" => "XXXXX", "signature" => "XXXXX");
+        
+        $postData_json = json_decode($postData_json_raw, JSON_UNESCAPED_SLASHES);
+        if($postData_json == null){
+            return $postData_json_raw;
+        }else {
+            $postData_json = $this->dataMaskingIterate($postData_json, $toBeMask);
+            return json_encode($postData_json);
+
+        }
+        
+    }
+
+    //Data masking iteration
+    public function dataMaskingIterate($responceArr, $callback)
+    { 
+        if(!empty($responceArr)){
+            foreach ($responceArr as $k => $v) 
+            {
+                if(is_array($v)) {
+                    $responceArr[$k] = $this->dataMaskingIterate($v, $callback);
+                } 
+                else 
+                {
+                    if(array_key_exists($k, $callback)) 
+                    {
+                        $responceArr[$k]="XXXXXX";
+                    }
+                }
+            }
+        }
+        return $responceArr;
 
     }
 }

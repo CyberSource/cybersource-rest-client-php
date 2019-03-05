@@ -106,6 +106,13 @@ class RequestBody1Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "reportFrequency"
+     */
+    public function testPropertyReportFrequency()
+    {
+    }
+
+    /**
      * Test attribute "reportName"
      */
     public function testPropertyReportName()
@@ -120,16 +127,16 @@ class RequestBody1Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reportStartTime"
+     * Test attribute "startTime"
      */
-    public function testPropertyReportStartTime()
+    public function testPropertyStartTime()
     {
     }
 
     /**
-     * Test attribute "reportEndTime"
+     * Test attribute "startDay"
      */
-    public function testPropertyReportEndTime()
+    public function testPropertyStartDay()
     {
     }
 
@@ -148,9 +155,9 @@ class RequestBody1Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "selectedMerchantGroupName"
+     * Test attribute "groupName"
      */
-    public function testPropertySelectedMerchantGroupName()
+    public function testPropertyGroupName()
     {
     }
 }

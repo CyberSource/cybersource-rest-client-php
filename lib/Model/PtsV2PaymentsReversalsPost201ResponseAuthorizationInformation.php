@@ -55,7 +55,8 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
       */
     protected static $swaggerTypes = [
         'approvalCode' => 'string',
-        'reasonCode' => 'string'
+        'reasonCode' => 'string',
+        'reversalSubmitted' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
       */
     protected static $swaggerFormats = [
         'approvalCode' => null,
-        'reasonCode' => null
+        'reasonCode' => null,
+        'reversalSubmitted' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
      */
     protected static $attributeMap = [
         'approvalCode' => 'approvalCode',
-        'reasonCode' => 'reasonCode'
+        'reasonCode' => 'reasonCode',
+        'reversalSubmitted' => 'reversalSubmitted'
     ];
 
 
@@ -93,7 +96,8 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
      */
     protected static $setters = [
         'approvalCode' => 'setApprovalCode',
-        'reasonCode' => 'setReasonCode'
+        'reasonCode' => 'setReasonCode',
+        'reversalSubmitted' => 'setReversalSubmitted'
     ];
 
 
@@ -103,7 +107,8 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
      */
     protected static $getters = [
         'approvalCode' => 'getApprovalCode',
-        'reasonCode' => 'getReasonCode'
+        'reasonCode' => 'getReasonCode',
+        'reversalSubmitted' => 'getReversalSubmitted'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
     {
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['reasonCode'] = isset($data['reasonCode']) ? $data['reasonCode'] : null;
+        $this->container['reversalSubmitted'] = isset($data['reversalSubmitted']) ? $data['reversalSubmitted'] : null;
     }
 
     /**
@@ -158,6 +164,10 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
             $invalid_properties[] = "invalid value for 'reasonCode', the character length must be smaller than or equal to 50.";
         }
 
+        if (!is_null($this->container['reversalSubmitted']) && (strlen($this->container['reversalSubmitted']) > 1)) {
+            $invalid_properties[] = "invalid value for 'reversalSubmitted', the character length must be smaller than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -174,6 +184,9 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
             return false;
         }
         if (strlen($this->container['reasonCode']) > 50) {
+            return false;
+        }
+        if (strlen($this->container['reversalSubmitted']) > 1) {
             return false;
         }
         return true;
@@ -226,6 +239,31 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
         }
 
         $this->container['reasonCode'] = $reasonCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets reversalSubmitted
+     * @return string
+     */
+    public function getReversalSubmitted()
+    {
+        return $this->container['reversalSubmitted'];
+    }
+
+    /**
+     * Sets reversalSubmitted
+     * @param string $reversalSubmitted Flag indicating whether a full authorization reversal was successfully submitted.  Possible values: - Y: The authorization reversal was successfully submitted. - N: The authorization reversal was not successfully submitted. You must send a credit request for a refund.  This field is supported only for **FDC Nashville Global**.
+     * @return $this
+     */
+    public function setReversalSubmitted($reversalSubmitted)
+    {
+        if (!is_null($reversalSubmitted) && (strlen($reversalSubmitted) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $reversalSubmitted when calling PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['reversalSubmitted'] = $reversalSubmitted;
 
         return $this;
     }

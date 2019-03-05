@@ -223,4 +223,39 @@ class Ptsv2paymentsOrderInformationLineItemsTest extends \PHPUnit_Framework_Test
     public function testPropertyFulfillmentType()
     {
     }
+
+    /**
+     * Test attribute "weight"
+     */
+    public function testPropertyWeight()
+    {
+    }
+
+    /**
+     * Test attribute "weightIdentifier"
+     */
+    public function testPropertyWeightIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "weightUnit"
+     */
+    public function testPropertyWeightUnit()
+    {
+    }
+
+    /**
+     * Test attribute "referenceDataCode"
+     */
+    public function testPropertyReferenceDataCode()
+    {
+    }
+
+    /**
+     * Test attribute "referenceDataNumber"
+     */
+    public function testPropertyReferenceDataNumber()
+    {
+    }
 }

@@ -134,6 +134,13 @@ class PtsV2PaymentsReversalsPost201ResponseTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
+    {
+    }
+
+    /**
      * Test attribute "authorizationInformation"
      */
     public function testPropertyAuthorizationInformation()

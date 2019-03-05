@@ -57,7 +57,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'card' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
-        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'card' => null,
         'tokenizedCard' => null,
         'fluidData' => null,
-        'customer' => null
+        'customer' => null,
+        'bank' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'card' => 'card',
         'tokenizedCard' => 'tokenizedCard',
         'fluidData' => 'fluidData',
-        'customer' => 'customer'
+        'customer' => 'customer',
+        'bank' => 'bank'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'card' => 'setCard',
         'tokenizedCard' => 'setTokenizedCard',
         'fluidData' => 'setFluidData',
-        'customer' => 'setCustomer'
+        'customer' => 'setCustomer',
+        'bank' => 'setBank'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'card' => 'getCard',
         'tokenizedCard' => 'getTokenizedCard',
         'fluidData' => 'getFluidData',
-        'customer' => 'getCustomer'
+        'customer' => 'getCustomer',
+        'bank' => 'getBank'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function setCustomer($customer)
     {
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBank
+     */
+    public function getBank()
+    {
+        return $this->container['bank'];
+    }
+
+    /**
+     * Sets bank
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBank $bank
+     * @return $this
+     */
+    public function setBank($bank)
+    {
+        $this->container['bank'] = $bank;
 
         return $this;
     }

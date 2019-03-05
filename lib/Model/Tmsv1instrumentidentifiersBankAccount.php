@@ -150,6 +150,22 @@ class Tmsv1instrumentidentifiersBankAccount implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 19)) {
+            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 19.";
+        }
+
+        if (!is_null($this->container['number']) && (strlen($this->container['number']) < 1)) {
+            $invalid_properties[] = "invalid value for 'number', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['routingNumber']) && (strlen($this->container['routingNumber']) > 9)) {
+            $invalid_properties[] = "invalid value for 'routingNumber', the character length must be smaller than or equal to 9.";
+        }
+
+        if (!is_null($this->container['routingNumber']) && (strlen($this->container['routingNumber']) < 1)) {
+            $invalid_properties[] = "invalid value for 'routingNumber', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -162,6 +178,18 @@ class Tmsv1instrumentidentifiersBankAccount implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['number']) > 19) {
+            return false;
+        }
+        if (strlen($this->container['number']) < 1) {
+            return false;
+        }
+        if (strlen($this->container['routingNumber']) > 9) {
+            return false;
+        }
+        if (strlen($this->container['routingNumber']) < 1) {
+            return false;
+        }
         return true;
     }
 
@@ -182,6 +210,13 @@ class Tmsv1instrumentidentifiersBankAccount implements ArrayAccess
      */
     public function setNumber($number)
     {
+        if (!is_null($number) && (strlen($number) > 19)) {
+            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv1instrumentidentifiersBankAccount., must be smaller than or equal to 19.');
+        }
+        if (!is_null($number) && (strlen($number) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv1instrumentidentifiersBankAccount., must be bigger than or equal to 1.');
+        }
+
         $this->container['number'] = $number;
 
         return $this;
@@ -203,6 +238,13 @@ class Tmsv1instrumentidentifiersBankAccount implements ArrayAccess
      */
     public function setRoutingNumber($routingNumber)
     {
+        if (!is_null($routingNumber) && (strlen($routingNumber) > 9)) {
+            throw new \InvalidArgumentException('invalid length for $routingNumber when calling Tmsv1instrumentidentifiersBankAccount., must be smaller than or equal to 9.');
+        }
+        if (!is_null($routingNumber) && (strlen($routingNumber) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $routingNumber when calling Tmsv1instrumentidentifiersBankAccount., must be bigger than or equal to 1.');
+        }
+
         $this->container['routingNumber'] = $routingNumber;
 
         return $this;

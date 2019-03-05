@@ -68,7 +68,8 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
         'queuedTime' => '\DateTime',
         'reportGeneratingTime' => '\DateTime',
         'reportCompletedTime' => '\DateTime',
-        'selectedMerchantGroupName' => 'string'
+        'subscriptionType' => 'string',
+        'groupId' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
         'queuedTime' => 'date-time',
         'reportGeneratingTime' => 'date-time',
         'reportCompletedTime' => 'date-time',
-        'selectedMerchantGroupName' => null
+        'subscriptionType' => null,
+        'groupId' => null
     ];
 
     public static function swaggerTypes()
@@ -120,7 +122,8 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
         'queuedTime' => 'queuedTime',
         'reportGeneratingTime' => 'reportGeneratingTime',
         'reportCompletedTime' => 'reportCompletedTime',
-        'selectedMerchantGroupName' => 'selectedMerchantGroupName'
+        'subscriptionType' => 'subscriptionType',
+        'groupId' => 'groupId'
     ];
 
 
@@ -142,7 +145,8 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
         'queuedTime' => 'setQueuedTime',
         'reportGeneratingTime' => 'setReportGeneratingTime',
         'reportCompletedTime' => 'setReportCompletedTime',
-        'selectedMerchantGroupName' => 'setSelectedMerchantGroupName'
+        'subscriptionType' => 'setSubscriptionType',
+        'groupId' => 'setGroupId'
     ];
 
 
@@ -164,7 +168,8 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
         'queuedTime' => 'getQueuedTime',
         'reportGeneratingTime' => 'getReportGeneratingTime',
         'reportCompletedTime' => 'getReportCompletedTime',
-        'selectedMerchantGroupName' => 'getSelectedMerchantGroupName'
+        'subscriptionType' => 'getSubscriptionType',
+        'groupId' => 'getGroupId'
     ];
 
     public static function attributeMap()
@@ -265,7 +270,8 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
         $this->container['queuedTime'] = isset($data['queuedTime']) ? $data['queuedTime'] : null;
         $this->container['reportGeneratingTime'] = isset($data['reportGeneratingTime']) ? $data['reportGeneratingTime'] : null;
         $this->container['reportCompletedTime'] = isset($data['reportCompletedTime']) ? $data['reportCompletedTime'] : null;
-        $this->container['selectedMerchantGroupName'] = isset($data['selectedMerchantGroupName']) ? $data['selectedMerchantGroupName'] : null;
+        $this->container['subscriptionType'] = isset($data['subscriptionType']) ? $data['subscriptionType'] : null;
+        $this->container['groupId'] = isset($data['groupId']) ? $data['groupId'] : null;
     }
 
     /**
@@ -630,22 +636,43 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
     }
 
     /**
-     * Gets selectedMerchantGroupName
+     * Gets subscriptionType
      * @return string
      */
-    public function getSelectedMerchantGroupName()
+    public function getSubscriptionType()
     {
-        return $this->container['selectedMerchantGroupName'];
+        return $this->container['subscriptionType'];
     }
 
     /**
-     * Sets selectedMerchantGroupName
-     * @param string $selectedMerchantGroupName Selected name of the group
+     * Sets subscriptionType
+     * @param string $subscriptionType Specifies whether the subscription created is either Custom, Standard or Classic
      * @return $this
      */
-    public function setSelectedMerchantGroupName($selectedMerchantGroupName)
+    public function setSubscriptionType($subscriptionType)
     {
-        $this->container['selectedMerchantGroupName'] = $selectedMerchantGroupName;
+        $this->container['subscriptionType'] = $subscriptionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets groupId
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->container['groupId'];
+    }
+
+    /**
+     * Sets groupId
+     * @param string $groupId Id for selected group.
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->container['groupId'] = $groupId;
 
         return $this;
     }

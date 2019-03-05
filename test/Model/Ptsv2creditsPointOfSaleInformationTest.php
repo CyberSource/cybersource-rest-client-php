@@ -83,4 +83,67 @@ class Ptsv2creditsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEmv()
     {
     }
+
+    /**
+     * Test attribute "partnerSdkVersion"
+     */
+    public function testPropertyPartnerSdkVersion()
+    {
+    }
+
+    /**
+     * Test attribute "storeAndForwardIndicator"
+     */
+    public function testPropertyStoreAndForwardIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "cardholderVerificationMethod"
+     */
+    public function testPropertyCardholderVerificationMethod()
+    {
+    }
+
+    /**
+     * Test attribute "terminalInputCapability"
+     */
+    public function testPropertyTerminalInputCapability()
+    {
+    }
+
+    /**
+     * Test attribute "terminalSerialNumber"
+     */
+    public function testPropertyTerminalSerialNumber()
+    {
+    }
+
+    /**
+     * Test attribute "terminalCardCaptureCapability"
+     */
+    public function testPropertyTerminalCardCaptureCapability()
+    {
+    }
+
+    /**
+     * Test attribute "terminalOutputCapability"
+     */
+    public function testPropertyTerminalOutputCapability()
+    {
+    }
+
+    /**
+     * Test attribute "terminalPinCapability"
+     */
+    public function testPropertyTerminalPinCapability()
+    {
+    }
+
+    /**
+     * Test attribute "deviceId"
+     */
+    public function testPropertyDeviceId()
+    {
+    }
 }

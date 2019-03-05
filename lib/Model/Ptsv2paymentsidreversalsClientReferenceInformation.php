@@ -55,7 +55,8 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'comments' => 'string'
+        'comments' => 'string',
+        'partner' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformationPartner'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => null,
-        'comments' => null
+        'comments' => null,
+        'partner' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'comments' => 'comments'
+        'comments' => 'comments',
+        'partner' => 'partner'
     ];
 
 
@@ -93,7 +96,8 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-        'comments' => 'setComments'
+        'comments' => 'setComments',
+        'partner' => 'setPartner'
     ];
 
 
@@ -103,7 +107,8 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-        'comments' => 'getComments'
+        'comments' => 'getComments',
+        'partner' => 'getPartner'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
 
     /**
@@ -184,7 +190,7 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.
+     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see Getting Started with CyberSource Advanced for the SCMP API.  **FDC Nashville Global**\\ Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
     public function setCode($code)
@@ -215,6 +221,27 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     public function setComments($comments)
     {
         $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

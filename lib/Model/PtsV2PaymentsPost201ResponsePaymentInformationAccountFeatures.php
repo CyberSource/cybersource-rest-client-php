@@ -537,7 +537,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets balanceSign
-     * @param string $balanceSign Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:
+     * @param string $balanceSign Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-**
      * @return $this
      */
     public function setBalanceSign($balanceSign)
