@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportingV3ReportsGet200ResponseReportsTest
+ * ReportingV3ReportsGet200ResponseReportSearchResultsTest
  *
  * PHP version 5
  *
@@ -30,7 +30,7 @@
 namespace CyberSource;
 
 /**
- * ReportingV3ReportsGet200ResponseReportsTest Class Doc Comment
+ * ReportingV3ReportsGet200ResponseReportSearchResultsTest Class Doc Comment
  *
  * @category    Class */
 // * @description Report Search Result Bean
@@ -39,7 +39,7 @@ namespace CyberSource;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReportingV3ReportsGet200ResponseReportsTest extends \PHPUnit_Framework_TestCase
+class ReportingV3ReportsGet200ResponseReportSearchResultsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class ReportingV3ReportsGet200ResponseReportsTest extends \PHPUnit_Framework_Tes
     }
 
     /**
-     * Test "ReportingV3ReportsGet200ResponseReports"
+     * Test "ReportingV3ReportsGet200ResponseReportSearchResults"
      */
-    public function testReportingV3ReportsGet200ResponseReports()
+    public function testReportingV3ReportsGet200ResponseReportSearchResults()
     {
     }
 

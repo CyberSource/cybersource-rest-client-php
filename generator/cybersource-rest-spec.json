@@ -12264,7 +12264,7 @@
 							"title": "reportingV3ReportsGet200Response",
 							"type": "object",
 							"properties": {
-								"reports": {
+								"reportSearchResults": {
 									"type": "array",
 									"items": {
 										"type": "object",

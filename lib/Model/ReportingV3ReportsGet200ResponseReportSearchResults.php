@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportingV3ReportsGet200ResponseReports
+ * ReportingV3ReportsGet200ResponseReportSearchResults
  *
  * PHP version 5
  *
@@ -32,7 +32,7 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * ReportingV3ReportsGet200ResponseReports Class Doc Comment
+ * ReportingV3ReportsGet200ResponseReportSearchResults Class Doc Comment
  *
  * @category    Class
  * @description Report Search Result Bean
@@ -40,7 +40,7 @@ use \ArrayAccess;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
+class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ReportingV3ReportsGet200ResponseReports implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ReportsGet200Response_reports';
+    protected static $swaggerModelName = 'reportingV3ReportsGet200Response_reportSearchResults';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
