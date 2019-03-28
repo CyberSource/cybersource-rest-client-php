@@ -95,7 +95,7 @@ class CaptureApi
      * @param \CyberSource\Model\CapturePaymentRequest $capturePaymentRequest  (required)
      * @param string $id The payment ID returned from a previous payment request. This ID links the capture to the payment. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsCapturesPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function capturePayment($capturePaymentRequest, $id)
     {

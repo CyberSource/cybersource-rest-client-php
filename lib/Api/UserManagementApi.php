@@ -97,7 +97,7 @@ class UserManagementApi
      * @param string $permissionId permission that you are trying to search user on. (optional)
      * @param string $roleId role of the user you are trying to search on. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\UmsV1UsersGet200Response
+     * @return array of \CyberSource\Model\UmsV1UsersGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUsers($organizationId = null, $userName = null, $permissionId = null, $roleId = null)
     {

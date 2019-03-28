@@ -95,7 +95,7 @@ class InstrumentIdentifierApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of an Instrument Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1InstrumentidentifiersTokenIdDelete($profileId, $tokenId)
     {
@@ -221,7 +221,7 @@ class InstrumentIdentifierApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of an Instrument Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPost200Response
+     * @return array of \CyberSource\Model\TmsV1InstrumentidentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1InstrumentidentifiersTokenIdGet($profileId, $tokenId)
     {
@@ -352,7 +352,7 @@ class InstrumentIdentifierApi
      * @param string $tokenId The TokenId of an Instrument Identifier. (required)
      * @param \CyberSource\Model\Body1 $body Please specify the previous transaction Id to update. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPost200Response
+     * @return array of \CyberSource\Model\TmsV1InstrumentidentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1InstrumentidentifiersTokenIdPatch($profileId, $tokenId, $body)
     {

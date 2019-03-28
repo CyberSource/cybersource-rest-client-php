@@ -95,7 +95,7 @@ class InstrumentIdentifiersApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param \CyberSource\Model\Body $body Please specify either a Card or Bank Account. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPost200Response
+     * @return array of \CyberSource\Model\TmsV1InstrumentidentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1InstrumentidentifiersPost($profileId, $body)
     {

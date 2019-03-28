@@ -68,13 +68,18 @@ class ApiClient
      *
      * @param Configuration $config config for this ApiClient
      */
-    public function __construct(\CyberSource\Configuration $config = null)
+    public function __construct(\CyberSource\Configuration $config = null, \CyberSource\Authentication\Core\MerchantConfiguration $merchantConfig = null)
     {
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();
         }
+		
+		if ($merchantConfig === null) {
+			echo "Merchant Configuration cannot be null.";
+		}
 
         $this->config = $config;
+		$this->merchantConfig = $merchantConfig;
         $this->serializer = new ObjectSerializer();
     }
 
@@ -392,9 +397,7 @@ class ApiClient
     */
     public function callAuthenticationHeader($method, $postData, $resourcePath)
     {
-        require_once './Resources/ExternalConfiguration.php';
-        $ExternalConfigurationObj = new ExternalConfiguration();
-        $merchantConfig = $ExternalConfigurationObj->merchantConfigObject();
+        $merchantConfig = $this->merchantConfig;
         $authentication = new Authentication();
         $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig); 
         if($merchantConfig->getAuthenticationType()==GlobalParameter::HTTP_SIGNATURE){

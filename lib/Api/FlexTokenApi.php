@@ -94,7 +94,7 @@ class FlexTokenApi
      *
      * @param \CyberSource\Model\TokenizeRequest $tokenizeRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\FlexV1TokensPost200Response
+     * @return array of \CyberSource\Model\FlexV1TokensPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tokenize($tokenizeRequest = null)
     {

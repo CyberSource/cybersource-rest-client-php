@@ -95,7 +95,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidCaptureRequest $voidCaptureRequest  (required)
      * @param string $id The capture ID returned from a previous capture request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidCapture($voidCaptureRequest, $id)
     {
@@ -196,7 +196,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidCreditRequest $voidCreditRequest  (required)
      * @param string $id The credit ID returned from a previous credit request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidCredit($voidCreditRequest, $id)
     {
@@ -297,7 +297,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidPaymentRequest $voidPaymentRequest  (required)
      * @param string $id The payment ID returned from a previous payment request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidPayment($voidPaymentRequest, $id)
     {
@@ -398,7 +398,7 @@ class VoidApi
      * @param \CyberSource\Model\VoidRefundRequest $voidRefundRequest  (required)
      * @param string $id The refund ID returned from a previous refund request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidRefund($voidRefundRequest, $id)
     {

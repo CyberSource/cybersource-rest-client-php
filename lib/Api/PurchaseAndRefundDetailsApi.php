@@ -101,7 +101,7 @@ class PurchaseAndRefundDetailsApi
      * @param int $offset Offset of the Purchase and Refund Results. (optional)
      * @param int $limit Results count per page. Range(1-2000) (optional, default to 2000)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response
+     * @return array of \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPurchaseAndRefundDetails($startTime, $endTime, $organizationId = null, $paymentSubtype = 'ALL', $viewBy = 'requestDate', $groupName = null, $offset = null, $limit = '2000')
     {

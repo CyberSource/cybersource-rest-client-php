@@ -94,7 +94,7 @@ class SearchTransactionsApi
      *
      * @param \CyberSource\Model\TssV2TransactionsPostResponse $createSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TssV2TransactionsPost201Response
+     * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSearch($createSearchRequest)
     {
@@ -181,7 +181,7 @@ class SearchTransactionsApi
      *
      * @param string $id Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TssV2TransactionsPost201Response
+     * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSearch($id)
     {
