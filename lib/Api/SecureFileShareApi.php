@@ -95,7 +95,7 @@ class SecureFileShareApi
      * @param string $fileId Unique identifier for each file (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFile($fileId, $organizationId = null)
     {
@@ -194,7 +194,7 @@ class SecureFileShareApi
      * @param \DateTime $endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\V1FileDetailsGet200Response
+     * @return array of \CyberSource\Model\V1FileDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFileDetails($startDate, $endDate, $organizationId = null)
     {

@@ -95,7 +95,7 @@ class ReportDefinitionsApi
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response
+     * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResourceInfoByReportDefinition($reportDefinitionName, $organizationId = null)
     {
@@ -196,7 +196,7 @@ class ReportDefinitionsApi
      *
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3ReportDefinitionsGet200Response
+     * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResourceV2Info($organizationId = null)
     {

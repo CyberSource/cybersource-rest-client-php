@@ -97,7 +97,7 @@ class PaymentInstrumentsApi
      * @param string $offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional)
      * @param string $limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
+     * @return array of \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1InstrumentidentifiersTokenIdPaymentinstrumentsGet($profileId, $tokenId, $offset = null, $limit = '20')
     {
@@ -248,7 +248,7 @@ class PaymentInstrumentsApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param \CyberSource\Model\Body2 $body Please specify the customers payment details for card or bank account. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response
+     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1PaymentinstrumentsPost($profileId, $body)
     {
@@ -360,7 +360,7 @@ class PaymentInstrumentsApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1PaymentinstrumentsTokenIdDelete($profileId, $tokenId)
     {
@@ -482,7 +482,7 @@ class PaymentInstrumentsApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response
+     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1PaymentinstrumentsTokenIdGet($profileId, $tokenId)
     {
@@ -613,7 +613,7 @@ class PaymentInstrumentsApi
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @param \CyberSource\Model\Body3 $body Please specify the customers payment details. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response
+     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function tmsV1PaymentinstrumentsTokenIdPatch($profileId, $tokenId, $body)
     {

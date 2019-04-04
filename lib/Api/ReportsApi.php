@@ -95,7 +95,7 @@ class ReportsApi
      * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function createReport($requestBody, $organizationId = null)
     {
@@ -190,7 +190,7 @@ class ReportsApi
      * @param string $reportId Valid Report Id (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3ReportsIdGet200Response
+     * @return array of \CyberSource\Model\ReportingV3ReportsIdGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReportByReportId($reportId, $organizationId = null)
     {
@@ -299,7 +299,7 @@ class ReportsApi
      * @param int $reportDefinitionId Valid Report Definition Id (optional)
      * @param string $reportStatus Valid Report Status (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3ReportsGet200Response
+     * @return array of \CyberSource\Model\ReportingV3ReportsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchReports($startTime, $endTime, $timeQueryType, $organizationId = null, $reportMimeType = null, $reportFrequency = null, $reportName = null, $reportDefinitionId = null, $reportStatus = null)
     {

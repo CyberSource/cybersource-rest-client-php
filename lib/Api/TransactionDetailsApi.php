@@ -94,7 +94,7 @@ class TransactionDetailsApi
      *
      * @param string $id Request ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\TssV2TransactionsGet200Response
+     * @return array of \CyberSource\Model\TssV2TransactionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransaction($id)
     {

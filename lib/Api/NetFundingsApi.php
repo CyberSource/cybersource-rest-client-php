@@ -97,7 +97,7 @@ class NetFundingsApi
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $groupName Valid CyberSource Group Name. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3NetFundingsGet200Response
+     * @return array of \CyberSource\Model\ReportingV3NetFundingsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNetFundingInfo($startTime, $endTime, $organizationId = null, $groupName = null)
     {

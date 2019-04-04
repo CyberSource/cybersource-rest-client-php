@@ -95,7 +95,7 @@ class ReversalApi
      * @param string $id The payment ID returned from a previous payment request. (required)
      * @param \CyberSource\Model\AuthReversalRequest $authReversalRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsReversalsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function authReversal($id, $authReversalRequest)
     {

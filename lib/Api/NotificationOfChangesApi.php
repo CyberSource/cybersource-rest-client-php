@@ -95,7 +95,7 @@ class NotificationOfChangesApi
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3NotificationofChangesGet200Response
+     * @return array of \CyberSource\Model\ReportingV3NotificationofChangesGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationOfChangeReport($startTime, $endTime)
     {

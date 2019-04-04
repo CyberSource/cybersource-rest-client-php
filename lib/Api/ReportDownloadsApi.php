@@ -96,7 +96,7 @@ class ReportDownloadsApi
      * @param string $reportName Name of the report to download (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadReport($reportDate, $reportName, $organizationId = null)
     {

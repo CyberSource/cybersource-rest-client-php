@@ -94,7 +94,7 @@ class PaymentsApi
      *
      * @param \CyberSource\Model\CreatePaymentRequest $createPaymentRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPayment($createPaymentRequest)
     {

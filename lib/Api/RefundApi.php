@@ -95,7 +95,7 @@ class RefundApi
      * @param \CyberSource\Model\RefundCaptureRequest $refundCaptureRequest  (required)
      * @param string $id The capture ID. This ID is returned from a previous capture request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsRefundPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsRefundPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function refundCapture($refundCaptureRequest, $id)
     {
@@ -196,7 +196,7 @@ class RefundApi
      * @param \CyberSource\Model\RefundPaymentRequest $refundPaymentRequest  (required)
      * @param string $id The payment ID. This ID is returned from a previous payment request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PaymentsRefundPost201Response
+     * @return array of \CyberSource\Model\PtsV2PaymentsRefundPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function refundPayment($refundPaymentRequest, $id)
     {

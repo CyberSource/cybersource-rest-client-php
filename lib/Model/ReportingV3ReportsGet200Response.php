@@ -54,7 +54,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reports' => '\CyberSource\Model\ReportingV3ReportsGet200ResponseReports[]'
+        'reportSearchResults' => '\CyberSource\Model\ReportingV3ReportsGet200ResponseReportSearchResults[]'
     ];
 
     /**
@@ -62,7 +62,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'reports' => null
+        'reportSearchResults' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'reports' => 'reports'
+        'reportSearchResults' => 'reportSearchResults'
     ];
 
 
@@ -89,7 +89,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'reports' => 'setReports'
+        'reportSearchResults' => 'setReportSearchResults'
     ];
 
 
@@ -98,7 +98,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'reports' => 'getReports'
+        'reportSearchResults' => 'getReportSearchResults'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['reports'] = isset($data['reports']) ? $data['reports'] : null;
+        $this->container['reportSearchResults'] = isset($data['reportSearchResults']) ? $data['reportSearchResults'] : null;
     }
 
     /**
@@ -161,22 +161,22 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
 
 
     /**
-     * Gets reports
-     * @return \CyberSource\Model\ReportingV3ReportsGet200ResponseReports[]
+     * Gets reportSearchResults
+     * @return \CyberSource\Model\ReportingV3ReportsGet200ResponseReportSearchResults[]
      */
-    public function getReports()
+    public function getReportSearchResults()
     {
-        return $this->container['reports'];
+        return $this->container['reportSearchResults'];
     }
 
     /**
-     * Sets reports
-     * @param \CyberSource\Model\ReportingV3ReportsGet200ResponseReports[] $reports
+     * Sets reportSearchResults
+     * @param \CyberSource\Model\ReportingV3ReportsGet200ResponseReportSearchResults[] $reportSearchResults
      * @return $this
      */
-    public function setReports($reports)
+    public function setReportSearchResults($reportSearchResults)
     {
-        $this->container['reports'] = $reports;
+        $this->container['reportSearchResults'] = $reportSearchResults;
 
         return $this;
     }

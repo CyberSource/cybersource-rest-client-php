@@ -94,7 +94,7 @@ class ProcessAPayoutApi
      *
      * @param \CyberSource\Model\PtsV2PayoutsPostResponse $octCreatePaymentRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\PtsV2PayoutsPost201Response
+     * @return array of \CyberSource\Model\PtsV2PayoutsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function octCreatePayment($octCreatePaymentRequest)
     {

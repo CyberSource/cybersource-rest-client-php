@@ -95,7 +95,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://apitest.cybersource.com';
+    protected $host = 'apitest.cybersource.com';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout

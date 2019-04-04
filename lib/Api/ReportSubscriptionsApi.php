@@ -95,7 +95,7 @@ class ReportSubscriptionsApi
      * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSubscription($requestBody, $organizationId = null)
     {
@@ -189,7 +189,7 @@ class ReportSubscriptionsApi
      *
      * @param string $reportName Name of the Report to Delete (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return void
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSubscription($reportName)
     {
@@ -284,7 +284,7 @@ class ReportSubscriptionsApi
      * Get all subscriptions
      *
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response
+     * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllSubscriptions()
     {
@@ -357,7 +357,7 @@ class ReportSubscriptionsApi
      *
      * @param string $reportName Name of the Report to Retrieve (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions
+     * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscription($reportName)
     {

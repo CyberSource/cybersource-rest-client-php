@@ -1,4 +1,4 @@
-# ReportingV3ReportsGet200ResponseReports
+# ReportingV3ReportsGet200ResponseReportSearchResults
 
 ## Properties
 Name | Type | Description | Notes
