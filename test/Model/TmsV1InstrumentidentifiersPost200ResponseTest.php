@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersPost200ResponseTest
+ * TmsV1InstrumentIdentifiersPost200ResponseTest
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * TmsV1InstrumentidentifiersPost200ResponseTest Class Doc Comment
+ * TmsV1InstrumentIdentifiersPost200ResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description TmsV1InstrumentidentifiersPost200Response
+// * @description TmsV1InstrumentIdentifiersPost200Response
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersPost200ResponseTest extends \PHPUnit_Framework_TestCase
+class TmsV1InstrumentIdentifiersPost200ResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class TmsV1InstrumentidentifiersPost200ResponseTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test "TmsV1InstrumentidentifiersPost200Response"
+     * Test "TmsV1InstrumentIdentifiersPost200Response"
      */
-    public function testTmsV1InstrumentidentifiersPost200Response()
+    public function testTmsV1InstrumentIdentifiersPost200Response()
     {
     }
 

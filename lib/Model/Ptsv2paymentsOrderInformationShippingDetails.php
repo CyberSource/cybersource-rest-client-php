@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -35,6 +35,7 @@ use \ArrayAccess;
  * Ptsv2paymentsOrderInformationShippingDetails Class Doc Comment
  *
  * @category    Class
+ * @description Contains shipping information not related to address.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,7 +55,7 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'giftWrap' => 'bool',
+        'giftWrap' => 'string',
         'shippingMethod' => 'string',
         'shipFromPostalCode' => 'string'
     ];
@@ -156,6 +157,10 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['giftWrap']) && (strlen($this->container['giftWrap']) > 3)) {
+            $invalid_properties[] = "invalid value for 'giftWrap', the character length must be smaller than or equal to 3.";
+        }
+
         if (!is_null($this->container['shippingMethod']) && (strlen($this->container['shippingMethod']) > 10)) {
             $invalid_properties[] = "invalid value for 'shippingMethod', the character length must be smaller than or equal to 10.";
         }
@@ -176,6 +181,9 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['giftWrap']) > 3) {
+            return false;
+        }
         if (strlen($this->container['shippingMethod']) > 10) {
             return false;
         }
@@ -188,7 +196,7 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
 
     /**
      * Gets giftWrap
-     * @return bool
+     * @return string
      */
     public function getGiftWrap()
     {
@@ -197,11 +205,15 @@ class Ptsv2paymentsOrderInformationShippingDetails implements ArrayAccess
 
     /**
      * Sets giftWrap
-     * @param bool $giftWrap The description for this field is not available.
+     * @param string $giftWrap Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping.
      * @return $this
      */
     public function setGiftWrap($giftWrap)
     {
+        if (!is_null($giftWrap) && (strlen($giftWrap) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $giftWrap when calling Ptsv2paymentsOrderInformationShippingDetails., must be smaller than or equal to 3.');
+        }
+
         $this->container['giftWrap'] = $giftWrap;
 
         return $this;

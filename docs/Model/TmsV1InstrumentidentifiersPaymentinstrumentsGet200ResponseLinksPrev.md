@@ -1,4 +1,4 @@
-# TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev
+# TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev
 
 ## Properties
 Name | Type | Description | Notes

@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -255,7 +255,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
 
     /**
      * Sets lastName
-     * @param string $lastName Last name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60
+     * @param string $lastName Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60
      * @return $this
      */
     public function setLastName($lastName)
@@ -305,7 +305,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
 
     /**
      * Sets country
-     * @param string $country Country of the shipping address. Use the two character ISO Standard Country Codes.
+     * @param string $country Country of the shipping address. Use the two-character ISO Standard Country Codes.
      * @return $this
      */
     public function setCountry($country)
@@ -330,7 +330,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Phone number for the shipping address.
+     * @param string $phoneNumber Phone number associated with the shipping address.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

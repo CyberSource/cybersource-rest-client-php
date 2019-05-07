@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -151,6 +151,20 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
      * Test attribute "electronicVerificationResults"
      */
     public function testPropertyElectronicVerificationResults()
+    {
+    }
+
+    /**
+     * Test attribute "systemTraceAuditNumber"
+     */
+    public function testPropertySystemTraceAuditNumber()
+    {
+    }
+
+    /**
+     * Test attribute "responseCodeSource"
+     */
+    public function testPropertyResponseCodeSource()
     {
     }
 }

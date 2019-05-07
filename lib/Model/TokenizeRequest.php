@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -150,6 +150,9 @@ class TokenizeRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['keyId'] === null) {
+            $invalid_properties[] = "'keyId' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,6 +165,9 @@ class TokenizeRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['keyId'] === null) {
+            return false;
+        }
         return true;
     }
 

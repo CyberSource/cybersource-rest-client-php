@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -172,6 +172,10 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
             $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
         }
 
+        if (!is_null($this->container['comments']) && (strlen($this->container['comments']) > 255)) {
+            $invalid_properties[] = "invalid value for 'comments', the character length must be smaller than or equal to 255.";
+        }
+
         return $invalid_properties;
     }
 
@@ -185,6 +189,9 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
     {
 
         if (strlen($this->container['code']) > 50) {
+            return false;
+        }
+        if (strlen($this->container['comments']) > 255) {
             return false;
         }
         return true;
@@ -202,7 +209,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
 
     /**
      * Sets code
-     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.
+     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see [Getting Started with CyberSource Advanced for the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/Getting_Started_SCMP/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  **FDC Nashville Global**\\ Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
     public function setCode($code)
@@ -290,11 +297,15 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
 
     /**
      * Sets comments
-     * @param string $comments The description for this field is not available.
+     * @param string $comments Brief description of the order or any comment you wish to add to the order.
      * @return $this
      */
     public function setComments($comments)
     {
+        if (!is_null($comments) && (strlen($comments) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $comments when calling TssV2TransactionsGet200ResponseClientReferenceInformation., must be smaller than or equal to 255.');
+        }
+
         $this->container['comments'] = $comments;
 
         return $this;

@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst Class Doc Comment
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst implements ArrayAccess
+class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst imple
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response__links_first';
+    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response__links_first';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

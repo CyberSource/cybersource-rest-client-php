@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response Class Doc Comment
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response implements ArrayAccess
+class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,20 +47,20 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response';
+    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks',
+        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks',
         'object' => 'string',
         'offset' => 'string',
         'limit' => 'string',
         'count' => 'string',
         'total' => 'string',
-        'embedded' => 'object'
+        'embedded' => '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[]'
     ];
 
     /**
@@ -222,7 +222,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response implements Arra
 
     /**
      * Gets links
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks
      */
     public function getLinks()
     {
@@ -231,7 +231,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response implements Arra
 
     /**
      * Sets links
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks $links
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -357,7 +357,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response implements Arra
 
     /**
      * Gets embedded
-     * @return object
+     * @return \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[]
      */
     public function getEmbedded()
     {
@@ -366,7 +366,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200Response implements Arra
 
     /**
      * Sets embedded
-     * @param object $embedded Array of Payment Instruments returned for the supplied Instrument Identifier.
+     * @param \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[] $embedded Array of Payment Instruments returned for the supplied Instrument Identifier.
      * @return $this
      */
     public function setEmbedded($embedded)

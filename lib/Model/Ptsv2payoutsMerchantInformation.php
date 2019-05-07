@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -170,6 +170,10 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'submitLocalDateTime', the character length must be smaller than or equal to 6.";
         }
 
+        if (!is_null($this->container['submitLocalDateTime']) && (strlen($this->container['submitLocalDateTime']) < 6)) {
+            $invalid_properties[] = "invalid value for 'submitLocalDateTime', the character length must be bigger than or equal to 6.";
+        }
+
         if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 21)) {
             $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 21.";
         }
@@ -192,6 +196,9 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
         if (strlen($this->container['submitLocalDateTime']) > 6) {
             return false;
         }
+        if (strlen($this->container['submitLocalDateTime']) < 6) {
+            return false;
+        }
         if (strlen($this->container['vatRegistrationNumber']) > 21) {
             return false;
         }
@@ -210,7 +217,7 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
 
     /**
      * Sets categoryCode
-     * @param int $categoryCode Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param int $categoryCode Four-digit number that the payment card industry uses to classify merchants into market segments. Visa assigned one or more of these values to your business when you started accepting Visa cards.  If you do not include this field in your request, CyberSource uses the value in your CyberSource account.  For processor-specific information, see the merchant_category_code field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  See \"Aggregator Support,\" page 100.  **CyberSource through VisaNet**\\ The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR4 - Position: 150-153 - Field: Merchant Category Code
      * @return $this
      */
     public function setCategoryCode($categoryCode)
@@ -243,6 +250,9 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
     {
         if (!is_null($submitLocalDateTime) && (strlen($submitLocalDateTime) > 6)) {
             throw new \InvalidArgumentException('invalid length for $submitLocalDateTime when calling Ptsv2payoutsMerchantInformation., must be smaller than or equal to 6.');
+        }
+        if (!is_null($submitLocalDateTime) && (strlen($submitLocalDateTime) < 6)) {
+            throw new \InvalidArgumentException('invalid length for $submitLocalDateTime when calling Ptsv2payoutsMerchantInformation., must be bigger than or equal to 6.');
         }
 
         $this->container['submitLocalDateTime'] = $submitLocalDateTime;

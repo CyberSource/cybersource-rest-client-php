@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -92,8 +92,8 @@ class PurchaseAndRefundDetailsApi
      *
      * Get Purchase and Refund details
      *
-     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
-     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
+     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
+     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $paymentSubtype Payment Subtypes.   - **ALL**:  All Payment Subtypes   - **VI** :  Visa   - **MC** :  Master Card   - **AX** :  American Express   - **DI** :  Discover   - **DP** :  Pinless Debit (optional, default to ALL)
      * @param string $viewBy View results by Request Date or Submission Date.   - **requestDate** : Request Date   - **submissionDate**: Submission Date (optional, default to requestDate)
@@ -101,7 +101,7 @@ class PurchaseAndRefundDetailsApi
      * @param int $offset Offset of the Purchase and Refund Results. (optional)
      * @param int $limit Results count per page. Range(1-2000) (optional, default to 2000)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPurchaseAndRefundDetails($startTime, $endTime, $organizationId = null, $paymentSubtype = 'ALL', $viewBy = 'requestDate', $groupName = null, $offset = null, $limit = '2000')
     {
@@ -114,8 +114,8 @@ class PurchaseAndRefundDetailsApi
      *
      * Get Purchase and Refund details
      *
-     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
-     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
+     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
+     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $paymentSubtype Payment Subtypes.   - **ALL**:  All Payment Subtypes   - **VI** :  Visa   - **MC** :  Master Card   - **AX** :  American Express   - **DI** :  Discover   - **DP** :  Pinless Debit (optional, default to ALL)
      * @param string $viewBy View results by Request Date or Submission Date.   - **requestDate** : Request Date   - **submissionDate**: Submission Date (optional, default to requestDate)
@@ -123,7 +123,7 @@ class PurchaseAndRefundDetailsApi
      * @param int $offset Offset of the Purchase and Refund Results. (optional)
      * @param int $limit Results count per page. Range(1-2000) (optional, default to 2000)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPurchaseAndRefundDetailsWithHttpInfo($startTime, $endTime, $organizationId = null, $paymentSubtype = 'ALL', $viewBy = 'requestDate', $groupName = null, $offset = null, $limit = '2000')
     {
@@ -211,17 +211,13 @@ class PurchaseAndRefundDetailsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response',
+                null,
                 '/reporting/v3/purchase-refund-details'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
                 case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);

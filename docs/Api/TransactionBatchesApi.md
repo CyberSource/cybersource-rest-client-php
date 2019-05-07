@@ -4,12 +4,61 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getTransactionBatchDetails**](TransactionBatchesApi.md#getTransactionBatchDetails) | **GET** /pts/v1/transaction-batch-details | Filters batch response.
 [**getTransactionBatchId**](TransactionBatchesApi.md#getTransactionBatchId) | **GET** /pts/v1/transaction-batches/{id} | Get individual batch file
 [**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Get a list of batch files
 
 
+# **getTransactionBatchDetails**
+> getTransactionBatchDetails($transactionBatchId, $uploadDate, $status)
+
+Filters batch response.
+
+Filters batch response.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\TransactionBatchesApi();
+$transactionBatchId = "transactionBatchId_example"; // string | Transaction Batch Id, this is unique.
+$uploadDate = new \DateTime("2013-10-20"); // \DateTime | Date in which the original batch file was uploaded. Date must be in ISO-8601 format.
+$status = "status_example"; // string | Allows you to filter by rejected response.
+
+try {
+    $api_instance->getTransactionBatchDetails($transactionBatchId, $uploadDate, $status);
+} catch (Exception $e) {
+    echo 'Exception when calling TransactionBatchesApi->getTransactionBatchDetails: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionBatchId** | **string**| Transaction Batch Id, this is unique. |
+ **uploadDate** | **\DateTime**| Date in which the original batch file was uploaded. Date must be in ISO-8601 format. | [optional]
+ **status** | **string**| Allows you to filter by rejected response. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: text/vnd.cybersource.map-csv
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getTransactionBatchId**
-> \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response getTransactionBatchId($id)
+> getTransactionBatchId($id)
 
 Get individual batch file
 
@@ -24,8 +73,7 @@ $api_instance = new CyberSource\Api\TransactionBatchesApi();
 $id = "id_example"; // string | The batch id assigned for the template.
 
 try {
-    $result = $api_instance->getTransactionBatchId($id);
-    print_r($result);
+    $api_instance->getTransactionBatchId($id);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionBatchesApi->getTransactionBatchId: ', $e->getMessage(), PHP_EOL;
 }
@@ -40,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response**](../Model/PtsV1TransactionBatchesIdGet200Response.md)
+void (empty response body)
 
 ### Authorization
 

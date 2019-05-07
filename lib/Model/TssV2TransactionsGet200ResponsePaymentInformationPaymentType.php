@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -56,7 +56,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     protected static $swaggerTypes = [
         'name' => 'string',
         'type' => 'string',
-        'subType' => 'string',
         'method' => 'string',
         'fundingSource' => 'string',
         'fundingSourceAffiliation' => 'string',
@@ -70,7 +69,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     protected static $swaggerFormats = [
         'name' => null,
         'type' => null,
-        'subType' => null,
         'method' => null,
         'fundingSource' => null,
         'fundingSourceAffiliation' => null,
@@ -94,7 +92,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     protected static $attributeMap = [
         'name' => 'name',
         'type' => 'type',
-        'subType' => 'subType',
         'method' => 'method',
         'fundingSource' => 'fundingSource',
         'fundingSourceAffiliation' => 'fundingSourceAffiliation',
@@ -109,7 +106,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     protected static $setters = [
         'name' => 'setName',
         'type' => 'setType',
-        'subType' => 'setSubType',
         'method' => 'setMethod',
         'fundingSource' => 'setFundingSource',
         'fundingSourceAffiliation' => 'setFundingSourceAffiliation',
@@ -124,7 +120,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     protected static $getters = [
         'name' => 'getName',
         'type' => 'getType',
-        'subType' => 'getSubType',
         'method' => 'getMethod',
         'fundingSource' => 'getFundingSource',
         'fundingSourceAffiliation' => 'getFundingSourceAffiliation',
@@ -164,7 +159,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['subType'] = isset($data['subType']) ? $data['subType'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
         $this->container['fundingSource'] = isset($data['fundingSource']) ? $data['fundingSource'] : null;
         $this->container['fundingSourceAffiliation'] = isset($data['fundingSourceAffiliation']) ? $data['fundingSourceAffiliation'] : null;
@@ -207,7 +201,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
 
     /**
      * Sets name
-     * @param string $name The description for this field is not available.
+     * @param string $name The name of a payment method. This is required for non-credit card payment.  Examples: `SEARS`, `JCREW`, `PAYPAL`, `IDEAL`, `EPS` ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
      * @return $this
      */
     public function setName($name)
@@ -228,33 +222,12 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
 
     /**
      * Sets type
-     * @param string $type The description for this field is not available.
+     * @param string $type The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
      * @return $this
      */
     public function setType($type)
     {
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets subType
-     * @return string
-     */
-    public function getSubType()
-    {
-        return $this->container['subType'];
-    }
-
-    /**
-     * Sets subType
-     * @param string $subType The description for this field is not available.
-     * @return $this
-     */
-    public function setSubType($subType)
-    {
-        $this->container['subType'] = $subType;
 
         return $this;
     }
@@ -270,7 +243,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
 
     /**
      * Sets method
-     * @param string $method The description for this field is not available.
+     * @param string $method This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
      * @return $this
      */
     public function setMethod($method)

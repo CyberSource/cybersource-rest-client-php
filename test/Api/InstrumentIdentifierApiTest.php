@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -73,32 +73,52 @@ class InstrumentIdentifierApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for tmsV1InstrumentidentifiersTokenIdDelete
+     * Test case for createInstrumentIdentifier
+     *
+     * Create an Instrument Identifier.
+     *
+     */
+    public function testCreateInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test case for deleteInstrumentIdentifier
      *
      * Delete an Instrument Identifier.
      *
      */
-    public function testTmsV1InstrumentidentifiersTokenIdDelete()
+    public function testDeleteInstrumentIdentifier()
     {
     }
 
     /**
-     * Test case for tmsV1InstrumentidentifiersTokenIdGet
+     * Test case for getAllPaymentInstruments
+     *
+     * Retrieve all Payment Instruments associated with an Instrument Identifier.
+     *
+     */
+    public function testGetAllPaymentInstruments()
+    {
+    }
+
+    /**
+     * Test case for getInstrumentIdentifier
      *
      * Retrieve an Instrument Identifier.
      *
      */
-    public function testTmsV1InstrumentidentifiersTokenIdGet()
+    public function testGetInstrumentIdentifier()
     {
     }
 
     /**
-     * Test case for tmsV1InstrumentidentifiersTokenIdPatch
+     * Test case for updateInstrumentIdentifier
      *
      * Update a Instrument Identifier.
      *
      */
-    public function testTmsV1InstrumentidentifiersTokenIdPatch()
+    public function testUpdateInstrumentIdentifier()
     {
     }
 }

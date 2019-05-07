@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -180,8 +180,8 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
             $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
         }
 
-        if (!is_null($this->container['sourceAccountType']) && (strlen($this->container['sourceAccountType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'sourceAccountType', the character length must be smaller than or equal to 2.";
+        if (!is_null($this->container['sourceAccountType']) && (strlen($this->container['sourceAccountType']) > 20)) {
+            $invalid_properties[] = "invalid value for 'sourceAccountType', the character length must be smaller than or equal to 20.";
         }
 
         return $invalid_properties;
@@ -205,7 +205,7 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
         if (strlen($this->container['expirationYear']) > 4) {
             return false;
         }
-        if (strlen($this->container['sourceAccountType']) > 2) {
+        if (strlen($this->container['sourceAccountType']) > 20) {
             return false;
         }
         return true;
@@ -223,7 +223,7 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover
+     * @param string $type Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover - 005: Diners Club - 007: JCB - 024: Maestro (UK Domestic) - 039 Encoded account number - 042: Maestro (International)
      * @return $this
      */
     public function setType($type)
@@ -244,7 +244,7 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets number
-     * @param string $number Customer’s credit card number. Encoded Account Numbers when processing encoded account numbers, use this field for the encoded account number.  For processor-specific information, see the customer_cc_number field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $number The customer’s payment card number, also knows as the Primary Account Nunmber (PAN). You can also use this field for encoded account numbers.  For processor-specific information, see the `customer_cc_number` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setNumber($number)
@@ -269,7 +269,7 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the credit card expires. `Format: MM`. Possible values: 01 through 12.  **Encoded Account Numbers**  For encoded account numbers (_type_=039), if there is no expiration date on the card, use 12.  For processor-specific information, see the customer_cc_expmo field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $expirationMonth Two-digit month in which the payment card expires.  Format: `MM`.  Valid values: `01` through `12`.  **Barclays and Streamline**\\ For Maestro (UK Domestic) and Maestro (International) cards on Barclays and Streamline, this must be a valid value (`01` through `12`) but is not required to be a valid expiration date. In other words, an expiration date that is in the past does not cause CyberSource to reject your request. However, an invalid expiration date might cause the issuer to reject your request.  **Encoded Account Numbers**\\ For encoded account numbers (_type_=039), if there is no expiration date on the card, use `12`.  For processor-specific information, see the `customer_cc_expmo` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
@@ -294,7 +294,7 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets expirationYear
-     * @param string $expirationYear Four-digit year in which the credit card expires. `Format: YYYY`.  **Encoded Account Numbers**  For encoded account numbers (_type_=039), if there is no expiration date on the card, use 2021.  For processor-specific information, see the customer_cc_expyr field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $expirationYear Four-digit year in which the credit card expires.  Format: `YYYY`.   **Barclays and Streamline**\\ For Maestro (UK Domestic) and Maestro (International) cards on Barclays and Streamline, this must be a valid value (`1900` through `3000`) but is not required to be a valid expiration date. In other words, an expiration date that is in the past does not cause CyberSource to reject your request. However, an invalid expiration date might cause the issuer to reject your request.  **FDC Nashville Global and FDMS South**\\ You can send in 2 digits or 4 digits. If you send in 2 digits, they must be the last 2 digits of the year.  **Encoded Account Numbers**\\ For encoded account numbers (_type_=039), if there is no expiration date on the card, use `2021`.  For processor-specific information, see the `customer_cc_expyr` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setExpirationYear($expirationYear)
@@ -319,13 +319,13 @@ class Ptsv2payoutsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets sourceAccountType
-     * @param string $sourceAccountType Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process. This field is required in the following cases.   - Debit transactions on Cielo and Comercio Latino.   - Transactions with Brazilian-issued cards on CyberSource through VisaNet.   - Applicable only for CTV.      **Note** Combo cards in Brazil contain credit and debit functionality in a single card. Visa systems use a credit bank identification number (BIN) for this type of card. Using the BIN to determine whether a card is debit or credit can cause transactions with these cards to be processed incorrectly. CyberSource strongly recommends that you include this field for combo card transactions.  Possible values include the following.   - CHECKING: Checking account  - CREDIT: Credit card account  - SAVING: Saving account  - LINE_OF_CREDIT: Line of credit  - PREPAID: Prepaid card account  - UNIVERSAL: Universal account
+     * @param string $sourceAccountType Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  This field is required in the following cases:   - Debit transactions on Cielo and Comercio Latino.   - Transactions with Brazilian-issued cards on CyberSource through VisaNet.   - Applicable only for Visa Platform Connect (VPC).      **Note**\\ Combo cards in Brazil contain credit and debit functionality in a single card. Visa systems use a credit bank identification number (BIN) for this type of card. Using the BIN to determine whether a card is debit or credit can cause transactions with these cards to be processed incorrectly. CyberSource strongly recommends that you include this field for combo card transactions.  Possible values include the following.   - **CHECKING**: Checking account  - **CREDIT**: Credit card account  - **SAVING**: Saving account  - **LINE_OF_CREDIT**: Line of credit or credit portion of combo card  - **PREPAID**: Prepaid card account or prepaid portion of combo card  - **UNIVERSAL**: Universal account
      * @return $this
      */
     public function setSourceAccountType($sourceAccountType)
     {
-        if (!is_null($sourceAccountType) && (strlen($sourceAccountType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $sourceAccountType when calling Ptsv2payoutsPaymentInformationCard., must be smaller than or equal to 2.');
+        if (!is_null($sourceAccountType) && (strlen($sourceAccountType) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $sourceAccountType when calling Ptsv2payoutsPaymentInformationCard., must be smaller than or equal to 20.');
         }
 
         $this->container['sourceAccountType'] = $sourceAccountType;

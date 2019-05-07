@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -57,7 +57,7 @@ class TssV2TransactionsPost400Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[]'
+        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class TssV2TransactionsPost400Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -234,7 +234,7 @@ class TssV2TransactionsPost400Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - INVALID_REQUEST
      * @return $this
      */
     public function setStatus($status)
@@ -276,7 +276,7 @@ class TssV2TransactionsPost400Response implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[]
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
      */
     public function getDetails()
     {
@@ -285,7 +285,7 @@ class TssV2TransactionsPost400Response implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[] $details
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
      * @return $this
      */
     public function setDetails($details)

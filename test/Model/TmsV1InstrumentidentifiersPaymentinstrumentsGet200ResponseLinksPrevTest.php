@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrevTest
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrevTest
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -30,7 +30,7 @@
 namespace CyberSource;
 
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrevTest Class Doc Comment
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrevTest Class Doc Comment
  *
  * @category    Class */
 // * @description A link to the previous collection starting at the supplied offset minus the supplied limit.
@@ -39,7 +39,7 @@ namespace CyberSource;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrevTest extends \PHPUnit_Framework_TestCase
+class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrevTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrevTest ex
     }
 
     /**
-     * Test "TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev"
+     * Test "TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev"
      */
-    public function testTmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev()
+    public function testTmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev()
     {
     }
 

@@ -1,4 +1,4 @@
-# TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
+# TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
 
 ## Properties
 Name | Type | Description | Notes

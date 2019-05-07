@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -57,7 +57,9 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'totalAmount' => 'string',
         'currency' => 'string',
         'taxAmount' => 'string',
-        'authorizedAmount' => 'string'
+        'authorizedAmount' => 'string',
+        'settlementAmount' => 'string',
+        'settlementCurrency' => 'string'
     ];
 
     /**
@@ -68,7 +70,9 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'totalAmount' => null,
         'currency' => null,
         'taxAmount' => null,
-        'authorizedAmount' => null
+        'authorizedAmount' => null,
+        'settlementAmount' => null,
+        'settlementCurrency' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +93,9 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'totalAmount' => 'totalAmount',
         'currency' => 'currency',
         'taxAmount' => 'taxAmount',
-        'authorizedAmount' => 'authorizedAmount'
+        'authorizedAmount' => 'authorizedAmount',
+        'settlementAmount' => 'settlementAmount',
+        'settlementCurrency' => 'settlementCurrency'
     ];
 
 
@@ -101,7 +107,9 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'totalAmount' => 'setTotalAmount',
         'currency' => 'setCurrency',
         'taxAmount' => 'setTaxAmount',
-        'authorizedAmount' => 'setAuthorizedAmount'
+        'authorizedAmount' => 'setAuthorizedAmount',
+        'settlementAmount' => 'setSettlementAmount',
+        'settlementCurrency' => 'setSettlementCurrency'
     ];
 
 
@@ -113,7 +121,9 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'totalAmount' => 'getTotalAmount',
         'currency' => 'getCurrency',
         'taxAmount' => 'getTaxAmount',
-        'authorizedAmount' => 'getAuthorizedAmount'
+        'authorizedAmount' => 'getAuthorizedAmount',
+        'settlementAmount' => 'getSettlementAmount',
+        'settlementCurrency' => 'getSettlementCurrency'
     ];
 
     public static function attributeMap()
@@ -151,6 +161,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
         $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
+        $this->container['settlementAmount'] = isset($data['settlementAmount']) ? $data['settlementAmount'] : null;
+        $this->container['settlementCurrency'] = isset($data['settlementCurrency']) ? $data['settlementCurrency'] : null;
     }
 
     /**
@@ -178,6 +190,14 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
             $invalid_properties[] = "invalid value for 'authorizedAmount', the character length must be smaller than or equal to 15.";
         }
 
+        if (!is_null($this->container['settlementAmount']) && (strlen($this->container['settlementAmount']) > 12)) {
+            $invalid_properties[] = "invalid value for 'settlementAmount', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['settlementCurrency']) && (strlen($this->container['settlementCurrency']) > 3)) {
+            $invalid_properties[] = "invalid value for 'settlementCurrency', the character length must be smaller than or equal to 3.";
+        }
+
         return $invalid_properties;
     }
 
@@ -202,6 +222,12 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         if (strlen($this->container['authorizedAmount']) > 15) {
             return false;
         }
+        if (strlen($this->container['settlementAmount']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['settlementCurrency']) > 3) {
+            return false;
+        }
         return true;
     }
 
@@ -217,7 +243,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
 
     /**
      * Sets totalAmount
-     * @param string $totalAmount Grand total for the order. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  * CTV, FDCCompass, Paymentech (<= 12)  For processor-specific information, see the grand_total_amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in:  Table 15, \"Authorization Information for Specific Processors,\" on page 43  Table 19, \"Capture Information for Specific Processors,\" on page 58  Table 23, \"Credit Information for Specific Processors,\" on page 75 If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 247.  **DCC with a Third-Party Provider**\\ Set this field to the converted amount that was returned by the DCC provider. You must include either this field or offer0 and the offerlevel field amount in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider,\" page 125.  **FDMS South**\\ If you accept IDR or CLP currencies, see the entry for FDMS South in Table 15, \"Authorization Information for Specific Processors,\" on page 43.  **DCC for First Data**\\ Not used.
      * @return $this
      */
     public function setTotalAmount($totalAmount)
@@ -242,7 +268,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
 
     /**
      * Sets currency
-     * @param string $currency Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal or a capture, you must use the same currency that you used in your request for Payment API.
+     * @param string $currency Currency used for the order. Use the three-character ISO Standard Currency Codes.  For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your request for Payment API.  **DCC for First Data**\\ Your local currency. For details, see \"Dynamic Currency Conversion for First Data,\" page 113.
      * @return $this
      */
     public function setCurrency($currency)
@@ -302,6 +328,56 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         }
 
         $this->container['authorizedAmount'] = $authorizedAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlementAmount
+     * @return string
+     */
+    public function getSettlementAmount()
+    {
+        return $this->container['settlementAmount'];
+    }
+
+    /**
+     * Sets settlementAmount
+     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account.
+     * @return $this
+     */
+    public function setSettlementAmount($settlementAmount)
+    {
+        if (!is_null($settlementAmount) && (strlen($settlementAmount) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $settlementAmount when calling TssV2TransactionsGet200ResponseOrderInformationAmountDetails., must be smaller than or equal to 12.');
+        }
+
+        $this->container['settlementAmount'] = $settlementAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlementCurrency
+     * @return string
+     */
+    public function getSettlementCurrency()
+    {
+        return $this->container['settlementCurrency'];
+    }
+
+    /**
+     * Sets settlementCurrency
+     * @param string $settlementCurrency This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account.
+     * @return $this
+     */
+    public function setSettlementCurrency($settlementCurrency)
+    {
+        if (!is_null($settlementCurrency) && (strlen($settlementCurrency) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $settlementCurrency when calling TssV2TransactionsGet200ResponseOrderInformationAmountDetails., must be smaller than or equal to 3.');
+        }
+
+        $this->container['settlementCurrency'] = $settlementCurrency;
 
         return $this;
     }

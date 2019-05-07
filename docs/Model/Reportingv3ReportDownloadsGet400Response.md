@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submitTimeUtc** | **string** | Time of request in UTC | 
+**submitTimeUtc** | [**\DateTime**](\DateTime.md) | Time of request in UTC. | 
 **reason** | **string** | Documented reason code | 
 **message** | **string** | Short descriptive message to the user. | 
 **details** | [**\CyberSource\Model\Reportingv3ReportDownloadsGet400ResponseDetails[]**](Reportingv3ReportDownloadsGet400ResponseDetails.md) | Error field list | 

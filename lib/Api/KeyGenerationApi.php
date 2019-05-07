@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -92,11 +92,11 @@ class KeyGenerationApi
      *
      * Generate Key
      *
-     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (optional)
+     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKey($generatePublicKeyRequest = null)
+    public function generatePublicKey($generatePublicKeyRequest)
     {
         list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest);
         return [$response, $statusCode, $httpHeader];
@@ -107,14 +107,18 @@ class KeyGenerationApi
      *
      * Generate Key
      *
-     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (optional)
+     * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest = null)
+    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest)
     {
+        // verify the required parameter 'generatePublicKeyRequest' is set
+        if ($generatePublicKeyRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $generatePublicKeyRequest when calling generatePublicKey');
+        }
         // parse inputs
-        $resourcePath = "/flex/v1/keys/";
+        $resourcePath = "/flex/v1/keys";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -146,7 +150,7 @@ class KeyGenerationApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\FlexV1KeysPost200Response',
-                '/flex/v1/keys/'
+                '/flex/v1/keys'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\FlexV1KeysPost200Response', $httpHeader), $statusCode, $httpHeader];
