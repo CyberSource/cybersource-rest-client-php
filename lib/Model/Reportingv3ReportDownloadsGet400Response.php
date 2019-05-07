@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -55,7 +55,7 @@ class Reportingv3ReportDownloadsGet400Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
+        'submitTimeUtc' => '\DateTime',
         'reason' => 'string',
         'message' => 'string',
         'details' => '\CyberSource\Model\Reportingv3ReportDownloadsGet400ResponseDetails[]'
@@ -66,7 +66,7 @@ class Reportingv3ReportDownloadsGet400Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
+        'submitTimeUtc' => 'date-time',
         'reason' => null,
         'message' => null,
         'details' => null
@@ -205,7 +205,7 @@ class Reportingv3ReportDownloadsGet400Response implements ArrayAccess
 
     /**
      * Gets submitTimeUtc
-     * @return string
+     * @return \DateTime
      */
     public function getSubmitTimeUtc()
     {
@@ -214,7 +214,7 @@ class Reportingv3ReportDownloadsGet400Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC
+     * @param \DateTime $submitTimeUtc Time of request in UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)

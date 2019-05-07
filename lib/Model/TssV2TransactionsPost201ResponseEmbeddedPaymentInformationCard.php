@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -156,10 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['suffix']) && (strlen($this->container['suffix']) > 4)) {
-            $invalid_properties[] = "invalid value for 'suffix', the character length must be smaller than or equal to 4.";
-        }
-
         if (!is_null($this->container['prefix']) && (strlen($this->container['prefix']) > 6)) {
             $invalid_properties[] = "invalid value for 'prefix', the character length must be smaller than or equal to 6.";
         }
@@ -176,9 +172,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
     public function valid()
     {
 
-        if (strlen($this->container['suffix']) > 4) {
-            return false;
-        }
         if (strlen($this->container['prefix']) > 6) {
             return false;
         }
@@ -202,10 +195,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
      */
     public function setSuffix($suffix)
     {
-        if (!is_null($suffix) && (strlen($suffix) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $suffix when calling TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard., must be smaller than or equal to 4.');
-        }
-
         $this->container['suffix'] = $suffix;
 
         return $this;
@@ -247,7 +236,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
 
     /**
      * Sets type
-     * @param string $type Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover
+     * @param string $type Type of card to authorize. - 001 Visa - 002 Mastercard - 003 Amex - 004 Discover - 005: Diners Club - 007: JCB - 024: Maestro (UK Domestic) - 039 Encoded account number - 042: Maestro (International)
      * @return $this
      */
     public function setType($type)

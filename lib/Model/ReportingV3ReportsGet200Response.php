@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -54,7 +54,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reportSearchResults' => '\CyberSource\Model\ReportingV3ReportsGet200ResponseReportSearchResults[]'
+        'reports' => '\CyberSource\Model\ReportingV3ReportsGet200ResponseReports[]'
     ];
 
     /**
@@ -62,7 +62,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'reportSearchResults' => null
+        'reports' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'reportSearchResults' => 'reportSearchResults'
+        'reports' => 'reports'
     ];
 
 
@@ -89,7 +89,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'reportSearchResults' => 'setReportSearchResults'
+        'reports' => 'setReports'
     ];
 
 
@@ -98,7 +98,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'reportSearchResults' => 'getReportSearchResults'
+        'reports' => 'getReports'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['reportSearchResults'] = isset($data['reportSearchResults']) ? $data['reportSearchResults'] : null;
+        $this->container['reports'] = isset($data['reports']) ? $data['reports'] : null;
     }
 
     /**
@@ -161,22 +161,22 @@ class ReportingV3ReportsGet200Response implements ArrayAccess
 
 
     /**
-     * Gets reportSearchResults
-     * @return \CyberSource\Model\ReportingV3ReportsGet200ResponseReportSearchResults[]
+     * Gets reports
+     * @return \CyberSource\Model\ReportingV3ReportsGet200ResponseReports[]
      */
-    public function getReportSearchResults()
+    public function getReports()
     {
-        return $this->container['reportSearchResults'];
+        return $this->container['reports'];
     }
 
     /**
-     * Sets reportSearchResults
-     * @param \CyberSource\Model\ReportingV3ReportsGet200ResponseReportSearchResults[] $reportSearchResults
+     * Sets reports
+     * @param \CyberSource\Model\ReportingV3ReportsGet200ResponseReports[] $reports
      * @return $this
      */
-    public function setReportSearchResults($reportSearchResults)
+    public function setReports($reports)
     {
-        $this->container['reportSearchResults'] = $reportSearchResults;
+        $this->container['reports'] = $reports;
 
         return $this;
     }

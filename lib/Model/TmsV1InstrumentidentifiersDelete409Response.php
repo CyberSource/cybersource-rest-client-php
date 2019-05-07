@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersDelete409Response
+ * TmsV1InstrumentIdentifiersDelete409Response
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentidentifiersDelete409Response Class Doc Comment
+ * TmsV1InstrumentIdentifiersDelete409Response Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersDelete409Response implements ArrayAccess
+class TmsV1InstrumentIdentifiersDelete409Response implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class TmsV1InstrumentidentifiersDelete409Response implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentidentifiersDelete409Response';
+    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersDelete409Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\TmsV1InstrumentidentifiersDelete409ResponseLinks'
+        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinks'
     ];
 
     /**
@@ -162,7 +162,7 @@ class TmsV1InstrumentidentifiersDelete409Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersDelete409ResponseLinks
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinks
      */
     public function getLinks()
     {
@@ -171,7 +171,7 @@ class TmsV1InstrumentidentifiersDelete409Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersDelete409ResponseLinks $links
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)

@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks Class Doc Comment
+ * TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements ArrayAccess
+class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinks implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,18 +47,18 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentidentifiersPaymentinstrumentsGet200Response__links';
+    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response__links';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'self' => '\CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf',
-        'first' => '\CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst',
-        'prev' => '\CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev',
-        'next' => '\CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext',
-        'last' => '\CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast'
+        'self' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf',
+        'first' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst',
+        'prev' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev',
+        'next' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext',
+        'last' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast'
     ];
 
     /**
@@ -186,7 +186,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Gets self
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf
      */
     public function getSelf()
     {
@@ -195,7 +195,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Sets self
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksSelf $self
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksSelf $self
      * @return $this
      */
     public function setSelf($self)
@@ -207,7 +207,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Gets first
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst
      */
     public function getFirst()
     {
@@ -216,7 +216,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Sets first
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksFirst $first
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksFirst $first
      * @return $this
      */
     public function setFirst($first)
@@ -228,7 +228,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Gets prev
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev
      */
     public function getPrev()
     {
@@ -237,7 +237,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Sets prev
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksPrev $prev
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksPrev $prev
      * @return $this
      */
     public function setPrev($prev)
@@ -249,7 +249,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Gets next
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext
      */
     public function getNext()
     {
@@ -258,7 +258,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Sets next
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksNext $next
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksNext $next
      * @return $this
      */
     public function setNext($next)
@@ -270,7 +270,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Gets last
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast
      */
     public function getLast()
     {
@@ -279,7 +279,7 @@ class TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinks implements
 
     /**
      * Sets last
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersPaymentinstrumentsGet200ResponseLinksLast $last
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseLinksLast $last
      * @return $this
      */
     public function setLast($last)

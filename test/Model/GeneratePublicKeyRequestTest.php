@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -81,48 +81,6 @@ class GeneratePublicKeyRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "encryptionType"
      */
     public function testPropertyEncryptionType()
-    {
-    }
-
-    /**
-     * Test attribute "targetOrigin"
-     */
-    public function testPropertyTargetOrigin()
-    {
-    }
-
-    /**
-     * Test attribute "unmaskedLeft"
-     */
-    public function testPropertyUnmaskedLeft()
-    {
-    }
-
-    /**
-     * Test attribute "unmaskedRight"
-     */
-    public function testPropertyUnmaskedRight()
-    {
-    }
-
-    /**
-     * Test attribute "enableBillingAddress"
-     */
-    public function testPropertyEnableBillingAddress()
-    {
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-    }
-
-    /**
-     * Test attribute "enableAutoAuth"
-     */
-    public function testPropertyEnableAutoAuth()
     {
     }
 }

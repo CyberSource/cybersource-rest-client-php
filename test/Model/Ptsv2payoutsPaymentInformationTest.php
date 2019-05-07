@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -81,6 +81,13 @@ class Ptsv2payoutsPaymentInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "card"
      */
     public function testPropertyCard()
+    {
+    }
+
+    /**
+     * Test attribute "customer"
+     */
+    public function testPropertyCustomer()
     {
     }
 }

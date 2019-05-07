@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **startDay** | **int** | Start Day | [optional] 
 **reportFields** | **string[]** | List of all fields String values | [optional] 
 **reportFilters** | [**map[string,string[]]**](array.md) | List of filters to apply | [optional] 
-**reportPreferences** | [**\CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences**](ReportingV3ReportsIdGet200ResponseReportPreferences.md) |  | [optional] 
+**reportPreferences** | [**\CyberSource\Model\Reportingv3reportsReportPreferences**](Reportingv3reportsReportPreferences.md) |  | [optional] 
 **groupId** | **string** | Id for the selected group. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

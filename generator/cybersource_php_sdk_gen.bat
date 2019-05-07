@@ -8,7 +8,7 @@ powershell -Command "(Get-Content ..\CyberSource\lib\Api\CreditApi.php) | ForEac
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\PaymentsApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PaymentsApi.php"
 
-powershell -Command "(Get-Content ..\CyberSource\lib\Api\ProcessAPayoutApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\ProcessAPayoutApi.php"
+powershell -Command "(Get-Content ..\CyberSource\lib\Api\PayoutsApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PayoutsApi.php"
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\RefundApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\RefundApi.php"
 
@@ -30,21 +30,21 @@ powershell -Command "(Get-Content ..\CyberSource\lib\Api\SecureFileShareApi.php)
 
 REM renaming long file name
 
-powershell -Command " rename-item -Path ..\CyberSource\lib\Model\Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.php  -newname Tmsv1instrumentidentifiersMerchantInitiatedTransaction.php"
+powershell -Command " rename-item -Path ..\CyberSource\lib\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.php  -newname TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransaction.php"
 
 powershell -Command " rename-item -Path ..\CyberSource\lib\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.php  -newname Ptsv2paymentsMerchantInitiatedTransaction.php"
 
-powershell -Command " rename-item -Path ..\CyberSource\docs\Model\Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md  -newname Tmsv1instrumentidentifiersMerchantInitiatedTransaction.md"
+powershell -Command " rename-item -Path ..\CyberSource\docs\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md  -newname TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransaction.md"
 
 powershell -Command " rename-item -Path ..\CyberSource\docs\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md  -newname Ptsv2paymentsMerchantInitiatedTransaction.md"
 
-powershell -Command " rename-item -Path ..\CyberSource\test\Model\Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname Tmsv1instrumentidentifiersMerchantInitiatedTransactionTest.php"
+powershell -Command " rename-item -Path ..\CyberSource\test\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransactionTest.php"
 
 powershell -Command " rename-item -Path ..\CyberSource\test\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname Ptsv2paymentsMerchantInitiatedTransactionTest.php"
 
-powershell -Command "(Get-Content ..\CyberSource\lib\Model\Tmsv1instrumentidentifiersMerchantInitiatedTransaction.php) |  ForEach-Object { $_ -replace 'class Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'class Tmsv1instrumentidentifiersMerchantInitiatedTransaction'}  | Set-Content ..\CyberSource\lib\Model\Tmsv1instrumentidentifiersMerchantInitiatedTransaction.php"
+powershell -Command "(Get-Content ..\CyberSource\lib\Model\TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransaction.php) |  ForEach-Object { $_ -replace 'class TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'class TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransaction'}  | Set-Content ..\CyberSource\lib\Model\TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransaction.php"
 
-powershell -Command "(Get-Content ..\CyberSource\lib\Model\Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator.php) |  ForEach-Object { $_ -replace 'Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'Tmsv1instrumentidentifiersMerchantInitiatedTransaction'}  | Set-Content ..\CyberSource\lib\Model\Tmsv1instrumentidentifiersProcessingInformationAuthorizationOptionsInitiator.php"
+powershell -Command "(Get-Content ..\CyberSource\lib\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiator.php) |  ForEach-Object { $_ -replace 'TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'TmsV1InstrumentIdentifiersPost200ResponseMerchantInitiatedTransaction'}  | Set-Content ..\CyberSource\lib\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformationAuthorizationOptionsInitiator.php"
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Model\ReportingV3ReportDefinitionsGet200ResponseReportDefinitions.php) |  ForEach-Object { $_ -replace 'csv\'';', 'csv'';const SUPPORTED_FORMATS_JSON =''application/json'';'}  | Set-Content ..\CyberSource\lib\Model\ReportingV3ReportDefinitionsGet200ResponseReportDefinitions.php"
 

@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -54,7 +54,8 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card' => '\CyberSource\Model\Ptsv2payoutsPaymentInformationCard'
+        'card' => '\CyberSource\Model\Ptsv2payoutsPaymentInformationCard',
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'card' => null
+        'card' => null,
+        'customer' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'card' => 'card'
+        'card' => 'card',
+        'customer' => 'customer'
     ];
 
 
@@ -89,7 +92,8 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'card' => 'setCard'
+        'card' => 'setCard',
+        'customer' => 'setCustomer'
     ];
 
 
@@ -98,7 +102,8 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'card' => 'getCard'
+        'card' => 'getCard',
+        'customer' => 'getCustomer'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
 
         return $this;
     }

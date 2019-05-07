@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -178,7 +178,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
 
     /**
      * Sets ipAddress
-     * @param string $ipAddress IP address of the customer.
+     * @param string $ipAddress Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information.
      * @return $this
      */
     public function setIpAddress($ipAddress)

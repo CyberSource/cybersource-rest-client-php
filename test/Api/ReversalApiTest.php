@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -79,6 +79,16 @@ class ReversalApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testAuthReversal()
+    {
+    }
+
+    /**
+     * Test case for mitReversal
+     *
+     * Merchant Initiated Reversal.
+     *
+     */
+    public function testMitReversal()
     {
     }
 }

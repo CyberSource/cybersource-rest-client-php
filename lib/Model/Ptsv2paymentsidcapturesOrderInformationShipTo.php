@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -229,7 +229,7 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Country of the shipping address. Use the two character ISO Standard Country Codes.
+     * @param string $country Country of the shipping address. Use the two-character ISO Standard Country Codes.
      * @return $this
      */
     public function setCountry($country)

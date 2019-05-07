@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -63,7 +63,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'consumerAuthenticationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation',
         'deviceInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedDeviceInformation',
         'fraudMarkingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseFraudMarkingInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseMerchantDefinedInformation[]',
+        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedMerchantInformation',
         'orderInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformation',
         'paymentInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformation',
@@ -280,7 +280,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
      * @return $this
      */
     public function setId($id)
@@ -305,7 +305,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -464,7 +464,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Gets merchantDefinedInformation
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseMerchantDefinedInformation[]
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]
      */
     public function getMerchantDefinedInformation()
     {
@@ -473,7 +473,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)

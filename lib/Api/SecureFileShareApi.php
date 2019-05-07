@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -186,7 +186,7 @@ class SecureFileShareApi
     }
 
     /**
-     * Operation getFileDetails
+     * Operation getFileDetail
      *
      * Get list of files
      *
@@ -196,14 +196,14 @@ class SecureFileShareApi
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\V1FileDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFileDetails($startDate, $endDate, $organizationId = null)
+    public function getFileDetail($startDate, $endDate, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getFileDetailsWithHttpInfo($startDate, $endDate, $organizationId);
+        list($response, $statusCode, $httpHeader) = $this->getFileDetailWithHttpInfo($startDate, $endDate, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation getFileDetailsWithHttpInfo
+     * Operation getFileDetailWithHttpInfo
      *
      * Get list of files
      *
@@ -213,24 +213,24 @@ class SecureFileShareApi
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\V1FileDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFileDetailsWithHttpInfo($startDate, $endDate, $organizationId = null)
+    public function getFileDetailWithHttpInfo($startDate, $endDate, $organizationId = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $startDate when calling getFileDetails');
+            throw new \InvalidArgumentException('Missing the required parameter $startDate when calling getFileDetail');
         }
         // verify the required parameter 'endDate' is set
         if ($endDate === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $endDate when calling getFileDetails');
+            throw new \InvalidArgumentException('Missing the required parameter $endDate when calling getFileDetail');
         }
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetails, must be smaller than or equal to 32.');
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetail, must be smaller than or equal to 32.');
         }
         if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetails, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetail, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_]+/.");
         }
 
         // parse inputs

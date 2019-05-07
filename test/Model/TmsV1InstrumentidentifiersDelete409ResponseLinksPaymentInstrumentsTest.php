@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstrumentsTest
+ * TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstrumentsTest
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstrumentsTest Class Doc Comment
+ * TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstrumentsTest Class Doc Comment
  *
  * @category    Class */
-// * @description TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
+// * @description TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstrumentsTest extends \PHPUnit_Framework_TestCase
+class TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstrumentsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstrumentsTest ext
     }
 
     /**
-     * Test "TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments"
+     * Test "TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments"
      */
-    public function testTmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments()
+    public function testTmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments()
     {
     }
 

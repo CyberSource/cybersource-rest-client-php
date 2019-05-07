@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersDelete409ResponseLinks
+ * TmsV1InstrumentIdentifiersDelete409ResponseLinks
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentidentifiersDelete409ResponseLinks Class Doc Comment
+ * TmsV1InstrumentIdentifiersDelete409ResponseLinks Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersDelete409ResponseLinks implements ArrayAccess
+class TmsV1InstrumentIdentifiersDelete409ResponseLinks implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class TmsV1InstrumentidentifiersDelete409ResponseLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentidentifiersDelete409Response__links';
+    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersDelete409Response__links';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentInstruments' => '\CyberSource\Model\TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments'
+        'paymentInstruments' => '\CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments'
     ];
 
     /**
@@ -162,7 +162,7 @@ class TmsV1InstrumentidentifiersDelete409ResponseLinks implements ArrayAccess
 
     /**
      * Gets paymentInstruments
-     * @return \CyberSource\Model\TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
      */
     public function getPaymentInstruments()
     {
@@ -171,7 +171,7 @@ class TmsV1InstrumentidentifiersDelete409ResponseLinks implements ArrayAccess
 
     /**
      * Sets paymentInstruments
-     * @param \CyberSource\Model\TmsV1InstrumentidentifiersDelete409ResponseLinksPaymentInstruments $paymentInstruments
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments $paymentInstruments
      * @return $this
      */
     public function setPaymentInstruments($paymentInstruments)

@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -185,8 +185,6 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     const STATUS_PARTIAL_AUTHORIZED = 'PARTIAL_AUTHORIZED';
     const STATUS_AUTHORIZED_PENDING_REVIEW = 'AUTHORIZED_PENDING_REVIEW';
     const STATUS_DECLINED = 'DECLINED';
-    const STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
-    const STATUS_PENDING = 'PENDING';
     
 
     
@@ -201,8 +199,6 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
             self::STATUS_PARTIAL_AUTHORIZED,
             self::STATUS_AUTHORIZED_PENDING_REVIEW,
             self::STATUS_DECLINED,
-            self::STATUS_INVALID_REQUEST,
-            self::STATUS_PENDING,
         ];
     }
     
@@ -318,7 +314,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
      * @return $this
      */
     public function setId($id)
@@ -343,7 +339,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
