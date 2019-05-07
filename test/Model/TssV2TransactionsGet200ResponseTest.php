@@ -113,9 +113,9 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "submitTimeUTC"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertySubmitTimeUTC()
     {
     }
 
