@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createInstrumentIdentifier**
-> \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $createInstrumentIdentifierRequest, $clientApplication)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response createInstrumentIdentifier($profileId, $createInstrumentIdentifierRequest)
 
 Create an Instrument Identifier
 
@@ -23,13 +23,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
-$vCMerchantId = "vCMerchantId_example"; // string | CyberSource merchant id.
-$vCCorrelationId = "vCCorrelationId_example"; // string | The mandatory correlation id passed by upstream (calling) system.
 $createInstrumentIdentifierRequest = new \CyberSource\Model\CreateInstrumentIdentifierRequest(); // \CyberSource\Model\CreateInstrumentIdentifierRequest | Please specify either a Card, Bank Account or Enrollable Card
-$clientApplication = "clientApplication_example"; // string | Client application name
 
 try {
-    $result = $api_instance->createInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $createInstrumentIdentifierRequest, $clientApplication);
+    $result = $api_instance->createInstrumentIdentifier($profileId, $createInstrumentIdentifierRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->createInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -42,10 +39,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **string**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **string**| CyberSource merchant id. |
- **vCCorrelationId** | **string**| The mandatory correlation id passed by upstream (calling) system. |
  **createInstrumentIdentifierRequest** | [**\CyberSource\Model\CreateInstrumentIdentifierRequest**](../Model/CreateInstrumentIdentifierRequest.md)| Please specify either a Card, Bank Account or Enrollable Card |
- **clientApplication** | **string**| Client application name | [optional]
 
 ### Return type
 
@@ -63,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteInstrumentIdentifier**
-> deleteInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $clientApplication)
+> deleteInstrumentIdentifier($profileId, $tokenId)
 
 Delete an Instrument Identifier
 
@@ -74,13 +68,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
-$vCMerchantId = "vCMerchantId_example"; // string | CyberSource merchant id.
-$vCCorrelationId = "vCCorrelationId_example"; // string | The mandatory correlation id passed by upstream (calling) system.
 $tokenId = "tokenId_example"; // string | The TokenId of an Instrument Identifier.
-$clientApplication = "clientApplication_example"; // string | Client application name
 
 try {
-    $api_instance->deleteInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $clientApplication);
+    $api_instance->deleteInstrumentIdentifier($profileId, $tokenId);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->deleteInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
 }
@@ -92,10 +83,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **string**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **string**| CyberSource merchant id. |
- **vCCorrelationId** | **string**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **string**| The TokenId of an Instrument Identifier. |
- **clientApplication** | **string**| Client application name | [optional]
 
 ### Return type
 
@@ -113,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllPaymentInstruments**
-> \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $clientApplication, $offset, $limit)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response getAllPaymentInstruments($profileId, $tokenId, $offset, $limit)
 
 Retrieve all Payment Instruments associated with an Instrument Identifier
 
@@ -124,15 +112,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
-$vCMerchantId = "vCMerchantId_example"; // string | CyberSource merchant id.
-$vCCorrelationId = "vCCorrelationId_example"; // string | The mandatory correlation id passed by upstream (calling) system.
 $tokenId = "tokenId_example"; // string | The TokenId of an Instrument Identifier.
-$clientApplication = "clientApplication_example"; // string | Client application name
 $offset = 0; // int | Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0.
 $limit = 20; // int | The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 
 try {
-    $result = $api_instance->getAllPaymentInstruments($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $clientApplication, $offset, $limit);
+    $result = $api_instance->getAllPaymentInstruments($profileId, $tokenId, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->getAllPaymentInstruments: ', $e->getMessage(), PHP_EOL;
@@ -145,10 +130,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **string**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **string**| CyberSource merchant id. |
- **vCCorrelationId** | **string**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **string**| The TokenId of an Instrument Identifier. |
- **clientApplication** | **string**| Client application name | [optional]
  **offset** | **int**| Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
  **limit** | **int**| The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
 
@@ -168,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInstrumentIdentifier**
-> \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $clientApplication)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response getInstrumentIdentifier($profileId, $tokenId)
 
 Retrieve an Instrument Identifier
 
@@ -179,13 +161,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
-$vCMerchantId = "vCMerchantId_example"; // string | CyberSource merchant id.
-$vCCorrelationId = "vCCorrelationId_example"; // string | The mandatory correlation id passed by upstream (calling) system.
 $tokenId = "tokenId_example"; // string | The TokenId of an Instrument Identifier.
-$clientApplication = "clientApplication_example"; // string | Client application name
 
 try {
-    $result = $api_instance->getInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $clientApplication);
+    $result = $api_instance->getInstrumentIdentifier($profileId, $tokenId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->getInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -198,10 +177,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **string**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **string**| CyberSource merchant id. |
- **vCCorrelationId** | **string**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **string**| The TokenId of an Instrument Identifier. |
- **clientApplication** | **string**| Client application name | [optional]
 
 ### Return type
 
@@ -219,7 +195,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInstrumentIdentifier**
-> \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $updateInstrumentIdentifierRequest, $clientApplication)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response updateInstrumentIdentifier($profileId, $tokenId, $updateInstrumentIdentifierRequest)
 
 Update a Instrument Identifier
 
@@ -230,14 +206,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
-$vCMerchantId = "vCMerchantId_example"; // string | CyberSource merchant id.
-$vCCorrelationId = "vCCorrelationId_example"; // string | The mandatory correlation id passed by upstream (calling) system.
 $tokenId = "tokenId_example"; // string | The TokenId of an Instrument Identifier.
 $updateInstrumentIdentifierRequest = new \CyberSource\Model\UpdateInstrumentIdentifierRequest(); // \CyberSource\Model\UpdateInstrumentIdentifierRequest | Specify the previous transaction ID to update.
-$clientApplication = "clientApplication_example"; // string | Client application name
 
 try {
-    $result = $api_instance->updateInstrumentIdentifier($profileId, $vCMerchantId, $vCCorrelationId, $tokenId, $updateInstrumentIdentifierRequest, $clientApplication);
+    $result = $api_instance->updateInstrumentIdentifier($profileId, $tokenId, $updateInstrumentIdentifierRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->updateInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -250,11 +223,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **profileId** | **string**| The id of a profile containing user specific TMS configuration. |
- **vCMerchantId** | **string**| CyberSource merchant id. |
- **vCCorrelationId** | **string**| The mandatory correlation id passed by upstream (calling) system. |
  **tokenId** | **string**| The TokenId of an Instrument Identifier. |
  **updateInstrumentIdentifierRequest** | [**\CyberSource\Model\UpdateInstrumentIdentifierRequest**](../Model/UpdateInstrumentIdentifierRequest.md)| Specify the previous transaction ID to update. |
- **clientApplication** | **string**| Client application name | [optional]
 
 ### Return type
 

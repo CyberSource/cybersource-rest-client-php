@@ -185,6 +185,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     const STATUS_PARTIAL_AUTHORIZED = 'PARTIAL_AUTHORIZED';
     const STATUS_AUTHORIZED_PENDING_REVIEW = 'AUTHORIZED_PENDING_REVIEW';
     const STATUS_DECLINED = 'DECLINED';
+    const STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
+    const STATUS_PENDING = 'PENDING';
     
 
     
@@ -199,6 +201,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
             self::STATUS_PARTIAL_AUTHORIZED,
             self::STATUS_AUTHORIZED_PENDING_REVIEW,
             self::STATUS_DECLINED,
+            self::STATUS_INVALID_REQUEST,
+            self::STATUS_PENDING,
         ];
     }
     
