@@ -58,14 +58,14 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
         'id' => 'string',
         'object' => 'string',
         'state' => 'string',
-        'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBankAccount',
-        'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseCard',
-        'buyerInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBuyerInformation',
-        'billTo' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBillTo',
-        'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseProcessingInformation',
-        'merchantInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseMerchantInformation',
+        'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount',
+        'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard',
+        'buyerInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation',
+        'billTo' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo',
+        'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation',
+        'merchantInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation',
         'metaData' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata',
-        'instrumentIdentifier' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseInstrumentIdentifier'
+        'instrumentIdentifier' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier'
     ];
 
     /**
@@ -380,7 +380,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBankAccount
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount
      */
     public function getBankAccount()
     {
@@ -389,7 +389,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBankAccount $bankAccount
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)
@@ -401,7 +401,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseCard
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard
      */
     public function getCard()
     {
@@ -410,7 +410,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseCard $card
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard $card
      * @return $this
      */
     public function setCard($card)
@@ -422,7 +422,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBuyerInformation
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -431,7 +431,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -443,7 +443,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBillTo
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo
      */
     public function getBillTo()
     {
@@ -452,7 +452,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseBillTo $billTo
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)
@@ -464,7 +464,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseProcessingInformation
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -473,7 +473,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseProcessingInformation $processingInformation
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -485,7 +485,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseMerchantInformation
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -494,7 +494,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)
@@ -527,7 +527,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseInstrumentIdentifier
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier
      */
     public function getInstrumentIdentifier()
     {
@@ -536,7 +536,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)

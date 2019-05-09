@@ -60,7 +60,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response implements Arra
         'limit' => 'string',
         'count' => 'string',
         'total' => 'string',
-        'embedded' => '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[]'
+        'embedded' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded'
     ];
 
     /**
@@ -357,7 +357,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response implements Arra
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[]
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded
      */
     public function getEmbedded()
     {
@@ -366,7 +366,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response implements Arra
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[] $embedded Array of Payment Instruments returned for the supplied Instrument Identifier.
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **limit** | **string** | The limit parameter supplied in the request. | [optional] 
 **count** | **string** | The number of Payment Instruments returned in the array. | [optional] 
 **total** | **string** | The total number of Payment Instruments associated with the Instrument Identifier in the zero-based dataset. | [optional] 
-**embedded** | [**\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response[]**](TmsV1PaymentinstrumentsPatch200Response.md) | Array of Payment Instruments returned for the supplied Instrument Identifier. | [optional] 
+**embedded** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded**](TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbedded.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

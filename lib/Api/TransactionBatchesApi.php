@@ -200,7 +200,7 @@ class TransactionBatchesApi
      *
      * @param string $id The batch id assigned for the template. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionBatchId($id)
     {
@@ -215,7 +215,7 @@ class TransactionBatchesApi
      *
      * @param string $id The batch id assigned for the template. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionBatchIdWithHttpInfo($id)
     {
@@ -258,13 +258,17 @@ class TransactionBatchesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                null,
+                '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response',
                 '/pts/v1/transaction-batches/{id}'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);

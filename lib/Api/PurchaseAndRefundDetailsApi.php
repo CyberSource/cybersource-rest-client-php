@@ -101,7 +101,7 @@ class PurchaseAndRefundDetailsApi
      * @param int $offset Offset of the Purchase and Refund Results. (optional)
      * @param int $limit Results count per page. Range(1-2000) (optional, default to 2000)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPurchaseAndRefundDetails($startTime, $endTime, $organizationId = null, $paymentSubtype = 'ALL', $viewBy = 'requestDate', $groupName = null, $offset = null, $limit = '2000')
     {
@@ -123,7 +123,7 @@ class PurchaseAndRefundDetailsApi
      * @param int $offset Offset of the Purchase and Refund Results. (optional)
      * @param int $limit Results count per page. Range(1-2000) (optional, default to 2000)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPurchaseAndRefundDetailsWithHttpInfo($startTime, $endTime, $organizationId = null, $paymentSubtype = 'ALL', $viewBy = 'requestDate', $groupName = null, $offset = null, $limit = '2000')
     {
@@ -211,13 +211,17 @@ class PurchaseAndRefundDetailsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                null,
+                '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response',
                 '/reporting/v3/purchase-refund-details'
             );
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Reportingv3ReportDownloadsGet400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);

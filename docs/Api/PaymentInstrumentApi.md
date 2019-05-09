@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createPaymentInstrument**
-> \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response createPaymentInstrument($profileId, $createPaymentInstrumentRequest)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments createPaymentInstrument($profileId, $createPaymentInstrumentRequest)
 
 Create a Payment Instrument
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response**](../Model/TmsV1PaymentinstrumentsPatch200Response.md)
+[**\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](../Model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
 
 ### Authorization
 
@@ -50,8 +50,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -94,13 +94,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPaymentInstrument**
-> \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response getPaymentInstrument($profileId, $tokenId)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments getPaymentInstrument($profileId, $tokenId)
 
 Retrieve a Payment Instrument
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response**](../Model/TmsV1PaymentinstrumentsPatch200Response.md)
+[**\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](../Model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
 
 ### Authorization
 
@@ -139,13 +139,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePaymentInstrument**
-> \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response updatePaymentInstrument($profileId, $tokenId, $updatePaymentInstrumentRequest)
+> \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments updatePaymentInstrument($profileId, $tokenId, $updatePaymentInstrumentRequest)
 
 Update a Payment Instrument
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response**](../Model/TmsV1PaymentinstrumentsPatch200Response.md)
+[**\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments**](../Model/TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments.md)
 
 ### Authorization
 
@@ -186,8 +186,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: */*
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **octCreatePayment**
-> octCreatePayment($octCreatePaymentRequest)
+> \CyberSource\Model\PtsV2PayoutsPost201Response octCreatePayment($octCreatePaymentRequest)
 
 Process a Payout
 
@@ -23,7 +23,8 @@ $api_instance = new CyberSource\Api\PayoutsApi();
 $octCreatePaymentRequest = new \CyberSource\Model\OctCreatePaymentRequest(); // \CyberSource\Model\OctCreatePaymentRequest | 
 
 try {
-    $api_instance->octCreatePayment($octCreatePaymentRequest);
+    $result = $api_instance->octCreatePayment($octCreatePaymentRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PayoutsApi->octCreatePayment: ', $e->getMessage(), PHP_EOL;
 }
@@ -38,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\CyberSource\Model\PtsV2PayoutsPost201Response**](../Model/PtsV2PayoutsPost201Response.md)
 
 ### Authorization
 

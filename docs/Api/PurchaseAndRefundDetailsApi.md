@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getPurchaseAndRefundDetails**
-> getPurchaseAndRefundDetails($startTime, $endTime, $organizationId, $paymentSubtype, $viewBy, $groupName, $offset, $limit)
+> \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response getPurchaseAndRefundDetails($startTime, $endTime, $organizationId, $paymentSubtype, $viewBy, $groupName, $offset, $limit)
 
 Get Purchase and Refund details
 
@@ -30,7 +30,8 @@ $offset = 56; // int | Offset of the Purchase and Refund Results.
 $limit = 2000; // int | Results count per page. Range(1-2000)
 
 try {
-    $api_instance->getPurchaseAndRefundDetails($startTime, $endTime, $organizationId, $paymentSubtype, $viewBy, $groupName, $offset, $limit);
+    $result = $api_instance->getPurchaseAndRefundDetails($startTime, $endTime, $organizationId, $paymentSubtype, $viewBy, $groupName, $offset, $limit);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PurchaseAndRefundDetailsApi->getPurchaseAndRefundDetails: ', $e->getMessage(), PHP_EOL;
 }
@@ -52,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response**](../Model/ReportingV3PurchaseRefundDetailsGet200Response.md)
 
 ### Authorization
 

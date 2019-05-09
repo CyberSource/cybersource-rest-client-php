@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransactionBatchId**
-> getTransactionBatchId($id)
+> \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response getTransactionBatchId($id)
 
 Get individual batch file
 
@@ -73,7 +73,8 @@ $api_instance = new CyberSource\Api\TransactionBatchesApi();
 $id = "id_example"; // string | The batch id assigned for the template.
 
 try {
-    $api_instance->getTransactionBatchId($id);
+    $result = $api_instance->getTransactionBatchId($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionBatchesApi->getTransactionBatchId: ', $e->getMessage(), PHP_EOL;
 }
@@ -88,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response**](../Model/PtsV1TransactionBatchesIdGet200Response.md)
 
 ### Authorization
 

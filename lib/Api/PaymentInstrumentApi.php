@@ -95,7 +95,7 @@ class PaymentInstrumentApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param \CyberSource\Model\CreatePaymentInstrumentRequest $createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPaymentInstrument($profileId, $createPaymentInstrumentRequest)
     {
@@ -111,7 +111,7 @@ class PaymentInstrumentApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param \CyberSource\Model\CreatePaymentInstrumentRequest $createPaymentInstrumentRequest Specify the customer&#39;s payment details for card or bank account. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPaymentInstrumentWithHttpInfo($profileId, $createPaymentInstrumentRequest)
     {
@@ -136,11 +136,11 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['*/*']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // header params
         if ($profileId !== null) {
@@ -166,15 +166,15 @@ class PaymentInstrumentApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response',
+                '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments',
                 '/tms/v1/paymentinstruments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -255,11 +255,11 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['*/*']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // header params
         if ($profileId !== null) {
@@ -329,7 +329,7 @@ class PaymentInstrumentApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentInstrument($profileId, $tokenId)
     {
@@ -345,7 +345,7 @@ class PaymentInstrumentApi
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentInstrumentWithHttpInfo($profileId, $tokenId)
     {
@@ -377,11 +377,11 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['*/*']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // header params
         if ($profileId !== null) {
@@ -410,15 +410,15 @@ class PaymentInstrumentApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response',
+                '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments',
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -460,7 +460,7 @@ class PaymentInstrumentApi
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @param \CyberSource\Model\UpdatePaymentInstrumentRequest $updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePaymentInstrument($profileId, $tokenId, $updatePaymentInstrumentRequest)
     {
@@ -477,7 +477,7 @@ class PaymentInstrumentApi
      * @param string $tokenId The TokenId of a Payment Instrument. (required)
      * @param \CyberSource\Model\UpdatePaymentInstrumentRequest $updatePaymentInstrumentRequest Specify the customer&#39;s payment details. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePaymentInstrumentWithHttpInfo($profileId, $tokenId, $updatePaymentInstrumentRequest)
     {
@@ -513,11 +513,11 @@ class PaymentInstrumentApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['*/*']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // header params
         if ($profileId !== null) {
@@ -551,15 +551,15 @@ class PaymentInstrumentApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response',
+                '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments',
                 '/tms/v1/paymentinstruments/{tokenId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1PaymentinstrumentsPatch200Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentInstruments', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
