@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -109,13 +109,6 @@ class PtsV2PayoutsPost201ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "reconciliationId"
      */
     public function testPropertyReconciliationId()
-    {
-    }
-
-    /**
-     * Test attribute "statusInformation"
-     */
-    public function testPropertyStatusInformation()
     {
     }
 

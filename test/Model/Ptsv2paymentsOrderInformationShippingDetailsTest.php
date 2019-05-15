@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -33,7 +33,7 @@ namespace CyberSource;
  * Ptsv2paymentsOrderInformationShippingDetailsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Ptsv2paymentsOrderInformationShippingDetails
+// * @description Contains shipping information not related to address.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -56,7 +56,7 @@ class PtsV2PayoutsPost201ResponseErrorInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[]'
+        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
     ];
 
     /**
@@ -227,7 +227,7 @@ class PtsV2PayoutsPost201ResponseErrorInformation implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.
+     * @param string $reason The reason of the status.  Possible values:  - EXPIRED_CARD  - PROCESSOR_DECLINED  - STOLEN_LOST_CARD  - UNAUTHORIZED_CARD  - CVN_NOT_MATCH  - INVALID_CVN  - BLACKLISTED_CUSTOMER  - INVALID_ACCOUNT  - GENERAL_DECLINE  - RISK_CONTROL_DECLINE  - PROCESSOR_RISK_CONTROL_DECLINE
      * @return $this
      */
     public function setReason($reason)
@@ -269,7 +269,7 @@ class PtsV2PayoutsPost201ResponseErrorInformation implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[]
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
      */
     public function getDetails()
     {
@@ -278,7 +278,7 @@ class PtsV2PayoutsPost201ResponseErrorInformation implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformationDetails[] $details
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
      * @return $this
      */
     public function setDetails($details)

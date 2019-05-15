@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -62,9 +62,11 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'approvalCode' => 'string',
         'responseCode' => 'string',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAvs',
-        'cardVerification' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationCardVerification',
-        'achVerification' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationAchVerification',
-        'electronicVerificationResults' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults'
+        'cardVerification' => '\CyberSource\Model\Riskv1decisionsCardVerification',
+        'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
+        'electronicVerificationResults' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults',
+        'systemTraceAuditNumber' => 'string',
+        'responseCodeSource' => 'string'
     ];
 
     /**
@@ -82,7 +84,9 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'avs' => null,
         'cardVerification' => null,
         'achVerification' => null,
-        'electronicVerificationResults' => null
+        'electronicVerificationResults' => null,
+        'systemTraceAuditNumber' => null,
+        'responseCodeSource' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +114,9 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'avs' => 'avs',
         'cardVerification' => 'cardVerification',
         'achVerification' => 'achVerification',
-        'electronicVerificationResults' => 'electronicVerificationResults'
+        'electronicVerificationResults' => 'electronicVerificationResults',
+        'systemTraceAuditNumber' => 'systemTraceAuditNumber',
+        'responseCodeSource' => 'responseCodeSource'
     ];
 
 
@@ -129,7 +135,9 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'avs' => 'setAvs',
         'cardVerification' => 'setCardVerification',
         'achVerification' => 'setAchVerification',
-        'electronicVerificationResults' => 'setElectronicVerificationResults'
+        'electronicVerificationResults' => 'setElectronicVerificationResults',
+        'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
+        'responseCodeSource' => 'setResponseCodeSource'
     ];
 
 
@@ -148,7 +156,9 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'avs' => 'getAvs',
         'cardVerification' => 'getCardVerification',
         'achVerification' => 'getAchVerification',
-        'electronicVerificationResults' => 'getElectronicVerificationResults'
+        'electronicVerificationResults' => 'getElectronicVerificationResults',
+        'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
+        'responseCodeSource' => 'getResponseCodeSource'
     ];
 
     public static function attributeMap()
@@ -193,6 +203,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
         $this->container['achVerification'] = isset($data['achVerification']) ? $data['achVerification'] : null;
         $this->container['electronicVerificationResults'] = isset($data['electronicVerificationResults']) ? $data['electronicVerificationResults'] : null;
+        $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
+        $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
     }
 
     /**
@@ -212,6 +224,14 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
         }
 
+        if (!is_null($this->container['systemTraceAuditNumber']) && (strlen($this->container['systemTraceAuditNumber']) > 6)) {
+            $invalid_properties[] = "invalid value for 'systemTraceAuditNumber', the character length must be smaller than or equal to 6.";
+        }
+
+        if (!is_null($this->container['responseCodeSource']) && (strlen($this->container['responseCodeSource']) > 1)) {
+            $invalid_properties[] = "invalid value for 'responseCodeSource', the character length must be smaller than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -228,6 +248,12 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['responseCode']) > 10) {
+            return false;
+        }
+        if (strlen($this->container['systemTraceAuditNumber']) > 6) {
+            return false;
+        }
+        if (strlen($this->container['responseCodeSource']) > 1) {
             return false;
         }
         return true;
@@ -266,7 +292,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets transactionId
-     * @param string $transactionId Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this  value.
+     * @param string $transactionId Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value.
      * @return $this
      */
     public function setTransactionId($transactionId)
@@ -412,7 +438,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Gets cardVerification
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationCardVerification
+     * @return \CyberSource\Model\Riskv1decisionsCardVerification
      */
     public function getCardVerification()
     {
@@ -421,7 +447,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets cardVerification
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationCardVerification $cardVerification
+     * @param \CyberSource\Model\Riskv1decisionsCardVerification $cardVerification
      * @return $this
      */
     public function setCardVerification($cardVerification)
@@ -433,7 +459,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Gets achVerification
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationAchVerification
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification
      */
     public function getAchVerification()
     {
@@ -442,7 +468,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets achVerification
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationAchVerification $achVerification
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification $achVerification
      * @return $this
      */
     public function setAchVerification($achVerification)
@@ -469,6 +495,56 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     public function setElectronicVerificationResults($electronicVerificationResults)
     {
         $this->container['electronicVerificationResults'] = $electronicVerificationResults;
+
+        return $this;
+    }
+
+    /**
+     * Gets systemTraceAuditNumber
+     * @return string
+     */
+    public function getSystemTraceAuditNumber()
+    {
+        return $this->container['systemTraceAuditNumber'];
+    }
+
+    /**
+     * Sets systemTraceAuditNumber
+     * @param string $systemTraceAuditNumber This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  **American Express Direct**  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  **CyberSource through VisaNet**  System trace number that must be printed on the customer’s receipt.
+     * @return $this
+     */
+    public function setSystemTraceAuditNumber($systemTraceAuditNumber)
+    {
+        if (!is_null($systemTraceAuditNumber) && (strlen($systemTraceAuditNumber) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $systemTraceAuditNumber when calling TssV2TransactionsGet200ResponseProcessorInformation., must be smaller than or equal to 6.');
+        }
+
+        $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseCodeSource
+     * @return string
+     */
+    public function getResponseCodeSource()
+    {
+        return $this->container['responseCodeSource'];
+    }
+
+    /**
+     * Sets responseCodeSource
+     * @param string $responseCodeSource Used by Visa only and contains the response source/reason code that identifies the source of the response decision.
+     * @return $this
+     */
+    public function setResponseCodeSource($responseCodeSource)
+    {
+        if (!is_null($responseCodeSource) && (strlen($responseCodeSource) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $responseCodeSource when calling TssV2TransactionsGet200ResponseProcessorInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['responseCodeSource'] = $responseCodeSource;
 
         return $this;
     }

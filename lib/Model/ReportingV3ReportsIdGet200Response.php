@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -67,7 +67,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         'reportEndTime' => '\DateTime',
         'timezone' => 'string',
         'reportFilters' => 'map[string,string[]]',
-        'reportPreferences' => '\CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences',
+        'reportPreferences' => '\CyberSource\Model\Reportingv3reportsReportPreferences',
         'groupId' => 'string'
     ];
 
@@ -612,7 +612,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Gets reportPreferences
-     * @return \CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences
+     * @return \CyberSource\Model\Reportingv3reportsReportPreferences
      */
     public function getReportPreferences()
     {
@@ -621,7 +621,7 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Sets reportPreferences
-     * @param \CyberSource\Model\ReportingV3ReportsIdGet200ResponseReportPreferences $reportPreferences
+     * @param \CyberSource\Model\Reportingv3reportsReportPreferences $reportPreferences
      * @return $this
      */
     public function setReportPreferences($reportPreferences)

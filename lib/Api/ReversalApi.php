@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -165,6 +165,93 @@ class ReversalApi
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response',
                 '/pts/v2/payments/{id}/reversals'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsReversalsPost400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation mitReversal
+     *
+     * Merchant Initiated Reversal
+     *
+     * @param \CyberSource\Model\MitReversalRequest $mitReversalRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsReversalsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mitReversal($mitReversalRequest)
+    {
+        list($response, $statusCode, $httpHeader) = $this->mitReversalWithHttpInfo($mitReversalRequest);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation mitReversalWithHttpInfo
+     *
+     * Merchant Initiated Reversal
+     *
+     * @param \CyberSource\Model\MitReversalRequest $mitReversalRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsReversalsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mitReversalWithHttpInfo($mitReversalRequest)
+    {
+        // verify the required parameter 'mitReversalRequest' is set
+        if ($mitReversalRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mitReversalRequest when calling mitReversal');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v2/reversals/";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($mitReversalRequest)) {
+            $_tempBody = $mitReversalRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response',
+                '/pts/v2/reversals/'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $httpHeader), $statusCode, $httpHeader];

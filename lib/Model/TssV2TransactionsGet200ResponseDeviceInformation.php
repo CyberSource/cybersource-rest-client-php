@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -197,7 +197,7 @@ class TssV2TransactionsGet200ResponseDeviceInformation implements ArrayAccess
 
     /**
      * Sets ipAddress
-     * @param string $ipAddress IP address of the customer.
+     * @param string $ipAddress Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information.
      * @return $this
      */
     public function setIpAddress($ipAddress)
@@ -222,7 +222,7 @@ class TssV2TransactionsGet200ResponseDeviceInformation implements ArrayAccess
 
     /**
      * Sets hostName
-     * @param string $hostName DNS resolved hostname from above _ipAddress_.
+     * @param string $hostName Host name reported by the customer’s browser to your Web server identified via the HTTP header.
      * @return $this
      */
     public function setHostName($hostName)
@@ -247,7 +247,7 @@ class TssV2TransactionsGet200ResponseDeviceInformation implements ArrayAccess
 
     /**
      * Sets cookiesAccepted
-     * @param string $cookiesAccepted The description for this field is not available.
+     * @param string $cookiesAccepted Boolean that indicates whether the customer’s browser accepts cookies. This field can contain one of the following values:   - `yes`: The customer’s browser accepts cookies.   - `no`: The customer’s browser does not accept cookies.
      * @return $this
      */
     public function setCookiesAccepted($cookiesAccepted)

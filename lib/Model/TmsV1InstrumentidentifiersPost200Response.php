@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentidentifiersPost200Response
+ * TmsV1InstrumentIdentifiersPost200Response
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentidentifiersPost200Response Class Doc Comment
+ * TmsV1InstrumentIdentifiersPost200Response Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
+class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,21 +47,21 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentidentifiersPost200Response';
+    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersPost200Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\Tmsv1instrumentidentifiersLinks',
+        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks',
         'id' => 'string',
         'object' => 'string',
         'state' => 'string',
-        'card' => '\CyberSource\Model\Tmsv1instrumentidentifiersCard',
-        'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
-        'processingInformation' => '\CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation',
-        'metadata' => '\CyberSource\Model\Tmsv1instrumentidentifiersMetadata'
+        'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard',
+        'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount',
+        'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation',
+        'metadata' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata'
     ];
 
     /**
@@ -254,7 +254,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersLinks
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks
      */
     public function getLinks()
     {
@@ -263,7 +263,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersLinks $links
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -305,7 +305,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Sets object
-     * @param string $object Describes type of token. For example: customer, paymentInstrument or instrumentIdentifier.
+     * @param string $object Describes type of token.
      * @return $this
      */
     public function setObject($object)
@@ -356,7 +356,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersCard
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard
      */
     public function getCard()
     {
@@ -365,7 +365,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersCard $card
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard $card
      * @return $this
      */
     public function setCard($card)
@@ -377,7 +377,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount
      */
     public function getBankAccount()
     {
@@ -386,7 +386,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount $bankAccount
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)
@@ -398,7 +398,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -407,7 +407,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersProcessingInformation $processingInformation
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -419,7 +419,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersMetadata
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata
      */
     public function getMetadata()
     {
@@ -428,7 +428,7 @@ class TmsV1InstrumentidentifiersPost200Response implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersMetadata $metadata
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata $metadata
      * @return $this
      */
     public function setMetadata($metadata)

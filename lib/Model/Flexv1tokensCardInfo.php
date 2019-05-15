@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -162,6 +162,12 @@ class Flexv1tokensCardInfo implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['cardNumber'] === null) {
+            $invalid_properties[] = "'cardNumber' can't be null";
+        }
+        if ($this->container['cardType'] === null) {
+            $invalid_properties[] = "'cardType' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -174,6 +180,12 @@ class Flexv1tokensCardInfo implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['cardNumber'] === null) {
+            return false;
+        }
+        if ($this->container['cardType'] === null) {
+            return false;
+        }
         return true;
     }
 

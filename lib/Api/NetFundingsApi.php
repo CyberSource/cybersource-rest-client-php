@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -88,53 +88,53 @@ class NetFundingsApi
     }
 
     /**
-     * Operation getNetFundingInfo
+     * Operation getNetFundingDetails
      *
      * Get Netfunding information for an account or a merchant
      *
-     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
-     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
+     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
+     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $groupName Valid CyberSource Group Name. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3NetFundingsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getNetFundingInfo($startTime, $endTime, $organizationId = null, $groupName = null)
+    public function getNetFundingDetails($startTime, $endTime, $organizationId = null, $groupName = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getNetFundingInfoWithHttpInfo($startTime, $endTime, $organizationId, $groupName);
+        list($response, $statusCode, $httpHeader) = $this->getNetFundingDetailsWithHttpInfo($startTime, $endTime, $organizationId, $groupName);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation getNetFundingInfoWithHttpInfo
+     * Operation getNetFundingDetailsWithHttpInfo
      *
      * Get Netfunding information for an account or a merchant
      *
-     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
-     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX (required)
+     * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
+     * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @param string $groupName Valid CyberSource Group Name. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3NetFundingsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getNetFundingInfoWithHttpInfo($startTime, $endTime, $organizationId = null, $groupName = null)
+    public function getNetFundingDetailsWithHttpInfo($startTime, $endTime, $organizationId = null, $groupName = null)
     {
         // verify the required parameter 'startTime' is set
         if ($startTime === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getNetFundingInfo');
+            throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getNetFundingDetails');
         }
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getNetFundingInfo');
+            throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getNetFundingDetails');
         }
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling NetFundingsApi.getNetFundingInfo, must be smaller than or equal to 32.');
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling NetFundingsApi.getNetFundingDetails, must be smaller than or equal to 32.');
         }
         if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling NetFundingsApi.getNetFundingInfo, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling NetFundingsApi.getNetFundingDetails, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling NetFundingsApi.getNetFundingInfo, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling NetFundingsApi.getNetFundingDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
         }
 
         // parse inputs

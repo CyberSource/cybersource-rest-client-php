@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -144,10 +144,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['suffix']) && (strlen($this->container['suffix']) > 4)) {
-            $invalid_properties[] = "invalid value for 'suffix', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['suffix']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -183,10 +176,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationCard implements ArrayAccess
      */
     public function setSuffix($suffix)
     {
-        if (!is_null($suffix) && (strlen($suffix) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $suffix when calling PtsV2PaymentsPost201ResponsePaymentInformationCard., must be smaller than or equal to 4.');
-        }
-
         $this->container['suffix'] = $suffix;
 
         return $this;

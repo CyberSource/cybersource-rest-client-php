@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -59,7 +59,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'string',
         'merchantId' => 'string',
         'status' => 'string',
-        'submitTimeUtc' => 'string',
+        'submitTimeUTC' => 'string',
         'applicationInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation',
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformation',
@@ -68,7 +68,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'errorInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseErrorInformation',
         'installmentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseInstallmentInformation',
         'fraudMarkingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseFraudMarkingInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseMerchantDefinedInformation[]',
+        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseMerchantInformation',
         'orderInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformation',
         'paymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformation',
@@ -77,7 +77,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'pointOfSaleInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePointOfSaleInformation',
         'riskInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformation',
         'senderInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseSenderInformation',
-        'links' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks'
+        'links' => '\CyberSource\Model\TssV2TransactionsGet200ResponseLinks'
     ];
 
     /**
@@ -90,7 +90,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => null,
         'merchantId' => null,
         'status' => null,
-        'submitTimeUtc' => null,
+        'submitTimeUTC' => null,
         'applicationInformation' => null,
         'buyerInformation' => null,
         'clientReferenceInformation' => null,
@@ -131,7 +131,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'merchantId' => 'merchantId',
         'status' => 'status',
-        'submitTimeUtc' => 'submitTimeUtc',
+        'submitTimeUTC' => 'submitTimeUTC',
         'applicationInformation' => 'applicationInformation',
         'buyerInformation' => 'buyerInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
@@ -163,7 +163,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'merchantId' => 'setMerchantId',
         'status' => 'setStatus',
-        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'submitTimeUTC' => 'setSubmitTimeUTC',
         'applicationInformation' => 'setApplicationInformation',
         'buyerInformation' => 'setBuyerInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
@@ -195,7 +195,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'merchantId' => 'getMerchantId',
         'status' => 'getStatus',
-        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'submitTimeUTC' => 'getSubmitTimeUTC',
         'applicationInformation' => 'getApplicationInformation',
         'buyerInformation' => 'getBuyerInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
@@ -252,7 +252,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['submitTimeUTC'] = isset($data['submitTimeUTC']) ? $data['submitTimeUTC'] : null;
         $this->container['applicationInformation'] = isset($data['applicationInformation']) ? $data['applicationInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
@@ -330,7 +330,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
      * @return $this
      */
     public function setId($id)
@@ -437,22 +437,22 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     }
 
     /**
-     * Gets submitTimeUtc
+     * Gets submitTimeUTC
      * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getSubmitTimeUTC()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['submitTimeUTC'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * Sets submitTimeUTC
+     * @param string $submitTimeUTC Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setSubmitTimeUTC($submitTimeUTC)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['submitTimeUTC'] = $submitTimeUTC;
 
         return $this;
     }
@@ -627,7 +627,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Gets merchantDefinedInformation
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseMerchantDefinedInformation[]
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]
      */
     public function getMerchantDefinedInformation()
     {
@@ -636,7 +636,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)
@@ -816,7 +816,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseLinks
      */
     public function getLinks()
     {
@@ -825,7 +825,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks $links
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)

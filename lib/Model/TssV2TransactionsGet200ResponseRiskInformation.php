@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -55,9 +55,9 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'profile' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile',
-        'rules' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[]',
+        'rules' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationRules[]',
         'passiveProfile' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile',
-        'passiveRules' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[]',
+        'passiveRules' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationRules[]',
         'score' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationScore',
         'localTime' => 'string'
     ];
@@ -213,7 +213,7 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
 
     /**
      * Gets rules
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[]
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationRules[]
      */
     public function getRules()
     {
@@ -222,7 +222,7 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
 
     /**
      * Sets rules
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[] $rules
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationRules[] $rules
      * @return $this
      */
     public function setRules($rules)
@@ -255,7 +255,7 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
 
     /**
      * Gets passiveRules
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[]
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationRules[]
      */
     public function getPassiveRules()
     {
@@ -264,7 +264,7 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
 
     /**
      * Sets passiveRules
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationProfile[] $passiveRules
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformationRules[] $passiveRules
      * @return $this
      */
     public function setPassiveRules($passiveRules)
@@ -306,7 +306,7 @@ class TssV2TransactionsGet200ResponseRiskInformation implements ArrayAccess
 
     /**
      * Sets localTime
-     * @param string $localTime Time that the transaction was submitted in local time..
+     * @param string $localTime Time that the transaction was submitted in local time.
      * @return $this
      */
     public function setLocalTime($localTime)

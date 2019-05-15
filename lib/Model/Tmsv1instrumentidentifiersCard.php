@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -54,7 +54,10 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'number' => 'string'
+        'number' => 'string',
+        'expirationMonth' => 'string',
+        'expirationYear' => 'string',
+        'securityCode' => 'string'
     ];
 
     /**
@@ -62,7 +65,10 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'number' => null
+        'number' => null,
+        'expirationMonth' => 'MM',
+        'expirationYear' => 'YYYY',
+        'securityCode' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +86,10 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'number' => 'number'
+        'number' => 'number',
+        'expirationMonth' => 'expirationMonth',
+        'expirationYear' => 'expirationYear',
+        'securityCode' => 'securityCode'
     ];
 
 
@@ -89,7 +98,10 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'number' => 'setNumber'
+        'number' => 'setNumber',
+        'expirationMonth' => 'setExpirationMonth',
+        'expirationYear' => 'setExpirationYear',
+        'securityCode' => 'setSecurityCode'
     ];
 
 
@@ -98,7 +110,10 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'number' => 'getNumber'
+        'number' => 'getNumber',
+        'expirationMonth' => 'getExpirationMonth',
+        'expirationYear' => 'getExpirationYear',
+        'securityCode' => 'getSecurityCode'
     ];
 
     public static function attributeMap()
@@ -133,6 +148,9 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
+        $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
+        $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
     }
 
     /**
@@ -152,6 +170,30 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
             $invalid_properties[] = "invalid value for 'number', the character length must be bigger than or equal to 12.";
         }
 
+        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
+            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) < 2)) {
+            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be bigger than or equal to 2.";
+        }
+
+        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
+            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) < 4)) {
+            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be bigger than or equal to 4.";
+        }
+
+        if (!is_null($this->container['securityCode']) && (strlen($this->container['securityCode']) > 4)) {
+            $invalid_properties[] = "invalid value for 'securityCode', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['securityCode']) && (strlen($this->container['securityCode']) < 3)) {
+            $invalid_properties[] = "invalid value for 'securityCode', the character length must be bigger than or equal to 3.";
+        }
+
         return $invalid_properties;
     }
 
@@ -168,6 +210,24 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
             return false;
         }
         if (strlen($this->container['number']) < 12) {
+            return false;
+        }
+        if (strlen($this->container['expirationMonth']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['expirationMonth']) < 2) {
+            return false;
+        }
+        if (strlen($this->container['expirationYear']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['expirationYear']) < 4) {
+            return false;
+        }
+        if (strlen($this->container['securityCode']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['securityCode']) < 3) {
             return false;
         }
         return true;
@@ -198,6 +258,90 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
         }
 
         $this->container['number'] = $number;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationMonth
+     * @return string
+     */
+    public function getExpirationMonth()
+    {
+        return $this->container['expirationMonth'];
+    }
+
+    /**
+     * Sets expirationMonth
+     * @param string $expirationMonth Card expiration month.  Format: `MM`. Possible values: `01` through `12`.
+     * @return $this
+     */
+    public function setExpirationMonth($expirationMonth)
+    {
+        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Tmsv1instrumentidentifiersCard., must be smaller than or equal to 2.');
+        }
+        if (!is_null($expirationMonth) && (strlen($expirationMonth) < 2)) {
+            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Tmsv1instrumentidentifiersCard., must be bigger than or equal to 2.');
+        }
+
+        $this->container['expirationMonth'] = $expirationMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationYear
+     * @return string
+     */
+    public function getExpirationYear()
+    {
+        return $this->container['expirationYear'];
+    }
+
+    /**
+     * Sets expirationYear
+     * @param string $expirationYear Card expiration year.  Format: `YYYY`. Possible values: `1900` through `2099`.
+     * @return $this
+     */
+    public function setExpirationYear($expirationYear)
+    {
+        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Tmsv1instrumentidentifiersCard., must be smaller than or equal to 4.');
+        }
+        if (!is_null($expirationYear) && (strlen($expirationYear) < 4)) {
+            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Tmsv1instrumentidentifiersCard., must be bigger than or equal to 4.');
+        }
+
+        $this->container['expirationYear'] = $expirationYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets securityCode
+     * @return string
+     */
+    public function getSecurityCode()
+    {
+        return $this->container['securityCode'];
+    }
+
+    /**
+     * Sets securityCode
+     * @param string $securityCode Card security code.
+     * @return $this
+     */
+    public function setSecurityCode($securityCode)
+    {
+        if (!is_null($securityCode) && (strlen($securityCode) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $securityCode when calling Tmsv1instrumentidentifiersCard., must be smaller than or equal to 4.');
+        }
+        if (!is_null($securityCode) && (strlen($securityCode) < 3)) {
+            throw new \InvalidArgumentException('invalid length for $securityCode when calling Tmsv1instrumentidentifiersCard., must be bigger than or equal to 3.');
+        }
+
+        $this->container['securityCode'] = $securityCode;
 
         return $this;
     }

@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -54,8 +54,8 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentMethod' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod',
-        'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
+        'paymentType' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType',
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard'
     ];
 
@@ -64,7 +64,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'paymentMethod' => null,
+        'paymentType' => null,
         'customer' => null,
         'card' => null
     ];
@@ -84,7 +84,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentMethod' => 'paymentMethod',
+        'paymentType' => 'paymentType',
         'customer' => 'customer',
         'card' => 'card'
     ];
@@ -95,7 +95,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
      * @var string[]
      */
     protected static $setters = [
-        'paymentMethod' => 'setPaymentMethod',
+        'paymentType' => 'setPaymentType',
         'customer' => 'setCustomer',
         'card' => 'setCard'
     ];
@@ -106,7 +106,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
      * @var string[]
      */
     protected static $getters = [
-        'paymentMethod' => 'getPaymentMethod',
+        'paymentType' => 'getPaymentType',
         'customer' => 'getCustomer',
         'card' => 'getCard'
     ];
@@ -142,7 +142,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
      */
     public function __construct(array $data = null)
     {
-        $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
     }
@@ -173,29 +173,29 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
 
 
     /**
-     * Gets paymentMethod
-     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod
+     * Gets paymentType
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType
      */
-    public function getPaymentMethod()
+    public function getPaymentType()
     {
-        return $this->container['paymentMethod'];
+        return $this->container['paymentType'];
     }
 
     /**
-     * Sets paymentMethod
-     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentMethod $paymentMethod
+     * Sets paymentType
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType $paymentType
      * @return $this
      */
-    public function setPaymentMethod($paymentMethod)
+    public function setPaymentType($paymentType)
     {
-        $this->container['paymentMethod'] = $paymentMethod;
+        $this->container['paymentType'] = $paymentType;
 
         return $this;
     }
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
      */
     public function getCustomer()
     {
@@ -204,7 +204,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformation implements Arra
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer $customer
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
      * @return $this
      */
     public function setCustomer($customer)

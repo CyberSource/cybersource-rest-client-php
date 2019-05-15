@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -177,7 +177,7 @@ class PtsV2PaymentsPost201ResponseLinksSelf implements ArrayAccess
 
     /**
      * Sets href
-     * @param string $href URL
+     * @param string $href This is the endpoint of the resource that was created by the successful request.
      * @return $this
      */
     public function setHref($href)
@@ -198,7 +198,7 @@ class PtsV2PaymentsPost201ResponseLinksSelf implements ArrayAccess
 
     /**
      * Sets method
-     * @param string $method HTTP method applied to above URL
+     * @param string $method `method` refers to the HTTP method that you can send to the `self` endpoint to retrieve details of the resource.
      * @return $this
      */
     public function setMethod($method)

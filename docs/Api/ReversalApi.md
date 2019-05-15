@@ -5,6 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authReversal**](ReversalApi.md#authReversal) | **POST** /pts/v2/payments/{id}/reversals | Process an Authorization Reversal
+[**mitReversal**](ReversalApi.md#mitReversal) | **POST** /pts/v2/reversals/ | Merchant Initiated Reversal
 
 
 # **authReversal**
@@ -38,6 +39,51 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The payment ID returned from a previous payment request. |
  **authReversalRequest** | [**\CyberSource\Model\AuthReversalRequest**](../Model/AuthReversalRequest.md)|  |
+
+### Return type
+
+[**\CyberSource\Model\PtsV2PaymentsReversalsPost201Response**](../Model/PtsV2PaymentsReversalsPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **mitReversal**
+> \CyberSource\Model\PtsV2PaymentsReversalsPost201Response mitReversal($mitReversalRequest)
+
+Merchant Initiated Reversal
+
+This is to reverse a previous payment that merchant does not receive a reply.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ReversalApi();
+$mitReversalRequest = new \CyberSource\Model\MitReversalRequest(); // \CyberSource\Model\MitReversalRequest | 
+
+try {
+    $result = $api_instance->mitReversal($mitReversalRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReversalApi->mitReversal: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mitReversalRequest** | [**\CyberSource\Model\MitReversalRequest**](../Model/MitReversalRequest.md)|  |
 
 ### Return type
 

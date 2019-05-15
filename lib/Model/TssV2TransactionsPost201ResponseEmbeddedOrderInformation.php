@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -56,7 +56,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformation implements ArrayA
     protected static $swaggerTypes = [
         'billTo' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo',
         'shipTo' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo',
-        'amountDetails' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails'
+        'amountDetails' => '\CyberSource\Model\Ptsv2paymentsidreversalsReversalInformationAmountDetails'
     ];
 
     /**
@@ -216,7 +216,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformation implements ArrayA
 
     /**
      * Gets amountDetails
-     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsReversalInformationAmountDetails
      */
     public function getAmountDetails()
     {
@@ -225,7 +225,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformation implements ArrayA
 
     /**
      * Sets amountDetails
-     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedOrderInformationAmountDetails $amountDetails
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsReversalInformationAmountDetails $amountDetails
      * @return $this
      */
     public function setAmountDetails($amountDetails)

@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -135,6 +135,7 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
     const REASON_SYSTEM_ERROR = 'SYSTEM_ERROR';
     const REASON_SERVER_TIMEOUT = 'SERVER_TIMEOUT';
     const REASON_SERVICE_TIMEOUT = 'SERVICE_TIMEOUT';
+    const REASON_INVALID_OR_MISSING_CONFIG = 'INVALID_OR_MISSING_CONFIG';
     const REASON_PROCESSOR_TIMEOUT = 'PROCESSOR_TIMEOUT';
     
 
@@ -160,6 +161,7 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
             self::REASON_SYSTEM_ERROR,
             self::REASON_SERVER_TIMEOUT,
             self::REASON_SERVICE_TIMEOUT,
+            self::REASON_INVALID_OR_MISSING_CONFIG,
             self::REASON_PROCESSOR_TIMEOUT,
         ];
     }
@@ -243,7 +245,7 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)

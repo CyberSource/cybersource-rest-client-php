@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -73,12 +73,12 @@ class NetFundingsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getNetFundingInfo
+     * Test case for getNetFundingDetails
      *
      * Get Netfunding information for an account or a merchant.
      *
      */
-    public function testGetNetFundingInfo()
+    public function testGetNetFundingDetails()
     {
     }
 }

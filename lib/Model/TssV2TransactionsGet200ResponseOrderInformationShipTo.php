@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -218,8 +218,8 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 2)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 2.";
+        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 3)) {
+            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 3.";
         }
 
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
@@ -265,7 +265,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
         if (strlen($this->container['locality']) > 50) {
             return false;
         }
-        if (strlen($this->container['administrativeArea']) > 2) {
+        if (strlen($this->container['administrativeArea']) > 3) {
             return false;
         }
         if (strlen($this->container['postalCode']) > 10) {
@@ -320,7 +320,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets lastName
-     * @param string $lastName Last name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60
+     * @param string $lastName Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60
      * @return $this
      */
     public function setLastName($lastName)
@@ -420,13 +420,13 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada.
+     * @param string $administrativeArea State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  ccAuthService (Required when the billing country is the U.S. or Canada; otherwise, optional.) This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See \"Relaxed Requirements for Address Data and Expiration Date,\" page 75. Important It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the bill_state field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationShipTo., must be smaller than or equal to 2.');
+        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationShipTo., must be smaller than or equal to 3.');
         }
 
         $this->container['administrativeArea'] = $administrativeArea;
@@ -445,7 +445,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets postalCode
-     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3
+     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -495,7 +495,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets country
-     * @param string $country Country of the shipping address. Use the two character ISO Standard Country Codes.
+     * @param string $country Country of the shipping address. Use the two-character ISO Standard Country Codes.
      * @return $this
      */
     public function setCountry($country)
@@ -520,7 +520,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Phone number for the shipping address.
+     * @param string $phoneNumber Phone number associated with the shipping address.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

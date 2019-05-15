@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -57,7 +57,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => 'string',
         'terminalSerialNumber' => 'string',
         'deviceId' => 'string',
-        'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'
+        'partner' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner'
     ];
 
     /**
@@ -166,6 +166,10 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
             $invalid_properties[] = "invalid value for 'terminalId', the character length must be smaller than or equal to 8.";
         }
 
+        if (!is_null($this->container['terminalSerialNumber']) && (strlen($this->container['terminalSerialNumber']) > 32)) {
+            $invalid_properties[] = "invalid value for 'terminalSerialNumber', the character length must be smaller than or equal to 32.";
+        }
+
         return $invalid_properties;
     }
 
@@ -179,6 +183,9 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
     {
 
         if (strlen($this->container['terminalId']) > 8) {
+            return false;
+        }
+        if (strlen($this->container['terminalSerialNumber']) > 32) {
             return false;
         }
         return true;
@@ -221,11 +228,15 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Sets terminalSerialNumber
-     * @param string $terminalSerialNumber The description for this field is not available.
+     * @param string $terminalSerialNumber Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.
      * @return $this
      */
     public function setTerminalSerialNumber($terminalSerialNumber)
     {
+        if (!is_null($terminalSerialNumber) && (strlen($terminalSerialNumber) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $terminalSerialNumber when calling TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation., must be smaller than or equal to 32.');
+        }
+
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
 
         return $this;
@@ -254,7 +265,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Gets partner
-     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner
+     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner
      */
     public function getPartner()
     {
@@ -263,7 +274,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Sets partner
-     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner $partner
+     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner $partner
      * @return $this
      */
     public function setPartner($partner)

@@ -10,9 +10,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -92,7 +92,7 @@ class SearchTransactionsApi
      *
      * Create a search request
      *
-     * @param \CyberSource\Model\TssV2TransactionsPostResponse $createSearchRequest  (required)
+     * @param \CyberSource\Model\CreateSearchRequest $createSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -107,7 +107,7 @@ class SearchTransactionsApi
      *
      * Create a search request
      *
-     * @param \CyberSource\Model\TssV2TransactionsPostResponse $createSearchRequest  (required)
+     * @param \CyberSource\Model\CreateSearchRequest $createSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -165,7 +165,7 @@ class SearchTransactionsApi
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PayoutsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -179,13 +179,13 @@ class SearchTransactionsApi
      *
      * Get Search results
      *
-     * @param string $id Search ID. (required)
+     * @param string $searchId Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSearch($id)
+    public function getSearch($searchId)
     {
-        list($response, $statusCode, $httpHeader) = $this->getSearchWithHttpInfo($id);
+        list($response, $statusCode, $httpHeader) = $this->getSearchWithHttpInfo($searchId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -194,18 +194,18 @@ class SearchTransactionsApi
      *
      * Get Search results
      *
-     * @param string $id Search ID. (required)
+     * @param string $searchId Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSearchWithHttpInfo($id)
+    public function getSearchWithHttpInfo($searchId)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getSearch');
+        // verify the required parameter 'searchId' is set
+        if ($searchId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $searchId when calling getSearch');
         }
         // parse inputs
-        $resourcePath = "/tss/v2/searches/{id}";
+        $resourcePath = "/tss/v2/searches/{searchId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -217,10 +217,10 @@ class SearchTransactionsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
-        if ($id !== null) {
+        if ($searchId !== null) {
             $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
+                "{" . "searchId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($searchId),
                 $resourcePath
             );
         }
@@ -240,7 +240,7 @@ class SearchTransactionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TssV2TransactionsPost201Response',
-                '/tss/v2/searches/{id}'
+                '/tss/v2/searches/{searchId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response', $httpHeader), $statusCode, $httpHeader];

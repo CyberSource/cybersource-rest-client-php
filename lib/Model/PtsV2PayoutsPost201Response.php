@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -59,9 +59,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'reconciliationId' => 'string',
-        'statusInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseStatusInformation',
         'errorInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformation',
-        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2payoutsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'merchantInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseMerchantInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseOrderInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseProcessorInformation',
@@ -78,7 +77,6 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'submitTimeUtc' => null,
         'status' => null,
         'reconciliationId' => null,
-        'statusInformation' => null,
         'errorInformation' => null,
         'clientReferenceInformation' => null,
         'merchantInformation' => null,
@@ -107,7 +105,6 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
         'reconciliationId' => 'reconciliationId',
-        'statusInformation' => 'statusInformation',
         'errorInformation' => 'errorInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'merchantInformation' => 'merchantInformation',
@@ -127,7 +124,6 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
         'reconciliationId' => 'setReconciliationId',
-        'statusInformation' => 'setStatusInformation',
         'errorInformation' => 'setErrorInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'merchantInformation' => 'setMerchantInformation',
@@ -147,7 +143,6 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
         'reconciliationId' => 'getReconciliationId',
-        'statusInformation' => 'getStatusInformation',
         'errorInformation' => 'getErrorInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'merchantInformation' => 'getMerchantInformation',
@@ -173,6 +168,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
 
     const STATUS_ACCEPTED = 'ACCEPTED';
     const STATUS_DECLINED = 'DECLINED';
+    const STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
     
 
     
@@ -185,6 +181,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         return [
             self::STATUS_ACCEPTED,
             self::STATUS_DECLINED,
+            self::STATUS_INVALID_REQUEST,
         ];
     }
     
@@ -206,7 +203,6 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
-        $this->container['statusInformation'] = isset($data['statusInformation']) ? $data['statusInformation'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
@@ -298,7 +294,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
      * @return $this
      */
     public function setId($id)
@@ -344,7 +340,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.
+     * @param string $status The status of the submitted transaction.  Possible values:  - ACCEPTED  - DECLINED  - INVALID_REQUEST
      * @return $this
      */
     public function setStatus($status)
@@ -389,27 +385,6 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
     }
 
     /**
-     * Gets statusInformation
-     * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseStatusInformation
-     */
-    public function getStatusInformation()
-    {
-        return $this->container['statusInformation'];
-    }
-
-    /**
-     * Sets statusInformation
-     * @param \CyberSource\Model\PtsV2PayoutsPost201ResponseStatusInformation $statusInformation
-     * @return $this
-     */
-    public function setStatusInformation($statusInformation)
-    {
-        $this->container['statusInformation'] = $statusInformation;
-
-        return $this;
-    }
-
-    /**
      * Gets errorInformation
      * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseErrorInformation
      */
@@ -432,7 +407,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Ptsv2payoutsClientReferenceInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -441,7 +416,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Ptsv2payoutsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

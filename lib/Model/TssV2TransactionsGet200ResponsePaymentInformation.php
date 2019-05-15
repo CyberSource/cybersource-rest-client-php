@@ -11,9 +11,9 @@
  */
 
 /**
- * CyberSource Flex API
+ * CyberSource Merged Spec
  *
- * Simple PAN tokenization service
+ * All CyberSource API specs merged together. These are available at https://developer.cybersource.com/api/reference/api-reference.html
  *
  * OpenAPI spec version: 0.0.1
  * 
@@ -55,7 +55,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'paymentType' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentType',
-        'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCard',
         'invoice' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInvoice',
         'bank' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBank',
@@ -213,7 +213,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
      */
     public function getCustomer()
     {
@@ -222,7 +222,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer $customer
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
      * @return $this
      */
     public function setCustomer($customer)

@@ -4,7 +4,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /flex/v1/keys/ | Generate Key
+[**generatePublicKey**](KeyGenerationApi.md#generatePublicKey) | **POST** /flex/v1/keys | Generate Key
 
 
 # **generatePublicKey**
@@ -35,7 +35,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generatePublicKeyRequest** | [**\CyberSource\Model\GeneratePublicKeyRequest**](../Model/GeneratePublicKeyRequest.md)|  | [optional]
+ **generatePublicKeyRequest** | [**\CyberSource\Model\GeneratePublicKeyRequest**](../Model/GeneratePublicKeyRequest.md)|  |
 
 ### Return type
 
