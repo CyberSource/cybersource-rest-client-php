@@ -294,7 +294,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets cavvAlgorithm
-     * @param string $cavvAlgorithm Algorithm used to generate the CAVV for Verified by Visa or the UCAF authentication data for Mastercard Identity Check.
+     * @param string $cavvAlgorithm Algorithm used to generate the CAVV for Visa Secure or the UCAF authentication data for Mastercard Identity Check.
      * @return $this
      */
     public function setCavvAlgorithm($cavvAlgorithm)

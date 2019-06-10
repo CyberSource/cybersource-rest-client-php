@@ -54,7 +54,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'profile' => '\CyberSource\Model\Riskv1decisionsRiskInformationProfile'
+        'profile' => '\CyberSource\Model\Riskv1decisionsRiskInformationProfile',
+        'eventType' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'profile' => null
+        'profile' => null,
+        'eventType' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'profile' => 'profile'
+        'profile' => 'profile',
+        'eventType' => 'eventType'
     ];
 
 
@@ -89,7 +92,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'profile' => 'setProfile'
+        'profile' => 'setProfile',
+        'eventType' => 'setEventType'
     ];
 
 
@@ -98,7 +102,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'profile' => 'getProfile'
+        'profile' => 'getProfile',
+        'eventType' => 'getEventType'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
+        $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
     }
 
     /**
@@ -143,6 +149,10 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['eventType']) && (strlen($this->container['eventType']) > 255)) {
+            $invalid_properties[] = "invalid value for 'eventType', the character length must be smaller than or equal to 255.";
+        }
 
         return $invalid_properties;
     }
@@ -156,6 +166,9 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['eventType']) > 255) {
+            return false;
+        }
         return true;
     }
 
@@ -177,6 +190,31 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     public function setProfile($profile)
     {
         $this->container['profile'] = $profile;
+
+        return $this;
+    }
+
+    /**
+     * Gets eventType
+     * @return string
+     */
+    public function getEventType()
+    {
+        return $this->container['eventType'];
+    }
+
+    /**
+     * Sets eventType
+     * @param string $eventType Specifies one of the following types of events: - login - account_creation - account_update For regular payment transactions, do not send this field.
+     * @return $this
+     */
+    public function setEventType($eventType)
+    {
+        if (!is_null($eventType) && (strlen($eventType) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $eventType when calling Riskv1decisionsRiskInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['eventType'] = $eventType;
 
         return $this;
     }

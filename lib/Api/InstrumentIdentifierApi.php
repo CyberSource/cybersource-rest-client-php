@@ -332,7 +332,7 @@ class InstrumentIdentifierApi
     /**
      * Operation getAllPaymentInstruments
      *
-     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     * Retrieve all Payment Instruments
      *
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of an Instrument Identifier. (required)
@@ -350,7 +350,7 @@ class InstrumentIdentifierApi
     /**
      * Operation getAllPaymentInstrumentsWithHttpInfo
      *
-     * Retrieve all Payment Instruments associated with an Instrument Identifier
+     * Retrieve all Payment Instruments
      *
      * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
      * @param string $tokenId The TokenId of an Instrument Identifier. (required)

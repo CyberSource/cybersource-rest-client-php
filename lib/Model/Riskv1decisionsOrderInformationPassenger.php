@@ -61,7 +61,8 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         'firstName' => 'string',
         'lastName' => 'string',
         'id' => 'string',
-        'email' => 'string'
+        'email' => 'string',
+        'nationality' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         'firstName' => null,
         'lastName' => null,
         'id' => null,
-        'email' => null
+        'email' => null,
+        'nationality' => null
     ];
 
     public static function swaggerTypes()
@@ -99,7 +101,8 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'id' => 'id',
-        'email' => 'email'
+        'email' => 'email',
+        'nationality' => 'nationality'
     ];
 
 
@@ -114,7 +117,8 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'id' => 'setId',
-        'email' => 'setEmail'
+        'email' => 'setEmail',
+        'nationality' => 'setNationality'
     ];
 
 
@@ -129,7 +133,8 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'id' => 'getId',
-        'email' => 'getEmail'
+        'email' => 'getEmail',
+        'nationality' => 'getNationality'
     ];
 
     public static function attributeMap()
@@ -170,6 +175,7 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['nationality'] = isset($data['nationality']) ? $data['nationality'] : null;
     }
 
     /**
@@ -209,6 +215,10 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
             $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
         }
 
+        if (!is_null($this->container['nationality']) && (strlen($this->container['nationality']) > 2)) {
+            $invalid_properties[] = "invalid value for 'nationality', the character length must be smaller than or equal to 2.";
+        }
+
         return $invalid_properties;
     }
 
@@ -240,6 +250,9 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
             return false;
         }
         if (strlen($this->container['email']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['nationality']) > 2) {
             return false;
         }
         return true;
@@ -307,7 +320,7 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
 
     /**
      * Sets phone
-     * @param string $phone Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the country code.
+     * @param string $phone Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)
      * @return $this
      */
     public function setPhone($phone)
@@ -417,6 +430,31 @@ class Riskv1decisionsOrderInformationPassenger implements ArrayAccess
         }
 
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets nationality
+     * @return string
+     */
+    public function getNationality()
+    {
+        return $this->container['nationality'];
+    }
+
+    /**
+     * Sets nationality
+     * @param string $nationality Passenger's nationality country. Use the two character ISO Standard Country Codes.
+     * @return $this
+     */
+    public function setNationality($nationality)
+    {
+        if (!is_null($nationality) && (strlen($nationality) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $nationality when calling Riskv1decisionsOrderInformationPassenger., must be smaller than or equal to 2.');
+        }
+
+        $this->container['nationality'] = $nationality;
 
         return $this;
     }

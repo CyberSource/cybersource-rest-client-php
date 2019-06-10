@@ -75,7 +75,7 @@ class DecisionManagerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createDecisionManagerCase
      *
-     * Create Decision Manager case.
+     * Create Decision Manager Case.
      *
      */
     public function testCreateDecisionManagerCase()

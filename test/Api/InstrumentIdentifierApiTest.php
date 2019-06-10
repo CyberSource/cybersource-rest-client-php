@@ -95,7 +95,7 @@ class InstrumentIdentifierApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAllPaymentInstruments
      *
-     * Retrieve all Payment Instruments associated with an Instrument Identifier.
+     * Retrieve all Payment Instruments.
      *
      */
     public function testGetAllPaymentInstruments()

@@ -54,6 +54,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'actualFinalDestination' => 'string',
         'completeRoute' => 'string',
         'departureTime' => 'string',
         'journeyType' => 'string',
@@ -65,6 +66,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'actualFinalDestination' => null,
         'completeRoute' => null,
         'departureTime' => null,
         'journeyType' => null,
@@ -86,6 +88,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'actualFinalDestination' => 'actualFinalDestination',
         'completeRoute' => 'completeRoute',
         'departureTime' => 'departureTime',
         'journeyType' => 'journeyType',
@@ -98,6 +101,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'actualFinalDestination' => 'setActualFinalDestination',
         'completeRoute' => 'setCompleteRoute',
         'departureTime' => 'setDepartureTime',
         'journeyType' => 'setJourneyType',
@@ -110,6 +114,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'actualFinalDestination' => 'getActualFinalDestination',
         'completeRoute' => 'getCompleteRoute',
         'departureTime' => 'getDepartureTime',
         'journeyType' => 'getJourneyType',
@@ -147,6 +152,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['actualFinalDestination'] = isset($data['actualFinalDestination']) ? $data['actualFinalDestination'] : null;
         $this->container['completeRoute'] = isset($data['completeRoute']) ? $data['completeRoute'] : null;
         $this->container['departureTime'] = isset($data['departureTime']) ? $data['departureTime'] : null;
         $this->container['journeyType'] = isset($data['journeyType']) ? $data['journeyType'] : null;
@@ -161,6 +167,10 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['actualFinalDestination']) && (strlen($this->container['actualFinalDestination']) > 3)) {
+            $invalid_properties[] = "invalid value for 'actualFinalDestination', the character length must be smaller than or equal to 3.";
+        }
 
         if (!is_null($this->container['completeRoute']) && (strlen($this->container['completeRoute']) > 255)) {
             $invalid_properties[] = "invalid value for 'completeRoute', the character length must be smaller than or equal to 255.";
@@ -186,6 +196,9 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['actualFinalDestination']) > 3) {
+            return false;
+        }
         if (strlen($this->container['completeRoute']) > 255) {
             return false;
         }
@@ -198,6 +211,31 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets actualFinalDestination
+     * @return string
+     */
+    public function getActualFinalDestination()
+    {
+        return $this->container['actualFinalDestination'];
+    }
+
+    /**
+     * Sets actualFinalDestination
+     * @param string $actualFinalDestination IATA Code for the actual final destination that the customer intends to travel to. It should be a destination on the completeRoute.
+     * @return $this
+     */
+    public function setActualFinalDestination($actualFinalDestination)
+    {
+        if (!is_null($actualFinalDestination) && (strlen($actualFinalDestination) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $actualFinalDestination when calling Riskv1decisionsTravelInformation., must be smaller than or equal to 3.');
+        }
+
+        $this->container['actualFinalDestination'] = $actualFinalDestination;
+
+        return $this;
+    }
 
     /**
      * Gets completeRoute

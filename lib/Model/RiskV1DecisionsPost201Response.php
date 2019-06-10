@@ -60,6 +60,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'submitTimeLocal' => 'string',
         'status' => 'string',
         'riskInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformation',
+        'paymentInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponsePaymentInformation',
         'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation'
     ];
 
@@ -74,6 +75,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'submitTimeLocal' => null,
         'status' => null,
         'riskInformation' => null,
+        'paymentInformation' => null,
         'errorInformation' => null
     ];
 
@@ -98,6 +100,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'submitTimeLocal' => 'submitTimeLocal',
         'status' => 'status',
         'riskInformation' => 'riskInformation',
+        'paymentInformation' => 'paymentInformation',
         'errorInformation' => 'errorInformation'
     ];
 
@@ -113,6 +116,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'submitTimeLocal' => 'setSubmitTimeLocal',
         'status' => 'setStatus',
         'riskInformation' => 'setRiskInformation',
+        'paymentInformation' => 'setPaymentInformation',
         'errorInformation' => 'setErrorInformation'
     ];
 
@@ -128,6 +132,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'submitTimeLocal' => 'getSubmitTimeLocal',
         'status' => 'getStatus',
         'riskInformation' => 'getRiskInformation',
+        'paymentInformation' => 'getPaymentInformation',
         'errorInformation' => 'getErrorInformation'
     ];
 
@@ -168,6 +173,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         $this->container['submitTimeLocal'] = isset($data['submitTimeLocal']) ? $data['submitTimeLocal'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
+        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
     }
 
@@ -329,6 +335,27 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
     public function setRiskInformation($riskInformation)
     {
         $this->container['riskInformation'] = $riskInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponsePaymentInformation
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponsePaymentInformation $paymentInformation
+     * @return $this
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }

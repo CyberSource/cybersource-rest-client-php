@@ -204,7 +204,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets hostName
-     * @param string $hostName Host name reported by the customer’s browser to your Web server identified via the HTTP header.
+     * @param string $hostName DNS resolved hostname from `ipAddress`.
      * @return $this
      */
     public function setHostName($hostName)
@@ -229,7 +229,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets ipAddress
-     * @param string $ipAddress Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information.
+     * @param string $ipAddress IP address of the customer.
      * @return $this
      */
     public function setIpAddress($ipAddress)
@@ -254,7 +254,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets userAgent
-     * @param string $userAgent Customer’s browser as identified from the HTTP header data. For example, Mozilla is the value that identifies the Netscape browser.
+     * @param string $userAgent Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser.
      * @return $this
      */
     public function setUserAgent($userAgent)

@@ -120,13 +120,6 @@ class RiskV1DecisionsPost201ResponseRiskInformationTest extends \PHPUnit_Framewo
     }
 
     /**
-     * Test attribute "paymentInformation"
-     */
-    public function testPropertyPaymentInformation()
-    {
-    }
-
-    /**
      * Test attribute "score"
      */
     public function testPropertyScore()
@@ -144,6 +137,13 @@ class RiskV1DecisionsPost201ResponseRiskInformationTest extends \PHPUnit_Framewo
      * Test attribute "providers"
      */
     public function testPropertyProviders()
+    {
+    }
+
+    /**
+     * Test attribute "travel"
+     */
+    public function testPropertyTravel()
     {
     }
 }
