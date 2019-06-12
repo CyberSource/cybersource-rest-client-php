@@ -11,6 +11,8 @@ powershell -Command "(Get-Content ..\CyberSource\lib\Api\CaptureApi.php) | ForEa
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\CreditApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\CreditApi.php"
 
+powershell -Command "(Get-Content ..\CyberSource\lib\Api\PayerAuthenticationApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PayerAuthenticationApi.php"
+
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\PaymentsApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PaymentsApi.php"
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\PayoutsApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PayoutsApi.php"
