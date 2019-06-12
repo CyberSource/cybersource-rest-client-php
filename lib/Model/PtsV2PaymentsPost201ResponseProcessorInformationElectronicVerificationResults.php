@@ -321,7 +321,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets code
-     * @param string $code Mapped Electronic Verification response code for the customer’s name.
+     * @param string $code Mapped Electronic Verification response code for the customer’s name.  For details, see `auth_ev_name` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setCode($code)
@@ -371,7 +371,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets email
-     * @param string $email Mapped Electronic Verification response code for the customer’s email address.
+     * @param string $email Mapped Electronic Verification response code for the customer’s email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setEmail($email)
@@ -421,7 +421,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Mapped Electronic Verification response code for the customer’s phone number.
+     * @param string $phoneNumber Mapped Electronic Verification response code for the customer’s phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)
@@ -471,7 +471,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets postalCode
-     * @param string $postalCode Mapped Electronic Verification response code for the customer’s postal code.
+     * @param string $postalCode Mapped Electronic Verification response code for the customer’s postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -521,7 +521,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets street
-     * @param string $street Mapped Electronic Verification response code for the customer’s street address.
+     * @param string $street Mapped Electronic Verification response code for the customer’s street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setStreet($street)

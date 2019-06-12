@@ -55,6 +55,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'username' => 'string',
         'hashedPassword' => 'string',
         'dateOfBirth' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]'
@@ -65,6 +66,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'username' => null,
         'hashedPassword' => null,
         'dateOfBirth' => null,
         'personalIdentification' => null
@@ -85,6 +87,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'username' => 'username',
         'hashedPassword' => 'hashedPassword',
         'dateOfBirth' => 'dateOfBirth',
         'personalIdentification' => 'personalIdentification'
@@ -96,6 +99,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'username' => 'setUsername',
         'hashedPassword' => 'setHashedPassword',
         'dateOfBirth' => 'setDateOfBirth',
         'personalIdentification' => 'setPersonalIdentification'
@@ -107,6 +111,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'username' => 'getUsername',
         'hashedPassword' => 'getHashedPassword',
         'dateOfBirth' => 'getDateOfBirth',
         'personalIdentification' => 'getPersonalIdentification'
@@ -143,6 +148,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
@@ -156,6 +162,10 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['username']) && (strlen($this->container['username']) > 255)) {
+            $invalid_properties[] = "invalid value for 'username', the character length must be smaller than or equal to 255.";
+        }
 
         if (!is_null($this->container['hashedPassword']) && (strlen($this->container['hashedPassword']) > 100)) {
             $invalid_properties[] = "invalid value for 'hashedPassword', the character length must be smaller than or equal to 100.";
@@ -177,6 +187,9 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['username']) > 255) {
+            return false;
+        }
         if (strlen($this->container['hashedPassword']) > 100) {
             return false;
         }
@@ -186,6 +199,31 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets username
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->container['username'];
+    }
+
+    /**
+     * Sets username
+     * @param string $username Specifies the customer account user name.
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        if (!is_null($username) && (strlen($username) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $username when calling Riskv1decisionsBuyerInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['username'] = $username;
+
+        return $this;
+    }
 
     /**
      * Gets hashedPassword
@@ -198,7 +236,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
 
     /**
      * Sets hashedPassword
-     * @param string $hashedPassword The description for this field is not available.
+     * @param string $hashedPassword The merchant's password that CyberSource hashes and stores as a hashed password.  For details about this field, see the `customer_password` field description in [Decision Manager Developer Guide Using the SCMP API.](https://www.cybersource.com/developers/documentation/fraud_management/)
      * @return $this
      */
     public function setHashedPassword($hashedPassword)
@@ -223,7 +261,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
 
     /**
      * Sets dateOfBirth
-     * @param string $dateOfBirth Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a pass-through, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see \"Recipients,\" page 224.
+     * @param string $dateOfBirth Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)

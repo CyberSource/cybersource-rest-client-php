@@ -83,4 +83,11 @@ class Riskv1decisionsRiskInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyProfile()
     {
     }
+
+    /**
+     * Test attribute "eventType"
+     */
+    public function testPropertyEventType()
+    {
+    }
 }

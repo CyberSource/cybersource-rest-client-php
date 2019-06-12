@@ -1,10 +1,17 @@
 @echo off
 
+rd /s /q ..\lib\Api
+rd /s /q ..\lib\Model
+rd /s /q ..\test
+rd /s /q ..\docs
+
 java -jar swagger-codegen-cli-2.2.3.jar generate -t cybersource-php-template -i cybersource-rest-spec.json -l php -o ../ -c cybersource-php-config.json
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\CaptureApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\CaptureApi.php"
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\CreditApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\CreditApi.php"
+
+powershell -Command "(Get-Content ..\CyberSource\lib\Api\PayerAuthenticationApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PayerAuthenticationApi.php"
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Api\PaymentsApi.php) | ForEach-Object { $_ -replace 'selectHeaderAccept\(\[''application/json', 'selectHeaderAccept([''application/hal+json' } | Set-Content ..\CyberSource\lib\Api\PaymentsApi.php"
 

@@ -90,4 +90,11 @@ class Riskv1decisionsTravelInformationLegsTest extends \PHPUnit_Framework_TestCa
     public function testPropertyDestination()
     {
     }
+
+    /**
+     * Test attribute "departureDateTime"
+     */
+    public function testPropertyDepartureDateTime()
+    {
+    }
 }

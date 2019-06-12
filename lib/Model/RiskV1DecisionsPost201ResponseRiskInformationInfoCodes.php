@@ -213,7 +213,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets velocity
-     * @param string[] $velocity List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.
+     * @param string[] $velocity List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  For all possible values, see the `decision_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setVelocity($velocity)
@@ -234,7 +234,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets address
-     * @param string[] $address Indicates a mismatch between the customer’s billing and shipping addresses.
+     * @param string[] $address Indicates a mismatch between the customer’s billing and shipping addresses.  For all possible values, see the `score_address_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setAddress($address)
@@ -255,7 +255,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets customerList
-     * @param string[] $customerList Indicates that customer information is associated with transactions that are either on the negative or the positive list.
+     * @param string[] $customerList Indicates that customer information is associated with transactions that are either on the negative or the positive list.  For all possible values, see the `score_hotlist_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setCustomerList($customerList)
@@ -276,7 +276,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets identityChange
-     * @param string[] $identityChange Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).
+     * @param string[] $identityChange Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  For all possible values, see the `score_identity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setIdentityChange($identityChange)
@@ -297,7 +297,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets internet
-     * @param string[] $internet Indicates a problem with the customer’s email address, IP address, or billing address.
+     * @param string[] $internet Indicates a problem with the customer’s email address, IP address, or billing address.  For all possible values, see the `score_internet_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setInternet($internet)
@@ -318,7 +318,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets phone
-     * @param string[] $phone Indicates a problem with the customer’s phone number.
+     * @param string[] $phone Indicates a problem with the customer’s phone number.  For all possible values, see the `score_phone_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setPhone($phone)
@@ -339,7 +339,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets suspicious
-     * @param string[] $suspicious Indicates that the customer provided potentially suspicious information.
+     * @param string[] $suspicious Indicates that the customer provided potentially suspicious information.  For all possible values, see the `score_suspicious_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setSuspicious($suspicious)
@@ -360,7 +360,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationInfoCodes implements ArrayAcc
 
     /**
      * Sets globalVelocity
-     * @param string[] $globalVelocity Indicates that the customer has a high purchase frequency.
+     * @param string[] $globalVelocity Indicates that the customer has a high purchase frequency.  For all possible values, see the `score_velocity_info` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setGlobalVelocity($globalVelocity)

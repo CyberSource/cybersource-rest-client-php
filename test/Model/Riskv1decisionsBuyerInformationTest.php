@@ -78,6 +78,13 @@ class Riskv1decisionsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "username"
+     */
+    public function testPropertyUsername()
+    {
+    }
+
+    /**
      * Test attribute "hashedPassword"
      */
     public function testPropertyHashedPassword()

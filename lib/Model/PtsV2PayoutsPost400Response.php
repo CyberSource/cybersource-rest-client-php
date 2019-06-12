@@ -192,14 +192,6 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['submitTimeUtc']) && (strlen($this->container['submitTimeUtc']) > 6)) {
-            $invalid_properties[] = "invalid value for 'submitTimeUtc', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['submitTimeUtc']) && (strlen($this->container['submitTimeUtc']) < 6)) {
-            $invalid_properties[] = "invalid value for 'submitTimeUtc', the character length must be bigger than or equal to 6.";
-        }
-
         $allowed_values = $this->getReasonAllowableValues();
         if (!in_array($this->container['reason'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -220,12 +212,6 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['submitTimeUtc']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['submitTimeUtc']) < 6) {
-            return false;
-        }
         $allowed_values = $this->getReasonAllowableValues();
         if (!in_array($this->container['reason'], $allowed_values)) {
             return false;
@@ -250,13 +236,6 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
      */
     public function setSubmitTimeUtc($submitTimeUtc)
     {
-        if (!is_null($submitTimeUtc) && (strlen($submitTimeUtc) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $submitTimeUtc when calling PtsV2PayoutsPost400Response., must be smaller than or equal to 6.');
-        }
-        if (!is_null($submitTimeUtc) && (strlen($submitTimeUtc) < 6)) {
-            throw new \InvalidArgumentException('invalid length for $submitTimeUtc when calling PtsV2PayoutsPost400Response., must be bigger than or equal to 6.');
-        }
-
         $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;

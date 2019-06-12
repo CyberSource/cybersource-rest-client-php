@@ -55,7 +55,7 @@ class Riskv1decisionsOrderInformationShippingDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'giftWrap' => 'string',
+        'giftWrap' => 'bool',
         'shippingMethod' => 'string'
     ];
 
@@ -151,10 +151,6 @@ class Riskv1decisionsOrderInformationShippingDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['giftWrap']) && (strlen($this->container['giftWrap']) > 3)) {
-            $invalid_properties[] = "invalid value for 'giftWrap', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['shippingMethod']) && (strlen($this->container['shippingMethod']) > 10)) {
             $invalid_properties[] = "invalid value for 'shippingMethod', the character length must be smaller than or equal to 10.";
         }
@@ -171,9 +167,6 @@ class Riskv1decisionsOrderInformationShippingDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['giftWrap']) > 3) {
-            return false;
-        }
         if (strlen($this->container['shippingMethod']) > 10) {
             return false;
         }
@@ -183,7 +176,7 @@ class Riskv1decisionsOrderInformationShippingDetails implements ArrayAccess
 
     /**
      * Gets giftWrap
-     * @return string
+     * @return bool
      */
     public function getGiftWrap()
     {
@@ -192,15 +185,11 @@ class Riskv1decisionsOrderInformationShippingDetails implements ArrayAccess
 
     /**
      * Sets giftWrap
-     * @param string $giftWrap Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping.
+     * @param bool $giftWrap Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping.
      * @return $this
      */
     public function setGiftWrap($giftWrap)
     {
-        if (!is_null($giftWrap) && (strlen($giftWrap) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $giftWrap when calling Riskv1decisionsOrderInformationShippingDetails., must be smaller than or equal to 3.');
-        }
-
         $this->container['giftWrap'] = $giftWrap;
 
         return $this;

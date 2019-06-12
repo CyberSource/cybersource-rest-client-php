@@ -75,7 +75,7 @@ class UserManagementApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getUsers
      *
-     * Get user based on organization Id, username, permission and role.
+     * Get user information.
      *
      */
     public function testGetUsers()

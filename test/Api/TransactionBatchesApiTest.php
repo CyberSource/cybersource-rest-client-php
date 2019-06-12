@@ -73,16 +73,6 @@ class TransactionBatchesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getTransactionBatchDetails
-     *
-     * Filters batch response..
-     *
-     */
-    public function testGetTransactionBatchDetails()
-    {
-    }
-
-    /**
      * Test case for getTransactionBatchId
      *
      * Get individual batch file.
@@ -95,7 +85,7 @@ class TransactionBatchesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getTransactionBatches
      *
-     * Get a list of batch files.
+     * Gets a list of batch files.
      *
      */
     public function testGetTransactionBatches()

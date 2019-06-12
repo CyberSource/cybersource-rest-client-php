@@ -78,6 +78,13 @@ class Riskv1decisionsTravelInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "actualFinalDestination"
+     */
+    public function testPropertyActualFinalDestination()
+    {
+    }
+
+    /**
      * Test attribute "completeRoute"
      */
     public function testPropertyCompleteRoute()

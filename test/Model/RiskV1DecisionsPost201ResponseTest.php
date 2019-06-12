@@ -120,6 +120,13 @@ class RiskV1DecisionsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentInformation"
+     */
+    public function testPropertyPaymentInformation()
+    {
+    }
+
+    /**
      * Test attribute "errorInformation"
      */
     public function testPropertyErrorInformation()

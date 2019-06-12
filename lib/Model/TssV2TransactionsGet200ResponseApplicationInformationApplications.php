@@ -213,7 +213,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets name
-     * @param string $name The description for this field is not available.
+     * @param string $name The CyberSource payment application processed for the transaction.
      * @return $this
      */
     public function setName($name)
@@ -255,7 +255,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets reasonCode
-     * @param string $reasonCode The description for this field is not available.
+     * @param string $reasonCode 3-digit reason code that indicates why the customer profile payment succeeded or failed.
      * @return $this
      */
     public function setReasonCode($reasonCode)
@@ -276,7 +276,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets rCode
-     * @param string $rCode The description for this field is not available.
+     * @param string $rCode Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful.
      * @return $this
      */
     public function setRCode($rCode)
@@ -297,7 +297,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets rFlag
-     * @param string $rFlag The description for this field is not available.
+     * @param string $rFlag One-word description of the result of the application.
      * @return $this
      */
     public function setRFlag($rFlag)
@@ -318,7 +318,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets reconciliationId
-     * @param string $reconciliationId The description for this field is not available.
+     * @param string $reconciliationId Reference number that you use to reconcile your CyberSource reports with your processor reports.
      * @return $this
      */
     public function setReconciliationId($reconciliationId)
@@ -339,7 +339,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets rMessage
-     * @param string $rMessage The description for this field is not available.
+     * @param string $rMessage Message that explains the reply flag for the application.
      * @return $this
      */
     public function setRMessage($rMessage)
