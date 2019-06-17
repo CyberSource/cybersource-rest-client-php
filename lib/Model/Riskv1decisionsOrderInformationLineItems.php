@@ -60,7 +60,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productRisk' => 'string',
         'productName' => 'string',
         'productCode' => 'string',
-        'gift' => 'string',
+        'gift' => 'bool',
         'distributorProductSku' => 'string',
         'passenger' => '\CyberSource\Model\Riskv1decisionsOrderInformationPassenger'
     ];
@@ -178,7 +178,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         $this->container['productRisk'] = isset($data['productRisk']) ? $data['productRisk'] : null;
         $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
-        $this->container['gift'] = isset($data['gift']) ? $data['gift'] : 'no';
+        $this->container['gift'] = isset($data['gift']) ? $data['gift'] : null;
         $this->container['distributorProductSku'] = isset($data['distributorProductSku']) ? $data['distributorProductSku'] : null;
         $this->container['passenger'] = isset($data['passenger']) ? $data['passenger'] : null;
     }
@@ -220,10 +220,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
             $invalid_properties[] = "invalid value for 'productCode', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['gift']) && (strlen($this->container['gift']) > 3)) {
-            $invalid_properties[] = "invalid value for 'gift', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['distributorProductSku']) && (strlen($this->container['distributorProductSku']) > 15)) {
             $invalid_properties[] = "invalid value for 'distributorProductSku', the character length must be smaller than or equal to 15.";
         }
@@ -261,9 +257,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         if (strlen($this->container['productCode']) > 255) {
             return false;
         }
-        if (strlen($this->container['gift']) > 3) {
-            return false;
-        }
         if (strlen($this->container['distributorProductSku']) > 15) {
             return false;
         }
@@ -282,7 +275,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitPrice
-     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the amount field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. This information is covered in: - Table 12, \"Authorization Information for Specific Processors,\" on page 36 - Table 16, \"Capture Information for Specific Processors,\" on page 51 - Table 20, \"Credit Information for Specific Processors,\" on page 65  **DCC for First Data**\\ This value is the original amount in your local currency. You must include this field. You cannot use grand_total_amount. See \"Dynamic Currency Conversion for First Data,\" page 113.  **FDMS South**\\ If you accept IDR or CLP currencies, see the entry for FDMS South in Table 12, \"Authorization Information for Specific Processors,\" on page 36.  **Zero Amount Authorizations**\\ If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations,\" page 220.
+     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the `amount` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. See these guides for details: - [Merchant Descriptors Using the SCMP API Guide] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) - \"Capture Information for Specific Processors\" section in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field `orderInformation.amountDetails.totalAmount` in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -307,7 +300,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param float $quantity Number of units for this order. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not set to `default` or one of the other values that are related to shipping and/or handling. When `orderInformation.lineItems[].productCode` is `gift_card`, this is the total count of individual prepaid gift cards purchased.
+     * @param float $quantity Number of units for this order.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the total count of individual prepaid gift cards purchased.
      * @return $this
      */
     public function setQuantity($quantity)
@@ -411,7 +404,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productCode
-     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required. It can also have a value of \"gift_card\".  See Appendix O, \"Product Codes,\" on page 373 for a list of valid values. For a payment, when you set this field to a value other than default or any of the values related to shipping and handling, below fields _quantity_, _productName_, and _productSKU_ are required.
+     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required. It can also have a value of \"gift_card\".  For details, see the `product_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setProductCode($productCode)
@@ -427,7 +420,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Gets gift
-     * @return string
+     * @return bool
      */
     public function getGift()
     {
@@ -436,15 +429,11 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets gift
-     * @param string $gift Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - `yes`: Orders are assigned only slight additional risk if billing and shipping addresses are different. - `no` (default): Orders are assigned higher additional risk if billing and shipping addresses are different. - `off`: Differences between billing and shipping addresses do not affect the score.
+     * @param bool $gift Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different.
      * @return $this
      */
     public function setGift($gift)
     {
-        if (!is_null($gift) && (strlen($gift) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $gift when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 3.');
-        }
-
         $this->container['gift'] = $gift;
 
         return $this;

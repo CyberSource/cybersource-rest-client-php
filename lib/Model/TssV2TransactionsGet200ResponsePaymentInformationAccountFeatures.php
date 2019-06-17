@@ -254,7 +254,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
 
     /**
      * Sets currency
-     * @param string $currency Currency of the remaining balance on the account. For the possible values, see the ISO Standard Currency Codes.
+     * @param string $currency Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `auth_account_balance_currency` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setCurrency($currency)

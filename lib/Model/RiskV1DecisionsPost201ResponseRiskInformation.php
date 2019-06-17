@@ -61,10 +61,10 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         'velocity' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationVelocity',
         'casePriority' => 'int',
         'localTime' => 'string',
-        'paymentInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation',
         'score' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationScore',
         'ipAddress' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationIpAddress',
-        'providers' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationProviders'
+        'providers' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationProviders',
+        'travel' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationTravel'
     ];
 
     /**
@@ -78,10 +78,10 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         'velocity' => null,
         'casePriority' => null,
         'localTime' => null,
-        'paymentInformation' => null,
         'score' => null,
         'ipAddress' => null,
-        'providers' => null
+        'providers' => null,
+        'travel' => null
     ];
 
     public static function swaggerTypes()
@@ -105,10 +105,10 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         'velocity' => 'velocity',
         'casePriority' => 'casePriority',
         'localTime' => 'localTime',
-        'paymentInformation' => 'paymentInformation',
         'score' => 'score',
         'ipAddress' => 'ipAddress',
-        'providers' => 'providers'
+        'providers' => 'providers',
+        'travel' => 'travel'
     ];
 
 
@@ -123,10 +123,10 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         'velocity' => 'setVelocity',
         'casePriority' => 'setCasePriority',
         'localTime' => 'setLocalTime',
-        'paymentInformation' => 'setPaymentInformation',
         'score' => 'setScore',
         'ipAddress' => 'setIpAddress',
-        'providers' => 'setProviders'
+        'providers' => 'setProviders',
+        'travel' => 'setTravel'
     ];
 
 
@@ -141,10 +141,10 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         'velocity' => 'getVelocity',
         'casePriority' => 'getCasePriority',
         'localTime' => 'getLocalTime',
-        'paymentInformation' => 'getPaymentInformation',
         'score' => 'getScore',
         'ipAddress' => 'getIpAddress',
-        'providers' => 'getProviders'
+        'providers' => 'getProviders',
+        'travel' => 'getTravel'
     ];
 
     public static function attributeMap()
@@ -184,10 +184,10 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         $this->container['velocity'] = isset($data['velocity']) ? $data['velocity'] : null;
         $this->container['casePriority'] = isset($data['casePriority']) ? $data['casePriority'] : null;
         $this->container['localTime'] = isset($data['localTime']) ? $data['localTime'] : null;
-        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['score'] = isset($data['score']) ? $data['score'] : null;
         $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
         $this->container['providers'] = isset($data['providers']) ? $data['providers'] : null;
+        $this->container['travel'] = isset($data['travel']) ? $data['travel'] : null;
     }
 
     /**
@@ -317,7 +317,7 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
 
     /**
      * Sets casePriority
-     * @param int $casePriority You receive this field only if you subscribe to the Enhanced Case Management service. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/) - Look for 'Reply Fields': \"decisionReply_casePriority\".
+     * @param int $casePriority You receive this field only if you subscribe to the Enhanced Case Management service. The priority level ranges from 1 (highest) to 5 (lowest); the default value is 3. If you do not assign a priority to your rules or to your profiles, the default value is given to the order.  For all possible values, see the `decision_case_priority` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setCasePriority($casePriority)
@@ -338,7 +338,7 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
 
     /**
      * Sets localTime
-     * @param string $localTime The customer's local time (hh:mm:ss), which is calculated from the transaction request time and the customer's billing address.
+     * @param string $localTime The customer's local time (`hh:mm:ss`), which is calculated from the transaction request time and the customer's billing address.  For details, see the `score_time_local` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/)
      * @return $this
      */
     public function setLocalTime($localTime)
@@ -348,27 +348,6 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
         }
 
         $this->container['localTime'] = $localTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets paymentInformation
-     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation
-     */
-    public function getPaymentInformation()
-    {
-        return $this->container['paymentInformation'];
-    }
-
-    /**
-     * Sets paymentInformation
-     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationPaymentInformation $paymentInformation
-     * @return $this
-     */
-    public function setPaymentInformation($paymentInformation)
-    {
-        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }
@@ -432,6 +411,27 @@ class RiskV1DecisionsPost201ResponseRiskInformation implements ArrayAccess
     public function setProviders($providers)
     {
         $this->container['providers'] = $providers;
+
+        return $this;
+    }
+
+    /**
+     * Gets travel
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationTravel
+     */
+    public function getTravel()
+    {
+        return $this->container['travel'];
+    }
+
+    /**
+     * Sets travel
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformationTravel $travel
+     * @return $this
+     */
+    public function setTravel($travel)
+    {
+        $this->container['travel'] = $travel;
 
         return $this;
     }

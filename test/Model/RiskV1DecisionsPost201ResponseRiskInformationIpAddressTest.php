@@ -85,9 +85,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddressTest extends \PHPUni
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "locality"
      */
-    public function testPropertyCity()
+    public function testPropertyLocality()
     {
     }
 
@@ -99,9 +99,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddressTest extends \PHPUni
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "administrativeArea"
      */
-    public function testPropertyState()
+    public function testPropertyAdministrativeArea()
     {
     }
 

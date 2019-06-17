@@ -125,4 +125,11 @@ class Riskv1decisionsOrderInformationPassengerTest extends \PHPUnit_Framework_Te
     public function testPropertyEmail()
     {
     }
+
+    /**
+     * Test attribute "nationality"
+     */
+    public function testPropertyNationality()
+    {
+    }
 }

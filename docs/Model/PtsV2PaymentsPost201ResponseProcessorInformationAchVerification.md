@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resultCode** | **string** | Results from the ACH verification service, which is described in \&quot;ACH Verification,\&quot; page 25. For the possible values, see Appendix H, \&quot;Verification Codes,\&quot; on page 91. | [optional] 
-**resultCodeRaw** | **string** | Raw results from the ACH verification service, which is described in \&quot;ACH Verification,\&quot; page 25. For the possible values, see Appendix H, \&quot;Verification Codes,\&quot; on page 91. | [optional] 
+**resultCode** | **string** | Results from the ACH verification service. For details about this service and the possible values for the results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). | [optional] 
+**resultCodeRaw** | **string** | Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \&quot;ACH Verification\&quot; and \&quot;Verification Codes\&quot; in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

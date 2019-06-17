@@ -88,112 +88,6 @@ class TransactionBatchesApi
     }
 
     /**
-     * Operation getTransactionBatchDetails
-     *
-     * Filters batch response.
-     *
-     * @param string $transactionBatchId Transaction Batch Id, this is unique. (required)
-     * @param \DateTime $uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. (optional)
-     * @param string $status Allows you to filter by rejected response. (optional)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of void, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getTransactionBatchDetails($transactionBatchId, $uploadDate = null, $status = null)
-    {
-        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchDetailsWithHttpInfo($transactionBatchId, $uploadDate, $status);
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation getTransactionBatchDetailsWithHttpInfo
-     *
-     * Filters batch response.
-     *
-     * @param string $transactionBatchId Transaction Batch Id, this is unique. (required)
-     * @param \DateTime $uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. (optional)
-     * @param string $status Allows you to filter by rejected response. (optional)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getTransactionBatchDetailsWithHttpInfo($transactionBatchId, $uploadDate = null, $status = null)
-    {
-        // verify the required parameter 'transactionBatchId' is set
-        if ($transactionBatchId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $transactionBatchId when calling getTransactionBatchDetails');
-        }
-        // parse inputs
-        $resourcePath = "/pts/v1/transaction-batch-details";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['text/vnd.cybersource.map-csv']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
-
-        // query params
-        if ($transactionBatchId !== null) {
-            $queryParams['transactionBatchId'] = $this->apiClient->getSerializer()->toQueryValue($transactionBatchId);
-        }
-        // query params
-        if ($uploadDate !== null) {
-            $queryParams['uploadDate'] = $this->apiClient->getSerializer()->toQueryValue($uploadDate);
-        }
-        // query params
-        if ($status !== null) {
-            $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/pts/v1/transaction-batch-details'
-            );
-
-            return [$response, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet400Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet500Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation getTransactionBatchId
      *
      * Get individual batch file
@@ -298,7 +192,7 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatches
      *
-     * Get a list of batch files
+     * Gets a list of batch files
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
@@ -314,7 +208,7 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatchesWithHttpInfo
      *
-     * Get a list of batch files
+     * Gets a list of batch files
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)

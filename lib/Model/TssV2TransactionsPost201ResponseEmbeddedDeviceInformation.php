@@ -178,7 +178,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
 
     /**
      * Sets ipAddress
-     * @param string $ipAddress Customer’s IP address, such as 10.1.27.63, reported by your Web server via socket information.
+     * @param string $ipAddress IP address of the customer.
      * @return $this
      */
     public function setIpAddress($ipAddress)

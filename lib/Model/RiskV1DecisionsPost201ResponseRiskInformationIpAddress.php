@@ -56,9 +56,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
       */
     protected static $swaggerTypes = [
         'anonymizerStatus' => 'string',
-        'city' => 'string',
+        'locality' => 'string',
         'country' => 'string',
-        'state' => 'string',
+        'administrativeArea' => 'string',
         'routingMethod' => 'string'
     ];
 
@@ -68,9 +68,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
       */
     protected static $swaggerFormats = [
         'anonymizerStatus' => null,
-        'city' => null,
+        'locality' => null,
         'country' => null,
-        'state' => null,
+        'administrativeArea' => null,
         'routingMethod' => null
     ];
 
@@ -90,9 +90,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
      */
     protected static $attributeMap = [
         'anonymizerStatus' => 'anonymizerStatus',
-        'city' => 'city',
+        'locality' => 'locality',
         'country' => 'country',
-        'state' => 'state',
+        'administrativeArea' => 'administrativeArea',
         'routingMethod' => 'routingMethod'
     ];
 
@@ -103,9 +103,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
      */
     protected static $setters = [
         'anonymizerStatus' => 'setAnonymizerStatus',
-        'city' => 'setCity',
+        'locality' => 'setLocality',
         'country' => 'setCountry',
-        'state' => 'setState',
+        'administrativeArea' => 'setAdministrativeArea',
         'routingMethod' => 'setRoutingMethod'
     ];
 
@@ -116,9 +116,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
      */
     protected static $getters = [
         'anonymizerStatus' => 'getAnonymizerStatus',
-        'city' => 'getCity',
+        'locality' => 'getLocality',
         'country' => 'getCountry',
-        'state' => 'getState',
+        'administrativeArea' => 'getAdministrativeArea',
         'routingMethod' => 'getRoutingMethod'
     ];
 
@@ -154,9 +154,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['anonymizerStatus'] = isset($data['anonymizerStatus']) ? $data['anonymizerStatus'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['routingMethod'] = isset($data['routingMethod']) ? $data['routingMethod'] : null;
     }
 
@@ -173,16 +173,16 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
             $invalid_properties[] = "invalid value for 'anonymizerStatus', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['city']) && (strlen($this->container['city']) > 255)) {
-            $invalid_properties[] = "invalid value for 'city', the character length must be smaller than or equal to 255.";
+        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 255)) {
+            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 255.";
         }
 
         if (!is_null($this->container['country']) && (strlen($this->container['country']) > 255)) {
             $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['state']) && (strlen($this->container['state']) > 255)) {
-            $invalid_properties[] = "invalid value for 'state', the character length must be smaller than or equal to 255.";
+        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 255)) {
+            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 255.";
         }
 
         if (!is_null($this->container['routingMethod']) && (strlen($this->container['routingMethod']) > 255)) {
@@ -204,13 +204,13 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         if (strlen($this->container['anonymizerStatus']) > 255) {
             return false;
         }
-        if (strlen($this->container['city']) > 255) {
+        if (strlen($this->container['locality']) > 255) {
             return false;
         }
         if (strlen($this->container['country']) > 255) {
             return false;
         }
-        if (strlen($this->container['state']) > 255) {
+        if (strlen($this->container['administrativeArea']) > 255) {
             return false;
         }
         if (strlen($this->container['routingMethod']) > 255) {
@@ -231,7 +231,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
 
     /**
      * Sets anonymizerStatus
-     * @param string $anonymizerStatus Indicates whether the transaction IP address is associated with a known anonymous proxy. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for 'Reply Fields': \"afsReply_ipAnonymizerStatus\".
+     * @param string $anonymizerStatus Indicates whether the transaction IP address is associated with a known anonymous proxy.  For all possible values, see the `score_ip_anonymizer_status` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setAnonymizerStatus($anonymizerStatus)
@@ -246,26 +246,26 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
     }
 
     /**
-     * Gets city
+     * Gets locality
      * @return string
      */
-    public function getCity()
+    public function getLocality()
     {
-        return $this->container['city'];
+        return $this->container['locality'];
     }
 
     /**
-     * Sets city
-     * @param string $city Name of the city decoded from the IP address used directly or indirectly by the customer to send the order.
+     * Sets locality
+     * @param string $locality Name of the city decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_city` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
-    public function setCity($city)
+    public function setLocality($locality)
     {
-        if (!is_null($city) && (strlen($city) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling RiskV1DecisionsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
+        if (!is_null($locality) && (strlen($locality) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $locality when calling RiskV1DecisionsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
         }
 
-        $this->container['city'] = $city;
+        $this->container['locality'] = $locality;
 
         return $this;
     }
@@ -281,7 +281,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
 
     /**
      * Sets country
-     * @param string $country Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.
+     * @param string $country Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setCountry($country)
@@ -296,26 +296,26 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
     }
 
     /**
-     * Gets state
+     * Gets administrativeArea
      * @return string
      */
-    public function getState()
+    public function getAdministrativeArea()
     {
-        return $this->container['state'];
+        return $this->container['administrativeArea'];
     }
 
     /**
-     * Sets state
-     * @param string $state Name of the state decoded from the IP address used directly or indirectly by the customer to send the order.
+     * Sets administrativeArea
+     * @param string $administrativeArea Name of the country decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
-    public function setState($state)
+    public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($state) && (strlen($state) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $state when calling RiskV1DecisionsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
+        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling RiskV1DecisionsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
         }
 
-        $this->container['state'] = $state;
+        $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
     }
@@ -331,7 +331,7 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
 
     /**
      * Sets routingMethod
-     * @param string $routingMethod Routing method decoded from the IP address used directly or indirectly by the customer to send the order. For all possible values, Please refer to Simple Order API Developer Guide on [CyberSource Business Center](https://ebc2.cybersource.com/ebc2/)- Look for 'Reply Fields': \"afsService_ipRoutingMethod \".
+     * @param string $routingMethod Routing method decoded from the IP address used directly or indirectly by the customer to send the order.  For all possible values, see the `score_ip_routing_method` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setRoutingMethod($routingMethod)

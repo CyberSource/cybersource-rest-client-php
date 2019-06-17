@@ -134,6 +134,20 @@ class Ptsv2paymentsOrderInformationBillToTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "address3"
+     */
+    public function testPropertyAddress3()
+    {
+    }
+
+    /**
+     * Test attribute "address4"
+     */
+    public function testPropertyAddress4()
+    {
+    }
+
+    /**
      * Test attribute "locality"
      */
     public function testPropertyLocality()

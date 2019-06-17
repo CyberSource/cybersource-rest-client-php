@@ -90,7 +90,7 @@ class UserManagementApi
     /**
      * Operation getUsers
      *
-     * Get user based on organization Id, username, permission and role
+     * Get user information
      *
      * @param string $organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param string $userName User ID of the user you want to get details on. (optional)
@@ -108,7 +108,7 @@ class UserManagementApi
     /**
      * Operation getUsersWithHttpInfo
      *
-     * Get user based on organization Id, username, permission and role
+     * Get user information
      *
      * @param string $organizationId This is the orgId of the organization which the user belongs to. (optional)
      * @param string $userName User ID of the user you want to get details on. (optional)

@@ -90,7 +90,7 @@ class DecisionManagerApi
     /**
      * Operation createDecisionManagerCase
      *
-     * Create Decision Manager case
+     * Create Decision Manager Case
      *
      * @param \CyberSource\Model\CreateDecisionManagerCaseRequest $createDecisionManagerCaseRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class DecisionManagerApi
     /**
      * Operation createDecisionManagerCaseWithHttpInfo
      *
-     * Create Decision Manager case
+     * Create Decision Manager Case
      *
      * @param \CyberSource\Model\CreateDecisionManagerCaseRequest $createDecisionManagerCaseRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response

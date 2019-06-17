@@ -178,7 +178,7 @@ class Ptsv2paymentsIssuerInformation implements ArrayAccess
 
     /**
      * Sets discretionaryData
-     * @param string $discretionaryData Data defined by the issuer.  The value for this reply field will probably be the same as the value that you submitted in the authorization request, but it is possible for the processor, issuer, or acquirer to modify the value.  This field is supported only for Visa transactions on **CyberSource through VisaNet**.  For more information, see Appendix K, \"Formats for  Discretionary Data,\" on page 359.
+     * @param string $discretionaryData Data defined by the issuer.  The value for this reply field will probably be the same as the value that you submitted in the authorization request, but it is possible for the processor, issuer, or acquirer to modify the value.  This field is supported only for Visa transactions on **CyberSource through VisaNet**.  For details, see `issuer_additional_data` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setDiscretionaryData($discretionaryData)

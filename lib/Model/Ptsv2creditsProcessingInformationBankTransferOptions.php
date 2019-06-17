@@ -281,7 +281,7 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
 
     /**
      * Sets secCode
-     * @param string $secCode Authorization method used for the transaction. See \"SEC Codes,\" page 89.  TeleCheck Accepts only the following values: - **PPD** - **TEL** - **WEB**
+     * @param string $secCode Authorization method used for the transaction.  #### TeleCheck Accepts only the following values: - `PPD` - `TEL` - `WEB`  For details, see `ecp_sec_code` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setSecCode($secCode)
@@ -381,7 +381,7 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
 
     /**
      * Sets partialPaymentId
-     * @param string $partialPaymentId Identifier for a partial payment or partial credit.  The value for each debit request or credit request must be unique within the scope of the order. See \"Multiple Partial Credits,\" page 41.
+     * @param string $partialPaymentId Identifier for a partial payment or partial credit.  The value for each debit request or credit request must be unique within the scope of the order. For details, see `partial_payment_id` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setPartialPaymentId($partialPaymentId)
@@ -406,7 +406,7 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
 
     /**
      * Sets settlementMethod
-     * @param string $settlementMethod Method used for settlement.  Possible values: - **A**: Automated Clearing House (default for credits and for transactions using Canadian dollars) - **F**: Facsimile draft (U.S. dollars only) - **B**: Best possible (U.S. dollars only) (default if the field has not already been configured for your merchant ID)  See \"Settlement Delivery Methods,\" page 44.
+     * @param string $settlementMethod Method used for settlement.  Possible values: - `A`: Automated Clearing House (default for credits and for transactions using Canadian dollars) - `F`: Facsimile draft (U.S. dollars only) - `B`: Best possible (U.S. dollars only) (default if the field has not already been configured for your merchant ID)  For details, see `ecp_settlement_method` field description for credit cars and `ecp_debit_settlement_method` for debit cards in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setSettlementMethod($settlementMethod)

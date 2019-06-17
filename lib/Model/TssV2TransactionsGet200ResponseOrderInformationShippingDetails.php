@@ -54,7 +54,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShippingDetails implements 
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'giftWrap' => 'string',
+        'giftWrap' => 'bool',
         'shippingMethod' => 'string'
     ];
 
@@ -150,10 +150,6 @@ class TssV2TransactionsGet200ResponseOrderInformationShippingDetails implements 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['giftWrap']) && (strlen($this->container['giftWrap']) > 3)) {
-            $invalid_properties[] = "invalid value for 'giftWrap', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['shippingMethod']) && (strlen($this->container['shippingMethod']) > 10)) {
             $invalid_properties[] = "invalid value for 'shippingMethod', the character length must be smaller than or equal to 10.";
         }
@@ -170,9 +166,6 @@ class TssV2TransactionsGet200ResponseOrderInformationShippingDetails implements 
     public function valid()
     {
 
-        if (strlen($this->container['giftWrap']) > 3) {
-            return false;
-        }
         if (strlen($this->container['shippingMethod']) > 10) {
             return false;
         }
@@ -182,7 +175,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShippingDetails implements 
 
     /**
      * Gets giftWrap
-     * @return string
+     * @return bool
      */
     public function getGiftWrap()
     {
@@ -191,15 +184,11 @@ class TssV2TransactionsGet200ResponseOrderInformationShippingDetails implements 
 
     /**
      * Sets giftWrap
-     * @param string $giftWrap Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values:  - `yes`: The customer requested gift wrapping. - `no`: The customer did not request gift wrapping.
+     * @param bool $giftWrap Boolean that indicates whether the customer requested gift wrapping for this purchase. This field can contain one of the following values: - true: The customer requested gift wrapping. - false: The customer did not request gift wrapping.
      * @return $this
      */
     public function setGiftWrap($giftWrap)
     {
-        if (!is_null($giftWrap) && (strlen($giftWrap) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $giftWrap when calling TssV2TransactionsGet200ResponseOrderInformationShippingDetails., must be smaller than or equal to 3.');
-        }
-
         $this->container['giftWrap'] = $giftWrap;
 
         return $this;

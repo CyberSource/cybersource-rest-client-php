@@ -58,7 +58,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'amountDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails',
         'shippingDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationShippingDetails',
         'shipTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationShipTo',
-        'returnsAccepted' => 'string',
+        'returnsAccepted' => 'bool',
         'lineItems' => '\CyberSource\Model\Riskv1decisionsOrderInformationLineItems[]',
         'billTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationBillTo'
     ];
@@ -175,10 +175,6 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['returnsAccepted']) && (strlen($this->container['returnsAccepted']) > 3)) {
-            $invalid_properties[] = "invalid value for 'returnsAccepted', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -191,9 +187,6 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['returnsAccepted']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -263,7 +256,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
 
     /**
      * Gets returnsAccepted
-     * @return string
+     * @return bool
      */
     public function getReturnsAccepted()
     {
@@ -272,15 +265,11 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
 
     /**
      * Sets returnsAccepted
-     * @param string $returnsAccepted Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - `yes`: Returns are accepted for this order. - `no`: Returns are not accepted for this order.
+     * @param bool $returnsAccepted Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order.
      * @return $this
      */
     public function setReturnsAccepted($returnsAccepted)
     {
-        if (!is_null($returnsAccepted) && (strlen($returnsAccepted) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $returnsAccepted when calling Riskv1decisionsOrderInformation., must be smaller than or equal to 3.');
-        }
-
         $this->container['returnsAccepted'] = $returnsAccepted;
 
         return $this;
