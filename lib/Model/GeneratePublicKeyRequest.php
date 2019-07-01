@@ -54,7 +54,8 @@ class GeneratePublicKeyRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'encryptionType' => 'string'
+        'encryptionType' => 'string',
+        'targetOrigin' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class GeneratePublicKeyRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'encryptionType' => null
+        'encryptionType' => null,
+        'targetOrigin' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class GeneratePublicKeyRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'encryptionType' => 'encryptionType'
+        'encryptionType' => 'encryptionType',
+        'targetOrigin' => 'targetOrigin'
     ];
 
 
@@ -89,7 +92,8 @@ class GeneratePublicKeyRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'encryptionType' => 'setEncryptionType'
+        'encryptionType' => 'setEncryptionType',
+        'targetOrigin' => 'setTargetOrigin'
     ];
 
 
@@ -98,7 +102,8 @@ class GeneratePublicKeyRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'encryptionType' => 'getEncryptionType'
+        'encryptionType' => 'getEncryptionType',
+        'targetOrigin' => 'getTargetOrigin'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class GeneratePublicKeyRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['encryptionType'] = isset($data['encryptionType']) ? $data['encryptionType'] : null;
+        $this->container['targetOrigin'] = isset($data['targetOrigin']) ? $data['targetOrigin'] : null;
     }
 
     /**
@@ -186,6 +192,29 @@ class GeneratePublicKeyRequest implements ArrayAccess
 
         return $this;
     }
+
+
+    /**
+     * Gets Target Origin
+     * @return string
+     */
+    public function getTargetOrigin()
+    {
+        return $this->container['targetOrigin'];
+    }
+
+    /**
+     * Sets target origin
+     * @param string $targetOrigin set the specific target origin for the public key request.
+     * @return $this
+     */
+    public function setTargetOrigin($targetOrigin)
+    {
+        $this->container['targetOrigin'] = $targetOrigin;
+        
+        return $this;
+    }
+    
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
