@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **organizationId** | **string** | Valid CyberSource Organization Id | [optional] 
 **reportDefinitionName** | **string** |  | [optional] 
 **reportFields** | **string[]** | List of fields which needs to get included in a report | [optional] 
-**reportMimeType** | **string** | Format of the report | [optional] 
+**reportMimeType** | **string** | &#39;Format of the report&#39;                  Valid values: - application/xml - text/csv | [optional] 
 **reportName** | **string** | Name of the report | [optional] 
 **timezone** | **string** | Timezone of the report | [optional] 
 **reportStartTime** | [**\DateTime**](\DateTime.md) | Start time of the report | [optional] 

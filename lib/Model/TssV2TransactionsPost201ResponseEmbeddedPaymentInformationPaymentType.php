@@ -54,7 +54,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
+        'name' => 'string',
         'method' => 'string'
     ];
 
@@ -63,7 +63,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
+        'name' => null,
         'method' => null
     ];
 
@@ -82,7 +82,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
+        'name' => 'name',
         'method' => 'method'
     ];
 
@@ -92,7 +92,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+        'name' => 'setName',
         'method' => 'setMethod'
     ];
 
@@ -102,7 +102,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
+        'name' => 'getName',
         'method' => 'getMethod'
     ];
 
@@ -137,7 +137,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
@@ -167,22 +167,22 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
 
 
     /**
-     * Gets type
+     * Gets name
      * @return string
      */
-    public function getType()
+    public function getName()
     {
-        return $this->container['type'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets type
-     * @param string $type The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
+     * Sets name
+     * @param string $name A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit.
      * @return $this
      */
-    public function setType($type)
+    public function setName($name)
     {
-        $this->container['type'] = $type;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -198,7 +198,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentType impl
 
     /**
      * Sets method
-     * @param string $method This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
+     * @param string $method A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
      * @return $this
      */
     public function setMethod($method)

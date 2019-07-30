@@ -183,7 +183,7 @@ class TssV2TransactionsGet200ResponseErrorInformation implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The description for this field is not available.
+     * @param string $reason 1-word description of why a request succeeded or failed.
      * @return $this
      */
     public function setReason($reason)
@@ -204,7 +204,7 @@ class TssV2TransactionsGet200ResponseErrorInformation implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The description for this field is not available.
+     * @param string $message The user-facing description for why a request succeeded or failed.
      * @return $this
      */
     public function setMessage($message)

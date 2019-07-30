@@ -92,9 +92,9 @@ class TssV2TransactionsGet200ResponseOrderInformationBillToTest extends \PHPUnit
     }
 
     /**
-     * Test attribute "middelName"
+     * Test attribute "middleName"
      */
-    public function testPropertyMiddelName()
+    public function testPropertyMiddleName()
     {
     }
 

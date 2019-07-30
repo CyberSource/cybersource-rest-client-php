@@ -121,22 +121,8 @@ class PtsV2PaymentsPost201ResponseErrorInformationDetails implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_MISSING_FIELD = 'MISSING_FIELD';
-    const REASON_INVALID_DATA = 'INVALID_DATA';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_MISSING_FIELD,
-            self::REASON_INVALID_DATA,
-        ];
-    }
     
 
     /**
@@ -164,14 +150,6 @@ class PtsV2PaymentsPost201ResponseErrorInformationDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -184,10 +162,6 @@ class PtsV2PaymentsPost201ResponseErrorInformationDetails implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -229,15 +203,6 @@ class PtsV2PaymentsPost201ResponseErrorInformationDetails implements ArrayAccess
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

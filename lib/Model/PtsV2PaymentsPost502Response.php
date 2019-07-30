@@ -131,40 +131,8 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
         return self::$getters;
     }
 
-    const STATUS_ERROR = 'SERVER_ERROR';
-    const REASON_SYSTEM_ERROR = 'SYSTEM_ERROR';
-    const REASON_SERVER_TIMEOUT = 'SERVER_TIMEOUT';
-    const REASON_SERVICE_TIMEOUT = 'SERVICE_TIMEOUT';
-    const REASON_INVALID_OR_MISSING_CONFIG = 'INVALID_OR_MISSING_CONFIG';
-    const REASON_PROCESSOR_TIMEOUT = 'PROCESSOR_TIMEOUT';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_ERROR,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_SYSTEM_ERROR,
-            self::REASON_SERVER_TIMEOUT,
-            self::REASON_SERVICE_TIMEOUT,
-            self::REASON_INVALID_OR_MISSING_CONFIG,
-            self::REASON_PROCESSOR_TIMEOUT,
-        ];
-    }
     
 
     /**
@@ -194,22 +162,6 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -222,14 +174,6 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -271,15 +215,6 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
@@ -296,20 +231,11 @@ class PtsV2PaymentsPost502Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG  - PROCESSOR_TIMEOUT
+     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT  - INVALID_OR_MISSING_CONFIG
      * @return $this
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

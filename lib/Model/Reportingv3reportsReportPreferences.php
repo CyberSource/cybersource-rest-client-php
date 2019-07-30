@@ -122,22 +122,8 @@ class Reportingv3reportsReportPreferences implements ArrayAccess
         return self::$getters;
     }
 
-    const FIELD_NAME_CONVENTION_SOAPI = 'SOAPI';
-    const FIELD_NAME_CONVENTION_SCMP = 'SCMP';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getFieldNameConventionAllowableValues()
-    {
-        return [
-            self::FIELD_NAME_CONVENTION_SOAPI,
-            self::FIELD_NAME_CONVENTION_SCMP,
-        ];
-    }
     
 
     /**
@@ -165,14 +151,6 @@ class Reportingv3reportsReportPreferences implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getFieldNameConventionAllowableValues();
-        if (!in_array($this->container['fieldNameConvention'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'fieldNameConvention', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -185,10 +163,6 @@ class Reportingv3reportsReportPreferences implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getFieldNameConventionAllowableValues();
-        if (!in_array($this->container['fieldNameConvention'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -225,20 +199,11 @@ class Reportingv3reportsReportPreferences implements ArrayAccess
 
     /**
      * Sets fieldNameConvention
-     * @param string $fieldNameConvention Specify the field naming convention to be followed in reports (applicable to only csv report formats
+     * @param string $fieldNameConvention Specify the field naming convention to be followed in reports (applicable to only csv report formats)  Valid values: - SOAPI - SCMP
      * @return $this
      */
     public function setFieldNameConvention($fieldNameConvention)
     {
-        $allowed_values = $this->getFieldNameConventionAllowableValues();
-        if (!is_null($fieldNameConvention) && !in_array($fieldNameConvention, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'fieldNameConvention', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['fieldNameConvention'] = $fieldNameConvention;
 
         return $this;

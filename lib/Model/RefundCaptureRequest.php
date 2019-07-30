@@ -414,7 +414,7 @@ class RefundCaptureRequest implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The object containing the custom data that the merchant defines.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)

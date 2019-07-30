@@ -249,7 +249,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets timezone
-     * @param string $timezone Time Zone.
+     * @param string $timezone Time Zone in ISO format.
      * @return $this
      */
     public function setTimezone($timezone)
@@ -312,7 +312,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets limit
-     * @param int $limit limit on number of results.
+     * @param int $limit Limit on number of results.
      * @return $this
      */
     public function setLimit($limit)

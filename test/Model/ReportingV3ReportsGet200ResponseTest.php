@@ -78,9 +78,9 @@ class ReportingV3ReportsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reports"
+     * Test attribute "reportSearchResults"
      */
-    public function testPropertyReports()
+    public function testPropertyReportSearchResults()
     {
     }
 }

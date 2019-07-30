@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **organizationId** | **string** | Valid CyberSource organizationId | [optional] 
 **reportDefinitionName** | **string** | Valid Report Definition Name | 
 **reportFields** | **string[]** |  | 
-**reportMimeType** | **string** |  | 
-**reportFrequency** | **string** | The frequency for which subscription is created. | 
+**reportMimeType** | **string** | Valid values: - application/xml - text/csv | 
+**reportFrequency** | **string** | &#39;The frequency for which subscription is created.&#39;  Valid values: - &#39;DAILY&#39; - &#39;WEEKLY&#39; - &#39;MONTHLY&#39; - &#39;ADHOC&#39; | 
 **reportName** | **string** |  | 
 **timezone** | **string** |  | 
 **startTime** | **string** | The hour at which the report generation should start. It should be in hhmm format. | 

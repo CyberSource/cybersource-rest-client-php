@@ -146,26 +146,8 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
         return self::$getters;
     }
 
-    const MIME_TYPE_APPLICATIONXML = 'application/xml';
-    const MIME_TYPE_TEXTCSV = 'text/csv';
-    const MIME_TYPE_APPLICATIONPDF = 'application/pdf';
-    const MIME_TYPE_APPLICATIONOCTET_STREAM = 'application/octet-stream';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getMimeTypeAllowableValues()
-    {
-        return [
-            self::MIME_TYPE_APPLICATIONXML,
-            self::MIME_TYPE_TEXTCSV,
-            self::MIME_TYPE_APPLICATIONPDF,
-            self::MIME_TYPE_APPLICATIONOCTET_STREAM,
-        ];
-    }
     
 
     /**
@@ -198,14 +180,6 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getMimeTypeAllowableValues();
-        if (!in_array($this->container['mimeType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'mimeType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -218,10 +192,6 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getMimeTypeAllowableValues();
-        if (!in_array($this->container['mimeType'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -342,20 +312,11 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
 
     /**
      * Sets mimeType
-     * @param string $mimeType File extension
+     * @param string $mimeType 'File extension'  Valid values: - 'application/xml' - 'text/csv' - 'application/pdf' - 'application/octet-stream'
      * @return $this
      */
     public function setMimeType($mimeType)
     {
-        $allowed_values = $this->getMimeTypeAllowableValues();
-        if (!is_null($mimeType) && !in_array($mimeType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'mimeType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['mimeType'] = $mimeType;
 
         return $this;

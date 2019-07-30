@@ -146,20 +146,8 @@ class PaymentInstrumentsForInstrumentIdentifier implements ArrayAccess
         return self::$getters;
     }
 
-    const OBJECT_COLLECTION = 'collection';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getObjectAllowableValues()
-    {
-        return [
-            self::OBJECT_COLLECTION,
-        ];
-    }
     
 
     /**
@@ -192,14 +180,6 @@ class PaymentInstrumentsForInstrumentIdentifier implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getObjectAllowableValues();
-        if (!in_array($this->container['object'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'object', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -212,10 +192,6 @@ class PaymentInstrumentsForInstrumentIdentifier implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getObjectAllowableValues();
-        if (!in_array($this->container['object'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -252,20 +228,11 @@ class PaymentInstrumentsForInstrumentIdentifier implements ArrayAccess
 
     /**
      * Sets object
-     * @param string $object Shows the response is a collection of objects.
+     * @param string $object 'Shows the response is a collection of objects.'  Valid values: - collection
      * @return $this
      */
     public function setObject($object)
     {
-        $allowed_values = $this->getObjectAllowableValues();
-        if (!is_null($object) && !in_array($object, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'object', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['object'] = $object;
 
         return $this;

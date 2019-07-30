@@ -181,30 +181,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         return self::$getters;
     }
 
-    const STATUS_AUTHORIZED = 'AUTHORIZED';
-    const STATUS_PARTIAL_AUTHORIZED = 'PARTIAL_AUTHORIZED';
-    const STATUS_AUTHORIZED_PENDING_REVIEW = 'AUTHORIZED_PENDING_REVIEW';
-    const STATUS_DECLINED = 'DECLINED';
-    const STATUS_INVALID_REQUEST = 'INVALID_REQUEST';
-    const STATUS_PENDING = 'PENDING';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_AUTHORIZED,
-            self::STATUS_PARTIAL_AUTHORIZED,
-            self::STATUS_AUTHORIZED_PENDING_REVIEW,
-            self::STATUS_DECLINED,
-            self::STATUS_INVALID_REQUEST,
-            self::STATUS_PENDING,
-        ];
-    }
     
 
     /**
@@ -248,14 +226,6 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
             $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 26.";
         }
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if (!is_null($this->container['reconciliationId']) && (strlen($this->container['reconciliationId']) > 60)) {
             $invalid_properties[] = "invalid value for 'reconciliationId', the character length must be smaller than or equal to 60.";
         }
@@ -273,10 +243,6 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     {
 
         if (strlen($this->container['id']) > 26) {
-            return false;
-        }
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
             return false;
         }
         if (strlen($this->container['reconciliationId']) > 60) {
@@ -369,15 +335,6 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

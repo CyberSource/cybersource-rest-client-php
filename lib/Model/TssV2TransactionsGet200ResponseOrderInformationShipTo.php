@@ -218,8 +218,8 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 3)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 3.";
+        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 20)) {
+            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 20.";
         }
 
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
@@ -265,7 +265,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
         if (strlen($this->container['locality']) > 50) {
             return false;
         }
-        if (strlen($this->container['administrativeArea']) > 3) {
+        if (strlen($this->container['administrativeArea']) > 20) {
             return false;
         }
         if (strlen($this->container['postalCode']) > 10) {
@@ -420,13 +420,13 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  ccAuthService (Required when the billing country is the U.S. or Canada; otherwise, optional.) This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See \"Relaxed Requirements for Address Data and Expiration Date,\" page 75. Important It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the bill_state field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $administrativeArea State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  ##### Visa Platform Connect Credit card networks cannot process transactions that contain non-ASCII characters. Visa Platform Connect accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `bill_state` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationShipTo., must be smaller than or equal to 3.');
+        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationShipTo., must be smaller than or equal to 20.');
         }
 
         $this->container['administrativeArea'] = $administrativeArea;

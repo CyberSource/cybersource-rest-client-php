@@ -116,26 +116,8 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessi
         return self::$getters;
     }
 
-    const SEC_CODE_CCD = 'CCD';
-    const SEC_CODE_PPD = 'PPD';
-    const SEC_CODE_TEL = 'TEL';
-    const SEC_CODE_WEB = 'WEB';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getSECCodeAllowableValues()
-    {
-        return [
-            self::SEC_CODE_CCD,
-            self::SEC_CODE_PPD,
-            self::SEC_CODE_TEL,
-            self::SEC_CODE_WEB,
-        ];
-    }
     
 
     /**
@@ -162,14 +144,6 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessi
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getSECCodeAllowableValues();
-        if (!in_array($this->container['sECCode'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'sECCode', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -182,10 +156,6 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessi
     public function valid()
     {
 
-        $allowed_values = $this->getSECCodeAllowableValues();
-        if (!in_array($this->container['sECCode'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -206,15 +176,6 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessi
      */
     public function setSECCode($sECCode)
     {
-        $allowed_values = $this->getSECCodeAllowableValues();
-        if (!is_null($sECCode) && !in_array($sECCode, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'sECCode', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['sECCode'] = $sECCode;
 
         return $this;

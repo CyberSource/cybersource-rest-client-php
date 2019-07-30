@@ -126,62 +126,8 @@ class PtsV2PaymentsPost201ResponseErrorInformation implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_AVS_FAILED = 'AVS_FAILED';
-    const REASON_CONTACT_PROCESSOR = 'CONTACT_PROCESSOR';
-    const REASON_EXPIRED_CARD = 'EXPIRED_CARD';
-    const REASON_PROCESSOR_DECLINED = 'PROCESSOR_DECLINED';
-    const REASON_INSUFFICIENT_FUND = 'INSUFFICIENT_FUND';
-    const REASON_STOLEN_LOST_CARD = 'STOLEN_LOST_CARD';
-    const REASON_ISSUER_UNAVAILABLE = 'ISSUER_UNAVAILABLE';
-    const REASON_UNAUTHORIZED_CARD = 'UNAUTHORIZED_CARD';
-    const REASON_CVN_NOT_MATCH = 'CVN_NOT_MATCH';
-    const REASON_EXCEEDS_CREDIT_LIMIT = 'EXCEEDS_CREDIT_LIMIT';
-    const REASON_INVALID_CVN = 'INVALID_CVN';
-    const REASON_DECLINED_CHECK = 'DECLINED_CHECK';
-    const REASON_BLACKLISTED_CUSTOMER = 'BLACKLISTED_CUSTOMER';
-    const REASON_SUSPENDED_ACCOUNT = 'SUSPENDED_ACCOUNT';
-    const REASON_PAYMENT_REFUSED = 'PAYMENT_REFUSED';
-    const REASON_CV_FAILED = 'CV_FAILED';
-    const REASON_INVALID_ACCOUNT = 'INVALID_ACCOUNT';
-    const REASON_GENERAL_DECLINE = 'GENERAL_DECLINE';
-    const REASON_INVALID_MERCHANT_CONFIGURATION = 'INVALID_MERCHANT_CONFIGURATION';
-    const REASON_DECISION_PROFILE_REJECT = 'DECISION_PROFILE_REJECT';
-    const REASON_SCORE_EXCEEDS_THRESHOLD = 'SCORE_EXCEEDS_THRESHOLD';
-    const REASON_PENDING_AUTHENTICATION = 'PENDING_AUTHENTICATION';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_AVS_FAILED,
-            self::REASON_CONTACT_PROCESSOR,
-            self::REASON_EXPIRED_CARD,
-            self::REASON_PROCESSOR_DECLINED,
-            self::REASON_INSUFFICIENT_FUND,
-            self::REASON_STOLEN_LOST_CARD,
-            self::REASON_ISSUER_UNAVAILABLE,
-            self::REASON_UNAUTHORIZED_CARD,
-            self::REASON_CVN_NOT_MATCH,
-            self::REASON_EXCEEDS_CREDIT_LIMIT,
-            self::REASON_INVALID_CVN,
-            self::REASON_DECLINED_CHECK,
-            self::REASON_BLACKLISTED_CUSTOMER,
-            self::REASON_SUSPENDED_ACCOUNT,
-            self::REASON_PAYMENT_REFUSED,
-            self::REASON_CV_FAILED,
-            self::REASON_INVALID_ACCOUNT,
-            self::REASON_GENERAL_DECLINE,
-            self::REASON_INVALID_MERCHANT_CONFIGURATION,
-            self::REASON_DECISION_PROFILE_REJECT,
-            self::REASON_SCORE_EXCEEDS_THRESHOLD,
-            self::REASON_PENDING_AUTHENTICATION,
-        ];
-    }
     
 
     /**
@@ -210,14 +156,6 @@ class PtsV2PaymentsPost201ResponseErrorInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -230,10 +168,6 @@ class PtsV2PaymentsPost201ResponseErrorInformation implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -254,15 +188,6 @@ class PtsV2PaymentsPost201ResponseErrorInformation implements ArrayAccess
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

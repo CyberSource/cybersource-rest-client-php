@@ -166,22 +166,8 @@ class RequestBody implements ArrayAccess
         return self::$getters;
     }
 
-    const REPORT_MIME_TYPE_APPLICATIONXML = 'application/xml';
-    const REPORT_MIME_TYPE_TEXTCSV = 'text/csv';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReportMimeTypeAllowableValues()
-    {
-        return [
-            self::REPORT_MIME_TYPE_APPLICATIONXML,
-            self::REPORT_MIME_TYPE_TEXTCSV,
-        ];
-    }
     
 
     /**
@@ -234,14 +220,6 @@ class RequestBody implements ArrayAccess
             $invalid_properties[] = "invalid value for 'reportDefinitionName', must be conform to the pattern /[a-zA-Z0-9-]+/.";
         }
 
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!in_array($this->container['reportMimeType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reportMimeType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if (!is_null($this->container['reportName']) && (strlen($this->container['reportName']) > 128)) {
             $invalid_properties[] = "invalid value for 'reportName', the character length must be smaller than or equal to 128.";
         }
@@ -280,10 +258,6 @@ class RequestBody implements ArrayAccess
             return false;
         }
         if (!preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
-            return false;
-        }
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!in_array($this->container['reportMimeType'], $allowed_values)) {
             return false;
         }
         if (strlen($this->container['reportName']) > 128) {
@@ -391,20 +365,11 @@ class RequestBody implements ArrayAccess
 
     /**
      * Sets reportMimeType
-     * @param string $reportMimeType Format of the report
+     * @param string $reportMimeType 'Format of the report'                  Valid values: - application/xml - text/csv
      * @return $this
      */
     public function setReportMimeType($reportMimeType)
     {
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!is_null($reportMimeType) && !in_array($reportMimeType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reportMimeType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reportMimeType'] = $reportMimeType;
 
         return $this;

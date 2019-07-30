@@ -56,14 +56,14 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     protected static $swaggerTypes = [
         'firstName' => 'string',
         'lastName' => 'string',
-        'middelName' => 'string',
+        'middleName' => 'string',
         'nameSuffix' => 'string',
         'address1' => 'string',
         'address2' => 'string',
         'locality' => 'string',
         'administrativeArea' => 'string',
         'postalCode' => 'string',
-        'company' => '\CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany',
+        'company' => 'string',
         'email' => 'string',
         'country' => 'string',
         'title' => 'string',
@@ -77,7 +77,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     protected static $swaggerFormats = [
         'firstName' => null,
         'lastName' => null,
-        'middelName' => null,
+        'middleName' => null,
         'nameSuffix' => null,
         'address1' => null,
         'address2' => null,
@@ -108,7 +108,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     protected static $attributeMap = [
         'firstName' => 'firstName',
         'lastName' => 'lastName',
-        'middelName' => 'middelName',
+        'middleName' => 'middleName',
         'nameSuffix' => 'nameSuffix',
         'address1' => 'address1',
         'address2' => 'address2',
@@ -130,7 +130,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     protected static $setters = [
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
-        'middelName' => 'setMiddelName',
+        'middleName' => 'setMiddleName',
         'nameSuffix' => 'setNameSuffix',
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
@@ -152,7 +152,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     protected static $getters = [
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
-        'middelName' => 'getMiddelName',
+        'middleName' => 'getMiddleName',
         'nameSuffix' => 'getNameSuffix',
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
@@ -199,7 +199,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     {
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['middelName'] = isset($data['middelName']) ? $data['middelName'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['nameSuffix'] = isset($data['nameSuffix']) ? $data['nameSuffix'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
@@ -230,8 +230,8 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
             $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['middelName']) && (strlen($this->container['middelName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'middelName', the character length must be smaller than or equal to 60.";
+        if (!is_null($this->container['middleName']) && (strlen($this->container['middleName']) > 60)) {
+            $invalid_properties[] = "invalid value for 'middleName', the character length must be smaller than or equal to 60.";
         }
 
         if (!is_null($this->container['nameSuffix']) && (strlen($this->container['nameSuffix']) > 60)) {
@@ -250,12 +250,16 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 3)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 3.";
+        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 20)) {
+            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 20.";
         }
 
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
             $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['company']) && (strlen($this->container['company']) > 60)) {
+            $invalid_properties[] = "invalid value for 'company', the character length must be smaller than or equal to 60.";
         }
 
         if (!is_null($this->container['email']) && (strlen($this->container['email']) > 255)) {
@@ -292,7 +296,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
         if (strlen($this->container['lastName']) > 60) {
             return false;
         }
-        if (strlen($this->container['middelName']) > 60) {
+        if (strlen($this->container['middleName']) > 60) {
             return false;
         }
         if (strlen($this->container['nameSuffix']) > 60) {
@@ -307,10 +311,13 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
         if (strlen($this->container['locality']) > 50) {
             return false;
         }
-        if (strlen($this->container['administrativeArea']) > 3) {
+        if (strlen($this->container['administrativeArea']) > 20) {
             return false;
         }
         if (strlen($this->container['postalCode']) > 10) {
+            return false;
+        }
+        if (strlen($this->container['company']) > 60) {
             return false;
         }
         if (strlen($this->container['email']) > 255) {
@@ -340,7 +347,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets firstName
-     * @param string $firstName Customer’s first name. This name must be the same as the name on the card.  #### CyberSource Latin American Processing **Important** For an authorization request, CyberSource Latin American Processing concatenates `orderInformation.billTo.firstName` and `orderInformation.billTo.lastName`. If the concatenated value exceeds 30 characters, CyberSource Latin American Processing declines the authorization request.\\ **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called _CyberSource Latin American Processing_. It is not for any other Latin American processors that CyberSource supports.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `customer_firstname` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $firstName Customer’s first name. This name must be the same as the name on the card.  #### CyberSource Latin American Processing **Important** For an authorization request, CyberSource Latin American Processing concatenates `orderInformation.billTo.firstName` and `orderInformation.billTo.lastName`. If the concatenated value exceeds 30 characters, CyberSource Latin American Processing declines the authorization request.\\ **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called _CyberSource Latin American Processing_. It is not for any other Latin American processors that CyberSource supports.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `customer_firstname` request-level field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setFirstName($firstName)
@@ -365,7 +372,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets lastName
-     * @param string $lastName Customer’s last name. This name must be the same as the name on the card.  #### CyberSource Latin American Processing **Important** For an authorization request, CyberSource Latin American Processing concatenates `orderInformation.billTo.firstName` and `orderInformation.billTo.lastName`. If the concatenated value exceeds 30 characters, CyberSource Latin American Processing declines the authorization request.\\ **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### For Payouts: This field may be sent only for FDC Compass.  For processor-specific information, see the `customer_lastname` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $lastName Customer’s last name. This name must be the same as the name on the card.  #### CyberSource Latin American Processing **Important** For an authorization request, CyberSource Latin American Processing concatenates `orderInformation.billTo.firstName` and `orderInformation.billTo.lastName`. If the concatenated value exceeds 30 characters, CyberSource Latin American Processing declines the authorization request.\\ **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### For Payouts: This field may be sent only for FDC Compass.  For processor-specific information, see the `customer_lastname` request-level field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setLastName($lastName)
@@ -380,26 +387,26 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     }
 
     /**
-     * Gets middelName
+     * Gets middleName
      * @return string
      */
-    public function getMiddelName()
+    public function getMiddleName()
     {
-        return $this->container['middelName'];
+        return $this->container['middleName'];
     }
 
     /**
-     * Sets middelName
-     * @param string $middelName Customer’s middle name.
+     * Sets middleName
+     * @param string $middleName Customer’s middle name.
      * @return $this
      */
-    public function setMiddelName($middelName)
+    public function setMiddleName($middleName)
     {
-        if (!is_null($middelName) && (strlen($middelName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $middelName when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
+        if (!is_null($middleName) && (strlen($middleName) > 60)) {
+            throw new \InvalidArgumentException('invalid length for $middleName when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
         }
 
-        $this->container['middelName'] = $middelName;
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }
@@ -440,7 +447,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets address1
-     * @param string $address1 First line of the billing street address as it appears on the credit card issuer’s records.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet **Important** When you populate billing street address 1 and billing street address 2, CyberSource through VisaNet concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `bill_address1` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $address1 Payment card billing street address as it appears on the credit card issuer’s records.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet **Important** When you populate billing street address 1 and billing street address 2, Visa Platform Connect concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `bill_address1` request-level field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setAddress1($address1)
@@ -465,7 +472,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets address2
-     * @param string $address2 Additional address information.  For Payouts: This field may be sent only for FDC Compass.  #### Atos This field must not contain colons (:).  #### Chase Paymentech Solutions, FDC Compass, and TSYS Acquiring Solutions This value is used for AVS.  #### CyberSource through VisaNet **Important** When you populate billing street address 1 and billing street address 2, CyberSource through VisaNet concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  For processor-specific information, see the `bill_address2` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $address2 Additional address information.  For Payouts: This field may be sent only for FDC Compass.  #### Atos This field must not contain colons (:).  #### Chase Paymentech Solutions, FDC Compass, and TSYS Acquiring Solutions This value is used for AVS.  #### Visa Platform Connect **Important** When you populate billing street address 1 and billing street address 2, Visa Platform Connect concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. Visa Platform Connect accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  For processor-specific information, see the `bill_address2` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setAddress2($address2)
@@ -490,7 +497,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets locality
-     * @param string $locality Payment card billing city.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  For processor-specific information, see the `bill_city` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $locality Payment card billing city.  #### Atos This field must not contain colons (:).  #### Visa Platform Connect Credit card networks cannot process transactions that contain non-ASCII characters. Visa Platform Connect accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  For processor-specific information, see the `bill_city` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setLocality($locality)
@@ -515,13 +522,13 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  ccAuthService (Required when the billing country is the U.S. or Canada; otherwise, optional.) This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. See \"Relaxed Requirements for Address Data and Expiration Date,\" page 75. Important It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the bill_state field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $administrativeArea State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.  For Payouts: This field may be sent only for FDC Compass.  ##### Visa Platform Connect Credit card networks cannot process transactions that contain non-ASCII characters. Visa Platform Connect accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `bill_state` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 3.');
+        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 20.');
         }
 
         $this->container['administrativeArea'] = $administrativeArea;
@@ -540,7 +547,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets postalCode
-     * @param string $postalCode Postal code for the billing address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  **Example** `12345-6789`  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  **Example** `A1B 2C3`  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### For Payouts:  This field may be sent only for FDC Compass.  #### American Express Direct Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  For processor-specific information, see the `bill_zip` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $postalCode Postal code for the billing address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  **Example** `12345-6789`  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  **Example** `A1B 2C3`  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### For Payouts:  This field may be sent only for FDC Compass.  #### American Express Direct Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  For processor-specific information, see the `bill_zip` request-level field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -556,7 +563,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Gets company
-     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany
+     * @return string
      */
     public function getCompany()
     {
@@ -565,11 +572,15 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets company
-     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany $company
+     * @param string $company Name of the customer’s company.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks. For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setCompany($company)
     {
+        if (!is_null($company) && (strlen($company) > 60)) {
+            throw new \InvalidArgumentException('invalid length for $company when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
+        }
+
         $this->container['company'] = $company;
 
         return $this;
@@ -586,7 +597,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets email
-     * @param string $email Customer's email address, including the full domain name.  **CyberSource through VisaNet** Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `customer_email` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $email Customer's email address, including the full domain name.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `customer_email` request-level field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setEmail($email)
@@ -611,7 +622,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets country
-     * @param string $country Payment card billing country. Use the two-character ISO Standard Country Codes.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `bill_country` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $country Payment card billing country. Use the two-character ISO Standard Country Codes.  #### Visa Platform Connect Credit card networks cannot process transactions that contain non-ASCII characters. Visa Platform Connect accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  For processor-specific information, see the `bill_country` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setCountry($country)
@@ -661,7 +672,7 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Customer’s phone number.  #### For Payouts: This field may be sent only for FDC Compass.  CyberSource recommends that you include the country code when the order is from outside the U.S.  For processor-specific information, see the customer_phone field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.
+     * @param string $phoneNumber Customer’s phone number.  #### For Payouts: This field may be sent only for FDC Compass.  CyberSource recommends that you include the country code when the order is from outside the U.S.  For processor-specific information, see the customer_phone field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  #### Visa Platform Connect Credit card networks cannot process transactions that contain non-ASCII characters. Visa Platform Connect accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

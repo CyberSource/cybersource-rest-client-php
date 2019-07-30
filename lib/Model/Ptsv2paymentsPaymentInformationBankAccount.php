@@ -280,7 +280,7 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
 
     /**
      * Sets encoderId
-     * @param string $encoderId Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \"Encoded Account Numbers,\" page 39.
+     * @param string $encoderId Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor.  For details, see `account_encoder_id` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setEncoderId($encoderId)

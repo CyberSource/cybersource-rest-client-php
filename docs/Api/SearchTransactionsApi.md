@@ -54,7 +54,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSearch**
-> \CyberSource\Model\TssV2TransactionsPost201Response getSearch($searchId)
+> \CyberSource\Model\TssV2TransactionsPost201Response1 getSearch($searchId)
 
 Get Search results
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TssV2TransactionsPost201Response**](../Model/TssV2TransactionsPost201Response.md)
+[**\CyberSource\Model\TssV2TransactionsPost201Response1**](../Model/TssV2TransactionsPost201Response1.md)
 
 ### Authorization
 

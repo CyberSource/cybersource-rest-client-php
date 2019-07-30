@@ -141,22 +141,8 @@ class ReportingV3ReportDefinitionsNameGet200Response implements ArrayAccess
         return self::$getters;
     }
 
-    const SUPPORTED_FORMATS_APPLICATIONXML = 'application/xml';
-    const SUPPORTED_FORMATS_TEXTCSV = 'text/csv';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getSupportedFormatsAllowableValues()
-    {
-        return [
-            self::SUPPORTED_FORMATS_APPLICATIONXML,
-            self::SUPPORTED_FORMATS_TEXTCSV,
-        ];
-    }
     
 
     /**
@@ -304,15 +290,6 @@ class ReportingV3ReportDefinitionsNameGet200Response implements ArrayAccess
      */
     public function setSupportedFormats($supportedFormats)
     {
-        $allowed_values = $this->getSupportedFormatsAllowableValues();
-        if (!is_null($supportedFormats) && array_diff($supportedFormats, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'supportedFormats', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['supportedFormats'] = $supportedFormats;
 
         return $this;

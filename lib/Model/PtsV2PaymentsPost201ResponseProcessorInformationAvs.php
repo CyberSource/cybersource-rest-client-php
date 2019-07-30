@@ -150,6 +150,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAvs implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 1)) {
+            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 1.";
+        }
+
         if (!is_null($this->container['codeRaw']) && (strlen($this->container['codeRaw']) > 10)) {
             $invalid_properties[] = "invalid value for 'codeRaw', the character length must be smaller than or equal to 10.";
         }
@@ -166,6 +170,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAvs implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['code']) > 1) {
+            return false;
+        }
         if (strlen($this->container['codeRaw']) > 10) {
             return false;
         }
@@ -189,6 +196,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAvs implements ArrayAccess
      */
     public function setCode($code)
     {
+        if (!is_null($code) && (strlen($code) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $code when calling PtsV2PaymentsPost201ResponseProcessorInformationAvs., must be smaller than or equal to 1.');
+        }
+
         $this->container['code'] = $code;
 
         return $this;

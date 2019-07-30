@@ -151,30 +151,8 @@ class UmsV1UsersGet200ResponseAccountInformation implements ArrayAccess
         return self::$getters;
     }
 
-    const STATUS_ACTIVE = 'active';
-    const STATUS_INACTIVE = 'inactive';
-    const STATUS_LOCKED = 'locked';
-    const STATUS_DISABLED = 'disabled';
-    const STATUS_FORGOTPASSWORD = 'forgotpassword';
-    const STATUS_DELETED = 'deleted';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_ACTIVE,
-            self::STATUS_INACTIVE,
-            self::STATUS_LOCKED,
-            self::STATUS_DISABLED,
-            self::STATUS_FORGOTPASSWORD,
-            self::STATUS_DELETED,
-        ];
-    }
     
 
     /**
@@ -208,14 +186,6 @@ class UmsV1UsersGet200ResponseAccountInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -228,10 +198,6 @@ class UmsV1UsersGet200ResponseAccountInformation implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -310,20 +276,11 @@ class UmsV1UsersGet200ResponseAccountInformation implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status
+     * @param string $status Valid values: - active - inactive - locked - disabled - forgotpassword - deleted
      * @return $this
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

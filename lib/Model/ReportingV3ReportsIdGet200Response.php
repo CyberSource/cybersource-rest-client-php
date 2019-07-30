@@ -182,64 +182,8 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
         return self::$getters;
     }
 
-    const REPORT_MIME_TYPE_APPLICATIONXML = 'application/xml';
-    const REPORT_MIME_TYPE_TEXTCSV = 'text/csv';
-    const REPORT_FREQUENCY_DAILY = 'DAILY';
-    const REPORT_FREQUENCY_WEEKLY = 'WEEKLY';
-    const REPORT_FREQUENCY_MONTHLY = 'MONTHLY';
-    const REPORT_FREQUENCY_ADHOC = 'ADHOC';
-    const REPORT_STATUS_COMPLETED = 'COMPLETED';
-    const REPORT_STATUS_PENDING = 'PENDING';
-    const REPORT_STATUS_QUEUED = 'QUEUED';
-    const REPORT_STATUS_RUNNING = 'RUNNING';
-    const REPORT_STATUS_ERROR = 'ERROR';
-    const REPORT_STATUS_NO_DATA = 'NO_DATA';
-    const REPORT_STATUS_RERUN = 'RERUN';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReportMimeTypeAllowableValues()
-    {
-        return [
-            self::REPORT_MIME_TYPE_APPLICATIONXML,
-            self::REPORT_MIME_TYPE_TEXTCSV,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReportFrequencyAllowableValues()
-    {
-        return [
-            self::REPORT_FREQUENCY_DAILY,
-            self::REPORT_FREQUENCY_WEEKLY,
-            self::REPORT_FREQUENCY_MONTHLY,
-            self::REPORT_FREQUENCY_ADHOC,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReportStatusAllowableValues()
-    {
-        return [
-            self::REPORT_STATUS_COMPLETED,
-            self::REPORT_STATUS_PENDING,
-            self::REPORT_STATUS_QUEUED,
-            self::REPORT_STATUS_RUNNING,
-            self::REPORT_STATUS_ERROR,
-            self::REPORT_STATUS_NO_DATA,
-            self::REPORT_STATUS_RERUN,
-        ];
-    }
     
 
     /**
@@ -279,30 +223,6 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!in_array($this->container['reportMimeType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reportMimeType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getReportFrequencyAllowableValues();
-        if (!in_array($this->container['reportFrequency'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reportFrequency', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getReportStatusAllowableValues();
-        if (!in_array($this->container['reportStatus'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reportStatus', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -315,18 +235,6 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!in_array($this->container['reportMimeType'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getReportFrequencyAllowableValues();
-        if (!in_array($this->container['reportFrequency'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getReportStatusAllowableValues();
-        if (!in_array($this->container['reportStatus'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -426,20 +334,11 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Sets reportMimeType
-     * @param string $reportMimeType Report Format
+     * @param string $reportMimeType Report Format  Valid values: - application/xml - text/csv
      * @return $this
      */
     public function setReportMimeType($reportMimeType)
     {
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!is_null($reportMimeType) && !in_array($reportMimeType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reportMimeType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reportMimeType'] = $reportMimeType;
 
         return $this;
@@ -456,20 +355,11 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Sets reportFrequency
-     * @param string $reportFrequency Report Frequency Value
+     * @param string $reportFrequency Report Frequency Value  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC
      * @return $this
      */
     public function setReportFrequency($reportFrequency)
     {
-        $allowed_values = $this->getReportFrequencyAllowableValues();
-        if (!is_null($reportFrequency) && !in_array($reportFrequency, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reportFrequency', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reportFrequency'] = $reportFrequency;
 
         return $this;
@@ -507,20 +397,11 @@ class ReportingV3ReportsIdGet200Response implements ArrayAccess
 
     /**
      * Sets reportStatus
-     * @param string $reportStatus Report Status Value
+     * @param string $reportStatus Report Status Value  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA - RERUN
      * @return $this
      */
     public function setReportStatus($reportStatus)
     {
-        $allowed_values = $this->getReportStatusAllowableValues();
-        if (!is_null($reportStatus) && !in_array($reportStatus, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reportStatus', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reportStatus'] = $reportStatus;
 
         return $this;

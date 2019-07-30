@@ -318,7 +318,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
 
     /**
      * Sets forwardedAcquirerCode
-     * @param string $forwardedAcquirerCode Name of the Japanese acquirer that processed the transaction. Returned only for CCS (CAFIS) and JCN Gateway. Please contact the CyberSource Japan Support Group for more information.
+     * @param string $forwardedAcquirerCode Name of the Japanese acquirer that processed the transaction. Returned only for JCN Gateway. Please contact the CyberSource Japan Support Group for more information.
      * @return $this
      */
     public function setForwardedAcquirerCode($forwardedAcquirerCode)
@@ -343,7 +343,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
 
     /**
      * Sets masterCardServiceCode
-     * @param string $masterCardServiceCode Mastercard service that was used for the transaction. Mastercard provides this value to CyberSource.  Possible value:  - 53: Mastercard card-on-file token service  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 133-134 - Field: Mastercard Merchant on-behalf service. **Note** This field is returned only for CyberSource through VisaNet.
+     * @param string $masterCardServiceCode Mastercard service that was used for the transaction. Mastercard provides this value to CyberSource.  Possible value:  - 53: Mastercard card-on-file token service  #### Visa Platform Connect The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 133-134 - Field: Mastercard Merchant on-behalf service. **Note** This field is returned only for Visa Platform Connect.
      * @return $this
      */
     public function setMasterCardServiceCode($masterCardServiceCode)
@@ -368,7 +368,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
 
     /**
      * Sets masterCardServiceReplyCode
-     * @param string $masterCardServiceReplyCode Result of the Mastercard card-on-file token service. Mastercard provides this value to CyberSource.  Possible values:   - `C`: Service completed successfully.  - `F`: One of the following:    - Incorrect Mastercard POS entry mode. The Mastercard POS entry mode should be 81 for an authorization or      authorization reversal.    - Incorrect Mastercard POS entry mode. The Mastercard POS entry mode should be 01 for a tokenized request.    - Token requestor ID is missing or formatted incorrectly.  - `I`: One of the following:    - Invalid token requestor ID.    - Suspended or deactivated token.    - Invalid token (not in mapping table).  - `T`: Invalid combination of token requestor ID and token.  - `U`: Expired token.  - `W`: Primary account number (PAN) listed in electronic warning bulletin.  **Note** This field is returned only for **CyberSource through VisaNet**.
+     * @param string $masterCardServiceReplyCode Result of the Mastercard card-on-file token service. Mastercard provides this value to CyberSource.  Possible values:   - `C`: Service completed successfully.  - `F`: One of the following:    - Incorrect Mastercard POS entry mode. The Mastercard POS entry mode should be 81 for an authorization or      authorization reversal.    - Incorrect Mastercard POS entry mode. The Mastercard POS entry mode should be 01 for a tokenized request.    - Token requestor ID is missing or formatted incorrectly.  - `I`: One of the following:    - Invalid token requestor ID.    - Suspended or deactivated token.    - Invalid token (not in mapping table).  - `T`: Invalid combination of token requestor ID and token.  - `U`: Expired token.  - `W`: Primary account number (PAN) listed in electronic warning bulletin.  **Note** This field is returned only for **Visa Platform Connect**.
      * @return $this
      */
     public function setMasterCardServiceReplyCode($masterCardServiceReplyCode)

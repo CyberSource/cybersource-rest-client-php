@@ -228,7 +228,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets suffix
-     * @param string $suffix The description for this field is not available.
+     * @param string $suffix Last four digits of the customer’s payment account number.
      * @return $this
      */
     public function setSuffix($suffix)
@@ -249,7 +249,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets prefix
-     * @param string $prefix The description for this field is not available.
+     * @param string $prefix Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number.
      * @return $this
      */
     public function setPrefix($prefix)
@@ -320,7 +320,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets name
-     * @param string $name The description for this field is not available.
+     * @param string $name Name used on the bank account. You can use this field only when scoring a direct debit transaction
      * @return $this
      */
     public function setName($name)
@@ -341,7 +341,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets checkDigit
-     * @param string $checkDigit The description for this field is not available.
+     * @param string $checkDigit Code used to validate the customer’s account number. Required for some countries if you do not or are not allowed to provide the IBAN instead. You may use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_check_digit` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setCheckDigit($checkDigit)
@@ -362,7 +362,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets encoderId
-     * @param string $encoderId Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor. See \"Encoded Account Numbers,\" page 39.
+     * @param string $encoderId Identifier for the bank that provided the customer’s encoded account number.  To obtain the bank identifier, contact your processor.  For details, see `account_encoder_id` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setEncoderId($encoderId)
