@@ -171,7 +171,7 @@ class TssV2TransactionsGet200ResponseFraudMarkingInformation implements ArrayAcc
 
     /**
      * Sets reason
-     * @param string $reason The description for this field is not available.
+     * @param string $reason Reason for adding the transaction to the negative list. This field can contain one of the following values: - fraud_chargeback: You have received a fraudrelated chargeback for the transaction. - non_fraud_chargeback: You have received a non-fraudulent chargeback for the transaction. - suspected: You believe that you will probably receive a chargeback for the transaction. - creditback: You issued a refund to the customer to avoid a chargeback for the transaction.  For details, see the `marking_reason` field description in [Decision Manager Using the SCMP API Developer Guide.](https://www.cybersource.com/developers/documentation/fraud_management/)
      * @return $this
      */
     public function setReason($reason)

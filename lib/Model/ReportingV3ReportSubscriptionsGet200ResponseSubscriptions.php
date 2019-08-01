@@ -177,40 +177,8 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         return self::$getters;
     }
 
-    const REPORT_MIME_TYPE_APPLICATIONXML = 'application/xml';
-    const REPORT_MIME_TYPE_TEXTCSV = 'text/csv';
-    const REPORT_FREQUENCY_DAILY = 'DAILY';
-    const REPORT_FREQUENCY_WEEKLY = 'WEEKLY';
-    const REPORT_FREQUENCY_MONTHLY = 'MONTHLY';
-    const REPORT_FREQUENCY_ADHOC = 'ADHOC';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReportMimeTypeAllowableValues()
-    {
-        return [
-            self::REPORT_MIME_TYPE_APPLICATIONXML,
-            self::REPORT_MIME_TYPE_TEXTCSV,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReportFrequencyAllowableValues()
-    {
-        return [
-            self::REPORT_FREQUENCY_DAILY,
-            self::REPORT_FREQUENCY_WEEKLY,
-            self::REPORT_FREQUENCY_MONTHLY,
-            self::REPORT_FREQUENCY_ADHOC,
-        ];
-    }
     
 
     /**
@@ -249,22 +217,6 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!in_array($this->container['reportMimeType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reportMimeType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getReportFrequencyAllowableValues();
-        if (!in_array($this->container['reportFrequency'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reportFrequency', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -277,14 +229,6 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
     public function valid()
     {
 
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!in_array($this->container['reportMimeType'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getReportFrequencyAllowableValues();
-        if (!in_array($this->container['reportFrequency'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -363,20 +307,11 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets reportMimeType
-     * @param string $reportMimeType Report Format
+     * @param string $reportMimeType Report Format                          Valid values: - application/xml - text/csv
      * @return $this
      */
     public function setReportMimeType($reportMimeType)
     {
-        $allowed_values = $this->getReportMimeTypeAllowableValues();
-        if (!is_null($reportMimeType) && !in_array($reportMimeType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reportMimeType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reportMimeType'] = $reportMimeType;
 
         return $this;
@@ -393,20 +328,11 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets reportFrequency
-     * @param string $reportFrequency Report Frequency
+     * @param string $reportFrequency 'Report Frequency'  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC
      * @return $this
      */
     public function setReportFrequency($reportFrequency)
     {
-        $allowed_values = $this->getReportFrequencyAllowableValues();
-        if (!is_null($reportFrequency) && !in_array($reportFrequency, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reportFrequency', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reportFrequency'] = $reportFrequency;
 
         return $this;

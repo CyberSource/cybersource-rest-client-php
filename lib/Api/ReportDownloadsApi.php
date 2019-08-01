@@ -92,7 +92,7 @@ class ReportDownloadsApi
      *
      * Download a report
      *
-     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd (required)
+     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd (required)
      * @param string $reportName Name of the report to download (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -109,7 +109,7 @@ class ReportDownloadsApi
      *
      * Download a report
      *
-     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format. - https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14   **Example date format:**   - yyyy-MM-dd (required)
+     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd (required)
      * @param string $reportName Name of the report to download (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response

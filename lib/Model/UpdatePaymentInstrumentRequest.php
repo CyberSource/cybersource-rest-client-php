@@ -171,34 +171,8 @@ class UpdatePaymentInstrumentRequest implements ArrayAccess
         return self::$getters;
     }
 
-    const OBJECT_PAYMENT_INSTRUMENT = 'paymentInstrument';
-    const STATE_ACTIVE = 'ACTIVE';
-    const STATE_CLOSED = 'CLOSED';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getObjectAllowableValues()
-    {
-        return [
-            self::OBJECT_PAYMENT_INSTRUMENT,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_ACTIVE,
-            self::STATE_CLOSED,
-        ];
-    }
     
 
     /**
@@ -236,22 +210,6 @@ class UpdatePaymentInstrumentRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getObjectAllowableValues();
-        if (!in_array($this->container['object'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'object', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getStateAllowableValues();
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'state', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -264,14 +222,6 @@ class UpdatePaymentInstrumentRequest implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getObjectAllowableValues();
-        if (!in_array($this->container['object'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getStateAllowableValues();
-        if (!in_array($this->container['state'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -329,20 +279,11 @@ class UpdatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets object
-     * @param string $object Describes type of token.
+     * @param string $object 'Describes type of token.'  Valid values: - paymentInstrument
      * @return $this
      */
     public function setObject($object)
     {
-        $allowed_values = $this->getObjectAllowableValues();
-        if (!is_null($object) && !in_array($object, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'object', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['object'] = $object;
 
         return $this;
@@ -359,20 +300,11 @@ class UpdatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state Current state of the token.
+     * @param string $state 'Current state of the token.'  Valid values: - ACTIVE - CLOSED
      * @return $this
      */
     public function setState($state)
     {
-        $allowed_values = $this->getStateAllowableValues();
-        if (!is_null($state) && !in_array($state, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'state', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['state'] = $state;
 
         return $this;

@@ -55,11 +55,10 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'type' => 'string',
+        'subTypeName' => 'string',
+        'fundingSource' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource',
         'method' => 'string',
-        'fundingSource' => 'string',
-        'fundingSourceAffiliation' => 'string',
-        'credential' => 'string'
+        'authenticationMethod' => 'string'
     ];
 
     /**
@@ -68,11 +67,10 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'type' => null,
-        'method' => null,
+        'subTypeName' => null,
         'fundingSource' => null,
-        'fundingSourceAffiliation' => null,
-        'credential' => null
+        'method' => null,
+        'authenticationMethod' => null
     ];
 
     public static function swaggerTypes()
@@ -91,11 +89,10 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'type' => 'type',
-        'method' => 'method',
+        'subTypeName' => 'subTypeName',
         'fundingSource' => 'fundingSource',
-        'fundingSourceAffiliation' => 'fundingSourceAffiliation',
-        'credential' => 'credential'
+        'method' => 'method',
+        'authenticationMethod' => 'authenticationMethod'
     ];
 
 
@@ -105,11 +102,10 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
      */
     protected static $setters = [
         'name' => 'setName',
-        'type' => 'setType',
-        'method' => 'setMethod',
+        'subTypeName' => 'setSubTypeName',
         'fundingSource' => 'setFundingSource',
-        'fundingSourceAffiliation' => 'setFundingSourceAffiliation',
-        'credential' => 'setCredential'
+        'method' => 'setMethod',
+        'authenticationMethod' => 'setAuthenticationMethod'
     ];
 
 
@@ -119,11 +115,10 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
      */
     protected static $getters = [
         'name' => 'getName',
-        'type' => 'getType',
-        'method' => 'getMethod',
+        'subTypeName' => 'getSubTypeName',
         'fundingSource' => 'getFundingSource',
-        'fundingSourceAffiliation' => 'getFundingSourceAffiliation',
-        'credential' => 'getCredential'
+        'method' => 'getMethod',
+        'authenticationMethod' => 'getAuthenticationMethod'
     ];
 
     public static function attributeMap()
@@ -158,11 +153,10 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
+        $this->container['subTypeName'] = isset($data['subTypeName']) ? $data['subTypeName'] : null;
         $this->container['fundingSource'] = isset($data['fundingSource']) ? $data['fundingSource'] : null;
-        $this->container['fundingSourceAffiliation'] = isset($data['fundingSourceAffiliation']) ? $data['fundingSourceAffiliation'] : null;
-        $this->container['credential'] = isset($data['credential']) ? $data['credential'] : null;
+        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
+        $this->container['authenticationMethod'] = isset($data['authenticationMethod']) ? $data['authenticationMethod'] : null;
     }
 
     /**
@@ -201,7 +195,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
 
     /**
      * Sets name
-     * @param string $name The name of a payment method. This is required for non-credit card payment.  Examples: `SEARS`, `JCREW`, `PAYPAL`, `IDEAL`, `EPS` ...etc.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
+     * @param string $name A Payment Type is an agreed means for a payee to receive legal tender from a payer. The way one pays for a commercial financial transaction. Examples: Card, Bank Transfer, Digital, Direct Debit.
      * @return $this
      */
     public function setName($name)
@@ -212,22 +206,43 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     }
 
     /**
-     * Gets type
+     * Gets subTypeName
      * @return string
      */
-    public function getType()
+    public function getSubTypeName()
     {
-        return $this->container['type'];
+        return $this->container['subTypeName'];
     }
 
     /**
-     * Sets type
-     * @param string $type The type of payment method. This is required for non-credit card payment.  Possible values:  - BANK_TRANSFER  - CARD (Default)  - EWALLET  - DIGITAL  - DIRECT_DEBIT  - INVOICE  - PUSH_PAYMENT  - CARRIER_BILLING  - CASH  - CHECK  - CRYPTOGRAPHIC  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
+     * Sets subTypeName
+     * @param string $subTypeName SubType Name is detail information about Payment Type. Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers.
      * @return $this
      */
-    public function setType($type)
+    public function setSubTypeName($subTypeName)
     {
-        $this->container['type'] = $type;
+        $this->container['subTypeName'] = $subTypeName;
+
+        return $this;
+    }
+
+    /**
+     * Gets fundingSource
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource
+     */
+    public function getFundingSource()
+    {
+        return $this->container['fundingSource'];
+    }
+
+    /**
+     * Sets fundingSource
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeFundingSource $fundingSource
+     * @return $this
+     */
+    public function setFundingSource($fundingSource)
+    {
+        $this->container['fundingSource'] = $fundingSource;
 
         return $this;
     }
@@ -243,7 +258,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
 
     /**
      * Sets method
-     * @param string $method This is an optional field.  Please contact CyberSource Customer Support to enable the payment method of your choice and the value you should send in your payment request for this field.
+     * @param string $method A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
      * @return $this
      */
     public function setMethod($method)
@@ -254,64 +269,22 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentType implements Ar
     }
 
     /**
-     * Gets fundingSource
+     * Gets authenticationMethod
      * @return string
      */
-    public function getFundingSource()
+    public function getAuthenticationMethod()
     {
-        return $this->container['fundingSource'];
+        return $this->container['authenticationMethod'];
     }
 
     /**
-     * Sets fundingSource
-     * @param string $fundingSource The description for this field is not available.
+     * Sets authenticationMethod
+     * @param string $authenticationMethod A Payment Type Authentication Method is the means used to verify that the presenter of the Payment Type credential is an authorized user of the Payment Instrument. Examples: 3DSecure – Verified by Visa, 3DSecure – MasteCard Secure Code
      * @return $this
      */
-    public function setFundingSource($fundingSource)
+    public function setAuthenticationMethod($authenticationMethod)
     {
-        $this->container['fundingSource'] = $fundingSource;
-
-        return $this;
-    }
-
-    /**
-     * Gets fundingSourceAffiliation
-     * @return string
-     */
-    public function getFundingSourceAffiliation()
-    {
-        return $this->container['fundingSourceAffiliation'];
-    }
-
-    /**
-     * Sets fundingSourceAffiliation
-     * @param string $fundingSourceAffiliation The description for this field is not available.
-     * @return $this
-     */
-    public function setFundingSourceAffiliation($fundingSourceAffiliation)
-    {
-        $this->container['fundingSourceAffiliation'] = $fundingSourceAffiliation;
-
-        return $this;
-    }
-
-    /**
-     * Gets credential
-     * @return string
-     */
-    public function getCredential()
-    {
-        return $this->container['credential'];
-    }
-
-    /**
-     * Sets credential
-     * @param string $credential The description for this field is not available.
-     * @return $this
-     */
-    public function setCredential($credential)
-    {
-        $this->container['credential'] = $credential;
+        $this->container['authenticationMethod'] = $authenticationMethod;
 
         return $this;
     }

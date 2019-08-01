@@ -126,30 +126,8 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_NATIONAL = 'NATIONAL';
-    const TYPE_CPF = 'CPF';
-    const TYPE_CPNJ = 'CPNJ';
-    const TYPE_CURP = 'CURP';
-    const TYPE_SSN = 'SSN';
-    const TYPE_DRIVER_LICENSE = 'DRIVER_LICENSE';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_NATIONAL,
-            self::TYPE_CPF,
-            self::TYPE_CPNJ,
-            self::TYPE_CURP,
-            self::TYPE_SSN,
-            self::TYPE_DRIVER_LICENSE,
-        ];
-    }
     
 
     /**
@@ -178,14 +156,6 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if (!is_null($this->container['id']) && (strlen($this->container['id']) > 26)) {
             $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 26.";
         }
@@ -202,10 +172,6 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            return false;
-        }
         if (strlen($this->container['id']) > 26) {
             return false;
         }
@@ -229,15 +195,6 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;

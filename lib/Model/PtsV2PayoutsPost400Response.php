@@ -136,32 +136,8 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_MISSING_FIELD = 'MISSING_FIELD';
-    const REASON_INVALID_DATA = 'INVALID_DATA';
-    const REASON_DUPLICATE_REQUEST = 'DUPLICATE_REQUEST';
-    const REASON_INVALID_CARD = 'INVALID_CARD';
-    const REASON_INVALID_MERCHANT_CONFIGURATION = 'INVALID_MERCHANT_CONFIGURATION';
-    const REASON_INVALID_AMOUNT = 'INVALID_AMOUNT';
-    const REASON_DEBIT_CARD_USEAGE_EXCEEDD_LIMIT = 'DEBIT_CARD_USEAGE_EXCEEDD_LIMIT';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_MISSING_FIELD,
-            self::REASON_INVALID_DATA,
-            self::REASON_DUPLICATE_REQUEST,
-            self::REASON_INVALID_CARD,
-            self::REASON_INVALID_MERCHANT_CONFIGURATION,
-            self::REASON_INVALID_AMOUNT,
-            self::REASON_DEBIT_CARD_USEAGE_EXCEEDD_LIMIT,
-        ];
-    }
     
 
     /**
@@ -192,14 +168,6 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -212,10 +180,6 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -278,15 +242,6 @@ class PtsV2PayoutsPost400Response implements ArrayAccess
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

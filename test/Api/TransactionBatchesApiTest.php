@@ -85,7 +85,7 @@ class TransactionBatchesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getTransactionBatches
      *
-     * Gets a list of batch files.
+     * Get a list of batch files.
      *
      */
     public function testGetTransactionBatches()

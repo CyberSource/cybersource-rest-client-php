@@ -116,26 +116,8 @@ class PaymentInstrumentBankAccount implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_CHECKING = 'checking';
-    const TYPE_SAVINGS = 'savings';
-    const TYPE_CORPORATE_CHECKING = 'corporate checking';
-    const TYPE_GENERAL_LEDGER = 'general ledger';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_CHECKING,
-            self::TYPE_SAVINGS,
-            self::TYPE_CORPORATE_CHECKING,
-            self::TYPE_GENERAL_LEDGER,
-        ];
-    }
     
 
     /**
@@ -162,14 +144,6 @@ class PaymentInstrumentBankAccount implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -182,10 +156,6 @@ class PaymentInstrumentBankAccount implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -206,15 +176,6 @@ class PaymentInstrumentBankAccount implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;

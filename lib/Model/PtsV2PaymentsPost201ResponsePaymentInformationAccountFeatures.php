@@ -196,22 +196,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         return self::$getters;
     }
 
-    const BALANCE_SIGN_PLUS = '+';
-    const BALANCE_SIGN_MINUS = '-';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getBalanceSignAllowableValues()
-    {
-        return [
-            self::BALANCE_SIGN_PLUS,
-            self::BALANCE_SIGN_MINUS,
-        ];
-    }
     
 
     /**
@@ -272,14 +258,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
         if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 5)) {
             $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 5.";
-        }
-
-        $allowed_values = $this->getBalanceSignAllowableValues();
-        if (!in_array($this->container['balanceSign'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'balanceSign', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
         }
 
         if (!is_null($this->container['balanceSign']) && (strlen($this->container['balanceSign']) > 1)) {
@@ -355,10 +333,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
             return false;
         }
         if (strlen($this->container['currency']) > 5) {
-            return false;
-        }
-        $allowed_values = $this->getBalanceSignAllowableValues();
-        if (!in_array($this->container['balanceSign'], $allowed_values)) {
             return false;
         }
         if (strlen($this->container['balanceSign']) > 1) {
@@ -437,7 +411,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets accountStatus
-     * @param string $accountStatus Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for CyberSource through VisaNet.
+     * @param string $accountStatus Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for Visa Platform Connect.
      * @return $this
      */
     public function setAccountStatus($accountStatus)
@@ -542,15 +516,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceSign($balanceSign)
     {
-        $allowed_values = $this->getBalanceSignAllowableValues();
-        if (!is_null($balanceSign) && !in_array($balanceSign, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'balanceSign', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         if (!is_null($balanceSign) && (strlen($balanceSign) > 1)) {
             throw new \InvalidArgumentException('invalid length for $balanceSign when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
         }
@@ -596,7 +561,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets category
-     * @param string $category #### CyberSource through VisaNet Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, see the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes)  Data Length: String (3)  #### GPN Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, seepag the Product ID table on the Visa Request & Response Codes web page at https://developer.visa.com/guides/request_response_codes. For descriptions of the Mastercard product IDs, see \"Product IDs\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Data Length: String (3)  #### Worldpay VAP **Important** Before using this field on Worldpay VAP, you must contact CyberSource Customer Support to have your account configured for this feature.  Type of card used in the transaction. The only possible value is: - `PREPAID`: Prepaid Card  Data Length: String (7)  #### RBS WorldPay Atlanta Type of card used in the transaction. Possible values: - `B`: Business Card - `O`: Noncommercial Card - `R`: Corporate Card - `S`: Purchase Card - `Blank`: Purchase card not supported  Data Length: String (1)
+     * @param string $category #### CyberSource through VisaNet Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, see the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes)  Data Length: String (3)  #### GPN Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, seepag the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes) For descriptions of the Mastercard product IDs, see \"Product IDs\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Data Length: String (3)  #### Worldpay VAP **Important** Before using this field on Worldpay VAP, you must contact CyberSource Customer Support to have your account configured for this feature.  Type of card used in the transaction. The only possible value is: - `PREPAID`: Prepaid Card  Data Length: String (7)  #### RBS WorldPay Atlanta Type of card used in the transaction. Possible values: - `B`: Business Card - `O`: Noncommercial Card - `R`: Corporate Card - `S`: Purchase Card - `Blank`: Purchase card not supported  Data Length: String (1)
      * @return $this
      */
     public function setCategory($category)
@@ -621,7 +586,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets commercial
-     * @param string $commercial Indicates whether the card is a commercial card, which enables you to include Level II data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown  For details, see `auth_card_commercial` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $commercial Indicates whether the card is a commercial card, which enables you to include Level II data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - **Y**: Yes  - **N**: No  - **X**: Not applicable / Unknown  For details, see `auth_card_commercial` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setCommercial($commercial)
@@ -646,7 +611,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets group
-     * @param string $group Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card
+     * @param string $group Type of commercial card. This field is supported only for Visa Platform Connect. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card
      * @return $this
      */
     public function setGroup($group)
@@ -671,7 +636,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets healthCare
-     * @param string $healthCare Indicates whether the card is a healthcare card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_healthcare` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $healthCare Indicates whether the card is a healthcare card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_healthcare` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setHealthCare($healthCare)
@@ -721,7 +686,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets level3Eligible
-     * @param string $level3Eligible Indicates whether the card is eligible for Level III interchange fees, which enables you to include Level III data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_level_3_eligible` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $level3Eligible Indicates whether the card is eligible for Level III interchange fees, which enables you to include Level III data in your transaction requests. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_level_3_eligible` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setLevel3Eligible($level3Eligible)
@@ -746,7 +711,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets pinlessDebit
-     * @param string $pinlessDebit Indicates whether the card is a PINless debit card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_pinless_debit` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $pinlessDebit Indicates whether the card is a PINless debit card. This field is supported for Visa and Mastercard on **Chase Paymentech Solutions**. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_pinless_debit` reply field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setPinlessDebit($pinlessDebit)
@@ -771,7 +736,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets signatureDebit
-     * @param string $signatureDebit Indicates whether the card is a signature debit card.  This information enables you to alter the way an order is processed. For example, you might not want to reauthorize a transaction for a signature debit card, or you might want to perform reversals promptly for a signature debit card. This field is supported for Visa, Mastercard, and Maestro (International) on Chase Paymentech Solutions. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_signature_debit` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $signatureDebit Indicates whether the card is a signature debit card.  This information enables you to alter the way an order is processed. For example, you might not want to reauthorize a transaction for a signature debit card, or you might want to perform reversals promptly for a signature debit card. This field is supported for Visa, Mastercard, and Maestro (International) on Chase Paymentech Solutions. Possible values:   - `Y`: Yes  - `N`: No  - `X`: Not applicable / Unknown  For details, see `auth_card_signature_debit` reply field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setSignatureDebit($signatureDebit)

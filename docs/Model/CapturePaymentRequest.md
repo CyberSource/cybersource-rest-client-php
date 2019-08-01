@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **merchantInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation**](Ptsv2paymentsidcapturesMerchantInformation.md) |  | [optional] 
 **aggregatorInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation**](Ptsv2paymentsidcapturesAggregatorInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation**](Ptsv2paymentsidcapturesPointOfSaleInformation.md) |  | [optional] 
-**merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | The description for this field is not available. | [optional] 
+**merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines. | [optional] 
 **installmentInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation**](Ptsv2paymentsidcapturesInstallmentInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

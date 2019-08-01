@@ -57,7 +57,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => 'string',
         'terminalSerialNumber' => 'string',
         'deviceId' => 'string',
-        'partner' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner'
+        'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'
     ];
 
     /**
@@ -253,7 +253,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Sets deviceId
-     * @param string $deviceId The description for this field is not available.
+     * @param string $deviceId Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for specific CyberSource integrations. For details, see the `pos_device_id` field description in the [Card-Present Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setDeviceId($deviceId)
@@ -265,7 +265,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Gets partner
-     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner
      */
     public function getPartner()
     {
@@ -274,7 +274,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Sets partner
-     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformationPartner $partner
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner $partner
      * @return $this
      */
     public function setPartner($partner)

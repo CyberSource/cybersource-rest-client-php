@@ -64,6 +64,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         'sort' => 'string',
         'count' => 'int',
         'totalCount' => 'int',
+        'status' => 'string',
         'submitTimeUtc' => 'string',
         'embedded' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbedded',
         'links' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks'
@@ -84,6 +85,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         'sort' => null,
         'count' => null,
         'totalCount' => null,
+        'status' => null,
         'submitTimeUtc' => null,
         'embedded' => null,
         'links' => null
@@ -114,6 +116,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         'sort' => 'sort',
         'count' => 'count',
         'totalCount' => 'totalCount',
+        'status' => 'status',
         'submitTimeUtc' => 'submitTimeUtc',
         'embedded' => '_embedded',
         'links' => '_links'
@@ -135,6 +138,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         'sort' => 'setSort',
         'count' => 'setCount',
         'totalCount' => 'setTotalCount',
+        'status' => 'setStatus',
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'embedded' => 'setEmbedded',
         'links' => 'setLinks'
@@ -156,6 +160,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         'sort' => 'getSort',
         'count' => 'getCount',
         'totalCount' => 'getTotalCount',
+        'status' => 'getStatus',
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'embedded' => 'getEmbedded',
         'links' => 'getLinks'
@@ -202,6 +207,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
@@ -317,7 +323,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
 
     /**
      * Sets timezone
-     * @param string $timezone Time Zone.
+     * @param string $timezone Time Zone in ISO format.
      * @return $this
      */
     public function setTimezone($timezone)
@@ -380,7 +386,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
 
     /**
      * Sets limit
-     * @param int $limit limit on number of results.
+     * @param int $limit Limit on number of results.
      * @return $this
      */
     public function setLimit($limit)
@@ -443,12 +449,33 @@ class TssV2TransactionsPost201Response implements ArrayAccess
 
     /**
      * Sets totalCount
-     * @param int $totalCount total number of results.
+     * @param int $totalCount Total number of results.
      * @return $this
      */
     public function setTotalCount($totalCount)
     {
         $this->container['totalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted transaction.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }

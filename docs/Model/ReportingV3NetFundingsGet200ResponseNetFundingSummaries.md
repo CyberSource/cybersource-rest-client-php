@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** |  | [optional] 
+**type** | **string** | Valid values: - PURCHASES - REFUNDS - FEES - CHARGEBACKS | [optional] 
 **paymentSubType** | **string** |  | [optional] 
 **conveyedCount** | **int** |  | [optional] 
 **conveyedAmount** | **string** |  | [optional] 

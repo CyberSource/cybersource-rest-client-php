@@ -126,20 +126,8 @@ class PersonalIdentification implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_LICENSE = 'driver license';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_LICENSE,
-        ];
-    }
     
 
     /**
@@ -168,14 +156,6 @@ class PersonalIdentification implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -188,10 +168,6 @@ class PersonalIdentification implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -228,20 +204,11 @@ class PersonalIdentification implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.
+     * @param string $type Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license
      * @return $this
      */
     public function setType($type)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;

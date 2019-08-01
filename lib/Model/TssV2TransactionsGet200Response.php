@@ -405,7 +405,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets merchantId
-     * @param string $merchantId The description for this field is not available.
+     * @param string $merchantId Your CyberSource merchant ID.
      * @return $this
      */
     public function setMerchantId($merchantId)
@@ -636,7 +636,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The description for this field is not available.
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[] $merchantDefinedInformation The object containing the custom data that the merchant defines.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)

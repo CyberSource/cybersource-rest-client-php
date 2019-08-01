@@ -151,26 +151,8 @@ class ReportingV3NetFundingsGet200ResponseNetFundingSummaries implements ArrayAc
         return self::$getters;
     }
 
-    const TYPE_PURCHASES = 'PURCHASES';
-    const TYPE_REFUNDS = 'REFUNDS';
-    const TYPE_FEES = 'FEES';
-    const TYPE_CHARGEBACKS = 'CHARGEBACKS';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_PURCHASES,
-            self::TYPE_REFUNDS,
-            self::TYPE_FEES,
-            self::TYPE_CHARGEBACKS,
-        ];
-    }
     
 
     /**
@@ -204,14 +186,6 @@ class ReportingV3NetFundingsGet200ResponseNetFundingSummaries implements ArrayAc
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -224,10 +198,6 @@ class ReportingV3NetFundingsGet200ResponseNetFundingSummaries implements ArrayAc
     public function valid()
     {
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -243,20 +213,11 @@ class ReportingV3NetFundingsGet200ResponseNetFundingSummaries implements ArrayAc
 
     /**
      * Sets type
-     * @param string $type
+     * @param string $type Valid values: - PURCHASES - REFUNDS - FEES - CHARGEBACKS
      * @return $this
      */
     public function setType($type)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;
