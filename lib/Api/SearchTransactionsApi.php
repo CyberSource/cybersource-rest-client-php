@@ -181,7 +181,7 @@ class SearchTransactionsApi
      *
      * @param string $searchId Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TssV2TransactionsPost201Response1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSearch($searchId)
     {
@@ -196,7 +196,7 @@ class SearchTransactionsApi
      *
      * @param string $searchId Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TssV2TransactionsPost201Response1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TssV2TransactionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSearchWithHttpInfo($searchId)
     {
@@ -239,15 +239,15 @@ class SearchTransactionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TssV2TransactionsPost201Response1',
+                '\CyberSource\Model\TssV2TransactionsPost201Response',
                 '/tss/v2/searches/{searchId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response1', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TssV2TransactionsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TssV2TransactionsPost201Response1', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TssV2TransactionsPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
