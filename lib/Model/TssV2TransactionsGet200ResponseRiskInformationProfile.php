@@ -177,7 +177,7 @@ class TssV2TransactionsGet200ResponseRiskInformationProfile implements ArrayAcce
 
     /**
      * Sets name
-     * @param string $name The description for this field is not available.
+     * @param string $name The name of the profile.
      * @return $this
      */
     public function setName($name)
@@ -198,7 +198,7 @@ class TssV2TransactionsGet200ResponseRiskInformationProfile implements ArrayAcce
 
     /**
      * Sets decision
-     * @param string $decision The description for this field is not available.
+     * @param string $decision Decision returned by the profile; this field contains one of these values: - ACCEPT - REJECT - REVIEW
      * @return $this
      */
     public function setDecision($decision)

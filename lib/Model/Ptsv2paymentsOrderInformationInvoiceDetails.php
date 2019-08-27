@@ -63,7 +63,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'taxable' => 'bool',
         'vatInvoiceReferenceNumber' => 'string',
         'commodityCode' => 'string',
-        'merchandiseCode' => 'float',
+        'merchandiseCode' => 'int',
         'transactionAdviceAddendum' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum[]',
         'referenceDataCode' => 'string',
         'referenceDataNumber' => 'string'
@@ -492,7 +492,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
 
     /**
      * Gets merchandiseCode
-     * @return float
+     * @return int
      */
     public function getMerchandiseCode()
     {
@@ -501,7 +501,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
 
     /**
      * Sets merchandiseCode
-     * @param float $merchandiseCode Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**.
+     * @param int $merchandiseCode Identifier for the merchandise. Possible value:   - 1000: Gift card  This field is supported only for **American Express Direct**.
      * @return $this
      */
     public function setMerchandiseCode($merchandiseCode)

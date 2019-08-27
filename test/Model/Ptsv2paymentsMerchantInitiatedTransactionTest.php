@@ -90,4 +90,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     public function testPropertyPreviousTransactionId()
     {
     }
+
+    /**
+     * Test attribute "originalAuthorizedAmount"
+     */
+    public function testPropertyOriginalAuthorizedAmount()
+    {
+    }
 }

@@ -54,8 +54,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'captureSequenceNumber' => 'float',
-        'totalCaptureCount' => 'float'
+        'captureSequenceNumber' => 'int',
+        'totalCaptureCount' => 'int'
     ];
 
     /**
@@ -196,7 +196,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
 
     /**
      * Gets captureSequenceNumber
-     * @return float
+     * @return int
      */
     public function getCaptureSequenceNumber()
     {
@@ -205,7 +205,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
 
     /**
      * Sets captureSequenceNumber
-     * @param float $captureSequenceNumber Capture number when requesting multiple partial captures for one authorization. Used along with `totalCaptureCount` to track which capture is being processed.  For example, the second of five captures would be passed to CyberSource as:   - `captureSequenceNumber_ = 2`, and   - `totalCaptureCount = 5`
+     * @param int $captureSequenceNumber Capture number when requesting multiple partial captures for one authorization. Used along with `totalCaptureCount` to track which capture is being processed.  For example, the second of five captures would be passed to CyberSource as:   - `captureSequenceNumber_ = 2`, and   - `totalCaptureCount = 5`
      * @return $this
      */
     public function setCaptureSequenceNumber($captureSequenceNumber)
@@ -225,7 +225,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
 
     /**
      * Gets totalCaptureCount
-     * @return float
+     * @return int
      */
     public function getTotalCaptureCount()
     {
@@ -234,7 +234,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
 
     /**
      * Sets totalCaptureCount
-     * @param float $totalCaptureCount Total number of captures when requesting multiple partial captures for one payment. Used along with `captureSequenceNumber` field to track which capture is being processed.  For example, the second of five captures would be passed to CyberSource as:   - `captureSequenceNumber = 2`, and   - `totalCaptureCount = 5`
+     * @param int $totalCaptureCount Total number of captures when requesting multiple partial captures for one payment. Used along with `captureSequenceNumber` field to track which capture is being processed.  For example, the second of five captures would be passed to CyberSource as:   - `captureSequenceNumber = 2`, and   - `totalCaptureCount = 5`
      * @return $this
      */
     public function setTotalCaptureCount($totalCaptureCount)

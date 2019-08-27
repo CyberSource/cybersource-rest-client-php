@@ -58,6 +58,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'currency' => 'string',
         'discountAmount' => 'string',
         'dutyAmount' => 'string',
+        'gratuityAmount' => 'string',
         'taxAmount' => 'string',
         'nationalTaxIncluded' => 'string',
         'taxAppliedAfterDiscount' => 'string',
@@ -87,6 +88,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'currency' => null,
         'discountAmount' => null,
         'dutyAmount' => null,
+        'gratuityAmount' => null,
         'taxAmount' => null,
         'nationalTaxIncluded' => null,
         'taxAppliedAfterDiscount' => null,
@@ -126,6 +128,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'currency' => 'currency',
         'discountAmount' => 'discountAmount',
         'dutyAmount' => 'dutyAmount',
+        'gratuityAmount' => 'gratuityAmount',
         'taxAmount' => 'taxAmount',
         'nationalTaxIncluded' => 'nationalTaxIncluded',
         'taxAppliedAfterDiscount' => 'taxAppliedAfterDiscount',
@@ -156,6 +159,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'currency' => 'setCurrency',
         'discountAmount' => 'setDiscountAmount',
         'dutyAmount' => 'setDutyAmount',
+        'gratuityAmount' => 'setGratuityAmount',
         'taxAmount' => 'setTaxAmount',
         'nationalTaxIncluded' => 'setNationalTaxIncluded',
         'taxAppliedAfterDiscount' => 'setTaxAppliedAfterDiscount',
@@ -186,6 +190,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'currency' => 'getCurrency',
         'discountAmount' => 'getDiscountAmount',
         'dutyAmount' => 'getDutyAmount',
+        'gratuityAmount' => 'getGratuityAmount',
         'taxAmount' => 'getTaxAmount',
         'nationalTaxIncluded' => 'getNationalTaxIncluded',
         'taxAppliedAfterDiscount' => 'getTaxAppliedAfterDiscount',
@@ -241,6 +246,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
         $this->container['dutyAmount'] = isset($data['dutyAmount']) ? $data['dutyAmount'] : null;
+        $this->container['gratuityAmount'] = isset($data['gratuityAmount']) ? $data['gratuityAmount'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
         $this->container['nationalTaxIncluded'] = isset($data['nationalTaxIncluded']) ? $data['nationalTaxIncluded'] : null;
         $this->container['taxAppliedAfterDiscount'] = isset($data['taxAppliedAfterDiscount']) ? $data['taxAppliedAfterDiscount'] : null;
@@ -284,6 +290,10 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
         if (!is_null($this->container['dutyAmount']) && (strlen($this->container['dutyAmount']) > 15)) {
             $invalid_properties[] = "invalid value for 'dutyAmount', the character length must be smaller than or equal to 15.";
+        }
+
+        if (!is_null($this->container['gratuityAmount']) && (strlen($this->container['gratuityAmount']) > 13)) {
+            $invalid_properties[] = "invalid value for 'gratuityAmount', the character length must be smaller than or equal to 13.";
         }
 
         if (!is_null($this->container['taxAmount']) && (strlen($this->container['taxAmount']) > 12)) {
@@ -370,6 +380,9 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         if (strlen($this->container['dutyAmount']) > 15) {
             return false;
         }
+        if (strlen($this->container['gratuityAmount']) > 13) {
+            return false;
+        }
         if (strlen($this->container['taxAmount']) > 12) {
             return false;
         }
@@ -430,7 +443,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets totalAmount
-     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. For details, see: - \"Authorization Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). - \"Capture Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). - \"Credit Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. For details, see \"Zero Amount Authorizations,\" \"Credit Information for Specific Processors\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request. For details, see `grand_total_amount` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in \"Authorization Information for Specific Processors\" of the [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC for First Data Not used.
+     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. For details, see: - \"Authorization Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). - \"Capture Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). - \"Credit Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. For details, see \"Zero Amount Authorizations,\" \"Credit Information for Specific Processors\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request. For details, see `grand_total_amount` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in \"Authorization Information for Specific Processors\" of the [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC for First Data Not used.  #### Invoicing Grand total for the order, this is required for creating a new invoice.
      * @return $this
      */
     public function setTotalAmount($totalAmount)
@@ -515,6 +528,31 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         }
 
         $this->container['dutyAmount'] = $dutyAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets gratuityAmount
+     * @return string
+     */
+    public function getGratuityAmount()
+    {
+        return $this->container['gratuityAmount'];
+    }
+
+    /**
+     * Sets gratuityAmount
+     * @param string $gratuityAmount Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet.
+     * @return $this
+     */
+    public function setGratuityAmount($gratuityAmount)
+    {
+        if (!is_null($gratuityAmount) && (strlen($gratuityAmount) > 13)) {
+            throw new \InvalidArgumentException('invalid length for $gratuityAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 13.');
+        }
+
+        $this->container['gratuityAmount'] = $gratuityAmount;
 
         return $this;
     }

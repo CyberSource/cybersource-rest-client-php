@@ -54,7 +54,9 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'tags' => 'string'
+        'tags' => 'string',
+        'chipValidationType' => 'string',
+        'chipValidationResult' => 'string'
     ];
 
     /**
@@ -62,7 +64,9 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'tags' => null
+        'tags' => null,
+        'chipValidationType' => null,
+        'chipValidationResult' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'tags' => 'tags'
+        'tags' => 'tags',
+        'chipValidationType' => 'chipValidationType',
+        'chipValidationResult' => 'chipValidationResult'
     ];
 
 
@@ -89,7 +95,9 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'tags' => 'setTags'
+        'tags' => 'setTags',
+        'chipValidationType' => 'setChipValidationType',
+        'chipValidationResult' => 'setChipValidationResult'
     ];
 
 
@@ -98,7 +106,9 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'tags' => 'getTags'
+        'tags' => 'getTags',
+        'chipValidationType' => 'getChipValidationType',
+        'chipValidationResult' => 'getChipValidationResult'
     ];
 
     public static function attributeMap()
@@ -133,6 +143,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
     public function __construct(array $data = null)
     {
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
+        $this->container['chipValidationType'] = isset($data['chipValidationType']) ? $data['chipValidationType'] : null;
+        $this->container['chipValidationResult'] = isset($data['chipValidationResult']) ? $data['chipValidationResult'] : null;
     }
 
     /**
@@ -148,6 +160,14 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
             $invalid_properties[] = "invalid value for 'tags', the character length must be smaller than or equal to 1998.";
         }
 
+        if (!is_null($this->container['chipValidationType']) && (strlen($this->container['chipValidationType']) > 2)) {
+            $invalid_properties[] = "invalid value for 'chipValidationType', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['chipValidationResult']) && (strlen($this->container['chipValidationResult']) > 1)) {
+            $invalid_properties[] = "invalid value for 'chipValidationResult', the character length must be smaller than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -161,6 +181,12 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
     {
 
         if (strlen($this->container['tags']) > 1998) {
+            return false;
+        }
+        if (strlen($this->container['chipValidationType']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['chipValidationResult']) > 1) {
             return false;
         }
         return true;
@@ -188,6 +214,56 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
         }
 
         $this->container['tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets chipValidationType
+     * @return string
+     */
+    public function getChipValidationType()
+    {
+        return $this->container['chipValidationType'];
+    }
+
+    /**
+     * Sets chipValidationType
+     * @param string $chipValidationType Entity or service that provided the validation results returned in **chipValidationResult**.  Possible values:  - **02**: MasterCard on-behalf pre-validation service (The MasterCard authorization platform validated the M/Chip cryptogram before the authorization request reached the issuer.)  - **03**: MasterCard on-behalf stand-in service (The MasterCard authorization platform validated the M/Chip cryptogram because the issuer was not available.)  - **50**: Issuer  - **90**: Chip fall-back transaction downgrade process (The chip could not be read.)  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time.
+     * @return $this
+     */
+    public function setChipValidationType($chipValidationType)
+    {
+        if (!is_null($chipValidationType) && (strlen($chipValidationType) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $chipValidationType when calling PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv., must be smaller than or equal to 2.');
+        }
+
+        $this->container['chipValidationType'] = $chipValidationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets chipValidationResult
+     * @return string
+     */
+    public function getChipValidationResult()
+    {
+        return $this->container['chipValidationResult'];
+    }
+
+    /**
+     * Sets chipValidationResult
+     * @param string $chipValidationResult Cryptogram validation results returned by the entity or service specified in **chipValidationType**.  Possible values: - **A**: Application cryptogram is valid, but the application transaction counter (ATC) is outside allowed range. (A large jump in ATC values may indicate data copying or other fraud.) - **C**: Chip validation was completed successfully. - **E**: Application cryptogram is valid but the ATC indicates possible replay fraud. - **F**: Format error in the chip data. - **G**: Application cryptogram is valid but is not a valid authorization request cryptogram (ARQC). - **I**: Application cryptogram is invalid. - **T**: Application cryptogram is valid but terminal verification results (TVR) or card verification results (CVR) are invalid. - **U**: Application cryptogram could not be validated because of a technical error.  This field is returned only for NFC payment network tokenization transactions with MasterCard.  **Note** No CyberSource through VisaNet acquirers support EMV at this time.
+     * @return $this
+     */
+    public function setChipValidationResult($chipValidationResult)
+    {
+        if (!is_null($chipValidationResult) && (strlen($chipValidationResult) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $chipValidationResult when calling PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv., must be smaller than or equal to 1.');
+        }
+
+        $this->container['chipValidationResult'] = $chipValidationResult;
 
         return $this;
     }

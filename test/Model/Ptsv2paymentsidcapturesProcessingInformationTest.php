@@ -120,6 +120,13 @@ class Ptsv2paymentsidcapturesProcessingInformationTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "industryDataType"
+     */
+    public function testPropertyIndustryDataType()
+    {
+    }
+
+    /**
      * Test attribute "issuer"
      */
     public function testPropertyIssuer()

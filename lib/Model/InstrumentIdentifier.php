@@ -59,7 +59,7 @@ class InstrumentIdentifier implements ArrayAccess
         'object' => 'string',
         'state' => 'string',
         'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard',
-        'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount',
+        'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
         'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation',
         'metadata' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata'
     ];
@@ -309,7 +309,7 @@ class InstrumentIdentifier implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount
      */
     public function getBankAccount()
     {
@@ -318,7 +318,7 @@ class InstrumentIdentifier implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount $bankAccount
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)

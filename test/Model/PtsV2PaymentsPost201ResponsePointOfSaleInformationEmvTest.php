@@ -83,4 +83,18 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmvTest extends \PHPUnit
     public function testPropertyTags()
     {
     }
+
+    /**
+     * Test attribute "chipValidationType"
+     */
+    public function testPropertyChipValidationType()
+    {
+    }
+
+    /**
+     * Test attribute "chipValidationResult"
+     */
+    public function testPropertyChipValidationResult()
+    {
+    }
 }

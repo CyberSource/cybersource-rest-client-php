@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse400FieldsTest
+ * InlineResponse4001FieldsTest
  *
  * PHP version 5
  *
@@ -30,7 +30,7 @@
 namespace CyberSource;
 
 /**
- * InlineResponse400FieldsTest Class Doc Comment
+ * InlineResponse4001FieldsTest Class Doc Comment
  *
  * @category    Class */
 // * @description Provide validation failed input field details
@@ -39,7 +39,7 @@ namespace CyberSource;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse400FieldsTest extends \PHPUnit_Framework_TestCase
+class InlineResponse4001FieldsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class InlineResponse400FieldsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse400Fields"
+     * Test "InlineResponse4001Fields"
      */
-    public function testInlineResponse400Fields()
+    public function testInlineResponse4001Fields()
     {
     }
 

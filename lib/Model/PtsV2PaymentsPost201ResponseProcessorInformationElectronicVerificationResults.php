@@ -571,7 +571,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets name
-     * @param string $name The description for this field is not available.
+     * @param string $name Mapped Electronic Verification response code for the customer’s name.
      * @return $this
      */
     public function setName($name)
@@ -596,7 +596,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets nameRaw
-     * @param string $nameRaw The description for this field is not available.
+     * @param string $nameRaw Raw Electronic Verification response code from the processor for the customer’s name.
      * @return $this
      */
     public function setNameRaw($nameRaw)

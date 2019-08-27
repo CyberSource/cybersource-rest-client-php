@@ -59,7 +59,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrume
         'state' => 'string',
         'id' => 'string',
         'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard',
-        'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount',
+        'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
         'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation',
         'metadata' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata'
     ];
@@ -269,7 +269,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrume
 
     /**
      * Sets state
-     * @param string $state 'Current state of the token.'              Valid values: - ACTIVE - CLOSED
+     * @param string $state 'Current state of the token.'  Valid values: - ACTIVE - CLOSED
      * @return $this
      */
     public function setState($state)
@@ -330,7 +330,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrume
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount
      */
     public function getBankAccount()
     {
@@ -339,7 +339,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrume
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseBankAccount $bankAccount
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)

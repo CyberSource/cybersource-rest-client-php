@@ -92,6 +92,13 @@ class InstrumentIdentifierEnrollableCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "bankAccount"
+     */
+    public function testPropertyBankAccount()
+    {
+    }
+
+    /**
      * Test attribute "billTo"
      */
     public function testPropertyBillTo()

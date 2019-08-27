@@ -55,10 +55,10 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'tags' => 'string',
-        'cardholderVerificationMethodUsed' => 'float',
+        'cardholderVerificationMethodUsed' => 'int',
         'cardSequenceNumber' => 'string',
         'fallback' => 'bool',
-        'fallbackCondition' => 'float'
+        'fallbackCondition' => 'int'
     ];
 
     /**
@@ -225,7 +225,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Gets cardholderVerificationMethodUsed
-     * @return float
+     * @return int
      */
     public function getCardholderVerificationMethodUsed()
     {
@@ -234,7 +234,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets cardholderVerificationMethodUsed
-     * @param float $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity.  Possible values:  - **0**: No verification  - **1**: Signature  This field is supported only on **American Express Direct**.
+     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity.  Possible values:  - **0**: No verification  - **1**: Signature  This field is supported only on **American Express Direct**.
      * @return $this
      */
     public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)
@@ -292,7 +292,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Gets fallbackCondition
-     * @return float
+     * @return int
      */
     public function getFallbackCondition()
     {
@@ -301,7 +301,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets fallbackCondition
-     * @param float $fallbackCondition Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - **1**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - **2**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card.  For details, see the `emv_request_fallback_condition` field description in the [Card-Present Processing Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param int $fallbackCondition Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - **1**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - **2**: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card.  For details, see the `emv_request_fallback_condition` field description in the [Card-Present Processing Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setFallbackCondition($fallbackCondition)

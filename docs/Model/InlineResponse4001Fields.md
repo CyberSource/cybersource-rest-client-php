@@ -1,4 +1,4 @@
-# InlineResponse400Fields
+# InlineResponse4001Fields
 
 ## Properties
 Name | Type | Description | Notes
