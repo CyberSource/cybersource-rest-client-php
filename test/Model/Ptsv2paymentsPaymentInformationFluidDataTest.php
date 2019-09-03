@@ -78,9 +78,9 @@ class Ptsv2paymentsPaymentInformationFluidDataTest extends \PHPUnit_Framework_Te
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "keySerialNumber"
      */
-    public function testPropertyKey()
+    public function testPropertyKeySerialNumber()
     {
     }
 

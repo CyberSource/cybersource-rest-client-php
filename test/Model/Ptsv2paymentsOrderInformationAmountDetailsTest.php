@@ -106,6 +106,13 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     }
 
     /**
+     * Test attribute "gratuityAmount"
+     */
+    public function testPropertyGratuityAmount()
+    {
+    }
+
+    /**
      * Test attribute "taxAmount"
      */
     public function testPropertyTaxAmount()

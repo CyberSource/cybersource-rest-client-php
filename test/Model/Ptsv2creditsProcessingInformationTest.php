@@ -134,6 +134,13 @@ class Ptsv2creditsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "industryDataType"
+     */
+    public function testPropertyIndustryDataType()
+    {
+    }
+
+    /**
      * Test attribute "recurringOptions"
      */
     public function testPropertyRecurringOptions()

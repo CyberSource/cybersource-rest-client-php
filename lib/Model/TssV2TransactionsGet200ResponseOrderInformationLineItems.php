@@ -58,7 +58,7 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
         'productName' => 'string',
         'productSku' => 'string',
         'taxAmount' => 'string',
-        'quantity' => 'float',
+        'quantity' => 'int',
         'unitPrice' => 'string',
         'fulfillmentType' => 'string'
     ];
@@ -196,8 +196,8 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
             $invalid_properties[] = "invalid value for 'taxAmount', the character length must be smaller than or equal to 15.";
         }
 
-        if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 9999999999)) {
-            $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 9999999999.";
+        if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 999999999)) {
+            $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 999999999.";
         }
 
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
@@ -232,7 +232,7 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
         if (strlen($this->container['taxAmount']) > 15) {
             return false;
         }
-        if ($this->container['quantity'] > 9999999999) {
+        if ($this->container['quantity'] > 999999999) {
             return false;
         }
         if ($this->container['quantity'] < 1) {
@@ -347,7 +347,7 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
 
     /**
      * Gets quantity
-     * @return float
+     * @return int
      */
     public function getQuantity()
     {
@@ -356,14 +356,14 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
 
     /**
      * Sets quantity
-     * @param float $quantity For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling.
+     * @param int $quantity For a payment or capture, this field is required when _productCode_ is not **default** or one of the values related to shipping and handling.
      * @return $this
      */
     public function setQuantity($quantity)
     {
 
-        if (!is_null($quantity) && ($quantity > 9999999999)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling TssV2TransactionsGet200ResponseOrderInformationLineItems., must be smaller than or equal to 9999999999.');
+        if (!is_null($quantity) && ($quantity > 999999999)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling TssV2TransactionsGet200ResponseOrderInformationLineItems., must be smaller than or equal to 999999999.');
         }
         if (!is_null($quantity) && ($quantity < 1)) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling TssV2TransactionsGet200ResponseOrderInformationLineItems., must be bigger than or equal to 1.');

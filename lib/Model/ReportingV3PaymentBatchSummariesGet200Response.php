@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse400Fields
+ * ReportingV3PaymentBatchSummariesGet200Response
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse400Fields Class Doc Comment
+ * ReportingV3PaymentBatchSummariesGet200Response Class Doc Comment
  *
  * @category    Class
- * @description Provide validation failed input field details
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse400Fields implements ArrayAccess
+class ReportingV3PaymentBatchSummariesGet200Response implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,16 +47,16 @@ class InlineResponse400Fields implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_400_fields';
+    protected static $swaggerModelName = 'reportingV3PaymentBatchSummariesGet200Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'path' => 'string',
-        'message' => 'string',
-        'localizationKey' => 'string'
+        'startTime' => '\DateTime',
+        'endTime' => '\DateTime',
+        'paymentBatchSummaries' => '\CyberSource\Model\ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries[]'
     ];
 
     /**
@@ -65,9 +64,9 @@ class InlineResponse400Fields implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'path' => null,
-        'message' => null,
-        'localizationKey' => null
+        'startTime' => 'date-time',
+        'endTime' => 'date-time',
+        'paymentBatchSummaries' => null
     ];
 
     public static function swaggerTypes()
@@ -85,9 +84,9 @@ class InlineResponse400Fields implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'path' => 'path',
-        'message' => 'message',
-        'localizationKey' => 'localizationKey'
+        'startTime' => 'startTime',
+        'endTime' => 'endTime',
+        'paymentBatchSummaries' => 'paymentBatchSummaries'
     ];
 
 
@@ -96,9 +95,9 @@ class InlineResponse400Fields implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'path' => 'setPath',
-        'message' => 'setMessage',
-        'localizationKey' => 'setLocalizationKey'
+        'startTime' => 'setStartTime',
+        'endTime' => 'setEndTime',
+        'paymentBatchSummaries' => 'setPaymentBatchSummaries'
     ];
 
 
@@ -107,9 +106,9 @@ class InlineResponse400Fields implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'path' => 'getPath',
-        'message' => 'getMessage',
-        'localizationKey' => 'getLocalizationKey'
+        'startTime' => 'getStartTime',
+        'endTime' => 'getEndTime',
+        'paymentBatchSummaries' => 'getPaymentBatchSummaries'
     ];
 
     public static function attributeMap()
@@ -143,9 +142,9 @@ class InlineResponse400Fields implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['localizationKey'] = isset($data['localizationKey']) ? $data['localizationKey'] : null;
+        $this->container['startTime'] = isset($data['startTime']) ? $data['startTime'] : null;
+        $this->container['endTime'] = isset($data['endTime']) ? $data['endTime'] : null;
+        $this->container['paymentBatchSummaries'] = isset($data['paymentBatchSummaries']) ? $data['paymentBatchSummaries'] : null;
     }
 
     /**
@@ -174,64 +173,64 @@ class InlineResponse400Fields implements ArrayAccess
 
 
     /**
-     * Gets path
-     * @return string
+     * Gets startTime
+     * @return \DateTime
      */
-    public function getPath()
+    public function getStartTime()
     {
-        return $this->container['path'];
+        return $this->container['startTime'];
     }
 
     /**
-     * Sets path
-     * @param string $path Path of the failed property
+     * Sets startTime
+     * @param \DateTime $startTime
      * @return $this
      */
-    public function setPath($path)
+    public function setStartTime($startTime)
     {
-        $this->container['path'] = $path;
+        $this->container['startTime'] = $startTime;
 
         return $this;
     }
 
     /**
-     * Gets message
-     * @return string
+     * Gets endTime
+     * @return \DateTime
      */
-    public function getMessage()
+    public function getEndTime()
     {
-        return $this->container['message'];
+        return $this->container['endTime'];
     }
 
     /**
-     * Sets message
-     * @param string $message Error description about validation failed field
+     * Sets endTime
+     * @param \DateTime $endTime
      * @return $this
      */
-    public function setMessage($message)
+    public function setEndTime($endTime)
     {
-        $this->container['message'] = $message;
+        $this->container['endTime'] = $endTime;
 
         return $this;
     }
 
     /**
-     * Gets localizationKey
-     * @return string
+     * Gets paymentBatchSummaries
+     * @return \CyberSource\Model\ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries[]
      */
-    public function getLocalizationKey()
+    public function getPaymentBatchSummaries()
     {
-        return $this->container['localizationKey'];
+        return $this->container['paymentBatchSummaries'];
     }
 
     /**
-     * Sets localizationKey
-     * @param string $localizationKey Localized Key Name
+     * Sets paymentBatchSummaries
+     * @param \CyberSource\Model\ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries[] $paymentBatchSummaries
      * @return $this
      */
-    public function setLocalizationKey($localizationKey)
+    public function setPaymentBatchSummaries($paymentBatchSummaries)
     {
-        $this->container['localizationKey'] = $localizationKey;
+        $this->container['paymentBatchSummaries'] = $paymentBatchSummaries;
 
         return $this;
     }

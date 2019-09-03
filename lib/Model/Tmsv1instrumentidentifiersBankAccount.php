@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsV1InstrumentIdentifiersPost200ResponseBankAccount
+ * Tmsv1instrumentidentifiersBankAccount
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TmsV1InstrumentIdentifiersPost200ResponseBankAccount Class Doc Comment
+ * Tmsv1instrumentidentifiersBankAccount Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsV1InstrumentIdentifiersPost200ResponseBankAccount implements ArrayAccess
+class Tmsv1instrumentidentifiersBankAccount implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseBankAccount implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsV1InstrumentIdentifiersPost200Response_bankAccount';
+    protected static $swaggerModelName = 'tmsv1instrumentidentifiers_BankAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -211,10 +211,10 @@ class TmsV1InstrumentIdentifiersPost200ResponseBankAccount implements ArrayAcces
     public function setNumber($number)
     {
         if (!is_null($number) && (strlen($number) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling TmsV1InstrumentIdentifiersPost200ResponseBankAccount., must be smaller than or equal to 19.');
+            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv1instrumentidentifiersBankAccount., must be smaller than or equal to 19.');
         }
         if (!is_null($number) && (strlen($number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling TmsV1InstrumentIdentifiersPost200ResponseBankAccount., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv1instrumentidentifiersBankAccount., must be bigger than or equal to 1.');
         }
 
         $this->container['number'] = $number;
@@ -239,10 +239,10 @@ class TmsV1InstrumentIdentifiersPost200ResponseBankAccount implements ArrayAcces
     public function setRoutingNumber($routingNumber)
     {
         if (!is_null($routingNumber) && (strlen($routingNumber) > 9)) {
-            throw new \InvalidArgumentException('invalid length for $routingNumber when calling TmsV1InstrumentIdentifiersPost200ResponseBankAccount., must be smaller than or equal to 9.');
+            throw new \InvalidArgumentException('invalid length for $routingNumber when calling Tmsv1instrumentidentifiersBankAccount., must be smaller than or equal to 9.');
         }
         if (!is_null($routingNumber) && (strlen($routingNumber) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $routingNumber when calling TmsV1InstrumentIdentifiersPost200ResponseBankAccount., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $routingNumber when calling Tmsv1instrumentidentifiersBankAccount., must be bigger than or equal to 1.');
         }
 
         $this->container['routingNumber'] = $routingNumber;

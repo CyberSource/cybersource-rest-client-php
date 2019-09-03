@@ -411,7 +411,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets accountStatus
-     * @param string $accountStatus Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for Visa Platform Connect.
+     * @param string $accountStatus Possible values:   - `N`: Nonregulated  - `R`: Regulated  **Note** This field is returned only for CyberSource through VisaNet.
      * @return $this
      */
     public function setAccountStatus($accountStatus)
@@ -611,7 +611,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets group
-     * @param string $group Type of commercial card. This field is supported only for Visa Platform Connect. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card
+     * @param string $group Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card
      * @return $this
      */
     public function setGroup($group)

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | The description for this field is not available. | [optional] 
-**decision** | **string** | The description for this field is not available. | [optional] 
+**name** | **string** | The name of the profile. | [optional] 
+**decision** | **string** | Decision returned by the profile; this field contains one of these values: - ACCEPT - REJECT - REVIEW | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

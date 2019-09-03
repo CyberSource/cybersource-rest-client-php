@@ -64,6 +64,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'purchaseLevel' => 'string',
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
+        'industryDataType' => 'string',
         'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptions',
         'captureOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationCaptureOptions',
         'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationRecurringOptions',
@@ -85,6 +86,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'purchaseLevel' => null,
         'reportGroup' => null,
         'visaCheckoutId' => null,
+        'industryDataType' => null,
         'authorizationOptions' => null,
         'captureOptions' => null,
         'recurringOptions' => null,
@@ -116,6 +118,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'purchaseLevel' => 'purchaseLevel',
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
+        'industryDataType' => 'industryDataType',
         'authorizationOptions' => 'authorizationOptions',
         'captureOptions' => 'captureOptions',
         'recurringOptions' => 'recurringOptions',
@@ -138,6 +141,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'purchaseLevel' => 'setPurchaseLevel',
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
+        'industryDataType' => 'setIndustryDataType',
         'authorizationOptions' => 'setAuthorizationOptions',
         'captureOptions' => 'setCaptureOptions',
         'recurringOptions' => 'setRecurringOptions',
@@ -160,6 +164,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'purchaseLevel' => 'getPurchaseLevel',
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
+        'industryDataType' => 'getIndustryDataType',
         'authorizationOptions' => 'getAuthorizationOptions',
         'captureOptions' => 'getCaptureOptions',
         'recurringOptions' => 'getRecurringOptions',
@@ -207,6 +212,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['purchaseLevel'] = isset($data['purchaseLevel']) ? $data['purchaseLevel'] : null;
         $this->container['reportGroup'] = isset($data['reportGroup']) ? $data['reportGroup'] : null;
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
+        $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
         $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
         $this->container['recurringOptions'] = isset($data['recurringOptions']) ? $data['recurringOptions'] : null;
@@ -254,6 +260,10 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'visaCheckoutId', the character length must be smaller than or equal to 48.";
         }
 
+        if (!is_null($this->container['industryDataType']) && (strlen($this->container['industryDataType']) > 10)) {
+            $invalid_properties[] = "invalid value for 'industryDataType', the character length must be smaller than or equal to 10.";
+        }
+
         return $invalid_properties;
     }
 
@@ -288,6 +298,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['visaCheckoutId']) > 48) {
+            return false;
+        }
+        if (strlen($this->container['industryDataType']) > 10) {
             return false;
         }
         return true;
@@ -532,6 +545,31 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         }
 
         $this->container['visaCheckoutId'] = $visaCheckoutId;
+
+        return $this;
+    }
+
+    /**
+     * Gets industryDataType
+     * @return string
+     */
+    public function getIndustryDataType()
+    {
+        return $this->container['industryDataType'];
+    }
+
+    /**
+     * Sets industryDataType
+     * @param string $industryDataType Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - **airline** - **restaurant**
+     * @return $this
+     */
+    public function setIndustryDataType($industryDataType)
+    {
+        if (!is_null($industryDataType) && (strlen($industryDataType) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $industryDataType when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 10.');
+        }
+
+        $this->container['industryDataType'] = $industryDataType;
 
         return $this;
     }

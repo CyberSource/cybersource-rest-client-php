@@ -56,6 +56,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'type' => 'string',
         'card' => '\CyberSource\Model\Tmsv1instrumentidentifiersCard',
+        'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
         'billTo' => '\CyberSource\Model\Tmsv1instrumentidentifiersBillTo'
     ];
 
@@ -66,6 +67,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     protected static $swaggerFormats = [
         'type' => null,
         'card' => null,
+        'bankAccount' => null,
         'billTo' => null
     ];
 
@@ -86,6 +88,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     protected static $attributeMap = [
         'type' => 'type',
         'card' => 'card',
+        'bankAccount' => 'BankAccount',
         'billTo' => 'billTo'
     ];
 
@@ -97,6 +100,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     protected static $setters = [
         'type' => 'setType',
         'card' => 'setCard',
+        'bankAccount' => 'setBankAccount',
         'billTo' => 'setBillTo'
     ];
 
@@ -108,6 +112,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     protected static $getters = [
         'type' => 'getType',
         'card' => 'getCard',
+        'bankAccount' => 'getBankAccount',
         'billTo' => 'getBillTo'
     ];
 
@@ -144,6 +149,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
     }
 
@@ -210,6 +216,27 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets bankAccount
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount
+     */
+    public function getBankAccount()
+    {
+        return $this->container['bankAccount'];
+    }
+
+    /**
+     * Sets bankAccount
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersBankAccount $bankAccount
+     * @return $this
+     */
+    public function setBankAccount($bankAccount)
+    {
+        $this->container['bankAccount'] = $bankAccount;
 
         return $this;
     }

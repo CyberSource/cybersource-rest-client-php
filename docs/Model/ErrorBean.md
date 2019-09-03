@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **localizationKey** | **string** | Localization Key Name | [optional] 
 **correlationId** | **string** | Correlation Id | [optional] 
 **detail** | **string** | Error Detail | [optional] 
-**fields** | [**\CyberSource\Model\InlineResponse400Fields[]**](InlineResponse400Fields.md) | Error fields List | [optional] 
+**fields** | [**\CyberSource\Model\InlineResponse4001Fields[]**](InlineResponse4001Fields.md) | Error fields List | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

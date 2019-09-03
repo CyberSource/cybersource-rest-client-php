@@ -57,6 +57,9 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     protected static $swaggerTypes = [
         'requestId' => 'string',
         'interchangePerItemFee' => 'string',
+        'interchangeDescription' => 'string',
+        'interchangePercentage' => 'string',
+        'interchangePercentageAmount' => 'string',
         'discountPercentage' => 'string',
         'discountAmount' => 'string',
         'discountPerItemFee' => 'string',
@@ -74,6 +77,9 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     protected static $swaggerFormats = [
         'requestId' => null,
         'interchangePerItemFee' => null,
+        'interchangeDescription' => null,
+        'interchangePercentage' => null,
+        'interchangePercentageAmount' => null,
         'discountPercentage' => null,
         'discountAmount' => null,
         'discountPerItemFee' => null,
@@ -101,6 +107,9 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     protected static $attributeMap = [
         'requestId' => 'requestId',
         'interchangePerItemFee' => 'interchangePerItemFee',
+        'interchangeDescription' => 'interchangeDescription',
+        'interchangePercentage' => 'interchangePercentage',
+        'interchangePercentageAmount' => 'interchangePercentageAmount',
         'discountPercentage' => 'discountPercentage',
         'discountAmount' => 'discountAmount',
         'discountPerItemFee' => 'discountPerItemFee',
@@ -119,6 +128,9 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     protected static $setters = [
         'requestId' => 'setRequestId',
         'interchangePerItemFee' => 'setInterchangePerItemFee',
+        'interchangeDescription' => 'setInterchangeDescription',
+        'interchangePercentage' => 'setInterchangePercentage',
+        'interchangePercentageAmount' => 'setInterchangePercentageAmount',
         'discountPercentage' => 'setDiscountPercentage',
         'discountAmount' => 'setDiscountAmount',
         'discountPerItemFee' => 'setDiscountPerItemFee',
@@ -137,6 +149,9 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     protected static $getters = [
         'requestId' => 'getRequestId',
         'interchangePerItemFee' => 'getInterchangePerItemFee',
+        'interchangeDescription' => 'getInterchangeDescription',
+        'interchangePercentage' => 'getInterchangePercentage',
+        'interchangePercentageAmount' => 'getInterchangePercentageAmount',
         'discountPercentage' => 'getDiscountPercentage',
         'discountAmount' => 'getDiscountAmount',
         'discountPerItemFee' => 'getDiscountPerItemFee',
@@ -180,6 +195,9 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     {
         $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
         $this->container['interchangePerItemFee'] = isset($data['interchangePerItemFee']) ? $data['interchangePerItemFee'] : null;
+        $this->container['interchangeDescription'] = isset($data['interchangeDescription']) ? $data['interchangeDescription'] : null;
+        $this->container['interchangePercentage'] = isset($data['interchangePercentage']) ? $data['interchangePercentage'] : null;
+        $this->container['interchangePercentageAmount'] = isset($data['interchangePercentageAmount']) ? $data['interchangePercentageAmount'] : null;
         $this->container['discountPercentage'] = isset($data['discountPercentage']) ? $data['discountPercentage'] : null;
         $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
         $this->container['discountPerItemFee'] = isset($data['discountPerItemFee']) ? $data['discountPerItemFee'] : null;
@@ -264,6 +282,69 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
     public function setInterchangePerItemFee($interchangePerItemFee)
     {
         $this->container['interchangePerItemFee'] = $interchangePerItemFee;
+
+        return $this;
+    }
+
+    /**
+     * Gets interchangeDescription
+     * @return string
+     */
+    public function getInterchangeDescription()
+    {
+        return $this->container['interchangeDescription'];
+    }
+
+    /**
+     * Sets interchangeDescription
+     * @param string $interchangeDescription interchange Description
+     * @return $this
+     */
+    public function setInterchangeDescription($interchangeDescription)
+    {
+        $this->container['interchangeDescription'] = $interchangeDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets interchangePercentage
+     * @return string
+     */
+    public function getInterchangePercentage()
+    {
+        return $this->container['interchangePercentage'];
+    }
+
+    /**
+     * Sets interchangePercentage
+     * @param string $interchangePercentage interchange Percentage
+     * @return $this
+     */
+    public function setInterchangePercentage($interchangePercentage)
+    {
+        $this->container['interchangePercentage'] = $interchangePercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets interchangePercentageAmount
+     * @return string
+     */
+    public function getInterchangePercentageAmount()
+    {
+        return $this->container['interchangePercentageAmount'];
+    }
+
+    /**
+     * Sets interchangePercentageAmount
+     * @param string $interchangePercentageAmount interchange Percentage Amount
+     * @return $this
+     */
+    public function setInterchangePercentageAmount($interchangePercentageAmount)
+    {
+        $this->container['interchangePercentageAmount'] = $interchangePercentageAmount;
 
         return $this;
     }

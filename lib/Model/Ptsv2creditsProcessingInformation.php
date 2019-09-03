@@ -62,6 +62,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
         'purchaseLevel' => 'string',
+        'industryDataType' => 'string',
         'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions',
         'bankTransferOptions' => '\CyberSource\Model\Ptsv2creditsProcessingInformationBankTransferOptions'
     ];
@@ -79,6 +80,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => null,
         'visaCheckoutId' => null,
         'purchaseLevel' => null,
+        'industryDataType' => null,
         'recurringOptions' => null,
         'bankTransferOptions' => null
     ];
@@ -106,6 +108,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
         'purchaseLevel' => 'purchaseLevel',
+        'industryDataType' => 'industryDataType',
         'recurringOptions' => 'recurringOptions',
         'bankTransferOptions' => 'bankTransferOptions'
     ];
@@ -124,6 +127,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
         'purchaseLevel' => 'setPurchaseLevel',
+        'industryDataType' => 'setIndustryDataType',
         'recurringOptions' => 'setRecurringOptions',
         'bankTransferOptions' => 'setBankTransferOptions'
     ];
@@ -142,6 +146,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
         'purchaseLevel' => 'getPurchaseLevel',
+        'industryDataType' => 'getIndustryDataType',
         'recurringOptions' => 'getRecurringOptions',
         'bankTransferOptions' => 'getBankTransferOptions'
     ];
@@ -185,6 +190,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         $this->container['reportGroup'] = isset($data['reportGroup']) ? $data['reportGroup'] : null;
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
         $this->container['purchaseLevel'] = isset($data['purchaseLevel']) ? $data['purchaseLevel'] : null;
+        $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
         $this->container['recurringOptions'] = isset($data['recurringOptions']) ? $data['recurringOptions'] : null;
         $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
     }
@@ -230,6 +236,10 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'purchaseLevel', the character length must be smaller than or equal to 1.";
         }
 
+        if (!is_null($this->container['industryDataType']) && (strlen($this->container['industryDataType']) > 10)) {
+            $invalid_properties[] = "invalid value for 'industryDataType', the character length must be smaller than or equal to 10.";
+        }
+
         return $invalid_properties;
     }
 
@@ -264,6 +274,9 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['purchaseLevel']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['industryDataType']) > 10) {
             return false;
         }
         return true;
@@ -466,6 +479,31 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         }
 
         $this->container['purchaseLevel'] = $purchaseLevel;
+
+        return $this;
+    }
+
+    /**
+     * Gets industryDataType
+     * @return string
+     */
+    public function getIndustryDataType()
+    {
+        return $this->container['industryDataType'];
+    }
+
+    /**
+     * Sets industryDataType
+     * @param string $industryDataType Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - **airline** - **restaurant**
+     * @return $this
+     */
+    public function setIndustryDataType($industryDataType)
+    {
+        if (!is_null($industryDataType) && (strlen($industryDataType) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $industryDataType when calling Ptsv2creditsProcessingInformation., must be smaller than or equal to 10.');
+        }
+
+        $this->container['industryDataType'] = $industryDataType;
 
         return $this;
     }

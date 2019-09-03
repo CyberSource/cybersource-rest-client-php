@@ -92,6 +92,27 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetailsTest ext
     }
 
     /**
+     * Test attribute "interchangeDescription"
+     */
+    public function testPropertyInterchangeDescription()
+    {
+    }
+
+    /**
+     * Test attribute "interchangePercentage"
+     */
+    public function testPropertyInterchangePercentage()
+    {
+    }
+
+    /**
+     * Test attribute "interchangePercentageAmount"
+     */
+    public function testPropertyInterchangePercentageAmount()
+    {
+    }
+
+    /**
      * Test attribute "discountPercentage"
      */
     public function testPropertyDiscountPercentage()

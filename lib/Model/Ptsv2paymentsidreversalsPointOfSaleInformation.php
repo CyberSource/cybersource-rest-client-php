@@ -54,7 +54,7 @@ class Ptsv2paymentsidreversalsPointOfSaleInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emv' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv'
+        'emv' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Ptsv2paymentsidreversalsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Gets emv
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv
      */
     public function getEmv()
     {
@@ -171,7 +171,7 @@ class Ptsv2paymentsidreversalsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets emv
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv $emv
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv $emv
      * @return $this
      */
     public function setEmv($emv)

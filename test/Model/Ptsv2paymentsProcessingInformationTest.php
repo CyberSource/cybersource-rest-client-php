@@ -148,6 +148,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "industryDataType"
+     */
+    public function testPropertyIndustryDataType()
+    {
+    }
+
+    /**
      * Test attribute "authorizationOptions"
      */
     public function testPropertyAuthorizationOptions()

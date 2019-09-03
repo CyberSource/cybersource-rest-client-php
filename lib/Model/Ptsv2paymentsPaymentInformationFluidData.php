@@ -54,7 +54,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'key' => 'string',
+        'keySerialNumber' => 'string',
         'descriptor' => 'string',
         'value' => 'string',
         'encoding' => 'string'
@@ -65,7 +65,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'key' => null,
+        'keySerialNumber' => null,
         'descriptor' => null,
         'value' => null,
         'encoding' => null
@@ -86,7 +86,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
+        'keySerialNumber' => 'keySerialNumber',
         'descriptor' => 'descriptor',
         'value' => 'value',
         'encoding' => 'encoding'
@@ -98,7 +98,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
+        'keySerialNumber' => 'setKeySerialNumber',
         'descriptor' => 'setDescriptor',
         'value' => 'setValue',
         'encoding' => 'setEncoding'
@@ -110,7 +110,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
+        'keySerialNumber' => 'getKeySerialNumber',
         'descriptor' => 'getDescriptor',
         'value' => 'getValue',
         'encoding' => 'getEncoding'
@@ -147,7 +147,7 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['keySerialNumber'] = isset($data['keySerialNumber']) ? $data['keySerialNumber'] : null;
         $this->container['descriptor'] = isset($data['descriptor']) ? $data['descriptor'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
@@ -200,22 +200,22 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
 
 
     /**
-     * Gets key
+     * Gets keySerialNumber
      * @return string
      */
-    public function getKey()
+    public function getKeySerialNumber()
     {
-        return $this->container['key'];
+        return $this->container['keySerialNumber'];
     }
 
     /**
-     * Sets key
-     * @param string $key The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html)
+     * Sets keySerialNumber
+     * @param string $keySerialNumber The encoded or encrypted value that a payment solution returns for an authorization request. For details about the valid values for a key, see [Creating an Online Authorization](https://developer.cybersource.com/api/developer-guides/dita-payments/CreatingOnlineAuth.html)
      * @return $this
      */
-    public function setKey($key)
+    public function setKeySerialNumber($keySerialNumber)
     {
-        $this->container['key'] = $key;
+        $this->container['keySerialNumber'] = $keySerialNumber;
 
         return $this;
     }

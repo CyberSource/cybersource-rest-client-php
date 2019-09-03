@@ -302,7 +302,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
 
     /**
      * Sets prefix
-     * @param string $prefix The description for this field is not available.
+     * @param string $prefix Bank Identification Number (BIN). This is the initial four to six numbers on a credit card account number.
      * @return $this
      */
     public function setPrefix($prefix)
