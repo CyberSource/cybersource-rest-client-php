@@ -111,4 +111,11 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBank()
     {
     }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
 }

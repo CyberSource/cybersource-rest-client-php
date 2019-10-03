@@ -1,6 +1,6 @@
 <?php
 /**
- * RequestBodyTest
+ * CreateReportSubscriptionRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * RequestBodyTest Class Doc Comment
+ * CreateReportSubscriptionRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description RequestBody
+// * @description CreateReportSubscriptionRequest
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RequestBodyTest extends \PHPUnit_Framework_TestCase
+class CreateReportSubscriptionRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class RequestBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RequestBody"
+     * Test "CreateReportSubscriptionRequest"
      */
-    public function testRequestBody()
+    public function testCreateReportSubscriptionRequest()
     {
     }
 
@@ -106,6 +106,13 @@ class RequestBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "reportFrequency"
+     */
+    public function testPropertyReportFrequency()
+    {
+    }
+
+    /**
      * Test attribute "reportName"
      */
     public function testPropertyReportName()
@@ -120,16 +127,16 @@ class RequestBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "reportStartTime"
+     * Test attribute "startTime"
      */
-    public function testPropertyReportStartTime()
+    public function testPropertyStartTime()
     {
     }
 
     /**
-     * Test attribute "reportEndTime"
+     * Test attribute "startDay"
      */
-    public function testPropertyReportEndTime()
+    public function testPropertyStartDay()
     {
     }
 

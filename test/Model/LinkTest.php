@@ -83,18 +83,4 @@ class LinkTest extends \PHPUnit_Framework_TestCase
     public function testPropertyHref()
     {
     }
-
-    /**
-     * Test attribute "title"
-     */
-    public function testPropertyTitle()
-    {
-    }
-
-    /**
-     * Test attribute "method"
-     */
-    public function testPropertyMethod()
-    {
-    }
 }

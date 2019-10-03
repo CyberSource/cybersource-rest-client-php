@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4001FieldsTest
+ * Ptsv2paymentsProcessingInformationElectronicBenefitsTransferTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * InlineResponse4001FieldsTest Class Doc Comment
+ * Ptsv2paymentsProcessingInformationElectronicBenefitsTransferTest Class Doc Comment
  *
  * @category    Class */
-// * @description Provide validation failed input field details
+// * @description Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse4001FieldsTest extends \PHPUnit_Framework_TestCase
+class Ptsv2paymentsProcessingInformationElectronicBenefitsTransferTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,30 +71,23 @@ class InlineResponse4001FieldsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse4001Fields"
+     * Test "Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer"
      */
-    public function testInlineResponse4001Fields()
+    public function testPtsv2paymentsProcessingInformationElectronicBenefitsTransfer()
     {
     }
 
     /**
-     * Test attribute "path"
+     * Test attribute "category"
      */
-    public function testPropertyPath()
+    public function testPropertyCategory()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "voucherSerialNumber"
      */
-    public function testPropertyMessage()
-    {
-    }
-
-    /**
-     * Test attribute "localizationKey"
-     */
-    public function testPropertyLocalizationKey()
+    public function testPropertyVoucherSerialNumber()
     {
     }
 }

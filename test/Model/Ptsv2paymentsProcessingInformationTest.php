@@ -181,4 +181,18 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBankTransferOptions()
     {
     }
+
+    /**
+     * Test attribute "purchaseOptions"
+     */
+    public function testPropertyPurchaseOptions()
+    {
+    }
+
+    /**
+     * Test attribute "electronicBenefitsTransfer"
+     */
+    public function testPropertyElectronicBenefitsTransfer()
+    {
+    }
 }

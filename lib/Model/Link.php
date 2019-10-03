@@ -54,9 +54,7 @@ class Link implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'href' => 'string',
-        'title' => 'string',
-        'method' => 'string'
+        'href' => 'string'
     ];
 
     /**
@@ -64,9 +62,7 @@ class Link implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'href' => null,
-        'title' => null,
-        'method' => null
+        'href' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +80,7 @@ class Link implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'href',
-        'title' => 'title',
-        'method' => 'method'
+        'href' => 'href'
     ];
 
 
@@ -95,9 +89,7 @@ class Link implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'href' => 'setHref',
-        'title' => 'setTitle',
-        'method' => 'setMethod'
+        'href' => 'setHref'
     ];
 
 
@@ -106,9 +98,7 @@ class Link implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'href' => 'getHref',
-        'title' => 'getTitle',
-        'method' => 'getMethod'
+        'href' => 'getHref'
     ];
 
     public static function attributeMap()
@@ -143,8 +133,6 @@ class Link implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['href'] = isset($data['href']) ? $data['href'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
     /**
@@ -183,54 +171,12 @@ class Link implements ArrayAccess
 
     /**
      * Sets href
-     * @param string $href URI of the linked resource.
+     * @param string $href
      * @return $this
      */
     public function setHref($href)
     {
         $this->container['href'] = $href;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     * @param string $title Label of the linked resource.
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets method
-     * @return string
-     */
-    public function getMethod()
-    {
-        return $this->container['method'];
-    }
-
-    /**
-     * Sets method
-     * @param string $method HTTP method of the linked resource.
-     * @return $this
-     */
-    public function setMethod($method)
-    {
-        $this->container['method'] = $method;
 
         return $this;
     }

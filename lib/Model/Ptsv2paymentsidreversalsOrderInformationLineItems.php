@@ -54,7 +54,7 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'quantity' => 'float',
+        'quantity' => 'int',
         'unitPrice' => 'string'
     ];
 
@@ -150,8 +150,8 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 9999999999)) {
-            $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 9999999999.";
+        if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 999999999)) {
+            $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 999999999.";
         }
 
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
@@ -174,7 +174,7 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['quantity'] > 9999999999) {
+        if ($this->container['quantity'] > 999999999) {
             return false;
         }
         if ($this->container['quantity'] < 1) {
@@ -189,7 +189,7 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Gets quantity
-     * @return float
+     * @return int
      */
     public function getQuantity()
     {
@@ -198,14 +198,14 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param float $quantity Number of units for this order.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the total count of individual prepaid gift cards purchased.
+     * @param int $quantity Number of units for this order.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the total count of individual prepaid gift cards purchased.
      * @return $this
      */
     public function setQuantity($quantity)
     {
 
-        if (!is_null($quantity) && ($quantity > 9999999999)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling Ptsv2paymentsidreversalsOrderInformationLineItems., must be smaller than or equal to 9999999999.');
+        if (!is_null($quantity) && ($quantity > 999999999)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling Ptsv2paymentsidreversalsOrderInformationLineItems., must be smaller than or equal to 999999999.');
         }
         if (!is_null($quantity) && ($quantity < 1)) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Ptsv2paymentsidreversalsOrderInformationLineItems., must be bigger than or equal to 1.');

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getTransactionBatchDetails**
-> getTransactionBatchDetails($id, $uploadDate, $status)
+> getTransactionBatchDetails($id)
 
 Get transaction details for a given batch id
 
@@ -23,11 +23,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\TransactionBatchesApi();
 $id = "id_example"; // string | The batch id assigned for the template.
-$uploadDate = new \DateTime("2013-10-20"); // \DateTime | Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd
-$status = "status_example"; // string | Allows you to filter by rejected response.  Valid values: - Rejected
 
 try {
-    $api_instance->getTransactionBatchDetails($id, $uploadDate, $status);
+    $api_instance->getTransactionBatchDetails($id);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionBatchesApi->getTransactionBatchDetails: ', $e->getMessage(), PHP_EOL;
 }
@@ -39,8 +37,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The batch id assigned for the template. |
- **uploadDate** | **\DateTime**| Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd | [optional]
- **status** | **string**| Allows you to filter by rejected response.  Valid values: - Rejected | [optional]
 
 ### Return type
 

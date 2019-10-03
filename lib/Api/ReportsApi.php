@@ -92,14 +92,14 @@ class ReportsApi
      *
      * Create Adhoc Report
      *
-     * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\CreateAdhocReportRequest $createAdhocReportRequest Report subscription request payload (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createReport($requestBody, $organizationId = null)
+    public function createReport($createAdhocReportRequest, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->createReportWithHttpInfo($requestBody, $organizationId);
+        list($response, $statusCode, $httpHeader) = $this->createReportWithHttpInfo($createAdhocReportRequest, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -108,16 +108,16 @@ class ReportsApi
      *
      * Create Adhoc Report
      *
-     * @param \CyberSource\Model\RequestBody $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\CreateAdhocReportRequest $createAdhocReportRequest Report subscription request payload (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createReportWithHttpInfo($requestBody, $organizationId = null)
+    public function createReportWithHttpInfo($createAdhocReportRequest, $organizationId = null)
     {
-        // verify the required parameter 'requestBody' is set
-        if ($requestBody === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $requestBody when calling createReport');
+        // verify the required parameter 'createAdhocReportRequest' is set
+        if ($createAdhocReportRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createAdhocReportRequest when calling createReport');
         }
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportsApi.createReport, must be smaller than or equal to 32.');
@@ -147,8 +147,8 @@ class ReportsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($requestBody)) {
-            $_tempBody = $requestBody;
+        if (isset($createAdhocReportRequest)) {
+            $_tempBody = $createAdhocReportRequest;
         }
 
         // for model (json/xml)

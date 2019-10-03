@@ -92,14 +92,14 @@ class ReportSubscriptionsApi
      *
      * Create Report Subscription for a report name by organization
      *
-     * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\CreateReportSubscriptionRequest $createReportSubscriptionRequest Report subscription request payload (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSubscription($requestBody, $organizationId = null)
+    public function createSubscription($createReportSubscriptionRequest, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->createSubscriptionWithHttpInfo($requestBody, $organizationId);
+        list($response, $statusCode, $httpHeader) = $this->createSubscriptionWithHttpInfo($createReportSubscriptionRequest, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -108,16 +108,16 @@ class ReportSubscriptionsApi
      *
      * Create Report Subscription for a report name by organization
      *
-     * @param \CyberSource\Model\RequestBody1 $requestBody Report subscription request payload (required)
+     * @param \CyberSource\Model\CreateReportSubscriptionRequest $createReportSubscriptionRequest Report subscription request payload (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createSubscriptionWithHttpInfo($requestBody, $organizationId = null)
+    public function createSubscriptionWithHttpInfo($createReportSubscriptionRequest, $organizationId = null)
     {
-        // verify the required parameter 'requestBody' is set
-        if ($requestBody === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $requestBody when calling createSubscription');
+        // verify the required parameter 'createReportSubscriptionRequest' is set
+        if ($createReportSubscriptionRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createReportSubscriptionRequest when calling createSubscription');
         }
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.createSubscription, must be smaller than or equal to 32.');
@@ -147,8 +147,8 @@ class ReportSubscriptionsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($requestBody)) {
-            $_tempBody = $requestBody;
+        if (isset($createReportSubscriptionRequest)) {
+            $_tempBody = $createReportSubscriptionRequest;
         }
 
         // for model (json/xml)
@@ -173,7 +173,7 @@ class ReportSubscriptionsApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

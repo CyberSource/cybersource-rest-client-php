@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createReport**
-> createReport($requestBody, $organizationId)
+> createReport($createAdhocReportRequest, $organizationId)
 
 Create Adhoc Report
 
@@ -22,11 +22,11 @@ Create a one-time report. You must specify the type of report in reportDefinitio
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportsApi();
-$requestBody = new \CyberSource\Model\RequestBody(); // \CyberSource\Model\RequestBody | Report subscription request payload
+$createAdhocReportRequest = new \CyberSource\Model\CreateAdhocReportRequest(); // \CyberSource\Model\CreateAdhocReportRequest | Report subscription request payload
 $organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $api_instance->createReport($requestBody, $organizationId);
+    $api_instance->createReport($createAdhocReportRequest, $organizationId);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->createReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**\CyberSource\Model\RequestBody**](../Model/RequestBody.md)| Report subscription request payload |
+ **createAdhocReportRequest** | [**\CyberSource\Model\CreateAdhocReportRequest**](../Model/CreateAdhocReportRequest.md)| Report subscription request payload |
  **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type

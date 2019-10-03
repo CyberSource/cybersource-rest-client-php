@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **captureOptions** | [**\CyberSource\Model\Ptsv2paymentsProcessingInformationCaptureOptions**](Ptsv2paymentsProcessingInformationCaptureOptions.md) |  | [optional] 
 **recurringOptions** | [**\CyberSource\Model\Ptsv2paymentsProcessingInformationRecurringOptions**](Ptsv2paymentsProcessingInformationRecurringOptions.md) |  | [optional] 
 **bankTransferOptions** | [**\CyberSource\Model\Ptsv2paymentsProcessingInformationBankTransferOptions**](Ptsv2paymentsProcessingInformationBankTransferOptions.md) |  | [optional] 
+**purchaseOptions** | [**\CyberSource\Model\Ptsv2paymentsProcessingInformationPurchaseOptions**](Ptsv2paymentsProcessingInformationPurchaseOptions.md) |  | [optional] 
+**electronicBenefitsTransfer** | [**\CyberSource\Model\Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer**](Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

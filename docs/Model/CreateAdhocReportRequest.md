@@ -1,4 +1,4 @@
-# RequestBody
+# CreateAdhocReportRequest
 
 ## Properties
 Name | Type | Description | Notes

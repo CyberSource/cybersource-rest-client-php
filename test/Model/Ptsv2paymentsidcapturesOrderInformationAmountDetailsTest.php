@@ -209,4 +209,11 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetailsTest extends \PHPUnit_
     public function testPropertyOriginalCurrency()
     {
     }
+
+    /**
+     * Test attribute "cashbackAmount"
+     */
+    public function testPropertyCashbackAmount()
+    {
+    }
 }

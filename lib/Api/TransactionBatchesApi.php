@@ -93,14 +93,12 @@ class TransactionBatchesApi
      * Get transaction details for a given batch id
      *
      * @param string $id The batch id assigned for the template. (required)
-     * @param \DateTime $uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd (optional)
-     * @param string $status Allows you to filter by rejected response.  Valid values: - Rejected (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionBatchDetails($id, $uploadDate = null, $status = null)
+    public function getTransactionBatchDetails($id)
     {
-        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchDetailsWithHttpInfo($id, $uploadDate, $status);
+        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchDetailsWithHttpInfo($id);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -110,12 +108,10 @@ class TransactionBatchesApi
      * Get transaction details for a given batch id
      *
      * @param string $id The batch id assigned for the template. (required)
-     * @param \DateTime $uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd (optional)
-     * @param string $status Allows you to filter by rejected response.  Valid values: - Rejected (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionBatchDetailsWithHttpInfo($id, $uploadDate = null, $status = null)
+    public function getTransactionBatchDetailsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -133,14 +129,6 @@ class TransactionBatchesApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
-        // query params
-        if ($uploadDate !== null) {
-            $queryParams['uploadDate'] = $this->apiClient->getSerializer()->toQueryValue($uploadDate);
-        }
-        // query params
-        if ($status !== null) {
-            $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
-        }
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(

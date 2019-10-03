@@ -78,16 +78,23 @@ class ErrorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "responseStatus"
+     * Test attribute "type"
      */
-    public function testPropertyResponseStatus()
+    public function testPropertyType()
     {
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "message"
      */
-    public function testPropertyLinks()
+    public function testPropertyMessage()
+    {
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
     {
     }
 }

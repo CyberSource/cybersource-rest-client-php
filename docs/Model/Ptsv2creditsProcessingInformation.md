@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **industryDataType** | **string** | Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to &#x60;airline&#x60; in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to &#x60;restaurant&#x60; in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - **airline** - **restaurant** | [optional] 
 **recurringOptions** | [**\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions**](Ptsv2paymentsidrefundsProcessingInformationRecurringOptions.md) |  | [optional] 
 **bankTransferOptions** | [**\CyberSource\Model\Ptsv2creditsProcessingInformationBankTransferOptions**](Ptsv2creditsProcessingInformationBankTransferOptions.md) |  | [optional] 
+**purchaseOptions** | [**\CyberSource\Model\Ptsv2creditsProcessingInformationPurchaseOptions**](Ptsv2creditsProcessingInformationPurchaseOptions.md) |  | [optional] 
+**electronicBenefitsTransfer** | [**\CyberSource\Model\Ptsv2creditsProcessingInformationElectronicBenefitsTransfer**](Ptsv2creditsProcessingInformationElectronicBenefitsTransfer.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

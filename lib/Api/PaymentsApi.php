@@ -118,7 +118,7 @@ class PaymentsApi
             throw new \InvalidArgumentException('Missing the required parameter $createPaymentRequest when calling createPayment');
         }
         // parse inputs
-        $resourcePath = "/pts/v2/payments/";
+        $resourcePath = "/pts/v2/payments";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -150,7 +150,7 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsPost201Response',
-                '/pts/v2/payments/'
+                '/pts/v2/payments'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsPost201Response', $httpHeader), $statusCode, $httpHeader];

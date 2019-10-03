@@ -54,7 +54,8 @@ class VoidCaptureRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation'
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformation',
+        'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsPaymentInformation'
     ];
 
     /**
@@ -62,7 +63,8 @@ class VoidCaptureRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'clientReferenceInformation' => null
+        'clientReferenceInformation' => null,
+        'paymentInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class VoidCaptureRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'clientReferenceInformation' => 'clientReferenceInformation'
+        'clientReferenceInformation' => 'clientReferenceInformation',
+        'paymentInformation' => 'paymentInformation'
     ];
 
 
@@ -89,7 +92,8 @@ class VoidCaptureRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'clientReferenceInformation' => 'setClientReferenceInformation'
+        'clientReferenceInformation' => 'setClientReferenceInformation',
+        'paymentInformation' => 'setPaymentInformation'
     ];
 
 
@@ -98,7 +102,8 @@ class VoidCaptureRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'clientReferenceInformation' => 'getClientReferenceInformation'
+        'clientReferenceInformation' => 'getClientReferenceInformation',
+        'paymentInformation' => 'getPaymentInformation'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class VoidCaptureRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
+        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class VoidCaptureRequest implements ArrayAccess
     public function setClientReferenceInformation($clientReferenceInformation)
     {
         $this->container['clientReferenceInformation'] = $clientReferenceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidvoidsPaymentInformation
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidvoidsPaymentInformation $paymentInformation
+     * @return $this
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }

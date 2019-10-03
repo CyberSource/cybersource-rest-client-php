@@ -78,9 +78,9 @@ class ErrorLinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "self"
+     * Test attribute "next"
      */
-    public function testPropertySelf()
+    public function testPropertyNext()
     {
     }
 
@@ -92,9 +92,9 @@ class ErrorLinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "next"
+     * Test attribute "self"
      */
-    public function testPropertyNext()
+    public function testPropertySelf()
     {
     }
 }
