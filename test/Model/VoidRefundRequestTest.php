@@ -83,4 +83,11 @@ class VoidRefundRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyClientReferenceInformation()
     {
     }
+
+    /**
+     * Test attribute "paymentInformation"
+     */
+    public function testPropertyPaymentInformation()
+    {
+    }
 }

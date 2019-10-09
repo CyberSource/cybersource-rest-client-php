@@ -4,15 +4,15 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getXSDV2**](DownloadXSDApi.md#getXSDV2) | **GET** /xsds/{reportDefinitionNameVersion} | Used to download XSDs for reports
+[**getXSDV2**](DownloadXSDApi.md#getXSDV2) | **GET** /xsds/{reportDefinitionNameVersion} | Download XSD for report
 
 
 # **getXSDV2**
 > getXSDV2($reportDefinitionNameVersion)
 
-Used to download XSDs for reports
+Download XSD for report
 
-Downloads XSDs for reports on no-auth.
+Used to download XSDs for reports on no-auth.
 
 ### Example
 ```php

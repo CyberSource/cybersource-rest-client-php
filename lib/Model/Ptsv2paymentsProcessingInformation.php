@@ -68,7 +68,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptions',
         'captureOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationCaptureOptions',
         'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationRecurringOptions',
-        'bankTransferOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationBankTransferOptions'
+        'bankTransferOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationBankTransferOptions',
+        'purchaseOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationPurchaseOptions',
+        'electronicBenefitsTransfer' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer'
     ];
 
     /**
@@ -90,7 +92,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'authorizationOptions' => null,
         'captureOptions' => null,
         'recurringOptions' => null,
-        'bankTransferOptions' => null
+        'bankTransferOptions' => null,
+        'purchaseOptions' => null,
+        'electronicBenefitsTransfer' => null
     ];
 
     public static function swaggerTypes()
@@ -122,7 +126,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'authorizationOptions' => 'authorizationOptions',
         'captureOptions' => 'captureOptions',
         'recurringOptions' => 'recurringOptions',
-        'bankTransferOptions' => 'bankTransferOptions'
+        'bankTransferOptions' => 'bankTransferOptions',
+        'purchaseOptions' => 'purchaseOptions',
+        'electronicBenefitsTransfer' => 'electronicBenefitsTransfer'
     ];
 
 
@@ -145,7 +151,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'authorizationOptions' => 'setAuthorizationOptions',
         'captureOptions' => 'setCaptureOptions',
         'recurringOptions' => 'setRecurringOptions',
-        'bankTransferOptions' => 'setBankTransferOptions'
+        'bankTransferOptions' => 'setBankTransferOptions',
+        'purchaseOptions' => 'setPurchaseOptions',
+        'electronicBenefitsTransfer' => 'setElectronicBenefitsTransfer'
     ];
 
 
@@ -168,7 +176,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'authorizationOptions' => 'getAuthorizationOptions',
         'captureOptions' => 'getCaptureOptions',
         'recurringOptions' => 'getRecurringOptions',
-        'bankTransferOptions' => 'getBankTransferOptions'
+        'bankTransferOptions' => 'getBankTransferOptions',
+        'purchaseOptions' => 'getPurchaseOptions',
+        'electronicBenefitsTransfer' => 'getElectronicBenefitsTransfer'
     ];
 
     public static function attributeMap()
@@ -217,6 +227,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
         $this->container['recurringOptions'] = isset($data['recurringOptions']) ? $data['recurringOptions'] : null;
         $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
+        $this->container['purchaseOptions'] = isset($data['purchaseOptions']) ? $data['purchaseOptions'] : null;
+        $this->container['electronicBenefitsTransfer'] = isset($data['electronicBenefitsTransfer']) ? $data['electronicBenefitsTransfer'] : null;
     }
 
     /**
@@ -654,6 +666,48 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setBankTransferOptions($bankTransferOptions)
     {
         $this->container['bankTransferOptions'] = $bankTransferOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchaseOptions
+     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationPurchaseOptions
+     */
+    public function getPurchaseOptions()
+    {
+        return $this->container['purchaseOptions'];
+    }
+
+    /**
+     * Sets purchaseOptions
+     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationPurchaseOptions $purchaseOptions
+     * @return $this
+     */
+    public function setPurchaseOptions($purchaseOptions)
+    {
+        $this->container['purchaseOptions'] = $purchaseOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets electronicBenefitsTransfer
+     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer
+     */
+    public function getElectronicBenefitsTransfer()
+    {
+        return $this->container['electronicBenefitsTransfer'];
+    }
+
+    /**
+     * Sets electronicBenefitsTransfer
+     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer $electronicBenefitsTransfer
+     * @return $this
+     */
+    public function setElectronicBenefitsTransfer($electronicBenefitsTransfer)
+    {
+        $this->container['electronicBenefitsTransfer'] = $electronicBenefitsTransfer;
 
         return $this;
     }

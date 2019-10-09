@@ -76,7 +76,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'taxDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsTaxDetails[]',
         'serviceFeeAmount' => 'string',
         'originalAmount' => 'string',
-        'originalCurrency' => 'string'
+        'originalCurrency' => 'string',
+        'cashbackAmount' => 'string'
     ];
 
     /**
@@ -106,7 +107,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'taxDetails' => null,
         'serviceFeeAmount' => null,
         'originalAmount' => null,
-        'originalCurrency' => null
+        'originalCurrency' => null,
+        'cashbackAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -146,7 +148,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'taxDetails' => 'taxDetails',
         'serviceFeeAmount' => 'serviceFeeAmount',
         'originalAmount' => 'originalAmount',
-        'originalCurrency' => 'originalCurrency'
+        'originalCurrency' => 'originalCurrency',
+        'cashbackAmount' => 'cashbackAmount'
     ];
 
 
@@ -177,7 +180,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'taxDetails' => 'setTaxDetails',
         'serviceFeeAmount' => 'setServiceFeeAmount',
         'originalAmount' => 'setOriginalAmount',
-        'originalCurrency' => 'setOriginalCurrency'
+        'originalCurrency' => 'setOriginalCurrency',
+        'cashbackAmount' => 'setCashbackAmount'
     ];
 
 
@@ -208,7 +212,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'taxDetails' => 'getTaxDetails',
         'serviceFeeAmount' => 'getServiceFeeAmount',
         'originalAmount' => 'getOriginalAmount',
-        'originalCurrency' => 'getOriginalCurrency'
+        'originalCurrency' => 'getOriginalCurrency',
+        'cashbackAmount' => 'getCashbackAmount'
     ];
 
     public static function attributeMap()
@@ -265,6 +270,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         $this->container['serviceFeeAmount'] = isset($data['serviceFeeAmount']) ? $data['serviceFeeAmount'] : null;
         $this->container['originalAmount'] = isset($data['originalAmount']) ? $data['originalAmount'] : null;
         $this->container['originalCurrency'] = isset($data['originalCurrency']) ? $data['originalCurrency'] : null;
+        $this->container['cashbackAmount'] = isset($data['cashbackAmount']) ? $data['cashbackAmount'] : null;
     }
 
     /**
@@ -356,6 +362,10 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
             $invalid_properties[] = "invalid value for 'originalCurrency', the character length must be smaller than or equal to 15.";
         }
 
+        if (!is_null($this->container['cashbackAmount']) && (strlen($this->container['cashbackAmount']) > 13)) {
+            $invalid_properties[] = "invalid value for 'cashbackAmount', the character length must be smaller than or equal to 13.";
+        }
+
         return $invalid_properties;
     }
 
@@ -426,6 +436,9 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
             return false;
         }
         if (strlen($this->container['originalCurrency']) > 15) {
+            return false;
+        }
+        if (strlen($this->container['cashbackAmount']) > 13) {
             return false;
         }
         return true;
@@ -991,6 +1004,31 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         }
 
         $this->container['originalCurrency'] = $originalCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets cashbackAmount
+     * @return string
+     */
+    public function getCashbackAmount()
+    {
+        return $this->container['cashbackAmount'];
+    }
+
+    /**
+     * Sets cashbackAmount
+     * @param string $cashbackAmount Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value.
+     * @return $this
+     */
+    public function setCashbackAmount($cashbackAmount)
+    {
+        if (!is_null($cashbackAmount) && (strlen($cashbackAmount) > 13)) {
+            throw new \InvalidArgumentException('invalid length for $cashbackAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 13.');
+        }
+
+        $this->container['cashbackAmount'] = $cashbackAmount;
 
         return $this;
     }

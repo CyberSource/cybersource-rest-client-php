@@ -54,8 +54,7 @@ class ErrorResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'responseStatus' => '\CyberSource\Model\InlineResponseDefaultResponseStatus',
-        'links' => '\CyberSource\Model\InlineResponseDefaultLinks'
+        
     ];
 
     /**
@@ -63,8 +62,7 @@ class ErrorResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'responseStatus' => null,
-        'links' => null
+        
     ];
 
     public static function swaggerTypes()
@@ -82,8 +80,7 @@ class ErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'responseStatus' => 'responseStatus',
-        'links' => '_links'
+        
     ];
 
 
@@ -92,8 +89,7 @@ class ErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'responseStatus' => 'setResponseStatus',
-        'links' => 'setLinks'
+        
     ];
 
 
@@ -102,8 +98,7 @@ class ErrorResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'responseStatus' => 'getResponseStatus',
-        'links' => 'getLinks'
+        
     ];
 
     public static function attributeMap()
@@ -137,8 +132,6 @@ class ErrorResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['responseStatus'] = isset($data['responseStatus']) ? $data['responseStatus'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
     }
 
     /**
@@ -148,7 +141,7 @@ class ErrorResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = [];
+        $invalid_properties = parent::listInvalidProperties();
 
         return $invalid_properties;
     }
@@ -161,52 +154,13 @@ class ErrorResponse implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
-
-    /**
-     * Gets responseStatus
-     * @return \CyberSource\Model\InlineResponseDefaultResponseStatus
-     */
-    public function getResponseStatus()
-    {
-        return $this->container['responseStatus'];
-    }
-
-    /**
-     * Sets responseStatus
-     * @param \CyberSource\Model\InlineResponseDefaultResponseStatus $responseStatus
-     * @return $this
-     */
-    public function setResponseStatus($responseStatus)
-    {
-        $this->container['responseStatus'] = $responseStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponseDefaultLinks
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponseDefaultLinks $links
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

@@ -85,16 +85,16 @@ class LinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "documentation"
+     * Test attribute "ancestor"
      */
-    public function testPropertyDocumentation()
+    public function testPropertyAncestor()
     {
     }
 
     /**
-     * Test attribute "next"
+     * Test attribute "successor"
      */
-    public function testPropertyNext()
+    public function testPropertySuccessor()
     {
     }
 }

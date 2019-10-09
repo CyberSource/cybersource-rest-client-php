@@ -1,6 +1,6 @@
 <?php
 /**
- * RequestBody1
+ * CreateAdhocReportRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * RequestBody1 Class Doc Comment
+ * CreateAdhocReportRequest Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RequestBody1 implements ArrayAccess
+class CreateAdhocReportRequest implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class RequestBody1 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'requestBody_1';
+    protected static $swaggerModelName = 'createAdhocReportRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,10 @@ class RequestBody1 implements ArrayAccess
         'reportDefinitionName' => 'string',
         'reportFields' => 'string[]',
         'reportMimeType' => 'string',
-        'reportFrequency' => 'string',
         'reportName' => 'string',
         'timezone' => 'string',
-        'startTime' => 'string',
-        'startDay' => 'int',
+        'reportStartTime' => '\DateTime',
+        'reportEndTime' => '\DateTime',
         'reportFilters' => 'map[string,string[]]',
         'reportPreferences' => '\CyberSource\Model\Reportingv3reportsReportPreferences',
         'groupName' => 'string'
@@ -77,11 +76,10 @@ class RequestBody1 implements ArrayAccess
         'reportDefinitionName' => null,
         'reportFields' => null,
         'reportMimeType' => null,
-        'reportFrequency' => null,
         'reportName' => null,
         'timezone' => null,
-        'startTime' => null,
-        'startDay' => null,
+        'reportStartTime' => 'date-time',
+        'reportEndTime' => 'date-time',
         'reportFilters' => null,
         'reportPreferences' => null,
         'groupName' => null
@@ -106,11 +104,10 @@ class RequestBody1 implements ArrayAccess
         'reportDefinitionName' => 'reportDefinitionName',
         'reportFields' => 'reportFields',
         'reportMimeType' => 'reportMimeType',
-        'reportFrequency' => 'reportFrequency',
         'reportName' => 'reportName',
         'timezone' => 'timezone',
-        'startTime' => 'startTime',
-        'startDay' => 'startDay',
+        'reportStartTime' => 'reportStartTime',
+        'reportEndTime' => 'reportEndTime',
         'reportFilters' => 'reportFilters',
         'reportPreferences' => 'reportPreferences',
         'groupName' => 'groupName'
@@ -126,11 +123,10 @@ class RequestBody1 implements ArrayAccess
         'reportDefinitionName' => 'setReportDefinitionName',
         'reportFields' => 'setReportFields',
         'reportMimeType' => 'setReportMimeType',
-        'reportFrequency' => 'setReportFrequency',
         'reportName' => 'setReportName',
         'timezone' => 'setTimezone',
-        'startTime' => 'setStartTime',
-        'startDay' => 'setStartDay',
+        'reportStartTime' => 'setReportStartTime',
+        'reportEndTime' => 'setReportEndTime',
         'reportFilters' => 'setReportFilters',
         'reportPreferences' => 'setReportPreferences',
         'groupName' => 'setGroupName'
@@ -146,11 +142,10 @@ class RequestBody1 implements ArrayAccess
         'reportDefinitionName' => 'getReportDefinitionName',
         'reportFields' => 'getReportFields',
         'reportMimeType' => 'getReportMimeType',
-        'reportFrequency' => 'getReportFrequency',
         'reportName' => 'getReportName',
         'timezone' => 'getTimezone',
-        'startTime' => 'getStartTime',
-        'startDay' => 'getStartDay',
+        'reportStartTime' => 'getReportStartTime',
+        'reportEndTime' => 'getReportEndTime',
         'reportFilters' => 'getReportFilters',
         'reportPreferences' => 'getReportPreferences',
         'groupName' => 'getGroupName'
@@ -191,11 +186,10 @@ class RequestBody1 implements ArrayAccess
         $this->container['reportDefinitionName'] = isset($data['reportDefinitionName']) ? $data['reportDefinitionName'] : null;
         $this->container['reportFields'] = isset($data['reportFields']) ? $data['reportFields'] : null;
         $this->container['reportMimeType'] = isset($data['reportMimeType']) ? $data['reportMimeType'] : null;
-        $this->container['reportFrequency'] = isset($data['reportFrequency']) ? $data['reportFrequency'] : null;
         $this->container['reportName'] = isset($data['reportName']) ? $data['reportName'] : null;
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
-        $this->container['startTime'] = isset($data['startTime']) ? $data['startTime'] : null;
-        $this->container['startDay'] = isset($data['startDay']) ? $data['startDay'] : null;
+        $this->container['reportStartTime'] = isset($data['reportStartTime']) ? $data['reportStartTime'] : null;
+        $this->container['reportEndTime'] = isset($data['reportEndTime']) ? $data['reportEndTime'] : null;
         $this->container['reportFilters'] = isset($data['reportFilters']) ? $data['reportFilters'] : null;
         $this->container['reportPreferences'] = isset($data['reportPreferences']) ? $data['reportPreferences'] : null;
         $this->container['groupName'] = isset($data['groupName']) ? $data['groupName'] : null;
@@ -214,61 +208,32 @@ class RequestBody1 implements ArrayAccess
             $invalid_properties[] = "invalid value for 'organizationId', must be conform to the pattern /[a-zA-Z0-9-_]+/.";
         }
 
-        if ($this->container['reportDefinitionName'] === null) {
-            $invalid_properties[] = "'reportDefinitionName' can't be null";
-        }
-        if ((strlen($this->container['reportDefinitionName']) > 80)) {
+        if (!is_null($this->container['reportDefinitionName']) && (strlen($this->container['reportDefinitionName']) > 80)) {
             $invalid_properties[] = "invalid value for 'reportDefinitionName', the character length must be smaller than or equal to 80.";
         }
 
-        if ((strlen($this->container['reportDefinitionName']) < 1)) {
+        if (!is_null($this->container['reportDefinitionName']) && (strlen($this->container['reportDefinitionName']) < 1)) {
             $invalid_properties[] = "invalid value for 'reportDefinitionName', the character length must be bigger than or equal to 1.";
         }
 
-        if (!preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
+        if (!is_null($this->container['reportDefinitionName']) && !preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
             $invalid_properties[] = "invalid value for 'reportDefinitionName', must be conform to the pattern /[a-zA-Z0-9-]+/.";
         }
 
-        if ($this->container['reportFields'] === null) {
-            $invalid_properties[] = "'reportFields' can't be null";
-        }
-        if ($this->container['reportMimeType'] === null) {
-            $invalid_properties[] = "'reportMimeType' can't be null";
-        }
-        if ($this->container['reportFrequency'] === null) {
-            $invalid_properties[] = "'reportFrequency' can't be null";
-        }
-        if ($this->container['reportName'] === null) {
-            $invalid_properties[] = "'reportName' can't be null";
-        }
-        if ((strlen($this->container['reportName']) > 128)) {
+        if (!is_null($this->container['reportName']) && (strlen($this->container['reportName']) > 128)) {
             $invalid_properties[] = "invalid value for 'reportName', the character length must be smaller than or equal to 128.";
         }
 
-        if ((strlen($this->container['reportName']) < 1)) {
+        if (!is_null($this->container['reportName']) && (strlen($this->container['reportName']) < 1)) {
             $invalid_properties[] = "invalid value for 'reportName', the character length must be bigger than or equal to 1.";
         }
 
-        if (!preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
+        if (!is_null($this->container['reportName']) && !preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
             $invalid_properties[] = "invalid value for 'reportName', must be conform to the pattern /[a-zA-Z0-9-_ ]+/.";
         }
 
-        if ($this->container['timezone'] === null) {
-            $invalid_properties[] = "'timezone' can't be null";
-        }
-        if ($this->container['startTime'] === null) {
-            $invalid_properties[] = "'startTime' can't be null";
-        }
-        if (!is_null($this->container['startDay']) && ($this->container['startDay'] > 31)) {
-            $invalid_properties[] = "invalid value for 'startDay', must be smaller than or equal to 31.";
-        }
-
-        if (!is_null($this->container['startDay']) && ($this->container['startDay'] < 1)) {
-            $invalid_properties[] = "invalid value for 'startDay', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['groupName']) && !preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['groupName'])) {
-            $invalid_properties[] = "invalid value for 'groupName', must be conform to the pattern /[a-zA-Z0-9-_ ]+/.";
+        if (!is_null($this->container['groupName']) && !preg_match("/[0-9]*/", $this->container['groupName'])) {
+            $invalid_properties[] = "invalid value for 'groupName', must be conform to the pattern /[0-9]*/.";
         }
 
         return $invalid_properties;
@@ -286,9 +251,6 @@ class RequestBody1 implements ArrayAccess
         if (!preg_match("/[a-zA-Z0-9-_]+/", $this->container['organizationId'])) {
             return false;
         }
-        if ($this->container['reportDefinitionName'] === null) {
-            return false;
-        }
         if (strlen($this->container['reportDefinitionName']) > 80) {
             return false;
         }
@@ -296,18 +258,6 @@ class RequestBody1 implements ArrayAccess
             return false;
         }
         if (!preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
-            return false;
-        }
-        if ($this->container['reportFields'] === null) {
-            return false;
-        }
-        if ($this->container['reportMimeType'] === null) {
-            return false;
-        }
-        if ($this->container['reportFrequency'] === null) {
-            return false;
-        }
-        if ($this->container['reportName'] === null) {
             return false;
         }
         if (strlen($this->container['reportName']) > 128) {
@@ -319,19 +269,7 @@ class RequestBody1 implements ArrayAccess
         if (!preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
             return false;
         }
-        if ($this->container['timezone'] === null) {
-            return false;
-        }
-        if ($this->container['startTime'] === null) {
-            return false;
-        }
-        if ($this->container['startDay'] > 31) {
-            return false;
-        }
-        if ($this->container['startDay'] < 1) {
-            return false;
-        }
-        if (!preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['groupName'])) {
+        if (!preg_match("/[0-9]*/", $this->container['groupName'])) {
             return false;
         }
         return true;
@@ -349,14 +287,14 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets organizationId
-     * @param string $organizationId Valid CyberSource organizationId
+     * @param string $organizationId Valid CyberSource Organization Id
      * @return $this
      */
     public function setOrganizationId($organizationId)
     {
 
         if (!is_null($organizationId) && (!preg_match("/[a-zA-Z0-9-_]+/", $organizationId))) {
-            throw new \InvalidArgumentException("invalid value for $organizationId when calling RequestBody1., must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            throw new \InvalidArgumentException("invalid value for $organizationId when calling CreateAdhocReportRequest., must conform to the pattern /[a-zA-Z0-9-_]+/.");
         }
 
         $this->container['organizationId'] = $organizationId;
@@ -375,19 +313,19 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets reportDefinitionName
-     * @param string $reportDefinitionName Valid Report Definition Name
+     * @param string $reportDefinitionName
      * @return $this
      */
     public function setReportDefinitionName($reportDefinitionName)
     {
-        if ((strlen($reportDefinitionName) > 80)) {
-            throw new \InvalidArgumentException('invalid length for $reportDefinitionName when calling RequestBody1., must be smaller than or equal to 80.');
+        if (!is_null($reportDefinitionName) && (strlen($reportDefinitionName) > 80)) {
+            throw new \InvalidArgumentException('invalid length for $reportDefinitionName when calling CreateAdhocReportRequest., must be smaller than or equal to 80.');
         }
-        if ((strlen($reportDefinitionName) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reportDefinitionName when calling RequestBody1., must be bigger than or equal to 1.');
+        if (!is_null($reportDefinitionName) && (strlen($reportDefinitionName) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $reportDefinitionName when calling CreateAdhocReportRequest., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/[a-zA-Z0-9-]+/", $reportDefinitionName))) {
-            throw new \InvalidArgumentException("invalid value for $reportDefinitionName when calling RequestBody1., must conform to the pattern /[a-zA-Z0-9-]+/.");
+        if (!is_null($reportDefinitionName) && (!preg_match("/[a-zA-Z0-9-]+/", $reportDefinitionName))) {
+            throw new \InvalidArgumentException("invalid value for $reportDefinitionName when calling CreateAdhocReportRequest., must conform to the pattern /[a-zA-Z0-9-]+/.");
         }
 
         $this->container['reportDefinitionName'] = $reportDefinitionName;
@@ -406,7 +344,7 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets reportFields
-     * @param string[] $reportFields
+     * @param string[] $reportFields List of fields which needs to get included in a report
      * @return $this
      */
     public function setReportFields($reportFields)
@@ -427,33 +365,12 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets reportMimeType
-     * @param string $reportMimeType Valid values: - application/xml - text/csv
+     * @param string $reportMimeType 'Format of the report'                  Valid values: - application/xml - text/csv
      * @return $this
      */
     public function setReportMimeType($reportMimeType)
     {
         $this->container['reportMimeType'] = $reportMimeType;
-
-        return $this;
-    }
-
-    /**
-     * Gets reportFrequency
-     * @return string
-     */
-    public function getReportFrequency()
-    {
-        return $this->container['reportFrequency'];
-    }
-
-    /**
-     * Sets reportFrequency
-     * @param string $reportFrequency 'The frequency for which subscription is created.'  Valid values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'ADHOC'
-     * @return $this
-     */
-    public function setReportFrequency($reportFrequency)
-    {
-        $this->container['reportFrequency'] = $reportFrequency;
 
         return $this;
     }
@@ -469,19 +386,19 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets reportName
-     * @param string $reportName
+     * @param string $reportName Name of the report
      * @return $this
      */
     public function setReportName($reportName)
     {
-        if ((strlen($reportName) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $reportName when calling RequestBody1., must be smaller than or equal to 128.');
+        if (!is_null($reportName) && (strlen($reportName) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $reportName when calling CreateAdhocReportRequest., must be smaller than or equal to 128.');
         }
-        if ((strlen($reportName) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reportName when calling RequestBody1., must be bigger than or equal to 1.');
+        if (!is_null($reportName) && (strlen($reportName) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $reportName when calling CreateAdhocReportRequest., must be bigger than or equal to 1.');
         }
-        if ((!preg_match("/[a-zA-Z0-9-_ ]+/", $reportName))) {
-            throw new \InvalidArgumentException("invalid value for $reportName when calling RequestBody1., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
+        if (!is_null($reportName) && (!preg_match("/[a-zA-Z0-9-_ ]+/", $reportName))) {
+            throw new \InvalidArgumentException("invalid value for $reportName when calling CreateAdhocReportRequest., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
         }
 
         $this->container['reportName'] = $reportName;
@@ -500,7 +417,7 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets timezone
-     * @param string $timezone
+     * @param string $timezone Timezone of the report
      * @return $this
      */
     public function setTimezone($timezone)
@@ -511,51 +428,43 @@ class RequestBody1 implements ArrayAccess
     }
 
     /**
-     * Gets startTime
-     * @return string
+     * Gets reportStartTime
+     * @return \DateTime
      */
-    public function getStartTime()
+    public function getReportStartTime()
     {
-        return $this->container['startTime'];
+        return $this->container['reportStartTime'];
     }
 
     /**
-     * Sets startTime
-     * @param string $startTime The hour at which the report generation should start. It should be in hhmm format.
+     * Sets reportStartTime
+     * @param \DateTime $reportStartTime Start time of the report
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setReportStartTime($reportStartTime)
     {
-        $this->container['startTime'] = $startTime;
+        $this->container['reportStartTime'] = $reportStartTime;
 
         return $this;
     }
 
     /**
-     * Gets startDay
-     * @return int
+     * Gets reportEndTime
+     * @return \DateTime
      */
-    public function getStartDay()
+    public function getReportEndTime()
     {
-        return $this->container['startDay'];
+        return $this->container['reportEndTime'];
     }
 
     /**
-     * Sets startDay
-     * @param int $startDay This is the start day if the frequency is WEEKLY or MONTHLY. The value varies from 1-7 for WEEKLY and 1-31 for MONTHLY. For WEEKLY 1 means Sunday and 7 means Saturday. By default the value is 1.
+     * Sets reportEndTime
+     * @param \DateTime $reportEndTime End time of the report
      * @return $this
      */
-    public function setStartDay($startDay)
+    public function setReportEndTime($reportEndTime)
     {
-
-        if (!is_null($startDay) && ($startDay > 31)) {
-            throw new \InvalidArgumentException('invalid value for $startDay when calling RequestBody1., must be smaller than or equal to 31.');
-        }
-        if (!is_null($startDay) && ($startDay < 1)) {
-            throw new \InvalidArgumentException('invalid value for $startDay when calling RequestBody1., must be bigger than or equal to 1.');
-        }
-
-        $this->container['startDay'] = $startDay;
+        $this->container['reportEndTime'] = $reportEndTime;
 
         return $this;
     }
@@ -613,14 +522,14 @@ class RequestBody1 implements ArrayAccess
 
     /**
      * Sets groupName
-     * @param string $groupName Valid GroupName
+     * @param string $groupName Specifies the group name
      * @return $this
      */
     public function setGroupName($groupName)
     {
 
-        if (!is_null($groupName) && (!preg_match("/[a-zA-Z0-9-_ ]+/", $groupName))) {
-            throw new \InvalidArgumentException("invalid value for $groupName when calling RequestBody1., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
+        if (!is_null($groupName) && (!preg_match("/[0-9]*/", $groupName))) {
+            throw new \InvalidArgumentException("invalid value for $groupName when calling CreateAdhocReportRequest., must conform to the pattern /[0-9]*/.");
         }
 
         $this->container['groupName'] = $groupName;

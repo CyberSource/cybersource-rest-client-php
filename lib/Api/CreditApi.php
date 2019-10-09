@@ -118,7 +118,7 @@ class CreditApi
             throw new \InvalidArgumentException('Missing the required parameter $createCreditRequest when calling createCredit');
         }
         // parse inputs
-        $resourcePath = "/pts/v2/credits/";
+        $resourcePath = "/pts/v2/credits";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -150,7 +150,7 @@ class CreditApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2CreditsPost201Response',
-                '/pts/v2/credits/'
+                '/pts/v2/credits'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2CreditsPost201Response', $httpHeader), $statusCode, $httpHeader];

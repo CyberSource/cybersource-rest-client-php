@@ -1,4 +1,4 @@
-# RequestBody1
+# CreateReportSubscriptionRequest
 
 ## Properties
 Name | Type | Description | Notes

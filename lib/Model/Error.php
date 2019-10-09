@@ -54,8 +54,9 @@ class Error implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'responseStatus' => '\CyberSource\Model\InlineResponseDefaultResponseStatus',
-        'links' => '\CyberSource\Model\ErrorLinks'
+        'type' => 'string',
+        'message' => 'string',
+        'details' => '\CyberSource\Model\Tmsv1instrumentidentifiersDetails'
     ];
 
     /**
@@ -63,8 +64,9 @@ class Error implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'responseStatus' => null,
-        'links' => null
+        'type' => null,
+        'message' => null,
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +84,9 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'responseStatus' => 'responseStatus',
-        'links' => '_links'
+        'type' => 'type',
+        'message' => 'message',
+        'details' => 'details'
     ];
 
 
@@ -92,8 +95,9 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'responseStatus' => 'setResponseStatus',
-        'links' => 'setLinks'
+        'type' => 'setType',
+        'message' => 'setMessage',
+        'details' => 'setDetails'
     ];
 
 
@@ -102,8 +106,9 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'responseStatus' => 'getResponseStatus',
-        'links' => 'getLinks'
+        'type' => 'getType',
+        'message' => 'getMessage',
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -137,8 +142,9 @@ class Error implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['responseStatus'] = isset($data['responseStatus']) ? $data['responseStatus'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -167,43 +173,64 @@ class Error implements ArrayAccess
 
 
     /**
-     * Gets responseStatus
-     * @return \CyberSource\Model\InlineResponseDefaultResponseStatus
+     * Gets type
+     * @return string
      */
-    public function getResponseStatus()
+    public function getType()
     {
-        return $this->container['responseStatus'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets responseStatus
-     * @param \CyberSource\Model\InlineResponseDefaultResponseStatus $responseStatus
+     * Sets type
+     * @param string $type
      * @return $this
      */
-    public function setResponseStatus($responseStatus)
+    public function setType($type)
     {
-        $this->container['responseStatus'] = $responseStatus;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\ErrorLinks
+     * Gets message
+     * @return string
      */
-    public function getLinks()
+    public function getMessage()
     {
-        return $this->container['links'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets links
-     * @param \CyberSource\Model\ErrorLinks $links
+     * Sets message
+     * @param string $message The detailed message related to the type stated above.
      * @return $this
      */
-    public function setLinks($links)
+    public function setMessage($message)
     {
-        $this->container['links'] = $links;
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     * @return \CyberSource\Model\Tmsv1instrumentidentifiersDetails
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     * @param \CyberSource\Model\Tmsv1instrumentidentifiersDetails $details
+     * @return $this
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

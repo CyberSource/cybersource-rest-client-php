@@ -97,4 +97,11 @@ class Ptsv2paymentsidrefundsPaymentInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyCustomer()
     {
     }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
 }

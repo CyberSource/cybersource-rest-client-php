@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createSubscription**
-> createSubscription($requestBody, $organizationId)
+> createSubscription($createReportSubscriptionRequest, $organizationId)
 
 Create Report Subscription for a report name by organization
 
@@ -23,11 +23,11 @@ Create a report subscription for your organization. The report name must be uniq
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
-$requestBody = new \CyberSource\Model\RequestBody1(); // \CyberSource\Model\RequestBody1 | Report subscription request payload
+$createReportSubscriptionRequest = new \CyberSource\Model\CreateReportSubscriptionRequest(); // \CyberSource\Model\CreateReportSubscriptionRequest | Report subscription request payload
 $organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $api_instance->createSubscription($requestBody, $organizationId);
+    $api_instance->createSubscription($createReportSubscriptionRequest, $organizationId);
 } catch (Exception $e) {
     echo 'Exception when calling ReportSubscriptionsApi->createSubscription: ', $e->getMessage(), PHP_EOL;
 }
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**\CyberSource\Model\RequestBody1**](../Model/RequestBody1.md)| Report subscription request payload |
+ **createReportSubscriptionRequest** | [**\CyberSource\Model\CreateReportSubscriptionRequest**](../Model/CreateReportSubscriptionRequest.md)| Report subscription request payload |
  **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type

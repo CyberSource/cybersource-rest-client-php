@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4001Fields
+ * InlineResponse400Fields
  *
  * PHP version 5
  *
@@ -32,7 +32,7 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse4001Fields Class Doc Comment
+ * InlineResponse400Fields Class Doc Comment
  *
  * @category    Class
  * @description Provide validation failed input field details
@@ -40,7 +40,7 @@ use \ArrayAccess;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse4001Fields implements ArrayAccess
+class InlineResponse400Fields implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InlineResponse4001Fields implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_400_1_fields';
+    protected static $swaggerModelName = 'inline_response_400_fields';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

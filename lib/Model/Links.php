@@ -54,9 +54,9 @@ class Links implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'self' => '\CyberSource\Model\InlineResponseDefaultLinksNext',
-        'documentation' => '\CyberSource\Model\InlineResponseDefaultLinksNext[]',
-        'next' => '\CyberSource\Model\InlineResponseDefaultLinksNext[]'
+        'self' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf',
+        'ancestor' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf',
+        'successor' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'
     ];
 
     /**
@@ -65,8 +65,8 @@ class Links implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'self' => null,
-        'documentation' => null,
-        'next' => null
+        'ancestor' => null,
+        'successor' => null
     ];
 
     public static function swaggerTypes()
@@ -85,8 +85,8 @@ class Links implements ArrayAccess
      */
     protected static $attributeMap = [
         'self' => 'self',
-        'documentation' => 'documentation',
-        'next' => 'next'
+        'ancestor' => 'ancestor',
+        'successor' => 'successor'
     ];
 
 
@@ -96,8 +96,8 @@ class Links implements ArrayAccess
      */
     protected static $setters = [
         'self' => 'setSelf',
-        'documentation' => 'setDocumentation',
-        'next' => 'setNext'
+        'ancestor' => 'setAncestor',
+        'successor' => 'setSuccessor'
     ];
 
 
@@ -107,8 +107,8 @@ class Links implements ArrayAccess
      */
     protected static $getters = [
         'self' => 'getSelf',
-        'documentation' => 'getDocumentation',
-        'next' => 'getNext'
+        'ancestor' => 'getAncestor',
+        'successor' => 'getSuccessor'
     ];
 
     public static function attributeMap()
@@ -143,8 +143,8 @@ class Links implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['self'] = isset($data['self']) ? $data['self'] : null;
-        $this->container['documentation'] = isset($data['documentation']) ? $data['documentation'] : null;
-        $this->container['next'] = isset($data['next']) ? $data['next'] : null;
+        $this->container['ancestor'] = isset($data['ancestor']) ? $data['ancestor'] : null;
+        $this->container['successor'] = isset($data['successor']) ? $data['successor'] : null;
     }
 
     /**
@@ -174,7 +174,7 @@ class Links implements ArrayAccess
 
     /**
      * Gets self
-     * @return \CyberSource\Model\InlineResponseDefaultLinksNext
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf
      */
     public function getSelf()
     {
@@ -183,7 +183,7 @@ class Links implements ArrayAccess
 
     /**
      * Sets self
-     * @param \CyberSource\Model\InlineResponseDefaultLinksNext $self
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf $self
      * @return $this
      */
     public function setSelf($self)
@@ -194,43 +194,43 @@ class Links implements ArrayAccess
     }
 
     /**
-     * Gets documentation
-     * @return \CyberSource\Model\InlineResponseDefaultLinksNext[]
+     * Gets ancestor
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf
      */
-    public function getDocumentation()
+    public function getAncestor()
     {
-        return $this->container['documentation'];
+        return $this->container['ancestor'];
     }
 
     /**
-     * Sets documentation
-     * @param \CyberSource\Model\InlineResponseDefaultLinksNext[] $documentation
+     * Sets ancestor
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf $ancestor
      * @return $this
      */
-    public function setDocumentation($documentation)
+    public function setAncestor($ancestor)
     {
-        $this->container['documentation'] = $documentation;
+        $this->container['ancestor'] = $ancestor;
 
         return $this;
     }
 
     /**
-     * Gets next
-     * @return \CyberSource\Model\InlineResponseDefaultLinksNext[]
+     * Gets successor
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf
      */
-    public function getNext()
+    public function getSuccessor()
     {
-        return $this->container['next'];
+        return $this->container['successor'];
     }
 
     /**
-     * Sets next
-     * @param \CyberSource\Model\InlineResponseDefaultLinksNext[] $next
+     * Sets successor
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf $successor
      * @return $this
      */
-    public function setNext($next)
+    public function setSuccessor($successor)
     {
-        $this->container['next'] = $next;
+        $this->container['successor'] = $successor;
 
         return $this;
     }

@@ -76,18 +76,4 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
     public function testErrorResponse()
     {
     }
-
-    /**
-     * Test attribute "responseStatus"
-     */
-    public function testPropertyResponseStatus()
-    {
-    }
-
-    /**
-     * Test attribute "links"
-     */
-    public function testPropertyLinks()
-    {
-    }
 }
