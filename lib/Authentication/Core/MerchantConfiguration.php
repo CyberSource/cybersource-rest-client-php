@@ -148,6 +148,13 @@ class MerchantConfiguration
     protected $runEnvironment="";
 
     /**
+     * Solution ID
+     *
+     * @var string
+     */
+    protected $solutionId="";
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -217,6 +224,29 @@ class MerchantConfiguration
     public function getRunEnvironment()
     {
         return $this->runEnvironment;
+    }
+
+    /**
+     * Sets the Solution ID
+     *
+     * @param string $solutionId
+     *
+     * @return $this
+     */
+    public function setSolutionId($solutionId)
+    {
+        $this->solutionId = $solutionId;
+        
+        return $this;
+    }
+
+    /**
+     * Gets the Solution ID
+     * @return string 
+     */
+    public function getSolutionId()
+    {
+        return $this->solutionId;
     }
 
     /**
@@ -695,6 +725,9 @@ class MerchantConfiguration
             $config = $config->setRunEnvironment($connectionDet->runEnvironment);
         else
             $error_message .= GlobalParameter::RUNENVFIELD;
+
+        if(isset($connectionDet->solutionId))
+            $config = $config->setSolutionId($connectionDet->solutionId);
        
         $config->validateMerchantData($config);
         if($error_message != null){
