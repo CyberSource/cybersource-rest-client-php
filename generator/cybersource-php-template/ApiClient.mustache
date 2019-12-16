@@ -441,10 +441,10 @@ class ApiClient
 
         array_push($headers, "v-c-client-id:" . $this->clientId);
 
-        if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId()) != '')
-        {
-            array_push($headers, "v-c-solution-id:" . $merchantConfig->getSolutionId());
-        }
+        // if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId()) != '')
+        // {
+            // array_push($headers, "v-c-solution-id:" . $merchantConfig->getSolutionId());
+        // }
         
         if($method == GlobalParameter::POST || $method == GlobalParameter::PUT || $method== GlobalParameter::PATCH){
              $digestCon = new PayloadDigest();
