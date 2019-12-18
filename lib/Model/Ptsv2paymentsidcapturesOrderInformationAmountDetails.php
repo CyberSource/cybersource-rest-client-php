@@ -511,7 +511,7 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
 
     /**
      * Sets gratuityAmount
-     * @param string $gratuityAmount Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet.
+     * @param string $gratuityAmount Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For details about partial authorizations, see \"Partial Authorizations\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Restaurant data is supported only on CyberSource through VisaNet.
      * @return $this
      */
     public function setGratuityAmount($gratuityAmount)
@@ -878,7 +878,7 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
 
     /**
      * Sets cashbackAmount
-     * @param string $cashbackAmount Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value.
+     * @param string $cashbackAmount Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value.
      * @return $this
      */
     public function setCashbackAmount($cashbackAmount)

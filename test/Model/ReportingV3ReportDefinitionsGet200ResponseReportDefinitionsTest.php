@@ -111,4 +111,18 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitionsTest extends \P
     public function testPropertyDescription()
     {
     }
+
+    /**
+     * Test attribute "defaultSettings"
+     */
+    public function testPropertyDefaultSettings()
+    {
+    }
+
+    /**
+     * Test attribute "subscriptionType"
+     */
+    public function testPropertySubscriptionType()
+    {
+    }
 }

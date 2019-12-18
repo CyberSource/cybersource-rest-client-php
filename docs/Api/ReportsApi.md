@@ -120,7 +120,7 @@ $endTime = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Valid repo
 $timeQueryType = "timeQueryType_example"; // string | Specify time you would like to search  Valid values: - reportTimeFrame - executedTime
 $organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 $reportMimeType = "reportMimeType_example"; // string | Valid Report Format  Valid values: - application/xml - text/csv
-$reportFrequency = "reportFrequency_example"; // string | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC
+$reportFrequency = "reportFrequency_example"; // string | Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC
 $reportName = "reportName_example"; // string | Valid Report Name
 $reportDefinitionId = 56; // int | Valid Report Definition Id
 $reportStatus = "reportStatus_example"; // string | Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
  **timeQueryType** | **string**| Specify time you would like to search  Valid values: - reportTimeFrame - executedTime |
  **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
  **reportMimeType** | **string**| Valid Report Format  Valid values: - application/xml - text/csv | [optional]
- **reportFrequency** | **string**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC | [optional]
+ **reportFrequency** | **string**| Valid Report Frequency  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED - ADHOC | [optional]
  **reportName** | **string**| Valid Report Name | [optional]
  **reportDefinitionId** | **int**| Valid Report Definition Id | [optional]
  **reportStatus** | **string**| Valid Report Status  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA | [optional]

@@ -54,10 +54,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks',
-        'id' => 'string',
-        'object' => 'string',
-        'state' => 'string',
         'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount',
         'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard',
         'buyerInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation',
@@ -65,7 +61,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation',
         'merchantInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation',
         'metaData' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata',
-        'instrumentIdentifier' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier'
+        'instrumentIdentifier' => '\CyberSource\Model\Tmsv1paymentinstrumentsInstrumentIdentifier'
     ];
 
     /**
@@ -73,10 +69,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'id' => null,
-        'object' => null,
-        'state' => null,
         'bankAccount' => null,
         'card' => null,
         'buyerInformation' => null,
@@ -102,10 +94,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
-        'id' => 'id',
-        'object' => 'object',
-        'state' => 'state',
         'bankAccount' => 'bankAccount',
         'card' => 'card',
         'buyerInformation' => 'buyerInformation',
@@ -122,10 +110,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'id' => 'setId',
-        'object' => 'setObject',
-        'state' => 'setState',
         'bankAccount' => 'setBankAccount',
         'card' => 'setCard',
         'buyerInformation' => 'setBuyerInformation',
@@ -142,10 +126,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'id' => 'getId',
-        'object' => 'getObject',
-        'state' => 'getState',
         'bankAccount' => 'getBankAccount',
         'card' => 'getCard',
         'buyerInformation' => 'getBuyerInformation',
@@ -187,10 +167,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
@@ -225,90 +201,6 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets links
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks $links
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id Unique identification number assigned by CyberSource to the submitted request.
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     * @return string
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     * @param string $object 'Describes type of token.'  Valid values: - paymentInstrument
-     * @return $this
-     */
-    public function setObject($object)
-    {
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state 'Current state of the token.'  Valid values: - ACTIVE - CLOSED
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $this->container['state'] = $state;
-
-        return $this;
-    }
 
     /**
      * Gets bankAccount
@@ -459,7 +351,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier
+     * @return \CyberSource\Model\Tmsv1paymentinstrumentsInstrumentIdentifier
      */
     public function getInstrumentIdentifier()
     {
@@ -468,7 +360,7 @@ class CreatePaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\Tmsv1paymentinstrumentsInstrumentIdentifier $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)

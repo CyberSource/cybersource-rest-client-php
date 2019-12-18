@@ -118,4 +118,11 @@ class Riskv1decisionsOrderInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBillTo()
     {
     }
+
+    /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+    }
 }

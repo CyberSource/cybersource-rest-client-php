@@ -93,13 +93,15 @@ class ReportDefinitionsApi
      * Get report definition
      *
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
+     * @param string $subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
+     * @param string $reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv (optional)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getResourceInfoByReportDefinition($reportDefinitionName, $organizationId = null)
+    public function getResourceInfoByReportDefinition($reportDefinitionName, $subscriptionType = null, $reportMimeType = null, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getResourceInfoByReportDefinitionWithHttpInfo($reportDefinitionName, $organizationId);
+        list($response, $statusCode, $httpHeader) = $this->getResourceInfoByReportDefinitionWithHttpInfo($reportDefinitionName, $subscriptionType, $reportMimeType, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -109,11 +111,13 @@ class ReportDefinitionsApi
      * Get report definition
      *
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
+     * @param string $subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
+     * @param string $reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv (optional)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getResourceInfoByReportDefinitionWithHttpInfo($reportDefinitionName, $organizationId = null)
+    public function getResourceInfoByReportDefinitionWithHttpInfo($reportDefinitionName, $subscriptionType = null, $reportMimeType = null, $organizationId = null)
     {
         // verify the required parameter 'reportDefinitionName' is set
         if ($reportDefinitionName === null) {
@@ -141,6 +145,14 @@ class ReportDefinitionsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($subscriptionType !== null) {
+            $queryParams['subscriptionType'] = $this->apiClient->getSerializer()->toQueryValue($subscriptionType);
+        }
+        // query params
+        if ($reportMimeType !== null) {
+            $queryParams['reportMimeType'] = $this->apiClient->getSerializer()->toQueryValue($reportMimeType);
+        }
         // query params
         if ($organizationId !== null) {
             $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
@@ -194,13 +206,14 @@ class ReportDefinitionsApi
      *
      * Get reporting resource information
      *
+     * @param string $subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getResourceV2Info($organizationId = null)
+    public function getResourceV2Info($subscriptionType = null, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getResourceV2InfoWithHttpInfo($organizationId);
+        list($response, $statusCode, $httpHeader) = $this->getResourceV2InfoWithHttpInfo($subscriptionType, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -209,11 +222,12 @@ class ReportDefinitionsApi
      *
      * Get reporting resource information
      *
+     * @param string $subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getResourceV2InfoWithHttpInfo($organizationId = null)
+    public function getResourceV2InfoWithHttpInfo($subscriptionType = null, $organizationId = null)
     {
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportDefinitionsApi.getResourceV2Info, must be smaller than or equal to 32.');
@@ -237,6 +251,10 @@ class ReportDefinitionsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($subscriptionType !== null) {
+            $queryParams['subscriptionType'] = $this->apiClient->getSerializer()->toQueryValue($subscriptionType);
+        }
         // query params
         if ($organizationId !== null) {
             $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);

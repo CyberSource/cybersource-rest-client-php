@@ -78,6 +78,13 @@ class ReportingV3ReportsGet200ResponseReportSearchResultsTest extends \PHPUnit_F
     }
 
     /**
+     * Test attribute "link"
+     */
+    public function testPropertyLink()
+    {
+    }
+
+    /**
      * Test attribute "reportDefinitionId"
      */
     public function testPropertyReportDefinitionId()

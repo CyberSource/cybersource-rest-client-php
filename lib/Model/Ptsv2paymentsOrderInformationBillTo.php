@@ -71,6 +71,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'district' => 'string',
         'buildingNumber' => 'string',
         'email' => 'string',
+        'emailDomain' => 'string',
         'phoneNumber' => 'string',
         'phoneType' => 'string'
     ];
@@ -97,6 +98,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'district' => null,
         'buildingNumber' => null,
         'email' => null,
+        'emailDomain' => null,
         'phoneNumber' => null,
         'phoneType' => null
     ];
@@ -133,6 +135,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'district' => 'district',
         'buildingNumber' => 'buildingNumber',
         'email' => 'email',
+        'emailDomain' => 'emailDomain',
         'phoneNumber' => 'phoneNumber',
         'phoneType' => 'phoneType'
     ];
@@ -160,6 +163,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'district' => 'setDistrict',
         'buildingNumber' => 'setBuildingNumber',
         'email' => 'setEmail',
+        'emailDomain' => 'setEmailDomain',
         'phoneNumber' => 'setPhoneNumber',
         'phoneType' => 'setPhoneType'
     ];
@@ -187,6 +191,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'district' => 'getDistrict',
         'buildingNumber' => 'getBuildingNumber',
         'email' => 'getEmail',
+        'emailDomain' => 'getEmailDomain',
         'phoneNumber' => 'getPhoneNumber',
         'phoneType' => 'getPhoneType'
     ];
@@ -239,6 +244,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         $this->container['district'] = isset($data['district']) ? $data['district'] : null;
         $this->container['buildingNumber'] = isset($data['buildingNumber']) ? $data['buildingNumber'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['emailDomain'] = isset($data['emailDomain']) ? $data['emailDomain'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['phoneType'] = isset($data['phoneType']) ? $data['phoneType'] : null;
     }
@@ -320,6 +326,10 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
             $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
         }
 
+        if (!is_null($this->container['emailDomain']) && (strlen($this->container['emailDomain']) > 100)) {
+            $invalid_properties[] = "invalid value for 'emailDomain', the character length must be smaller than or equal to 100.";
+        }
+
         if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 15)) {
             $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 15.";
         }
@@ -385,6 +395,9 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
             return false;
         }
         if (strlen($this->container['email']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['emailDomain']) > 100) {
             return false;
         }
         if (strlen($this->container['phoneNumber']) > 15) {
@@ -815,6 +828,31 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         }
 
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets emailDomain
+     * @return string
+     */
+    public function getEmailDomain()
+    {
+        return $this->container['emailDomain'];
+    }
+
+    /**
+     * Sets emailDomain
+     * @param string $emailDomain Email domain of the customer. The domain of the email address comprises all characters that follow the @ symbol, such as mail.example.com. For the Risk Update service, if the email address and the domain are sent in the request, the domain supersedes the email address.
+     * @return $this
+     */
+    public function setEmailDomain($emailDomain)
+    {
+        if (!is_null($emailDomain) && (strlen($emailDomain) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $emailDomain when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 100.');
+        }
+
+        $this->container['emailDomain'] = $emailDomain;
 
         return $this;
     }

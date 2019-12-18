@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteSubscription**](ReportSubscriptionsApi.md#deleteSubscription) | **DELETE** /reporting/v3/report-subscriptions/{reportName} | Delete subscription of a report name by organization
 [**getAllSubscriptions**](ReportSubscriptionsApi.md#getAllSubscriptions) | **GET** /reporting/v3/report-subscriptions | Get all subscriptions
 [**getSubscription**](ReportSubscriptionsApi.md#getSubscription) | **GET** /reporting/v3/report-subscriptions/{reportName} | Get subscription for report name
+[**reportingV3PredefinedReportSubscriptionsPut**](ReportSubscriptionsApi.md#reportingV3PredefinedReportSubscriptionsPut) | **PUT** /reporting/v3/predefined-report-subscriptions | Create a Standard or Classic subscription
 
 
 # **createSubscription**
@@ -174,6 +175,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions**](../Model/ReportingV3ReportSubscriptionsGet200ResponseSubscriptions.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **reportingV3PredefinedReportSubscriptionsPut**
+> reportingV3PredefinedReportSubscriptionsPut($predefinedSubscriptionRequestBean, $organizationId)
+
+Create a Standard or Classic subscription
+
+Create or update an already existing classic or standard subscription.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ReportSubscriptionsApi();
+$predefinedSubscriptionRequestBean = new \CyberSource\Model\PredefinedSubscriptionRequestBean(); // \CyberSource\Model\PredefinedSubscriptionRequestBean | Report subscription request payload
+$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+
+try {
+    $api_instance->reportingV3PredefinedReportSubscriptionsPut($predefinedSubscriptionRequestBean, $organizationId);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportSubscriptionsApi->reportingV3PredefinedReportSubscriptionsPut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **predefinedSubscriptionRequestBean** | [**\CyberSource\Model\PredefinedSubscriptionRequestBean**](../Model/PredefinedSubscriptionRequestBean.md)| Report subscription request payload |
+ **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

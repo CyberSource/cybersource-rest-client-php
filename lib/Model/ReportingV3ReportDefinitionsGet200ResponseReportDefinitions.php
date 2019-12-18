@@ -58,7 +58,9 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
         'reportDefinitionId' => 'int',
         'reportDefintionName' => 'string',
         'supportedFormats' => 'string[]',
-        'description' => 'string'
+        'description' => 'string',
+        'defaultSettings' => '\CyberSource\Model\ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings',
+        'subscriptionType' => 'string'
     ];
 
     /**
@@ -70,7 +72,9 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
         'reportDefinitionId' => 'int32',
         'reportDefintionName' => null,
         'supportedFormats' => null,
-        'description' => null
+        'description' => null,
+        'defaultSettings' => null,
+        'subscriptionType' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
         'reportDefinitionId' => 'reportDefinitionId',
         'reportDefintionName' => 'reportDefintionName',
         'supportedFormats' => 'supportedFormats',
-        'description' => 'description'
+        'description' => 'description',
+        'defaultSettings' => 'defaultSettings',
+        'subscriptionType' => 'subscriptionType'
     ];
 
 
@@ -105,7 +111,9 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
         'reportDefinitionId' => 'setReportDefinitionId',
         'reportDefintionName' => 'setReportDefintionName',
         'supportedFormats' => 'setSupportedFormats',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
+        'defaultSettings' => 'setDefaultSettings',
+        'subscriptionType' => 'setSubscriptionType'
     ];
 
 
@@ -118,7 +126,9 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
         'reportDefinitionId' => 'getReportDefinitionId',
         'reportDefintionName' => 'getReportDefintionName',
         'supportedFormats' => 'getSupportedFormats',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
+        'defaultSettings' => 'getDefaultSettings',
+        'subscriptionType' => 'getSubscriptionType'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
         $this->container['reportDefintionName'] = isset($data['reportDefintionName']) ? $data['reportDefintionName'] : null;
         $this->container['supportedFormats'] = isset($data['supportedFormats']) ? $data['supportedFormats'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['defaultSettings'] = isset($data['defaultSettings']) ? $data['defaultSettings'] : null;
+        $this->container['subscriptionType'] = isset($data['subscriptionType']) ? $data['subscriptionType'] : null;
     }
 
     /**
@@ -285,6 +297,48 @@ class ReportingV3ReportDefinitionsGet200ResponseReportDefinitions implements Arr
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultSettings
+     * @return \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings
+     */
+    public function getDefaultSettings()
+    {
+        return $this->container['defaultSettings'];
+    }
+
+    /**
+     * Sets defaultSettings
+     * @param \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings $defaultSettings
+     * @return $this
+     */
+    public function setDefaultSettings($defaultSettings)
+    {
+        $this->container['defaultSettings'] = $defaultSettings;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionType
+     * @return string
+     */
+    public function getSubscriptionType()
+    {
+        return $this->container['subscriptionType'];
+    }
+
+    /**
+     * Sets subscriptionType
+     * @param string $subscriptionType 'The subscription type for which report definition is required. By default the type will be CUSTOM.' Valid Values: - CLASSIC - CUSTOM - STANDARD
+     * @return $this
+     */
+    public function setSubscriptionType($subscriptionType)
+    {
+        $this->container['subscriptionType'] = $subscriptionType;
 
         return $this;
     }

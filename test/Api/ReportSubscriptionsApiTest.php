@@ -111,4 +111,14 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     public function testGetSubscription()
     {
     }
+
+    /**
+     * Test case for reportingV3PredefinedReportSubscriptionsPut
+     *
+     * Create a Standard or Classic subscription.
+     *
+     */
+    public function testReportingV3PredefinedReportSubscriptionsPut()
+    {
+    }
 }

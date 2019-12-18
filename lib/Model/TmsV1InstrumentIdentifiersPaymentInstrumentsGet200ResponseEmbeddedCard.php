@@ -311,7 +311,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard imp
 
     /**
      * Sets expirationYear
-     * @param string $expirationYear Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/).  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.'
+     * @param string $expirationYear Four-digit year in which the credit card expires. Format: `YYYY`. Possible values: `1900` through `2099`.  **FDC Nashville Global and FDMS South** You can send in 2 digits or 4 digits. When you send in 2 digits, they must be the last 2 digits of the year.  This field is optional if your CyberSource account is configured for relaxed requirements for address data and expiration date. For details, see [Relaxed Requirements for Address Data and Expiration Date.](https://www.cybersource.com/developers/integration_methods/relax_avs/). **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.'
      * @return $this
      */
     public function setExpirationYear($expirationYear)
@@ -388,7 +388,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard imp
 
     /**
      * Sets startMonth
-     * @param string $startMonth Month of the start of the Maestro (UK Domestic) card validity period.  Format: `MM`. Possible values: `01` through `12`.
+     * @param string $startMonth Month of the start of the Maestro (UK Domestic) card validity period. Format: `MM`. Possible values: `01` through `12`.
      * @return $this
      */
     public function setStartMonth($startMonth)

@@ -213,7 +213,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets name
-     * @param string $name The CyberSource payment application processed for the transaction.
+     * @param string $name The name of the CyberSource transaction type (such as CC settlement or CC authorization) that the merchant wants to process in a transaction request. More than one transaction type can included in a transaction request. Each transaction type separately returns their own status, reasonCode, rCode, and rFlag messages.
      * @return $this
      */
     public function setName($name)

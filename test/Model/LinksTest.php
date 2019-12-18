@@ -85,6 +85,13 @@ class LinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentInstruments"
+     */
+    public function testPropertyPaymentInstruments()
+    {
+    }
+
+    /**
      * Test attribute "ancestor"
      */
     public function testPropertyAncestor()

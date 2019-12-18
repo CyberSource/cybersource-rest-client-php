@@ -445,4 +445,99 @@ class ReportSubscriptionsApi
             throw $e;
         }
     }
+
+    /**
+     * Operation reportingV3PredefinedReportSubscriptionsPut
+     *
+     * Create a Standard or Classic subscription
+     *
+     * @param \CyberSource\Model\PredefinedSubscriptionRequestBean $predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function reportingV3PredefinedReportSubscriptionsPut($predefinedSubscriptionRequestBean, $organizationId = null)
+    {
+        list($response, $statusCode, $httpHeader) = $this->reportingV3PredefinedReportSubscriptionsPutWithHttpInfo($predefinedSubscriptionRequestBean, $organizationId);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation reportingV3PredefinedReportSubscriptionsPutWithHttpInfo
+     *
+     * Create a Standard or Classic subscription
+     *
+     * @param \CyberSource\Model\PredefinedSubscriptionRequestBean $predefinedSubscriptionRequestBean Report subscription request payload (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function reportingV3PredefinedReportSubscriptionsPutWithHttpInfo($predefinedSubscriptionRequestBean, $organizationId = null)
+    {
+        // verify the required parameter 'predefinedSubscriptionRequestBean' is set
+        if ($predefinedSubscriptionRequestBean === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $predefinedSubscriptionRequestBean when calling reportingV3PredefinedReportSubscriptionsPut');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.reportingV3PredefinedReportSubscriptionsPut, must be smaller than or equal to 32.');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.reportingV3PredefinedReportSubscriptionsPut, must be bigger than or equal to 1.');
+        }
+        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportSubscriptionsApi.reportingV3PredefinedReportSubscriptionsPut, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
+        // parse inputs
+        $resourcePath = "/reporting/v3/predefined-report-subscriptions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // query params
+        if ($organizationId !== null) {
+            $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($predefinedSubscriptionRequestBean)) {
+            $_tempBody = $predefinedSubscriptionRequestBean;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/reporting/v3/predefined-report-subscriptions'
+            );
+
+            return [$response, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
 }

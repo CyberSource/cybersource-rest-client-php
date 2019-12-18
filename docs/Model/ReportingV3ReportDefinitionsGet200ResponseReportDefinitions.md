@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **reportDefintionName** | **string** |  | [optional] 
 **supportedFormats** | **string[]** |  | [optional] 
 **description** | **string** |  | [optional] 
+**defaultSettings** | [**\CyberSource\Model\ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings**](ReportingV3ReportDefinitionsNameGet200ResponseDefaultSettings.md) |  | [optional] 
+**subscriptionType** | **string** | &#39;The subscription type for which report definition is required. By default the type will be CUSTOM.&#39; Valid Values: - CLASSIC - CUSTOM - STANDARD | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

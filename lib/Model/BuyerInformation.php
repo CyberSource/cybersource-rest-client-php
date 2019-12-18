@@ -56,7 +56,7 @@ class BuyerInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'companyTaxID' => 'string',
         'currency' => 'string',
-        'dateOBirth' => 'string',
+        'dateOfBirth' => 'string',
         'personalIdentification' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformationPersonalIdentification[]'
     ];
 
@@ -67,7 +67,7 @@ class BuyerInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'companyTaxID' => null,
         'currency' => null,
-        'dateOBirth' => 'YYYY-MM-DD|YYYYMMDD',
+        'dateOfBirth' => 'YYYY-MM-DD|YYYYMMDD',
         'personalIdentification' => null
     ];
 
@@ -88,7 +88,7 @@ class BuyerInformation implements ArrayAccess
     protected static $attributeMap = [
         'companyTaxID' => 'companyTaxID',
         'currency' => 'currency',
-        'dateOBirth' => 'dateOBirth',
+        'dateOfBirth' => 'dateOfBirth',
         'personalIdentification' => 'personalIdentification'
     ];
 
@@ -100,7 +100,7 @@ class BuyerInformation implements ArrayAccess
     protected static $setters = [
         'companyTaxID' => 'setCompanyTaxID',
         'currency' => 'setCurrency',
-        'dateOBirth' => 'setDateOBirth',
+        'dateOfBirth' => 'setDateOfBirth',
         'personalIdentification' => 'setPersonalIdentification'
     ];
 
@@ -112,7 +112,7 @@ class BuyerInformation implements ArrayAccess
     protected static $getters = [
         'companyTaxID' => 'getCompanyTaxID',
         'currency' => 'getCurrency',
-        'dateOBirth' => 'getDateOBirth',
+        'dateOfBirth' => 'getDateOfBirth',
         'personalIdentification' => 'getPersonalIdentification'
     ];
 
@@ -149,7 +149,7 @@ class BuyerInformation implements ArrayAccess
     {
         $this->container['companyTaxID'] = isset($data['companyTaxID']) ? $data['companyTaxID'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['dateOBirth'] = isset($data['dateOBirth']) ? $data['dateOBirth'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
     }
 
@@ -174,12 +174,12 @@ class BuyerInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'currency', the character length must be bigger than or equal to 3.";
         }
 
-        if (!is_null($this->container['dateOBirth']) && (strlen($this->container['dateOBirth']) > 10)) {
-            $invalid_properties[] = "invalid value for 'dateOBirth', the character length must be smaller than or equal to 10.";
+        if (!is_null($this->container['dateOfBirth']) && (strlen($this->container['dateOfBirth']) > 10)) {
+            $invalid_properties[] = "invalid value for 'dateOfBirth', the character length must be smaller than or equal to 10.";
         }
 
-        if (!is_null($this->container['dateOBirth']) && (strlen($this->container['dateOBirth']) < 8)) {
-            $invalid_properties[] = "invalid value for 'dateOBirth', the character length must be bigger than or equal to 8.";
+        if (!is_null($this->container['dateOfBirth']) && (strlen($this->container['dateOfBirth']) < 8)) {
+            $invalid_properties[] = "invalid value for 'dateOfBirth', the character length must be bigger than or equal to 8.";
         }
 
         return $invalid_properties;
@@ -203,10 +203,10 @@ class BuyerInformation implements ArrayAccess
         if (strlen($this->container['currency']) < 3) {
             return false;
         }
-        if (strlen($this->container['dateOBirth']) > 10) {
+        if (strlen($this->container['dateOfBirth']) > 10) {
             return false;
         }
-        if (strlen($this->container['dateOBirth']) < 8) {
+        if (strlen($this->container['dateOfBirth']) < 8) {
             return false;
         }
         return true;
@@ -267,29 +267,29 @@ class BuyerInformation implements ArrayAccess
     }
 
     /**
-     * Gets dateOBirth
+     * Gets dateOfBirth
      * @return string
      */
-    public function getDateOBirth()
+    public function getDateOfBirth()
     {
-        return $this->container['dateOBirth'];
+        return $this->container['dateOfBirth'];
     }
 
     /**
-     * Sets dateOBirth
-     * @param string $dateOBirth Date of birth of the customer.  Format: `YYYY-MM-DD` or `YYYYMMDD`
+     * Sets dateOfBirth
+     * @param string $dateOfBirth Date of birth of the customer.  Format: `YYYY-MM-DD` or `YYYYMMDD`
      * @return $this
      */
-    public function setDateOBirth($dateOBirth)
+    public function setDateOfBirth($dateOfBirth)
     {
-        if (!is_null($dateOBirth) && (strlen($dateOBirth) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $dateOBirth when calling BuyerInformation., must be smaller than or equal to 10.');
+        if (!is_null($dateOfBirth) && (strlen($dateOfBirth) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $dateOfBirth when calling BuyerInformation., must be smaller than or equal to 10.');
         }
-        if (!is_null($dateOBirth) && (strlen($dateOBirth) < 8)) {
-            throw new \InvalidArgumentException('invalid length for $dateOBirth when calling BuyerInformation., must be bigger than or equal to 8.');
+        if (!is_null($dateOfBirth) && (strlen($dateOfBirth) < 8)) {
+            throw new \InvalidArgumentException('invalid length for $dateOfBirth when calling BuyerInformation., must be bigger than or equal to 8.');
         }
 
-        $this->container['dateOBirth'] = $dateOBirth;
+        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }

@@ -132,4 +132,11 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptorTest extends \PHPUnit_Fr
     public function testPropertyAdministrativeArea()
     {
     }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
+    {
+    }
 }

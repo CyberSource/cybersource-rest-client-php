@@ -50,6 +50,12 @@ class ApiClient
     public static $DELETE = "DELETE";
 
     /**
+     * Client ID
+     *
+     */
+    protected $clientId;
+
+    /**
      * Configuration
      *
      * @var Configuration
@@ -73,14 +79,36 @@ class ApiClient
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();
         }
-		
-		if ($merchantConfig === null) {
-			echo "Merchant Configuration cannot be null.";
-		}
+        
+        if ($merchantConfig === null) {
+            echo "Merchant Configuration cannot be null.";
+        }
 
         $this->config = $config;
-		$this->merchantConfig = $merchantConfig;
+        $this->merchantConfig = $merchantConfig;
         $this->serializer = new ObjectSerializer();
+
+        $this->clientId = $this->getClientId();
+    }
+
+    /**
+     * Get Client ID 
+     * 
+     * @return String
+     */
+    public function getClientId()
+    {
+        $versionInfo = "";
+        $packages = json_decode(file_get_contents(__DIR__ . "/../../../../vendor/composer/installed.json"), true);
+
+        foreach ($packages as $package) {
+            if (strcmp($package['name'], "cybersource/rest-client-php") == 0)
+            {
+                $versionInfo = "cybs-rest-sdk-php-" . $package['version'];
+            }
+        }
+
+        return $versionInfo;
     }
 
     /**
@@ -151,12 +179,12 @@ class ApiClient
             (array)$this->config->getDefaultHeaders(),
             (array)$headerParams
         );
-		
-		if (!empty($queryParams)) {
+        
+        if (!empty($queryParams)) {
             $resourcePath = ($resourcePath . '?' . http_build_query($queryParams));
             $queryParams=null;
         }
-		
+        
         foreach ($headerParams as $key => $val) {
             $headers[] = "$key: $val";
         }
@@ -167,10 +195,10 @@ class ApiClient
         } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($postData));
         }
-		$resourcePath= utf8_encode($resourcePath);
-		$authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
+        $resourcePath= utf8_encode($resourcePath);
+        $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         $headers = array_merge($headers, $authHeader);
-		foreach ($headers as $value) {
+        foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
             $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
         }
@@ -250,7 +278,7 @@ class ApiClient
 
         // debugging for curl
         if ($this->config->getDebug()) {
-			//$postData = $this->dataMasking($postData);
+            //$postData = $this->dataMasking($postData);
             error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
@@ -267,7 +295,7 @@ class ApiClient
         $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
         $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
         $http_body = substr($response, $http_header_size);
-		//$http_body = $this->dataMasking($http_body);
+        //$http_body = $this->dataMasking($http_body);
         $response_info = curl_getinfo($curl);
 
         // debug HTTP response body
@@ -390,8 +418,8 @@ class ApiClient
 
         return $headers;
     }
-	
-	/*
+    
+    /*
     * Purpose : This function calling the Authentication and making an Auth Header
     *
     */
@@ -419,7 +447,15 @@ class ApiClient
         else{
             echo "Invalid Authentication type!";
         }
-         if($method == GlobalParameter::POST || $method == GlobalParameter::PUT || $method== GlobalParameter::PATCH){
+
+        array_push($headers, "v-c-client-id:" . $this->clientId);
+
+        // if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId()) != '')
+        // {
+            // array_push($headers, "v-c-solution-id:" . $merchantConfig->getSolutionId());
+        // }
+        
+        if($method == GlobalParameter::POST || $method == GlobalParameter::PUT || $method== GlobalParameter::PATCH){
              $digestCon = new PayloadDigest();
             $digest = $digestCon->generateDigest($postData);
             $digestArry = array(GlobalParameter::POSTHTTPDIGEST.$digest);
@@ -428,8 +464,8 @@ class ApiClient
         return $headers;
 
     }
-	
-	//set Fields to be mask
+    
+    //set Fields to be mask
     public function dataMasking($postData_json_raw)
     {
         $toBeMask = array("number"=>"XXXXX","expirationMonth"=>"XXXXX","expirationYear"=>"XXXX","email"=>"XXXXX","firstName"=>"XXXXX","lastName"=>"XXXXX","phoneNumber"=>"XXXXX","type"=>"XXXXX","securityCode"=>"XXXXX", "totalAmount" => "XXXXX", "token" => "XXXXX", "signature" => "XXXXX");

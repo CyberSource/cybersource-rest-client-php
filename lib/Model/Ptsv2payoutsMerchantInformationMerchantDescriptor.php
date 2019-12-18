@@ -178,14 +178,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 13.";
         }
 
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 3)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 14)) {
             $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 14.";
         }
@@ -207,12 +199,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
     {
 
         if (strlen($this->container['locality']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 3) {
             return false;
         }
         if (strlen($this->container['postalCode']) > 14) {
@@ -287,10 +273,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2payoutsMerchantInformationMerchantDescriptor., must be smaller than or equal to 2.');
-        }
-
         $this->container['country'] = $country;
 
         return $this;
@@ -312,10 +294,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2payoutsMerchantInformationMerchantDescriptor., must be smaller than or equal to 3.');
-        }
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;

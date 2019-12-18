@@ -118,4 +118,18 @@ class ReportingV3ReportDefinitionsNameGet200ResponseTest extends \PHPUnit_Framew
     public function testPropertyDescription()
     {
     }
+
+    /**
+     * Test attribute "defaultSettings"
+     */
+    public function testPropertyDefaultSettings()
+    {
+    }
+
+    /**
+     * Test attribute "subscriptionType"
+     */
+    public function testPropertySubscriptionType()
+    {
+    }
 }

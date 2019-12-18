@@ -113,6 +113,13 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptionsTest extends \PHP
     }
 
     /**
+     * Test attribute "reportInterval"
+     */
+    public function testPropertyReportInterval()
+    {
+    }
+
+    /**
      * Test attribute "reportName"
      */
     public function testPropertyReportName()

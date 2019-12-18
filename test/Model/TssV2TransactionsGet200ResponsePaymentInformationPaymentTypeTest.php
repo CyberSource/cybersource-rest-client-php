@@ -85,16 +85,9 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeTest extends \
     }
 
     /**
-     * Test attribute "subTypeName"
+     * Test attribute "type"
      */
-    public function testPropertySubTypeName()
-    {
-    }
-
-    /**
-     * Test attribute "fundingSource"
-     */
-    public function testPropertyFundingSource()
+    public function testPropertyType()
     {
     }
 
@@ -102,13 +95,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationPaymentTypeTest extends \
      * Test attribute "method"
      */
     public function testPropertyMethod()
-    {
-    }
-
-    /**
-     * Test attribute "authenticationMethod"
-     */
-    public function testPropertyAuthenticationMethod()
     {
     }
 }

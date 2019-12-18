@@ -55,6 +55,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'link' => '\CyberSource\Model\ReportingV3ReportsGet200ResponseLink',
         'reportDefinitionId' => 'string',
         'reportName' => 'string',
         'reportMimeType' => 'string',
@@ -77,6 +78,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'link' => null,
         'reportDefinitionId' => null,
         'reportName' => null,
         'reportMimeType' => null,
@@ -109,6 +111,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'link' => '_link',
         'reportDefinitionId' => 'reportDefinitionId',
         'reportName' => 'reportName',
         'reportMimeType' => 'reportMimeType',
@@ -132,6 +135,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'link' => 'setLink',
         'reportDefinitionId' => 'setReportDefinitionId',
         'reportName' => 'setReportName',
         'reportMimeType' => 'setReportMimeType',
@@ -155,6 +159,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'link' => 'getLink',
         'reportDefinitionId' => 'getReportDefinitionId',
         'reportName' => 'getReportName',
         'reportMimeType' => 'getReportMimeType',
@@ -203,6 +208,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['reportDefinitionId'] = isset($data['reportDefinitionId']) ? $data['reportDefinitionId'] : null;
         $this->container['reportName'] = isset($data['reportName']) ? $data['reportName'] : null;
         $this->container['reportMimeType'] = isset($data['reportMimeType']) ? $data['reportMimeType'] : null;
@@ -244,6 +250,27 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets link
+     * @return \CyberSource\Model\ReportingV3ReportsGet200ResponseLink
+     */
+    public function getLink()
+    {
+        return $this->container['link'];
+    }
+
+    /**
+     * Sets link
+     * @param \CyberSource\Model\ReportingV3ReportsGet200ResponseLink $link
+     * @return $this
+     */
+    public function setLink($link)
+    {
+        $this->container['link'] = $link;
+
+        return $this;
+    }
 
     /**
      * Gets reportDefinitionId
@@ -298,7 +325,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
 
     /**
      * Sets reportMimeType
-     * @param string $reportMimeType Format of the report to get generated  Valid values: - application/xml - text/csv
+     * @param string $reportMimeType Format of the report to get generated Valid Values: - application/xml - text/csv
      * @return $this
      */
     public function setReportMimeType($reportMimeType)
@@ -319,7 +346,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
 
     /**
      * Sets reportFrequency
-     * @param string $reportFrequency Frequency of the report to get generated  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC
+     * @param string $reportFrequency Frequency of the report to get generated Valid Values: - DAILY - WEEKLY - MONTHLY - ADHOC
      * @return $this
      */
     public function setReportFrequency($reportFrequency)
@@ -340,7 +367,7 @@ class ReportingV3ReportsGet200ResponseReportSearchResults implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status Status of the report  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA
+     * @param string $status Status of the report Valid Values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA
      * @return $this
      */
     public function setStatus($status)

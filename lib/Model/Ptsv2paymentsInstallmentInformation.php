@@ -222,6 +222,22 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'totalCount', must be smaller than or equal to 99.";
         }
 
+        if (!is_null($this->container['firstInstallmentDate']) && (strlen($this->container['firstInstallmentDate']) > 6)) {
+            $invalid_properties[] = "invalid value for 'firstInstallmentDate', the character length must be smaller than or equal to 6.";
+        }
+
+        if (!is_null($this->container['invoiceData']) && (strlen($this->container['invoiceData']) > 20)) {
+            $invalid_properties[] = "invalid value for 'invoiceData', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['paymentType']) && (strlen($this->container['paymentType']) > 1)) {
+            $invalid_properties[] = "invalid value for 'paymentType', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['eligibilityInquiry']) && (strlen($this->container['eligibilityInquiry']) > 9)) {
+            $invalid_properties[] = "invalid value for 'eligibilityInquiry', the character length must be smaller than or equal to 9.";
+        }
+
         return $invalid_properties;
     }
 
@@ -250,6 +266,18 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
             return false;
         }
         if ($this->container['totalCount'] > 99) {
+            return false;
+        }
+        if (strlen($this->container['firstInstallmentDate']) > 6) {
+            return false;
+        }
+        if (strlen($this->container['invoiceData']) > 20) {
+            return false;
+        }
+        if (strlen($this->container['paymentType']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['eligibilityInquiry']) > 9) {
             return false;
         }
         return true;
@@ -424,6 +452,10 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setFirstInstallmentDate($firstInstallmentDate)
     {
+        if (!is_null($firstInstallmentDate) && (strlen($firstInstallmentDate) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $firstInstallmentDate when calling Ptsv2paymentsInstallmentInformation., must be smaller than or equal to 6.');
+        }
+
         $this->container['firstInstallmentDate'] = $firstInstallmentDate;
 
         return $this;
@@ -445,6 +477,10 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setInvoiceData($invoiceData)
     {
+        if (!is_null($invoiceData) && (strlen($invoiceData) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $invoiceData when calling Ptsv2paymentsInstallmentInformation., must be smaller than or equal to 20.');
+        }
+
         $this->container['invoiceData'] = $invoiceData;
 
         return $this;
@@ -466,6 +502,10 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setPaymentType($paymentType)
     {
+        if (!is_null($paymentType) && (strlen($paymentType) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $paymentType when calling Ptsv2paymentsInstallmentInformation., must be smaller than or equal to 1.');
+        }
+
         $this->container['paymentType'] = $paymentType;
 
         return $this;
@@ -487,6 +527,10 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setEligibilityInquiry($eligibilityInquiry)
     {
+        if (!is_null($eligibilityInquiry) && (strlen($eligibilityInquiry) > 9)) {
+            throw new \InvalidArgumentException('invalid length for $eligibilityInquiry when calling Ptsv2paymentsInstallmentInformation., must be smaller than or equal to 9.');
+        }
+
         $this->container['eligibilityInquiry'] = $eligibilityInquiry;
 
         return $this;

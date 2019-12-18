@@ -78,9 +78,9 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationPaymentTypeTest 
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "type"
      */
-    public function testPropertyName()
+    public function testPropertyType()
     {
     }
 

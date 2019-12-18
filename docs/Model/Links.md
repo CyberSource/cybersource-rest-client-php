@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **self** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
+**paymentInstruments** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments**](TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments.md) |  | [optional] 
 **ancestor** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
 **successor** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
 
