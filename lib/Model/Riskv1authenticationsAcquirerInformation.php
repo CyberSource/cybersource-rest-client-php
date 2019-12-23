@@ -267,7 +267,7 @@ class Riskv1authenticationsAcquirerInformation implements ArrayAccess
 
     /**
      * Sets password
-     * @param string $password Registered password for the Visa directory server. For Mastercard, this value is always 12345678.
+     * @param string $password Registered password for the Visa directory server.
      * @return $this
      */
     public function setPassword($password)
