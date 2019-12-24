@@ -54,7 +54,7 @@ class PaymentInstrument implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks',
+        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks',
         'id' => 'string',
         'object' => 'string',
         'state' => 'string',
@@ -65,7 +65,7 @@ class PaymentInstrument implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation',
         'merchantInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation',
         'metaData' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata',
-        'instrumentIdentifier' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier'
+        'embedded' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded'
     ];
 
     /**
@@ -84,7 +84,7 @@ class PaymentInstrument implements ArrayAccess
         'processingInformation' => null,
         'merchantInformation' => null,
         'metaData' => null,
-        'instrumentIdentifier' => null
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +113,7 @@ class PaymentInstrument implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'merchantInformation' => 'merchantInformation',
         'metaData' => 'metaData',
-        'instrumentIdentifier' => 'instrumentIdentifier'
+        'embedded' => '_embedded'
     ];
 
 
@@ -133,7 +133,7 @@ class PaymentInstrument implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'merchantInformation' => 'setMerchantInformation',
         'metaData' => 'setMetaData',
-        'instrumentIdentifier' => 'setInstrumentIdentifier'
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -153,7 +153,7 @@ class PaymentInstrument implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'merchantInformation' => 'getMerchantInformation',
         'metaData' => 'getMetaData',
-        'instrumentIdentifier' => 'getInstrumentIdentifier'
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -198,7 +198,7 @@ class PaymentInstrument implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
-        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -228,7 +228,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks
      */
     public function getLinks()
     {
@@ -237,7 +237,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinks $links
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -279,7 +279,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets object
-     * @param string $object 'Describes type of token.'  Valid values: - paymentInstrument
+     * @param string $object 'Describes type of token.'  Valid values: - instrumentIdentifier
      * @return $this
      */
     public function setObject($object)
@@ -458,22 +458,22 @@ class PaymentInstrument implements ArrayAccess
     }
 
     /**
-     * Gets instrumentIdentifier
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier
+     * Gets embedded
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded
      */
-    public function getInstrumentIdentifier()
+    public function getEmbedded()
     {
-        return $this->container['instrumentIdentifier'];
+        return $this->container['embedded'];
     }
 
     /**
-     * Sets instrumentIdentifier
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedInstrumentIdentifier $instrumentIdentifier
+     * Sets embedded
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded $embedded
      * @return $this
      */
-    public function setInstrumentIdentifier($instrumentIdentifier)
+    public function setEmbedded($embedded)
     {
-        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }

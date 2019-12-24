@@ -78,34 +78,6 @@ class CreatePaymentInstrumentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
-     */
-    public function testPropertyLinks()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "object"
-     */
-    public function testPropertyObject()
-    {
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
-    {
-    }
-
-    /**
      * Test attribute "bankAccount"
      */
     public function testPropertyBankAccount()

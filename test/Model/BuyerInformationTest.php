@@ -92,9 +92,9 @@ class BuyerInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "dateOBirth"
+     * Test attribute "dateOfBirth"
      */
-    public function testPropertyDateOBirth()
+    public function testPropertyDateOfBirth()
     {
     }
 

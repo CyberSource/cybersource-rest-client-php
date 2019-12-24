@@ -995,7 +995,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets weight
-     * @param string $weight Weight of the item. See Numbered Elements.
+     * @param string $weight Weight of the item.  For details, see `weight_amount` field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setWeight($weight)
@@ -1020,7 +1020,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets weightIdentifier
-     * @param string $weightIdentifier Type of weight. See Numbered Elements.  Possible values: - B: Billed weight - N: Actual net weight
+     * @param string $weightIdentifier Type of weight.  Possible values: - B: Billed weight - N: Actual net weight  For details, see `weight_identifier` offer-level field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setWeightIdentifier($weightIdentifier)
@@ -1045,7 +1045,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets weightUnit
-     * @param string $weightUnit Code that specifies the unit of measurement for the weight amount. For example, OZ specifies ounce and LB specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  See Numbered Elements.
+     * @param string $weightUnit Code that specifies the unit of measurement for the weight amount. For example, `OZ` specifies ounce and `LB` specifies pound. The possible values are defined by the ANSI Accredited Standards Committee (ASC).  For details, see `weight_unit_measurement` offer-level field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setWeightUnit($weightUnit)
@@ -1070,7 +1070,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets referenceDataCode
-     * @param string $referenceDataCode Code that identifies the value of the corresponding item_#_referenceData_#_number field. See Numbered Elements.  Possible values: - AN: Client-defined asset code - MG: Manufacturer's part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
+     * @param string $referenceDataCode Code that identifies the value of the corresponding `orderInformation.lineItems[].referenceDataNumber` field.  Possible values: - AN: Client-defined asset code - MG: Manufacturer's part number - PO: Purchase order number - SK: Supplier stock keeping unit number - UP: Universal product code - VC: Supplier catalog number - VP: Vendor part number  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.  For details, see `reference_data_#_code` field description in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
      * @return $this
      */
     public function setReferenceDataCode($referenceDataCode)

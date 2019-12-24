@@ -204,7 +204,7 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInf
 
     /**
      * Sets type
-     * @param string $type Type of personal identification. **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license
+     * @param string $type Type of personal identification.  **Important**: Contact your TeleCheck representative to learn whether this field is required or optional.  Valid values: - driver license
      * @return $this
      */
     public function setType($type)

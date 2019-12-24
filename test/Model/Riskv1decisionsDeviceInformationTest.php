@@ -92,6 +92,13 @@ class Riskv1decisionsDeviceInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "networkIpAddress"
+     */
+    public function testPropertyNetworkIpAddress()
+    {
+    }
+
+    /**
      * Test attribute "hostName"
      */
     public function testPropertyHostName()

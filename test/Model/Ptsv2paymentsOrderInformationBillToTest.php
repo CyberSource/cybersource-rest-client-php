@@ -197,6 +197,13 @@ class Ptsv2paymentsOrderInformationBillToTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "emailDomain"
+     */
+    public function testPropertyEmailDomain()
+    {
+    }
+
+    /**
      * Test attribute "phoneNumber"
      */
     public function testPropertyPhoneNumber()

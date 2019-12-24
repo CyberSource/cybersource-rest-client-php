@@ -3,11 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**\CyberSource\Model\ReportingV3ReportsGet200ResponseLink**](ReportingV3ReportsGet200ResponseLink.md) |  | [optional] 
 **reportDefinitionId** | **string** | Unique Report Identifier of each report type | [optional] 
 **reportName** | **string** | Name of the report specified by merchant while creating the report | [optional] 
-**reportMimeType** | **string** | Format of the report to get generated  Valid values: - application/xml - text/csv | [optional] 
-**reportFrequency** | **string** | Frequency of the report to get generated  Valid values: - DAILY - WEEKLY - MONTHLY - ADHOC | [optional] 
-**status** | **string** | Status of the report  Valid values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA | [optional] 
+**reportMimeType** | **string** | Format of the report to get generated Valid Values: - application/xml - text/csv | [optional] 
+**reportFrequency** | **string** | Frequency of the report to get generated Valid Values: - DAILY - WEEKLY - MONTHLY - ADHOC | [optional] 
+**status** | **string** | Status of the report Valid Values: - COMPLETED - PENDING - QUEUED - RUNNING - ERROR - NO_DATA | [optional] 
 **reportStartTime** | [**\DateTime**](\DateTime.md) | Specifies the report start time in ISO 8601 format | [optional] 
 **reportEndTime** | [**\DateTime**](\DateTime.md) | Specifies the report end time in ISO 8601 format | [optional] 
 **timezone** | **string** | Time Zone | [optional] 

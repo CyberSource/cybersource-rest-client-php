@@ -61,7 +61,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'locality' => 'string',
         'country' => 'string',
         'postalCode' => 'string',
-        'administrativeArea' => 'string'
+        'administrativeArea' => 'string',
+        'url' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'locality' => null,
         'country' => null,
         'postalCode' => null,
-        'administrativeArea' => null
+        'administrativeArea' => null,
+        'url' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +103,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'locality' => 'locality',
         'country' => 'country',
         'postalCode' => 'postalCode',
-        'administrativeArea' => 'administrativeArea'
+        'administrativeArea' => 'administrativeArea',
+        'url' => 'url'
     ];
 
 
@@ -117,7 +120,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'locality' => 'setLocality',
         'country' => 'setCountry',
         'postalCode' => 'setPostalCode',
-        'administrativeArea' => 'setAdministrativeArea'
+        'administrativeArea' => 'setAdministrativeArea',
+        'url' => 'setUrl'
     ];
 
 
@@ -133,7 +137,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'locality' => 'getLocality',
         'country' => 'getCountry',
         'postalCode' => 'getPostalCode',
-        'administrativeArea' => 'getAdministrativeArea'
+        'administrativeArea' => 'getAdministrativeArea',
+        'url' => 'getUrl'
     ];
 
     public static function attributeMap()
@@ -175,6 +180,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -202,16 +208,12 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 13.";
         }
 
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 14)) {
             $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 14.";
         }
 
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 3)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 3.";
+        if (!is_null($this->container['url']) && (strlen($this->container['url']) > 255)) {
+            $invalid_properties[] = "invalid value for 'url', the character length must be smaller than or equal to 255.";
         }
 
         return $invalid_properties;
@@ -238,13 +240,10 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         if (strlen($this->container['locality']) > 13) {
             return false;
         }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
         if (strlen($this->container['postalCode']) > 14) {
             return false;
         }
-        if (strlen($this->container['administrativeArea']) > 3) {
+        if (strlen($this->container['url']) > 255) {
             return false;
         }
         return true;
@@ -388,10 +387,6 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsMerchantInformationMerchantDescriptor., must be smaller than or equal to 2.');
-        }
-
         $this->container['country'] = $country;
 
         return $this;
@@ -438,11 +433,32 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2paymentsMerchantInformationMerchantDescriptor., must be smaller than or equal to 3.');
+        $this->container['administrativeArea'] = $administrativeArea;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     * @param string $url Address of company's website provided by merchant
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        if (!is_null($url) && (strlen($url) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $url when calling Ptsv2paymentsMerchantInformationMerchantDescriptor., must be smaller than or equal to 255.');
         }
 
-        $this->container['administrativeArea'] = $administrativeArea;
+        $this->container['url'] = $url;
 
         return $this;
     }

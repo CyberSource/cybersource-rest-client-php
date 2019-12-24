@@ -56,6 +56,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'cookiesAccepted' => 'string',
         'ipAddress' => 'string',
+        'networkIpAddress' => 'string',
         'hostName' => 'string',
         'fingerprintSessionId' => 'string',
         'httpBrowserEmail' => 'string',
@@ -69,6 +70,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'cookiesAccepted' => null,
         'ipAddress' => null,
+        'networkIpAddress' => null,
         'hostName' => null,
         'fingerprintSessionId' => null,
         'httpBrowserEmail' => null,
@@ -92,6 +94,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     protected static $attributeMap = [
         'cookiesAccepted' => 'cookiesAccepted',
         'ipAddress' => 'ipAddress',
+        'networkIpAddress' => 'networkIpAddress',
         'hostName' => 'hostName',
         'fingerprintSessionId' => 'fingerprintSessionId',
         'httpBrowserEmail' => 'httpBrowserEmail',
@@ -106,6 +109,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     protected static $setters = [
         'cookiesAccepted' => 'setCookiesAccepted',
         'ipAddress' => 'setIpAddress',
+        'networkIpAddress' => 'setNetworkIpAddress',
         'hostName' => 'setHostName',
         'fingerprintSessionId' => 'setFingerprintSessionId',
         'httpBrowserEmail' => 'setHttpBrowserEmail',
@@ -120,6 +124,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     protected static $getters = [
         'cookiesAccepted' => 'getCookiesAccepted',
         'ipAddress' => 'getIpAddress',
+        'networkIpAddress' => 'getNetworkIpAddress',
         'hostName' => 'getHostName',
         'fingerprintSessionId' => 'getFingerprintSessionId',
         'httpBrowserEmail' => 'getHttpBrowserEmail',
@@ -159,6 +164,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     {
         $this->container['cookiesAccepted'] = isset($data['cookiesAccepted']) ? $data['cookiesAccepted'] : null;
         $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
+        $this->container['networkIpAddress'] = isset($data['networkIpAddress']) ? $data['networkIpAddress'] : null;
         $this->container['hostName'] = isset($data['hostName']) ? $data['hostName'] : null;
         $this->container['fingerprintSessionId'] = isset($data['fingerprintSessionId']) ? $data['fingerprintSessionId'] : null;
         $this->container['httpBrowserEmail'] = isset($data['httpBrowserEmail']) ? $data['httpBrowserEmail'] : null;
@@ -176,6 +182,10 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
 
         if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 48)) {
             $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 48.";
+        }
+
+        if (!is_null($this->container['networkIpAddress']) && (strlen($this->container['networkIpAddress']) > 11)) {
+            $invalid_properties[] = "invalid value for 'networkIpAddress', the character length must be smaller than or equal to 11.";
         }
 
         if (!is_null($this->container['hostName']) && (strlen($this->container['hostName']) > 60)) {
@@ -199,6 +209,9 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     {
 
         if (strlen($this->container['ipAddress']) > 48) {
+            return false;
+        }
+        if (strlen($this->container['networkIpAddress']) > 11) {
             return false;
         }
         if (strlen($this->container['hostName']) > 60) {
@@ -253,6 +266,31 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         }
 
         $this->container['ipAddress'] = $ipAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkIpAddress
+     * @return string
+     */
+    public function getNetworkIpAddress()
+    {
+        return $this->container['networkIpAddress'];
+    }
+
+    /**
+     * Sets networkIpAddress
+     * @param string $networkIpAddress Network IP address of the customer (for example, 10.1.27). A network IP address includes up to 256 IP addresses.
+     * @return $this
+     */
+    public function setNetworkIpAddress($networkIpAddress)
+    {
+        if (!is_null($networkIpAddress) && (strlen($networkIpAddress) > 11)) {
+            throw new \InvalidArgumentException('invalid length for $networkIpAddress when calling Riskv1decisionsDeviceInformation., must be smaller than or equal to 11.');
+        }
+
+        $this->container['networkIpAddress'] = $networkIpAddress;
 
         return $this;
     }

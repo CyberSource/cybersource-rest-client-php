@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **returnsAccepted** | **bool** | Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order. | [optional] 
 **lineItems** | [**\CyberSource\Model\Riskv1decisionsOrderInformationLineItems[]**](Riskv1decisionsOrderInformationLineItems.md) | This array contains detailed information about individual products in the order. | [optional] 
 **billTo** | [**\CyberSource\Model\Riskv1decisionsOrderInformationBillTo**](Riskv1decisionsOrderInformationBillTo.md) |  | [optional] 
+**address** | [**\CyberSource\Model\Riskv1decisionsOrderInformationAddress**](Riskv1decisionsOrderInformationAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -160,10 +160,6 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 13.";
         }
 
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -177,9 +173,6 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
     {
 
         if (strlen($this->container['locality']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
             return false;
         }
         return true;
@@ -248,10 +241,6 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor., must be smaller than or equal to 2.');
-        }
-
         $this->container['country'] = $country;
 
         return $this;

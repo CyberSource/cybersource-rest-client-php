@@ -55,6 +55,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'self' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf',
+        'paymentInstruments' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments',
         'ancestor' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf',
         'successor' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf'
     ];
@@ -65,6 +66,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'self' => null,
+        'paymentInstruments' => null,
         'ancestor' => null,
         'successor' => null
     ];
@@ -85,6 +87,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
      */
     protected static $attributeMap = [
         'self' => 'self',
+        'paymentInstruments' => 'paymentInstruments',
         'ancestor' => 'ancestor',
         'successor' => 'successor'
     ];
@@ -96,6 +99,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
      */
     protected static $setters = [
         'self' => 'setSelf',
+        'paymentInstruments' => 'setPaymentInstruments',
         'ancestor' => 'setAncestor',
         'successor' => 'setSuccessor'
     ];
@@ -107,6 +111,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
      */
     protected static $getters = [
         'self' => 'getSelf',
+        'paymentInstruments' => 'getPaymentInstruments',
         'ancestor' => 'getAncestor',
         'successor' => 'getSuccessor'
     ];
@@ -143,6 +148,7 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['self'] = isset($data['self']) ? $data['self'] : null;
+        $this->container['paymentInstruments'] = isset($data['paymentInstruments']) ? $data['paymentInstruments'] : null;
         $this->container['ancestor'] = isset($data['ancestor']) ? $data['ancestor'] : null;
         $this->container['successor'] = isset($data['successor']) ? $data['successor'] : null;
     }
@@ -189,6 +195,27 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinks implements ArrayAccess
     public function setSelf($self)
     {
         $this->container['self'] = $self;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstruments
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments
+     */
+    public function getPaymentInstruments()
+    {
+        return $this->container['paymentInstruments'];
+    }
+
+    /**
+     * Sets paymentInstruments
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments $paymentInstruments
+     * @return $this
+     */
+    public function setPaymentInstruments($paymentInstruments)
+    {
+        $this->container['paymentInstruments'] = $paymentInstruments;
 
         return $this;
     }

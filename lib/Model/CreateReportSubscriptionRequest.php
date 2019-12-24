@@ -59,6 +59,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         'reportFields' => 'string[]',
         'reportMimeType' => 'string',
         'reportFrequency' => 'string',
+        'reportInterval' => 'string',
         'reportName' => 'string',
         'timezone' => 'string',
         'startTime' => 'string',
@@ -78,6 +79,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         'reportFields' => null,
         'reportMimeType' => null,
         'reportFrequency' => null,
+        'reportInterval' => null,
         'reportName' => null,
         'timezone' => null,
         'startTime' => null,
@@ -107,6 +109,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         'reportFields' => 'reportFields',
         'reportMimeType' => 'reportMimeType',
         'reportFrequency' => 'reportFrequency',
+        'reportInterval' => 'reportInterval',
         'reportName' => 'reportName',
         'timezone' => 'timezone',
         'startTime' => 'startTime',
@@ -127,6 +130,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         'reportFields' => 'setReportFields',
         'reportMimeType' => 'setReportMimeType',
         'reportFrequency' => 'setReportFrequency',
+        'reportInterval' => 'setReportInterval',
         'reportName' => 'setReportName',
         'timezone' => 'setTimezone',
         'startTime' => 'setStartTime',
@@ -147,6 +151,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         'reportFields' => 'getReportFields',
         'reportMimeType' => 'getReportMimeType',
         'reportFrequency' => 'getReportFrequency',
+        'reportInterval' => 'getReportInterval',
         'reportName' => 'getReportName',
         'timezone' => 'getTimezone',
         'startTime' => 'getStartTime',
@@ -192,6 +197,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         $this->container['reportFields'] = isset($data['reportFields']) ? $data['reportFields'] : null;
         $this->container['reportMimeType'] = isset($data['reportMimeType']) ? $data['reportMimeType'] : null;
         $this->container['reportFrequency'] = isset($data['reportFrequency']) ? $data['reportFrequency'] : null;
+        $this->container['reportInterval'] = isset($data['reportInterval']) ? $data['reportInterval'] : null;
         $this->container['reportName'] = isset($data['reportName']) ? $data['reportName'] : null;
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
         $this->container['startTime'] = isset($data['startTime']) ? $data['startTime'] : null;
@@ -238,6 +244,10 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         if ($this->container['reportFrequency'] === null) {
             $invalid_properties[] = "'reportFrequency' can't be null";
         }
+        if (!is_null($this->container['reportInterval']) && !preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $this->container['reportInterval'])) {
+            $invalid_properties[] = "invalid value for 'reportInterval', must be conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.";
+        }
+
         if ($this->container['reportName'] === null) {
             $invalid_properties[] = "'reportName' can't be null";
         }
@@ -305,6 +315,9 @@ class CreateReportSubscriptionRequest implements ArrayAccess
             return false;
         }
         if ($this->container['reportFrequency'] === null) {
+            return false;
+        }
+        if (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $this->container['reportInterval'])) {
             return false;
         }
         if ($this->container['reportName'] === null) {
@@ -448,12 +461,38 @@ class CreateReportSubscriptionRequest implements ArrayAccess
 
     /**
      * Sets reportFrequency
-     * @param string $reportFrequency 'The frequency for which subscription is created.'  Valid values: - 'DAILY' - 'WEEKLY' - 'MONTHLY' - 'ADHOC'
+     * @param string $reportFrequency 'The frequency for which subscription is created.'  Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED'
      * @return $this
      */
     public function setReportFrequency($reportFrequency)
     {
         $this->container['reportFrequency'] = $reportFrequency;
+
+        return $this;
+    }
+
+    /**
+     * Gets reportInterval
+     * @return string
+     */
+    public function getReportInterval()
+    {
+        return $this->container['reportInterval'];
+    }
+
+    /**
+     * Sets reportInterval
+     * @param string $reportInterval If the reportFrequency is User-defined, reportInterval should be in **ISO 8601 time format** Please refer the following link to know more about ISO 8601 format.[Rfc Time Format](https://en.wikipedia.org/wiki/ISO_8601#Durations)  **Example time format for 2 hours and 30 Mins:**   - PT2H30M **NOTE: Do not document reportInterval field in developer center**
+     * @return $this
+     */
+    public function setReportInterval($reportInterval)
+    {
+
+        if (!is_null($reportInterval) && (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $reportInterval))) {
+            throw new \InvalidArgumentException("invalid value for $reportInterval when calling CreateReportSubscriptionRequest., must conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.");
+        }
+
+        $this->container['reportInterval'] = $reportInterval;
 
         return $this;
     }

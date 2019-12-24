@@ -85,6 +85,13 @@ class TmsV1InstrumentIdentifiersPost200ResponseLinksTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "paymentInstruments"
+     */
+    public function testPropertyPaymentInstruments()
+    {
+    }
+
+    /**
      * Test attribute "ancestor"
      */
     public function testPropertyAncestor()

@@ -301,7 +301,7 @@ class Tmsv1instrumentidentifiersCard implements ArrayAccess
 
     /**
      * Sets expirationYear
-     * @param string $expirationYear Card expiration year.  Format: `YYYY`. Possible values: `1900` through `2099`.
+     * @param string $expirationYear Card expiration year. Format: `YYYY`. Possible values: `1900` through `2099`.
      * @return $this
      */
     public function setExpirationYear($expirationYear)

@@ -63,6 +63,7 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         'lastName' => 'string',
         'phoneNumber' => 'string',
         'email' => 'string',
+        'emailDomain' => 'string',
         'postalCode' => 'string'
     ];
 
@@ -80,6 +81,7 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         'lastName' => null,
         'phoneNumber' => null,
         'email' => null,
+        'emailDomain' => null,
         'postalCode' => null
     ];
 
@@ -107,6 +109,7 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         'lastName' => 'lastName',
         'phoneNumber' => 'phoneNumber',
         'email' => 'email',
+        'emailDomain' => 'emailDomain',
         'postalCode' => 'postalCode'
     ];
 
@@ -125,6 +128,7 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         'lastName' => 'setLastName',
         'phoneNumber' => 'setPhoneNumber',
         'email' => 'setEmail',
+        'emailDomain' => 'setEmailDomain',
         'postalCode' => 'setPostalCode'
     ];
 
@@ -143,6 +147,7 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         'lastName' => 'getLastName',
         'phoneNumber' => 'getPhoneNumber',
         'email' => 'getEmail',
+        'emailDomain' => 'getEmailDomain',
         'postalCode' => 'getPostalCode'
     ];
 
@@ -186,6 +191,7 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['emailDomain'] = isset($data['emailDomain']) ? $data['emailDomain'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
     }
 
@@ -234,6 +240,10 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
             $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
         }
 
+        if (!is_null($this->container['emailDomain']) && (strlen($this->container['emailDomain']) > 100)) {
+            $invalid_properties[] = "invalid value for 'emailDomain', the character length must be smaller than or equal to 100.";
+        }
+
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
             $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
         }
@@ -275,6 +285,9 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
             return false;
         }
         if (strlen($this->container['email']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['emailDomain']) > 100) {
             return false;
         }
         if (strlen($this->container['postalCode']) > 10) {
@@ -505,6 +518,31 @@ class Riskv1decisionsOrderInformationBillTo implements ArrayAccess
         }
 
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets emailDomain
+     * @return string
+     */
+    public function getEmailDomain()
+    {
+        return $this->container['emailDomain'];
+    }
+
+    /**
+     * Sets emailDomain
+     * @param string $emailDomain Email domain of the customer. The domain of the email address comprises all characters that follow the @ symbol, such as mail.example.com. For the Risk Update service, if the email address and the domain are sent in the request, the domain supersedes the email address.
+     * @return $this
+     */
+    public function setEmailDomain($emailDomain)
+    {
+        if (!is_null($emailDomain) && (strlen($emailDomain) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $emailDomain when calling Riskv1decisionsOrderInformationBillTo., must be smaller than or equal to 100.');
+        }
+
+        $this->container['emailDomain'] = $emailDomain;
 
         return $this;
     }

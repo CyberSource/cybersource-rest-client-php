@@ -92,9 +92,9 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInf
     }
 
     /**
-     * Test attribute "dateOBirth"
+     * Test attribute "dateOfBirth"
      */
-    public function testPropertyDateOBirth()
+    public function testPropertyDateOfBirth()
     {
     }
 

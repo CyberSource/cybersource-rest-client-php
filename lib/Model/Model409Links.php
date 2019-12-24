@@ -54,7 +54,7 @@ class Model409Links implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentInstruments' => '\CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments'
+        'paymentInstruments' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Model409Links implements ArrayAccess
 
     /**
      * Gets paymentInstruments
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments
      */
     public function getPaymentInstruments()
     {
@@ -171,7 +171,7 @@ class Model409Links implements ArrayAccess
 
     /**
      * Sets paymentInstruments
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersDelete409ResponseLinksPaymentInstruments $paymentInstruments
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments $paymentInstruments
      * @return $this
      */
     public function setPaymentInstruments($paymentInstruments)

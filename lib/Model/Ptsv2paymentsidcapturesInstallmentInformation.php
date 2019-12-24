@@ -246,6 +246,78 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['firstInstallmentDate']) && (strlen($this->container['firstInstallmentDate']) > 6)) {
+            $invalid_properties[] = "invalid value for 'firstInstallmentDate', the character length must be smaller than or equal to 6.";
+        }
+
+        if (!is_null($this->container['invoiceData']) && (strlen($this->container['invoiceData']) > 20)) {
+            $invalid_properties[] = "invalid value for 'invoiceData', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['paymentType']) && (strlen($this->container['paymentType']) > 1)) {
+            $invalid_properties[] = "invalid value for 'paymentType', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['additionalCosts']) && (strlen($this->container['additionalCosts']) > 12)) {
+            $invalid_properties[] = "invalid value for 'additionalCosts', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['additionalCostsPercentage']) && (strlen($this->container['additionalCostsPercentage']) > 4)) {
+            $invalid_properties[] = "invalid value for 'additionalCostsPercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['amountFunded']) && (strlen($this->container['amountFunded']) > 12)) {
+            $invalid_properties[] = "invalid value for 'amountFunded', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['amountRequestedPercentage']) && (strlen($this->container['amountRequestedPercentage']) > 4)) {
+            $invalid_properties[] = "invalid value for 'amountRequestedPercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['annualFinancingCost']) && (strlen($this->container['annualFinancingCost']) > 7)) {
+            $invalid_properties[] = "invalid value for 'annualFinancingCost', the character length must be smaller than or equal to 7.";
+        }
+
+        if (!is_null($this->container['annualInterestRate']) && (strlen($this->container['annualInterestRate']) > 7)) {
+            $invalid_properties[] = "invalid value for 'annualInterestRate', the character length must be smaller than or equal to 7.";
+        }
+
+        if (!is_null($this->container['expenses']) && (strlen($this->container['expenses']) > 12)) {
+            $invalid_properties[] = "invalid value for 'expenses', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['expensesPercentage']) && (strlen($this->container['expensesPercentage']) > 4)) {
+            $invalid_properties[] = "invalid value for 'expensesPercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['fees']) && (strlen($this->container['fees']) > 12)) {
+            $invalid_properties[] = "invalid value for 'fees', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['feesPercentage']) && (strlen($this->container['feesPercentage']) > 4)) {
+            $invalid_properties[] = "invalid value for 'feesPercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['insurance']) && (strlen($this->container['insurance']) > 12)) {
+            $invalid_properties[] = "invalid value for 'insurance', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['insurancePercentage']) && (strlen($this->container['insurancePercentage']) > 4)) {
+            $invalid_properties[] = "invalid value for 'insurancePercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['monthlyInterestRate']) && (strlen($this->container['monthlyInterestRate']) > 7)) {
+            $invalid_properties[] = "invalid value for 'monthlyInterestRate', the character length must be smaller than or equal to 7.";
+        }
+
+        if (!is_null($this->container['taxes']) && (strlen($this->container['taxes']) > 12)) {
+            $invalid_properties[] = "invalid value for 'taxes', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['taxesPercentage']) && (strlen($this->container['taxesPercentage']) > 4)) {
+            $invalid_properties[] = "invalid value for 'taxesPercentage', the character length must be smaller than or equal to 4.";
+        }
+
         return $invalid_properties;
     }
 
@@ -258,6 +330,60 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['firstInstallmentDate']) > 6) {
+            return false;
+        }
+        if (strlen($this->container['invoiceData']) > 20) {
+            return false;
+        }
+        if (strlen($this->container['paymentType']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['additionalCosts']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['additionalCostsPercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['amountFunded']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['amountRequestedPercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['annualFinancingCost']) > 7) {
+            return false;
+        }
+        if (strlen($this->container['annualInterestRate']) > 7) {
+            return false;
+        }
+        if (strlen($this->container['expenses']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['expensesPercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['fees']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['feesPercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['insurance']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['insurancePercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['monthlyInterestRate']) > 7) {
+            return false;
+        }
+        if (strlen($this->container['taxes']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['taxesPercentage']) > 4) {
+            return false;
+        }
         return true;
     }
 
@@ -278,6 +404,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setFirstInstallmentDate($firstInstallmentDate)
     {
+        if (!is_null($firstInstallmentDate) && (strlen($firstInstallmentDate) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $firstInstallmentDate when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 6.');
+        }
+
         $this->container['firstInstallmentDate'] = $firstInstallmentDate;
 
         return $this;
@@ -299,6 +429,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setInvoiceData($invoiceData)
     {
+        if (!is_null($invoiceData) && (strlen($invoiceData) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $invoiceData when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 20.');
+        }
+
         $this->container['invoiceData'] = $invoiceData;
 
         return $this;
@@ -320,6 +454,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setPaymentType($paymentType)
     {
+        if (!is_null($paymentType) && (strlen($paymentType) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $paymentType when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 1.');
+        }
+
         $this->container['paymentType'] = $paymentType;
 
         return $this;
@@ -341,6 +479,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setAdditionalCosts($additionalCosts)
     {
+        if (!is_null($additionalCosts) && (strlen($additionalCosts) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $additionalCosts when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
         $this->container['additionalCosts'] = $additionalCosts;
 
         return $this;
@@ -362,6 +504,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setAdditionalCostsPercentage($additionalCostsPercentage)
     {
+        if (!is_null($additionalCostsPercentage) && (strlen($additionalCostsPercentage) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $additionalCostsPercentage when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 4.');
+        }
+
         $this->container['additionalCostsPercentage'] = $additionalCostsPercentage;
 
         return $this;
@@ -383,6 +529,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setAmountFunded($amountFunded)
     {
+        if (!is_null($amountFunded) && (strlen($amountFunded) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $amountFunded when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
         $this->container['amountFunded'] = $amountFunded;
 
         return $this;
@@ -404,6 +554,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setAmountRequestedPercentage($amountRequestedPercentage)
     {
+        if (!is_null($amountRequestedPercentage) && (strlen($amountRequestedPercentage) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $amountRequestedPercentage when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 4.');
+        }
+
         $this->container['amountRequestedPercentage'] = $amountRequestedPercentage;
 
         return $this;
@@ -425,6 +579,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setAnnualFinancingCost($annualFinancingCost)
     {
+        if (!is_null($annualFinancingCost) && (strlen($annualFinancingCost) > 7)) {
+            throw new \InvalidArgumentException('invalid length for $annualFinancingCost when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 7.');
+        }
+
         $this->container['annualFinancingCost'] = $annualFinancingCost;
 
         return $this;
@@ -446,6 +604,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setAnnualInterestRate($annualInterestRate)
     {
+        if (!is_null($annualInterestRate) && (strlen($annualInterestRate) > 7)) {
+            throw new \InvalidArgumentException('invalid length for $annualInterestRate when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 7.');
+        }
+
         $this->container['annualInterestRate'] = $annualInterestRate;
 
         return $this;
@@ -467,6 +629,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setExpenses($expenses)
     {
+        if (!is_null($expenses) && (strlen($expenses) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $expenses when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
         $this->container['expenses'] = $expenses;
 
         return $this;
@@ -488,6 +654,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setExpensesPercentage($expensesPercentage)
     {
+        if (!is_null($expensesPercentage) && (strlen($expensesPercentage) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $expensesPercentage when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 4.');
+        }
+
         $this->container['expensesPercentage'] = $expensesPercentage;
 
         return $this;
@@ -509,6 +679,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setFees($fees)
     {
+        if (!is_null($fees) && (strlen($fees) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $fees when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
         $this->container['fees'] = $fees;
 
         return $this;
@@ -530,6 +704,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setFeesPercentage($feesPercentage)
     {
+        if (!is_null($feesPercentage) && (strlen($feesPercentage) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $feesPercentage when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 4.');
+        }
+
         $this->container['feesPercentage'] = $feesPercentage;
 
         return $this;
@@ -551,6 +729,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setInsurance($insurance)
     {
+        if (!is_null($insurance) && (strlen($insurance) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $insurance when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
         $this->container['insurance'] = $insurance;
 
         return $this;
@@ -572,6 +754,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setInsurancePercentage($insurancePercentage)
     {
+        if (!is_null($insurancePercentage) && (strlen($insurancePercentage) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $insurancePercentage when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 4.');
+        }
+
         $this->container['insurancePercentage'] = $insurancePercentage;
 
         return $this;
@@ -593,6 +779,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setMonthlyInterestRate($monthlyInterestRate)
     {
+        if (!is_null($monthlyInterestRate) && (strlen($monthlyInterestRate) > 7)) {
+            throw new \InvalidArgumentException('invalid length for $monthlyInterestRate when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 7.');
+        }
+
         $this->container['monthlyInterestRate'] = $monthlyInterestRate;
 
         return $this;
@@ -614,6 +804,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setTaxes($taxes)
     {
+        if (!is_null($taxes) && (strlen($taxes) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $taxes when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
         $this->container['taxes'] = $taxes;
 
         return $this;
@@ -635,6 +829,10 @@ class Ptsv2paymentsidcapturesInstallmentInformation implements ArrayAccess
      */
     public function setTaxesPercentage($taxesPercentage)
     {
+        if (!is_null($taxesPercentage) && (strlen($taxesPercentage) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $taxesPercentage when calling Ptsv2paymentsidcapturesInstallmentInformation., must be smaller than or equal to 4.');
+        }
+
         $this->container['taxesPercentage'] = $taxesPercentage;
 
         return $this;

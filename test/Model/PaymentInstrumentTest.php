@@ -155,9 +155,9 @@ class PaymentInstrumentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "instrumentIdentifier"
+     * Test attribute "embedded"
      */
-    public function testPropertyInstrumentIdentifier()
+    public function testPropertyEmbedded()
     {
     }
 }

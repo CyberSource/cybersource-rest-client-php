@@ -59,6 +59,7 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
         'object' => 'string',
         'state' => 'string',
         'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard',
+        'issuer' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseIssuer',
         'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
         'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation',
         'metadata' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata'
@@ -74,6 +75,7 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
         'object' => null,
         'state' => null,
         'card' => null,
+        'issuer' => null,
         'bankAccount' => null,
         'processingInformation' => null,
         'metadata' => null
@@ -99,6 +101,7 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
         'object' => 'object',
         'state' => 'state',
         'card' => 'card',
+        'issuer' => 'issuer',
         'bankAccount' => 'bankAccount',
         'processingInformation' => 'processingInformation',
         'metadata' => 'metadata'
@@ -115,6 +118,7 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
         'object' => 'setObject',
         'state' => 'setState',
         'card' => 'setCard',
+        'issuer' => 'setIssuer',
         'bankAccount' => 'setBankAccount',
         'processingInformation' => 'setProcessingInformation',
         'metadata' => 'setMetadata'
@@ -131,6 +135,7 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
         'object' => 'getObject',
         'state' => 'getState',
         'card' => 'getCard',
+        'issuer' => 'getIssuer',
         'bankAccount' => 'getBankAccount',
         'processingInformation' => 'getProcessingInformation',
         'metadata' => 'getMetadata'
@@ -172,6 +177,7 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
         $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
@@ -303,6 +309,27 @@ class TmsV1InstrumentIdentifiersPost200Response implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuer
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseIssuer
+     */
+    public function getIssuer()
+    {
+        return $this->container['issuer'];
+    }
+
+    /**
+     * Sets issuer
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseIssuer $issuer
+     * @return $this
+     */
+    public function setIssuer($issuer)
+    {
+        $this->container['issuer'] = $issuer;
 
         return $this;
     }

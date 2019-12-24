@@ -155,9 +155,9 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedPaymentI
     }
 
     /**
-     * Test attribute "instrumentIdentifier"
+     * Test attribute "embedded"
      */
-    public function testPropertyInstrumentIdentifier()
+    public function testPropertyEmbedded()
     {
     }
 }
