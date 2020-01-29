@@ -1,6 +1,6 @@
 {
     "name": "itslit-tech/rest-client-php",
-    "version": "0.0.12",
+    "version": "1.0",
     "description": "Client SDK for CyberSource REST APIs",
     "keywords": [
         "cybersource", "payments", "ecommerce", "merchant", "merchants", "authorize", "visa", "payment", "payment-gateway", "payment-integration", "payment-module", "payment-processing", "payment-service", "payment-methods"
