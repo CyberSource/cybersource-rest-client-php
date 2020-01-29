@@ -1,5 +1,5 @@
 {
-    "name": "itslit-tech/rest-client-php",
+    "name": "itslit-tech/cybersource-rest-client-php",
     "version": "1.0",
     "description": "Client SDK for CyberSource REST APIs",
     "keywords": [
