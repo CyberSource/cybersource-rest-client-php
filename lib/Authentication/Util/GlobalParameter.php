@@ -24,6 +24,10 @@ class GlobalParameter
 	const SANDBOXURL = "apitest.cybersource.com";
 	const RUNENVIRONMENT = "cyberSource.environment.SANDBOX";
 	const RUNPRODENVIRONMENT = "cyberSource.environment.PRODUCTION";
+	const BOAPRODUCTIONURL = "api.merchant-services.bankofamerica.com";
+	const BOASANDBOXURL = "apitest.merchant-services.bankofamerica.com";
+	const BOARUNENVIRONMENT = "bankofamerica.environment.SANDBOX";
+	const BOARUNPRODENVIRONMENT = "bankofamerica.environment.PRODUCTION";
 	const KEY_DIR_PATH_DEFAULT = "Resources/";
 	const HTTPS_PREFIX = "https://"; 
 	const SIGNATURE = "Signature:";

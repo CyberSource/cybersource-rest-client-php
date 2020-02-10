@@ -210,6 +210,14 @@ class MerchantConfiguration
         {
            $this->host = GlobalParameter::PRODUCTIONURL;
         }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::BOARUNENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::BOASANDBOXURL;
+        }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::BOARUNPRODENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::BOAPRODUCTIONURL;
+        }
         else
         {
             $this->host =$this->runEnvironment;
