@@ -39,7 +39,7 @@ use \ArrayAccess;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RiskV1AuthenticationExemptionsPost201ResponseConsumerAuthenticationInformationStrongAuthentication implements ArrayAccess
+class RiskV1AuthenticationExemptionsPost201ResponseStrongAuthentication implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
