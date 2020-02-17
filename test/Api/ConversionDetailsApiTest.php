@@ -75,7 +75,7 @@ class ConversionDetailsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getConversionDetail
      *
-     * Get conversion detail transactions.
+     * Get Conversion Detail Transactions.
      *
      */
     public function testGetConversionDetail()

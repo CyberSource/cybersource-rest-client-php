@@ -75,7 +75,7 @@ class ReportDownloadsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for downloadReport
      *
-     * Download a report.
+     * Download a Report.
      *
      */
     public function testDownloadReport()

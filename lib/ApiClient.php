@@ -31,6 +31,9 @@ namespace CyberSource;
 use CyberSource\Authentication\Core\Authentication as Authentication;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\PayloadDigest\PayloadDigest as PayloadDigest;
+
+$stream_headers = array();
+
 /**
  * ApiClient Class Doc Comment
  *
@@ -68,6 +71,13 @@ class ApiClient
      * @var ObjectSerializer
      */
     protected $serializer;
+
+    /**
+     * Download File Path
+     *
+     * @var DownloadFilePath
+     */
+    public $downloadFilePath = null;
 
     /**
      * Constructor of the class
@@ -173,6 +183,7 @@ class ApiClient
     public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
     {
         $headers = [];
+        global $stream_headers;
 
         // construct the http header
         $headerParams = array_merge(
@@ -287,61 +298,123 @@ class ApiClient
             curl_setopt($curl, CURLOPT_VERBOSE, 0);
         }
 
-        // obtain the HTTP response headers
-        curl_setopt($curl, CURLOPT_HEADER, 1);
+        // File download functionality
+		$fileHandle = Null;
+        if (isset($this->downloadFilePath) && trim($this->downloadFilePath) != '') {
+            // obtain the HTTP response headers
+            curl_setopt($curl, CURLOPT_HEADER, 0);
+            curl_setopt($curl, CURLOPT_HEADERFUNCTION, array($this, 'header_callback'));
+            
+            $fileHandle = fopen($this->downloadFilePath, 'w+');
+            curl_setopt($curl, CURLOPT_FILE, $fileHandle);
+            curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+        } else {
+            // obtain the HTTP response headers
+            curl_setopt($curl, CURLOPT_HEADER, 1);
+        }
 
         // Make the request
         $response = curl_exec($curl);
-        $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
-        $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
-        $http_body = substr($response, $http_header_size);
-        //$http_body = $this->dataMasking($http_body);
-        $response_info = curl_getinfo($curl);
 
-        // debug HTTP response body
-        if ($this->config->getDebug()) {
-            error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
-        }
-
-        // Handle the response
-        if ($response_info['http_code'] === 0) {
-            $curl_error_message = curl_error($curl);
-
-            // curl_exec can sometimes fail but still return a blank message from curl_error().
-            if (!empty($curl_error_message)) {
-                $error_message = "API call to $url failed: $curl_error_message";
+        if (!isset($this->downloadFilePath) && trim($this->downloadFilePath) == '') {
+            $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+            $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
+            $http_body = substr($response, $http_header_size);
+            //$http_body = $this->dataMasking($http_body);
+            $response_info = curl_getinfo($curl);
+    
+            // debug HTTP response body
+            if ($this->config->getDebug()) {
+                error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+            }
+    
+            // Handle the response
+            if ($response_info['http_code'] === 0) {
+                $curl_error_message = curl_error($curl);
+    
+                // curl_exec can sometimes fail but still return a blank message from curl_error().
+                if (!empty($curl_error_message)) {
+                    $error_message = "API call to $url failed: $curl_error_message";
+                } else {
+                    $error_message = "API call to $url failed, but for an unknown reason. " .
+                        "This could happen if you are disconnected from the network.";
+                }
+    
+                $exception = new ApiException($error_message, 0, null, null);
+                $exception->setResponseObject($response_info);
+                throw $exception;
+            } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
+                // return raw body if response is a file
+                if ($responseType === '\SplFileObject' || $responseType === 'string') {
+                    return [$http_body, $response_info['http_code'], $http_header];
+                }
+    
+                $data = json_decode($http_body);
+                if (json_last_error() > 0) { // if response is a string
+                    $data = $http_body;
+                }
             } else {
-                $error_message = "API call to $url failed, but for an unknown reason. " .
-                    "This could happen if you are disconnected from the network.";
+                $data = json_decode($http_body);
+                if (json_last_error() > 0) { // if response is a string
+                    $data = $http_body;
+                }
+    
+                throw new ApiException(
+                    "[".$response_info['http_code']."] Error connecting to the API ($url)",
+                    $response_info['http_code'],
+                    $http_header,
+                    $data
+                );
             }
-
-            $exception = new ApiException($error_message, 0, null, null);
-            $exception->setResponseObject($response_info);
-            throw $exception;
-        } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
-            // return raw body if response is a file
-            if ($responseType === '\SplFileObject' || $responseType === 'string') {
-                return [$http_body, $response_info['http_code'], $http_header];
-            }
-
-            $data = json_decode($http_body);
-            if (json_last_error() > 0) { // if response is a string
-                $data = $http_body;
-            }
+            return [$data, $response_info['http_code'], $http_header];
         } else {
-            $data = json_decode($http_body);
-            if (json_last_error() > 0) { // if response is a string
-                $data = $http_body;
+            $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+            $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
+            $http_body = substr($response, $http_header_size);
+            $response_info = curl_getinfo($curl);
+            curl_close($curl);
+            
+            if ($fileHandle) {
+                fclose($fileHandle);
             }
+            
+            $downloadFilePath = null;
+            
+            // Handle the response
+            if ($response_info['http_code'] === 0) {
+                $curl_error_message = curl_error($curl);
 
-            throw new ApiException(
-                "[".$response_info['http_code']."] Error connecting to the API ($url)",
-                $response_info['http_code'],
-                $http_header,
-                $data
-            );
+                // curl_exec can sometimes fail but still return a blank message from curl_error().
+                if (!empty($curl_error_message)) {
+                    $error_message = "API call to $url failed: $curl_error_message";
+                } else {
+                    $error_message = "API call to $url failed, but for an unknown reason. " .
+                        "This could happen if you are disconnected from the network.";
+                }
+
+                $exception = new ApiException($error_message, 0, null, null);
+                $exception->setResponseObject($response_info);
+                throw $exception;
+            } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
+                $stream_headers['http_code'] = $response_info['http_code'];
+                
+                return [$http_body, $stream_headers['http_code'], $stream_headers];
+            } else {
+                throw new ApiException(
+                    "[".$response_info['http_code']."] Error connecting to the API ($url)",
+                    $response_info['http_code'],
+                    $stream_headers,
+                    null
+                );
+            }
         }
-        return [$data, $response_info['http_code'], $http_header];
+    }
+    
+    function header_callback($curl, $header_line) { 
+        global $stream_headers;
+        
+		$stream_headers[] = $this->httpParseHeaders($header_line);
+        return strlen($header_line);
     }
 
     /**

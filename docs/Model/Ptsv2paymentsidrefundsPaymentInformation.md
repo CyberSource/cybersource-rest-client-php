@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **card** | [**\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationCard**](Ptsv2paymentsidrefundsPaymentInformationCard.md) |  | [optional] 
 **bank** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationBank**](Ptsv2paymentsPaymentInformationBank.md) |  | [optional] 
+**tokenizedCard** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard**](Ptsv2paymentsPaymentInformationTokenizedCard.md) |  | [optional] 
+**fluidData** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData**](Ptsv2paymentsPaymentInformationFluidData.md) |  | [optional] 
 **customer** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer**](Ptsv2paymentsPaymentInformationCustomer.md) |  | [optional] 
 **paymentType** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType**](Ptsv2paymentsPaymentInformationPaymentType.md) |  | [optional] 
 

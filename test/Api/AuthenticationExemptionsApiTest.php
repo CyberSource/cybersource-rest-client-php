@@ -75,7 +75,7 @@ class AuthenticationExemptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for authenticationExemptions
      *
-     * Authentication exemptions service.
+     * Authentication Exemptions Service.
      *
      */
     public function testAuthenticationExemptions()

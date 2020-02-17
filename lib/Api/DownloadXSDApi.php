@@ -90,7 +90,7 @@ class DownloadXSDApi
     /**
      * Operation getXSDV2
      *
-     * Download XSD for report
+     * Download XSD for Report
      *
      * @param string $reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class DownloadXSDApi
     /**
      * Operation getXSDV2WithHttpInfo
      *
-     * Download XSD for report
+     * Download XSD for Report
      *
      * @param string $reportDefinitionNameVersion Name and version of XSD file to download. Some XSDs only have one version. In that case version name is not needed. Some example values are DecisionManagerDetailReport, DecisionManagerTypes (required)
      * @throws \CyberSource\ApiException on non-2xx response

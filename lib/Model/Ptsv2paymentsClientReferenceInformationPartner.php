@@ -56,7 +56,8 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     protected static $swaggerTypes = [
         'originalTransactionId' => 'string',
         'developerId' => 'string',
-        'solutionId' => 'string'
+        'solutionId' => 'string',
+        'thirdPartyCertificationNumber' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     protected static $swaggerFormats = [
         'originalTransactionId' => null,
         'developerId' => null,
-        'solutionId' => null
+        'solutionId' => null,
+        'thirdPartyCertificationNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     protected static $attributeMap = [
         'originalTransactionId' => 'originalTransactionId',
         'developerId' => 'developerId',
-        'solutionId' => 'solutionId'
+        'solutionId' => 'solutionId',
+        'thirdPartyCertificationNumber' => 'thirdPartyCertificationNumber'
     ];
 
 
@@ -97,7 +100,8 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     protected static $setters = [
         'originalTransactionId' => 'setOriginalTransactionId',
         'developerId' => 'setDeveloperId',
-        'solutionId' => 'setSolutionId'
+        'solutionId' => 'setSolutionId',
+        'thirdPartyCertificationNumber' => 'setThirdPartyCertificationNumber'
     ];
 
 
@@ -108,7 +112,8 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     protected static $getters = [
         'originalTransactionId' => 'getOriginalTransactionId',
         'developerId' => 'getDeveloperId',
-        'solutionId' => 'getSolutionId'
+        'solutionId' => 'getSolutionId',
+        'thirdPartyCertificationNumber' => 'getThirdPartyCertificationNumber'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
         $this->container['originalTransactionId'] = isset($data['originalTransactionId']) ? $data['originalTransactionId'] : null;
         $this->container['developerId'] = isset($data['developerId']) ? $data['developerId'] : null;
         $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;
+        $this->container['thirdPartyCertificationNumber'] = isset($data['thirdPartyCertificationNumber']) ? $data['thirdPartyCertificationNumber'] : null;
     }
 
     /**
@@ -168,6 +174,10 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
             $invalid_properties[] = "invalid value for 'solutionId', the character length must be smaller than or equal to 8.";
         }
 
+        if (!is_null($this->container['thirdPartyCertificationNumber']) && (strlen($this->container['thirdPartyCertificationNumber']) > 12)) {
+            $invalid_properties[] = "invalid value for 'thirdPartyCertificationNumber', the character length must be smaller than or equal to 12.";
+        }
+
         return $invalid_properties;
     }
 
@@ -187,6 +197,9 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
             return false;
         }
         if (strlen($this->container['solutionId']) > 8) {
+            return false;
+        }
+        if (strlen($this->container['thirdPartyCertificationNumber']) > 12) {
             return false;
         }
         return true;
@@ -264,6 +277,31 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
         }
 
         $this->container['solutionId'] = $solutionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets thirdPartyCertificationNumber
+     * @return string
+     */
+    public function getThirdPartyCertificationNumber()
+    {
+        return $this->container['thirdPartyCertificationNumber'];
+    }
+
+    /**
+     * Sets thirdPartyCertificationNumber
+     * @param string $thirdPartyCertificationNumber Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.
+     * @return $this
+     */
+    public function setThirdPartyCertificationNumber($thirdPartyCertificationNumber)
+    {
+        if (!is_null($thirdPartyCertificationNumber) && (strlen($thirdPartyCertificationNumber) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $thirdPartyCertificationNumber when calling Ptsv2paymentsClientReferenceInformationPartner., must be smaller than or equal to 12.');
+        }
+
+        $this->container['thirdPartyCertificationNumber'] = $thirdPartyCertificationNumber;
 
         return $this;
     }

@@ -54,9 +54,8 @@ class Error implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'message' => 'string',
-        'details' => '\CyberSource\Model\Tmsv1instrumentidentifiersDetails'
+        'responseStatus' => '\CyberSource\Model\InlineResponseDefaultResponseStatus',
+        'links' => '\CyberSource\Model\ErrorLinks'
     ];
 
     /**
@@ -64,9 +63,8 @@ class Error implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'message' => null,
-        'details' => null
+        'responseStatus' => null,
+        'links' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +82,8 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'message' => 'message',
-        'details' => 'details'
+        'responseStatus' => 'responseStatus',
+        'links' => '_links'
     ];
 
 
@@ -95,9 +92,8 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'responseStatus' => 'setResponseStatus',
+        'links' => 'setLinks'
     ];
 
 
@@ -106,9 +102,8 @@ class Error implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'responseStatus' => 'getResponseStatus',
+        'links' => 'getLinks'
     ];
 
     public static function attributeMap()
@@ -142,9 +137,8 @@ class Error implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['responseStatus'] = isset($data['responseStatus']) ? $data['responseStatus'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
     }
 
     /**
@@ -173,64 +167,43 @@ class Error implements ArrayAccess
 
 
     /**
-     * Gets type
-     * @return string
+     * Gets responseStatus
+     * @return \CyberSource\Model\InlineResponseDefaultResponseStatus
      */
-    public function getType()
+    public function getResponseStatus()
     {
-        return $this->container['type'];
+        return $this->container['responseStatus'];
     }
 
     /**
-     * Sets type
-     * @param string $type
+     * Sets responseStatus
+     * @param \CyberSource\Model\InlineResponseDefaultResponseStatus $responseStatus
      * @return $this
      */
-    public function setType($type)
+    public function setResponseStatus($responseStatus)
     {
-        $this->container['type'] = $type;
+        $this->container['responseStatus'] = $responseStatus;
 
         return $this;
     }
 
     /**
-     * Gets message
-     * @return string
+     * Gets links
+     * @return \CyberSource\Model\ErrorLinks
      */
-    public function getMessage()
+    public function getLinks()
     {
-        return $this->container['message'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets message
-     * @param string $message The detailed message related to the type stated above.
+     * Sets links
+     * @param \CyberSource\Model\ErrorLinks $links
      * @return $this
      */
-    public function setMessage($message)
+    public function setLinks($links)
     {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersDetails
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersDetails $details
-     * @return $this
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['links'] = $links;
 
         return $this;
     }

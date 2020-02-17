@@ -113,6 +113,13 @@ class TmsV1InstrumentIdentifiersPost200ResponseTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "tokenizedCard"
+     */
+    public function testPropertyTokenizedCard()
+    {
+    }
+
+    /**
      * Test attribute "issuer"
      */
     public function testPropertyIssuer()

@@ -54,21 +54,12 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'acsRenderingType' => 'string',
-        'acsTransactionId' => 'string',
         'authenticationTransactionId' => 'string',
         'authenticationType' => 'string',
-        'challengeCancelCode' => 'string',
         'effectiveAuthenticationType' => 'string',
-        'directoryServerErrorCode' => 'string',
-        'directoryServerErrorDescription' => 'string',
-        'interactionCounter' => 'string',
         'signedParesStatusReason' => 'string',
-        'sdkTransactionId' => 'string',
         'signedPares' => 'string',
-        'threeDSServerTransactionId' => 'string',
-        'whiteListStatus' => 'string',
-        'whiteListStatusSource' => 'string'
+        'whiteListStatus' => 'string'
     ];
 
     /**
@@ -76,21 +67,12 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'acsRenderingType' => null,
-        'acsTransactionId' => null,
         'authenticationTransactionId' => null,
         'authenticationType' => null,
-        'challengeCancelCode' => null,
         'effectiveAuthenticationType' => null,
-        'directoryServerErrorCode' => null,
-        'directoryServerErrorDescription' => null,
-        'interactionCounter' => null,
         'signedParesStatusReason' => null,
-        'sdkTransactionId' => null,
         'signedPares' => null,
-        'threeDSServerTransactionId' => null,
-        'whiteListStatus' => null,
-        'whiteListStatusSource' => null
+        'whiteListStatus' => null
     ];
 
     public static function swaggerTypes()
@@ -108,21 +90,12 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'acsRenderingType' => 'acsRenderingType',
-        'acsTransactionId' => 'acsTransactionId',
         'authenticationTransactionId' => 'authenticationTransactionId',
         'authenticationType' => 'authenticationType',
-        'challengeCancelCode' => 'challengeCancelCode',
         'effectiveAuthenticationType' => 'effectiveAuthenticationType',
-        'directoryServerErrorCode' => 'directoryServerErrorCode',
-        'directoryServerErrorDescription' => 'directoryServerErrorDescription',
-        'interactionCounter' => 'interactionCounter',
         'signedParesStatusReason' => 'signedParesStatusReason',
-        'sdkTransactionId' => 'sdkTransactionId',
         'signedPares' => 'signedPares',
-        'threeDSServerTransactionId' => 'threeDSServerTransactionId',
-        'whiteListStatus' => 'whiteListStatus',
-        'whiteListStatusSource' => 'whiteListStatusSource'
+        'whiteListStatus' => 'whiteListStatus'
     ];
 
 
@@ -131,21 +104,12 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      * @var string[]
      */
     protected static $setters = [
-        'acsRenderingType' => 'setAcsRenderingType',
-        'acsTransactionId' => 'setAcsTransactionId',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
         'authenticationType' => 'setAuthenticationType',
-        'challengeCancelCode' => 'setChallengeCancelCode',
         'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
-        'directoryServerErrorCode' => 'setDirectoryServerErrorCode',
-        'directoryServerErrorDescription' => 'setDirectoryServerErrorDescription',
-        'interactionCounter' => 'setInteractionCounter',
         'signedParesStatusReason' => 'setSignedParesStatusReason',
-        'sdkTransactionId' => 'setSdkTransactionId',
         'signedPares' => 'setSignedPares',
-        'threeDSServerTransactionId' => 'setThreeDSServerTransactionId',
-        'whiteListStatus' => 'setWhiteListStatus',
-        'whiteListStatusSource' => 'setWhiteListStatusSource'
+        'whiteListStatus' => 'setWhiteListStatus'
     ];
 
 
@@ -154,21 +118,12 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      * @var string[]
      */
     protected static $getters = [
-        'acsRenderingType' => 'getAcsRenderingType',
-        'acsTransactionId' => 'getAcsTransactionId',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
         'authenticationType' => 'getAuthenticationType',
-        'challengeCancelCode' => 'getChallengeCancelCode',
         'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
-        'directoryServerErrorCode' => 'getDirectoryServerErrorCode',
-        'directoryServerErrorDescription' => 'getDirectoryServerErrorDescription',
-        'interactionCounter' => 'getInteractionCounter',
         'signedParesStatusReason' => 'getSignedParesStatusReason',
-        'sdkTransactionId' => 'getSdkTransactionId',
         'signedPares' => 'getSignedPares',
-        'threeDSServerTransactionId' => 'getThreeDSServerTransactionId',
-        'whiteListStatus' => 'getWhiteListStatus',
-        'whiteListStatusSource' => 'getWhiteListStatusSource'
+        'whiteListStatus' => 'getWhiteListStatus'
     ];
 
     public static function attributeMap()
@@ -202,21 +157,12 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     public function __construct(array $data = null)
     {
-        $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
-        $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
         $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
-        $this->container['challengeCancelCode'] = isset($data['challengeCancelCode']) ? $data['challengeCancelCode'] : null;
         $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
-        $this->container['directoryServerErrorCode'] = isset($data['directoryServerErrorCode']) ? $data['directoryServerErrorCode'] : null;
-        $this->container['directoryServerErrorDescription'] = isset($data['directoryServerErrorDescription']) ? $data['directoryServerErrorDescription'] : null;
-        $this->container['interactionCounter'] = isset($data['interactionCounter']) ? $data['interactionCounter'] : null;
         $this->container['signedParesStatusReason'] = isset($data['signedParesStatusReason']) ? $data['signedParesStatusReason'] : null;
-        $this->container['sdkTransactionId'] = isset($data['sdkTransactionId']) ? $data['sdkTransactionId'] : null;
         $this->container['signedPares'] = isset($data['signedPares']) ? $data['signedPares'] : null;
-        $this->container['threeDSServerTransactionId'] = isset($data['threeDSServerTransactionId']) ? $data['threeDSServerTransactionId'] : null;
         $this->container['whiteListStatus'] = isset($data['whiteListStatus']) ? $data['whiteListStatus'] : null;
-        $this->container['whiteListStatusSource'] = isset($data['whiteListStatusSource']) ? $data['whiteListStatusSource'] : null;
     }
 
     /**
@@ -228,10 +174,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
         if (!is_null($this->container['authenticationTransactionId']) && (strlen($this->container['authenticationTransactionId']) > 20)) {
             $invalid_properties[] = "invalid value for 'authenticationTransactionId', the character length must be smaller than or equal to 20.";
         }
@@ -240,47 +182,19 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
             $invalid_properties[] = "invalid value for 'authenticationType', the character length must be smaller than or equal to 2.";
         }
 
-        if (!is_null($this->container['challengeCancelCode']) && (strlen($this->container['challengeCancelCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'challengeCancelCode', the character length must be smaller than or equal to 2.";
-        }
-
         if (!is_null($this->container['effectiveAuthenticationType']) && (strlen($this->container['effectiveAuthenticationType']) > 2)) {
             $invalid_properties[] = "invalid value for 'effectiveAuthenticationType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['directoryServerErrorCode']) && (strlen($this->container['directoryServerErrorCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorDescription', the character length must be smaller than or equal to 4096.";
-        }
-
-        if (!is_null($this->container['interactionCounter']) && (strlen($this->container['interactionCounter']) > 2)) {
-            $invalid_properties[] = "invalid value for 'interactionCounter', the character length must be smaller than or equal to 2.";
         }
 
         if (!is_null($this->container['signedParesStatusReason']) && (strlen($this->container['signedParesStatusReason']) > 2)) {
             $invalid_properties[] = "invalid value for 'signedParesStatusReason', the character length must be smaller than or equal to 2.";
         }
 
-        if (!is_null($this->container['sdkTransactionId']) && (strlen($this->container['sdkTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'sdkTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
         if ($this->container['signedPares'] === null) {
             $invalid_properties[] = "'signedPares' can't be null";
         }
-        if (!is_null($this->container['threeDSServerTransactionId']) && (strlen($this->container['threeDSServerTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'threeDSServerTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
         if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
             $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['whiteListStatusSource']) && (strlen($this->container['whiteListStatusSource']) > 2)) {
-            $invalid_properties[] = "invalid value for 'whiteListStatusSource', the character length must be smaller than or equal to 2.";
         }
 
         return $invalid_properties;
@@ -295,97 +209,27 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function valid()
     {
 
-        if (strlen($this->container['acsTransactionId']) > 36) {
-            return false;
-        }
         if (strlen($this->container['authenticationTransactionId']) > 20) {
             return false;
         }
         if (strlen($this->container['authenticationType']) > 2) {
             return false;
         }
-        if (strlen($this->container['challengeCancelCode']) > 2) {
-            return false;
-        }
         if (strlen($this->container['effectiveAuthenticationType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerErrorCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
-            return false;
-        }
-        if (strlen($this->container['interactionCounter']) > 2) {
             return false;
         }
         if (strlen($this->container['signedParesStatusReason']) > 2) {
             return false;
         }
-        if (strlen($this->container['sdkTransactionId']) > 36) {
-            return false;
-        }
         if ($this->container['signedPares'] === null) {
-            return false;
-        }
-        if (strlen($this->container['threeDSServerTransactionId']) > 36) {
             return false;
         }
         if (strlen($this->container['whiteListStatus']) > 1) {
             return false;
         }
-        if (strlen($this->container['whiteListStatusSource']) > 2) {
-            return false;
-        }
         return true;
     }
 
-
-    /**
-     * Gets acsRenderingType
-     * @return string
-     */
-    public function getAcsRenderingType()
-    {
-        return $this->container['acsRenderingType'];
-    }
-
-    /**
-     * Sets acsRenderingType
-     * @param string $acsRenderingType Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK.
-     * @return $this
-     */
-    public function setAcsRenderingType($acsRenderingType)
-    {
-        $this->container['acsRenderingType'] = $acsRenderingType;
-
-        return $this;
-    }
-
-    /**
-     * Gets acsTransactionId
-     * @return string
-     */
-    public function getAcsTransactionId()
-    {
-        return $this->container['acsTransactionId'];
-    }
-
-    /**
-     * Sets acsTransactionId
-     * @param string $acsTransactionId Unique transaction identifier assigned by the ACS to identify a single transaction.
-     * @return $this
-     */
-    public function setAcsTransactionId($acsTransactionId)
-    {
-        if (!is_null($acsTransactionId) && (strlen($acsTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $acsTransactionId when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
-
-        $this->container['acsTransactionId'] = $acsTransactionId;
-
-        return $this;
-    }
 
     /**
      * Gets authenticationTransactionId
@@ -438,31 +282,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     }
 
     /**
-     * Gets challengeCancelCode
-     * @return string
-     */
-    public function getChallengeCancelCode()
-    {
-        return $this->container['challengeCancelCode'];
-    }
-
-    /**
-     * Sets challengeCancelCode
-     * @param string $challengeCancelCode An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK
-     * @return $this
-     */
-    public function setChallengeCancelCode($challengeCancelCode)
-    {
-        if (!is_null($challengeCancelCode) && (strlen($challengeCancelCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $challengeCancelCode when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['challengeCancelCode'] = $challengeCancelCode;
-
-        return $this;
-    }
-
-    /**
      * Gets effectiveAuthenticationType
      * @return string
      */
@@ -483,81 +302,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         }
 
         $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
-
-        return $this;
-    }
-
-    /**
-     * Gets directoryServerErrorCode
-     * @return string
-     */
-    public function getDirectoryServerErrorCode()
-    {
-        return $this->container['directoryServerErrorCode'];
-    }
-
-    /**
-     * Sets directoryServerErrorCode
-     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction.
-     * @return $this
-     */
-    public function setDirectoryServerErrorCode($directoryServerErrorCode)
-    {
-        if (!is_null($directoryServerErrorCode) && (strlen($directoryServerErrorCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorCode when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 3.');
-        }
-
-        $this->container['directoryServerErrorCode'] = $directoryServerErrorCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets directoryServerErrorDescription
-     * @return string
-     */
-    public function getDirectoryServerErrorDescription()
-    {
-        return $this->container['directoryServerErrorDescription'];
-    }
-
-    /**
-     * Sets directoryServerErrorDescription
-     * @param string $directoryServerErrorDescription Directory server text and additional detail about the error for this transaction.
-     * @return $this
-     */
-    public function setDirectoryServerErrorDescription($directoryServerErrorDescription)
-    {
-        if (!is_null($directoryServerErrorDescription) && (strlen($directoryServerErrorDescription) > 4096)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorDescription when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 4096.');
-        }
-
-        $this->container['directoryServerErrorDescription'] = $directoryServerErrorDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets interactionCounter
-     * @return string
-     */
-    public function getInteractionCounter()
-    {
-        return $this->container['interactionCounter'];
-    }
-
-    /**
-     * Sets interactionCounter
-     * @param string $interactionCounter Indicates the number of authentication cycles attempted by the cardholder and is tracked by the Issuing Banks ACS.Example: if customer gets the challenge window and enter in their one time password and hit submit then that interaction counter should just be 1. When customer gets the challenge window and the bank asks if they want to have the one time password  sent to their phone or their email and they have to choose before going to the next screen to enter in their one time password then this interaction count would be 2. One for the selection of how they want the one time password delivered and another with them actually entering in the one time password and hitting the submit button.
-     * @return $this
-     */
-    public function setInteractionCounter($interactionCounter)
-    {
-        if (!is_null($interactionCounter) && (strlen($interactionCounter) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $interactionCounter when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['interactionCounter'] = $interactionCounter;
 
         return $this;
     }
@@ -588,31 +332,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     }
 
     /**
-     * Gets sdkTransactionId
-     * @return string
-     */
-    public function getSdkTransactionId()
-    {
-        return $this->container['sdkTransactionId'];
-    }
-
-    /**
-     * Sets sdkTransactionId
-     * @param string $sdkTransactionId SDK unique transaction identifier that is generated on each new transaction.
-     * @return $this
-     */
-    public function setSdkTransactionId($sdkTransactionId)
-    {
-        if (!is_null($sdkTransactionId) && (strlen($sdkTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $sdkTransactionId when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
-
-        $this->container['sdkTransactionId'] = $sdkTransactionId;
-
-        return $this;
-    }
-
-    /**
      * Gets signedPares
      * @return string
      */
@@ -629,31 +348,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function setSignedPares($signedPares)
     {
         $this->container['signedPares'] = $signedPares;
-
-        return $this;
-    }
-
-    /**
-     * Gets threeDSServerTransactionId
-     * @return string
-     */
-    public function getThreeDSServerTransactionId()
-    {
-        return $this->container['threeDSServerTransactionId'];
-    }
-
-    /**
-     * Sets threeDSServerTransactionId
-     * @param string $threeDSServerTransactionId Unique transaction identifier assigned by the 3DS Server to identify a single transaction.
-     * @return $this
-     */
-    public function setThreeDSServerTransactionId($threeDSServerTransactionId)
-    {
-        if (!is_null($threeDSServerTransactionId) && (strlen($threeDSServerTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $threeDSServerTransactionId when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
-
-        $this->container['threeDSServerTransactionId'] = $threeDSServerTransactionId;
 
         return $this;
     }
@@ -679,31 +373,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         }
 
         $this->container['whiteListStatus'] = $whiteListStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets whiteListStatusSource
-     * @return string
-     */
-    public function getWhiteListStatusSource()
-    {
-        return $this->container['whiteListStatusSource'];
-    }
-
-    /**
-     * Sets whiteListStatusSource
-     * @param string $whiteListStatusSource This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS
-     * @return $this
-     */
-    public function setWhiteListStatusSource($whiteListStatusSource)
-    {
-        if (!is_null($whiteListStatusSource) && (strlen($whiteListStatusSource) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $whiteListStatusSource when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['whiteListStatusSource'] = $whiteListStatusSource;
 
         return $this;
     }

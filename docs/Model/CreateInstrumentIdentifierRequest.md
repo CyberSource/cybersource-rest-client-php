@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of Card | [optional] 
+**type** | **string** | Enrol card for a Network Token | [optional] 
 **card** | [**\CyberSource\Model\Tmsv1instrumentidentifiersCard**](Tmsv1instrumentidentifiersCard.md) |  | [optional] 
 **bankAccount** | [**\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount**](Tmsv1instrumentidentifiersBankAccount.md) |  | [optional] 
 **billTo** | [**\CyberSource\Model\Tmsv1instrumentidentifiersBillTo**](Tmsv1instrumentidentifiersBillTo.md) |  | [optional] 

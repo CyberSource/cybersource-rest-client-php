@@ -88,6 +88,93 @@ class VoidApi
     }
 
     /**
+     * Operation mitVoid
+     *
+     * Merchant Initiated Void
+     *
+     * @param \CyberSource\Model\MitVoidRequest $mitVoidRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mitVoid($mitVoidRequest)
+    {
+        list($response, $statusCode, $httpHeader) = $this->mitVoidWithHttpInfo($mitVoidRequest);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation mitVoidWithHttpInfo
+     *
+     * Merchant Initiated Void
+     *
+     * @param \CyberSource\Model\MitVoidRequest $mitVoidRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsVoidsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mitVoidWithHttpInfo($mitVoidRequest)
+    {
+        // verify the required parameter 'mitVoidRequest' is set
+        if ($mitVoidRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mitVoidRequest when calling mitVoid');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v2/voids/";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($mitVoidRequest)) {
+            $_tempBody = $mitVoidRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
+                '/pts/v2/voids/'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsVoidsPost400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation voidCapture
      *
      * Void a Capture

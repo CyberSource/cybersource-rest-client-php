@@ -64,7 +64,8 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\PtsV2CreditsPost201ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformation',
         'paymentInformation' => '\CyberSource\Model\PtsV2CreditsPost201ResponsePaymentInformation',
-        'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation'
+        'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'
     ];
 
     /**
@@ -82,7 +83,8 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'processingInformation' => null,
         'processorInformation' => null,
         'paymentInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'pointOfSaleInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +112,8 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
         'paymentInformation' => 'paymentInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'pointOfSaleInformation' => 'pointOfSaleInformation'
     ];
 
 
@@ -129,7 +132,8 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
         'paymentInformation' => 'setPaymentInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'pointOfSaleInformation' => 'setPointOfSaleInformation'
     ];
 
 
@@ -148,7 +152,8 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
         'paymentInformation' => 'getPaymentInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'pointOfSaleInformation' => 'getPointOfSaleInformation'
     ];
 
     public static function attributeMap()
@@ -193,6 +198,7 @@ class PtsV2CreditsPost201Response implements ArrayAccess
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
     }
 
     /**
@@ -266,7 +272,7 @@ class PtsV2CreditsPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)
@@ -312,7 +318,7 @@ class PtsV2CreditsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - PENDING
+     * @param string $status The status of the submitted transaction.  Possible values:  - PENDING  - COMPLETED (as in the case of PIN Debit Full Financial Credit)
      * @return $this
      */
     public function setStatus($status)
@@ -469,6 +475,27 @@ class PtsV2CreditsPost201Response implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointOfSaleInformation
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation
+     */
+    public function getPointOfSaleInformation()
+    {
+        return $this->container['pointOfSaleInformation'];
+    }
+
+    /**
+     * Sets pointOfSaleInformation
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation $pointOfSaleInformation
+     * @return $this
+     */
+    public function setPointOfSaleInformation($pointOfSaleInformation)
+    {
+        $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
 
         return $this;
     }

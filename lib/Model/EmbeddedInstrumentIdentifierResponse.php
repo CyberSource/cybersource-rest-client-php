@@ -59,6 +59,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         'state' => 'string',
         'id' => 'string',
         'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard',
+        'tokenizedCard' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard',
         'bankAccount' => '\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount',
         'issuer' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseIssuer',
         'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation',
@@ -75,6 +76,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         'state' => null,
         'id' => null,
         'card' => null,
+        'tokenizedCard' => null,
         'bankAccount' => null,
         'issuer' => null,
         'processingInformation' => null,
@@ -101,6 +103,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         'state' => 'state',
         'id' => 'id',
         'card' => 'card',
+        'tokenizedCard' => 'tokenizedCard',
         'bankAccount' => 'bankAccount',
         'issuer' => 'issuer',
         'processingInformation' => 'processingInformation',
@@ -118,6 +121,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         'state' => 'setState',
         'id' => 'setId',
         'card' => 'setCard',
+        'tokenizedCard' => 'setTokenizedCard',
         'bankAccount' => 'setBankAccount',
         'issuer' => 'setIssuer',
         'processingInformation' => 'setProcessingInformation',
@@ -135,6 +139,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         'state' => 'getState',
         'id' => 'getId',
         'card' => 'getCard',
+        'tokenizedCard' => 'getTokenizedCard',
         'bankAccount' => 'getBankAccount',
         'issuer' => 'getIssuer',
         'processingInformation' => 'getProcessingInformation',
@@ -177,6 +182,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
@@ -330,6 +336,27 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenizedCard
+     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard
+     */
+    public function getTokenizedCard()
+    {
+        return $this->container['tokenizedCard'];
+    }
+
+    /**
+     * Sets tokenizedCard
+     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard $tokenizedCard
+     * @return $this
+     */
+    public function setTokenizedCard($tokenizedCard)
+    {
+        $this->container['tokenizedCard'] = $tokenizedCard;
 
         return $this;
     }

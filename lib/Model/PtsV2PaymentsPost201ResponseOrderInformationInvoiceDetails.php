@@ -54,7 +54,8 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'level3TransmissionStatus' => 'bool'
+        'level3TransmissionStatus' => 'bool',
+        'salesSlipNumber' => 'int'
     ];
 
     /**
@@ -62,7 +63,8 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'level3TransmissionStatus' => null
+        'level3TransmissionStatus' => null,
+        'salesSlipNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'level3TransmissionStatus' => 'level3TransmissionStatus'
+        'level3TransmissionStatus' => 'level3TransmissionStatus',
+        'salesSlipNumber' => 'salesSlipNumber'
     ];
 
 
@@ -89,7 +92,8 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
      * @var string[]
      */
     protected static $setters = [
-        'level3TransmissionStatus' => 'setLevel3TransmissionStatus'
+        'level3TransmissionStatus' => 'setLevel3TransmissionStatus',
+        'salesSlipNumber' => 'setSalesSlipNumber'
     ];
 
 
@@ -98,7 +102,8 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
      * @var string[]
      */
     protected static $getters = [
-        'level3TransmissionStatus' => 'getLevel3TransmissionStatus'
+        'level3TransmissionStatus' => 'getLevel3TransmissionStatus',
+        'salesSlipNumber' => 'getSalesSlipNumber'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
     public function __construct(array $data = null)
     {
         $this->container['level3TransmissionStatus'] = isset($data['level3TransmissionStatus']) ? $data['level3TransmissionStatus'] : null;
+        $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
     }
 
     /**
@@ -143,6 +149,10 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['salesSlipNumber']) && ($this->container['salesSlipNumber'] > 99999)) {
+            $invalid_properties[] = "invalid value for 'salesSlipNumber', must be smaller than or equal to 99999.";
+        }
 
         return $invalid_properties;
     }
@@ -156,6 +166,9 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
     public function valid()
     {
 
+        if ($this->container['salesSlipNumber'] > 99999) {
+            return false;
+        }
         return true;
     }
 
@@ -177,6 +190,32 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
     public function setLevel3TransmissionStatus($level3TransmissionStatus)
     {
         $this->container['level3TransmissionStatus'] = $level3TransmissionStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets salesSlipNumber
+     * @return int
+     */
+    public function getSalesSlipNumber()
+    {
+        return $this->container['salesSlipNumber'];
+    }
+
+    /**
+     * Sets salesSlipNumber
+     * @param int $salesSlipNumber Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.
+     * @return $this
+     */
+    public function setSalesSlipNumber($salesSlipNumber)
+    {
+
+        if (!is_null($salesSlipNumber) && ($salesSlipNumber > 99999)) {
+            throw new \InvalidArgumentException('invalid value for $salesSlipNumber when calling PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails., must be smaller than or equal to 99999.');
+        }
+
+        $this->container['salesSlipNumber'] = $salesSlipNumber;
 
         return $this;
     }

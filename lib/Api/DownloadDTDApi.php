@@ -90,7 +90,7 @@ class DownloadDTDApi
     /**
      * Operation getDTDV2
      *
-     * Download DTD for report
+     * Download DTD for Report
      *
      * @param string $reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class DownloadDTDApi
     /**
      * Operation getDTDV2WithHttpInfo
      *
-     * Download DTD for report
+     * Download DTD for Report
      *
      * @param string $reportDefinitionNameVersion Name and version of DTD file to download. Some DTDs only have one version. In that case version name is not needed. Some example values are ctdr-1.0, tdr, pbdr-1.1 (required)
      * @throws \CyberSource\ApiException on non-2xx response

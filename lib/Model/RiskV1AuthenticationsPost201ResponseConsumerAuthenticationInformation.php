@@ -54,24 +54,41 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'acsRenderingType' => 'string',
+        'acsTransactionId' => 'string',
         'acsUrl' => 'string',
         'authenticationPath' => 'string',
+        'authorizationPayload' => 'string',
         'authenticationTransactionId' => 'string',
+        'cardholderMessage' => 'string',
         'cavv' => 'string',
         'cavvAlgorithm' => 'string',
+        'challengeCancelCode' => 'string',
         'challengeRequired' => 'string',
+        'decoupledAuthenticationIndicator' => 'string',
+        'directoryServerErrorCode' => 'string',
+        'directoryServerErrorDescription' => 'string',
         'ecommerceIndicator' => 'string',
         'eci' => 'string',
         'eciRaw' => 'string',
+        'effectiveAuthenticationType' => 'string',
+        'ivr' => '\CyberSource\Model\RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr',
+        'networkScore' => 'string',
         'pareq' => 'string',
         'paresStatus' => 'string',
         'proofXml' => 'string',
         'proxyPan' => 'string',
+        'sdkTransactionId' => 'string',
+        'signedParesStatusReason' => 'string',
         'specificationVersion' => 'string',
+        'stepUpUrl' => 'string',
+        'threeDSServerTransactionId' => 'string',
         'ucafAuthenticationData' => 'string',
         'ucafCollectionIndicator' => 'float',
         'veresEnrolled' => 'string',
-        'xid' => 'string'
+        'whiteListStatusSource' => 'string',
+        'xid' => 'string',
+        'directoryServerTransactionId' => 'string'
     ];
 
     /**
@@ -79,24 +96,41 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'acsRenderingType' => null,
+        'acsTransactionId' => null,
         'acsUrl' => null,
         'authenticationPath' => null,
+        'authorizationPayload' => null,
         'authenticationTransactionId' => null,
+        'cardholderMessage' => null,
         'cavv' => null,
         'cavvAlgorithm' => null,
+        'challengeCancelCode' => null,
         'challengeRequired' => null,
+        'decoupledAuthenticationIndicator' => null,
+        'directoryServerErrorCode' => null,
+        'directoryServerErrorDescription' => null,
         'ecommerceIndicator' => null,
         'eci' => null,
         'eciRaw' => null,
+        'effectiveAuthenticationType' => null,
+        'ivr' => null,
+        'networkScore' => null,
         'pareq' => null,
         'paresStatus' => null,
         'proofXml' => null,
         'proxyPan' => null,
+        'sdkTransactionId' => null,
+        'signedParesStatusReason' => null,
         'specificationVersion' => null,
+        'stepUpUrl' => null,
+        'threeDSServerTransactionId' => null,
         'ucafAuthenticationData' => null,
         'ucafCollectionIndicator' => null,
         'veresEnrolled' => null,
-        'xid' => null
+        'whiteListStatusSource' => null,
+        'xid' => null,
+        'directoryServerTransactionId' => null
     ];
 
     public static function swaggerTypes()
@@ -114,24 +148,41 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
      * @var string[]
      */
     protected static $attributeMap = [
+        'acsRenderingType' => 'acsRenderingType',
+        'acsTransactionId' => 'acsTransactionId',
         'acsUrl' => 'acsUrl',
         'authenticationPath' => 'authenticationPath',
+        'authorizationPayload' => 'authorizationPayload',
         'authenticationTransactionId' => 'authenticationTransactionId',
+        'cardholderMessage' => 'cardholderMessage',
         'cavv' => 'cavv',
         'cavvAlgorithm' => 'cavvAlgorithm',
+        'challengeCancelCode' => 'challengeCancelCode',
         'challengeRequired' => 'challengeRequired',
+        'decoupledAuthenticationIndicator' => 'decoupledAuthenticationIndicator',
+        'directoryServerErrorCode' => 'directoryServerErrorCode',
+        'directoryServerErrorDescription' => 'directoryServerErrorDescription',
         'ecommerceIndicator' => 'ecommerceIndicator',
         'eci' => 'eci',
         'eciRaw' => 'eciRaw',
+        'effectiveAuthenticationType' => 'effectiveAuthenticationType',
+        'ivr' => 'ivr',
+        'networkScore' => 'networkScore',
         'pareq' => 'pareq',
         'paresStatus' => 'paresStatus',
         'proofXml' => 'proofXml',
         'proxyPan' => 'proxyPan',
+        'sdkTransactionId' => 'sdkTransactionId',
+        'signedParesStatusReason' => 'signedParesStatusReason',
         'specificationVersion' => 'specificationVersion',
+        'stepUpUrl' => 'stepUpUrl',
+        'threeDSServerTransactionId' => 'threeDSServerTransactionId',
         'ucafAuthenticationData' => 'ucafAuthenticationData',
         'ucafCollectionIndicator' => 'ucafCollectionIndicator',
         'veresEnrolled' => 'veresEnrolled',
-        'xid' => 'xid'
+        'whiteListStatusSource' => 'whiteListStatusSource',
+        'xid' => 'xid',
+        'directoryServerTransactionId' => 'directoryServerTransactionId'
     ];
 
 
@@ -140,24 +191,41 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
      * @var string[]
      */
     protected static $setters = [
+        'acsRenderingType' => 'setAcsRenderingType',
+        'acsTransactionId' => 'setAcsTransactionId',
         'acsUrl' => 'setAcsUrl',
         'authenticationPath' => 'setAuthenticationPath',
+        'authorizationPayload' => 'setAuthorizationPayload',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
+        'cardholderMessage' => 'setCardholderMessage',
         'cavv' => 'setCavv',
         'cavvAlgorithm' => 'setCavvAlgorithm',
+        'challengeCancelCode' => 'setChallengeCancelCode',
         'challengeRequired' => 'setChallengeRequired',
+        'decoupledAuthenticationIndicator' => 'setDecoupledAuthenticationIndicator',
+        'directoryServerErrorCode' => 'setDirectoryServerErrorCode',
+        'directoryServerErrorDescription' => 'setDirectoryServerErrorDescription',
         'ecommerceIndicator' => 'setEcommerceIndicator',
         'eci' => 'setEci',
         'eciRaw' => 'setEciRaw',
+        'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
+        'ivr' => 'setIvr',
+        'networkScore' => 'setNetworkScore',
         'pareq' => 'setPareq',
         'paresStatus' => 'setParesStatus',
         'proofXml' => 'setProofXml',
         'proxyPan' => 'setProxyPan',
+        'sdkTransactionId' => 'setSdkTransactionId',
+        'signedParesStatusReason' => 'setSignedParesStatusReason',
         'specificationVersion' => 'setSpecificationVersion',
+        'stepUpUrl' => 'setStepUpUrl',
+        'threeDSServerTransactionId' => 'setThreeDSServerTransactionId',
         'ucafAuthenticationData' => 'setUcafAuthenticationData',
         'ucafCollectionIndicator' => 'setUcafCollectionIndicator',
         'veresEnrolled' => 'setVeresEnrolled',
-        'xid' => 'setXid'
+        'whiteListStatusSource' => 'setWhiteListStatusSource',
+        'xid' => 'setXid',
+        'directoryServerTransactionId' => 'setDirectoryServerTransactionId'
     ];
 
 
@@ -166,24 +234,41 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
      * @var string[]
      */
     protected static $getters = [
+        'acsRenderingType' => 'getAcsRenderingType',
+        'acsTransactionId' => 'getAcsTransactionId',
         'acsUrl' => 'getAcsUrl',
         'authenticationPath' => 'getAuthenticationPath',
+        'authorizationPayload' => 'getAuthorizationPayload',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
+        'cardholderMessage' => 'getCardholderMessage',
         'cavv' => 'getCavv',
         'cavvAlgorithm' => 'getCavvAlgorithm',
+        'challengeCancelCode' => 'getChallengeCancelCode',
         'challengeRequired' => 'getChallengeRequired',
+        'decoupledAuthenticationIndicator' => 'getDecoupledAuthenticationIndicator',
+        'directoryServerErrorCode' => 'getDirectoryServerErrorCode',
+        'directoryServerErrorDescription' => 'getDirectoryServerErrorDescription',
         'ecommerceIndicator' => 'getEcommerceIndicator',
         'eci' => 'getEci',
         'eciRaw' => 'getEciRaw',
+        'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
+        'ivr' => 'getIvr',
+        'networkScore' => 'getNetworkScore',
         'pareq' => 'getPareq',
         'paresStatus' => 'getParesStatus',
         'proofXml' => 'getProofXml',
         'proxyPan' => 'getProxyPan',
+        'sdkTransactionId' => 'getSdkTransactionId',
+        'signedParesStatusReason' => 'getSignedParesStatusReason',
         'specificationVersion' => 'getSpecificationVersion',
+        'stepUpUrl' => 'getStepUpUrl',
+        'threeDSServerTransactionId' => 'getThreeDSServerTransactionId',
         'ucafAuthenticationData' => 'getUcafAuthenticationData',
         'ucafCollectionIndicator' => 'getUcafCollectionIndicator',
         'veresEnrolled' => 'getVeresEnrolled',
-        'xid' => 'getXid'
+        'whiteListStatusSource' => 'getWhiteListStatusSource',
+        'xid' => 'getXid',
+        'directoryServerTransactionId' => 'getDirectoryServerTransactionId'
     ];
 
     public static function attributeMap()
@@ -217,24 +302,41 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
      */
     public function __construct(array $data = null)
     {
+        $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
+        $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['acsUrl'] = isset($data['acsUrl']) ? $data['acsUrl'] : null;
         $this->container['authenticationPath'] = isset($data['authenticationPath']) ? $data['authenticationPath'] : null;
+        $this->container['authorizationPayload'] = isset($data['authorizationPayload']) ? $data['authorizationPayload'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
+        $this->container['cardholderMessage'] = isset($data['cardholderMessage']) ? $data['cardholderMessage'] : null;
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['cavvAlgorithm'] = isset($data['cavvAlgorithm']) ? $data['cavvAlgorithm'] : null;
+        $this->container['challengeCancelCode'] = isset($data['challengeCancelCode']) ? $data['challengeCancelCode'] : null;
         $this->container['challengeRequired'] = isset($data['challengeRequired']) ? $data['challengeRequired'] : null;
+        $this->container['decoupledAuthenticationIndicator'] = isset($data['decoupledAuthenticationIndicator']) ? $data['decoupledAuthenticationIndicator'] : null;
+        $this->container['directoryServerErrorCode'] = isset($data['directoryServerErrorCode']) ? $data['directoryServerErrorCode'] : null;
+        $this->container['directoryServerErrorDescription'] = isset($data['directoryServerErrorDescription']) ? $data['directoryServerErrorDescription'] : null;
         $this->container['ecommerceIndicator'] = isset($data['ecommerceIndicator']) ? $data['ecommerceIndicator'] : null;
         $this->container['eci'] = isset($data['eci']) ? $data['eci'] : null;
         $this->container['eciRaw'] = isset($data['eciRaw']) ? $data['eciRaw'] : null;
+        $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
+        $this->container['ivr'] = isset($data['ivr']) ? $data['ivr'] : null;
+        $this->container['networkScore'] = isset($data['networkScore']) ? $data['networkScore'] : null;
         $this->container['pareq'] = isset($data['pareq']) ? $data['pareq'] : null;
         $this->container['paresStatus'] = isset($data['paresStatus']) ? $data['paresStatus'] : null;
         $this->container['proofXml'] = isset($data['proofXml']) ? $data['proofXml'] : null;
         $this->container['proxyPan'] = isset($data['proxyPan']) ? $data['proxyPan'] : null;
+        $this->container['sdkTransactionId'] = isset($data['sdkTransactionId']) ? $data['sdkTransactionId'] : null;
+        $this->container['signedParesStatusReason'] = isset($data['signedParesStatusReason']) ? $data['signedParesStatusReason'] : null;
         $this->container['specificationVersion'] = isset($data['specificationVersion']) ? $data['specificationVersion'] : null;
+        $this->container['stepUpUrl'] = isset($data['stepUpUrl']) ? $data['stepUpUrl'] : null;
+        $this->container['threeDSServerTransactionId'] = isset($data['threeDSServerTransactionId']) ? $data['threeDSServerTransactionId'] : null;
         $this->container['ucafAuthenticationData'] = isset($data['ucafAuthenticationData']) ? $data['ucafAuthenticationData'] : null;
         $this->container['ucafCollectionIndicator'] = isset($data['ucafCollectionIndicator']) ? $data['ucafCollectionIndicator'] : null;
         $this->container['veresEnrolled'] = isset($data['veresEnrolled']) ? $data['veresEnrolled'] : null;
+        $this->container['whiteListStatusSource'] = isset($data['whiteListStatusSource']) ? $data['whiteListStatusSource'] : null;
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
+        $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
     }
 
     /**
@@ -246,12 +348,20 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
         if (!is_null($this->container['acsUrl']) && (strlen($this->container['acsUrl']) > 2048)) {
             $invalid_properties[] = "invalid value for 'acsUrl', the character length must be smaller than or equal to 2048.";
         }
 
         if (!is_null($this->container['authenticationTransactionId']) && (strlen($this->container['authenticationTransactionId']) > 20)) {
             $invalid_properties[] = "invalid value for 'authenticationTransactionId', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['cardholderMessage']) && (strlen($this->container['cardholderMessage']) > 128)) {
+            $invalid_properties[] = "invalid value for 'cardholderMessage', the character length must be smaller than or equal to 128.";
         }
 
         if (!is_null($this->container['cavv']) && (strlen($this->container['cavv']) > 255)) {
@@ -262,12 +372,60 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
             $invalid_properties[] = "invalid value for 'cavvAlgorithm', the character length must be smaller than or equal to 1.";
         }
 
+        if (!is_null($this->container['challengeCancelCode']) && (strlen($this->container['challengeCancelCode']) > 2)) {
+            $invalid_properties[] = "invalid value for 'challengeCancelCode', the character length must be smaller than or equal to 2.";
+        }
+
         if (!is_null($this->container['challengeRequired']) && (strlen($this->container['challengeRequired']) > 1)) {
             $invalid_properties[] = "invalid value for 'challengeRequired', the character length must be smaller than or equal to 1.";
         }
 
+        if (!is_null($this->container['decoupledAuthenticationIndicator']) && (strlen($this->container['decoupledAuthenticationIndicator']) > 1)) {
+            $invalid_properties[] = "invalid value for 'decoupledAuthenticationIndicator', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['directoryServerErrorCode']) && (strlen($this->container['directoryServerErrorCode']) > 3)) {
+            $invalid_properties[] = "invalid value for 'directoryServerErrorCode', the character length must be smaller than or equal to 3.";
+        }
+
+        if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
+            $invalid_properties[] = "invalid value for 'directoryServerErrorDescription', the character length must be smaller than or equal to 4096.";
+        }
+
         if (!is_null($this->container['ecommerceIndicator']) && (strlen($this->container['ecommerceIndicator']) > 255)) {
             $invalid_properties[] = "invalid value for 'ecommerceIndicator', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['effectiveAuthenticationType']) && (strlen($this->container['effectiveAuthenticationType']) > 2)) {
+            $invalid_properties[] = "invalid value for 'effectiveAuthenticationType', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['networkScore']) && (strlen($this->container['networkScore']) > 2)) {
+            $invalid_properties[] = "invalid value for 'networkScore', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['sdkTransactionId']) && (strlen($this->container['sdkTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'sdkTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
+        if (!is_null($this->container['signedParesStatusReason']) && (strlen($this->container['signedParesStatusReason']) > 2)) {
+            $invalid_properties[] = "invalid value for 'signedParesStatusReason', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['stepUpUrl']) && (strlen($this->container['stepUpUrl']) > 2048)) {
+            $invalid_properties[] = "invalid value for 'stepUpUrl', the character length must be smaller than or equal to 2048.";
+        }
+
+        if (!is_null($this->container['threeDSServerTransactionId']) && (strlen($this->container['threeDSServerTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'threeDSServerTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
+        if (!is_null($this->container['whiteListStatusSource']) && (strlen($this->container['whiteListStatusSource']) > 2)) {
+            $invalid_properties[] = "invalid value for 'whiteListStatusSource', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['directoryServerTransactionId']) && (strlen($this->container['directoryServerTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'directoryServerTransactionId', the character length must be smaller than or equal to 36.";
         }
 
         return $invalid_properties;
@@ -282,10 +440,16 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     public function valid()
     {
 
+        if (strlen($this->container['acsTransactionId']) > 36) {
+            return false;
+        }
         if (strlen($this->container['acsUrl']) > 2048) {
             return false;
         }
         if (strlen($this->container['authenticationTransactionId']) > 20) {
+            return false;
+        }
+        if (strlen($this->container['cardholderMessage']) > 128) {
             return false;
         }
         if (strlen($this->container['cavv']) > 255) {
@@ -294,15 +458,97 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
         if (strlen($this->container['cavvAlgorithm']) > 1) {
             return false;
         }
+        if (strlen($this->container['challengeCancelCode']) > 2) {
+            return false;
+        }
         if (strlen($this->container['challengeRequired']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['decoupledAuthenticationIndicator']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['directoryServerErrorCode']) > 3) {
+            return false;
+        }
+        if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
             return false;
         }
         if (strlen($this->container['ecommerceIndicator']) > 255) {
             return false;
         }
+        if (strlen($this->container['effectiveAuthenticationType']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['networkScore']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['sdkTransactionId']) > 36) {
+            return false;
+        }
+        if (strlen($this->container['signedParesStatusReason']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['stepUpUrl']) > 2048) {
+            return false;
+        }
+        if (strlen($this->container['threeDSServerTransactionId']) > 36) {
+            return false;
+        }
+        if (strlen($this->container['whiteListStatusSource']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['directoryServerTransactionId']) > 36) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets acsRenderingType
+     * @return string
+     */
+    public function getAcsRenderingType()
+    {
+        return $this->container['acsRenderingType'];
+    }
+
+    /**
+     * Sets acsRenderingType
+     * @param string $acsRenderingType Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK.
+     * @return $this
+     */
+    public function setAcsRenderingType($acsRenderingType)
+    {
+        $this->container['acsRenderingType'] = $acsRenderingType;
+
+        return $this;
+    }
+
+    /**
+     * Gets acsTransactionId
+     * @return string
+     */
+    public function getAcsTransactionId()
+    {
+        return $this->container['acsTransactionId'];
+    }
+
+    /**
+     * Sets acsTransactionId
+     * @param string $acsTransactionId Unique transaction identifier assigned by the ACS to identify a single transaction.
+     * @return $this
+     */
+    public function setAcsTransactionId($acsTransactionId)
+    {
+        if (!is_null($acsTransactionId) && (strlen($acsTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $acsTransactionId when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['acsTransactionId'] = $acsTransactionId;
+
+        return $this;
+    }
 
     /**
      * Gets acsUrl
@@ -340,12 +586,33 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
 
     /**
      * Sets authenticationPath
-     * @param string $authenticationPath Indicates what displays to the customer during the authentication process. This field can contain one of these values: - `ADS`: (Card not enrolled) customer prompted to activate the card during the checkout process. - `ATTEMPTS`: (Attempts processing) Processing briefly displays before the checkout process is completed. - `ENROLLED`: (Card enrolled) the card issuer’s authentication window displays. - `UNKNOWN`: Card enrollment status cannot be determined. - `NOREDIRECT`: (Card not enrolled, authentication unavailable, or error occurred) nothing displays to the customer.  The following values can be returned if you are using rules-based payer authentication. - `RIBA`: The card-issuing bank supports risk-based authentication, but whether the cardholder is likely to be challenged cannot be determined. - `RIBA_PASS`: The card-issuing bank supports risk-based authentication and it is likely that the cardholder will not be challenged to provide credentials, also known as _silent authentication_.  For details about possible values, see `pa_enroll_authentication_path` field description and \"Rules-Based Payer Authentication\" in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $authenticationPath Indicates what displays to the customer during the authentication process. This field can contain one of these values: - `ADS`: (Card not enrolled) customer prompted to activate the card during the checkout process. - `ATTEMPTS`: (Attempts processing) Processing briefly displays before the checkout process is completed. - `ENROLLED`: (Card enrolled) the card issuer’s authentication window displays. - `UNKNOWN`: Card enrollment status cannot be determined. - `NOREDIRECT`: (Card not enrolled, authentication unavailable, or error occurred) nothing displays to the customer.  The following values can be returned if you are using rules-based payer authentication. - `RIBA`: The card-issuing bank supports risk-based authentication, but whether the cardholder is likely to be challenged cannot be determined. - `RIBA_PASS`: The card-issuing bank supports risk-based authentication and it is likely that the cardholder will not be challenged to provide credentials, also known as _silent authentication_.  For details about possible values, see `pa_enroll_authentication_path` field description and \"Rules-Based Payer Authentication\" in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/)
      * @return $this
      */
     public function setAuthenticationPath($authenticationPath)
     {
         $this->container['authenticationPath'] = $authenticationPath;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationPayload
+     * @return string
+     */
+    public function getAuthorizationPayload()
+    {
+        return $this->container['authorizationPayload'];
+    }
+
+    /**
+     * Sets authorizationPayload
+     * @param string $authorizationPayload The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow
+     * @return $this
+     */
+    public function setAuthorizationPayload($authorizationPayload)
+    {
+        $this->container['authorizationPayload'] = $authorizationPayload;
 
         return $this;
     }
@@ -371,6 +638,31 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
         }
 
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardholderMessage
+     * @return string
+     */
+    public function getCardholderMessage()
+    {
+        return $this->container['cardholderMessage'];
+    }
+
+    /**
+     * Sets cardholderMessage
+     * @param string $cardholderMessage Text provided by the ACS/Issuer to Cardholder during a Frictionless or Decoupled transaction.The Issuer can provide information to Cardholder. For example, “Additional authentication is needed for this transaction, please contact (Issuer Name) at xxx-xxx-xxxx.”. The Issuing Bank can optionally support this value.
+     * @return $this
+     */
+    public function setCardholderMessage($cardholderMessage)
+    {
+        if (!is_null($cardholderMessage) && (strlen($cardholderMessage) > 128)) {
+            throw new \InvalidArgumentException('invalid length for $cardholderMessage when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 128.');
+        }
+
+        $this->container['cardholderMessage'] = $cardholderMessage;
 
         return $this;
     }
@@ -426,6 +718,31 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     }
 
     /**
+     * Gets challengeCancelCode
+     * @return string
+     */
+    public function getChallengeCancelCode()
+    {
+        return $this->container['challengeCancelCode'];
+    }
+
+    /**
+     * Sets challengeCancelCode
+     * @param string $challengeCancelCode An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK
+     * @return $this
+     */
+    public function setChallengeCancelCode($challengeCancelCode)
+    {
+        if (!is_null($challengeCancelCode) && (strlen($challengeCancelCode) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $challengeCancelCode when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['challengeCancelCode'] = $challengeCancelCode;
+
+        return $this;
+    }
+
+    /**
      * Gets challengeRequired
      * @return string
      */
@@ -446,6 +763,81 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
         }
 
         $this->container['challengeRequired'] = $challengeRequired;
+
+        return $this;
+    }
+
+    /**
+     * Gets decoupledAuthenticationIndicator
+     * @return string
+     */
+    public function getDecoupledAuthenticationIndicator()
+    {
+        return $this->container['decoupledAuthenticationIndicator'];
+    }
+
+    /**
+     * Sets decoupledAuthenticationIndicator
+     * @param string $decoupledAuthenticationIndicator Indicates whether the 3DS Requestor requests the ACS to utilize Decoupled Authentication and agrees to utilize Decoupled Authentication if the ACS confirms its use.  Possible Values:  Y - Decoupled Authentication is supported and preferred if challenge is necessary  N - Do not use Decoupled Authentication  **Default Value**: N
+     * @return $this
+     */
+    public function setDecoupledAuthenticationIndicator($decoupledAuthenticationIndicator)
+    {
+        if (!is_null($decoupledAuthenticationIndicator) && (strlen($decoupledAuthenticationIndicator) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $decoupledAuthenticationIndicator when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['decoupledAuthenticationIndicator'] = $decoupledAuthenticationIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets directoryServerErrorCode
+     * @return string
+     */
+    public function getDirectoryServerErrorCode()
+    {
+        return $this->container['directoryServerErrorCode'];
+    }
+
+    /**
+     * Sets directoryServerErrorCode
+     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction.
+     * @return $this
+     */
+    public function setDirectoryServerErrorCode($directoryServerErrorCode)
+    {
+        if (!is_null($directoryServerErrorCode) && (strlen($directoryServerErrorCode) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerErrorCode when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 3.');
+        }
+
+        $this->container['directoryServerErrorCode'] = $directoryServerErrorCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets directoryServerErrorDescription
+     * @return string
+     */
+    public function getDirectoryServerErrorDescription()
+    {
+        return $this->container['directoryServerErrorDescription'];
+    }
+
+    /**
+     * Sets directoryServerErrorDescription
+     * @param string $directoryServerErrorDescription Directory server text and additional detail about the error for this transaction.
+     * @return $this
+     */
+    public function setDirectoryServerErrorDescription($directoryServerErrorDescription)
+    {
+        if (!is_null($directoryServerErrorDescription) && (strlen($directoryServerErrorDescription) > 4096)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerErrorDescription when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 4096.');
+        }
+
+        $this->container['directoryServerErrorDescription'] = $directoryServerErrorDescription;
 
         return $this;
     }
@@ -518,6 +910,77 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     }
 
     /**
+     * Gets effectiveAuthenticationType
+     * @return string
+     */
+    public function getEffectiveAuthenticationType()
+    {
+        return $this->container['effectiveAuthenticationType'];
+    }
+
+    /**
+     * Sets effectiveAuthenticationType
+     * @param string $effectiveAuthenticationType This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer).
+     * @return $this
+     */
+    public function setEffectiveAuthenticationType($effectiveAuthenticationType)
+    {
+        if (!is_null($effectiveAuthenticationType) && (strlen($effectiveAuthenticationType) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $effectiveAuthenticationType when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets ivr
+     * @return \CyberSource\Model\RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr
+     */
+    public function getIvr()
+    {
+        return $this->container['ivr'];
+    }
+
+    /**
+     * Sets ivr
+     * @param \CyberSource\Model\RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr $ivr
+     * @return $this
+     */
+    public function setIvr($ivr)
+    {
+        $this->container['ivr'] = $ivr;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkScore
+     * @return string
+     */
+    public function getNetworkScore()
+    {
+        return $this->container['networkScore'];
+    }
+
+    /**
+     * Sets networkScore
+     * @param string $networkScore The global score calculated by the CB scoring platform and returned to merchants.
+     * @return $this
+     */
+    public function setNetworkScore($networkScore)
+    {
+        if (!is_null($networkScore) && (strlen($networkScore) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $networkScore when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['networkScore'] = $networkScore;
+
+        return $this;
+    }
+
+    /**
      * Gets pareq
      * @return string
      */
@@ -570,7 +1033,7 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
 
     /**
      * Sets proofXml
-     * @param string $proofXml Date and time of the enrollment check combined with the VEReq and VERes elements. If you ever need to show proof of enrollment checking, you may need to parse the string for the information required by the payment card company. The value can be very large. For details about possible values, see the `pa_enroll_proofxml` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm) - For cards issued in the U.S. or Canada, Visa may require this data for specific merchant category codes. - For cards not issued in the U.S. or Canada, your bank may require this data as proof of enrollment checking for any payer authentication transaction that you re-present because of a chargeback.
+     * @param string $proofXml Date and time of the enrollment check combined with the VEReq and VERes elements. If you ever need to show proof of enrollment checking, you may need to parse the string for the information required by the payment card company. The value can be very large. For details about possible values, see the `pa_enroll_proofxml` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/) - For cards issued in the U.S. or Canada, Visa may require this data for specific merchant category codes. - For cards not issued in the U.S. or Canada, your bank may require this data as proof of enrollment checking for any payer authentication transaction that you re-present because of a chargeback.
      * @return $this
      */
     public function setProofXml($proofXml)
@@ -602,6 +1065,56 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     }
 
     /**
+     * Gets sdkTransactionId
+     * @return string
+     */
+    public function getSdkTransactionId()
+    {
+        return $this->container['sdkTransactionId'];
+    }
+
+    /**
+     * Sets sdkTransactionId
+     * @param string $sdkTransactionId SDK unique transaction identifier that is generated on each new transaction.
+     * @return $this
+     */
+    public function setSdkTransactionId($sdkTransactionId)
+    {
+        if (!is_null($sdkTransactionId) && (strlen($sdkTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $sdkTransactionId when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['sdkTransactionId'] = $sdkTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets signedParesStatusReason
+     * @return string
+     */
+    public function getSignedParesStatusReason()
+    {
+        return $this->container['signedParesStatusReason'];
+    }
+
+    /**
+     * Sets signedParesStatusReason
+     * @param string $signedParesStatusReason Provides additional information as to why the PAResStatus has a specific value.
+     * @return $this
+     */
+    public function setSignedParesStatusReason($signedParesStatusReason)
+    {
+        if (!is_null($signedParesStatusReason) && (strlen($signedParesStatusReason) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $signedParesStatusReason when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['signedParesStatusReason'] = $signedParesStatusReason;
+
+        return $this;
+    }
+
+    /**
      * Gets specificationVersion
      * @return string
      */
@@ -618,6 +1131,56 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     public function setSpecificationVersion($specificationVersion)
     {
         $this->container['specificationVersion'] = $specificationVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets stepUpUrl
+     * @return string
+     */
+    public function getStepUpUrl()
+    {
+        return $this->container['stepUpUrl'];
+    }
+
+    /**
+     * Sets stepUpUrl
+     * @param string $stepUpUrl The fully qualified URL that the merchant uses to post a form to the cardholder in order to complete the Consumer Authentication transaction for the Cardinal Cruise API integration.
+     * @return $this
+     */
+    public function setStepUpUrl($stepUpUrl)
+    {
+        if (!is_null($stepUpUrl) && (strlen($stepUpUrl) > 2048)) {
+            throw new \InvalidArgumentException('invalid length for $stepUpUrl when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
+        }
+
+        $this->container['stepUpUrl'] = $stepUpUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets threeDSServerTransactionId
+     * @return string
+     */
+    public function getThreeDSServerTransactionId()
+    {
+        return $this->container['threeDSServerTransactionId'];
+    }
+
+    /**
+     * Sets threeDSServerTransactionId
+     * @param string $threeDSServerTransactionId Unique transaction identifier assigned by the 3DS Server to identify a single transaction.
+     * @return $this
+     */
+    public function setThreeDSServerTransactionId($threeDSServerTransactionId)
+    {
+        if (!is_null($threeDSServerTransactionId) && (strlen($threeDSServerTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $threeDSServerTransactionId when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['threeDSServerTransactionId'] = $threeDSServerTransactionId;
 
         return $this;
     }
@@ -675,12 +1238,37 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
 
     /**
      * Sets veresEnrolled
-     * @param string $veresEnrolled Result of the enrollment check. This field can contain one of these values: - `Y`: Card enrolled or can be enrolled; you must authenticate. Liability shift. - `N`: Card not enrolled; proceed with authorization. Liability shift. - `U`: Unable to authenticate regardless of the reason. No liability shift.  **Note** This field only applies to the Asia, Middle East, and Africa Gateway. If you are configured for this processor, you must send the value of this field in your authorization request.  The following value can be returned if you are using rules-based Payer Authentication: - `B`: Indicates that authentication was bypassed.  For details, see `pa_enroll_veres_enrolled` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $veresEnrolled Result of the enrollment check. This field can contain one of these values: - `Y`: Card enrolled or can be enrolled; you must authenticate. Liability shift. - `N`: Card not enrolled; proceed with authorization. Liability shift. - `U`: Unable to authenticate regardless of the reason. No liability shift.  **Note** This field only applies to the Asia, Middle East, and Africa Gateway. If you are configured for this processor, you must send the value of this field in your authorization request.  The following value can be returned if you are using rules-based Payer Authentication: - `B`: Indicates that authentication was bypassed.  For details, see `pa_enroll_veres_enrolled` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html/)
      * @return $this
      */
     public function setVeresEnrolled($veresEnrolled)
     {
         $this->container['veresEnrolled'] = $veresEnrolled;
+
+        return $this;
+    }
+
+    /**
+     * Gets whiteListStatusSource
+     * @return string
+     */
+    public function getWhiteListStatusSource()
+    {
+        return $this->container['whiteListStatusSource'];
+    }
+
+    /**
+     * Sets whiteListStatusSource
+     * @param string $whiteListStatusSource This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS
+     * @return $this
+     */
+    public function setWhiteListStatusSource($whiteListStatusSource)
+    {
+        if (!is_null($whiteListStatusSource) && (strlen($whiteListStatusSource) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $whiteListStatusSource when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['whiteListStatusSource'] = $whiteListStatusSource;
 
         return $this;
     }
@@ -702,6 +1290,31 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
     public function setXid($xid)
     {
         $this->container['xid'] = $xid;
+
+        return $this;
+    }
+
+    /**
+     * Gets directoryServerTransactionId
+     * @return string
+     */
+    public function getDirectoryServerTransactionId()
+    {
+        return $this->container['directoryServerTransactionId'];
+    }
+
+    /**
+     * Sets directoryServerTransactionId
+     * @param string $directoryServerTransactionId The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID
+     * @return $this
+     */
+    public function setDirectoryServerTransactionId($directoryServerTransactionId)
+    {
+        if (!is_null($directoryServerTransactionId) && (strlen($directoryServerTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerTransactionId when calling RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['directoryServerTransactionId'] = $directoryServerTransactionId;
 
         return $this;
     }

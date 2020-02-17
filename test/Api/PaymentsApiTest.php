@@ -81,4 +81,14 @@ class PaymentsApiTest extends \PHPUnit_Framework_TestCase
     public function testCreatePayment()
     {
     }
+
+    /**
+     * Test case for incrementAuth
+     *
+     * Increment an Authorization.
+     *
+     */
+    public function testIncrementAuth()
+    {
+    }
 }

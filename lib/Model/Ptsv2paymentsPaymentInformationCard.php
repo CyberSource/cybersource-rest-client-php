@@ -60,6 +60,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'type' => 'string',
         'useAs' => 'string',
         'sourceAccountType' => 'string',
+        'sourceAccountTypeDetails' => 'string',
         'securityCode' => 'string',
         'securityCodeIndicator' => 'string',
         'accountEncoderId' => 'string',
@@ -80,6 +81,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'type' => null,
         'useAs' => null,
         'sourceAccountType' => null,
+        'sourceAccountTypeDetails' => null,
         'securityCode' => null,
         'securityCodeIndicator' => null,
         'accountEncoderId' => null,
@@ -110,6 +112,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'type' => 'type',
         'useAs' => 'useAs',
         'sourceAccountType' => 'sourceAccountType',
+        'sourceAccountTypeDetails' => 'sourceAccountTypeDetails',
         'securityCode' => 'securityCode',
         'securityCodeIndicator' => 'securityCodeIndicator',
         'accountEncoderId' => 'accountEncoderId',
@@ -131,6 +134,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'type' => 'setType',
         'useAs' => 'setUseAs',
         'sourceAccountType' => 'setSourceAccountType',
+        'sourceAccountTypeDetails' => 'setSourceAccountTypeDetails',
         'securityCode' => 'setSecurityCode',
         'securityCodeIndicator' => 'setSecurityCodeIndicator',
         'accountEncoderId' => 'setAccountEncoderId',
@@ -152,6 +156,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'type' => 'getType',
         'useAs' => 'getUseAs',
         'sourceAccountType' => 'getSourceAccountType',
+        'sourceAccountTypeDetails' => 'getSourceAccountTypeDetails',
         'securityCode' => 'getSecurityCode',
         'securityCodeIndicator' => 'getSecurityCodeIndicator',
         'accountEncoderId' => 'getAccountEncoderId',
@@ -198,6 +203,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['useAs'] = isset($data['useAs']) ? $data['useAs'] : null;
         $this->container['sourceAccountType'] = isset($data['sourceAccountType']) ? $data['sourceAccountType'] : null;
+        $this->container['sourceAccountTypeDetails'] = isset($data['sourceAccountTypeDetails']) ? $data['sourceAccountTypeDetails'] : null;
         $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
         $this->container['securityCodeIndicator'] = isset($data['securityCodeIndicator']) ? $data['securityCodeIndicator'] : null;
         $this->container['accountEncoderId'] = isset($data['accountEncoderId']) ? $data['accountEncoderId'] : null;
@@ -234,6 +240,10 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
 
         if (!is_null($this->container['sourceAccountType']) && (strlen($this->container['sourceAccountType']) > 20)) {
             $invalid_properties[] = "invalid value for 'sourceAccountType', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['sourceAccountTypeDetails']) && (strlen($this->container['sourceAccountTypeDetails']) > 4)) {
+            $invalid_properties[] = "invalid value for 'sourceAccountTypeDetails', the character length must be smaller than or equal to 4.";
         }
 
         if (!is_null($this->container['securityCode']) && (strlen($this->container['securityCode']) > 4)) {
@@ -289,6 +299,9 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
             return false;
         }
         if (strlen($this->container['sourceAccountType']) > 20) {
+            return false;
+        }
+        if (strlen($this->container['sourceAccountTypeDetails']) > 4) {
             return false;
         }
         if (strlen($this->container['securityCode']) > 4) {
@@ -463,6 +476,31 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
     }
 
     /**
+     * Gets sourceAccountTypeDetails
+     * @return string
+     */
+    public function getSourceAccountTypeDetails()
+    {
+        return $this->container['sourceAccountTypeDetails'];
+    }
+
+    /**
+     * Sets sourceAccountTypeDetails
+     * @param string $sourceAccountTypeDetails Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - `AGRC`: Visa Agro Custeio - `AGRE`: Visa Agro Electron - `AGRI`: Visa Agro Investimento - `AGRO`: Visa Agro Possible values for prepaid card: - `VVA`: Visa Vale Alimentacao - `VVF`: Visa Vale Flex - `VVR`: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed
+     * @return $this
+     */
+    public function setSourceAccountTypeDetails($sourceAccountTypeDetails)
+    {
+        if (!is_null($sourceAccountTypeDetails) && (strlen($sourceAccountTypeDetails) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $sourceAccountTypeDetails when calling Ptsv2paymentsPaymentInformationCard., must be smaller than or equal to 4.');
+        }
+
+        $this->container['sourceAccountTypeDetails'] = $sourceAccountTypeDetails;
+
+        return $this;
+    }
+
+    /**
      * Gets securityCode
      * @return string
      */
@@ -623,7 +661,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets productName
-     * @param string $productName Name of the card product.  Possible value: - BNDES  This field is supported only for BNDES transactions on CyberSource through VisaNet. For details, see `card_product_name` field description in the [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR4 - Position: 115-120 - Field: Brazil Country Data
+     * @param string $productName Name of the card product.  Possible value: - BNDES  This field is supported only for BNDES transactions on CyberSource through VisaNet. For details, see `card_product_name` field description in the [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR4 - Position: 115-120 - Field: Brazil Country Data
      * @return $this
      */
     public function setProductName($productName)

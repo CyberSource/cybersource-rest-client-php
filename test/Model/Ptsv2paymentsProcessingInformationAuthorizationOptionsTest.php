@@ -160,4 +160,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     public function testPropertyBillPaymentType()
     {
     }
+
+    /**
+     * Test attribute "redemptionInquiry"
+     */
+    public function testPropertyRedemptionInquiry()
+    {
+    }
 }

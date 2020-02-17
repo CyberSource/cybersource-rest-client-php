@@ -54,7 +54,7 @@ class AuthenticationExemptionsRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2payoutsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationexemptionsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationexemptionsDeviceInformation',
@@ -192,7 +192,7 @@ class AuthenticationExemptionsRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Ptsv2payoutsClientReferenceInformation
+     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -201,7 +201,7 @@ class AuthenticationExemptionsRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Ptsv2payoutsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

@@ -56,6 +56,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'country' => 'string',
         'discretionaryData' => 'string',
+        'countrySpecificDiscretionaryData' => 'string',
         'responseCode' => 'string'
     ];
 
@@ -66,6 +67,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'country' => null,
         'discretionaryData' => null,
+        'countrySpecificDiscretionaryData' => null,
         'responseCode' => null
     ];
 
@@ -86,6 +88,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     protected static $attributeMap = [
         'country' => 'country',
         'discretionaryData' => 'discretionaryData',
+        'countrySpecificDiscretionaryData' => 'countrySpecificDiscretionaryData',
         'responseCode' => 'responseCode'
     ];
 
@@ -97,6 +100,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     protected static $setters = [
         'country' => 'setCountry',
         'discretionaryData' => 'setDiscretionaryData',
+        'countrySpecificDiscretionaryData' => 'setCountrySpecificDiscretionaryData',
         'responseCode' => 'setResponseCode'
     ];
 
@@ -108,6 +112,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     protected static $getters = [
         'country' => 'getCountry',
         'discretionaryData' => 'getDiscretionaryData',
+        'countrySpecificDiscretionaryData' => 'getCountrySpecificDiscretionaryData',
         'responseCode' => 'getResponseCode'
     ];
 
@@ -144,6 +149,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     {
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['discretionaryData'] = isset($data['discretionaryData']) ? $data['discretionaryData'] : null;
+        $this->container['countrySpecificDiscretionaryData'] = isset($data['countrySpecificDiscretionaryData']) ? $data['countrySpecificDiscretionaryData'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
     }
 
@@ -162,6 +168,10 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
 
         if (!is_null($this->container['discretionaryData']) && (strlen($this->container['discretionaryData']) > 255)) {
             $invalid_properties[] = "invalid value for 'discretionaryData', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['countrySpecificDiscretionaryData']) && (strlen($this->container['countrySpecificDiscretionaryData']) > 140)) {
+            $invalid_properties[] = "invalid value for 'countrySpecificDiscretionaryData', the character length must be smaller than or equal to 140.";
         }
 
         if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 6)) {
@@ -186,6 +196,9 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         if (strlen($this->container['discretionaryData']) > 255) {
             return false;
         }
+        if (strlen($this->container['countrySpecificDiscretionaryData']) > 140) {
+            return false;
+        }
         if (strlen($this->container['responseCode']) > 6) {
             return false;
         }
@@ -204,7 +217,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Country in which the card was issued. This information enables you to determine whether the card was issued domestically or internationally. Use the two-character ISO Standard Country Codes.  This field is supported for Visa, Mastercard, Discover, Diners Club, JCB, and Maestro (International) on Chase Paymentech Solutions.  For details, see `auth_card_issuer_country` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $country Country in which the card was issued. This information enables you to determine whether the card was issued domestically or internationally. Use the two-character ISO Standard Country Codes.  This field is supported for Visa, Mastercard, Discover, Diners Club, JCB, and Maestro (International) on Chase Paymentech Solutions.  For details, see `auth_card_issuer_country` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setCountry($country)
@@ -229,7 +242,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
 
     /**
      * Sets discretionaryData
-     * @param string $discretionaryData Data defined by the issuer.  The value for this reply field will probably be the same as the value that you submitted in the authorization request, but it is possible for the processor, issuer, or acquirer to modify the value.  This field is supported only for Visa transactions on **CyberSource through VisaNet**.  For details, see `issuer_additional_data` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $discretionaryData Data defined by the issuer.  The value for this reply field will probably be the same as the value that you submitted in the authorization request, but it is possible for the processor, issuer, or acquirer to modify the value.  This field is supported only for Visa transactions on **CyberSource through VisaNet**.  For details, see `issuer_additional_data` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setDiscretionaryData($discretionaryData)
@@ -239,6 +252,31 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         }
 
         $this->container['discretionaryData'] = $discretionaryData;
+
+        return $this;
+    }
+
+    /**
+     * Gets countrySpecificDiscretionaryData
+     * @return string
+     */
+    public function getCountrySpecificDiscretionaryData()
+    {
+        return $this->container['countrySpecificDiscretionaryData'];
+    }
+
+    /**
+     * Sets countrySpecificDiscretionaryData
+     * @param string $countrySpecificDiscretionaryData Data defined by the issuer.  This national use field contains two subfields for information unique to the processing of Visa transactions by members in Japan. This subfield contains the Katakana text to be printed on the receipt. For details, see `jpo_issuer_message` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setCountrySpecificDiscretionaryData($countrySpecificDiscretionaryData)
+    {
+        if (!is_null($countrySpecificDiscretionaryData) && (strlen($countrySpecificDiscretionaryData) > 140)) {
+            throw new \InvalidArgumentException('invalid length for $countrySpecificDiscretionaryData when calling PtsV2PaymentsPost201ResponseIssuerInformation., must be smaller than or equal to 140.');
+        }
+
+        $this->container['countrySpecificDiscretionaryData'] = $countrySpecificDiscretionaryData;
 
         return $this;
     }

@@ -92,6 +92,13 @@ class PtsV2PaymentsPost201ResponseIssuerInformationTest extends \PHPUnit_Framewo
     }
 
     /**
+     * Test attribute "countrySpecificDiscretionaryData"
+     */
+    public function testPropertyCountrySpecificDiscretionaryData()
+    {
+    }
+
+    /**
      * Test attribute "responseCode"
      */
     public function testPropertyResponseCode()

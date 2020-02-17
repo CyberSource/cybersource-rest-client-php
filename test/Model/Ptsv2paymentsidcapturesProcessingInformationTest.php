@@ -146,4 +146,11 @@ class Ptsv2paymentsidcapturesProcessingInformationTest extends \PHPUnit_Framewor
     public function testPropertyCaptureOptions()
     {
     }
+
+    /**
+     * Test attribute "loanOptions"
+     */
+    public function testPropertyLoanOptions()
+    {
+    }
 }

@@ -73,12 +73,32 @@ class DecisionManagerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addNegative
+     *
+     * List Management.
+     *
+     */
+    public function testAddNegative()
+    {
+    }
+
+    /**
      * Test case for createDecisionManagerCase
      *
      * Create Decision Manager Case.
      *
      */
     public function testCreateDecisionManagerCase()
+    {
+    }
+
+    /**
+     * Test case for fraudUpdate
+     *
+     * Fraud Marking.
+     *
+     */
+    public function testFraudUpdate()
     {
     }
 }

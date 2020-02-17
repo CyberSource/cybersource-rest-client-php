@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **object** | **string** | &#39;Describes type of token.&#39;  Valid values: - instrumentIdentifier | [optional] 
 **state** | **string** | &#39;Current state of the token.&#39;  Valid values: - ACTIVE - CLOSED | [optional] 
 **card** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseCard**](TmsV1InstrumentIdentifiersPost200ResponseCard.md) |  | [optional] 
+**tokenizedCard** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard**](TmsV1InstrumentIdentifiersPost200ResponseTokenizedCard.md) |  | [optional] 
 **issuer** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseIssuer**](TmsV1InstrumentIdentifiersPost200ResponseIssuer.md) |  | [optional] 
 **bankAccount** | [**\CyberSource\Model\Tmsv1instrumentidentifiersBankAccount**](Tmsv1instrumentidentifiersBankAccount.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation**](TmsV1InstrumentIdentifiersPost200ResponseProcessingInformation.md) |  | [optional] 

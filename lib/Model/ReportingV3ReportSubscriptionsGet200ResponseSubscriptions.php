@@ -341,7 +341,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
 
     /**
      * Sets reportFrequency
-     * @param string $reportFrequency 'Report Frequency'   Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED
+     * @param string $reportFrequency 'Report Frequency' **NOTE: Do not document USER_DEFINED Frequency field in developer center**  Valid values: - DAILY - WEEKLY - MONTHLY - USER_DEFINED
      * @return $this
      */
     public function setReportFrequency($reportFrequency)

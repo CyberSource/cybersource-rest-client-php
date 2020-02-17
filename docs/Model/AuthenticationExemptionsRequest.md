@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\Ptsv2payoutsClientReferenceInformation**](Ptsv2payoutsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation**](PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Riskv1authenticationexemptionsOrderInformation**](Riskv1authenticationexemptionsOrderInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformation**](Riskv1authenticationexemptionsPaymentInformation.md) |  | [optional] 
 **deviceInformation** | [**\CyberSource\Model\Riskv1authenticationexemptionsDeviceInformation**](Riskv1authenticationexemptionsDeviceInformation.md) |  | [optional] 

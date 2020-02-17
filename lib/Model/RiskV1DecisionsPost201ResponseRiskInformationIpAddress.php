@@ -59,7 +59,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         'locality' => 'string',
         'country' => 'string',
         'administrativeArea' => 'string',
-        'routingMethod' => 'string'
+        'routingMethod' => 'string',
+        'carrier' => 'string',
+        'organization' => 'string'
     ];
 
     /**
@@ -71,7 +73,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         'locality' => null,
         'country' => null,
         'administrativeArea' => null,
-        'routingMethod' => null
+        'routingMethod' => null,
+        'carrier' => null,
+        'organization' => null
     ];
 
     public static function swaggerTypes()
@@ -93,7 +97,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         'locality' => 'locality',
         'country' => 'country',
         'administrativeArea' => 'administrativeArea',
-        'routingMethod' => 'routingMethod'
+        'routingMethod' => 'routingMethod',
+        'carrier' => 'carrier',
+        'organization' => 'organization'
     ];
 
 
@@ -106,7 +112,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         'locality' => 'setLocality',
         'country' => 'setCountry',
         'administrativeArea' => 'setAdministrativeArea',
-        'routingMethod' => 'setRoutingMethod'
+        'routingMethod' => 'setRoutingMethod',
+        'carrier' => 'setCarrier',
+        'organization' => 'setOrganization'
     ];
 
 
@@ -119,7 +127,9 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         'locality' => 'getLocality',
         'country' => 'getCountry',
         'administrativeArea' => 'getAdministrativeArea',
-        'routingMethod' => 'getRoutingMethod'
+        'routingMethod' => 'getRoutingMethod',
+        'carrier' => 'getCarrier',
+        'organization' => 'getOrganization'
     ];
 
     public static function attributeMap()
@@ -158,6 +168,8 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['routingMethod'] = isset($data['routingMethod']) ? $data['routingMethod'] : null;
+        $this->container['carrier'] = isset($data['carrier']) ? $data['carrier'] : null;
+        $this->container['organization'] = isset($data['organization']) ? $data['organization'] : null;
     }
 
     /**
@@ -189,6 +201,14 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
             $invalid_properties[] = "invalid value for 'routingMethod', the character length must be smaller than or equal to 255.";
         }
 
+        if (!is_null($this->container['carrier']) && (strlen($this->container['carrier']) > 255)) {
+            $invalid_properties[] = "invalid value for 'carrier', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['organization']) && (strlen($this->container['organization']) > 255)) {
+            $invalid_properties[] = "invalid value for 'organization', the character length must be smaller than or equal to 255.";
+        }
+
         return $invalid_properties;
     }
 
@@ -214,6 +234,12 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
             return false;
         }
         if (strlen($this->container['routingMethod']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['carrier']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['organization']) > 255) {
             return false;
         }
         return true;
@@ -341,6 +367,56 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddress implements ArrayAcc
         }
 
         $this->container['routingMethod'] = $routingMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets carrier
+     * @return string
+     */
+    public function getCarrier()
+    {
+        return $this->container['carrier'];
+    }
+
+    /**
+     * Sets carrier
+     * @param string $carrier Provides the name of the organization that owns the ASN. The carrier is responsible for the traffic carried on the network or set of networks designated as an Autonomous System (AS) and identified by the ASN. While there are more than 27,000 active ASNs, there are fewer carriers, because a single carrier often manages several ASNs.
+     * @return $this
+     */
+    public function setCarrier($carrier)
+    {
+        if (!is_null($carrier) && (strlen($carrier) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $carrier when calling RiskV1DecisionsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
+        }
+
+        $this->container['carrier'] = $carrier;
+
+        return $this;
+    }
+
+    /**
+     * Gets organization
+     * @return string
+     */
+    public function getOrganization()
+    {
+        return $this->container['organization'];
+    }
+
+    /**
+     * Sets organization
+     * @param string $organization The Registering Organization is the entity responsible for the actions and content associated with a given block of IP addresses. This is in contrast to the carrier, which is responsible for the routing of traffic for network blocks. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks.
+     * @return $this
+     */
+    public function setOrganization($organization)
+    {
+        if (!is_null($organization) && (strlen($organization) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $organization when calling RiskV1DecisionsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
+        }
+
+        $this->container['organization'] = $organization;
 
         return $this;
     }

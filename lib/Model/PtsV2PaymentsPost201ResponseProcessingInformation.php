@@ -54,7 +54,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bankTransferOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions'
+        'bankTransferOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions',
+        'enhancedDataEnabled' => 'bool'
     ];
 
     /**
@@ -62,7 +63,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'bankTransferOptions' => null
+        'bankTransferOptions' => null,
+        'enhancedDataEnabled' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bankTransferOptions' => 'bankTransferOptions'
+        'bankTransferOptions' => 'bankTransferOptions',
+        'enhancedDataEnabled' => 'enhancedDataEnabled'
     ];
 
 
@@ -89,7 +92,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bankTransferOptions' => 'setBankTransferOptions'
+        'bankTransferOptions' => 'setBankTransferOptions',
+        'enhancedDataEnabled' => 'setEnhancedDataEnabled'
     ];
 
 
@@ -98,7 +102,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bankTransferOptions' => 'getBankTransferOptions'
+        'bankTransferOptions' => 'getBankTransferOptions',
+        'enhancedDataEnabled' => 'getEnhancedDataEnabled'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
+        $this->container['enhancedDataEnabled'] = isset($data['enhancedDataEnabled']) ? $data['enhancedDataEnabled'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     public function setBankTransferOptions($bankTransferOptions)
     {
         $this->container['bankTransferOptions'] = $bankTransferOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets enhancedDataEnabled
+     * @return bool
+     */
+    public function getEnhancedDataEnabled()
+    {
+        return $this->container['enhancedDataEnabled'];
+    }
+
+    /**
+     * Sets enhancedDataEnabled
+     * @param bool $enhancedDataEnabled - true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor.
+     * @return $this
+     */
+    public function setEnhancedDataEnabled($enhancedDataEnabled)
+    {
+        $this->container['enhancedDataEnabled'] = $enhancedDataEnabled;
 
         return $this;
     }

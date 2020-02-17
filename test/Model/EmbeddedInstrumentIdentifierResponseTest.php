@@ -113,6 +113,13 @@ class EmbeddedInstrumentIdentifierResponseTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
+     * Test attribute "tokenizedCard"
+     */
+    public function testPropertyTokenizedCard()
+    {
+    }
+
+    /**
      * Test attribute "bankAccount"
      */
     public function testPropertyBankAccount()

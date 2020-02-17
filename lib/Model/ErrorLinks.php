@@ -47,16 +47,16 @@ class ErrorLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ErrorLinks';
+    protected static $swaggerModelName = 'Error__links';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'next' => '\CyberSource\Model\InlineResponseDefaultLinksNext[]',
+        'self' => '\CyberSource\Model\InlineResponseDefaultLinksNext',
         'documentation' => '\CyberSource\Model\InlineResponseDefaultLinksNext[]',
-        'self' => '\CyberSource\Model\InlineResponseDefaultLinksNext'
+        'next' => '\CyberSource\Model\InlineResponseDefaultLinksNext[]'
     ];
 
     /**
@@ -64,9 +64,9 @@ class ErrorLinks implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'next' => null,
+        'self' => null,
         'documentation' => null,
-        'self' => null
+        'next' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +84,9 @@ class ErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'next' => 'next',
+        'self' => 'self',
         'documentation' => 'documentation',
-        'self' => 'self'
+        'next' => 'next'
     ];
 
 
@@ -95,9 +95,9 @@ class ErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'next' => 'setNext',
+        'self' => 'setSelf',
         'documentation' => 'setDocumentation',
-        'self' => 'setSelf'
+        'next' => 'setNext'
     ];
 
 
@@ -106,9 +106,9 @@ class ErrorLinks implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'next' => 'getNext',
+        'self' => 'getSelf',
         'documentation' => 'getDocumentation',
-        'self' => 'getSelf'
+        'next' => 'getNext'
     ];
 
     public static function attributeMap()
@@ -142,9 +142,9 @@ class ErrorLinks implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['next'] = isset($data['next']) ? $data['next'] : null;
-        $this->container['documentation'] = isset($data['documentation']) ? $data['documentation'] : null;
         $this->container['self'] = isset($data['self']) ? $data['self'] : null;
+        $this->container['documentation'] = isset($data['documentation']) ? $data['documentation'] : null;
+        $this->container['next'] = isset($data['next']) ? $data['next'] : null;
     }
 
     /**
@@ -173,22 +173,22 @@ class ErrorLinks implements ArrayAccess
 
 
     /**
-     * Gets next
-     * @return \CyberSource\Model\InlineResponseDefaultLinksNext[]
+     * Gets self
+     * @return \CyberSource\Model\InlineResponseDefaultLinksNext
      */
-    public function getNext()
+    public function getSelf()
     {
-        return $this->container['next'];
+        return $this->container['self'];
     }
 
     /**
-     * Sets next
-     * @param \CyberSource\Model\InlineResponseDefaultLinksNext[] $next
+     * Sets self
+     * @param \CyberSource\Model\InlineResponseDefaultLinksNext $self
      * @return $this
      */
-    public function setNext($next)
+    public function setSelf($self)
     {
-        $this->container['next'] = $next;
+        $this->container['self'] = $self;
 
         return $this;
     }
@@ -215,22 +215,22 @@ class ErrorLinks implements ArrayAccess
     }
 
     /**
-     * Gets self
-     * @return \CyberSource\Model\InlineResponseDefaultLinksNext
+     * Gets next
+     * @return \CyberSource\Model\InlineResponseDefaultLinksNext[]
      */
-    public function getSelf()
+    public function getNext()
     {
-        return $this->container['self'];
+        return $this->container['next'];
     }
 
     /**
-     * Sets self
-     * @param \CyberSource\Model\InlineResponseDefaultLinksNext $self
+     * Sets next
+     * @param \CyberSource\Model\InlineResponseDefaultLinksNext[] $next
      * @return $this
      */
-    public function setSelf($self)
+    public function setNext($next)
     {
-        $this->container['self'] = $self;
+        $this->container['next'] = $next;
 
         return $this;
     }

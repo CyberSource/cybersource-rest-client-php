@@ -65,7 +65,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'ignoreCvResult' => 'bool',
         'initiator' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator',
         'billPayment' => 'bool',
-        'billPaymentType' => 'string'
+        'billPaymentType' => 'string',
+        'redemptionInquiry' => 'bool'
     ];
 
     /**
@@ -84,7 +85,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'ignoreCvResult' => null,
         'initiator' => null,
         'billPayment' => null,
-        'billPaymentType' => null
+        'billPaymentType' => null,
+        'redemptionInquiry' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +115,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'ignoreCvResult' => 'ignoreCvResult',
         'initiator' => 'initiator',
         'billPayment' => 'billPayment',
-        'billPaymentType' => 'billPaymentType'
+        'billPaymentType' => 'billPaymentType',
+        'redemptionInquiry' => 'redemptionInquiry'
     ];
 
 
@@ -133,7 +136,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'ignoreCvResult' => 'setIgnoreCvResult',
         'initiator' => 'setInitiator',
         'billPayment' => 'setBillPayment',
-        'billPaymentType' => 'setBillPaymentType'
+        'billPaymentType' => 'setBillPaymentType',
+        'redemptionInquiry' => 'setRedemptionInquiry'
     ];
 
 
@@ -153,7 +157,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'ignoreCvResult' => 'getIgnoreCvResult',
         'initiator' => 'getInitiator',
         'billPayment' => 'getBillPayment',
-        'billPaymentType' => 'getBillPaymentType'
+        'billPaymentType' => 'getBillPaymentType',
+        'redemptionInquiry' => 'getRedemptionInquiry'
     ];
 
     public static function attributeMap()
@@ -199,6 +204,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['initiator'] = isset($data['initiator']) ? $data['initiator'] : null;
         $this->container['billPayment'] = isset($data['billPayment']) ? $data['billPayment'] : null;
         $this->container['billPaymentType'] = isset($data['billPaymentType']) ? $data['billPaymentType'] : null;
+        $this->container['redemptionInquiry'] = isset($data['redemptionInquiry']) ? $data['redemptionInquiry'] : null;
     }
 
     /**
@@ -265,7 +271,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets authType
-     * @param string $authType Authorization type. Possible values:   - `AUTOCAPTURE`: automatic capture.  - `STANDARDCAPTURE`: standard capture.  - `VERBAL`: forced capture. Include it in the payment request for a forced capture. Include it in the capture request for a verbal payment.  #### Asia, Middle East, and Africa Gateway; Cielo; Comercio Latino; and CyberSource Latin American Processing Set this field to `AUTOCAPTURE` and include it in a bundled request to indicate that you are requesting an automatic capture. If your account is configured to enable automatic captures, set this field to `STANDARDCAPTURE` and include it in a standard authorization or bundled request to indicate that you are overriding an automatic capture. For more information, see the `auth_type` field description in [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### Forced Capture Set this field to `VERBAL` and include it in the authorization request to indicate that you are performing a forced capture; therefore, you receive the authorization code outside the CyberSource system.  For more information, see \"Forced Captures\" in [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  #### Verbal Authorization Set this field to `VERBAL` and include it in the capture request to indicate that the request is for a verbal authorization. For more information, see \"Verbal Authorizations\" in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html).  For processor-specific information, see the `auth_type` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $authType Authorization type. Possible values:   - `AUTOCAPTURE`: automatic capture.  - `STANDARDCAPTURE`: standard capture.  - `VERBAL`: forced capture. Include it in the payment request for a forced capture. Include it in the capture request for a verbal payment.  #### Asia, Middle East, and Africa Gateway; Cielo; Comercio Latino; and CyberSource Latin American Processing Set this field to `AUTOCAPTURE` and include it in a bundled request to indicate that you are requesting an automatic capture. If your account is configured to enable automatic captures, set this field to `STANDARDCAPTURE` and include it in a standard authorization or bundled request to indicate that you are overriding an automatic capture. For more information, see the `auth_type` field description in [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Forced Capture Set this field to `VERBAL` and include it in the authorization request to indicate that you are performing a forced capture; therefore, you receive the authorization code outside the CyberSource system.  For more information, see \"Forced Captures\" in [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Verbal Authorization Set this field to `VERBAL` and include it in the capture request to indicate that the request is for a verbal authorization. For more information, see \"Verbal Authorizations\" in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html).  For processor-specific information, see the `auth_type` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setAuthType($authType)
@@ -315,7 +321,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets verbalAuthTransactionId
-     * @param string $verbalAuthTransactionId Transaction ID (TID).  #### FDMS South This field is required for verbal authorizations and forced captures with the American Express card type to comply with the CAPN requirements: - Forced capture: Obtain the value for this field from the authorization response. - Verbal authorization: You cannot obtain a value for this field so CyberSource uses the default value of `000000000000000` (15 zeros).  For more information about using this default value, see \"Verbal Authorizations\" in [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $verbalAuthTransactionId Transaction ID (TID).  #### FDMS South This field is required for verbal authorizations and forced captures with the American Express card type to comply with the CAPN requirements: - Forced capture: Obtain the value for this field from the authorization response. - Verbal authorization: You cannot obtain a value for this field so CyberSource uses the default value of `000000000000000` (15 zeros).  For more information about using this default value, see \"Verbal Authorizations\" in [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setVerbalAuthTransactionId($verbalAuthTransactionId)
@@ -340,7 +346,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets authIndicator
-     * @param string $authIndicator Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \"Final Authorization Indicator\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the `auth_indicator` field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html).
+     * @param string $authIndicator Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \"Final Authorization Indicator\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the `auth_indicator` field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html).
      * @return $this
      */
     public function setAuthIndicator($authIndicator)
@@ -491,7 +497,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets billPayment
-     * @param bool $billPayment Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the `bill_payment` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.
+     * @param bool $billPayment Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the `bill_payment` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.
      * @return $this
      */
     public function setBillPayment($billPayment)
@@ -512,12 +518,33 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets billPaymentType
-     * @param string $billPaymentType Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  This field is supported only for bill payments in Brazil with Mastercard on CyberSource through VisaNet.  **Note** For details about Mastercard bill payments or bill payments with Visa, see `bill_payment_type` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $billPaymentType Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  This field is supported only for bill payments in Brazil with Mastercard on CyberSource through VisaNet.  **Note** For details about Mastercard bill payments or bill payments with Visa, see `bill_payment_type` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setBillPaymentType($billPaymentType)
     {
         $this->container['billPaymentType'] = $billPaymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets redemptionInquiry
+     * @return bool
+     */
+    public function getRedemptionInquiry()
+    {
+        return $this->container['redemptionInquiry'];
+    }
+
+    /**
+     * Sets redemptionInquiry
+     * @param bool $redemptionInquiry Flag that indicates the payment request is a redemption inquiry.  Possible values:   - `true`   - `false`
+     * @return $this
+     */
+    public function setRedemptionInquiry($redemptionInquiry)
+    {
+        $this->container['redemptionInquiry'] = $redemptionInquiry;
 
         return $this;
     }

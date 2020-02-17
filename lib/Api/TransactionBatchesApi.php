@@ -90,28 +90,32 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatchDetails
      *
-     * Get transaction details for a given batch id
+     * Get Transaction Details for a given Batch Id
      *
      * @param string $id The batch id assigned for the template. (required)
+     * @param \DateTime $uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd (optional)
+     * @param string $status Allows you to filter by rejected response.  Valid values: - Rejected (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionBatchDetails($id)
+    public function getTransactionBatchDetails($id, $uploadDate = null, $status = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchDetailsWithHttpInfo($id);
+        list($response, $statusCode, $httpHeader) = $this->getTransactionBatchDetailsWithHttpInfo($id, $uploadDate, $status);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
      * Operation getTransactionBatchDetailsWithHttpInfo
      *
-     * Get transaction details for a given batch id
+     * Get Transaction Details for a given Batch Id
      *
      * @param string $id The batch id assigned for the template. (required)
+     * @param \DateTime $uploadDate Date in which the original batch file was uploaded. Date must be in ISO-8601 format. Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) **Example date format:**  - yyyy-MM-dd (optional)
+     * @param string $status Allows you to filter by rejected response.  Valid values: - Rejected (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionBatchDetailsWithHttpInfo($id)
+    public function getTransactionBatchDetailsWithHttpInfo($id, $uploadDate = null, $status = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -123,12 +127,20 @@ class TransactionBatchesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['text/csv', 'application/xml']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['text/csv', 'application/xml', 'text/vnd.cybersource.map-csv']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($uploadDate !== null) {
+            $queryParams['uploadDate'] = $this->apiClient->getSerializer()->toQueryValue($uploadDate);
+        }
+        // query params
+        if ($status !== null) {
+            $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
+        }
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -188,7 +200,7 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatchId
      *
-     * Get individual batch file
+     * Get Individual Batch File
      *
      * @param string $id The batch id assigned for the template. (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -203,7 +215,7 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatchIdWithHttpInfo
      *
-     * Get individual batch file
+     * Get Individual Batch File
      *
      * @param string $id The batch id assigned for the template. (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -290,7 +302,7 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatches
      *
-     * Get a list of batch files
+     * Get a List of Batch Files
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
@@ -306,7 +318,7 @@ class TransactionBatchesApi
     /**
      * Operation getTransactionBatchesWithHttpInfo
      *
-     * Get a list of batch files
+     * Get a List of Batch Files
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZZ (required)

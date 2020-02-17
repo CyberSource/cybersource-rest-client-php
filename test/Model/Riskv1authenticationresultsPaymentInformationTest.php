@@ -90,4 +90,11 @@ class Riskv1authenticationresultsPaymentInformationTest extends \PHPUnit_Framewo
     public function testPropertyTokenizedCard()
     {
     }
+
+    /**
+     * Test attribute "fluidData"
+     */
+    public function testPropertyFluidData()
+    {
+    }
 }

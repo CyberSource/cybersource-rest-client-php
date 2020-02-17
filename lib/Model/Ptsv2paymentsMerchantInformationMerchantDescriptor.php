@@ -62,6 +62,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'string',
         'postalCode' => 'string',
         'administrativeArea' => 'string',
+        'phone' => 'string',
         'url' => 'string'
     ];
 
@@ -78,6 +79,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => null,
         'postalCode' => null,
         'administrativeArea' => null,
+        'phone' => null,
         'url' => null
     ];
 
@@ -104,6 +106,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'country',
         'postalCode' => 'postalCode',
         'administrativeArea' => 'administrativeArea',
+        'phone' => 'phone',
         'url' => 'url'
     ];
 
@@ -121,6 +124,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'setCountry',
         'postalCode' => 'setPostalCode',
         'administrativeArea' => 'setAdministrativeArea',
+        'phone' => 'setPhone',
         'url' => 'setUrl'
     ];
 
@@ -138,6 +142,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'getCountry',
         'postalCode' => 'getPostalCode',
         'administrativeArea' => 'getAdministrativeArea',
+        'phone' => 'getPhone',
         'url' => 'getUrl'
     ];
 
@@ -180,6 +185,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
@@ -212,6 +218,10 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
             $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 14.";
         }
 
+        if (!is_null($this->container['phone']) && (strlen($this->container['phone']) > 13)) {
+            $invalid_properties[] = "invalid value for 'phone', the character length must be smaller than or equal to 13.";
+        }
+
         if (!is_null($this->container['url']) && (strlen($this->container['url']) > 255)) {
             $invalid_properties[] = "invalid value for 'url', the character length must be smaller than or equal to 255.";
         }
@@ -241,6 +251,9 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
             return false;
         }
         if (strlen($this->container['postalCode']) > 14) {
+            return false;
+        }
+        if (strlen($this->container['phone']) > 13) {
             return false;
         }
         if (strlen($this->container['url']) > 255) {
@@ -434,6 +447,31 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function setAdministrativeArea($administrativeArea)
     {
         $this->container['administrativeArea'] = $administrativeArea;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     * @param string $phone Merchnat phone as contact information for CNP transactions
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        if (!is_null($phone) && (strlen($phone) > 13)) {
+            throw new \InvalidArgumentException('invalid length for $phone when calling Ptsv2paymentsMerchantInformationMerchantDescriptor., must be smaller than or equal to 13.');
+        }
+
+        $this->container['phone'] = $phone;
 
         return $this;
     }

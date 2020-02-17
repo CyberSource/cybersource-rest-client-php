@@ -55,7 +55,8 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformationCard',
-        'tokenizedCard' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformationTokenizedCard'
+        'tokenizedCard' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformationTokenizedCard',
+        'fluidData' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformationFluidData'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'card' => null,
-        'tokenizedCard' => null
+        'tokenizedCard' => null,
+        'fluidData' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'card' => 'card',
-        'tokenizedCard' => 'tokenizedCard'
+        'tokenizedCard' => 'tokenizedCard',
+        'fluidData' => 'fluidData'
     ];
 
 
@@ -93,7 +96,8 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'card' => 'setCard',
-        'tokenizedCard' => 'setTokenizedCard'
+        'tokenizedCard' => 'setTokenizedCard',
+        'fluidData' => 'setFluidData'
     ];
 
 
@@ -103,7 +107,8 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'card' => 'getCard',
-        'tokenizedCard' => 'getTokenizedCard'
+        'tokenizedCard' => 'getTokenizedCard',
+        'fluidData' => 'getFluidData'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
+        $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
     }
 
     /**
@@ -204,6 +210,27 @@ class Riskv1authenticationexemptionsPaymentInformation implements ArrayAccess
     public function setTokenizedCard($tokenizedCard)
     {
         $this->container['tokenizedCard'] = $tokenizedCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets fluidData
+     * @return \CyberSource\Model\Riskv1authenticationexemptionsPaymentInformationFluidData
+     */
+    public function getFluidData()
+    {
+        return $this->container['fluidData'];
+    }
+
+    /**
+     * Sets fluidData
+     * @param \CyberSource\Model\Riskv1authenticationexemptionsPaymentInformationFluidData $fluidData
+     * @return $this
+     */
+    public function setFluidData($fluidData)
+    {
+        $this->container['fluidData'] = $fluidData;
 
         return $this;
     }

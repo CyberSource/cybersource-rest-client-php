@@ -54,18 +54,29 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'acsRenderingType' => 'string',
+        'acsTransactionId' => 'string',
         'authenticationResult' => 'string',
         'authenticationStatusMsg' => 'string',
+        'authorizationPayload' => 'string',
         'cavv' => 'string',
         'cavvAlgorithm' => 'string',
+        'directoryServerErrorCode' => 'string',
+        'directoryServerErrorDescription' => 'string',
         'indicator' => 'string',
+        'interactionCounter' => 'string',
         'eci' => 'string',
         'eciRaw' => 'string',
         'paresStatus' => 'string',
+        'sdkTransactionId' => 'string',
         'specificationVersion' => 'string',
+        'threeDSServerTransactionId' => 'string',
         'ucafAuthenticationData' => 'string',
         'ucafCollectionIndicator' => 'float',
-        'xid' => 'string'
+        'whiteListStatus' => 'string',
+        'whiteListStatusSource' => 'string',
+        'xid' => 'string',
+        'directoryServerTransactionId' => 'string'
     ];
 
     /**
@@ -73,18 +84,29 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'acsRenderingType' => null,
+        'acsTransactionId' => null,
         'authenticationResult' => null,
         'authenticationStatusMsg' => null,
+        'authorizationPayload' => null,
         'cavv' => null,
         'cavvAlgorithm' => null,
+        'directoryServerErrorCode' => null,
+        'directoryServerErrorDescription' => null,
         'indicator' => null,
+        'interactionCounter' => null,
         'eci' => null,
         'eciRaw' => null,
         'paresStatus' => null,
+        'sdkTransactionId' => null,
         'specificationVersion' => null,
+        'threeDSServerTransactionId' => null,
         'ucafAuthenticationData' => null,
         'ucafCollectionIndicator' => null,
-        'xid' => null
+        'whiteListStatus' => null,
+        'whiteListStatusSource' => null,
+        'xid' => null,
+        'directoryServerTransactionId' => null
     ];
 
     public static function swaggerTypes()
@@ -102,18 +124,29 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      * @var string[]
      */
     protected static $attributeMap = [
+        'acsRenderingType' => 'acsRenderingType',
+        'acsTransactionId' => 'acsTransactionId',
         'authenticationResult' => 'authenticationResult',
         'authenticationStatusMsg' => 'authenticationStatusMsg',
+        'authorizationPayload' => 'authorizationPayload',
         'cavv' => 'cavv',
         'cavvAlgorithm' => 'cavvAlgorithm',
+        'directoryServerErrorCode' => 'directoryServerErrorCode',
+        'directoryServerErrorDescription' => 'directoryServerErrorDescription',
         'indicator' => 'indicator',
+        'interactionCounter' => 'interactionCounter',
         'eci' => 'eci',
         'eciRaw' => 'eciRaw',
         'paresStatus' => 'paresStatus',
+        'sdkTransactionId' => 'sdkTransactionId',
         'specificationVersion' => 'specificationVersion',
+        'threeDSServerTransactionId' => 'threeDSServerTransactionId',
         'ucafAuthenticationData' => 'ucafAuthenticationData',
         'ucafCollectionIndicator' => 'ucafCollectionIndicator',
-        'xid' => 'xid'
+        'whiteListStatus' => 'whiteListStatus',
+        'whiteListStatusSource' => 'whiteListStatusSource',
+        'xid' => 'xid',
+        'directoryServerTransactionId' => 'directoryServerTransactionId'
     ];
 
 
@@ -122,18 +155,29 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      * @var string[]
      */
     protected static $setters = [
+        'acsRenderingType' => 'setAcsRenderingType',
+        'acsTransactionId' => 'setAcsTransactionId',
         'authenticationResult' => 'setAuthenticationResult',
         'authenticationStatusMsg' => 'setAuthenticationStatusMsg',
+        'authorizationPayload' => 'setAuthorizationPayload',
         'cavv' => 'setCavv',
         'cavvAlgorithm' => 'setCavvAlgorithm',
+        'directoryServerErrorCode' => 'setDirectoryServerErrorCode',
+        'directoryServerErrorDescription' => 'setDirectoryServerErrorDescription',
         'indicator' => 'setIndicator',
+        'interactionCounter' => 'setInteractionCounter',
         'eci' => 'setEci',
         'eciRaw' => 'setEciRaw',
         'paresStatus' => 'setParesStatus',
+        'sdkTransactionId' => 'setSdkTransactionId',
         'specificationVersion' => 'setSpecificationVersion',
+        'threeDSServerTransactionId' => 'setThreeDSServerTransactionId',
         'ucafAuthenticationData' => 'setUcafAuthenticationData',
         'ucafCollectionIndicator' => 'setUcafCollectionIndicator',
-        'xid' => 'setXid'
+        'whiteListStatus' => 'setWhiteListStatus',
+        'whiteListStatusSource' => 'setWhiteListStatusSource',
+        'xid' => 'setXid',
+        'directoryServerTransactionId' => 'setDirectoryServerTransactionId'
     ];
 
 
@@ -142,18 +186,29 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      * @var string[]
      */
     protected static $getters = [
+        'acsRenderingType' => 'getAcsRenderingType',
+        'acsTransactionId' => 'getAcsTransactionId',
         'authenticationResult' => 'getAuthenticationResult',
         'authenticationStatusMsg' => 'getAuthenticationStatusMsg',
+        'authorizationPayload' => 'getAuthorizationPayload',
         'cavv' => 'getCavv',
         'cavvAlgorithm' => 'getCavvAlgorithm',
+        'directoryServerErrorCode' => 'getDirectoryServerErrorCode',
+        'directoryServerErrorDescription' => 'getDirectoryServerErrorDescription',
         'indicator' => 'getIndicator',
+        'interactionCounter' => 'getInteractionCounter',
         'eci' => 'getEci',
         'eciRaw' => 'getEciRaw',
         'paresStatus' => 'getParesStatus',
+        'sdkTransactionId' => 'getSdkTransactionId',
         'specificationVersion' => 'getSpecificationVersion',
+        'threeDSServerTransactionId' => 'getThreeDSServerTransactionId',
         'ucafAuthenticationData' => 'getUcafAuthenticationData',
         'ucafCollectionIndicator' => 'getUcafCollectionIndicator',
-        'xid' => 'getXid'
+        'whiteListStatus' => 'getWhiteListStatus',
+        'whiteListStatusSource' => 'getWhiteListStatusSource',
+        'xid' => 'getXid',
+        'directoryServerTransactionId' => 'getDirectoryServerTransactionId'
     ];
 
     public static function attributeMap()
@@ -187,18 +242,29 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function __construct(array $data = null)
     {
+        $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
+        $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['authenticationResult'] = isset($data['authenticationResult']) ? $data['authenticationResult'] : null;
         $this->container['authenticationStatusMsg'] = isset($data['authenticationStatusMsg']) ? $data['authenticationStatusMsg'] : null;
+        $this->container['authorizationPayload'] = isset($data['authorizationPayload']) ? $data['authorizationPayload'] : null;
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['cavvAlgorithm'] = isset($data['cavvAlgorithm']) ? $data['cavvAlgorithm'] : null;
+        $this->container['directoryServerErrorCode'] = isset($data['directoryServerErrorCode']) ? $data['directoryServerErrorCode'] : null;
+        $this->container['directoryServerErrorDescription'] = isset($data['directoryServerErrorDescription']) ? $data['directoryServerErrorDescription'] : null;
         $this->container['indicator'] = isset($data['indicator']) ? $data['indicator'] : null;
+        $this->container['interactionCounter'] = isset($data['interactionCounter']) ? $data['interactionCounter'] : null;
         $this->container['eci'] = isset($data['eci']) ? $data['eci'] : null;
         $this->container['eciRaw'] = isset($data['eciRaw']) ? $data['eciRaw'] : null;
         $this->container['paresStatus'] = isset($data['paresStatus']) ? $data['paresStatus'] : null;
+        $this->container['sdkTransactionId'] = isset($data['sdkTransactionId']) ? $data['sdkTransactionId'] : null;
         $this->container['specificationVersion'] = isset($data['specificationVersion']) ? $data['specificationVersion'] : null;
+        $this->container['threeDSServerTransactionId'] = isset($data['threeDSServerTransactionId']) ? $data['threeDSServerTransactionId'] : null;
         $this->container['ucafAuthenticationData'] = isset($data['ucafAuthenticationData']) ? $data['ucafAuthenticationData'] : null;
         $this->container['ucafCollectionIndicator'] = isset($data['ucafCollectionIndicator']) ? $data['ucafCollectionIndicator'] : null;
+        $this->container['whiteListStatus'] = isset($data['whiteListStatus']) ? $data['whiteListStatus'] : null;
+        $this->container['whiteListStatusSource'] = isset($data['whiteListStatusSource']) ? $data['whiteListStatusSource'] : null;
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
+        $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
     }
 
     /**
@@ -210,12 +276,48 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     {
         $invalid_properties = [];
 
+        if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
         if (!is_null($this->container['cavv']) && (strlen($this->container['cavv']) > 255)) {
             $invalid_properties[] = "invalid value for 'cavv', the character length must be smaller than or equal to 255.";
         }
 
         if (!is_null($this->container['cavvAlgorithm']) && (strlen($this->container['cavvAlgorithm']) > 1)) {
             $invalid_properties[] = "invalid value for 'cavvAlgorithm', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['directoryServerErrorCode']) && (strlen($this->container['directoryServerErrorCode']) > 3)) {
+            $invalid_properties[] = "invalid value for 'directoryServerErrorCode', the character length must be smaller than or equal to 3.";
+        }
+
+        if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
+            $invalid_properties[] = "invalid value for 'directoryServerErrorDescription', the character length must be smaller than or equal to 4096.";
+        }
+
+        if (!is_null($this->container['interactionCounter']) && (strlen($this->container['interactionCounter']) > 2)) {
+            $invalid_properties[] = "invalid value for 'interactionCounter', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['sdkTransactionId']) && (strlen($this->container['sdkTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'sdkTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
+        if (!is_null($this->container['threeDSServerTransactionId']) && (strlen($this->container['threeDSServerTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'threeDSServerTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
+        if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
+            $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['whiteListStatusSource']) && (strlen($this->container['whiteListStatusSource']) > 2)) {
+            $invalid_properties[] = "invalid value for 'whiteListStatusSource', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['directoryServerTransactionId']) && (strlen($this->container['directoryServerTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'directoryServerTransactionId', the character length must be smaller than or equal to 36.";
         }
 
         return $invalid_properties;
@@ -230,15 +332,88 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function valid()
     {
 
+        if (strlen($this->container['acsTransactionId']) > 36) {
+            return false;
+        }
         if (strlen($this->container['cavv']) > 255) {
             return false;
         }
         if (strlen($this->container['cavvAlgorithm']) > 1) {
             return false;
         }
+        if (strlen($this->container['directoryServerErrorCode']) > 3) {
+            return false;
+        }
+        if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
+            return false;
+        }
+        if (strlen($this->container['interactionCounter']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['sdkTransactionId']) > 36) {
+            return false;
+        }
+        if (strlen($this->container['threeDSServerTransactionId']) > 36) {
+            return false;
+        }
+        if (strlen($this->container['whiteListStatus']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['whiteListStatusSource']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['directoryServerTransactionId']) > 36) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets acsRenderingType
+     * @return string
+     */
+    public function getAcsRenderingType()
+    {
+        return $this->container['acsRenderingType'];
+    }
+
+    /**
+     * Sets acsRenderingType
+     * @param string $acsRenderingType Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK.
+     * @return $this
+     */
+    public function setAcsRenderingType($acsRenderingType)
+    {
+        $this->container['acsRenderingType'] = $acsRenderingType;
+
+        return $this;
+    }
+
+    /**
+     * Gets acsTransactionId
+     * @return string
+     */
+    public function getAcsTransactionId()
+    {
+        return $this->container['acsTransactionId'];
+    }
+
+    /**
+     * Sets acsTransactionId
+     * @param string $acsTransactionId Unique transaction identifier assigned by the ACS to identify a single transaction.
+     * @return $this
+     */
+    public function setAcsTransactionId($acsTransactionId)
+    {
+        if (!is_null($acsTransactionId) && (strlen($acsTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $acsTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['acsTransactionId'] = $acsTransactionId;
+
+        return $this;
+    }
 
     /**
      * Gets authenticationResult
@@ -278,6 +453,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setAuthenticationStatusMsg($authenticationStatusMsg)
     {
         $this->container['authenticationStatusMsg'] = $authenticationStatusMsg;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationPayload
+     * @return string
+     */
+    public function getAuthorizationPayload()
+    {
+        return $this->container['authorizationPayload'];
+    }
+
+    /**
+     * Sets authorizationPayload
+     * @param string $authorizationPayload The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow
+     * @return $this
+     */
+    public function setAuthorizationPayload($authorizationPayload)
+    {
+        $this->container['authorizationPayload'] = $authorizationPayload;
 
         return $this;
     }
@@ -333,6 +529,56 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Gets directoryServerErrorCode
+     * @return string
+     */
+    public function getDirectoryServerErrorCode()
+    {
+        return $this->container['directoryServerErrorCode'];
+    }
+
+    /**
+     * Sets directoryServerErrorCode
+     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction.
+     * @return $this
+     */
+    public function setDirectoryServerErrorCode($directoryServerErrorCode)
+    {
+        if (!is_null($directoryServerErrorCode) && (strlen($directoryServerErrorCode) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerErrorCode when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 3.');
+        }
+
+        $this->container['directoryServerErrorCode'] = $directoryServerErrorCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets directoryServerErrorDescription
+     * @return string
+     */
+    public function getDirectoryServerErrorDescription()
+    {
+        return $this->container['directoryServerErrorDescription'];
+    }
+
+    /**
+     * Sets directoryServerErrorDescription
+     * @param string $directoryServerErrorDescription Directory server text and additional detail about the error for this transaction.
+     * @return $this
+     */
+    public function setDirectoryServerErrorDescription($directoryServerErrorDescription)
+    {
+        if (!is_null($directoryServerErrorDescription) && (strlen($directoryServerErrorDescription) > 4096)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerErrorDescription when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 4096.');
+        }
+
+        $this->container['directoryServerErrorDescription'] = $directoryServerErrorDescription;
+
+        return $this;
+    }
+
+    /**
      * Gets indicator
      * @return string
      */
@@ -349,6 +595,31 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setIndicator($indicator)
     {
         $this->container['indicator'] = $indicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets interactionCounter
+     * @return string
+     */
+    public function getInteractionCounter()
+    {
+        return $this->container['interactionCounter'];
+    }
+
+    /**
+     * Sets interactionCounter
+     * @param string $interactionCounter Indicates the number of authentication cycles attempted by the cardholder and is tracked by the Issuing Banks ACS.Example: if customer gets the challenge window and enter in their one time password and hit submit then that interaction counter should just be 1. When customer gets the challenge window and the bank asks if they want to have the one time password  sent to their phone or their email and they have to choose before going to the next screen to enter in their one time password then this interaction count would be 2. One for the selection of how they want the one time password delivered and another with them actually entering in the one time password and hitting the submit button.
+     * @return $this
+     */
+    public function setInteractionCounter($interactionCounter)
+    {
+        if (!is_null($interactionCounter) && (strlen($interactionCounter) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $interactionCounter when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['interactionCounter'] = $interactionCounter;
 
         return $this;
     }
@@ -417,6 +688,31 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Gets sdkTransactionId
+     * @return string
+     */
+    public function getSdkTransactionId()
+    {
+        return $this->container['sdkTransactionId'];
+    }
+
+    /**
+     * Sets sdkTransactionId
+     * @param string $sdkTransactionId SDK unique transaction identifier that is generated on each new transaction.
+     * @return $this
+     */
+    public function setSdkTransactionId($sdkTransactionId)
+    {
+        if (!is_null($sdkTransactionId) && (strlen($sdkTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $sdkTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['sdkTransactionId'] = $sdkTransactionId;
+
+        return $this;
+    }
+
+    /**
      * Gets specificationVersion
      * @return string
      */
@@ -433,6 +729,31 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setSpecificationVersion($specificationVersion)
     {
         $this->container['specificationVersion'] = $specificationVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets threeDSServerTransactionId
+     * @return string
+     */
+    public function getThreeDSServerTransactionId()
+    {
+        return $this->container['threeDSServerTransactionId'];
+    }
+
+    /**
+     * Sets threeDSServerTransactionId
+     * @param string $threeDSServerTransactionId Unique transaction identifier assigned by the 3DS Server to identify a single transaction.
+     * @return $this
+     */
+    public function setThreeDSServerTransactionId($threeDSServerTransactionId)
+    {
+        if (!is_null($threeDSServerTransactionId) && (strlen($threeDSServerTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $threeDSServerTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['threeDSServerTransactionId'] = $threeDSServerTransactionId;
 
         return $this;
     }
@@ -480,6 +801,56 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Gets whiteListStatus
+     * @return string
+     */
+    public function getWhiteListStatus()
+    {
+        return $this->container['whiteListStatus'];
+    }
+
+    /**
+     * Sets whiteListStatus
+     * @param string $whiteListStatus Enables the communication of trusted beneficiary/whitelist status between the ACS, the DS and the 3DS Requestor.  Possible Values:  Y - 3DS Requestor is whitelisted by cardholder  N - 3DS Requestor is not whitelisted by cardholder
+     * @return $this
+     */
+    public function setWhiteListStatus($whiteListStatus)
+    {
+        if (!is_null($whiteListStatus) && (strlen($whiteListStatus) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $whiteListStatus when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['whiteListStatus'] = $whiteListStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets whiteListStatusSource
+     * @return string
+     */
+    public function getWhiteListStatusSource()
+    {
+        return $this->container['whiteListStatusSource'];
+    }
+
+    /**
+     * Sets whiteListStatusSource
+     * @param string $whiteListStatusSource This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS
+     * @return $this
+     */
+    public function setWhiteListStatusSource($whiteListStatusSource)
+    {
+        if (!is_null($whiteListStatusSource) && (strlen($whiteListStatusSource) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $whiteListStatusSource when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['whiteListStatusSource'] = $whiteListStatusSource;
+
+        return $this;
+    }
+
+    /**
      * Gets xid
      * @return string
      */
@@ -496,6 +867,31 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setXid($xid)
     {
         $this->container['xid'] = $xid;
+
+        return $this;
+    }
+
+    /**
+     * Gets directoryServerTransactionId
+     * @return string
+     */
+    public function getDirectoryServerTransactionId()
+    {
+        return $this->container['directoryServerTransactionId'];
+    }
+
+    /**
+     * Sets directoryServerTransactionId
+     * @param string $directoryServerTransactionId The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID
+     * @return $this
+     */
+    public function setDirectoryServerTransactionId($directoryServerTransactionId)
+    {
+        if (!is_null($directoryServerTransactionId) && (strlen($directoryServerTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
+        }
+
+        $this->container['directoryServerTransactionId'] = $directoryServerTransactionId;
 
         return $this;
     }

@@ -55,7 +55,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'emv' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv',
-        'amexCapnData' => 'string'
+        'amexCapnData' => 'string',
+        'terminalId' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'emv' => null,
-        'amexCapnData' => null
+        'amexCapnData' => null,
+        'terminalId' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'emv' => 'emv',
-        'amexCapnData' => 'amexCapnData'
+        'amexCapnData' => 'amexCapnData',
+        'terminalId' => 'terminalId'
     ];
 
 
@@ -93,7 +96,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
      */
     protected static $setters = [
         'emv' => 'setEmv',
-        'amexCapnData' => 'setAmexCapnData'
+        'amexCapnData' => 'setAmexCapnData',
+        'terminalId' => 'setTerminalId'
     ];
 
 
@@ -103,7 +107,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
      */
     protected static $getters = [
         'emv' => 'getEmv',
-        'amexCapnData' => 'getAmexCapnData'
+        'amexCapnData' => 'getAmexCapnData',
+        'terminalId' => 'getTerminalId'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     {
         $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
         $this->container['amexCapnData'] = isset($data['amexCapnData']) ? $data['amexCapnData'] : null;
+        $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
     }
 
     /**
@@ -150,8 +156,12 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 12)) {
-            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 12.";
+        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 15)) {
+            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 15.";
+        }
+
+        if (!is_null($this->container['terminalId']) && (strlen($this->container['terminalId']) > 8)) {
+            $invalid_properties[] = "invalid value for 'terminalId', the character length must be smaller than or equal to 8.";
         }
 
         return $invalid_properties;
@@ -166,7 +176,10 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['amexCapnData']) > 12) {
+        if (strlen($this->container['amexCapnData']) > 15) {
+            return false;
+        }
+        if (strlen($this->container['terminalId']) > 8) {
             return false;
         }
         return true;
@@ -205,16 +218,41 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets amexCapnData
-     * @param string $amexCapnData Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $amexCapnData Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setAmexCapnData($amexCapnData)
     {
-        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling PtsV2PaymentsPost201ResponsePointOfSaleInformation., must be smaller than or equal to 12.');
+        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling PtsV2PaymentsPost201ResponsePointOfSaleInformation., must be smaller than or equal to 15.');
         }
 
         $this->container['amexCapnData'] = $amexCapnData;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalId
+     * @return string
+     */
+    public function getTerminalId()
+    {
+        return $this->container['terminalId'];
+    }
+
+    /**
+     * Sets terminalId
+     * @param string $terminalId Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the `terminal_id` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)  **For Payouts**: This field is applicable for CtV.
+     * @return $this
+     */
+    public function setTerminalId($terminalId)
+    {
+        if (!is_null($terminalId) && (strlen($terminalId) > 8)) {
+            throw new \InvalidArgumentException('invalid length for $terminalId when calling PtsV2PaymentsPost201ResponsePointOfSaleInformation., must be smaller than or equal to 8.');
+        }
+
+        $this->container['terminalId'] = $terminalId;
 
         return $this;
     }

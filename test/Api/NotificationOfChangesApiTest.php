@@ -75,7 +75,7 @@ class NotificationOfChangesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getNotificationOfChangeReport
      *
-     * Get Notification Of Changes.
+     * Get Notification of Changes.
      *
      */
     public function testGetNotificationOfChangeReport()

@@ -75,7 +75,7 @@ class DownloadXSDApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getXSDV2
      *
-     * Download XSD for report.
+     * Download XSD for Report.
      *
      */
     public function testGetXSDV2()

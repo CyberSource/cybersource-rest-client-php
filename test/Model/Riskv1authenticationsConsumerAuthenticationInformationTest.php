@@ -92,20 +92,6 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
     }
 
     /**
-     * Test attribute "acsRenderingType"
-     */
-    public function testPropertyAcsRenderingType()
-    {
-    }
-
-    /**
-     * Test attribute "acsTransactionId"
-     */
-    public function testPropertyAcsTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "acsWindowSize"
      */
     public function testPropertyAcsWindowSize()
@@ -148,20 +134,6 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
     }
 
     /**
-     * Test attribute "authorizationPayload"
-     */
-    public function testPropertyAuthorizationPayload()
-    {
-    }
-
-    /**
-     * Test attribute "cardholderMessage"
-     */
-    public function testPropertyCardholderMessage()
-    {
-    }
-
-    /**
      * Test attribute "challengeCancelCode"
      */
     public function testPropertyChallengeCancelCode()
@@ -172,13 +144,6 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
      * Test attribute "challengeCode"
      */
     public function testPropertyChallengeCode()
-    {
-    }
-
-    /**
-     * Test attribute "challengeRequired"
-     */
-    public function testPropertyChallengeRequired()
     {
     }
 
@@ -225,37 +190,9 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
     }
 
     /**
-     * Test attribute "directoryServerErrorCode"
-     */
-    public function testPropertyDirectoryServerErrorCode()
-    {
-    }
-
-    /**
-     * Test attribute "directoryServerErrorDescription"
-     */
-    public function testPropertyDirectoryServerErrorDescription()
-    {
-    }
-
-    /**
-     * Test attribute "effectiveAuthenticationType"
-     */
-    public function testPropertyEffectiveAuthenticationType()
-    {
-    }
-
-    /**
      * Test attribute "installmentTotalCount"
      */
     public function testPropertyInstallmentTotalCount()
-    {
-    }
-
-    /**
-     * Test attribute "ivr"
-     */
-    public function testPropertyIvr()
     {
     }
 
@@ -298,13 +235,6 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
      * Test attribute "messageCategory"
      */
     public function testPropertyMessageCategory()
-    {
-    }
-
-    /**
-     * Test attribute "networkScore"
-     */
-    public function testPropertyNetworkScore()
     {
     }
 
@@ -400,37 +330,9 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
     }
 
     /**
-     * Test attribute "sdkTransactionId"
-     */
-    public function testPropertySdkTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "secureCorporatePaymentIndicator"
      */
     public function testPropertySecureCorporatePaymentIndicator()
-    {
-    }
-
-    /**
-     * Test attribute "signedParesStatusReason"
-     */
-    public function testPropertySignedParesStatusReason()
-    {
-    }
-
-    /**
-     * Test attribute "stepUpUrl"
-     */
-    public function testPropertyStepUpUrl()
-    {
-    }
-
-    /**
-     * Test attribute "threeDSServerTransactionId"
-     */
-    public function testPropertyThreeDSServerTransactionId()
     {
     }
 
@@ -445,13 +347,6 @@ class Riskv1authenticationsConsumerAuthenticationInformationTest extends \PHPUni
      * Test attribute "whiteListStatus"
      */
     public function testPropertyWhiteListStatus()
-    {
-    }
-
-    /**
-     * Test attribute "whiteListStatusSource"
-     */
-    public function testPropertyWhiteListStatusSource()
     {
     }
 }

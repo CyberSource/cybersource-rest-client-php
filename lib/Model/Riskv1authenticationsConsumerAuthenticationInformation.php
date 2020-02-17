@@ -56,37 +56,27 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     protected static $swaggerTypes = [
         'strongAuthentication' => '\CyberSource\Model\Riskv1authenticationsConsumerAuthenticationInformationStrongAuthentication',
         'authenticationType' => 'string',
-        'acsRenderingType' => 'string',
-        'acsTransactionId' => 'string',
         'acsWindowSize' => 'string',
         'alternateAuthenticationData' => 'string',
         'alternateAuthenticationDate' => 'string',
         'alternateAuthenticationMethod' => 'string',
         'authenticationDate' => 'string',
         'authenticationTransactionId' => 'string',
-        'authorizationPayload' => 'string',
-        'cardholderMessage' => 'string',
         'challengeCancelCode' => 'string',
         'challengeCode' => 'string',
-        'challengeRequired' => 'string',
         'challengeStatus' => 'string',
         'customerCardAlias' => 'string',
         'decoupledAuthenticationIndicator' => 'string',
         'decoupledAuthenticationMaxTime' => 'string',
         'defaultCard' => 'bool',
         'deviceChannel' => 'string',
-        'directoryServerErrorCode' => 'string',
-        'directoryServerErrorDescription' => 'string',
-        'effectiveAuthenticationType' => 'string',
         'installmentTotalCount' => 'int',
-        'ivr' => '\CyberSource\Model\Riskv1authenticationsConsumerAuthenticationInformationIvr',
         'merchantFraudRate' => 'string',
         'marketingOptIn' => 'bool',
         'marketingSource' => 'string',
         'mcc' => 'string',
         'merchantScore' => 'int',
         'messageCategory' => 'string',
-        'networkScore' => 'string',
         'npaCode' => 'string',
         'overridePaymentMethod' => 'string',
         'overrideCountryCode' => 'string',
@@ -100,14 +90,9 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         'requestorName' => 'string',
         'referenceId' => 'string',
         'sdkMaxTimeout' => 'string',
-        'sdkTransactionId' => 'string',
         'secureCorporatePaymentIndicator' => 'string',
-        'signedParesStatusReason' => 'string',
-        'stepUpUrl' => 'string',
-        'threeDSServerTransactionId' => 'string',
         'transactionMode' => 'string',
-        'whiteListStatus' => 'string',
-        'whiteListStatusSource' => 'string'
+        'whiteListStatus' => 'string'
     ];
 
     /**
@@ -117,37 +102,27 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     protected static $swaggerFormats = [
         'strongAuthentication' => null,
         'authenticationType' => null,
-        'acsRenderingType' => null,
-        'acsTransactionId' => null,
         'acsWindowSize' => null,
         'alternateAuthenticationData' => null,
         'alternateAuthenticationDate' => null,
         'alternateAuthenticationMethod' => null,
         'authenticationDate' => null,
         'authenticationTransactionId' => null,
-        'authorizationPayload' => null,
-        'cardholderMessage' => null,
         'challengeCancelCode' => null,
         'challengeCode' => null,
-        'challengeRequired' => null,
         'challengeStatus' => null,
         'customerCardAlias' => null,
         'decoupledAuthenticationIndicator' => null,
         'decoupledAuthenticationMaxTime' => null,
         'defaultCard' => null,
         'deviceChannel' => null,
-        'directoryServerErrorCode' => null,
-        'directoryServerErrorDescription' => null,
-        'effectiveAuthenticationType' => null,
         'installmentTotalCount' => null,
-        'ivr' => null,
         'merchantFraudRate' => null,
         'marketingOptIn' => null,
         'marketingSource' => null,
         'mcc' => null,
         'merchantScore' => null,
         'messageCategory' => null,
-        'networkScore' => null,
         'npaCode' => null,
         'overridePaymentMethod' => null,
         'overrideCountryCode' => null,
@@ -161,14 +136,9 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         'requestorName' => null,
         'referenceId' => null,
         'sdkMaxTimeout' => null,
-        'sdkTransactionId' => null,
         'secureCorporatePaymentIndicator' => null,
-        'signedParesStatusReason' => null,
-        'stepUpUrl' => null,
-        'threeDSServerTransactionId' => null,
         'transactionMode' => null,
-        'whiteListStatus' => null,
-        'whiteListStatusSource' => null
+        'whiteListStatus' => null
     ];
 
     public static function swaggerTypes()
@@ -188,37 +158,27 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     protected static $attributeMap = [
         'strongAuthentication' => 'strongAuthentication',
         'authenticationType' => 'authenticationType',
-        'acsRenderingType' => 'acsRenderingType',
-        'acsTransactionId' => 'acsTransactionId',
         'acsWindowSize' => 'acsWindowSize',
         'alternateAuthenticationData' => 'alternateAuthenticationData',
         'alternateAuthenticationDate' => 'alternateAuthenticationDate',
         'alternateAuthenticationMethod' => 'alternateAuthenticationMethod',
         'authenticationDate' => 'authenticationDate',
         'authenticationTransactionId' => 'authenticationTransactionId',
-        'authorizationPayload' => 'authorizationPayload',
-        'cardholderMessage' => 'cardholderMessage',
         'challengeCancelCode' => 'challengeCancelCode',
         'challengeCode' => 'challengeCode',
-        'challengeRequired' => 'challengeRequired',
         'challengeStatus' => 'challengeStatus',
         'customerCardAlias' => 'customerCardAlias',
         'decoupledAuthenticationIndicator' => 'decoupledAuthenticationIndicator',
         'decoupledAuthenticationMaxTime' => 'decoupledAuthenticationMaxTime',
         'defaultCard' => 'defaultCard',
         'deviceChannel' => 'deviceChannel',
-        'directoryServerErrorCode' => 'directoryServerErrorCode',
-        'directoryServerErrorDescription' => 'directoryServerErrorDescription',
-        'effectiveAuthenticationType' => 'effectiveAuthenticationType',
         'installmentTotalCount' => 'installmentTotalCount',
-        'ivr' => 'ivr',
         'merchantFraudRate' => 'merchantFraudRate',
         'marketingOptIn' => 'marketingOptIn',
         'marketingSource' => 'marketingSource',
         'mcc' => 'mcc',
         'merchantScore' => 'merchantScore',
         'messageCategory' => 'messageCategory',
-        'networkScore' => 'networkScore',
         'npaCode' => 'npaCode',
         'overridePaymentMethod' => 'overridePaymentMethod',
         'overrideCountryCode' => 'overrideCountryCode',
@@ -232,14 +192,9 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         'requestorName' => 'requestorName',
         'referenceId' => 'referenceId',
         'sdkMaxTimeout' => 'sdkMaxTimeout',
-        'sdkTransactionId' => 'sdkTransactionId',
         'secureCorporatePaymentIndicator' => 'secureCorporatePaymentIndicator',
-        'signedParesStatusReason' => 'signedParesStatusReason',
-        'stepUpUrl' => 'stepUpUrl',
-        'threeDSServerTransactionId' => 'threeDSServerTransactionId',
         'transactionMode' => 'transactionMode',
-        'whiteListStatus' => 'whiteListStatus',
-        'whiteListStatusSource' => 'whiteListStatusSource'
+        'whiteListStatus' => 'whiteListStatus'
     ];
 
 
@@ -250,37 +205,27 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     protected static $setters = [
         'strongAuthentication' => 'setStrongAuthentication',
         'authenticationType' => 'setAuthenticationType',
-        'acsRenderingType' => 'setAcsRenderingType',
-        'acsTransactionId' => 'setAcsTransactionId',
         'acsWindowSize' => 'setAcsWindowSize',
         'alternateAuthenticationData' => 'setAlternateAuthenticationData',
         'alternateAuthenticationDate' => 'setAlternateAuthenticationDate',
         'alternateAuthenticationMethod' => 'setAlternateAuthenticationMethod',
         'authenticationDate' => 'setAuthenticationDate',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
-        'authorizationPayload' => 'setAuthorizationPayload',
-        'cardholderMessage' => 'setCardholderMessage',
         'challengeCancelCode' => 'setChallengeCancelCode',
         'challengeCode' => 'setChallengeCode',
-        'challengeRequired' => 'setChallengeRequired',
         'challengeStatus' => 'setChallengeStatus',
         'customerCardAlias' => 'setCustomerCardAlias',
         'decoupledAuthenticationIndicator' => 'setDecoupledAuthenticationIndicator',
         'decoupledAuthenticationMaxTime' => 'setDecoupledAuthenticationMaxTime',
         'defaultCard' => 'setDefaultCard',
         'deviceChannel' => 'setDeviceChannel',
-        'directoryServerErrorCode' => 'setDirectoryServerErrorCode',
-        'directoryServerErrorDescription' => 'setDirectoryServerErrorDescription',
-        'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
         'installmentTotalCount' => 'setInstallmentTotalCount',
-        'ivr' => 'setIvr',
         'merchantFraudRate' => 'setMerchantFraudRate',
         'marketingOptIn' => 'setMarketingOptIn',
         'marketingSource' => 'setMarketingSource',
         'mcc' => 'setMcc',
         'merchantScore' => 'setMerchantScore',
         'messageCategory' => 'setMessageCategory',
-        'networkScore' => 'setNetworkScore',
         'npaCode' => 'setNpaCode',
         'overridePaymentMethod' => 'setOverridePaymentMethod',
         'overrideCountryCode' => 'setOverrideCountryCode',
@@ -294,14 +239,9 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         'requestorName' => 'setRequestorName',
         'referenceId' => 'setReferenceId',
         'sdkMaxTimeout' => 'setSdkMaxTimeout',
-        'sdkTransactionId' => 'setSdkTransactionId',
         'secureCorporatePaymentIndicator' => 'setSecureCorporatePaymentIndicator',
-        'signedParesStatusReason' => 'setSignedParesStatusReason',
-        'stepUpUrl' => 'setStepUpUrl',
-        'threeDSServerTransactionId' => 'setThreeDSServerTransactionId',
         'transactionMode' => 'setTransactionMode',
-        'whiteListStatus' => 'setWhiteListStatus',
-        'whiteListStatusSource' => 'setWhiteListStatusSource'
+        'whiteListStatus' => 'setWhiteListStatus'
     ];
 
 
@@ -312,37 +252,27 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     protected static $getters = [
         'strongAuthentication' => 'getStrongAuthentication',
         'authenticationType' => 'getAuthenticationType',
-        'acsRenderingType' => 'getAcsRenderingType',
-        'acsTransactionId' => 'getAcsTransactionId',
         'acsWindowSize' => 'getAcsWindowSize',
         'alternateAuthenticationData' => 'getAlternateAuthenticationData',
         'alternateAuthenticationDate' => 'getAlternateAuthenticationDate',
         'alternateAuthenticationMethod' => 'getAlternateAuthenticationMethod',
         'authenticationDate' => 'getAuthenticationDate',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
-        'authorizationPayload' => 'getAuthorizationPayload',
-        'cardholderMessage' => 'getCardholderMessage',
         'challengeCancelCode' => 'getChallengeCancelCode',
         'challengeCode' => 'getChallengeCode',
-        'challengeRequired' => 'getChallengeRequired',
         'challengeStatus' => 'getChallengeStatus',
         'customerCardAlias' => 'getCustomerCardAlias',
         'decoupledAuthenticationIndicator' => 'getDecoupledAuthenticationIndicator',
         'decoupledAuthenticationMaxTime' => 'getDecoupledAuthenticationMaxTime',
         'defaultCard' => 'getDefaultCard',
         'deviceChannel' => 'getDeviceChannel',
-        'directoryServerErrorCode' => 'getDirectoryServerErrorCode',
-        'directoryServerErrorDescription' => 'getDirectoryServerErrorDescription',
-        'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
         'installmentTotalCount' => 'getInstallmentTotalCount',
-        'ivr' => 'getIvr',
         'merchantFraudRate' => 'getMerchantFraudRate',
         'marketingOptIn' => 'getMarketingOptIn',
         'marketingSource' => 'getMarketingSource',
         'mcc' => 'getMcc',
         'merchantScore' => 'getMerchantScore',
         'messageCategory' => 'getMessageCategory',
-        'networkScore' => 'getNetworkScore',
         'npaCode' => 'getNpaCode',
         'overridePaymentMethod' => 'getOverridePaymentMethod',
         'overrideCountryCode' => 'getOverrideCountryCode',
@@ -356,14 +286,9 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         'requestorName' => 'getRequestorName',
         'referenceId' => 'getReferenceId',
         'sdkMaxTimeout' => 'getSdkMaxTimeout',
-        'sdkTransactionId' => 'getSdkTransactionId',
         'secureCorporatePaymentIndicator' => 'getSecureCorporatePaymentIndicator',
-        'signedParesStatusReason' => 'getSignedParesStatusReason',
-        'stepUpUrl' => 'getStepUpUrl',
-        'threeDSServerTransactionId' => 'getThreeDSServerTransactionId',
         'transactionMode' => 'getTransactionMode',
-        'whiteListStatus' => 'getWhiteListStatus',
-        'whiteListStatusSource' => 'getWhiteListStatusSource'
+        'whiteListStatus' => 'getWhiteListStatus'
     ];
 
     public static function attributeMap()
@@ -399,37 +324,27 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     {
         $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;
         $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
-        $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
-        $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['acsWindowSize'] = isset($data['acsWindowSize']) ? $data['acsWindowSize'] : null;
         $this->container['alternateAuthenticationData'] = isset($data['alternateAuthenticationData']) ? $data['alternateAuthenticationData'] : null;
         $this->container['alternateAuthenticationDate'] = isset($data['alternateAuthenticationDate']) ? $data['alternateAuthenticationDate'] : null;
         $this->container['alternateAuthenticationMethod'] = isset($data['alternateAuthenticationMethod']) ? $data['alternateAuthenticationMethod'] : null;
         $this->container['authenticationDate'] = isset($data['authenticationDate']) ? $data['authenticationDate'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
-        $this->container['authorizationPayload'] = isset($data['authorizationPayload']) ? $data['authorizationPayload'] : null;
-        $this->container['cardholderMessage'] = isset($data['cardholderMessage']) ? $data['cardholderMessage'] : null;
         $this->container['challengeCancelCode'] = isset($data['challengeCancelCode']) ? $data['challengeCancelCode'] : null;
         $this->container['challengeCode'] = isset($data['challengeCode']) ? $data['challengeCode'] : null;
-        $this->container['challengeRequired'] = isset($data['challengeRequired']) ? $data['challengeRequired'] : null;
         $this->container['challengeStatus'] = isset($data['challengeStatus']) ? $data['challengeStatus'] : null;
         $this->container['customerCardAlias'] = isset($data['customerCardAlias']) ? $data['customerCardAlias'] : null;
         $this->container['decoupledAuthenticationIndicator'] = isset($data['decoupledAuthenticationIndicator']) ? $data['decoupledAuthenticationIndicator'] : null;
         $this->container['decoupledAuthenticationMaxTime'] = isset($data['decoupledAuthenticationMaxTime']) ? $data['decoupledAuthenticationMaxTime'] : null;
         $this->container['defaultCard'] = isset($data['defaultCard']) ? $data['defaultCard'] : null;
         $this->container['deviceChannel'] = isset($data['deviceChannel']) ? $data['deviceChannel'] : null;
-        $this->container['directoryServerErrorCode'] = isset($data['directoryServerErrorCode']) ? $data['directoryServerErrorCode'] : null;
-        $this->container['directoryServerErrorDescription'] = isset($data['directoryServerErrorDescription']) ? $data['directoryServerErrorDescription'] : null;
-        $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
         $this->container['installmentTotalCount'] = isset($data['installmentTotalCount']) ? $data['installmentTotalCount'] : null;
-        $this->container['ivr'] = isset($data['ivr']) ? $data['ivr'] : null;
         $this->container['merchantFraudRate'] = isset($data['merchantFraudRate']) ? $data['merchantFraudRate'] : null;
         $this->container['marketingOptIn'] = isset($data['marketingOptIn']) ? $data['marketingOptIn'] : null;
         $this->container['marketingSource'] = isset($data['marketingSource']) ? $data['marketingSource'] : null;
         $this->container['mcc'] = isset($data['mcc']) ? $data['mcc'] : null;
         $this->container['merchantScore'] = isset($data['merchantScore']) ? $data['merchantScore'] : null;
         $this->container['messageCategory'] = isset($data['messageCategory']) ? $data['messageCategory'] : null;
-        $this->container['networkScore'] = isset($data['networkScore']) ? $data['networkScore'] : null;
         $this->container['npaCode'] = isset($data['npaCode']) ? $data['npaCode'] : null;
         $this->container['overridePaymentMethod'] = isset($data['overridePaymentMethod']) ? $data['overridePaymentMethod'] : null;
         $this->container['overrideCountryCode'] = isset($data['overrideCountryCode']) ? $data['overrideCountryCode'] : null;
@@ -443,14 +358,9 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         $this->container['requestorName'] = isset($data['requestorName']) ? $data['requestorName'] : null;
         $this->container['referenceId'] = isset($data['referenceId']) ? $data['referenceId'] : null;
         $this->container['sdkMaxTimeout'] = isset($data['sdkMaxTimeout']) ? $data['sdkMaxTimeout'] : null;
-        $this->container['sdkTransactionId'] = isset($data['sdkTransactionId']) ? $data['sdkTransactionId'] : null;
         $this->container['secureCorporatePaymentIndicator'] = isset($data['secureCorporatePaymentIndicator']) ? $data['secureCorporatePaymentIndicator'] : null;
-        $this->container['signedParesStatusReason'] = isset($data['signedParesStatusReason']) ? $data['signedParesStatusReason'] : null;
-        $this->container['stepUpUrl'] = isset($data['stepUpUrl']) ? $data['stepUpUrl'] : null;
-        $this->container['threeDSServerTransactionId'] = isset($data['threeDSServerTransactionId']) ? $data['threeDSServerTransactionId'] : null;
         $this->container['transactionMode'] = isset($data['transactionMode']) ? $data['transactionMode'] : null;
         $this->container['whiteListStatus'] = isset($data['whiteListStatus']) ? $data['whiteListStatus'] : null;
-        $this->container['whiteListStatusSource'] = isset($data['whiteListStatusSource']) ? $data['whiteListStatusSource'] : null;
     }
 
     /**
@@ -464,10 +374,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
 
         if (!is_null($this->container['authenticationType']) && (strlen($this->container['authenticationType']) > 2)) {
             $invalid_properties[] = "invalid value for 'authenticationType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
         }
 
         if (!is_null($this->container['acsWindowSize']) && (strlen($this->container['acsWindowSize']) > 2)) {
@@ -490,16 +396,8 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'authenticationTransactionId', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['cardholderMessage']) && (strlen($this->container['cardholderMessage']) > 128)) {
-            $invalid_properties[] = "invalid value for 'cardholderMessage', the character length must be smaller than or equal to 128.";
-        }
-
         if (!is_null($this->container['challengeCancelCode']) && (strlen($this->container['challengeCancelCode']) > 2)) {
             $invalid_properties[] = "invalid value for 'challengeCancelCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['challengeRequired']) && (strlen($this->container['challengeRequired']) > 1)) {
-            $invalid_properties[] = "invalid value for 'challengeRequired', the character length must be smaller than or equal to 1.";
         }
 
         if (!is_null($this->container['challengeStatus']) && (strlen($this->container['challengeStatus']) > 2)) {
@@ -522,18 +420,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'deviceChannel', the character length must be smaller than or equal to 10.";
         }
 
-        if (!is_null($this->container['directoryServerErrorCode']) && (strlen($this->container['directoryServerErrorCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorDescription', the character length must be smaller than or equal to 4096.";
-        }
-
-        if (!is_null($this->container['effectiveAuthenticationType']) && (strlen($this->container['effectiveAuthenticationType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'effectiveAuthenticationType', the character length must be smaller than or equal to 2.";
-        }
-
         if (!is_null($this->container['merchantFraudRate']) && (strlen($this->container['merchantFraudRate']) > 2)) {
             $invalid_properties[] = "invalid value for 'merchantFraudRate', the character length must be smaller than or equal to 2.";
         }
@@ -547,10 +433,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         }
         if ((strlen($this->container['mcc']) > 4)) {
             $invalid_properties[] = "invalid value for 'mcc', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['networkScore']) && (strlen($this->container['networkScore']) > 2)) {
-            $invalid_properties[] = "invalid value for 'networkScore', the character length must be smaller than or equal to 2.";
         }
 
         if (!is_null($this->container['npaCode']) && (strlen($this->container['npaCode']) > 2)) {
@@ -607,24 +489,8 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'sdkMaxTimeout', the character length must be smaller than or equal to 2.";
         }
 
-        if (!is_null($this->container['sdkTransactionId']) && (strlen($this->container['sdkTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'sdkTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
         if (!is_null($this->container['secureCorporatePaymentIndicator']) && (strlen($this->container['secureCorporatePaymentIndicator']) > 1)) {
             $invalid_properties[] = "invalid value for 'secureCorporatePaymentIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['signedParesStatusReason']) && (strlen($this->container['signedParesStatusReason']) > 2)) {
-            $invalid_properties[] = "invalid value for 'signedParesStatusReason', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['stepUpUrl']) && (strlen($this->container['stepUpUrl']) > 2048)) {
-            $invalid_properties[] = "invalid value for 'stepUpUrl', the character length must be smaller than or equal to 2048.";
-        }
-
-        if (!is_null($this->container['threeDSServerTransactionId']) && (strlen($this->container['threeDSServerTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'threeDSServerTransactionId', the character length must be smaller than or equal to 36.";
         }
 
         if ($this->container['transactionMode'] === null) {
@@ -632,10 +498,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         }
         if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
             $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['whiteListStatusSource']) && (strlen($this->container['whiteListStatusSource']) > 2)) {
-            $invalid_properties[] = "invalid value for 'whiteListStatusSource', the character length must be smaller than or equal to 2.";
         }
 
         return $invalid_properties;
@@ -653,9 +515,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         if (strlen($this->container['authenticationType']) > 2) {
             return false;
         }
-        if (strlen($this->container['acsTransactionId']) > 36) {
-            return false;
-        }
         if (strlen($this->container['acsWindowSize']) > 2) {
             return false;
         }
@@ -671,13 +530,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         if (strlen($this->container['authenticationTransactionId']) > 20) {
             return false;
         }
-        if (strlen($this->container['cardholderMessage']) > 128) {
-            return false;
-        }
         if (strlen($this->container['challengeCancelCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['challengeRequired']) > 1) {
             return false;
         }
         if (strlen($this->container['challengeStatus']) > 2) {
@@ -695,15 +548,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         if (strlen($this->container['deviceChannel']) > 10) {
             return false;
         }
-        if (strlen($this->container['directoryServerErrorCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
-            return false;
-        }
-        if (strlen($this->container['effectiveAuthenticationType']) > 2) {
-            return false;
-        }
         if (strlen($this->container['merchantFraudRate']) > 2) {
             return false;
         }
@@ -714,9 +558,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             return false;
         }
         if (strlen($this->container['mcc']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['networkScore']) > 2) {
             return false;
         }
         if (strlen($this->container['npaCode']) > 2) {
@@ -761,28 +602,13 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         if (strlen($this->container['sdkMaxTimeout']) > 2) {
             return false;
         }
-        if (strlen($this->container['sdkTransactionId']) > 36) {
-            return false;
-        }
         if (strlen($this->container['secureCorporatePaymentIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['signedParesStatusReason']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['stepUpUrl']) > 2048) {
-            return false;
-        }
-        if (strlen($this->container['threeDSServerTransactionId']) > 36) {
             return false;
         }
         if ($this->container['transactionMode'] === null) {
             return false;
         }
         if (strlen($this->container['whiteListStatus']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['whiteListStatusSource']) > 2) {
             return false;
         }
         return true;
@@ -831,52 +657,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         }
 
         $this->container['authenticationType'] = $authenticationType;
-
-        return $this;
-    }
-
-    /**
-     * Gets acsRenderingType
-     * @return string
-     */
-    public function getAcsRenderingType()
-    {
-        return $this->container['acsRenderingType'];
-    }
-
-    /**
-     * Sets acsRenderingType
-     * @param string $acsRenderingType Identifies the UI Type the ACS will use to complete the challenge. **NOTE**: Only available for App transactions using the Cardinal Mobile SDK.
-     * @return $this
-     */
-    public function setAcsRenderingType($acsRenderingType)
-    {
-        $this->container['acsRenderingType'] = $acsRenderingType;
-
-        return $this;
-    }
-
-    /**
-     * Gets acsTransactionId
-     * @return string
-     */
-    public function getAcsTransactionId()
-    {
-        return $this->container['acsTransactionId'];
-    }
-
-    /**
-     * Sets acsTransactionId
-     * @param string $acsTransactionId Unique transaction identifier assigned by the ACS to identify a single transaction.
-     * @return $this
-     */
-    public function setAcsTransactionId($acsTransactionId)
-    {
-        if (!is_null($acsTransactionId) && (strlen($acsTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $acsTransactionId when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
-
-        $this->container['acsTransactionId'] = $acsTransactionId;
 
         return $this;
     }
@@ -1028,52 +808,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     }
 
     /**
-     * Gets authorizationPayload
-     * @return string
-     */
-    public function getAuthorizationPayload()
-    {
-        return $this->container['authorizationPayload'];
-    }
-
-    /**
-     * Sets authorizationPayload
-     * @param string $authorizationPayload The Base64 encoded JSON Payload of CB specific Authorization Values returned in the challenge Flow
-     * @return $this
-     */
-    public function setAuthorizationPayload($authorizationPayload)
-    {
-        $this->container['authorizationPayload'] = $authorizationPayload;
-
-        return $this;
-    }
-
-    /**
-     * Gets cardholderMessage
-     * @return string
-     */
-    public function getCardholderMessage()
-    {
-        return $this->container['cardholderMessage'];
-    }
-
-    /**
-     * Sets cardholderMessage
-     * @param string $cardholderMessage Text provided by the ACS/Issuer to Cardholder during a Frictionless or Decoupled transaction.The Issuer can provide information to Cardholder. For example, “Additional authentication is needed for this transaction, please contact (Issuer Name) at xxx-xxx-xxxx.”. The Issuing Bank can optionally support this value.
-     * @return $this
-     */
-    public function setCardholderMessage($cardholderMessage)
-    {
-        if (!is_null($cardholderMessage) && (strlen($cardholderMessage) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $cardholderMessage when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 128.');
-        }
-
-        $this->container['cardholderMessage'] = $cardholderMessage;
-
-        return $this;
-    }
-
-    /**
      * Gets challengeCancelCode
      * @return string
      */
@@ -1115,31 +849,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     public function setChallengeCode($challengeCode)
     {
         $this->container['challengeCode'] = $challengeCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets challengeRequired
-     * @return string
-     */
-    public function getChallengeRequired()
-    {
-        return $this->container['challengeRequired'];
-    }
-
-    /**
-     * Sets challengeRequired
-     * @param string $challengeRequired Indicates whether a challenge is required in order to complete authentication. **Note** Regional mandates might determine that a challenge is required.  Possible values: - `Y`: Challenge required - `N`: Challenge not required **Note**  Used by the Hybrid integration.
-     * @return $this
-     */
-    public function setChallengeRequired($challengeRequired)
-    {
-        if (!is_null($challengeRequired) && (strlen($challengeRequired) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $challengeRequired when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
-
-        $this->container['challengeRequired'] = $challengeRequired;
 
         return $this;
     }
@@ -1291,81 +1000,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     }
 
     /**
-     * Gets directoryServerErrorCode
-     * @return string
-     */
-    public function getDirectoryServerErrorCode()
-    {
-        return $this->container['directoryServerErrorCode'];
-    }
-
-    /**
-     * Sets directoryServerErrorCode
-     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction.
-     * @return $this
-     */
-    public function setDirectoryServerErrorCode($directoryServerErrorCode)
-    {
-        if (!is_null($directoryServerErrorCode) && (strlen($directoryServerErrorCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorCode when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 3.');
-        }
-
-        $this->container['directoryServerErrorCode'] = $directoryServerErrorCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets directoryServerErrorDescription
-     * @return string
-     */
-    public function getDirectoryServerErrorDescription()
-    {
-        return $this->container['directoryServerErrorDescription'];
-    }
-
-    /**
-     * Sets directoryServerErrorDescription
-     * @param string $directoryServerErrorDescription Directory server text and additional detail about the error for this transaction.
-     * @return $this
-     */
-    public function setDirectoryServerErrorDescription($directoryServerErrorDescription)
-    {
-        if (!is_null($directoryServerErrorDescription) && (strlen($directoryServerErrorDescription) > 4096)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorDescription when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 4096.');
-        }
-
-        $this->container['directoryServerErrorDescription'] = $directoryServerErrorDescription;
-
-        return $this;
-    }
-
-    /**
-     * Gets effectiveAuthenticationType
-     * @return string
-     */
-    public function getEffectiveAuthenticationType()
-    {
-        return $this->container['effectiveAuthenticationType'];
-    }
-
-    /**
-     * Sets effectiveAuthenticationType
-     * @param string $effectiveAuthenticationType This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer).
-     * @return $this
-     */
-    public function setEffectiveAuthenticationType($effectiveAuthenticationType)
-    {
-        if (!is_null($effectiveAuthenticationType) && (strlen($effectiveAuthenticationType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $effectiveAuthenticationType when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
-
-        return $this;
-    }
-
-    /**
      * Gets installmentTotalCount
      * @return int
      */
@@ -1382,27 +1016,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     public function setInstallmentTotalCount($installmentTotalCount)
     {
         $this->container['installmentTotalCount'] = $installmentTotalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets ivr
-     * @return \CyberSource\Model\Riskv1authenticationsConsumerAuthenticationInformationIvr
-     */
-    public function getIvr()
-    {
-        return $this->container['ivr'];
-    }
-
-    /**
-     * Sets ivr
-     * @param \CyberSource\Model\Riskv1authenticationsConsumerAuthenticationInformationIvr $ivr
-     * @return $this
-     */
-    public function setIvr($ivr)
-    {
-        $this->container['ivr'] = $ivr;
 
         return $this;
     }
@@ -1541,31 +1154,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     public function setMessageCategory($messageCategory)
     {
         $this->container['messageCategory'] = $messageCategory;
-
-        return $this;
-    }
-
-    /**
-     * Gets networkScore
-     * @return string
-     */
-    public function getNetworkScore()
-    {
-        return $this->container['networkScore'];
-    }
-
-    /**
-     * Sets networkScore
-     * @param string $networkScore The global score calculated by the CB scoring platform and returned to merchants.
-     * @return $this
-     */
-    public function setNetworkScore($networkScore)
-    {
-        if (!is_null($networkScore) && (strlen($networkScore) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $networkScore when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['networkScore'] = $networkScore;
 
         return $this;
     }
@@ -1892,31 +1480,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
     }
 
     /**
-     * Gets sdkTransactionId
-     * @return string
-     */
-    public function getSdkTransactionId()
-    {
-        return $this->container['sdkTransactionId'];
-    }
-
-    /**
-     * Sets sdkTransactionId
-     * @param string $sdkTransactionId SDK unique transaction identifier that is generated on each new transaction.
-     * @return $this
-     */
-    public function setSdkTransactionId($sdkTransactionId)
-    {
-        if (!is_null($sdkTransactionId) && (strlen($sdkTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $sdkTransactionId when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
-
-        $this->container['sdkTransactionId'] = $sdkTransactionId;
-
-        return $this;
-    }
-
-    /**
      * Gets secureCorporatePaymentIndicator
      * @return string
      */
@@ -1937,81 +1500,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         }
 
         $this->container['secureCorporatePaymentIndicator'] = $secureCorporatePaymentIndicator;
-
-        return $this;
-    }
-
-    /**
-     * Gets signedParesStatusReason
-     * @return string
-     */
-    public function getSignedParesStatusReason()
-    {
-        return $this->container['signedParesStatusReason'];
-    }
-
-    /**
-     * Sets signedParesStatusReason
-     * @param string $signedParesStatusReason Provides additional information as to why the PAResStatus has a specific value.
-     * @return $this
-     */
-    public function setSignedParesStatusReason($signedParesStatusReason)
-    {
-        if (!is_null($signedParesStatusReason) && (strlen($signedParesStatusReason) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $signedParesStatusReason when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['signedParesStatusReason'] = $signedParesStatusReason;
-
-        return $this;
-    }
-
-    /**
-     * Gets stepUpUrl
-     * @return string
-     */
-    public function getStepUpUrl()
-    {
-        return $this->container['stepUpUrl'];
-    }
-
-    /**
-     * Sets stepUpUrl
-     * @param string $stepUpUrl The fully qualified URL that the merchant uses to post a form to the cardholder in order to complete the Consumer Authentication transaction for the Cardinal Cruise API integration.
-     * @return $this
-     */
-    public function setStepUpUrl($stepUpUrl)
-    {
-        if (!is_null($stepUpUrl) && (strlen($stepUpUrl) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $stepUpUrl when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
-        }
-
-        $this->container['stepUpUrl'] = $stepUpUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets threeDSServerTransactionId
-     * @return string
-     */
-    public function getThreeDSServerTransactionId()
-    {
-        return $this->container['threeDSServerTransactionId'];
-    }
-
-    /**
-     * Sets threeDSServerTransactionId
-     * @param string $threeDSServerTransactionId Unique transaction identifier assigned by the 3DS Server to identify a single transaction.
-     * @return $this
-     */
-    public function setThreeDSServerTransactionId($threeDSServerTransactionId)
-    {
-        if (!is_null($threeDSServerTransactionId) && (strlen($threeDSServerTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $threeDSServerTransactionId when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
-
-        $this->container['threeDSServerTransactionId'] = $threeDSServerTransactionId;
 
         return $this;
     }
@@ -2058,31 +1546,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         }
 
         $this->container['whiteListStatus'] = $whiteListStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets whiteListStatusSource
-     * @return string
-     */
-    public function getWhiteListStatusSource()
-    {
-        return $this->container['whiteListStatusSource'];
-    }
-
-    /**
-     * Sets whiteListStatusSource
-     * @param string $whiteListStatusSource This data element will be populated by the system setting Whitelist Status. Possible Values: 01 - 3DS/ Server/ 02 – DS/03 - ACS
-     * @return $this
-     */
-    public function setWhiteListStatusSource($whiteListStatusSource)
-    {
-        if (!is_null($whiteListStatusSource) && (strlen($whiteListStatusSource) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $whiteListStatusSource when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
-
-        $this->container['whiteListStatusSource'] = $whiteListStatusSource;
 
         return $this;
     }

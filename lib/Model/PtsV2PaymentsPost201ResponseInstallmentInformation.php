@@ -56,6 +56,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'additionalCosts' => 'string',
         'additionalCostsPercentage' => 'string',
+        'amount' => 'string',
         'amountFunded' => 'string',
         'amountRequestedPercentage' => 'string',
         'annualFinancingCost' => 'string',
@@ -64,11 +65,21 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'expensesPercentage' => 'string',
         'fees' => 'string',
         'feesPercentage' => 'string',
+        'frequency' => 'string',
         'insurance' => 'string',
         'insurancePercentage' => 'string',
+        'invoiceData' => 'string',
         'monthlyInterestRate' => 'string',
+        'planType' => 'string',
+        'sequence' => 'int',
         'taxes' => 'string',
-        'taxesPercentage' => 'string'
+        'taxesPercentage' => 'string',
+        'totalAmount' => 'string',
+        'totalCount' => 'int',
+        'minimumTotalCount' => 'string',
+        'maximumTotalCount' => 'string',
+        'firstInstallmentAmount' => 'string',
+        'firstInstallmentDate' => 'string'
     ];
 
     /**
@@ -78,6 +89,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'additionalCosts' => null,
         'additionalCostsPercentage' => null,
+        'amount' => null,
         'amountFunded' => null,
         'amountRequestedPercentage' => null,
         'annualFinancingCost' => null,
@@ -86,11 +98,21 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'expensesPercentage' => null,
         'fees' => null,
         'feesPercentage' => null,
+        'frequency' => null,
         'insurance' => null,
         'insurancePercentage' => null,
+        'invoiceData' => null,
         'monthlyInterestRate' => null,
+        'planType' => null,
+        'sequence' => null,
         'taxes' => null,
-        'taxesPercentage' => null
+        'taxesPercentage' => null,
+        'totalAmount' => null,
+        'totalCount' => null,
+        'minimumTotalCount' => null,
+        'maximumTotalCount' => null,
+        'firstInstallmentAmount' => null,
+        'firstInstallmentDate' => null
     ];
 
     public static function swaggerTypes()
@@ -110,6 +132,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     protected static $attributeMap = [
         'additionalCosts' => 'additionalCosts',
         'additionalCostsPercentage' => 'additionalCostsPercentage',
+        'amount' => 'amount',
         'amountFunded' => 'amountFunded',
         'amountRequestedPercentage' => 'amountRequestedPercentage',
         'annualFinancingCost' => 'annualFinancingCost',
@@ -118,11 +141,21 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'expensesPercentage' => 'expensesPercentage',
         'fees' => 'fees',
         'feesPercentage' => 'feesPercentage',
+        'frequency' => 'frequency',
         'insurance' => 'insurance',
         'insurancePercentage' => 'insurancePercentage',
+        'invoiceData' => 'invoiceData',
         'monthlyInterestRate' => 'monthlyInterestRate',
+        'planType' => 'planType',
+        'sequence' => 'sequence',
         'taxes' => 'taxes',
-        'taxesPercentage' => 'taxesPercentage'
+        'taxesPercentage' => 'taxesPercentage',
+        'totalAmount' => 'totalAmount',
+        'totalCount' => 'totalCount',
+        'minimumTotalCount' => 'minimumTotalCount',
+        'maximumTotalCount' => 'maximumTotalCount',
+        'firstInstallmentAmount' => 'firstInstallmentAmount',
+        'firstInstallmentDate' => 'firstInstallmentDate'
     ];
 
 
@@ -133,6 +166,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     protected static $setters = [
         'additionalCosts' => 'setAdditionalCosts',
         'additionalCostsPercentage' => 'setAdditionalCostsPercentage',
+        'amount' => 'setAmount',
         'amountFunded' => 'setAmountFunded',
         'amountRequestedPercentage' => 'setAmountRequestedPercentage',
         'annualFinancingCost' => 'setAnnualFinancingCost',
@@ -141,11 +175,21 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'expensesPercentage' => 'setExpensesPercentage',
         'fees' => 'setFees',
         'feesPercentage' => 'setFeesPercentage',
+        'frequency' => 'setFrequency',
         'insurance' => 'setInsurance',
         'insurancePercentage' => 'setInsurancePercentage',
+        'invoiceData' => 'setInvoiceData',
         'monthlyInterestRate' => 'setMonthlyInterestRate',
+        'planType' => 'setPlanType',
+        'sequence' => 'setSequence',
         'taxes' => 'setTaxes',
-        'taxesPercentage' => 'setTaxesPercentage'
+        'taxesPercentage' => 'setTaxesPercentage',
+        'totalAmount' => 'setTotalAmount',
+        'totalCount' => 'setTotalCount',
+        'minimumTotalCount' => 'setMinimumTotalCount',
+        'maximumTotalCount' => 'setMaximumTotalCount',
+        'firstInstallmentAmount' => 'setFirstInstallmentAmount',
+        'firstInstallmentDate' => 'setFirstInstallmentDate'
     ];
 
 
@@ -156,6 +200,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     protected static $getters = [
         'additionalCosts' => 'getAdditionalCosts',
         'additionalCostsPercentage' => 'getAdditionalCostsPercentage',
+        'amount' => 'getAmount',
         'amountFunded' => 'getAmountFunded',
         'amountRequestedPercentage' => 'getAmountRequestedPercentage',
         'annualFinancingCost' => 'getAnnualFinancingCost',
@@ -164,11 +209,21 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'expensesPercentage' => 'getExpensesPercentage',
         'fees' => 'getFees',
         'feesPercentage' => 'getFeesPercentage',
+        'frequency' => 'getFrequency',
         'insurance' => 'getInsurance',
         'insurancePercentage' => 'getInsurancePercentage',
+        'invoiceData' => 'getInvoiceData',
         'monthlyInterestRate' => 'getMonthlyInterestRate',
+        'planType' => 'getPlanType',
+        'sequence' => 'getSequence',
         'taxes' => 'getTaxes',
-        'taxesPercentage' => 'getTaxesPercentage'
+        'taxesPercentage' => 'getTaxesPercentage',
+        'totalAmount' => 'getTotalAmount',
+        'totalCount' => 'getTotalCount',
+        'minimumTotalCount' => 'getMinimumTotalCount',
+        'maximumTotalCount' => 'getMaximumTotalCount',
+        'firstInstallmentAmount' => 'getFirstInstallmentAmount',
+        'firstInstallmentDate' => 'getFirstInstallmentDate'
     ];
 
     public static function attributeMap()
@@ -204,6 +259,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     {
         $this->container['additionalCosts'] = isset($data['additionalCosts']) ? $data['additionalCosts'] : null;
         $this->container['additionalCostsPercentage'] = isset($data['additionalCostsPercentage']) ? $data['additionalCostsPercentage'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['amountFunded'] = isset($data['amountFunded']) ? $data['amountFunded'] : null;
         $this->container['amountRequestedPercentage'] = isset($data['amountRequestedPercentage']) ? $data['amountRequestedPercentage'] : null;
         $this->container['annualFinancingCost'] = isset($data['annualFinancingCost']) ? $data['annualFinancingCost'] : null;
@@ -212,11 +268,21 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         $this->container['expensesPercentage'] = isset($data['expensesPercentage']) ? $data['expensesPercentage'] : null;
         $this->container['fees'] = isset($data['fees']) ? $data['fees'] : null;
         $this->container['feesPercentage'] = isset($data['feesPercentage']) ? $data['feesPercentage'] : null;
+        $this->container['frequency'] = isset($data['frequency']) ? $data['frequency'] : null;
         $this->container['insurance'] = isset($data['insurance']) ? $data['insurance'] : null;
         $this->container['insurancePercentage'] = isset($data['insurancePercentage']) ? $data['insurancePercentage'] : null;
+        $this->container['invoiceData'] = isset($data['invoiceData']) ? $data['invoiceData'] : null;
         $this->container['monthlyInterestRate'] = isset($data['monthlyInterestRate']) ? $data['monthlyInterestRate'] : null;
+        $this->container['planType'] = isset($data['planType']) ? $data['planType'] : null;
+        $this->container['sequence'] = isset($data['sequence']) ? $data['sequence'] : null;
         $this->container['taxes'] = isset($data['taxes']) ? $data['taxes'] : null;
         $this->container['taxesPercentage'] = isset($data['taxesPercentage']) ? $data['taxesPercentage'] : null;
+        $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
+        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
+        $this->container['minimumTotalCount'] = isset($data['minimumTotalCount']) ? $data['minimumTotalCount'] : null;
+        $this->container['maximumTotalCount'] = isset($data['maximumTotalCount']) ? $data['maximumTotalCount'] : null;
+        $this->container['firstInstallmentAmount'] = isset($data['firstInstallmentAmount']) ? $data['firstInstallmentAmount'] : null;
+        $this->container['firstInstallmentDate'] = isset($data['firstInstallmentDate']) ? $data['firstInstallmentDate'] : null;
     }
 
     /**
@@ -234,6 +300,10 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
         if (!is_null($this->container['additionalCostsPercentage']) && (strlen($this->container['additionalCostsPercentage']) > 4)) {
             $invalid_properties[] = "invalid value for 'additionalCostsPercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 12)) {
+            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 12.";
         }
 
         if (!is_null($this->container['amountFunded']) && (strlen($this->container['amountFunded']) > 12)) {
@@ -268,6 +338,10 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'feesPercentage', the character length must be smaller than or equal to 4.";
         }
 
+        if (!is_null($this->container['frequency']) && (strlen($this->container['frequency']) > 1)) {
+            $invalid_properties[] = "invalid value for 'frequency', the character length must be smaller than or equal to 1.";
+        }
+
         if (!is_null($this->container['insurance']) && (strlen($this->container['insurance']) > 12)) {
             $invalid_properties[] = "invalid value for 'insurance', the character length must be smaller than or equal to 12.";
         }
@@ -276,8 +350,20 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'insurancePercentage', the character length must be smaller than or equal to 4.";
         }
 
+        if (!is_null($this->container['invoiceData']) && (strlen($this->container['invoiceData']) > 20)) {
+            $invalid_properties[] = "invalid value for 'invoiceData', the character length must be smaller than or equal to 20.";
+        }
+
         if (!is_null($this->container['monthlyInterestRate']) && (strlen($this->container['monthlyInterestRate']) > 7)) {
             $invalid_properties[] = "invalid value for 'monthlyInterestRate', the character length must be smaller than or equal to 7.";
+        }
+
+        if (!is_null($this->container['planType']) && (strlen($this->container['planType']) > 1)) {
+            $invalid_properties[] = "invalid value for 'planType', the character length must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['sequence']) && ($this->container['sequence'] > 99)) {
+            $invalid_properties[] = "invalid value for 'sequence', must be smaller than or equal to 99.";
         }
 
         if (!is_null($this->container['taxes']) && (strlen($this->container['taxes']) > 12)) {
@@ -286,6 +372,22 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
         if (!is_null($this->container['taxesPercentage']) && (strlen($this->container['taxesPercentage']) > 4)) {
             $invalid_properties[] = "invalid value for 'taxesPercentage', the character length must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['totalAmount']) && (strlen($this->container['totalAmount']) > 12)) {
+            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 12.";
+        }
+
+        if (!is_null($this->container['totalCount']) && ($this->container['totalCount'] > 99)) {
+            $invalid_properties[] = "invalid value for 'totalCount', must be smaller than or equal to 99.";
+        }
+
+        if (!is_null($this->container['firstInstallmentAmount']) && (strlen($this->container['firstInstallmentAmount']) > 13)) {
+            $invalid_properties[] = "invalid value for 'firstInstallmentAmount', the character length must be smaller than or equal to 13.";
+        }
+
+        if (!is_null($this->container['firstInstallmentDate']) && (strlen($this->container['firstInstallmentDate']) > 6)) {
+            $invalid_properties[] = "invalid value for 'firstInstallmentDate', the character length must be smaller than or equal to 6.";
         }
 
         return $invalid_properties;
@@ -304,6 +406,9 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['additionalCostsPercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['amount']) > 12) {
             return false;
         }
         if (strlen($this->container['amountFunded']) > 12) {
@@ -330,19 +435,43 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         if (strlen($this->container['feesPercentage']) > 4) {
             return false;
         }
+        if (strlen($this->container['frequency']) > 1) {
+            return false;
+        }
         if (strlen($this->container['insurance']) > 12) {
             return false;
         }
         if (strlen($this->container['insurancePercentage']) > 4) {
             return false;
         }
+        if (strlen($this->container['invoiceData']) > 20) {
+            return false;
+        }
         if (strlen($this->container['monthlyInterestRate']) > 7) {
+            return false;
+        }
+        if (strlen($this->container['planType']) > 1) {
+            return false;
+        }
+        if ($this->container['sequence'] > 99) {
             return false;
         }
         if (strlen($this->container['taxes']) > 12) {
             return false;
         }
         if (strlen($this->container['taxesPercentage']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['totalAmount']) > 12) {
+            return false;
+        }
+        if ($this->container['totalCount'] > 99) {
+            return false;
+        }
+        if (strlen($this->container['firstInstallmentAmount']) > 13) {
+            return false;
+        }
+        if (strlen($this->container['firstInstallmentDate']) > 6) {
             return false;
         }
         return true;
@@ -360,7 +489,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets additionalCosts
-     * @param string $additionalCosts Additional costs charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 128-139 - Field: Total Other Costs
+     * @param string $additionalCosts Additional costs charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 128-139 - Field: Total Other Costs
      * @return $this
      */
     public function setAdditionalCosts($additionalCosts)
@@ -385,7 +514,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets additionalCostsPercentage
-     * @param string $additionalCostsPercentage Additional costs divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 140-143 - Field: Percent of Total Other Costs
+     * @param string $additionalCostsPercentage Additional costs divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 140-143 - Field: Percent of Total Other Costs
      * @return $this
      */
     public function setAdditionalCostsPercentage($additionalCostsPercentage)
@@ -395,6 +524,31 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         }
 
         $this->container['additionalCostsPercentage'] = $additionalCostsPercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param string $amount Amount for the current installment payment.  This field is supported only for CyberSource through VisaNet.  For details, see `installment_amount` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        if (!is_null($amount) && (strlen($amount) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $amount when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }
@@ -410,7 +564,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets amountFunded
-     * @param string $amountFunded Amount funded.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 48-59 - Field: Total Amount Funded
+     * @param string $amountFunded Amount funded.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 48-59 - Field: Total Amount Funded
      * @return $this
      */
     public function setAmountFunded($amountFunded)
@@ -435,7 +589,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets amountRequestedPercentage
-     * @param string $amountRequestedPercentage Amount requested divided by the amount funded.  For example: - A value of 90.0 specifies 90%. - A value of 93.7 specifies 93.7%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 60-63 - Field: Percent of Amount Requested
+     * @param string $amountRequestedPercentage Amount requested divided by the amount funded.  For example: - A value of 90.0 specifies 90%. - A value of 93.7 specifies 93.7%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 60-63 - Field: Percent of Amount Requested
      * @return $this
      */
     public function setAmountRequestedPercentage($amountRequestedPercentage)
@@ -460,7 +614,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets annualFinancingCost
-     * @param string $annualFinancingCost Annual cost of financing the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 158-164 - Field: Annual Total Cost of Financing
+     * @param string $annualFinancingCost Annual cost of financing the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 158-164 - Field: Annual Total Cost of Financing
      * @return $this
      */
     public function setAnnualFinancingCost($annualFinancingCost)
@@ -485,7 +639,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets annualInterestRate
-     * @param string $annualInterestRate Annual interest rate.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 151-157 - Field: Annual Interest Rate
+     * @param string $annualInterestRate Annual interest rate.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 151-157 - Field: Annual Interest Rate
      * @return $this
      */
     public function setAnnualInterestRate($annualInterestRate)
@@ -510,7 +664,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets expenses
-     * @param string $expenses Expenses charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 64-75 - Field: Total Expenses
+     * @param string $expenses Expenses charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 64-75 - Field: Total Expenses
      * @return $this
      */
     public function setExpenses($expenses)
@@ -535,7 +689,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets expensesPercentage
-     * @param string $expensesPercentage Expenses divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 76-79 - Field: Percent of Total Expenses
+     * @param string $expensesPercentage Expenses divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 76-79 - Field: Percent of Total Expenses
      * @return $this
      */
     public function setExpensesPercentage($expensesPercentage)
@@ -560,7 +714,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets fees
-     * @param string $fees Fees charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 80-91 - Field: Total Fees
+     * @param string $fees Fees charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 80-91 - Field: Total Fees
      * @return $this
      */
     public function setFees($fees)
@@ -585,7 +739,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets feesPercentage
-     * @param string $feesPercentage Fees divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 92-95 - Field: Percent of Total Fees
+     * @param string $feesPercentage Fees divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 92-95 - Field: Percent of Total Fees
      * @return $this
      */
     public function setFeesPercentage($feesPercentage)
@@ -595,6 +749,31 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         }
 
         $this->container['feesPercentage'] = $feesPercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets frequency
+     * @return string
+     */
+    public function getFrequency()
+    {
+        return $this->container['frequency'];
+    }
+
+    /**
+     * Sets frequency
+     * @param string $frequency Frequency of the installment payments. When you do not include this field in a request for a Crediario installment payment, CyberSource sends a space character to the processor.  For details, see `installment_frequency` field description in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for CyberSource through VisaNet. Possible values: - `B`: Biweekly - `M`: Monthly - `W`: Weekly  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR9 - Position: 41 - Field: Installment Frequency  For details, see \"Installment Payments\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setFrequency($frequency)
+    {
+        if (!is_null($frequency) && (strlen($frequency) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $frequency when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['frequency'] = $frequency;
 
         return $this;
     }
@@ -610,7 +789,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets insurance
-     * @param string $insurance Insurance charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 112-123 - Field: Total Insurance
+     * @param string $insurance Insurance charged by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 112-123 - Field: Total Insurance
      * @return $this
      */
     public function setInsurance($insurance)
@@ -635,7 +814,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets insurancePercentage
-     * @param string $insurancePercentage Insurance costs divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 124-127 - Field: Percent Of Total Insurance
+     * @param string $insurancePercentage Insurance costs divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 124-127 - Field: Percent Of Total Insurance
      * @return $this
      */
     public function setInsurancePercentage($insurancePercentage)
@@ -645,6 +824,31 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         }
 
         $this->container['insurancePercentage'] = $insurancePercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceData
+     * @return string
+     */
+    public function getInvoiceData()
+    {
+        return $this->container['invoiceData'];
+    }
+
+    /**
+     * Sets invoiceData
+     * @param string $invoiceData Invoice information that you want to provide to the issuer. This value is similar to a tracking number and is the same for all installment payments for one purchase.  This field is supported only for installment payments with Mastercard on CyberSource through VisaNet in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR4 - Position: 51-70 - Field: Purchase Identification
+     * @return $this
+     */
+    public function setInvoiceData($invoiceData)
+    {
+        if (!is_null($invoiceData) && (strlen($invoiceData) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $invoiceData when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 20.');
+        }
+
+        $this->container['invoiceData'] = $invoiceData;
 
         return $this;
     }
@@ -660,7 +864,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets monthlyInterestRate
-     * @param string $monthlyInterestRate Monthly interest rate.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 144-150 - Field: Monthly Interest Rate
+     * @param string $monthlyInterestRate Monthly interest rate.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 144-150 - Field: Monthly Interest Rate
      * @return $this
      */
     public function setMonthlyInterestRate($monthlyInterestRate)
@@ -670,6 +874,57 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         }
 
         $this->container['monthlyInterestRate'] = $monthlyInterestRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets planType
+     * @return string
+     */
+    public function getPlanType()
+    {
+        return $this->container['planType'];
+    }
+
+    /**
+     * Sets planType
+     * @param string $planType #### American Express Direct, Cielo, and CyberSource Latin American Processing Flag that indicates the type of funding for the installment plan associated with the payment.  Possible values: - `1`: Merchant-funded installment plan - `2`: Issuer-funded installment plan If you do not include this field in the request, CyberSource uses the value in your CyberSource account.  To change the value in your CyberSource account, contact CyberSource Customer Service. For details, see `installment_plan_type` field description in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet and American Express Defined code that indicates the type of installment plan for this transaction.  Contact American Express for: - Information about the kinds of installment plans that American Express provides - Values for this field  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 5-6 - Field: Plan Type  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.  #### CyberSource through VisaNet with Visa or Mastercard Flag indicating the type of funding for the installment plan associated with the payment. Possible values: - 1 or 01: Merchant-funded installment plan - 2 or 02: Issuer-funded installment plan - 43: Crediario installment plan—only with Visa in Brazil For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR1 - Position: 5-6 - Field: Installment Type  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR5 - Position: 39-40 - Field: Installment Plan Type (Issuer or Merchant)
+     * @return $this
+     */
+    public function setPlanType($planType)
+    {
+        if (!is_null($planType) && (strlen($planType) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $planType when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['planType'] = $planType;
+
+        return $this;
+    }
+
+    /**
+     * Gets sequence
+     * @return int
+     */
+    public function getSequence()
+    {
+        return $this->container['sequence'];
+    }
+
+    /**
+     * Sets sequence
+     * @param int $sequence Installment number when making payments in installments. Used along with `totalCount` to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as `sequence` = 2 and `totalCount` = 5.  For details, see \"Installment Payments\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors. For details, see \"Chase Paymentech Solutions Merchant Descriptors\" and \"FDC Compass Merchant Descriptors\" in the [Merchant Descriptors Using the SCMP API] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### CyberSource through VisaNet When you do not include this field in a request for a Crediario installment payment, CyberSource sends a value of 0 to the processor.  For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 38-40 - Field: Installment Payment Number  * The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.
+     * @return $this
+     */
+    public function setSequence($sequence)
+    {
+
+        if (!is_null($sequence) && ($sequence > 99)) {
+            throw new \InvalidArgumentException('invalid value for $sequence when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 99.');
+        }
+
+        $this->container['sequence'] = $sequence;
 
         return $this;
     }
@@ -685,7 +940,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets taxes
-     * @param string $taxes Taxes collected by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 96-107 - Field: Total Taxes
+     * @param string $taxes Taxes collected by the issuer to fund the installment payments.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 96-107 - Field: Total Taxes
      * @return $this
      */
     public function setTaxes($taxes)
@@ -710,7 +965,7 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
 
     /**
      * Sets taxesPercentage
-     * @param string $taxesPercentage Taxes divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 108-111 - Field: Percent of Total Taxes
+     * @param string $taxesPercentage Taxes divided by the amount funded.  For example: - A value of 1.0 specifies 1%. - A value of 4.0 specifies 4%.  This field is included in the authorization reply for the Crediario eligibility request when the issuer approves the cardholder's request for Crediario installment payments in Brazil.  For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on **CyberSource through VisaNet**.  The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR9 - Position: 108-111 - Field: Percent of Total Taxes
      * @return $this
      */
     public function setTaxesPercentage($taxesPercentage)
@@ -720,6 +975,149 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         }
 
         $this->container['taxesPercentage'] = $taxesPercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalAmount
+     * @return string
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['totalAmount'];
+    }
+
+    /**
+     * Sets totalAmount
+     * @param string $totalAmount Total amount of the loan that is being paid in installments. This field is supported only for CyberSource through VisaNet.  For details, see \"Installment Payments\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setTotalAmount($totalAmount)
+    {
+        if (!is_null($totalAmount) && (strlen($totalAmount) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $totalAmount when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 12.');
+        }
+
+        $this->container['totalAmount'] = $totalAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalCount
+     * @return int
+     */
+    public function getTotalCount()
+    {
+        return $this->container['totalCount'];
+    }
+
+    /**
+     * Sets totalCount
+     * @param int $totalCount Total number of installments when making payments in installments.  For details, see \"Installment Payments\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Chase Paymentech Solutions and FDC Compass This field is optional because this value is required in the merchant descriptors.  For details, see \"Chase Paymentech Solutions Merchant Descriptors\" and \"FDC Compass Merchant Descriptors\" in the [Merchant Descriptors Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### American Express Direct, Cielo, and Comercio Latino This value is the total number of installments you approved.  #### CyberSource Latin American Processing in Brazil This value is the total number of installments that you approved. The default is 1.  #### All Other Processors This value is used along with _sequence_ to track which payment is being processed.  For example, the second of 5 payments would be passed to CyberSource as _sequence_ = 2 and _totalCount_ = 5.  #### CyberSource through VisaNet For Crediario installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR9 - Position: 23-25 - Field: Number of Installments  For installment payments with American Express in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR3 - Position: 7-8 - Field: Number of Installments  For installment payments with Visa in Brazil, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP07 TCR1 - Position: 7-8 - Field: Number of Installments  For all other kinds of installment payments, the value for this field corresponds to the following data in the TC 33 capture file*: - Record: CP01 TCR5 - Position: 20-22 - Field: Installment Total Count  **Note** The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment card companies.
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+
+        if (!is_null($totalCount) && ($totalCount > 99)) {
+            throw new \InvalidArgumentException('invalid value for $totalCount when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 99.');
+        }
+
+        $this->container['totalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets minimumTotalCount
+     * @return string
+     */
+    public function getMinimumTotalCount()
+    {
+        return $this->container['minimumTotalCount'];
+    }
+
+    /**
+     * Sets minimumTotalCount
+     * @param string $minimumTotalCount \"Minimum number of installments offered by the issuer for this purchase. The issuer provides this value when the first installment payment is successful. This field is supported for installment payments with Mastercard on CyberSource through VisaNet in all countries except Brazil, Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 75-76 - Field: Mastercard Minimum Number Of Installments
+     * @return $this
+     */
+    public function setMinimumTotalCount($minimumTotalCount)
+    {
+        $this->container['minimumTotalCount'] = $minimumTotalCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets maximumTotalCount
+     * @return string
+     */
+    public function getMaximumTotalCount()
+    {
+        return $this->container['maximumTotalCount'];
+    }
+
+    /**
+     * Sets maximumTotalCount
+     * @param string $maximumTotalCount Maximum number of installments offered by the issuer for this purchase. The issuer provides this value when the first installment payment is successful. This field is supported for installment payments with Mastercard on CyberSource through VisaNet in all countries except Brazil, Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file1: - Record: CP01 TCR5 - Position: 77-78 - Field: Mastercard Maximum Number Of Installments
+     * @return $this
+     */
+    public function setMaximumTotalCount($maximumTotalCount)
+    {
+        $this->container['maximumTotalCount'] = $maximumTotalCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstInstallmentAmount
+     * @return string
+     */
+    public function getFirstInstallmentAmount()
+    {
+        return $this->container['firstInstallmentAmount'];
+    }
+
+    /**
+     * Sets firstInstallmentAmount
+     * @param string $firstInstallmentAmount Amount of the first installment payment. The issuer provides this value when the first installment payment is successful. This field is supported for Mastercard installment payments on CyberSource through VisaNet in all countries except Brazil,Croatia, Georgia, and Greece. The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 23-34 - Field: Amount of Each Installment
+     * @return $this
+     */
+    public function setFirstInstallmentAmount($firstInstallmentAmount)
+    {
+        if (!is_null($firstInstallmentAmount) && (strlen($firstInstallmentAmount) > 13)) {
+            throw new \InvalidArgumentException('invalid length for $firstInstallmentAmount when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 13.');
+        }
+
+        $this->container['firstInstallmentAmount'] = $firstInstallmentAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstInstallmentDate
+     * @return string
+     */
+    public function getFirstInstallmentDate()
+    {
+        return $this->container['firstInstallmentDate'];
+    }
+
+    /**
+     * Sets firstInstallmentDate
+     * @param string $firstInstallmentDate Date of the first installment payment. Format: YYMMDD. When you do not include this field, CyberSource sends a string of six zeros (000000) to the processor. For details, see \"Installment Payments on CyberSource through VisaNet\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  This field is supported only for Crediario installment payments in Brazil on CyberSource through VisaNet.  The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 42-47 - Field: Date of First Installment
+     * @return $this
+     */
+    public function setFirstInstallmentDate($firstInstallmentDate)
+    {
+        if (!is_null($firstInstallmentDate) && (strlen($firstInstallmentDate) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $firstInstallmentDate when calling PtsV2PaymentsPost201ResponseInstallmentInformation., must be smaller than or equal to 6.');
+        }
+
+        $this->container['firstInstallmentDate'] = $firstInstallmentDate;
 
         return $this;
     }

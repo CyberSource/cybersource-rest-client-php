@@ -146,4 +146,25 @@ class Ptsv2paymentsInstallmentInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyEligibilityInquiry()
     {
     }
+
+    /**
+     * Test attribute "gracePeriodDuration"
+     */
+    public function testPropertyGracePeriodDuration()
+    {
+    }
+
+    /**
+     * Test attribute "gracePeriodDurationType"
+     */
+    public function testPropertyGracePeriodDurationType()
+    {
+    }
+
+    /**
+     * Test attribute "firstInstallmentAmount"
+     */
+    public function testPropertyFirstInstallmentAmount()
+    {
+    }
 }

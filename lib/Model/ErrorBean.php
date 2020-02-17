@@ -60,7 +60,7 @@ class ErrorBean implements ArrayAccess
         'localizationKey' => 'string',
         'correlationId' => 'string',
         'detail' => 'string',
-        'fields' => '\CyberSource\Model\InlineResponse400Fields[]'
+        'fields' => '\CyberSource\Model\InlineResponse4001Fields[]'
     ];
 
     /**
@@ -310,7 +310,7 @@ class ErrorBean implements ArrayAccess
 
     /**
      * Gets fields
-     * @return \CyberSource\Model\InlineResponse400Fields[]
+     * @return \CyberSource\Model\InlineResponse4001Fields[]
      */
     public function getFields()
     {
@@ -319,7 +319,7 @@ class ErrorBean implements ArrayAccess
 
     /**
      * Sets fields
-     * @param \CyberSource\Model\InlineResponse400Fields[] $fields Error fields List
+     * @param \CyberSource\Model\InlineResponse4001Fields[] $fields Error fields List
      * @return $this
      */
     public function setFields($fields)

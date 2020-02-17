@@ -90,4 +90,11 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationTest extends \PHPUnit_Fr
     public function testPropertyAmexCapnData()
     {
     }
+
+    /**
+     * Test attribute "terminalId"
+     */
+    public function testPropertyTerminalId()
+    {
+    }
 }

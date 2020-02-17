@@ -75,7 +75,7 @@ class NetFundingsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getNetFundingDetails
      *
-     * Get Netfunding information for an account or a merchant.
+     * Get Netfunding Information for an Account or a Merchant.
      *
      */
     public function testGetNetFundingDetails()

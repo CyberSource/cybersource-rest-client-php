@@ -54,7 +54,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'card' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationCard'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'customer' => null
+        'customer' => null,
+        'card' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'customer' => 'customer'
+        'customer' => 'customer',
+        'card' => 'card'
     ];
 
 
@@ -89,7 +92,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'customer' => 'setCustomer'
+        'customer' => 'setCustomer',
+        'card' => 'setCard'
     ];
 
 
@@ -98,7 +102,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'customer' => 'getCustomer'
+        'customer' => 'getCustomer',
+        'card' => 'getCard'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['card'] = isset($data['card']) ? $data['card'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
     public function setCustomer($customer)
     {
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets card
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationCard
+     */
+    public function getCard()
+    {
+        return $this->container['card'];
+    }
+
+    /**
+     * Sets card
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationCard $card
+     * @return $this
+     */
+    public function setCard($card)
+    {
+        $this->container['card'] = $card;
 
         return $this;
     }

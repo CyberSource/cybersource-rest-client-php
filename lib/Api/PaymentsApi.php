@@ -173,4 +173,105 @@ class PaymentsApi
             throw $e;
         }
     }
+
+    /**
+     * Operation incrementAuth
+     *
+     * Increment an Authorization
+     *
+     * @param string $id The ID returned from the original authorization request. (required)
+     * @param \CyberSource\Model\IncrementAuthRequest $incrementAuthRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function incrementAuth($id, $incrementAuthRequest)
+    {
+        list($response, $statusCode, $httpHeader) = $this->incrementAuthWithHttpInfo($id, $incrementAuthRequest);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation incrementAuthWithHttpInfo
+     *
+     * Increment an Authorization
+     *
+     * @param string $id The ID returned from the original authorization request. (required)
+     * @param \CyberSource\Model\IncrementAuthRequest $incrementAuthRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function incrementAuthWithHttpInfo($id, $incrementAuthRequest)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling incrementAuth');
+        }
+        // verify the required parameter 'incrementAuthRequest' is set
+        if ($incrementAuthRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $incrementAuthRequest when calling incrementAuth');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v2/payments/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($incrementAuthRequest)) {
+            $_tempBody = $incrementAuthRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response',
+                '/pts/v2/payments/{id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
 }

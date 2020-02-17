@@ -61,7 +61,9 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'reconciliationId' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessorInformation',
-        'orderInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformation'
+        'orderInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformation',
+        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'
     ];
 
     /**
@@ -76,7 +78,9 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'reconciliationId' => null,
         'clientReferenceInformation' => null,
         'processorInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'processingInformation' => null,
+        'pointOfSaleInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +105,9 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'processorInformation' => 'processorInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'processingInformation' => 'processingInformation',
+        'pointOfSaleInformation' => 'pointOfSaleInformation'
     ];
 
 
@@ -117,7 +123,9 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'processorInformation' => 'setProcessorInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'processingInformation' => 'setProcessingInformation',
+        'pointOfSaleInformation' => 'setPointOfSaleInformation'
     ];
 
 
@@ -133,7 +141,9 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'processorInformation' => 'getProcessorInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'processingInformation' => 'getProcessingInformation',
+        'pointOfSaleInformation' => 'getPointOfSaleInformation'
     ];
 
     public static function attributeMap()
@@ -175,6 +185,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
     }
 
     /**
@@ -248,7 +260,7 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)
@@ -388,6 +400,48 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointOfSaleInformation
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation
+     */
+    public function getPointOfSaleInformation()
+    {
+        return $this->container['pointOfSaleInformation'];
+    }
+
+    /**
+     * Sets pointOfSaleInformation
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation $pointOfSaleInformation
+     * @return $this
+     */
+    public function setPointOfSaleInformation($pointOfSaleInformation)
+    {
+        $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
 
         return $this;
     }

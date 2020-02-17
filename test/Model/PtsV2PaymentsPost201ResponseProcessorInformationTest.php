@@ -225,13 +225,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
-     * Test attribute "salesSlipNumber"
-     */
-    public function testPropertySalesSlipNumber()
-    {
-    }
-
-    /**
      * Test attribute "masterCardServiceCode"
      */
     public function testPropertyMasterCardServiceCode()

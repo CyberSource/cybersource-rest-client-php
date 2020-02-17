@@ -132,4 +132,18 @@ class Ptsv2paymentsidrefundsPaymentInformationCardTest extends \PHPUnit_Framewor
     public function testPropertyStartYear()
     {
     }
+
+    /**
+     * Test attribute "sourceAccountType"
+     */
+    public function testPropertySourceAccountType()
+    {
+    }
+
+    /**
+     * Test attribute "sourceAccountTypeDetails"
+     */
+    public function testPropertySourceAccountTypeDetails()
+    {
+    }
 }

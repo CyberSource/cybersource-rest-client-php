@@ -92,6 +92,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformationTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+    }
+
+    /**
      * Test attribute "amountFunded"
      */
     public function testPropertyAmountFunded()
@@ -148,6 +155,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformationTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "frequency"
+     */
+    public function testPropertyFrequency()
+    {
+    }
+
+    /**
      * Test attribute "insurance"
      */
     public function testPropertyInsurance()
@@ -162,9 +176,30 @@ class PtsV2PaymentsPost201ResponseInstallmentInformationTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "invoiceData"
+     */
+    public function testPropertyInvoiceData()
+    {
+    }
+
+    /**
      * Test attribute "monthlyInterestRate"
      */
     public function testPropertyMonthlyInterestRate()
+    {
+    }
+
+    /**
+     * Test attribute "planType"
+     */
+    public function testPropertyPlanType()
+    {
+    }
+
+    /**
+     * Test attribute "sequence"
+     */
+    public function testPropertySequence()
     {
     }
 
@@ -179,6 +214,48 @@ class PtsV2PaymentsPost201ResponseInstallmentInformationTest extends \PHPUnit_Fr
      * Test attribute "taxesPercentage"
      */
     public function testPropertyTaxesPercentage()
+    {
+    }
+
+    /**
+     * Test attribute "totalAmount"
+     */
+    public function testPropertyTotalAmount()
+    {
+    }
+
+    /**
+     * Test attribute "totalCount"
+     */
+    public function testPropertyTotalCount()
+    {
+    }
+
+    /**
+     * Test attribute "minimumTotalCount"
+     */
+    public function testPropertyMinimumTotalCount()
+    {
+    }
+
+    /**
+     * Test attribute "maximumTotalCount"
+     */
+    public function testPropertyMaximumTotalCount()
+    {
+    }
+
+    /**
+     * Test attribute "firstInstallmentAmount"
+     */
+    public function testPropertyFirstInstallmentAmount()
+    {
+    }
+
+    /**
+     * Test attribute "firstInstallmentDate"
+     */
+    public function testPropertyFirstInstallmentDate()
     {
     }
 }

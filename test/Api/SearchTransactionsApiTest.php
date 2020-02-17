@@ -75,7 +75,7 @@ class SearchTransactionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createSearch
      *
-     * Create a search request.
+     * Create a Search Request.
      *
      */
     public function testCreateSearch()
@@ -85,7 +85,7 @@ class SearchTransactionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSearch
      *
-     * Get Search results.
+     * Get Search Results.
      *
      */
     public function testGetSearch()

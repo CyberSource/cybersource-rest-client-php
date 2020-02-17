@@ -73,9 +73,19 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for createStandardOrClassicSubscription
+     *
+     * Create a Standard or Classic Subscription.
+     *
+     */
+    public function testCreateStandardOrClassicSubscription()
+    {
+    }
+
+    /**
      * Test case for createSubscription
      *
-     * Create Report Subscription for a report name by organization.
+     * Create Report Subscription for a Report Name by Organization.
      *
      */
     public function testCreateSubscription()
@@ -85,7 +95,7 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteSubscription
      *
-     * Delete subscription of a report name by organization.
+     * Delete Subscription of a Report Name by Organization.
      *
      */
     public function testDeleteSubscription()
@@ -95,7 +105,7 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getAllSubscriptions
      *
-     * Get all subscriptions.
+     * Get All Subscriptions.
      *
      */
     public function testGetAllSubscriptions()
@@ -105,20 +115,10 @@ class ReportSubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSubscription
      *
-     * Get subscription for report name.
+     * Get Subscription for Report Name.
      *
      */
     public function testGetSubscription()
-    {
-    }
-
-    /**
-     * Test case for reportingV3PredefinedReportSubscriptionsPut
-     *
-     * Create a Standard or Classic subscription.
-     *
-     */
-    public function testReportingV3PredefinedReportSubscriptionsPut()
     {
     }
 }

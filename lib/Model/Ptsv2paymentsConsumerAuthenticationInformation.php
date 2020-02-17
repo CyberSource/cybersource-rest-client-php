@@ -61,7 +61,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'veresEnrolled' => 'string',
         'xid' => 'string',
         'ucafAuthenticationData' => 'string',
-        'ucafCollectionIndicator' => 'string'
+        'strongAuthentication' => '\CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication',
+        'directoryServerTransactionId' => 'string',
+        'paSpecificationVersion' => 'string'
     ];
 
     /**
@@ -76,7 +78,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'veresEnrolled' => null,
         'xid' => null,
         'ucafAuthenticationData' => null,
-        'ucafCollectionIndicator' => null
+        'strongAuthentication' => null,
+        'directoryServerTransactionId' => null,
+        'paSpecificationVersion' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +105,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'veresEnrolled' => 'veresEnrolled',
         'xid' => 'xid',
         'ucafAuthenticationData' => 'ucafAuthenticationData',
-        'ucafCollectionIndicator' => 'ucafCollectionIndicator'
+        'strongAuthentication' => 'strongAuthentication',
+        'directoryServerTransactionId' => 'directoryServerTransactionId',
+        'paSpecificationVersion' => 'paSpecificationVersion'
     ];
 
 
@@ -117,7 +123,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'veresEnrolled' => 'setVeresEnrolled',
         'xid' => 'setXid',
         'ucafAuthenticationData' => 'setUcafAuthenticationData',
-        'ucafCollectionIndicator' => 'setUcafCollectionIndicator'
+        'strongAuthentication' => 'setStrongAuthentication',
+        'directoryServerTransactionId' => 'setDirectoryServerTransactionId',
+        'paSpecificationVersion' => 'setPaSpecificationVersion'
     ];
 
 
@@ -133,7 +141,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'veresEnrolled' => 'getVeresEnrolled',
         'xid' => 'getXid',
         'ucafAuthenticationData' => 'getUcafAuthenticationData',
-        'ucafCollectionIndicator' => 'getUcafCollectionIndicator'
+        'strongAuthentication' => 'getStrongAuthentication',
+        'directoryServerTransactionId' => 'getDirectoryServerTransactionId',
+        'paSpecificationVersion' => 'getPaSpecificationVersion'
     ];
 
     public static function attributeMap()
@@ -174,7 +184,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['veresEnrolled'] = isset($data['veresEnrolled']) ? $data['veresEnrolled'] : null;
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
         $this->container['ucafAuthenticationData'] = isset($data['ucafAuthenticationData']) ? $data['ucafAuthenticationData'] : null;
-        $this->container['ucafCollectionIndicator'] = isset($data['ucafCollectionIndicator']) ? $data['ucafCollectionIndicator'] : null;
+        $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;
+        $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
+        $this->container['paSpecificationVersion'] = isset($data['paSpecificationVersion']) ? $data['paSpecificationVersion'] : null;
     }
 
     /**
@@ -214,8 +226,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'ucafAuthenticationData', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['ucafCollectionIndicator']) && (strlen($this->container['ucafCollectionIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'ucafCollectionIndicator', the character length must be smaller than or equal to 1.";
+        if (!is_null($this->container['directoryServerTransactionId']) && (strlen($this->container['directoryServerTransactionId']) > 36)) {
+            $invalid_properties[] = "invalid value for 'directoryServerTransactionId', the character length must be smaller than or equal to 36.";
+        }
+
+        if (!is_null($this->container['paSpecificationVersion']) && (strlen($this->container['paSpecificationVersion']) > 1)) {
+            $invalid_properties[] = "invalid value for 'paSpecificationVersion', the character length must be smaller than or equal to 1.";
         }
 
         return $invalid_properties;
@@ -251,7 +267,10 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         if (strlen($this->container['ucafAuthenticationData']) > 32) {
             return false;
         }
-        if (strlen($this->container['ucafCollectionIndicator']) > 1) {
+        if (strlen($this->container['directoryServerTransactionId']) > 36) {
+            return false;
+        }
+        if (strlen($this->container['paSpecificationVersion']) > 1) {
             return false;
         }
         return true;
@@ -319,7 +338,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets eciRaw
-     * @param string $eciRaw Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $eciRaw Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setEciRaw($eciRaw)
@@ -344,7 +363,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets paresStatus
-     * @param string $paresStatus Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $paresStatus Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setParesStatus($paresStatus)
@@ -369,7 +388,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets veresEnrolled
-     * @param string $veresEnrolled Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $veresEnrolled Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setVeresEnrolled($veresEnrolled)
@@ -394,7 +413,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets xid
-     * @param string $xid Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $xid Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setXid($xid)
@@ -419,7 +438,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets ucafAuthenticationData
-     * @param string $ucafAuthenticationData Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $ucafAuthenticationData Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setUcafAuthenticationData($ucafAuthenticationData)
@@ -434,26 +453,72 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     }
 
     /**
-     * Gets ucafCollectionIndicator
-     * @return string
+     * Gets strongAuthentication
+     * @return \CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication
      */
-    public function getUcafCollectionIndicator()
+    public function getStrongAuthentication()
     {
-        return $this->container['ucafCollectionIndicator'];
+        return $this->container['strongAuthentication'];
     }
 
     /**
-     * Sets ucafCollectionIndicator
-     * @param string $ucafCollectionIndicator Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator
+     * Sets strongAuthentication
+     * @param \CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication $strongAuthentication
      * @return $this
      */
-    public function setUcafCollectionIndicator($ucafCollectionIndicator)
+    public function setStrongAuthentication($strongAuthentication)
     {
-        if (!is_null($ucafCollectionIndicator) && (strlen($ucafCollectionIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $ucafCollectionIndicator when calling Ptsv2paymentsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
+        $this->container['strongAuthentication'] = $strongAuthentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets directoryServerTransactionId
+     * @return string
+     */
+    public function getDirectoryServerTransactionId()
+    {
+        return $this->container['directoryServerTransactionId'];
+    }
+
+    /**
+     * Sets directoryServerTransactionId
+     * @param string $directoryServerTransactionId The Directory Server Transaction ID is generated by the Mastercard Directory Server during the authentication transaction and passed back to the merchant with the authentication results. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 114-149, Field: MC AVV Verification—Directory Server Transaction ID
+     * @return $this
+     */
+    public function setDirectoryServerTransactionId($directoryServerTransactionId)
+    {
+        if (!is_null($directoryServerTransactionId) && (strlen($directoryServerTransactionId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $directoryServerTransactionId when calling Ptsv2paymentsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
         }
 
-        $this->container['ucafCollectionIndicator'] = $ucafCollectionIndicator;
+        $this->container['directoryServerTransactionId'] = $directoryServerTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets paSpecificationVersion
+     * @return string
+     */
+    public function getPaSpecificationVersion()
+    {
+        return $this->container['paSpecificationVersion'];
+    }
+
+    /**
+     * Sets paSpecificationVersion
+     * @param string $paSpecificationVersion This field contains 3DS version that was used for Secured Consumer Authentication (SCA). For example 3DS secure version 1.0.2 or 2.0.0 is used for Secured Consumer Authentication. For Cybersource Through Visanet Gateway: The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR7, Position: 113 , Field: MC AVV Verification—Program Protocol It will contain one of the following values: - `1` (3D Secure Version 1.0 (3DS 1.0)) - `2` (EMV 3-D Secure (3DS 2.0))
+     * @return $this
+     */
+    public function setPaSpecificationVersion($paSpecificationVersion)
+    {
+        if (!is_null($paSpecificationVersion) && (strlen($paSpecificationVersion) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $paSpecificationVersion when calling Ptsv2paymentsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['paSpecificationVersion'] = $paSpecificationVersion;
 
         return $this;
     }

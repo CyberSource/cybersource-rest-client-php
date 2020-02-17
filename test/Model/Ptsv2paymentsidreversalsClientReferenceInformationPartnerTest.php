@@ -90,4 +90,11 @@ class Ptsv2paymentsidreversalsClientReferenceInformationPartnerTest extends \PHP
     public function testPropertySolutionId()
     {
     }
+
+    /**
+     * Test attribute "thirdPartyCertificationNumber"
+     */
+    public function testPropertyThirdPartyCertificationNumber()
+    {
+    }
 }

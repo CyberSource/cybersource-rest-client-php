@@ -90,7 +90,7 @@ class ReportDownloadsApi
     /**
      * Operation downloadReport
      *
-     * Download a report
+     * Download a Report
      *
      * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd (required)
      * @param string $reportName Name of the report to download (required)
@@ -108,7 +108,7 @@ class ReportDownloadsApi
     /**
      * Operation downloadReportWithHttpInfo
      *
-     * Download a report
+     * Download a Report
      *
      * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd (required)
      * @param string $reportName Name of the report to download (required)

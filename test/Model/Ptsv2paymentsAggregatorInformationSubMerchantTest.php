@@ -85,6 +85,13 @@ class Ptsv2paymentsAggregatorInformationSubMerchantTest extends \PHPUnit_Framewo
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
      * Test attribute "name"
      */
     public function testPropertyName()

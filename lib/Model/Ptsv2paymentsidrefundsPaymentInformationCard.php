@@ -61,7 +61,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'accountEncoderId' => 'string',
         'issueNumber' => 'string',
         'startMonth' => 'string',
-        'startYear' => 'string'
+        'startYear' => 'string',
+        'sourceAccountType' => 'string',
+        'sourceAccountTypeDetails' => 'string'
     ];
 
     /**
@@ -76,7 +78,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'accountEncoderId' => null,
         'issueNumber' => null,
         'startMonth' => null,
-        'startYear' => null
+        'startYear' => null,
+        'sourceAccountType' => null,
+        'sourceAccountTypeDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +105,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'accountEncoderId' => 'accountEncoderId',
         'issueNumber' => 'issueNumber',
         'startMonth' => 'startMonth',
-        'startYear' => 'startYear'
+        'startYear' => 'startYear',
+        'sourceAccountType' => 'sourceAccountType',
+        'sourceAccountTypeDetails' => 'sourceAccountTypeDetails'
     ];
 
 
@@ -117,7 +123,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'accountEncoderId' => 'setAccountEncoderId',
         'issueNumber' => 'setIssueNumber',
         'startMonth' => 'setStartMonth',
-        'startYear' => 'setStartYear'
+        'startYear' => 'setStartYear',
+        'sourceAccountType' => 'setSourceAccountType',
+        'sourceAccountTypeDetails' => 'setSourceAccountTypeDetails'
     ];
 
 
@@ -133,7 +141,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'accountEncoderId' => 'getAccountEncoderId',
         'issueNumber' => 'getIssueNumber',
         'startMonth' => 'getStartMonth',
-        'startYear' => 'getStartYear'
+        'startYear' => 'getStartYear',
+        'sourceAccountType' => 'getSourceAccountType',
+        'sourceAccountTypeDetails' => 'getSourceAccountTypeDetails'
     ];
 
     public static function attributeMap()
@@ -175,6 +185,8 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         $this->container['issueNumber'] = isset($data['issueNumber']) ? $data['issueNumber'] : null;
         $this->container['startMonth'] = isset($data['startMonth']) ? $data['startMonth'] : null;
         $this->container['startYear'] = isset($data['startYear']) ? $data['startYear'] : null;
+        $this->container['sourceAccountType'] = isset($data['sourceAccountType']) ? $data['sourceAccountType'] : null;
+        $this->container['sourceAccountTypeDetails'] = isset($data['sourceAccountTypeDetails']) ? $data['sourceAccountTypeDetails'] : null;
     }
 
     /**
@@ -214,6 +226,14 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
             $invalid_properties[] = "invalid value for 'startYear', the character length must be smaller than or equal to 4.";
         }
 
+        if (!is_null($this->container['sourceAccountType']) && (strlen($this->container['sourceAccountType']) > 20)) {
+            $invalid_properties[] = "invalid value for 'sourceAccountType', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['sourceAccountTypeDetails']) && (strlen($this->container['sourceAccountTypeDetails']) > 4)) {
+            $invalid_properties[] = "invalid value for 'sourceAccountTypeDetails', the character length must be smaller than or equal to 4.";
+        }
+
         return $invalid_properties;
     }
 
@@ -245,6 +265,12 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
             return false;
         }
         if (strlen($this->container['startYear']) > 4) {
+            return false;
+        }
+        if (strlen($this->container['sourceAccountType']) > 20) {
+            return false;
+        }
+        if (strlen($this->container['sourceAccountTypeDetails']) > 4) {
             return false;
         }
         return true;
@@ -443,6 +469,56 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         }
 
         $this->container['startYear'] = $startYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets sourceAccountType
+     * @return string
+     */
+    public function getSourceAccountType()
+    {
+        return $this->container['sourceAccountType'];
+    }
+
+    /**
+     * Sets sourceAccountType
+     * @param string $sourceAccountType Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  This field is required in the following cases:   - Debit transactions on Cielo and Comercio Latino.   - Transactions with Brazilian-issued cards on CyberSource through VisaNet.   - Applicable only for CyberSource through VisaNet (CtV).      **Note** Combo cards in Brazil contain credit and debit functionality in a single card. Visa systems use a credit bank identification number (BIN) for this type of card. Using the BIN to determine whether a card is debit or credit can cause transactions with these cards to be processed incorrectly. CyberSource strongly recommends that you include this field for combo card transactions.  Possible values include the following.   - `CHECKING`: Checking account  - `CREDIT`: Credit card account  - `SAVING`: Saving account  - `LINE_OF_CREDIT`: Line of credit or credit portion of combo card  - `PREPAID`: Prepaid card account or prepaid portion of combo card  - `UNIVERSAL`: Universal account
+     * @return $this
+     */
+    public function setSourceAccountType($sourceAccountType)
+    {
+        if (!is_null($sourceAccountType) && (strlen($sourceAccountType) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $sourceAccountType when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 20.');
+        }
+
+        $this->container['sourceAccountType'] = $sourceAccountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets sourceAccountTypeDetails
+     * @return string
+     */
+    public function getSourceAccountTypeDetails()
+    {
+        return $this->container['sourceAccountTypeDetails'];
+    }
+
+    /**
+     * Sets sourceAccountTypeDetails
+     * @param string $sourceAccountTypeDetails Type of account that is being used when the value for the override_payment_method field is line of credit (LI) or prepaid card (PP). Possible values for line of credit: - `AGRC`: Visa Agro Custeio - `AGRE`: Visa Agro Electron - `AGRI`: Visa Agro Investimento - `AGRO`: Visa Agro Possible values for prepaid card: - `VVA`: Visa Vale Alimentacao - `VVF`: Visa Vale Flex - `VVR`: Visa Vale Refeicao This field is supported only for combo card transactions in Brazil on CyberSource through VisaNet. The value for this field corresponds to the following data in the TC 33 capture file5: Record: CP07 TCR0, Position: 44-47, Field: Account Accessed
+     * @return $this
+     */
+    public function setSourceAccountTypeDetails($sourceAccountTypeDetails)
+    {
+        if (!is_null($sourceAccountTypeDetails) && (strlen($sourceAccountTypeDetails) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $sourceAccountTypeDetails when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 4.');
+        }
+
+        $this->container['sourceAccountTypeDetails'] = $sourceAccountTypeDetails;
 
         return $this;
     }

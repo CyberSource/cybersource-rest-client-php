@@ -92,6 +92,20 @@ class Ptsv2paymentsidrefundsPaymentInformationTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "tokenizedCard"
+     */
+    public function testPropertyTokenizedCard()
+    {
+    }
+
+    /**
+     * Test attribute "fluidData"
+     */
+    public function testPropertyFluidData()
+    {
+    }
+
+    /**
      * Test attribute "customer"
      */
     public function testPropertyCustomer()

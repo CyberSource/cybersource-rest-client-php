@@ -83,4 +83,11 @@ class PtsV2CreditsPost201ResponseProcessingInformationTest extends \PHPUnit_Fram
     public function testPropertyBankTransferOptions()
     {
     }
+
+    /**
+     * Test attribute "enhancedDataEnabled"
+     */
+    public function testPropertyEnhancedDataEnabled()
+    {
+    }
 }

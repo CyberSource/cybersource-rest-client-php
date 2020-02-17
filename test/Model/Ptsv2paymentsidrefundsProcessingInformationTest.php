@@ -125,4 +125,11 @@ class Ptsv2paymentsidrefundsProcessingInformationTest extends \PHPUnit_Framework
     public function testPropertyRecurringOptions()
     {
     }
+
+    /**
+     * Test attribute "industryDataType"
+     */
+    public function testPropertyIndustryDataType()
+    {
+    }
 }

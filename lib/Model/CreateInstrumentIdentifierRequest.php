@@ -189,7 +189,7 @@ class CreateInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type Type of Card
+     * @param string $type Enrol card for a Network Token
      * @return $this
      */
     public function setType($type)

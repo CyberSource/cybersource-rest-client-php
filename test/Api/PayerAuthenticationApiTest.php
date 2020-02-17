@@ -75,7 +75,7 @@ class PayerAuthenticationApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for checkPayerAuthEnrollment
      *
-     * Check payer auth enrollment.
+     * Check Payer Auth Enrollment.
      *
      */
     public function testCheckPayerAuthEnrollment()
@@ -83,9 +83,19 @@ class PayerAuthenticationApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for payerAuthSetup
+     *
+     * Setup Payer Auth.
+     *
+     */
+    public function testPayerAuthSetup()
+    {
+    }
+
+    /**
      * Test case for validateAuthenticationResults
      *
-     * Validate authentication results.
+     * Validate Authentication Results.
      *
      */
     public function testValidateAuthenticationResults()

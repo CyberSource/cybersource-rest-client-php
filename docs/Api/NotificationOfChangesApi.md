@@ -4,13 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getNotificationOfChangeReport**](NotificationOfChangesApi.md#getNotificationOfChangeReport) | **GET** /reporting/v3/notification-of-changes | Get Notification Of Changes
+[**getNotificationOfChangeReport**](NotificationOfChangesApi.md#getNotificationOfChangeReport) | **GET** /reporting/v3/notification-of-changes | Get Notification of Changes
 
 
 # **getNotificationOfChangeReport**
 > \CyberSource\Model\ReportingV3NotificationofChangesGet200Response getNotificationOfChangeReport($startTime, $endTime)
 
-Get Notification Of Changes
+Get Notification of Changes
 
 Download the Notification of Change report. This report shows eCheck-related fields updated as a result of a response to an eCheck settlement transaction.
 

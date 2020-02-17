@@ -83,4 +83,11 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetailsTest extends \PH
     public function testPropertyLevel3TransmissionStatus()
     {
     }
+
+    /**
+     * Test attribute "salesSlipNumber"
+     */
+    public function testPropertySalesSlipNumber()
+    {
+    }
 }

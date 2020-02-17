@@ -132,4 +132,11 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchantTest extends \PHPUn
     public function testPropertyPhoneNumber()
     {
     }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
 }

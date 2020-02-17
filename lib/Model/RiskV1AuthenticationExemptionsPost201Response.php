@@ -54,7 +54,7 @@ class RiskV1AuthenticationExemptionsPost201Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks',
+        'links' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks',
         'id' => 'string',
         'submitTimeUtc' => 'string',
         'status' => 'string',
@@ -205,7 +205,7 @@ class RiskV1AuthenticationExemptionsPost201Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks
+     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks
      */
     public function getLinks()
     {
@@ -214,7 +214,7 @@ class RiskV1AuthenticationExemptionsPost201Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks $links
+     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -235,7 +235,7 @@ class RiskV1AuthenticationExemptionsPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)

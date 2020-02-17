@@ -61,7 +61,8 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         'postalCode' => 'string',
         'country' => 'string',
         'email' => 'string',
-        'phoneNumber' => 'string'
+        'phoneNumber' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         'postalCode' => null,
         'country' => null,
         'email' => null,
-        'phoneNumber' => null
+        'phoneNumber' => null,
+        'id' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +103,8 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         'postalCode' => 'postalCode',
         'country' => 'country',
         'email' => 'email',
-        'phoneNumber' => 'phoneNumber'
+        'phoneNumber' => 'phoneNumber',
+        'id' => 'id'
     ];
 
 
@@ -117,7 +120,8 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         'postalCode' => 'setPostalCode',
         'country' => 'setCountry',
         'email' => 'setEmail',
-        'phoneNumber' => 'setPhoneNumber'
+        'phoneNumber' => 'setPhoneNumber',
+        'id' => 'setId'
     ];
 
 
@@ -133,7 +137,8 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry',
         'email' => 'getEmail',
-        'phoneNumber' => 'getPhoneNumber'
+        'phoneNumber' => 'getPhoneNumber',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -175,6 +180,7 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -218,6 +224,10 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
             $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 20.";
         }
 
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 20)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 20.";
+        }
+
         return $invalid_properties;
     }
 
@@ -252,6 +262,9 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
             return false;
         }
         if (strlen($this->container['phoneNumber']) > 20) {
+            return false;
+        }
+        if (strlen($this->container['id']) > 20) {
             return false;
         }
         return true;
@@ -294,7 +307,7 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
 
     /**
      * Sets address1
-     * @param string $address1 First line of the sub-merchant’s street address.  For processor-specific details, see `submerchant_street` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $address1 First line of the sub-merchant’s street address.  For processor-specific details, see `submerchant_street` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setAddress1($address1)
@@ -319,7 +332,7 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
 
     /**
      * Sets locality
-     * @param string $locality Sub-merchant’s city.  For processor-specific details, see `submerchant_city` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $locality Sub-merchant’s city.  For processor-specific details, see `submerchant_city` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setLocality($locality)
@@ -344,7 +357,7 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sub-merchant’s state or province.  For possible values and also aggregator support, see `submerchant_state` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $administrativeArea Sub-merchant’s state or province.  For possible values and also aggregator support, see `submerchant_state` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -369,7 +382,7 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
 
     /**
      * Sets postalCode
-     * @param string $postalCode Partial postal code for the sub-merchant’s address.  For processor-specific details, see `submerchant_postal_code` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $postalCode Partial postal code for the sub-merchant’s address.  For processor-specific details, see `submerchant_postal_code` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -394,7 +407,7 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
 
     /**
      * Sets country
-     * @param string $country Sub-merchant’s country. Use the two-character ISO Standard Country Codes.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.  For details, see the `submerchant_country` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $country Sub-merchant’s country. Use the two-character ISO Standard Country Codes.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.  For details, see the `submerchant_country` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setCountry($country)
@@ -454,6 +467,31 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
         }
 
         $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id The ID you assigned to your sub-merchant. CyberSource through VisaNet: For American Express transaction, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCRB - Position: 65-84 - Field: American Express Seller ID For  Mastercard transactions, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR6 - Position: 117-131 - Field: Mastercard Sub-Merchant ID FDC Compass: This value must consist of uppercase characters.  American Express Direct: String (20) CyberSource through VisaNet with American Express: String (20) CyberSource through VisaNet with Mastercard: String (15) FDC Compass: String (20) FDC Nashville Global: String (14)
+     * @return $this
+     */
+    public function setId($id)
+    {
+        if (!is_null($id) && (strlen($id) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 20.');
+        }
+
+        $this->container['id'] = $id;
 
         return $this;
     }

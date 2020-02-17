@@ -139,4 +139,11 @@ class PtsV2PaymentsRefundPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "pointOfSaleInformation"
+     */
+    public function testPropertyPointOfSaleInformation()
+    {
+    }
 }

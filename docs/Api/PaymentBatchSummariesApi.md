@@ -4,13 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPaymentBatchSummary**](PaymentBatchSummariesApi.md#getPaymentBatchSummary) | **GET** /reporting/v3/payment-batch-summaries | Get payment batch summary data
+[**getPaymentBatchSummary**](PaymentBatchSummariesApi.md#getPaymentBatchSummary) | **GET** /reporting/v3/payment-batch-summaries | Get Payment Batch Summary Data
 
 
 # **getPaymentBatchSummary**
 > \CyberSource\Model\ReportingV3PaymentBatchSummariesGet200Response getPaymentBatchSummary($startTime, $endTime, $organizationId, $rollUp, $breakdown, $startDayOfWeek)
 
-Get payment batch summary data
+Get Payment Batch Summary Data
 
 Scope can be either account/merchant or reseller.
 

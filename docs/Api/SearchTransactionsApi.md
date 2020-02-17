@@ -4,14 +4,14 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSearch**](SearchTransactionsApi.md#createSearch) | **POST** /tss/v2/searches | Create a search request
-[**getSearch**](SearchTransactionsApi.md#getSearch) | **GET** /tss/v2/searches/{searchId} | Get Search results
+[**createSearch**](SearchTransactionsApi.md#createSearch) | **POST** /tss/v2/searches | Create a Search Request
+[**getSearch**](SearchTransactionsApi.md#getSearch) | **GET** /tss/v2/searches/{searchId} | Get Search Results
 
 
 # **createSearch**
 > \CyberSource\Model\TssV2TransactionsPost201Response createSearch($createSearchRequest)
 
-Create a search request
+Create a Search Request
 
 Create a search request.
 
@@ -56,7 +56,7 @@ No authorization required
 # **getSearch**
 > \CyberSource\Model\TssV2TransactionsPost201Response getSearch($searchId)
 
-Get Search results
+Get Search Results
 
 Include the Search ID in the GET request to retrieve the search results.
 
