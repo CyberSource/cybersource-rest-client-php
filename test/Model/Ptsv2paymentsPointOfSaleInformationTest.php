@@ -230,4 +230,25 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyPartnerSdkVersion()
     {
     }
+
+    /**
+     * Test attribute "emvApplicationIdentifierAndDedicatedFileName"
+     */
+    public function testPropertyEmvApplicationIdentifierAndDedicatedFileName()
+    {
+    }
+
+    /**
+     * Test attribute "terminalCompliance"
+     */
+    public function testPropertyTerminalCompliance()
+    {
+    }
+
+    /**
+     * Test attribute "isDedicatedHardwareTerminal"
+     */
+    public function testPropertyIsDedicatedHardwareTerminal()
+    {
+    }
 }

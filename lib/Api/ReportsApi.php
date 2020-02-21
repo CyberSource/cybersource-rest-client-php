@@ -185,7 +185,7 @@ class ReportsApi
     /**
      * Operation getReportByReportId
      *
-     * Get Report based on reportId
+     * Get Report Based on Report Id
      *
      * @param string $reportId Valid Report Id (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
@@ -201,7 +201,7 @@ class ReportsApi
     /**
      * Operation getReportByReportIdWithHttpInfo
      *
-     * Get Report based on reportId
+     * Get Report Based on Report Id
      *
      * @param string $reportId Valid Report Id (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
@@ -287,7 +287,7 @@ class ReportsApi
     /**
      * Operation searchReports
      *
-     * Retrieve available reports
+     * Retrieve Available Reports
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
@@ -310,7 +310,7 @@ class ReportsApi
     /**
      * Operation searchReportsWithHttpInfo
      *
-     * Retrieve available reports
+     * Retrieve Available Reports
      *
      * @param \DateTime $startTime Valid report Start Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)
      * @param \DateTime $endTime Valid report End Time in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ (e.g. 2018-01-01T00:00:00.000Z) (required)

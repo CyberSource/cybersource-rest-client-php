@@ -90,7 +90,7 @@ class TokenizationApi
     /**
      * Operation tokenize
      *
-     * Tokenize card
+     * Tokenize Card
      *
      * @param \CyberSource\Model\TokenizeRequest $tokenizeRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class TokenizationApi
     /**
      * Operation tokenizeWithHttpInfo
      *
-     * Tokenize card
+     * Tokenize Card
      *
      * @param \CyberSource\Model\TokenizeRequest $tokenizeRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response

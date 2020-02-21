@@ -5,8 +5,8 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createReport**](ReportsApi.md#createReport) | **POST** /reporting/v3/reports | Create Adhoc Report
-[**getReportByReportId**](ReportsApi.md#getReportByReportId) | **GET** /reporting/v3/reports/{reportId} | Get Report based on reportId
-[**searchReports**](ReportsApi.md#searchReports) | **GET** /reporting/v3/reports | Retrieve available reports
+[**getReportByReportId**](ReportsApi.md#getReportByReportId) | **GET** /reporting/v3/reports/{reportId} | Get Report Based on Report Id
+[**searchReports**](ReportsApi.md#searchReports) | **GET** /reporting/v3/reports | Retrieve Available Reports
 
 
 # **createReport**
@@ -58,7 +58,7 @@ No authorization required
 # **getReportByReportId**
 > \CyberSource\Model\ReportingV3ReportsIdGet200Response getReportByReportId($reportId, $organizationId)
 
-Get Report based on reportId
+Get Report Based on Report Id
 
 Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call.
 
@@ -105,7 +105,7 @@ No authorization required
 # **searchReports**
 > \CyberSource\Model\ReportingV3ReportsGet200Response searchReports($startTime, $endTime, $timeQueryType, $organizationId, $reportMimeType, $reportFrequency, $reportName, $reportDefinitionId, $reportStatus)
 
-Retrieve available reports
+Retrieve Available Reports
 
 Retrieve a list of the available reports to which you are subscribed. This will also give you the reportId value, which you can also use to download a report.
 

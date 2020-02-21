@@ -120,6 +120,13 @@ class Ptsv2paymentsPaymentInformationCardTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "sourceAccountTypeDetails"
+     */
+    public function testPropertySourceAccountTypeDetails()
+    {
+    }
+
+    /**
      * Test attribute "securityCode"
      */
     public function testPropertySecurityCode()

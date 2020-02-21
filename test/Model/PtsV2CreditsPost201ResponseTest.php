@@ -153,4 +153,11 @@ class PtsV2CreditsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "pointOfSaleInformation"
+     */
+    public function testPropertyPointOfSaleInformation()
+    {
+    }
 }

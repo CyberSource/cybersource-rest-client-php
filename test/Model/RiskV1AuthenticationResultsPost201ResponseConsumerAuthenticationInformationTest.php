@@ -78,6 +78,20 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "acsRenderingType"
+     */
+    public function testPropertyAcsRenderingType()
+    {
+    }
+
+    /**
+     * Test attribute "acsTransactionId"
+     */
+    public function testPropertyAcsTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "authenticationResult"
      */
     public function testPropertyAuthenticationResult()
@@ -88,6 +102,13 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      * Test attribute "authenticationStatusMsg"
      */
     public function testPropertyAuthenticationStatusMsg()
+    {
+    }
+
+    /**
+     * Test attribute "authorizationPayload"
+     */
+    public function testPropertyAuthorizationPayload()
     {
     }
 
@@ -106,9 +127,30 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "directoryServerErrorCode"
+     */
+    public function testPropertyDirectoryServerErrorCode()
+    {
+    }
+
+    /**
+     * Test attribute "directoryServerErrorDescription"
+     */
+    public function testPropertyDirectoryServerErrorDescription()
+    {
+    }
+
+    /**
      * Test attribute "indicator"
      */
     public function testPropertyIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "interactionCounter"
+     */
+    public function testPropertyInteractionCounter()
     {
     }
 
@@ -134,9 +176,23 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "sdkTransactionId"
+     */
+    public function testPropertySdkTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "specificationVersion"
      */
     public function testPropertySpecificationVersion()
+    {
+    }
+
+    /**
+     * Test attribute "threeDSServerTransactionId"
+     */
+    public function testPropertyThreeDSServerTransactionId()
     {
     }
 
@@ -155,9 +211,30 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "whiteListStatus"
+     */
+    public function testPropertyWhiteListStatus()
+    {
+    }
+
+    /**
+     * Test attribute "whiteListStatusSource"
+     */
+    public function testPropertyWhiteListStatusSource()
+    {
+    }
+
+    /**
      * Test attribute "xid"
      */
     public function testPropertyXid()
+    {
+    }
+
+    /**
+     * Test attribute "directoryServerTransactionId"
+     */
+    public function testPropertyDirectoryServerTransactionId()
     {
     }
 }

@@ -97,4 +97,11 @@ class Ptsv2paymentsClientReferenceInformationPartnerTest extends \PHPUnit_Framew
     public function testPropertySolutionId()
     {
     }
+
+    /**
+     * Test attribute "thirdPartyCertificationNumber"
+     */
+    public function testPropertyThirdPartyCertificationNumber()
+    {
+    }
 }

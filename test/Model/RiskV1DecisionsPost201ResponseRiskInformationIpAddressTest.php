@@ -111,4 +111,18 @@ class RiskV1DecisionsPost201ResponseRiskInformationIpAddressTest extends \PHPUni
     public function testPropertyRoutingMethod()
     {
     }
+
+    /**
+     * Test attribute "carrier"
+     */
+    public function testPropertyCarrier()
+    {
+    }
+
+    /**
+     * Test attribute "organization"
+     */
+    public function testPropertyOrganization()
+    {
+    }
 }

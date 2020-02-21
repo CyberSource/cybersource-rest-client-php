@@ -4,13 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getConversionDetail**](ConversionDetailsApi.md#getConversionDetail) | **GET** /reporting/v3/conversion-details | Get conversion detail transactions
+[**getConversionDetail**](ConversionDetailsApi.md#getConversionDetail) | **GET** /reporting/v3/conversion-details | Get Conversion Detail Transactions
 
 
 # **getConversionDetail**
 > \CyberSource\Model\ReportingV3ConversionDetailsGet200Response getConversionDetail($startTime, $endTime, $organizationId)
 
-Get conversion detail transactions
+Get Conversion Detail Transactions
 
 Get conversion detail of transactions for a merchant.
 

@@ -127,9 +127,23 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     }
 
     /**
-     * Test attribute "ucafCollectionIndicator"
+     * Test attribute "strongAuthentication"
      */
-    public function testPropertyUcafCollectionIndicator()
+    public function testPropertyStrongAuthentication()
+    {
+    }
+
+    /**
+     * Test attribute "directoryServerTransactionId"
+     */
+    public function testPropertyDirectoryServerTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "paSpecificationVersion"
+     */
+    public function testPropertyPaSpecificationVersion()
     {
     }
 }

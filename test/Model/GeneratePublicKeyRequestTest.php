@@ -83,4 +83,11 @@ class GeneratePublicKeyRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEncryptionType()
     {
     }
+
+    /**
+     * Test attribute "targetOrigin"
+     */
+    public function testPropertyTargetOrigin()
+    {
+    }
 }

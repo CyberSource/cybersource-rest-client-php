@@ -90,7 +90,7 @@ class ReportDefinitionsApi
     /**
      * Operation getResourceInfoByReportDefinition
      *
-     * Get report definition
+     * Get Report Definition
      *
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
@@ -108,7 +108,7 @@ class ReportDefinitionsApi
     /**
      * Operation getResourceInfoByReportDefinitionWithHttpInfo
      *
-     * Get report definition
+     * Get Report Definition
      *
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
@@ -204,7 +204,7 @@ class ReportDefinitionsApi
     /**
      * Operation getResourceV2Info
      *
-     * Get reporting resource information
+     * Get Reporting Resource Information
      *
      * @param string $subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
@@ -220,7 +220,7 @@ class ReportDefinitionsApi
     /**
      * Operation getResourceV2InfoWithHttpInfo
      *
-     * Get reporting resource information
+     * Get Reporting Resource Information
      *
      * @param string $subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
      * @param string $organizationId Valid Cybersource Organization Id (optional)

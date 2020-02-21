@@ -83,4 +83,11 @@ class Ptsv2paymentsidcapturesPaymentInformationTest extends \PHPUnit_Framework_T
     public function testPropertyCustomer()
     {
     }
+
+    /**
+     * Test attribute "card"
+     */
+    public function testPropertyCard()
+    {
+    }
 }

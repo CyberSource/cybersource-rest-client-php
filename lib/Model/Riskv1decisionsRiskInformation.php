@@ -55,8 +55,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'profile' => '\CyberSource\Model\Riskv1decisionsRiskInformationProfile',
-        'eventType' => 'string',
-        'markingDetails' => '\CyberSource\Model\Riskv1decisionsRiskInformationMarkingDetails'
+        'eventType' => 'string'
     ];
 
     /**
@@ -65,8 +64,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'profile' => null,
-        'eventType' => null,
-        'markingDetails' => null
+        'eventType' => null
     ];
 
     public static function swaggerTypes()
@@ -85,8 +83,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'profile' => 'profile',
-        'eventType' => 'eventType',
-        'markingDetails' => 'markingDetails'
+        'eventType' => 'eventType'
     ];
 
 
@@ -96,8 +93,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      */
     protected static $setters = [
         'profile' => 'setProfile',
-        'eventType' => 'setEventType',
-        'markingDetails' => 'setMarkingDetails'
+        'eventType' => 'setEventType'
     ];
 
 
@@ -107,8 +103,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      */
     protected static $getters = [
         'profile' => 'getProfile',
-        'eventType' => 'getEventType',
-        'markingDetails' => 'getMarkingDetails'
+        'eventType' => 'getEventType'
     ];
 
     public static function attributeMap()
@@ -144,7 +139,6 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     {
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
         $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
-        $this->container['markingDetails'] = isset($data['markingDetails']) ? $data['markingDetails'] : null;
     }
 
     /**
@@ -221,27 +215,6 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         }
 
         $this->container['eventType'] = $eventType;
-
-        return $this;
-    }
-
-    /**
-     * Gets markingDetails
-     * @return \CyberSource\Model\Riskv1decisionsRiskInformationMarkingDetails
-     */
-    public function getMarkingDetails()
-    {
-        return $this->container['markingDetails'];
-    }
-
-    /**
-     * Sets markingDetails
-     * @param \CyberSource\Model\Riskv1decisionsRiskInformationMarkingDetails $markingDetails
-     * @return $this
-     */
-    public function setMarkingDetails($markingDetails)
-    {
-        $this->container['markingDetails'] = $markingDetails;
 
         return $this;
     }

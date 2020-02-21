@@ -204,7 +204,7 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
 
     /**
      * Sets trueIpaddress
-     * @param string $trueIpaddress Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in [CyberSource Decision Manager Device Fingerprinting Guide.](https://www.cybersource.com/developers/documentation/fraud_management)
+     * @param string $trueIpaddress Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link).
      * @return $this
      */
     public function setTrueIpaddress($trueIpaddress)
@@ -229,7 +229,7 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
 
     /**
      * Sets hash
-     * @param string $hash The unique identifier of the device that is returned in the `riskInformation.providers.fingerprint.device_fingerprint_hash` API reply field.  NOTE: For details about the value of this field, see the `decision_provider_#_field_#_value` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the `device_fingerprint_hash` field description in the _CyberSource Decision Manager Device Fingerprinting Guide_on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link)
+     * @param string $hash The unique identifier of the device that is returned in the `riskInformation.providers.fingerprint.device_fingerprint_hash` API reply field.  NOTE: For details about the value of this field, see the `decision_provider_#_field_#_value` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).  For more details about this field, see the `device_fingerprint_hash` field description in the _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link).
      * @return $this
      */
     public function setHash($hash)

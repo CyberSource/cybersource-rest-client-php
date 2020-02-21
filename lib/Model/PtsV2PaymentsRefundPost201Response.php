@@ -62,7 +62,8 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'refundAmountDetails' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseRefundAmountDetails',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformation',
-        'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation'
+        'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'
     ];
 
     /**
@@ -78,7 +79,8 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'clientReferenceInformation' => null,
         'refundAmountDetails' => null,
         'processorInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'pointOfSaleInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -104,7 +106,8 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'refundAmountDetails' => 'refundAmountDetails',
         'processorInformation' => 'processorInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'pointOfSaleInformation' => 'pointOfSaleInformation'
     ];
 
 
@@ -121,7 +124,8 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'refundAmountDetails' => 'setRefundAmountDetails',
         'processorInformation' => 'setProcessorInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'pointOfSaleInformation' => 'setPointOfSaleInformation'
     ];
 
 
@@ -138,7 +142,8 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'refundAmountDetails' => 'getRefundAmountDetails',
         'processorInformation' => 'getProcessorInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'pointOfSaleInformation' => 'getPointOfSaleInformation'
     ];
 
     public static function attributeMap()
@@ -181,6 +186,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         $this->container['refundAmountDetails'] = isset($data['refundAmountDetails']) ? $data['refundAmountDetails'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
     }
 
     /**
@@ -254,7 +260,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.
+     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)
@@ -415,6 +421,27 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointOfSaleInformation
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation
+     */
+    public function getPointOfSaleInformation()
+    {
+        return $this->container['pointOfSaleInformation'];
+    }
+
+    /**
+     * Sets pointOfSaleInformation
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation $pointOfSaleInformation
+     * @return $this
+     */
+    public function setPointOfSaleInformation($pointOfSaleInformation)
+    {
+        $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
 
         return $this;
     }

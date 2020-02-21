@@ -56,6 +56,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationCard',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
+        'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
+        'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType'
     ];
@@ -67,6 +69,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'card' => null,
         'bank' => null,
+        'tokenizedCard' => null,
+        'fluidData' => null,
         'customer' => null,
         'paymentType' => null
     ];
@@ -88,6 +92,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     protected static $attributeMap = [
         'card' => 'card',
         'bank' => 'bank',
+        'tokenizedCard' => 'tokenizedCard',
+        'fluidData' => 'fluidData',
         'customer' => 'customer',
         'paymentType' => 'paymentType'
     ];
@@ -100,6 +106,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     protected static $setters = [
         'card' => 'setCard',
         'bank' => 'setBank',
+        'tokenizedCard' => 'setTokenizedCard',
+        'fluidData' => 'setFluidData',
         'customer' => 'setCustomer',
         'paymentType' => 'setPaymentType'
     ];
@@ -112,6 +120,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     protected static $getters = [
         'card' => 'getCard',
         'bank' => 'getBank',
+        'tokenizedCard' => 'getTokenizedCard',
+        'fluidData' => 'getFluidData',
         'customer' => 'getCustomer',
         'paymentType' => 'getPaymentType'
     ];
@@ -149,6 +159,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
+        $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
+        $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
     }
@@ -216,6 +228,48 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     public function setBank($bank)
     {
         $this->container['bank'] = $bank;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenizedCard
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard
+     */
+    public function getTokenizedCard()
+    {
+        return $this->container['tokenizedCard'];
+    }
+
+    /**
+     * Sets tokenizedCard
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard $tokenizedCard
+     * @return $this
+     */
+    public function setTokenizedCard($tokenizedCard)
+    {
+        $this->container['tokenizedCard'] = $tokenizedCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets fluidData
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData
+     */
+    public function getFluidData()
+    {
+        return $this->container['fluidData'];
+    }
+
+    /**
+     * Sets fluidData
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData $fluidData
+     * @return $this
+     */
+    public function setFluidData($fluidData)
+    {
+        $this->container['fluidData'] = $fluidData;
 
         return $this;
     }

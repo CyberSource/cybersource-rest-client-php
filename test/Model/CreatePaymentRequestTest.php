@@ -174,4 +174,18 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyInstallmentInformation()
     {
     }
+
+    /**
+     * Test attribute "travelInformation"
+     */
+    public function testPropertyTravelInformation()
+    {
+    }
+
+    /**
+     * Test attribute "promotionInformation"
+     */
+    public function testPropertyPromotionInformation()
+    {
+    }
 }

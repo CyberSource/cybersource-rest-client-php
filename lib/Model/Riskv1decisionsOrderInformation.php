@@ -60,8 +60,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'shipTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationShipTo',
         'returnsAccepted' => 'bool',
         'lineItems' => '\CyberSource\Model\Riskv1decisionsOrderInformationLineItems[]',
-        'billTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationBillTo',
-        'address' => '\CyberSource\Model\Riskv1decisionsOrderInformationAddress'
+        'billTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationBillTo'
     ];
 
     /**
@@ -74,8 +73,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'shipTo' => null,
         'returnsAccepted' => null,
         'lineItems' => null,
-        'billTo' => null,
-        'address' => null
+        'billTo' => null
     ];
 
     public static function swaggerTypes()
@@ -98,8 +96,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'shipTo' => 'shipTo',
         'returnsAccepted' => 'returnsAccepted',
         'lineItems' => 'lineItems',
-        'billTo' => 'billTo',
-        'address' => 'address'
+        'billTo' => 'billTo'
     ];
 
 
@@ -113,8 +110,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'shipTo' => 'setShipTo',
         'returnsAccepted' => 'setReturnsAccepted',
         'lineItems' => 'setLineItems',
-        'billTo' => 'setBillTo',
-        'address' => 'setAddress'
+        'billTo' => 'setBillTo'
     ];
 
 
@@ -128,8 +124,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'shipTo' => 'getShipTo',
         'returnsAccepted' => 'getReturnsAccepted',
         'lineItems' => 'getLineItems',
-        'billTo' => 'getBillTo',
-        'address' => 'getAddress'
+        'billTo' => 'getBillTo'
     ];
 
     public static function attributeMap()
@@ -169,7 +164,6 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
     }
 
     /**
@@ -319,27 +313,6 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function setBillTo($billTo)
     {
         $this->container['billTo'] = $billTo;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     * @return \CyberSource\Model\Riskv1decisionsOrderInformationAddress
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     * @param \CyberSource\Model\Riskv1decisionsOrderInformationAddress $address
-     * @return $this
-     */
-    public function setAddress($address)
-    {
-        $this->container['address'] = $address;
 
         return $this;
     }

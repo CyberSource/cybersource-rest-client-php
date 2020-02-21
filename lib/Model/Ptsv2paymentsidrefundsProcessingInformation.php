@@ -60,7 +60,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
         'purchaseLevel' => 'string',
-        'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions'
+        'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions',
+        'industryDataType' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'reportGroup' => null,
         'visaCheckoutId' => null,
         'purchaseLevel' => null,
-        'recurringOptions' => null
+        'recurringOptions' => null,
+        'industryDataType' => null
     ];
 
     public static function swaggerTypes()
@@ -98,7 +100,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
         'purchaseLevel' => 'purchaseLevel',
-        'recurringOptions' => 'recurringOptions'
+        'recurringOptions' => 'recurringOptions',
+        'industryDataType' => 'industryDataType'
     ];
 
 
@@ -113,7 +116,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
         'purchaseLevel' => 'setPurchaseLevel',
-        'recurringOptions' => 'setRecurringOptions'
+        'recurringOptions' => 'setRecurringOptions',
+        'industryDataType' => 'setIndustryDataType'
     ];
 
 
@@ -128,7 +132,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
         'purchaseLevel' => 'getPurchaseLevel',
-        'recurringOptions' => 'getRecurringOptions'
+        'recurringOptions' => 'getRecurringOptions',
+        'industryDataType' => 'getIndustryDataType'
     ];
 
     public static function attributeMap()
@@ -169,6 +174,7 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
         $this->container['purchaseLevel'] = isset($data['purchaseLevel']) ? $data['purchaseLevel'] : null;
         $this->container['recurringOptions'] = isset($data['recurringOptions']) ? $data['recurringOptions'] : null;
+        $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
     }
 
     /**
@@ -204,6 +210,10 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'purchaseLevel', the character length must be smaller than or equal to 1.";
         }
 
+        if (!is_null($this->container['industryDataType']) && (strlen($this->container['industryDataType']) > 20)) {
+            $invalid_properties[] = "invalid value for 'industryDataType', the character length must be smaller than or equal to 20.";
+        }
+
         return $invalid_properties;
     }
 
@@ -234,6 +244,9 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         if (strlen($this->container['purchaseLevel']) > 1) {
             return false;
         }
+        if (strlen($this->container['industryDataType']) > 20) {
+            return false;
+        }
         return true;
     }
 
@@ -249,7 +262,7 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
 
     /**
      * Sets paymentSolution
-     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.
+     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.
      * @return $this
      */
     public function setPaymentSolution($paymentSolution)
@@ -299,7 +312,7 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
 
     /**
      * Sets linkId
-     * @param string $linkId Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments  For details, see `link_to_request` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $linkId Value that links the current authorization request to the original authorization request. Set this value to the ID that was returned in the reply message from the original authorization request.  This value is used for:  - Partial authorizations - Split shipments  For details, see `link_to_request` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setLinkId($linkId)
@@ -324,7 +337,7 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
 
     /**
      * Sets reportGroup
-     * @param string $reportGroup Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  For details, see `report_group` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $reportGroup Attribute that lets you define custom grouping for your processor reports. This field is supported only for **Worldpay VAP**.  For details, see `report_group` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setReportGroup($reportGroup)
@@ -349,7 +362,7 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
 
     /**
      * Sets visaCheckoutId
-     * @param string $visaCheckoutId Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For details, see the `vc_order_id` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $visaCheckoutId Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For details, see the `vc_order_id` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)
      * @return $this
      */
     public function setVisaCheckoutId($visaCheckoutId)
@@ -405,6 +418,31 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
     public function setRecurringOptions($recurringOptions)
     {
         $this->container['recurringOptions'] = $recurringOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets industryDataType
+     * @return string
+     */
+    public function getIndustryDataType()
+    {
+        return $this->container['industryDataType'];
+    }
+
+    /**
+     * Sets industryDataType
+     * @param string $industryDataType Flag that indicates that the transaction includes airline data or restaurant data.  This field must be set to `airline` in order for airline data to be sent to the processor.  For example, if this field is not set to airline or is not included in the request, CyberSource does not send airline data to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor.  When this field is not set to restaurant or is not included in the request, CyberSource does not send restaurant data to the processor.  Possible Values:  - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit`
+     * @return $this
+     */
+    public function setIndustryDataType($industryDataType)
+    {
+        if (!is_null($industryDataType) && (strlen($industryDataType) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $industryDataType when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 20.');
+        }
+
+        $this->container['industryDataType'] = $industryDataType;
 
         return $this;
     }

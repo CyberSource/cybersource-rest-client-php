@@ -217,7 +217,7 @@ class Riskv1authenticationsAcquirerInformation implements ArrayAccess
 
     /**
      * Sets acquirerBin
-     * @param string $acquirerBin Acquirer bank ID number that corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard.
+     * @param string $acquirerBin Acquirer bank ID number that  corresponds to a certificate that Cybersource already has.This ID has this format. 4XXXXX for Visa and 5XXXXX for Mastercard.
      * @return $this
      */
     public function setAcquirerBin($acquirerBin)

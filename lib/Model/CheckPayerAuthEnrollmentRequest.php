@@ -54,9 +54,10 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformation',
+        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
         'buyerInformation' => '\CyberSource\Model\Riskv1authenticationsBuyerInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationsDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Riskv1authenticationsMerchantInformation',
@@ -76,6 +77,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'clientReferenceInformation' => null,
         'orderInformation' => null,
         'paymentInformation' => null,
+        'processingInformation' => null,
         'buyerInformation' => null,
         'deviceInformation' => null,
         'merchantInformation' => null,
@@ -105,6 +107,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'orderInformation' => 'orderInformation',
         'paymentInformation' => 'paymentInformation',
+        'processingInformation' => 'processingInformation',
         'buyerInformation' => 'buyerInformation',
         'deviceInformation' => 'deviceInformation',
         'merchantInformation' => 'merchantInformation',
@@ -125,6 +128,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'orderInformation' => 'setOrderInformation',
         'paymentInformation' => 'setPaymentInformation',
+        'processingInformation' => 'setProcessingInformation',
         'buyerInformation' => 'setBuyerInformation',
         'deviceInformation' => 'setDeviceInformation',
         'merchantInformation' => 'setMerchantInformation',
@@ -145,6 +149,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'orderInformation' => 'getOrderInformation',
         'paymentInformation' => 'getPaymentInformation',
+        'processingInformation' => 'getProcessingInformation',
         'buyerInformation' => 'getBuyerInformation',
         'deviceInformation' => 'getDeviceInformation',
         'merchantInformation' => 'getMerchantInformation',
@@ -190,6 +195,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
@@ -228,7 +234,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Riskv1authenticationsClientReferenceInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -237,7 +243,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Riskv1authenticationsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -285,6 +291,27 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
     public function setPaymentInformation($paymentInformation)
     {
         $this->container['paymentInformation'] = $paymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

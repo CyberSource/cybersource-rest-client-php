@@ -249,7 +249,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
 
     /**
      * Sets prefix
-     * @param string $prefix First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_prefix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $prefix First six digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_prefix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/)
      * @return $this
      */
     public function setPrefix($prefix)
@@ -274,7 +274,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
 
     /**
      * Sets suffix
-     * @param string $suffix Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_suffix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $suffix Last four digits of token. CyberSource includes this field in the reply message when it decrypts the payment blob for the tokenized transaction.  For details, see `token_suffix` field description in [Google Pay Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Google_Pay_SCMP_API/html/)
      * @return $this
      */
     public function setSuffix($suffix)

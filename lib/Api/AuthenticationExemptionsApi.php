@@ -90,7 +90,7 @@ class AuthenticationExemptionsApi
     /**
      * Operation authenticationExemptions
      *
-     * Authentication exemptions service
+     * Authentication Exemptions Service
      *
      * @param \CyberSource\Model\AuthenticationExemptionsRequest $authenticationExemptionsRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class AuthenticationExemptionsApi
     /**
      * Operation authenticationExemptionsWithHttpInfo
      *
-     * Authentication exemptions service
+     * Authentication Exemptions Service
      *
      * @param \CyberSource\Model\AuthenticationExemptionsRequest $authenticationExemptionsRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response

@@ -67,7 +67,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
         'status' => 'string',
         'submitTimeUtc' => 'string',
         'embedded' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbedded',
-        'links' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks'
+        'links' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks'
     ];
 
     /**
@@ -524,7 +524,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks
+     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks
      */
     public function getLinks()
     {
@@ -533,7 +533,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseLinks $links
+     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)

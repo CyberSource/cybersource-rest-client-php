@@ -78,20 +78,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
-     * Test attribute "acsRenderingType"
-     */
-    public function testPropertyAcsRenderingType()
-    {
-    }
-
-    /**
-     * Test attribute "acsTransactionId"
-     */
-    public function testPropertyAcsTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "authenticationTransactionId"
      */
     public function testPropertyAuthenticationTransactionId()
@@ -106,37 +92,9 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
-     * Test attribute "challengeCancelCode"
-     */
-    public function testPropertyChallengeCancelCode()
-    {
-    }
-
-    /**
      * Test attribute "effectiveAuthenticationType"
      */
     public function testPropertyEffectiveAuthenticationType()
-    {
-    }
-
-    /**
-     * Test attribute "directoryServerErrorCode"
-     */
-    public function testPropertyDirectoryServerErrorCode()
-    {
-    }
-
-    /**
-     * Test attribute "directoryServerErrorDescription"
-     */
-    public function testPropertyDirectoryServerErrorDescription()
-    {
-    }
-
-    /**
-     * Test attribute "interactionCounter"
-     */
-    public function testPropertyInteractionCounter()
     {
     }
 
@@ -148,13 +106,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
-     * Test attribute "sdkTransactionId"
-     */
-    public function testPropertySdkTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "signedPares"
      */
     public function testPropertySignedPares()
@@ -162,23 +113,9 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
-     * Test attribute "threeDSServerTransactionId"
-     */
-    public function testPropertyThreeDSServerTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "whiteListStatus"
      */
     public function testPropertyWhiteListStatus()
-    {
-    }
-
-    /**
-     * Test attribute "whiteListStatusSource"
-     */
-    public function testPropertyWhiteListStatusSource()
     {
     }
 }

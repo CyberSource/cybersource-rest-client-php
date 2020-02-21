@@ -75,7 +75,7 @@ class PurchaseAndRefundDetailsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getPurchaseAndRefundDetails
      *
-     * Get Purchase and Refund details.
+     * Get Purchase and Refund Details.
      *
      */
     public function testGetPurchaseAndRefundDetails()

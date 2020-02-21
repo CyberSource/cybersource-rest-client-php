@@ -244,4 +244,11 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     public function testPropertyCashbackAmount()
     {
     }
+
+    /**
+     * Test attribute "currencyConversion"
+     */
+    public function testPropertyCurrencyConversion()
+    {
+    }
 }

@@ -85,7 +85,7 @@ class ReportsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getReportByReportId
      *
-     * Get Report based on reportId.
+     * Get Report Based on Report Id.
      *
      */
     public function testGetReportByReportId()
@@ -95,7 +95,7 @@ class ReportsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for searchReports
      *
-     * Retrieve available reports.
+     * Retrieve Available Reports.
      *
      */
     public function testSearchReports()

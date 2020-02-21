@@ -184,7 +184,7 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
 
     /**
      * Sets xid
-     * @param string $xid Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $xid Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setXid($xid)

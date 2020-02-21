@@ -167,4 +167,11 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTest extends \PHPUnit_Framework
     public function testPropertyReferenceDataNumber()
     {
     }
+
+    /**
+     * Test attribute "salesSlipNumber"
+     */
+    public function testPropertySalesSlipNumber()
+    {
+    }
 }

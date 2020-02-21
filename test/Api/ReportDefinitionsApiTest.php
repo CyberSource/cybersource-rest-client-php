@@ -75,7 +75,7 @@ class ReportDefinitionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getResourceInfoByReportDefinition
      *
-     * Get report definition.
+     * Get Report Definition.
      *
      */
     public function testGetResourceInfoByReportDefinition()
@@ -85,7 +85,7 @@ class ReportDefinitionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getResourceV2Info
      *
-     * Get reporting resource information.
+     * Get Reporting Resource Information.
      *
      */
     public function testGetResourceV2Info()

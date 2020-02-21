@@ -67,7 +67,9 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => '\CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
-        'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation'
+        'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation',
+        'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
+        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
     ];
 
     /**
@@ -88,7 +90,9 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => null,
         'pointOfSaleInformation' => null,
         'merchantDefinedInformation' => null,
-        'installmentInformation' => null
+        'installmentInformation' => null,
+        'travelInformation' => null,
+        'promotionInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -119,7 +123,9 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
-        'installmentInformation' => 'installmentInformation'
+        'installmentInformation' => 'installmentInformation',
+        'travelInformation' => 'travelInformation',
+        'promotionInformation' => 'promotionInformation'
     ];
 
 
@@ -141,7 +147,9 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
-        'installmentInformation' => 'setInstallmentInformation'
+        'installmentInformation' => 'setInstallmentInformation',
+        'travelInformation' => 'setTravelInformation',
+        'promotionInformation' => 'setPromotionInformation'
     ];
 
 
@@ -163,7 +171,9 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
-        'installmentInformation' => 'getInstallmentInformation'
+        'installmentInformation' => 'getInstallmentInformation',
+        'travelInformation' => 'getTravelInformation',
+        'promotionInformation' => 'getPromotionInformation'
     ];
 
     public static function attributeMap()
@@ -211,6 +221,8 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
+        $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
+        $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
     }
 
     /**
@@ -528,6 +540,48 @@ class CreatePaymentRequest implements ArrayAccess
     public function setInstallmentInformation($installmentInformation)
     {
         $this->container['installmentInformation'] = $installmentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets travelInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTravelInformation
+     */
+    public function getTravelInformation()
+    {
+        return $this->container['travelInformation'];
+    }
+
+    /**
+     * Sets travelInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTravelInformation $travelInformation
+     * @return $this
+     */
+    public function setTravelInformation($travelInformation)
+    {
+        $this->container['travelInformation'] = $travelInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets promotionInformation
+     * @return \CyberSource\Model\Ptsv2paymentsPromotionInformation
+     */
+    public function getPromotionInformation()
+    {
+        return $this->container['promotionInformation'];
+    }
+
+    /**
+     * Sets promotionInformation
+     * @param \CyberSource\Model\Ptsv2paymentsPromotionInformation $promotionInformation
+     * @return $this
+     */
+    public function setPromotionInformation($promotionInformation)
+    {
+        $this->container['promotionInformation'] = $promotionInformation;
 
         return $this;
     }

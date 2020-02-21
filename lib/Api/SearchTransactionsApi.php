@@ -90,7 +90,7 @@ class SearchTransactionsApi
     /**
      * Operation createSearch
      *
-     * Create a search request
+     * Create a Search Request
      *
      * @param \CyberSource\Model\CreateSearchRequest $createSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class SearchTransactionsApi
     /**
      * Operation createSearchWithHttpInfo
      *
-     * Create a search request
+     * Create a Search Request
      *
      * @param \CyberSource\Model\CreateSearchRequest $createSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -177,7 +177,7 @@ class SearchTransactionsApi
     /**
      * Operation getSearch
      *
-     * Get Search results
+     * Get Search Results
      *
      * @param string $searchId Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -192,7 +192,7 @@ class SearchTransactionsApi
     /**
      * Operation getSearchWithHttpInfo
      *
-     * Get Search results
+     * Get Search Results
      *
      * @param string $searchId Search ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response

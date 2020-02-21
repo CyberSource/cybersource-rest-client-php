@@ -56,8 +56,7 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Riskv1decisionsPaymentInformationCard',
-        'tokenizedCard' => '\CyberSource\Model\Riskv1decisionsPaymentInformationTokenizedCard',
-        'bank' => '\CyberSource\Model\Riskv1decisionsPaymentInformationBank'
+        'tokenizedCard' => '\CyberSource\Model\Riskv1decisionsPaymentInformationTokenizedCard'
     ];
 
     /**
@@ -66,8 +65,7 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'card' => null,
-        'tokenizedCard' => null,
-        'bank' => null
+        'tokenizedCard' => null
     ];
 
     public static function swaggerTypes()
@@ -86,8 +84,7 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'card' => 'card',
-        'tokenizedCard' => 'tokenizedCard',
-        'bank' => 'bank'
+        'tokenizedCard' => 'tokenizedCard'
     ];
 
 
@@ -97,8 +94,7 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'card' => 'setCard',
-        'tokenizedCard' => 'setTokenizedCard',
-        'bank' => 'setBank'
+        'tokenizedCard' => 'setTokenizedCard'
     ];
 
 
@@ -108,8 +104,7 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'card' => 'getCard',
-        'tokenizedCard' => 'getTokenizedCard',
-        'bank' => 'getBank'
+        'tokenizedCard' => 'getTokenizedCard'
     ];
 
     public static function attributeMap()
@@ -145,7 +140,6 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
-        $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
     }
 
     /**
@@ -211,27 +205,6 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     public function setTokenizedCard($tokenizedCard)
     {
         $this->container['tokenizedCard'] = $tokenizedCard;
-
-        return $this;
-    }
-
-    /**
-     * Gets bank
-     * @return \CyberSource\Model\Riskv1decisionsPaymentInformationBank
-     */
-    public function getBank()
-    {
-        return $this->container['bank'];
-    }
-
-    /**
-     * Sets bank
-     * @param \CyberSource\Model\Riskv1decisionsPaymentInformationBank $bank
-     * @return $this
-     */
-    public function setBank($bank)
-    {
-        $this->container['bank'] = $bank;
 
         return $this;
     }

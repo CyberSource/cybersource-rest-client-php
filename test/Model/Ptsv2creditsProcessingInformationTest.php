@@ -141,6 +141,27 @@ class Ptsv2creditsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "walletType"
+     */
+    public function testPropertyWalletType()
+    {
+    }
+
+    /**
+     * Test attribute "nationalNetDomesticData"
+     */
+    public function testPropertyNationalNetDomesticData()
+    {
+    }
+
+    /**
+     * Test attribute "networkRoutingOrder"
+     */
+    public function testPropertyNetworkRoutingOrder()
+    {
+    }
+
+    /**
      * Test attribute "recurringOptions"
      */
     public function testPropertyRecurringOptions()
@@ -165,6 +186,20 @@ class Ptsv2creditsProcessingInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "electronicBenefitsTransfer"
      */
     public function testPropertyElectronicBenefitsTransfer()
+    {
+    }
+
+    /**
+     * Test attribute "loanOptions"
+     */
+    public function testPropertyLoanOptions()
+    {
+    }
+
+    /**
+     * Test attribute "japanPaymentOptions"
+     */
+    public function testPropertyJapanPaymentOptions()
     {
     }
 }

@@ -77,7 +77,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'serviceFeeAmount' => 'string',
         'originalAmount' => 'string',
         'originalCurrency' => 'string',
-        'cashbackAmount' => 'string'
+        'cashbackAmount' => 'string',
+        'currencyConversion' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion'
     ];
 
     /**
@@ -108,7 +109,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'serviceFeeAmount' => null,
         'originalAmount' => null,
         'originalCurrency' => null,
-        'cashbackAmount' => null
+        'cashbackAmount' => null,
+        'currencyConversion' => null
     ];
 
     public static function swaggerTypes()
@@ -149,7 +151,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'serviceFeeAmount' => 'serviceFeeAmount',
         'originalAmount' => 'originalAmount',
         'originalCurrency' => 'originalCurrency',
-        'cashbackAmount' => 'cashbackAmount'
+        'cashbackAmount' => 'cashbackAmount',
+        'currencyConversion' => 'currencyConversion'
     ];
 
 
@@ -181,7 +184,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'serviceFeeAmount' => 'setServiceFeeAmount',
         'originalAmount' => 'setOriginalAmount',
         'originalCurrency' => 'setOriginalCurrency',
-        'cashbackAmount' => 'setCashbackAmount'
+        'cashbackAmount' => 'setCashbackAmount',
+        'currencyConversion' => 'setCurrencyConversion'
     ];
 
 
@@ -213,7 +217,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'serviceFeeAmount' => 'getServiceFeeAmount',
         'originalAmount' => 'getOriginalAmount',
         'originalCurrency' => 'getOriginalCurrency',
-        'cashbackAmount' => 'getCashbackAmount'
+        'cashbackAmount' => 'getCashbackAmount',
+        'currencyConversion' => 'getCurrencyConversion'
     ];
 
     public static function attributeMap()
@@ -271,6 +276,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         $this->container['originalAmount'] = isset($data['originalAmount']) ? $data['originalAmount'] : null;
         $this->container['originalCurrency'] = isset($data['originalCurrency']) ? $data['originalCurrency'] : null;
         $this->container['cashbackAmount'] = isset($data['cashbackAmount']) ? $data['cashbackAmount'] : null;
+        $this->container['currencyConversion'] = isset($data['currencyConversion']) ? $data['currencyConversion'] : null;
     }
 
     /**
@@ -456,7 +462,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets totalAmount
-     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. For details, see: - \"Authorization Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). - \"Capture Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm). - \"Credit Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. For details, see \"Zero Amount Authorizations,\" \"Credit Information for Specific Processors\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request. For details, see `grand_total_amount` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in \"Authorization Information for Specific Processors\" of the [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### DCC for First Data Not used.  #### Invoicing Grand total for the order, this is required for creating a new invoice.
+     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  **Note** For CTV, FDCCompass, Paymentech processors, the maximum length for this field is 12.  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. For details, see: - \"Authorization Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/). - \"Capture Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/). - \"Credit Information for Specific Processors\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. For details, see \"Zero Amount Authorizations,\" \"Credit Information for Specific Processors\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either this field or the 1st line item in the order and the specific line-order amount in your request. For details, see `grand_total_amount` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in \"Authorization Information for Specific Processors\" of the [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### DCC for First Data Not used.  #### Invoicing Grand total for the order, this is required for creating a new invoice.
      * @return $this
      */
     public function setTotalAmount($totalAmount)
@@ -481,7 +487,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets currency
-     * @param string $currency Currency used for the order. Use the three-character I[ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details about currency as used in partial authorizations, see \"Features for Debit Cards and Prepaid Cards\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your payment authorization request.  #### DCC for First Data Your local currency. For details, see the `currency` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).
+     * @param string $currency Currency used for the order. Use the three-character I[ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details about currency as used in partial authorizations, see \"Features for Debit Cards and Prepaid Cards\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your payment authorization request.  #### DCC for First Data Your local currency. For details, see the `currency` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).
      * @return $this
      */
     public function setCurrency($currency)
@@ -556,7 +562,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets gratuityAmount
-     * @param string $gratuityAmount Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For details about partial authorizations, see \"Partial Authorizations\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  Restaurant data is supported only on CyberSource through VisaNet.
+     * @param string $gratuityAmount Gratuity or tip amount for restaurants when the card is present. Allowed only when `industryDatatype=restaurant`. When your customer uses a debit card or prepaid card, and you receive a partial authorization, the payment networks recommend that you do not submit a capture amount that is higher than the authorized amount. When the capture amount exceeds the partial amount that was approved, the issuer has chargeback rights for the excess amount.  For information about partial authorizations, see Credit Card Services Using the SCMP API.  Restaurant data is supported only on CyberSource through VisaNet.
      * @return $this
      */
     public function setGratuityAmount($gratuityAmount)
@@ -731,7 +737,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets foreignAmount
-     * @param string $foreignAmount Set this field to the converted amount that was returned by the DCC provider. For processor-specific information, see the `foreign_amount` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $foreignAmount Set this field to the converted amount that was returned by the DCC provider. For processor-specific information, see the `foreign_amount` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setForeignAmount($foreignAmount)
@@ -756,7 +762,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets foreignCurrency
-     * @param string $foreignCurrency Set this field to the converted amount that was returned by the DCC provider. For processor-specific information, see the `foreign_amount` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $foreignCurrency Set this field to the converted amount that was returned by the DCC provider. For processor-specific information, see the `foreign_amount` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setForeignCurrency($foreignCurrency)
@@ -969,7 +975,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets originalAmount
-     * @param string $originalAmount Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places.  For details, see the `original_amount` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $originalAmount Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places.  For details, see the `original_amount` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setOriginalAmount($originalAmount)
@@ -994,7 +1000,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets originalCurrency
-     * @param string $originalCurrency Your local pricing currency code.  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `original_currency` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  For details about converting a foreign cardholder’s purchase from your local pricing currency to the cardholder’s billing currency, see the [Dynamic Currency Conversion with a Third Party Provider Guide.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).
+     * @param string $originalCurrency Your local pricing currency code.  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `original_currency` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  For details about converting a foreign cardholder’s purchase from your local pricing currency to the cardholder’s billing currency, see the [Dynamic Currency Conversion with a Third Party Provider Guide.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).
      * @return $this
      */
     public function setOriginalCurrency($originalCurrency)
@@ -1019,7 +1025,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets cashbackAmount
-     * @param string $cashbackAmount Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value.
+     * @param string $cashbackAmount Cashback amount requested by the customer. If a cashback amount is included in the request, it must be included in the orderInformation.amountDetails.totalAmount value.
      * @return $this
      */
     public function setCashbackAmount($cashbackAmount)
@@ -1029,6 +1035,27 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         }
 
         $this->container['cashbackAmount'] = $cashbackAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currencyConversion
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion
+     */
+    public function getCurrencyConversion()
+    {
+        return $this->container['currencyConversion'];
+    }
+
+    /**
+     * Sets currencyConversion
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion $currencyConversion
+     * @return $this
+     */
+    public function setCurrencyConversion($currencyConversion)
+    {
+        $this->container['currencyConversion'] = $currencyConversion;
 
         return $this;
     }

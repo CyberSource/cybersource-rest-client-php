@@ -78,9 +78,58 @@ class Ptsv2paymentsidcapturesInstallmentInformationTest extends \PHPUnit_Framewo
     }
 
     /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+    }
+
+    /**
+     * Test attribute "frequency"
+     */
+    public function testPropertyFrequency()
+    {
+    }
+
+    /**
+     * Test attribute "planType"
+     */
+    public function testPropertyPlanType()
+    {
+    }
+
+    /**
+     * Test attribute "sequence"
+     */
+    public function testPropertySequence()
+    {
+    }
+
+    /**
+     * Test attribute "totalAmount"
+     */
+    public function testPropertyTotalAmount()
+    {
+    }
+
+    /**
+     * Test attribute "totalCount"
+     */
+    public function testPropertyTotalCount()
+    {
+    }
+
+    /**
      * Test attribute "firstInstallmentDate"
      */
     public function testPropertyFirstInstallmentDate()
+    {
+    }
+
+    /**
+     * Test attribute "firstInstallmentAmount"
+     */
+    public function testPropertyFirstInstallmentAmount()
     {
     }
 

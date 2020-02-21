@@ -78,6 +78,20 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationTest 
     }
 
     /**
+     * Test attribute "acsRenderingType"
+     */
+    public function testPropertyAcsRenderingType()
+    {
+    }
+
+    /**
+     * Test attribute "acsTransactionId"
+     */
+    public function testPropertyAcsTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "acsUrl"
      */
     public function testPropertyAcsUrl()
@@ -92,9 +106,23 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationTest 
     }
 
     /**
+     * Test attribute "authorizationPayload"
+     */
+    public function testPropertyAuthorizationPayload()
+    {
+    }
+
+    /**
      * Test attribute "authenticationTransactionId"
      */
     public function testPropertyAuthenticationTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "cardholderMessage"
+     */
+    public function testPropertyCardholderMessage()
     {
     }
 
@@ -113,9 +141,37 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationTest 
     }
 
     /**
+     * Test attribute "challengeCancelCode"
+     */
+    public function testPropertyChallengeCancelCode()
+    {
+    }
+
+    /**
      * Test attribute "challengeRequired"
      */
     public function testPropertyChallengeRequired()
+    {
+    }
+
+    /**
+     * Test attribute "decoupledAuthenticationIndicator"
+     */
+    public function testPropertyDecoupledAuthenticationIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "directoryServerErrorCode"
+     */
+    public function testPropertyDirectoryServerErrorCode()
+    {
+    }
+
+    /**
+     * Test attribute "directoryServerErrorDescription"
+     */
+    public function testPropertyDirectoryServerErrorDescription()
     {
     }
 
@@ -137,6 +193,27 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationTest 
      * Test attribute "eciRaw"
      */
     public function testPropertyEciRaw()
+    {
+    }
+
+    /**
+     * Test attribute "effectiveAuthenticationType"
+     */
+    public function testPropertyEffectiveAuthenticationType()
+    {
+    }
+
+    /**
+     * Test attribute "ivr"
+     */
+    public function testPropertyIvr()
+    {
+    }
+
+    /**
+     * Test attribute "networkScore"
+     */
+    public function testPropertyNetworkScore()
     {
     }
 
@@ -169,9 +246,37 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationTest 
     }
 
     /**
+     * Test attribute "sdkTransactionId"
+     */
+    public function testPropertySdkTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "signedParesStatusReason"
+     */
+    public function testPropertySignedParesStatusReason()
+    {
+    }
+
+    /**
      * Test attribute "specificationVersion"
      */
     public function testPropertySpecificationVersion()
+    {
+    }
+
+    /**
+     * Test attribute "stepUpUrl"
+     */
+    public function testPropertyStepUpUrl()
+    {
+    }
+
+    /**
+     * Test attribute "threeDSServerTransactionId"
+     */
+    public function testPropertyThreeDSServerTransactionId()
     {
     }
 
@@ -197,9 +302,23 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationTest 
     }
 
     /**
+     * Test attribute "whiteListStatusSource"
+     */
+    public function testPropertyWhiteListStatusSource()
+    {
+    }
+
+    /**
      * Test attribute "xid"
      */
     public function testPropertyXid()
+    {
+    }
+
+    /**
+     * Test attribute "directoryServerTransactionId"
+     */
+    public function testPropertyDirectoryServerTransactionId()
     {
     }
 }

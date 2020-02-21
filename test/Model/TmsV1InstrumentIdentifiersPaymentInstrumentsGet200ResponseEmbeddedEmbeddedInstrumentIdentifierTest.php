@@ -113,6 +113,13 @@ class TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded
     }
 
     /**
+     * Test attribute "tokenizedCard"
+     */
+    public function testPropertyTokenizedCard()
+    {
+    }
+
+    /**
      * Test attribute "bankAccount"
      */
     public function testPropertyBankAccount()

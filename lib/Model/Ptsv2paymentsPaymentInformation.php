@@ -59,7 +59,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
-        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType'
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
+        'initiationChannel' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => null,
         'customer' => null,
         'bank' => null,
-        'paymentType' => null
+        'paymentType' => null,
+        'initiationChannel' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => 'fluidData',
         'customer' => 'customer',
         'bank' => 'bank',
-        'paymentType' => 'paymentType'
+        'paymentType' => 'paymentType',
+        'initiationChannel' => 'initiationChannel'
     ];
 
 
@@ -109,7 +112,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => 'setFluidData',
         'customer' => 'setCustomer',
         'bank' => 'setBank',
-        'paymentType' => 'setPaymentType'
+        'paymentType' => 'setPaymentType',
+        'initiationChannel' => 'setInitiationChannel'
     ];
 
 
@@ -123,7 +127,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => 'getFluidData',
         'customer' => 'getCustomer',
         'bank' => 'getBank',
-        'paymentType' => 'getPaymentType'
+        'paymentType' => 'getPaymentType',
+        'initiationChannel' => 'getInitiationChannel'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
     }
 
     /**
@@ -173,6 +179,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['initiationChannel']) && (strlen($this->container['initiationChannel']) > 2)) {
+            $invalid_properties[] = "invalid value for 'initiationChannel', the character length must be smaller than or equal to 2.";
+        }
 
         return $invalid_properties;
     }
@@ -186,6 +196,9 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['initiationChannel']) > 2) {
+            return false;
+        }
         return true;
     }
 
@@ -312,6 +325,31 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function setPaymentType($paymentType)
     {
         $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets initiationChannel
+     * @return string
+     */
+    public function getInitiationChannel()
+    {
+        return $this->container['initiationChannel'];
+    }
+
+    /**
+     * Sets initiationChannel
+     * @param string $initiationChannel \"This tag contains a MesterCard defined code that provides information about the type of device used to initiate a non-card transaction. Valid values for this tag are: - 00 Card (default) - 01 Mobile network operator (MNO) controlled removal secure element (SIM or UICC) personalized for use with a mobile phone or smartphone> - 02 Key fob - 03  Watch - 04  Mobile tag - 05  Wristband - 06  Mobile phone case or sleeve - 07  Mobile phone or smartphone with a fixed, (non-removable), secure element controlled by the MNO, for example, code division multiple access (CDMA) - 08  Removable secure element not controlled by the MNO, for example, memory card personalized for use with a mobile phone or smartphone - 09 Mobile phonen or smartphone with a fixed, (non-removable), secure element not controlled by the MNO - 10 MNO controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - 11 Tablet or e-book with a fixed, (non-removable), secure element controlled by the MNO - 12 Removable secure element not controlled by the MNO, for example, memory card personalized for use with a tablet or e-book - 13 Table or e-book with fixed, (non-removable) secure element not controlled by the MNO - 14 - 99 = (Reserved for future use)
+     * @return $this
+     */
+    public function setInitiationChannel($initiationChannel)
+    {
+        if (!is_null($initiationChannel) && (strlen($initiationChannel) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $initiationChannel when calling Ptsv2paymentsPaymentInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['initiationChannel'] = $initiationChannel;
 
         return $this;
     }

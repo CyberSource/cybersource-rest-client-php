@@ -75,7 +75,7 @@ class DownloadDTDApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getDTDV2
      *
-     * Download DTD for report.
+     * Download DTD for Report.
      *
      */
     public function testGetDTDV2()

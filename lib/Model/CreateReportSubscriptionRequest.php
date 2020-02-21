@@ -461,7 +461,7 @@ class CreateReportSubscriptionRequest implements ArrayAccess
 
     /**
      * Sets reportFrequency
-     * @param string $reportFrequency 'The frequency for which subscription is created.'  Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED'
+     * @param string $reportFrequency 'The frequency for which subscription is created.' **NOTE: Do not document USER_DEFINED Frequency field in developer center** Valid Values:   - 'DAILY'   - 'WEEKLY'   - 'MONTHLY'   - 'USER_DEFINED'
      * @return $this
      */
     public function setReportFrequency($reportFrequency)

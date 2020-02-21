@@ -73,6 +73,16 @@ class VoidApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for mitVoid
+     *
+     * Merchant Initiated Void.
+     *
+     */
+    public function testMitVoid()
+    {
+    }
+
+    /**
      * Test case for voidCapture
      *
      * Void a Capture.

@@ -90,7 +90,7 @@ class PayerAuthenticationApi
     /**
      * Operation checkPayerAuthEnrollment
      *
-     * Check payer auth enrollment
+     * Check Payer Auth Enrollment
      *
      * @param \CyberSource\Model\CheckPayerAuthEnrollmentRequest $checkPayerAuthEnrollmentRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class PayerAuthenticationApi
     /**
      * Operation checkPayerAuthEnrollmentWithHttpInfo
      *
-     * Check payer auth enrollment
+     * Check Payer Auth Enrollment
      *
      * @param \CyberSource\Model\CheckPayerAuthEnrollmentRequest $checkPayerAuthEnrollmentRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -175,34 +175,121 @@ class PayerAuthenticationApi
     }
 
     /**
+     * Operation payerAuthSetup
+     *
+     * Setup Payer Auth
+     *
+     * @param \CyberSource\Model\PayerAuthSetupRequest $payerAuthSetupRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\RiskV1AuthenticationSetupsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function payerAuthSetup($payerAuthSetupRequest)
+    {
+        list($response, $statusCode, $httpHeader) = $this->payerAuthSetupWithHttpInfo($payerAuthSetupRequest);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation payerAuthSetupWithHttpInfo
+     *
+     * Setup Payer Auth
+     *
+     * @param \CyberSource\Model\PayerAuthSetupRequest $payerAuthSetupRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\RiskV1AuthenticationSetupsPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function payerAuthSetupWithHttpInfo($payerAuthSetupRequest)
+    {
+        // verify the required parameter 'payerAuthSetupRequest' is set
+        if ($payerAuthSetupRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $payerAuthSetupRequest when calling payerAuthSetup');
+        }
+        // parse inputs
+        $resourcePath = "/risk/v1/authentication-setups";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($payerAuthSetupRequest)) {
+            $_tempBody = $payerAuthSetupRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\RiskV1AuthenticationSetupsPost201Response',
+                '/risk/v1/authentication-setups'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1AuthenticationSetupsPost201Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RiskV1AuthenticationSetupsPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RiskV1AuthenticationsPost400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation validateAuthenticationResults
      *
-     * Validate authentication results
+     * Validate Authentication Results
      *
-     * @param \CyberSource\Model\Request $request  (required)
+     * @param \CyberSource\Model\ValidateRequest $validateRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\RiskV1AuthenticationResultsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function validateAuthenticationResults($request)
+    public function validateAuthenticationResults($validateRequest)
     {
-        list($response, $statusCode, $httpHeader) = $this->validateAuthenticationResultsWithHttpInfo($request);
+        list($response, $statusCode, $httpHeader) = $this->validateAuthenticationResultsWithHttpInfo($validateRequest);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
      * Operation validateAuthenticationResultsWithHttpInfo
      *
-     * Validate authentication results
+     * Validate Authentication Results
      *
-     * @param \CyberSource\Model\Request $request  (required)
+     * @param \CyberSource\Model\ValidateRequest $validateRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\RiskV1AuthenticationResultsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function validateAuthenticationResultsWithHttpInfo($request)
+    public function validateAuthenticationResultsWithHttpInfo($validateRequest)
     {
-        // verify the required parameter 'request' is set
-        if ($request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling validateAuthenticationResults');
+        // verify the required parameter 'validateRequest' is set
+        if ($validateRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $validateRequest when calling validateAuthenticationResults');
         }
         // parse inputs
         $resourcePath = "/risk/v1/authentication-results";
@@ -218,8 +305,8 @@ class PayerAuthenticationApi
 
         // body params
         $_tempBody = null;
-        if (isset($request)) {
-            $_tempBody = $request;
+        if (isset($validateRequest)) {
+            $_tempBody = $validateRequest;
         }
 
         // for model (json/xml)

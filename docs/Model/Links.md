@@ -3,10 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
-**paymentInstruments** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments**](TmsV1InstrumentIdentifiersPost200ResponseLinksPaymentInstruments.md) |  | [optional] 
-**ancestor** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
-**successor** | [**\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseLinksSelf**](TmsV1InstrumentIdentifiersPost200ResponseLinksSelf.md) |  | [optional] 
+**self** | [**\CyberSource\Model\InlineResponseDefaultLinksNext**](InlineResponseDefaultLinksNext.md) |  | [optional] 
+**documentation** | [**\CyberSource\Model\InlineResponseDefaultLinksNext[]**](InlineResponseDefaultLinksNext.md) |  | [optional] 
+**next** | [**\CyberSource\Model\InlineResponseDefaultLinksNext[]**](InlineResponseDefaultLinksNext.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

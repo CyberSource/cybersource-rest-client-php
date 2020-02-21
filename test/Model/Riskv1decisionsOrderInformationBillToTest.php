@@ -141,13 +141,6 @@ class Riskv1decisionsOrderInformationBillToTest extends \PHPUnit_Framework_TestC
     }
 
     /**
-     * Test attribute "emailDomain"
-     */
-    public function testPropertyEmailDomain()
-    {
-    }
-
-    /**
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()

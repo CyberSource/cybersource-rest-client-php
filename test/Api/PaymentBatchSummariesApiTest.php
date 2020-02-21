@@ -75,7 +75,7 @@ class PaymentBatchSummariesApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getPaymentBatchSummary
      *
-     * Get payment batch summary data.
+     * Get Payment Batch Summary Data.
      *
      */
     public function testGetPaymentBatchSummary()

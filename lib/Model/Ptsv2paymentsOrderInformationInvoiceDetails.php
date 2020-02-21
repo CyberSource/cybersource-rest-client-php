@@ -66,7 +66,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'merchandiseCode' => 'int',
         'transactionAdviceAddendum' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum[]',
         'referenceDataCode' => 'string',
-        'referenceDataNumber' => 'string'
+        'referenceDataNumber' => 'string',
+        'salesSlipNumber' => 'int'
     ];
 
     /**
@@ -86,7 +87,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'merchandiseCode' => null,
         'transactionAdviceAddendum' => null,
         'referenceDataCode' => null,
-        'referenceDataNumber' => null
+        'referenceDataNumber' => null,
+        'salesSlipNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -116,7 +118,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'merchandiseCode' => 'merchandiseCode',
         'transactionAdviceAddendum' => 'transactionAdviceAddendum',
         'referenceDataCode' => 'referenceDataCode',
-        'referenceDataNumber' => 'referenceDataNumber'
+        'referenceDataNumber' => 'referenceDataNumber',
+        'salesSlipNumber' => 'salesSlipNumber'
     ];
 
 
@@ -137,7 +140,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'merchandiseCode' => 'setMerchandiseCode',
         'transactionAdviceAddendum' => 'setTransactionAdviceAddendum',
         'referenceDataCode' => 'setReferenceDataCode',
-        'referenceDataNumber' => 'setReferenceDataNumber'
+        'referenceDataNumber' => 'setReferenceDataNumber',
+        'salesSlipNumber' => 'setSalesSlipNumber'
     ];
 
 
@@ -158,7 +162,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'merchandiseCode' => 'getMerchandiseCode',
         'transactionAdviceAddendum' => 'getTransactionAdviceAddendum',
         'referenceDataCode' => 'getReferenceDataCode',
-        'referenceDataNumber' => 'getReferenceDataNumber'
+        'referenceDataNumber' => 'getReferenceDataNumber',
+        'salesSlipNumber' => 'getSalesSlipNumber'
     ];
 
     public static function attributeMap()
@@ -205,6 +210,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         $this->container['transactionAdviceAddendum'] = isset($data['transactionAdviceAddendum']) ? $data['transactionAdviceAddendum'] : null;
         $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
         $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
+        $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
     }
 
     /**
@@ -244,6 +250,10 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
             $invalid_properties[] = "invalid value for 'referenceDataNumber', the character length must be smaller than or equal to 30.";
         }
 
+        if (!is_null($this->container['salesSlipNumber']) && ($this->container['salesSlipNumber'] > 99999)) {
+            $invalid_properties[] = "invalid value for 'salesSlipNumber', must be smaller than or equal to 99999.";
+        }
+
         return $invalid_properties;
     }
 
@@ -275,6 +285,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
             return false;
         }
         if (strlen($this->container['referenceDataNumber']) > 30) {
+            return false;
+        }
+        if ($this->container['salesSlipNumber'] > 99999) {
             return false;
         }
         return true;
@@ -543,7 +556,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
 
     /**
      * Sets referenceDataCode
-     * @param string $referenceDataCode Code that identifies the value of the `referenceDataNumber` field.  For the possible values, see \"Reference Data Codes\" in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
+     * @param string $referenceDataCode Code that identifies the value of the `referenceDataNumber` field.  For the possible values, see \"Reference Data Codes\" in [Level II and Level III Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/).  This field is a pass-through, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor.
      * @return $this
      */
     public function setReferenceDataCode($referenceDataCode)
@@ -578,6 +591,32 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         }
 
         $this->container['referenceDataNumber'] = $referenceDataNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets salesSlipNumber
+     * @return int
+     */
+    public function getSalesSlipNumber()
+    {
+        return $this->container['salesSlipNumber'];
+    }
+
+    /**
+     * Sets salesSlipNumber
+     * @param int $salesSlipNumber Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt. This field is supported only on Cybersource through Visanet and JCN gateway.
+     * @return $this
+     */
+    public function setSalesSlipNumber($salesSlipNumber)
+    {
+
+        if (!is_null($salesSlipNumber) && ($salesSlipNumber > 99999)) {
+            throw new \InvalidArgumentException('invalid value for $salesSlipNumber when calling Ptsv2paymentsOrderInformationInvoiceDetails., must be smaller than or equal to 99999.');
+        }
+
+        $this->container['salesSlipNumber'] = $salesSlipNumber;
 
         return $this;
     }

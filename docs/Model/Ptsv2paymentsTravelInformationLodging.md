@@ -1,0 +1,51 @@
+# Ptsv2paymentsTravelInformationLodging
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**checkInDate** | **string** | Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: MMDDYY. For best interchange rates, make sure it is a valid date. | [optional] 
+**checkOutDate** | **string** | Date on which the guest checked out. Format: MMDDYY. For best interchange rates, make sure it is a valid date. | [optional] 
+**room** | [**\CyberSource\Model\Ptsv2paymentsTravelInformationLodgingRoom[]**](Ptsv2paymentsTravelInformationLodgingRoom.md) | The object containing the number of nights and the daily rate that applies for that no of nights. | [optional] 
+**smokingPreference** | **string** | Smoking preference of the guest. Possible values: - &#x60;Y&#x60;: smoking room - &#x60;N&#x60;: non-smoking room | [optional] 
+**numberOfRooms** | **int** | Number of rooms booked by the cardholder. | [optional] 
+**numberOfGuests** | **int** | Number of guests staying in the room. | [optional] 
+**roomBedType** | **string** | Type of room, such as queen, king, or two doubles. | [optional] 
+**roomTaxType** | **string** | Type of tax, such as tourist or hotel. | [optional] 
+**roomRateType** | **string** | Type of rate, such as corporate or senior citizen. | [optional] 
+**guestName** | **string** | Name of the guest under which the room is reserved. | [optional] 
+**customerServicePhoneNumber** | **string** | Your toll-free customer service phone number. | [optional] 
+**corporateClientCode** | **string** | Code assigned to a business. You can use this code to identify corporate rates and discounts for guests. | [optional] 
+**additionalDiscountAmount** | **string** | Amount of an additional coupon or discount. | [optional] 
+**roomLocation** | **string** | Location of room, such as lake view or ocean view. | [optional] 
+**specialProgramCode** | **string** | Code that identifies special circumstances. Possible values: - &#x60;1&#x60;: lodging (default) - &#x60;2&#x60;: no show reservation - &#x60;3&#x60;: advanced deposit | [optional] 
+**totalTaxAmount** | **string** | Total tax amount. | [optional] 
+**prepaidCost** | **string** | Prepaid amount, such as a deposit. | [optional] 
+**foodAndBeverageCost** | **string** | Cost for all food and beverages. | [optional] 
+**roomTaxAmount** | **string** | Total tax for the room. | [optional] 
+**adjustmentAmount** | **string** | Adjusted amount charged in addition to the reservation amount after the stay is complete. | [optional] 
+**phoneCost** | **string** | Cost of telephone services. | [optional] 
+**restaurantCost** | **string** | Cost of restaurant purchases | [optional] 
+**roomServiceCost** | **string** | Cost of room service. | [optional] 
+**miniBarCost** | **string** | Cost of mini-bar purchases. | [optional] 
+**laundryCost** | **string** | Cost of laundry services. | [optional] 
+**miscellaneousCost** | **string** | Miscellaneous costs. | [optional] 
+**giftShopCost** | **string** | Cost of gift shop purchases. | [optional] 
+**movieCost** | **string** | Cost of movies. | [optional] 
+**healthClubCost** | **string** | Cost of health club services. | [optional] 
+**valetParkingCost** | **string** | Cost of valet parking services. | [optional] 
+**cashDisbursementCost** | **string** | Cost of the cash that was disbursed plus any associated service fees | [optional] 
+**nonRoomCost** | **string** | Cost of non-room purchases, such as meals and gifts. | [optional] 
+**businessCenterCost** | **string** | Cost of business center services. | [optional] 
+**loungeBarCost** | **string** | Cost of lounge and bar purchases. | [optional] 
+**transportationCost** | **string** | Cost of transportation services. | [optional] 
+**gratuityAmount** | **string** | Gratuity. | [optional] 
+**conferenceRoomCost** | **string** | Cost of conference room services. | [optional] 
+**audioVisualCost** | **string** | Cost of audio visual services. | [optional] 
+**banquestCost** | **string** | Cost of banquet services. | [optional] 
+**nonRoomTaxAmount** | **string** | Tax on non-room purchases. | [optional] 
+**earlyCheckOutCost** | **string** | Service fee for early departure. | [optional] 
+**internetAccessCost** | **string** | Cost of Internet access. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

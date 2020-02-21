@@ -54,7 +54,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'invoiceDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'
+        'invoiceDetails' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails'
     ];
 
     /**
@@ -162,7 +162,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
 
     /**
      * Gets invoiceDetails
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails
      */
     public function getInvoiceDetails()
     {
@@ -171,7 +171,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
 
     /**
      * Sets invoiceDetails
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails $invoiceDetails
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails $invoiceDetails
      * @return $this
      */
     public function setInvoiceDetails($invoiceDetails)

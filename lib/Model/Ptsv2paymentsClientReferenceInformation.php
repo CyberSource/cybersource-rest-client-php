@@ -166,6 +166,10 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
         }
 
+        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 30)) {
+            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 30.";
+        }
+
         return $invalid_properties;
     }
 
@@ -179,6 +183,9 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     {
 
         if (strlen($this->container['code']) > 50) {
+            return false;
+        }
+        if (strlen($this->container['transactionId']) > 30) {
             return false;
         }
         return true;
@@ -196,7 +203,7 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see \"Tracking and Reconciling Your Orders\" in [Getting Started with CyberSource Advanced for the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Getting_Started_SCMP/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
+     * @param string $code Client-generated order reference or tracking number. CyberSource recommends that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  For information about tracking orders, see \"Tracking and Reconciling Your Orders\" in [Getting Started with CyberSource Advanced for the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Getting_Started_SCMP/html/)  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
     public function setCode($code)
@@ -221,11 +228,15 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets transactionId
-     * @param string $transactionId Identifier that you assign to the transaction.  **Note** Use this field only if you want to support merchant-initiated reversal and void operations.  For details, see \"Merchant-Initiated Reversals and Voids\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $transactionId Identifier that you assign to the transaction.  **Note** Use this field only if you want to support merchant-initiated reversal and void operations.  For details, see \"Merchant-Initiated Reversals and Voids\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setTransactionId($transactionId)
     {
+        if (!is_null($transactionId) && (strlen($transactionId) > 30)) {
+            throw new \InvalidArgumentException('invalid length for $transactionId when calling Ptsv2paymentsClientReferenceInformation., must be smaller than or equal to 30.');
+        }
+
         $this->container['transactionId'] = $transactionId;
 
         return $this;

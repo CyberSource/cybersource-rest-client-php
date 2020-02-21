@@ -75,7 +75,10 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'pinBlockEncodingFormat' => 'int',
         'encryptedPin' => 'string',
         'encryptedKeySerialNumber' => 'string',
-        'partnerSdkVersion' => 'string'
+        'partnerSdkVersion' => 'string',
+        'emvApplicationIdentifierAndDedicatedFileName' => 'string',
+        'terminalCompliance' => 'string',
+        'isDedicatedHardwareTerminal' => 'string'
     ];
 
     /**
@@ -104,7 +107,10 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'pinBlockEncodingFormat' => null,
         'encryptedPin' => null,
         'encryptedKeySerialNumber' => null,
-        'partnerSdkVersion' => null
+        'partnerSdkVersion' => null,
+        'emvApplicationIdentifierAndDedicatedFileName' => null,
+        'terminalCompliance' => null,
+        'isDedicatedHardwareTerminal' => null
     ];
 
     public static function swaggerTypes()
@@ -143,7 +149,10 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'pinBlockEncodingFormat' => 'pinBlockEncodingFormat',
         'encryptedPin' => 'encryptedPin',
         'encryptedKeySerialNumber' => 'encryptedKeySerialNumber',
-        'partnerSdkVersion' => 'partnerSdkVersion'
+        'partnerSdkVersion' => 'partnerSdkVersion',
+        'emvApplicationIdentifierAndDedicatedFileName' => 'emvApplicationIdentifierAndDedicatedFileName',
+        'terminalCompliance' => 'terminalCompliance',
+        'isDedicatedHardwareTerminal' => 'isDedicatedHardwareTerminal'
     ];
 
 
@@ -173,7 +182,10 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'pinBlockEncodingFormat' => 'setPinBlockEncodingFormat',
         'encryptedPin' => 'setEncryptedPin',
         'encryptedKeySerialNumber' => 'setEncryptedKeySerialNumber',
-        'partnerSdkVersion' => 'setPartnerSdkVersion'
+        'partnerSdkVersion' => 'setPartnerSdkVersion',
+        'emvApplicationIdentifierAndDedicatedFileName' => 'setEmvApplicationIdentifierAndDedicatedFileName',
+        'terminalCompliance' => 'setTerminalCompliance',
+        'isDedicatedHardwareTerminal' => 'setIsDedicatedHardwareTerminal'
     ];
 
 
@@ -203,7 +215,10 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'pinBlockEncodingFormat' => 'getPinBlockEncodingFormat',
         'encryptedPin' => 'getEncryptedPin',
         'encryptedKeySerialNumber' => 'getEncryptedKeySerialNumber',
-        'partnerSdkVersion' => 'getPartnerSdkVersion'
+        'partnerSdkVersion' => 'getPartnerSdkVersion',
+        'emvApplicationIdentifierAndDedicatedFileName' => 'getEmvApplicationIdentifierAndDedicatedFileName',
+        'terminalCompliance' => 'getTerminalCompliance',
+        'isDedicatedHardwareTerminal' => 'getIsDedicatedHardwareTerminal'
     ];
 
     public static function attributeMap()
@@ -259,6 +274,9 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['encryptedPin'] = isset($data['encryptedPin']) ? $data['encryptedPin'] : null;
         $this->container['encryptedKeySerialNumber'] = isset($data['encryptedKeySerialNumber']) ? $data['encryptedKeySerialNumber'] : null;
         $this->container['partnerSdkVersion'] = isset($data['partnerSdkVersion']) ? $data['partnerSdkVersion'] : null;
+        $this->container['emvApplicationIdentifierAndDedicatedFileName'] = isset($data['emvApplicationIdentifierAndDedicatedFileName']) ? $data['emvApplicationIdentifierAndDedicatedFileName'] : null;
+        $this->container['terminalCompliance'] = isset($data['terminalCompliance']) ? $data['terminalCompliance'] : null;
+        $this->container['isDedicatedHardwareTerminal'] = isset($data['isDedicatedHardwareTerminal']) ? $data['isDedicatedHardwareTerminal'] : null;
     }
 
     /**
@@ -314,8 +332,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'operatingEnvironment', the character length must be smaller than or equal to 1.";
         }
 
-        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 12)) {
-            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 12.";
+        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 15)) {
+            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 15.";
         }
 
         if (!is_null($this->container['storeAndForwardIndicator']) && (strlen($this->container['storeAndForwardIndicator']) > 1)) {
@@ -348,6 +366,18 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
         if (!is_null($this->container['partnerSdkVersion']) && (strlen($this->container['partnerSdkVersion']) > 32)) {
             $invalid_properties[] = "invalid value for 'partnerSdkVersion', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['emvApplicationIdentifierAndDedicatedFileName']) && (strlen($this->container['emvApplicationIdentifierAndDedicatedFileName']) > 32)) {
+            $invalid_properties[] = "invalid value for 'emvApplicationIdentifierAndDedicatedFileName', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['terminalCompliance']) && (strlen($this->container['terminalCompliance']) > 2)) {
+            $invalid_properties[] = "invalid value for 'terminalCompliance', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['isDedicatedHardwareTerminal']) && (strlen($this->container['isDedicatedHardwareTerminal']) > 1)) {
+            $invalid_properties[] = "invalid value for 'isDedicatedHardwareTerminal', the character length must be smaller than or equal to 1.";
         }
 
         return $invalid_properties;
@@ -395,7 +425,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         if (strlen($this->container['operatingEnvironment']) > 1) {
             return false;
         }
-        if (strlen($this->container['amexCapnData']) > 12) {
+        if (strlen($this->container['amexCapnData']) > 15) {
             return false;
         }
         if (strlen($this->container['storeAndForwardIndicator']) > 1) {
@@ -422,6 +452,15 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         if (strlen($this->container['partnerSdkVersion']) > 32) {
             return false;
         }
+        if (strlen($this->container['emvApplicationIdentifierAndDedicatedFileName']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['terminalCompliance']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['isDedicatedHardwareTerminal']) > 1) {
+            return false;
+        }
         return true;
     }
 
@@ -437,7 +476,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets terminalId
-     * @param string $terminalId Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the `terminal_id` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)  **For Payouts**: This field is applicable for CtV.
+     * @param string $terminalId Identifier for the terminal at your retail location. You can define this value yourself, but consult the processor for requirements.  #### FDC Nashville Global To have your account configured to support this field, contact CyberSource Customer Support. This value must be a value that FDC Nashville Global issued to you.  For details, see the `terminal_id` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)  **For Payouts**: This field is applicable for CtV.
      * @return $this
      */
     public function setTerminalId($terminalId)
@@ -462,7 +501,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets terminalSerialNumber
-     * @param string $terminalSerialNumber Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.  For details, see the `terminal_serial_number` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $terminalSerialNumber Terminal serial number assigned by the hardware manufacturer. This value is provided by the client software that is installed on the POS terminal.  CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only on American Express Direct, FDC Nashville Global, and SIX.  For details, see the `terminal_serial_number` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)
      * @return $this
      */
     public function setTerminalSerialNumber($terminalSerialNumber)
@@ -512,7 +551,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets catLevel
-     * @param int $catLevel Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  #### GPN Only values 6, 7, 8, and 9 are supported.  #### TSYS Acquiring Solutions Only value 6 is supported. For details, see the `cat_level` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param int $catLevel Type of cardholder-activated terminal. Possible values:   - 1: Automated dispensing machine  - 2: Self-service terminal  - 3: Limited amount terminal  - 4: In-flight commerce (IFC) terminal  - 5: Radio frequency device  - 6: Mobile acceptance terminal  - 7: Electronic cash register  - 8: E-commerce device at your location  - 9: Terminal or cash register that uses a dialup connection to connect to the transaction processing network  #### Chase Paymentech Solutions Only values 1, 2, and 3 are supported.  #### FDC Nashville Global Only values 7, 8, and 9 are supported.  #### GPN Only values 6, 7, 8, and 9 are supported.  #### TSYS Acquiring Solutions Only value 6 is supported. For details, see the `cat_level` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)
      * @return $this
      */
     public function setCatLevel($catLevel)
@@ -541,7 +580,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets entryMode
-     * @param string $entryMode Method of entering credit card information into the POS terminal. Possible values:   - `contact`: Read from direct contact with chip card.  - `contactless`: Read from a contactless interface using chip data.  - `keyed`: Manually keyed into POS terminal.  - `msd`: Read from a contactless interface using magnetic stripe data (MSD).  - `swiped`: Read from credit card magnetic stripe.  The contact, contactless, and msd values are supported only for EMV transactions.  For details, see the `pos_entry_mode` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $entryMode Method of entering credit card information into the POS terminal. Possible values:   - `contact`: Read from direct contact with chip card.  - `contactless`: Read from a contactless interface using chip data.  - `keyed`: Manually keyed into POS terminal.  - `msd`: Read from a contactless interface using magnetic stripe data (MSD).  - `swiped`: Read from credit card magnetic stripe.  The contact, contactless, and msd values are supported only for EMV transactions.  For details, see the `pos_entry_mode` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)
      * @return $this
      */
     public function setEntryMode($entryMode)
@@ -566,7 +605,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets terminalCapability
-     * @param int $terminalCapability POS terminal’s capability. Possible values:   - `1`: Terminal has a magnetic stripe reader only.  - `2`: Terminal has a magnetic stripe reader and manual entry capability.  - `3`: Terminal has manual entry capability only.  - `4`: Terminal can read chip cards.  - `5`: Terminal can read contactless chip cards.  The values of 4 and 5 are supported only for EMV transactions. * Applicable only for CTV for Payouts.  For processor-specific details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param int $terminalCapability POS terminal’s capability. Possible values:   - `1`: Terminal has a magnetic stripe reader only.  - `2`: Terminal has a magnetic stripe reader and manual entry capability.  - `3`: Terminal has manual entry capability only.  - `4`: Terminal can read chip cards.  - `5`: Terminal can read contactless chip cards.  The values of 4 and 5 are supported only for EMV transactions. * Applicable only for CTV for Payouts.  For processor-specific details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)
      * @return $this
      */
     public function setTerminalCapability($terminalCapability)
@@ -595,7 +634,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets pinEntryCapability
-     * @param int $pinEntryCapability A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - `1`: Terminal has a magnetic stripe reader only. - `2`: Terminal has a magnetic stripe reader and manual entry capability. - `3`: Terminal has manual entry capability only. - `4`: Terminal can read chip cards.* - `5`: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV.  For details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param int $pinEntryCapability A one-digit code that identifies the capability of terminal to capture PINs.  This code does not necessarily mean that a PIN was entered or is included in this message.  POS terminal’s capability. Possible values: - `1`: Terminal has a magnetic stripe reader only. - `2`: Terminal has a magnetic stripe reader and manual entry capability. - `3`: Terminal has manual entry capability only. - `4`: Terminal can read chip cards.* - `5`: Terminal can read contactless chip cards.* * The values of 4 and 5 are supported only for EMV transactions.  For Payouts: This field is applicable for CtV.  For details, see the `terminal_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)
      * @return $this
      */
     public function setPinEntryCapability($pinEntryCapability)
@@ -670,13 +709,13 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets amexCapnData
-     * @param string $amexCapnData Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $amexCapnData Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setAmexCapnData($amexCapnData)
     {
-        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 12.');
+        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 15.');
         }
 
         $this->container['amexCapnData'] = $amexCapnData;
@@ -965,6 +1004,81 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         }
 
         $this->container['partnerSdkVersion'] = $partnerSdkVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets emvApplicationIdentifierAndDedicatedFileName
+     * @return string
+     */
+    public function getEmvApplicationIdentifierAndDedicatedFileName()
+    {
+        return $this->container['emvApplicationIdentifierAndDedicatedFileName'];
+    }
+
+    /**
+     * Sets emvApplicationIdentifierAndDedicatedFileName
+     * @param string $emvApplicationIdentifierAndDedicatedFileName This 32 byte length-maximum EBCDIC-K value is used to identify which chip application was performed between the terminal and the chip product. The included values are the Application Identifier (AID) and the Dedicated File (DF) name. It is available to early- or full-option VSDC issuers. Only single byte Katakana characters that can map to the EBCDIC-K table expected in the name.
+     * @return $this
+     */
+    public function setEmvApplicationIdentifierAndDedicatedFileName($emvApplicationIdentifierAndDedicatedFileName)
+    {
+        if (!is_null($emvApplicationIdentifierAndDedicatedFileName) && (strlen($emvApplicationIdentifierAndDedicatedFileName) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $emvApplicationIdentifierAndDedicatedFileName when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 32.');
+        }
+
+        $this->container['emvApplicationIdentifierAndDedicatedFileName'] = $emvApplicationIdentifierAndDedicatedFileName;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalCompliance
+     * @return string
+     */
+    public function getTerminalCompliance()
+    {
+        return $this->container['terminalCompliance'];
+    }
+
+    /**
+     * Sets terminalCompliance
+     * @param string $terminalCompliance This tag contains indicators to determine if the terminal used for the transaction is compliant with new standards mandated by the Reserve Bank of India. The new standards are applicable to card-present domestic transactions for the country of India. This tag contains one of the following data values:  First byte (Position 1) : Terminal supports TLE - `1` (Not certified) - `2` (Certified)  Second byte (Position 2) : Terminal supports UKPT/DUKPT - `1` (Not certified) - `2` (Certified)
+     * @return $this
+     */
+    public function setTerminalCompliance($terminalCompliance)
+    {
+        if (!is_null($terminalCompliance) && (strlen($terminalCompliance) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $terminalCompliance when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['terminalCompliance'] = $terminalCompliance;
+
+        return $this;
+    }
+
+    /**
+     * Gets isDedicatedHardwareTerminal
+     * @return string
+     */
+    public function getIsDedicatedHardwareTerminal()
+    {
+        return $this->container['isDedicatedHardwareTerminal'];
+    }
+
+    /**
+     * Sets isDedicatedHardwareTerminal
+     * @param string $isDedicatedHardwareTerminal This API will indicate mPOS device capability with one  of the following values. - 0: Dongle - 1: Phone or tablet
+     * @return $this
+     */
+    public function setIsDedicatedHardwareTerminal($isDedicatedHardwareTerminal)
+    {
+        if (!is_null($isDedicatedHardwareTerminal) && (strlen($isDedicatedHardwareTerminal) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $isDedicatedHardwareTerminal when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['isDedicatedHardwareTerminal'] = $isDedicatedHardwareTerminal;
 
         return $this;
     }

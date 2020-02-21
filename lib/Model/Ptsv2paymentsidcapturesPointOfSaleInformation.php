@@ -150,8 +150,8 @@ class Ptsv2paymentsidcapturesPointOfSaleInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 12)) {
-            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 12.";
+        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 15)) {
+            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 15.";
         }
 
         return $invalid_properties;
@@ -166,7 +166,7 @@ class Ptsv2paymentsidcapturesPointOfSaleInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['amexCapnData']) > 12) {
+        if (strlen($this->container['amexCapnData']) > 15) {
             return false;
         }
         return true;
@@ -205,13 +205,13 @@ class Ptsv2paymentsidcapturesPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets amexCapnData
-     * @param string $amexCapnData Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $amexCapnData Point-of-sale details for the transaction. This value is returned only for **American Express Direct**. CyberSource generates this value, which consists of a series of codes that identify terminal capability, security data, and specific conditions present at the time the transaction occurred. To comply with the CAPN requirements, this value must be included in all subsequent follow-on requests, such as captures and follow-on credits.  When you perform authorizations, captures, and credits through CyberSource, CyberSource passes this value from the authorization service to the subsequent services for you. However, when you perform authorizations through CyberSource and perform subsequent services through other financial institutions, you must ensure that your requests for captures and credits include this value.  For details, see `auth_pos_data` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setAmexCapnData($amexCapnData)
     {
-        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling Ptsv2paymentsidcapturesPointOfSaleInformation., must be smaller than or equal to 12.');
+        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling Ptsv2paymentsidcapturesPointOfSaleInformation., must be smaller than or equal to 15.');
         }
 
         $this->container['amexCapnData'] = $amexCapnData;

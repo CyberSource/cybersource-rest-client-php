@@ -191,7 +191,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
 
     /**
      * Sets resultCode
-     * @param string $resultCode Results from the ACH verification service. For details about this service and the possible values for the results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).
+     * @param string $resultCode Results from the ACH verification service. For details about this service and the possible values for the results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/).
      * @return $this
      */
     public function setResultCode($resultCode)
@@ -216,7 +216,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
 
     /**
      * Sets resultCodeRaw
-     * @param string $resultCodeRaw Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm).
+     * @param string $resultCodeRaw Raw results from the ACH verification service. For details about this service and the possible values for the raw results, see \"ACH Verification\" and \"Verification Codes\" in the [Electronic Check Services Using the SCMP API](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/).
      * @return $this
      */
     public function setResultCodeRaw($resultCodeRaw)

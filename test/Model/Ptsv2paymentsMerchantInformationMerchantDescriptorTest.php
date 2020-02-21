@@ -134,6 +134,13 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptorTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+    }
+
+    /**
      * Test attribute "url"
      */
     public function testPropertyUrl()

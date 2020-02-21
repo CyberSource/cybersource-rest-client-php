@@ -195,4 +195,53 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyElectronicBenefitsTransfer()
     {
     }
+
+    /**
+     * Test attribute "loanOptions"
+     */
+    public function testPropertyLoanOptions()
+    {
+    }
+
+    /**
+     * Test attribute "walletType"
+     */
+    public function testPropertyWalletType()
+    {
+    }
+
+    /**
+     * Test attribute "nationalNetDomesticData"
+     */
+    public function testPropertyNationalNetDomesticData()
+    {
+    }
+
+    /**
+     * Test attribute "japanPaymentOptions"
+     */
+    public function testPropertyJapanPaymentOptions()
+    {
+    }
+
+    /**
+     * Test attribute "mobileRemotePaymentType"
+     */
+    public function testPropertyMobileRemotePaymentType()
+    {
+    }
+
+    /**
+     * Test attribute "extendedCreditTotalCount"
+     */
+    public function testPropertyExtendedCreditTotalCount()
+    {
+    }
+
+    /**
+     * Test attribute "networkRoutingOrder"
+     */
+    public function testPropertyNetworkRoutingOrder()
+    {
+    }
 }

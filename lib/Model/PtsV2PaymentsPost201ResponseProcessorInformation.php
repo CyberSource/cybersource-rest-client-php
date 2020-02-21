@@ -75,7 +75,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentAccountReferenceNumber' => 'string',
         'transactionIntegrityCode' => 'string',
         'amexVerbalAuthReferenceNumber' => 'string',
-        'salesSlipNumber' => 'int',
         'masterCardServiceCode' => 'string',
         'masterCardServiceReplyCode' => 'string',
         'masterCardAuthenticationType' => 'string',
@@ -110,7 +109,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentAccountReferenceNumber' => null,
         'transactionIntegrityCode' => null,
         'amexVerbalAuthReferenceNumber' => null,
-        'salesSlipNumber' => null,
         'masterCardServiceCode' => null,
         'masterCardServiceReplyCode' => null,
         'masterCardAuthenticationType' => null,
@@ -155,7 +153,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentAccountReferenceNumber' => 'paymentAccountReferenceNumber',
         'transactionIntegrityCode' => 'transactionIntegrityCode',
         'amexVerbalAuthReferenceNumber' => 'amexVerbalAuthReferenceNumber',
-        'salesSlipNumber' => 'salesSlipNumber',
         'masterCardServiceCode' => 'masterCardServiceCode',
         'masterCardServiceReplyCode' => 'masterCardServiceReplyCode',
         'masterCardAuthenticationType' => 'masterCardAuthenticationType',
@@ -191,7 +188,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentAccountReferenceNumber' => 'setPaymentAccountReferenceNumber',
         'transactionIntegrityCode' => 'setTransactionIntegrityCode',
         'amexVerbalAuthReferenceNumber' => 'setAmexVerbalAuthReferenceNumber',
-        'salesSlipNumber' => 'setSalesSlipNumber',
         'masterCardServiceCode' => 'setMasterCardServiceCode',
         'masterCardServiceReplyCode' => 'setMasterCardServiceReplyCode',
         'masterCardAuthenticationType' => 'setMasterCardAuthenticationType',
@@ -227,7 +223,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentAccountReferenceNumber' => 'getPaymentAccountReferenceNumber',
         'transactionIntegrityCode' => 'getTransactionIntegrityCode',
         'amexVerbalAuthReferenceNumber' => 'getAmexVerbalAuthReferenceNumber',
-        'salesSlipNumber' => 'getSalesSlipNumber',
         'masterCardServiceCode' => 'getMasterCardServiceCode',
         'masterCardServiceReplyCode' => 'getMasterCardServiceReplyCode',
         'masterCardAuthenticationType' => 'getMasterCardAuthenticationType',
@@ -288,7 +283,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['paymentAccountReferenceNumber'] = isset($data['paymentAccountReferenceNumber']) ? $data['paymentAccountReferenceNumber'] : null;
         $this->container['transactionIntegrityCode'] = isset($data['transactionIntegrityCode']) ? $data['transactionIntegrityCode'] : null;
         $this->container['amexVerbalAuthReferenceNumber'] = isset($data['amexVerbalAuthReferenceNumber']) ? $data['amexVerbalAuthReferenceNumber'] : null;
-        $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
         $this->container['masterCardServiceCode'] = isset($data['masterCardServiceCode']) ? $data['masterCardServiceCode'] : null;
         $this->container['masterCardServiceReplyCode'] = isset($data['masterCardServiceReplyCode']) ? $data['masterCardServiceReplyCode'] : null;
         $this->container['masterCardAuthenticationType'] = isset($data['masterCardAuthenticationType']) ? $data['masterCardAuthenticationType'] : null;
@@ -348,10 +342,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
         if (!is_null($this->container['amexVerbalAuthReferenceNumber']) && (strlen($this->container['amexVerbalAuthReferenceNumber']) > 6)) {
             $invalid_properties[] = "invalid value for 'amexVerbalAuthReferenceNumber', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['salesSlipNumber']) && ($this->container['salesSlipNumber'] > 99999)) {
-            $invalid_properties[] = "invalid value for 'salesSlipNumber', must be smaller than or equal to 99999.";
         }
 
         if (!is_null($this->container['masterCardServiceCode']) && (strlen($this->container['masterCardServiceCode']) > 2)) {
@@ -417,9 +407,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['amexVerbalAuthReferenceNumber']) > 6) {
-            return false;
-        }
-        if ($this->container['salesSlipNumber'] > 99999) {
             return false;
         }
         if (strlen($this->container['masterCardServiceCode']) > 2) {
@@ -498,7 +485,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets transactionId
-     * @param string $transactionId Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value.  #### Cielo For Cielo, this value is the non-sequential unit (NSU) and is supported for all transactions. The value is generated by Cielo or the issuing bank.  #### Comercio Latino For Comercio Latino, this value is the proof of sale or non-sequential unit (NSU) number generated by the acquirers Cielo and Rede, or the issuing bank.  #### CyberSource through VisaNet and GPN For details about this value for CyberSource through VisaNet and GPN, see \"Network Transaction Identifiers\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $transactionId Network transaction identifier (TID). You can use this value to identify a specific transaction when you are discussing the transaction with your processor. Not all processors provide this value.  #### Cielo For Cielo, this value is the non-sequential unit (NSU) and is supported for all transactions. The value is generated by Cielo or the issuing bank.  #### Comercio Latino For Comercio Latino, this value is the proof of sale or non-sequential unit (NSU) number generated by the acquirers Cielo and Rede, or the issuing bank.  #### CyberSource through VisaNet and GPN For details about this value for CyberSource through VisaNet and GPN, see \"Network Transaction Identifiers\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setTransactionId($transactionId)
@@ -837,7 +824,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets systemTraceAuditNumber
-     * @param string $systemTraceAuditNumber This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer’s receipt.  For details, see `receipt_number` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/wwhelp/wwhimpl/js/html/wwhelp.htm)
+     * @param string $systemTraceAuditNumber This field is returned only for **American Express Direct** and **CyberSource through VisaNet**.  #### American Express Direct  System trace audit number (STAN). This value identifies the transaction and is useful when investigating a chargeback dispute.  #### CyberSource through VisaNet  System trace number that must be printed on the customer’s receipt.  For details, see `receipt_number` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
@@ -922,32 +909,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         }
 
         $this->container['amexVerbalAuthReferenceNumber'] = $amexVerbalAuthReferenceNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets salesSlipNumber
-     * @return int
-     */
-    public function getSalesSlipNumber()
-    {
-        return $this->container['salesSlipNumber'];
-    }
-
-    /**
-     * Sets salesSlipNumber
-     * @param int $salesSlipNumber Transaction identifier that CyberSource generates. You have the option of printing the sales slip number on the receipt.  This field is supported only for **JCN Gateway**.
-     * @return $this
-     */
-    public function setSalesSlipNumber($salesSlipNumber)
-    {
-
-        if (!is_null($salesSlipNumber) && ($salesSlipNumber > 99999)) {
-            throw new \InvalidArgumentException('invalid value for $salesSlipNumber when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 99999.');
-        }
-
-        $this->container['salesSlipNumber'] = $salesSlipNumber;
 
         return $this;
     }

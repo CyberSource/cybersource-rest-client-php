@@ -75,7 +75,7 @@ class SecureFileShareApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFile
      *
-     * Download a file with file identifier.
+     * Download a File with File Identifier.
      *
      */
     public function testGetFile()
@@ -85,7 +85,7 @@ class SecureFileShareApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getFileDetail
      *
-     * Get list of files.
+     * Get List of Files.
      *
      */
     public function testGetFileDetail()

@@ -113,6 +113,13 @@ class InstrumentIdentifierResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "tokenizedCard"
+     */
+    public function testPropertyTokenizedCard()
+    {
+    }
+
+    /**
      * Test attribute "issuer"
      */
     public function testPropertyIssuer()

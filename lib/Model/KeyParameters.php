@@ -54,7 +54,8 @@ class KeyParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'encryptionType' => 'string'
+        'encryptionType' => 'string',
+        'targetOrigin' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class KeyParameters implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'encryptionType' => null
+        'encryptionType' => null,
+        'targetOrigin' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class KeyParameters implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'encryptionType' => 'encryptionType'
+        'encryptionType' => 'encryptionType',
+        'targetOrigin' => 'targetOrigin'
     ];
 
 
@@ -89,7 +92,8 @@ class KeyParameters implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'encryptionType' => 'setEncryptionType'
+        'encryptionType' => 'setEncryptionType',
+        'targetOrigin' => 'setTargetOrigin'
     ];
 
 
@@ -98,7 +102,8 @@ class KeyParameters implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'encryptionType' => 'getEncryptionType'
+        'encryptionType' => 'getEncryptionType',
+        'targetOrigin' => 'getTargetOrigin'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class KeyParameters implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['encryptionType'] = isset($data['encryptionType']) ? $data['encryptionType'] : null;
+        $this->container['targetOrigin'] = isset($data['targetOrigin']) ? $data['targetOrigin'] : null;
     }
 
     /**
@@ -183,6 +189,27 @@ class KeyParameters implements ArrayAccess
     public function setEncryptionType($encryptionType)
     {
         $this->container['encryptionType'] = $encryptionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets targetOrigin
+     * @return string
+     */
+    public function getTargetOrigin()
+    {
+        return $this->container['targetOrigin'];
+    }
+
+    /**
+     * Sets targetOrigin
+     * @param string $targetOrigin The merchant origin (e.g. https://example.com) used to integrate with Flex API. Required to comply with CORS and CSP standards.
+     * @return $this
+     */
+    public function setTargetOrigin($targetOrigin)
+    {
+        $this->container['targetOrigin'] = $targetOrigin;
 
         return $this;
     }
