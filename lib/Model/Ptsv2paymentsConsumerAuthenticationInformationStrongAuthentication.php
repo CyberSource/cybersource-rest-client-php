@@ -58,7 +58,8 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'riskAnalysisExemptionIndicator' => 'string',
         'trustedMerchantExemptionIndicator' => 'string',
         'secureCorporatePaymentIndicator' => 'string',
-        'delegatedAuthenticationExemptionIndicator' => 'string'
+        'delegatedAuthenticationExemptionIndicator' => 'string',
+        'authenticationIndicator' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'riskAnalysisExemptionIndicator' => null,
         'trustedMerchantExemptionIndicator' => null,
         'secureCorporatePaymentIndicator' => null,
-        'delegatedAuthenticationExemptionIndicator' => null
+        'delegatedAuthenticationExemptionIndicator' => null,
+        'authenticationIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'riskAnalysisExemptionIndicator' => 'riskAnalysisExemptionIndicator',
         'trustedMerchantExemptionIndicator' => 'trustedMerchantExemptionIndicator',
         'secureCorporatePaymentIndicator' => 'secureCorporatePaymentIndicator',
-        'delegatedAuthenticationExemptionIndicator' => 'delegatedAuthenticationExemptionIndicator'
+        'delegatedAuthenticationExemptionIndicator' => 'delegatedAuthenticationExemptionIndicator',
+        'authenticationIndicator' => 'authenticationIndicator'
     ];
 
 
@@ -105,7 +108,8 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'riskAnalysisExemptionIndicator' => 'setRiskAnalysisExemptionIndicator',
         'trustedMerchantExemptionIndicator' => 'setTrustedMerchantExemptionIndicator',
         'secureCorporatePaymentIndicator' => 'setSecureCorporatePaymentIndicator',
-        'delegatedAuthenticationExemptionIndicator' => 'setDelegatedAuthenticationExemptionIndicator'
+        'delegatedAuthenticationExemptionIndicator' => 'setDelegatedAuthenticationExemptionIndicator',
+        'authenticationIndicator' => 'setAuthenticationIndicator'
     ];
 
 
@@ -118,7 +122,8 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'riskAnalysisExemptionIndicator' => 'getRiskAnalysisExemptionIndicator',
         'trustedMerchantExemptionIndicator' => 'getTrustedMerchantExemptionIndicator',
         'secureCorporatePaymentIndicator' => 'getSecureCorporatePaymentIndicator',
-        'delegatedAuthenticationExemptionIndicator' => 'getDelegatedAuthenticationExemptionIndicator'
+        'delegatedAuthenticationExemptionIndicator' => 'getDelegatedAuthenticationExemptionIndicator',
+        'authenticationIndicator' => 'getAuthenticationIndicator'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         $this->container['trustedMerchantExemptionIndicator'] = isset($data['trustedMerchantExemptionIndicator']) ? $data['trustedMerchantExemptionIndicator'] : null;
         $this->container['secureCorporatePaymentIndicator'] = isset($data['secureCorporatePaymentIndicator']) ? $data['secureCorporatePaymentIndicator'] : null;
         $this->container['delegatedAuthenticationExemptionIndicator'] = isset($data['delegatedAuthenticationExemptionIndicator']) ? $data['delegatedAuthenticationExemptionIndicator'] : null;
+        $this->container['authenticationIndicator'] = isset($data['authenticationIndicator']) ? $data['authenticationIndicator'] : null;
     }
 
     /**
@@ -188,6 +194,10 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
             $invalid_properties[] = "invalid value for 'delegatedAuthenticationExemptionIndicator', the character length must be smaller than or equal to 1.";
         }
 
+        if (!is_null($this->container['authenticationIndicator']) && (strlen($this->container['authenticationIndicator']) > 2)) {
+            $invalid_properties[] = "invalid value for 'authenticationIndicator', the character length must be smaller than or equal to 2.";
+        }
+
         return $invalid_properties;
     }
 
@@ -213,6 +223,9 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
             return false;
         }
         if (strlen($this->container['delegatedAuthenticationExemptionIndicator']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['authenticationIndicator']) > 2) {
             return false;
         }
         return true;
@@ -340,6 +353,31 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         }
 
         $this->container['delegatedAuthenticationExemptionIndicator'] = $delegatedAuthenticationExemptionIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationIndicator
+     * @return string
+     */
+    public function getAuthenticationIndicator()
+    {
+        return $this->container['authenticationIndicator'];
+    }
+
+    /**
+     * Sets authenticationIndicator
+     * @param string $authenticationIndicator Indicates the type of Authentication request  01 - Payment transaction  02 - Recurring transaction  03 - Installment transaction  04 - Add card  05 - Maintain card  06 - Cardholder verification as part of EMV token ID and V
+     * @return $this
+     */
+    public function setAuthenticationIndicator($authenticationIndicator)
+    {
+        if (!is_null($authenticationIndicator) && (strlen($authenticationIndicator) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $authenticationIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 2.');
+        }
+
+        $this->container['authenticationIndicator'] = $authenticationIndicator;
 
         return $this;
     }

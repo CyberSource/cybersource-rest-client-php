@@ -56,7 +56,7 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
     protected static $swaggerTypes = [
         'firstName' => 'string',
         'lastName' => 'string',
-        'company' => 'string',
+        'company' => '\CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany',
         'address1' => 'string',
         'address2' => 'string',
         'locality' => 'string',
@@ -212,10 +212,6 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
             $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['company']) && (strlen($this->container['company']) > 60)) {
-            $invalid_properties[] = "invalid value for 'company', the character length must be smaller than or equal to 60.";
-        }
-
         if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 60)) {
             $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 60.";
         }
@@ -264,9 +260,6 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
             return false;
         }
         if (strlen($this->container['lastName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['company']) > 60) {
             return false;
         }
         if (strlen($this->container['address1']) > 60) {
@@ -349,7 +342,7 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
 
     /**
      * Gets company
-     * @return string
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany
      */
     public function getCompany()
     {
@@ -358,15 +351,11 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets company
-     * @param string $company Name of the customer’s company.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks. For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany $company
      * @return $this
      */
     public function setCompany($company)
     {
-        if (!is_null($company) && (strlen($company) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $company when calling Ptsv2paymentsidcapturesOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
-
         $this->container['company'] = $company;
 
         return $this;

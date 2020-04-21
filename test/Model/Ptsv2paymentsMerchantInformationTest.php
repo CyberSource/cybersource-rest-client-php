@@ -139,4 +139,11 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyServiceFeeDescriptor()
     {
     }
+
+    /**
+     * Test attribute "merchantName"
+     */
+    public function testPropertyMerchantName()
+    {
+    }
 }

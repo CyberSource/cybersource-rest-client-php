@@ -55,7 +55,8 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
       */
     protected static $swaggerTypes = [
         'xid' => 'string',
-        'transactionId' => 'string'
+        'transactionId' => 'string',
+        'eciRaw' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
       */
     protected static $swaggerFormats = [
         'xid' => null,
-        'transactionId' => null
+        'transactionId' => null,
+        'eciRaw' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
      */
     protected static $attributeMap = [
         'xid' => 'xid',
-        'transactionId' => 'transactionId'
+        'transactionId' => 'transactionId',
+        'eciRaw' => 'eciRaw'
     ];
 
 
@@ -93,7 +96,8 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
      */
     protected static $setters = [
         'xid' => 'setXid',
-        'transactionId' => 'setTransactionId'
+        'transactionId' => 'setTransactionId',
+        'eciRaw' => 'setEciRaw'
     ];
 
 
@@ -103,7 +107,8 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
      */
     protected static $getters = [
         'xid' => 'getXid',
-        'transactionId' => 'getTransactionId'
+        'transactionId' => 'getTransactionId',
+        'eciRaw' => 'getEciRaw'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
     {
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['eciRaw'] = isset($data['eciRaw']) ? $data['eciRaw'] : null;
     }
 
     /**
@@ -154,6 +160,10 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
             $invalid_properties[] = "invalid value for 'xid', the character length must be smaller than or equal to 40.";
         }
 
+        if (!is_null($this->container['eciRaw']) && (strlen($this->container['eciRaw']) > 2)) {
+            $invalid_properties[] = "invalid value for 'eciRaw', the character length must be smaller than or equal to 2.";
+        }
+
         return $invalid_properties;
     }
 
@@ -167,6 +177,9 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
     {
 
         if (strlen($this->container['xid']) > 40) {
+            return false;
+        }
+        if (strlen($this->container['eciRaw']) > 2) {
             return false;
         }
         return true;
@@ -215,6 +228,31 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
     public function setTransactionId($transactionId)
     {
         $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets eciRaw
+     * @return string
+     */
+    public function getEciRaw()
+    {
+        return $this->container['eciRaw'];
+    }
+
+    /**
+     * Sets eciRaw
+     * @param string $eciRaw Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setEciRaw($eciRaw)
+    {
+        if (!is_null($eciRaw) && (strlen($eciRaw) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $eciRaw when calling TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['eciRaw'] = $eciRaw;
 
         return $this;
     }

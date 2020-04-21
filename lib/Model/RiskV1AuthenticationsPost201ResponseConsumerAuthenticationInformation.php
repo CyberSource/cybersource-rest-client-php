@@ -72,7 +72,7 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
         'eci' => 'string',
         'eciRaw' => 'string',
         'effectiveAuthenticationType' => 'string',
-        'ivr' => '\CyberSource\Model\RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr',
+        'ivr' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr',
         'networkScore' => 'string',
         'pareq' => 'string',
         'paresStatus' => 'string',
@@ -936,7 +936,7 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
 
     /**
      * Gets ivr
-     * @return \CyberSource\Model\RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr
      */
     public function getIvr()
     {
@@ -945,7 +945,7 @@ class RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformation impl
 
     /**
      * Sets ivr
-     * @param \CyberSource\Model\RiskV1AuthenticationsPost201ResponseConsumerAuthenticationInformationIvr $ivr
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr $ivr
      * @return $this
      */
     public function setIvr($ivr)

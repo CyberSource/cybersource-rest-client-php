@@ -79,7 +79,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightIdentifier' => 'string',
         'weightUnit' => 'string',
         'referenceDataCode' => 'string',
-        'referenceDataNumber' => 'string'
+        'referenceDataNumber' => 'string',
+        'productDescription' => 'string',
+        'giftCardCurrency' => 'int',
+        'shippingDestinationTypes' => 'string',
+        'gift' => 'bool',
+        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger'
     ];
 
     /**
@@ -112,7 +117,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightIdentifier' => null,
         'weightUnit' => null,
         'referenceDataCode' => null,
-        'referenceDataNumber' => null
+        'referenceDataNumber' => null,
+        'productDescription' => null,
+        'giftCardCurrency' => null,
+        'shippingDestinationTypes' => null,
+        'gift' => null,
+        'passenger' => null
     ];
 
     public static function swaggerTypes()
@@ -155,7 +165,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightIdentifier' => 'weightIdentifier',
         'weightUnit' => 'weightUnit',
         'referenceDataCode' => 'referenceDataCode',
-        'referenceDataNumber' => 'referenceDataNumber'
+        'referenceDataNumber' => 'referenceDataNumber',
+        'productDescription' => 'productDescription',
+        'giftCardCurrency' => 'giftCardCurrency',
+        'shippingDestinationTypes' => 'shippingDestinationTypes',
+        'gift' => 'gift',
+        'passenger' => 'passenger'
     ];
 
 
@@ -189,7 +204,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightIdentifier' => 'setWeightIdentifier',
         'weightUnit' => 'setWeightUnit',
         'referenceDataCode' => 'setReferenceDataCode',
-        'referenceDataNumber' => 'setReferenceDataNumber'
+        'referenceDataNumber' => 'setReferenceDataNumber',
+        'productDescription' => 'setProductDescription',
+        'giftCardCurrency' => 'setGiftCardCurrency',
+        'shippingDestinationTypes' => 'setShippingDestinationTypes',
+        'gift' => 'setGift',
+        'passenger' => 'setPassenger'
     ];
 
 
@@ -223,7 +243,12 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightIdentifier' => 'getWeightIdentifier',
         'weightUnit' => 'getWeightUnit',
         'referenceDataCode' => 'getReferenceDataCode',
-        'referenceDataNumber' => 'getReferenceDataNumber'
+        'referenceDataNumber' => 'getReferenceDataNumber',
+        'productDescription' => 'getProductDescription',
+        'giftCardCurrency' => 'getGiftCardCurrency',
+        'shippingDestinationTypes' => 'getShippingDestinationTypes',
+        'gift' => 'getGift',
+        'passenger' => 'getPassenger'
     ];
 
     public static function attributeMap()
@@ -283,6 +308,11 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         $this->container['weightUnit'] = isset($data['weightUnit']) ? $data['weightUnit'] : null;
         $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
         $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
+        $this->container['productDescription'] = isset($data['productDescription']) ? $data['productDescription'] : null;
+        $this->container['giftCardCurrency'] = isset($data['giftCardCurrency']) ? $data['giftCardCurrency'] : null;
+        $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
+        $this->container['gift'] = isset($data['gift']) ? $data['gift'] : null;
+        $this->container['passenger'] = isset($data['passenger']) ? $data['passenger'] : null;
     }
 
     /**
@@ -386,6 +416,10 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
             $invalid_properties[] = "invalid value for 'referenceDataNumber', the character length must be smaller than or equal to 30.";
         }
 
+        if (!is_null($this->container['shippingDestinationTypes']) && (strlen($this->container['shippingDestinationTypes']) > 50)) {
+            $invalid_properties[] = "invalid value for 'shippingDestinationTypes', the character length must be smaller than or equal to 50.";
+        }
+
         return $invalid_properties;
     }
 
@@ -465,6 +499,9 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
             return false;
         }
         if (strlen($this->container['referenceDataNumber']) > 30) {
+            return false;
+        }
+        if (strlen($this->container['shippingDestinationTypes']) > 50) {
             return false;
         }
         return true;
@@ -1105,6 +1142,115 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         }
 
         $this->container['referenceDataNumber'] = $referenceDataNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets productDescription
+     * @return string
+     */
+    public function getProductDescription()
+    {
+        return $this->container['productDescription'];
+    }
+
+    /**
+     * Sets productDescription
+     * @param string $productDescription Brief description of item.
+     * @return $this
+     */
+    public function setProductDescription($productDescription)
+    {
+        $this->container['productDescription'] = $productDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets giftCardCurrency
+     * @return int
+     */
+    public function getGiftCardCurrency()
+    {
+        return $this->container['giftCardCurrency'];
+    }
+
+    /**
+     * Sets giftCardCurrency
+     * @param int $giftCardCurrency When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the currency used for the gift card purchase.  For details, see `pa_gift_card_currency` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
+     * @return $this
+     */
+    public function setGiftCardCurrency($giftCardCurrency)
+    {
+        $this->container['giftCardCurrency'] = $giftCardCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingDestinationTypes
+     * @return string
+     */
+    public function getShippingDestinationTypes()
+    {
+        return $this->container['shippingDestinationTypes'];
+    }
+
+    /**
+     * Sets shippingDestinationTypes
+     * @param string $shippingDestinationTypes Destination to where the item will be shipped. Example: Commercial, Residential, Store
+     * @return $this
+     */
+    public function setShippingDestinationTypes($shippingDestinationTypes)
+    {
+        if (!is_null($shippingDestinationTypes) && (strlen($shippingDestinationTypes) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $shippingDestinationTypes when calling Ptsv2paymentsOrderInformationLineItems., must be smaller than or equal to 50.');
+        }
+
+        $this->container['shippingDestinationTypes'] = $shippingDestinationTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets gift
+     * @return bool
+     */
+    public function getGift()
+    {
+        return $this->container['gift'];
+    }
+
+    /**
+     * Sets gift
+     * @param bool $gift This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different.
+     * @return $this
+     */
+    public function setGift($gift)
+    {
+        $this->container['gift'] = $gift;
+
+        return $this;
+    }
+
+    /**
+     * Gets passenger
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationPassenger
+     */
+    public function getPassenger()
+    {
+        return $this->container['passenger'];
+    }
+
+    /**
+     * Sets passenger
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationPassenger $passenger
+     * @return $this
+     */
+    public function setPassenger($passenger)
+    {
+        $this->container['passenger'] = $passenger;
 
         return $this;
     }

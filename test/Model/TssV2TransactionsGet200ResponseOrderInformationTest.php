@@ -111,4 +111,11 @@ class TssV2TransactionsGet200ResponseOrderInformationTest extends \PHPUnit_Frame
     public function testPropertyShippingDetails()
     {
     }
+
+    /**
+     * Test attribute "invoiceDetails"
+     */
+    public function testPropertyInvoiceDetails()
+    {
+    }
 }

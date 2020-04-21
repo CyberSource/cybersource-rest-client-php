@@ -83,4 +83,11 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformationTest extends \
     public function testPropertyProcessor()
     {
     }
+
+    /**
+     * Test attribute "approvalCode"
+     */
+    public function testPropertyApprovalCode()
+    {
+    }
 }

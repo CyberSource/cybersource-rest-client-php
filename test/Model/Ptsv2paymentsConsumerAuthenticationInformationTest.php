@@ -146,4 +146,291 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     public function testPropertyPaSpecificationVersion()
     {
     }
+
+    /**
+     * Test attribute "authenticationType"
+     */
+    public function testPropertyAuthenticationType()
+    {
+    }
+
+    /**
+     * Test attribute "acsWindowSize"
+     */
+    public function testPropertyAcsWindowSize()
+    {
+    }
+
+    /**
+     * Test attribute "alternateAuthenticationData"
+     */
+    public function testPropertyAlternateAuthenticationData()
+    {
+    }
+
+    /**
+     * Test attribute "alternateAuthenticationDate"
+     */
+    public function testPropertyAlternateAuthenticationDate()
+    {
+    }
+
+    /**
+     * Test attribute "alternateAuthenticationMethod"
+     */
+    public function testPropertyAlternateAuthenticationMethod()
+    {
+    }
+
+    /**
+     * Test attribute "authenticationDate"
+     */
+    public function testPropertyAuthenticationDate()
+    {
+    }
+
+    /**
+     * Test attribute "authenticationTransactionId"
+     */
+    public function testPropertyAuthenticationTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "challengeCancelCode"
+     */
+    public function testPropertyChallengeCancelCode()
+    {
+    }
+
+    /**
+     * Test attribute "challengeCode"
+     */
+    public function testPropertyChallengeCode()
+    {
+    }
+
+    /**
+     * Test attribute "challengeStatus"
+     */
+    public function testPropertyChallengeStatus()
+    {
+    }
+
+    /**
+     * Test attribute "customerCardAlias"
+     */
+    public function testPropertyCustomerCardAlias()
+    {
+    }
+
+    /**
+     * Test attribute "decoupledAuthenticationIndicator"
+     */
+    public function testPropertyDecoupledAuthenticationIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "decoupledAuthenticationMaxTime"
+     */
+    public function testPropertyDecoupledAuthenticationMaxTime()
+    {
+    }
+
+    /**
+     * Test attribute "defaultCard"
+     */
+    public function testPropertyDefaultCard()
+    {
+    }
+
+    /**
+     * Test attribute "deviceChannel"
+     */
+    public function testPropertyDeviceChannel()
+    {
+    }
+
+    /**
+     * Test attribute "installmentTotalCount"
+     */
+    public function testPropertyInstallmentTotalCount()
+    {
+    }
+
+    /**
+     * Test attribute "merchantFraudRate"
+     */
+    public function testPropertyMerchantFraudRate()
+    {
+    }
+
+    /**
+     * Test attribute "marketingOptIn"
+     */
+    public function testPropertyMarketingOptIn()
+    {
+    }
+
+    /**
+     * Test attribute "marketingSource"
+     */
+    public function testPropertyMarketingSource()
+    {
+    }
+
+    /**
+     * Test attribute "mcc"
+     */
+    public function testPropertyMcc()
+    {
+    }
+
+    /**
+     * Test attribute "merchantScore"
+     */
+    public function testPropertyMerchantScore()
+    {
+    }
+
+    /**
+     * Test attribute "messageCategory"
+     */
+    public function testPropertyMessageCategory()
+    {
+    }
+
+    /**
+     * Test attribute "npaCode"
+     */
+    public function testPropertyNpaCode()
+    {
+    }
+
+    /**
+     * Test attribute "overridePaymentMethod"
+     */
+    public function testPropertyOverridePaymentMethod()
+    {
+    }
+
+    /**
+     * Test attribute "overrideCountryCode"
+     */
+    public function testPropertyOverrideCountryCode()
+    {
+    }
+
+    /**
+     * Test attribute "priorAuthenticationData"
+     */
+    public function testPropertyPriorAuthenticationData()
+    {
+    }
+
+    /**
+     * Test attribute "priorAuthenticationMethod"
+     */
+    public function testPropertyPriorAuthenticationMethod()
+    {
+    }
+
+    /**
+     * Test attribute "priorAuthenticationReferenceId"
+     */
+    public function testPropertyPriorAuthenticationReferenceId()
+    {
+    }
+
+    /**
+     * Test attribute "priorAuthenticationTime"
+     */
+    public function testPropertyPriorAuthenticationTime()
+    {
+    }
+
+    /**
+     * Test attribute "productCode"
+     */
+    public function testPropertyProductCode()
+    {
+    }
+
+    /**
+     * Test attribute "requestorId"
+     */
+    public function testPropertyRequestorId()
+    {
+    }
+
+    /**
+     * Test attribute "requestorInitiatedAuthenticationIndicator"
+     */
+    public function testPropertyRequestorInitiatedAuthenticationIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "requestorName"
+     */
+    public function testPropertyRequestorName()
+    {
+    }
+
+    /**
+     * Test attribute "referenceId"
+     */
+    public function testPropertyReferenceId()
+    {
+    }
+
+    /**
+     * Test attribute "sdkMaxTimeout"
+     */
+    public function testPropertySdkMaxTimeout()
+    {
+    }
+
+    /**
+     * Test attribute "secureCorporatePaymentIndicator"
+     */
+    public function testPropertySecureCorporatePaymentIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "transactionMode"
+     */
+    public function testPropertyTransactionMode()
+    {
+    }
+
+    /**
+     * Test attribute "whiteListStatus"
+     */
+    public function testPropertyWhiteListStatus()
+    {
+    }
+
+    /**
+     * Test attribute "effectiveAuthenticationType"
+     */
+    public function testPropertyEffectiveAuthenticationType()
+    {
+    }
+
+    /**
+     * Test attribute "signedParesStatusReason"
+     */
+    public function testPropertySignedParesStatusReason()
+    {
+    }
+
+    /**
+     * Test attribute "signedPares"
+     */
+    public function testPropertySignedPares()
+    {
+    }
 }

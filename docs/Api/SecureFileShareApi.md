@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFileDetail**
-> \CyberSource\Model\V1FileDetailsGet200Response getFileDetail($startDate, $endDate, $organizationId)
+> \CyberSource\Model\V1FileDetailsGet200Response getFileDetail($startDate, $endDate, $organizationId, $name)
 
 Get List of Files
 
@@ -70,9 +70,10 @@ $api_instance = new CyberSource\Api\SecureFileShareApi();
 $startDate = new \DateTime("2013-10-20"); // \DateTime | Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd
 $endDate = new \DateTime("2013-10-20"); // \DateTime | Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd
 $organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$name = "name_example"; // string | **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml
 
 try {
-    $result = $api_instance->getFileDetail($startDate, $endDate, $organizationId);
+    $result = $api_instance->getFileDetail($startDate, $endDate, $organizationId, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SecureFileShareApi->getFileDetail: ', $e->getMessage(), PHP_EOL;
@@ -87,6 +88,7 @@ Name | Type | Description  | Notes
  **startDate** | **\DateTime**| Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd |
  **endDate** | **\DateTime**| Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd |
  **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **name** | **string**| **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml | [optional]
 
 ### Return type
 

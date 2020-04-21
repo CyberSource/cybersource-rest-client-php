@@ -90,4 +90,11 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformationTest extends 
     public function testPropertyBusinessApplicationId()
     {
     }
+
+    /**
+     * Test attribute "commerceIndicator"
+     */
+    public function testPropertyCommerceIndicator()
+    {
+    }
 }

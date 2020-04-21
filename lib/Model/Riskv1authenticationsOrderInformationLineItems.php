@@ -61,7 +61,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         'productSKU' => 'string',
         'productDescription' => 'string',
         'productName' => 'string',
-        'passenger' => '\CyberSource\Model\Riskv1decisionsOrderInformationPassenger',
+        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger',
         'shippingDestinationTypes' => 'string',
         'taxAmount' => 'string'
     ];
@@ -449,7 +449,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Gets passenger
-     * @return \CyberSource\Model\Riskv1decisionsOrderInformationPassenger
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationPassenger
      */
     public function getPassenger()
     {
@@ -458,7 +458,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets passenger
-     * @param \CyberSource\Model\Riskv1decisionsOrderInformationPassenger $passenger
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationPassenger $passenger
      * @return $this
      */
     public function setPassenger($passenger)

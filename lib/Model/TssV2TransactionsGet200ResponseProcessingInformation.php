@@ -58,7 +58,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'commerceIndicator' => 'string',
         'businessApplicationId' => 'string',
         'authorizationOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions',
-        'bankTransferOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions'
+        'bankTransferOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions',
+        'japanPaymentOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions'
     ];
 
     /**
@@ -70,7 +71,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'commerceIndicator' => null,
         'businessApplicationId' => null,
         'authorizationOptions' => null,
-        'bankTransferOptions' => null
+        'bankTransferOptions' => null,
+        'japanPaymentOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'commerceIndicator' => 'commerceIndicator',
         'businessApplicationId' => 'businessApplicationId',
         'authorizationOptions' => 'authorizationOptions',
-        'bankTransferOptions' => 'bankTransferOptions'
+        'bankTransferOptions' => 'bankTransferOptions',
+        'japanPaymentOptions' => 'japanPaymentOptions'
     ];
 
 
@@ -105,7 +108,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'commerceIndicator' => 'setCommerceIndicator',
         'businessApplicationId' => 'setBusinessApplicationId',
         'authorizationOptions' => 'setAuthorizationOptions',
-        'bankTransferOptions' => 'setBankTransferOptions'
+        'bankTransferOptions' => 'setBankTransferOptions',
+        'japanPaymentOptions' => 'setJapanPaymentOptions'
     ];
 
 
@@ -118,7 +122,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'commerceIndicator' => 'getCommerceIndicator',
         'businessApplicationId' => 'getBusinessApplicationId',
         'authorizationOptions' => 'getAuthorizationOptions',
-        'bankTransferOptions' => 'getBankTransferOptions'
+        'bankTransferOptions' => 'getBankTransferOptions',
+        'japanPaymentOptions' => 'getJapanPaymentOptions'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
         $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
+        $this->container['japanPaymentOptions'] = isset($data['japanPaymentOptions']) ? $data['japanPaymentOptions'] : null;
     }
 
     /**
@@ -234,7 +240,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
 
     /**
      * Sets commerceIndicator
-     * @param string $commerceIndicator Type of transaction. Some payment card companies use this information when determining discount rates.  #### Ingenico ePayments Ingenico ePayments was previously called _Global Collect_. When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value listed in \"Commerce Indicators\" section of [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### Payouts OCT (Original Credit Transaction) Value for an OCT transaction: - `internet` For details, see the `e_commerce_indicator` field description in [Payouts Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/payouts_SCMP/html/)  #### Other Types of Transactions For details, see \"Commerce Indicators\" in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $commerceIndicator Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment)
      * @return $this
      */
     public function setCommerceIndicator($commerceIndicator)
@@ -307,6 +313,27 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
     public function setBankTransferOptions($bankTransferOptions)
     {
         $this->container['bankTransferOptions'] = $bankTransferOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets japanPaymentOptions
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions
+     */
+    public function getJapanPaymentOptions()
+    {
+        return $this->container['japanPaymentOptions'];
+    }
+
+    /**
+     * Sets japanPaymentOptions
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions $japanPaymentOptions
+     * @return $this
+     */
+    public function setJapanPaymentOptions($japanPaymentOptions)
+    {
+        $this->container['japanPaymentOptions'] = $japanPaymentOptions;
 
         return $this;
     }

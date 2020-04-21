@@ -55,6 +55,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'merchantCustomerId' => 'string',
         'username' => 'string',
         'hashedPassword' => 'string',
         'dateOfBirth' => 'string',
@@ -66,6 +67,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'merchantCustomerId' => null,
         'username' => null,
         'hashedPassword' => null,
         'dateOfBirth' => null,
@@ -87,6 +89,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'merchantCustomerId' => 'merchantCustomerId',
         'username' => 'username',
         'hashedPassword' => 'hashedPassword',
         'dateOfBirth' => 'dateOfBirth',
@@ -99,6 +102,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'merchantCustomerId' => 'setMerchantCustomerId',
         'username' => 'setUsername',
         'hashedPassword' => 'setHashedPassword',
         'dateOfBirth' => 'setDateOfBirth',
@@ -111,6 +115,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'merchantCustomerId' => 'getMerchantCustomerId',
         'username' => 'getUsername',
         'hashedPassword' => 'getHashedPassword',
         'dateOfBirth' => 'getDateOfBirth',
@@ -148,6 +153,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
@@ -162,6 +168,10 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
+            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
+        }
 
         if (!is_null($this->container['username']) && (strlen($this->container['username']) > 255)) {
             $invalid_properties[] = "invalid value for 'username', the character length must be smaller than or equal to 255.";
@@ -187,6 +197,9 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['merchantCustomerId']) > 100) {
+            return false;
+        }
         if (strlen($this->container['username']) > 255) {
             return false;
         }
@@ -199,6 +212,31 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets merchantCustomerId
+     * @return string
+     */
+    public function getMerchantCustomerId()
+    {
+        return $this->container['merchantCustomerId'];
+    }
+
+    /**
+     * Sets merchantCustomerId
+     * @param string $merchantCustomerId Your identifier for the customer.  When a subscription or customer profile is being created, the maximum length for this field for most processors is 30. Otherwise, the maximum length is 100.  #### Comercio Latino For recurring payments in Mexico, the value is the customer’s contract number. Note Before you request the authorization, you must inform the issuer of the customer contract numbers that will be used for recurring transactions.  #### Worldpay VAP For a follow-on credit with Worldpay VAP, CyberSource checks the following locations, in the order given, for a customer account ID value and uses the first value it finds: 1. `customer_account_id` value in the follow-on credit request 2. Customer account ID value that was used for the capture that is being credited 3. Customer account ID value that was used for the original authorization If a customer account ID value cannot be found in any of these locations, then no value is used.  For processor-specific information, see the `customer_account_id` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @return $this
+     */
+    public function setMerchantCustomerId($merchantCustomerId)
+    {
+        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling Riskv1decisionsBuyerInformation., must be smaller than or equal to 100.');
+        }
+
+        $this->container['merchantCustomerId'] = $merchantCustomerId;
+
+        return $this;
+    }
 
     /**
      * Gets username

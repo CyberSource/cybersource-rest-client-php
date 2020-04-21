@@ -160,4 +160,25 @@ class Ptsv2paymentsOrderInformationShipToTest extends \PHPUnit_Framework_TestCas
     public function testPropertyCompany()
     {
     }
+
+    /**
+     * Test attribute "destinationTypes"
+     */
+    public function testPropertyDestinationTypes()
+    {
+    }
+
+    /**
+     * Test attribute "destinationCode"
+     */
+    public function testPropertyDestinationCode()
+    {
+    }
+
+    /**
+     * Test attribute "method"
+     */
+    public function testPropertyMethod()
+    {
+    }
 }

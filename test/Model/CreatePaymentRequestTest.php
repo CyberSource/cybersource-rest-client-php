@@ -188,4 +188,32 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPromotionInformation()
     {
     }
+
+    /**
+     * Test attribute "tokenInformation"
+     */
+    public function testPropertyTokenInformation()
+    {
+    }
+
+    /**
+     * Test attribute "riskInformation"
+     */
+    public function testPropertyRiskInformation()
+    {
+    }
+
+    /**
+     * Test attribute "acquirerInformation"
+     */
+    public function testPropertyAcquirerInformation()
+    {
+    }
+
+    /**
+     * Test attribute "recurringPaymentInformation"
+     */
+    public function testPropertyRecurringPaymentInformation()
+    {
+    }
 }

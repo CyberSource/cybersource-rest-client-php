@@ -168,10 +168,7 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['bin'] === null) {
-            $invalid_properties[] = "'bin' can't be null";
-        }
-        if ((strlen($this->container['bin']) > 6)) {
+        if (!is_null($this->container['bin']) && (strlen($this->container['bin']) > 6)) {
             $invalid_properties[] = "invalid value for 'bin', the character length must be smaller than or equal to 6.";
         }
 
@@ -202,9 +199,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['bin'] === null) {
-            return false;
-        }
         if (strlen($this->container['bin']) > 6) {
             return false;
         }
@@ -240,7 +234,7 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
      */
     public function setBin($bin)
     {
-        if ((strlen($bin) > 6)) {
+        if (!is_null($bin) && (strlen($bin) > 6)) {
             throw new \InvalidArgumentException('invalid length for $bin when calling Riskv1authenticationresultsPaymentInformationCard., must be smaller than or equal to 6.');
         }
 

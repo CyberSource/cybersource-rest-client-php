@@ -55,7 +55,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
       */
     protected static $swaggerTypes = [
         'paymentSolution' => 'string',
-        'businessApplicationId' => 'string'
+        'businessApplicationId' => 'string',
+        'commerceIndicator' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
       */
     protected static $swaggerFormats = [
         'paymentSolution' => null,
-        'businessApplicationId' => null
+        'businessApplicationId' => null,
+        'commerceIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     protected static $attributeMap = [
         'paymentSolution' => 'paymentSolution',
-        'businessApplicationId' => 'businessApplicationId'
+        'businessApplicationId' => 'businessApplicationId',
+        'commerceIndicator' => 'commerceIndicator'
     ];
 
 
@@ -93,7 +96,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     protected static $setters = [
         'paymentSolution' => 'setPaymentSolution',
-        'businessApplicationId' => 'setBusinessApplicationId'
+        'businessApplicationId' => 'setBusinessApplicationId',
+        'commerceIndicator' => 'setCommerceIndicator'
     ];
 
 
@@ -103,7 +107,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     protected static $getters = [
         'paymentSolution' => 'getPaymentSolution',
-        'businessApplicationId' => 'getBusinessApplicationId'
+        'businessApplicationId' => 'getBusinessApplicationId',
+        'commerceIndicator' => 'getCommerceIndicator'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     {
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
+        $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
     }
 
     /**
@@ -154,6 +160,10 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
             $invalid_properties[] = "invalid value for 'paymentSolution', the character length must be smaller than or equal to 12.";
         }
 
+        if (!is_null($this->container['commerceIndicator']) && (strlen($this->container['commerceIndicator']) > 20)) {
+            $invalid_properties[] = "invalid value for 'commerceIndicator', the character length must be smaller than or equal to 20.";
+        }
+
         return $invalid_properties;
     }
 
@@ -167,6 +177,9 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     {
 
         if (strlen($this->container['paymentSolution']) > 12) {
+            return false;
+        }
+        if (strlen($this->container['commerceIndicator']) > 20) {
             return false;
         }
         return true;
@@ -215,6 +228,31 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     public function setBusinessApplicationId($businessApplicationId)
     {
         $this->container['businessApplicationId'] = $businessApplicationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets commerceIndicator
+     * @return string
+     */
+    public function getCommerceIndicator()
+    {
+        return $this->container['commerceIndicator'];
+    }
+
+    /**
+     * Sets commerceIndicator
+     * @param string $commerceIndicator Type of transaction. Certain card associations use this information when determining discount rates to charge you. Required for Verified by Visa and MasterCard SecureCode transactions.      This field can contain one of these values:      * 5: `vbv` (Successful Verified by Visa transaction)     * 6: `spa` (MasterCard SecureCode transaction)     * 7: `internet` (default) (eCommerce order placed by     using a Web site)     * 8: `vbv_attempted` (Verified by Visa transaction     was attempted but not authenticated)     * E: `vbv_failure` (Depending on your payment     processor, you may receive this result if Visa’s     directory service is not available)     * F: `spa_failure` (MasterCard SecureCode     authentication failed)     * M: `moto` (Mail order or telephone order)     * P: `retail` (Point-of-sale transaction)     * R: `recurring` (Recurring transaction)     * S: `install` (Installment payment)
+     * @return $this
+     */
+    public function setCommerceIndicator($commerceIndicator)
+    {
+        if (!is_null($commerceIndicator) && (strlen($commerceIndicator) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $commerceIndicator when calling TssV2TransactionsPost201ResponseEmbeddedProcessingInformation., must be smaller than or equal to 20.');
+        }
+
+        $this->container['commerceIndicator'] = $commerceIndicator;
 
         return $this;
     }

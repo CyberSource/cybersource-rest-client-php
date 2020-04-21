@@ -59,7 +59,7 @@ class RefundCaptureRequest implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsOrderInformation',
         'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation',
-        'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsDeviceInformation',
+        'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsMerchantInformation',
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsPointOfSaleInformation',
@@ -333,7 +333,7 @@ class RefundCaptureRequest implements ArrayAccess
 
     /**
      * Gets deviceInformation
-     * @return \CyberSource\Model\Ptsv2paymentsDeviceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation
      */
     public function getDeviceInformation()
     {
@@ -342,7 +342,7 @@ class RefundCaptureRequest implements ArrayAccess
 
     /**
      * Sets deviceInformation
-     * @param \CyberSource\Model\Ptsv2paymentsDeviceInformation $deviceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation $deviceInformation
      * @return $this
      */
     public function setDeviceInformation($deviceInformation)

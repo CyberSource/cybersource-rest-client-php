@@ -69,7 +69,11 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
-        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
+        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
+        'tokenInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformation',
+        'riskInformation' => '\CyberSource\Model\Ptsv2paymentsRiskInformation',
+        'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
+        'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation'
     ];
 
     /**
@@ -92,7 +96,11 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => null,
         'installmentInformation' => null,
         'travelInformation' => null,
-        'promotionInformation' => null
+        'promotionInformation' => null,
+        'tokenInformation' => null,
+        'riskInformation' => null,
+        'acquirerInformation' => null,
+        'recurringPaymentInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -125,7 +133,11 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => 'merchantDefinedInformation',
         'installmentInformation' => 'installmentInformation',
         'travelInformation' => 'travelInformation',
-        'promotionInformation' => 'promotionInformation'
+        'promotionInformation' => 'promotionInformation',
+        'tokenInformation' => 'tokenInformation',
+        'riskInformation' => 'riskInformation',
+        'acquirerInformation' => 'acquirerInformation',
+        'recurringPaymentInformation' => 'recurringPaymentInformation'
     ];
 
 
@@ -149,7 +161,11 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'travelInformation' => 'setTravelInformation',
-        'promotionInformation' => 'setPromotionInformation'
+        'promotionInformation' => 'setPromotionInformation',
+        'tokenInformation' => 'setTokenInformation',
+        'riskInformation' => 'setRiskInformation',
+        'acquirerInformation' => 'setAcquirerInformation',
+        'recurringPaymentInformation' => 'setRecurringPaymentInformation'
     ];
 
 
@@ -173,7 +189,11 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'travelInformation' => 'getTravelInformation',
-        'promotionInformation' => 'getPromotionInformation'
+        'promotionInformation' => 'getPromotionInformation',
+        'tokenInformation' => 'getTokenInformation',
+        'riskInformation' => 'getRiskInformation',
+        'acquirerInformation' => 'getAcquirerInformation',
+        'recurringPaymentInformation' => 'getRecurringPaymentInformation'
     ];
 
     public static function attributeMap()
@@ -223,6 +243,10 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
+        $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
+        $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
+        $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
+        $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
     }
 
     /**
@@ -582,6 +606,90 @@ class CreatePaymentRequest implements ArrayAccess
     public function setPromotionInformation($promotionInformation)
     {
         $this->container['promotionInformation'] = $promotionInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTokenInformation
+     */
+    public function getTokenInformation()
+    {
+        return $this->container['tokenInformation'];
+    }
+
+    /**
+     * Sets tokenInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTokenInformation $tokenInformation
+     * @return $this
+     */
+    public function setTokenInformation($tokenInformation)
+    {
+        $this->container['tokenInformation'] = $tokenInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets riskInformation
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformation
+     */
+    public function getRiskInformation()
+    {
+        return $this->container['riskInformation'];
+    }
+
+    /**
+     * Sets riskInformation
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformation $riskInformation
+     * @return $this
+     */
+    public function setRiskInformation($riskInformation)
+    {
+        $this->container['riskInformation'] = $riskInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerInformation
+     * @return \CyberSource\Model\Ptsv2paymentsAcquirerInformation
+     */
+    public function getAcquirerInformation()
+    {
+        return $this->container['acquirerInformation'];
+    }
+
+    /**
+     * Sets acquirerInformation
+     * @param \CyberSource\Model\Ptsv2paymentsAcquirerInformation $acquirerInformation
+     * @return $this
+     */
+    public function setAcquirerInformation($acquirerInformation)
+    {
+        $this->container['acquirerInformation'] = $acquirerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurringPaymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation
+     */
+    public function getRecurringPaymentInformation()
+    {
+        return $this->container['recurringPaymentInformation'];
+    }
+
+    /**
+     * Sets recurringPaymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation $recurringPaymentInformation
+     * @return $this
+     */
+    public function setRecurringPaymentInformation($recurringPaymentInformation)
+    {
+        $this->container['recurringPaymentInformation'] = $recurringPaymentInformation;
 
         return $this;
     }

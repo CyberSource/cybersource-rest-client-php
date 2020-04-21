@@ -146,4 +146,11 @@ class Ptsv2paymentsProcessingInformationBankTransferOptionsTest extends \PHPUnit
     public function testPropertyFraudScreeningLevel()
     {
     }
+
+    /**
+     * Test attribute "customerPresent"
+     */
+    public function testPropertyCustomerPresent()
+    {
+    }
 }

@@ -59,7 +59,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
-        'voidAmountDetails' => '\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails'
+        'voidAmountDetails' => '\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails',
+        'processorInformation' => '\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseProcessorInformation'
     ];
 
     /**
@@ -72,7 +73,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'submitTimeUtc' => null,
         'status' => null,
         'clientReferenceInformation' => null,
-        'voidAmountDetails' => null
+        'voidAmountDetails' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
         'clientReferenceInformation' => 'clientReferenceInformation',
-        'voidAmountDetails' => 'voidAmountDetails'
+        'voidAmountDetails' => 'voidAmountDetails',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -109,7 +112,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
         'clientReferenceInformation' => 'setClientReferenceInformation',
-        'voidAmountDetails' => 'setVoidAmountDetails'
+        'voidAmountDetails' => 'setVoidAmountDetails',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -123,7 +127,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
         'clientReferenceInformation' => 'getClientReferenceInformation',
-        'voidAmountDetails' => 'getVoidAmountDetails'
+        'voidAmountDetails' => 'getVoidAmountDetails',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['voidAmountDetails'] = isset($data['voidAmountDetails']) ? $data['voidAmountDetails'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -323,6 +329,27 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
     public function setVoidAmountDetails($voidAmountDetails)
     {
         $this->container['voidAmountDetails'] = $voidAmountDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

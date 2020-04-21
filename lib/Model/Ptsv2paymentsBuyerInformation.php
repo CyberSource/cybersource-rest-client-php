@@ -59,7 +59,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'vatRegistrationNumber' => 'string',
         'companyTaxId' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]',
-        'hashedPassword' => 'string'
+        'hashedPassword' => 'string',
+        'mobilePhone' => 'int'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'vatRegistrationNumber' => null,
         'companyTaxId' => null,
         'personalIdentification' => null,
-        'hashedPassword' => null
+        'hashedPassword' => null,
+        'mobilePhone' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'vatRegistrationNumber' => 'vatRegistrationNumber',
         'companyTaxId' => 'companyTaxId',
         'personalIdentification' => 'personalIdentification',
-        'hashedPassword' => 'hashedPassword'
+        'hashedPassword' => 'hashedPassword',
+        'mobilePhone' => 'mobilePhone'
     ];
 
 
@@ -109,7 +112,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'vatRegistrationNumber' => 'setVatRegistrationNumber',
         'companyTaxId' => 'setCompanyTaxId',
         'personalIdentification' => 'setPersonalIdentification',
-        'hashedPassword' => 'setHashedPassword'
+        'hashedPassword' => 'setHashedPassword',
+        'mobilePhone' => 'setMobilePhone'
     ];
 
 
@@ -123,7 +127,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'vatRegistrationNumber' => 'getVatRegistrationNumber',
         'companyTaxId' => 'getCompanyTaxId',
         'personalIdentification' => 'getPersonalIdentification',
-        'hashedPassword' => 'getHashedPassword'
+        'hashedPassword' => 'getHashedPassword',
+        'mobilePhone' => 'getMobilePhone'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         $this->container['companyTaxId'] = isset($data['companyTaxId']) ? $data['companyTaxId'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
+        $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
     }
 
     /**
@@ -367,6 +373,27 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         }
 
         $this->container['hashedPassword'] = $hashedPassword;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobilePhone
+     * @return int
+     */
+    public function getMobilePhone()
+    {
+        return $this->container['mobilePhone'];
+    }
+
+    /**
+     * Sets mobilePhone
+     * @param int $mobilePhone Cardholder’s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions.
+     * @return $this
+     */
+    public function setMobilePhone($mobilePhone)
+    {
+        $this->container['mobilePhone'] = $mobilePhone;
 
         return $this;
     }

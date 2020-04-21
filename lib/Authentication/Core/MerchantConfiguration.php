@@ -218,6 +218,14 @@ class MerchantConfiguration
         {
            $this->host = GlobalParameter::BOAPRODUCTIONURL;
         }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::IDCSANDBOXURL;
+        }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNPRODENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::IDCPRODUCTIONURL;
+        }
         else
         {
             $this->host =$this->runEnvironment;

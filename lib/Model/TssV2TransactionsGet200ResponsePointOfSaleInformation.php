@@ -55,7 +55,8 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
       */
     protected static $swaggerTypes = [
         'entryMode' => 'string',
-        'terminalCapability' => 'int'
+        'terminalCapability' => 'int',
+        'emv' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv'
     ];
 
     /**
@@ -64,7 +65,8 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
       */
     protected static $swaggerFormats = [
         'entryMode' => null,
-        'terminalCapability' => null
+        'terminalCapability' => null,
+        'emv' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     protected static $attributeMap = [
         'entryMode' => 'entryMode',
-        'terminalCapability' => 'terminalCapability'
+        'terminalCapability' => 'terminalCapability',
+        'emv' => 'emv'
     ];
 
 
@@ -93,7 +96,8 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     protected static $setters = [
         'entryMode' => 'setEntryMode',
-        'terminalCapability' => 'setTerminalCapability'
+        'terminalCapability' => 'setTerminalCapability',
+        'emv' => 'setEmv'
     ];
 
 
@@ -103,7 +107,8 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     protected static $getters = [
         'entryMode' => 'getEntryMode',
-        'terminalCapability' => 'getTerminalCapability'
+        'terminalCapability' => 'getTerminalCapability',
+        'emv' => 'getEmv'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
     {
         $this->container['entryMode'] = isset($data['entryMode']) ? $data['entryMode'] : null;
         $this->container['terminalCapability'] = isset($data['terminalCapability']) ? $data['terminalCapability'] : null;
+        $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
     }
 
     /**
@@ -237,6 +243,27 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         }
 
         $this->container['terminalCapability'] = $terminalCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets emv
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv
+     */
+    public function getEmv()
+    {
+        return $this->container['emv'];
+    }
+
+    /**
+     * Sets emv
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv $emv
+     * @return $this
+     */
+    public function setEmv($emv)
+    {
+        $this->container['emv'] = $emv;
 
         return $this;
     }

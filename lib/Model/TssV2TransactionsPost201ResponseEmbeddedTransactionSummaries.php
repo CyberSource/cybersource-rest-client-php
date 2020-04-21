@@ -57,7 +57,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'id' => 'string',
         'submitTimeUtc' => 'string',
         'merchantId' => 'string',
-        'applicationInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation',
+        'applicationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformation',
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation',
@@ -338,7 +338,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Gets applicationInformation
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformation
      */
     public function getApplicationInformation()
     {
@@ -347,7 +347,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Sets applicationInformation
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation $applicationInformation
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformation $applicationInformation
      * @return $this
      */
     public function setApplicationInformation($applicationInformation)

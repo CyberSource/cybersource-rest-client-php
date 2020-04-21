@@ -54,15 +54,15 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationsOrderInformation',
-        'paymentInformation' => '\CyberSource\Model\Riskv1authenticationexemptionsPaymentInformation',
-        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
+        'paymentInformation' => '\CyberSource\Model\Riskv1authenticationsPaymentInformation',
+        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsProcessingInformation',
         'buyerInformation' => '\CyberSource\Model\Riskv1authenticationsBuyerInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationsDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Riskv1authenticationsMerchantInformation',
-        'acquirerInformation' => '\CyberSource\Model\Riskv1authenticationsAcquirerInformation',
-        'recurringPaymentInformation' => '\CyberSource\Model\Riskv1authenticationsRecurringPaymentInformation',
+        'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
+        'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1authenticationsConsumerAuthenticationInformation',
         'riskInformation' => '\CyberSource\Model\Riskv1authenticationsRiskInformation',
         'travelInformation' => '\CyberSource\Model\Riskv1authenticationsTravelInformation',
@@ -234,7 +234,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation
+     * @return \CyberSource\Model\Riskv1authenticationsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -243,7 +243,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Riskv1authenticationsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -276,7 +276,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets paymentInformation
-     * @return \CyberSource\Model\Riskv1authenticationexemptionsPaymentInformation
+     * @return \CyberSource\Model\Riskv1authenticationsPaymentInformation
      */
     public function getPaymentInformation()
     {
@@ -285,7 +285,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets paymentInformation
-     * @param \CyberSource\Model\Riskv1authenticationexemptionsPaymentInformation $paymentInformation
+     * @param \CyberSource\Model\Riskv1authenticationsPaymentInformation $paymentInformation
      * @return $this
      */
     public function setPaymentInformation($paymentInformation)
@@ -297,7 +297,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation
+     * @return \CyberSource\Model\Riskv1authenticationsProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -306,7 +306,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Riskv1authenticationsProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -381,7 +381,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets acquirerInformation
-     * @return \CyberSource\Model\Riskv1authenticationsAcquirerInformation
+     * @return \CyberSource\Model\Ptsv2paymentsAcquirerInformation
      */
     public function getAcquirerInformation()
     {
@@ -390,7 +390,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets acquirerInformation
-     * @param \CyberSource\Model\Riskv1authenticationsAcquirerInformation $acquirerInformation
+     * @param \CyberSource\Model\Ptsv2paymentsAcquirerInformation $acquirerInformation
      * @return $this
      */
     public function setAcquirerInformation($acquirerInformation)
@@ -402,7 +402,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets recurringPaymentInformation
-     * @return \CyberSource\Model\Riskv1authenticationsRecurringPaymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation
      */
     public function getRecurringPaymentInformation()
     {
@@ -411,7 +411,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets recurringPaymentInformation
-     * @param \CyberSource\Model\Riskv1authenticationsRecurringPaymentInformation $recurringPaymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation $recurringPaymentInformation
      * @return $this
      */
     public function setRecurringPaymentInformation($recurringPaymentInformation)

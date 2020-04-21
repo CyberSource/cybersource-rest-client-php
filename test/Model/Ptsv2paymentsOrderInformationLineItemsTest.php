@@ -258,4 +258,39 @@ class Ptsv2paymentsOrderInformationLineItemsTest extends \PHPUnit_Framework_Test
     public function testPropertyReferenceDataNumber()
     {
     }
+
+    /**
+     * Test attribute "productDescription"
+     */
+    public function testPropertyProductDescription()
+    {
+    }
+
+    /**
+     * Test attribute "giftCardCurrency"
+     */
+    public function testPropertyGiftCardCurrency()
+    {
+    }
+
+    /**
+     * Test attribute "shippingDestinationTypes"
+     */
+    public function testPropertyShippingDestinationTypes()
+    {
+    }
+
+    /**
+     * Test attribute "gift"
+     */
+    public function testPropertyGift()
+    {
+    }
+
+    /**
+     * Test attribute "passenger"
+     */
+    public function testPropertyPassenger()
+    {
+    }
 }

@@ -54,7 +54,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'profile' => '\CyberSource\Model\Riskv1decisionsRiskInformationProfile',
+        'profile' => '\CyberSource\Model\Ptsv2paymentsRiskInformationProfile',
         'eventType' => 'string'
     ];
 
@@ -175,7 +175,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
 
     /**
      * Gets profile
-     * @return \CyberSource\Model\Riskv1decisionsRiskInformationProfile
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationProfile
      */
     public function getProfile()
     {
@@ -184,7 +184,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
 
     /**
      * Sets profile
-     * @param \CyberSource\Model\Riskv1decisionsRiskInformationProfile $profile
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationProfile $profile
      * @return $this
      */
     public function setProfile($profile)

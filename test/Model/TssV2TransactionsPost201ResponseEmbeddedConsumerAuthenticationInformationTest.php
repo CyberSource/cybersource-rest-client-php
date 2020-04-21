@@ -90,4 +90,11 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformationT
     public function testPropertyTransactionId()
     {
     }
+
+    /**
+     * Test attribute "eciRaw"
+     */
+    public function testPropertyEciRaw()
+    {
+    }
 }
