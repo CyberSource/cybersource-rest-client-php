@@ -19,6 +19,10 @@ Name | Type | Description | Notes
 **installmentInformation** | [**\CyberSource\Model\Ptsv2paymentsInstallmentInformation**](Ptsv2paymentsInstallmentInformation.md) |  | [optional] 
 **travelInformation** | [**\CyberSource\Model\Ptsv2paymentsTravelInformation**](Ptsv2paymentsTravelInformation.md) |  | [optional] 
 **promotionInformation** | [**\CyberSource\Model\Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
+**tokenInformation** | [**\CyberSource\Model\Ptsv2paymentsTokenInformation**](Ptsv2paymentsTokenInformation.md) |  | [optional] 
+**riskInformation** | [**\CyberSource\Model\Ptsv2paymentsRiskInformation**](Ptsv2paymentsRiskInformation.md) |  | [optional] 
+**acquirerInformation** | [**\CyberSource\Model\Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
+**recurringPaymentInformation** | [**\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **generatePublicKey**
-> \CyberSource\Model\FlexV1KeysPost200Response generatePublicKey($generatePublicKeyRequest)
+> \CyberSource\Model\FlexV1KeysPost200Response generatePublicKey($generatePublicKeyRequest, $format)
 
 Generate Key
 
@@ -21,9 +21,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\KeyGenerationApi();
 $generatePublicKeyRequest = new \CyberSource\Model\GeneratePublicKeyRequest(); // \CyberSource\Model\GeneratePublicKeyRequest | 
+$format = "legacy"; // string | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
 
 try {
-    $result = $api_instance->generatePublicKey($generatePublicKeyRequest);
+    $result = $api_instance->generatePublicKey($generatePublicKeyRequest, $format);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling KeyGenerationApi->generatePublicKey: ', $e->getMessage(), PHP_EOL;
@@ -36,6 +37,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **generatePublicKeyRequest** | [**\CyberSource\Model\GeneratePublicKeyRequest**](../Model/GeneratePublicKeyRequest.md)|  |
+ **format** | **string**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [optional] [default to legacy]
 
 ### Return type
 

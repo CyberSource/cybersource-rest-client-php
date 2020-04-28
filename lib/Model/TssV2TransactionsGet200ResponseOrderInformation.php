@@ -58,7 +58,8 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
         'shipTo' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationShipTo',
         'lineItems' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationLineItems[]',
         'amountDetails' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationAmountDetails',
-        'shippingDetails' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationShippingDetails'
+        'shippingDetails' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationShippingDetails',
+        'invoiceDetails' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails'
     ];
 
     /**
@@ -70,7 +71,8 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
         'shipTo' => null,
         'lineItems' => null,
         'amountDetails' => null,
-        'shippingDetails' => null
+        'shippingDetails' => null,
+        'invoiceDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
         'shipTo' => 'shipTo',
         'lineItems' => 'lineItems',
         'amountDetails' => 'amountDetails',
-        'shippingDetails' => 'shippingDetails'
+        'shippingDetails' => 'shippingDetails',
+        'invoiceDetails' => 'invoiceDetails'
     ];
 
 
@@ -105,7 +108,8 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
         'shipTo' => 'setShipTo',
         'lineItems' => 'setLineItems',
         'amountDetails' => 'setAmountDetails',
-        'shippingDetails' => 'setShippingDetails'
+        'shippingDetails' => 'setShippingDetails',
+        'invoiceDetails' => 'setInvoiceDetails'
     ];
 
 
@@ -118,7 +122,8 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
         'shipTo' => 'getShipTo',
         'lineItems' => 'getLineItems',
         'amountDetails' => 'getAmountDetails',
-        'shippingDetails' => 'getShippingDetails'
+        'shippingDetails' => 'getShippingDetails',
+        'invoiceDetails' => 'getInvoiceDetails'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['shippingDetails'] = isset($data['shippingDetails']) ? $data['shippingDetails'] : null;
+        $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class TssV2TransactionsGet200ResponseOrderInformation implements ArrayAccess
     public function setShippingDetails($shippingDetails)
     {
         $this->container['shippingDetails'] = $shippingDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceDetails
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails
+     */
+    public function getInvoiceDetails()
+    {
+        return $this->container['invoiceDetails'];
+    }
+
+    /**
+     * Sets invoiceDetails
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails $invoiceDetails
+     * @return $this
+     */
+    public function setInvoiceDetails($invoiceDetails)
+    {
+        $this->container['invoiceDetails'] = $invoiceDetails;
 
         return $this;
     }

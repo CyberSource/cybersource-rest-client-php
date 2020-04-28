@@ -90,4 +90,11 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformationTest extends \PHPUnit
     public function testPropertyTerminalCapability()
     {
     }
+
+    /**
+     * Test attribute "emv"
+     */
+    public function testPropertyEmv()
+    {
+    }
 }

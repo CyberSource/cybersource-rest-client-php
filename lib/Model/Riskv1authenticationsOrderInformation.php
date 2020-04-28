@@ -54,13 +54,13 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amountDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails',
+        'amountDetails' => '\CyberSource\Model\Riskv1authenticationsOrderInformationAmountDetails',
         'preOrder' => 'string',
         'preOrderDate' => 'string',
         'reordered' => 'bool',
         'shipTo' => '\CyberSource\Model\Riskv1authenticationsOrderInformationShipTo',
         'lineItems' => '\CyberSource\Model\Riskv1authenticationsOrderInformationLineItems[]',
-        'billTo' => '\CyberSource\Model\Riskv1authenticationexemptionsOrderInformationBillTo',
+        'billTo' => '\CyberSource\Model\Riskv1authenticationsOrderInformationBillTo',
         'totalOffersCount' => 'string'
     ];
 
@@ -218,7 +218,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
 
     /**
      * Gets amountDetails
-     * @return \CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails
+     * @return \CyberSource\Model\Riskv1authenticationsOrderInformationAmountDetails
      */
     public function getAmountDetails()
     {
@@ -227,7 +227,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
 
     /**
      * Sets amountDetails
-     * @param \CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails $amountDetails
+     * @param \CyberSource\Model\Riskv1authenticationsOrderInformationAmountDetails $amountDetails
      * @return $this
      */
     public function setAmountDetails($amountDetails)
@@ -348,7 +348,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\Riskv1authenticationexemptionsOrderInformationBillTo
+     * @return \CyberSource\Model\Riskv1authenticationsOrderInformationBillTo
      */
     public function getBillTo()
     {
@@ -357,7 +357,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\Riskv1authenticationexemptionsOrderInformationBillTo $billTo
+     * @param \CyberSource\Model\Riskv1authenticationsOrderInformationBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)

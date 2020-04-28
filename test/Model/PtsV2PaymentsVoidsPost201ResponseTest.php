@@ -118,4 +118,11 @@ class PtsV2PaymentsVoidsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyVoidAmountDetails()
     {
     }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
+    {
+    }
 }

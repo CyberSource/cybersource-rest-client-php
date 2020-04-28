@@ -150,6 +150,9 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['mobilePhone'] === null) {
+            $invalid_properties[] = "'mobilePhone' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,6 +165,9 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['mobilePhone'] === null) {
+            return false;
+        }
         return true;
     }
 

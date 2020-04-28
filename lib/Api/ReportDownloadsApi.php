@@ -92,16 +92,15 @@ class ReportDownloadsApi
      *
      * Download a Report
      *
-     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd (required)
+     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10 (required)
      * @param string $reportName Name of the report to download (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
-     * @param string $reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadReport($reportDate, $reportName, $organizationId = null, $reportTime = null)
+    public function downloadReport($reportDate, $reportName, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->downloadReportWithHttpInfo($reportDate, $reportName, $organizationId, $reportTime);
+        list($response, $statusCode, $httpHeader) = $this->downloadReportWithHttpInfo($reportDate, $reportName, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -110,14 +109,13 @@ class ReportDownloadsApi
      *
      * Download a Report
      *
-     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**   - yyyy-MM-dd (required)
+     * @param \DateTime $reportDate Valid date on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example date format:**  yyyy-mm-dd For reports that span multiple days, this value would be the end date of the report in the time zone of the report subscription. Example 1: If your report start date is 2020-03-06 and the end date is 2020-03-09, the reportDate passed in the query is 2020-03-09. Example 2: If your report runs from midnight to midnight on 2020-03-09, the reportDate passed in the query is 2020-03-10 (required)
      * @param string $reportName Name of the report to download (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
-     * @param string $reportTime Valid time on which to download the report in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Time Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)  **Example time format:**   - hh:mm:ss±hh:mm (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadReportWithHttpInfo($reportDate, $reportName, $organizationId = null, $reportTime = null)
+    public function downloadReportWithHttpInfo($reportDate, $reportName, $organizationId = null)
     {
         // verify the required parameter 'reportDate' is set
         if ($reportDate === null) {
@@ -160,10 +158,6 @@ class ReportDownloadsApi
         // query params
         if ($reportName !== null) {
             $queryParams['reportName'] = $this->apiClient->getSerializer()->toQueryValue($reportName);
-        }
-        // query params
-        if ($reportTime !== null) {
-            $queryParams['reportTime'] = $this->apiClient->getSerializer()->toQueryValue($reportTime);
         }
 
         // for model (json/xml)

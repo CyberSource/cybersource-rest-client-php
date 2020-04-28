@@ -97,4 +97,25 @@ class Ptsv2paymentsidreversalsClientReferenceInformationTest extends \PHPUnit_Fr
     public function testPropertyPartner()
     {
     }
+
+    /**
+     * Test attribute "applicationName"
+     */
+    public function testPropertyApplicationName()
+    {
+    }
+
+    /**
+     * Test attribute "applicationVersion"
+     */
+    public function testPropertyApplicationVersion()
+    {
+    }
+
+    /**
+     * Test attribute "applicationUser"
+     */
+    public function testPropertyApplicationUser()
+    {
+    }
 }

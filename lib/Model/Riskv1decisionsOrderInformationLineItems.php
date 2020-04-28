@@ -62,7 +62,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productCode' => 'string',
         'gift' => 'bool',
         'distributorProductSku' => 'string',
-        'passenger' => '\CyberSource\Model\Riskv1decisionsOrderInformationPassenger'
+        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger'
     ];
 
     /**
@@ -429,7 +429,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets gift
-     * @param bool $gift Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different.
+     * @param bool $gift This field is only used in DM service.  Determines whether to assign risk to the order if the billing and shipping addresses specify different cities, states, or countries. This field can contain one of the following values: - true: Orders are assigned only slight additional risk if billing and shipping addresses are different. - false: Orders are assigned higher additional risk if billing and shipping addresses are different.
      * @return $this
      */
     public function setGift($gift)
@@ -466,7 +466,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Gets passenger
-     * @return \CyberSource\Model\Riskv1decisionsOrderInformationPassenger
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationPassenger
      */
     public function getPassenger()
     {
@@ -475,7 +475,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets passenger
-     * @param \CyberSource\Model\Riskv1decisionsOrderInformationPassenger $passenger
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationPassenger $passenger
      * @return $this
      */
     public function setPassenger($passenger)

@@ -54,7 +54,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'processor' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationProcessor'
+        'processor' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationProcessor',
+        'approvalCode' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'processor' => null
+        'processor' => null,
+        'approvalCode' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'processor' => 'processor'
+        'processor' => 'processor',
+        'approvalCode' => 'approvalCode'
     ];
 
 
@@ -89,7 +92,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      * @var string[]
      */
     protected static $setters = [
-        'processor' => 'setProcessor'
+        'processor' => 'setProcessor',
+        'approvalCode' => 'setApprovalCode'
     ];
 
 
@@ -98,7 +102,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      * @var string[]
      */
     protected static $getters = [
-        'processor' => 'getProcessor'
+        'processor' => 'getProcessor',
+        'approvalCode' => 'getApprovalCode'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
     public function __construct(array $data = null)
     {
         $this->container['processor'] = isset($data['processor']) ? $data['processor'] : null;
+        $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
     public function setProcessor($processor)
     {
         $this->container['processor'] = $processor;
+
+        return $this;
+    }
+
+    /**
+     * Gets approvalCode
+     * @return string
+     */
+    public function getApprovalCode()
+    {
+        return $this->container['approvalCode'];
+    }
+
+    /**
+     * Sets approvalCode
+     * @param string $approvalCode Authorization code. Returned only when the processor returns this value.
+     * @return $this
+     */
+    public function setApprovalCode($approvalCode)
+    {
+        $this->container['approvalCode'] = $approvalCode;
 
         return $this;
     }

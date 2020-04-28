@@ -78,9 +78,9 @@ class Ptsv2paymentsidOrderInformationAmountDetailsTest extends \PHPUnit_Framewor
     }
 
     /**
-     * Test attribute "additonalAmount"
+     * Test attribute "additionalAmount"
      */
-    public function testPropertyAdditonalAmount()
+    public function testPropertyAdditionalAmount()
     {
     }
 

@@ -118,4 +118,39 @@ class Ptsv2paymentsOrderInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyShippingDetails()
     {
     }
+
+    /**
+     * Test attribute "returnsAccepted"
+     */
+    public function testPropertyReturnsAccepted()
+    {
+    }
+
+    /**
+     * Test attribute "preOrder"
+     */
+    public function testPropertyPreOrder()
+    {
+    }
+
+    /**
+     * Test attribute "preOrderDate"
+     */
+    public function testPropertyPreOrderDate()
+    {
+    }
+
+    /**
+     * Test attribute "reordered"
+     */
+    public function testPropertyReordered()
+    {
+    }
+
+    /**
+     * Test attribute "totalOffersCount"
+     */
+    public function testPropertyTotalOffersCount()
+    {
+    }
 }

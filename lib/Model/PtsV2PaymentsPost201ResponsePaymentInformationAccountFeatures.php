@@ -56,6 +56,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     protected static $swaggerTypes = [
         'accountType' => 'string',
         'accountStatus' => 'string',
+        'balances' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances[]',
         'balanceAmount' => 'string',
         'balanceAmountType' => 'string',
         'currency' => 'string',
@@ -80,6 +81,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     protected static $swaggerFormats = [
         'accountType' => null,
         'accountStatus' => null,
+        'balances' => null,
         'balanceAmount' => null,
         'balanceAmountType' => null,
         'currency' => null,
@@ -114,6 +116,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     protected static $attributeMap = [
         'accountType' => 'accountType',
         'accountStatus' => 'accountStatus',
+        'balances' => 'balances',
         'balanceAmount' => 'balanceAmount',
         'balanceAmountType' => 'balanceAmountType',
         'currency' => 'currency',
@@ -139,6 +142,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     protected static $setters = [
         'accountType' => 'setAccountType',
         'accountStatus' => 'setAccountStatus',
+        'balances' => 'setBalances',
         'balanceAmount' => 'setBalanceAmount',
         'balanceAmountType' => 'setBalanceAmountType',
         'currency' => 'setCurrency',
@@ -164,6 +168,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     protected static $getters = [
         'accountType' => 'getAccountType',
         'accountStatus' => 'getAccountStatus',
+        'balances' => 'getBalances',
         'balanceAmount' => 'getBalanceAmount',
         'balanceAmountType' => 'getBalanceAmountType',
         'currency' => 'getCurrency',
@@ -214,6 +219,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     {
         $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;
         $this->container['accountStatus'] = isset($data['accountStatus']) ? $data['accountStatus'] : null;
+        $this->container['balances'] = isset($data['balances']) ? $data['balances'] : null;
         $this->container['balanceAmount'] = isset($data['balanceAmount']) ? $data['balanceAmount'] : null;
         $this->container['balanceAmountType'] = isset($data['balanceAmountType']) ? $data['balanceAmountType'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
@@ -260,8 +266,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
             $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 5.";
         }
 
-        if (!is_null($this->container['balanceSign']) && (strlen($this->container['balanceSign']) > 1)) {
-            $invalid_properties[] = "invalid value for 'balanceSign', the character length must be smaller than or equal to 1.";
+        if (!is_null($this->container['balanceSign']) && (strlen($this->container['balanceSign']) > 8)) {
+            $invalid_properties[] = "invalid value for 'balanceSign', the character length must be smaller than or equal to 8.";
         }
 
         if (!is_null($this->container['affluenceIndicator']) && (strlen($this->container['affluenceIndicator']) > 13)) {
@@ -335,7 +341,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         if (strlen($this->container['currency']) > 5) {
             return false;
         }
-        if (strlen($this->container['balanceSign']) > 1) {
+        if (strlen($this->container['balanceSign']) > 8) {
             return false;
         }
         if (strlen($this->container['affluenceIndicator']) > 13) {
@@ -426,6 +432,27 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     }
 
     /**
+     * Gets balances
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances[]
+     */
+    public function getBalances()
+    {
+        return $this->container['balances'];
+    }
+
+    /**
+     * Sets balances
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesBalances[] $balances This is an array of multiple balances information an issuer can return for a given card.
+     * @return $this
+     */
+    public function setBalances($balances)
+    {
+        $this->container['balances'] = $balances;
+
+        return $this;
+    }
+
+    /**
      * Gets balanceAmount
      * @return string
      */
@@ -511,13 +538,13 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets balanceSign
-     * @param string $balanceSign Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **+**  - **-**
+     * @param string $balanceSign Sign for the remaining balance on the account. Returned only when the processor returns this value. Possible values:  Possible values:  - **positive**  - **negative**
      * @return $this
      */
     public function setBalanceSign($balanceSign)
     {
-        if (!is_null($balanceSign) && (strlen($balanceSign) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $balanceSign when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
+        if (!is_null($balanceSign) && (strlen($balanceSign) > 8)) {
+            throw new \InvalidArgumentException('invalid length for $balanceSign when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 8.');
         }
 
         $this->container['balanceSign'] = $balanceSign;

@@ -56,7 +56,10 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'comments' => 'string',
-        'partner' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformationPartner'
+        'partner' => '\CyberSource\Model\Ptsv2paymentsidreversalsClientReferenceInformationPartner',
+        'applicationName' => 'string',
+        'applicationVersion' => 'string',
+        'applicationUser' => 'string'
     ];
 
     /**
@@ -66,7 +69,10 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'code' => null,
         'comments' => null,
-        'partner' => null
+        'partner' => null,
+        'applicationName' => null,
+        'applicationVersion' => null,
+        'applicationUser' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +92,10 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     protected static $attributeMap = [
         'code' => 'code',
         'comments' => 'comments',
-        'partner' => 'partner'
+        'partner' => 'partner',
+        'applicationName' => 'applicationName',
+        'applicationVersion' => 'applicationVersion',
+        'applicationUser' => 'applicationUser'
     ];
 
 
@@ -97,7 +106,10 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     protected static $setters = [
         'code' => 'setCode',
         'comments' => 'setComments',
-        'partner' => 'setPartner'
+        'partner' => 'setPartner',
+        'applicationName' => 'setApplicationName',
+        'applicationVersion' => 'setApplicationVersion',
+        'applicationUser' => 'setApplicationUser'
     ];
 
 
@@ -108,7 +120,10 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     protected static $getters = [
         'code' => 'getCode',
         'comments' => 'getComments',
-        'partner' => 'getPartner'
+        'partner' => 'getPartner',
+        'applicationName' => 'getApplicationName',
+        'applicationVersion' => 'getApplicationVersion',
+        'applicationUser' => 'getApplicationUser'
     ];
 
     public static function attributeMap()
@@ -145,6 +160,9 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
         $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
+        $this->container['applicationName'] = isset($data['applicationName']) ? $data['applicationName'] : null;
+        $this->container['applicationVersion'] = isset($data['applicationVersion']) ? $data['applicationVersion'] : null;
+        $this->container['applicationUser'] = isset($data['applicationUser']) ? $data['applicationUser'] : null;
     }
 
     /**
@@ -242,6 +260,69 @@ class Ptsv2paymentsidreversalsClientReferenceInformation implements ArrayAccess
     public function setPartner($partner)
     {
         $this->container['partner'] = $partner;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicationName
+     * @return string
+     */
+    public function getApplicationName()
+    {
+        return $this->container['applicationName'];
+    }
+
+    /**
+     * Sets applicationName
+     * @param string $applicationName The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource.
+     * @return $this
+     */
+    public function setApplicationName($applicationName)
+    {
+        $this->container['applicationName'] = $applicationName;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicationVersion
+     * @return string
+     */
+    public function getApplicationVersion()
+    {
+        return $this->container['applicationVersion'];
+    }
+
+    /**
+     * Sets applicationVersion
+     * @param string $applicationVersion Version of the CyberSource application or integration used for a transaction.
+     * @return $this
+     */
+    public function setApplicationVersion($applicationVersion)
+    {
+        $this->container['applicationVersion'] = $applicationVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets applicationUser
+     * @return string
+     */
+    public function getApplicationUser()
+    {
+        return $this->container['applicationUser'];
+    }
+
+    /**
+     * Sets applicationUser
+     * @param string $applicationUser The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method.
+     * @return $this
+     */
+    public function setApplicationUser($applicationUser)
+    {
+        $this->container['applicationUser'] = $applicationUser;
 
         return $this;
     }

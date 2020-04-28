@@ -111,4 +111,11 @@ class TssV2TransactionsGet200ResponseProcessingInformationTest extends \PHPUnit_
     public function testPropertyBankTransferOptions()
     {
     }
+
+    /**
+     * Test attribute "japanPaymentOptions"
+     */
+    public function testPropertyJapanPaymentOptions()
+    {
+    }
 }

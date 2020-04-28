@@ -118,4 +118,11 @@ class Ptsv2paymentsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyHashedPassword()
     {
     }
+
+    /**
+     * Test attribute "mobilePhone"
+     */
+    public function testPropertyMobilePhone()
+    {
+    }
 }

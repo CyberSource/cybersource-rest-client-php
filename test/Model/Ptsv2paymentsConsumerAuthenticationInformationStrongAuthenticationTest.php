@@ -111,4 +111,11 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationTest ext
     public function testPropertyDelegatedAuthenticationExemptionIndicator()
     {
     }
+
+    /**
+     * Test attribute "authenticationIndicator"
+     */
+    public function testPropertyAuthenticationIndicator()
+    {
+    }
 }

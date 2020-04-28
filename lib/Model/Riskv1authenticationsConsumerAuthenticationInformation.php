@@ -428,10 +428,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'marketingSource', the character length must be smaller than or equal to 40.";
         }
 
-        if ($this->container['mcc'] === null) {
-            $invalid_properties[] = "'mcc' can't be null";
-        }
-        if ((strlen($this->container['mcc']) > 4)) {
+        if (!is_null($this->container['mcc']) && (strlen($this->container['mcc']) > 4)) {
             $invalid_properties[] = "invalid value for 'mcc', the character length must be smaller than or equal to 4.";
         }
 
@@ -439,10 +436,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'npaCode', the character length must be smaller than or equal to 2.";
         }
 
-        if ($this->container['overrideCountryCode'] === null) {
-            $invalid_properties[] = "'overrideCountryCode' can't be null";
-        }
-        if ((strlen($this->container['overrideCountryCode']) > 2)) {
+        if (!is_null($this->container['overrideCountryCode']) && (strlen($this->container['overrideCountryCode']) > 2)) {
             $invalid_properties[] = "invalid value for 'overrideCountryCode', the character length must be smaller than or equal to 2.";
         }
 
@@ -478,10 +472,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'requestorName', the character length must be smaller than or equal to 40.";
         }
 
-        if ($this->container['referenceId'] === null) {
-            $invalid_properties[] = "'referenceId' can't be null";
-        }
-        if ((strlen($this->container['referenceId']) > 50)) {
+        if (!is_null($this->container['referenceId']) && (strlen($this->container['referenceId']) > 50)) {
             $invalid_properties[] = "invalid value for 'referenceId', the character length must be smaller than or equal to 50.";
         }
 
@@ -493,9 +484,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             $invalid_properties[] = "invalid value for 'secureCorporatePaymentIndicator', the character length must be smaller than or equal to 1.";
         }
 
-        if ($this->container['transactionMode'] === null) {
-            $invalid_properties[] = "'transactionMode' can't be null";
-        }
         if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
             $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
         }
@@ -554,16 +542,10 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         if (strlen($this->container['marketingSource']) > 40) {
             return false;
         }
-        if ($this->container['mcc'] === null) {
-            return false;
-        }
         if (strlen($this->container['mcc']) > 4) {
             return false;
         }
         if (strlen($this->container['npaCode']) > 2) {
-            return false;
-        }
-        if ($this->container['overrideCountryCode'] === null) {
             return false;
         }
         if (strlen($this->container['overrideCountryCode']) > 2) {
@@ -593,9 +575,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
         if (strlen($this->container['requestorName']) > 40) {
             return false;
         }
-        if ($this->container['referenceId'] === null) {
-            return false;
-        }
         if (strlen($this->container['referenceId']) > 50) {
             return false;
         }
@@ -603,9 +582,6 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
             return false;
         }
         if (strlen($this->container['secureCorporatePaymentIndicator']) > 1) {
-            return false;
-        }
-        if ($this->container['transactionMode'] === null) {
             return false;
         }
         if (strlen($this->container['whiteListStatus']) > 1) {
@@ -1107,7 +1083,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
      */
     public function setMcc($mcc)
     {
-        if ((strlen($mcc) > 4)) {
+        if (!is_null($mcc) && (strlen($mcc) > 4)) {
             throw new \InvalidArgumentException('invalid length for $mcc when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 4.');
         }
 
@@ -1220,7 +1196,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
      */
     public function setOverrideCountryCode($overrideCountryCode)
     {
-        if ((strlen($overrideCountryCode) > 2)) {
+        if (!is_null($overrideCountryCode) && (strlen($overrideCountryCode) > 2)) {
             throw new \InvalidArgumentException('invalid length for $overrideCountryCode when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
         }
 
@@ -1445,7 +1421,7 @@ class Riskv1authenticationsConsumerAuthenticationInformation implements ArrayAcc
      */
     public function setReferenceId($referenceId)
     {
-        if ((strlen($referenceId) > 50)) {
+        if (!is_null($referenceId) && (strlen($referenceId) > 50)) {
             throw new \InvalidArgumentException('invalid length for $referenceId when calling Riskv1authenticationsConsumerAuthenticationInformation., must be smaller than or equal to 50.');
         }
 

@@ -55,7 +55,7 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'ipAddress' => 'string',
-        'rawData' => '\CyberSource\Model\Riskv1authenticationsDeviceInformationRawData[]',
+        'rawData' => '\CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]',
         'httpAcceptBrowserValue' => 'string',
         'httpAcceptContent' => 'string',
         'httpBrowserLanguage' => 'string',
@@ -316,7 +316,7 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
 
     /**
      * Gets rawData
-     * @return \CyberSource\Model\Riskv1authenticationsDeviceInformationRawData[]
+     * @return \CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]
      */
     public function getRawData()
     {
@@ -325,7 +325,7 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
 
     /**
      * Sets rawData
-     * @param \CyberSource\Model\Riskv1authenticationsDeviceInformationRawData[] $rawData
+     * @param \CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[] $rawData
      * @return $this
      */
     public function setRawData($rawData)

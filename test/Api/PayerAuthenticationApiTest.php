@@ -83,16 +83,6 @@ class PayerAuthenticationApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for payerAuthSetup
-     *
-     * Setup Payer Auth.
-     *
-     */
-    public function testPayerAuthSetup()
-    {
-    }
-
-    /**
      * Test case for validateAuthenticationResults
      *
      * Validate Authentication Results.

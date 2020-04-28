@@ -104,4 +104,25 @@ class Ptsv2paymentsClientReferenceInformationTest extends \PHPUnit_Framework_Tes
     public function testPropertyPartner()
     {
     }
+
+    /**
+     * Test attribute "applicationName"
+     */
+    public function testPropertyApplicationName()
+    {
+    }
+
+    /**
+     * Test attribute "applicationVersion"
+     */
+    public function testPropertyApplicationVersion()
+    {
+    }
+
+    /**
+     * Test attribute "applicationUser"
+     */
+    public function testPropertyApplicationUser()
+    {
+    }
 }

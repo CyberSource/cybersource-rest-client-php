@@ -59,7 +59,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'submitTimeLocal' => 'string',
         'status' => 'string',
-        'riskInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformation',
+        'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'paymentInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponsePaymentInformation',
         'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation'
     ];
@@ -308,7 +308,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`
+     * @param string $status The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `CHALLENGE`   - `PENDING_AUTHENTICATION`
      * @return $this
      */
     public function setStatus($status)
@@ -320,7 +320,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Gets riskInformation
-     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation
      */
     public function getRiskInformation()
     {
@@ -329,7 +329,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Sets riskInformation
-     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseRiskInformation $riskInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation $riskInformation
      * @return $this
      */
     public function setRiskInformation($riskInformation)

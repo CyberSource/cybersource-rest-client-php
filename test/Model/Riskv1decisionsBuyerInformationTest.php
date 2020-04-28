@@ -78,6 +78,13 @@ class Riskv1decisionsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "merchantCustomerId"
+     */
+    public function testPropertyMerchantCustomerId()
+    {
+    }
+
+    /**
      * Test attribute "username"
      */
     public function testPropertyUsername()

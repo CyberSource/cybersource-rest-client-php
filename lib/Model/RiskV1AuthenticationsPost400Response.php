@@ -216,7 +216,7 @@ class RiskV1AuthenticationsPost400Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status for payerAuthentication 400 setup calls. Possible values are: - INVALID_REQUEST
+     * @param string $status The status for payerAuthentication 201 enroll and validate calls. Value is: - AUTHENTICATION_FAILED
      * @return $this
      */
     public function setStatus($status)
@@ -237,7 +237,7 @@ class RiskV1AuthenticationsPost400Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.
+     * @param string $reason The reason of the status. Value is Failed_Authentication.
      * @return $this
      */
     public function setReason($reason)
@@ -258,7 +258,7 @@ class RiskV1AuthenticationsPost400Response implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be setup.
+     * @param string $message The message describing the reason of the status. Value is: - Encountered a Payer Authentication problem. Payer could not be authenticated.
      * @return $this
      */
     public function setMessage($message)

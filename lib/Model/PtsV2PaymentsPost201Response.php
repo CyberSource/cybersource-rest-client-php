@@ -67,7 +67,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation',
-        'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation'
+        'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
+        'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
+        'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'
     ];
 
     /**
@@ -88,7 +90,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'paymentInformation' => null,
         'orderInformation' => null,
         'pointOfSaleInformation' => null,
-        'installmentInformation' => null
+        'installmentInformation' => null,
+        'riskInformation' => null,
+        'consumerAuthenticationInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -119,7 +123,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
-        'installmentInformation' => 'installmentInformation'
+        'installmentInformation' => 'installmentInformation',
+        'riskInformation' => 'riskInformation',
+        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
     ];
 
 
@@ -141,7 +147,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
-        'installmentInformation' => 'setInstallmentInformation'
+        'installmentInformation' => 'setInstallmentInformation',
+        'riskInformation' => 'setRiskInformation',
+        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
     ];
 
 
@@ -163,7 +171,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
-        'installmentInformation' => 'getInstallmentInformation'
+        'installmentInformation' => 'getInstallmentInformation',
+        'riskInformation' => 'getRiskInformation',
+        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
     ];
 
     public static function attributeMap()
@@ -211,6 +221,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
+        $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
+        $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
     }
 
     /**
@@ -550,6 +562,48 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setInstallmentInformation($installmentInformation)
     {
         $this->container['installmentInformation'] = $installmentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets riskInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation
+     */
+    public function getRiskInformation()
+    {
+        return $this->container['riskInformation'];
+    }
+
+    /**
+     * Sets riskInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation $riskInformation
+     * @return $this
+     */
+    public function setRiskInformation($riskInformation)
+    {
+        $this->container['riskInformation'] = $riskInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets consumerAuthenticationInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation
+     */
+    public function getConsumerAuthenticationInformation()
+    {
+        return $this->container['consumerAuthenticationInformation'];
+    }
+
+    /**
+     * Sets consumerAuthenticationInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation $consumerAuthenticationInformation
+     * @return $this
+     */
+    public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
+    {
+        $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
 
         return $this;
     }

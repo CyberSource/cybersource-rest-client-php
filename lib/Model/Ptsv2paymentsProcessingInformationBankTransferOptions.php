@@ -63,7 +63,8 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         'customerMemo' => 'string',
         'paymentCategoryCode' => 'string',
         'settlementMethod' => 'string',
-        'fraudScreeningLevel' => 'string'
+        'fraudScreeningLevel' => 'string',
+        'customerPresent' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         'customerMemo' => null,
         'paymentCategoryCode' => null,
         'settlementMethod' => null,
-        'fraudScreeningLevel' => null
+        'fraudScreeningLevel' => null,
+        'customerPresent' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +109,8 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         'customerMemo' => 'customerMemo',
         'paymentCategoryCode' => 'paymentCategoryCode',
         'settlementMethod' => 'settlementMethod',
-        'fraudScreeningLevel' => 'fraudScreeningLevel'
+        'fraudScreeningLevel' => 'fraudScreeningLevel',
+        'customerPresent' => 'customerPresent'
     ];
 
 
@@ -125,7 +128,8 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         'customerMemo' => 'setCustomerMemo',
         'paymentCategoryCode' => 'setPaymentCategoryCode',
         'settlementMethod' => 'setSettlementMethod',
-        'fraudScreeningLevel' => 'setFraudScreeningLevel'
+        'fraudScreeningLevel' => 'setFraudScreeningLevel',
+        'customerPresent' => 'setCustomerPresent'
     ];
 
 
@@ -143,7 +147,8 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         'customerMemo' => 'getCustomerMemo',
         'paymentCategoryCode' => 'getPaymentCategoryCode',
         'settlementMethod' => 'getSettlementMethod',
-        'fraudScreeningLevel' => 'getFraudScreeningLevel'
+        'fraudScreeningLevel' => 'getFraudScreeningLevel',
+        'customerPresent' => 'getCustomerPresent'
     ];
 
     public static function attributeMap()
@@ -187,6 +192,7 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         $this->container['paymentCategoryCode'] = isset($data['paymentCategoryCode']) ? $data['paymentCategoryCode'] : null;
         $this->container['settlementMethod'] = isset($data['settlementMethod']) ? $data['settlementMethod'] : null;
         $this->container['fraudScreeningLevel'] = isset($data['fraudScreeningLevel']) ? $data['fraudScreeningLevel'] : null;
+        $this->container['customerPresent'] = isset($data['customerPresent']) ? $data['customerPresent'] : null;
     }
 
     /**
@@ -238,6 +244,10 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
             $invalid_properties[] = "invalid value for 'fraudScreeningLevel', the character length must be smaller than or equal to 1.";
         }
 
+        if (!is_null($this->container['customerPresent']) && (strlen($this->container['customerPresent']) > 1)) {
+            $invalid_properties[] = "invalid value for 'customerPresent', the character length must be smaller than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -278,6 +288,9 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
             return false;
         }
         if (strlen($this->container['fraudScreeningLevel']) > 1) {
+            return false;
+        }
+        if (strlen($this->container['customerPresent']) > 1) {
             return false;
         }
         return true;
@@ -530,6 +543,31 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
         }
 
         $this->container['fraudScreeningLevel'] = $fraudScreeningLevel;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerPresent
+     * @return string
+     */
+    public function getCustomerPresent()
+    {
+        return $this->container['customerPresent'];
+    }
+
+    /**
+     * Sets customerPresent
+     * @param string $customerPresent Indicates whether a customer is physically present and whether the customer is enrolling in CyberSource Recurring Billing.  Possible values: - `1`: Customer is present and not enrolling. - `2`: Customer is not present and not enrolling. - `3`: Customer is present and enrolling. - `4`: Customer is not present and enrolling.
+     * @return $this
+     */
+    public function setCustomerPresent($customerPresent)
+    {
+        if (!is_null($customerPresent) && (strlen($customerPresent) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $customerPresent when calling Ptsv2paymentsProcessingInformationBankTransferOptions., must be smaller than or equal to 1.');
+        }
+
+        $this->container['customerPresent'] = $customerPresent;
 
         return $this;
     }

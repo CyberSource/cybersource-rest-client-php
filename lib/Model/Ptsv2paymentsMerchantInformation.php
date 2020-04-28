@@ -62,7 +62,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'vatRegistrationNumber' => 'string',
         'cardAcceptorReferenceNumber' => 'string',
         'transactionLocalDateTime' => 'string',
-        'serviceFeeDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor'
+        'serviceFeeDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor',
+        'merchantName' => 'string'
     ];
 
     /**
@@ -78,7 +79,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'vatRegistrationNumber' => null,
         'cardAcceptorReferenceNumber' => null,
         'transactionLocalDateTime' => null,
-        'serviceFeeDescriptor' => null
+        'serviceFeeDescriptor' => null,
+        'merchantName' => null
     ];
 
     public static function swaggerTypes()
@@ -104,7 +106,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'vatRegistrationNumber' => 'vatRegistrationNumber',
         'cardAcceptorReferenceNumber' => 'cardAcceptorReferenceNumber',
         'transactionLocalDateTime' => 'transactionLocalDateTime',
-        'serviceFeeDescriptor' => 'serviceFeeDescriptor'
+        'serviceFeeDescriptor' => 'serviceFeeDescriptor',
+        'merchantName' => 'merchantName'
     ];
 
 
@@ -121,7 +124,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'vatRegistrationNumber' => 'setVatRegistrationNumber',
         'cardAcceptorReferenceNumber' => 'setCardAcceptorReferenceNumber',
         'transactionLocalDateTime' => 'setTransactionLocalDateTime',
-        'serviceFeeDescriptor' => 'setServiceFeeDescriptor'
+        'serviceFeeDescriptor' => 'setServiceFeeDescriptor',
+        'merchantName' => 'setMerchantName'
     ];
 
 
@@ -138,7 +142,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'vatRegistrationNumber' => 'getVatRegistrationNumber',
         'cardAcceptorReferenceNumber' => 'getCardAcceptorReferenceNumber',
         'transactionLocalDateTime' => 'getTransactionLocalDateTime',
-        'serviceFeeDescriptor' => 'getServiceFeeDescriptor'
+        'serviceFeeDescriptor' => 'getServiceFeeDescriptor',
+        'merchantName' => 'getMerchantName'
     ];
 
     public static function attributeMap()
@@ -181,6 +186,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         $this->container['cardAcceptorReferenceNumber'] = isset($data['cardAcceptorReferenceNumber']) ? $data['cardAcceptorReferenceNumber'] : null;
         $this->container['transactionLocalDateTime'] = isset($data['transactionLocalDateTime']) ? $data['transactionLocalDateTime'] : null;
         $this->container['serviceFeeDescriptor'] = isset($data['serviceFeeDescriptor']) ? $data['serviceFeeDescriptor'] : null;
+        $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
     }
 
     /**
@@ -220,6 +226,10 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'transactionLocalDateTime', the character length must be smaller than or equal to 14.";
         }
 
+        if (!is_null($this->container['merchantName']) && (strlen($this->container['merchantName']) > 25)) {
+            $invalid_properties[] = "invalid value for 'merchantName', the character length must be smaller than or equal to 25.";
+        }
+
         return $invalid_properties;
     }
 
@@ -251,6 +261,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['transactionLocalDateTime']) > 14) {
+            return false;
+        }
+        if (strlen($this->container['merchantName']) > 25) {
             return false;
         }
         return true;
@@ -472,6 +485,31 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function setServiceFeeDescriptor($serviceFeeDescriptor)
     {
         $this->container['serviceFeeDescriptor'] = $serviceFeeDescriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantName
+     * @return string
+     */
+    public function getMerchantName()
+    {
+        return $this->container['merchantName'];
+    }
+
+    /**
+     * Sets merchantName
+     * @param string $merchantName Use this field only if you are requesting payment with Payer Authentication serice together.  Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank.
+     * @return $this
+     */
+    public function setMerchantName($merchantName)
+    {
+        if (!is_null($merchantName) && (strlen($merchantName) > 25)) {
+            throw new \InvalidArgumentException('invalid length for $merchantName when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 25.');
+        }
+
+        $this->container['merchantName'] = $merchantName;
 
         return $this;
     }

@@ -92,6 +92,13 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesTest extends 
     }
 
     /**
+     * Test attribute "balances"
+     */
+    public function testPropertyBalances()
+    {
+    }
+
+    /**
      * Test attribute "balanceAmount"
      */
     public function testPropertyBalanceAmount()

@@ -65,7 +65,10 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'district' => 'string',
         'buildingNumber' => 'string',
         'phoneNumber' => 'string',
-        'company' => 'string'
+        'company' => 'string',
+        'destinationTypes' => 'string',
+        'destinationCode' => 'int',
+        'method' => 'string'
     ];
 
     /**
@@ -84,7 +87,10 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'district' => null,
         'buildingNumber' => null,
         'phoneNumber' => null,
-        'company' => null
+        'company' => null,
+        'destinationTypes' => null,
+        'destinationCode' => null,
+        'method' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +119,10 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'district' => 'district',
         'buildingNumber' => 'buildingNumber',
         'phoneNumber' => 'phoneNumber',
-        'company' => 'company'
+        'company' => 'company',
+        'destinationTypes' => 'destinationTypes',
+        'destinationCode' => 'destinationCode',
+        'method' => 'method'
     ];
 
 
@@ -133,7 +142,10 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'district' => 'setDistrict',
         'buildingNumber' => 'setBuildingNumber',
         'phoneNumber' => 'setPhoneNumber',
-        'company' => 'setCompany'
+        'company' => 'setCompany',
+        'destinationTypes' => 'setDestinationTypes',
+        'destinationCode' => 'setDestinationCode',
+        'method' => 'setMethod'
     ];
 
 
@@ -153,7 +165,10 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'district' => 'getDistrict',
         'buildingNumber' => 'getBuildingNumber',
         'phoneNumber' => 'getPhoneNumber',
-        'company' => 'getCompany'
+        'company' => 'getCompany',
+        'destinationTypes' => 'getDestinationTypes',
+        'destinationCode' => 'getDestinationCode',
+        'method' => 'getMethod'
     ];
 
     public static function attributeMap()
@@ -199,6 +214,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         $this->container['buildingNumber'] = isset($data['buildingNumber']) ? $data['buildingNumber'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['company'] = isset($data['company']) ? $data['company'] : null;
+        $this->container['destinationTypes'] = isset($data['destinationTypes']) ? $data['destinationTypes'] : null;
+        $this->container['destinationCode'] = isset($data['destinationCode']) ? $data['destinationCode'] : null;
+        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
     /**
@@ -258,6 +276,14 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
             $invalid_properties[] = "invalid value for 'company', the character length must be smaller than or equal to 60.";
         }
 
+        if (!is_null($this->container['destinationTypes']) && (strlen($this->container['destinationTypes']) > 25)) {
+            $invalid_properties[] = "invalid value for 'destinationTypes', the character length must be smaller than or equal to 25.";
+        }
+
+        if (!is_null($this->container['method']) && (strlen($this->container['method']) > 10)) {
+            $invalid_properties[] = "invalid value for 'method', the character length must be smaller than or equal to 10.";
+        }
+
         return $invalid_properties;
     }
 
@@ -304,6 +330,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
             return false;
         }
         if (strlen($this->container['company']) > 60) {
+            return false;
+        }
+        if (strlen($this->container['destinationTypes']) > 25) {
+            return false;
+        }
+        if (strlen($this->container['method']) > 10) {
             return false;
         }
         return true;
@@ -606,6 +638,77 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         }
 
         $this->container['company'] = $company;
+
+        return $this;
+    }
+
+    /**
+     * Gets destinationTypes
+     * @return string
+     */
+    public function getDestinationTypes()
+    {
+        return $this->container['destinationTypes'];
+    }
+
+    /**
+     * Sets destinationTypes
+     * @param string $destinationTypes Shipping destination of item. Example: Commercial, Residential, Store
+     * @return $this
+     */
+    public function setDestinationTypes($destinationTypes)
+    {
+        if (!is_null($destinationTypes) && (strlen($destinationTypes) > 25)) {
+            throw new \InvalidArgumentException('invalid length for $destinationTypes when calling Ptsv2paymentsOrderInformationShipTo., must be smaller than or equal to 25.');
+        }
+
+        $this->container['destinationTypes'] = $destinationTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets destinationCode
+     * @return int
+     */
+    public function getDestinationCode()
+    {
+        return $this->container['destinationCode'];
+    }
+
+    /**
+     * Sets destinationCode
+     * @param int $destinationCode Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other
+     * @return $this
+     */
+    public function setDestinationCode($destinationCode)
+    {
+        $this->container['destinationCode'] = $destinationCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets method
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->container['method'];
+    }
+
+    /**
+     * Sets method
+     * @param string $method Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.).
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        if (!is_null($method) && (strlen($method) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $method when calling Ptsv2paymentsOrderInformationShipTo., must be smaller than or equal to 10.');
+        }
+
+        $this->container['method'] = $method;
 
         return $this;
     }

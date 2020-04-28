@@ -59,7 +59,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
-        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType'
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType'
     ];
 
     /**
@@ -297,7 +297,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Gets paymentType
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType
      */
     public function getPaymentType()
     {
@@ -306,7 +306,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Sets paymentType
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType $paymentType
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType $paymentType
      * @return $this
      */
     public function setPaymentType($paymentType)

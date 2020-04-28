@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **status** | **string** | The status of the submitted transaction.  Possible values:  - VOIDED | [optional] 
 **clientReferenceInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation**](PtsV2PaymentsPost201ResponseClientReferenceInformation.md) |  | [optional] 
 **voidAmountDetails** | [**\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails**](PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails.md) |  | [optional] 
+**processorInformation** | [**\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseProcessorInformation**](PtsV2PaymentsVoidsPost201ResponseProcessorInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

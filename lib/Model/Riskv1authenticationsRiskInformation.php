@@ -54,7 +54,7 @@ class Riskv1authenticationsRiskInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'buyerHistory' => '\CyberSource\Model\Riskv1authenticationsRiskInformationBuyerHistory'
+        'buyerHistory' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Riskv1authenticationsRiskInformation implements ArrayAccess
 
     /**
      * Gets buyerHistory
-     * @return \CyberSource\Model\Riskv1authenticationsRiskInformationBuyerHistory
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory
      */
     public function getBuyerHistory()
     {
@@ -171,7 +171,7 @@ class Riskv1authenticationsRiskInformation implements ArrayAccess
 
     /**
      * Sets buyerHistory
-     * @param \CyberSource\Model\Riskv1authenticationsRiskInformationBuyerHistory $buyerHistory
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory $buyerHistory
      * @return $this
      */
     public function setBuyerHistory($buyerHistory)

@@ -54,7 +54,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amountDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails',
+        'amountDetails' => '\CyberSource\Model\Riskv1authenticationsOrderInformationAmountDetails',
         'lineItems' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformationLineItems[]'
     ];
 
@@ -168,7 +168,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
 
     /**
      * Gets amountDetails
-     * @return \CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails
+     * @return \CyberSource\Model\Riskv1authenticationsOrderInformationAmountDetails
      */
     public function getAmountDetails()
     {
@@ -177,7 +177,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
 
     /**
      * Sets amountDetails
-     * @param \CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails $amountDetails
+     * @param \CyberSource\Model\Riskv1authenticationsOrderInformationAmountDetails $amountDetails
      * @return $this
      */
     public function setAmountDetails($amountDetails)

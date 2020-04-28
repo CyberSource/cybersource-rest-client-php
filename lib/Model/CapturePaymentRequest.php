@@ -59,7 +59,7 @@ class CapturePaymentRequest implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesOrderInformation',
         'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformation',
-        'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsDeviceInformation',
+        'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation',
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation',
@@ -339,7 +339,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets deviceInformation
-     * @return \CyberSource\Model\Ptsv2paymentsDeviceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation
      */
     public function getDeviceInformation()
     {
@@ -348,7 +348,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets deviceInformation
-     * @param \CyberSource\Model\Ptsv2paymentsDeviceInformation $deviceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation $deviceInformation
      * @return $this
      */
     public function setDeviceInformation($deviceInformation)

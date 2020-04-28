@@ -54,7 +54,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'additonalAmount' => 'string',
+        'additionalAmount' => 'string',
         'currency' => 'string'
     ];
 
@@ -63,7 +63,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'additonalAmount' => null,
+        'additionalAmount' => null,
         'currency' => null
     ];
 
@@ -82,7 +82,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'additonalAmount' => 'additonalAmount',
+        'additionalAmount' => 'additionalAmount',
         'currency' => 'currency'
     ];
 
@@ -92,7 +92,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'additonalAmount' => 'setAdditonalAmount',
+        'additionalAmount' => 'setAdditionalAmount',
         'currency' => 'setCurrency'
     ];
 
@@ -102,7 +102,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'additonalAmount' => 'getAdditonalAmount',
+        'additionalAmount' => 'getAdditionalAmount',
         'currency' => 'getCurrency'
     ];
 
@@ -137,7 +137,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['additonalAmount'] = isset($data['additonalAmount']) ? $data['additonalAmount'] : null;
+        $this->container['additionalAmount'] = isset($data['additionalAmount']) ? $data['additionalAmount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
     }
 
@@ -150,8 +150,8 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['additonalAmount']) && (strlen($this->container['additonalAmount']) > 19)) {
-            $invalid_properties[] = "invalid value for 'additonalAmount', the character length must be smaller than or equal to 19.";
+        if (!is_null($this->container['additionalAmount']) && (strlen($this->container['additionalAmount']) > 19)) {
+            $invalid_properties[] = "invalid value for 'additionalAmount', the character length must be smaller than or equal to 19.";
         }
 
         if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
@@ -170,7 +170,7 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['additonalAmount']) > 19) {
+        if (strlen($this->container['additionalAmount']) > 19) {
             return false;
         }
         if (strlen($this->container['currency']) > 3) {
@@ -181,26 +181,26 @@ class Ptsv2paymentsidOrderInformationAmountDetails implements ArrayAccess
 
 
     /**
-     * Gets additonalAmount
+     * Gets additionalAmount
      * @return string
      */
-    public function getAdditonalAmount()
+    public function getAdditionalAmount()
     {
-        return $this->container['additonalAmount'];
+        return $this->container['additionalAmount'];
     }
 
     /**
-     * Sets additonalAmount
-     * @param string $additonalAmount Additional charges that have to be authorized against a lodging or auto-rental order. This value cannot be negative. You can include a decimal point (.), but no other special characters.
+     * Sets additionalAmount
+     * @param string $additionalAmount Additional charges that have to be authorized against a lodging or auto-rental order. This value cannot be negative. You can include a decimal point (.), but no other special characters.
      * @return $this
      */
-    public function setAdditonalAmount($additonalAmount)
+    public function setAdditionalAmount($additionalAmount)
     {
-        if (!is_null($additonalAmount) && (strlen($additonalAmount) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $additonalAmount when calling Ptsv2paymentsidOrderInformationAmountDetails., must be smaller than or equal to 19.');
+        if (!is_null($additionalAmount) && (strlen($additionalAmount) > 19)) {
+            throw new \InvalidArgumentException('invalid length for $additionalAmount when calling Ptsv2paymentsidOrderInformationAmountDetails., must be smaller than or equal to 19.');
         }
 
-        $this->container['additonalAmount'] = $additonalAmount;
+        $this->container['additionalAmount'] = $additionalAmount;
 
         return $this;
     }

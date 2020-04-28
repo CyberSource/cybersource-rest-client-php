@@ -193,12 +193,13 @@ class SecureFileShareApi
      * @param \DateTime $startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd (required)
      * @param \DateTime $endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\V1FileDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFileDetail($startDate, $endDate, $organizationId = null)
+    public function getFileDetail($startDate, $endDate, $organizationId = null, $name = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getFileDetailWithHttpInfo($startDate, $endDate, $organizationId);
+        list($response, $statusCode, $httpHeader) = $this->getFileDetailWithHttpInfo($startDate, $endDate, $organizationId, $name);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -210,10 +211,11 @@ class SecureFileShareApi
      * @param \DateTime $startDate Valid start date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd (required)
      * @param \DateTime $endDate Valid end date in **ISO 8601 format** Please refer the following link to know more about ISO 8601 format.[Rfc Date Format](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14)   **Example date format:**   - yyyy-MM-dd (required)
      * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $name **Tailored to searches for specific files with in given Date range** example : MyTransactionDetailreport.xml (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\V1FileDetailsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFileDetailWithHttpInfo($startDate, $endDate, $organizationId = null)
+    public function getFileDetailWithHttpInfo($startDate, $endDate, $organizationId = null, $name = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -231,6 +233,10 @@ class SecureFileShareApi
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
+        if (!is_null($name) && !preg_match("/[a-zA-Z0-9-_\\.]+/", $name)) {
+            throw new \InvalidArgumentException("invalid value for \"name\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_\\.]+/.");
         }
 
         // parse inputs
@@ -256,6 +262,10 @@ class SecureFileShareApi
         // query params
         if ($organizationId !== null) {
             $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
+        // query params
+        if ($name !== null) {
+            $queryParams['name'] = $this->apiClient->getSerializer()->toQueryValue($name);
         }
 
         // for model (json/xml)

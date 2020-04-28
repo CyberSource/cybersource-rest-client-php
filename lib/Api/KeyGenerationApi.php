@@ -93,12 +93,13 @@ class KeyGenerationApi
      * Generate Key
      *
      * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
+     * @param string $format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKey($generatePublicKeyRequest)
+    public function generatePublicKey($generatePublicKeyRequest, $format = 'legacy')
     {
-        list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest);
+        list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest, $format);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -108,10 +109,11 @@ class KeyGenerationApi
      * Generate Key
      *
      * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
+     * @param string $format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest)
+    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest, $format = 'legacy')
     {
         // verify the required parameter 'generatePublicKeyRequest' is set
         if ($generatePublicKeyRequest === null) {
@@ -129,6 +131,10 @@ class KeyGenerationApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = $this->apiClient->getSerializer()->toQueryValue($format);
+        }
         // body params
         $_tempBody = null;
         if (isset($generatePublicKeyRequest)) {

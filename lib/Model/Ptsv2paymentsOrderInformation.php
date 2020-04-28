@@ -59,7 +59,12 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => '\CyberSource\Model\Ptsv2paymentsOrderInformationShipTo',
         'lineItems' => '\CyberSource\Model\Ptsv2paymentsOrderInformationLineItems[]',
         'invoiceDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetails',
-        'shippingDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationShippingDetails'
+        'shippingDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationShippingDetails',
+        'returnsAccepted' => 'bool',
+        'preOrder' => 'string',
+        'preOrderDate' => 'string',
+        'reordered' => 'bool',
+        'totalOffersCount' => 'string'
     ];
 
     /**
@@ -72,7 +77,12 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => null,
         'lineItems' => null,
         'invoiceDetails' => null,
-        'shippingDetails' => null
+        'shippingDetails' => null,
+        'returnsAccepted' => null,
+        'preOrder' => null,
+        'preOrderDate' => null,
+        'reordered' => null,
+        'totalOffersCount' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +105,12 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => 'shipTo',
         'lineItems' => 'lineItems',
         'invoiceDetails' => 'invoiceDetails',
-        'shippingDetails' => 'shippingDetails'
+        'shippingDetails' => 'shippingDetails',
+        'returnsAccepted' => 'returnsAccepted',
+        'preOrder' => 'preOrder',
+        'preOrderDate' => 'preOrderDate',
+        'reordered' => 'reordered',
+        'totalOffersCount' => 'totalOffersCount'
     ];
 
 
@@ -109,7 +124,12 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => 'setShipTo',
         'lineItems' => 'setLineItems',
         'invoiceDetails' => 'setInvoiceDetails',
-        'shippingDetails' => 'setShippingDetails'
+        'shippingDetails' => 'setShippingDetails',
+        'returnsAccepted' => 'setReturnsAccepted',
+        'preOrder' => 'setPreOrder',
+        'preOrderDate' => 'setPreOrderDate',
+        'reordered' => 'setReordered',
+        'totalOffersCount' => 'setTotalOffersCount'
     ];
 
 
@@ -123,7 +143,12 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'shipTo' => 'getShipTo',
         'lineItems' => 'getLineItems',
         'invoiceDetails' => 'getInvoiceDetails',
-        'shippingDetails' => 'getShippingDetails'
+        'shippingDetails' => 'getShippingDetails',
+        'returnsAccepted' => 'getReturnsAccepted',
+        'preOrder' => 'getPreOrder',
+        'preOrderDate' => 'getPreOrderDate',
+        'reordered' => 'getReordered',
+        'totalOffersCount' => 'getTotalOffersCount'
     ];
 
     public static function attributeMap()
@@ -163,6 +188,11 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
         $this->container['shippingDetails'] = isset($data['shippingDetails']) ? $data['shippingDetails'] : null;
+        $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;
+        $this->container['preOrder'] = isset($data['preOrder']) ? $data['preOrder'] : null;
+        $this->container['preOrderDate'] = isset($data['preOrderDate']) ? $data['preOrderDate'] : null;
+        $this->container['reordered'] = isset($data['reordered']) ? $data['reordered'] : null;
+        $this->container['totalOffersCount'] = isset($data['totalOffersCount']) ? $data['totalOffersCount'] : null;
     }
 
     /**
@@ -173,6 +203,14 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['preOrderDate']) && (strlen($this->container['preOrderDate']) > 10)) {
+            $invalid_properties[] = "invalid value for 'preOrderDate', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['totalOffersCount']) && (strlen($this->container['totalOffersCount']) > 2)) {
+            $invalid_properties[] = "invalid value for 'totalOffersCount', the character length must be smaller than or equal to 2.";
+        }
 
         return $invalid_properties;
     }
@@ -186,6 +224,12 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['preOrderDate']) > 10) {
+            return false;
+        }
+        if (strlen($this->container['totalOffersCount']) > 2) {
+            return false;
+        }
         return true;
     }
 
@@ -312,6 +356,119 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     public function setShippingDetails($shippingDetails)
     {
         $this->container['shippingDetails'] = $shippingDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnsAccepted
+     * @return bool
+     */
+    public function getReturnsAccepted()
+    {
+        return $this->container['returnsAccepted'];
+    }
+
+    /**
+     * Sets returnsAccepted
+     * @param bool $returnsAccepted This is only needed when you are requesting both payment and DM service at same time.  Boolean that indicates whether returns are accepted for this order. This field can contain one of the following values: - true: Returns are accepted for this order. - false: Returns are not accepted for this order.
+     * @return $this
+     */
+    public function setReturnsAccepted($returnsAccepted)
+    {
+        $this->container['returnsAccepted'] = $returnsAccepted;
+
+        return $this;
+    }
+
+    /**
+     * Gets preOrder
+     * @return string
+     */
+    public function getPreOrder()
+    {
+        return $this->container['preOrder'];
+    }
+
+    /**
+     * Sets preOrder
+     * @param string $preOrder Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability
+     * @return $this
+     */
+    public function setPreOrder($preOrder)
+    {
+        $this->container['preOrder'] = $preOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets preOrderDate
+     * @return string
+     */
+    public function getPreOrderDate()
+    {
+        return $this->container['preOrderDate'];
+    }
+
+    /**
+     * Sets preOrderDate
+     * @param string $preOrderDate Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD
+     * @return $this
+     */
+    public function setPreOrderDate($preOrderDate)
+    {
+        if (!is_null($preOrderDate) && (strlen($preOrderDate) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $preOrderDate when calling Ptsv2paymentsOrderInformation., must be smaller than or equal to 10.');
+        }
+
+        $this->container['preOrderDate'] = $preOrderDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets reordered
+     * @return bool
+     */
+    public function getReordered()
+    {
+        return $this->container['reordered'];
+    }
+
+    /**
+     * Sets reordered
+     * @param bool $reordered Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered
+     * @return $this
+     */
+    public function setReordered($reordered)
+    {
+        $this->container['reordered'] = $reordered;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalOffersCount
+     * @return string
+     */
+    public function getTotalOffersCount()
+    {
+        return $this->container['totalOffersCount'];
+    }
+
+    /**
+     * Sets totalOffersCount
+     * @param string $totalOffersCount Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99
+     * @return $this
+     */
+    public function setTotalOffersCount($totalOffersCount)
+    {
+        if (!is_null($totalOffersCount) && (strlen($totalOffersCount) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $totalOffersCount when calling Ptsv2paymentsOrderInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['totalOffersCount'] = $totalOffersCount;
 
         return $this;
     }
