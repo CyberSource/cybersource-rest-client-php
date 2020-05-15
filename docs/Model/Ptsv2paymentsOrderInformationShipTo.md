@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **string** | First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60 | [optional] 
-**lastName** | **string** | Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60 | [optional] 
-**address1** | **string** | First line of the shipping address. | [optional] 
-**address2** | **string** | Second line of the shipping address. | [optional] 
-**locality** | **string** | City of the shipping address. | [optional] 
-**administrativeArea** | **string** | State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada. | [optional] 
-**postalCode** | **string** | Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side. | [optional] 
-**country** | **string** | Country of the shipping address. Use the two-character ISO Standard Country Codes. | [optional] 
+**firstName** | **string** | First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. | [optional] 
+**lastName** | **string** | Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field. | [optional] 
+**address1** | **string** | First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional. | [optional] 
+**address2** | **string** | Second line of the shipping address.  Optional field. | [optional] 
+**locality** | **string** | City of the shipping address.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. | [optional] 
+**administrativeArea** | **string** | State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional. | [optional] 
+**postalCode** | **string** | Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  #### American Express Direct Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, the value is truncated starting from the right side. | [optional] 
+**country** | **string** | Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional. | [optional] 
 **district** | **string** | Neighborhood, community, or region within a city or municipality. | [optional] 
 **buildingNumber** | **string** | Building number in the street address. For example, the building number is 187 in the following address:  Rua da Quitanda 187 | [optional] 
 **phoneNumber** | **string** | Phone number associated with the shipping address. | [optional] 

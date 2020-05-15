@@ -59,11 +59,10 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'submitTimeLocal' => 'string',
         'status' => 'string',
-        'reason' => 'string',
         'message' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
         'exportComplianceInformation' => '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation',
-        'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation'
+        'errorInformation' => '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'
     ];
 
     /**
@@ -76,7 +75,6 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'submitTimeUtc' => null,
         'submitTimeLocal' => null,
         'status' => null,
-        'reason' => null,
         'message' => null,
         'clientReferenceInformation' => null,
         'exportComplianceInformation' => null,
@@ -103,7 +101,6 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'submitTimeLocal' => 'submitTimeLocal',
         'status' => 'status',
-        'reason' => 'reason',
         'message' => 'message',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'exportComplianceInformation' => 'exportComplianceInformation',
@@ -121,7 +118,6 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'submitTimeLocal' => 'setSubmitTimeLocal',
         'status' => 'setStatus',
-        'reason' => 'setReason',
         'message' => 'setMessage',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'exportComplianceInformation' => 'setExportComplianceInformation',
@@ -139,7 +135,6 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'submitTimeLocal' => 'getSubmitTimeLocal',
         'status' => 'getStatus',
-        'reason' => 'getReason',
         'message' => 'getMessage',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'exportComplianceInformation' => 'getExportComplianceInformation',
@@ -182,7 +177,6 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['submitTimeLocal'] = isset($data['submitTimeLocal']) ? $data['submitTimeLocal'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['exportComplianceInformation'] = isset($data['exportComplianceInformation']) ? $data['exportComplianceInformation'] : null;
@@ -278,7 +272,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -326,27 +320,6 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status. Value can be   - CUSTOMER_WATCHLIST_MATCH   - ADDRESS_COUNTRY_WATCHLIST_MATCH   - EMAIL_COUNTRY_WATCHLIST_MATCH   - IP_COUNTRY_WATCHLIST_MATCH
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -416,7 +389,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Gets errorInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation
+     * @return \CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation
      */
     public function getErrorInformation()
     {
@@ -425,7 +398,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Sets errorInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation $errorInformation
+     * @param \CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation $errorInformation
      * @return $this
      */
     public function setErrorInformation($errorInformation)

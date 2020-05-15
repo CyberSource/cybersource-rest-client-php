@@ -78,6 +78,13 @@ class Riskv1decisionsOrderInformationLineItemsTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "totalAmount"
+     */
+    public function testPropertyTotalAmount()
+    {
+    }
+
+    /**
      * Test attribute "unitPrice"
      */
     public function testPropertyUnitPrice()
@@ -92,6 +99,13 @@ class Riskv1decisionsOrderInformationLineItemsTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "giftCardCurrency"
+     */
+    public function testPropertyGiftCardCurrency()
+    {
+    }
+
+    /**
      * Test attribute "productSKU"
      */
     public function testPropertyProductSKU()
@@ -102,6 +116,13 @@ class Riskv1decisionsOrderInformationLineItemsTest extends \PHPUnit_Framework_Te
      * Test attribute "productRisk"
      */
     public function testPropertyProductRisk()
+    {
+    }
+
+    /**
+     * Test attribute "productDescription"
+     */
+    public function testPropertyProductDescription()
     {
     }
 
@@ -137,6 +158,20 @@ class Riskv1decisionsOrderInformationLineItemsTest extends \PHPUnit_Framework_Te
      * Test attribute "passenger"
      */
     public function testPropertyPassenger()
+    {
+    }
+
+    /**
+     * Test attribute "shippingDestinationTypes"
+     */
+    public function testPropertyShippingDestinationTypes()
+    {
+    }
+
+    /**
+     * Test attribute "taxAmount"
+     */
+    public function testPropertyTaxAmount()
     {
     }
 }

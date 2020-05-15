@@ -191,7 +191,7 @@ class ReversalApi
     /**
      * Operation mitReversal
      *
-     * Merchant Initiated Reversal
+     * Timeout Reversal
      *
      * @param \CyberSource\Model\MitReversalRequest $mitReversalRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -206,7 +206,7 @@ class ReversalApi
     /**
      * Operation mitReversalWithHttpInfo
      *
-     * Merchant Initiated Reversal
+     * Timeout Reversal
      *
      * @param \CyberSource\Model\MitReversalRequest $mitReversalRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response

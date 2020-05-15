@@ -75,7 +75,7 @@ class VoidApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for mitVoid
      *
-     * Merchant Initiated Void.
+     * Timeout Void.
      *
      */
     public function testMitVoid()

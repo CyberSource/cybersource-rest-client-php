@@ -118,4 +118,81 @@ class Riskv1decisionsDeviceInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUserAgent()
     {
     }
+
+    /**
+     * Test attribute "rawData"
+     */
+    public function testPropertyRawData()
+    {
+    }
+
+    /**
+     * Test attribute "httpAcceptBrowserValue"
+     */
+    public function testPropertyHttpAcceptBrowserValue()
+    {
+    }
+
+    /**
+     * Test attribute "httpAcceptContent"
+     */
+    public function testPropertyHttpAcceptContent()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserLanguage"
+     */
+    public function testPropertyHttpBrowserLanguage()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserJavaEnabled"
+     */
+    public function testPropertyHttpBrowserJavaEnabled()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserJavaScriptEnabled"
+     */
+    public function testPropertyHttpBrowserJavaScriptEnabled()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserColorDepth"
+     */
+    public function testPropertyHttpBrowserColorDepth()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserScreenHeight"
+     */
+    public function testPropertyHttpBrowserScreenHeight()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserScreenWidth"
+     */
+    public function testPropertyHttpBrowserScreenWidth()
+    {
+    }
+
+    /**
+     * Test attribute "httpBrowserTimeDifference"
+     */
+    public function testPropertyHttpBrowserTimeDifference()
+    {
+    }
+
+    /**
+     * Test attribute "userAgentBrowserValue"
+     */
+    public function testPropertyUserAgentBrowserValue()
+    {
+    }
 }

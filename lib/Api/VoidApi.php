@@ -90,7 +90,7 @@ class VoidApi
     /**
      * Operation mitVoid
      *
-     * Merchant Initiated Void
+     * Timeout Void
      *
      * @param \CyberSource\Model\MitVoidRequest $mitVoidRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class VoidApi
     /**
      * Operation mitVoidWithHttpInfo
      *
-     * Merchant Initiated Void
+     * Timeout Void
      *
      * @param \CyberSource\Model\MitVoidRequest $mitVoidRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response

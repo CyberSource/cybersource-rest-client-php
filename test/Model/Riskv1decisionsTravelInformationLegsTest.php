@@ -92,9 +92,16 @@ class Riskv1decisionsTravelInformationLegsTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
-     * Test attribute "departureDateTime"
+     * Test attribute "carrierCode"
      */
-    public function testPropertyDepartureDateTime()
+    public function testPropertyCarrierCode()
+    {
+    }
+
+    /**
+     * Test attribute "departureDate"
+     */
+    public function testPropertyDepartureDate()
     {
     }
 }

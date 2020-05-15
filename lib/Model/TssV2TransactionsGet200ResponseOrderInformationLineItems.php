@@ -306,7 +306,7 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
 
     /**
      * Sets productSku
-     * @param string $productSku Identification code for the product. For PAYMENT and CAPTURE API, this field is required when above _productCode_ is not **default** or one of the values related to shipping and/or handling.
+     * @param string $productSku Identification code for the product. For Payment and Capture APIs, this field is required when above `productCode` is not **default** or one of the values related to shipping and/or handling.
      * @return $this
      */
     public function setProductSku($productSku)

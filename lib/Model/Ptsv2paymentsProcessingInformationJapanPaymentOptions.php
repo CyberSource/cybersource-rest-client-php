@@ -308,7 +308,7 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
 
     /**
      * Sets terminalId
-     * @param string $terminalId This value is the 13-digit JCCA number.
+     * @param string $terminalId Unique Japan Credit Card Association (JCCA) terminal identifier.  The difference between this field and the `pointOfSaleInformation.terminalID` field is that you can define `pointOfSaleInformation.terminalID`, but `processingInformation.japanPaymentOptions.terminalId` is defined by the JCCA and is used only in Japan.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field.
      * @return $this
      */
     public function setTerminalId($terminalId)
@@ -408,7 +408,7 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
 
     /**
      * Sets jis2TrackData
-     * @param string $jis2TrackData Japanese Industrial Standard Type 2 (JIS2) track data from the front of the card. This field is supported only on JCN Gateway.
+     * @param string $jis2TrackData Japanese Industrial Standard Type 2 (JIS2) track data from the front of the card.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field.
      * @return $this
      */
     public function setJis2TrackData($jis2TrackData)

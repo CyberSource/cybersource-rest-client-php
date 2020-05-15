@@ -229,7 +229,7 @@ class Ptsv2paymentsidcapturesDeviceInformation implements ArrayAccess
 
     /**
      * Sets ipAddress
-     * @param string $ipAddress IP address of the customer.
+     * @param string $ipAddress IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field.
      * @return $this
      */
     public function setIpAddress($ipAddress)

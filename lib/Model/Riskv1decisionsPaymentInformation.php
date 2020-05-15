@@ -56,7 +56,10 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Riskv1decisionsPaymentInformationCard',
-        'tokenizedCard' => '\CyberSource\Model\Riskv1decisionsPaymentInformationTokenizedCard'
+        'tokenizedCard' => '\CyberSource\Model\Riskv1decisionsPaymentInformationTokenizedCard',
+        'customer' => '\CyberSource\Model\Riskv1decisionsPaymentInformationCustomer',
+        'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
+        'method' => 'string'
     ];
 
     /**
@@ -65,7 +68,10 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'card' => null,
-        'tokenizedCard' => null
+        'tokenizedCard' => null,
+        'customer' => null,
+        'bank' => null,
+        'method' => null
     ];
 
     public static function swaggerTypes()
@@ -84,7 +90,10 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'card' => 'card',
-        'tokenizedCard' => 'tokenizedCard'
+        'tokenizedCard' => 'tokenizedCard',
+        'customer' => 'customer',
+        'bank' => 'bank',
+        'method' => 'method'
     ];
 
 
@@ -94,7 +103,10 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'card' => 'setCard',
-        'tokenizedCard' => 'setTokenizedCard'
+        'tokenizedCard' => 'setTokenizedCard',
+        'customer' => 'setCustomer',
+        'bank' => 'setBank',
+        'method' => 'setMethod'
     ];
 
 
@@ -104,7 +116,10 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'card' => 'getCard',
-        'tokenizedCard' => 'getTokenizedCard'
+        'tokenizedCard' => 'getTokenizedCard',
+        'customer' => 'getCustomer',
+        'bank' => 'getBank',
+        'method' => 'getMethod'
     ];
 
     public static function attributeMap()
@@ -140,6 +155,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
+        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
     /**
@@ -150,6 +168,10 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['method']) && (strlen($this->container['method']) > 10)) {
+            $invalid_properties[] = "invalid value for 'method', the character length must be smaller than or equal to 10.";
+        }
 
         return $invalid_properties;
     }
@@ -163,6 +185,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['method']) > 10) {
+            return false;
+        }
         return true;
     }
 
@@ -205,6 +230,73 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     public function setTokenizedCard($tokenizedCard)
     {
         $this->container['tokenizedCard'] = $tokenizedCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     * @return \CyberSource\Model\Riskv1decisionsPaymentInformationCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     * @param \CyberSource\Model\Riskv1decisionsPaymentInformationCustomer $customer
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBank
+     */
+    public function getBank()
+    {
+        return $this->container['bank'];
+    }
+
+    /**
+     * Sets bank
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBank $bank
+     * @return $this
+     */
+    public function setBank($bank)
+    {
+        $this->container['bank'] = $bank;
+
+        return $this;
+    }
+
+    /**
+     * Gets method
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->container['method'];
+    }
+
+    /**
+     * Sets method
+     * @param string $method Method of payment used for the order. This field can contain one of the following values:   - `consumer` (default): Customer credit card   - `corporate`: Corporate credit card   - `debit`: Debit card, such as a Maestro (UK Domestic) card   - `cod`: Collect on delivery   - `check`: Electronic check   - `p2p`: Person-to-person payment   - `private1`: Private label credit card   - `other`: Other payment method
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        if (!is_null($method) && (strlen($method) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $method when calling Riskv1decisionsPaymentInformation., must be smaller than or equal to 10.');
+        }
+
+        $this->container['method'] = $method;
 
         return $this;
     }

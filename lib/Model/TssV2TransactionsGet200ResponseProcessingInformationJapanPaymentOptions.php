@@ -242,7 +242,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
 
     /**
      * Sets terminalId
-     * @param string $terminalId This value is the 13-digit JCCA number.
+     * @param string $terminalId Unique Japan Credit Card Association (JCCA) terminal identifier.  The difference between this field and the `pointOfSaleInformation.terminalID` field is that you can define `pointOfSaleInformation.terminalID`, but `processingInformation.japanPaymentOptions.terminalId` is defined by the JCCA and is used only in Japan.  This field is supported only on CyberSource through VisaNet and JCN Gateway.  Optional field.
      * @return $this
      */
     public function setTerminalId($terminalId)

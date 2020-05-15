@@ -249,8 +249,8 @@ class InstrumentIdentifierApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
         // parse inputs
@@ -379,8 +379,8 @@ class InstrumentIdentifierApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be bigger than or equal to 12.');
         }
 
         if (!is_null($offset) && ($offset < 0)) {
@@ -528,8 +528,8 @@ class InstrumentIdentifierApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
         // parse inputs
@@ -660,8 +660,8 @@ class InstrumentIdentifierApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
         // verify the required parameter 'updateInstrumentIdentifierRequest' is set

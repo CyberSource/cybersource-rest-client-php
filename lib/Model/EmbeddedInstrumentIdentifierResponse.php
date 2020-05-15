@@ -202,8 +202,8 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
             $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 16)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 16.";
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 12)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 12.";
         }
 
         return $invalid_properties;
@@ -221,7 +221,7 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         if (strlen($this->container['id']) > 32) {
             return false;
         }
-        if (strlen($this->container['id']) < 16) {
+        if (strlen($this->container['id']) < 12) {
             return false;
         }
         return true;
@@ -310,8 +310,8 @@ class EmbeddedInstrumentIdentifierResponse implements ArrayAccess
         if (!is_null($id) && (strlen($id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $id when calling EmbeddedInstrumentIdentifierResponse., must be smaller than or equal to 32.');
         }
-        if (!is_null($id) && (strlen($id) < 16)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling EmbeddedInstrumentIdentifierResponse., must be bigger than or equal to 16.');
+        if (!is_null($id) && (strlen($id) < 12)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling EmbeddedInstrumentIdentifierResponse., must be bigger than or equal to 12.');
         }
 
         $this->container['id'] = $id;

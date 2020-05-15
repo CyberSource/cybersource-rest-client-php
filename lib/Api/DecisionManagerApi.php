@@ -175,7 +175,7 @@ class DecisionManagerApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RiskV1DecisionsPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RiskV1DecisionsPost400Response1', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -185,34 +185,34 @@ class DecisionManagerApi
     }
 
     /**
-     * Operation createDecisionManagerCase
+     * Operation createBundledDecisionManagerCase
      *
      * Create Decision Manager Case
      *
-     * @param \CyberSource\Model\CreateDecisionManagerCaseRequest $createDecisionManagerCaseRequest  (required)
+     * @param \CyberSource\Model\CreateBundledDecisionManagerCaseRequest $createBundledDecisionManagerCaseRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\RiskV1DecisionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createDecisionManagerCase($createDecisionManagerCaseRequest)
+    public function createBundledDecisionManagerCase($createBundledDecisionManagerCaseRequest)
     {
-        list($response, $statusCode, $httpHeader) = $this->createDecisionManagerCaseWithHttpInfo($createDecisionManagerCaseRequest);
+        list($response, $statusCode, $httpHeader) = $this->createBundledDecisionManagerCaseWithHttpInfo($createBundledDecisionManagerCaseRequest);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation createDecisionManagerCaseWithHttpInfo
+     * Operation createBundledDecisionManagerCaseWithHttpInfo
      *
      * Create Decision Manager Case
      *
-     * @param \CyberSource\Model\CreateDecisionManagerCaseRequest $createDecisionManagerCaseRequest  (required)
+     * @param \CyberSource\Model\CreateBundledDecisionManagerCaseRequest $createBundledDecisionManagerCaseRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\RiskV1DecisionsPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createDecisionManagerCaseWithHttpInfo($createDecisionManagerCaseRequest)
+    public function createBundledDecisionManagerCaseWithHttpInfo($createBundledDecisionManagerCaseRequest)
     {
-        // verify the required parameter 'createDecisionManagerCaseRequest' is set
-        if ($createDecisionManagerCaseRequest === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $createDecisionManagerCaseRequest when calling createDecisionManagerCase');
+        // verify the required parameter 'createBundledDecisionManagerCaseRequest' is set
+        if ($createBundledDecisionManagerCaseRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $createBundledDecisionManagerCaseRequest when calling createBundledDecisionManagerCase');
         }
         // parse inputs
         $resourcePath = "/risk/v1/decisions";
@@ -228,8 +228,8 @@ class DecisionManagerApi
 
         // body params
         $_tempBody = null;
-        if (isset($createDecisionManagerCaseRequest)) {
-            $_tempBody = $createDecisionManagerCaseRequest;
+        if (isset($createBundledDecisionManagerCaseRequest)) {
+            $_tempBody = $createBundledDecisionManagerCaseRequest;
         }
 
         // for model (json/xml)
@@ -359,7 +359,7 @@ class DecisionManagerApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RiskV1DecisionsPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RiskV1DecisionsPost400Response1', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

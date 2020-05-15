@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscription**
-> deleteSubscription($reportName)
+> deleteSubscription($reportName, $organizationId)
 
 Delete Subscription of a Report Name by Organization
 
@@ -117,9 +117,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
 $reportName = "reportName_example"; // string | Name of the Report to Delete
+$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $api_instance->deleteSubscription($reportName);
+    $api_instance->deleteSubscription($reportName, $organizationId);
 } catch (Exception $e) {
     echo 'Exception when calling ReportSubscriptionsApi->deleteSubscription: ', $e->getMessage(), PHP_EOL;
 }
@@ -131,6 +132,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **string**| Name of the Report to Delete |
+ **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 
@@ -148,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllSubscriptions**
-> \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions()
+> \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response getAllSubscriptions($organizationId)
 
 Get All Subscriptions
 
@@ -160,9 +162,10 @@ View a summary of all report subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
+$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $result = $api_instance->getAllSubscriptions();
+    $result = $api_instance->getAllSubscriptions($organizationId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportSubscriptionsApi->getAllSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -171,7 +174,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 
@@ -189,7 +195,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscription**
-> \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription($reportName)
+> \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions getSubscription($reportName, $organizationId)
 
 Get Subscription for Report Name
 
@@ -202,9 +208,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
 $reportName = "reportName_example"; // string | Name of the Report to Retrieve
+$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
 
 try {
-    $result = $api_instance->getSubscription($reportName);
+    $result = $api_instance->getSubscription($reportName, $organizationId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportSubscriptionsApi->getSubscription: ', $e->getMessage(), PHP_EOL;
@@ -217,6 +224,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **string**| Name of the Report to Retrieve |
+ **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
 
 ### Return type
 

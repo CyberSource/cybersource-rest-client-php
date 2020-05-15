@@ -191,7 +191,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAvs implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code AVS result code.
+     * @param string $code AVS result code.  Returned by authorization service.
      * @return $this
      */
     public function setCode($code)
@@ -216,7 +216,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAvs implements ArrayAccess
 
     /**
      * Sets codeRaw
-     * @param string $codeRaw AVS result code sent directly from the processor. Returned only when the processor returns this value. Important Do not use this field to evaluate the result of AVS. Use for debugging purposes only.
+     * @param string $codeRaw AVS result code sent directly from the processor. Returned only when the processor returns this value. **Important** Do not use this field to evaluate the result of AVS. Use for debugging purposes only.  Returned by authorization service.
      * @return $this
      */
     public function setCodeRaw($codeRaw)

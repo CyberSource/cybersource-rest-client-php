@@ -54,9 +54,9 @@ class Riskv1authenticationsTravelInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'legs' => '\CyberSource\Model\Riskv1authenticationsTravelInformationLegs[]',
+        'legs' => '\CyberSource\Model\Riskv1decisionsTravelInformationLegs[]',
         'numberOfPassengers' => 'int',
-        'passengers' => '\CyberSource\Model\Riskv1authenticationsTravelInformationPassengers[]'
+        'passengers' => '\CyberSource\Model\Riskv1decisionsTravelInformationPassengers[]'
     ];
 
     /**
@@ -174,7 +174,7 @@ class Riskv1authenticationsTravelInformation implements ArrayAccess
 
     /**
      * Gets legs
-     * @return \CyberSource\Model\Riskv1authenticationsTravelInformationLegs[]
+     * @return \CyberSource\Model\Riskv1decisionsTravelInformationLegs[]
      */
     public function getLegs()
     {
@@ -183,7 +183,7 @@ class Riskv1authenticationsTravelInformation implements ArrayAccess
 
     /**
      * Sets legs
-     * @param \CyberSource\Model\Riskv1authenticationsTravelInformationLegs[] $legs
+     * @param \CyberSource\Model\Riskv1decisionsTravelInformationLegs[] $legs
      * @return $this
      */
     public function setLegs($legs)
@@ -216,7 +216,7 @@ class Riskv1authenticationsTravelInformation implements ArrayAccess
 
     /**
      * Gets passengers
-     * @return \CyberSource\Model\Riskv1authenticationsTravelInformationPassengers[]
+     * @return \CyberSource\Model\Riskv1decisionsTravelInformationPassengers[]
      */
     public function getPassengers()
     {
@@ -225,7 +225,7 @@ class Riskv1authenticationsTravelInformation implements ArrayAccess
 
     /**
      * Sets passengers
-     * @param \CyberSource\Model\Riskv1authenticationsTravelInformationPassengers[] $passengers
+     * @param \CyberSource\Model\Riskv1decisionsTravelInformationPassengers[] $passengers
      * @return $this
      */
     public function setPassengers($passengers)

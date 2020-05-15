@@ -59,6 +59,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
         'initiationChannel' => 'string'
     ];
 
@@ -72,6 +73,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => null,
         'customer' => null,
         'bank' => null,
+        'paymentType' => null,
         'initiationChannel' => null
     ];
 
@@ -95,6 +97,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => 'fluidData',
         'customer' => 'customer',
         'bank' => 'bank',
+        'paymentType' => 'paymentType',
         'initiationChannel' => 'initiationChannel'
     ];
 
@@ -109,6 +112,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => 'setFluidData',
         'customer' => 'setCustomer',
         'bank' => 'setBank',
+        'paymentType' => 'setPaymentType',
         'initiationChannel' => 'setInitiationChannel'
     ];
 
@@ -123,6 +127,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'fluidData' => 'getFluidData',
         'customer' => 'getCustomer',
         'bank' => 'getBank',
+        'paymentType' => 'getPaymentType',
         'initiationChannel' => 'getInitiationChannel'
     ];
 
@@ -162,6 +167,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
     }
 
@@ -303,6 +309,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     }
 
     /**
+     * Gets paymentType
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType $paymentType
+     * @return $this
+     */
+    public function setPaymentType($paymentType)
+    {
+        $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
      * Gets initiationChannel
      * @return string
      */
@@ -313,7 +340,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
 
     /**
      * Sets initiationChannel
-     * @param string $initiationChannel \"This tag contains a MesterCard defined code that provides information about the type of device used to initiate a non-card transaction. Valid values for this tag are: - 00 Card (default) - 01 Mobile network operator (MNO) controlled removal secure element (SIM or UICC) personalized for use with a mobile phone or smartphone> - 02 Key fob - 03  Watch - 04  Mobile tag - 05  Wristband - 06  Mobile phone case or sleeve - 07  Mobile phone or smartphone with a fixed, (non-removable), secure element controlled by the MNO, for example, code division multiple access (CDMA) - 08  Removable secure element not controlled by the MNO, for example, memory card personalized for use with a mobile phone or smartphone - 09 Mobile phonen or smartphone with a fixed, (non-removable), secure element not controlled by the MNO - 10 MNO controlled removable secure element (SIM or UICC) personalized for use with a tablet or e-book - 11 Tablet or e-book with a fixed, (non-removable), secure element controlled by the MNO - 12 Removable secure element not controlled by the MNO, for example, memory card personalized for use with a tablet or e-book - 13 Table or e-book with fixed, (non-removable) secure element not controlled by the MNO - 14 - 99 = (Reserved for future use)
+     * @param string $initiationChannel Mastercard-defined code that indicates how the account information was obtained.  - `00` (default): Card - `01`: Removable secure element that is personalized for use with a mobile phone and controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `02`: Key fob - `03`: Watch - `04`: Mobile tag - `05`: Wristband - `06`: Mobile phone case or sleeve - `07`: Mobile phone with a non-removable, secure element that is controlled by the wireless service provider; for example, code division multiple access (CDMA) - `08`: Removable secure element that is personalized for use with a mobile phone and not controlled by the wireless service provider; example: memory card - `09`: Mobile phone with a non-removable, secure element that is not controlled by the wireless service provider - `10`: Removable secure element that is personalized for use with a tablet or e-book and is controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `11`: Tablet or e-book with a non-removable, secure element that is controlled by the wireless service provider - `12`: Removable secure element that is personalized for use with a tablet or e-book and is not controlled by the wireless service provider - `13`: Tablet or e-book with a non-removable, secure element that is not controlled by the wireless service provider  This field is supported only for Mastercard on CyberSource through VisaNet.  #### Used by **Authorization**\\ Optional field.
      * @return $this
      */
     public function setInitiationChannel($initiationChannel)

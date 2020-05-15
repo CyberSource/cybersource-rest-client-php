@@ -58,7 +58,9 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'completeRoute' => 'string',
         'departureTime' => 'string',
         'journeyType' => 'string',
-        'legs' => '\CyberSource\Model\Riskv1decisionsTravelInformationLegs[]'
+        'legs' => '\CyberSource\Model\Riskv1decisionsTravelInformationLegs[]',
+        'numberOfPassengers' => 'int',
+        'passengers' => '\CyberSource\Model\Riskv1decisionsTravelInformationPassengers[]'
     ];
 
     /**
@@ -70,7 +72,9 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'completeRoute' => null,
         'departureTime' => null,
         'journeyType' => null,
-        'legs' => null
+        'legs' => null,
+        'numberOfPassengers' => null,
+        'passengers' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'completeRoute' => 'completeRoute',
         'departureTime' => 'departureTime',
         'journeyType' => 'journeyType',
-        'legs' => 'legs'
+        'legs' => 'legs',
+        'numberOfPassengers' => 'numberOfPassengers',
+        'passengers' => 'passengers'
     ];
 
 
@@ -105,7 +111,9 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'completeRoute' => 'setCompleteRoute',
         'departureTime' => 'setDepartureTime',
         'journeyType' => 'setJourneyType',
-        'legs' => 'setLegs'
+        'legs' => 'setLegs',
+        'numberOfPassengers' => 'setNumberOfPassengers',
+        'passengers' => 'setPassengers'
     ];
 
 
@@ -118,7 +126,9 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'completeRoute' => 'getCompleteRoute',
         'departureTime' => 'getDepartureTime',
         'journeyType' => 'getJourneyType',
-        'legs' => 'getLegs'
+        'legs' => 'getLegs',
+        'numberOfPassengers' => 'getNumberOfPassengers',
+        'passengers' => 'getPassengers'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         $this->container['departureTime'] = isset($data['departureTime']) ? $data['departureTime'] : null;
         $this->container['journeyType'] = isset($data['journeyType']) ? $data['journeyType'] : null;
         $this->container['legs'] = isset($data['legs']) ? $data['legs'] : null;
+        $this->container['numberOfPassengers'] = isset($data['numberOfPassengers']) ? $data['numberOfPassengers'] : null;
+        $this->container['passengers'] = isset($data['passengers']) ? $data['passengers'] : null;
     }
 
     /**
@@ -329,6 +341,48 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
     public function setLegs($legs)
     {
         $this->container['legs'] = $legs;
+
+        return $this;
+    }
+
+    /**
+     * Gets numberOfPassengers
+     * @return int
+     */
+    public function getNumberOfPassengers()
+    {
+        return $this->container['numberOfPassengers'];
+    }
+
+    /**
+     * Sets numberOfPassengers
+     * @param int $numberOfPassengers Number of passengers for whom the ticket was issued. If you do not include this field in your request, CyberSource uses a default value of 1. Required for American Express SafeKey (U.S.) for travel-related requests.
+     * @return $this
+     */
+    public function setNumberOfPassengers($numberOfPassengers)
+    {
+        $this->container['numberOfPassengers'] = $numberOfPassengers;
+
+        return $this;
+    }
+
+    /**
+     * Gets passengers
+     * @return \CyberSource\Model\Riskv1decisionsTravelInformationPassengers[]
+     */
+    public function getPassengers()
+    {
+        return $this->container['passengers'];
+    }
+
+    /**
+     * Sets passengers
+     * @param \CyberSource\Model\Riskv1decisionsTravelInformationPassengers[] $passengers
+     * @return $this
+     */
+    public function setPassengers($passengers)
+    {
+        $this->container['passengers'] = $passengers;
 
         return $this;
     }

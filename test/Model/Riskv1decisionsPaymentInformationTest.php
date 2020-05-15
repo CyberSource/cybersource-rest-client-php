@@ -90,4 +90,25 @@ class Riskv1decisionsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTokenizedCard()
     {
     }
+
+    /**
+     * Test attribute "customer"
+     */
+    public function testPropertyCustomer()
+    {
+    }
+
+    /**
+     * Test attribute "bank"
+     */
+    public function testPropertyBank()
+    {
+    }
+
+    /**
+     * Test attribute "method"
+     */
+    public function testPropertyMethod()
+    {
+    }
 }

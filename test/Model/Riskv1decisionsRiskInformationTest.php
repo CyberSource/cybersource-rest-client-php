@@ -90,4 +90,11 @@ class Riskv1decisionsRiskInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEventType()
     {
     }
+
+    /**
+     * Test attribute "buyerHistory"
+     */
+    public function testPropertyBuyerHistory()
+    {
+    }
 }

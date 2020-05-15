@@ -59,11 +59,10 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'submitTimeLocal' => 'string',
         'status' => 'string',
-        'reason' => 'string',
         'message' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation',
-        'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation'
+        'errorInformation' => '\CyberSource\Model\RiskV1AuthenticationsPost201ResponseErrorInformation'
     ];
 
     /**
@@ -76,7 +75,6 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
         'submitTimeUtc' => null,
         'submitTimeLocal' => null,
         'status' => null,
-        'reason' => null,
         'message' => null,
         'clientReferenceInformation' => null,
         'consumerAuthenticationInformation' => null,
@@ -103,7 +101,6 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'submitTimeLocal' => 'submitTimeLocal',
         'status' => 'status',
-        'reason' => 'reason',
         'message' => 'message',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
@@ -121,7 +118,6 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'submitTimeLocal' => 'setSubmitTimeLocal',
         'status' => 'setStatus',
-        'reason' => 'setReason',
         'message' => 'setMessage',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
@@ -139,7 +135,6 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'submitTimeLocal' => 'getSubmitTimeLocal',
         'status' => 'getStatus',
-        'reason' => 'getReason',
         'message' => 'getMessage',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
@@ -182,7 +177,6 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['submitTimeLocal'] = isset($data['submitTimeLocal']) ? $data['submitTimeLocal'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
@@ -278,7 +272,7 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -320,33 +314,12 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status for payerAuthentication 201 enroll and validate calls. Possible values are: - AUTHENTICATION_SUCCESSFUL - PENDING_AUTHENTICATION
+     * @param string $status The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `INVALID_REQUEST` - `AUTHENTICATION_FAILED`
      * @return $this
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status. Possible values are: - Authentication_Completed_Or_Skipped_Sucessfully - Pending_Authentication
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -416,7 +389,7 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
 
     /**
      * Gets errorInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation
+     * @return \CyberSource\Model\RiskV1AuthenticationsPost201ResponseErrorInformation
      */
     public function getErrorInformation()
     {
@@ -425,7 +398,7 @@ class RiskV1AuthenticationResultsPost201Response implements ArrayAccess
 
     /**
      * Sets errorInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation $errorInformation
+     * @param \CyberSource\Model\RiskV1AuthenticationsPost201ResponseErrorInformation $errorInformation
      * @return $this
      */
     public function setErrorInformation($errorInformation)
