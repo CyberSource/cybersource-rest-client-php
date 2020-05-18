@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.14"
+  "cybersource/rest-client-php": "0.0.15"
   }
 }
 ```
