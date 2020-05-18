@@ -33,7 +33,7 @@ namespace CyberSource;
  * Riskv1decisionsOrderInformationShipToTest Class Doc Comment
  *
  * @category    Class */
-// * @description Contains recipient shipping information.
+// * @description Riskv1decisionsOrderInformationShipTo
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -106,6 +106,13 @@ class Riskv1decisionsOrderInformationShipToTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "destinationTypes"
+     */
+    public function testPropertyDestinationTypes()
+    {
+    }
+
+    /**
      * Test attribute "locality"
      */
     public function testPropertyLocality()
@@ -137,6 +144,20 @@ class Riskv1decisionsOrderInformationShipToTest extends \PHPUnit_Framework_TestC
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "destinationCode"
+     */
+    public function testPropertyDestinationCode()
+    {
+    }
+
+    /**
+     * Test attribute "method"
+     */
+    public function testPropertyMethod()
     {
     }
 }

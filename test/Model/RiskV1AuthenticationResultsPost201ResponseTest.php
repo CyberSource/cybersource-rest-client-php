@@ -113,13 +113,6 @@ class RiskV1AuthenticationResultsPost201ResponseTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
-    {
-    }
-
-    /**
      * Test attribute "message"
      */
     public function testPropertyMessage()

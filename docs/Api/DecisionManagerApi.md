@@ -5,7 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addNegative**](DecisionManagerApi.md#addNegative) | **POST** /risk/v1/lists/{type}/entries | List Management
-[**createDecisionManagerCase**](DecisionManagerApi.md#createDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
+[**createBundledDecisionManagerCase**](DecisionManagerApi.md#createBundledDecisionManagerCase) | **POST** /risk/v1/decisions | Create Decision Manager Case
 [**fraudUpdate**](DecisionManagerApi.md#fraudUpdate) | **POST** /risk/v1/decisions/{id}/marking | Fraud Marking
 
 
@@ -56,8 +56,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createDecisionManagerCase**
-> \CyberSource\Model\RiskV1DecisionsPost201Response createDecisionManagerCase($createDecisionManagerCaseRequest)
+# **createBundledDecisionManagerCase**
+> \CyberSource\Model\RiskV1DecisionsPost201Response createBundledDecisionManagerCase($createBundledDecisionManagerCaseRequest)
 
 Create Decision Manager Case
 
@@ -69,13 +69,13 @@ This is the combined request to the Decision Manager Service for a transaction s
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\DecisionManagerApi();
-$createDecisionManagerCaseRequest = new \CyberSource\Model\CreateDecisionManagerCaseRequest(); // \CyberSource\Model\CreateDecisionManagerCaseRequest | 
+$createBundledDecisionManagerCaseRequest = new \CyberSource\Model\CreateBundledDecisionManagerCaseRequest(); // \CyberSource\Model\CreateBundledDecisionManagerCaseRequest | 
 
 try {
-    $result = $api_instance->createDecisionManagerCase($createDecisionManagerCaseRequest);
+    $result = $api_instance->createBundledDecisionManagerCase($createBundledDecisionManagerCaseRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DecisionManagerApi->createDecisionManagerCase: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DecisionManagerApi->createBundledDecisionManagerCase: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -84,7 +84,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createDecisionManagerCaseRequest** | [**\CyberSource\Model\CreateDecisionManagerCaseRequest**](../Model/CreateDecisionManagerCaseRequest.md)|  |
+ **createBundledDecisionManagerCaseRequest** | [**\CyberSource\Model\CreateBundledDecisionManagerCaseRequest**](../Model/CreateBundledDecisionManagerCaseRequest.md)|  |
 
 ### Return type
 

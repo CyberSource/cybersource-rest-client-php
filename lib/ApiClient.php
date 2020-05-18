@@ -80,6 +80,13 @@ class ApiClient
     public $downloadFilePath = null;
 
     /**
+     * User-defined Accept Header Type
+     *
+     * @var AcceptHeader
+     */
+    public $acceptHeader = null;
+
+    /**
      * Constructor of the class
      *
      * @param Configuration $config config for this ApiClient
@@ -142,6 +149,16 @@ class ApiClient
     }
 
     /**
+     * Set user-defined Accept Header Type
+     *
+     * @param  string $headerType user-defined Accept Header Type
+     */
+    public function setAcceptHeader($headerType)
+    {
+        $this->acceptHeader = $headerType;
+    }
+
+    /**
      * Get API key (with prefix if set)
      *
      * @param  string $apiKeyIdentifier name of apikey
@@ -184,6 +201,12 @@ class ApiClient
     {
         $headers = [];
         global $stream_headers;
+
+        if (!($this->acceptHeader === NULL)) {
+            $defaultAcceptHeader = ',' . $headerParams['Accept'];
+            $defaultAcceptHeader = $this->acceptHeader . str_replace(',' . $this->acceptHeader, '', $defaultAcceptHeader);
+            $headerParams['Accept'] = $defaultAcceptHeader;
+        }
 
         // construct the http header
         $headerParams = array_merge(

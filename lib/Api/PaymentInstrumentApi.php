@@ -245,8 +245,8 @@ class PaymentInstrumentApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -367,8 +367,8 @@ class PaymentInstrumentApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -499,8 +499,8 @@ class PaymentInstrumentApi
         if ((strlen($tokenId) > 32)) {
             throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.updatePaymentInstrument, must be smaller than or equal to 32.');
         }
-        if ((strlen($tokenId) < 16)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.updatePaymentInstrument, must be bigger than or equal to 16.');
+        if ((strlen($tokenId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling PaymentInstrumentApi.updatePaymentInstrument, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'updatePaymentInstrumentRequest' is set

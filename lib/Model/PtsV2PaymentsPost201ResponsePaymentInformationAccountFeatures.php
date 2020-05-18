@@ -463,7 +463,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets balanceAmount
-     * @param string $balanceAmount Remaining balance on the account.
+     * @param string $balanceAmount Remaining balance on the account.  Returned by authorization service.
      * @return $this
      */
     public function setBalanceAmount($balanceAmount)
@@ -513,7 +513,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets currency
-     * @param string $currency Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  For details, see `auth_account_balance_currency` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $currency Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  Returned by authorization service.
      * @return $this
      */
     public function setCurrency($currency)
@@ -588,7 +588,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets category
-     * @param string $category #### CyberSource through VisaNet Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, see the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes)  Data Length: String (3)  #### GPN Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, seepag the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes) For descriptions of the Mastercard product IDs, see \"Product IDs\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Data Length: String (3)  #### Worldpay VAP **Important** Before using this field on Worldpay VAP, you must contact CyberSource Customer Support to have your account configured for this feature.  Type of card used in the transaction. The only possible value is: - `PREPAID`: Prepaid Card  Data Length: String (7)  #### RBS WorldPay Atlanta Type of card used in the transaction. Possible values: - `B`: Business Card - `O`: Noncommercial Card - `R`: Corporate Card - `S`: Purchase Card - `Blank`: Purchase card not supported  Data Length: String (1)
+     * @param string $category #### GPX Mastercard product ID associated with the primary account number (PAN). Returned by authorization service.  #### CyberSource through VisaNet Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, see the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes)  Data Length: String (3)  #### GPN Visa or Mastercard product ID that is associated with the primary account number (PAN). For descriptions of the Visa product IDs, seepag the Product ID table on the [Visa Request & Response Codes web page.](https://developer.visa.com/guides/request_response_codes) For descriptions of the Mastercard product IDs, see \"Product IDs\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Data Length: String (3)  #### Worldpay VAP **Important** Before using this field on Worldpay VAP, you must contact CyberSource Customer Support to have your account configured for this feature.  Type of card used in the transaction. The only possible value is: - `PREPAID`: Prepaid Card  Data Length: String (7)  #### RBS WorldPay Atlanta Type of card used in the transaction. Possible values: - `B`: Business Card - `O`: Noncommercial Card - `R`: Corporate Card - `S`: Purchase Card - `Blank`: Purchase card not supported  Data Length: String (1)
      * @return $this
      */
     public function setCategory($category)
@@ -638,7 +638,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
 
     /**
      * Sets group
-     * @param string $group Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - **B**: Business card  - **R**: Corporate card  - **S**: Purchasing card  - **0**: Noncommercial card
+     * @param string $group Type of commercial card. This field is supported only for CyberSource through VisaNet. Possible values:   - `B`: Business card  - `R`: Corporate card  - `S`: Purchasing card  - `0`: Noncommercial card  Returned by authorization service.
      * @return $this
      */
     public function setGroup($group)

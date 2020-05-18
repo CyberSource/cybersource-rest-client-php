@@ -113,13 +113,6 @@ class RiskV1ExportComplianceInquiriesPost201ResponseTest extends \PHPUnit_Framew
     }
 
     /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
-    {
-    }
-
-    /**
      * Test attribute "message"
      */
     public function testPropertyMessage()

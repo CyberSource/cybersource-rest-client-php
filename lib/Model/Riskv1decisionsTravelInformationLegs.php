@@ -56,7 +56,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     protected static $swaggerTypes = [
         'origination' => 'string',
         'destination' => 'string',
-        'departureDateTime' => 'string'
+        'carrierCode' => 'string',
+        'departureDate' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     protected static $swaggerFormats = [
         'origination' => null,
         'destination' => null,
-        'departureDateTime' => null
+        'carrierCode' => null,
+        'departureDate' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     protected static $attributeMap = [
         'origination' => 'origination',
         'destination' => 'destination',
-        'departureDateTime' => 'departureDateTime'
+        'carrierCode' => 'carrierCode',
+        'departureDate' => 'departureDate'
     ];
 
 
@@ -97,7 +100,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     protected static $setters = [
         'origination' => 'setOrigination',
         'destination' => 'setDestination',
-        'departureDateTime' => 'setDepartureDateTime'
+        'carrierCode' => 'setCarrierCode',
+        'departureDate' => 'setDepartureDate'
     ];
 
 
@@ -108,7 +112,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     protected static $getters = [
         'origination' => 'getOrigination',
         'destination' => 'getDestination',
-        'departureDateTime' => 'getDepartureDateTime'
+        'carrierCode' => 'getCarrierCode',
+        'departureDate' => 'getDepartureDate'
     ];
 
     public static function attributeMap()
@@ -144,7 +149,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     {
         $this->container['origination'] = isset($data['origination']) ? $data['origination'] : null;
         $this->container['destination'] = isset($data['destination']) ? $data['destination'] : null;
-        $this->container['departureDateTime'] = isset($data['departureDateTime']) ? $data['departureDateTime'] : null;
+        $this->container['carrierCode'] = isset($data['carrierCode']) ? $data['carrierCode'] : null;
+        $this->container['departureDate'] = isset($data['departureDate']) ? $data['departureDate'] : null;
     }
 
     /**
@@ -164,8 +170,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
             $invalid_properties[] = "invalid value for 'destination', the character length must be smaller than or equal to 3.";
         }
 
-        if (!is_null($this->container['departureDateTime']) && (strlen($this->container['departureDateTime']) > 25)) {
-            $invalid_properties[] = "invalid value for 'departureDateTime', the character length must be smaller than or equal to 25.";
+        if (!is_null($this->container['carrierCode']) && (strlen($this->container['carrierCode']) > 2)) {
+            $invalid_properties[] = "invalid value for 'carrierCode', the character length must be smaller than or equal to 2.";
         }
 
         return $invalid_properties;
@@ -186,7 +192,7 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         if (strlen($this->container['destination']) > 3) {
             return false;
         }
-        if (strlen($this->container['departureDateTime']) > 25) {
+        if (strlen($this->container['carrierCode']) > 2) {
             return false;
         }
         return true;
@@ -244,26 +250,47 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     }
 
     /**
-     * Gets departureDateTime
+     * Gets carrierCode
      * @return string
      */
-    public function getDepartureDateTime()
+    public function getCarrierCode()
     {
-        return $this->container['departureDateTime'];
+        return $this->container['carrierCode'];
     }
 
     /**
-     * Sets departureDateTime
-     * @param string $departureDateTime Departure date and time for the each leg of the trip. Use one of the following formats: - `yyyy-MM-dd HH:mm z` - `yyyy-MM-dd hh:mm a z` - `yyyy-MM-dd hh:mma z`  Where:\\ `HH` = hour in 24-hour format\\ `hh` = hour in 12-hour format\\ `a` = am or pm (case insensitive)\\ `z` = time zone of the departing flight. For example, if the airline is based in city A, but the flight departs from city B, `z` is the time zone of city B at the time of departure.\\ **Important** For travel information, use GMT instead of UTC, or use the local time zone.  #### Examples  2011-03-20 11:30 PM PDT\\ 2011-03-20 11:30pm GMT\\ 2011-03-20 11:30pm GMT-05:00\\ Eastern Standard Time: GMT-05:00 or EST\\  **Note** When specifying an offset from GMT, the format must be exactly as specified in the example. Insert no spaces between the time zone and the offset.
+     * Sets carrierCode
+     * @param string $carrierCode International Air Transport Association (IATA) code for the carrier for this leg of the trip. Required for each leg. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see `airline_leg#_carrier_code` in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf)
      * @return $this
      */
-    public function setDepartureDateTime($departureDateTime)
+    public function setCarrierCode($carrierCode)
     {
-        if (!is_null($departureDateTime) && (strlen($departureDateTime) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $departureDateTime when calling Riskv1decisionsTravelInformationLegs., must be smaller than or equal to 25.');
+        if (!is_null($carrierCode) && (strlen($carrierCode) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $carrierCode when calling Riskv1decisionsTravelInformationLegs., must be smaller than or equal to 2.');
         }
 
-        $this->container['departureDateTime'] = $departureDateTime;
+        $this->container['carrierCode'] = $carrierCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets departureDate
+     * @return string
+     */
+    public function getDepartureDate()
+    {
+        return $this->container['departureDate'];
+    }
+
+    /**
+     * Sets departureDate
+     * @param string $departureDate Departure date for the first leg of the trip. Format: YYYYMMDD. Required for American Express SafeKey (U.S.) for travel-related requests.  For details, see `airline_leg#_leg_departure_date` in [Airline Processing Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Airline_SCMP_API/Airline_SCMP_API.pdf)
+     * @return $this
+     */
+    public function setDepartureDate($departureDate)
+    {
+        $this->container['departureDate'] = $departureDate;
 
         return $this;
     }

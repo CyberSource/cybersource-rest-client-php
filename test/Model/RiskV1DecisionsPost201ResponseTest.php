@@ -127,6 +127,27 @@ class RiskV1DecisionsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "consumerAuthenticationInformation"
+     */
+    public function testPropertyConsumerAuthenticationInformation()
+    {
+    }
+
+    /**
      * Test attribute "errorInformation"
      */
     public function testPropertyErrorInformation()

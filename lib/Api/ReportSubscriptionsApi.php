@@ -283,12 +283,13 @@ class ReportSubscriptionsApi
      * Delete Subscription of a Report Name by Organization
      *
      * @param string $reportName Name of the Report to Delete (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSubscription($reportName)
+    public function deleteSubscription($reportName, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->deleteSubscriptionWithHttpInfo($reportName);
+        list($response, $statusCode, $httpHeader) = $this->deleteSubscriptionWithHttpInfo($reportName, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -298,10 +299,11 @@ class ReportSubscriptionsApi
      * Delete Subscription of a Report Name by Organization
      *
      * @param string $reportName Name of the Report to Delete (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteSubscriptionWithHttpInfo($reportName)
+    public function deleteSubscriptionWithHttpInfo($reportName, $organizationId = null)
     {
         // verify the required parameter 'reportName' is set
         if ($reportName === null) {
@@ -317,6 +319,16 @@ class ReportSubscriptionsApi
             throw new \InvalidArgumentException("invalid value for \"reportName\" when calling ReportSubscriptionsApi.deleteSubscription, must conform to the pattern /[a-zA-Z0-9-_+]+/.");
         }
 
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.deleteSubscription, must be smaller than or equal to 32.');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.deleteSubscription, must be bigger than or equal to 1.');
+        }
+        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportSubscriptionsApi.deleteSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions/{reportName}";
         $httpBody = '';
@@ -329,6 +341,10 @@ class ReportSubscriptionsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($organizationId !== null) {
+            $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
         // path params
         if ($reportName !== null) {
             $resourcePath = str_replace(
@@ -378,12 +394,13 @@ class ReportSubscriptionsApi
      *
      * Get All Subscriptions
      *
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllSubscriptions()
+    public function getAllSubscriptions($organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getAllSubscriptionsWithHttpInfo();
+        list($response, $statusCode, $httpHeader) = $this->getAllSubscriptionsWithHttpInfo($organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -392,11 +409,22 @@ class ReportSubscriptionsApi
      *
      * Get All Subscriptions
      *
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllSubscriptionsWithHttpInfo()
+    public function getAllSubscriptionsWithHttpInfo($organizationId = null)
     {
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.getAllSubscriptions, must be smaller than or equal to 32.');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.getAllSubscriptions, must be bigger than or equal to 1.');
+        }
+        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportSubscriptionsApi.getAllSubscriptions, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions";
         $httpBody = '';
@@ -409,6 +437,10 @@ class ReportSubscriptionsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($organizationId !== null) {
+            $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -451,12 +483,13 @@ class ReportSubscriptionsApi
      * Get Subscription for Report Name
      *
      * @param string $reportName Name of the Report to Retrieve (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubscription($reportName)
+    public function getSubscription($reportName, $organizationId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getSubscriptionWithHttpInfo($reportName);
+        list($response, $statusCode, $httpHeader) = $this->getSubscriptionWithHttpInfo($reportName, $organizationId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -466,10 +499,11 @@ class ReportSubscriptionsApi
      * Get Subscription for Report Name
      *
      * @param string $reportName Name of the Report to Retrieve (required)
+     * @param string $organizationId Valid Cybersource Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubscriptionWithHttpInfo($reportName)
+    public function getSubscriptionWithHttpInfo($reportName, $organizationId = null)
     {
         // verify the required parameter 'reportName' is set
         if ($reportName === null) {
@@ -485,6 +519,16 @@ class ReportSubscriptionsApi
             throw new \InvalidArgumentException("invalid value for \"reportName\" when calling ReportSubscriptionsApi.getSubscription, must conform to the pattern /[a-zA-Z0-9-_+]+/.");
         }
 
+        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.getSubscription, must be smaller than or equal to 32.');
+        }
+        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportSubscriptionsApi.getSubscription, must be bigger than or equal to 1.');
+        }
+        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
+            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportSubscriptionsApi.getSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+        }
+
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions/{reportName}";
         $httpBody = '';
@@ -497,6 +541,10 @@ class ReportSubscriptionsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($organizationId !== null) {
+            $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
         // path params
         if ($reportName !== null) {
             $resourcePath = str_replace(

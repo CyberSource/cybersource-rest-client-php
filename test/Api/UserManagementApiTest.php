@@ -75,7 +75,7 @@ class UserManagementApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getUsers
      *
-     * Get User Information.
+     * Get User Information - Deprecated.
      *
      */
     public function testGetUsers()

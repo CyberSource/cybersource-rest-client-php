@@ -55,7 +55,8 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'avs' => '\CyberSource\Model\Riskv1decisionsProcessorInformationAvs'
+        'avs' => '\CyberSource\Model\Riskv1decisionsProcessorInformationAvs',
+        'cardVerification' => '\CyberSource\Model\Riskv1decisionsProcessorInformationCardVerification'
     ];
 
     /**
@@ -63,7 +64,8 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'avs' => null
+        'avs' => null,
+        'cardVerification' => null
     ];
 
     public static function swaggerTypes()
@@ -81,7 +83,8 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'avs' => 'avs'
+        'avs' => 'avs',
+        'cardVerification' => 'cardVerification'
     ];
 
 
@@ -90,7 +93,8 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'avs' => 'setAvs'
+        'avs' => 'setAvs',
+        'cardVerification' => 'setCardVerification'
     ];
 
 
@@ -99,7 +103,8 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'avs' => 'getAvs'
+        'avs' => 'getAvs',
+        'cardVerification' => 'getCardVerification'
     ];
 
     public static function attributeMap()
@@ -134,6 +139,7 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
+        $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
     }
 
     /**
@@ -178,6 +184,27 @@ class Riskv1decisionsProcessorInformation implements ArrayAccess
     public function setAvs($avs)
     {
         $this->container['avs'] = $avs;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardVerification
+     * @return \CyberSource\Model\Riskv1decisionsProcessorInformationCardVerification
+     */
+    public function getCardVerification()
+    {
+        return $this->container['cardVerification'];
+    }
+
+    /**
+     * Sets cardVerification
+     * @param \CyberSource\Model\Riskv1decisionsProcessorInformationCardVerification $cardVerification
+     * @return $this
+     */
+    public function setCardVerification($cardVerification)
+    {
+        $this->container['cardVerification'] = $cardVerification;
 
         return $this;
     }

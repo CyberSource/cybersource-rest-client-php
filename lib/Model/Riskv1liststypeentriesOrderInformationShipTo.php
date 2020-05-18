@@ -244,7 +244,7 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 First line of the shipping address.
+     * @param string $address1 First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional.
      * @return $this
      */
     public function setAddress1($address1)
@@ -269,7 +269,7 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets address2
-     * @param string $address2 Second line of the shipping address.
+     * @param string $address2 Second line of the shipping address.  Optional field.
      * @return $this
      */
     public function setAddress2($address2)
@@ -294,7 +294,7 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada.
+     * @param string $administrativeArea State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -319,7 +319,7 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Country of the shipping address. Use the two-character ISO Standard Country Codes.
+     * @param string $country Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional.
      * @return $this
      */
     public function setCountry($country)
@@ -344,7 +344,7 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality City of the shipping address.
+     * @param string $locality City of the shipping address.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.
      * @return $this
      */
     public function setLocality($locality)
@@ -369,7 +369,7 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side.
+     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  #### American Express Direct Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, the value is truncated starting from the right side.
      * @return $this
      */
     public function setPostalCode($postalCode)

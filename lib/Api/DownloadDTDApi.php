@@ -118,7 +118,7 @@ class DownloadDTDApi
             throw new \InvalidArgumentException('Missing the required parameter $reportDefinitionNameVersion when calling getDTDV2');
         }
         // parse inputs
-        $resourcePath = "/dtds/{reportDefinitionNameVersion}";
+        $resourcePath = "/reporting/v3/dtds/{reportDefinitionNameVersion}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -153,7 +153,7 @@ class DownloadDTDApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/dtds/{reportDefinitionNameVersion}'
+                '/reporting/v3/dtds/{reportDefinitionNameVersion}'
             );
 
             return [$response, $statusCode, $httpHeader];

@@ -54,15 +54,20 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'totalAmount' => 'string',
         'unitPrice' => 'string',
         'quantity' => 'int',
+        'giftCardCurrency' => 'int',
         'productSKU' => 'string',
         'productRisk' => 'string',
+        'productDescription' => 'string',
         'productName' => 'string',
         'productCode' => 'string',
         'gift' => 'bool',
         'distributorProductSku' => 'string',
-        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger'
+        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger',
+        'shippingDestinationTypes' => 'string',
+        'taxAmount' => 'string'
     ];
 
     /**
@@ -70,15 +75,20 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'totalAmount' => null,
         'unitPrice' => null,
         'quantity' => null,
+        'giftCardCurrency' => null,
         'productSKU' => null,
         'productRisk' => null,
+        'productDescription' => null,
         'productName' => null,
         'productCode' => null,
         'gift' => null,
         'distributorProductSku' => null,
-        'passenger' => null
+        'passenger' => null,
+        'shippingDestinationTypes' => null,
+        'taxAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -96,15 +106,20 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'totalAmount' => 'totalAmount',
         'unitPrice' => 'unitPrice',
         'quantity' => 'quantity',
+        'giftCardCurrency' => 'giftCardCurrency',
         'productSKU' => 'productSKU',
         'productRisk' => 'productRisk',
+        'productDescription' => 'productDescription',
         'productName' => 'productName',
         'productCode' => 'productCode',
         'gift' => 'gift',
         'distributorProductSku' => 'distributorProductSku',
-        'passenger' => 'passenger'
+        'passenger' => 'passenger',
+        'shippingDestinationTypes' => 'shippingDestinationTypes',
+        'taxAmount' => 'taxAmount'
     ];
 
 
@@ -113,15 +128,20 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'totalAmount' => 'setTotalAmount',
         'unitPrice' => 'setUnitPrice',
         'quantity' => 'setQuantity',
+        'giftCardCurrency' => 'setGiftCardCurrency',
         'productSKU' => 'setProductSKU',
         'productRisk' => 'setProductRisk',
+        'productDescription' => 'setProductDescription',
         'productName' => 'setProductName',
         'productCode' => 'setProductCode',
         'gift' => 'setGift',
         'distributorProductSku' => 'setDistributorProductSku',
-        'passenger' => 'setPassenger'
+        'passenger' => 'setPassenger',
+        'shippingDestinationTypes' => 'setShippingDestinationTypes',
+        'taxAmount' => 'setTaxAmount'
     ];
 
 
@@ -130,15 +150,20 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'totalAmount' => 'getTotalAmount',
         'unitPrice' => 'getUnitPrice',
         'quantity' => 'getQuantity',
+        'giftCardCurrency' => 'getGiftCardCurrency',
         'productSKU' => 'getProductSKU',
         'productRisk' => 'getProductRisk',
+        'productDescription' => 'getProductDescription',
         'productName' => 'getProductName',
         'productCode' => 'getProductCode',
         'gift' => 'getGift',
         'distributorProductSku' => 'getDistributorProductSku',
-        'passenger' => 'getPassenger'
+        'passenger' => 'getPassenger',
+        'shippingDestinationTypes' => 'getShippingDestinationTypes',
+        'taxAmount' => 'getTaxAmount'
     ];
 
     public static function attributeMap()
@@ -172,15 +197,20 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['giftCardCurrency'] = isset($data['giftCardCurrency']) ? $data['giftCardCurrency'] : null;
         $this->container['productSKU'] = isset($data['productSKU']) ? $data['productSKU'] : null;
         $this->container['productRisk'] = isset($data['productRisk']) ? $data['productRisk'] : null;
+        $this->container['productDescription'] = isset($data['productDescription']) ? $data['productDescription'] : null;
         $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
         $this->container['gift'] = isset($data['gift']) ? $data['gift'] : null;
         $this->container['distributorProductSku'] = isset($data['distributorProductSku']) ? $data['distributorProductSku'] : null;
         $this->container['passenger'] = isset($data['passenger']) ? $data['passenger'] : null;
+        $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
+        $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
     }
 
     /**
@@ -191,6 +221,10 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['totalAmount']) && (strlen($this->container['totalAmount']) > 13)) {
+            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 13.";
+        }
 
         if (!is_null($this->container['unitPrice']) && (strlen($this->container['unitPrice']) > 15)) {
             $invalid_properties[] = "invalid value for 'unitPrice', the character length must be smaller than or equal to 15.";
@@ -224,6 +258,14 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
             $invalid_properties[] = "invalid value for 'distributorProductSku', the character length must be smaller than or equal to 15.";
         }
 
+        if (!is_null($this->container['shippingDestinationTypes']) && (strlen($this->container['shippingDestinationTypes']) > 50)) {
+            $invalid_properties[] = "invalid value for 'shippingDestinationTypes', the character length must be smaller than or equal to 50.";
+        }
+
+        if (!is_null($this->container['taxAmount']) && (strlen($this->container['taxAmount']) > 15)) {
+            $invalid_properties[] = "invalid value for 'taxAmount', the character length must be smaller than or equal to 15.";
+        }
+
         return $invalid_properties;
     }
 
@@ -236,6 +278,9 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['totalAmount']) > 13) {
+            return false;
+        }
         if (strlen($this->container['unitPrice']) > 15) {
             return false;
         }
@@ -260,9 +305,40 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         if (strlen($this->container['distributorProductSku']) > 15) {
             return false;
         }
+        if (strlen($this->container['shippingDestinationTypes']) > 50) {
+            return false;
+        }
+        if (strlen($this->container['taxAmount']) > 15) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets totalAmount
+     * @return string
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['totalAmount'];
+    }
+
+    /**
+     * Sets totalAmount
+     * @param string $totalAmount Total amount for the item. Normally calculated as the unit price times quantity.  When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the purchase amount total for prepaid gift cards in major units.  Example: 123.45 USD = 123
+     * @return $this
+     */
+    public function setTotalAmount($totalAmount)
+    {
+        if (!is_null($totalAmount) && (strlen($totalAmount) > 13)) {
+            throw new \InvalidArgumentException('invalid length for $totalAmount when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 13.');
+        }
+
+        $this->container['totalAmount'] = $totalAmount;
+
+        return $this;
+    }
 
     /**
      * Gets unitPrice
@@ -275,7 +351,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitPrice
-     * @param string $unitPrice Per-item price of the product. This value cannot be negative. You can include a decimal point (.), but you cannot include any other special characters. CyberSource truncates the amount to the correct number of decimal places.  For processor-specific information, see the `amount` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  **Important** Some processors have specific requirements and limitations, such as maximum amounts and maximum field lengths. See these guides for details: - [Merchant Descriptors Using the SCMP API Guide] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/) - \"Capture Information for Specific Processors\" section in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field `orderInformation.amountDetails.totalAmount` in your request. For details, see \"Dynamic Currency Conversion with a Third Party Provider\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen. See \"Zero Amount Authorizations\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $unitPrice Per-item price of the product. This value for this field cannot be negative.  You must include either this field or the request-level field `orderInformation.amountDetails.totalAmount` in your request.  You can include a decimal point (.), but you cannot include any other special characters. The value is truncated to the correct number of decimal places.  #### DCC with a Third-Party Provider Set this field to the converted amount that was returned by the DCC provider. You must include either the 1st line item in the order and this field, or the request-level field `orderInformation.amountDetails.totalAmount` in your request.  #### FDMS South If you accept IDR or CLP currencies, see the entry for FDMS South in the [Merchant Descriptors Using the SCMP API Guide.] (https://apps.cybersource.com/library/documentation/dev_guides/Merchant_Descriptors_SCMP_API/html/)  #### Zero Amount Authorizations If your processor supports zero amount authorizations, you can set this field to 0 for the authorization to check if the card is lost or stolen.  #### Maximum Field Lengths For GPN and JCN Gateway: Decimal (10) All other processors: Decimal (15)
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -300,7 +376,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param int $quantity Number of units for this order.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.  When orderInformation.lineItems[].productCode is \"gift_card\", this is the total count of individual prepaid gift cards purchased.
+     * @param int $quantity Number of units for this order. Must be a non-negative integer.  The default is `1`. For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not `default` or one of the other values related to shipping and/or handling.
      * @return $this
      */
     public function setQuantity($quantity)
@@ -319,6 +395,27 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     }
 
     /**
+     * Gets giftCardCurrency
+     * @return int
+     */
+    public function getGiftCardCurrency()
+    {
+        return $this->container['giftCardCurrency'];
+    }
+
+    /**
+     * Sets giftCardCurrency
+     * @param int $giftCardCurrency When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the currency used for the gift card purchase.  For details, see `pa_gift_card_currency` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/Payer_Authentication_SCMP_API.pdf)  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)
+     * @return $this
+     */
+    public function setGiftCardCurrency($giftCardCurrency)
+    {
+        $this->container['giftCardCurrency'] = $giftCardCurrency;
+
+        return $this;
+    }
+
+    /**
      * Gets productSKU
      * @return string
      */
@@ -329,7 +426,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productSKU
-     * @param string $productSKU Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when _orderInformation.lineItems[].productCode_ is not set to **default** or one of the other values that are related to shipping and/or handling.
+     * @param string $productSKU Product identifier code. Also known as the Stock Keeping Unit (SKU) code for the product.  For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not `default` or one of the values related to shipping and/or handling.
      * @return $this
      */
     public function setProductSKU($productSKU)
@@ -369,6 +466,27 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     }
 
     /**
+     * Gets productDescription
+     * @return string
+     */
+    public function getProductDescription()
+    {
+        return $this->container['productDescription'];
+    }
+
+    /**
+     * Sets productDescription
+     * @param string $productDescription Brief description of item.
+     * @return $this
+     */
+    public function setProductDescription($productDescription)
+    {
+        $this->container['productDescription'] = $productDescription;
+
+        return $this;
+    }
+
+    /**
      * Gets productName
      * @return string
      */
@@ -379,7 +497,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productName
-     * @param string $productName For an authorization or capture transaction (`processingOptions.capture` is set to `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not set to `default` or one of the other values that are related to shipping and/or handling.
+     * @param string $productName For an authorization or capture transaction (`processingOptions.capture` is `true` or `false`), this field is required when `orderInformation.lineItems[].productCode` is not `default` or one of the other values that are related to shipping and/or handling.
      * @return $this
      */
     public function setProductName($productName)
@@ -404,7 +522,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productCode
-     * @param string $productCode Type of product. This value is used to determine the category that the product is in: electronic, handling, physical, service, or shipping. The default value is **default**. If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than default or any of the values related to shipping and handling, then the fields `quantity`, `productName`, and `productSku` are required. It can also have a value of \"gift_card\".  For details, see the `product_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $productCode Type of product. The value for this field is used to identify the product category (electronic, handling, physical, service, or shipping). The default value is `default`.  If you are performing an authorization transaction (`processingOptions.capture` is set to `false`), and you set this field to a value other than `default` or one of the values related to shipping and/or handling, then `orderInformation.lineItems[].quantity`, `orderInformation.lineItems[].productName`, and `orderInformation.lineItems[].productSku` fields are required.  Optional field.
      * @return $this
      */
     public function setProductCode($productCode)
@@ -481,6 +599,56 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     public function setPassenger($passenger)
     {
         $this->container['passenger'] = $passenger;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingDestinationTypes
+     * @return string
+     */
+    public function getShippingDestinationTypes()
+    {
+        return $this->container['shippingDestinationTypes'];
+    }
+
+    /**
+     * Sets shippingDestinationTypes
+     * @param string $shippingDestinationTypes Destination to where the item will be shipped. Example: Commercial, Residential, Store
+     * @return $this
+     */
+    public function setShippingDestinationTypes($shippingDestinationTypes)
+    {
+        if (!is_null($shippingDestinationTypes) && (strlen($shippingDestinationTypes) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $shippingDestinationTypes when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 50.');
+        }
+
+        $this->container['shippingDestinationTypes'] = $shippingDestinationTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxAmount
+     * @return string
+     */
+    public function getTaxAmount()
+    {
+        return $this->container['taxAmount'];
+    }
+
+    /**
+     * Sets taxAmount
+     * @param string $taxAmount Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field.
+     * @return $this
+     */
+    public function setTaxAmount($taxAmount)
+    {
+        if (!is_null($taxAmount) && (strlen($taxAmount) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $taxAmount when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 15.');
+        }
+
+        $this->container['taxAmount'] = $taxAmount;
 
         return $this;
     }

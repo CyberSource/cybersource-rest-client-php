@@ -129,7 +129,7 @@ class NotificationOfChangesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json', 'application/csv', 'application/xml']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }

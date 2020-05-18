@@ -83,4 +83,11 @@ class Riskv1decisionsProcessorInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyAvs()
     {
     }
+
+    /**
+     * Test attribute "cardVerification"
+     */
+    public function testPropertyCardVerification()
+    {
+    }
 }

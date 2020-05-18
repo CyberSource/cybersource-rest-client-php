@@ -58,7 +58,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
         'preOrder' => 'string',
         'preOrderDate' => 'string',
         'reordered' => 'bool',
-        'shipTo' => '\CyberSource\Model\Riskv1authenticationsOrderInformationShipTo',
+        'shipTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationShipTo',
         'lineItems' => '\CyberSource\Model\Riskv1authenticationsOrderInformationLineItems[]',
         'billTo' => '\CyberSource\Model\Riskv1authenticationsOrderInformationBillTo',
         'totalOffersCount' => 'string'
@@ -306,7 +306,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
 
     /**
      * Gets shipTo
-     * @return \CyberSource\Model\Riskv1authenticationsOrderInformationShipTo
+     * @return \CyberSource\Model\Riskv1decisionsOrderInformationShipTo
      */
     public function getShipTo()
     {
@@ -315,7 +315,7 @@ class Riskv1authenticationsOrderInformation implements ArrayAccess
 
     /**
      * Sets shipTo
-     * @param \CyberSource\Model\Riskv1authenticationsOrderInformationShipTo $shipTo
+     * @param \CyberSource\Model\Riskv1decisionsOrderInformationShipTo $shipTo
      * @return $this
      */
     public function setShipTo($shipTo)

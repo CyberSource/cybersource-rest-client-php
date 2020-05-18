@@ -113,13 +113,6 @@ class RiskV1AddressVerificationsPost201ResponseTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
-    {
-    }
-
-    /**
      * Test attribute "message"
      */
     public function testPropertyMessage()

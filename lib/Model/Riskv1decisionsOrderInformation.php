@@ -56,11 +56,15 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'amountDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails',
+        'preOrder' => 'string',
+        'preOrderDate' => 'string',
+        'reordered' => 'bool',
         'shippingDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationShippingDetails',
         'shipTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationShipTo',
         'returnsAccepted' => 'bool',
         'lineItems' => '\CyberSource\Model\Riskv1decisionsOrderInformationLineItems[]',
-        'billTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationBillTo'
+        'billTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationBillTo',
+        'totalOffersCount' => 'string'
     ];
 
     /**
@@ -69,11 +73,15 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'amountDetails' => null,
+        'preOrder' => null,
+        'preOrderDate' => null,
+        'reordered' => null,
         'shippingDetails' => null,
         'shipTo' => null,
         'returnsAccepted' => null,
         'lineItems' => null,
-        'billTo' => null
+        'billTo' => null,
+        'totalOffersCount' => null
     ];
 
     public static function swaggerTypes()
@@ -92,11 +100,15 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'amountDetails' => 'amountDetails',
+        'preOrder' => 'preOrder',
+        'preOrderDate' => 'preOrderDate',
+        'reordered' => 'reordered',
         'shippingDetails' => 'shippingDetails',
         'shipTo' => 'shipTo',
         'returnsAccepted' => 'returnsAccepted',
         'lineItems' => 'lineItems',
-        'billTo' => 'billTo'
+        'billTo' => 'billTo',
+        'totalOffersCount' => 'totalOffersCount'
     ];
 
 
@@ -106,11 +118,15 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
      */
     protected static $setters = [
         'amountDetails' => 'setAmountDetails',
+        'preOrder' => 'setPreOrder',
+        'preOrderDate' => 'setPreOrderDate',
+        'reordered' => 'setReordered',
         'shippingDetails' => 'setShippingDetails',
         'shipTo' => 'setShipTo',
         'returnsAccepted' => 'setReturnsAccepted',
         'lineItems' => 'setLineItems',
-        'billTo' => 'setBillTo'
+        'billTo' => 'setBillTo',
+        'totalOffersCount' => 'setTotalOffersCount'
     ];
 
 
@@ -120,11 +136,15 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
      */
     protected static $getters = [
         'amountDetails' => 'getAmountDetails',
+        'preOrder' => 'getPreOrder',
+        'preOrderDate' => 'getPreOrderDate',
+        'reordered' => 'getReordered',
         'shippingDetails' => 'getShippingDetails',
         'shipTo' => 'getShipTo',
         'returnsAccepted' => 'getReturnsAccepted',
         'lineItems' => 'getLineItems',
-        'billTo' => 'getBillTo'
+        'billTo' => 'getBillTo',
+        'totalOffersCount' => 'getTotalOffersCount'
     ];
 
     public static function attributeMap()
@@ -159,11 +179,15 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
+        $this->container['preOrder'] = isset($data['preOrder']) ? $data['preOrder'] : null;
+        $this->container['preOrderDate'] = isset($data['preOrderDate']) ? $data['preOrderDate'] : null;
+        $this->container['reordered'] = isset($data['reordered']) ? $data['reordered'] : null;
         $this->container['shippingDetails'] = isset($data['shippingDetails']) ? $data['shippingDetails'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
         $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
+        $this->container['totalOffersCount'] = isset($data['totalOffersCount']) ? $data['totalOffersCount'] : null;
     }
 
     /**
@@ -174,6 +198,14 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['preOrderDate']) && (strlen($this->container['preOrderDate']) > 10)) {
+            $invalid_properties[] = "invalid value for 'preOrderDate', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['totalOffersCount']) && (strlen($this->container['totalOffersCount']) > 2)) {
+            $invalid_properties[] = "invalid value for 'totalOffersCount', the character length must be smaller than or equal to 2.";
+        }
 
         return $invalid_properties;
     }
@@ -187,6 +219,12 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['preOrderDate']) > 10) {
+            return false;
+        }
+        if (strlen($this->container['totalOffersCount']) > 2) {
+            return false;
+        }
         return true;
     }
 
@@ -208,6 +246,73 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function setAmountDetails($amountDetails)
     {
         $this->container['amountDetails'] = $amountDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets preOrder
+     * @return string
+     */
+    public function getPreOrder()
+    {
+        return $this->container['preOrder'];
+    }
+
+    /**
+     * Sets preOrder
+     * @param string $preOrder Indicates whether cardholder is placing an order with a future availability or release date. This field can contain one of these values: - MERCHANDISE_AVAILABLE: Merchandise available - FUTURE_AVAILABILITY: Future availability
+     * @return $this
+     */
+    public function setPreOrder($preOrder)
+    {
+        $this->container['preOrder'] = $preOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets preOrderDate
+     * @return string
+     */
+    public function getPreOrderDate()
+    {
+        return $this->container['preOrderDate'];
+    }
+
+    /**
+     * Sets preOrderDate
+     * @param string $preOrderDate Expected date that a pre-ordered purchase will be available. Format: YYYYMMDD
+     * @return $this
+     */
+    public function setPreOrderDate($preOrderDate)
+    {
+        if (!is_null($preOrderDate) && (strlen($preOrderDate) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $preOrderDate when calling Riskv1decisionsOrderInformation., must be smaller than or equal to 10.');
+        }
+
+        $this->container['preOrderDate'] = $preOrderDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets reordered
+     * @return bool
+     */
+    public function getReordered()
+    {
+        return $this->container['reordered'];
+    }
+
+    /**
+     * Sets reordered
+     * @param bool $reordered Indicates whether the cardholder is reordering previously purchased merchandise. This field can contain one of these values: - false: First time ordered - true: Reordered
+     * @return $this
+     */
+    public function setReordered($reordered)
+    {
+        $this->container['reordered'] = $reordered;
 
         return $this;
     }
@@ -313,6 +418,31 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function setBillTo($billTo)
     {
         $this->container['billTo'] = $billTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalOffersCount
+     * @return string
+     */
+    public function getTotalOffersCount()
+    {
+        return $this->container['totalOffersCount'];
+    }
+
+    /**
+     * Sets totalOffersCount
+     * @param string $totalOffersCount Total number of articles/items in the order as a numeric decimal count. Possible values: 00 - 99
+     * @return $this
+     */
+    public function setTotalOffersCount($totalOffersCount)
+    {
+        if (!is_null($totalOffersCount) && (strlen($totalOffersCount) > 2)) {
+            throw new \InvalidArgumentException('invalid length for $totalOffersCount when calling Riskv1decisionsOrderInformation., must be smaller than or equal to 2.');
+        }
+
+        $this->container['totalOffersCount'] = $totalOffersCount;
 
         return $this;
     }

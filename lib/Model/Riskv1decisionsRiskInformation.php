@@ -55,7 +55,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'profile' => '\CyberSource\Model\Ptsv2paymentsRiskInformationProfile',
-        'eventType' => 'string'
+        'eventType' => 'string',
+        'buyerHistory' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'profile' => null,
-        'eventType' => null
+        'eventType' => null,
+        'buyerHistory' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'profile' => 'profile',
-        'eventType' => 'eventType'
+        'eventType' => 'eventType',
+        'buyerHistory' => 'buyerHistory'
     ];
 
 
@@ -93,7 +96,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      */
     protected static $setters = [
         'profile' => 'setProfile',
-        'eventType' => 'setEventType'
+        'eventType' => 'setEventType',
+        'buyerHistory' => 'setBuyerHistory'
     ];
 
 
@@ -103,7 +107,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
      */
     protected static $getters = [
         'profile' => 'getProfile',
-        'eventType' => 'getEventType'
+        'eventType' => 'getEventType',
+        'buyerHistory' => 'getBuyerHistory'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     {
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
         $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
+        $this->container['buyerHistory'] = isset($data['buyerHistory']) ? $data['buyerHistory'] : null;
     }
 
     /**
@@ -215,6 +221,27 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         }
 
         $this->container['eventType'] = $eventType;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerHistory
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory
+     */
+    public function getBuyerHistory()
+    {
+        return $this->container['buyerHistory'];
+    }
+
+    /**
+     * Sets buyerHistory
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory $buyerHistory
+     * @return $this
+     */
+    public function setBuyerHistory($buyerHistory)
+    {
+        $this->container['buyerHistory'] = $buyerHistory;
 
         return $this;
     }

@@ -61,7 +61,10 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'status' => 'string',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'paymentInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponsePaymentInformation',
-        'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation'
+        'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
+        'orderInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseOrderInformation',
+        'consumerAuthenticationInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation',
+        'errorInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseErrorInformation'
     ];
 
     /**
@@ -76,6 +79,9 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'status' => null,
         'riskInformation' => null,
         'paymentInformation' => null,
+        'clientReferenceInformation' => null,
+        'orderInformation' => null,
+        'consumerAuthenticationInformation' => null,
         'errorInformation' => null
     ];
 
@@ -101,6 +107,9 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'status' => 'status',
         'riskInformation' => 'riskInformation',
         'paymentInformation' => 'paymentInformation',
+        'clientReferenceInformation' => 'clientReferenceInformation',
+        'orderInformation' => 'orderInformation',
+        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
         'errorInformation' => 'errorInformation'
     ];
 
@@ -117,6 +126,9 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'status' => 'setStatus',
         'riskInformation' => 'setRiskInformation',
         'paymentInformation' => 'setPaymentInformation',
+        'clientReferenceInformation' => 'setClientReferenceInformation',
+        'orderInformation' => 'setOrderInformation',
+        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
         'errorInformation' => 'setErrorInformation'
     ];
 
@@ -133,6 +145,9 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'status' => 'getStatus',
         'riskInformation' => 'getRiskInformation',
         'paymentInformation' => 'getPaymentInformation',
+        'clientReferenceInformation' => 'getClientReferenceInformation',
+        'orderInformation' => 'getOrderInformation',
+        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
         'errorInformation' => 'getErrorInformation'
     ];
 
@@ -174,6 +189,9 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
+        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
     }
 
@@ -266,7 +284,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -308,7 +326,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `CHALLENGE`   - `PENDING_AUTHENTICATION`
+     * @param string $status The status of the submitted transaction.  Possible values:   - `ACCEPTED`   - `REJECTED`   - `PENDING_REVIEW`   - `DECLINED`   - `PENDING_AUTHENTICATION`   - `INVALID_REQUEST`   - `AUTHENTICATION_FAILED`   - `CHALLENGE`
      * @return $this
      */
     public function setStatus($status)
@@ -361,8 +379,71 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
     }
 
     /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseOrderInformation
+     */
+    public function getOrderInformation()
+    {
+        return $this->container['orderInformation'];
+    }
+
+    /**
+     * Sets orderInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseOrderInformation $orderInformation
+     * @return $this
+     */
+    public function setOrderInformation($orderInformation)
+    {
+        $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets consumerAuthenticationInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation
+     */
+    public function getConsumerAuthenticationInformation()
+    {
+        return $this->container['consumerAuthenticationInformation'];
+    }
+
+    /**
+     * Sets consumerAuthenticationInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation $consumerAuthenticationInformation
+     * @return $this
+     */
+    public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
+    {
+        $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets errorInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseErrorInformation
      */
     public function getErrorInformation()
     {
@@ -371,7 +452,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Sets errorInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation $errorInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseErrorInformation $errorInformation
      * @return $this
      */
     public function setErrorInformation($errorInformation)

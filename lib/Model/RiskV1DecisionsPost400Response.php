@@ -195,7 +195,7 @@ class RiskV1DecisionsPost400Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -216,7 +216,7 @@ class RiskV1DecisionsPost400Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - INVALID_REQUEST
+     * @param string $status The status of the submitted transaction.  Possible values:  - `INVALID_REQUEST`  - `DECLINED`
      * @return $this
      */
     public function setStatus($status)
@@ -237,7 +237,7 @@ class RiskV1DecisionsPost400Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE
+     * @param string $reason The reason of the status.  Possible values:  - `MISSING_FIELD`  - `INVALID_DATA`  - `INVALID_ACCOUNT`
      * @return $this
      */
     public function setReason($reason)

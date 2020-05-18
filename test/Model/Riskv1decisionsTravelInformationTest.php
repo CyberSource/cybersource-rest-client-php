@@ -111,4 +111,18 @@ class Riskv1decisionsTravelInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyLegs()
     {
     }
+
+    /**
+     * Test attribute "numberOfPassengers"
+     */
+    public function testPropertyNumberOfPassengers()
+    {
+    }
+
+    /**
+     * Test attribute "passengers"
+     */
+    public function testPropertyPassengers()
+    {
+    }
 }

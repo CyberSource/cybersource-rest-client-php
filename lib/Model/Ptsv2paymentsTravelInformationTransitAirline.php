@@ -759,7 +759,7 @@ class Ptsv2paymentsTravelInformationTransitAirline implements ArrayAccess
 
     /**
      * Sets extendedPaymentCode
-     * @param string $extendedPaymentCode Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets..
+     * @param string $extendedPaymentCode The field is not currently supported.
      * @return $this
      */
     public function setExtendedPaymentCode($extendedPaymentCode)
@@ -859,7 +859,7 @@ class Ptsv2paymentsTravelInformationTransitAirline implements ArrayAccess
 
     /**
      * Sets documentNumber
-     * @param string $documentNumber Ticket number or a value that might be a booking reference number.
+     * @param string $documentNumber The field is not currently supported.
      * @return $this
      */
     public function setDocumentNumber($documentNumber)
@@ -884,7 +884,7 @@ class Ptsv2paymentsTravelInformationTransitAirline implements ArrayAccess
 
     /**
      * Sets documentNumberOfParts
-     * @param int $documentNumberOfParts Number of travel legs. Numbering for the travel legs: 0 to 3.
+     * @param int $documentNumberOfParts The field is not currently supported.
      * @return $this
      */
     public function setDocumentNumberOfParts($documentNumberOfParts)
@@ -1418,7 +1418,7 @@ class Ptsv2paymentsTravelInformationTransitAirline implements ArrayAccess
 
     /**
      * Sets reservationType
-     * @param string $reservationType Type of journey such as one way or round trip.
+     * @param string $reservationType The field is not currently supported.
      * @return $this
      */
     public function setReservationType($reservationType)

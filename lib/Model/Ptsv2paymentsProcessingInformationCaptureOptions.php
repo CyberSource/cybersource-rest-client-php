@@ -276,7 +276,7 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
 
     /**
      * Sets dateToCapture
-     * @param string $dateToCapture Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet.\\ `Format: MMDD`
+     * @param string $dateToCapture Date on which you want the capture to occur. This field is supported only for CyberSource through VisaNet. Format: `MMDD`  #### Used by **Authorization** Optional field.
      * @return $this
      */
     public function setDateToCapture($dateToCapture)

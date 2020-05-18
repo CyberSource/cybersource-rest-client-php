@@ -118,7 +118,7 @@ class DownloadXSDApi
             throw new \InvalidArgumentException('Missing the required parameter $reportDefinitionNameVersion when calling getXSDV2');
         }
         // parse inputs
-        $resourcePath = "/xsds/{reportDefinitionNameVersion}";
+        $resourcePath = "/reporting/v3/xsds/{reportDefinitionNameVersion}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -153,7 +153,7 @@ class DownloadXSDApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/xsds/{reportDefinitionNameVersion}'
+                '/reporting/v3/xsds/{reportDefinitionNameVersion}'
             );
 
             return [$response, $statusCode, $httpHeader];

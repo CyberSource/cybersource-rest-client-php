@@ -346,7 +346,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets authIndicator
-     * @param string $authIndicator Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \"Final Authorization Indicator\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file5:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the `auth_indicator` field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html).
+     * @param string $authIndicator Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support. For details, see \"Final Authorization Indicator\" in the [Credit Card Services Using the SCMP API Guide](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/).  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.  For processor-specific information, see the `auth_indicator` field in [Credit Card Services Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html).
      * @return $this
      */
     public function setAuthIndicator($authIndicator)
@@ -371,7 +371,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets partialAuthIndicator
-     * @param bool $partialAuthIndicator Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your CyberSource account.  For processor-specific information, see the `auth_partial_auth_indicator` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators  Possible values: - **true** Enable the transaction for partial authorization. - **false** Do not enable the transaction for partial authorization.
+     * @param bool $partialAuthIndicator Flag that indicates whether the transaction is enabled for partial authorization or not. When your request includes this field, this value overrides the information in your account.  Possible values: - `true`: Enable the transaction for partial authorization. - `false`: Do not enable the transaction for partial authorization.  #### Used by **Authorization** Optional field.  #### CyberSource through VisaNet To set the default for this field, contact CyberSource Customer Support. The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR0 - Position: 164 - Field: Additional Authorization Indicators
      * @return $this
      */
     public function setPartialAuthIndicator($partialAuthIndicator)
@@ -392,7 +392,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets balanceInquiry
-     * @param bool $balanceInquiry Flag that indicates whether to return balance information.  Possible values: - **true** - **false**
+     * @param bool $balanceInquiry Flag that indicates whether to return balance information.  Possible values: - `true`: Return balance information. - `false`: Do not return balance information.  #### Used by **Authorization** Required for a balance inquiry; otherwise, not used.
      * @return $this
      */
     public function setBalanceInquiry($balanceInquiry)
@@ -413,7 +413,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets ignoreAvsResult
-     * @param bool $ignoreAvsResult Flag that indicates whether to allow the capture service to run, even when the payment receives an AVS decline.  Possible values: - **true**  Ignore the results of AVS checking and run the capture service. - **false**  (default): If the authorization receives an AVS decline, do not run the capture service.
+     * @param bool $ignoreAvsResult Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives an AVS decline, as indicated by a reply flag value of DAVSNO.  Possible values: - `true`: Ignore the results of AVS checking and run the capture service. - `false` (default): If the authorization receives an AVS decline, do not run the capture service. When the value of this field is `true`, the list in the `processingInformation.authorizationOptions.declineAvsFlags` field is ignored.  #### Used by **Authorization** Optional field. String (3)
      * @return $this
      */
     public function setIgnoreAvsResult($ignoreAvsResult)
@@ -455,7 +455,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets ignoreCvResult
-     * @param bool $ignoreCvResult Flag that indicates whether to allow the capture service to run even when the payment receives a CVN decline.  Possible values: - **true**  Ignore the results of CVN checking and run the capture service. - **false**  (default) If the authorization receives a CVN decline, do not run the capture service.
+     * @param bool $ignoreCvResult Flag for a sale request that indicates whether to allow the capture service to run even when the authorization receives a CVN decline, as indicated by an `processorInformation.cardVerification.resultCode` value of `D` or `N`. Possible values: - `true`: Ignore the results of CVN checking and run the capture service. - `false` (default): If the authorization receives a CVN decline, do not run the capture service.  #### Used by **Authorization** Optional field.
      * @return $this
      */
     public function setIgnoreCvResult($ignoreCvResult)
@@ -497,7 +497,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets billPayment
-     * @param bool $billPayment Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the `bill_payment` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.
+     * @param bool $billPayment Indicates payment for bill or payment towards existing contractual loan.  Possible values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.  Optional field
      * @return $this
      */
     public function setBillPayment($billPayment)

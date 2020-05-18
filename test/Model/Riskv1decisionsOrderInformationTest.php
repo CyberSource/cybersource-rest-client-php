@@ -85,6 +85,27 @@ class Riskv1decisionsOrderInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "preOrder"
+     */
+    public function testPropertyPreOrder()
+    {
+    }
+
+    /**
+     * Test attribute "preOrderDate"
+     */
+    public function testPropertyPreOrderDate()
+    {
+    }
+
+    /**
+     * Test attribute "reordered"
+     */
+    public function testPropertyReordered()
+    {
+    }
+
+    /**
      * Test attribute "shippingDetails"
      */
     public function testPropertyShippingDetails()
@@ -116,6 +137,13 @@ class Riskv1decisionsOrderInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "billTo"
      */
     public function testPropertyBillTo()
+    {
+    }
+
+    /**
+     * Test attribute "totalOffersCount"
+     */
+    public function testPropertyTotalOffersCount()
     {
     }
 }

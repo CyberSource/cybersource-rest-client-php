@@ -85,7 +85,7 @@ class ReversalApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for mitReversal
      *
-     * Merchant Initiated Reversal.
+     * Timeout Reversal.
      *
      */
     public function testMitReversal()

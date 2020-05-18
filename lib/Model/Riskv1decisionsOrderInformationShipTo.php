@@ -35,7 +35,6 @@ use \ArrayAccess;
  * Riskv1decisionsOrderInformationShipTo Class Doc Comment
  *
  * @category    Class
- * @description Contains recipient shipping information.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -59,11 +58,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         'address2' => 'string',
         'administrativeArea' => 'string',
         'country' => 'string',
+        'destinationTypes' => 'string',
         'locality' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
         'phoneNumber' => 'string',
-        'postalCode' => 'string'
+        'postalCode' => 'string',
+        'destinationCode' => 'int',
+        'method' => 'string'
     ];
 
     /**
@@ -75,11 +77,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         'address2' => null,
         'administrativeArea' => null,
         'country' => null,
+        'destinationTypes' => null,
         'locality' => null,
         'firstName' => null,
         'lastName' => null,
         'phoneNumber' => null,
-        'postalCode' => null
+        'postalCode' => null,
+        'destinationCode' => null,
+        'method' => null
     ];
 
     public static function swaggerTypes()
@@ -101,11 +106,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         'address2' => 'address2',
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
+        'destinationTypes' => 'destinationTypes',
         'locality' => 'locality',
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'phoneNumber' => 'phoneNumber',
-        'postalCode' => 'postalCode'
+        'postalCode' => 'postalCode',
+        'destinationCode' => 'destinationCode',
+        'method' => 'method'
     ];
 
 
@@ -118,11 +126,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         'address2' => 'setAddress2',
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
+        'destinationTypes' => 'setDestinationTypes',
         'locality' => 'setLocality',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'phoneNumber' => 'setPhoneNumber',
-        'postalCode' => 'setPostalCode'
+        'postalCode' => 'setPostalCode',
+        'destinationCode' => 'setDestinationCode',
+        'method' => 'setMethod'
     ];
 
 
@@ -135,11 +146,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         'address2' => 'getAddress2',
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
+        'destinationTypes' => 'getDestinationTypes',
         'locality' => 'getLocality',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'phoneNumber' => 'getPhoneNumber',
-        'postalCode' => 'getPostalCode'
+        'postalCode' => 'getPostalCode',
+        'destinationCode' => 'getDestinationCode',
+        'method' => 'getMethod'
     ];
 
     public static function attributeMap()
@@ -177,11 +191,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['destinationTypes'] = isset($data['destinationTypes']) ? $data['destinationTypes'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['destinationCode'] = isset($data['destinationCode']) ? $data['destinationCode'] : null;
+        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
     /**
@@ -209,6 +226,10 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
             $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
         }
 
+        if (!is_null($this->container['destinationTypes']) && (strlen($this->container['destinationTypes']) > 25)) {
+            $invalid_properties[] = "invalid value for 'destinationTypes', the character length must be smaller than or equal to 25.";
+        }
+
         if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 50)) {
             $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
         }
@@ -227,6 +248,10 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
         if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
             $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
+        }
+
+        if (!is_null($this->container['method']) && (strlen($this->container['method']) > 10)) {
+            $invalid_properties[] = "invalid value for 'method', the character length must be smaller than or equal to 10.";
         }
 
         return $invalid_properties;
@@ -253,6 +278,9 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         if (strlen($this->container['country']) > 2) {
             return false;
         }
+        if (strlen($this->container['destinationTypes']) > 25) {
+            return false;
+        }
         if (strlen($this->container['locality']) > 50) {
             return false;
         }
@@ -266,6 +294,9 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
             return false;
         }
         if (strlen($this->container['postalCode']) > 10) {
+            return false;
+        }
+        if (strlen($this->container['method']) > 10) {
             return false;
         }
         return true;
@@ -283,7 +314,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 First line of the shipping address.
+     * @param string $address1 First line of the shipping address.  Required field for authorization if any shipping address information is included in the request; otherwise, optional.
      * @return $this
      */
     public function setAddress1($address1)
@@ -308,7 +339,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets address2
-     * @param string $address2 Second line of the shipping address.
+     * @param string $address2 Second line of the shipping address.  Optional field.
      * @return $this
      */
     public function setAddress2($address2)
@@ -333,7 +364,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea State or province of the shipping address. Use the State, Province, and Territory Codes for the United States and Canada.
+     * @param string $administrativeArea State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -358,7 +389,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Country of the shipping address. Use the two-character ISO Standard Country Codes.
+     * @param string $country Country of the shipping address. Use the two-character [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)  Required field for authorization if any shipping address information is included in the request; otherwise, optional.
      * @return $this
      */
     public function setCountry($country)
@@ -368,6 +399,31 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         }
 
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets destinationTypes
+     * @return string
+     */
+    public function getDestinationTypes()
+    {
+        return $this->container['destinationTypes'];
+    }
+
+    /**
+     * Sets destinationTypes
+     * @param string $destinationTypes Shipping destination of item. Example: Commercial, Residential, Store
+     * @return $this
+     */
+    public function setDestinationTypes($destinationTypes)
+    {
+        if (!is_null($destinationTypes) && (strlen($destinationTypes) > 25)) {
+            throw new \InvalidArgumentException('invalid length for $destinationTypes when calling Riskv1decisionsOrderInformationShipTo., must be smaller than or equal to 25.');
+        }
+
+        $this->container['destinationTypes'] = $destinationTypes;
 
         return $this;
     }
@@ -383,7 +439,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality City of the shipping address.
+     * @param string $locality City of the shipping address.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.
      * @return $this
      */
     public function setLocality($locality)
@@ -408,7 +464,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName First name of the recipient.  **Processor specific maximum length**  - Litle: 25 - All other processors: 60
+     * @param string $firstName First name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field.
      * @return $this
      */
     public function setFirstName($firstName)
@@ -433,7 +489,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName Last name of the recipient.  **Processor-specific maximum length**  - Litle: 25 - All other processors: 60
+     * @param string $lastName Last name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field.
      * @return $this
      */
     public function setLastName($lastName)
@@ -483,7 +539,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side.
+     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  #### American Express Direct Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, the value is truncated starting from the right side.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -493,6 +549,52 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
         }
 
         $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets destinationCode
+     * @return int
+     */
+    public function getDestinationCode()
+    {
+        return $this->container['destinationCode'];
+    }
+
+    /**
+     * Sets destinationCode
+     * @param int $destinationCode Indicates destination chosen for the transaction. Possible values: - 01- Ship to cardholder billing address - 02- Ship to another verified address on file with merchant - 03- Ship to address that is different than billing address - 04- Ship to store (store address should be populated on request) - 05- Digital goods - 06- Travel and event tickets, not shipped - 07- Other
+     * @return $this
+     */
+    public function setDestinationCode($destinationCode)
+    {
+        $this->container['destinationCode'] = $destinationCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets method
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->container['method'];
+    }
+
+    /**
+     * Sets method
+     * @param string $method Shipping method for the product. Possible values: - lowcost: Lowest-cost service - sameday: Courier or same-day service - oneday: Next-day or overnight service - twoday: Two-day service - threeday: Three-day service - pickup: Store pick-up - other: Other shipping method - none: No shipping method because product is a service or subscription Required for American Express SafeKey (U.S.).
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        if (!is_null($method) && (strlen($method) > 10)) {
+            throw new \InvalidArgumentException('invalid length for $method when calling Riskv1decisionsOrderInformationShipTo., must be smaller than or equal to 10.');
+        }
+
+        $this->container['method'] = $method;
 
         return $this;
     }

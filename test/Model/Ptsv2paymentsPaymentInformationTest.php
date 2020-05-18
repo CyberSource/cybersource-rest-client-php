@@ -113,6 +113,13 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
+
+    /**
      * Test attribute "initiationChannel"
      */
     public function testPropertyInitiationChannel()
