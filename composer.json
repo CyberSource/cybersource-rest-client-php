@@ -24,9 +24,9 @@
         "phpunit/phpunit": "~4.8"
     },
     "autoload": {
-        "psr-4": { "Soberanes\\CyberSource\\" : "lib/" }
+        "psr-4": { "CyberSource\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Soberanes\\CyberSource\\" : "test/" }
+        "psr-4": { "CyberSource\\" : "test/" }
     }
 }
