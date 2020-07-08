@@ -2,10 +2,10 @@
 
 The CyberSource PHP client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your PHP application.
 
-[![Version         ][packagist_badge]][packagist]
+[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/v)](//packagist.org/packages/phpunit/phpunit) [![Total Downloads](https://poser.pugx.org/phpunit/phpunit/downloads)](//packagist.org/packages/phpunit/phpunit) [![Latest Unstable Version](https://poser.pugx.org/phpunit/phpunit/v/unstable)](//packagist.org/packages/phpunit/phpunit) [![License](https://poser.pugx.org/phpunit/phpunit/license)](//packagist.org/packages/phpunit/phpunit)
 
 ## Requirements
-* PHP 5.6+
+* PHP 7.1.3+
 * Enable cURL PHP Extension
 * Enable JSON PHP Extension
 * Enable MBString PHP Extension
