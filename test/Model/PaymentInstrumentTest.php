@@ -148,9 +148,16 @@ class PaymentInstrumentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "metaData"
+     * Test attribute "instrumentIdentifier"
      */
-    public function testPropertyMetaData()
+    public function testPropertyInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "metadata"
+     */
+    public function testPropertyMetadata()
     {
     }
 

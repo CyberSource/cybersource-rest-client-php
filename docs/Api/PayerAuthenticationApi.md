@@ -5,6 +5,7 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkPayerAuthEnrollment**](PayerAuthenticationApi.md#checkPayerAuthEnrollment) | **POST** /risk/v1/authentications | Check Payer Auth Enrollment
+[**payerAuthSetup**](PayerAuthenticationApi.md#payerAuthSetup) | **POST** /risk/v1/authentication-setups | Setup Payer Auth
 [**validateAuthenticationResults**](PayerAuthenticationApi.md#validateAuthenticationResults) | **POST** /risk/v1/authentication-results | Validate Authentication Results
 
 
@@ -41,6 +42,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\CyberSource\Model\RiskV1AuthenticationsPost201Response**](../Model/RiskV1AuthenticationsPost201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **payerAuthSetup**
+> \CyberSource\Model\RiskV1AuthenticationSetupsPost201Response payerAuthSetup($payerAuthSetupRequest)
+
+Setup Payer Auth
+
+A new service for Merchants to get reference_id for Digital Wallets to use in place of BIN number in Cardinal. Set up file while authenticating with Cardinal. This service should be called by Merchant when payment instrument chosen or changes. This service has to be called before enrollment check.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\PayerAuthenticationApi();
+$payerAuthSetupRequest = new \CyberSource\Model\PayerAuthSetupRequest(); // \CyberSource\Model\PayerAuthSetupRequest | 
+
+try {
+    $result = $api_instance->payerAuthSetup($payerAuthSetupRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PayerAuthenticationApi->payerAuthSetup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payerAuthSetupRequest** | [**\CyberSource\Model\PayerAuthSetupRequest**](../Model/PayerAuthSetupRequest.md)|  |
+
+### Return type
+
+[**\CyberSource\Model\RiskV1AuthenticationSetupsPost201Response**](../Model/RiskV1AuthenticationSetupsPost201Response.md)
 
 ### Authorization
 

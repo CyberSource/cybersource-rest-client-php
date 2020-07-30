@@ -73,32 +73,12 @@ class InstrumentIdentifierApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createInstrumentIdentifier
-     *
-     * Create an Instrument Identifier.
-     *
-     */
-    public function testCreateInstrumentIdentifier()
-    {
-    }
-
-    /**
      * Test case for deleteInstrumentIdentifier
      *
      * Delete an Instrument Identifier.
      *
      */
     public function testDeleteInstrumentIdentifier()
-    {
-    }
-
-    /**
-     * Test case for getAllPaymentInstruments
-     *
-     * Retrieve all Payment Instruments.
-     *
-     */
-    public function testGetAllPaymentInstruments()
     {
     }
 
@@ -113,12 +93,32 @@ class InstrumentIdentifierApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updateInstrumentIdentifier
+     * Test case for getInstrumentIdentifierPaymentInstrumentsList
      *
-     * Update a Instrument Identifier.
+     * List Payment Instruments for an Instrument Identifier.
      *
      */
-    public function testUpdateInstrumentIdentifier()
+    public function testGetInstrumentIdentifierPaymentInstrumentsList()
+    {
+    }
+
+    /**
+     * Test case for patchInstrumentIdentifier
+     *
+     * Update an Instrument Identifier.
+     *
+     */
+    public function testPatchInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test case for postInstrumentIdentifier
+     *
+     * Create an Instrument Identifier.
+     *
+     */
+    public function testPostInstrumentIdentifier()
     {
     }
 }

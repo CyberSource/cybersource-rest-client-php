@@ -54,12 +54,11 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'status' => 'string',
         'reasonCode' => 'string',
         'rCode' => 'string',
         'rFlag' => 'string',
-        'applications' => '\CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformationApplications[]',
-        'returnCode' => 'string'
+        'applications' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications[]',
+        'returnCode' => 'int'
     ];
 
     /**
@@ -67,7 +66,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'status' => null,
         'reasonCode' => null,
         'rCode' => null,
         'rFlag' => null,
@@ -90,7 +88,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
         'reasonCode' => 'reasonCode',
         'rCode' => 'rCode',
         'rFlag' => 'rFlag',
@@ -104,7 +101,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
         'reasonCode' => 'setReasonCode',
         'rCode' => 'setRCode',
         'rFlag' => 'setRFlag',
@@ -118,7 +114,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
         'reasonCode' => 'getReasonCode',
         'rCode' => 'getRCode',
         'rFlag' => 'getRFlag',
@@ -157,7 +152,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reasonCode'] = isset($data['reasonCode']) ? $data['reasonCode'] : null;
         $this->container['rCode'] = isset($data['rCode']) ? $data['rCode'] : null;
         $this->container['rFlag'] = isset($data['rFlag']) ? $data['rFlag'] : null;
@@ -191,27 +185,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
 
     /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * Gets reasonCode
      * @return string
      */
@@ -243,7 +216,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
     /**
      * Sets rCode
-     * @param string $rCode Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful.  For details, see `auth_rcode` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $rCode Indicates whether the service request was successful. Possible values:  - `-1`: An error occurred. - `0`: The request was declined. - `1`: The request was successful.
      * @return $this
      */
     public function setRCode($rCode)
@@ -264,7 +237,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
     /**
      * Sets rFlag
-     * @param string $rFlag One-word description of the result of the application.  For details, see `auth_rflag` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $rFlag One-word description of the result of the application.
      * @return $this
      */
     public function setRFlag($rFlag)
@@ -276,7 +249,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
     /**
      * Gets applications
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformationApplications[]
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications[]
      */
     public function getApplications()
     {
@@ -285,7 +258,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
     /**
      * Sets applications
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformationApplications[] $applications
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications[] $applications
      * @return $this
      */
     public function setApplications($applications)
@@ -297,7 +270,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
     /**
      * Gets returnCode
-     * @return string
+     * @return int
      */
     public function getReturnCode()
     {
@@ -306,7 +279,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
 
     /**
      * Sets returnCode
-     * @param string $returnCode The description for this field is not available.
+     * @param int $returnCode The description for this field is not available.
      * @return $this
      */
     public function setReturnCode($returnCode)

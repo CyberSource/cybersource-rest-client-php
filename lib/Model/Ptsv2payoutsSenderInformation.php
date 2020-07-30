@@ -543,7 +543,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada.
+     * @param string $administrativeArea Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -568,7 +568,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets countryCode
-     * @param string $countryCode Country of sender. Use the ISO Standard Country Codes. * CTV (3)
+     * @param string $countryCode Country of sender. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf). * CTV (3)
      * @return $this
      */
     public function setCountryCode($countryCode)

@@ -191,7 +191,7 @@ class Ptsv2paymentsTravelInformationAgency implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Code of travel agency that made the vehicle rental reservation.
+     * @param string $code International Air Transport Association (IATA) code of travel agency that made the vehicle rental reservation.
      * @return $this
      */
     public function setCode($code)

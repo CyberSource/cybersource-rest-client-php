@@ -397,7 +397,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets carrierCode
-     * @param string $carrierCode Carrier Code: IATA1 code for the carrier for this leg of the trip.
+     * @param string $carrierCode IATA code for the carrier for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setCarrierCode($carrierCode)
@@ -422,7 +422,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets flightNumber
-     * @param string $flightNumber Flight number for this leg of the trip.
+     * @param string $flightNumber Flight number for this leg of the trip. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setFlightNumber($flightNumber)
@@ -447,7 +447,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets originatingAirportCode
-     * @param string $originatingAirportCode IATA1 code for the originating airport for this leg of the trip.
+     * @param string $originatingAirportCode IATA code for the originating airport for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setOriginatingAirportCode($originatingAirportCode)
@@ -472,7 +472,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets class
-     * @param string $class IATA1 code for the class of service for this leg of the trip.
+     * @param string $class IATA code for the class of service for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setClass($class)
@@ -497,7 +497,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets stopoverIndicator
-     * @param int $stopoverIndicator Code that indicates whether a stopover is allowed on this leg of the trip. Possible Values: O(capital letter \"O\"): stopover allowed.  X(capital letter \"X\"): Stopover not allowed.
+     * @param int $stopoverIndicator Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter “O”) (default): Stopover allowed - `X` (capital letter “X”): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setStopoverIndicator($stopoverIndicator)
@@ -518,7 +518,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets departureDate
-     * @param int $departureDate Departure date for the first leg of the trip. Format: YYYYMMDD.
+     * @param int $departureDate Departure date for the first leg of the trip. Format: `YYYYMMDD`. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setDepartureDate($departureDate)
@@ -539,7 +539,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets destinationAirportCode
-     * @param string $destinationAirportCode IATA1 code for the destination airport for this leg of the trip.
+     * @param string $destinationAirportCode IATA code for the destination airport for this leg of the trip. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setDestinationAirportCode($destinationAirportCode)
@@ -564,7 +564,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets fareBasis
-     * @param string $fareBasis Code for the fare basis for this leg of the trip. The fare basis is assigned by the carriers and indicates a particular ticket type, such as business class or discounted/nonrefundable.
+     * @param string $fareBasis Code for the fare basis for this leg of the trip. The fare basis is assigned by the carriers and indicates a particular ticket type, such as business class or discounted/nonrefundable. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Format: English characters only. Optional request field for travel legs.auto_rental_regular_mileage_cost
      * @return $this
      */
     public function setFareBasis($fareBasis)
@@ -614,7 +614,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets conjunctionTicket
-     * @param string $conjunctionTicket Ticket that contains additional coupons for this leg of the trip on an itinerary that has more than four segments.
+     * @param string $conjunctionTicket Ticket that contains additional coupons for this leg of the trip on an itinerary that has more than four segments. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setConjunctionTicket($conjunctionTicket)
@@ -639,7 +639,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets exchangeTicketNumber
-     * @param string $exchangeTicketNumber New ticket number that is issued when the ticket is exchanged for this leg of the trip.
+     * @param string $exchangeTicketNumber New ticket number that is issued when the ticket is exchanged for this leg of the trip. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setExchangeTicketNumber($exchangeTicketNumber)
@@ -664,7 +664,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets couponNumber
-     * @param string $couponNumber Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number.
+     * @param string $couponNumber Coupon number. Each leg on the ticket requires a separate coupon, and each coupon is identified by the coupon number. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setCouponNumber($couponNumber)
@@ -689,7 +689,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets departureTime
-     * @param int $departureTime Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be 00-23 and the minutes must be 00-59
+     * @param int $departureTime Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59`. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setDepartureTime($departureTime)
@@ -710,7 +710,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets departureTimeMeridian
-     * @param string $departureTimeMeridian AM or PM for the departure time. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m
+     * @param string $departureTimeMeridian AM or PM for the departure time. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setDepartureTimeMeridian($departureTimeMeridian)
@@ -735,7 +735,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets arrivalTime
-     * @param int $arrivalTime Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be 00-23 and the minutes must be 00-59
+     * @param int $arrivalTime Time of arrival for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59` Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setArrivalTime($arrivalTime)
@@ -756,7 +756,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets arrivalTimeMeridian
-     * @param string $arrivalTimeMeridian AM or PM for the arrival time for this leg of the trip. Possible values: - A: 12:00 midnight to 11:59 a.m. - P: 12:00 noon to 11:59 p.m. Format: English characters only
+     * @param string $arrivalTimeMeridian AM or PM for the arrival time for this leg of the trip. Possible values: - `A`: 12:00 midnight to 11:59 a.m. - `P`: 12:00 noon to 11:59 p.m. Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setArrivalTimeMeridian($arrivalTimeMeridian)
@@ -781,7 +781,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets endorsementsRestrictions
-     * @param string $endorsementsRestrictions Notes or notations about endorsements and restrictions for this leg of the trip. Endorsements can be notations added by the travel agency, including mandatory government required notations such as value added tax. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable tic.
+     * @param string $endorsementsRestrictions Notes or notations about endorsements and restrictions for this leg of the trip. Endorsements can be notations added by the travel agency, including mandatory government-required notations such as value added tax. Restrictions are limitations for the ticket based on the type of fare, such as a nonrefundable ticket or a 3-day minimum stay. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setEndorsementsRestrictions($endorsementsRestrictions)
@@ -806,7 +806,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets totalFareAmount
-     * @param string $totalFareAmount Total fare for this leg of the trip.
+     * @param string $totalFareAmount Total fare for this leg of the trip. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setTotalFareAmount($totalFareAmount)
@@ -831,7 +831,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets feeAmount
-     * @param string $feeAmount Fee for this leg of the trip, such as an airport fee or country fee.
+     * @param string $feeAmount Fee for this leg of the trip, such as an airport fee or country fee. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setFeeAmount($feeAmount)
@@ -856,7 +856,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets taxAmount
-     * @param string $taxAmount Tax for this leg of the trip
+     * @param string $taxAmount Tax for this leg of the trip. Format: English characters only. Optional request field for travel legs.
      * @return $this
      */
     public function setTaxAmount($taxAmount)

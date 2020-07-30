@@ -92,6 +92,13 @@ class Ptsv2paymentsTravelInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "autoRental"
+     */
+    public function testPropertyAutoRental()
+    {
+    }
+
+    /**
      * Test attribute "lodging"
      */
     public function testPropertyLodging()

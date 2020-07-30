@@ -99,6 +99,13 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
+     * Test attribute "responseAccessToken"
+     */
+    public function testPropertyResponseAccessToken()
+    {
+    }
+
+    /**
      * Test attribute "signedParesStatusReason"
      */
     public function testPropertySignedParesStatusReason()

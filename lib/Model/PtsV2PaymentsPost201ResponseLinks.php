@@ -56,7 +56,11 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
     protected static $swaggerTypes = [
         'self' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf',
         'reversal' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf',
-        'capture' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf'
+        'capture' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf',
+        'customer' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf',
+        'paymentInstrument' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf',
+        'shippingAddress' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf',
+        'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf'
     ];
 
     /**
@@ -66,7 +70,11 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
     protected static $swaggerFormats = [
         'self' => null,
         'reversal' => null,
-        'capture' => null
+        'capture' => null,
+        'customer' => null,
+        'paymentInstrument' => null,
+        'shippingAddress' => null,
+        'instrumentIdentifier' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +94,11 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
     protected static $attributeMap = [
         'self' => 'self',
         'reversal' => 'reversal',
-        'capture' => 'capture'
+        'capture' => 'capture',
+        'customer' => 'customer',
+        'paymentInstrument' => 'paymentInstrument',
+        'shippingAddress' => 'shippingAddress',
+        'instrumentIdentifier' => 'instrumentIdentifier'
     ];
 
 
@@ -97,7 +109,11 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
     protected static $setters = [
         'self' => 'setSelf',
         'reversal' => 'setReversal',
-        'capture' => 'setCapture'
+        'capture' => 'setCapture',
+        'customer' => 'setCustomer',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'shippingAddress' => 'setShippingAddress',
+        'instrumentIdentifier' => 'setInstrumentIdentifier'
     ];
 
 
@@ -108,7 +124,11 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
     protected static $getters = [
         'self' => 'getSelf',
         'reversal' => 'getReversal',
-        'capture' => 'getCapture'
+        'capture' => 'getCapture',
+        'customer' => 'getCustomer',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'shippingAddress' => 'getShippingAddress',
+        'instrumentIdentifier' => 'getInstrumentIdentifier'
     ];
 
     public static function attributeMap()
@@ -145,6 +165,10 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
         $this->container['self'] = isset($data['self']) ? $data['self'] : null;
         $this->container['reversal'] = isset($data['reversal']) ? $data['reversal'] : null;
         $this->container['capture'] = isset($data['capture']) ? $data['capture'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
     }
 
     /**
@@ -231,6 +255,90 @@ class PtsV2PaymentsPost201ResponseLinks implements ArrayAccess
     public function setCapture($capture)
     {
         $this->container['capture'] = $capture;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf $customer
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf $shippingAddress
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf
+     */
+    public function getInstrumentIdentifier()
+    {
+        return $this->container['instrumentIdentifier'];
+    }
+
+    /**
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf $instrumentIdentifier
+     * @return $this
+     */
+    public function setInstrumentIdentifier($instrumentIdentifier)
+    {
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
 
         return $this;
     }

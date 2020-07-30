@@ -97,4 +97,32 @@ class PtsV2PaymentsPost201ResponseLinksTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCapture()
     {
     }
+
+    /**
+     * Test attribute "customer"
+     */
+    public function testPropertyCustomer()
+    {
+    }
+
+    /**
+     * Test attribute "paymentInstrument"
+     */
+    public function testPropertyPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test attribute "shippingAddress"
+     */
+    public function testPropertyShippingAddress()
+    {
+    }
+
+    /**
+     * Test attribute "instrumentIdentifier"
+     */
+    public function testPropertyInstrumentIdentifier()
+    {
+    }
 }

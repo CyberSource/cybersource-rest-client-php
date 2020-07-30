@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines. | [optional] 
 **installmentInformation** | [**\CyberSource\Model\Ptsv2paymentsInstallmentInformation**](Ptsv2paymentsInstallmentInformation.md) |  | [optional] 
 **travelInformation** | [**\CyberSource\Model\Ptsv2paymentsTravelInformation**](Ptsv2paymentsTravelInformation.md) |  | [optional] 
+**healthCareInformation** | [**\CyberSource\Model\Ptsv2paymentsHealthCareInformation**](Ptsv2paymentsHealthCareInformation.md) |  | [optional] 
 **promotionInformation** | [**\CyberSource\Model\Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
 **tokenInformation** | [**\CyberSource\Model\Ptsv2paymentsTokenInformation**](Ptsv2paymentsTokenInformation.md) |  | [optional] 
 **riskInformation** | [**\CyberSource\Model\Ptsv2paymentsRiskInformation**](Ptsv2paymentsRiskInformation.md) |  | [optional] 

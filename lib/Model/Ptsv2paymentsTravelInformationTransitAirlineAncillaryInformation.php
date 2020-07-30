@@ -223,7 +223,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
 
     /**
      * Sets ticketNumber
-     * @param string $ticketNumber Ticket number, which consists of the carrier code, form, and serial number, without the check digit. Important This field is required in the U.S. in order for you to qualify for either the custompayment service (CPS) or the electronic interchange reimbursement fee (EIRF)program.
+     * @param string $ticketNumber Ticket number, which consists of the carrier code, form, and serial number, without the check digit. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program. Format: English characters only. Optional field for ancillary services.
      * @return $this
      */
     public function setTicketNumber($ticketNumber)
@@ -248,7 +248,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
 
     /**
      * Sets passengerName
-     * @param string $passengerName Name of the passenger. If the passenger’s name is not available, this value is the cardholder’s name. If neither the passenger’s name nor the cardholder’s name is available,this value is a description of the ancillary purchase.Important This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program.
+     * @param string $passengerName Name of the passenger. If the passenger’s name is not available, this value is the cardholder’s name. If neither the passenger’s name nor the cardholder’s name is available, this value is a description of the ancillary purchase. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program. Format: English characters only. Optional field for ancillary service.
      * @return $this
      */
     public function setPassengerName($passengerName)
@@ -273,7 +273,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
 
     /**
      * Sets connectedTicketNumber
-     * @param string $connectedTicketNumber Name of the passenger. If the passenger’s name is not available, this value is the cardholder’s name. If neither the passenger’s name nor the cardholder’s name is available,this value is a description of the ancillary purchase. Important This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program.
+     * @param string $connectedTicketNumber Number for the airline ticket to which the ancillary purchase is connected.  If this purchase has a connection or relationship to another purchase such as a baggage fee for a passenger transport ticket, this field must contain the ticket number for the other purchase.  For a stand-alone purchase, the value for this field must be the same as the value for the `travelInformation.transit.airline.ancillaryInformation.ticketNumber` field. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF) program. Format: English characters only. Optional request field for ancillary services.
      * @return $this
      */
     public function setConnectedTicketNumber($connectedTicketNumber)
@@ -298,7 +298,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
 
     /**
      * Sets creditReasonIndicator
-     * @param string $creditReasonIndicator Reason for the credit. Possible values: - A: Cancellation of the ancillary passenger transport purchase. - B: Cancellation of the airline ticket and the passenger transport ancillary purchase. - C: Cancellation of the airline ticket. - O: Other. - P: Partial refund of the airline ticket. Format: English characters only.
+     * @param string $creditReasonIndicator Reason for the credit. Possible values: - `A`: Cancellation of the ancillary passenger transport purchase. - `B`: Cancellation of the airline ticket and the passenger transport ancillary purchase. - `C`: Cancellation of the airline ticket. - `O`: Other. - `P`: Partial refund of the airline ticket. Format: English characters only. Optional field for ancillary services.
      * @return $this
      */
     public function setCreditReasonIndicator($creditReasonIndicator)

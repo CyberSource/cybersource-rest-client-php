@@ -106,6 +106,34 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentInstrument"
+     */
+    public function testPropertyPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test attribute "instrumentIdentifier"
+     */
+    public function testPropertyInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "shippingAddress"
+     */
+    public function testPropertyShippingAddress()
+    {
+    }
+
+    /**
+     * Test attribute "legacyToken"
+     */
+    public function testPropertyLegacyToken()
+    {
+    }
+
+    /**
      * Test attribute "bank"
      */
     public function testPropertyBank()

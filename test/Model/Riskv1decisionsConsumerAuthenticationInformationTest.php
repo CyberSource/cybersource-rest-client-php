@@ -295,6 +295,13 @@ class Riskv1decisionsConsumerAuthenticationInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "returnUrl"
+     */
+    public function testPropertyReturnUrl()
+    {
+    }
+
+    /**
      * Test attribute "requestorId"
      */
     public function testPropertyRequestorId()

@@ -78,6 +78,13 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformationTest extend
     }
 
     /**
+     * Test attribute "accessToken"
+     */
+    public function testPropertyAccessToken()
+    {
+    }
+
+    /**
      * Test attribute "acsRenderingType"
      */
     public function testPropertyAcsRenderingType()

@@ -198,7 +198,7 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
 
     /**
      * Sets enhancedDataEnabled
-     * @param bool $enhancedDataEnabled - true : the airline data was included in the request to the processor. - false : the airline data was not included in the request to the processor.
+     * @param bool $enhancedDataEnabled The possible values for the reply field are: - `true` : the airline data was included in the request to the processor. - `false` : the airline data was not included in the request to the processor.  Returned by authorization, capture, or credit services.
      * @return $this
      */
     public function setEnhancedDataEnabled($enhancedDataEnabled)

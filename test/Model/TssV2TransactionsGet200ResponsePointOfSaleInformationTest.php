@@ -78,6 +78,13 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformationTest extends \PHPUnit
     }
 
     /**
+     * Test attribute "terminalId"
+     */
+    public function testPropertyTerminalId()
+    {
+    }
+
+    /**
      * Test attribute "entryMode"
      */
     public function testPropertyEntryMode()

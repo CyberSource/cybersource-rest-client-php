@@ -56,7 +56,8 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Riskv1authenticationsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Riskv1authenticationsPaymentInformationTokenizedCard',
-        'fluidData' => '\CyberSource\Model\Riskv1authenticationsPaymentInformationFluidData'
+        'fluidData' => '\CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData',
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'card' => null,
         'tokenizedCard' => null,
-        'fluidData' => null
+        'fluidData' => null,
+        'customer' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
     protected static $attributeMap = [
         'card' => 'card',
         'tokenizedCard' => 'tokenizedCard',
-        'fluidData' => 'fluidData'
+        'fluidData' => 'fluidData',
+        'customer' => 'customer'
     ];
 
 
@@ -97,7 +100,8 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
     protected static $setters = [
         'card' => 'setCard',
         'tokenizedCard' => 'setTokenizedCard',
-        'fluidData' => 'setFluidData'
+        'fluidData' => 'setFluidData',
+        'customer' => 'setCustomer'
     ];
 
 
@@ -108,7 +112,8 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
     protected static $getters = [
         'card' => 'getCard',
         'tokenizedCard' => 'getTokenizedCard',
-        'fluidData' => 'getFluidData'
+        'fluidData' => 'getFluidData',
+        'customer' => 'getCustomer'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
     }
 
     /**
@@ -216,7 +222,7 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
 
     /**
      * Gets fluidData
-     * @return \CyberSource\Model\Riskv1authenticationsPaymentInformationFluidData
+     * @return \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData
      */
     public function getFluidData()
     {
@@ -225,12 +231,33 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
 
     /**
      * Sets fluidData
-     * @param \CyberSource\Model\Riskv1authenticationsPaymentInformationFluidData $fluidData
+     * @param \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData $fluidData
      * @return $this
      */
     public function setFluidData($fluidData)
     {
         $this->container['fluidData'] = $fluidData;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
 
         return $this;
     }

@@ -320,7 +320,7 @@ class Ptsv2paymentsOrderInformationPassenger implements ArrayAccess
 
     /**
      * Sets phone
-     * @param string $phone Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)
+     * @param string $phone Passenger's phone number. If the order is from outside the U.S., CyberSource recommends that you include the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).
      * @return $this
      */
     public function setPhone($phone)
@@ -445,7 +445,7 @@ class Ptsv2paymentsOrderInformationPassenger implements ArrayAccess
 
     /**
      * Sets nationality
-     * @param string $nationality Passenger's nationality country. Use the two character ISO Standard Country Codes.
+     * @param string $nationality Passenger's nationality country. Use the two character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).
      * @return $this
      */
     public function setNationality($nationality)

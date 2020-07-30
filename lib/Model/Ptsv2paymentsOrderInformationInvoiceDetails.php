@@ -67,7 +67,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'transactionAdviceAddendum' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum[]',
         'referenceDataCode' => 'string',
         'referenceDataNumber' => 'string',
-        'salesSlipNumber' => 'int'
+        'salesSlipNumber' => 'int',
+        'invoiceDate' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'transactionAdviceAddendum' => null,
         'referenceDataCode' => null,
         'referenceDataNumber' => null,
-        'salesSlipNumber' => null
+        'salesSlipNumber' => null,
+        'invoiceDate' => null
     ];
 
     public static function swaggerTypes()
@@ -119,7 +121,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'transactionAdviceAddendum' => 'transactionAdviceAddendum',
         'referenceDataCode' => 'referenceDataCode',
         'referenceDataNumber' => 'referenceDataNumber',
-        'salesSlipNumber' => 'salesSlipNumber'
+        'salesSlipNumber' => 'salesSlipNumber',
+        'invoiceDate' => 'invoiceDate'
     ];
 
 
@@ -141,7 +144,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'transactionAdviceAddendum' => 'setTransactionAdviceAddendum',
         'referenceDataCode' => 'setReferenceDataCode',
         'referenceDataNumber' => 'setReferenceDataNumber',
-        'salesSlipNumber' => 'setSalesSlipNumber'
+        'salesSlipNumber' => 'setSalesSlipNumber',
+        'invoiceDate' => 'setInvoiceDate'
     ];
 
 
@@ -163,7 +167,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'transactionAdviceAddendum' => 'getTransactionAdviceAddendum',
         'referenceDataCode' => 'getReferenceDataCode',
         'referenceDataNumber' => 'getReferenceDataNumber',
-        'salesSlipNumber' => 'getSalesSlipNumber'
+        'salesSlipNumber' => 'getSalesSlipNumber',
+        'invoiceDate' => 'getInvoiceDate'
     ];
 
     public static function attributeMap()
@@ -211,6 +216,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
         $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
         $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
+        $this->container['invoiceDate'] = isset($data['invoiceDate']) ? $data['invoiceDate'] : null;
     }
 
     /**
@@ -254,6 +260,10 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
             $invalid_properties[] = "invalid value for 'salesSlipNumber', must be smaller than or equal to 99999.";
         }
 
+        if (!is_null($this->container['invoiceDate']) && (strlen($this->container['invoiceDate']) > 8)) {
+            $invalid_properties[] = "invalid value for 'invoiceDate', the character length must be smaller than or equal to 8.";
+        }
+
         return $invalid_properties;
     }
 
@@ -288,6 +298,9 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
             return false;
         }
         if ($this->container['salesSlipNumber'] > 99999) {
+            return false;
+        }
+        if (strlen($this->container['invoiceDate']) > 8) {
             return false;
         }
         return true;
@@ -617,6 +630,31 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         }
 
         $this->container['salesSlipNumber'] = $salesSlipNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceDate
+     * @return string
+     */
+    public function getInvoiceDate()
+    {
+        return $this->container['invoiceDate'];
+    }
+
+    /**
+     * Sets invoiceDate
+     * @param string $invoiceDate Date of the tax calculation. Use format YYYYMMDD. You can provide a date in the past if you are calculating tax for a refund and want to know what the tax was on the date the order was placed. You can provide a date in the future if you are calculating the tax for a future date, such as an upcoming tax holiday.  The default is the date, in Pacific time, that the bank receives the request. Keep this in mind if you are in a different time zone and want the tax calculated with the rates that are applicable on a specific date.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes.
+     * @return $this
+     */
+    public function setInvoiceDate($invoiceDate)
+    {
+        if (!is_null($invoiceDate) && (strlen($invoiceDate) > 8)) {
+            throw new \InvalidArgumentException('invalid length for $invoiceDate when calling Ptsv2paymentsOrderInformationInvoiceDetails., must be smaller than or equal to 8.');
+        }
+
+        $this->container['invoiceDate'] = $invoiceDate;
 
         return $this;
     }

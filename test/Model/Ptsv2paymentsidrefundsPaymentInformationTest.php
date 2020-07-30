@@ -113,6 +113,34 @@ class Ptsv2paymentsidrefundsPaymentInformationTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "paymentInstrument"
+     */
+    public function testPropertyPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test attribute "instrumentIdentifier"
+     */
+    public function testPropertyInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "shippingAddress"
+     */
+    public function testPropertyShippingAddress()
+    {
+    }
+
+    /**
+     * Test attribute "legacyToken"
+     */
+    public function testPropertyLegacyToken()
+    {
+    }
+
+    /**
      * Test attribute "paymentType"
      */
     public function testPropertyPaymentType()

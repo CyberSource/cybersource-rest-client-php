@@ -191,7 +191,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService im
 
     /**
      * Sets categoryCode
-     * @param string $categoryCode Category code for the ancillary service that is provided. Obtain the codes from the International Air Transport Association (IATA). Note is either 0, 1, 2, or 3. Important This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF)program.
+     * @param string $categoryCode Category code for the ancillary service that is provided. Obtain the codes from the International Air Transport Association (IATA). **Note** `#` is either 0, 1, 2, or 3. **Important** This field is required in the U.S. in order for you to qualify for either the custom payment service (CPS) or the electronic interchange reimbursement fee (EIRF)program. Format: English characters only. Optional request field for ancillary services.
      * @return $this
      */
     public function setCategoryCode($categoryCode)
@@ -216,7 +216,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService im
 
     /**
      * Sets subCategoryCode
-     * @param string $subCategoryCode Subcategory code for the ancillary service category. Obtain the codes from the International Air Transport Association (IATA). Note  is 0, 1, 2, or 3. Format  English characters only
+     * @param string $subCategoryCode Subcategory code for the ancillary service category. Obtain the codes from the International Air Transport Association (IATA). **Note** `#` is either 0, 1, 2, or 3. Format  English characters only. Optional request field for ancillary services.
      * @return $this
      */
     public function setSubCategoryCode($subCategoryCode)

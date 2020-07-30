@@ -60,6 +60,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'paresStatus' => 'string',
         'veresEnrolled' => 'string',
         'xid' => 'string',
+        'ucafCollectionIndicator' => 'string',
         'ucafAuthenticationData' => 'string',
         'strongAuthentication' => '\CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication',
         'directoryServerTransactionId' => 'string',
@@ -118,6 +119,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'paresStatus' => null,
         'veresEnrolled' => null,
         'xid' => null,
+        'ucafCollectionIndicator' => null,
         'ucafAuthenticationData' => null,
         'strongAuthentication' => null,
         'directoryServerTransactionId' => null,
@@ -186,6 +188,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'paresStatus' => 'paresStatus',
         'veresEnrolled' => 'veresEnrolled',
         'xid' => 'xid',
+        'ucafCollectionIndicator' => 'ucafCollectionIndicator',
         'ucafAuthenticationData' => 'ucafAuthenticationData',
         'strongAuthentication' => 'strongAuthentication',
         'directoryServerTransactionId' => 'directoryServerTransactionId',
@@ -245,6 +248,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'paresStatus' => 'setParesStatus',
         'veresEnrolled' => 'setVeresEnrolled',
         'xid' => 'setXid',
+        'ucafCollectionIndicator' => 'setUcafCollectionIndicator',
         'ucafAuthenticationData' => 'setUcafAuthenticationData',
         'strongAuthentication' => 'setStrongAuthentication',
         'directoryServerTransactionId' => 'setDirectoryServerTransactionId',
@@ -304,6 +308,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'paresStatus' => 'getParesStatus',
         'veresEnrolled' => 'getVeresEnrolled',
         'xid' => 'getXid',
+        'ucafCollectionIndicator' => 'getUcafCollectionIndicator',
         'ucafAuthenticationData' => 'getUcafAuthenticationData',
         'strongAuthentication' => 'getStrongAuthentication',
         'directoryServerTransactionId' => 'getDirectoryServerTransactionId',
@@ -388,6 +393,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['paresStatus'] = isset($data['paresStatus']) ? $data['paresStatus'] : null;
         $this->container['veresEnrolled'] = isset($data['veresEnrolled']) ? $data['veresEnrolled'] : null;
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
+        $this->container['ucafCollectionIndicator'] = isset($data['ucafCollectionIndicator']) ? $data['ucafCollectionIndicator'] : null;
         $this->container['ucafAuthenticationData'] = isset($data['ucafAuthenticationData']) ? $data['ucafAuthenticationData'] : null;
         $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;
         $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
@@ -466,6 +472,10 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
         if (!is_null($this->container['xid']) && (strlen($this->container['xid']) > 40)) {
             $invalid_properties[] = "invalid value for 'xid', the character length must be smaller than or equal to 40.";
+        }
+
+        if (!is_null($this->container['ucafCollectionIndicator']) && (strlen($this->container['ucafCollectionIndicator']) > 1)) {
+            $invalid_properties[] = "invalid value for 'ucafCollectionIndicator', the character length must be smaller than or equal to 1.";
         }
 
         if (!is_null($this->container['ucafAuthenticationData']) && (strlen($this->container['ucafAuthenticationData']) > 32)) {
@@ -632,6 +642,9 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['xid']) > 40) {
+            return false;
+        }
+        if (strlen($this->container['ucafCollectionIndicator']) > 1) {
             return false;
         }
         if (strlen($this->container['ucafAuthenticationData']) > 32) {
@@ -886,6 +899,31 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         }
 
         $this->container['xid'] = $xid;
+
+        return $this;
+    }
+
+    /**
+     * Gets ucafCollectionIndicator
+     * @return string
+     */
+    public function getUcafCollectionIndicator()
+    {
+        return $this->container['ucafCollectionIndicator'];
+    }
+
+    /**
+     * Sets ucafCollectionIndicator
+     * @param string $ucafCollectionIndicator Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator
+     * @return $this
+     */
+    public function setUcafCollectionIndicator($ucafCollectionIndicator)
+    {
+        if (!is_null($ucafCollectionIndicator) && (strlen($ucafCollectionIndicator) > 1)) {
+            throw new \InvalidArgumentException('invalid length for $ucafCollectionIndicator when calling Ptsv2paymentsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
+        }
+
+        $this->container['ucafCollectionIndicator'] = $ucafCollectionIndicator;
 
         return $this;
     }
@@ -1565,7 +1603,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets overrideCountryCode
-     * @param string $overrideCountryCode Two-character ISO standard Country Codes.
+     * @param string $overrideCountryCode Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)..
      * @return $this
      */
     public function setOverrideCountryCode($overrideCountryCode)

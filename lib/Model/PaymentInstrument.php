@@ -54,18 +54,19 @@ class PaymentInstrument implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks',
+        'links' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks',
         'id' => 'string',
         'object' => 'string',
         'state' => 'string',
-        'bankAccount' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount',
-        'card' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard',
-        'buyerInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation',
-        'billTo' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo',
-        'processingInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation',
-        'merchantInformation' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation',
-        'metaData' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata',
-        'embedded' => '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded'
+        'bankAccount' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount',
+        'card' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard',
+        'buyerInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation',
+        'billTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo',
+        'processingInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation',
+        'merchantInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation',
+        'instrumentIdentifier' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier',
+        'metadata' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata',
+        'embedded' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded'
     ];
 
     /**
@@ -83,7 +84,8 @@ class PaymentInstrument implements ArrayAccess
         'billTo' => null,
         'processingInformation' => null,
         'merchantInformation' => null,
-        'metaData' => null,
+        'instrumentIdentifier' => null,
+        'metadata' => null,
         'embedded' => null
     ];
 
@@ -112,7 +114,8 @@ class PaymentInstrument implements ArrayAccess
         'billTo' => 'billTo',
         'processingInformation' => 'processingInformation',
         'merchantInformation' => 'merchantInformation',
-        'metaData' => 'metaData',
+        'instrumentIdentifier' => 'instrumentIdentifier',
+        'metadata' => 'metadata',
         'embedded' => '_embedded'
     ];
 
@@ -132,7 +135,8 @@ class PaymentInstrument implements ArrayAccess
         'billTo' => 'setBillTo',
         'processingInformation' => 'setProcessingInformation',
         'merchantInformation' => 'setMerchantInformation',
-        'metaData' => 'setMetaData',
+        'instrumentIdentifier' => 'setInstrumentIdentifier',
+        'metadata' => 'setMetadata',
         'embedded' => 'setEmbedded'
     ];
 
@@ -152,7 +156,8 @@ class PaymentInstrument implements ArrayAccess
         'billTo' => 'getBillTo',
         'processingInformation' => 'getProcessingInformation',
         'merchantInformation' => 'getMerchantInformation',
-        'metaData' => 'getMetaData',
+        'instrumentIdentifier' => 'getInstrumentIdentifier',
+        'metadata' => 'getMetadata',
         'embedded' => 'getEmbedded'
     ];
 
@@ -197,7 +202,8 @@ class PaymentInstrument implements ArrayAccess
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
-        $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
@@ -209,6 +215,14 @@ class PaymentInstrument implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 32)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 1)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalid_properties;
     }
@@ -222,13 +236,19 @@ class PaymentInstrument implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['id']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['id']) < 1) {
+            return false;
+        }
         return true;
     }
 
 
     /**
      * Gets links
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks
      */
     public function getLinks()
     {
@@ -237,7 +257,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedLinks $links
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -258,11 +278,18 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id Unique identification number assigned by CyberSource to the submitted request.
+     * @param string $id The id of the Payment Instrument Token.
      * @return $this
      */
     public function setId($id)
     {
+        if (!is_null($id) && (strlen($id) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling PaymentInstrument., must be smaller than or equal to 32.');
+        }
+        if (!is_null($id) && (strlen($id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling PaymentInstrument., must be bigger than or equal to 1.');
+        }
+
         $this->container['id'] = $id;
 
         return $this;
@@ -279,7 +306,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets object
-     * @param string $object 'Describes type of token.'  Valid values: - instrumentIdentifier
+     * @param string $object The type of token.  Valid values: - paymentInstrument
      * @return $this
      */
     public function setObject($object)
@@ -300,7 +327,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state 'Current state of the token.'  Valid values: - ACTIVE - CLOSED
+     * @param string $state Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed.
      * @return $this
      */
     public function setState($state)
@@ -312,7 +339,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount
      */
     public function getBankAccount()
     {
@@ -321,7 +348,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBankAccount $bankAccount
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)
@@ -333,7 +360,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard
      */
     public function getCard()
     {
@@ -342,7 +369,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedCard $card
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard $card
      * @return $this
      */
     public function setCard($card)
@@ -354,7 +381,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -363,7 +390,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -375,7 +402,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo
      */
     public function getBillTo()
     {
@@ -384,7 +411,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedBillTo $billTo
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)
@@ -396,7 +423,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -405,7 +432,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
@@ -417,7 +444,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -426,7 +453,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)
@@ -437,29 +464,50 @@ class PaymentInstrument implements ArrayAccess
     }
 
     /**
-     * Gets metaData
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier
      */
-    public function getMetaData()
+    public function getInstrumentIdentifier()
     {
-        return $this->container['metaData'];
+        return $this->container['instrumentIdentifier'];
     }
 
     /**
-     * Sets metaData
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPost200ResponseMetadata $metaData
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier $instrumentIdentifier
      * @return $this
      */
-    public function setMetaData($metaData)
+    public function setInstrumentIdentifier($instrumentIdentifier)
     {
-        $this->container['metaData'] = $metaData;
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata $metadata
+     * @return $this
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded
      */
     public function getEmbedded()
     {
@@ -468,7 +516,7 @@ class PaymentInstrument implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200ResponseEmbeddedEmbedded $embedded
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

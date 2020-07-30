@@ -187,7 +187,7 @@ class DecisionManagerApi
     /**
      * Operation createBundledDecisionManagerCase
      *
-     * Create Decision Manager Case
+     * Create Decision Manager
      *
      * @param \CyberSource\Model\CreateBundledDecisionManagerCaseRequest $createBundledDecisionManagerCaseRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -202,7 +202,7 @@ class DecisionManagerApi
     /**
      * Operation createBundledDecisionManagerCaseWithHttpInfo
      *
-     * Create Decision Manager Case
+     * Create Decision Manager
      *
      * @param \CyberSource\Model\CreateBundledDecisionManagerCaseRequest $createBundledDecisionManagerCaseRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response

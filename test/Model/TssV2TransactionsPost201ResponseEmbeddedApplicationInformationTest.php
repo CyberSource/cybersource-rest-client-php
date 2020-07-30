@@ -78,13 +78,6 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationTest extends
     }
 
     /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
      * Test attribute "reasonCode"
      */
     public function testPropertyReasonCode()

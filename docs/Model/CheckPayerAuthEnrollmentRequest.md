@@ -3,10 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\Riskv1authenticationsClientReferenceInformation**](Riskv1authenticationsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation**](Riskv1authenticationsetupsClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Riskv1authenticationsOrderInformation**](Riskv1authenticationsOrderInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\Riskv1authenticationsPaymentInformation**](Riskv1authenticationsPaymentInformation.md) |  | [optional] 
-**processingInformation** | [**\CyberSource\Model\Riskv1authenticationsProcessingInformation**](Riskv1authenticationsProcessingInformation.md) |  | [optional] 
+**processingInformation** | [**\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation**](Riskv1authenticationsetupsProcessingInformation.md) |  | [optional] 
+**tokenInformation** | [**\CyberSource\Model\Riskv1authenticationsetupsTokenInformation**](Riskv1authenticationsetupsTokenInformation.md) |  | [optional] 
 **buyerInformation** | [**\CyberSource\Model\Riskv1authenticationsBuyerInformation**](Riskv1authenticationsBuyerInformation.md) |  | [optional] 
 **deviceInformation** | [**\CyberSource\Model\Riskv1authenticationsDeviceInformation**](Riskv1authenticationsDeviceInformation.md) |  | [optional] 
 **merchantInformation** | [**\CyberSource\Model\Riskv1decisionsMerchantInformation**](Riskv1decisionsMerchantInformation.md) |  | [optional] 

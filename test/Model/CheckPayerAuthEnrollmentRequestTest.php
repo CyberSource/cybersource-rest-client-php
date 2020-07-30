@@ -106,6 +106,13 @@ class CheckPayerAuthEnrollmentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "tokenInformation"
+     */
+    public function testPropertyTokenInformation()
+    {
+    }
+
+    /**
      * Test attribute "buyerInformation"
      */
     public function testPropertyBuyerInformation()
