@@ -92,14 +92,14 @@ class KeyGenerationApi
      *
      * Generate Key
      *
+     * @param string $format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (required)
      * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
-     * @param string $format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKey($generatePublicKeyRequest, $format = 'legacy')
+    public function generatePublicKey($format, $generatePublicKeyRequest)
     {
-        list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($generatePublicKeyRequest, $format);
+        list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($format, $generatePublicKeyRequest);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -108,13 +108,17 @@ class KeyGenerationApi
      *
      * Generate Key
      *
+     * @param string $format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (required)
      * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
-     * @param string $format Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) (optional, default to legacy)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest, $format = 'legacy')
+    public function generatePublicKeyWithHttpInfo($format, $generatePublicKeyRequest)
     {
+        // verify the required parameter 'format' is set
+        if ($format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling generatePublicKey');
+        }
         // verify the required parameter 'generatePublicKeyRequest' is set
         if ($generatePublicKeyRequest === null) {
             throw new \InvalidArgumentException('Missing the required parameter $generatePublicKeyRequest when calling generatePublicKey');

@@ -223,7 +223,7 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
 
     /**
      * Sets numberOfNights
-     * @param int $numberOfNights Number of nights billed at the rate specified by lodging_daily_room_rate_1.
+     * @param int $numberOfNights Number of nights billed at the rate specified by `travelInformation.lodging.room[].dailyRate`.
      * @return $this
      */
     public function setNumberOfNights($numberOfNights)

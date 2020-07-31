@@ -54,6 +54,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'accessToken' => 'string',
         'acsRenderingType' => 'string',
         'acsTransactionId' => 'string',
         'acsUrl' => 'string',
@@ -84,7 +85,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'stepUpUrl' => 'string',
         'threeDSServerTransactionId' => 'string',
         'ucafAuthenticationData' => 'string',
-        'ucafCollectionIndicator' => 'float',
+        'ucafCollectionIndicator' => 'string',
         'veresEnrolled' => 'string',
         'whiteListStatusSource' => 'string',
         'xid' => 'string',
@@ -96,6 +97,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'accessToken' => null,
         'acsRenderingType' => null,
         'acsTransactionId' => null,
         'acsUrl' => null,
@@ -148,6 +150,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
      * @var string[]
      */
     protected static $attributeMap = [
+        'accessToken' => 'accessToken',
         'acsRenderingType' => 'acsRenderingType',
         'acsTransactionId' => 'acsTransactionId',
         'acsUrl' => 'acsUrl',
@@ -191,6 +194,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
      * @var string[]
      */
     protected static $setters = [
+        'accessToken' => 'setAccessToken',
         'acsRenderingType' => 'setAcsRenderingType',
         'acsTransactionId' => 'setAcsTransactionId',
         'acsUrl' => 'setAcsUrl',
@@ -234,6 +238,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
      * @var string[]
      */
     protected static $getters = [
+        'accessToken' => 'getAccessToken',
         'acsRenderingType' => 'getAcsRenderingType',
         'acsTransactionId' => 'getAcsTransactionId',
         'acsUrl' => 'getAcsUrl',
@@ -302,6 +307,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
      */
     public function __construct(array $data = null)
     {
+        $this->container['accessToken'] = isset($data['accessToken']) ? $data['accessToken'] : null;
         $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
         $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['acsUrl'] = isset($data['acsUrl']) ? $data['acsUrl'] : null;
@@ -347,6 +353,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['accessToken']) && (strlen($this->container['accessToken']) > 2048)) {
+            $invalid_properties[] = "invalid value for 'accessToken', the character length must be smaller than or equal to 2048.";
+        }
 
         if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
             $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
@@ -440,6 +450,9 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
     public function valid()
     {
 
+        if (strlen($this->container['accessToken']) > 2048) {
+            return false;
+        }
         if (strlen($this->container['acsTransactionId']) > 36) {
             return false;
         }
@@ -503,6 +516,31 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         return true;
     }
 
+
+    /**
+     * Gets accessToken
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->container['accessToken'];
+    }
+
+    /**
+     * Sets accessToken
+     * @param string $accessToken JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay.
+     * @return $this
+     */
+    public function setAccessToken($accessToken)
+    {
+        if (!is_null($accessToken) && (strlen($accessToken) > 2048)) {
+            throw new \InvalidArgumentException('invalid length for $accessToken when calling RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
+        }
+
+        $this->container['accessToken'] = $accessToken;
+
+        return $this;
+    }
 
     /**
      * Gets acsRenderingType
@@ -1208,7 +1246,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Gets ucafCollectionIndicator
-     * @return float
+     * @return string
      */
     public function getUcafCollectionIndicator()
     {
@@ -1217,7 +1255,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Sets ucafCollectionIndicator
-     * @param float $ucafCollectionIndicator For enroll, Returned only for Mastercard transactions. Indicates that authentication is not required because the customer is not enrolled. Add the value of this field to the authorization field ucaf_collection_indicator. This field can contain these values: 0, 1.  For validate, Numeric electronic commerce indicator (ECI) returned only for Mastercard Identity Check transactions. The field is absent when authentication fails. You must send this value to your payment processor in the request for card authorization. This field contain one of these values: - `0`: Authentication data not collected, and customer authentication was not completed. - `1`: Authentication data not collected because customer authentication was not completed. - `2`: Authentication data collected because customer completed authentication.
+     * @param string $ucafCollectionIndicator For enroll, Returned only for Mastercard transactions. Indicates that authentication is not required because the customer is not enrolled. Add the value of this field to the authorization field ucaf_collection_indicator. This field can contain these values: 0, 1.  For validate, Numeric electronic commerce indicator (ECI) returned only for Mastercard Identity Check transactions. The field is absent when authentication fails. You must send this value to your payment processor in the request for card authorization. This field contain one of these values: - `0`: Authentication data not collected, and customer authentication was not completed. - `1`: Authentication data not collected because customer authentication was not completed. - `2`: Authentication data collected because customer completed authentication.
      * @return $this
      */
     public function setUcafCollectionIndicator($ucafCollectionIndicator)

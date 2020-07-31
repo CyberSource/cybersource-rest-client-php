@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **generatePublicKey**
-> \CyberSource\Model\FlexV1KeysPost200Response generatePublicKey($generatePublicKeyRequest, $format)
+> \CyberSource\Model\FlexV1KeysPost200Response generatePublicKey($format, $generatePublicKeyRequest)
 
 Generate Key
 
@@ -20,11 +20,11 @@ Generate a one-time use public key and key ID to encrypt the card number in the 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\KeyGenerationApi();
+$format = "JWT"; // string | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
 $generatePublicKeyRequest = new \CyberSource\Model\GeneratePublicKeyRequest(); // \CyberSource\Model\GeneratePublicKeyRequest | 
-$format = "legacy"; // string | Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required)
 
 try {
-    $result = $api_instance->generatePublicKey($generatePublicKeyRequest, $format);
+    $result = $api_instance->generatePublicKey($format, $generatePublicKeyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling KeyGenerationApi->generatePublicKey: ', $e->getMessage(), PHP_EOL;
@@ -36,8 +36,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **format** | **string**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [default to JWT]
  **generatePublicKeyRequest** | [**\CyberSource\Model\GeneratePublicKeyRequest**](../Model/GeneratePublicKeyRequest.md)|  |
- **format** | **string**| Indicator to enable the receipt of the Keys response in Flex 11+ format (JWT) or legacy (parameter not required) | [optional] [default to legacy]
 
 ### Return type
 

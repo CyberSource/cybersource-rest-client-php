@@ -83,4 +83,11 @@ class Ptsv2paymentsPaymentInformationCustomerTest extends \PHPUnit_Framework_Tes
     public function testPropertyCustomerId()
     {
     }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
 }

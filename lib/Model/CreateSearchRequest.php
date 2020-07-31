@@ -207,7 +207,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets save
-     * @param bool $save save or not save.
+     * @param bool $save Indicates whether or not you want to save this search request for future use. The options are:  * `true` * `false` (default value)  If set to `true`, this field returns `searchID` in the response. You can use this value to retrieve the details of the saved search.
      * @return $this
      */
     public function setSave($save)
@@ -228,7 +228,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name The description for this field is not available.
+     * @param string $name Name of this search. When `save` is set to `true`, this search is saved with this name.
      * @return $this
      */
     public function setName($name)
@@ -249,7 +249,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets timezone
-     * @param string $timezone Time Zone in ISO format.
+     * @param string $timezone Merchant’s time zone in ISO standard, using the TZ database format. For example: `America/Chicago`
      * @return $this
      */
     public function setTimezone($timezone)
@@ -270,7 +270,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets query
-     * @param string $query transaction search query string.
+     * @param string $query String that contains the filters and variables for which you want to search. For information about supported field-filters and operators, see the [Query Filters]( https://developer.cybersource.com/api/developer-guides/dita-txn-search-details-rest-api-dev-guide-102718/txn_search_api/creating_txn_search_request.html) section of the Transaction Search Developer Guide.
      * @return $this
      */
     public function setQuery($query)
@@ -291,7 +291,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets offset
-     * @param int $offset offset.
+     * @param int $offset Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned.
      * @return $this
      */
     public function setOffset($offset)
@@ -312,7 +312,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets limit
-     * @param int $limit Limit on number of results.
+     * @param int $limit Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000.
      * @return $this
      */
     public function setLimit($limit)
@@ -333,7 +333,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets sort
-     * @param string $sort A comma separated list of the following form - fieldName1 asc or desc, fieldName2 asc or desc, etc.
+     * @param string $sort A comma separated list of the following form:  `submitTimeUtc:desc`
      * @return $this
      */
     public function setSort($sort)

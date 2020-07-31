@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **rFlag** | **string** | One-word description of the result of the application. | [optional] 
 **reconciliationId** | **string** | Reference number that you use to reconcile your CyberSource reports with your processor reports. | [optional] 
 **rMessage** | **string** | Message that explains the reply flag for the application. | [optional] 
-**returnCode** | **string** | The description for this field is not available. | [optional] 
+**returnCode** | **int** | The description for this field is not available. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

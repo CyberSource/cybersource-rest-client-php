@@ -59,6 +59,10 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument',
+        'instrumentIdentifier' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier',
+        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
+        'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType'
     ];
 
@@ -72,6 +76,10 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'tokenizedCard' => null,
         'fluidData' => null,
         'customer' => null,
+        'paymentInstrument' => null,
+        'instrumentIdentifier' => null,
+        'shippingAddress' => null,
+        'legacyToken' => null,
         'paymentType' => null
     ];
 
@@ -95,6 +103,10 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'tokenizedCard',
         'fluidData' => 'fluidData',
         'customer' => 'customer',
+        'paymentInstrument' => 'paymentInstrument',
+        'instrumentIdentifier' => 'instrumentIdentifier',
+        'shippingAddress' => 'shippingAddress',
+        'legacyToken' => 'legacyToken',
         'paymentType' => 'paymentType'
     ];
 
@@ -109,6 +121,10 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'setTokenizedCard',
         'fluidData' => 'setFluidData',
         'customer' => 'setCustomer',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'instrumentIdentifier' => 'setInstrumentIdentifier',
+        'shippingAddress' => 'setShippingAddress',
+        'legacyToken' => 'setLegacyToken',
         'paymentType' => 'setPaymentType'
     ];
 
@@ -123,6 +139,10 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'getTokenizedCard',
         'fluidData' => 'getFluidData',
         'customer' => 'getCustomer',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'instrumentIdentifier' => 'getInstrumentIdentifier',
+        'shippingAddress' => 'getShippingAddress',
+        'legacyToken' => 'getLegacyToken',
         'paymentType' => 'getPaymentType'
     ];
 
@@ -162,6 +182,10 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['legacyToken'] = isset($data['legacyToken']) ? $data['legacyToken'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
     }
 
@@ -291,6 +315,90 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     public function setCustomer($customer)
     {
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier
+     */
+    public function getInstrumentIdentifier()
+    {
+        return $this->container['instrumentIdentifier'];
+    }
+
+    /**
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier $instrumentIdentifier
+     * @return $this
+     */
+    public function setInstrumentIdentifier($instrumentIdentifier)
+    {
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress $shippingAddress
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets legacyToken
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken
+     */
+    public function getLegacyToken()
+    {
+        return $this->container['legacyToken'];
+    }
+
+    /**
+     * Sets legacyToken
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken $legacyToken
+     * @return $this
+     */
+    public function setLegacyToken($legacyToken)
+    {
+        $this->container['legacyToken'] = $legacyToken;
 
         return $this;
     }

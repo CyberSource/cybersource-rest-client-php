@@ -256,7 +256,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
 
     /**
      * Sets code
-     * @param string $code IATA2 airline code. Format: English characters only.
+     * @param string $code IATA2 airline code. Format: English characters only. Required for Mastercard; optional for all other card types.
      * @return $this
      */
     public function setCode($code)
@@ -331,7 +331,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
 
     /**
      * Sets locality
-     * @param string $locality City in which the transactionoccurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only
+     * @param string $locality City in which the transaction occurred. If the name of the city exceeds 18 characters, use meaningful abbreviations. Format: English characters only. Optional request field.
      * @return $this
      */
     public function setLocality($locality)

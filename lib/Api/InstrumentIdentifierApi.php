@@ -88,134 +88,18 @@ class InstrumentIdentifierApi
     }
 
     /**
-     * Operation createInstrumentIdentifier
-     *
-     * Create an Instrument Identifier
-     *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param \CyberSource\Model\CreateInstrumentIdentifierRequest $createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createInstrumentIdentifier($profileId, $createInstrumentIdentifierRequest)
-    {
-        list($response, $statusCode, $httpHeader) = $this->createInstrumentIdentifierWithHttpInfo($profileId, $createInstrumentIdentifierRequest);
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation createInstrumentIdentifierWithHttpInfo
-     *
-     * Create an Instrument Identifier
-     *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param \CyberSource\Model\CreateInstrumentIdentifierRequest $createInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createInstrumentIdentifierWithHttpInfo($profileId, $createInstrumentIdentifierRequest)
-    {
-        // verify the required parameter 'profileId' is set
-        if ($profileId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $profileId when calling createInstrumentIdentifier');
-        }
-        if ((strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.createInstrumentIdentifier, must be smaller than or equal to 36.');
-        }
-        if ((strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.createInstrumentIdentifier, must be bigger than or equal to 36.');
-        }
-
-        // verify the required parameter 'createInstrumentIdentifierRequest' is set
-        if ($createInstrumentIdentifierRequest === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $createInstrumentIdentifierRequest when calling createInstrumentIdentifier');
-        }
-        // parse inputs
-        $resourcePath = "/tms/v1/instrumentidentifiers";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
-
-        // header params
-        if ($profileId !== null) {
-            $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($createInstrumentIdentifierRequest)) {
-            $_tempBody = $createInstrumentIdentifierRequest;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response',
-                '/tms/v1/instrumentidentifiers'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation deleteInstrumentIdentifier
      *
      * Delete an Instrument Identifier
      *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteInstrumentIdentifier($profileId, $tokenId)
+    public function deleteInstrumentIdentifier($instrumentIdentifierTokenId, $profileId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->deleteInstrumentIdentifierWithHttpInfo($profileId, $tokenId);
+        list($response, $statusCode, $httpHeader) = $this->deleteInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $profileId);
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -224,37 +108,33 @@ class InstrumentIdentifierApi
      *
      * Delete an Instrument Identifier
      *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteInstrumentIdentifierWithHttpInfo($profileId, $tokenId)
+    public function deleteInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $profileId = null)
     {
-        // verify the required parameter 'profileId' is set
-        if ($profileId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $profileId when calling deleteInstrumentIdentifier');
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if ($instrumentIdentifierTokenId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling deleteInstrumentIdentifier');
         }
-        if ((strlen($profileId) > 36)) {
+        if ((strlen($instrumentIdentifierTokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.');
+        }
+        if ((strlen($instrumentIdentifierTokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.');
+        }
+
+        if (!is_null($profileId) && (strlen($profileId) > 36)) {
             throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 36.');
         }
-        if ((strlen($profileId) < 36)) {
+        if (!is_null($profileId) && (strlen($profileId) < 36)) {
             throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 36.');
         }
 
-        // verify the required parameter 'tokenId' is set
-        if ($tokenId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling deleteInstrumentIdentifier');
-        }
-        if ((strlen($tokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.');
-        }
-        if ((strlen($tokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.');
-        }
-
         // parse inputs
-        $resourcePath = "/tms/v1/instrumentidentifiers/{tokenId}";
+        $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -270,10 +150,10 @@ class InstrumentIdentifierApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($tokenId !== null) {
+        if ($instrumentIdentifierTokenId !== null) {
             $resourcePath = str_replace(
-                "{" . "tokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($tokenId),
+                "{" . "instrumentIdentifierTokenId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
                 $resourcePath
             );
         }
@@ -293,34 +173,30 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v1/instrumentidentifiers/{tokenId}'
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}'
             );
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 409:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersDelete409Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -330,72 +206,194 @@ class InstrumentIdentifierApi
     }
 
     /**
-     * Operation getAllPaymentInstruments
+     * Operation getInstrumentIdentifier
      *
-     * Retrieve all Payment Instruments
+     * Retrieve an Instrument Identifier
      *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
-     * @param int $offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
-     * @param int $limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllPaymentInstruments($profileId, $tokenId, $offset = '0', $limit = '20')
+    public function getInstrumentIdentifier($instrumentIdentifierTokenId, $profileId = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getAllPaymentInstrumentsWithHttpInfo($profileId, $tokenId, $offset, $limit);
+        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $profileId);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation getAllPaymentInstrumentsWithHttpInfo
+     * Operation getInstrumentIdentifierWithHttpInfo
      *
-     * Retrieve all Payment Instruments
+     * Retrieve an Instrument Identifier
      *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
-     * @param int $offset Starting Payment Instrument record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
-     * @param int $limit The maximum number of Payment Instruments that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAllPaymentInstrumentsWithHttpInfo($profileId, $tokenId, $offset = '0', $limit = '20')
+    public function getInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $profileId = null)
     {
-        // verify the required parameter 'profileId' is set
-        if ($profileId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $profileId when calling getAllPaymentInstruments');
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if ($instrumentIdentifierTokenId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling getInstrumentIdentifier');
         }
-        if ((strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be smaller than or equal to 36.');
+        if ((strlen($instrumentIdentifierTokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.');
         }
-        if ((strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be bigger than or equal to 36.');
-        }
-
-        // verify the required parameter 'tokenId' is set
-        if ($tokenId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling getAllPaymentInstruments');
-        }
-        if ((strlen($tokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be smaller than or equal to 32.');
-        }
-        if ((strlen($tokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be bigger than or equal to 12.');
+        if ((strlen($instrumentIdentifierTokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
-        if (!is_null($offset) && ($offset < 0)) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be bigger than or equal to 0.');
+        if (!is_null($profileId) && (strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.');
         }
-
-        if (!is_null($limit) && ($limit > 100)) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be smaller than or equal to 100.');
-        }
-        if (!is_null($limit) && ($limit < 1)) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling InstrumentIdentifierApi.getAllPaymentInstruments, must be bigger than or equal to 1.');
+        if (!is_null($profileId) && (strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.');
         }
 
         // parse inputs
-        $resourcePath = "/tms/v1/instrumentidentifiers/{tokenId}/paymentinstruments";
+        $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // header params
+        if ($profileId !== null) {
+            $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
+        }
+        // path params
+        if ($instrumentIdentifierTokenId !== null) {
+            $resourcePath = str_replace(
+                "{" . "instrumentIdentifierTokenId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 410:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 424:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getInstrumentIdentifierPaymentInstrumentsList
+     *
+     * List Payment Instruments for an Instrument Identifier
+     *
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
+     * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PaymentInstrumentListForCustomer, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierTokenId, $profileId = null, $offset = '0', $limit = '20')
+    {
+        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierTokenId, $profileId, $offset, $limit);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo
+     *
+     * List Payment Instruments for an Instrument Identifier
+     *
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
+     * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PaymentInstrumentListForCustomer, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierTokenId, $profileId = null, $offset = '0', $limit = '20')
+    {
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if ($instrumentIdentifierTokenId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling getInstrumentIdentifierPaymentInstrumentsList');
+        }
+        if ((strlen($instrumentIdentifierTokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 32.');
+        }
+        if ((strlen($instrumentIdentifierTokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 12.');
+        }
+
+        if (!is_null($profileId) && (strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 36.');
+        }
+        if (!is_null($profileId) && (strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 36.');
+        }
+
+        if (!is_null($offset) && ($offset < 0)) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 0.');
+        }
+
+        if (!is_null($limit) && ($limit > 100)) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 100.');
+        }
+        if (!is_null($limit) && ($limit < 1)) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 1.');
+        }
+
+        // parse inputs
+        $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -419,10 +417,10 @@ class InstrumentIdentifierApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($tokenId !== null) {
+        if ($instrumentIdentifierTokenId !== null) {
             $resourcePath = str_replace(
-                "{" . "tokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($tokenId),
+                "{" . "instrumentIdentifierTokenId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
                 $resourcePath
             );
         }
@@ -441,39 +439,39 @@ class InstrumentIdentifierApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response',
-                '/tms/v1/instrumentidentifiers/{tokenId}/paymentinstruments'
+                '\CyberSource\Model\PaymentInstrumentListForCustomer',
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PaymentInstrumentListForCustomer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPaymentInstrumentsGet200Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PaymentInstrumentListForCustomer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -483,57 +481,68 @@ class InstrumentIdentifierApi
     }
 
     /**
-     * Operation getInstrumentIdentifier
+     * Operation patchInstrumentIdentifier
      *
-     * Retrieve an Instrument Identifier
+     * Update an Instrument Identifier
      *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param \CyberSource\Model\PatchInstrumentIdentifierRequest $patchInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInstrumentIdentifier($profileId, $tokenId)
+    public function patchInstrumentIdentifier($instrumentIdentifierTokenId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
     {
-        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierWithHttpInfo($profileId, $tokenId);
+        list($response, $statusCode, $httpHeader) = $this->patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch);
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation getInstrumentIdentifierWithHttpInfo
+     * Operation patchInstrumentIdentifierWithHttpInfo
      *
-     * Retrieve an Instrument Identifier
+     * Update an Instrument Identifier
      *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param \CyberSource\Model\PatchInstrumentIdentifierRequest $patchInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInstrumentIdentifierWithHttpInfo($profileId, $tokenId)
+    public function patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
     {
-        // verify the required parameter 'profileId' is set
-        if ($profileId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $profileId when calling getInstrumentIdentifier');
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if ($instrumentIdentifierTokenId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling patchInstrumentIdentifier');
         }
-        if ((strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.');
+        if ((strlen($instrumentIdentifierTokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
         }
-        if ((strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.');
+        if ((strlen($instrumentIdentifierTokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
-        // verify the required parameter 'tokenId' is set
-        if ($tokenId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling getInstrumentIdentifier');
+        // verify the required parameter 'patchInstrumentIdentifierRequest' is set
+        if ($patchInstrumentIdentifierRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier');
         }
-        if ((strlen($tokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.');
+        if (!is_null($profileId) && (strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 36.');
         }
-        if ((strlen($tokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.');
+        if (!is_null($profileId) && (strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 36.');
+        }
+
+        if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
+        }
+        if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
+            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 1.');
         }
 
         // parse inputs
-        $resourcePath = "/tms/v1/instrumentidentifiers/{tokenId}";
+        $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -548,154 +557,22 @@ class InstrumentIdentifierApi
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
-        // path params
-        if ($tokenId !== null) {
-            $resourcePath = str_replace(
-                "{" . "tokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($tokenId),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response',
-                '/tms/v1/instrumentidentifiers/{tokenId}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateInstrumentIdentifier
-     *
-     * Update a Instrument Identifier
-     *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
-     * @param \CyberSource\Model\UpdateInstrumentIdentifierRequest $updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateInstrumentIdentifier($profileId, $tokenId, $updateInstrumentIdentifierRequest)
-    {
-        list($response, $statusCode, $httpHeader) = $this->updateInstrumentIdentifierWithHttpInfo($profileId, $tokenId, $updateInstrumentIdentifierRequest);
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation updateInstrumentIdentifierWithHttpInfo
-     *
-     * Update a Instrument Identifier
-     *
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (required)
-     * @param string $tokenId The TokenId of an Instrument Identifier. (required)
-     * @param \CyberSource\Model\UpdateInstrumentIdentifierRequest $updateInstrumentIdentifierRequest Specify the previous transaction ID to update. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateInstrumentIdentifierWithHttpInfo($profileId, $tokenId, $updateInstrumentIdentifierRequest)
-    {
-        // verify the required parameter 'profileId' is set
-        if ($profileId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $profileId when calling updateInstrumentIdentifier');
-        }
-        if ((strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be smaller than or equal to 36.');
-        }
-        if ((strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be bigger than or equal to 36.');
-        }
-
-        // verify the required parameter 'tokenId' is set
-        if ($tokenId === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling updateInstrumentIdentifier');
-        }
-        if ((strlen($tokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be smaller than or equal to 32.');
-        }
-        if ((strlen($tokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$tokenId" when calling InstrumentIdentifierApi.updateInstrumentIdentifier, must be bigger than or equal to 12.');
-        }
-
-        // verify the required parameter 'updateInstrumentIdentifierRequest' is set
-        if ($updateInstrumentIdentifierRequest === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $updateInstrumentIdentifierRequest when calling updateInstrumentIdentifier');
-        }
-        // parse inputs
-        $resourcePath = "/tms/v1/instrumentidentifiers/{tokenId}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
-
         // header params
-        if ($profileId !== null) {
-            $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
+        if ($ifMatch !== null) {
+            $headerParams['if-match'] = $this->apiClient->getSerializer()->toHeaderValue($ifMatch);
         }
         // path params
-        if ($tokenId !== null) {
+        if ($instrumentIdentifierTokenId !== null) {
             $resourcePath = str_replace(
-                "{" . "tokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($tokenId),
+                "{" . "instrumentIdentifierTokenId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
                 $resourcePath
             );
         }
         // body params
         $_tempBody = null;
-        if (isset($updateInstrumentIdentifierRequest)) {
-            $_tempBody = $updateInstrumentIdentifierRequest;
+        if (isset($patchInstrumentIdentifierRequest)) {
+            $_tempBody = $patchInstrumentIdentifierRequest;
         }
 
         // for model (json/xml)
@@ -712,39 +589,151 @@ class InstrumentIdentifierApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response',
-                '/tms/v1/instrumentidentifiers/{tokenId}'
+                '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsV1InstrumentIdentifiersPost200Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postInstrumentIdentifier
+     *
+     * Create an Instrument Identifier
+     *
+     * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId = null)
+    {
+        list($response, $statusCode, $httpHeader) = $this->postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation postInstrumentIdentifierWithHttpInfo
+     *
+     * Create an Instrument Identifier
+     *
+     * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId = null)
+    {
+        // verify the required parameter 'postInstrumentIdentifierRequest' is set
+        if ($postInstrumentIdentifierRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier');
+        }
+        if (!is_null($profileId) && (strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be smaller than or equal to 36.');
+        }
+        if (!is_null($profileId) && (strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be bigger than or equal to 36.');
+        }
+
+        // parse inputs
+        $resourcePath = "/tms/v1/instrumentidentifiers";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // header params
+        if ($profileId !== null) {
+            $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($postInstrumentIdentifierRequest)) {
+            $_tempBody = $postInstrumentIdentifierRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
+                '/tms/v1/instrumentidentifiers'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 424:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

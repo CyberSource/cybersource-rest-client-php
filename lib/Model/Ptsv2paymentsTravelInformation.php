@@ -56,6 +56,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'duration' => 'string',
         'agency' => '\CyberSource\Model\Ptsv2paymentsTravelInformationAgency',
+        'autoRental' => '\CyberSource\Model\Ptsv2paymentsTravelInformationAutoRental',
         'lodging' => '\CyberSource\Model\Ptsv2paymentsTravelInformationLodging',
         'transit' => '\CyberSource\Model\Ptsv2paymentsTravelInformationTransit'
     ];
@@ -67,6 +68,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'duration' => null,
         'agency' => null,
+        'autoRental' => null,
         'lodging' => null,
         'transit' => null
     ];
@@ -88,6 +90,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     protected static $attributeMap = [
         'duration' => 'duration',
         'agency' => 'agency',
+        'autoRental' => 'autoRental',
         'lodging' => 'lodging',
         'transit' => 'transit'
     ];
@@ -100,6 +103,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     protected static $setters = [
         'duration' => 'setDuration',
         'agency' => 'setAgency',
+        'autoRental' => 'setAutoRental',
         'lodging' => 'setLodging',
         'transit' => 'setTransit'
     ];
@@ -112,6 +116,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     protected static $getters = [
         'duration' => 'getDuration',
         'agency' => 'getAgency',
+        'autoRental' => 'getAutoRental',
         'lodging' => 'getLodging',
         'transit' => 'getTransit'
     ];
@@ -149,6 +154,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     {
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['agency'] = isset($data['agency']) ? $data['agency'] : null;
+        $this->container['autoRental'] = isset($data['autoRental']) ? $data['autoRental'] : null;
         $this->container['lodging'] = isset($data['lodging']) ? $data['lodging'] : null;
         $this->container['transit'] = isset($data['transit']) ? $data['transit'] : null;
     }
@@ -196,7 +202,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
 
     /**
      * Sets duration
-     * @param string $duration Duration for which the vehicle was rented or lodge/hotel was booked.
+     * @param string $duration Duration of the auto rental or lodging rental.  #### Auto rental This field is supported for Visa, MasterCard, and American Express. **Important** If this field is not included when the `processingInformation.industryDataType` is auto rental, the transaction is declined.
      * @return $this
      */
     public function setDuration($duration)
@@ -227,6 +233,27 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     public function setAgency($agency)
     {
         $this->container['agency'] = $agency;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoRental
+     * @return \CyberSource\Model\Ptsv2paymentsTravelInformationAutoRental
+     */
+    public function getAutoRental()
+    {
+        return $this->container['autoRental'];
+    }
+
+    /**
+     * Sets autoRental
+     * @param \CyberSource\Model\Ptsv2paymentsTravelInformationAutoRental $autoRental
+     * @return $this
+     */
+    public function setAutoRental($autoRental)
+    {
+        $this->container['autoRental'] = $autoRental;
 
         return $this;
     }

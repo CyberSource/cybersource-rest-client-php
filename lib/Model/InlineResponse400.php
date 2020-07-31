@@ -54,9 +54,7 @@ class InlineResponse400 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'message' => 'string',
-        'details' => '\CyberSource\Model\Tmsv1instrumentidentifiersDetails'
+        'errors' => '\CyberSource\Model\InlineResponse400Errors[]'
     ];
 
     /**
@@ -64,9 +62,7 @@ class InlineResponse400 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'message' => null,
-        'details' => null
+        'errors' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +80,7 @@ class InlineResponse400 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'message' => 'message',
-        'details' => 'details'
+        'errors' => 'errors'
     ];
 
 
@@ -95,9 +89,7 @@ class InlineResponse400 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'errors' => 'setErrors'
     ];
 
 
@@ -106,9 +98,7 @@ class InlineResponse400 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'errors' => 'getErrors'
     ];
 
     public static function attributeMap()
@@ -142,9 +132,7 @@ class InlineResponse400 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
     /**
@@ -173,64 +161,22 @@ class InlineResponse400 implements ArrayAccess
 
 
     /**
-     * Gets type
-     * @return string
+     * Gets errors
+     * @return \CyberSource\Model\InlineResponse400Errors[]
      */
-    public function getType()
+    public function getErrors()
     {
-        return $this->container['type'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets type
-     * @param string $type
+     * Sets errors
+     * @param \CyberSource\Model\InlineResponse400Errors[] $errors
      * @return $this
      */
-    public function setType($type)
+    public function setErrors($errors)
     {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     * @param string $message The detailed message related to the type stated above.
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     * @return \CyberSource\Model\Tmsv1instrumentidentifiersDetails
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     * @param \CyberSource\Model\Tmsv1instrumentidentifiersDetails $details
-     * @return $this
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

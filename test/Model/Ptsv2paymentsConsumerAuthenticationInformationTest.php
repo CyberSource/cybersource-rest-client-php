@@ -120,6 +120,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "ucafCollectionIndicator"
+     */
+    public function testPropertyUcafCollectionIndicator()
+    {
+    }
+
+    /**
      * Test attribute "ucafAuthenticationData"
      */
     public function testPropertyUcafAuthenticationData()

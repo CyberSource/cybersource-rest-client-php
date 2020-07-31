@@ -294,7 +294,7 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
 
     /**
      * Sets applicableRegion
-     * @param string $applicableRegion Value can be - Canada - US - International. The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info.
+     * @param string $applicableRegion Value can be - Canada - US - International The values of errorCode and statusCode mean different things depending on the applicable region. Refer to the guide for more info.
      * @return $this
      */
     public function setApplicableRegion($applicableRegion)

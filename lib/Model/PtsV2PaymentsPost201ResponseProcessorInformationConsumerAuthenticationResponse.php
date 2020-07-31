@@ -191,7 +191,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResp
 
     /**
      * Sets code
-     * @param string $code Mapped response code for Visa Secure and American Express SafeKey.  For processor-specific details, see `auth_cavv_response_code` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $code Mapped response code for Visa Secure and American Express SafeKey.
      * @return $this
      */
     public function setCode($code)
@@ -216,7 +216,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationConsumerAuthenticationResp
 
     /**
      * Sets codeRaw
-     * @param string $codeRaw Raw response code sent directly from the processor for Visa Secure and American Express SafeKey:  For processor-specific details, see `auth_cavv_response_code_raw` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $codeRaw Raw response code sent directly from the processor for Visa Secure and American Express SafeKey:
      * @return $this
      */
     public function setCodeRaw($codeRaw)

@@ -176,6 +176,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "tokenInformation"
+     */
+    public function testPropertyTokenInformation()
+    {
+    }
+
+    /**
      * Test attribute "riskInformation"
      */
     public function testPropertyRiskInformation()

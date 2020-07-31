@@ -111,4 +111,18 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationTest ext
     public function testPropertyHeaderStyle()
     {
     }
+
+    /**
+     * Test attribute "deliveryLanguage"
+     */
+    public function testPropertyDeliveryLanguage()
+    {
+    }
+
+    /**
+     * Test attribute "defaultCurrencyCode"
+     */
+    public function testPropertyDefaultCurrencyCode()
+    {
+    }
 }

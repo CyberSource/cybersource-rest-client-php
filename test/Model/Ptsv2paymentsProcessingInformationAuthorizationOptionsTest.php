@@ -167,4 +167,32 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     public function testPropertyRedemptionInquiry()
     {
     }
+
+    /**
+     * Test attribute "transitTransactionType"
+     */
+    public function testPropertyTransitTransactionType()
+    {
+    }
+
+    /**
+     * Test attribute "aggregatedAuthIndicator"
+     */
+    public function testPropertyAggregatedAuthIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "debtRecoveryIndicator"
+     */
+    public function testPropertyDebtRecoveryIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "deferredAuthIndicator"
+     */
+    public function testPropertyDeferredAuthIndicator()
+    {
+    }
 }

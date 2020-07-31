@@ -55,7 +55,9 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'jti' => 'string',
-        'transientTokenJwt' => 'string'
+        'transientTokenJwt' => 'string',
+        'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsTokenInformationPaymentInstrument',
+        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsTokenInformationShippingAddress'
     ];
 
     /**
@@ -64,7 +66,9 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'jti' => null,
-        'transientTokenJwt' => null
+        'transientTokenJwt' => null,
+        'paymentInstrument' => null,
+        'shippingAddress' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +87,9 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'jti' => 'jti',
-        'transientTokenJwt' => 'transientTokenJwt'
+        'transientTokenJwt' => 'transientTokenJwt',
+        'paymentInstrument' => 'paymentInstrument',
+        'shippingAddress' => 'shippingAddress'
     ];
 
 
@@ -93,7 +99,9 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
      */
     protected static $setters = [
         'jti' => 'setJti',
-        'transientTokenJwt' => 'setTransientTokenJwt'
+        'transientTokenJwt' => 'setTransientTokenJwt',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'shippingAddress' => 'setShippingAddress'
     ];
 
 
@@ -103,7 +111,9 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
      */
     protected static $getters = [
         'jti' => 'getJti',
-        'transientTokenJwt' => 'getTransientTokenJwt'
+        'transientTokenJwt' => 'getTransientTokenJwt',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'shippingAddress' => 'getShippingAddress'
     ];
 
     public static function attributeMap()
@@ -139,6 +149,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
     {
         $this->container['jti'] = isset($data['jti']) ? $data['jti'] : null;
         $this->container['transientTokenJwt'] = isset($data['transientTokenJwt']) ? $data['transientTokenJwt'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
     }
 
     /**
@@ -215,6 +227,48 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
     public function setTransientTokenJwt($transientTokenJwt)
     {
         $this->container['transientTokenJwt'] = $transientTokenJwt;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\Ptsv2paymentsTokenInformationPaymentInstrument
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\Ptsv2paymentsTokenInformationPaymentInstrument $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     * @return \CyberSource\Model\Ptsv2paymentsTokenInformationShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     * @param \CyberSource\Model\Ptsv2paymentsTokenInformationShippingAddress $shippingAddress
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }

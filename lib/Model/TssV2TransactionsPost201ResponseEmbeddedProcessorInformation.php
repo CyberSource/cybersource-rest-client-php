@@ -198,7 +198,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
 
     /**
      * Sets approvalCode
-     * @param string $approvalCode Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE. See \"Encoded Account Numbers,\" page 136.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000. See \"Zero Amount Authorizations,\" page 230.
+     * @param string $approvalCode Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit credit.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000.
      * @return $this
      */
     public function setApprovalCode($approvalCode)

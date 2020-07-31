@@ -183,6 +183,13 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "healthCareInformation"
+     */
+    public function testPropertyHealthCareInformation()
+    {
+    }
+
+    /**
      * Test attribute "promotionInformation"
      */
     public function testPropertyPromotionInformation()
