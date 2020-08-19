@@ -1,6 +1,6 @@
 {
     "name": "soberanes/cybersource-rest-client-php",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "description": "Client SDK for CyberSource REST APIs - Custom",
     "keywords": [
         "cybersource", "payments", "ecommerce", "merchant", "merchants", "authorize", "visa", "payment", "payment-gateway", "payment-integration", "payment-module", "payment-processing", "payment-service", "payment-methods"
