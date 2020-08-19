@@ -254,7 +254,7 @@ class Ptsv2paymentsidClientReferenceInformationPartner implements ArrayAccess
 
     /**
      * Sets solutionId
-     * @param string $solutionId Identifier for the partner that is integrated to CyberSource.  Send this value in all requests that are sent through the partner solution. CyberSource assigns the ID to the partner.  **Note** When you see a partner ID of 999 in reports, the partner ID that was submitted is incorrect.
+     * @param string $solutionId Identifier for the partner that is integrated to CyberSource.  Send this value in all requests that are sent through the partner solution. CyberSource assigns the ID to the partner.  **Note** When you see a solutionId of 999 in reports, the solutionId that was submitted is incorrect.
      * @return $this
      */
     public function setSolutionId($solutionId)

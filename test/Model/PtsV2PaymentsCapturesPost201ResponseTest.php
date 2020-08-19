@@ -134,16 +134,16 @@ class PtsV2PaymentsCapturesPost201ResponseTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
-     * Test attribute "processingInformation"
+     * Test attribute "pointOfSaleInformation"
      */
-    public function testPropertyProcessingInformation()
+    public function testPropertyPointOfSaleInformation()
     {
     }
 
     /**
-     * Test attribute "pointOfSaleInformation"
+     * Test attribute "processingInformation"
      */
-    public function testPropertyPointOfSaleInformation()
+    public function testPropertyProcessingInformation()
     {
     }
 }

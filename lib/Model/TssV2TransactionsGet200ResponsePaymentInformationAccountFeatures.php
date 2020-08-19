@@ -204,7 +204,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
 
     /**
      * Sets balanceAmount
-     * @param string $balanceAmount Remaining balance on the account.  Returned by authorization service.
+     * @param string $balanceAmount Remaining balance on the account.  Returned by authorization service.  #### PIN debit Remaining balance on the prepaid card.  Returned by PIN debit purchase.
      * @return $this
      */
     public function setBalanceAmount($balanceAmount)
@@ -229,7 +229,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
 
     /**
      * Sets previousBalanceAmount
-     * @param string $previousBalanceAmount Remaining balance on the account.  Returned by authorization service.
+     * @param string $previousBalanceAmount Remaining balance on the account.  Returned by authorization service.  #### PIN debit Remaining balance on the prepaid card.  Returned by PIN debit purchase.
      * @return $this
      */
     public function setPreviousBalanceAmount($previousBalanceAmount)
@@ -254,7 +254,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
 
     /**
      * Sets currency
-     * @param string $currency Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  Returned by authorization service.
+     * @param string $currency Currency of the remaining balance on the account. For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  Returned by authorization service.  #### PIN debit Currency of the remaining balance on the prepaid card.  Returned by PIN debit purchase.
      * @return $this
      */
     public function setCurrency($currency)

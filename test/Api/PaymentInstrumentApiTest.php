@@ -73,16 +73,6 @@ class PaymentInstrumentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for createPaymentInstrument
-     *
-     * Create a Payment Instrument.
-     *
-     */
-    public function testCreatePaymentInstrument()
-    {
-    }
-
-    /**
      * Test case for deletePaymentInstrument
      *
      * Delete a Payment Instrument.
@@ -103,12 +93,22 @@ class PaymentInstrumentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for updatePaymentInstrument
+     * Test case for patchPaymentInstrument
      *
      * Update a Payment Instrument.
      *
      */
-    public function testUpdatePaymentInstrument()
+    public function testPatchPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test case for postPaymentInstrument
+     *
+     * Create a Payment Instrument.
+     *
+     */
+    public function testPostPaymentInstrument()
     {
     }
 }

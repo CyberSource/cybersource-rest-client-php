@@ -90,4 +90,18 @@ class Ptsv2paymentsTokenInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTransientTokenJwt()
     {
     }
+
+    /**
+     * Test attribute "paymentInstrument"
+     */
+    public function testPropertyPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test attribute "shippingAddress"
+     */
+    public function testPropertyShippingAddress()
+    {
+    }
 }

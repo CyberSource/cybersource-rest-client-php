@@ -62,8 +62,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessorInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformation',
-        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'
+        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation',
+        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation'
     ];
 
     /**
@@ -79,8 +79,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'clientReferenceInformation' => null,
         'processorInformation' => null,
         'orderInformation' => null,
-        'processingInformation' => null,
-        'pointOfSaleInformation' => null
+        'pointOfSaleInformation' => null,
+        'processingInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -106,8 +106,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'processorInformation' => 'processorInformation',
         'orderInformation' => 'orderInformation',
-        'processingInformation' => 'processingInformation',
-        'pointOfSaleInformation' => 'pointOfSaleInformation'
+        'pointOfSaleInformation' => 'pointOfSaleInformation',
+        'processingInformation' => 'processingInformation'
     ];
 
 
@@ -124,8 +124,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'processorInformation' => 'setProcessorInformation',
         'orderInformation' => 'setOrderInformation',
-        'processingInformation' => 'setProcessingInformation',
-        'pointOfSaleInformation' => 'setPointOfSaleInformation'
+        'pointOfSaleInformation' => 'setPointOfSaleInformation',
+        'processingInformation' => 'setProcessingInformation'
     ];
 
 
@@ -142,8 +142,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'processorInformation' => 'getProcessorInformation',
         'orderInformation' => 'getOrderInformation',
-        'processingInformation' => 'getProcessingInformation',
-        'pointOfSaleInformation' => 'getPointOfSaleInformation'
+        'pointOfSaleInformation' => 'getPointOfSaleInformation',
+        'processingInformation' => 'getProcessingInformation'
     ];
 
     public static function attributeMap()
@@ -185,8 +185,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
-        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
     }
 
     /**
@@ -260,7 +260,7 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number assigned by CyberSource to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
+     * @param string $id An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services.
      * @return $this
      */
     public function setId($id)
@@ -285,7 +285,7 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -327,7 +327,7 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
 
     /**
      * Sets reconciliationId
-     * @param string $reconciliationId Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  #### Atos Positive string (6)  #### All other processors String (60)
+     * @param string $reconciliationId Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60)
      * @return $this
      */
     public function setReconciliationId($reconciliationId)
@@ -405,27 +405,6 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
     }
 
     /**
-     * Gets processingInformation
-     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation
-     */
-    public function getProcessingInformation()
-    {
-        return $this->container['processingInformation'];
-    }
-
-    /**
-     * Sets processingInformation
-     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation $processingInformation
-     * @return $this
-     */
-    public function setProcessingInformation($processingInformation)
-    {
-        $this->container['processingInformation'] = $processingInformation;
-
-        return $this;
-    }
-
-    /**
      * Gets pointOfSaleInformation
      * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation
      */
@@ -442,6 +421,27 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
     public function setPointOfSaleInformation($pointOfSaleInformation)
     {
         $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

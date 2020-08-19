@@ -184,7 +184,7 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
 
     /**
      * Sets isElectronicBenefitsTransfer
-     * @param bool $isElectronicBenefitsTransfer Flag that indicates that this transaction is an EBT transaction.Possible values: - **true** - **false**
+     * @param bool $isElectronicBenefitsTransfer Flag that indicates whether this transaction is an EBT transaction. Possible values: - `true` - `false`  #### PIN debit Required field for EBT and EBT voucher transactions that use PIN debit credit or PIN debit purchase; otherwise, not used.
      * @return $this
      */
     public function setIsElectronicBenefitsTransfer($isElectronicBenefitsTransfer)
@@ -205,7 +205,7 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type This field is used in PIN Debit EBT transaction as a flag to identify EBT vouchers.Possible values: - `EBT_VOUCHER`: Indicates EBT voucher
+     * @param string $type Flag that indicates an EBT voucher transaction. Possible value: - `EBT_VOUCHER`: Indicates the PIN debit transaction is an EBT voucher.  #### PIN debit Required field for EBT voucher transactions that use PIN debit purchase; otherwise, not used.
      * @return $this
      */
     public function setType($type)

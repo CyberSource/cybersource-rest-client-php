@@ -85,6 +85,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'string',
         'priorAuthenticationTime' => 'string',
         'productCode' => 'string',
+        'returnUrl' => 'string',
         'requestorId' => 'string',
         'requestorInitiatedAuthenticationIndicator' => 'string',
         'requestorName' => 'string',
@@ -131,6 +132,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => null,
         'priorAuthenticationTime' => null,
         'productCode' => null,
+        'returnUrl' => null,
         'requestorId' => null,
         'requestorInitiatedAuthenticationIndicator' => null,
         'requestorName' => null,
@@ -187,6 +189,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'priorAuthenticationReferenceId',
         'priorAuthenticationTime' => 'priorAuthenticationTime',
         'productCode' => 'productCode',
+        'returnUrl' => 'returnUrl',
         'requestorId' => 'requestorId',
         'requestorInitiatedAuthenticationIndicator' => 'requestorInitiatedAuthenticationIndicator',
         'requestorName' => 'requestorName',
@@ -234,6 +237,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'setPriorAuthenticationReferenceId',
         'priorAuthenticationTime' => 'setPriorAuthenticationTime',
         'productCode' => 'setProductCode',
+        'returnUrl' => 'setReturnUrl',
         'requestorId' => 'setRequestorId',
         'requestorInitiatedAuthenticationIndicator' => 'setRequestorInitiatedAuthenticationIndicator',
         'requestorName' => 'setRequestorName',
@@ -281,6 +285,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'getPriorAuthenticationReferenceId',
         'priorAuthenticationTime' => 'getPriorAuthenticationTime',
         'productCode' => 'getProductCode',
+        'returnUrl' => 'getReturnUrl',
         'requestorId' => 'getRequestorId',
         'requestorInitiatedAuthenticationIndicator' => 'getRequestorInitiatedAuthenticationIndicator',
         'requestorName' => 'getRequestorName',
@@ -353,6 +358,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['priorAuthenticationReferenceId'] = isset($data['priorAuthenticationReferenceId']) ? $data['priorAuthenticationReferenceId'] : null;
         $this->container['priorAuthenticationTime'] = isset($data['priorAuthenticationTime']) ? $data['priorAuthenticationTime'] : null;
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
+        $this->container['returnUrl'] = isset($data['returnUrl']) ? $data['returnUrl'] : null;
         $this->container['requestorId'] = isset($data['requestorId']) ? $data['requestorId'] : null;
         $this->container['requestorInitiatedAuthenticationIndicator'] = isset($data['requestorInitiatedAuthenticationIndicator']) ? $data['requestorInitiatedAuthenticationIndicator'] : null;
         $this->container['requestorName'] = isset($data['requestorName']) ? $data['requestorName'] : null;
@@ -460,6 +466,10 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'productCode', the character length must be smaller than or equal to 3.";
         }
 
+        if (!is_null($this->container['returnUrl']) && (strlen($this->container['returnUrl']) > 2048)) {
+            $invalid_properties[] = "invalid value for 'returnUrl', the character length must be smaller than or equal to 2048.";
+        }
+
         if (!is_null($this->container['requestorId']) && (strlen($this->container['requestorId']) > 35)) {
             $invalid_properties[] = "invalid value for 'requestorId', the character length must be smaller than or equal to 35.";
         }
@@ -564,6 +574,9 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
             return false;
         }
         if (strlen($this->container['productCode']) > 3) {
+            return false;
+        }
+        if (strlen($this->container['returnUrl']) > 2048) {
             return false;
         }
         if (strlen($this->container['requestorId']) > 35) {
@@ -1191,7 +1204,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets overrideCountryCode
-     * @param string $overrideCountryCode Two-character ISO standard Country Codes.
+     * @param string $overrideCountryCode Two-character [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)..
      * @return $this
      */
     public function setOverrideCountryCode($overrideCountryCode)
@@ -1326,6 +1339,31 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         }
 
         $this->container['productCode'] = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnUrl
+     * @return string
+     */
+    public function getReturnUrl()
+    {
+        return $this->container['returnUrl'];
+    }
+
+    /**
+     * Sets returnUrl
+     * @param string $returnUrl The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call.
+     * @return $this
+     */
+    public function setReturnUrl($returnUrl)
+    {
+        if (!is_null($returnUrl) && (strlen($returnUrl) > 2048)) {
+            throw new \InvalidArgumentException('invalid length for $returnUrl when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
+        }
+
+        $this->container['returnUrl'] = $returnUrl;
 
         return $this;
     }

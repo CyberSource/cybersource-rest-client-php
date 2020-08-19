@@ -65,7 +65,7 @@ class InvoicingV2InvoicesGet200ResponseInvoiceHistory implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'event' => null,
-        'date' => 'date',
+        'date' => 'date-time',
         'transactionDetails' => null
     ];
 
@@ -204,7 +204,7 @@ class InvoicingV2InvoicesGet200ResponseInvoiceHistory implements ArrayAccess
 
     /**
      * Sets date
-     * @param \DateTime $date The invoice due date. This field is required for creating an invoice. Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day
+     * @param \DateTime $date The date and time when the invoice event was triggered in ISO 8601 format. Format: YYYY-MM-DDThh:mm:ssZ
      * @return $this
      */
     public function setDate($date)

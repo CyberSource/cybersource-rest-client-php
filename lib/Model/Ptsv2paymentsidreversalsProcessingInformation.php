@@ -336,7 +336,7 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
 
     /**
      * Sets visaCheckoutId
-     * @param string $visaCheckoutId Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.  For details, see the `vc_order_id` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)
+     * @param string $visaCheckoutId Identifier for the **Visa Checkout** order. Visa Checkout provides a unique order ID for every transaction in the Visa Checkout **callID** field.
      * @return $this
      */
     public function setVisaCheckoutId($visaCheckoutId)

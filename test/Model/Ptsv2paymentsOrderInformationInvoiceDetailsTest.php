@@ -174,4 +174,11 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTest extends \PHPUnit_Framework
     public function testPropertySalesSlipNumber()
     {
     }
+
+    /**
+     * Test attribute "invoiceDate"
+     */
+    public function testPropertyInvoiceDate()
+    {
+    }
 }

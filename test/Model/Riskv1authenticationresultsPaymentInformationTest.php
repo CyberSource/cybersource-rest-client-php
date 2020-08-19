@@ -97,4 +97,11 @@ class Riskv1authenticationresultsPaymentInformationTest extends \PHPUnit_Framewo
     public function testPropertyFluidData()
     {
     }
+
+    /**
+     * Test attribute "customer"
+     */
+    public function testPropertyCustomer()
+    {
+    }
 }

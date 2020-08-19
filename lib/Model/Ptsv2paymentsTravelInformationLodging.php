@@ -718,7 +718,7 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
 
     /**
      * Sets checkInDate
-     * @param string $checkInDate Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: MMDDYY. For best interchange rates, make sure it is a valid date.
+     * @param string $checkInDate Date on which the guest checked in. In the case of a no-show or a reservation, the scheduled arrival date. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date.
      * @return $this
      */
     public function setCheckInDate($checkInDate)
@@ -743,7 +743,7 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
 
     /**
      * Sets checkOutDate
-     * @param string $checkOutDate Date on which the guest checked out. Format: MMDDYY. For best interchange rates, make sure it is a valid date.
+     * @param string $checkOutDate Date on which the guest checked out. Format: `MMDDYY`. For best interchange rates, make sure it is a valid date.
      * @return $this
      */
     public function setCheckOutDate($checkOutDate)

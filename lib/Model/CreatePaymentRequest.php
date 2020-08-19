@@ -69,6 +69,7 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
+        'healthCareInformation' => '\CyberSource\Model\Ptsv2paymentsHealthCareInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
         'tokenInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformation',
         'riskInformation' => '\CyberSource\Model\Ptsv2paymentsRiskInformation',
@@ -96,6 +97,7 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => null,
         'installmentInformation' => null,
         'travelInformation' => null,
+        'healthCareInformation' => null,
         'promotionInformation' => null,
         'tokenInformation' => null,
         'riskInformation' => null,
@@ -133,6 +135,7 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => 'merchantDefinedInformation',
         'installmentInformation' => 'installmentInformation',
         'travelInformation' => 'travelInformation',
+        'healthCareInformation' => 'healthCareInformation',
         'promotionInformation' => 'promotionInformation',
         'tokenInformation' => 'tokenInformation',
         'riskInformation' => 'riskInformation',
@@ -161,6 +164,7 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'travelInformation' => 'setTravelInformation',
+        'healthCareInformation' => 'setHealthCareInformation',
         'promotionInformation' => 'setPromotionInformation',
         'tokenInformation' => 'setTokenInformation',
         'riskInformation' => 'setRiskInformation',
@@ -189,6 +193,7 @@ class CreatePaymentRequest implements ArrayAccess
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'travelInformation' => 'getTravelInformation',
+        'healthCareInformation' => 'getHealthCareInformation',
         'promotionInformation' => 'getPromotionInformation',
         'tokenInformation' => 'getTokenInformation',
         'riskInformation' => 'getRiskInformation',
@@ -242,6 +247,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
+        $this->container['healthCareInformation'] = isset($data['healthCareInformation']) ? $data['healthCareInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
@@ -585,6 +591,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setTravelInformation($travelInformation)
     {
         $this->container['travelInformation'] = $travelInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets healthCareInformation
+     * @return \CyberSource\Model\Ptsv2paymentsHealthCareInformation
+     */
+    public function getHealthCareInformation()
+    {
+        return $this->container['healthCareInformation'];
+    }
+
+    /**
+     * Sets healthCareInformation
+     * @param \CyberSource\Model\Ptsv2paymentsHealthCareInformation $healthCareInformation
+     * @return $this
+     */
+    public function setHealthCareInformation($healthCareInformation)
+    {
+        $this->container['healthCareInformation'] = $healthCareInformation;
 
         return $this;
     }

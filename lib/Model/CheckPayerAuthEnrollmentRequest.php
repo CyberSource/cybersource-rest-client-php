@@ -54,10 +54,11 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationsPaymentInformation',
-        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsProcessingInformation',
+        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
+        'tokenInformation' => '\CyberSource\Model\Riskv1authenticationsetupsTokenInformation',
         'buyerInformation' => '\CyberSource\Model\Riskv1authenticationsBuyerInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationsDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Riskv1decisionsMerchantInformation',
@@ -78,6 +79,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'orderInformation' => null,
         'paymentInformation' => null,
         'processingInformation' => null,
+        'tokenInformation' => null,
         'buyerInformation' => null,
         'deviceInformation' => null,
         'merchantInformation' => null,
@@ -108,6 +110,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'orderInformation' => 'orderInformation',
         'paymentInformation' => 'paymentInformation',
         'processingInformation' => 'processingInformation',
+        'tokenInformation' => 'tokenInformation',
         'buyerInformation' => 'buyerInformation',
         'deviceInformation' => 'deviceInformation',
         'merchantInformation' => 'merchantInformation',
@@ -129,6 +132,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'orderInformation' => 'setOrderInformation',
         'paymentInformation' => 'setPaymentInformation',
         'processingInformation' => 'setProcessingInformation',
+        'tokenInformation' => 'setTokenInformation',
         'buyerInformation' => 'setBuyerInformation',
         'deviceInformation' => 'setDeviceInformation',
         'merchantInformation' => 'setMerchantInformation',
@@ -150,6 +154,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'orderInformation' => 'getOrderInformation',
         'paymentInformation' => 'getPaymentInformation',
         'processingInformation' => 'getProcessingInformation',
+        'tokenInformation' => 'getTokenInformation',
         'buyerInformation' => 'getBuyerInformation',
         'deviceInformation' => 'getDeviceInformation',
         'merchantInformation' => 'getMerchantInformation',
@@ -196,6 +201,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
@@ -234,7 +240,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Riskv1authenticationsClientReferenceInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -243,7 +249,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Riskv1authenticationsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -297,7 +303,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\Riskv1authenticationsProcessingInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -306,12 +312,33 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\Riskv1authenticationsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
     {
         $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsTokenInformation
+     */
+    public function getTokenInformation()
+    {
+        return $this->container['tokenInformation'];
+    }
+
+    /**
+     * Sets tokenInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsTokenInformation $tokenInformation
+     * @return $this
+     */
+    public function setTokenInformation($tokenInformation)
+    {
+        $this->container['tokenInformation'] = $tokenInformation;
 
         return $this;
     }

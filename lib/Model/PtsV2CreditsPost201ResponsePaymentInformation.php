@@ -54,7 +54,11 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bank' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank'
+        'bank' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank',
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument',
+        'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier',
+        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress'
     ];
 
     /**
@@ -62,7 +66,11 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'bank' => null
+        'bank' => null,
+        'customer' => null,
+        'paymentInstrument' => null,
+        'instrumentIdentifier' => null,
+        'shippingAddress' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +88,11 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bank' => 'bank'
+        'bank' => 'bank',
+        'customer' => 'customer',
+        'paymentInstrument' => 'paymentInstrument',
+        'instrumentIdentifier' => 'instrumentIdentifier',
+        'shippingAddress' => 'shippingAddress'
     ];
 
 
@@ -89,7 +101,11 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bank' => 'setBank'
+        'bank' => 'setBank',
+        'customer' => 'setCustomer',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'instrumentIdentifier' => 'setInstrumentIdentifier',
+        'shippingAddress' => 'setShippingAddress'
     ];
 
 
@@ -98,7 +114,11 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bank' => 'getBank'
+        'bank' => 'getBank',
+        'customer' => 'getCustomer',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'instrumentIdentifier' => 'getInstrumentIdentifier',
+        'shippingAddress' => 'getShippingAddress'
     ];
 
     public static function attributeMap()
@@ -133,6 +153,10 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
     }
 
     /**
@@ -177,6 +201,90 @@ class PtsV2CreditsPost201ResponsePaymentInformation implements ArrayAccess
     public function setBank($bank)
     {
         $this->container['bank'] = $bank;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
+     */
+    public function getCustomer()
+    {
+        return $this->container['customer'];
+    }
+
+    /**
+     * Sets customer
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
+     * @return $this
+     */
+    public function setCustomer($customer)
+    {
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier
+     */
+    public function getInstrumentIdentifier()
+    {
+        return $this->container['instrumentIdentifier'];
+    }
+
+    /**
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier $instrumentIdentifier
+     * @return $this
+     */
+    public function setInstrumentIdentifier($instrumentIdentifier)
+    {
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress $shippingAddress
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }

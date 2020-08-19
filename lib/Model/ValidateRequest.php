@@ -54,8 +54,8 @@ class ValidateRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsClientReferenceInformation',
-        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsProcessingInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation',
+        'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1authenticationresultsConsumerAuthenticationInformation'
@@ -186,7 +186,7 @@ class ValidateRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Riskv1authenticationsClientReferenceInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -195,7 +195,7 @@ class ValidateRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Riskv1authenticationsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -207,7 +207,7 @@ class ValidateRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\Riskv1authenticationsProcessingInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -216,7 +216,7 @@ class ValidateRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\Riskv1authenticationsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)

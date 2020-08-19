@@ -58,6 +58,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument',
+        'instrumentIdentifier' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier',
+        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
+        'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
         'initiationChannel' => 'string'
@@ -72,6 +76,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'tokenizedCard' => null,
         'fluidData' => null,
         'customer' => null,
+        'paymentInstrument' => null,
+        'instrumentIdentifier' => null,
+        'shippingAddress' => null,
+        'legacyToken' => null,
         'bank' => null,
         'paymentType' => null,
         'initiationChannel' => null
@@ -96,6 +104,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'tokenizedCard',
         'fluidData' => 'fluidData',
         'customer' => 'customer',
+        'paymentInstrument' => 'paymentInstrument',
+        'instrumentIdentifier' => 'instrumentIdentifier',
+        'shippingAddress' => 'shippingAddress',
+        'legacyToken' => 'legacyToken',
         'bank' => 'bank',
         'paymentType' => 'paymentType',
         'initiationChannel' => 'initiationChannel'
@@ -111,6 +123,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'setTokenizedCard',
         'fluidData' => 'setFluidData',
         'customer' => 'setCustomer',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'instrumentIdentifier' => 'setInstrumentIdentifier',
+        'shippingAddress' => 'setShippingAddress',
+        'legacyToken' => 'setLegacyToken',
         'bank' => 'setBank',
         'paymentType' => 'setPaymentType',
         'initiationChannel' => 'setInitiationChannel'
@@ -126,6 +142,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'getTokenizedCard',
         'fluidData' => 'getFluidData',
         'customer' => 'getCustomer',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'instrumentIdentifier' => 'getInstrumentIdentifier',
+        'shippingAddress' => 'getShippingAddress',
+        'legacyToken' => 'getLegacyToken',
         'bank' => 'getBank',
         'paymentType' => 'getPaymentType',
         'initiationChannel' => 'getInitiationChannel'
@@ -166,6 +186,10 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['legacyToken'] = isset($data['legacyToken']) ? $data['legacyToken'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
@@ -288,6 +312,90 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     }
 
     /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier
+     */
+    public function getInstrumentIdentifier()
+    {
+        return $this->container['instrumentIdentifier'];
+    }
+
+    /**
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier $instrumentIdentifier
+     * @return $this
+     */
+    public function setInstrumentIdentifier($instrumentIdentifier)
+    {
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress $shippingAddress
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets legacyToken
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken
+     */
+    public function getLegacyToken()
+    {
+        return $this->container['legacyToken'];
+    }
+
+    /**
+     * Sets legacyToken
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken $legacyToken
+     * @return $this
+     */
+    public function setLegacyToken($legacyToken)
+    {
+        $this->container['legacyToken'] = $legacyToken;
+
+        return $this;
+    }
+
+    /**
      * Gets bank
      * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBank
      */
@@ -340,7 +448,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
 
     /**
      * Sets initiationChannel
-     * @param string $initiationChannel Mastercard-defined code that indicates how the account information was obtained.  - `00` (default): Card - `01`: Removable secure element that is personalized for use with a mobile phone and controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `02`: Key fob - `03`: Watch - `04`: Mobile tag - `05`: Wristband - `06`: Mobile phone case or sleeve - `07`: Mobile phone with a non-removable, secure element that is controlled by the wireless service provider; for example, code division multiple access (CDMA) - `08`: Removable secure element that is personalized for use with a mobile phone and not controlled by the wireless service provider; example: memory card - `09`: Mobile phone with a non-removable, secure element that is not controlled by the wireless service provider - `10`: Removable secure element that is personalized for use with a tablet or e-book and is controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `11`: Tablet or e-book with a non-removable, secure element that is controlled by the wireless service provider - `12`: Removable secure element that is personalized for use with a tablet or e-book and is not controlled by the wireless service provider - `13`: Tablet or e-book with a non-removable, secure element that is not controlled by the wireless service provider  This field is supported only for Mastercard on CyberSource through VisaNet.  #### Used by **Authorization**\\ Optional field.
+     * @param string $initiationChannel Mastercard-defined code that indicates how the account information was obtained.  - `00` (default): Card - `01`: Removable secure element that is personalized for use with a mobile phone and controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `02`: Key fob - `03`: Watch - `04`: Mobile tag - `05`: Wristband - `06`: Mobile phone case or sleeve - `07`: Mobile phone with a non-removable, secure element that is controlled by the wireless service provider; for example, code division multiple access (CDMA) - `08`: Removable secure element that is personalized for use with a mobile phone and not controlled by the wireless service provider; example: memory card - `09`: Mobile phone with a non-removable, secure element that is not controlled by the wireless service provider - `10`: Removable secure element that is personalized for use with a tablet or e-book and is controlled by the wireless service provider; examples: subscriber identity module (SIM), universal integrated circuit card (UICC) - `11`: Tablet or e-book with a non-removable, secure element that is controlled by the wireless service provider - `12`: Removable secure element that is personalized for use with a tablet or e-book and is not controlled by the wireless service provider - `13`: Tablet or e-book with a non-removable, secure element that is not controlled by the wireless service provider  This field is supported only for Mastercard on CyberSource through VisaNet.  #### Used by **Authorization** Optional field.
      * @return $this
      */
     public function setInitiationChannel($initiationChannel)

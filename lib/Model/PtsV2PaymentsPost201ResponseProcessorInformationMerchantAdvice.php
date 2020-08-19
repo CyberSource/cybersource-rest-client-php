@@ -154,8 +154,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
             $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 2.";
         }
 
-        if (!is_null($this->container['codeRaw']) && (strlen($this->container['codeRaw']) > 2)) {
-            $invalid_properties[] = "invalid value for 'codeRaw', the character length must be smaller than or equal to 2.";
+        if (!is_null($this->container['codeRaw']) && (strlen($this->container['codeRaw']) > 4)) {
+            $invalid_properties[] = "invalid value for 'codeRaw', the character length must be smaller than or equal to 4.";
         }
 
         return $invalid_properties;
@@ -173,7 +173,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
         if (strlen($this->container['code']) > 2) {
             return false;
         }
-        if (strlen($this->container['codeRaw']) > 2) {
+        if (strlen($this->container['codeRaw']) > 4) {
             return false;
         }
         return true;
@@ -221,8 +221,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
      */
     public function setCodeRaw($codeRaw)
     {
-        if (!is_null($codeRaw) && (strlen($codeRaw) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $codeRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice., must be smaller than or equal to 2.');
+        if (!is_null($codeRaw) && (strlen($codeRaw) > 4)) {
+            throw new \InvalidArgumentException('invalid length for $codeRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice., must be smaller than or equal to 4.');
         }
 
         $this->container['codeRaw'] = $codeRaw;

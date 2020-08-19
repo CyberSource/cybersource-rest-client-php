@@ -61,7 +61,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
         'rFlag' => 'string',
         'reconciliationId' => 'string',
         'rMessage' => 'string',
-        'returnCode' => 'string'
+        'returnCode' => 'int'
     ];
 
     /**
@@ -351,7 +351,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Gets returnCode
-     * @return string
+     * @return int
      */
     public function getReturnCode()
     {
@@ -360,7 +360,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
 
     /**
      * Sets returnCode
-     * @param string $returnCode The description for this field is not available.
+     * @param int $returnCode The description for this field is not available.
      * @return $this
      */
     public function setReturnCode($returnCode)

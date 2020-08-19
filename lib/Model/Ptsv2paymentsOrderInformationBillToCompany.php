@@ -406,7 +406,7 @@ class Ptsv2paymentsOrderInformationBillToCompany implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Country in the address of the company purchasing the product. Use the [ISO Standard Country Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf)
+     * @param string $country Country in the address of the company purchasing the product. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).
      * @return $this
      */
     public function setCountry($country)

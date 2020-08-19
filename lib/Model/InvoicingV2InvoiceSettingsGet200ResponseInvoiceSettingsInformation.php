@@ -58,7 +58,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'merchantDisplayName' => 'string',
         'customEmailMessage' => 'string',
         'enableReminders' => 'bool',
-        'headerStyle' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle'
+        'headerStyle' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle',
+        'deliveryLanguage' => 'string',
+        'defaultCurrencyCode' => 'string'
     ];
 
     /**
@@ -70,7 +72,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'merchantDisplayName' => null,
         'customEmailMessage' => null,
         'enableReminders' => null,
-        'headerStyle' => null
+        'headerStyle' => null,
+        'deliveryLanguage' => null,
+        'defaultCurrencyCode' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'merchantDisplayName' => 'merchantDisplayName',
         'customEmailMessage' => 'customEmailMessage',
         'enableReminders' => 'enableReminders',
-        'headerStyle' => 'headerStyle'
+        'headerStyle' => 'headerStyle',
+        'deliveryLanguage' => 'deliveryLanguage',
+        'defaultCurrencyCode' => 'defaultCurrencyCode'
     ];
 
 
@@ -105,7 +111,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'merchantDisplayName' => 'setMerchantDisplayName',
         'customEmailMessage' => 'setCustomEmailMessage',
         'enableReminders' => 'setEnableReminders',
-        'headerStyle' => 'setHeaderStyle'
+        'headerStyle' => 'setHeaderStyle',
+        'deliveryLanguage' => 'setDeliveryLanguage',
+        'defaultCurrencyCode' => 'setDefaultCurrencyCode'
     ];
 
 
@@ -118,7 +126,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'merchantDisplayName' => 'getMerchantDisplayName',
         'customEmailMessage' => 'getCustomEmailMessage',
         'enableReminders' => 'getEnableReminders',
-        'headerStyle' => 'getHeaderStyle'
+        'headerStyle' => 'getHeaderStyle',
+        'deliveryLanguage' => 'getDeliveryLanguage',
+        'defaultCurrencyCode' => 'getDefaultCurrencyCode'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         $this->container['customEmailMessage'] = isset($data['customEmailMessage']) ? $data['customEmailMessage'] : null;
         $this->container['enableReminders'] = isset($data['enableReminders']) ? $data['enableReminders'] : null;
         $this->container['headerStyle'] = isset($data['headerStyle']) ? $data['headerStyle'] : null;
+        $this->container['deliveryLanguage'] = isset($data['deliveryLanguage']) ? $data['deliveryLanguage'] : null;
+        $this->container['defaultCurrencyCode'] = isset($data['defaultCurrencyCode']) ? $data['defaultCurrencyCode'] : null;
     }
 
     /**
@@ -180,6 +192,14 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
             $invalid_properties[] = "invalid value for 'customEmailMessage', the character length must be smaller than or equal to 2000.";
         }
 
+        if (!is_null($this->container['deliveryLanguage']) && (strlen($this->container['deliveryLanguage']) > 6)) {
+            $invalid_properties[] = "invalid value for 'deliveryLanguage', the character length must be smaller than or equal to 6.";
+        }
+
+        if (!is_null($this->container['defaultCurrencyCode']) && (strlen($this->container['defaultCurrencyCode']) > 3)) {
+            $invalid_properties[] = "invalid value for 'defaultCurrencyCode', the character length must be smaller than or equal to 3.";
+        }
+
         return $invalid_properties;
     }
 
@@ -199,6 +219,12 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
             return false;
         }
         if (strlen($this->container['customEmailMessage']) > 2000) {
+            return false;
+        }
+        if (strlen($this->container['deliveryLanguage']) > 6) {
+            return false;
+        }
+        if (strlen($this->container['defaultCurrencyCode']) > 3) {
             return false;
         }
         return true;
@@ -318,6 +344,56 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
     public function setHeaderStyle($headerStyle)
     {
         $this->container['headerStyle'] = $headerStyle;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryLanguage
+     * @return string
+     */
+    public function getDeliveryLanguage()
+    {
+        return $this->container['deliveryLanguage'];
+    }
+
+    /**
+     * Sets deliveryLanguage
+     * @param string $deliveryLanguage The language of the email that we send to your customers. Possible values are `zh-CN`, `zh-TW`, `en-US`, `fr-FR`, `de-DE`, `ja-JP`, `pt-BR`, `ru-RU` and `es-419`.
+     * @return $this
+     */
+    public function setDeliveryLanguage($deliveryLanguage)
+    {
+        if (!is_null($deliveryLanguage) && (strlen($deliveryLanguage) > 6)) {
+            throw new \InvalidArgumentException('invalid length for $deliveryLanguage when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation., must be smaller than or equal to 6.');
+        }
+
+        $this->container['deliveryLanguage'] = $deliveryLanguage;
+
+        return $this;
+    }
+
+    /**
+     * Gets defaultCurrencyCode
+     * @return string
+     */
+    public function getDefaultCurrencyCode()
+    {
+        return $this->container['defaultCurrencyCode'];
+    }
+
+    /**
+     * Sets defaultCurrencyCode
+     * @param string $defaultCurrencyCode Currency used for the order. Use the three-character [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf)  #### Used by **Authorization** Required field.  **Authorization Reversal** For an authorization reversal (`reversalInformation`) or a capture (`processingOptions.capture` is set to `true`), you must use the same currency that you used in your payment authorization request.  #### PIN Debit Currency for the amount you requested for the PIN debit purchase. This value is returned for partial authorizations. The issuing bank can approve a partial amount if the balance on the debit card is less than the requested transaction amount. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf). Returned by PIN debit purchase.  For PIN debit reversal requests, you must use the same currency that was used for the PIN debit purchase or PIN debit credit that you are reversing. For the possible values, see the [ISO Standard Currency Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/currencies.pdf).  Required field for PIN Debit purchase and PIN Debit credit requests. Optional field for PIN Debit reversal requests.  #### GPX This field is optional for reversing an authorization or credit.  #### DCC for First Data Your local currency. For details, see the `currency` field description in [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf).  #### Tax Calculation Required for international tax and value added tax only. Optional for U.S. and Canadian taxes. Your local currency.
+     * @return $this
+     */
+    public function setDefaultCurrencyCode($defaultCurrencyCode)
+    {
+        if (!is_null($defaultCurrencyCode) && (strlen($defaultCurrencyCode) > 3)) {
+            throw new \InvalidArgumentException('invalid length for $defaultCurrencyCode when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation., must be smaller than or equal to 3.');
+        }
+
+        $this->container['defaultCurrencyCode'] = $defaultCurrencyCode;
 
         return $this;
     }

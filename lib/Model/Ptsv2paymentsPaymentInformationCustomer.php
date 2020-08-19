@@ -54,7 +54,8 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customerId' => 'string'
+        'customerId' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'customerId' => null
+        'customerId' => null,
+        'id' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'customerId' => 'customerId'
+        'customerId' => 'customerId',
+        'id' => 'id'
     ];
 
 
@@ -89,7 +92,8 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'customerId' => 'setCustomerId'
+        'customerId' => 'setCustomerId',
+        'id' => 'setId'
     ];
 
 
@@ -98,7 +102,8 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'customerId' => 'getCustomerId'
+        'customerId' => 'getCustomerId',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['customerId'] = isset($data['customerId']) ? $data['customerId'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -143,6 +149,14 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 32)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 32.";
+        }
+
+        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 1)) {
+            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalid_properties;
     }
@@ -156,6 +170,12 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['id']) > 32) {
+            return false;
+        }
+        if (strlen($this->container['id']) < 1) {
+            return false;
+        }
         return true;
     }
 
@@ -177,6 +197,34 @@ class Ptsv2paymentsPaymentInformationCustomer implements ArrayAccess
     public function setCustomerId($customerId)
     {
         $this->container['customerId'] = $customerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id Unique identifier for the Customer token used in the transaction. When you include this value in your request, many of the fields that are normally required for an authorization or credit become optional.
+     * @return $this
+     */
+    public function setId($id)
+    {
+        if (!is_null($id) && (strlen($id) > 32)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling Ptsv2paymentsPaymentInformationCustomer., must be smaller than or equal to 32.');
+        }
+        if (!is_null($id) && (strlen($id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling Ptsv2paymentsPaymentInformationCustomer., must be bigger than or equal to 1.');
+        }
+
+        $this->container['id'] = $id;
 
         return $this;
     }

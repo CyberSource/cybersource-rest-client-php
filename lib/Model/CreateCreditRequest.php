@@ -65,7 +65,7 @@ class CreateCreditRequest implements ArrayAccess
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'installmentInformation' => '\CyberSource\Model\Ptsv2creditsInstallmentInformation',
-        'travelInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesTravelInformation',
+        'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
     ];
 
@@ -465,7 +465,7 @@ class CreateCreditRequest implements ArrayAccess
 
     /**
      * Gets travelInformation
-     * @return \CyberSource\Model\Ptsv2paymentsidcapturesTravelInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTravelInformation
      */
     public function getTravelInformation()
     {
@@ -474,7 +474,7 @@ class CreateCreditRequest implements ArrayAccess
 
     /**
      * Sets travelInformation
-     * @param \CyberSource\Model\Ptsv2paymentsidcapturesTravelInformation $travelInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTravelInformation $travelInformation
      * @return $this
      */
     public function setTravelInformation($travelInformation)

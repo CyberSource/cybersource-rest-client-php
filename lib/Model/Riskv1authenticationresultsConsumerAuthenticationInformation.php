@@ -57,6 +57,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'string',
         'authenticationType' => 'string',
         'effectiveAuthenticationType' => 'string',
+        'responseAccessToken' => 'string',
         'signedParesStatusReason' => 'string',
         'signedPares' => 'string',
         'whiteListStatus' => 'string'
@@ -70,6 +71,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => null,
         'authenticationType' => null,
         'effectiveAuthenticationType' => null,
+        'responseAccessToken' => null,
         'signedParesStatusReason' => null,
         'signedPares' => null,
         'whiteListStatus' => null
@@ -93,6 +95,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'authenticationTransactionId',
         'authenticationType' => 'authenticationType',
         'effectiveAuthenticationType' => 'effectiveAuthenticationType',
+        'responseAccessToken' => 'responseAccessToken',
         'signedParesStatusReason' => 'signedParesStatusReason',
         'signedPares' => 'signedPares',
         'whiteListStatus' => 'whiteListStatus'
@@ -107,6 +110,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
         'authenticationType' => 'setAuthenticationType',
         'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
+        'responseAccessToken' => 'setResponseAccessToken',
         'signedParesStatusReason' => 'setSignedParesStatusReason',
         'signedPares' => 'setSignedPares',
         'whiteListStatus' => 'setWhiteListStatus'
@@ -121,6 +125,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
         'authenticationType' => 'getAuthenticationType',
         'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
+        'responseAccessToken' => 'getResponseAccessToken',
         'signedParesStatusReason' => 'getSignedParesStatusReason',
         'signedPares' => 'getSignedPares',
         'whiteListStatus' => 'getWhiteListStatus'
@@ -160,6 +165,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
         $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
         $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
+        $this->container['responseAccessToken'] = isset($data['responseAccessToken']) ? $data['responseAccessToken'] : null;
         $this->container['signedParesStatusReason'] = isset($data['signedParesStatusReason']) ? $data['signedParesStatusReason'] : null;
         $this->container['signedPares'] = isset($data['signedPares']) ? $data['signedPares'] : null;
         $this->container['whiteListStatus'] = isset($data['whiteListStatus']) ? $data['whiteListStatus'] : null;
@@ -184,6 +190,10 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
 
         if (!is_null($this->container['effectiveAuthenticationType']) && (strlen($this->container['effectiveAuthenticationType']) > 2)) {
             $invalid_properties[] = "invalid value for 'effectiveAuthenticationType', the character length must be smaller than or equal to 2.";
+        }
+
+        if (!is_null($this->container['responseAccessToken']) && (strlen($this->container['responseAccessToken']) > 2048)) {
+            $invalid_properties[] = "invalid value for 'responseAccessToken', the character length must be smaller than or equal to 2048.";
         }
 
         if (!is_null($this->container['signedParesStatusReason']) && (strlen($this->container['signedParesStatusReason']) > 2)) {
@@ -216,6 +226,9 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
             return false;
         }
         if (strlen($this->container['effectiveAuthenticationType']) > 2) {
+            return false;
+        }
+        if (strlen($this->container['responseAccessToken']) > 2048) {
             return false;
         }
         if (strlen($this->container['signedParesStatusReason']) > 2) {
@@ -302,6 +315,31 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         }
 
         $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseAccessToken
+     * @return string
+     */
+    public function getResponseAccessToken()
+    {
+        return $this->container['responseAccessToken'];
+    }
+
+    /**
+     * Sets responseAccessToken
+     * @param string $responseAccessToken A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token.
+     * @return $this
+     */
+    public function setResponseAccessToken($responseAccessToken)
+    {
+        if (!is_null($responseAccessToken) && (strlen($responseAccessToken) > 2048)) {
+            throw new \InvalidArgumentException('invalid length for $responseAccessToken when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
+        }
+
+        $this->container['responseAccessToken'] = $responseAccessToken;
 
         return $this;
     }
