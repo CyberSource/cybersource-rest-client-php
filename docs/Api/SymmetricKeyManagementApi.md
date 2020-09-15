@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createV2SharedSecretKeys**
-> \CyberSource\Model\InlineResponse201 createV2SharedSecretKeys($createSharedSecretKeysRequest)
+> \CyberSource\Model\KmsV2KeysSymPost201Response createV2SharedSecretKeys($createSharedSecretKeysRequest)
 
 Create Shared-Secret Keys
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\CyberSource\Model\KmsV2KeysSymPost201Response**](../Model/KmsV2KeysSymPost201Response.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteBulkSymmetricKeys**
-> \CyberSource\Model\InlineResponse2001 deleteBulkSymmetricKeys($deleteBulkSymmetricKeysRequest)
+> \CyberSource\Model\KmsV2KeysSymDeletesPost200Response deleteBulkSymmetricKeys($deleteBulkSymmetricKeysRequest)
 
 Delete one or more Symmetric keys
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\CyberSource\Model\KmsV2KeysSymDeletesPost200Response**](../Model/KmsV2KeysSymDeletesPost200Response.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getKeyDetails**
-> \CyberSource\Model\InlineResponse200 getKeyDetails($keyId)
+> \CyberSource\Model\KmsV2KeysSymGet200Response getKeyDetails($keyId)
 
 Retrieves shared secret key details
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\CyberSource\Model\KmsV2KeysSymGet200Response**](../Model/KmsV2KeysSymGet200Response.md)
 
 ### Authorization
 

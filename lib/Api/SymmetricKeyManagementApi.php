@@ -94,7 +94,7 @@ class SymmetricKeyManagementApi
      *
      * @param \CyberSource\Model\CreateSharedSecretKeysRequest $createSharedSecretKeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\KmsV2KeysSymPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createV2SharedSecretKeys($createSharedSecretKeysRequest)
     {
@@ -109,7 +109,7 @@ class SymmetricKeyManagementApi
      *
      * @param \CyberSource\Model\CreateSharedSecretKeysRequest $createSharedSecretKeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\KmsV2KeysSymPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createV2SharedSecretKeysWithHttpInfo($createSharedSecretKeysRequest)
     {
@@ -149,15 +149,15 @@ class SymmetricKeyManagementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse201',
+                '\CyberSource\Model\KmsV2KeysSymPost201Response',
                 '/kms/v2/keys-sym'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\KmsV2KeysSymPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -181,7 +181,7 @@ class SymmetricKeyManagementApi
      *
      * @param \CyberSource\Model\DeleteBulkSymmetricKeysRequest $deleteBulkSymmetricKeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\KmsV2KeysSymDeletesPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBulkSymmetricKeys($deleteBulkSymmetricKeysRequest)
     {
@@ -196,7 +196,7 @@ class SymmetricKeyManagementApi
      *
      * @param \CyberSource\Model\DeleteBulkSymmetricKeysRequest $deleteBulkSymmetricKeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\KmsV2KeysSymDeletesPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBulkSymmetricKeysWithHttpInfo($deleteBulkSymmetricKeysRequest)
     {
@@ -236,15 +236,15 @@ class SymmetricKeyManagementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2001',
+                '\CyberSource\Model\KmsV2KeysSymDeletesPost200Response',
                 '/kms/v2/keys-sym/deletes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymDeletesPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\KmsV2KeysSymDeletesPost200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -268,7 +268,7 @@ class SymmetricKeyManagementApi
      *
      * @param string $keyId Key ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\KmsV2KeysSymGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getKeyDetails($keyId)
     {
@@ -283,7 +283,7 @@ class SymmetricKeyManagementApi
      *
      * @param string $keyId Key ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\KmsV2KeysSymGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getKeyDetailsWithHttpInfo($keyId)
     {
@@ -326,15 +326,15 @@ class SymmetricKeyManagementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse200',
+                '\CyberSource\Model\KmsV2KeysSymGet200Response',
                 '/kms/v2/keys-sym/{keyId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\KmsV2KeysSymGet200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
