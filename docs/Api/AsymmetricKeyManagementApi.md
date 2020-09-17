@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createP12Keys**
-> \CyberSource\Model\InlineResponse2011 createP12Keys($createP12KeysRequest)
+> \CyberSource\Model\KmsV2KeysAsymPost201Response createP12Keys($createP12KeysRequest)
 
 Create one or more PKCS#12 keys
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\CyberSource\Model\KmsV2KeysAsymPost201Response**](../Model/KmsV2KeysAsymPost201Response.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteBulkP12Keys**
-> \CyberSource\Model\InlineResponse2003 deleteBulkP12Keys($deleteBulkP12KeysRequest)
+> \CyberSource\Model\KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys($deleteBulkP12KeysRequest)
 
 Delete one or more PKCS#12 keys
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\CyberSource\Model\KmsV2KeysAsymDeletesPost200Response**](../Model/KmsV2KeysAsymDeletesPost200Response.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getP12KeyDetails**
-> \CyberSource\Model\InlineResponse2002 getP12KeyDetails($keyId)
+> \CyberSource\Model\KmsV2KeysAsymGet200Response getP12KeyDetails($keyId)
 
 Retrieves PKCS#12 key details
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\KmsV2KeysAsymGet200Response**](../Model/KmsV2KeysAsymGet200Response.md)
 
 ### Authorization
 

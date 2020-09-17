@@ -320,8 +320,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'responseDetails', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['responseCategoryCode']) && (strlen($this->container['responseCategoryCode']) > 32)) {
-            $invalid_properties[] = "invalid value for 'responseCategoryCode', the character length must be smaller than or equal to 32.";
+        if (!is_null($this->container['responseCategoryCode']) && (strlen($this->container['responseCategoryCode']) > 36)) {
+            $invalid_properties[] = "invalid value for 'responseCategoryCode', the character length must be smaller than or equal to 36.";
         }
 
         if (!is_null($this->container['forwardedAcquirerCode']) && (strlen($this->container['forwardedAcquirerCode']) > 32)) {
@@ -391,7 +391,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         if (strlen($this->container['responseDetails']) > 255) {
             return false;
         }
-        if (strlen($this->container['responseCategoryCode']) > 32) {
+        if (strlen($this->container['responseCategoryCode']) > 36) {
             return false;
         }
         if (strlen($this->container['forwardedAcquirerCode']) > 32) {
@@ -627,13 +627,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets responseCategoryCode
-     * @param string $responseCategoryCode Processor-defined response category code. The associated detail error code is in the `processorInformation.responseCode` or `issuerInformation.responseCode` field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 32  - All other processors: 3
+     * @param string $responseCategoryCode Processor-defined response category code. The associated detail error code is in the `processorInformation.responseCode` or `issuerInformation.responseCode` field of the service you requested.  This field is supported only for:   - Japanese issuers  - Domestic transactions in Japan  - Comercio Latino—processor transaction ID required for troubleshooting  #### Maximum length for processors   - Comercio Latino: 36  - All other processors: 3
      * @return $this
      */
     public function setResponseCategoryCode($responseCategoryCode)
     {
-        if (!is_null($responseCategoryCode) && (strlen($responseCategoryCode) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $responseCategoryCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 32.');
+        if (!is_null($responseCategoryCode) && (strlen($responseCategoryCode) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $responseCategoryCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 36.');
         }
 
         $this->container['responseCategoryCode'] = $responseCategoryCode;
