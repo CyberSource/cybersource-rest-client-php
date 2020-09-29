@@ -14,7 +14,7 @@ The CyberSource PHP client provides convenient access to the [CyberSource REST A
 * [CyberSource API Keys](https://prod.developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration/createCertSharedKey.html)
  
  ## Dependencies
-* PHP-JWT              			      : JWT token Genearation
+* PHP-JWT              			      : JWT token Generation
 * CURL          				            : Http communication with the payment gateway
 * PHP_APCU						                : Caching 
 * phpunit-5.7.25               	: unit testing
@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.16"
+  "cybersource/rest-client-php": "0.0.17"
   }
 }
 ```
