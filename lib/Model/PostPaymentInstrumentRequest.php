@@ -57,6 +57,7 @@ class PostPaymentInstrumentRequest implements ArrayAccess
         'links' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks',
         'id' => 'string',
         'object' => 'string',
+        'default' => 'bool',
         'state' => 'string',
         'bankAccount' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount',
         'card' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard',
@@ -77,6 +78,7 @@ class PostPaymentInstrumentRequest implements ArrayAccess
         'links' => null,
         'id' => null,
         'object' => null,
+        'default' => null,
         'state' => null,
         'bankAccount' => null,
         'card' => null,
@@ -107,6 +109,7 @@ class PostPaymentInstrumentRequest implements ArrayAccess
         'links' => '_links',
         'id' => 'id',
         'object' => 'object',
+        'default' => 'default',
         'state' => 'state',
         'bankAccount' => 'bankAccount',
         'card' => 'card',
@@ -128,6 +131,7 @@ class PostPaymentInstrumentRequest implements ArrayAccess
         'links' => 'setLinks',
         'id' => 'setId',
         'object' => 'setObject',
+        'default' => 'setDefault',
         'state' => 'setState',
         'bankAccount' => 'setBankAccount',
         'card' => 'setCard',
@@ -149,6 +153,7 @@ class PostPaymentInstrumentRequest implements ArrayAccess
         'links' => 'getLinks',
         'id' => 'getId',
         'object' => 'getObject',
+        'default' => 'getDefault',
         'state' => 'getState',
         'bankAccount' => 'getBankAccount',
         'card' => 'getCard',
@@ -195,6 +200,7 @@ class PostPaymentInstrumentRequest implements ArrayAccess
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['default'] = isset($data['default']) ? $data['default'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
@@ -312,6 +318,27 @@ class PostPaymentInstrumentRequest implements ArrayAccess
     public function setObject($object)
     {
         $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets default
+     * @return bool
+     */
+    public function getDefault()
+    {
+        return $this->container['default'];
+    }
+
+    /**
+     * Sets default
+     * @param bool $default Flag that indicates whether customer payment instrument is the dafault. Valid values:  - `true`: Payment instrument is customer's default.  - `false`: Payment instrument is not customer's default.
+     * @return $this
+     */
+    public function setDefault($default)
+    {
+        $this->container['default'] = $default;
 
         return $this;
     }

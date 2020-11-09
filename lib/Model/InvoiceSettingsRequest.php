@@ -54,7 +54,7 @@ class InvoiceSettingsRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'invoiceSettingsInformation' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'
+        'invoiceSettingsInformation' => '\CyberSource\Model\Invoicingv2invoiceSettingsInvoiceSettingsInformation'
     ];
 
     /**
@@ -162,7 +162,7 @@ class InvoiceSettingsRequest implements ArrayAccess
 
     /**
      * Gets invoiceSettingsInformation
-     * @return \CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation
+     * @return \CyberSource\Model\Invoicingv2invoiceSettingsInvoiceSettingsInformation
      */
     public function getInvoiceSettingsInformation()
     {
@@ -171,7 +171,7 @@ class InvoiceSettingsRequest implements ArrayAccess
 
     /**
      * Sets invoiceSettingsInformation
-     * @param \CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation $invoiceSettingsInformation
+     * @param \CyberSource\Model\Invoicingv2invoiceSettingsInvoiceSettingsInformation $invoiceSettingsInformation
      * @return $this
      */
     public function setInvoiceSettingsInformation($invoiceSettingsInformation)

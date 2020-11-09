@@ -192,10 +192,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
             $invalid_properties[] = "invalid value for 'effectiveAuthenticationType', the character length must be smaller than or equal to 2.";
         }
 
-        if (!is_null($this->container['responseAccessToken']) && (strlen($this->container['responseAccessToken']) > 2048)) {
-            $invalid_properties[] = "invalid value for 'responseAccessToken', the character length must be smaller than or equal to 2048.";
-        }
-
         if (!is_null($this->container['signedParesStatusReason']) && (strlen($this->container['signedParesStatusReason']) > 2)) {
             $invalid_properties[] = "invalid value for 'signedParesStatusReason', the character length must be smaller than or equal to 2.";
         }
@@ -226,9 +222,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
             return false;
         }
         if (strlen($this->container['effectiveAuthenticationType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['responseAccessToken']) > 2048) {
             return false;
         }
         if (strlen($this->container['signedParesStatusReason']) > 2) {
@@ -330,15 +323,11 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
 
     /**
      * Sets responseAccessToken
-     * @param string $responseAccessToken A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token.
+     * @param string $responseAccessToken A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. Note - Max Length of this field is 2048 characters.
      * @return $this
      */
     public function setResponseAccessToken($responseAccessToken)
     {
-        if (!is_null($responseAccessToken) && (strlen($responseAccessToken) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $responseAccessToken when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
-        }
-
         $this->container['responseAccessToken'] = $responseAccessToken;
 
         return $this;

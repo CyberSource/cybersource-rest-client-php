@@ -210,8 +210,8 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 48)) {
-            $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 48.";
+        if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 45)) {
+            $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 45.";
         }
 
         if (!is_null($this->container['httpAcceptBrowserValue']) && (strlen($this->container['httpAcceptBrowserValue']) > 255)) {
@@ -258,7 +258,7 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['ipAddress']) > 48) {
+        if (strlen($this->container['ipAddress']) > 45) {
             return false;
         }
         if (strlen($this->container['httpAcceptBrowserValue']) > 255) {
@@ -305,8 +305,8 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
      */
     public function setIpAddress($ipAddress)
     {
-        if (!is_null($ipAddress) && (strlen($ipAddress) > 48)) {
-            throw new \InvalidArgumentException('invalid length for $ipAddress when calling Riskv1authenticationsDeviceInformation., must be smaller than or equal to 48.');
+        if (!is_null($ipAddress) && (strlen($ipAddress) > 45)) {
+            throw new \InvalidArgumentException('invalid length for $ipAddress when calling Riskv1authenticationsDeviceInformation., must be smaller than or equal to 45.');
         }
 
         $this->container['ipAddress'] = $ipAddress;

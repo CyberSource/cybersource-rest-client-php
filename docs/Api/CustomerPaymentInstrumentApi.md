@@ -209,6 +209,8 @@ No authorization required
 
 Create a Customer Payment Instrument
 
+Include an existing TMS Customer & Instrument Identifier token id in the request. * A Customer token can be created by calling: **POST *_/tms/v2/customers*** * An Instrument Identifier token can be created by calling: **POST *_/tms/v1/instrumentidentifiers***
+
 ### Example
 ```php
 <?php

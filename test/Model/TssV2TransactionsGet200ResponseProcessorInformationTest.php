@@ -85,6 +85,13 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     }
 
     /**
+     * Test attribute "multiProcessorRouting"
+     */
+    public function testPropertyMultiProcessorRouting()
+    {
+    }
+
+    /**
      * Test attribute "transactionId"
      */
     public function testPropertyTransactionId()

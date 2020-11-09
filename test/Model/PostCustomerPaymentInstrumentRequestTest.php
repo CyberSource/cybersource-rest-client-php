@@ -99,6 +99,13 @@ class PostCustomerPaymentInstrumentRequestTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
+     * Test attribute "default"
+     */
+    public function testPropertyDefault()
+    {
+    }
+
+    /**
      * Test attribute "state"
      */
     public function testPropertyState()

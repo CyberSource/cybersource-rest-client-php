@@ -99,6 +99,13 @@ class PatchCustomerPaymentInstrumentRequestTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "default"
+     */
+    public function testPropertyDefault()
+    {
+    }
+
+    /**
      * Test attribute "state"
      */
     public function testPropertyState()

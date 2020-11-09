@@ -132,4 +132,39 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTest extends \PHPUnit_Framew
     public function testPropertyShippingAddress()
     {
     }
+
+    /**
+     * Test attribute "scheme"
+     */
+    public function testPropertyScheme()
+    {
+    }
+
+    /**
+     * Test attribute "bin"
+     */
+    public function testPropertyBin()
+    {
+    }
+
+    /**
+     * Test attribute "accountType"
+     */
+    public function testPropertyAccountType()
+    {
+    }
+
+    /**
+     * Test attribute "issuer"
+     */
+    public function testPropertyIssuer()
+    {
+    }
+
+    /**
+     * Test attribute "binCountry"
+     */
+    public function testPropertyBinCountry()
+    {
+    }
 }
