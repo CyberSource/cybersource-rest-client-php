@@ -55,6 +55,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'processor' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationProcessor',
+        'multiProcessorRouting' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting[]',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
         'responseId' => 'string',
@@ -75,6 +76,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'processor' => null,
+        'multiProcessorRouting' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
         'responseId' => null,
@@ -105,6 +107,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'processor' => 'processor',
+        'multiProcessorRouting' => 'multiProcessorRouting',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
         'responseId' => 'responseId',
@@ -126,6 +129,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
      */
     protected static $setters = [
         'processor' => 'setProcessor',
+        'multiProcessorRouting' => 'setMultiProcessorRouting',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
         'responseId' => 'setResponseId',
@@ -147,6 +151,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
      */
     protected static $getters = [
         'processor' => 'getProcessor',
+        'multiProcessorRouting' => 'getMultiProcessorRouting',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
         'responseId' => 'getResponseId',
@@ -193,6 +198,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['processor'] = isset($data['processor']) ? $data['processor'] : null;
+        $this->container['multiProcessorRouting'] = isset($data['multiProcessorRouting']) ? $data['multiProcessorRouting'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
         $this->container['responseId'] = isset($data['responseId']) ? $data['responseId'] : null;
@@ -277,6 +283,27 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     public function setProcessor($processor)
     {
         $this->container['processor'] = $processor;
+
+        return $this;
+    }
+
+    /**
+     * Gets multiProcessorRouting
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting[]
+     */
+    public function getMultiProcessorRouting()
+    {
+        return $this->container['multiProcessorRouting'];
+    }
+
+    /**
+     * Sets multiProcessorRouting
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting[] $multiProcessorRouting An array of object that contains the list of acquirer response codes & reasons if a transaction is routed to multiple acquirers.
+     * @return $this
+     */
+    public function setMultiProcessorRouting($multiProcessorRouting)
+    {
+        $this->container['multiProcessorRouting'] = $multiProcessorRouting;
 
         return $this;
     }

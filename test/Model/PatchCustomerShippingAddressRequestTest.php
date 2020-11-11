@@ -92,6 +92,13 @@ class PatchCustomerShippingAddressRequestTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "default"
+     */
+    public function testPropertyDefault()
+    {
+    }
+
+    /**
      * Test attribute "shipTo"
      */
     public function testPropertyShipTo()

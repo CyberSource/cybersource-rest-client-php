@@ -92,6 +92,13 @@ class Tmsv2customersEmbeddedDefaultShippingAddressTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "default"
+     */
+    public function testPropertyDefault()
+    {
+    }
+
+    /**
      * Test attribute "shipTo"
      */
     public function testPropertyShipTo()

@@ -61,7 +61,12 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument',
         'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier',
-        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress'
+        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
+        'scheme' => 'string',
+        'bin' => 'string',
+        'accountType' => 'string',
+        'issuer' => 'string',
+        'binCountry' => 'string'
     ];
 
     /**
@@ -76,7 +81,12 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'customer' => null,
         'paymentInstrument' => null,
         'instrumentIdentifier' => null,
-        'shippingAddress' => null
+        'shippingAddress' => null,
+        'scheme' => null,
+        'bin' => null,
+        'accountType' => null,
+        'issuer' => null,
+        'binCountry' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +111,12 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'customer' => 'customer',
         'paymentInstrument' => 'paymentInstrument',
         'instrumentIdentifier' => 'instrumentIdentifier',
-        'shippingAddress' => 'shippingAddress'
+        'shippingAddress' => 'shippingAddress',
+        'scheme' => 'scheme',
+        'bin' => 'bin',
+        'accountType' => 'accountType',
+        'issuer' => 'issuer',
+        'binCountry' => 'binCountry'
     ];
 
 
@@ -117,7 +132,12 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'customer' => 'setCustomer',
         'paymentInstrument' => 'setPaymentInstrument',
         'instrumentIdentifier' => 'setInstrumentIdentifier',
-        'shippingAddress' => 'setShippingAddress'
+        'shippingAddress' => 'setShippingAddress',
+        'scheme' => 'setScheme',
+        'bin' => 'setBin',
+        'accountType' => 'setAccountType',
+        'issuer' => 'setIssuer',
+        'binCountry' => 'setBinCountry'
     ];
 
 
@@ -133,7 +153,12 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'customer' => 'getCustomer',
         'paymentInstrument' => 'getPaymentInstrument',
         'instrumentIdentifier' => 'getInstrumentIdentifier',
-        'shippingAddress' => 'getShippingAddress'
+        'shippingAddress' => 'getShippingAddress',
+        'scheme' => 'getScheme',
+        'bin' => 'getBin',
+        'accountType' => 'getAccountType',
+        'issuer' => 'getIssuer',
+        'binCountry' => 'getBinCountry'
     ];
 
     public static function attributeMap()
@@ -175,6 +200,11 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
         $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['scheme'] = isset($data['scheme']) ? $data['scheme'] : null;
+        $this->container['bin'] = isset($data['bin']) ? $data['bin'] : null;
+        $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;
+        $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
+        $this->container['binCountry'] = isset($data['binCountry']) ? $data['binCountry'] : null;
     }
 
     /**
@@ -185,6 +215,26 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if (!is_null($this->container['scheme']) && (strlen($this->container['scheme']) > 255)) {
+            $invalid_properties[] = "invalid value for 'scheme', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['bin']) && (strlen($this->container['bin']) > 255)) {
+            $invalid_properties[] = "invalid value for 'bin', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['accountType']) && (strlen($this->container['accountType']) > 255)) {
+            $invalid_properties[] = "invalid value for 'accountType', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['issuer']) && (strlen($this->container['issuer']) > 255)) {
+            $invalid_properties[] = "invalid value for 'issuer', the character length must be smaller than or equal to 255.";
+        }
+
+        if (!is_null($this->container['binCountry']) && (strlen($this->container['binCountry']) > 255)) {
+            $invalid_properties[] = "invalid value for 'binCountry', the character length must be smaller than or equal to 255.";
+        }
 
         return $invalid_properties;
     }
@@ -198,6 +248,21 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function valid()
     {
 
+        if (strlen($this->container['scheme']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['bin']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['accountType']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['issuer']) > 255) {
+            return false;
+        }
+        if (strlen($this->container['binCountry']) > 255) {
+            return false;
+        }
         return true;
     }
 
@@ -366,6 +431,131 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function setShippingAddress($shippingAddress)
     {
         $this->container['shippingAddress'] = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets scheme
+     * @return string
+     */
+    public function getScheme()
+    {
+        return $this->container['scheme'];
+    }
+
+    /**
+     * Sets scheme
+     * @param string $scheme Subtype of card account. This field can contain one of the following values: - Maestro International - Maestro UK Domestic - MasterCard Credit - MasterCard Debit - Visa Credit - Visa Debit - Visa Electron  **Note** Additional values may be present.  For all possible values, see the `score_card_scheme` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @return $this
+     */
+    public function setScheme($scheme)
+    {
+        if (!is_null($scheme) && (strlen($scheme) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $scheme when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['scheme'] = $scheme;
+
+        return $this;
+    }
+
+    /**
+     * Gets bin
+     * @return string
+     */
+    public function getBin()
+    {
+        return $this->container['bin'];
+    }
+
+    /**
+     * Sets bin
+     * @param string $bin Credit card BIN (the first six digits of the credit card).Derived either from the `cc_bin` request field or from the first six characters of the `customer_cc_num` field.  For all possible values, see the `score_cc_bin` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @return $this
+     */
+    public function setBin($bin)
+    {
+        if (!is_null($bin) && (strlen($bin) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $bin when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['bin'] = $bin;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountType
+     * @return string
+     */
+    public function getAccountType()
+    {
+        return $this->container['accountType'];
+    }
+
+    /**
+     * Sets accountType
+     * @param string $accountType Type of payment card account. This field can refer to a credit card, debit card, or prepaid card account type.  For all possible values, see the `score_card_account_type` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @return $this
+     */
+    public function setAccountType($accountType)
+    {
+        if (!is_null($accountType) && (strlen($accountType) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $accountType when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['accountType'] = $accountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuer
+     * @return string
+     */
+    public function getIssuer()
+    {
+        return $this->container['issuer'];
+    }
+
+    /**
+     * Sets issuer
+     * @param string $issuer Name of the bank or entity that issued the card account.  For all possible values, see the `score_card_issuer` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @return $this
+     */
+    public function setIssuer($issuer)
+    {
+        if (!is_null($issuer) && (strlen($issuer) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $issuer when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['issuer'] = $issuer;
+
+        return $this;
+    }
+
+    /**
+     * Gets binCountry
+     * @return string
+     */
+    public function getBinCountry()
+    {
+        return $this->container['binCountry'];
+    }
+
+    /**
+     * Sets binCountry
+     * @param string $binCountry Country (two-digit country code) associated with the BIN of the customer’s card used for the payment. Returned if the information is available. Use this field for additional information when reviewing orders. This information is also displayed in the details page of the CyberSource Business Center.  For all possible values, see the `bin_country` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @return $this
+     */
+    public function setBinCountry($binCountry)
+    {
+        if (!is_null($binCountry) && (strlen($binCountry) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $binCountry when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
+        }
+
+        $this->container['binCountry'] = $binCountry;
 
         return $this;
     }

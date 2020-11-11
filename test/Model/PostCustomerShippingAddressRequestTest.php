@@ -92,6 +92,13 @@ class PostCustomerShippingAddressRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "default"
+     */
+    public function testPropertyDefault()
+    {
+    }
+
+    /**
      * Test attribute "shipTo"
      */
     public function testPropertyShipTo()

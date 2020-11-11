@@ -288,10 +288,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
             $invalid_properties[] = "invalid value for 'cavvAlgorithm', the character length must be smaller than or equal to 1.";
         }
 
-        if (!is_null($this->container['directoryServerErrorCode']) && (strlen($this->container['directoryServerErrorCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorCode', the character length must be smaller than or equal to 3.";
-        }
-
         if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
             $invalid_properties[] = "invalid value for 'directoryServerErrorDescription', the character length must be smaller than or equal to 4096.";
         }
@@ -339,9 +335,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
             return false;
         }
         if (strlen($this->container['cavvAlgorithm']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerErrorCode']) > 3) {
             return false;
         }
         if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
@@ -539,15 +532,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
 
     /**
      * Sets directoryServerErrorCode
-     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction.
+     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters.
      * @return $this
      */
     public function setDirectoryServerErrorCode($directoryServerErrorCode)
     {
-        if (!is_null($directoryServerErrorCode) && (strlen($directoryServerErrorCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorCode when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 3.');
-        }
-
         $this->container['directoryServerErrorCode'] = $directoryServerErrorCode;
 
         return $this;

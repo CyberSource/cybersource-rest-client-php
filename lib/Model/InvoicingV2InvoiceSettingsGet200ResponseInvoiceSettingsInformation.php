@@ -60,7 +60,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'enableReminders' => 'bool',
         'headerStyle' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle',
         'deliveryLanguage' => 'string',
-        'defaultCurrencyCode' => 'string'
+        'defaultCurrencyCode' => 'string',
+        'payerAuthentication3DSVersion' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'enableReminders' => null,
         'headerStyle' => null,
         'deliveryLanguage' => null,
-        'defaultCurrencyCode' => null
+        'defaultCurrencyCode' => null,
+        'payerAuthentication3DSVersion' => null
     ];
 
     public static function swaggerTypes()
@@ -98,7 +100,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'enableReminders' => 'enableReminders',
         'headerStyle' => 'headerStyle',
         'deliveryLanguage' => 'deliveryLanguage',
-        'defaultCurrencyCode' => 'defaultCurrencyCode'
+        'defaultCurrencyCode' => 'defaultCurrencyCode',
+        'payerAuthentication3DSVersion' => 'payerAuthentication3DSVersion'
     ];
 
 
@@ -113,7 +116,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'enableReminders' => 'setEnableReminders',
         'headerStyle' => 'setHeaderStyle',
         'deliveryLanguage' => 'setDeliveryLanguage',
-        'defaultCurrencyCode' => 'setDefaultCurrencyCode'
+        'defaultCurrencyCode' => 'setDefaultCurrencyCode',
+        'payerAuthentication3DSVersion' => 'setPayerAuthentication3DSVersion'
     ];
 
 
@@ -128,7 +132,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'enableReminders' => 'getEnableReminders',
         'headerStyle' => 'getHeaderStyle',
         'deliveryLanguage' => 'getDeliveryLanguage',
-        'defaultCurrencyCode' => 'getDefaultCurrencyCode'
+        'defaultCurrencyCode' => 'getDefaultCurrencyCode',
+        'payerAuthentication3DSVersion' => 'getPayerAuthentication3DSVersion'
     ];
 
     public static function attributeMap()
@@ -169,6 +174,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         $this->container['headerStyle'] = isset($data['headerStyle']) ? $data['headerStyle'] : null;
         $this->container['deliveryLanguage'] = isset($data['deliveryLanguage']) ? $data['deliveryLanguage'] : null;
         $this->container['defaultCurrencyCode'] = isset($data['defaultCurrencyCode']) ? $data['defaultCurrencyCode'] : null;
+        $this->container['payerAuthentication3DSVersion'] = isset($data['payerAuthentication3DSVersion']) ? $data['payerAuthentication3DSVersion'] : null;
     }
 
     /**
@@ -200,6 +206,10 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
             $invalid_properties[] = "invalid value for 'defaultCurrencyCode', the character length must be smaller than or equal to 3.";
         }
 
+        if (!is_null($this->container['payerAuthentication3DSVersion']) && (strlen($this->container['payerAuthentication3DSVersion']) > 8)) {
+            $invalid_properties[] = "invalid value for 'payerAuthentication3DSVersion', the character length must be smaller than or equal to 8.";
+        }
+
         return $invalid_properties;
     }
 
@@ -225,6 +235,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
             return false;
         }
         if (strlen($this->container['defaultCurrencyCode']) > 3) {
+            return false;
+        }
+        if (strlen($this->container['payerAuthentication3DSVersion']) > 8) {
             return false;
         }
         return true;
@@ -394,6 +407,31 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         }
 
         $this->container['defaultCurrencyCode'] = $defaultCurrencyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets payerAuthentication3DSVersion
+     * @return string
+     */
+    public function getPayerAuthentication3DSVersion()
+    {
+        return $this->container['payerAuthentication3DSVersion'];
+    }
+
+    /**
+     * Sets payerAuthentication3DSVersion
+     * @param string $payerAuthentication3DSVersion The 3D Secure payer authentication version or status for a merchant's invoice payments. Possible values are: - `1` - `2` - `None` - `Disabled`
+     * @return $this
+     */
+    public function setPayerAuthentication3DSVersion($payerAuthentication3DSVersion)
+    {
+        if (!is_null($payerAuthentication3DSVersion) && (strlen($payerAuthentication3DSVersion) > 8)) {
+            throw new \InvalidArgumentException('invalid length for $payerAuthentication3DSVersion when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation., must be smaller than or equal to 8.');
+        }
+
+        $this->container['payerAuthentication3DSVersion'] = $payerAuthentication3DSVersion;
 
         return $this;
     }

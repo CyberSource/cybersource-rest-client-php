@@ -354,10 +354,6 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['accessToken']) && (strlen($this->container['accessToken']) > 2048)) {
-            $invalid_properties[] = "invalid value for 'accessToken', the character length must be smaller than or equal to 2048.";
-        }
-
         if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
             $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
         }
@@ -392,10 +388,6 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
         if (!is_null($this->container['decoupledAuthenticationIndicator']) && (strlen($this->container['decoupledAuthenticationIndicator']) > 1)) {
             $invalid_properties[] = "invalid value for 'decoupledAuthenticationIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['directoryServerErrorCode']) && (strlen($this->container['directoryServerErrorCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorCode', the character length must be smaller than or equal to 3.";
         }
 
         if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
@@ -450,9 +442,6 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
     public function valid()
     {
 
-        if (strlen($this->container['accessToken']) > 2048) {
-            return false;
-        }
         if (strlen($this->container['acsTransactionId']) > 36) {
             return false;
         }
@@ -478,9 +467,6 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
             return false;
         }
         if (strlen($this->container['decoupledAuthenticationIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerErrorCode']) > 3) {
             return false;
         }
         if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
@@ -528,15 +514,11 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Sets accessToken
-     * @param string $accessToken JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay.
+     * @param string $accessToken JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters.
      * @return $this
      */
     public function setAccessToken($accessToken)
     {
-        if (!is_null($accessToken) && (strlen($accessToken) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $accessToken when calling RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
-        }
-
         $this->container['accessToken'] = $accessToken;
 
         return $this;
@@ -841,15 +823,11 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Sets directoryServerErrorCode
-     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction.
+     * @param string $directoryServerErrorCode The directory server error code indicating a problem with this transaction. Note - Max Length of this field is typically 3 characters.
      * @return $this
      */
     public function setDirectoryServerErrorCode($directoryServerErrorCode)
     {
-        if (!is_null($directoryServerErrorCode) && (strlen($directoryServerErrorCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorCode when calling RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 3.');
-        }
-
         $this->container['directoryServerErrorCode'] = $directoryServerErrorCode;
 
         return $this;

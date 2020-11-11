@@ -144,9 +144,9 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
     {
         $invalid_properties = [];
 
-        // if (!is_null($this->container['type']) && (strlen($this->container['type']) > 1)) {
-        //     $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 1.";
-        // }
+        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 18)) {
+            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 18.";
+        }
 
         return $invalid_properties;
     }
@@ -160,9 +160,9 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
     public function valid()
     {
 
-        // if (strlen($this->container['type']) > 1) {
-        //     return false;
-        // }
+        if (strlen($this->container['type']) > 18) {
+            return false;
+        }
         return true;
     }
 
@@ -183,9 +183,9 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
      */
     public function setType($type)
     {
-        // if (!is_null($type) && (strlen($type) > 1)) {
-        //     throw new \InvalidArgumentException('invalid length for $type when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount., must be smaller than or equal to 1.');
-        // }
+        if (!is_null($type) && (strlen($type) > 18)) {
+            throw new \InvalidArgumentException('invalid length for $type when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount., must be smaller than or equal to 18.');
+        }
 
         $this->container['type'] = $type;
 

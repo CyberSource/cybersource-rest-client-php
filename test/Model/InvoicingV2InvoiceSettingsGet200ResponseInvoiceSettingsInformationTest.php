@@ -125,4 +125,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationTest ext
     public function testPropertyDefaultCurrencyCode()
     {
     }
+
+    /**
+     * Test attribute "payerAuthentication3DSVersion"
+     */
+    public function testPropertyPayerAuthentication3DSVersion()
+    {
+    }
 }

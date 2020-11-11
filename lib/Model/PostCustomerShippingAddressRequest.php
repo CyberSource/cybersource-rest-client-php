@@ -56,6 +56,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'links' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressLinks',
         'id' => 'string',
+        'default' => 'bool',
         'shipTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo',
         'metadata' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressMetadata'
     ];
@@ -67,6 +68,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
     protected static $swaggerFormats = [
         'links' => null,
         'id' => null,
+        'default' => null,
         'shipTo' => null,
         'metadata' => null
     ];
@@ -88,6 +90,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
     protected static $attributeMap = [
         'links' => '_links',
         'id' => 'id',
+        'default' => 'default',
         'shipTo' => 'shipTo',
         'metadata' => 'metadata'
     ];
@@ -100,6 +103,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
     protected static $setters = [
         'links' => 'setLinks',
         'id' => 'setId',
+        'default' => 'setDefault',
         'shipTo' => 'setShipTo',
         'metadata' => 'setMetadata'
     ];
@@ -112,6 +116,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
     protected static $getters = [
         'links' => 'getLinks',
         'id' => 'getId',
+        'default' => 'getDefault',
         'shipTo' => 'getShipTo',
         'metadata' => 'getMetadata'
     ];
@@ -149,6 +154,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
     {
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['default'] = isset($data['default']) ? $data['default'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
     }
@@ -237,6 +243,27 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
         }
 
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets default
+     * @return bool
+     */
+    public function getDefault()
+    {
+        return $this->container['default'];
+    }
+
+    /**
+     * Sets default
+     * @param bool $default Flag that indicates whether customer shipping address is the dafault. Valid values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default.
+     * @return $this
+     */
+    public function setDefault($default)
+    {
+        $this->container['default'] = $default;
 
         return $this;
     }
