@@ -76,6 +76,20 @@ class MerchantConfiguration
     protected $secretKey = '';
 
     /**
+     * flag for MetaKey authentication
+     *
+     * @var bool
+     */
+    protected $useMetaKey = false;
+
+    /**
+     * portfolioID for MetaKey authentication
+     *
+     * @var string
+     */
+    protected $portfolioID = '';
+
+    /**
      * The host
      *
      * @var string
@@ -449,6 +463,55 @@ class MerchantConfiguration
         return $this->secretKey;
     }
 
+    /**
+     * Sets the flag for metakey authentication
+     *
+     * @param bool flag for metakey authentication
+     *
+     * @return $this
+     */
+    public function setUseMetaKey($useMetaKey)
+    {
+        if(is_bool($useMetaKey))
+        {
+            $this->useMetaKey = $useMetaKey;
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the flag for metakey authentication
+     *
+     * @return bool flag for metakey authentication
+     */
+    public function getUseMetaKey()
+    {
+        return $this->useMetaKey;
+    }
+
+    /**
+     * Sets the portfolioID for metakey authentication
+     *
+     * @param string portfolioID for metakey authentication
+     *
+     * @return $this
+     */
+    public function setPortfolioID($portfolioID)
+    {
+        $this->portfolioID = $portfolioID;
+        return $this;
+    }
+
+    /**
+     * Gets the portfolioID for metakey authentication
+     *
+     * @return string portfolioID for metakey authentication
+     */
+    public function getPortfolioID()
+    {
+        return $this->portfolioID;
+    }
+
 
     /**
      * Sets the Method for HTTP basic connection
@@ -664,7 +727,7 @@ class MerchantConfiguration
      *
      * @return string The report for External config
      */
-    public static function setMerchantCredentials($connectionDet)
+    public static function setMerchantCredentials($connectionDet)    
     {
         $warning_message =""; $error_message ="";
         $config = new MerchantConfiguration();
@@ -835,6 +898,11 @@ class MerchantConfiguration
 
         if(empty($config->getSecretKey()) && $config->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE ){
             $error_message .= GlobalParameter::MERCHANT_SECRET_KEY_REQ;
+        }
+
+        if(is_bool($config->getUseMetaKey()) && $config->getUseMetaKey() && empty($config->getPortfolioID()))
+        {
+            $error_message .= GlobalParameter::PORTFOLIO_ID_REQ;
         }
 
         self::$logger->log($config, GlobalParameter::LOG_START_MSG);

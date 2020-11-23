@@ -24,14 +24,21 @@ class HttpSignatureGenerator implements TokenGenerator
 
 	//Signature Creation function
 	public function generateToken($resourcePath, $payloadData, $method, $merchantConfig) //add 
-	{
+	{		
 		$host = $merchantConfig->getHost();
 		$date = date("D, d M Y G:i:s ").GlobalParameter::GMT;
 		$methodHeader = strtolower($method);
 		$signatureString ="";
 		if($method==GlobalParameter::GET || $method==GlobalParameter::DELETE){		
 			//signature creation for GET/DELETE
-			$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\nv-c-merchant-id: ".$merchantConfig->getMerchantID();
+			if($merchantConfig->getUseMetaKey())
+			{
+				$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\nv-c-merchant-id: ".$merchantConfig->getPortfolioID();
+			}	
+			else
+			{
+				$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\nv-c-merchant-id: ".$merchantConfig->getMerchantID();
+			}					
 			$headerString = GlobalParameter::GETALGOHEADER;	
 			
 		} else if($method==GlobalParameter::POST || $method==GlobalParameter::PUT || $method==GlobalParameter::PATCH){
@@ -43,8 +50,15 @@ class HttpSignatureGenerator implements TokenGenerator
 			}
 			//Get digest data
 			$digestCon = new PayloadDigest();
-	    	$digest = $digestCon->generateDigest($payloadData);
-			$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\ndigest: ".GlobalParameter::SHA256DIGEST.$digest."\nv-c-merchant-id: ".$merchantConfig->getMerchantID();
+			$digest = $digestCon->generateDigest($payloadData);
+			if($merchantConfig->getUseMetaKey())
+			{
+				$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\ndigest: ".GlobalParameter::SHA256DIGEST.$digest."\nv-c-merchant-id: ".$merchantConfig->getPortfolioID();
+			}	
+			else
+			{
+				$signatureString = "host: ".$host."\ndate: ".$date."\n(request-target): ".$methodHeader." ".$resourcePath."\ndigest: ".GlobalParameter::SHA256DIGEST.$digest."\nv-c-merchant-id: ".$merchantConfig->getMerchantID();
+			}			
 			$headerString = GlobalParameter::POSTALGOHEADER;
 			
 		}
