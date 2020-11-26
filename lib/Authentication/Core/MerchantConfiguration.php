@@ -472,9 +472,13 @@ class MerchantConfiguration
      */
     public function setUseMetaKey($useMetaKey)
     {
-        if(is_bool($useMetaKey))
+        if(!is_null($useMetaKey) && is_bool($useMetaKey))
         {
             $this->useMetaKey = $useMetaKey;
+        }
+        else
+        {
+            $this->useMetaKey = false;
         }
         return $this;
     }
@@ -794,6 +798,16 @@ class MerchantConfiguration
             $config = $config->setKeyPassword($connectionDet->keyPass);
         else
             $warning_message .= GlobalParameter::KEYPWDFIELD;
+
+        if(isset($connectionDet->useMetaKey))
+            $config = $config->setUseMetaKey($connectionDet->useMetaKey);
+        else
+            $warning_message .= GlobalParameter::USE_METAKEY_EMPTY;
+
+        if(isset($connectionDet->portfolioID))
+            $config = $config->setPortfolioID($connectionDet->portfolioID);
+        else
+            $warning_message .= GlobalParameter::PORTFOLIO_ID_EMPTY;
 
         if(isset($connectionDet->keysDirectory))
             $config = $config->setKeysDirectory($connectionDet->keysDirectory);
