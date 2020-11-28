@@ -150,10 +150,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 17)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 17.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     public function valid()
     {
 
-        if (strlen($this->container['number']) > 17) {
-            return false;
-        }
         return true;
     }
 
@@ -189,9 +182,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 17)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBankAccount., must be smaller than or equal to 17.');
-        }
 
         $this->container['number'] = $number;
 

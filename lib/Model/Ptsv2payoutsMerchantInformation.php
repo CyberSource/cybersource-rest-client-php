@@ -166,10 +166,6 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'categoryCode', must be smaller than or equal to 9999.";
         }
 
-        if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 21)) {
-            $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 21.";
-        }
-
         return $invalid_properties;
     }
 
@@ -183,9 +179,6 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
     {
 
         if ($this->container['categoryCode'] > 9999) {
-            return false;
-        }
-        if (strlen($this->container['vatRegistrationNumber']) > 21) {
             return false;
         }
         return true;
@@ -208,7 +201,6 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
      */
     public function setCategoryCode($categoryCode)
     {
-
         if (!is_null($categoryCode) && ($categoryCode > 9999)) {
             throw new \InvalidArgumentException('invalid value for $categoryCode when calling Ptsv2payoutsMerchantInformation., must be smaller than or equal to 9999.');
         }
@@ -255,9 +247,6 @@ class Ptsv2payoutsMerchantInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-        if (!is_null($vatRegistrationNumber) && (strlen($vatRegistrationNumber) > 21)) {
-            throw new \InvalidArgumentException('invalid length for $vatRegistrationNumber when calling Ptsv2payoutsMerchantInformation., must be smaller than or equal to 21.');
-        }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 

@@ -174,30 +174,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 18)) {
-            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 18.";
-        }
-
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['responseCategoryCode']) && (strlen($this->container['responseCategoryCode']) > 36)) {
-            $invalid_properties[] = "invalid value for 'responseCategoryCode', the character length must be smaller than or equal to 36.";
-        }
-
-        if (!is_null($this->container['forwardedAcquirerCode']) && (strlen($this->container['forwardedAcquirerCode']) > 32)) {
-            $invalid_properties[] = "invalid value for 'forwardedAcquirerCode', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['masterCardServiceCode']) && (strlen($this->container['masterCardServiceCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'masterCardServiceCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['masterCardServiceReplyCode']) && (strlen($this->container['masterCardServiceReplyCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'masterCardServiceReplyCode', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -210,24 +186,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     public function valid()
     {
 
-        if (strlen($this->container['transactionId']) > 18) {
-            return false;
-        }
-        if (strlen($this->container['responseCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['responseCategoryCode']) > 36) {
-            return false;
-        }
-        if (strlen($this->container['forwardedAcquirerCode']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['masterCardServiceCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['masterCardServiceReplyCode']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -248,9 +206,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
      */
     public function setTransactionId($transactionId)
     {
-        if (!is_null($transactionId) && (strlen($transactionId) > 18)) {
-            throw new \InvalidArgumentException('invalid length for $transactionId when calling PtsV2PaymentsReversalsPost201ResponseProcessorInformation., must be smaller than or equal to 18.');
-        }
 
         $this->container['transactionId'] = $transactionId;
 
@@ -273,9 +228,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PaymentsReversalsPost201ResponseProcessorInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 
@@ -298,9 +250,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
      */
     public function setResponseCategoryCode($responseCategoryCode)
     {
-        if (!is_null($responseCategoryCode) && (strlen($responseCategoryCode) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $responseCategoryCode when calling PtsV2PaymentsReversalsPost201ResponseProcessorInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['responseCategoryCode'] = $responseCategoryCode;
 
@@ -323,9 +272,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
      */
     public function setForwardedAcquirerCode($forwardedAcquirerCode)
     {
-        if (!is_null($forwardedAcquirerCode) && (strlen($forwardedAcquirerCode) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $forwardedAcquirerCode when calling PtsV2PaymentsReversalsPost201ResponseProcessorInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['forwardedAcquirerCode'] = $forwardedAcquirerCode;
 
@@ -348,9 +294,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
      */
     public function setMasterCardServiceCode($masterCardServiceCode)
     {
-        if (!is_null($masterCardServiceCode) && (strlen($masterCardServiceCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $masterCardServiceCode when calling PtsV2PaymentsReversalsPost201ResponseProcessorInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['masterCardServiceCode'] = $masterCardServiceCode;
 
@@ -373,9 +316,6 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
      */
     public function setMasterCardServiceReplyCode($masterCardServiceReplyCode)
     {
-        if (!is_null($masterCardServiceReplyCode) && (strlen($masterCardServiceReplyCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $masterCardServiceReplyCode when calling PtsV2PaymentsReversalsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['masterCardServiceReplyCode'] = $masterCardServiceReplyCode;
 

@@ -144,10 +144,6 @@ class Ptsv2paymentsidTravelInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['duration']) && (strlen($this->container['duration']) > 2)) {
-            $invalid_properties[] = "invalid value for 'duration', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsidTravelInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['duration']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2paymentsidTravelInformation implements ArrayAccess
      */
     public function setDuration($duration)
     {
-        if (!is_null($duration) && (strlen($duration) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $duration when calling Ptsv2paymentsidTravelInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['duration'] = $duration;
 

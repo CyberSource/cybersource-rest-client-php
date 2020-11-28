@@ -150,14 +150,6 @@ class Riskv1decisionsTravelInformationPassengers implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Riskv1decisionsTravelInformationPassengers implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['firstName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['lastName']) > 60) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Riskv1decisionsTravelInformationPassengers implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Riskv1decisionsTravelInformationPassengers., must be smaller than or equal to 60.');
-        }
 
         $this->container['firstName'] = $firstName;
 
@@ -221,9 +204,6 @@ class Riskv1decisionsTravelInformationPassengers implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling Riskv1decisionsTravelInformationPassengers., must be smaller than or equal to 60.');
-        }
 
         $this->container['lastName'] = $lastName;
 

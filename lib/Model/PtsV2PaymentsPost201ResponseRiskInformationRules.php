@@ -150,14 +150,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationRules implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 255)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['decision']) && (strlen($this->container['decision']) > 255)) {
-            $invalid_properties[] = "invalid value for 'decision', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationRules implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['decision']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationRules implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling PtsV2PaymentsPost201ResponseRiskInformationRules., must be smaller than or equal to 255.');
-        }
 
         $this->container['name'] = $name;
 
@@ -221,9 +204,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationRules implements ArrayAccess
      */
     public function setDecision($decision)
     {
-        if (!is_null($decision) && (strlen($decision) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $decision when calling PtsV2PaymentsPost201ResponseRiskInformationRules., must be smaller than or equal to 255.');
-        }
 
         $this->container['decision'] = $decision;
 

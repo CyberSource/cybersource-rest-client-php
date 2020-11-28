@@ -198,36 +198,12 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['salesOrganizationId']) && (strlen($this->container['salesOrganizationId']) > 11)) {
-            $invalid_properties[] = "invalid value for 'salesOrganizationId', the character length must be smaller than or equal to 11.";
-        }
-
         if (!is_null($this->container['categoryCode']) && ($this->container['categoryCode'] > 9999)) {
             $invalid_properties[] = "invalid value for 'categoryCode', must be smaller than or equal to 9999.";
         }
 
         if (!is_null($this->container['categoryCodeDomestic']) && ($this->container['categoryCodeDomestic'] > 9999)) {
             $invalid_properties[] = "invalid value for 'categoryCodeDomestic', must be smaller than or equal to 9999.";
-        }
-
-        if (!is_null($this->container['taxId']) && (strlen($this->container['taxId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'taxId', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 21)) {
-            $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 21.";
-        }
-
-        if (!is_null($this->container['cardAcceptorReferenceNumber']) && (strlen($this->container['cardAcceptorReferenceNumber']) > 25)) {
-            $invalid_properties[] = "invalid value for 'cardAcceptorReferenceNumber', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['transactionLocalDateTime']) && (strlen($this->container['transactionLocalDateTime']) > 14)) {
-            $invalid_properties[] = "invalid value for 'transactionLocalDateTime', the character length must be smaller than or equal to 14.";
-        }
-
-        if (!is_null($this->container['merchantName']) && (strlen($this->container['merchantName']) > 25)) {
-            $invalid_properties[] = "invalid value for 'merchantName', the character length must be smaller than or equal to 25.";
         }
 
         return $invalid_properties;
@@ -242,28 +218,10 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['salesOrganizationId']) > 11) {
-            return false;
-        }
         if ($this->container['categoryCode'] > 9999) {
             return false;
         }
         if ($this->container['categoryCodeDomestic'] > 9999) {
-            return false;
-        }
-        if (strlen($this->container['taxId']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['vatRegistrationNumber']) > 21) {
-            return false;
-        }
-        if (strlen($this->container['cardAcceptorReferenceNumber']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['transactionLocalDateTime']) > 14) {
-            return false;
-        }
-        if (strlen($this->container['merchantName']) > 25) {
             return false;
         }
         return true;
@@ -307,9 +265,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setSalesOrganizationId($salesOrganizationId)
     {
-        if (!is_null($salesOrganizationId) && (strlen($salesOrganizationId) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $salesOrganizationId when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 11.');
-        }
 
         $this->container['salesOrganizationId'] = $salesOrganizationId;
 
@@ -332,7 +287,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCategoryCode($categoryCode)
     {
-
         if (!is_null($categoryCode) && ($categoryCode > 9999)) {
             throw new \InvalidArgumentException('invalid value for $categoryCode when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 9999.');
         }
@@ -358,7 +312,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCategoryCodeDomestic($categoryCodeDomestic)
     {
-
         if (!is_null($categoryCodeDomestic) && ($categoryCodeDomestic > 9999)) {
             throw new \InvalidArgumentException('invalid value for $categoryCodeDomestic when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 9999.');
         }
@@ -384,9 +337,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setTaxId($taxId)
     {
-        if (!is_null($taxId) && (strlen($taxId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $taxId when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['taxId'] = $taxId;
 
@@ -409,9 +359,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-        if (!is_null($vatRegistrationNumber) && (strlen($vatRegistrationNumber) > 21)) {
-            throw new \InvalidArgumentException('invalid length for $vatRegistrationNumber when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 21.');
-        }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
@@ -434,9 +381,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCardAcceptorReferenceNumber($cardAcceptorReferenceNumber)
     {
-        if (!is_null($cardAcceptorReferenceNumber) && (strlen($cardAcceptorReferenceNumber) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $cardAcceptorReferenceNumber when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['cardAcceptorReferenceNumber'] = $cardAcceptorReferenceNumber;
 
@@ -459,9 +403,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setTransactionLocalDateTime($transactionLocalDateTime)
     {
-        if (!is_null($transactionLocalDateTime) && (strlen($transactionLocalDateTime) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $transactionLocalDateTime when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 14.');
-        }
 
         $this->container['transactionLocalDateTime'] = $transactionLocalDateTime;
 
@@ -505,9 +446,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setMerchantName($merchantName)
     {
-        if (!is_null($merchantName) && (strlen($merchantName) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $merchantName when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['merchantName'] = $merchantName;
 

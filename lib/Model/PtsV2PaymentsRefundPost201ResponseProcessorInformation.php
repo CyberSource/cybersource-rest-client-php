@@ -168,22 +168,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 18)) {
-            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 18.";
-        }
-
-        if (!is_null($this->container['forwardedAcquirerCode']) && (strlen($this->container['forwardedAcquirerCode']) > 32)) {
-            $invalid_properties[] = "invalid value for 'forwardedAcquirerCode', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['merchantNumber']) && (strlen($this->container['merchantNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'merchantNumber', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -196,18 +180,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     public function valid()
     {
 
-        if (strlen($this->container['transactionId']) > 18) {
-            return false;
-        }
-        if (strlen($this->container['forwardedAcquirerCode']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['merchantNumber']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['responseCode']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -228,9 +200,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setTransactionId($transactionId)
     {
-        if (!is_null($transactionId) && (strlen($transactionId) > 18)) {
-            throw new \InvalidArgumentException('invalid length for $transactionId when calling PtsV2PaymentsRefundPost201ResponseProcessorInformation., must be smaller than or equal to 18.');
-        }
 
         $this->container['transactionId'] = $transactionId;
 
@@ -253,9 +222,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setForwardedAcquirerCode($forwardedAcquirerCode)
     {
-        if (!is_null($forwardedAcquirerCode) && (strlen($forwardedAcquirerCode) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $forwardedAcquirerCode when calling PtsV2PaymentsRefundPost201ResponseProcessorInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['forwardedAcquirerCode'] = $forwardedAcquirerCode;
 
@@ -278,9 +244,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setMerchantNumber($merchantNumber)
     {
-        if (!is_null($merchantNumber) && (strlen($merchantNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $merchantNumber when calling PtsV2PaymentsRefundPost201ResponseProcessorInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['merchantNumber'] = $merchantNumber;
 
@@ -303,9 +266,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PaymentsRefundPost201ResponseProcessorInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 

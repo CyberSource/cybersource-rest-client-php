@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getInstrumentIdentifierPaymentInstrumentsList**](InstrumentIdentifierApi.md#getInstrumentIdentifierPaymentInstrumentsList) | **GET** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments | List Payment Instruments for an Instrument Identifier
 [**patchInstrumentIdentifier**](InstrumentIdentifierApi.md#patchInstrumentIdentifier) | **PATCH** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId} | Update an Instrument Identifier
 [**postInstrumentIdentifier**](InstrumentIdentifierApi.md#postInstrumentIdentifier) | **POST** /tms/v1/instrumentidentifiers | Create an Instrument Identifier
+[**postInstrumentIdentifierEnrollment**](InstrumentIdentifierApi.md#postInstrumentIdentifierEnrollment) | **POST** /tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment | Enroll an Instrument Identifier for Network Tokenization
 
 
 # **deleteInstrumentIdentifier**
@@ -209,7 +210,7 @@ Create an Instrument Identifier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
-$postInstrumentIdentifierRequest = new \CyberSource\Model\PostInstrumentIdentifierRequest(); // \CyberSource\Model\PostInstrumentIdentifierRequest | Please specify either a Card, Bank Account or Enrollable Card
+$postInstrumentIdentifierRequest = new \CyberSource\Model\PostInstrumentIdentifierRequest(); // \CyberSource\Model\PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 $profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
 
 try {
@@ -225,12 +226,58 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postInstrumentIdentifierRequest** | [**\CyberSource\Model\PostInstrumentIdentifierRequest**](../Model/PostInstrumentIdentifierRequest.md)| Please specify either a Card, Bank Account or Enrollable Card |
+ **postInstrumentIdentifierRequest** | [**\CyberSource\Model\PostInstrumentIdentifierRequest**](../Model/PostInstrumentIdentifierRequest.md)| Specify either a Card, Bank Account or Enrollable Card |
  **profileId** | **string**| The id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type
 
 [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **postInstrumentIdentifierEnrollment**
+> postInstrumentIdentifierEnrollment($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId)
+
+Enroll an Instrument Identifier for Network Tokenization
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\InstrumentIdentifierApi();
+$instrumentIdentifierTokenId = "instrumentIdentifierTokenId_example"; // string | The TokenId of a Instrument Identifier.
+$postInstrumentIdentifierEnrollmentRequest = new \CyberSource\Model\PostInstrumentIdentifierEnrollmentRequest(); // \CyberSource\Model\PostInstrumentIdentifierEnrollmentRequest | Specify Enrollable Card details
+$profileId = "profileId_example"; // string | The id of a profile containing user specific TMS configuration.
+
+try {
+    $api_instance->postInstrumentIdentifierEnrollment($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId);
+} catch (Exception $e) {
+    echo 'Exception when calling InstrumentIdentifierApi->postInstrumentIdentifierEnrollment: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instrumentIdentifierTokenId** | **string**| The TokenId of a Instrument Identifier. |
+ **postInstrumentIdentifierEnrollmentRequest** | [**\CyberSource\Model\PostInstrumentIdentifierEnrollmentRequest**](../Model/PostInstrumentIdentifierEnrollmentRequest.md)| Specify Enrollable Card details |
+ **profileId** | **string**| The id of a profile containing user specific TMS configuration. | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

@@ -150,10 +150,6 @@ class Ptsv2creditsProcessingInformationJapanPaymentOptions implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentMethod']) && (strlen($this->container['paymentMethod']) > 2)) {
-            $invalid_properties[] = "invalid value for 'paymentMethod', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2creditsProcessingInformationJapanPaymentOptions implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['paymentMethod']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -189,9 +182,6 @@ class Ptsv2creditsProcessingInformationJapanPaymentOptions implements ArrayAcces
      */
     public function setPaymentMethod($paymentMethod)
     {
-        if (!is_null($paymentMethod) && (strlen($paymentMethod) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $paymentMethod when calling Ptsv2creditsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 2.');
-        }
 
         $this->container['paymentMethod'] = $paymentMethod;
 

@@ -150,14 +150,6 @@ class Ptsv2paymentsPromotionInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['additionalCode']) && (strlen($this->container['additionalCode']) > 12)) {
-            $invalid_properties[] = "invalid value for 'additionalCode', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 12)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 12.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsPromotionInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['additionalCode']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['code']) > 12) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsPromotionInformation implements ArrayAccess
      */
     public function setAdditionalCode($additionalCode)
     {
-        if (!is_null($additionalCode) && (strlen($additionalCode) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $additionalCode when calling Ptsv2paymentsPromotionInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['additionalCode'] = $additionalCode;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsPromotionInformation implements ArrayAccess
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Ptsv2paymentsPromotionInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['code'] = $code;
 

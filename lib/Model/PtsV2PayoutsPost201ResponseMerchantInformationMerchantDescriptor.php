@@ -156,10 +156,6 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 13)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 13.";
-        }
-
         return $invalid_properties;
     }
 
@@ -172,9 +168,6 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
     public function valid()
     {
 
-        if (strlen($this->container['locality']) > 13) {
-            return false;
-        }
         return true;
     }
 
@@ -216,9 +209,6 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor., must be smaller than or equal to 13.');
-        }
 
         $this->container['locality'] = $locality;
 

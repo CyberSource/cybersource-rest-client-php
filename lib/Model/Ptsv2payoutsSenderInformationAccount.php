@@ -150,18 +150,6 @@ class Ptsv2payoutsSenderInformationAccount implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['fundsSource']) && (strlen($this->container['fundsSource']) > 2)) {
-            $invalid_properties[] = "invalid value for 'fundsSource', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['fundsSource']) && (strlen($this->container['fundsSource']) < 2)) {
-            $invalid_properties[] = "invalid value for 'fundsSource', the character length must be bigger than or equal to 2.";
-        }
-
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 34)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 34.";
-        }
-
         return $invalid_properties;
     }
 
@@ -174,15 +162,6 @@ class Ptsv2payoutsSenderInformationAccount implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['fundsSource']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['fundsSource']) < 2) {
-            return false;
-        }
-        if (strlen($this->container['number']) > 34) {
-            return false;
-        }
         return true;
     }
 
@@ -203,12 +182,6 @@ class Ptsv2payoutsSenderInformationAccount implements ArrayAccess
      */
     public function setFundsSource($fundsSource)
     {
-        if (!is_null($fundsSource) && (strlen($fundsSource) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $fundsSource when calling Ptsv2payoutsSenderInformationAccount., must be smaller than or equal to 2.');
-        }
-        if (!is_null($fundsSource) && (strlen($fundsSource) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $fundsSource when calling Ptsv2payoutsSenderInformationAccount., must be bigger than or equal to 2.');
-        }
 
         $this->container['fundsSource'] = $fundsSource;
 
@@ -231,9 +204,6 @@ class Ptsv2payoutsSenderInformationAccount implements ArrayAccess
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 34)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Ptsv2payoutsSenderInformationAccount., must be smaller than or equal to 34.');
-        }
 
         $this->container['number'] = $number;
 

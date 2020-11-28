@@ -175,10 +175,6 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['description']) && (strlen($this->container['description']) > 2000)) {
-            $invalid_properties[] = "invalid value for 'description', the character length must be smaller than or equal to 2000.";
-        }
-
         return $invalid_properties;
     }
 
@@ -191,9 +187,6 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['description']) > 2000) {
-            return false;
-        }
         return true;
     }
 
@@ -235,9 +228,6 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
      */
     public function setDescription($description)
     {
-        if (!is_null($description) && (strlen($description) > 2000)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling InvoicingV2InvoicesPost201ResponseInvoiceInformation., must be smaller than or equal to 2000.');
-        }
 
         $this->container['description'] = $description;
 

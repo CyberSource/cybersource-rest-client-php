@@ -150,10 +150,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsSurcharge implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsSurcharge implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['amount']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -189,9 +182,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsSurcharge implements ArrayAccess
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling Ptsv2paymentsOrderInformationAmountDetailsSurcharge., must be smaller than or equal to 15.');
-        }
 
         $this->container['amount'] = $amount;
 

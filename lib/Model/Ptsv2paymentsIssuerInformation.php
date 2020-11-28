@@ -144,10 +144,6 @@ class Ptsv2paymentsIssuerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['discretionaryData']) && (strlen($this->container['discretionaryData']) > 255)) {
-            $invalid_properties[] = "invalid value for 'discretionaryData', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsIssuerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['discretionaryData']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2paymentsIssuerInformation implements ArrayAccess
      */
     public function setDiscretionaryData($discretionaryData)
     {
-        if (!is_null($discretionaryData) && (strlen($discretionaryData) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $discretionaryData when calling Ptsv2paymentsIssuerInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['discretionaryData'] = $discretionaryData;
 

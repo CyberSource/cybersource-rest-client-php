@@ -300,70 +300,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['authIndicator']) && (strlen($this->container['authIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'authIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 50)) {
-            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['responseCodeSource']) && (strlen($this->container['responseCodeSource']) > 1)) {
-            $invalid_properties[] = "invalid value for 'responseCodeSource', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['responseDetails']) && (strlen($this->container['responseDetails']) > 255)) {
-            $invalid_properties[] = "invalid value for 'responseDetails', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['responseCategoryCode']) && (strlen($this->container['responseCategoryCode']) > 36)) {
-            $invalid_properties[] = "invalid value for 'responseCategoryCode', the character length must be smaller than or equal to 36.";
-        }
-
-        if (!is_null($this->container['forwardedAcquirerCode']) && (strlen($this->container['forwardedAcquirerCode']) > 32)) {
-            $invalid_properties[] = "invalid value for 'forwardedAcquirerCode', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['systemTraceAuditNumber']) && (strlen($this->container['systemTraceAuditNumber']) > 6)) {
-            $invalid_properties[] = "invalid value for 'systemTraceAuditNumber', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['paymentAccountReferenceNumber']) && (strlen($this->container['paymentAccountReferenceNumber']) > 32)) {
-            $invalid_properties[] = "invalid value for 'paymentAccountReferenceNumber', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['transactionIntegrityCode']) && (strlen($this->container['transactionIntegrityCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'transactionIntegrityCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['amexVerbalAuthReferenceNumber']) && (strlen($this->container['amexVerbalAuthReferenceNumber']) > 6)) {
-            $invalid_properties[] = "invalid value for 'amexVerbalAuthReferenceNumber', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['masterCardServiceCode']) && (strlen($this->container['masterCardServiceCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'masterCardServiceCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['masterCardServiceReplyCode']) && (strlen($this->container['masterCardServiceReplyCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'masterCardServiceReplyCode', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['masterCardAuthenticationType']) && (strlen($this->container['masterCardAuthenticationType']) > 1)) {
-            $invalid_properties[] = "invalid value for 'masterCardAuthenticationType', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 30)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['merchantNumber']) && (strlen($this->container['merchantNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'merchantNumber', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -376,54 +312,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['authIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['transactionId']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['responseCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['responseCodeSource']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['responseDetails']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['responseCategoryCode']) > 36) {
-            return false;
-        }
-        if (strlen($this->container['forwardedAcquirerCode']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['systemTraceAuditNumber']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['paymentAccountReferenceNumber']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['transactionIntegrityCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['amexVerbalAuthReferenceNumber']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['masterCardServiceCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['masterCardServiceReplyCode']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['masterCardAuthenticationType']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 30) {
-            return false;
-        }
-        if (strlen($this->container['merchantNumber']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -444,9 +332,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setAuthIndicator($authIndicator)
     {
-        if (!is_null($authIndicator) && (strlen($authIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $authIndicator when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['authIndicator'] = $authIndicator;
 
@@ -490,9 +375,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setTransactionId($transactionId)
     {
-        if (!is_null($transactionId) && (strlen($transactionId) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $transactionId when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['transactionId'] = $transactionId;
 
@@ -557,9 +439,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 
@@ -582,9 +461,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCodeSource($responseCodeSource)
     {
-        if (!is_null($responseCodeSource) && (strlen($responseCodeSource) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $responseCodeSource when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['responseCodeSource'] = $responseCodeSource;
 
@@ -607,9 +483,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseDetails($responseDetails)
     {
-        if (!is_null($responseDetails) && (strlen($responseDetails) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $responseDetails when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['responseDetails'] = $responseDetails;
 
@@ -632,9 +505,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCategoryCode($responseCategoryCode)
     {
-        if (!is_null($responseCategoryCode) && (strlen($responseCategoryCode) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $responseCategoryCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['responseCategoryCode'] = $responseCategoryCode;
 
@@ -657,9 +527,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setForwardedAcquirerCode($forwardedAcquirerCode)
     {
-        if (!is_null($forwardedAcquirerCode) && (strlen($forwardedAcquirerCode) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $forwardedAcquirerCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['forwardedAcquirerCode'] = $forwardedAcquirerCode;
 
@@ -829,9 +696,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
     {
-        if (!is_null($systemTraceAuditNumber) && (strlen($systemTraceAuditNumber) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $systemTraceAuditNumber when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
 
@@ -854,9 +718,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setPaymentAccountReferenceNumber($paymentAccountReferenceNumber)
     {
-        if (!is_null($paymentAccountReferenceNumber) && (strlen($paymentAccountReferenceNumber) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $paymentAccountReferenceNumber when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['paymentAccountReferenceNumber'] = $paymentAccountReferenceNumber;
 
@@ -879,9 +740,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setTransactionIntegrityCode($transactionIntegrityCode)
     {
-        if (!is_null($transactionIntegrityCode) && (strlen($transactionIntegrityCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $transactionIntegrityCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['transactionIntegrityCode'] = $transactionIntegrityCode;
 
@@ -904,9 +762,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setAmexVerbalAuthReferenceNumber($amexVerbalAuthReferenceNumber)
     {
-        if (!is_null($amexVerbalAuthReferenceNumber) && (strlen($amexVerbalAuthReferenceNumber) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $amexVerbalAuthReferenceNumber when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['amexVerbalAuthReferenceNumber'] = $amexVerbalAuthReferenceNumber;
 
@@ -929,9 +784,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setMasterCardServiceCode($masterCardServiceCode)
     {
-        if (!is_null($masterCardServiceCode) && (strlen($masterCardServiceCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $masterCardServiceCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['masterCardServiceCode'] = $masterCardServiceCode;
 
@@ -954,9 +806,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setMasterCardServiceReplyCode($masterCardServiceReplyCode)
     {
-        if (!is_null($masterCardServiceReplyCode) && (strlen($masterCardServiceReplyCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $masterCardServiceReplyCode when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['masterCardServiceReplyCode'] = $masterCardServiceReplyCode;
 
@@ -979,9 +828,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setMasterCardAuthenticationType($masterCardAuthenticationType)
     {
-        if (!is_null($masterCardAuthenticationType) && (strlen($masterCardAuthenticationType) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $masterCardAuthenticationType when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['masterCardAuthenticationType'] = $masterCardAuthenticationType;
 
@@ -1004,9 +850,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 30.');
-        }
 
         $this->container['name'] = $name;
 
@@ -1050,9 +893,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setMerchantNumber($merchantNumber)
     {
-        if (!is_null($merchantNumber) && (strlen($merchantNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $merchantNumber when calling PtsV2PaymentsPost201ResponseProcessorInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['merchantNumber'] = $merchantNumber;
 

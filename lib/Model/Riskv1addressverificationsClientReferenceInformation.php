@@ -153,14 +153,6 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
         if ($this->container['code'] === null) {
             $invalid_properties[] = "'code' can't be null";
         }
-        if ((strlen($this->container['code']) > 50)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['comments']) && (strlen($this->container['comments']) > 255)) {
-            $invalid_properties[] = "invalid value for 'comments', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -174,12 +166,6 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
     {
 
         if ($this->container['code'] === null) {
-            return false;
-        }
-        if (strlen($this->container['code']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['comments']) > 255) {
             return false;
         }
         return true;
@@ -202,9 +188,6 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
      */
     public function setCode($code)
     {
-        if ((strlen($code) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Riskv1addressverificationsClientReferenceInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['code'] = $code;
 
@@ -227,9 +210,6 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
      */
     public function setComments($comments)
     {
-        if (!is_null($comments) && (strlen($comments) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $comments when calling Riskv1addressverificationsClientReferenceInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['comments'] = $comments;
 

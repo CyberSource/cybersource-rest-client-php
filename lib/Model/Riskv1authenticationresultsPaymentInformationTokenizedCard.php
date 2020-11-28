@@ -165,18 +165,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 20)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,15 +178,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
     {
 
         if ($this->container['type'] === null) {
-            return false;
-        }
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['number']) > 20) {
             return false;
         }
         return true;
@@ -242,9 +221,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Riskv1authenticationresultsPaymentInformationTokenizedCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -267,9 +243,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
      */
     public function setExpirationYear($expirationYear)
     {
-        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Riskv1authenticationresultsPaymentInformationTokenizedCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -292,9 +265,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Riskv1authenticationresultsPaymentInformationTokenizedCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['number'] = $number;
 

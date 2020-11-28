@@ -162,18 +162,6 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['origination']) && (strlen($this->container['origination']) > 3)) {
-            $invalid_properties[] = "invalid value for 'origination', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['destination']) && (strlen($this->container['destination']) > 3)) {
-            $invalid_properties[] = "invalid value for 'destination', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['carrierCode']) && (strlen($this->container['carrierCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'carrierCode', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -186,15 +174,6 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['origination']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['destination']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['carrierCode']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -215,9 +194,6 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
      */
     public function setOrigination($origination)
     {
-        if (!is_null($origination) && (strlen($origination) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $origination when calling Riskv1decisionsTravelInformationLegs., must be smaller than or equal to 3.');
-        }
 
         $this->container['origination'] = $origination;
 
@@ -240,9 +216,6 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
      */
     public function setDestination($destination)
     {
-        if (!is_null($destination) && (strlen($destination) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $destination when calling Riskv1decisionsTravelInformationLegs., must be smaller than or equal to 3.');
-        }
 
         $this->container['destination'] = $destination;
 
@@ -265,9 +238,6 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
      */
     public function setCarrierCode($carrierCode)
     {
-        if (!is_null($carrierCode) && (strlen($carrierCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $carrierCode when calling Riskv1decisionsTravelInformationLegs., must be smaller than or equal to 2.');
-        }
 
         $this->container['carrierCode'] = $carrierCode;
 

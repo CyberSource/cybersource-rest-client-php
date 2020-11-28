@@ -156,14 +156,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['fieldName']) && (strlen($this->container['fieldName']) > 255)) {
-            $invalid_properties[] = "invalid value for 'fieldName', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['informationCode']) && (strlen($this->container['informationCode']) > 255)) {
-            $invalid_properties[] = "invalid value for 'informationCode', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
     public function valid()
     {
 
-        if (strlen($this->container['fieldName']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['informationCode']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -223,9 +209,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      */
     public function setFieldName($fieldName)
     {
-        if (!is_null($fieldName) && (strlen($fieldName) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $fieldName when calling PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing., must be smaller than or equal to 255.');
-        }
 
         $this->container['fieldName'] = $fieldName;
 
@@ -248,9 +231,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      */
     public function setInformationCode($informationCode)
     {
-        if (!is_null($informationCode) && (strlen($informationCode) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $informationCode when calling PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing., must be smaller than or equal to 255.');
-        }
 
         $this->container['informationCode'] = $informationCode;
 

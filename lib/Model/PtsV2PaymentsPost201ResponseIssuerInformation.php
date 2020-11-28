@@ -162,22 +162,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 3)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['discretionaryData']) && (strlen($this->container['discretionaryData']) > 255)) {
-            $invalid_properties[] = "invalid value for 'discretionaryData', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['countrySpecificDiscretionaryData']) && (strlen($this->container['countrySpecificDiscretionaryData']) > 140)) {
-            $invalid_properties[] = "invalid value for 'countrySpecificDiscretionaryData', the character length must be smaller than or equal to 140.";
-        }
-
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 6)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['country']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['discretionaryData']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['countrySpecificDiscretionaryData']) > 140) {
-            return false;
-        }
-        if (strlen($this->container['responseCode']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling PtsV2PaymentsPost201ResponseIssuerInformation., must be smaller than or equal to 3.');
-        }
 
         $this->container['country'] = $country;
 
@@ -247,9 +216,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
      */
     public function setDiscretionaryData($discretionaryData)
     {
-        if (!is_null($discretionaryData) && (strlen($discretionaryData) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $discretionaryData when calling PtsV2PaymentsPost201ResponseIssuerInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['discretionaryData'] = $discretionaryData;
 
@@ -272,9 +238,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
      */
     public function setCountrySpecificDiscretionaryData($countrySpecificDiscretionaryData)
     {
-        if (!is_null($countrySpecificDiscretionaryData) && (strlen($countrySpecificDiscretionaryData) > 140)) {
-            throw new \InvalidArgumentException('invalid length for $countrySpecificDiscretionaryData when calling PtsV2PaymentsPost201ResponseIssuerInformation., must be smaller than or equal to 140.');
-        }
 
         $this->container['countrySpecificDiscretionaryData'] = $countrySpecificDiscretionaryData;
 
@@ -297,9 +260,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PaymentsPost201ResponseIssuerInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 

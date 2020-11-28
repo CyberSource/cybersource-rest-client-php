@@ -168,14 +168,6 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 50)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['comments']) && (strlen($this->container['comments']) > 255)) {
-            $invalid_properties[] = "invalid value for 'comments', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -188,12 +180,6 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['comments']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -214,9 +200,6 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling TssV2TransactionsGet200ResponseClientReferenceInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['code'] = $code;
 
@@ -302,9 +285,6 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
      */
     public function setComments($comments)
     {
-        if (!is_null($comments) && (strlen($comments) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $comments when calling TssV2TransactionsGet200ResponseClientReferenceInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['comments'] = $comments;
 

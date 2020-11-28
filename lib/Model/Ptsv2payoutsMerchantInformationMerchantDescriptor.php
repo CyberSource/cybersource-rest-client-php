@@ -174,18 +174,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 13)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 14)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 14.";
-        }
-
-        if (!is_null($this->container['contact']) && (strlen($this->container['contact']) > 14)) {
-            $invalid_properties[] = "invalid value for 'contact', the character length must be smaller than or equal to 14.";
-        }
-
         return $invalid_properties;
     }
 
@@ -198,15 +186,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['locality']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 14) {
-            return false;
-        }
-        if (strlen($this->container['contact']) > 14) {
-            return false;
-        }
         return true;
     }
 
@@ -248,9 +227,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Ptsv2payoutsMerchantInformationMerchantDescriptor., must be smaller than or equal to 13.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -315,9 +291,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2payoutsMerchantInformationMerchantDescriptor., must be smaller than or equal to 14.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -340,9 +313,6 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setContact($contact)
     {
-        if (!is_null($contact) && (strlen($contact) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $contact when calling Ptsv2payoutsMerchantInformationMerchantDescriptor., must be smaller than or equal to 14.');
-        }
 
         $this->container['contact'] = $contact;
 

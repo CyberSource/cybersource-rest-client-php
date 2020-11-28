@@ -150,14 +150,6 @@ class TssV2TransactionsGet200ResponseBuyerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['hashedPassword']) && (strlen($this->container['hashedPassword']) > 100)) {
-            $invalid_properties[] = "invalid value for 'hashedPassword', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class TssV2TransactionsGet200ResponseBuyerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['merchantCustomerId']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['hashedPassword']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class TssV2TransactionsGet200ResponseBuyerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling TssV2TransactionsGet200ResponseBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 
@@ -221,9 +204,6 @@ class TssV2TransactionsGet200ResponseBuyerInformation implements ArrayAccess
      */
     public function setHashedPassword($hashedPassword)
     {
-        if (!is_null($hashedPassword) && (strlen($hashedPassword) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $hashedPassword when calling TssV2TransactionsGet200ResponseBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['hashedPassword'] = $hashedPassword;
 

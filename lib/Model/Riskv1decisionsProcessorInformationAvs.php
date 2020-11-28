@@ -145,10 +145,6 @@ class Riskv1decisionsProcessorInformationAvs implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 3)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -161,9 +157,6 @@ class Riskv1decisionsProcessorInformationAvs implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -184,9 +177,6 @@ class Riskv1decisionsProcessorInformationAvs implements ArrayAccess
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Riskv1decisionsProcessorInformationAvs., must be smaller than or equal to 3.');
-        }
 
         $this->container['code'] = $code;
 

@@ -288,28 +288,12 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['terminalId']) && (strlen($this->container['terminalId']) > 8)) {
-            $invalid_properties[] = "invalid value for 'terminalId', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['terminalSerialNumber']) && (strlen($this->container['terminalSerialNumber']) > 32)) {
-            $invalid_properties[] = "invalid value for 'terminalSerialNumber', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['laneNumber']) && (strlen($this->container['laneNumber']) > 8)) {
-            $invalid_properties[] = "invalid value for 'laneNumber', the character length must be smaller than or equal to 8.";
-        }
-
         if (!is_null($this->container['catLevel']) && ($this->container['catLevel'] > 9)) {
             $invalid_properties[] = "invalid value for 'catLevel', must be smaller than or equal to 9.";
         }
 
         if (!is_null($this->container['catLevel']) && ($this->container['catLevel'] < 1)) {
             $invalid_properties[] = "invalid value for 'catLevel', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['entryMode']) && (strlen($this->container['entryMode']) > 11)) {
-            $invalid_properties[] = "invalid value for 'entryMode', the character length must be smaller than or equal to 11.";
         }
 
         if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] > 5)) {
@@ -328,56 +312,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
             $invalid_properties[] = "invalid value for 'pinEntryCapability', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['operatingEnvironment']) && (strlen($this->container['operatingEnvironment']) > 1)) {
-            $invalid_properties[] = "invalid value for 'operatingEnvironment', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['amexCapnData']) && (strlen($this->container['amexCapnData']) > 15)) {
-            $invalid_properties[] = "invalid value for 'amexCapnData', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['storeAndForwardIndicator']) && (strlen($this->container['storeAndForwardIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'storeAndForwardIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['terminalCardCaptureCapability']) && (strlen($this->container['terminalCardCaptureCapability']) > 1)) {
-            $invalid_properties[] = "invalid value for 'terminalCardCaptureCapability', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['terminalOutputCapability']) && (strlen($this->container['terminalOutputCapability']) > 1)) {
-            $invalid_properties[] = "invalid value for 'terminalOutputCapability', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['deviceId']) && (strlen($this->container['deviceId']) > 32)) {
-            $invalid_properties[] = "invalid value for 'deviceId', the character length must be smaller than or equal to 32.";
-        }
-
         if (!is_null($this->container['pinBlockEncodingFormat']) && ($this->container['pinBlockEncodingFormat'] > 9)) {
             $invalid_properties[] = "invalid value for 'pinBlockEncodingFormat', must be smaller than or equal to 9.";
-        }
-
-        if (!is_null($this->container['encryptedPin']) && (strlen($this->container['encryptedPin']) > 16)) {
-            $invalid_properties[] = "invalid value for 'encryptedPin', the character length must be smaller than or equal to 16.";
-        }
-
-        if (!is_null($this->container['encryptedKeySerialNumber']) && (strlen($this->container['encryptedKeySerialNumber']) > 20)) {
-            $invalid_properties[] = "invalid value for 'encryptedKeySerialNumber', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['partnerSdkVersion']) && (strlen($this->container['partnerSdkVersion']) > 32)) {
-            $invalid_properties[] = "invalid value for 'partnerSdkVersion', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['emvApplicationIdentifierAndDedicatedFileName']) && (strlen($this->container['emvApplicationIdentifierAndDedicatedFileName']) > 32)) {
-            $invalid_properties[] = "invalid value for 'emvApplicationIdentifierAndDedicatedFileName', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['terminalCompliance']) && (strlen($this->container['terminalCompliance']) > 2)) {
-            $invalid_properties[] = "invalid value for 'terminalCompliance', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['isDedicatedHardwareTerminal']) && (strlen($this->container['isDedicatedHardwareTerminal']) > 1)) {
-            $invalid_properties[] = "invalid value for 'isDedicatedHardwareTerminal', the character length must be smaller than or equal to 1.";
         }
 
         return $invalid_properties;
@@ -392,22 +328,10 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['terminalId']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['terminalSerialNumber']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['laneNumber']) > 8) {
-            return false;
-        }
         if ($this->container['catLevel'] > 9) {
             return false;
         }
         if ($this->container['catLevel'] < 1) {
-            return false;
-        }
-        if (strlen($this->container['entryMode']) > 11) {
             return false;
         }
         if ($this->container['terminalCapability'] > 5) {
@@ -422,43 +346,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         if ($this->container['pinEntryCapability'] < 1) {
             return false;
         }
-        if (strlen($this->container['operatingEnvironment']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['amexCapnData']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['storeAndForwardIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['terminalCardCaptureCapability']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['terminalOutputCapability']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['deviceId']) > 32) {
-            return false;
-        }
         if ($this->container['pinBlockEncodingFormat'] > 9) {
-            return false;
-        }
-        if (strlen($this->container['encryptedPin']) > 16) {
-            return false;
-        }
-        if (strlen($this->container['encryptedKeySerialNumber']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['partnerSdkVersion']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['emvApplicationIdentifierAndDedicatedFileName']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['terminalCompliance']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['isDedicatedHardwareTerminal']) > 1) {
             return false;
         }
         return true;
@@ -481,9 +369,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalId($terminalId)
     {
-        if (!is_null($terminalId) && (strlen($terminalId) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $terminalId when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['terminalId'] = $terminalId;
 
@@ -506,9 +391,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalSerialNumber($terminalSerialNumber)
     {
-        if (!is_null($terminalSerialNumber) && (strlen($terminalSerialNumber) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $terminalSerialNumber when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
 
@@ -531,9 +413,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setLaneNumber($laneNumber)
     {
-        if (!is_null($laneNumber) && (strlen($laneNumber) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $laneNumber when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['laneNumber'] = $laneNumber;
 
@@ -556,7 +435,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setCatLevel($catLevel)
     {
-
         if (!is_null($catLevel) && ($catLevel > 9)) {
             throw new \InvalidArgumentException('invalid value for $catLevel when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 9.');
         }
@@ -585,9 +463,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEntryMode($entryMode)
     {
-        if (!is_null($entryMode) && (strlen($entryMode) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $entryMode when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 11.');
-        }
 
         $this->container['entryMode'] = $entryMode;
 
@@ -610,7 +485,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalCapability($terminalCapability)
     {
-
         if (!is_null($terminalCapability) && ($terminalCapability > 5)) {
             throw new \InvalidArgumentException('invalid value for $terminalCapability when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 5.');
         }
@@ -639,7 +513,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setPinEntryCapability($pinEntryCapability)
     {
-
         if (!is_null($pinEntryCapability) && ($pinEntryCapability > 1)) {
             throw new \InvalidArgumentException('invalid value for $pinEntryCapability when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
         }
@@ -668,9 +541,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setOperatingEnvironment($operatingEnvironment)
     {
-        if (!is_null($operatingEnvironment) && (strlen($operatingEnvironment) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $operatingEnvironment when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['operatingEnvironment'] = $operatingEnvironment;
 
@@ -714,9 +584,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setAmexCapnData($amexCapnData)
     {
-        if (!is_null($amexCapnData) && (strlen($amexCapnData) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $amexCapnData when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['amexCapnData'] = $amexCapnData;
 
@@ -760,9 +627,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setStoreAndForwardIndicator($storeAndForwardIndicator)
     {
-        if (!is_null($storeAndForwardIndicator) && (strlen($storeAndForwardIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $storeAndForwardIndicator when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['storeAndForwardIndicator'] = $storeAndForwardIndicator;
 
@@ -827,9 +691,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalCardCaptureCapability($terminalCardCaptureCapability)
     {
-        if (!is_null($terminalCardCaptureCapability) && (strlen($terminalCardCaptureCapability) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $terminalCardCaptureCapability when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['terminalCardCaptureCapability'] = $terminalCardCaptureCapability;
 
@@ -852,9 +713,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalOutputCapability($terminalOutputCapability)
     {
-        if (!is_null($terminalOutputCapability) && (strlen($terminalOutputCapability) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $terminalOutputCapability when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['terminalOutputCapability'] = $terminalOutputCapability;
 
@@ -898,9 +756,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setDeviceId($deviceId)
     {
-        if (!is_null($deviceId) && (strlen($deviceId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $deviceId when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['deviceId'] = $deviceId;
 
@@ -923,7 +778,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setPinBlockEncodingFormat($pinBlockEncodingFormat)
     {
-
         if (!is_null($pinBlockEncodingFormat) && ($pinBlockEncodingFormat > 9)) {
             throw new \InvalidArgumentException('invalid value for $pinBlockEncodingFormat when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 9.');
         }
@@ -949,9 +803,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEncryptedPin($encryptedPin)
     {
-        if (!is_null($encryptedPin) && (strlen($encryptedPin) > 16)) {
-            throw new \InvalidArgumentException('invalid length for $encryptedPin when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 16.');
-        }
 
         $this->container['encryptedPin'] = $encryptedPin;
 
@@ -974,9 +825,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEncryptedKeySerialNumber($encryptedKeySerialNumber)
     {
-        if (!is_null($encryptedKeySerialNumber) && (strlen($encryptedKeySerialNumber) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $encryptedKeySerialNumber when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['encryptedKeySerialNumber'] = $encryptedKeySerialNumber;
 
@@ -999,9 +847,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setPartnerSdkVersion($partnerSdkVersion)
     {
-        if (!is_null($partnerSdkVersion) && (strlen($partnerSdkVersion) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $partnerSdkVersion when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['partnerSdkVersion'] = $partnerSdkVersion;
 
@@ -1024,9 +869,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEmvApplicationIdentifierAndDedicatedFileName($emvApplicationIdentifierAndDedicatedFileName)
     {
-        if (!is_null($emvApplicationIdentifierAndDedicatedFileName) && (strlen($emvApplicationIdentifierAndDedicatedFileName) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $emvApplicationIdentifierAndDedicatedFileName when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['emvApplicationIdentifierAndDedicatedFileName'] = $emvApplicationIdentifierAndDedicatedFileName;
 
@@ -1049,9 +891,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalCompliance($terminalCompliance)
     {
-        if (!is_null($terminalCompliance) && (strlen($terminalCompliance) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $terminalCompliance when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['terminalCompliance'] = $terminalCompliance;
 
@@ -1074,9 +913,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setIsDedicatedHardwareTerminal($isDedicatedHardwareTerminal)
     {
-        if (!is_null($isDedicatedHardwareTerminal) && (strlen($isDedicatedHardwareTerminal) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $isDedicatedHardwareTerminal when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['isDedicatedHardwareTerminal'] = $isDedicatedHardwareTerminal;
 

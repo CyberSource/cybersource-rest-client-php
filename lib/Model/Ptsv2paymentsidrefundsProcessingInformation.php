@@ -186,34 +186,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentSolution']) && (strlen($this->container['paymentSolution']) > 12)) {
-            $invalid_properties[] = "invalid value for 'paymentSolution', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['reconciliationId']) && (strlen($this->container['reconciliationId']) > 60)) {
-            $invalid_properties[] = "invalid value for 'reconciliationId', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['linkId']) && (strlen($this->container['linkId']) > 26)) {
-            $invalid_properties[] = "invalid value for 'linkId', the character length must be smaller than or equal to 26.";
-        }
-
-        if (!is_null($this->container['reportGroup']) && (strlen($this->container['reportGroup']) > 25)) {
-            $invalid_properties[] = "invalid value for 'reportGroup', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['visaCheckoutId']) && (strlen($this->container['visaCheckoutId']) > 48)) {
-            $invalid_properties[] = "invalid value for 'visaCheckoutId', the character length must be smaller than or equal to 48.";
-        }
-
-        if (!is_null($this->container['purchaseLevel']) && (strlen($this->container['purchaseLevel']) > 1)) {
-            $invalid_properties[] = "invalid value for 'purchaseLevel', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['industryDataType']) && (strlen($this->container['industryDataType']) > 20)) {
-            $invalid_properties[] = "invalid value for 'industryDataType', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -226,27 +198,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['paymentSolution']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['reconciliationId']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['linkId']) > 26) {
-            return false;
-        }
-        if (strlen($this->container['reportGroup']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['visaCheckoutId']) > 48) {
-            return false;
-        }
-        if (strlen($this->container['purchaseLevel']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['industryDataType']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -267,9 +218,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setPaymentSolution($paymentSolution)
     {
-        if (!is_null($paymentSolution) && (strlen($paymentSolution) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $paymentSolution when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['paymentSolution'] = $paymentSolution;
 
@@ -292,9 +240,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setReconciliationId($reconciliationId)
     {
-        if (!is_null($reconciliationId) && (strlen($reconciliationId) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $reconciliationId when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 60.');
-        }
 
         $this->container['reconciliationId'] = $reconciliationId;
 
@@ -317,9 +262,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setLinkId($linkId)
     {
-        if (!is_null($linkId) && (strlen($linkId) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $linkId when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 26.');
-        }
 
         $this->container['linkId'] = $linkId;
 
@@ -342,9 +284,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setReportGroup($reportGroup)
     {
-        if (!is_null($reportGroup) && (strlen($reportGroup) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $reportGroup when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['reportGroup'] = $reportGroup;
 
@@ -367,9 +306,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setVisaCheckoutId($visaCheckoutId)
     {
-        if (!is_null($visaCheckoutId) && (strlen($visaCheckoutId) > 48)) {
-            throw new \InvalidArgumentException('invalid length for $visaCheckoutId when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 48.');
-        }
 
         $this->container['visaCheckoutId'] = $visaCheckoutId;
 
@@ -392,9 +328,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setPurchaseLevel($purchaseLevel)
     {
-        if (!is_null($purchaseLevel) && (strlen($purchaseLevel) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $purchaseLevel when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['purchaseLevel'] = $purchaseLevel;
 
@@ -438,9 +371,6 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
      */
     public function setIndustryDataType($industryDataType)
     {
-        if (!is_null($industryDataType) && (strlen($industryDataType) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $industryDataType when calling Ptsv2paymentsidrefundsProcessingInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['industryDataType'] = $industryDataType;
 

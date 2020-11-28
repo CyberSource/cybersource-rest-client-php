@@ -276,46 +276,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['acsTransactionId']) && (strlen($this->container['acsTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'acsTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
-        if (!is_null($this->container['cavv']) && (strlen($this->container['cavv']) > 255)) {
-            $invalid_properties[] = "invalid value for 'cavv', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['cavvAlgorithm']) && (strlen($this->container['cavvAlgorithm']) > 1)) {
-            $invalid_properties[] = "invalid value for 'cavvAlgorithm', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['directoryServerErrorDescription']) && (strlen($this->container['directoryServerErrorDescription']) > 4096)) {
-            $invalid_properties[] = "invalid value for 'directoryServerErrorDescription', the character length must be smaller than or equal to 4096.";
-        }
-
-        if (!is_null($this->container['interactionCounter']) && (strlen($this->container['interactionCounter']) > 2)) {
-            $invalid_properties[] = "invalid value for 'interactionCounter', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['sdkTransactionId']) && (strlen($this->container['sdkTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'sdkTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
-        if (!is_null($this->container['threeDSServerTransactionId']) && (strlen($this->container['threeDSServerTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'threeDSServerTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
-        if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
-            $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['whiteListStatusSource']) && (strlen($this->container['whiteListStatusSource']) > 2)) {
-            $invalid_properties[] = "invalid value for 'whiteListStatusSource', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['directoryServerTransactionId']) && (strlen($this->container['directoryServerTransactionId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'directoryServerTransactionId', the character length must be smaller than or equal to 36.";
-        }
-
         return $invalid_properties;
     }
 
@@ -328,36 +288,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function valid()
     {
 
-        if (strlen($this->container['acsTransactionId']) > 36) {
-            return false;
-        }
-        if (strlen($this->container['cavv']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['cavvAlgorithm']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerErrorDescription']) > 4096) {
-            return false;
-        }
-        if (strlen($this->container['interactionCounter']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['sdkTransactionId']) > 36) {
-            return false;
-        }
-        if (strlen($this->container['threeDSServerTransactionId']) > 36) {
-            return false;
-        }
-        if (strlen($this->container['whiteListStatus']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['whiteListStatusSource']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['directoryServerTransactionId']) > 36) {
-            return false;
-        }
         return true;
     }
 
@@ -399,9 +329,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setAcsTransactionId($acsTransactionId)
     {
-        if (!is_null($acsTransactionId) && (strlen($acsTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $acsTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['acsTransactionId'] = $acsTransactionId;
 
@@ -487,9 +414,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setCavv($cavv)
     {
-        if (!is_null($cavv) && (strlen($cavv) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $cavv when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['cavv'] = $cavv;
 
@@ -512,9 +436,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setCavvAlgorithm($cavvAlgorithm)
     {
-        if (!is_null($cavvAlgorithm) && (strlen($cavvAlgorithm) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $cavvAlgorithm when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['cavvAlgorithm'] = $cavvAlgorithm;
 
@@ -558,9 +479,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setDirectoryServerErrorDescription($directoryServerErrorDescription)
     {
-        if (!is_null($directoryServerErrorDescription) && (strlen($directoryServerErrorDescription) > 4096)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerErrorDescription when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 4096.');
-        }
 
         $this->container['directoryServerErrorDescription'] = $directoryServerErrorDescription;
 
@@ -604,9 +522,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setInteractionCounter($interactionCounter)
     {
-        if (!is_null($interactionCounter) && (strlen($interactionCounter) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $interactionCounter when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['interactionCounter'] = $interactionCounter;
 
@@ -692,9 +607,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setSdkTransactionId($sdkTransactionId)
     {
-        if (!is_null($sdkTransactionId) && (strlen($sdkTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $sdkTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['sdkTransactionId'] = $sdkTransactionId;
 
@@ -738,9 +650,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setThreeDSServerTransactionId($threeDSServerTransactionId)
     {
-        if (!is_null($threeDSServerTransactionId) && (strlen($threeDSServerTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $threeDSServerTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['threeDSServerTransactionId'] = $threeDSServerTransactionId;
 
@@ -805,9 +714,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setWhiteListStatus($whiteListStatus)
     {
-        if (!is_null($whiteListStatus) && (strlen($whiteListStatus) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $whiteListStatus when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['whiteListStatus'] = $whiteListStatus;
 
@@ -830,9 +736,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setWhiteListStatusSource($whiteListStatusSource)
     {
-        if (!is_null($whiteListStatusSource) && (strlen($whiteListStatusSource) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $whiteListStatusSource when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['whiteListStatusSource'] = $whiteListStatusSource;
 
@@ -876,9 +779,6 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     public function setDirectoryServerTransactionId($directoryServerTransactionId)
     {
-        if (!is_null($directoryServerTransactionId) && (strlen($directoryServerTransactionId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $directoryServerTransactionId when calling RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['directoryServerTransactionId'] = $directoryServerTransactionId;
 

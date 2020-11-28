@@ -150,14 +150,6 @@ class Riskv1exportcomplianceinquiriesDeviceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 45)) {
-            $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 45.";
-        }
-
-        if (!is_null($this->container['hostName']) && (strlen($this->container['hostName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'hostName', the character length must be smaller than or equal to 60.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Riskv1exportcomplianceinquiriesDeviceInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['ipAddress']) > 45) {
-            return false;
-        }
-        if (strlen($this->container['hostName']) > 60) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Riskv1exportcomplianceinquiriesDeviceInformation implements ArrayAccess
      */
     public function setIpAddress($ipAddress)
     {
-        if (!is_null($ipAddress) && (strlen($ipAddress) > 45)) {
-            throw new \InvalidArgumentException('invalid length for $ipAddress when calling Riskv1exportcomplianceinquiriesDeviceInformation., must be smaller than or equal to 45.');
-        }
 
         $this->container['ipAddress'] = $ipAddress;
 
@@ -221,9 +204,6 @@ class Riskv1exportcomplianceinquiriesDeviceInformation implements ArrayAccess
      */
     public function setHostName($hostName)
     {
-        if (!is_null($hostName) && (strlen($hostName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $hostName when calling Riskv1exportcomplianceinquiriesDeviceInformation., must be smaller than or equal to 60.');
-        }
 
         $this->container['hostName'] = $hostName;
 

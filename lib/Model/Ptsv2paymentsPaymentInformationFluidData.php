@@ -162,18 +162,6 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['descriptor']) && (strlen($this->container['descriptor']) > 128)) {
-            $invalid_properties[] = "invalid value for 'descriptor', the character length must be smaller than or equal to 128.";
-        }
-
-        if (!is_null($this->container['value']) && (strlen($this->container['value']) > 3072)) {
-            $invalid_properties[] = "invalid value for 'value', the character length must be smaller than or equal to 3072.";
-        }
-
-        if (!is_null($this->container['encoding']) && (strlen($this->container['encoding']) > 6)) {
-            $invalid_properties[] = "invalid value for 'encoding', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -186,15 +174,6 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['descriptor']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['value']) > 3072) {
-            return false;
-        }
-        if (strlen($this->container['encoding']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -236,9 +215,6 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      */
     public function setDescriptor($descriptor)
     {
-        if (!is_null($descriptor) && (strlen($descriptor) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $descriptor when calling Ptsv2paymentsPaymentInformationFluidData., must be smaller than or equal to 128.');
-        }
 
         $this->container['descriptor'] = $descriptor;
 
@@ -261,9 +237,6 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      */
     public function setValue($value)
     {
-        if (!is_null($value) && (strlen($value) > 3072)) {
-            throw new \InvalidArgumentException('invalid length for $value when calling Ptsv2paymentsPaymentInformationFluidData., must be smaller than or equal to 3072.');
-        }
 
         $this->container['value'] = $value;
 
@@ -286,9 +259,6 @@ class Ptsv2paymentsPaymentInformationFluidData implements ArrayAccess
      */
     public function setEncoding($encoding)
     {
-        if (!is_null($encoding) && (strlen($encoding) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $encoding when calling Ptsv2paymentsPaymentInformationFluidData., must be smaller than or equal to 6.');
-        }
 
         $this->container['encoding'] = $encoding;
 

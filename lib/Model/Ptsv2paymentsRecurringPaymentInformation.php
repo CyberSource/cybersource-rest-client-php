@@ -157,14 +157,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['endDate']) && (strlen($this->container['endDate']) > 10)) {
-            $invalid_properties[] = "invalid value for 'endDate', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['originalPurchaseDate']) && (strlen($this->container['originalPurchaseDate']) > 17)) {
-            $invalid_properties[] = "invalid value for 'originalPurchaseDate', the character length must be smaller than or equal to 17.";
-        }
-
         return $invalid_properties;
     }
 
@@ -177,12 +169,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['endDate']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['originalPurchaseDate']) > 17) {
-            return false;
-        }
         return true;
     }
 
@@ -203,9 +189,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setEndDate($endDate)
     {
-        if (!is_null($endDate) && (strlen($endDate) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $endDate when calling Ptsv2paymentsRecurringPaymentInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['endDate'] = $endDate;
 
@@ -249,9 +232,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setOriginalPurchaseDate($originalPurchaseDate)
     {
-        if (!is_null($originalPurchaseDate) && (strlen($originalPurchaseDate) > 17)) {
-            throw new \InvalidArgumentException('invalid length for $originalPurchaseDate when calling Ptsv2paymentsRecurringPaymentInformation., must be smaller than or equal to 17.');
-        }
 
         $this->container['originalPurchaseDate'] = $originalPurchaseDate;
 

@@ -156,14 +156,6 @@ class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['referenceId']) && (strlen($this->container['referenceId']) > 50)) {
-            $invalid_properties[] = "invalid value for 'referenceId', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['deviceDataCollectionUrl']) && (strlen($this->container['deviceDataCollectionUrl']) > 100)) {
-            $invalid_properties[] = "invalid value for 'deviceDataCollectionUrl', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
     public function valid()
     {
 
-        if (strlen($this->container['referenceId']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['deviceDataCollectionUrl']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -223,9 +209,6 @@ class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
      */
     public function setReferenceId($referenceId)
     {
-        if (!is_null($referenceId) && (strlen($referenceId) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $referenceId when calling RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['referenceId'] = $referenceId;
 
@@ -248,9 +231,6 @@ class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
      */
     public function setDeviceDataCollectionUrl($deviceDataCollectionUrl)
     {
-        if (!is_null($deviceDataCollectionUrl) && (strlen($deviceDataCollectionUrl) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $deviceDataCollectionUrl when calling RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['deviceDataCollectionUrl'] = $deviceDataCollectionUrl;
 

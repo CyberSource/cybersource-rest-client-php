@@ -168,26 +168,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 1)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 17)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 17.";
-        }
-
-        if (!is_null($this->container['encoderId']) && (strlen($this->container['encoderId']) > 3)) {
-            $invalid_properties[] = "invalid value for 'encoderId', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['checkNumber']) && (strlen($this->container['checkNumber']) > 8)) {
-            $invalid_properties[] = "invalid value for 'checkNumber', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['checkImageReferenceNumber']) && (strlen($this->container['checkImageReferenceNumber']) > 32)) {
-            $invalid_properties[] = "invalid value for 'checkImageReferenceNumber', the character length must be smaller than or equal to 32.";
-        }
-
         return $invalid_properties;
     }
 
@@ -200,21 +180,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['type']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['number']) > 17) {
-            return false;
-        }
-        if (strlen($this->container['encoderId']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['checkNumber']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['checkImageReferenceNumber']) > 32) {
-            return false;
-        }
         return true;
     }
 
@@ -235,9 +200,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling Ptsv2paymentsPaymentInformationBankAccount., must be smaller than or equal to 1.');
-        }
 
         $this->container['type'] = $type;
 
@@ -260,9 +222,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 17)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Ptsv2paymentsPaymentInformationBankAccount., must be smaller than or equal to 17.');
-        }
 
         $this->container['number'] = $number;
 
@@ -285,9 +244,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setEncoderId($encoderId)
     {
-        if (!is_null($encoderId) && (strlen($encoderId) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $encoderId when calling Ptsv2paymentsPaymentInformationBankAccount., must be smaller than or equal to 3.');
-        }
 
         $this->container['encoderId'] = $encoderId;
 
@@ -310,9 +266,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setCheckNumber($checkNumber)
     {
-        if (!is_null($checkNumber) && (strlen($checkNumber) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $checkNumber when calling Ptsv2paymentsPaymentInformationBankAccount., must be smaller than or equal to 8.');
-        }
 
         $this->container['checkNumber'] = $checkNumber;
 
@@ -335,9 +288,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setCheckImageReferenceNumber($checkImageReferenceNumber)
     {
-        if (!is_null($checkImageReferenceNumber) && (strlen($checkImageReferenceNumber) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $checkImageReferenceNumber when calling Ptsv2paymentsPaymentInformationBankAccount., must be smaller than or equal to 32.');
-        }
 
         $this->container['checkImageReferenceNumber'] = $checkImageReferenceNumber;
 

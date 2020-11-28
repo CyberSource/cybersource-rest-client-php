@@ -150,14 +150,6 @@ class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions imple
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['settlementMethod']) && (strlen($this->container['settlementMethod']) > 1)) {
-            $invalid_properties[] = "invalid value for 'settlementMethod', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['fraudScreeningLevel']) && (strlen($this->container['fraudScreeningLevel']) > 1)) {
-            $invalid_properties[] = "invalid value for 'fraudScreeningLevel', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions imple
     public function valid()
     {
 
-        if (strlen($this->container['settlementMethod']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['fraudScreeningLevel']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions imple
      */
     public function setSettlementMethod($settlementMethod)
     {
-        if (!is_null($settlementMethod) && (strlen($settlementMethod) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $settlementMethod when calling PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions., must be smaller than or equal to 1.');
-        }
 
         $this->container['settlementMethod'] = $settlementMethod;
 
@@ -221,9 +204,6 @@ class PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions imple
      */
     public function setFraudScreeningLevel($fraudScreeningLevel)
     {
-        if (!is_null($fraudScreeningLevel) && (strlen($fraudScreeningLevel) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $fraudScreeningLevel when calling PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions., must be smaller than or equal to 1.');
-        }
 
         $this->container['fraudScreeningLevel'] = $fraudScreeningLevel;
 

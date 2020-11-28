@@ -258,70 +258,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['carrierCode']) && (strlen($this->container['carrierCode']) > 4)) {
-            $invalid_properties[] = "invalid value for 'carrierCode', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['flightNumber']) && (strlen($this->container['flightNumber']) > 6)) {
-            $invalid_properties[] = "invalid value for 'flightNumber', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['originatingAirportCode']) && (strlen($this->container['originatingAirportCode']) > 5)) {
-            $invalid_properties[] = "invalid value for 'originatingAirportCode', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['class']) && (strlen($this->container['class']) > 3)) {
-            $invalid_properties[] = "invalid value for 'class', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['destinationAirportCode']) && (strlen($this->container['destinationAirportCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'destinationAirportCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['fareBasis']) && (strlen($this->container['fareBasis']) > 15)) {
-            $invalid_properties[] = "invalid value for 'fareBasis', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['departTaxAmount']) && (strlen($this->container['departTaxAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'departTaxAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['conjunctionTicket']) && (strlen($this->container['conjunctionTicket']) > 25)) {
-            $invalid_properties[] = "invalid value for 'conjunctionTicket', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['exchangeTicketNumber']) && (strlen($this->container['exchangeTicketNumber']) > 25)) {
-            $invalid_properties[] = "invalid value for 'exchangeTicketNumber', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['couponNumber']) && (strlen($this->container['couponNumber']) > 1)) {
-            $invalid_properties[] = "invalid value for 'couponNumber', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['departureTimeMeridian']) && (strlen($this->container['departureTimeMeridian']) > 1)) {
-            $invalid_properties[] = "invalid value for 'departureTimeMeridian', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['arrivalTimeMeridian']) && (strlen($this->container['arrivalTimeMeridian']) > 1)) {
-            $invalid_properties[] = "invalid value for 'arrivalTimeMeridian', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['endorsementsRestrictions']) && (strlen($this->container['endorsementsRestrictions']) > 20)) {
-            $invalid_properties[] = "invalid value for 'endorsementsRestrictions', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['totalFareAmount']) && (strlen($this->container['totalFareAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'totalFareAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['feeAmount']) && (strlen($this->container['feeAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'feeAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['taxAmount']) && (strlen($this->container['taxAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'taxAmount', the character length must be smaller than or equal to 12.";
-        }
-
         return $invalid_properties;
     }
 
@@ -334,54 +270,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['carrierCode']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['flightNumber']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['originatingAirportCode']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['class']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['destinationAirportCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['fareBasis']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['departTaxAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['conjunctionTicket']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['exchangeTicketNumber']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['couponNumber']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['departureTimeMeridian']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['arrivalTimeMeridian']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['endorsementsRestrictions']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['totalFareAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['feeAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['taxAmount']) > 12) {
-            return false;
-        }
         return true;
     }
 
@@ -402,9 +290,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setCarrierCode($carrierCode)
     {
-        if (!is_null($carrierCode) && (strlen($carrierCode) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $carrierCode when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 4.');
-        }
 
         $this->container['carrierCode'] = $carrierCode;
 
@@ -427,9 +312,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setFlightNumber($flightNumber)
     {
-        if (!is_null($flightNumber) && (strlen($flightNumber) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $flightNumber when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 6.');
-        }
 
         $this->container['flightNumber'] = $flightNumber;
 
@@ -452,9 +334,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setOriginatingAirportCode($originatingAirportCode)
     {
-        if (!is_null($originatingAirportCode) && (strlen($originatingAirportCode) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $originatingAirportCode when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 5.');
-        }
 
         $this->container['originatingAirportCode'] = $originatingAirportCode;
 
@@ -477,9 +356,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setClass($class)
     {
-        if (!is_null($class) && (strlen($class) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $class when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 3.');
-        }
 
         $this->container['class'] = $class;
 
@@ -544,9 +420,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setDestinationAirportCode($destinationAirportCode)
     {
-        if (!is_null($destinationAirportCode) && (strlen($destinationAirportCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $destinationAirportCode when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 3.');
-        }
 
         $this->container['destinationAirportCode'] = $destinationAirportCode;
 
@@ -569,9 +442,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setFareBasis($fareBasis)
     {
-        if (!is_null($fareBasis) && (strlen($fareBasis) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $fareBasis when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 15.');
-        }
 
         $this->container['fareBasis'] = $fareBasis;
 
@@ -594,9 +464,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setDepartTaxAmount($departTaxAmount)
     {
-        if (!is_null($departTaxAmount) && (strlen($departTaxAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $departTaxAmount when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 12.');
-        }
 
         $this->container['departTaxAmount'] = $departTaxAmount;
 
@@ -619,9 +486,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setConjunctionTicket($conjunctionTicket)
     {
-        if (!is_null($conjunctionTicket) && (strlen($conjunctionTicket) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $conjunctionTicket when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 25.');
-        }
 
         $this->container['conjunctionTicket'] = $conjunctionTicket;
 
@@ -644,9 +508,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setExchangeTicketNumber($exchangeTicketNumber)
     {
-        if (!is_null($exchangeTicketNumber) && (strlen($exchangeTicketNumber) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $exchangeTicketNumber when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 25.');
-        }
 
         $this->container['exchangeTicketNumber'] = $exchangeTicketNumber;
 
@@ -669,9 +530,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setCouponNumber($couponNumber)
     {
-        if (!is_null($couponNumber) && (strlen($couponNumber) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $couponNumber when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 1.');
-        }
 
         $this->container['couponNumber'] = $couponNumber;
 
@@ -715,9 +573,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setDepartureTimeMeridian($departureTimeMeridian)
     {
-        if (!is_null($departureTimeMeridian) && (strlen($departureTimeMeridian) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $departureTimeMeridian when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 1.');
-        }
 
         $this->container['departureTimeMeridian'] = $departureTimeMeridian;
 
@@ -761,9 +616,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setArrivalTimeMeridian($arrivalTimeMeridian)
     {
-        if (!is_null($arrivalTimeMeridian) && (strlen($arrivalTimeMeridian) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $arrivalTimeMeridian when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 1.');
-        }
 
         $this->container['arrivalTimeMeridian'] = $arrivalTimeMeridian;
 
@@ -786,9 +638,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setEndorsementsRestrictions($endorsementsRestrictions)
     {
-        if (!is_null($endorsementsRestrictions) && (strlen($endorsementsRestrictions) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $endorsementsRestrictions when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 20.');
-        }
 
         $this->container['endorsementsRestrictions'] = $endorsementsRestrictions;
 
@@ -811,9 +660,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setTotalFareAmount($totalFareAmount)
     {
-        if (!is_null($totalFareAmount) && (strlen($totalFareAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $totalFareAmount when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 15.');
-        }
 
         $this->container['totalFareAmount'] = $totalFareAmount;
 
@@ -836,9 +682,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setFeeAmount($feeAmount)
     {
-        if (!is_null($feeAmount) && (strlen($feeAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $feeAmount when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 12.');
-        }
 
         $this->container['feeAmount'] = $feeAmount;
 
@@ -861,9 +704,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
      */
     public function setTaxAmount($taxAmount)
     {
-        if (!is_null($taxAmount) && (strlen($taxAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $taxAmount when calling Ptsv2paymentsTravelInformationTransitAirlineLegs., must be smaller than or equal to 12.');
-        }
 
         $this->container['taxAmount'] = $taxAmount;
 

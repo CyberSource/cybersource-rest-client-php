@@ -144,10 +144,6 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 18)) {
-            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 18.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     public function valid()
     {
 
-        if (strlen($this->container['transactionId']) > 18) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      */
     public function setTransactionId($transactionId)
     {
-        if (!is_null($transactionId) && (strlen($transactionId) > 18)) {
-            throw new \InvalidArgumentException('invalid length for $transactionId when calling PtsV2PaymentsCapturesPost201ResponseProcessorInformation., must be smaller than or equal to 18.');
-        }
 
         $this->container['transactionId'] = $transactionId;
 

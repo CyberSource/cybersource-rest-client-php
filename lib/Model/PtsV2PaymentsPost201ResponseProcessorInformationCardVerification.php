@@ -150,14 +150,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCardVerification implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['resultCode']) && (strlen($this->container['resultCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'resultCode', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['resultCodeRaw']) && (strlen($this->container['resultCodeRaw']) > 10)) {
-            $invalid_properties[] = "invalid value for 'resultCodeRaw', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCardVerification implement
     public function valid()
     {
 
-        if (strlen($this->container['resultCode']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['resultCodeRaw']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCardVerification implement
      */
     public function setResultCode($resultCode)
     {
-        if (!is_null($resultCode) && (strlen($resultCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $resultCode when calling PtsV2PaymentsPost201ResponseProcessorInformationCardVerification., must be smaller than or equal to 1.');
-        }
 
         $this->container['resultCode'] = $resultCode;
 
@@ -221,9 +204,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCardVerification implement
      */
     public function setResultCodeRaw($resultCodeRaw)
     {
-        if (!is_null($resultCodeRaw) && (strlen($resultCodeRaw) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $resultCodeRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationCardVerification., must be smaller than or equal to 10.');
-        }
 
         $this->container['resultCodeRaw'] = $resultCodeRaw;
 

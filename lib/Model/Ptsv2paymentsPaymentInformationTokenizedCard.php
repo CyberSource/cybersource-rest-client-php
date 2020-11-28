@@ -198,42 +198,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 20)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['cryptogram']) && (strlen($this->container['cryptogram']) > 40)) {
-            $invalid_properties[] = "invalid value for 'cryptogram', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['requestorId']) && (strlen($this->container['requestorId']) > 11)) {
-            $invalid_properties[] = "invalid value for 'requestorId', the character length must be smaller than or equal to 11.";
-        }
-
-        if (!is_null($this->container['transactionType']) && (strlen($this->container['transactionType']) > 1)) {
-            $invalid_properties[] = "invalid value for 'transactionType', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['assuranceLevel']) && (strlen($this->container['assuranceLevel']) > 2)) {
-            $invalid_properties[] = "invalid value for 'assuranceLevel', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['storageMethod']) && (strlen($this->container['storageMethod']) > 3)) {
-            $invalid_properties[] = "invalid value for 'storageMethod', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['securityCode']) && (strlen($this->container['securityCode']) > 4)) {
-            $invalid_properties[] = "invalid value for 'securityCode', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -246,33 +210,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['number']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['cryptogram']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['requestorId']) > 11) {
-            return false;
-        }
-        if (strlen($this->container['transactionType']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['assuranceLevel']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['storageMethod']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['securityCode']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -293,9 +230,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['number'] = $number;
 
@@ -318,9 +252,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -343,9 +274,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setExpirationYear($expirationYear)
     {
-        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -389,9 +317,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setCryptogram($cryptogram)
     {
-        if (!is_null($cryptogram) && (strlen($cryptogram) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $cryptogram when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 40.');
-        }
 
         $this->container['cryptogram'] = $cryptogram;
 
@@ -414,9 +339,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setRequestorId($requestorId)
     {
-        if (!is_null($requestorId) && (strlen($requestorId) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $requestorId when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 11.');
-        }
 
         $this->container['requestorId'] = $requestorId;
 
@@ -439,9 +361,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setTransactionType($transactionType)
     {
-        if (!is_null($transactionType) && (strlen($transactionType) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $transactionType when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 1.');
-        }
 
         $this->container['transactionType'] = $transactionType;
 
@@ -464,9 +383,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setAssuranceLevel($assuranceLevel)
     {
-        if (!is_null($assuranceLevel) && (strlen($assuranceLevel) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $assuranceLevel when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['assuranceLevel'] = $assuranceLevel;
 
@@ -489,9 +405,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setStorageMethod($storageMethod)
     {
-        if (!is_null($storageMethod) && (strlen($storageMethod) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $storageMethod when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 3.');
-        }
 
         $this->container['storageMethod'] = $storageMethod;
 
@@ -514,9 +427,6 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
      */
     public function setSecurityCode($securityCode)
     {
-        if (!is_null($securityCode) && (strlen($securityCode) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $securityCode when calling Ptsv2paymentsPaymentInformationTokenizedCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['securityCode'] = $securityCode;
 

@@ -144,10 +144,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeat
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['category']) && (strlen($this->container['category']) > 7)) {
-            $invalid_properties[] = "invalid value for 'category', the character length must be smaller than or equal to 7.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeat
     public function valid()
     {
 
-        if (strlen($this->container['category']) > 7) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeat
      */
     public function setCategory($category)
     {
-        if (!is_null($category) && (strlen($category) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $category when calling PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 7.');
-        }
 
         $this->container['category'] = $category;
 

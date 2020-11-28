@@ -180,30 +180,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['prefix']) && (strlen($this->container['prefix']) > 6)) {
-            $invalid_properties[] = "invalid value for 'prefix', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['suffix']) && (strlen($this->container['suffix']) > 4)) {
-            $invalid_properties[] = "invalid value for 'suffix', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['assuranceLevel']) && (strlen($this->container['assuranceLevel']) > 2)) {
-            $invalid_properties[] = "invalid value for 'assuranceLevel', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['requestorId']) && (strlen($this->container['requestorId']) > 11)) {
-            $invalid_properties[] = "invalid value for 'requestorId', the character length must be smaller than or equal to 11.";
-        }
-
         return $invalid_properties;
     }
 
@@ -216,24 +192,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
     public function valid()
     {
 
-        if (strlen($this->container['prefix']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['suffix']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['assuranceLevel']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['requestorId']) > 11) {
-            return false;
-        }
         return true;
     }
 
@@ -254,9 +212,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setPrefix($prefix)
     {
-        if (!is_null($prefix) && (strlen($prefix) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $prefix when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 6.');
-        }
 
         $this->container['prefix'] = $prefix;
 
@@ -279,9 +234,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setSuffix($suffix)
     {
-        if (!is_null($suffix) && (strlen($suffix) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $suffix when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['suffix'] = $suffix;
 
@@ -325,9 +277,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setAssuranceLevel($assuranceLevel)
     {
-        if (!is_null($assuranceLevel) && (strlen($assuranceLevel) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $assuranceLevel when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['assuranceLevel'] = $assuranceLevel;
 
@@ -350,9 +299,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -375,9 +321,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setExpirationYear($expirationYear)
     {
-        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -400,9 +343,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
      */
     public function setRequestorId($requestorId)
     {
-        if (!is_null($requestorId) && (strlen($requestorId) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $requestorId when calling PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard., must be smaller than or equal to 11.');
-        }
 
         $this->container['requestorId'] = $requestorId;
 

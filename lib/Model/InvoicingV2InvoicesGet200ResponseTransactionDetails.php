@@ -151,10 +151,6 @@ class InvoicingV2InvoicesGet200ResponseTransactionDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 19)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 19.";
-        }
-
         return $invalid_properties;
     }
 
@@ -167,9 +163,6 @@ class InvoicingV2InvoicesGet200ResponseTransactionDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['amount']) > 19) {
-            return false;
-        }
         return true;
     }
 
@@ -211,9 +204,6 @@ class InvoicingV2InvoicesGet200ResponseTransactionDetails implements ArrayAccess
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling InvoicingV2InvoicesGet200ResponseTransactionDetails., must be smaller than or equal to 19.');
-        }
 
         $this->container['amount'] = $amount;
 

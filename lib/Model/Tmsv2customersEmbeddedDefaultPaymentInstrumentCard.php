@@ -186,26 +186,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['issueNumber']) && (strlen($this->container['issueNumber']) > 2)) {
-            $invalid_properties[] = "invalid value for 'issueNumber', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['startMonth']) && (strlen($this->container['startMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'startMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['startYear']) && (strlen($this->container['startYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'startYear', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -218,21 +198,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['issueNumber']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['startMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['startYear']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -253,9 +218,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -278,9 +240,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setExpirationYear($expirationYear)
     {
-        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -324,9 +283,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setIssueNumber($issueNumber)
     {
-        if (!is_null($issueNumber) && (strlen($issueNumber) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $issueNumber when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['issueNumber'] = $issueNumber;
 
@@ -349,9 +305,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setStartMonth($startMonth)
     {
-        if (!is_null($startMonth) && (strlen($startMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $startMonth when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['startMonth'] = $startMonth;
 
@@ -374,9 +327,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setStartYear($startYear)
     {
-        if (!is_null($startYear) && (strlen($startYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $startYear when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['startYear'] = $startYear;
 

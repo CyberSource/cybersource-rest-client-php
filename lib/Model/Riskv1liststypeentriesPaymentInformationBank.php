@@ -163,22 +163,6 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['accountNumber']) && (strlen($this->container['accountNumber']) > 30)) {
-            $invalid_properties[] = "invalid value for 'accountNumber', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 15)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['iban']) && (strlen($this->container['iban']) > 30)) {
-            $invalid_properties[] = "invalid value for 'iban', the character length must be smaller than or equal to 30.";
-        }
-
         return $invalid_properties;
     }
 
@@ -191,18 +175,6 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['accountNumber']) > 30) {
-            return false;
-        }
-        if (strlen($this->container['code']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['iban']) > 30) {
-            return false;
-        }
         return true;
     }
 
@@ -223,9 +195,6 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
      */
     public function setAccountNumber($accountNumber)
     {
-        if (!is_null($accountNumber) && (strlen($accountNumber) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $accountNumber when calling Riskv1liststypeentriesPaymentInformationBank., must be smaller than or equal to 30.');
-        }
 
         $this->container['accountNumber'] = $accountNumber;
 
@@ -248,9 +217,6 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Riskv1liststypeentriesPaymentInformationBank., must be smaller than or equal to 15.');
-        }
 
         $this->container['code'] = $code;
 
@@ -273,9 +239,6 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Riskv1liststypeentriesPaymentInformationBank., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -298,9 +261,6 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
      */
     public function setIban($iban)
     {
-        if (!is_null($iban) && (strlen($iban) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $iban when calling Riskv1liststypeentriesPaymentInformationBank., must be smaller than or equal to 30.');
-        }
 
         $this->container['iban'] = $iban;
 

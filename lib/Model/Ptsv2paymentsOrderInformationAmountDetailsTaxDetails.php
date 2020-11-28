@@ -180,26 +180,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['rate']) && (strlen($this->container['rate']) > 6)) {
-            $invalid_properties[] = "invalid value for 'rate', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 4)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['taxId']) && (strlen($this->container['taxId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'taxId', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['exemptionCode']) && (strlen($this->container['exemptionCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'exemptionCode', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -212,21 +192,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['amount']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['rate']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['code']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['taxId']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['exemptionCode']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -268,9 +233,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling Ptsv2paymentsOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['amount'] = $amount;
 
@@ -293,9 +255,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
      */
     public function setRate($rate)
     {
-        if (!is_null($rate) && (strlen($rate) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $rate when calling Ptsv2paymentsOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 6.');
-        }
 
         $this->container['rate'] = $rate;
 
@@ -318,9 +277,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Ptsv2paymentsOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 4.');
-        }
 
         $this->container['code'] = $code;
 
@@ -343,9 +299,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
      */
     public function setTaxId($taxId)
     {
-        if (!is_null($taxId) && (strlen($taxId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $taxId when calling Ptsv2paymentsOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['taxId'] = $taxId;
 
@@ -389,9 +342,6 @@ class Ptsv2paymentsOrderInformationAmountDetailsTaxDetails implements ArrayAcces
      */
     public function setExemptionCode($exemptionCode)
     {
-        if (!is_null($exemptionCode) && (strlen($exemptionCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $exemptionCode when calling Ptsv2paymentsOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 1.');
-        }
 
         $this->container['exemptionCode'] = $exemptionCode;
 

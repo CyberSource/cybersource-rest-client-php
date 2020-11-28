@@ -144,10 +144,6 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['previousTransactionId']) && (strlen($this->container['previousTransactionId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'previousTransactionId', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['previousTransactionId']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      */
     public function setPreviousTransactionId($previousTransactionId)
     {
-        if (!is_null($previousTransactionId) && (strlen($previousTransactionId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $previousTransactionId when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction., must be smaller than or equal to 15.');
-        }
 
         $this->container['previousTransactionId'] = $previousTransactionId;
 

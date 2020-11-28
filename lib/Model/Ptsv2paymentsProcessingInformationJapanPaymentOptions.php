@@ -186,34 +186,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentMethod']) && (strlen($this->container['paymentMethod']) > 2)) {
-            $invalid_properties[] = "invalid value for 'paymentMethod', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['terminalId']) && (strlen($this->container['terminalId']) > 13)) {
-            $invalid_properties[] = "invalid value for 'terminalId', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['firstBillingMonth']) && (strlen($this->container['firstBillingMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'firstBillingMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['businessName']) && (strlen($this->container['businessName']) > 25)) {
-            $invalid_properties[] = "invalid value for 'businessName', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['businessNameKatakana']) && (strlen($this->container['businessNameKatakana']) > 25)) {
-            $invalid_properties[] = "invalid value for 'businessNameKatakana', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['jis2TrackData']) && (strlen($this->container['jis2TrackData']) > 69)) {
-            $invalid_properties[] = "invalid value for 'jis2TrackData', the character length must be smaller than or equal to 69.";
-        }
-
-        if (!is_null($this->container['businessNameAlphaNumeric']) && (strlen($this->container['businessNameAlphaNumeric']) > 25)) {
-            $invalid_properties[] = "invalid value for 'businessNameAlphaNumeric', the character length must be smaller than or equal to 25.";
-        }
-
         return $invalid_properties;
     }
 
@@ -226,27 +198,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['paymentMethod']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['terminalId']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['firstBillingMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['businessName']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['businessNameKatakana']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['jis2TrackData']) > 69) {
-            return false;
-        }
-        if (strlen($this->container['businessNameAlphaNumeric']) > 25) {
-            return false;
-        }
         return true;
     }
 
@@ -267,9 +218,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setPaymentMethod($paymentMethod)
     {
-        if (!is_null($paymentMethod) && (strlen($paymentMethod) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $paymentMethod when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 2.');
-        }
 
         $this->container['paymentMethod'] = $paymentMethod;
 
@@ -313,9 +261,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setTerminalId($terminalId)
     {
-        if (!is_null($terminalId) && (strlen($terminalId) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $terminalId when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 13.');
-        }
 
         $this->container['terminalId'] = $terminalId;
 
@@ -338,9 +283,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setFirstBillingMonth($firstBillingMonth)
     {
-        if (!is_null($firstBillingMonth) && (strlen($firstBillingMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $firstBillingMonth when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 2.');
-        }
 
         $this->container['firstBillingMonth'] = $firstBillingMonth;
 
@@ -363,9 +305,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setBusinessName($businessName)
     {
-        if (!is_null($businessName) && (strlen($businessName) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $businessName when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 25.');
-        }
 
         $this->container['businessName'] = $businessName;
 
@@ -388,9 +327,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setBusinessNameKatakana($businessNameKatakana)
     {
-        if (!is_null($businessNameKatakana) && (strlen($businessNameKatakana) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $businessNameKatakana when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 25.');
-        }
 
         $this->container['businessNameKatakana'] = $businessNameKatakana;
 
@@ -413,9 +349,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setJis2TrackData($jis2TrackData)
     {
-        if (!is_null($jis2TrackData) && (strlen($jis2TrackData) > 69)) {
-            throw new \InvalidArgumentException('invalid length for $jis2TrackData when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 69.');
-        }
 
         $this->container['jis2TrackData'] = $jis2TrackData;
 
@@ -438,9 +371,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     public function setBusinessNameAlphaNumeric($businessNameAlphaNumeric)
     {
-        if (!is_null($businessNameAlphaNumeric) && (strlen($businessNameAlphaNumeric) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $businessNameAlphaNumeric when calling Ptsv2paymentsProcessingInformationJapanPaymentOptions., must be smaller than or equal to 25.');
-        }
 
         $this->container['businessNameAlphaNumeric'] = $businessNameAlphaNumeric;
 

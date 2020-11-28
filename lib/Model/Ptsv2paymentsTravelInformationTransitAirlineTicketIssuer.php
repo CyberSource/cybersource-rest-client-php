@@ -180,34 +180,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 4)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 20)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['address']) && (strlen($this->container['address']) > 16)) {
-            $invalid_properties[] = "invalid value for 'address', the character length must be smaller than or equal to 16.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 18)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 18.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 18)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 18.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 15)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 18)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 18.";
-        }
-
         return $invalid_properties;
     }
 
@@ -220,27 +192,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['address']) > 16) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 18) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 18) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 18) {
-            return false;
-        }
         return true;
     }
 
@@ -261,9 +212,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 4.');
-        }
 
         $this->container['code'] = $code;
 
@@ -286,9 +234,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 20.');
-        }
 
         $this->container['name'] = $name;
 
@@ -311,9 +256,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setAddress($address)
     {
-        if (!is_null($address) && (strlen($address) > 16)) {
-            throw new \InvalidArgumentException('invalid length for $address when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 16.');
-        }
 
         $this->container['address'] = $address;
 
@@ -336,9 +278,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 18)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 18.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -361,9 +300,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 18)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 18.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -386,9 +322,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 15.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -411,9 +344,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer implements ArrayA
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 18)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsTravelInformationTransitAirlineTicketIssuer., must be smaller than or equal to 18.');
-        }
 
         $this->container['country'] = $country;
 

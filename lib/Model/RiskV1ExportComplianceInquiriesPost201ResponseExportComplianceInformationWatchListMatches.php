@@ -162,10 +162,6 @@ class RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationW
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['sanctionList']) && (strlen($this->container['sanctionList']) > 255)) {
-            $invalid_properties[] = "invalid value for 'sanctionList', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -178,9 +174,6 @@ class RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationW
     public function valid()
     {
 
-        if (strlen($this->container['sanctionList']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +215,6 @@ class RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationW
      */
     public function setSanctionList($sanctionList)
     {
-        if (!is_null($sanctionList) && (strlen($sanctionList) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $sanctionList when calling RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformationWatchListMatches., must be smaller than or equal to 255.');
-        }
 
         $this->container['sanctionList'] = $sanctionList;
 

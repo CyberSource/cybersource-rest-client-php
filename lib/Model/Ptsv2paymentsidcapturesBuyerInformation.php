@@ -150,14 +150,6 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 20)) {
-            $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['merchantCustomerId']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['vatRegistrationNumber']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling Ptsv2paymentsidcapturesBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-        if (!is_null($vatRegistrationNumber) && (strlen($vatRegistrationNumber) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $vatRegistrationNumber when calling Ptsv2paymentsidcapturesBuyerInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 

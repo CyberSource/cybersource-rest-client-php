@@ -183,7 +183,6 @@ class TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails implements A
      */
     public function setSalesSlipNumber($salesSlipNumber)
     {
-
         if (!is_null($salesSlipNumber) && ($salesSlipNumber > 99999)) {
             throw new \InvalidArgumentException('invalid value for $salesSlipNumber when calling TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails., must be smaller than or equal to 99999.');
         }

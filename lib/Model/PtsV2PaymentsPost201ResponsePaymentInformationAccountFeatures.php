@@ -246,74 +246,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['accountType']) && (strlen($this->container['accountType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'accountType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['accountStatus']) && (strlen($this->container['accountStatus']) > 1)) {
-            $invalid_properties[] = "invalid value for 'accountStatus', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['balanceAmount']) && (strlen($this->container['balanceAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'balanceAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['balanceAmountType']) && (strlen($this->container['balanceAmountType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'balanceAmountType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 5)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['balanceSign']) && (strlen($this->container['balanceSign']) > 8)) {
-            $invalid_properties[] = "invalid value for 'balanceSign', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['affluenceIndicator']) && (strlen($this->container['affluenceIndicator']) > 13)) {
-            $invalid_properties[] = "invalid value for 'affluenceIndicator', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['category']) && (strlen($this->container['category']) > 7)) {
-            $invalid_properties[] = "invalid value for 'category', the character length must be smaller than or equal to 7.";
-        }
-
-        if (!is_null($this->container['commercial']) && (strlen($this->container['commercial']) > 1)) {
-            $invalid_properties[] = "invalid value for 'commercial', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['group']) && (strlen($this->container['group']) > 1)) {
-            $invalid_properties[] = "invalid value for 'group', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['healthCare']) && (strlen($this->container['healthCare']) > 1)) {
-            $invalid_properties[] = "invalid value for 'healthCare', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['payroll']) && (strlen($this->container['payroll']) > 1)) {
-            $invalid_properties[] = "invalid value for 'payroll', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['level3Eligible']) && (strlen($this->container['level3Eligible']) > 1)) {
-            $invalid_properties[] = "invalid value for 'level3Eligible', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['pinlessDebit']) && (strlen($this->container['pinlessDebit']) > 1)) {
-            $invalid_properties[] = "invalid value for 'pinlessDebit', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['signatureDebit']) && (strlen($this->container['signatureDebit']) > 1)) {
-            $invalid_properties[] = "invalid value for 'signatureDebit', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['prepaid']) && (strlen($this->container['prepaid']) > 1)) {
-            $invalid_properties[] = "invalid value for 'prepaid', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['regulated']) && (strlen($this->container['regulated']) > 1)) {
-            $invalid_properties[] = "invalid value for 'regulated', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -326,57 +258,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     public function valid()
     {
 
-        if (strlen($this->container['accountType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['accountStatus']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['balanceAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['balanceAmountType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['balanceSign']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['affluenceIndicator']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['category']) > 7) {
-            return false;
-        }
-        if (strlen($this->container['commercial']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['group']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['healthCare']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['payroll']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['level3Eligible']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['pinlessDebit']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['signatureDebit']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['prepaid']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['regulated']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -397,9 +278,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setAccountType($accountType)
     {
-        if (!is_null($accountType) && (strlen($accountType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $accountType when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 2.');
-        }
 
         $this->container['accountType'] = $accountType;
 
@@ -422,9 +300,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setAccountStatus($accountStatus)
     {
-        if (!is_null($accountStatus) && (strlen($accountStatus) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $accountStatus when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['accountStatus'] = $accountStatus;
 
@@ -468,9 +343,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceAmount($balanceAmount)
     {
-        if (!is_null($balanceAmount) && (strlen($balanceAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $balanceAmount when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 12.');
-        }
 
         $this->container['balanceAmount'] = $balanceAmount;
 
@@ -493,9 +365,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceAmountType($balanceAmountType)
     {
-        if (!is_null($balanceAmountType) && (strlen($balanceAmountType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $balanceAmountType when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 2.');
-        }
 
         $this->container['balanceAmountType'] = $balanceAmountType;
 
@@ -518,9 +387,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 5.');
-        }
 
         $this->container['currency'] = $currency;
 
@@ -543,9 +409,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceSign($balanceSign)
     {
-        if (!is_null($balanceSign) && (strlen($balanceSign) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $balanceSign when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 8.');
-        }
 
         $this->container['balanceSign'] = $balanceSign;
 
@@ -568,9 +431,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setAffluenceIndicator($affluenceIndicator)
     {
-        if (!is_null($affluenceIndicator) && (strlen($affluenceIndicator) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $affluenceIndicator when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 13.');
-        }
 
         $this->container['affluenceIndicator'] = $affluenceIndicator;
 
@@ -593,9 +453,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setCategory($category)
     {
-        if (!is_null($category) && (strlen($category) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $category when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 7.');
-        }
 
         $this->container['category'] = $category;
 
@@ -618,9 +475,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setCommercial($commercial)
     {
-        if (!is_null($commercial) && (strlen($commercial) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $commercial when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['commercial'] = $commercial;
 
@@ -643,9 +497,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setGroup($group)
     {
-        if (!is_null($group) && (strlen($group) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $group when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['group'] = $group;
 
@@ -668,9 +519,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setHealthCare($healthCare)
     {
-        if (!is_null($healthCare) && (strlen($healthCare) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $healthCare when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['healthCare'] = $healthCare;
 
@@ -693,9 +541,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setPayroll($payroll)
     {
-        if (!is_null($payroll) && (strlen($payroll) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $payroll when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['payroll'] = $payroll;
 
@@ -718,9 +563,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setLevel3Eligible($level3Eligible)
     {
-        if (!is_null($level3Eligible) && (strlen($level3Eligible) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $level3Eligible when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['level3Eligible'] = $level3Eligible;
 
@@ -743,9 +585,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setPinlessDebit($pinlessDebit)
     {
-        if (!is_null($pinlessDebit) && (strlen($pinlessDebit) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $pinlessDebit when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['pinlessDebit'] = $pinlessDebit;
 
@@ -768,9 +607,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setSignatureDebit($signatureDebit)
     {
-        if (!is_null($signatureDebit) && (strlen($signatureDebit) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $signatureDebit when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['signatureDebit'] = $signatureDebit;
 
@@ -793,9 +629,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setPrepaid($prepaid)
     {
-        if (!is_null($prepaid) && (strlen($prepaid) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $prepaid when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['prepaid'] = $prepaid;
 
@@ -818,9 +651,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setRegulated($regulated)
     {
-        if (!is_null($regulated) && (strlen($regulated) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $regulated when calling PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 1.');
-        }
 
         $this->container['regulated'] = $regulated;
 

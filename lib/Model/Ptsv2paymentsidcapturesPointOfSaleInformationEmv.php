@@ -150,10 +150,6 @@ class Ptsv2paymentsidcapturesPointOfSaleInformationEmv implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['tags']) && (strlen($this->container['tags']) > 1998)) {
-            $invalid_properties[] = "invalid value for 'tags', the character length must be smaller than or equal to 1998.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2paymentsidcapturesPointOfSaleInformationEmv implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['tags']) > 1998) {
-            return false;
-        }
         return true;
     }
 
@@ -189,9 +182,6 @@ class Ptsv2paymentsidcapturesPointOfSaleInformationEmv implements ArrayAccess
      */
     public function setTags($tags)
     {
-        if (!is_null($tags) && (strlen($tags) > 1998)) {
-            throw new \InvalidArgumentException('invalid length for $tags when calling Ptsv2paymentsidcapturesPointOfSaleInformationEmv., must be smaller than or equal to 1998.');
-        }
 
         $this->container['tags'] = $tags;
 

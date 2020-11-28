@@ -150,14 +150,6 @@ class VasV2PaymentsPost201ResponseOrderInformationTaxDetails implements ArrayAcc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 15)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class VasV2PaymentsPost201ResponseOrderInformationTaxDetails implements ArrayAcc
     public function valid()
     {
 
-        if (strlen($this->container['type']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['amount']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class VasV2PaymentsPost201ResponseOrderInformationTaxDetails implements ArrayAcc
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling VasV2PaymentsPost201ResponseOrderInformationTaxDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['type'] = $type;
 
@@ -221,9 +204,6 @@ class VasV2PaymentsPost201ResponseOrderInformationTaxDetails implements ArrayAcc
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling VasV2PaymentsPost201ResponseOrderInformationTaxDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['amount'] = $amount;
 

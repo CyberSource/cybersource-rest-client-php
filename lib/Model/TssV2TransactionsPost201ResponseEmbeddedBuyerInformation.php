@@ -144,10 +144,6 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
     public function valid()
     {
 
-        if (strlen($this->container['merchantCustomerId']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling TssV2TransactionsPost201ResponseEmbeddedBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 

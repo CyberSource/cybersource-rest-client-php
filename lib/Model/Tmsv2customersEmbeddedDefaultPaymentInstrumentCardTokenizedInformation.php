@@ -150,14 +150,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation imp
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['requestorID']) && (strlen($this->container['requestorID']) > 11)) {
-            $invalid_properties[] = "invalid value for 'requestorID', the character length must be smaller than or equal to 11.";
-        }
-
-        if (!is_null($this->container['transactionType']) && (strlen($this->container['transactionType']) > 1)) {
-            $invalid_properties[] = "invalid value for 'transactionType', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation imp
     public function valid()
     {
 
-        if (strlen($this->container['requestorID']) > 11) {
-            return false;
-        }
-        if (strlen($this->container['transactionType']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation imp
      */
     public function setRequestorID($requestorID)
     {
-        if (!is_null($requestorID) && (strlen($requestorID) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $requestorID when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation., must be smaller than or equal to 11.');
-        }
 
         $this->container['requestorID'] = $requestorID;
 
@@ -221,9 +204,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation imp
      */
     public function setTransactionType($transactionType)
     {
-        if (!is_null($transactionType) && (strlen($transactionType) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $transactionType when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['transactionType'] = $transactionType;
 

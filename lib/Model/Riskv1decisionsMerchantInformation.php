@@ -150,10 +150,6 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantName']) && (strlen($this->container['merchantName']) > 25)) {
-            $invalid_properties[] = "invalid value for 'merchantName', the character length must be smaller than or equal to 25.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['merchantName']) > 25) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      */
     public function setMerchantName($merchantName)
     {
-        if (!is_null($merchantName) && (strlen($merchantName) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $merchantName when calling Riskv1decisionsMerchantInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['merchantName'] = $merchantName;
 

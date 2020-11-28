@@ -150,14 +150,6 @@ class Tmsv2customersObjectInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['title']) && (strlen($this->container['title']) > 60)) {
-            $invalid_properties[] = "invalid value for 'title', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['comment']) && (strlen($this->container['comment']) > 150)) {
-            $invalid_properties[] = "invalid value for 'comment', the character length must be smaller than or equal to 150.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Tmsv2customersObjectInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['title']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['comment']) > 150) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Tmsv2customersObjectInformation implements ArrayAccess
      */
     public function setTitle($title)
     {
-        if (!is_null($title) && (strlen($title) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling Tmsv2customersObjectInformation., must be smaller than or equal to 60.');
-        }
 
         $this->container['title'] = $title;
 
@@ -221,9 +204,6 @@ class Tmsv2customersObjectInformation implements ArrayAccess
      */
     public function setComment($comment)
     {
-        if (!is_null($comment) && (strlen($comment) > 150)) {
-            throw new \InvalidArgumentException('invalid length for $comment when calling Tmsv2customersObjectInformation., must be smaller than or equal to 150.');
-        }
 
         $this->container['comment'] = $comment;
 

@@ -156,14 +156,6 @@ class Riskv1liststypeentriesPaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 20)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['bin']) && (strlen($this->container['bin']) > 6)) {
-            $invalid_properties[] = "invalid value for 'bin', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class Riskv1liststypeentriesPaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['number']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['bin']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -202,9 +188,6 @@ class Riskv1liststypeentriesPaymentInformationCard implements ArrayAccess
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Riskv1liststypeentriesPaymentInformationCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['number'] = $number;
 
@@ -248,9 +231,6 @@ class Riskv1liststypeentriesPaymentInformationCard implements ArrayAccess
      */
     public function setBin($bin)
     {
-        if (!is_null($bin) && (strlen($bin) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $bin when calling Riskv1liststypeentriesPaymentInformationCard., must be smaller than or equal to 6.');
-        }
 
         $this->container['bin'] = $bin;
 

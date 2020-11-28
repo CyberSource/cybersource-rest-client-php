@@ -156,18 +156,6 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['tags']) && (strlen($this->container['tags']) > 1998)) {
-            $invalid_properties[] = "invalid value for 'tags', the character length must be smaller than or equal to 1998.";
-        }
-
-        if (!is_null($this->container['chipValidationType']) && (strlen($this->container['chipValidationType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'chipValidationType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['chipValidationResult']) && (strlen($this->container['chipValidationResult']) > 1)) {
-            $invalid_properties[] = "invalid value for 'chipValidationResult', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['tags']) > 1998) {
-            return false;
-        }
-        if (strlen($this->container['chipValidationType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['chipValidationResult']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      */
     public function setTags($tags)
     {
-        if (!is_null($tags) && (strlen($tags) > 1998)) {
-            throw new \InvalidArgumentException('invalid length for $tags when calling PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv., must be smaller than or equal to 1998.');
-        }
 
         $this->container['tags'] = $tags;
 
@@ -234,9 +210,6 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      */
     public function setChipValidationType($chipValidationType)
     {
-        if (!is_null($chipValidationType) && (strlen($chipValidationType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $chipValidationType when calling PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv., must be smaller than or equal to 2.');
-        }
 
         $this->container['chipValidationType'] = $chipValidationType;
 
@@ -259,9 +232,6 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      */
     public function setChipValidationResult($chipValidationResult)
     {
-        if (!is_null($chipValidationResult) && (strlen($chipValidationResult) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $chipValidationResult when calling PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv., must be smaller than or equal to 1.');
-        }
 
         $this->container['chipValidationResult'] = $chipValidationResult;
 

@@ -204,10 +204,6 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 26)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 26.";
-        }
-
         return $invalid_properties;
     }
 
@@ -220,9 +216,6 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['id']) > 26) {
-            return false;
-        }
         return true;
     }
 
@@ -264,9 +257,6 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
      */
     public function setId($id)
     {
-        if (!is_null($id) && (strlen($id) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling RiskV1DecisionsPost201Response., must be smaller than or equal to 26.');
-        }
 
         $this->container['id'] = $id;
 

@@ -223,14 +223,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         if ($this->container['reportDefinitionName'] === null) {
             $invalid_properties[] = "'reportDefinitionName' can't be null";
         }
-        if ((strlen($this->container['reportDefinitionName']) > 80)) {
-            $invalid_properties[] = "invalid value for 'reportDefinitionName', the character length must be smaller than or equal to 80.";
-        }
-
-        if ((strlen($this->container['reportDefinitionName']) < 1)) {
-            $invalid_properties[] = "invalid value for 'reportDefinitionName', the character length must be bigger than or equal to 1.";
-        }
-
         if (!preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
             $invalid_properties[] = "invalid value for 'reportDefinitionName', must be conform to the pattern /[a-zA-Z0-9-]+/.";
         }
@@ -251,14 +243,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         if ($this->container['reportName'] === null) {
             $invalid_properties[] = "'reportName' can't be null";
         }
-        if ((strlen($this->container['reportName']) > 128)) {
-            $invalid_properties[] = "invalid value for 'reportName', the character length must be smaller than or equal to 128.";
-        }
-
-        if ((strlen($this->container['reportName']) < 1)) {
-            $invalid_properties[] = "invalid value for 'reportName', the character length must be bigger than or equal to 1.";
-        }
-
         if (!preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
             $invalid_properties[] = "invalid value for 'reportName', must be conform to the pattern /[a-zA-Z0-9-_ ]+/.";
         }
@@ -299,12 +283,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
         if ($this->container['reportDefinitionName'] === null) {
             return false;
         }
-        if (strlen($this->container['reportDefinitionName']) > 80) {
-            return false;
-        }
-        if (strlen($this->container['reportDefinitionName']) < 1) {
-            return false;
-        }
         if (!preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
             return false;
         }
@@ -321,12 +299,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
             return false;
         }
         if ($this->container['reportName'] === null) {
-            return false;
-        }
-        if (strlen($this->container['reportName']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['reportName']) < 1) {
             return false;
         }
         if (!preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
@@ -367,7 +339,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setOrganizationId($organizationId)
     {
-
         if (!is_null($organizationId) && (!preg_match("/[a-zA-Z0-9-_]+/", $organizationId))) {
             throw new \InvalidArgumentException("invalid value for $organizationId when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-_]+/.");
         }
@@ -393,12 +364,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setReportDefinitionName($reportDefinitionName)
     {
-        if ((strlen($reportDefinitionName) > 80)) {
-            throw new \InvalidArgumentException('invalid length for $reportDefinitionName when calling CreateReportSubscriptionRequest., must be smaller than or equal to 80.');
-        }
-        if ((strlen($reportDefinitionName) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reportDefinitionName when calling CreateReportSubscriptionRequest., must be bigger than or equal to 1.');
-        }
         if ((!preg_match("/[a-zA-Z0-9-]+/", $reportDefinitionName))) {
             throw new \InvalidArgumentException("invalid value for $reportDefinitionName when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-]+/.");
         }
@@ -487,7 +452,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setReportInterval($reportInterval)
     {
-
         if (!is_null($reportInterval) && (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $reportInterval))) {
             throw new \InvalidArgumentException("invalid value for $reportInterval when calling CreateReportSubscriptionRequest., must conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.");
         }
@@ -513,12 +477,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setReportName($reportName)
     {
-        if ((strlen($reportName) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $reportName when calling CreateReportSubscriptionRequest., must be smaller than or equal to 128.');
-        }
-        if ((strlen($reportName) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reportName when calling CreateReportSubscriptionRequest., must be bigger than or equal to 1.');
-        }
         if ((!preg_match("/[a-zA-Z0-9-_ ]+/", $reportName))) {
             throw new \InvalidArgumentException("invalid value for $reportName when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
         }
@@ -586,7 +544,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setStartDay($startDay)
     {
-
         if (!is_null($startDay) && ($startDay > 31)) {
             throw new \InvalidArgumentException('invalid value for $startDay when calling CreateReportSubscriptionRequest., must be smaller than or equal to 31.');
         }
@@ -657,7 +614,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setGroupName($groupName)
     {
-
         if (!is_null($groupName) && (!preg_match("/[a-zA-Z0-9-_ ]+/", $groupName))) {
             throw new \InvalidArgumentException("invalid value for $groupName when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
         }

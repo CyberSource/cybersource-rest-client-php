@@ -144,10 +144,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCustomer implements ArrayA
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['personalIdResult']) && (strlen($this->container['personalIdResult']) > 1)) {
-            $invalid_properties[] = "invalid value for 'personalIdResult', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCustomer implements ArrayA
     public function valid()
     {
 
-        if (strlen($this->container['personalIdResult']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCustomer implements ArrayA
      */
     public function setPersonalIdResult($personalIdResult)
     {
-        if (!is_null($personalIdResult) && (strlen($personalIdResult) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $personalIdResult when calling PtsV2PaymentsPost201ResponseProcessorInformationCustomer., must be smaller than or equal to 1.');
-        }
 
         $this->container['personalIdResult'] = $personalIdResult;
 

@@ -151,14 +151,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 100)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['email']) && (strlen($this->container['email']) > 255)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -171,12 +163,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['email']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -197,9 +183,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Invoicingv2invoicesCustomerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['name'] = $name;
 
@@ -222,9 +205,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling Invoicingv2invoicesCustomerInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['email'] = $email;
 

@@ -150,14 +150,6 @@ class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer implements Ar
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['category']) && (strlen($this->container['category']) > 4)) {
-            $invalid_properties[] = "invalid value for 'category', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['voucherSerialNumber']) && (strlen($this->container['voucherSerialNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'voucherSerialNumber', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer implements Ar
     public function valid()
     {
 
-        if (strlen($this->container['category']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['voucherSerialNumber']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer implements Ar
      */
     public function setCategory($category)
     {
-        if (!is_null($category) && (strlen($category) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $category when calling Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer., must be smaller than or equal to 4.');
-        }
 
         $this->container['category'] = $category;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer implements Ar
      */
     public function setVoucherSerialNumber($voucherSerialNumber)
     {
-        if (!is_null($voucherSerialNumber) && (strlen($voucherSerialNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $voucherSerialNumber when calling Ptsv2paymentsProcessingInformationElectronicBenefitsTransfer., must be smaller than or equal to 15.');
-        }
 
         $this->container['voucherSerialNumber'] = $voucherSerialNumber;
 

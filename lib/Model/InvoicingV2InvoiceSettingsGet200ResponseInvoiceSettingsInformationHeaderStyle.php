@@ -150,16 +150,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['fontColor']) && (strlen($this->container['fontColor']) > 7)) {
-            $invalid_properties[] = "invalid value for 'fontColor', the character length must be smaller than or equal to 7.";
-        }
-
         if (!is_null($this->container['fontColor']) && !preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['fontColor'])) {
             $invalid_properties[] = "invalid value for 'fontColor', must be conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.";
-        }
-
-        if (!is_null($this->container['backgroundColor']) && (strlen($this->container['backgroundColor']) > 7)) {
-            $invalid_properties[] = "invalid value for 'backgroundColor', the character length must be smaller than or equal to 7.";
         }
 
         if (!is_null($this->container['backgroundColor']) && !preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['backgroundColor'])) {
@@ -178,13 +170,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
     public function valid()
     {
 
-        if (strlen($this->container['fontColor']) > 7) {
-            return false;
-        }
         if (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['fontColor'])) {
-            return false;
-        }
-        if (strlen($this->container['backgroundColor']) > 7) {
             return false;
         }
         if (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['backgroundColor'])) {
@@ -210,9 +196,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      */
     public function setFontColor($fontColor)
     {
-        if (!is_null($fontColor) && (strlen($fontColor) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $fontColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must be smaller than or equal to 7.');
-        }
         if (!is_null($fontColor) && (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $fontColor))) {
             throw new \InvalidArgumentException("invalid value for $fontColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.");
         }
@@ -238,9 +221,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      */
     public function setBackgroundColor($backgroundColor)
     {
-        if (!is_null($backgroundColor) && (strlen($backgroundColor) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $backgroundColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must be smaller than or equal to 7.');
-        }
         if (!is_null($backgroundColor) && (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $backgroundColor))) {
             throw new \InvalidArgumentException("invalid value for $backgroundColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.");
         }

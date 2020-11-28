@@ -156,14 +156,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationScore implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['modelUsed']) && (strlen($this->container['modelUsed']) > 255)) {
-            $invalid_properties[] = "invalid value for 'modelUsed', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['result']) && (strlen($this->container['result']) > 255)) {
-            $invalid_properties[] = "invalid value for 'result', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationScore implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['modelUsed']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['result']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -223,9 +209,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationScore implements ArrayAccess
      */
     public function setModelUsed($modelUsed)
     {
-        if (!is_null($modelUsed) && (strlen($modelUsed) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $modelUsed when calling PtsV2PaymentsPost201ResponseRiskInformationScore., must be smaller than or equal to 255.');
-        }
 
         $this->container['modelUsed'] = $modelUsed;
 
@@ -248,9 +231,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationScore implements ArrayAccess
      */
     public function setResult($result)
     {
-        if (!is_null($result) && (strlen($result) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $result when calling PtsV2PaymentsPost201ResponseRiskInformationScore., must be smaller than or equal to 255.');
-        }
 
         $this->container['result'] = $result;
 

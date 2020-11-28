@@ -210,54 +210,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 1)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['codeRaw']) && (strlen($this->container['codeRaw']) > 1)) {
-            $invalid_properties[] = "invalid value for 'codeRaw', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['email']) && (strlen($this->container['email']) > 1)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['emailRaw']) && (strlen($this->container['emailRaw']) > 1)) {
-            $invalid_properties[] = "invalid value for 'emailRaw', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 1)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['phoneNumberRaw']) && (strlen($this->container['phoneNumberRaw']) > 1)) {
-            $invalid_properties[] = "invalid value for 'phoneNumberRaw', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['postalCodeRaw']) && (strlen($this->container['postalCodeRaw']) > 1)) {
-            $invalid_properties[] = "invalid value for 'postalCodeRaw', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['street']) && (strlen($this->container['street']) > 1)) {
-            $invalid_properties[] = "invalid value for 'street', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['streetRaw']) && (strlen($this->container['streetRaw']) > 1)) {
-            $invalid_properties[] = "invalid value for 'streetRaw', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 30)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['nameRaw']) && (strlen($this->container['nameRaw']) > 30)) {
-            $invalid_properties[] = "invalid value for 'nameRaw', the character length must be smaller than or equal to 30.";
-        }
-
         return $invalid_properties;
     }
 
@@ -270,42 +222,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['codeRaw']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['email']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['emailRaw']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumberRaw']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['postalCodeRaw']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['street']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['streetRaw']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 30) {
-            return false;
-        }
-        if (strlen($this->container['nameRaw']) > 30) {
-            return false;
-        }
         return true;
     }
 
@@ -326,9 +242,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['code'] = $code;
 
@@ -351,9 +264,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setCodeRaw($codeRaw)
     {
-        if (!is_null($codeRaw) && (strlen($codeRaw) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $codeRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['codeRaw'] = $codeRaw;
 
@@ -376,9 +286,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['email'] = $email;
 
@@ -401,9 +308,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setEmailRaw($emailRaw)
     {
-        if (!is_null($emailRaw) && (strlen($emailRaw) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $emailRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['emailRaw'] = $emailRaw;
 
@@ -426,9 +330,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 
@@ -451,9 +352,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPhoneNumberRaw($phoneNumberRaw)
     {
-        if (!is_null($phoneNumberRaw) && (strlen($phoneNumberRaw) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumberRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['phoneNumberRaw'] = $phoneNumberRaw;
 
@@ -476,9 +374,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -501,9 +396,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPostalCodeRaw($postalCodeRaw)
     {
-        if (!is_null($postalCodeRaw) && (strlen($postalCodeRaw) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $postalCodeRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['postalCodeRaw'] = $postalCodeRaw;
 
@@ -526,9 +418,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setStreet($street)
     {
-        if (!is_null($street) && (strlen($street) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $street when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['street'] = $street;
 
@@ -551,9 +440,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setStreetRaw($streetRaw)
     {
-        if (!is_null($streetRaw) && (strlen($streetRaw) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $streetRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 1.');
-        }
 
         $this->container['streetRaw'] = $streetRaw;
 
@@ -576,9 +462,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 30.');
-        }
 
         $this->container['name'] = $name;
 
@@ -601,9 +484,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setNameRaw($nameRaw)
     {
-        if (!is_null($nameRaw) && (strlen($nameRaw) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $nameRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResults., must be smaller than or equal to 30.');
-        }
 
         $this->container['nameRaw'] = $nameRaw;
 

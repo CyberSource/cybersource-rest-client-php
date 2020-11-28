@@ -181,34 +181,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['anonymizerStatus']) && (strlen($this->container['anonymizerStatus']) > 255)) {
-            $invalid_properties[] = "invalid value for 'anonymizerStatus', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 255)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 255)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 255)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['routingMethod']) && (strlen($this->container['routingMethod']) > 255)) {
-            $invalid_properties[] = "invalid value for 'routingMethod', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['carrier']) && (strlen($this->container['carrier']) > 255)) {
-            $invalid_properties[] = "invalid value for 'carrier', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['organization']) && (strlen($this->container['organization']) > 255)) {
-            $invalid_properties[] = "invalid value for 'organization', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -221,27 +193,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['anonymizerStatus']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['routingMethod']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['carrier']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['organization']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -262,9 +213,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setAnonymizerStatus($anonymizerStatus)
     {
-        if (!is_null($anonymizerStatus) && (strlen($anonymizerStatus) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $anonymizerStatus when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['anonymizerStatus'] = $anonymizerStatus;
 
@@ -287,9 +235,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -312,9 +257,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['country'] = $country;
 
@@ -337,9 +279,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -362,9 +301,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setRoutingMethod($routingMethod)
     {
-        if (!is_null($routingMethod) && (strlen($routingMethod) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $routingMethod when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['routingMethod'] = $routingMethod;
 
@@ -387,9 +323,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setCarrier($carrier)
     {
-        if (!is_null($carrier) && (strlen($carrier) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $carrier when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['carrier'] = $carrier;
 
@@ -412,9 +345,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setOrganization($organization)
     {
-        if (!is_null($organization) && (strlen($organization) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $organization when calling PtsV2PaymentsPost201ResponseRiskInformationIpAddress., must be smaller than or equal to 255.');
-        }
 
         $this->container['organization'] = $organization;
 

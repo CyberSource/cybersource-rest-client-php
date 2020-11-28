@@ -294,62 +294,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['processorId']) && (strlen($this->container['processorId']) > 3)) {
-            $invalid_properties[] = "invalid value for 'processorId', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['commerceIndicator']) && (strlen($this->container['commerceIndicator']) > 20)) {
-            $invalid_properties[] = "invalid value for 'commerceIndicator', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['paymentSolution']) && (strlen($this->container['paymentSolution']) > 12)) {
-            $invalid_properties[] = "invalid value for 'paymentSolution', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['reconciliationId']) && (strlen($this->container['reconciliationId']) > 60)) {
-            $invalid_properties[] = "invalid value for 'reconciliationId', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['linkId']) && (strlen($this->container['linkId']) > 26)) {
-            $invalid_properties[] = "invalid value for 'linkId', the character length must be smaller than or equal to 26.";
-        }
-
-        if (!is_null($this->container['purchaseLevel']) && (strlen($this->container['purchaseLevel']) > 1)) {
-            $invalid_properties[] = "invalid value for 'purchaseLevel', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['reportGroup']) && (strlen($this->container['reportGroup']) > 25)) {
-            $invalid_properties[] = "invalid value for 'reportGroup', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['visaCheckoutId']) && (strlen($this->container['visaCheckoutId']) > 48)) {
-            $invalid_properties[] = "invalid value for 'visaCheckoutId', the character length must be smaller than or equal to 48.";
-        }
-
-        if (!is_null($this->container['industryDataType']) && (strlen($this->container['industryDataType']) > 20)) {
-            $invalid_properties[] = "invalid value for 'industryDataType', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['walletType']) && (strlen($this->container['walletType']) > 5)) {
-            $invalid_properties[] = "invalid value for 'walletType', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['nationalNetDomesticData']) && (strlen($this->container['nationalNetDomesticData']) > 123)) {
-            $invalid_properties[] = "invalid value for 'nationalNetDomesticData', the character length must be smaller than or equal to 123.";
-        }
-
-        if (!is_null($this->container['mobileRemotePaymentType']) && (strlen($this->container['mobileRemotePaymentType']) > 1)) {
-            $invalid_properties[] = "invalid value for 'mobileRemotePaymentType', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['extendedCreditTotalCount']) && (strlen($this->container['extendedCreditTotalCount']) > 1)) {
-            $invalid_properties[] = "invalid value for 'extendedCreditTotalCount', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['networkRoutingOrder']) && (strlen($this->container['networkRoutingOrder']) > 30)) {
-            $invalid_properties[] = "invalid value for 'networkRoutingOrder', the character length must be smaller than or equal to 30.";
-        }
-
         return $invalid_properties;
     }
 
@@ -362,48 +306,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['processorId']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['commerceIndicator']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['paymentSolution']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['reconciliationId']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['linkId']) > 26) {
-            return false;
-        }
-        if (strlen($this->container['purchaseLevel']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['reportGroup']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['visaCheckoutId']) > 48) {
-            return false;
-        }
-        if (strlen($this->container['industryDataType']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['walletType']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['nationalNetDomesticData']) > 123) {
-            return false;
-        }
-        if (strlen($this->container['mobileRemotePaymentType']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['extendedCreditTotalCount']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['networkRoutingOrder']) > 30) {
-            return false;
-        }
         return true;
     }
 
@@ -487,9 +389,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setProcessorId($processorId)
     {
-        if (!is_null($processorId) && (strlen($processorId) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $processorId when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 3.');
-        }
 
         $this->container['processorId'] = $processorId;
 
@@ -533,9 +432,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setCommerceIndicator($commerceIndicator)
     {
-        if (!is_null($commerceIndicator) && (strlen($commerceIndicator) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $commerceIndicator when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['commerceIndicator'] = $commerceIndicator;
 
@@ -558,9 +454,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setPaymentSolution($paymentSolution)
     {
-        if (!is_null($paymentSolution) && (strlen($paymentSolution) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $paymentSolution when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['paymentSolution'] = $paymentSolution;
 
@@ -583,9 +476,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setReconciliationId($reconciliationId)
     {
-        if (!is_null($reconciliationId) && (strlen($reconciliationId) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $reconciliationId when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 60.');
-        }
 
         $this->container['reconciliationId'] = $reconciliationId;
 
@@ -608,9 +498,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setLinkId($linkId)
     {
-        if (!is_null($linkId) && (strlen($linkId) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $linkId when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 26.');
-        }
 
         $this->container['linkId'] = $linkId;
 
@@ -633,9 +520,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setPurchaseLevel($purchaseLevel)
     {
-        if (!is_null($purchaseLevel) && (strlen($purchaseLevel) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $purchaseLevel when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['purchaseLevel'] = $purchaseLevel;
 
@@ -658,9 +542,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setReportGroup($reportGroup)
     {
-        if (!is_null($reportGroup) && (strlen($reportGroup) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $reportGroup when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['reportGroup'] = $reportGroup;
 
@@ -683,9 +564,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setVisaCheckoutId($visaCheckoutId)
     {
-        if (!is_null($visaCheckoutId) && (strlen($visaCheckoutId) > 48)) {
-            throw new \InvalidArgumentException('invalid length for $visaCheckoutId when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 48.');
-        }
 
         $this->container['visaCheckoutId'] = $visaCheckoutId;
 
@@ -708,9 +586,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setIndustryDataType($industryDataType)
     {
-        if (!is_null($industryDataType) && (strlen($industryDataType) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $industryDataType when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['industryDataType'] = $industryDataType;
 
@@ -880,9 +755,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setWalletType($walletType)
     {
-        if (!is_null($walletType) && (strlen($walletType) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $walletType when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 5.');
-        }
 
         $this->container['walletType'] = $walletType;
 
@@ -905,9 +777,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setNationalNetDomesticData($nationalNetDomesticData)
     {
-        if (!is_null($nationalNetDomesticData) && (strlen($nationalNetDomesticData) > 123)) {
-            throw new \InvalidArgumentException('invalid length for $nationalNetDomesticData when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 123.');
-        }
 
         $this->container['nationalNetDomesticData'] = $nationalNetDomesticData;
 
@@ -951,9 +820,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setMobileRemotePaymentType($mobileRemotePaymentType)
     {
-        if (!is_null($mobileRemotePaymentType) && (strlen($mobileRemotePaymentType) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $mobileRemotePaymentType when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['mobileRemotePaymentType'] = $mobileRemotePaymentType;
 
@@ -976,9 +842,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setExtendedCreditTotalCount($extendedCreditTotalCount)
     {
-        if (!is_null($extendedCreditTotalCount) && (strlen($extendedCreditTotalCount) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $extendedCreditTotalCount when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['extendedCreditTotalCount'] = $extendedCreditTotalCount;
 
@@ -1001,9 +864,6 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     public function setNetworkRoutingOrder($networkRoutingOrder)
     {
-        if (!is_null($networkRoutingOrder) && (strlen($networkRoutingOrder) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $networkRoutingOrder when calling Ptsv2paymentsProcessingInformation., must be smaller than or equal to 30.');
-        }
 
         $this->container['networkRoutingOrder'] = $networkRoutingOrder;
 

@@ -144,10 +144,6 @@ class InvoicingV2InvoicesAllGet200ResponseCustomerInformation implements ArrayAc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 100)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class InvoicingV2InvoicesAllGet200ResponseCustomerInformation implements ArrayAc
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class InvoicingV2InvoicesAllGet200ResponseCustomerInformation implements ArrayAc
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling InvoicingV2InvoicesAllGet200ResponseCustomerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['name'] = $name;
 

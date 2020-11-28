@@ -144,10 +144,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentAccountReference']) && (strlen($this->container['paymentAccountReference']) > 32)) {
-            $invalid_properties[] = "invalid value for 'paymentAccountReference', the character length must be smaller than or equal to 32.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     public function valid()
     {
 
-        if (strlen($this->container['paymentAccountReference']) > 32) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setPaymentAccountReference($paymentAccountReference)
     {
-        if (!is_null($paymentAccountReference) && (strlen($paymentAccountReference) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $paymentAccountReference when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierIssuer., must be smaller than or equal to 32.');
-        }
 
         $this->container['paymentAccountReference'] = $paymentAccountReference;
 

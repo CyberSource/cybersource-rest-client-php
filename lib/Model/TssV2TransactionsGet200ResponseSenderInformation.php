@@ -144,10 +144,6 @@ class TssV2TransactionsGet200ResponseSenderInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['referenceNumber']) && (strlen($this->container['referenceNumber']) > 19)) {
-            $invalid_properties[] = "invalid value for 'referenceNumber', the character length must be smaller than or equal to 19.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsGet200ResponseSenderInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['referenceNumber']) > 19) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class TssV2TransactionsGet200ResponseSenderInformation implements ArrayAccess
      */
     public function setReferenceNumber($referenceNumber)
     {
-        if (!is_null($referenceNumber) && (strlen($referenceNumber) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $referenceNumber when calling TssV2TransactionsGet200ResponseSenderInformation., must be smaller than or equal to 19.');
-        }
 
         $this->container['referenceNumber'] = $referenceNumber;
 

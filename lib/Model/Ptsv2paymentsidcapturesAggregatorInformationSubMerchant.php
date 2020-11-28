@@ -192,42 +192,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 37)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 37.";
-        }
-
-        if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 38)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 38.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 21)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 21.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 3)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 15)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 3)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['email']) && (strlen($this->container['email']) > 40)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 20)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 20)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -240,33 +204,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 37) {
-            return false;
-        }
-        if (strlen($this->container['address1']) > 38) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 21) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['email']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['id']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -287,9 +224,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 37)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 37.');
-        }
 
         $this->container['name'] = $name;
 
@@ -312,9 +246,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setAddress1($address1)
     {
-        if (!is_null($address1) && (strlen($address1) > 38)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 38.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -337,9 +268,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 21)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 21.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -362,9 +290,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 3.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -387,9 +312,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 15.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -412,9 +334,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 3.');
-        }
 
         $this->container['country'] = $country;
 
@@ -437,9 +356,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 40.');
-        }
 
         $this->container['email'] = $email;
 
@@ -462,9 +378,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 20.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 
@@ -487,9 +400,6 @@ class Ptsv2paymentsidcapturesAggregatorInformationSubMerchant implements ArrayAc
      */
     public function setId($id)
     {
-        if (!is_null($id) && (strlen($id) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling Ptsv2paymentsidcapturesAggregatorInformationSubMerchant., must be smaller than or equal to 20.');
-        }
 
         $this->container['id'] = $id;
 

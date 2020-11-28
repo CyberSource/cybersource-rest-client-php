@@ -162,22 +162,6 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['totalAmount']) && (strlen($this->container['totalAmount']) > 19)) {
-            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 19.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['settlementAmount']) && (strlen($this->container['settlementAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'settlementAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['settlementCurrency']) && (strlen($this->container['settlementCurrency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'settlementCurrency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
     public function valid()
     {
 
-        if (strlen($this->container['totalAmount']) > 19) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['settlementAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['settlementCurrency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
      */
     public function setTotalAmount($totalAmount)
     {
-        if (!is_null($totalAmount) && (strlen($totalAmount) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $totalAmount when calling PtsV2PayoutsPost201ResponseOrderInformationAmountDetails., must be smaller than or equal to 19.');
-        }
 
         $this->container['totalAmount'] = $totalAmount;
 
@@ -247,9 +216,6 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling PtsV2PayoutsPost201ResponseOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 
@@ -272,9 +238,6 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
      */
     public function setSettlementAmount($settlementAmount)
     {
-        if (!is_null($settlementAmount) && (strlen($settlementAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $settlementAmount when calling PtsV2PayoutsPost201ResponseOrderInformationAmountDetails., must be smaller than or equal to 12.');
-        }
 
         $this->container['settlementAmount'] = $settlementAmount;
 
@@ -297,9 +260,6 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
      */
     public function setSettlementCurrency($settlementCurrency)
     {
-        if (!is_null($settlementCurrency) && (strlen($settlementCurrency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $settlementCurrency when calling PtsV2PayoutsPost201ResponseOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['settlementCurrency'] = $settlementCurrency;
 

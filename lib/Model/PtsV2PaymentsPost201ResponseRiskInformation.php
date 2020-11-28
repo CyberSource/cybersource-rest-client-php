@@ -199,10 +199,6 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['localTime']) && (strlen($this->container['localTime']) > 255)) {
-            $invalid_properties[] = "invalid value for 'localTime', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -215,9 +211,6 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['localTime']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -343,9 +336,6 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
      */
     public function setLocalTime($localTime)
     {
-        if (!is_null($localTime) && (strlen($localTime) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $localTime when calling PtsV2PaymentsPost201ResponseRiskInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['localTime'] = $localTime;
 

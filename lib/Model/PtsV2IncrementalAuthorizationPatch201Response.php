@@ -198,14 +198,6 @@ class PtsV2IncrementalAuthorizationPatch201Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 26)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 26.";
-        }
-
-        if (!is_null($this->container['reconciliationId']) && (strlen($this->container['reconciliationId']) > 60)) {
-            $invalid_properties[] = "invalid value for 'reconciliationId', the character length must be smaller than or equal to 60.";
-        }
-
         return $invalid_properties;
     }
 
@@ -218,12 +210,6 @@ class PtsV2IncrementalAuthorizationPatch201Response implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['id']) > 26) {
-            return false;
-        }
-        if (strlen($this->container['reconciliationId']) > 60) {
-            return false;
-        }
         return true;
     }
 
@@ -265,9 +251,6 @@ class PtsV2IncrementalAuthorizationPatch201Response implements ArrayAccess
      */
     public function setId($id)
     {
-        if (!is_null($id) && (strlen($id) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling PtsV2IncrementalAuthorizationPatch201Response., must be smaller than or equal to 26.');
-        }
 
         $this->container['id'] = $id;
 
@@ -332,9 +315,6 @@ class PtsV2IncrementalAuthorizationPatch201Response implements ArrayAccess
      */
     public function setReconciliationId($reconciliationId)
     {
-        if (!is_null($reconciliationId) && (strlen($reconciliationId) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $reconciliationId when calling PtsV2IncrementalAuthorizationPatch201Response., must be smaller than or equal to 60.');
-        }
 
         $this->container['reconciliationId'] = $reconciliationId;
 

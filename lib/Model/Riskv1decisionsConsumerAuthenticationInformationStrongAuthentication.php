@@ -144,10 +144,6 @@ class Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication imple
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['authenticationIndicator']) && (strlen($this->container['authenticationIndicator']) > 2)) {
-            $invalid_properties[] = "invalid value for 'authenticationIndicator', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication imple
     public function valid()
     {
 
-        if (strlen($this->container['authenticationIndicator']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication imple
      */
     public function setAuthenticationIndicator($authenticationIndicator)
     {
-        if (!is_null($authenticationIndicator) && (strlen($authenticationIndicator) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationIndicator when calling Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 2.');
-        }
 
         $this->container['authenticationIndicator'] = $authenticationIndicator;
 

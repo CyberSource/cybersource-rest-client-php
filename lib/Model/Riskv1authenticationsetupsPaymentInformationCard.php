@@ -165,24 +165,12 @@ class Riskv1authenticationsetupsPaymentInformationCard implements ArrayAccess
         if ($this->container['expirationMonth'] === null) {
             $invalid_properties[] = "'expirationMonth' can't be null";
         }
-        if ((strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
         if ($this->container['expirationYear'] === null) {
             $invalid_properties[] = "'expirationYear' can't be null";
         }
-        if ((strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
         if ($this->container['number'] === null) {
             $invalid_properties[] = "'number' can't be null";
         }
-        if ((strlen($this->container['number']) > 20)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -198,19 +186,10 @@ class Riskv1authenticationsetupsPaymentInformationCard implements ArrayAccess
         if ($this->container['expirationMonth'] === null) {
             return false;
         }
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
         if ($this->container['expirationYear'] === null) {
             return false;
         }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
         if ($this->container['number'] === null) {
-            return false;
-        }
-        if (strlen($this->container['number']) > 20) {
             return false;
         }
         return true;
@@ -254,9 +233,6 @@ class Riskv1authenticationsetupsPaymentInformationCard implements ArrayAccess
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if ((strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Riskv1authenticationsetupsPaymentInformationCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -279,9 +255,6 @@ class Riskv1authenticationsetupsPaymentInformationCard implements ArrayAccess
      */
     public function setExpirationYear($expirationYear)
     {
-        if ((strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Riskv1authenticationsetupsPaymentInformationCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -304,9 +277,6 @@ class Riskv1authenticationsetupsPaymentInformationCard implements ArrayAccess
      */
     public function setNumber($number)
     {
-        if ((strlen($number) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Riskv1authenticationsetupsPaymentInformationCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['number'] = $number;
 

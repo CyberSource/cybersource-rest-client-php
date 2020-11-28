@@ -168,26 +168,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['email']) && (strlen($this->container['email']) > 255)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -200,21 +180,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     public function valid()
     {
 
-        if (strlen($this->container['firstName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['lastName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['email']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -235,9 +200,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['firstName'] = $firstName;
 
@@ -260,9 +222,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['lastName'] = $lastName;
 
@@ -285,9 +244,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo., must be smaller than or equal to 255.');
-        }
 
         $this->container['email'] = $email;
 
@@ -310,9 +266,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -335,9 +288,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo., must be smaller than or equal to 15.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 

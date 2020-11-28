@@ -150,10 +150,6 @@ class Ptsv2paymentsDeviceInformationRawData implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['provider']) && (strlen($this->container['provider']) > 32)) {
-            $invalid_properties[] = "invalid value for 'provider', the character length must be smaller than or equal to 32.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2paymentsDeviceInformationRawData implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['provider']) > 32) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Ptsv2paymentsDeviceInformationRawData implements ArrayAccess
      */
     public function setProvider($provider)
     {
-        if (!is_null($provider) && (strlen($provider) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $provider when calling Ptsv2paymentsDeviceInformationRawData., must be smaller than or equal to 32.');
-        }
 
         $this->container['provider'] = $provider;
 

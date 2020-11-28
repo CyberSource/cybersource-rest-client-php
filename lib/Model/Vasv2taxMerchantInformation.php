@@ -144,10 +144,6 @@ class Vasv2taxMerchantInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 21)) {
-            $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 21.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Vasv2taxMerchantInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['vatRegistrationNumber']) > 21) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Vasv2taxMerchantInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-        if (!is_null($vatRegistrationNumber) && (strlen($vatRegistrationNumber) > 21)) {
-            throw new \InvalidArgumentException('invalid length for $vatRegistrationNumber when calling Vasv2taxMerchantInformation., must be smaller than or equal to 21.');
-        }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 

@@ -156,18 +156,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 30)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['desinationQueue']) && (strlen($this->container['desinationQueue']) > 255)) {
-            $invalid_properties[] = "invalid value for 'desinationQueue', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['selectorRule']) && (strlen($this->container['selectorRule']) > 255)) {
-            $invalid_properties[] = "invalid value for 'selectorRule', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 30) {
-            return false;
-        }
-        if (strlen($this->container['desinationQueue']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['selectorRule']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling PtsV2PaymentsPost201ResponseRiskInformationProfile., must be smaller than or equal to 30.');
-        }
 
         $this->container['name'] = $name;
 
@@ -234,9 +210,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      */
     public function setDesinationQueue($desinationQueue)
     {
-        if (!is_null($desinationQueue) && (strlen($desinationQueue) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $desinationQueue when calling PtsV2PaymentsPost201ResponseRiskInformationProfile., must be smaller than or equal to 255.');
-        }
 
         $this->container['desinationQueue'] = $desinationQueue;
 
@@ -259,9 +232,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      */
     public function setSelectorRule($selectorRule)
     {
-        if (!is_null($selectorRule) && (strlen($selectorRule) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $selectorRule when calling PtsV2PaymentsPost201ResponseRiskInformationProfile., must be smaller than or equal to 255.');
-        }
 
         $this->container['selectorRule'] = $selectorRule;
 

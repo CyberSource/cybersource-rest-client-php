@@ -180,34 +180,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['city']) && (strlen($this->container['city']) > 25)) {
-            $invalid_properties[] = "invalid value for 'city', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['state']) && (strlen($this->container['state']) > 3)) {
-            $invalid_properties[] = "invalid value for 'state', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 3)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['locationId']) && (strlen($this->container['locationId']) > 10)) {
-            $invalid_properties[] = "invalid value for 'locationId', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 13)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['address2']) && (strlen($this->container['address2']) > 13)) {
-            $invalid_properties[] = "invalid value for 'address2', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['location']) && (strlen($this->container['location']) > 38)) {
-            $invalid_properties[] = "invalid value for 'location', the character length must be smaller than or equal to 38.";
-        }
-
         return $invalid_properties;
     }
 
@@ -220,27 +192,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['city']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['state']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['locationId']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['address1']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['address2']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['location']) > 38) {
-            return false;
-        }
         return true;
     }
 
@@ -261,9 +212,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setCity($city)
     {
-        if (!is_null($city) && (strlen($city) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 25.');
-        }
 
         $this->container['city'] = $city;
 
@@ -286,9 +234,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setState($state)
     {
-        if (!is_null($state) && (strlen($state) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $state when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 3.');
-        }
 
         $this->container['state'] = $state;
 
@@ -311,9 +256,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 3.');
-        }
 
         $this->container['country'] = $country;
 
@@ -336,9 +278,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setLocationId($locationId)
     {
-        if (!is_null($locationId) && (strlen($locationId) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $locationId when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 10.');
-        }
 
         $this->container['locationId'] = $locationId;
 
@@ -361,9 +300,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setAddress1($address1)
     {
-        if (!is_null($address1) && (strlen($address1) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 13.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -386,9 +322,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setAddress2($address2)
     {
-        if (!is_null($address2) && (strlen($address2) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $address2 when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 13.');
-        }
 
         $this->container['address2'] = $address2;
 
@@ -411,9 +344,6 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
      */
     public function setLocation($location)
     {
-        if (!is_null($location) && (strlen($location) > 38)) {
-            throw new \InvalidArgumentException('invalid length for $location when calling Ptsv2paymentsTravelInformationAutoRentalRentalAddress., must be smaller than or equal to 38.');
-        }
 
         $this->container['location'] = $location;
 

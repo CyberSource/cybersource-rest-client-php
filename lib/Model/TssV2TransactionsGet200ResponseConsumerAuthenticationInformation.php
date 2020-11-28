@@ -162,18 +162,6 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['eciRaw']) && (strlen($this->container['eciRaw']) > 2)) {
-            $invalid_properties[] = "invalid value for 'eciRaw', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['cavv']) && (strlen($this->container['cavv']) > 40)) {
-            $invalid_properties[] = "invalid value for 'cavv', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['xid']) && (strlen($this->container['xid']) > 40)) {
-            $invalid_properties[] = "invalid value for 'xid', the character length must be smaller than or equal to 40.";
-        }
-
         return $invalid_properties;
     }
 
@@ -186,15 +174,6 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
     public function valid()
     {
 
-        if (strlen($this->container['eciRaw']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['cavv']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['xid']) > 40) {
-            return false;
-        }
         return true;
     }
 
@@ -215,9 +194,6 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
      */
     public function setEciRaw($eciRaw)
     {
-        if (!is_null($eciRaw) && (strlen($eciRaw) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $eciRaw when calling TssV2TransactionsGet200ResponseConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['eciRaw'] = $eciRaw;
 
@@ -240,9 +216,6 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
      */
     public function setCavv($cavv)
     {
-        if (!is_null($cavv) && (strlen($cavv) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $cavv when calling TssV2TransactionsGet200ResponseConsumerAuthenticationInformation., must be smaller than or equal to 40.');
-        }
 
         $this->container['cavv'] = $cavv;
 
@@ -265,9 +238,6 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
      */
     public function setXid($xid)
     {
-        if (!is_null($xid) && (strlen($xid) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $xid when calling TssV2TransactionsGet200ResponseConsumerAuthenticationInformation., must be smaller than or equal to 40.');
-        }
 
         $this->container['xid'] = $xid;
 

@@ -151,14 +151,6 @@ class TssV2TransactionsGet200ResponseRiskInformationRules implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 255)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['decision']) && (strlen($this->container['decision']) > 255)) {
-            $invalid_properties[] = "invalid value for 'decision', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -171,12 +163,6 @@ class TssV2TransactionsGet200ResponseRiskInformationRules implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['decision']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -197,9 +183,6 @@ class TssV2TransactionsGet200ResponseRiskInformationRules implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling TssV2TransactionsGet200ResponseRiskInformationRules., must be smaller than or equal to 255.');
-        }
 
         $this->container['name'] = $name;
 
@@ -222,9 +205,6 @@ class TssV2TransactionsGet200ResponseRiskInformationRules implements ArrayAccess
      */
     public function setDecision($decision)
     {
-        if (!is_null($decision) && (strlen($decision) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $decision when calling TssV2TransactionsGet200ResponseRiskInformationRules., must be smaller than or equal to 255.');
-        }
 
         $this->container['decision'] = $decision;
 
