@@ -163,26 +163,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 19)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 19.";
-        }
-
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) < 12)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be bigger than or equal to 12.";
-        }
-
-        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['securityCode']) && (strlen($this->container['securityCode']) > 4)) {
-            $invalid_properties[] = "invalid value for 'securityCode', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -195,21 +175,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     public function valid()
     {
 
-        if (strlen($this->container['number']) > 19) {
-            return false;
-        }
-        if (strlen($this->container['number']) < 12) {
-            return false;
-        }
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['securityCode']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -230,12 +195,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard., must be smaller than or equal to 19.');
-        }
-        if (!is_null($number) && (strlen($number) < 12)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard., must be bigger than or equal to 12.');
-        }
 
         $this->container['number'] = $number;
 
@@ -258,9 +217,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -283,9 +239,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setExpirationYear($expirationYear)
     {
-        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -308,9 +261,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setSecurityCode($securityCode)
     {
-        if (!is_null($securityCode) && (strlen($securityCode) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $securityCode when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['securityCode'] = $securityCode;
 

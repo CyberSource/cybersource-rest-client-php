@@ -154,17 +154,9 @@ class Riskv1authenticationsOrderInformationAmountDetails implements ArrayAccess
         if ($this->container['currency'] === null) {
             $invalid_properties[] = "'currency' can't be null";
         }
-        if ((strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         if ($this->container['totalAmount'] === null) {
             $invalid_properties[] = "'totalAmount' can't be null";
         }
-        if ((strlen($this->container['totalAmount']) > 19)) {
-            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 19.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,13 +172,7 @@ class Riskv1authenticationsOrderInformationAmountDetails implements ArrayAccess
         if ($this->container['currency'] === null) {
             return false;
         }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         if ($this->container['totalAmount'] === null) {
-            return false;
-        }
-        if (strlen($this->container['totalAmount']) > 19) {
             return false;
         }
         return true;
@@ -209,9 +195,6 @@ class Riskv1authenticationsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setCurrency($currency)
     {
-        if ((strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling Riskv1authenticationsOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 
@@ -234,9 +217,6 @@ class Riskv1authenticationsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTotalAmount($totalAmount)
     {
-        if ((strlen($totalAmount) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $totalAmount when calling Riskv1authenticationsOrderInformationAmountDetails., must be smaller than or equal to 19.');
-        }
 
         $this->container['totalAmount'] = $totalAmount;
 

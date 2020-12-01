@@ -150,10 +150,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['dailyRate']) && (strlen($this->container['dailyRate']) > 8)) {
-            $invalid_properties[] = "invalid value for 'dailyRate', the character length must be smaller than or equal to 8.";
-        }
-
         if (!is_null($this->container['numberOfNights']) && ($this->container['numberOfNights'] > 9999)) {
             $invalid_properties[] = "invalid value for 'numberOfNights', must be smaller than or equal to 9999.";
         }
@@ -174,9 +170,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['dailyRate']) > 8) {
-            return false;
-        }
         if ($this->container['numberOfNights'] > 9999) {
             return false;
         }
@@ -203,9 +196,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      */
     public function setDailyRate($dailyRate)
     {
-        if (!is_null($dailyRate) && (strlen($dailyRate) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $dailyRate when calling Ptsv2paymentsTravelInformationLodgingRoom., must be smaller than or equal to 8.');
-        }
 
         $this->container['dailyRate'] = $dailyRate;
 
@@ -228,7 +218,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      */
     public function setNumberOfNights($numberOfNights)
     {
-
         if (!is_null($numberOfNights) && ($numberOfNights > 9999)) {
             throw new \InvalidArgumentException('invalid value for $numberOfNights when calling Ptsv2paymentsTravelInformationLodgingRoom., must be smaller than or equal to 9999.');
         }

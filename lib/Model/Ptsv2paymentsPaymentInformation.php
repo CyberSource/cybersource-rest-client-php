@@ -204,10 +204,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['initiationChannel']) && (strlen($this->container['initiationChannel']) > 2)) {
-            $invalid_properties[] = "invalid value for 'initiationChannel', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -220,9 +216,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['initiationChannel']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -453,9 +446,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      */
     public function setInitiationChannel($initiationChannel)
     {
-        if (!is_null($initiationChannel) && (strlen($initiationChannel) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $initiationChannel when calling Ptsv2paymentsPaymentInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['initiationChannel'] = $initiationChannel;
 

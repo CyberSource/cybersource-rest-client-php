@@ -180,22 +180,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['actualFinalDestination']) && (strlen($this->container['actualFinalDestination']) > 3)) {
-            $invalid_properties[] = "invalid value for 'actualFinalDestination', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['completeRoute']) && (strlen($this->container['completeRoute']) > 255)) {
-            $invalid_properties[] = "invalid value for 'completeRoute', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['departureTime']) && (strlen($this->container['departureTime']) > 25)) {
-            $invalid_properties[] = "invalid value for 'departureTime', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['journeyType']) && (strlen($this->container['journeyType']) > 32)) {
-            $invalid_properties[] = "invalid value for 'journeyType', the character length must be smaller than or equal to 32.";
-        }
-
         return $invalid_properties;
     }
 
@@ -208,18 +192,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['actualFinalDestination']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['completeRoute']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['departureTime']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['journeyType']) > 32) {
-            return false;
-        }
         return true;
     }
 
@@ -240,9 +212,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setActualFinalDestination($actualFinalDestination)
     {
-        if (!is_null($actualFinalDestination) && (strlen($actualFinalDestination) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $actualFinalDestination when calling Riskv1decisionsTravelInformation., must be smaller than or equal to 3.');
-        }
 
         $this->container['actualFinalDestination'] = $actualFinalDestination;
 
@@ -265,9 +234,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setCompleteRoute($completeRoute)
     {
-        if (!is_null($completeRoute) && (strlen($completeRoute) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $completeRoute when calling Riskv1decisionsTravelInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['completeRoute'] = $completeRoute;
 
@@ -290,9 +256,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setDepartureTime($departureTime)
     {
-        if (!is_null($departureTime) && (strlen($departureTime) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $departureTime when calling Riskv1decisionsTravelInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['departureTime'] = $departureTime;
 
@@ -315,9 +278,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setJourneyType($journeyType)
     {
-        if (!is_null($journeyType) && (strlen($journeyType) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $journeyType when calling Riskv1decisionsTravelInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['journeyType'] = $journeyType;
 

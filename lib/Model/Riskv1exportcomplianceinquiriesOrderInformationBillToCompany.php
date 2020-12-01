@@ -144,10 +144,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillToCompany implements Ar
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 60)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 60.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillToCompany implements Ar
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 60) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillToCompany implements Ar
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Riskv1exportcomplianceinquiriesOrderInformationBillToCompany., must be smaller than or equal to 60.');
-        }
 
         $this->container['name'] = $name;
 

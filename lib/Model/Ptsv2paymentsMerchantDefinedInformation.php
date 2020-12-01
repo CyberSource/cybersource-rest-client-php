@@ -150,14 +150,6 @@ class Ptsv2paymentsMerchantDefinedInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['key']) && (strlen($this->container['key']) > 50)) {
-            $invalid_properties[] = "invalid value for 'key', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['value']) && (strlen($this->container['value']) > 255)) {
-            $invalid_properties[] = "invalid value for 'value', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsMerchantDefinedInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['key']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['value']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsMerchantDefinedInformation implements ArrayAccess
      */
     public function setKey($key)
     {
-        if (!is_null($key) && (strlen($key) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $key when calling Ptsv2paymentsMerchantDefinedInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['key'] = $key;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsMerchantDefinedInformation implements ArrayAccess
      */
     public function setValue($value)
     {
-        if (!is_null($value) && (strlen($value) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $value when calling Ptsv2paymentsMerchantDefinedInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['value'] = $value;
 

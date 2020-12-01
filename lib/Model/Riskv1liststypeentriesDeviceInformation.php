@@ -150,14 +150,6 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 45)) {
-            $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 45.";
-        }
-
-        if (!is_null($this->container['networkIpAddress']) && (strlen($this->container['networkIpAddress']) > 11)) {
-            $invalid_properties[] = "invalid value for 'networkIpAddress', the character length must be smaller than or equal to 11.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['ipAddress']) > 45) {
-            return false;
-        }
-        if (strlen($this->container['networkIpAddress']) > 11) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      */
     public function setIpAddress($ipAddress)
     {
-        if (!is_null($ipAddress) && (strlen($ipAddress) > 45)) {
-            throw new \InvalidArgumentException('invalid length for $ipAddress when calling Riskv1liststypeentriesDeviceInformation., must be smaller than or equal to 45.');
-        }
 
         $this->container['ipAddress'] = $ipAddress;
 
@@ -221,9 +204,6 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      */
     public function setNetworkIpAddress($networkIpAddress)
     {
-        if (!is_null($networkIpAddress) && (strlen($networkIpAddress) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $networkIpAddress when calling Riskv1liststypeentriesDeviceInformation., must be smaller than or equal to 11.');
-        }
 
         $this->container['networkIpAddress'] = $networkIpAddress;
 

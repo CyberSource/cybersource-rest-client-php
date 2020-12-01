@@ -210,7 +210,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
      */
     public function setSalesSlipNumber($salesSlipNumber)
     {
-
         if (!is_null($salesSlipNumber) && ($salesSlipNumber > 99999)) {
             throw new \InvalidArgumentException('invalid value for $salesSlipNumber when calling PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails., must be smaller than or equal to 99999.');
         }

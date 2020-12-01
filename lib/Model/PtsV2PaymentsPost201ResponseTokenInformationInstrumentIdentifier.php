@@ -150,14 +150,6 @@ class PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 32)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 12)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 12.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier implement
     public function valid()
     {
 
-        if (strlen($this->container['id']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['id']) < 12) {
-            return false;
-        }
         return true;
     }
 
@@ -196,12 +182,6 @@ class PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier implement
      */
     public function setId($id)
     {
-        if (!is_null($id) && (strlen($id) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier., must be smaller than or equal to 32.');
-        }
-        if (!is_null($id) && (strlen($id) < 12)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier., must be bigger than or equal to 12.');
-        }
 
         $this->container['id'] = $id;
 

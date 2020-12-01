@@ -168,14 +168,6 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['tags']) && (strlen($this->container['tags']) > 1998)) {
-            $invalid_properties[] = "invalid value for 'tags', the character length must be smaller than or equal to 1998.";
-        }
-
-        if (!is_null($this->container['cardSequenceNumber']) && (strlen($this->container['cardSequenceNumber']) > 3)) {
-            $invalid_properties[] = "invalid value for 'cardSequenceNumber', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -188,12 +180,6 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['tags']) > 1998) {
-            return false;
-        }
-        if (strlen($this->container['cardSequenceNumber']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -214,9 +200,6 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
      */
     public function setTags($tags)
     {
-        if (!is_null($tags) && (strlen($tags) > 1998)) {
-            throw new \InvalidArgumentException('invalid length for $tags when calling Ptsv2paymentsPointOfSaleInformationEmv., must be smaller than or equal to 1998.');
-        }
 
         $this->container['tags'] = $tags;
 
@@ -260,9 +243,6 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
      */
     public function setCardSequenceNumber($cardSequenceNumber)
     {
-        if (!is_null($cardSequenceNumber) && (strlen($cardSequenceNumber) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $cardSequenceNumber when calling Ptsv2paymentsPointOfSaleInformationEmv., must be smaller than or equal to 3.');
-        }
 
         $this->container['cardSequenceNumber'] = $cardSequenceNumber;
 

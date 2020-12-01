@@ -162,22 +162,6 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['acquirerMerchantId']) && (strlen($this->container['acquirerMerchantId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'acquirerMerchantId', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['acquirerBin']) && (strlen($this->container['acquirerBin']) > 11)) {
-            $invalid_properties[] = "invalid value for 'acquirerBin', the character length must be smaller than or equal to 11.";
-        }
-
-        if (!is_null($this->container['retrievalReferenceNumber']) && (strlen($this->container['retrievalReferenceNumber']) > 12)) {
-            $invalid_properties[] = "invalid value for 'retrievalReferenceNumber', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['accountFundingReferenceId']) && (strlen($this->container['accountFundingReferenceId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'accountFundingReferenceId', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['acquirerMerchantId']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['acquirerBin']) > 11) {
-            return false;
-        }
-        if (strlen($this->container['retrievalReferenceNumber']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['accountFundingReferenceId']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
      */
     public function setAcquirerMerchantId($acquirerMerchantId)
     {
-        if (!is_null($acquirerMerchantId) && (strlen($acquirerMerchantId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $acquirerMerchantId when calling Ptsv2payoutsProcessingInformationPayoutsOptions., must be smaller than or equal to 15.');
-        }
 
         $this->container['acquirerMerchantId'] = $acquirerMerchantId;
 
@@ -247,9 +216,6 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
      */
     public function setAcquirerBin($acquirerBin)
     {
-        if (!is_null($acquirerBin) && (strlen($acquirerBin) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $acquirerBin when calling Ptsv2payoutsProcessingInformationPayoutsOptions., must be smaller than or equal to 11.');
-        }
 
         $this->container['acquirerBin'] = $acquirerBin;
 
@@ -272,9 +238,6 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
      */
     public function setRetrievalReferenceNumber($retrievalReferenceNumber)
     {
-        if (!is_null($retrievalReferenceNumber) && (strlen($retrievalReferenceNumber) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $retrievalReferenceNumber when calling Ptsv2payoutsProcessingInformationPayoutsOptions., must be smaller than or equal to 12.');
-        }
 
         $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
 
@@ -297,9 +260,6 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
      */
     public function setAccountFundingReferenceId($accountFundingReferenceId)
     {
-        if (!is_null($accountFundingReferenceId) && (strlen($accountFundingReferenceId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $accountFundingReferenceId when calling Ptsv2payoutsProcessingInformationPayoutsOptions., must be smaller than or equal to 15.');
-        }
 
         $this->container['accountFundingReferenceId'] = $accountFundingReferenceId;
 

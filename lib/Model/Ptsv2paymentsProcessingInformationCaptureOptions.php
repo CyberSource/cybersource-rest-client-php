@@ -172,10 +172,6 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
             $invalid_properties[] = "invalid value for 'totalCaptureCount', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['dateToCapture']) && (strlen($this->container['dateToCapture']) > 4)) {
-            $invalid_properties[] = "invalid value for 'dateToCapture', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -200,9 +196,6 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         if ($this->container['totalCaptureCount'] < 1) {
             return false;
         }
-        if (strlen($this->container['dateToCapture']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -223,7 +216,6 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
      */
     public function setCaptureSequenceNumber($captureSequenceNumber)
     {
-
         if (!is_null($captureSequenceNumber) && ($captureSequenceNumber > 99)) {
             throw new \InvalidArgumentException('invalid value for $captureSequenceNumber when calling Ptsv2paymentsProcessingInformationCaptureOptions., must be smaller than or equal to 99.');
         }
@@ -252,7 +244,6 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
      */
     public function setTotalCaptureCount($totalCaptureCount)
     {
-
         if (!is_null($totalCaptureCount) && ($totalCaptureCount > 99)) {
             throw new \InvalidArgumentException('invalid value for $totalCaptureCount when calling Ptsv2paymentsProcessingInformationCaptureOptions., must be smaller than or equal to 99.');
         }
@@ -281,9 +272,6 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
      */
     public function setDateToCapture($dateToCapture)
     {
-        if (!is_null($dateToCapture) && (strlen($dateToCapture) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $dateToCapture when calling Ptsv2paymentsProcessingInformationCaptureOptions., must be smaller than or equal to 4.');
-        }
 
         $this->container['dateToCapture'] = $dateToCapture;
 

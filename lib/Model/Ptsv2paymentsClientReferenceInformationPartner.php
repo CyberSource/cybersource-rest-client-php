@@ -162,22 +162,6 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['originalTransactionId']) && (strlen($this->container['originalTransactionId']) > 32)) {
-            $invalid_properties[] = "invalid value for 'originalTransactionId', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['developerId']) && (strlen($this->container['developerId']) > 8)) {
-            $invalid_properties[] = "invalid value for 'developerId', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['solutionId']) && (strlen($this->container['solutionId']) > 8)) {
-            $invalid_properties[] = "invalid value for 'solutionId', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['thirdPartyCertificationNumber']) && (strlen($this->container['thirdPartyCertificationNumber']) > 12)) {
-            $invalid_properties[] = "invalid value for 'thirdPartyCertificationNumber', the character length must be smaller than or equal to 12.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['originalTransactionId']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['developerId']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['solutionId']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['thirdPartyCertificationNumber']) > 12) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
      */
     public function setOriginalTransactionId($originalTransactionId)
     {
-        if (!is_null($originalTransactionId) && (strlen($originalTransactionId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $originalTransactionId when calling Ptsv2paymentsClientReferenceInformationPartner., must be smaller than or equal to 32.');
-        }
 
         $this->container['originalTransactionId'] = $originalTransactionId;
 
@@ -247,9 +216,6 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
      */
     public function setDeveloperId($developerId)
     {
-        if (!is_null($developerId) && (strlen($developerId) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $developerId when calling Ptsv2paymentsClientReferenceInformationPartner., must be smaller than or equal to 8.');
-        }
 
         $this->container['developerId'] = $developerId;
 
@@ -272,9 +238,6 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
      */
     public function setSolutionId($solutionId)
     {
-        if (!is_null($solutionId) && (strlen($solutionId) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $solutionId when calling Ptsv2paymentsClientReferenceInformationPartner., must be smaller than or equal to 8.');
-        }
 
         $this->container['solutionId'] = $solutionId;
 
@@ -297,9 +260,6 @@ class Ptsv2paymentsClientReferenceInformationPartner implements ArrayAccess
      */
     public function setThirdPartyCertificationNumber($thirdPartyCertificationNumber)
     {
-        if (!is_null($thirdPartyCertificationNumber) && (strlen($thirdPartyCertificationNumber) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $thirdPartyCertificationNumber when calling Ptsv2paymentsClientReferenceInformationPartner., must be smaller than or equal to 12.');
-        }
 
         $this->container['thirdPartyCertificationNumber'] = $thirdPartyCertificationNumber;
 

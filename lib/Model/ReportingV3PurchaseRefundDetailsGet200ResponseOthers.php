@@ -181,10 +181,6 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseOthers implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['requestId']) && (strlen($this->container['requestId']) > 26)) {
-            $invalid_properties[] = "invalid value for 'requestId', the character length must be smaller than or equal to 26.";
-        }
-
         return $invalid_properties;
     }
 
@@ -197,9 +193,6 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseOthers implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['requestId']) > 26) {
-            return false;
-        }
         return true;
     }
 
@@ -220,9 +213,6 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseOthers implements ArrayAcces
      */
     public function setRequestId($requestId)
     {
-        if (!is_null($requestId) && (strlen($requestId) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $requestId when calling ReportingV3PurchaseRefundDetailsGet200ResponseOthers., must be smaller than or equal to 26.');
-        }
 
         $this->container['requestId'] = $requestId;
 

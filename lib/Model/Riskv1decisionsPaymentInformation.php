@@ -169,10 +169,6 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['method']) && (strlen($this->container['method']) > 10)) {
-            $invalid_properties[] = "invalid value for 'method', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -185,9 +181,6 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['method']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -292,9 +285,6 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
      */
     public function setMethod($method)
     {
-        if (!is_null($method) && (strlen($method) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $method when calling Riskv1decisionsPaymentInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['method'] = $method;
 

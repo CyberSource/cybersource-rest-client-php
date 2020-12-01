@@ -204,14 +204,6 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['preOrderDate']) && (strlen($this->container['preOrderDate']) > 10)) {
-            $invalid_properties[] = "invalid value for 'preOrderDate', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['totalOffersCount']) && (strlen($this->container['totalOffersCount']) > 2)) {
-            $invalid_properties[] = "invalid value for 'totalOffersCount', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -224,12 +216,6 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['preOrderDate']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['totalOffersCount']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -418,9 +404,6 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
      */
     public function setPreOrderDate($preOrderDate)
     {
-        if (!is_null($preOrderDate) && (strlen($preOrderDate) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $preOrderDate when calling Ptsv2paymentsOrderInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['preOrderDate'] = $preOrderDate;
 
@@ -464,9 +447,6 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
      */
     public function setTotalOffersCount($totalOffersCount)
     {
-        if (!is_null($totalOffersCount) && (strlen($totalOffersCount) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $totalOffersCount when calling Ptsv2paymentsOrderInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['totalOffersCount'] = $totalOffersCount;
 

@@ -175,30 +175,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address2']) && (strlen($this->container['address2']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address2', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 2)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 50)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -211,24 +187,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['address1']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address2']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -249,9 +207,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-        if (!is_null($address1) && (strlen($address1) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling Riskv1liststypeentriesOrderInformationShipTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -274,9 +229,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-        if (!is_null($address2) && (strlen($address2) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address2 when calling Riskv1liststypeentriesOrderInformationShipTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address2'] = $address2;
 
@@ -299,9 +251,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Riskv1liststypeentriesOrderInformationShipTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -324,9 +273,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Riskv1liststypeentriesOrderInformationShipTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -349,9 +295,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Riskv1liststypeentriesOrderInformationShipTo., must be smaller than or equal to 50.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -374,9 +317,6 @@ class Riskv1liststypeentriesOrderInformationShipTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Riskv1liststypeentriesOrderInformationShipTo., must be smaller than or equal to 10.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 

@@ -144,10 +144,6 @@ class Ptsv2paymentsidMerchantInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['transactionLocalDateTime']) && (strlen($this->container['transactionLocalDateTime']) > 14)) {
-            $invalid_properties[] = "invalid value for 'transactionLocalDateTime', the character length must be smaller than or equal to 14.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsidMerchantInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['transactionLocalDateTime']) > 14) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2paymentsidMerchantInformation implements ArrayAccess
      */
     public function setTransactionLocalDateTime($transactionLocalDateTime)
     {
-        if (!is_null($transactionLocalDateTime) && (strlen($transactionLocalDateTime) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $transactionLocalDateTime when calling Ptsv2paymentsidMerchantInformation., must be smaller than or equal to 14.');
-        }
 
         $this->container['transactionLocalDateTime'] = $transactionLocalDateTime;
 

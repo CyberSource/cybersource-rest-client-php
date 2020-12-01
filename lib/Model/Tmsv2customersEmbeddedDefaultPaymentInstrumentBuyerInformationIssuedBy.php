@@ -144,10 +144,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssuedBy imp
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 20)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssuedBy imp
     public function valid()
     {
 
-        if (strlen($this->container['administrativeArea']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssuedBy imp
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationIssuedBy., must be smaller than or equal to 20.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 

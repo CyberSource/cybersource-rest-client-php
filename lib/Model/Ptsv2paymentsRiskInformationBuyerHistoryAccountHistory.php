@@ -150,10 +150,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory implements ArrayAcc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['shippingAddressUsageDate']) && (strlen($this->container['shippingAddressUsageDate']) > 10)) {
-            $invalid_properties[] = "invalid value for 'shippingAddressUsageDate', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory implements ArrayAcc
     public function valid()
     {
 
-        if (strlen($this->container['shippingAddressUsageDate']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory implements ArrayAcc
      */
     public function setShippingAddressUsageDate($shippingAddressUsageDate)
     {
-        if (!is_null($shippingAddressUsageDate) && (strlen($shippingAddressUsageDate) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $shippingAddressUsageDate when calling Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory., must be smaller than or equal to 10.');
-        }
 
         $this->container['shippingAddressUsageDate'] = $shippingAddressUsageDate;
 

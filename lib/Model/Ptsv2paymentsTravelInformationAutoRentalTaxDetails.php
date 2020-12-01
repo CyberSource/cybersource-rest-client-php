@@ -174,26 +174,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['rate']) && (strlen($this->container['rate']) > 6)) {
-            $invalid_properties[] = "invalid value for 'rate', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['exemptionCode']) && (strlen($this->container['exemptionCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'exemptionCode', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['taxType']) && (strlen($this->container['taxType']) > 10)) {
-            $invalid_properties[] = "invalid value for 'taxType', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['taxSummary']) && (strlen($this->container['taxSummary']) > 12)) {
-            $invalid_properties[] = "invalid value for 'taxSummary', the character length must be smaller than or equal to 12.";
-        }
-
         return $invalid_properties;
     }
 
@@ -206,21 +186,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['amount']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['rate']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['exemptionCode']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['taxType']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['taxSummary']) > 12) {
-            return false;
-        }
         return true;
     }
 
@@ -241,9 +206,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling Ptsv2paymentsTravelInformationAutoRentalTaxDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['amount'] = $amount;
 
@@ -266,9 +228,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setRate($rate)
     {
-        if (!is_null($rate) && (strlen($rate) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $rate when calling Ptsv2paymentsTravelInformationAutoRentalTaxDetails., must be smaller than or equal to 6.');
-        }
 
         $this->container['rate'] = $rate;
 
@@ -312,9 +271,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setExemptionCode($exemptionCode)
     {
-        if (!is_null($exemptionCode) && (strlen($exemptionCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $exemptionCode when calling Ptsv2paymentsTravelInformationAutoRentalTaxDetails., must be smaller than or equal to 1.');
-        }
 
         $this->container['exemptionCode'] = $exemptionCode;
 
@@ -337,9 +293,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setTaxType($taxType)
     {
-        if (!is_null($taxType) && (strlen($taxType) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $taxType when calling Ptsv2paymentsTravelInformationAutoRentalTaxDetails., must be smaller than or equal to 10.');
-        }
 
         $this->container['taxType'] = $taxType;
 
@@ -362,9 +315,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setTaxSummary($taxSummary)
     {
-        if (!is_null($taxSummary) && (strlen($taxSummary) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $taxSummary when calling Ptsv2paymentsTravelInformationAutoRentalTaxDetails., must be smaller than or equal to 12.');
-        }
 
         $this->container['taxSummary'] = $taxSummary;
 

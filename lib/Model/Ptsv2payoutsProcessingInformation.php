@@ -168,22 +168,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['businessApplicationId']) && (strlen($this->container['businessApplicationId']) > 2)) {
-            $invalid_properties[] = "invalid value for 'businessApplicationId', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['networkRoutingOrder']) && (strlen($this->container['networkRoutingOrder']) > 30)) {
-            $invalid_properties[] = "invalid value for 'networkRoutingOrder', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['commerceIndicator']) && (strlen($this->container['commerceIndicator']) > 13)) {
-            $invalid_properties[] = "invalid value for 'commerceIndicator', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['reconciliationId']) && (strlen($this->container['reconciliationId']) > 60)) {
-            $invalid_properties[] = "invalid value for 'reconciliationId', the character length must be smaller than or equal to 60.";
-        }
-
         return $invalid_properties;
     }
 
@@ -196,18 +180,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['businessApplicationId']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['networkRoutingOrder']) > 30) {
-            return false;
-        }
-        if (strlen($this->container['commerceIndicator']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['reconciliationId']) > 60) {
-            return false;
-        }
         return true;
     }
 
@@ -228,9 +200,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setBusinessApplicationId($businessApplicationId)
     {
-        if (!is_null($businessApplicationId) && (strlen($businessApplicationId) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $businessApplicationId when calling Ptsv2payoutsProcessingInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['businessApplicationId'] = $businessApplicationId;
 
@@ -253,9 +222,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setNetworkRoutingOrder($networkRoutingOrder)
     {
-        if (!is_null($networkRoutingOrder) && (strlen($networkRoutingOrder) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $networkRoutingOrder when calling Ptsv2payoutsProcessingInformation., must be smaller than or equal to 30.');
-        }
 
         $this->container['networkRoutingOrder'] = $networkRoutingOrder;
 
@@ -278,9 +244,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setCommerceIndicator($commerceIndicator)
     {
-        if (!is_null($commerceIndicator) && (strlen($commerceIndicator) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $commerceIndicator when calling Ptsv2payoutsProcessingInformation., must be smaller than or equal to 13.');
-        }
 
         $this->container['commerceIndicator'] = $commerceIndicator;
 
@@ -303,9 +266,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setReconciliationId($reconciliationId)
     {
-        if (!is_null($reconciliationId) && (strlen($reconciliationId) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $reconciliationId when calling Ptsv2payoutsProcessingInformation., must be smaller than or equal to 60.');
-        }
 
         $this->container['reconciliationId'] = $reconciliationId;
 

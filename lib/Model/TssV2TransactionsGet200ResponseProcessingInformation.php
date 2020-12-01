@@ -174,14 +174,6 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentSolution']) && (strlen($this->container['paymentSolution']) > 12)) {
-            $invalid_properties[] = "invalid value for 'paymentSolution', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['commerceIndicator']) && (strlen($this->container['commerceIndicator']) > 20)) {
-            $invalid_properties[] = "invalid value for 'commerceIndicator', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -194,12 +186,6 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['paymentSolution']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['commerceIndicator']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -215,14 +201,11 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
 
     /**
      * Sets paymentSolution
-     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.
+     * @param string $paymentSolution Type of digital payment solution for the transaction.
      * @return $this
      */
     public function setPaymentSolution($paymentSolution)
     {
-        if (!is_null($paymentSolution) && (strlen($paymentSolution) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $paymentSolution when calling TssV2TransactionsGet200ResponseProcessingInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['paymentSolution'] = $paymentSolution;
 
@@ -245,9 +228,6 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      */
     public function setCommerceIndicator($commerceIndicator)
     {
-        if (!is_null($commerceIndicator) && (strlen($commerceIndicator) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $commerceIndicator when calling TssV2TransactionsGet200ResponseProcessingInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['commerceIndicator'] = $commerceIndicator;
 

@@ -150,14 +150,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['resultCode']) && (strlen($this->container['resultCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'resultCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['resultCodeRaw']) && (strlen($this->container['resultCodeRaw']) > 10)) {
-            $invalid_properties[] = "invalid value for 'resultCodeRaw', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
     public function valid()
     {
 
-        if (strlen($this->container['resultCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['resultCodeRaw']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
      */
     public function setResultCode($resultCode)
     {
-        if (!is_null($resultCode) && (strlen($resultCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $resultCode when calling PtsV2PaymentsPost201ResponseProcessorInformationAchVerification., must be smaller than or equal to 2.');
-        }
 
         $this->container['resultCode'] = $resultCode;
 
@@ -221,9 +204,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationAchVerification implements
      */
     public function setResultCodeRaw($resultCodeRaw)
     {
-        if (!is_null($resultCodeRaw) && (strlen($resultCodeRaw) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $resultCodeRaw when calling PtsV2PaymentsPost201ResponseProcessorInformationAchVerification., must be smaller than or equal to 10.');
-        }
 
         $this->container['resultCodeRaw'] = $resultCodeRaw;
 

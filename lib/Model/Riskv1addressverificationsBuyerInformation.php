@@ -144,10 +144,6 @@ class Riskv1addressverificationsBuyerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Riskv1addressverificationsBuyerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['merchantCustomerId']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Riskv1addressverificationsBuyerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling Riskv1addressverificationsBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 

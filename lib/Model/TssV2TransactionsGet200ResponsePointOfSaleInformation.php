@@ -162,14 +162,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['terminalId']) && (strlen($this->container['terminalId']) > 8)) {
-            $invalid_properties[] = "invalid value for 'terminalId', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['entryMode']) && (strlen($this->container['entryMode']) > 11)) {
-            $invalid_properties[] = "invalid value for 'entryMode', the character length must be smaller than or equal to 11.";
-        }
-
         if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] > 5)) {
             $invalid_properties[] = "invalid value for 'terminalCapability', must be smaller than or equal to 5.";
         }
@@ -190,12 +182,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['terminalId']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['entryMode']) > 11) {
-            return false;
-        }
         if ($this->container['terminalCapability'] > 5) {
             return false;
         }
@@ -222,9 +208,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     public function setTerminalId($terminalId)
     {
-        if (!is_null($terminalId) && (strlen($terminalId) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $terminalId when calling TssV2TransactionsGet200ResponsePointOfSaleInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['terminalId'] = $terminalId;
 
@@ -247,9 +230,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     public function setEntryMode($entryMode)
     {
-        if (!is_null($entryMode) && (strlen($entryMode) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $entryMode when calling TssV2TransactionsGet200ResponsePointOfSaleInformation., must be smaller than or equal to 11.');
-        }
 
         $this->container['entryMode'] = $entryMode;
 
@@ -272,7 +252,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     public function setTerminalCapability($terminalCapability)
     {
-
         if (!is_null($terminalCapability) && ($terminalCapability > 5)) {
             throw new \InvalidArgumentException('invalid value for $terminalCapability when calling TssV2TransactionsGet200ResponsePointOfSaleInformation., must be smaller than or equal to 5.');
         }

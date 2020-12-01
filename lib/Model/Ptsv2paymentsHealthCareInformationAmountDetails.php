@@ -150,14 +150,6 @@ class Ptsv2paymentsHealthCareInformationAmountDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amountType']) && (strlen($this->container['amountType']) > 35)) {
-            $invalid_properties[] = "invalid value for 'amountType', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 13.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsHealthCareInformationAmountDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['amountType']) > 35) {
-            return false;
-        }
-        if (strlen($this->container['amount']) > 13) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsHealthCareInformationAmountDetails implements ArrayAccess
      */
     public function setAmountType($amountType)
     {
-        if (!is_null($amountType) && (strlen($amountType) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $amountType when calling Ptsv2paymentsHealthCareInformationAmountDetails., must be smaller than or equal to 35.');
-        }
 
         $this->container['amountType'] = $amountType;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsHealthCareInformationAmountDetails implements ArrayAccess
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling Ptsv2paymentsHealthCareInformationAmountDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['amount'] = $amount;
 

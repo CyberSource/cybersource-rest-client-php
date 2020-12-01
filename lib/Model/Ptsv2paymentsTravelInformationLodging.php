@@ -390,18 +390,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['checkInDate']) && (strlen($this->container['checkInDate']) > 6)) {
-            $invalid_properties[] = "invalid value for 'checkInDate', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['checkOutDate']) && (strlen($this->container['checkOutDate']) > 6)) {
-            $invalid_properties[] = "invalid value for 'checkOutDate', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['smokingPreference']) && (strlen($this->container['smokingPreference']) > 1)) {
-            $invalid_properties[] = "invalid value for 'smokingPreference', the character length must be smaller than or equal to 1.";
-        }
-
         if (!is_null($this->container['numberOfRooms']) && ($this->container['numberOfRooms'] > 99)) {
             $invalid_properties[] = "invalid value for 'numberOfRooms', must be smaller than or equal to 99.";
         }
@@ -418,150 +406,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
             $invalid_properties[] = "invalid value for 'numberOfGuests', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['roomBedType']) && (strlen($this->container['roomBedType']) > 12)) {
-            $invalid_properties[] = "invalid value for 'roomBedType', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['roomTaxType']) && (strlen($this->container['roomTaxType']) > 10)) {
-            $invalid_properties[] = "invalid value for 'roomTaxType', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['roomRateType']) && (strlen($this->container['roomRateType']) > 12)) {
-            $invalid_properties[] = "invalid value for 'roomRateType', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['guestName']) && (strlen($this->container['guestName']) > 40)) {
-            $invalid_properties[] = "invalid value for 'guestName', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['customerServicePhoneNumber']) && (strlen($this->container['customerServicePhoneNumber']) > 17)) {
-            $invalid_properties[] = "invalid value for 'customerServicePhoneNumber', the character length must be smaller than or equal to 17.";
-        }
-
-        if (!is_null($this->container['corporateClientCode']) && (strlen($this->container['corporateClientCode']) > 17)) {
-            $invalid_properties[] = "invalid value for 'corporateClientCode', the character length must be smaller than or equal to 17.";
-        }
-
-        if (!is_null($this->container['additionalDiscountAmount']) && (strlen($this->container['additionalDiscountAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'additionalDiscountAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['roomLocation']) && (strlen($this->container['roomLocation']) > 10)) {
-            $invalid_properties[] = "invalid value for 'roomLocation', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['specialProgramCode']) && (strlen($this->container['specialProgramCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'specialProgramCode', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['totalTaxAmount']) && (strlen($this->container['totalTaxAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'totalTaxAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['prepaidCost']) && (strlen($this->container['prepaidCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'prepaidCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['foodAndBeverageCost']) && (strlen($this->container['foodAndBeverageCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'foodAndBeverageCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['roomTaxAmount']) && (strlen($this->container['roomTaxAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'roomTaxAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['adjustmentAmount']) && (strlen($this->container['adjustmentAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'adjustmentAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['phoneCost']) && (strlen($this->container['phoneCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'phoneCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['restaurantCost']) && (strlen($this->container['restaurantCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'restaurantCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['roomServiceCost']) && (strlen($this->container['roomServiceCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'roomServiceCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['miniBarCost']) && (strlen($this->container['miniBarCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'miniBarCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['laundryCost']) && (strlen($this->container['laundryCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'laundryCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['miscellaneousCost']) && (strlen($this->container['miscellaneousCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'miscellaneousCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['giftShopCost']) && (strlen($this->container['giftShopCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'giftShopCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['movieCost']) && (strlen($this->container['movieCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'movieCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['healthClubCost']) && (strlen($this->container['healthClubCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'healthClubCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['valetParkingCost']) && (strlen($this->container['valetParkingCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'valetParkingCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['cashDisbursementCost']) && (strlen($this->container['cashDisbursementCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'cashDisbursementCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['nonRoomCost']) && (strlen($this->container['nonRoomCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'nonRoomCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['businessCenterCost']) && (strlen($this->container['businessCenterCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'businessCenterCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['loungeBarCost']) && (strlen($this->container['loungeBarCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'loungeBarCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['transportationCost']) && (strlen($this->container['transportationCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'transportationCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['gratuityAmount']) && (strlen($this->container['gratuityAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'gratuityAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['conferenceRoomCost']) && (strlen($this->container['conferenceRoomCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'conferenceRoomCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['audioVisualCost']) && (strlen($this->container['audioVisualCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'audioVisualCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['banquestCost']) && (strlen($this->container['banquestCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'banquestCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['nonRoomTaxAmount']) && (strlen($this->container['nonRoomTaxAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'nonRoomTaxAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['earlyCheckOutCost']) && (strlen($this->container['earlyCheckOutCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'earlyCheckOutCost', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['internetAccessCost']) && (strlen($this->container['internetAccessCost']) > 12)) {
-            $invalid_properties[] = "invalid value for 'internetAccessCost', the character length must be smaller than or equal to 12.";
-        }
-
         return $invalid_properties;
     }
 
@@ -574,15 +418,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['checkInDate']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['checkOutDate']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['smokingPreference']) > 1) {
-            return false;
-        }
         if ($this->container['numberOfRooms'] > 99) {
             return false;
         }
@@ -593,114 +428,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
             return false;
         }
         if ($this->container['numberOfGuests'] < 1) {
-            return false;
-        }
-        if (strlen($this->container['roomBedType']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['roomTaxType']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['roomRateType']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['guestName']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['customerServicePhoneNumber']) > 17) {
-            return false;
-        }
-        if (strlen($this->container['corporateClientCode']) > 17) {
-            return false;
-        }
-        if (strlen($this->container['additionalDiscountAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['roomLocation']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['specialProgramCode']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['totalTaxAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['prepaidCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['foodAndBeverageCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['roomTaxAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['adjustmentAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['phoneCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['restaurantCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['roomServiceCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['miniBarCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['laundryCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['miscellaneousCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['giftShopCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['movieCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['healthClubCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['valetParkingCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['cashDisbursementCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['nonRoomCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['businessCenterCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['loungeBarCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['transportationCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['gratuityAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['conferenceRoomCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['audioVisualCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['banquestCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['nonRoomTaxAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['earlyCheckOutCost']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['internetAccessCost']) > 12) {
             return false;
         }
         return true;
@@ -723,9 +450,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCheckInDate($checkInDate)
     {
-        if (!is_null($checkInDate) && (strlen($checkInDate) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $checkInDate when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 6.');
-        }
 
         $this->container['checkInDate'] = $checkInDate;
 
@@ -748,9 +472,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCheckOutDate($checkOutDate)
     {
-        if (!is_null($checkOutDate) && (strlen($checkOutDate) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $checkOutDate when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 6.');
-        }
 
         $this->container['checkOutDate'] = $checkOutDate;
 
@@ -794,9 +515,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setSmokingPreference($smokingPreference)
     {
-        if (!is_null($smokingPreference) && (strlen($smokingPreference) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $smokingPreference when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 1.');
-        }
 
         $this->container['smokingPreference'] = $smokingPreference;
 
@@ -819,7 +537,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNumberOfRooms($numberOfRooms)
     {
-
         if (!is_null($numberOfRooms) && ($numberOfRooms > 99)) {
             throw new \InvalidArgumentException('invalid value for $numberOfRooms when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 99.');
         }
@@ -848,7 +565,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNumberOfGuests($numberOfGuests)
     {
-
         if (!is_null($numberOfGuests) && ($numberOfGuests > 99)) {
             throw new \InvalidArgumentException('invalid value for $numberOfGuests when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 99.');
         }
@@ -877,9 +593,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomBedType($roomBedType)
     {
-        if (!is_null($roomBedType) && (strlen($roomBedType) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $roomBedType when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['roomBedType'] = $roomBedType;
 
@@ -902,9 +615,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomTaxType($roomTaxType)
     {
-        if (!is_null($roomTaxType) && (strlen($roomTaxType) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $roomTaxType when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 10.');
-        }
 
         $this->container['roomTaxType'] = $roomTaxType;
 
@@ -927,9 +637,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomRateType($roomRateType)
     {
-        if (!is_null($roomRateType) && (strlen($roomRateType) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $roomRateType when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['roomRateType'] = $roomRateType;
 
@@ -952,9 +659,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setGuestName($guestName)
     {
-        if (!is_null($guestName) && (strlen($guestName) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $guestName when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 40.');
-        }
 
         $this->container['guestName'] = $guestName;
 
@@ -977,9 +681,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCustomerServicePhoneNumber($customerServicePhoneNumber)
     {
-        if (!is_null($customerServicePhoneNumber) && (strlen($customerServicePhoneNumber) > 17)) {
-            throw new \InvalidArgumentException('invalid length for $customerServicePhoneNumber when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 17.');
-        }
 
         $this->container['customerServicePhoneNumber'] = $customerServicePhoneNumber;
 
@@ -1002,9 +703,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCorporateClientCode($corporateClientCode)
     {
-        if (!is_null($corporateClientCode) && (strlen($corporateClientCode) > 17)) {
-            throw new \InvalidArgumentException('invalid length for $corporateClientCode when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 17.');
-        }
 
         $this->container['corporateClientCode'] = $corporateClientCode;
 
@@ -1027,9 +725,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setAdditionalDiscountAmount($additionalDiscountAmount)
     {
-        if (!is_null($additionalDiscountAmount) && (strlen($additionalDiscountAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $additionalDiscountAmount when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['additionalDiscountAmount'] = $additionalDiscountAmount;
 
@@ -1052,9 +747,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomLocation($roomLocation)
     {
-        if (!is_null($roomLocation) && (strlen($roomLocation) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $roomLocation when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 10.');
-        }
 
         $this->container['roomLocation'] = $roomLocation;
 
@@ -1077,9 +769,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setSpecialProgramCode($specialProgramCode)
     {
-        if (!is_null($specialProgramCode) && (strlen($specialProgramCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $specialProgramCode when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 1.');
-        }
 
         $this->container['specialProgramCode'] = $specialProgramCode;
 
@@ -1102,9 +791,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setTotalTaxAmount($totalTaxAmount)
     {
-        if (!is_null($totalTaxAmount) && (strlen($totalTaxAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $totalTaxAmount when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['totalTaxAmount'] = $totalTaxAmount;
 
@@ -1127,9 +813,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setPrepaidCost($prepaidCost)
     {
-        if (!is_null($prepaidCost) && (strlen($prepaidCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $prepaidCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['prepaidCost'] = $prepaidCost;
 
@@ -1152,9 +835,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setFoodAndBeverageCost($foodAndBeverageCost)
     {
-        if (!is_null($foodAndBeverageCost) && (strlen($foodAndBeverageCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $foodAndBeverageCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['foodAndBeverageCost'] = $foodAndBeverageCost;
 
@@ -1177,9 +857,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomTaxAmount($roomTaxAmount)
     {
-        if (!is_null($roomTaxAmount) && (strlen($roomTaxAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $roomTaxAmount when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['roomTaxAmount'] = $roomTaxAmount;
 
@@ -1202,9 +879,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setAdjustmentAmount($adjustmentAmount)
     {
-        if (!is_null($adjustmentAmount) && (strlen($adjustmentAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $adjustmentAmount when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['adjustmentAmount'] = $adjustmentAmount;
 
@@ -1227,9 +901,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setPhoneCost($phoneCost)
     {
-        if (!is_null($phoneCost) && (strlen($phoneCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $phoneCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['phoneCost'] = $phoneCost;
 
@@ -1252,9 +923,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRestaurantCost($restaurantCost)
     {
-        if (!is_null($restaurantCost) && (strlen($restaurantCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $restaurantCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['restaurantCost'] = $restaurantCost;
 
@@ -1277,9 +945,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomServiceCost($roomServiceCost)
     {
-        if (!is_null($roomServiceCost) && (strlen($roomServiceCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $roomServiceCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['roomServiceCost'] = $roomServiceCost;
 
@@ -1302,9 +967,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setMiniBarCost($miniBarCost)
     {
-        if (!is_null($miniBarCost) && (strlen($miniBarCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $miniBarCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['miniBarCost'] = $miniBarCost;
 
@@ -1327,9 +989,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setLaundryCost($laundryCost)
     {
-        if (!is_null($laundryCost) && (strlen($laundryCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $laundryCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['laundryCost'] = $laundryCost;
 
@@ -1352,9 +1011,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setMiscellaneousCost($miscellaneousCost)
     {
-        if (!is_null($miscellaneousCost) && (strlen($miscellaneousCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $miscellaneousCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['miscellaneousCost'] = $miscellaneousCost;
 
@@ -1377,9 +1033,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setGiftShopCost($giftShopCost)
     {
-        if (!is_null($giftShopCost) && (strlen($giftShopCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $giftShopCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['giftShopCost'] = $giftShopCost;
 
@@ -1402,9 +1055,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setMovieCost($movieCost)
     {
-        if (!is_null($movieCost) && (strlen($movieCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $movieCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['movieCost'] = $movieCost;
 
@@ -1427,9 +1077,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setHealthClubCost($healthClubCost)
     {
-        if (!is_null($healthClubCost) && (strlen($healthClubCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $healthClubCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['healthClubCost'] = $healthClubCost;
 
@@ -1452,9 +1099,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setValetParkingCost($valetParkingCost)
     {
-        if (!is_null($valetParkingCost) && (strlen($valetParkingCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $valetParkingCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['valetParkingCost'] = $valetParkingCost;
 
@@ -1477,9 +1121,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCashDisbursementCost($cashDisbursementCost)
     {
-        if (!is_null($cashDisbursementCost) && (strlen($cashDisbursementCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $cashDisbursementCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['cashDisbursementCost'] = $cashDisbursementCost;
 
@@ -1502,9 +1143,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNonRoomCost($nonRoomCost)
     {
-        if (!is_null($nonRoomCost) && (strlen($nonRoomCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $nonRoomCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['nonRoomCost'] = $nonRoomCost;
 
@@ -1527,9 +1165,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setBusinessCenterCost($businessCenterCost)
     {
-        if (!is_null($businessCenterCost) && (strlen($businessCenterCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $businessCenterCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['businessCenterCost'] = $businessCenterCost;
 
@@ -1552,9 +1187,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setLoungeBarCost($loungeBarCost)
     {
-        if (!is_null($loungeBarCost) && (strlen($loungeBarCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $loungeBarCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['loungeBarCost'] = $loungeBarCost;
 
@@ -1577,9 +1209,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setTransportationCost($transportationCost)
     {
-        if (!is_null($transportationCost) && (strlen($transportationCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $transportationCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['transportationCost'] = $transportationCost;
 
@@ -1602,9 +1231,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setGratuityAmount($gratuityAmount)
     {
-        if (!is_null($gratuityAmount) && (strlen($gratuityAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $gratuityAmount when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['gratuityAmount'] = $gratuityAmount;
 
@@ -1627,9 +1253,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setConferenceRoomCost($conferenceRoomCost)
     {
-        if (!is_null($conferenceRoomCost) && (strlen($conferenceRoomCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $conferenceRoomCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['conferenceRoomCost'] = $conferenceRoomCost;
 
@@ -1652,9 +1275,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setAudioVisualCost($audioVisualCost)
     {
-        if (!is_null($audioVisualCost) && (strlen($audioVisualCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $audioVisualCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['audioVisualCost'] = $audioVisualCost;
 
@@ -1677,9 +1297,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setBanquestCost($banquestCost)
     {
-        if (!is_null($banquestCost) && (strlen($banquestCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $banquestCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['banquestCost'] = $banquestCost;
 
@@ -1702,9 +1319,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNonRoomTaxAmount($nonRoomTaxAmount)
     {
-        if (!is_null($nonRoomTaxAmount) && (strlen($nonRoomTaxAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $nonRoomTaxAmount when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['nonRoomTaxAmount'] = $nonRoomTaxAmount;
 
@@ -1727,9 +1341,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setEarlyCheckOutCost($earlyCheckOutCost)
     {
-        if (!is_null($earlyCheckOutCost) && (strlen($earlyCheckOutCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $earlyCheckOutCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['earlyCheckOutCost'] = $earlyCheckOutCost;
 
@@ -1752,9 +1363,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setInternetAccessCost($internetAccessCost)
     {
-        if (!is_null($internetAccessCost) && (strlen($internetAccessCost) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $internetAccessCost when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 12.');
-        }
 
         $this->container['internetAccessCost'] = $internetAccessCost;
 

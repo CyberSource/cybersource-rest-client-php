@@ -144,10 +144,6 @@ class Ptsv2paymentsidcapturesOrderInformationShippingDetails implements ArrayAcc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['shipFromPostalCode']) && (strlen($this->container['shipFromPostalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'shipFromPostalCode', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsidcapturesOrderInformationShippingDetails implements ArrayAcc
     public function valid()
     {
 
-        if (strlen($this->container['shipFromPostalCode']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2paymentsidcapturesOrderInformationShippingDetails implements ArrayAcc
      */
     public function setShipFromPostalCode($shipFromPostalCode)
     {
-        if (!is_null($shipFromPostalCode) && (strlen($shipFromPostalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $shipFromPostalCode when calling Ptsv2paymentsidcapturesOrderInformationShippingDetails., must be smaller than or equal to 10.');
-        }
 
         $this->container['shipFromPostalCode'] = $shipFromPostalCode;
 

@@ -162,14 +162,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['terminalId']) && (strlen($this->container['terminalId']) > 8)) {
-            $invalid_properties[] = "invalid value for 'terminalId', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['terminalSerialNumber']) && (strlen($this->container['terminalSerialNumber']) > 32)) {
-            $invalid_properties[] = "invalid value for 'terminalSerialNumber', the character length must be smaller than or equal to 32.";
-        }
-
         return $invalid_properties;
     }
 
@@ -182,12 +174,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
     public function valid()
     {
 
-        if (strlen($this->container['terminalId']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['terminalSerialNumber']) > 32) {
-            return false;
-        }
         return true;
     }
 
@@ -208,9 +194,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      */
     public function setTerminalId($terminalId)
     {
-        if (!is_null($terminalId) && (strlen($terminalId) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $terminalId when calling TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['terminalId'] = $terminalId;
 
@@ -233,9 +216,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      */
     public function setTerminalSerialNumber($terminalSerialNumber)
     {
-        if (!is_null($terminalSerialNumber) && (strlen($terminalSerialNumber) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $terminalSerialNumber when calling TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation., must be smaller than or equal to 32.');
-        }
 
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
 

@@ -150,14 +150,6 @@ class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['refundAmount']) && (strlen($this->container['refundAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'refundAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['refundAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails implements ArrayAcce
      */
     public function setRefundAmount($refundAmount)
     {
-        if (!is_null($refundAmount) && (strlen($refundAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $refundAmount when calling PtsV2PaymentsRefundPost201ResponseRefundAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['refundAmount'] = $refundAmount;
 
@@ -221,9 +204,6 @@ class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails implements ArrayAcce
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling PtsV2PaymentsRefundPost201ResponseRefundAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

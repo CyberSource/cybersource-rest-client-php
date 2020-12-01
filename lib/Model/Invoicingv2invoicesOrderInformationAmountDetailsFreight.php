@@ -151,10 +151,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 13.";
-        }
-
         return $invalid_properties;
     }
 
@@ -167,9 +163,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
     public function valid()
     {
 
-        if (strlen($this->container['amount']) > 13) {
-            return false;
-        }
         return true;
     }
 
@@ -190,9 +183,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling Invoicingv2invoicesOrderInformationAmountDetailsFreight., must be smaller than or equal to 13.');
-        }
 
         $this->container['amount'] = $amount;
 

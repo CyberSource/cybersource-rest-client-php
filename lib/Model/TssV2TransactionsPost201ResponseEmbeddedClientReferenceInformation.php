@@ -156,10 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 50)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
-        }
-
         return $invalid_properties;
     }
 
@@ -172,9 +168,6 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 50) {
-            return false;
-        }
         return true;
     }
 
@@ -195,9 +188,6 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['code'] = $code;
 

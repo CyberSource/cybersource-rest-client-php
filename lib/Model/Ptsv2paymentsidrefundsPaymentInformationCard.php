@@ -198,42 +198,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['number']) && (strlen($this->container['number']) > 20)) {
-            $invalid_properties[] = "invalid value for 'number', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['expirationMonth']) && (strlen($this->container['expirationMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'expirationMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['expirationYear']) && (strlen($this->container['expirationYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'expirationYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['accountEncoderId']) && (strlen($this->container['accountEncoderId']) > 3)) {
-            $invalid_properties[] = "invalid value for 'accountEncoderId', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['issueNumber']) && (strlen($this->container['issueNumber']) > 5)) {
-            $invalid_properties[] = "invalid value for 'issueNumber', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['startMonth']) && (strlen($this->container['startMonth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'startMonth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['startYear']) && (strlen($this->container['startYear']) > 4)) {
-            $invalid_properties[] = "invalid value for 'startYear', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['sourceAccountType']) && (strlen($this->container['sourceAccountType']) > 20)) {
-            $invalid_properties[] = "invalid value for 'sourceAccountType', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['sourceAccountTypeDetails']) && (strlen($this->container['sourceAccountTypeDetails']) > 4)) {
-            $invalid_properties[] = "invalid value for 'sourceAccountTypeDetails', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -246,33 +210,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['number']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['expirationMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['expirationYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['accountEncoderId']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['issueNumber']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['startMonth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['startYear']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['sourceAccountType']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['sourceAccountTypeDetails']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -293,9 +230,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setNumber($number)
     {
-        if (!is_null($number) && (strlen($number) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $number when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['number'] = $number;
 
@@ -318,9 +252,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setExpirationMonth($expirationMonth)
     {
-        if (!is_null($expirationMonth) && (strlen($expirationMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $expirationMonth when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['expirationMonth'] = $expirationMonth;
 
@@ -343,9 +274,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setExpirationYear($expirationYear)
     {
-        if (!is_null($expirationYear) && (strlen($expirationYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $expirationYear when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['expirationYear'] = $expirationYear;
 
@@ -389,9 +317,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setAccountEncoderId($accountEncoderId)
     {
-        if (!is_null($accountEncoderId) && (strlen($accountEncoderId) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $accountEncoderId when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 3.');
-        }
 
         $this->container['accountEncoderId'] = $accountEncoderId;
 
@@ -414,9 +339,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setIssueNumber($issueNumber)
     {
-        if (!is_null($issueNumber) && (strlen($issueNumber) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $issueNumber when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 5.');
-        }
 
         $this->container['issueNumber'] = $issueNumber;
 
@@ -439,9 +361,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setStartMonth($startMonth)
     {
-        if (!is_null($startMonth) && (strlen($startMonth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $startMonth when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 2.');
-        }
 
         $this->container['startMonth'] = $startMonth;
 
@@ -464,9 +383,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setStartYear($startYear)
     {
-        if (!is_null($startYear) && (strlen($startYear) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $startYear when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['startYear'] = $startYear;
 
@@ -489,9 +405,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setSourceAccountType($sourceAccountType)
     {
-        if (!is_null($sourceAccountType) && (strlen($sourceAccountType) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $sourceAccountType when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['sourceAccountType'] = $sourceAccountType;
 
@@ -514,9 +427,6 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
      */
     public function setSourceAccountTypeDetails($sourceAccountTypeDetails)
     {
-        if (!is_null($sourceAccountTypeDetails) && (strlen($sourceAccountTypeDetails) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $sourceAccountTypeDetails when calling Ptsv2paymentsidrefundsPaymentInformationCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['sourceAccountTypeDetails'] = $sourceAccountTypeDetails;
 

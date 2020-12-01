@@ -144,10 +144,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['authType']) && (strlen($this->container['authType']) > 15)) {
-            $invalid_properties[] = "invalid value for 'authType', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
     public function valid()
     {
 
-        if (strlen($this->container['authType']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      */
     public function setAuthType($authType)
     {
-        if (!is_null($authType) && (strlen($authType) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $authType when calling TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions., must be smaller than or equal to 15.');
-        }
 
         $this->container['authType'] = $authType;
 

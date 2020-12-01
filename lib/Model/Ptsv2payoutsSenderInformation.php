@@ -222,62 +222,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['referenceNumber']) && (strlen($this->container['referenceNumber']) > 19)) {
-            $invalid_properties[] = "invalid value for 'referenceNumber', the character length must be smaller than or equal to 19.";
-        }
-
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 35)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['middleInitial']) && (strlen($this->container['middleInitial']) > 1)) {
-            $invalid_properties[] = "invalid value for 'middleInitial', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 35)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 24)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 24.";
-        }
-
-        if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 50)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 25)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 2)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['countryCode']) && (strlen($this->container['countryCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'countryCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 20)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['dateOfBirth']) && (strlen($this->container['dateOfBirth']) > 8)) {
-            $invalid_properties[] = "invalid value for 'dateOfBirth', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['dateOfBirth']) && (strlen($this->container['dateOfBirth']) < 8)) {
-            $invalid_properties[] = "invalid value for 'dateOfBirth', the character length must be bigger than or equal to 8.";
-        }
-
-        if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 13)) {
-            $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 13.";
-        }
-
         return $invalid_properties;
     }
 
@@ -290,48 +234,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['referenceNumber']) > 19) {
-            return false;
-        }
-        if (strlen($this->container['firstName']) > 35) {
-            return false;
-        }
-        if (strlen($this->container['middleInitial']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['lastName']) > 35) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 24) {
-            return false;
-        }
-        if (strlen($this->container['address1']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['countryCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['dateOfBirth']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['dateOfBirth']) < 8) {
-            return false;
-        }
-        if (strlen($this->container['vatRegistrationNumber']) > 13) {
-            return false;
-        }
         return true;
     }
 
@@ -352,9 +254,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setReferenceNumber($referenceNumber)
     {
-        if (!is_null($referenceNumber) && (strlen($referenceNumber) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $referenceNumber when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 19.');
-        }
 
         $this->container['referenceNumber'] = $referenceNumber;
 
@@ -398,9 +297,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 35.');
-        }
 
         $this->container['firstName'] = $firstName;
 
@@ -423,9 +319,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setMiddleInitial($middleInitial)
     {
-        if (!is_null($middleInitial) && (strlen($middleInitial) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $middleInitial when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['middleInitial'] = $middleInitial;
 
@@ -448,9 +341,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 35.');
-        }
 
         $this->container['lastName'] = $lastName;
 
@@ -473,9 +363,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 24)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 24.');
-        }
 
         $this->container['name'] = $name;
 
@@ -498,9 +385,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-        if (!is_null($address1) && (strlen($address1) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -523,9 +407,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 25.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -548,9 +429,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -573,9 +451,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setCountryCode($countryCode)
     {
-        if (!is_null($countryCode) && (strlen($countryCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $countryCode when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['countryCode'] = $countryCode;
 
@@ -598,9 +473,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -623,9 +495,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 
@@ -648,12 +517,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setDateOfBirth($dateOfBirth)
     {
-        if (!is_null($dateOfBirth) && (strlen($dateOfBirth) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $dateOfBirth when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 8.');
-        }
-        if (!is_null($dateOfBirth) && (strlen($dateOfBirth) < 8)) {
-            throw new \InvalidArgumentException('invalid length for $dateOfBirth when calling Ptsv2payoutsSenderInformation., must be bigger than or equal to 8.');
-        }
 
         $this->container['dateOfBirth'] = $dateOfBirth;
 
@@ -676,9 +539,6 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-        if (!is_null($vatRegistrationNumber) && (strlen($vatRegistrationNumber) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $vatRegistrationNumber when calling Ptsv2payoutsSenderInformation., must be smaller than or equal to 13.');
-        }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 

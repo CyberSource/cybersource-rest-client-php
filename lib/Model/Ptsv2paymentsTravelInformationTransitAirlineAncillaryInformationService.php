@@ -150,14 +150,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService im
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['categoryCode']) && (strlen($this->container['categoryCode']) > 4)) {
-            $invalid_properties[] = "invalid value for 'categoryCode', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['subCategoryCode']) && (strlen($this->container['subCategoryCode']) > 4)) {
-            $invalid_properties[] = "invalid value for 'subCategoryCode', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService im
     public function valid()
     {
 
-        if (strlen($this->container['categoryCode']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['subCategoryCode']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService im
      */
     public function setCategoryCode($categoryCode)
     {
-        if (!is_null($categoryCode) && (strlen($categoryCode) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $categoryCode when calling Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService., must be smaller than or equal to 4.');
-        }
 
         $this->container['categoryCode'] = $categoryCode;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService im
      */
     public function setSubCategoryCode($subCategoryCode)
     {
-        if (!is_null($subCategoryCode) && (strlen($subCategoryCode) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $subCategoryCode when calling Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformationService., must be smaller than or equal to 4.');
-        }
 
         $this->container['subCategoryCode'] = $subCategoryCode;
 

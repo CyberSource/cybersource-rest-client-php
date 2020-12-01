@@ -168,22 +168,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['ticketNumber']) && (strlen($this->container['ticketNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'ticketNumber', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['passengerName']) && (strlen($this->container['passengerName']) > 20)) {
-            $invalid_properties[] = "invalid value for 'passengerName', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['connectedTicketNumber']) && (strlen($this->container['connectedTicketNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'connectedTicketNumber', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['creditReasonIndicator']) && (strlen($this->container['creditReasonIndicator']) > 15)) {
-            $invalid_properties[] = "invalid value for 'creditReasonIndicator', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -196,18 +180,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
     public function valid()
     {
 
-        if (strlen($this->container['ticketNumber']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['passengerName']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['connectedTicketNumber']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['creditReasonIndicator']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -228,9 +200,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setTicketNumber($ticketNumber)
     {
-        if (!is_null($ticketNumber) && (strlen($ticketNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $ticketNumber when calling Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['ticketNumber'] = $ticketNumber;
 
@@ -253,9 +222,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setPassengerName($passengerName)
     {
-        if (!is_null($passengerName) && (strlen($passengerName) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $passengerName when calling Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['passengerName'] = $passengerName;
 
@@ -278,9 +244,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setConnectedTicketNumber($connectedTicketNumber)
     {
-        if (!is_null($connectedTicketNumber) && (strlen($connectedTicketNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $connectedTicketNumber when calling Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['connectedTicketNumber'] = $connectedTicketNumber;
 
@@ -303,9 +266,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setCreditReasonIndicator($creditReasonIndicator)
     {
-        if (!is_null($creditReasonIndicator) && (strlen($creditReasonIndicator) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $creditReasonIndicator when calling Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['creditReasonIndicator'] = $creditReasonIndicator;
 

@@ -156,18 +156,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['balanceAmount']) && (strlen($this->container['balanceAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'balanceAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['previousBalanceAmount']) && (strlen($this->container['previousBalanceAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'previousBalanceAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 5)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 5.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
     public function valid()
     {
 
-        if (strlen($this->container['balanceAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['previousBalanceAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 5) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
      */
     public function setBalanceAmount($balanceAmount)
     {
-        if (!is_null($balanceAmount) && (strlen($balanceAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $balanceAmount when calling TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 12.');
-        }
 
         $this->container['balanceAmount'] = $balanceAmount;
 
@@ -234,9 +210,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
      */
     public function setPreviousBalanceAmount($previousBalanceAmount)
     {
-        if (!is_null($previousBalanceAmount) && (strlen($previousBalanceAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $previousBalanceAmount when calling TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 12.');
-        }
 
         $this->container['previousBalanceAmount'] = $previousBalanceAmount;
 
@@ -259,9 +232,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures., must be smaller than or equal to 5.');
-        }
 
         $this->container['currency'] = $currency;
 

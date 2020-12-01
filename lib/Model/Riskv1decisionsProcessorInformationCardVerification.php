@@ -144,10 +144,6 @@ class Riskv1decisionsProcessorInformationCardVerification implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['resultCode']) && (strlen($this->container['resultCode']) > 1)) {
-            $invalid_properties[] = "invalid value for 'resultCode', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Riskv1decisionsProcessorInformationCardVerification implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['resultCode']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Riskv1decisionsProcessorInformationCardVerification implements ArrayAccess
      */
     public function setResultCode($resultCode)
     {
-        if (!is_null($resultCode) && (strlen($resultCode) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $resultCode when calling Riskv1decisionsProcessorInformationCardVerification., must be smaller than or equal to 1.');
-        }
 
         $this->container['resultCode'] = $resultCode;
 

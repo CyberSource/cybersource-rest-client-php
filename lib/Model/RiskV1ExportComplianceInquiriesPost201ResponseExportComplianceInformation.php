@@ -202,7 +202,6 @@ class RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation 
      */
     public function setIpCountryConfidence($ipCountryConfidence)
     {
-
         if (!is_null($ipCountryConfidence) && ($ipCountryConfidence > 100)) {
             throw new \InvalidArgumentException('invalid value for $ipCountryConfidence when calling RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation., must be smaller than or equal to 100.');
         }

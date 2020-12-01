@@ -156,18 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['trueIpaddress']) && (strlen($this->container['trueIpaddress']) > 255)) {
-            $invalid_properties[] = "invalid value for 'trueIpaddress', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['hash']) && (strlen($this->container['hash']) > 255)) {
-            $invalid_properties[] = "invalid value for 'hash', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['smartId']) && (strlen($this->container['smartId']) > 255)) {
-            $invalid_properties[] = "invalid value for 'smartId', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
     public function valid()
     {
 
-        if (strlen($this->container['trueIpaddress']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['hash']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['smartId']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
      */
     public function setTrueIpaddress($trueIpaddress)
     {
-        if (!is_null($trueIpaddress) && (strlen($trueIpaddress) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $trueIpaddress when calling TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint., must be smaller than or equal to 255.');
-        }
 
         $this->container['trueIpaddress'] = $trueIpaddress;
 
@@ -234,9 +210,6 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
      */
     public function setHash($hash)
     {
-        if (!is_null($hash) && (strlen($hash) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $hash when calling TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint., must be smaller than or equal to 255.');
-        }
 
         $this->container['hash'] = $hash;
 
@@ -259,9 +232,6 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
      */
     public function setSmartId($smartId)
     {
-        if (!is_null($smartId) && (strlen($smartId) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $smartId when calling TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint., must be smaller than or equal to 255.');
-        }
 
         $this->container['smartId'] = $smartId;
 

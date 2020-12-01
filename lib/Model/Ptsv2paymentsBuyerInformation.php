@@ -180,26 +180,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['dateOfBirth']) && (strlen($this->container['dateOfBirth']) > 8)) {
-            $invalid_properties[] = "invalid value for 'dateOfBirth', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['vatRegistrationNumber']) && (strlen($this->container['vatRegistrationNumber']) > 20)) {
-            $invalid_properties[] = "invalid value for 'vatRegistrationNumber', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['companyTaxId']) && (strlen($this->container['companyTaxId']) > 9)) {
-            $invalid_properties[] = "invalid value for 'companyTaxId', the character length must be smaller than or equal to 9.";
-        }
-
-        if (!is_null($this->container['hashedPassword']) && (strlen($this->container['hashedPassword']) > 100)) {
-            $invalid_properties[] = "invalid value for 'hashedPassword', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -212,21 +192,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['merchantCustomerId']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['dateOfBirth']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['vatRegistrationNumber']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['companyTaxId']) > 9) {
-            return false;
-        }
-        if (strlen($this->container['hashedPassword']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -247,9 +212,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling Ptsv2paymentsBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 
@@ -272,9 +234,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
      */
     public function setDateOfBirth($dateOfBirth)
     {
-        if (!is_null($dateOfBirth) && (strlen($dateOfBirth) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $dateOfBirth when calling Ptsv2paymentsBuyerInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['dateOfBirth'] = $dateOfBirth;
 
@@ -297,9 +256,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-        if (!is_null($vatRegistrationNumber) && (strlen($vatRegistrationNumber) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $vatRegistrationNumber when calling Ptsv2paymentsBuyerInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
@@ -322,9 +278,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
      */
     public function setCompanyTaxId($companyTaxId)
     {
-        if (!is_null($companyTaxId) && (strlen($companyTaxId) > 9)) {
-            throw new \InvalidArgumentException('invalid length for $companyTaxId when calling Ptsv2paymentsBuyerInformation., must be smaller than or equal to 9.');
-        }
 
         $this->container['companyTaxId'] = $companyTaxId;
 
@@ -368,9 +321,6 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
      */
     public function setHashedPassword($hashedPassword)
     {
-        if (!is_null($hashedPassword) && (strlen($hashedPassword) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $hashedPassword when calling Ptsv2paymentsBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['hashedPassword'] = $hashedPassword;
 

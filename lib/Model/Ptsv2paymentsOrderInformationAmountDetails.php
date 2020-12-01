@@ -288,90 +288,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['totalAmount']) && (strlen($this->container['totalAmount']) > 19)) {
-            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 19.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['discountAmount']) && (strlen($this->container['discountAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'discountAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['dutyAmount']) && (strlen($this->container['dutyAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'dutyAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['gratuityAmount']) && (strlen($this->container['gratuityAmount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'gratuityAmount', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['taxAmount']) && (strlen($this->container['taxAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'taxAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['nationalTaxIncluded']) && (strlen($this->container['nationalTaxIncluded']) > 1)) {
-            $invalid_properties[] = "invalid value for 'nationalTaxIncluded', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['taxAppliedAfterDiscount']) && (strlen($this->container['taxAppliedAfterDiscount']) > 1)) {
-            $invalid_properties[] = "invalid value for 'taxAppliedAfterDiscount', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['taxAppliedLevel']) && (strlen($this->container['taxAppliedLevel']) > 1)) {
-            $invalid_properties[] = "invalid value for 'taxAppliedLevel', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['taxTypeCode']) && (strlen($this->container['taxTypeCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'taxTypeCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['freightAmount']) && (strlen($this->container['freightAmount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'freightAmount', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['foreignAmount']) && (strlen($this->container['foreignAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'foreignAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['foreignCurrency']) && (strlen($this->container['foreignCurrency']) > 5)) {
-            $invalid_properties[] = "invalid value for 'foreignCurrency', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['exchangeRate']) && (strlen($this->container['exchangeRate']) > 13)) {
-            $invalid_properties[] = "invalid value for 'exchangeRate', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['exchangeRateTimeStamp']) && (strlen($this->container['exchangeRateTimeStamp']) > 14)) {
-            $invalid_properties[] = "invalid value for 'exchangeRateTimeStamp', the character length must be smaller than or equal to 14.";
-        }
-
-        if (!is_null($this->container['settlementAmount']) && (strlen($this->container['settlementAmount']) > 12)) {
-            $invalid_properties[] = "invalid value for 'settlementAmount', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['settlementCurrency']) && (strlen($this->container['settlementCurrency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'settlementCurrency', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['serviceFeeAmount']) && (strlen($this->container['serviceFeeAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'serviceFeeAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['originalAmount']) && (strlen($this->container['originalAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'originalAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['originalCurrency']) && (strlen($this->container['originalCurrency']) > 15)) {
-            $invalid_properties[] = "invalid value for 'originalCurrency', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['cashbackAmount']) && (strlen($this->container['cashbackAmount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'cashbackAmount', the character length must be smaller than or equal to 13.";
-        }
-
         return $invalid_properties;
     }
 
@@ -384,69 +300,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['totalAmount']) > 19) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['discountAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['dutyAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['gratuityAmount']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['taxAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['nationalTaxIncluded']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['taxAppliedAfterDiscount']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['taxAppliedLevel']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['taxTypeCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['freightAmount']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['foreignAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['foreignCurrency']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['exchangeRate']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['exchangeRateTimeStamp']) > 14) {
-            return false;
-        }
-        if (strlen($this->container['settlementAmount']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['settlementCurrency']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['serviceFeeAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['originalAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['originalCurrency']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['cashbackAmount']) > 13) {
-            return false;
-        }
         return true;
     }
 
@@ -467,9 +320,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTotalAmount($totalAmount)
     {
-        if (!is_null($totalAmount) && (strlen($totalAmount) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $totalAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 19.');
-        }
 
         $this->container['totalAmount'] = $totalAmount;
 
@@ -492,9 +342,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 
@@ -517,9 +364,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setDiscountAmount($discountAmount)
     {
-        if (!is_null($discountAmount) && (strlen($discountAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $discountAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['discountAmount'] = $discountAmount;
 
@@ -542,9 +386,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setDutyAmount($dutyAmount)
     {
-        if (!is_null($dutyAmount) && (strlen($dutyAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $dutyAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['dutyAmount'] = $dutyAmount;
 
@@ -567,9 +408,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setGratuityAmount($gratuityAmount)
     {
-        if (!is_null($gratuityAmount) && (strlen($gratuityAmount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $gratuityAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['gratuityAmount'] = $gratuityAmount;
 
@@ -592,9 +430,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTaxAmount($taxAmount)
     {
-        if (!is_null($taxAmount) && (strlen($taxAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $taxAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 12.');
-        }
 
         $this->container['taxAmount'] = $taxAmount;
 
@@ -617,9 +452,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setNationalTaxIncluded($nationalTaxIncluded)
     {
-        if (!is_null($nationalTaxIncluded) && (strlen($nationalTaxIncluded) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $nationalTaxIncluded when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 1.');
-        }
 
         $this->container['nationalTaxIncluded'] = $nationalTaxIncluded;
 
@@ -642,9 +474,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTaxAppliedAfterDiscount($taxAppliedAfterDiscount)
     {
-        if (!is_null($taxAppliedAfterDiscount) && (strlen($taxAppliedAfterDiscount) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $taxAppliedAfterDiscount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 1.');
-        }
 
         $this->container['taxAppliedAfterDiscount'] = $taxAppliedAfterDiscount;
 
@@ -667,9 +496,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTaxAppliedLevel($taxAppliedLevel)
     {
-        if (!is_null($taxAppliedLevel) && (strlen($taxAppliedLevel) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $taxAppliedLevel when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 1.');
-        }
 
         $this->container['taxAppliedLevel'] = $taxAppliedLevel;
 
@@ -692,9 +518,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTaxTypeCode($taxTypeCode)
     {
-        if (!is_null($taxTypeCode) && (strlen($taxTypeCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $taxTypeCode when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['taxTypeCode'] = $taxTypeCode;
 
@@ -717,9 +540,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setFreightAmount($freightAmount)
     {
-        if (!is_null($freightAmount) && (strlen($freightAmount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $freightAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['freightAmount'] = $freightAmount;
 
@@ -742,9 +562,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setForeignAmount($foreignAmount)
     {
-        if (!is_null($foreignAmount) && (strlen($foreignAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $foreignAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['foreignAmount'] = $foreignAmount;
 
@@ -767,9 +584,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setForeignCurrency($foreignCurrency)
     {
-        if (!is_null($foreignCurrency) && (strlen($foreignCurrency) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $foreignCurrency when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 5.');
-        }
 
         $this->container['foreignCurrency'] = $foreignCurrency;
 
@@ -792,9 +606,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setExchangeRate($exchangeRate)
     {
-        if (!is_null($exchangeRate) && (strlen($exchangeRate) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $exchangeRate when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['exchangeRate'] = $exchangeRate;
 
@@ -817,9 +628,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setExchangeRateTimeStamp($exchangeRateTimeStamp)
     {
-        if (!is_null($exchangeRateTimeStamp) && (strlen($exchangeRateTimeStamp) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $exchangeRateTimeStamp when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 14.');
-        }
 
         $this->container['exchangeRateTimeStamp'] = $exchangeRateTimeStamp;
 
@@ -863,9 +671,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setSettlementAmount($settlementAmount)
     {
-        if (!is_null($settlementAmount) && (strlen($settlementAmount) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $settlementAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 12.');
-        }
 
         $this->container['settlementAmount'] = $settlementAmount;
 
@@ -888,9 +693,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setSettlementCurrency($settlementCurrency)
     {
-        if (!is_null($settlementCurrency) && (strlen($settlementCurrency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $settlementCurrency when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['settlementCurrency'] = $settlementCurrency;
 
@@ -955,9 +757,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setServiceFeeAmount($serviceFeeAmount)
     {
-        if (!is_null($serviceFeeAmount) && (strlen($serviceFeeAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $serviceFeeAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['serviceFeeAmount'] = $serviceFeeAmount;
 
@@ -980,9 +779,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setOriginalAmount($originalAmount)
     {
-        if (!is_null($originalAmount) && (strlen($originalAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $originalAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['originalAmount'] = $originalAmount;
 
@@ -1005,9 +801,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setOriginalCurrency($originalCurrency)
     {
-        if (!is_null($originalCurrency) && (strlen($originalCurrency) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $originalCurrency when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['originalCurrency'] = $originalCurrency;
 
@@ -1030,9 +823,6 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setCashbackAmount($cashbackAmount)
     {
-        if (!is_null($cashbackAmount) && (strlen($cashbackAmount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $cashbackAmount when calling Ptsv2paymentsOrderInformationAmountDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['cashbackAmount'] = $cashbackAmount;
 

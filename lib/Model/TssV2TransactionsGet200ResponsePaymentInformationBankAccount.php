@@ -180,18 +180,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['checkNumber']) && (strlen($this->container['checkNumber']) > 8)) {
-            $invalid_properties[] = "invalid value for 'checkNumber', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 1)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['encoderId']) && (strlen($this->container['encoderId']) > 3)) {
-            $invalid_properties[] = "invalid value for 'encoderId', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -204,15 +192,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
     public function valid()
     {
 
-        if (strlen($this->container['checkNumber']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['type']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['encoderId']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -275,9 +254,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
      */
     public function setCheckNumber($checkNumber)
     {
-        if (!is_null($checkNumber) && (strlen($checkNumber) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $checkNumber when calling TssV2TransactionsGet200ResponsePaymentInformationBankAccount., must be smaller than or equal to 8.');
-        }
 
         $this->container['checkNumber'] = $checkNumber;
 
@@ -300,9 +276,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling TssV2TransactionsGet200ResponsePaymentInformationBankAccount., must be smaller than or equal to 1.');
-        }
 
         $this->container['type'] = $type;
 
@@ -367,9 +340,6 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
      */
     public function setEncoderId($encoderId)
     {
-        if (!is_null($encoderId) && (strlen($encoderId) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $encoderId when calling TssV2TransactionsGet200ResponsePaymentInformationBankAccount., must be smaller than or equal to 3.');
-        }
 
         $this->container['encoderId'] = $encoderId;
 

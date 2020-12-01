@@ -150,14 +150,6 @@ class Riskv1authenticationsetupsProcessingInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentSolution']) && (strlen($this->container['paymentSolution']) > 12)) {
-            $invalid_properties[] = "invalid value for 'paymentSolution', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['visaCheckoutId']) && (strlen($this->container['visaCheckoutId']) > 48)) {
-            $invalid_properties[] = "invalid value for 'visaCheckoutId', the character length must be smaller than or equal to 48.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Riskv1authenticationsetupsProcessingInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['paymentSolution']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['visaCheckoutId']) > 48) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Riskv1authenticationsetupsProcessingInformation implements ArrayAccess
      */
     public function setPaymentSolution($paymentSolution)
     {
-        if (!is_null($paymentSolution) && (strlen($paymentSolution) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $paymentSolution when calling Riskv1authenticationsetupsProcessingInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['paymentSolution'] = $paymentSolution;
 
@@ -221,9 +204,6 @@ class Riskv1authenticationsetupsProcessingInformation implements ArrayAccess
      */
     public function setVisaCheckoutId($visaCheckoutId)
     {
-        if (!is_null($visaCheckoutId) && (strlen($visaCheckoutId) > 48)) {
-            throw new \InvalidArgumentException('invalid length for $visaCheckoutId when calling Riskv1authenticationsetupsProcessingInformation., must be smaller than or equal to 48.');
-        }
 
         $this->container['visaCheckoutId'] = $visaCheckoutId;
 

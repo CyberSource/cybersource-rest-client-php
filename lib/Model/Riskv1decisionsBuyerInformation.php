@@ -169,22 +169,6 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantCustomerId']) && (strlen($this->container['merchantCustomerId']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantCustomerId', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['username']) && (strlen($this->container['username']) > 255)) {
-            $invalid_properties[] = "invalid value for 'username', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['hashedPassword']) && (strlen($this->container['hashedPassword']) > 100)) {
-            $invalid_properties[] = "invalid value for 'hashedPassword', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['dateOfBirth']) && (strlen($this->container['dateOfBirth']) > 8)) {
-            $invalid_properties[] = "invalid value for 'dateOfBirth', the character length must be smaller than or equal to 8.";
-        }
-
         return $invalid_properties;
     }
 
@@ -197,18 +181,6 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['merchantCustomerId']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['username']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['hashedPassword']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['dateOfBirth']) > 8) {
-            return false;
-        }
         return true;
     }
 
@@ -229,9 +201,6 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-        if (!is_null($merchantCustomerId) && (strlen($merchantCustomerId) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantCustomerId when calling Riskv1decisionsBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 
@@ -254,9 +223,6 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      */
     public function setUsername($username)
     {
-        if (!is_null($username) && (strlen($username) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $username when calling Riskv1decisionsBuyerInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['username'] = $username;
 
@@ -279,9 +245,6 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      */
     public function setHashedPassword($hashedPassword)
     {
-        if (!is_null($hashedPassword) && (strlen($hashedPassword) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $hashedPassword when calling Riskv1decisionsBuyerInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['hashedPassword'] = $hashedPassword;
 
@@ -304,9 +267,6 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
      */
     public function setDateOfBirth($dateOfBirth)
     {
-        if (!is_null($dateOfBirth) && (strlen($dateOfBirth) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $dateOfBirth when calling Riskv1decisionsBuyerInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['dateOfBirth'] = $dateOfBirth;
 

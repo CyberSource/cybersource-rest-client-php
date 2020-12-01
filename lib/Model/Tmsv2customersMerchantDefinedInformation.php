@@ -150,10 +150,6 @@ class Tmsv2customersMerchantDefinedInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['value']) && (strlen($this->container['value']) > 100)) {
-            $invalid_properties[] = "invalid value for 'value', the character length must be smaller than or equal to 100.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Tmsv2customersMerchantDefinedInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['value']) > 100) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Tmsv2customersMerchantDefinedInformation implements ArrayAccess
      */
     public function setValue($value)
     {
-        if (!is_null($value) && (strlen($value) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $value when calling Tmsv2customersMerchantDefinedInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['value'] = $value;
 

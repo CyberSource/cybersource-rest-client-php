@@ -144,10 +144,6 @@ class Ptsv2creditsInstallmentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['planType']) && (strlen($this->container['planType']) > 1)) {
-            $invalid_properties[] = "invalid value for 'planType', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2creditsInstallmentInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['planType']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2creditsInstallmentInformation implements ArrayAccess
      */
     public function setPlanType($planType)
     {
-        if (!is_null($planType) && (strlen($planType) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $planType when calling Ptsv2creditsInstallmentInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['planType'] = $planType;
 

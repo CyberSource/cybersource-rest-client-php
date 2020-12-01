@@ -639,7 +639,7 @@ class InstrumentIdentifierApi
      *
      * Create an Instrument Identifier
      *
-     * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
@@ -655,7 +655,7 @@ class InstrumentIdentifierApi
      *
      * Create an Instrument Identifier
      *
-     * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Please specify either a Card, Bank Account or Enrollable Card (required)
+     * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
@@ -729,6 +729,139 @@ class InstrumentIdentifierApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 424:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postInstrumentIdentifierEnrollment
+     *
+     * Enroll an Instrument Identifier for Network Tokenization
+     *
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param \CyberSource\Model\PostInstrumentIdentifierEnrollmentRequest $postInstrumentIdentifierEnrollmentRequest Specify Enrollable Card details (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postInstrumentIdentifierEnrollment($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId = null)
+    {
+        list($response, $statusCode, $httpHeader) = $this->postInstrumentIdentifierEnrollmentWithHttpInfo($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId);
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation postInstrumentIdentifierEnrollmentWithHttpInfo
+     *
+     * Enroll an Instrument Identifier for Network Tokenization
+     *
+     * @param string $instrumentIdentifierTokenId The TokenId of a Instrument Identifier. (required)
+     * @param \CyberSource\Model\PostInstrumentIdentifierEnrollmentRequest $postInstrumentIdentifierEnrollmentRequest Specify Enrollable Card details (required)
+     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postInstrumentIdentifierEnrollmentWithHttpInfo($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId = null)
+    {
+        // verify the required parameter 'instrumentIdentifierTokenId' is set
+        if ($instrumentIdentifierTokenId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling postInstrumentIdentifierEnrollment');
+        }
+        if ((strlen($instrumentIdentifierTokenId) > 32)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 32.');
+        }
+        if ((strlen($instrumentIdentifierTokenId) < 12)) {
+            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 12.');
+        }
+
+        // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
+        if ($postInstrumentIdentifierEnrollmentRequest === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment');
+        }
+        if (!is_null($profileId) && (strlen($profileId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 36.');
+        }
+        if (!is_null($profileId) && (strlen($profileId) < 36)) {
+            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 36.');
+        }
+
+        // parse inputs
+        $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // header params
+        if ($profileId !== null) {
+            $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
+        }
+        // path params
+        if ($instrumentIdentifierTokenId !== null) {
+            $resourcePath = str_replace(
+                "{" . "instrumentIdentifierTokenId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($postInstrumentIdentifierEnrollmentRequest)) {
+            $_tempBody = $postInstrumentIdentifierEnrollmentRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment'
+            );
+
+            return [$response, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 410:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;

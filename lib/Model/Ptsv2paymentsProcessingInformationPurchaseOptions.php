@@ -150,10 +150,6 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 6)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['type']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling Ptsv2paymentsProcessingInformationPurchaseOptions., must be smaller than or equal to 6.');
-        }
 
         $this->container['type'] = $type;
 

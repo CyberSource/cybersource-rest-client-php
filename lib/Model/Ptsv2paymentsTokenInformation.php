@@ -162,10 +162,6 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['jti']) && (strlen($this->container['jti']) > 64)) {
-            $invalid_properties[] = "invalid value for 'jti', the character length must be smaller than or equal to 64.";
-        }
-
         return $invalid_properties;
     }
 
@@ -178,9 +174,6 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['jti']) > 64) {
-            return false;
-        }
         return true;
     }
 
@@ -201,9 +194,6 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
      */
     public function setJti($jti)
     {
-        if (!is_null($jti) && (strlen($jti) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $jti when calling Ptsv2paymentsTokenInformation., must be smaller than or equal to 64.');
-        }
 
         $this->container['jti'] = $jti;
 

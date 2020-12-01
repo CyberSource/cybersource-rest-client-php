@@ -156,18 +156,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationRouting implements ArrayAc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['network']) && (strlen($this->container['network']) > 1)) {
-            $invalid_properties[] = "invalid value for 'network', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['networkName']) && (strlen($this->container['networkName']) > 10)) {
-            $invalid_properties[] = "invalid value for 'networkName', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['customerSignatureRequired']) && (strlen($this->container['customerSignatureRequired']) > 1)) {
-            $invalid_properties[] = "invalid value for 'customerSignatureRequired', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationRouting implements ArrayAc
     public function valid()
     {
 
-        if (strlen($this->container['network']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['networkName']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['customerSignatureRequired']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationRouting implements ArrayAc
      */
     public function setNetwork($network)
     {
-        if (!is_null($network) && (strlen($network) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $network when calling PtsV2PaymentsPost201ResponseProcessorInformationRouting., must be smaller than or equal to 1.');
-        }
 
         $this->container['network'] = $network;
 
@@ -234,9 +210,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationRouting implements ArrayAc
      */
     public function setNetworkName($networkName)
     {
-        if (!is_null($networkName) && (strlen($networkName) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $networkName when calling PtsV2PaymentsPost201ResponseProcessorInformationRouting., must be smaller than or equal to 10.');
-        }
 
         $this->container['networkName'] = $networkName;
 
@@ -259,9 +232,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationRouting implements ArrayAc
      */
     public function setCustomerSignatureRequired($customerSignatureRequired)
     {
-        if (!is_null($customerSignatureRequired) && (strlen($customerSignatureRequired) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $customerSignatureRequired when calling PtsV2PaymentsPost201ResponseProcessorInformationRouting., must be smaller than or equal to 1.');
-        }
 
         $this->container['customerSignatureRequired'] = $customerSignatureRequired;
 

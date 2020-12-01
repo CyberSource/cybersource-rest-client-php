@@ -180,34 +180,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['customerMemo']) && (strlen($this->container['customerMemo']) > 80)) {
-            $invalid_properties[] = "invalid value for 'customerMemo', the character length must be smaller than or equal to 80.";
-        }
-
-        if (!is_null($this->container['secCode']) && (strlen($this->container['secCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'secCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['terminalCity']) && (strlen($this->container['terminalCity']) > 4)) {
-            $invalid_properties[] = "invalid value for 'terminalCity', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['terminalState']) && (strlen($this->container['terminalState']) > 2)) {
-            $invalid_properties[] = "invalid value for 'terminalState', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['effectiveDate']) && (strlen($this->container['effectiveDate']) > 8)) {
-            $invalid_properties[] = "invalid value for 'effectiveDate', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['partialPaymentId']) && (strlen($this->container['partialPaymentId']) > 25)) {
-            $invalid_properties[] = "invalid value for 'partialPaymentId', the character length must be smaller than or equal to 25.";
-        }
-
-        if (!is_null($this->container['settlementMethod']) && (strlen($this->container['settlementMethod']) > 1)) {
-            $invalid_properties[] = "invalid value for 'settlementMethod', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -220,27 +192,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['customerMemo']) > 80) {
-            return false;
-        }
-        if (strlen($this->container['secCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['terminalCity']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['terminalState']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['effectiveDate']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['partialPaymentId']) > 25) {
-            return false;
-        }
-        if (strlen($this->container['settlementMethod']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -261,9 +212,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setCustomerMemo($customerMemo)
     {
-        if (!is_null($customerMemo) && (strlen($customerMemo) > 80)) {
-            throw new \InvalidArgumentException('invalid length for $customerMemo when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 80.');
-        }
 
         $this->container['customerMemo'] = $customerMemo;
 
@@ -286,9 +234,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setSecCode($secCode)
     {
-        if (!is_null($secCode) && (strlen($secCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $secCode when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 3.');
-        }
 
         $this->container['secCode'] = $secCode;
 
@@ -311,9 +256,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setTerminalCity($terminalCity)
     {
-        if (!is_null($terminalCity) && (strlen($terminalCity) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $terminalCity when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 4.');
-        }
 
         $this->container['terminalCity'] = $terminalCity;
 
@@ -336,9 +278,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setTerminalState($terminalState)
     {
-        if (!is_null($terminalState) && (strlen($terminalState) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $terminalState when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 2.');
-        }
 
         $this->container['terminalState'] = $terminalState;
 
@@ -361,9 +300,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setEffectiveDate($effectiveDate)
     {
-        if (!is_null($effectiveDate) && (strlen($effectiveDate) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $effectiveDate when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 8.');
-        }
 
         $this->container['effectiveDate'] = $effectiveDate;
 
@@ -386,9 +322,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setPartialPaymentId($partialPaymentId)
     {
-        if (!is_null($partialPaymentId) && (strlen($partialPaymentId) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $partialPaymentId when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 25.');
-        }
 
         $this->container['partialPaymentId'] = $partialPaymentId;
 
@@ -411,9 +344,6 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      */
     public function setSettlementMethod($settlementMethod)
     {
-        if (!is_null($settlementMethod) && (strlen($settlementMethod) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $settlementMethod when calling Ptsv2creditsProcessingInformationBankTransferOptions., must be smaller than or equal to 1.');
-        }
 
         $this->container['settlementMethod'] = $settlementMethod;
 

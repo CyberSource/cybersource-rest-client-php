@@ -168,26 +168,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['approvalCode']) && (strlen($this->container['approvalCode']) > 6)) {
-            $invalid_properties[] = "invalid value for 'approvalCode', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['systemTraceAuditNumber']) && (strlen($this->container['systemTraceAuditNumber']) > 6)) {
-            $invalid_properties[] = "invalid value for 'systemTraceAuditNumber', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['responseCodeSource']) && (strlen($this->container['responseCodeSource']) > 1)) {
-            $invalid_properties[] = "invalid value for 'responseCodeSource', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -200,21 +180,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['approvalCode']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['responseCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['transactionId']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['systemTraceAuditNumber']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['responseCodeSource']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -235,9 +200,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setApprovalCode($approvalCode)
     {
-        if (!is_null($approvalCode) && (strlen($approvalCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $approvalCode when calling PtsV2PayoutsPost201ResponseProcessorInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['approvalCode'] = $approvalCode;
 
@@ -260,9 +222,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PayoutsPost201ResponseProcessorInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 
@@ -285,9 +244,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setTransactionId($transactionId)
     {
-        if (!is_null($transactionId) && (strlen($transactionId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $transactionId when calling PtsV2PayoutsPost201ResponseProcessorInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['transactionId'] = $transactionId;
 
@@ -310,9 +266,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
     {
-        if (!is_null($systemTraceAuditNumber) && (strlen($systemTraceAuditNumber) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $systemTraceAuditNumber when calling PtsV2PayoutsPost201ResponseProcessorInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
 
@@ -335,9 +288,6 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCodeSource($responseCodeSource)
     {
-        if (!is_null($responseCodeSource) && (strlen($responseCodeSource) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $responseCodeSource when calling PtsV2PayoutsPost201ResponseProcessorInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['responseCodeSource'] = $responseCodeSource;
 

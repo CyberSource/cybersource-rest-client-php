@@ -144,10 +144,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner impl
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['originalTransactionId']) && (strlen($this->container['originalTransactionId']) > 32)) {
-            $invalid_properties[] = "invalid value for 'originalTransactionId', the character length must be smaller than or equal to 32.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner impl
     public function valid()
     {
 
-        if (strlen($this->container['originalTransactionId']) > 32) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner impl
      */
     public function setOriginalTransactionId($originalTransactionId)
     {
-        if (!is_null($originalTransactionId) && (strlen($originalTransactionId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $originalTransactionId when calling TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner., must be smaller than or equal to 32.');
-        }
 
         $this->container['originalTransactionId'] = $originalTransactionId;
 

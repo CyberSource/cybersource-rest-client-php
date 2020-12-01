@@ -216,26 +216,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['scheme']) && (strlen($this->container['scheme']) > 255)) {
-            $invalid_properties[] = "invalid value for 'scheme', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['bin']) && (strlen($this->container['bin']) > 255)) {
-            $invalid_properties[] = "invalid value for 'bin', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['accountType']) && (strlen($this->container['accountType']) > 255)) {
-            $invalid_properties[] = "invalid value for 'accountType', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['issuer']) && (strlen($this->container['issuer']) > 255)) {
-            $invalid_properties[] = "invalid value for 'issuer', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['binCountry']) && (strlen($this->container['binCountry']) > 255)) {
-            $invalid_properties[] = "invalid value for 'binCountry', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -248,21 +228,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['scheme']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['bin']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['accountType']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['issuer']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['binCountry']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -451,9 +416,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
      */
     public function setScheme($scheme)
     {
-        if (!is_null($scheme) && (strlen($scheme) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $scheme when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['scheme'] = $scheme;
 
@@ -476,9 +438,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
      */
     public function setBin($bin)
     {
-        if (!is_null($bin) && (strlen($bin) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $bin when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['bin'] = $bin;
 
@@ -501,9 +460,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
      */
     public function setAccountType($accountType)
     {
-        if (!is_null($accountType) && (strlen($accountType) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $accountType when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['accountType'] = $accountType;
 
@@ -526,9 +482,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
      */
     public function setIssuer($issuer)
     {
-        if (!is_null($issuer) && (strlen($issuer) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $issuer when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['issuer'] = $issuer;
 
@@ -551,9 +504,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
      */
     public function setBinCountry($binCountry)
     {
-        if (!is_null($binCountry) && (strlen($binCountry) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $binCountry when calling PtsV2PaymentsPost201ResponsePaymentInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['binCountry'] = $binCountry;
 

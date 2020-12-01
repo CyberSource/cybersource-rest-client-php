@@ -144,10 +144,6 @@ class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation implements Arr
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['resellerId']) && (strlen($this->container['resellerId']) > 26)) {
-            $invalid_properties[] = "invalid value for 'resellerId', the character length must be smaller than or equal to 26.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation implements Arr
     public function valid()
     {
 
-        if (strlen($this->container['resellerId']) > 26) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation implements Arr
      */
     public function setResellerId($resellerId)
     {
-        if (!is_null($resellerId) && (strlen($resellerId) > 26)) {
-            throw new \InvalidArgumentException('invalid length for $resellerId when calling TssV2TransactionsPost201ResponseEmbeddedMerchantInformation., must be smaller than or equal to 26.');
-        }
 
         $this->container['resellerId'] = $resellerId;
 

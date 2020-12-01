@@ -144,10 +144,6 @@ class Vasv2taxOrderInformationInvoiceDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['invoiceDate']) && (strlen($this->container['invoiceDate']) > 8)) {
-            $invalid_properties[] = "invalid value for 'invoiceDate', the character length must be smaller than or equal to 8.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Vasv2taxOrderInformationInvoiceDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['invoiceDate']) > 8) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Vasv2taxOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setInvoiceDate($invoiceDate)
     {
-        if (!is_null($invoiceDate) && (strlen($invoiceDate) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $invoiceDate when calling Vasv2taxOrderInformationInvoiceDetails., must be smaller than or equal to 8.');
-        }
 
         $this->container['invoiceDate'] = $invoiceDate;
 

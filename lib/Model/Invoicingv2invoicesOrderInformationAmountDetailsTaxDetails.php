@@ -157,14 +157,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails implements Arra
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && (strlen($this->container['amount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'amount', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['rate']) && (strlen($this->container['rate']) > 6)) {
-            $invalid_properties[] = "invalid value for 'rate', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -177,12 +169,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails implements Arra
     public function valid()
     {
 
-        if (strlen($this->container['amount']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['rate']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -224,9 +210,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails implements Arra
      */
     public function setAmount($amount)
     {
-        if (!is_null($amount) && (strlen($amount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $amount when calling Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 13.');
-        }
 
         $this->container['amount'] = $amount;
 
@@ -249,9 +232,6 @@ class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails implements Arra
      */
     public function setRate($rate)
     {
-        if (!is_null($rate) && (strlen($rate) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $rate when calling Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails., must be smaller than or equal to 6.');
-        }
 
         $this->container['rate'] = $rate;
 

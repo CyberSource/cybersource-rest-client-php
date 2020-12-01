@@ -150,14 +150,6 @@ class Ptsv2paymentsProcessingInformationLoanOptions implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['type']) && (strlen($this->container['type']) > 20)) {
-            $invalid_properties[] = "invalid value for 'type', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['assetType']) && (strlen($this->container['assetType']) > 1)) {
-            $invalid_properties[] = "invalid value for 'assetType', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsProcessingInformationLoanOptions implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['type']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['assetType']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsProcessingInformationLoanOptions implements ArrayAccess
      */
     public function setType($type)
     {
-        if (!is_null($type) && (strlen($type) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $type when calling Ptsv2paymentsProcessingInformationLoanOptions., must be smaller than or equal to 20.');
-        }
 
         $this->container['type'] = $type;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsProcessingInformationLoanOptions implements ArrayAccess
      */
     public function setAssetType($assetType)
     {
-        if (!is_null($assetType) && (strlen($assetType) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $assetType when calling Ptsv2paymentsProcessingInformationLoanOptions., must be smaller than or equal to 1.');
-        }
 
         $this->container['assetType'] = $assetType;
 

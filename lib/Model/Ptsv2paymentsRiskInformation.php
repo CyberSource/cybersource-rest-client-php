@@ -157,10 +157,6 @@ class Ptsv2paymentsRiskInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['eventType']) && (strlen($this->container['eventType']) > 255)) {
-            $invalid_properties[] = "invalid value for 'eventType', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -173,9 +169,6 @@ class Ptsv2paymentsRiskInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['eventType']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -217,9 +210,6 @@ class Ptsv2paymentsRiskInformation implements ArrayAccess
      */
     public function setEventType($eventType)
     {
-        if (!is_null($eventType) && (strlen($eventType) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $eventType when calling Ptsv2paymentsRiskInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['eventType'] = $eventType;
 

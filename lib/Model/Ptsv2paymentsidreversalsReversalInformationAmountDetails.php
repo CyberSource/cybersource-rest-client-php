@@ -150,14 +150,6 @@ class Ptsv2paymentsidreversalsReversalInformationAmountDetails implements ArrayA
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['totalAmount']) && (strlen($this->container['totalAmount']) > 19)) {
-            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 19.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsidreversalsReversalInformationAmountDetails implements ArrayA
     public function valid()
     {
 
-        if (strlen($this->container['totalAmount']) > 19) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsidreversalsReversalInformationAmountDetails implements ArrayA
      */
     public function setTotalAmount($totalAmount)
     {
-        if (!is_null($totalAmount) && (strlen($totalAmount) > 19)) {
-            throw new \InvalidArgumentException('invalid length for $totalAmount when calling Ptsv2paymentsidreversalsReversalInformationAmountDetails., must be smaller than or equal to 19.');
-        }
 
         $this->container['totalAmount'] = $totalAmount;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsidreversalsReversalInformationAmountDetails implements ArrayA
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling Ptsv2paymentsidreversalsReversalInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

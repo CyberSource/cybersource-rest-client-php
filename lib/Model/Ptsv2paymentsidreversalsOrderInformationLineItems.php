@@ -158,10 +158,6 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['unitPrice']) && (strlen($this->container['unitPrice']) > 15)) {
-            $invalid_properties[] = "invalid value for 'unitPrice', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -178,9 +174,6 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
             return false;
         }
         if ($this->container['quantity'] < 1) {
-            return false;
-        }
-        if (strlen($this->container['unitPrice']) > 15) {
             return false;
         }
         return true;
@@ -203,7 +196,6 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
      */
     public function setQuantity($quantity)
     {
-
         if (!is_null($quantity) && ($quantity > 999999999)) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Ptsv2paymentsidreversalsOrderInformationLineItems., must be smaller than or equal to 999999999.');
         }
@@ -232,9 +224,6 @@ class Ptsv2paymentsidreversalsOrderInformationLineItems implements ArrayAccess
      */
     public function setUnitPrice($unitPrice)
     {
-        if (!is_null($unitPrice) && (strlen($unitPrice) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $unitPrice when calling Ptsv2paymentsidreversalsOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['unitPrice'] = $unitPrice;
 

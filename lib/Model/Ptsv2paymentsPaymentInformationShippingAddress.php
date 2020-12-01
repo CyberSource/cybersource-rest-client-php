@@ -144,14 +144,6 @@ class Ptsv2paymentsPaymentInformationShippingAddress implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) > 32)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['id']) && (strlen($this->container['id']) < 1)) {
-            $invalid_properties[] = "invalid value for 'id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -164,12 +156,6 @@ class Ptsv2paymentsPaymentInformationShippingAddress implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['id']) > 32) {
-            return false;
-        }
-        if (strlen($this->container['id']) < 1) {
-            return false;
-        }
         return true;
     }
 
@@ -190,12 +176,6 @@ class Ptsv2paymentsPaymentInformationShippingAddress implements ArrayAccess
      */
     public function setId($id)
     {
-        if (!is_null($id) && (strlen($id) > 32)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling Ptsv2paymentsPaymentInformationShippingAddress., must be smaller than or equal to 32.');
-        }
-        if (!is_null($id) && (strlen($id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $id when calling Ptsv2paymentsPaymentInformationShippingAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['id'] = $id;
 

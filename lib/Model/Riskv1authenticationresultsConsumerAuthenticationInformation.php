@@ -180,29 +180,9 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['authenticationTransactionId']) && (strlen($this->container['authenticationTransactionId']) > 20)) {
-            $invalid_properties[] = "invalid value for 'authenticationTransactionId', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['authenticationType']) && (strlen($this->container['authenticationType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'authenticationType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['effectiveAuthenticationType']) && (strlen($this->container['effectiveAuthenticationType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'effectiveAuthenticationType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['signedParesStatusReason']) && (strlen($this->container['signedParesStatusReason']) > 2)) {
-            $invalid_properties[] = "invalid value for 'signedParesStatusReason', the character length must be smaller than or equal to 2.";
-        }
-
         if ($this->container['signedPares'] === null) {
             $invalid_properties[] = "'signedPares' can't be null";
         }
-        if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
-            $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -215,22 +195,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function valid()
     {
 
-        if (strlen($this->container['authenticationTransactionId']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['authenticationType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['effectiveAuthenticationType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['signedParesStatusReason']) > 2) {
-            return false;
-        }
         if ($this->container['signedPares'] === null) {
-            return false;
-        }
-        if (strlen($this->container['whiteListStatus']) > 1) {
             return false;
         }
         return true;
@@ -253,9 +218,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)
     {
-        if (!is_null($authenticationTransactionId) && (strlen($authenticationTransactionId) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationTransactionId when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
 
@@ -278,9 +240,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     public function setAuthenticationType($authenticationType)
     {
-        if (!is_null($authenticationType) && (strlen($authenticationType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationType when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['authenticationType'] = $authenticationType;
 
@@ -303,9 +262,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     public function setEffectiveAuthenticationType($effectiveAuthenticationType)
     {
-        if (!is_null($effectiveAuthenticationType) && (strlen($effectiveAuthenticationType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $effectiveAuthenticationType when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
 
@@ -349,9 +305,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     public function setSignedParesStatusReason($signedParesStatusReason)
     {
-        if (!is_null($signedParesStatusReason) && (strlen($signedParesStatusReason) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $signedParesStatusReason when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['signedParesStatusReason'] = $signedParesStatusReason;
 
@@ -395,9 +348,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     public function setWhiteListStatus($whiteListStatus)
     {
-        if (!is_null($whiteListStatus) && (strlen($whiteListStatus) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $whiteListStatus when calling Riskv1authenticationresultsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['whiteListStatus'] = $whiteListStatus;
 

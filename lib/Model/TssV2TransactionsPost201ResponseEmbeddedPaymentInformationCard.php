@@ -156,10 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['prefix']) && (strlen($this->container['prefix']) > 6)) {
-            $invalid_properties[] = "invalid value for 'prefix', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -172,9 +168,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
     public function valid()
     {
 
-        if (strlen($this->container['prefix']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -216,9 +209,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
      */
     public function setPrefix($prefix)
     {
-        if (!is_null($prefix) && (strlen($prefix) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $prefix when calling TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard., must be smaller than or equal to 6.');
-        }
 
         $this->container['prefix'] = $prefix;
 

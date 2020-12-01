@@ -159,20 +159,12 @@ class Riskv1authenticationresultsOrderInformationLineItems implements ArrayAcces
         if ($this->container['unitPrice'] === null) {
             $invalid_properties[] = "'unitPrice' can't be null";
         }
-        if ((strlen($this->container['unitPrice']) > 15)) {
-            $invalid_properties[] = "invalid value for 'unitPrice', the character length must be smaller than or equal to 15.";
-        }
-
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 999999999)) {
             $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 999999999.";
         }
 
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['taxAmount']) && (strlen($this->container['taxAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'taxAmount', the character length must be smaller than or equal to 15.";
         }
 
         return $invalid_properties;
@@ -190,16 +182,10 @@ class Riskv1authenticationresultsOrderInformationLineItems implements ArrayAcces
         if ($this->container['unitPrice'] === null) {
             return false;
         }
-        if (strlen($this->container['unitPrice']) > 15) {
-            return false;
-        }
         if ($this->container['quantity'] > 999999999) {
             return false;
         }
         if ($this->container['quantity'] < 1) {
-            return false;
-        }
-        if (strlen($this->container['taxAmount']) > 15) {
             return false;
         }
         return true;
@@ -222,9 +208,6 @@ class Riskv1authenticationresultsOrderInformationLineItems implements ArrayAcces
      */
     public function setUnitPrice($unitPrice)
     {
-        if ((strlen($unitPrice) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $unitPrice when calling Riskv1authenticationresultsOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['unitPrice'] = $unitPrice;
 
@@ -247,7 +230,6 @@ class Riskv1authenticationresultsOrderInformationLineItems implements ArrayAcces
      */
     public function setQuantity($quantity)
     {
-
         if (!is_null($quantity) && ($quantity > 999999999)) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Riskv1authenticationresultsOrderInformationLineItems., must be smaller than or equal to 999999999.');
         }
@@ -276,9 +258,6 @@ class Riskv1authenticationresultsOrderInformationLineItems implements ArrayAcces
      */
     public function setTaxAmount($taxAmount)
     {
-        if (!is_null($taxAmount) && (strlen($taxAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $taxAmount when calling Riskv1authenticationresultsOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['taxAmount'] = $taxAmount;
 

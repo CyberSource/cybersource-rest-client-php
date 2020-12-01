@@ -156,18 +156,6 @@ class PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails implements Arra
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['reversedAmount']) && (strlen($this->container['reversedAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'reversedAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['originalTransactionAmount']) && (strlen($this->container['originalTransactionAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'originalTransactionAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails implements Arra
     public function valid()
     {
 
-        if (strlen($this->container['reversedAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['originalTransactionAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails implements Arra
      */
     public function setReversedAmount($reversedAmount)
     {
-        if (!is_null($reversedAmount) && (strlen($reversedAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $reversedAmount when calling PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['reversedAmount'] = $reversedAmount;
 
@@ -234,9 +210,6 @@ class PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails implements Arra
      */
     public function setOriginalTransactionAmount($originalTransactionAmount)
     {
-        if (!is_null($originalTransactionAmount) && (strlen($originalTransactionAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $originalTransactionAmount when calling PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['originalTransactionAmount'] = $originalTransactionAmount;
 
@@ -259,9 +232,6 @@ class PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails implements Arra
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling PtsV2PaymentsReversalsPost201ResponseReversalAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

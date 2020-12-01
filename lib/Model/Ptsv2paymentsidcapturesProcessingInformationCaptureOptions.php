@@ -210,7 +210,6 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
      */
     public function setCaptureSequenceNumber($captureSequenceNumber)
     {
-
         if (!is_null($captureSequenceNumber) && ($captureSequenceNumber > 99)) {
             throw new \InvalidArgumentException('invalid value for $captureSequenceNumber when calling Ptsv2paymentsidcapturesProcessingInformationCaptureOptions., must be smaller than or equal to 99.');
         }
@@ -239,7 +238,6 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
      */
     public function setTotalCaptureCount($totalCaptureCount)
     {
-
         if (!is_null($totalCaptureCount) && ($totalCaptureCount > 99)) {
             throw new \InvalidArgumentException('invalid value for $totalCaptureCount when calling Ptsv2paymentsidcapturesProcessingInformationCaptureOptions., must be smaller than or equal to 99.');
         }

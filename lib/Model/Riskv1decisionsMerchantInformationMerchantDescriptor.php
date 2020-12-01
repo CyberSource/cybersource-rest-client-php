@@ -150,10 +150,6 @@ class Riskv1decisionsMerchantInformationMerchantDescriptor implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['url']) && (strlen($this->container['url']) > 255)) {
-            $invalid_properties[] = "invalid value for 'url', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Riskv1decisionsMerchantInformationMerchantDescriptor implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['url']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Riskv1decisionsMerchantInformationMerchantDescriptor implements ArrayAcces
      */
     public function setUrl($url)
     {
-        if (!is_null($url) && (strlen($url) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $url when calling Riskv1decisionsMerchantInformationMerchantDescriptor., must be smaller than or equal to 255.');
-        }
 
         $this->container['url'] = $url;
 

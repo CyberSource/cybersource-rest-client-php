@@ -174,18 +174,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['lastChangeDate']) && (strlen($this->container['lastChangeDate']) > 10)) {
-            $invalid_properties[] = "invalid value for 'lastChangeDate', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['createDate']) && (strlen($this->container['createDate']) > 10)) {
-            $invalid_properties[] = "invalid value for 'createDate', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['passwordChangeDate']) && (strlen($this->container['passwordChangeDate']) > 10)) {
-            $invalid_properties[] = "invalid value for 'passwordChangeDate', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -198,15 +186,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
     public function valid()
     {
 
-        if (strlen($this->container['lastChangeDate']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['createDate']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['passwordChangeDate']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -227,9 +206,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
      */
     public function setLastChangeDate($lastChangeDate)
     {
-        if (!is_null($lastChangeDate) && (strlen($lastChangeDate) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $lastChangeDate when calling Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount., must be smaller than or equal to 10.');
-        }
 
         $this->container['lastChangeDate'] = $lastChangeDate;
 
@@ -315,9 +291,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
      */
     public function setCreateDate($createDate)
     {
-        if (!is_null($createDate) && (strlen($createDate) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $createDate when calling Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount., must be smaller than or equal to 10.');
-        }
 
         $this->container['createDate'] = $createDate;
 
@@ -340,9 +313,6 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
      */
     public function setPasswordChangeDate($passwordChangeDate)
     {
-        if (!is_null($passwordChangeDate) && (strlen($passwordChangeDate) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $passwordChangeDate when calling Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount., must be smaller than or equal to 10.');
-        }
 
         $this->container['passwordChangeDate'] = $passwordChangeDate;
 

@@ -174,30 +174,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['lowValueExemptionIndicator']) && (strlen($this->container['lowValueExemptionIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'lowValueExemptionIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['riskAnalysisExemptionIndicator']) && (strlen($this->container['riskAnalysisExemptionIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'riskAnalysisExemptionIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['trustedMerchantExemptionIndicator']) && (strlen($this->container['trustedMerchantExemptionIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'trustedMerchantExemptionIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['secureCorporatePaymentIndicator']) && (strlen($this->container['secureCorporatePaymentIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'secureCorporatePaymentIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['delegatedAuthenticationExemptionIndicator']) && (strlen($this->container['delegatedAuthenticationExemptionIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'delegatedAuthenticationExemptionIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['authenticationIndicator']) && (strlen($this->container['authenticationIndicator']) > 2)) {
-            $invalid_properties[] = "invalid value for 'authenticationIndicator', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -210,24 +186,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
     public function valid()
     {
 
-        if (strlen($this->container['lowValueExemptionIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['riskAnalysisExemptionIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['trustedMerchantExemptionIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['secureCorporatePaymentIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['delegatedAuthenticationExemptionIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['authenticationIndicator']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -248,9 +206,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function setLowValueExemptionIndicator($lowValueExemptionIndicator)
     {
-        if (!is_null($lowValueExemptionIndicator) && (strlen($lowValueExemptionIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $lowValueExemptionIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 1.');
-        }
 
         $this->container['lowValueExemptionIndicator'] = $lowValueExemptionIndicator;
 
@@ -273,9 +228,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function setRiskAnalysisExemptionIndicator($riskAnalysisExemptionIndicator)
     {
-        if (!is_null($riskAnalysisExemptionIndicator) && (strlen($riskAnalysisExemptionIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $riskAnalysisExemptionIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 1.');
-        }
 
         $this->container['riskAnalysisExemptionIndicator'] = $riskAnalysisExemptionIndicator;
 
@@ -298,9 +250,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function setTrustedMerchantExemptionIndicator($trustedMerchantExemptionIndicator)
     {
-        if (!is_null($trustedMerchantExemptionIndicator) && (strlen($trustedMerchantExemptionIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $trustedMerchantExemptionIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 1.');
-        }
 
         $this->container['trustedMerchantExemptionIndicator'] = $trustedMerchantExemptionIndicator;
 
@@ -323,9 +272,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function setSecureCorporatePaymentIndicator($secureCorporatePaymentIndicator)
     {
-        if (!is_null($secureCorporatePaymentIndicator) && (strlen($secureCorporatePaymentIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $secureCorporatePaymentIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 1.');
-        }
 
         $this->container['secureCorporatePaymentIndicator'] = $secureCorporatePaymentIndicator;
 
@@ -348,9 +294,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function setDelegatedAuthenticationExemptionIndicator($delegatedAuthenticationExemptionIndicator)
     {
-        if (!is_null($delegatedAuthenticationExemptionIndicator) && (strlen($delegatedAuthenticationExemptionIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $delegatedAuthenticationExemptionIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 1.');
-        }
 
         $this->container['delegatedAuthenticationExemptionIndicator'] = $delegatedAuthenticationExemptionIndicator;
 
@@ -373,9 +316,6 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function setAuthenticationIndicator($authenticationIndicator)
     {
-        if (!is_null($authenticationIndicator) && (strlen($authenticationIndicator) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationIndicator when calling Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication., must be smaller than or equal to 2.');
-        }
 
         $this->container['authenticationIndicator'] = $authenticationIndicator;
 

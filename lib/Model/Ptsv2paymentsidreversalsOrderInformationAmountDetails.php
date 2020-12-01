@@ -144,10 +144,6 @@ class Ptsv2paymentsidreversalsOrderInformationAmountDetails implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['serviceFeeAmount']) && (strlen($this->container['serviceFeeAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'serviceFeeAmount', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsidreversalsOrderInformationAmountDetails implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['serviceFeeAmount']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2paymentsidreversalsOrderInformationAmountDetails implements ArrayAcce
      */
     public function setServiceFeeAmount($serviceFeeAmount)
     {
-        if (!is_null($serviceFeeAmount) && (strlen($serviceFeeAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $serviceFeeAmount when calling Ptsv2paymentsidreversalsOrderInformationAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['serviceFeeAmount'] = $serviceFeeAmount;
 

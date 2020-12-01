@@ -144,10 +144,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformationBankTra
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['sECCode']) && (strlen($this->container['sECCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'sECCode', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformationBankTra
     public function valid()
     {
 
-        if (strlen($this->container['sECCode']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformationBankTra
      */
     public function setSECCode($sECCode)
     {
-        if (!is_null($sECCode) && (strlen($sECCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $sECCode when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformationBankTransferOptions., must be smaller than or equal to 3.');
-        }
 
         $this->container['sECCode'] = $sECCode;
 

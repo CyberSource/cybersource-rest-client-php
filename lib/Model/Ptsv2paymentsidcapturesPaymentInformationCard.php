@@ -150,14 +150,6 @@ class Ptsv2paymentsidcapturesPaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['sourceAccountType']) && (strlen($this->container['sourceAccountType']) > 20)) {
-            $invalid_properties[] = "invalid value for 'sourceAccountType', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['sourceAccountTypeDetails']) && (strlen($this->container['sourceAccountTypeDetails']) > 4)) {
-            $invalid_properties[] = "invalid value for 'sourceAccountTypeDetails', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsidcapturesPaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['sourceAccountType']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['sourceAccountTypeDetails']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class Ptsv2paymentsidcapturesPaymentInformationCard implements ArrayAccess
      */
     public function setSourceAccountType($sourceAccountType)
     {
-        if (!is_null($sourceAccountType) && (strlen($sourceAccountType) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $sourceAccountType when calling Ptsv2paymentsidcapturesPaymentInformationCard., must be smaller than or equal to 20.');
-        }
 
         $this->container['sourceAccountType'] = $sourceAccountType;
 
@@ -221,9 +204,6 @@ class Ptsv2paymentsidcapturesPaymentInformationCard implements ArrayAccess
      */
     public function setSourceAccountTypeDetails($sourceAccountTypeDetails)
     {
-        if (!is_null($sourceAccountTypeDetails) && (strlen($sourceAccountTypeDetails) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $sourceAccountTypeDetails when calling Ptsv2paymentsidcapturesPaymentInformationCard., must be smaller than or equal to 4.');
-        }
 
         $this->container['sourceAccountTypeDetails'] = $sourceAccountTypeDetails;
 

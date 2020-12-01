@@ -222,10 +222,6 @@ class TssV2TransactionsPost201Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['searchId']) && (strlen($this->container['searchId']) > 60)) {
-            $invalid_properties[] = "invalid value for 'searchId', the character length must be smaller than or equal to 60.";
-        }
-
         return $invalid_properties;
     }
 
@@ -238,9 +234,6 @@ class TssV2TransactionsPost201Response implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['searchId']) > 60) {
-            return false;
-        }
         return true;
     }
 
@@ -261,9 +254,6 @@ class TssV2TransactionsPost201Response implements ArrayAccess
      */
     public function setSearchId($searchId)
     {
-        if (!is_null($searchId) && (strlen($searchId) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $searchId when calling TssV2TransactionsPost201Response., must be smaller than or equal to 60.');
-        }
 
         $this->container['searchId'] = $searchId;
 

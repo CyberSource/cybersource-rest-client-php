@@ -150,14 +150,6 @@ class PtsV2PayoutsPost201ResponseRecipientInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['balance']) && (strlen($this->container['balance']) > 12)) {
-            $invalid_properties[] = "invalid value for 'balance', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2PayoutsPost201ResponseRecipientInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['balance']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2PayoutsPost201ResponseRecipientInformationCard implements ArrayAccess
      */
     public function setBalance($balance)
     {
-        if (!is_null($balance) && (strlen($balance) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $balance when calling PtsV2PayoutsPost201ResponseRecipientInformationCard., must be smaller than or equal to 12.');
-        }
 
         $this->container['balance'] = $balance;
 
@@ -221,9 +204,6 @@ class PtsV2PayoutsPost201ResponseRecipientInformationCard implements ArrayAccess
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling PtsV2PayoutsPost201ResponseRecipientInformationCard., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

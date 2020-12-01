@@ -222,48 +222,12 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['totalAmount']) && (strlen($this->container['totalAmount']) > 13)) {
-            $invalid_properties[] = "invalid value for 'totalAmount', the character length must be smaller than or equal to 13.";
-        }
-
-        if (!is_null($this->container['unitPrice']) && (strlen($this->container['unitPrice']) > 15)) {
-            $invalid_properties[] = "invalid value for 'unitPrice', the character length must be smaller than or equal to 15.";
-        }
-
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 999999999)) {
             $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 999999999.";
         }
 
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['productSKU']) && (strlen($this->container['productSKU']) > 255)) {
-            $invalid_properties[] = "invalid value for 'productSKU', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['productRisk']) && (strlen($this->container['productRisk']) > 6)) {
-            $invalid_properties[] = "invalid value for 'productRisk', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['productName']) && (strlen($this->container['productName']) > 255)) {
-            $invalid_properties[] = "invalid value for 'productName', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['productCode']) && (strlen($this->container['productCode']) > 255)) {
-            $invalid_properties[] = "invalid value for 'productCode', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['distributorProductSku']) && (strlen($this->container['distributorProductSku']) > 15)) {
-            $invalid_properties[] = "invalid value for 'distributorProductSku', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['shippingDestinationTypes']) && (strlen($this->container['shippingDestinationTypes']) > 50)) {
-            $invalid_properties[] = "invalid value for 'shippingDestinationTypes', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['taxAmount']) && (strlen($this->container['taxAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'taxAmount', the character length must be smaller than or equal to 15.";
         }
 
         return $invalid_properties;
@@ -278,37 +242,10 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['totalAmount']) > 13) {
-            return false;
-        }
-        if (strlen($this->container['unitPrice']) > 15) {
-            return false;
-        }
         if ($this->container['quantity'] > 999999999) {
             return false;
         }
         if ($this->container['quantity'] < 1) {
-            return false;
-        }
-        if (strlen($this->container['productSKU']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['productRisk']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['productName']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['productCode']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['distributorProductSku']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['shippingDestinationTypes']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['taxAmount']) > 15) {
             return false;
         }
         return true;
@@ -331,9 +268,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setTotalAmount($totalAmount)
     {
-        if (!is_null($totalAmount) && (strlen($totalAmount) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $totalAmount when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 13.');
-        }
 
         $this->container['totalAmount'] = $totalAmount;
 
@@ -356,9 +290,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setUnitPrice($unitPrice)
     {
-        if (!is_null($unitPrice) && (strlen($unitPrice) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $unitPrice when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['unitPrice'] = $unitPrice;
 
@@ -381,7 +312,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setQuantity($quantity)
     {
-
         if (!is_null($quantity) && ($quantity > 999999999)) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 999999999.');
         }
@@ -431,9 +361,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setProductSKU($productSKU)
     {
-        if (!is_null($productSKU) && (strlen($productSKU) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $productSKU when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 255.');
-        }
 
         $this->container['productSKU'] = $productSKU;
 
@@ -456,9 +383,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setProductRisk($productRisk)
     {
-        if (!is_null($productRisk) && (strlen($productRisk) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $productRisk when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 6.');
-        }
 
         $this->container['productRisk'] = $productRisk;
 
@@ -502,9 +426,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setProductName($productName)
     {
-        if (!is_null($productName) && (strlen($productName) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $productName when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 255.');
-        }
 
         $this->container['productName'] = $productName;
 
@@ -527,9 +448,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setProductCode($productCode)
     {
-        if (!is_null($productCode) && (strlen($productCode) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $productCode when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 255.');
-        }
 
         $this->container['productCode'] = $productCode;
 
@@ -573,9 +491,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setDistributorProductSku($distributorProductSku)
     {
-        if (!is_null($distributorProductSku) && (strlen($distributorProductSku) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $distributorProductSku when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['distributorProductSku'] = $distributorProductSku;
 
@@ -619,9 +534,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setShippingDestinationTypes($shippingDestinationTypes)
     {
-        if (!is_null($shippingDestinationTypes) && (strlen($shippingDestinationTypes) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $shippingDestinationTypes when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 50.');
-        }
 
         $this->container['shippingDestinationTypes'] = $shippingDestinationTypes;
 
@@ -644,9 +556,6 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
      */
     public function setTaxAmount($taxAmount)
     {
-        if (!is_null($taxAmount) && (strlen($taxAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $taxAmount when calling Riskv1decisionsOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['taxAmount'] = $taxAmount;
 

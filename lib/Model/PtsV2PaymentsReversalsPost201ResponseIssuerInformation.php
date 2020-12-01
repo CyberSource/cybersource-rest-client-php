@@ -144,10 +144,6 @@ class PtsV2PaymentsReversalsPost201ResponseIssuerInformation implements ArrayAcc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 6)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class PtsV2PaymentsReversalsPost201ResponseIssuerInformation implements ArrayAcc
     public function valid()
     {
 
-        if (strlen($this->container['responseCode']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class PtsV2PaymentsReversalsPost201ResponseIssuerInformation implements ArrayAcc
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling PtsV2PaymentsReversalsPost201ResponseIssuerInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 

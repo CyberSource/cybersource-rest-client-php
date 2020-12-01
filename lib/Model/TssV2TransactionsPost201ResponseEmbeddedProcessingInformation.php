@@ -156,14 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['paymentSolution']) && (strlen($this->container['paymentSolution']) > 12)) {
-            $invalid_properties[] = "invalid value for 'paymentSolution', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['commerceIndicator']) && (strlen($this->container['commerceIndicator']) > 20)) {
-            $invalid_properties[] = "invalid value for 'commerceIndicator', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     public function valid()
     {
 
-        if (strlen($this->container['paymentSolution']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['commerceIndicator']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -202,9 +188,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     public function setPaymentSolution($paymentSolution)
     {
-        if (!is_null($paymentSolution) && (strlen($paymentSolution) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $paymentSolution when calling TssV2TransactionsPost201ResponseEmbeddedProcessingInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['paymentSolution'] = $paymentSolution;
 
@@ -248,9 +231,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     public function setCommerceIndicator($commerceIndicator)
     {
-        if (!is_null($commerceIndicator) && (strlen($commerceIndicator) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $commerceIndicator when calling TssV2TransactionsPost201ResponseEmbeddedProcessingInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['commerceIndicator'] = $commerceIndicator;
 

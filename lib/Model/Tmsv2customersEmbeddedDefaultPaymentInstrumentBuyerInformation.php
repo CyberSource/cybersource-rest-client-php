@@ -162,14 +162,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation implements 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['companyTaxID']) && (strlen($this->container['companyTaxID']) > 9)) {
-            $invalid_properties[] = "invalid value for 'companyTaxID', the character length must be smaller than or equal to 9.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -182,12 +174,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation implements 
     public function valid()
     {
 
-        if (strlen($this->container['companyTaxID']) > 9) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -208,9 +194,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation implements 
      */
     public function setCompanyTaxID($companyTaxID)
     {
-        if (!is_null($companyTaxID) && (strlen($companyTaxID) > 9)) {
-            throw new \InvalidArgumentException('invalid length for $companyTaxID when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation., must be smaller than or equal to 9.');
-        }
 
         $this->container['companyTaxID'] = $companyTaxID;
 
@@ -233,9 +216,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation implements 
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

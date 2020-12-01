@@ -156,18 +156,6 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformationWeights implemen
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['address']) && (strlen($this->container['address']) > 6)) {
-            $invalid_properties[] = "invalid value for 'address', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['company']) && (strlen($this->container['company']) > 6)) {
-            $invalid_properties[] = "invalid value for 'company', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 6)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformationWeights implemen
     public function valid()
     {
 
-        if (strlen($this->container['address']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['company']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['name']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformationWeights implemen
      */
     public function setAddress($address)
     {
-        if (!is_null($address) && (strlen($address) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $address when calling Riskv1exportcomplianceinquiriesExportComplianceInformationWeights., must be smaller than or equal to 6.');
-        }
 
         $this->container['address'] = $address;
 
@@ -234,9 +210,6 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformationWeights implemen
      */
     public function setCompany($company)
     {
-        if (!is_null($company) && (strlen($company) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $company when calling Riskv1exportcomplianceinquiriesExportComplianceInformationWeights., must be smaller than or equal to 6.');
-        }
 
         $this->container['company'] = $company;
 
@@ -259,9 +232,6 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformationWeights implemen
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Riskv1exportcomplianceinquiriesExportComplianceInformationWeights., must be smaller than or equal to 6.');
-        }
 
         $this->container['name'] = $name;
 

@@ -180,14 +180,6 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 50)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['transactionId']) && (strlen($this->container['transactionId']) > 30)) {
-            $invalid_properties[] = "invalid value for 'transactionId', the character length must be smaller than or equal to 30.";
-        }
-
         return $invalid_properties;
     }
 
@@ -200,12 +192,6 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['transactionId']) > 30) {
-            return false;
-        }
         return true;
     }
 
@@ -226,9 +212,6 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Ptsv2paymentsClientReferenceInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['code'] = $code;
 
@@ -251,9 +234,6 @@ class Ptsv2paymentsClientReferenceInformation implements ArrayAccess
      */
     public function setTransactionId($transactionId)
     {
-        if (!is_null($transactionId) && (strlen($transactionId) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $transactionId when calling Ptsv2paymentsClientReferenceInformation., must be smaller than or equal to 30.');
-        }
 
         $this->container['transactionId'] = $transactionId;
 

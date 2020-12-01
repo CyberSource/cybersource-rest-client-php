@@ -156,18 +156,6 @@ class Ptsv2paymentsMerchantInformationServiceFeeDescriptor implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 22)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 22.";
-        }
-
-        if (!is_null($this->container['contact']) && (strlen($this->container['contact']) > 11)) {
-            $invalid_properties[] = "invalid value for 'contact', the character length must be smaller than or equal to 11.";
-        }
-
-        if (!is_null($this->container['state']) && (strlen($this->container['state']) > 20)) {
-            $invalid_properties[] = "invalid value for 'state', the character length must be smaller than or equal to 20.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class Ptsv2paymentsMerchantInformationServiceFeeDescriptor implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 22) {
-            return false;
-        }
-        if (strlen($this->container['contact']) > 11) {
-            return false;
-        }
-        if (strlen($this->container['state']) > 20) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class Ptsv2paymentsMerchantInformationServiceFeeDescriptor implements ArrayAcces
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 22)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Ptsv2paymentsMerchantInformationServiceFeeDescriptor., must be smaller than or equal to 22.');
-        }
 
         $this->container['name'] = $name;
 
@@ -234,9 +210,6 @@ class Ptsv2paymentsMerchantInformationServiceFeeDescriptor implements ArrayAcces
      */
     public function setContact($contact)
     {
-        if (!is_null($contact) && (strlen($contact) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $contact when calling Ptsv2paymentsMerchantInformationServiceFeeDescriptor., must be smaller than or equal to 11.');
-        }
 
         $this->container['contact'] = $contact;
 
@@ -259,9 +232,6 @@ class Ptsv2paymentsMerchantInformationServiceFeeDescriptor implements ArrayAcces
      */
     public function setState($state)
     {
-        if (!is_null($state) && (strlen($state) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $state when calling Ptsv2paymentsMerchantInformationServiceFeeDescriptor., must be smaller than or equal to 20.');
-        }
 
         $this->container['state'] = $state;
 

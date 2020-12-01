@@ -258,78 +258,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['middleName']) && (strlen($this->container['middleName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'middleName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['nameSuffix']) && (strlen($this->container['nameSuffix']) > 60)) {
-            $invalid_properties[] = "invalid value for 'nameSuffix', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['title']) && (strlen($this->container['title']) > 60)) {
-            $invalid_properties[] = "invalid value for 'title', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address2']) && (strlen($this->container['address2']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address2', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address3']) && (strlen($this->container['address3']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address3', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address4']) && (strlen($this->container['address4']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address4', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 50)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 20)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['district']) && (strlen($this->container['district']) > 50)) {
-            $invalid_properties[] = "invalid value for 'district', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['buildingNumber']) && (strlen($this->container['buildingNumber']) > 256)) {
-            $invalid_properties[] = "invalid value for 'buildingNumber', the character length must be smaller than or equal to 256.";
-        }
-
-        if (!is_null($this->container['email']) && (strlen($this->container['email']) > 255)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['emailDomain']) && (strlen($this->container['emailDomain']) > 100)) {
-            $invalid_properties[] = "invalid value for 'emailDomain', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -342,60 +270,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['firstName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['lastName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['middleName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['nameSuffix']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['title']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address1']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address2']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address3']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address4']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['district']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['buildingNumber']) > 256) {
-            return false;
-        }
-        if (strlen($this->container['email']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['emailDomain']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -416,9 +290,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['firstName'] = $firstName;
 
@@ -441,9 +312,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['lastName'] = $lastName;
 
@@ -466,9 +334,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setMiddleName($middleName)
     {
-        if (!is_null($middleName) && (strlen($middleName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $middleName when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['middleName'] = $middleName;
 
@@ -491,9 +356,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setNameSuffix($nameSuffix)
     {
-        if (!is_null($nameSuffix) && (strlen($nameSuffix) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $nameSuffix when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['nameSuffix'] = $nameSuffix;
 
@@ -516,9 +378,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setTitle($title)
     {
-        if (!is_null($title) && (strlen($title) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['title'] = $title;
 
@@ -562,9 +421,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-        if (!is_null($address1) && (strlen($address1) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -587,9 +443,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-        if (!is_null($address2) && (strlen($address2) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address2 when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address2'] = $address2;
 
@@ -612,9 +465,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress3($address3)
     {
-        if (!is_null($address3) && (strlen($address3) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address3 when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address3'] = $address3;
 
@@ -637,9 +487,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress4($address4)
     {
-        if (!is_null($address4) && (strlen($address4) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address4 when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address4'] = $address4;
 
@@ -662,9 +509,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 50.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -687,9 +531,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 20.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -712,9 +553,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 10.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -737,9 +575,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -762,9 +597,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setDistrict($district)
     {
-        if (!is_null($district) && (strlen($district) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $district when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 50.');
-        }
 
         $this->container['district'] = $district;
 
@@ -787,9 +619,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setBuildingNumber($buildingNumber)
     {
-        if (!is_null($buildingNumber) && (strlen($buildingNumber) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $buildingNumber when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 256.');
-        }
 
         $this->container['buildingNumber'] = $buildingNumber;
 
@@ -812,9 +641,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 255.');
-        }
 
         $this->container['email'] = $email;
 
@@ -837,9 +663,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setEmailDomain($emailDomain)
     {
-        if (!is_null($emailDomain) && (strlen($emailDomain) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $emailDomain when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 100.');
-        }
 
         $this->container['emailDomain'] = $emailDomain;
 
@@ -862,9 +685,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling Ptsv2paymentsOrderInformationBillTo., must be smaller than or equal to 15.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 

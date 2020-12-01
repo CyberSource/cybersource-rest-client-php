@@ -150,10 +150,6 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['routingNumber']) && (strlen($this->container['routingNumber']) > 9)) {
-            $invalid_properties[] = "invalid value for 'routingNumber', the character length must be smaller than or equal to 9.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['routingNumber']) > 9) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      */
     public function setRoutingNumber($routingNumber)
     {
-        if (!is_null($routingNumber) && (strlen($routingNumber) > 9)) {
-            throw new \InvalidArgumentException('invalid length for $routingNumber when calling Ptsv2paymentsPaymentInformationBank., must be smaller than or equal to 9.');
-        }
 
         $this->container['routingNumber'] = $routingNumber;
 

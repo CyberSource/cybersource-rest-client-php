@@ -157,18 +157,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}} {{/parentSchema}}imple
         {{/isContainer}}
         {{/isEnum}}
         {{#hasValidation}}
-        {{#maxLength}}
-        if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}(strlen($this->container['{{name}}']) > {{maxLength}})) {
-            $invalid_properties[] = "invalid value for '{{name}}', the character length must be smaller than or equal to {{{maxLength}}}.";
-        }
-
-        {{/maxLength}}
-        {{#minLength}}
-        if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}(strlen($this->container['{{name}}']) < {{minLength}})) {
-            $invalid_properties[] = "invalid value for '{{name}}', the character length must be bigger than or equal to {{{minLength}}}.";
-        }
-
-        {{/minLength}}
         {{#maximum}}
         if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}($this->container['{{name}}'] >{{#exclusiveMaximum}}={{/exclusiveMaximum}} {{maximum}})) {
             $invalid_properties[] = "invalid value for '{{name}}', must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.";
@@ -233,16 +221,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}} {{/parentSchema}}imple
         {{/isContainer}}
         {{/isEnum}}
         {{#hasValidation}}
-        {{#maxLength}}
-        if (strlen($this->container['{{name}}']) > {{maxLength}}) {
-            return false;
-        }
-        {{/maxLength}}
-        {{#minLength}}
-        if (strlen($this->container['{{name}}']) < {{minLength}}) {
-            return false;
-        }
-        {{/minLength}}
         {{#maximum}}
         if ($this->container['{{name}}'] >{{#exclusiveMaximum}}={{/exclusiveMaximum}} {{maximum}}) {
             return false;
@@ -315,15 +293,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}} {{/parentSchema}}imple
         {{/isContainer}}
         {{/isEnum}}
         {{#hasValidation}}
-        {{#maxLength}}
-        if ({{^required}}!is_null(${{name}}) && {{/required}}(strlen(${{name}}) > {{maxLength}})) {
-            throw new \InvalidArgumentException('invalid length for ${{name}} when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.');
-        }{{/maxLength}}
-        {{#minLength}}
-        if ({{^required}}!is_null(${{name}}) && {{/required}}(strlen(${{name}}) < {{minLength}})) {
-            throw new \InvalidArgumentException('invalid length for ${{name}} when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.');
-        }
-        {{/minLength}}
         {{#maximum}}
         if ({{^required}}!is_null(${{name}}) && {{/required}}(${{name}} >{{#exclusiveMaximum}}={{/exclusiveMaximum}} {{maximum}})) {
             throw new \InvalidArgumentException('invalid value for ${{name}} when calling {{classname}}.{{operationId}}, must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.');

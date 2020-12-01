@@ -150,14 +150,6 @@ class PtsV2CreditsPost201ResponseCreditAmountDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['creditAmount']) && (strlen($this->container['creditAmount']) > 15)) {
-            $invalid_properties[] = "invalid value for 'creditAmount', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class PtsV2CreditsPost201ResponseCreditAmountDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['creditAmount']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -196,9 +182,6 @@ class PtsV2CreditsPost201ResponseCreditAmountDetails implements ArrayAccess
      */
     public function setCreditAmount($creditAmount)
     {
-        if (!is_null($creditAmount) && (strlen($creditAmount) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $creditAmount when calling PtsV2CreditsPost201ResponseCreditAmountDetails., must be smaller than or equal to 15.');
-        }
 
         $this->container['creditAmount'] = $creditAmount;
 
@@ -221,9 +204,6 @@ class PtsV2CreditsPost201ResponseCreditAmountDetails implements ArrayAccess
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling PtsV2CreditsPost201ResponseCreditAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

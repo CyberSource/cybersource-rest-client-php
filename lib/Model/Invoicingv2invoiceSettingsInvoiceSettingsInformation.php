@@ -186,30 +186,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['merchantLogo']) && (strlen($this->container['merchantLogo']) > 10000000)) {
-            $invalid_properties[] = "invalid value for 'merchantLogo', the character length must be smaller than or equal to 10000000.";
-        }
-
-        if (!is_null($this->container['merchantDisplayName']) && (strlen($this->container['merchantDisplayName']) > 100)) {
-            $invalid_properties[] = "invalid value for 'merchantDisplayName', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['customEmailMessage']) && (strlen($this->container['customEmailMessage']) > 2000)) {
-            $invalid_properties[] = "invalid value for 'customEmailMessage', the character length must be smaller than or equal to 2000.";
-        }
-
-        if (!is_null($this->container['deliveryLanguage']) && (strlen($this->container['deliveryLanguage']) > 6)) {
-            $invalid_properties[] = "invalid value for 'deliveryLanguage', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['defaultCurrencyCode']) && (strlen($this->container['defaultCurrencyCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'defaultCurrencyCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['payerAuthenticationInInvoicing']) && (strlen($this->container['payerAuthenticationInInvoicing']) > 7)) {
-            $invalid_properties[] = "invalid value for 'payerAuthenticationInInvoicing', the character length must be smaller than or equal to 7.";
-        }
-
         return $invalid_properties;
     }
 
@@ -222,24 +198,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
     public function valid()
     {
 
-        if (strlen($this->container['merchantLogo']) > 10000000) {
-            return false;
-        }
-        if (strlen($this->container['merchantDisplayName']) > 100) {
-            return false;
-        }
-        if (strlen($this->container['customEmailMessage']) > 2000) {
-            return false;
-        }
-        if (strlen($this->container['deliveryLanguage']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['defaultCurrencyCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['payerAuthenticationInInvoicing']) > 7) {
-            return false;
-        }
         return true;
     }
 
@@ -260,9 +218,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
      */
     public function setMerchantLogo($merchantLogo)
     {
-        if (!is_null($merchantLogo) && (strlen($merchantLogo) > 10000000)) {
-            throw new \InvalidArgumentException('invalid length for $merchantLogo when calling Invoicingv2invoiceSettingsInvoiceSettingsInformation., must be smaller than or equal to 10000000.');
-        }
 
         $this->container['merchantLogo'] = $merchantLogo;
 
@@ -285,9 +240,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
      */
     public function setMerchantDisplayName($merchantDisplayName)
     {
-        if (!is_null($merchantDisplayName) && (strlen($merchantDisplayName) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $merchantDisplayName when calling Invoicingv2invoiceSettingsInvoiceSettingsInformation., must be smaller than or equal to 100.');
-        }
 
         $this->container['merchantDisplayName'] = $merchantDisplayName;
 
@@ -310,9 +262,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
      */
     public function setCustomEmailMessage($customEmailMessage)
     {
-        if (!is_null($customEmailMessage) && (strlen($customEmailMessage) > 2000)) {
-            throw new \InvalidArgumentException('invalid length for $customEmailMessage when calling Invoicingv2invoiceSettingsInvoiceSettingsInformation., must be smaller than or equal to 2000.');
-        }
 
         $this->container['customEmailMessage'] = $customEmailMessage;
 
@@ -377,9 +326,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
      */
     public function setDeliveryLanguage($deliveryLanguage)
     {
-        if (!is_null($deliveryLanguage) && (strlen($deliveryLanguage) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $deliveryLanguage when calling Invoicingv2invoiceSettingsInvoiceSettingsInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['deliveryLanguage'] = $deliveryLanguage;
 
@@ -402,9 +348,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
      */
     public function setDefaultCurrencyCode($defaultCurrencyCode)
     {
-        if (!is_null($defaultCurrencyCode) && (strlen($defaultCurrencyCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $defaultCurrencyCode when calling Invoicingv2invoiceSettingsInvoiceSettingsInformation., must be smaller than or equal to 3.');
-        }
 
         $this->container['defaultCurrencyCode'] = $defaultCurrencyCode;
 
@@ -427,9 +370,6 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
      */
     public function setPayerAuthenticationInInvoicing($payerAuthenticationInInvoicing)
     {
-        if (!is_null($payerAuthenticationInInvoicing) && (strlen($payerAuthenticationInInvoicing) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $payerAuthenticationInInvoicing when calling Invoicingv2invoiceSettingsInvoiceSettingsInformation., must be smaller than or equal to 7.');
-        }
 
         $this->container['payerAuthenticationInInvoicing'] = $payerAuthenticationInInvoicing;
 

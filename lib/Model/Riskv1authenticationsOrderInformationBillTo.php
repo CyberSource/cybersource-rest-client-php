@@ -201,64 +201,24 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
         if ($this->container['address1'] === null) {
             $invalid_properties[] = "'address1' can't be null";
         }
-        if ((strlen($this->container['address1']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address2']) && (strlen($this->container['address2']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address2', the character length must be smaller than or equal to 60.";
-        }
-
         if ($this->container['administrativeArea'] === null) {
             $invalid_properties[] = "'administrativeArea' can't be null";
         }
-        if ((strlen($this->container['administrativeArea']) > 20)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 20.";
-        }
-
         if ($this->container['country'] === null) {
             $invalid_properties[] = "'country' can't be null";
         }
-        if ((strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 50)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
-        }
-
         if ($this->container['firstName'] === null) {
             $invalid_properties[] = "'firstName' can't be null";
         }
-        if ((strlen($this->container['firstName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 60.";
-        }
-
         if ($this->container['lastName'] === null) {
             $invalid_properties[] = "'lastName' can't be null";
         }
-        if ((strlen($this->container['lastName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 15.";
-        }
-
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
-        if ((strlen($this->container['email']) > 255)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
-        }
-
         if ($this->container['postalCode'] === null) {
             $invalid_properties[] = "'postalCode' can't be null";
         }
-        if ((strlen($this->container['postalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -274,52 +234,22 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
         if ($this->container['address1'] === null) {
             return false;
         }
-        if (strlen($this->container['address1']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address2']) > 60) {
-            return false;
-        }
         if ($this->container['administrativeArea'] === null) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 20) {
             return false;
         }
         if ($this->container['country'] === null) {
             return false;
         }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 50) {
-            return false;
-        }
         if ($this->container['firstName'] === null) {
-            return false;
-        }
-        if (strlen($this->container['firstName']) > 60) {
             return false;
         }
         if ($this->container['lastName'] === null) {
             return false;
         }
-        if (strlen($this->container['lastName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 15) {
-            return false;
-        }
         if ($this->container['email'] === null) {
             return false;
         }
-        if (strlen($this->container['email']) > 255) {
-            return false;
-        }
         if ($this->container['postalCode'] === null) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 10) {
             return false;
         }
         return true;
@@ -342,9 +272,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-        if ((strlen($address1) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -367,9 +294,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-        if (!is_null($address2) && (strlen($address2) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address2 when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address2'] = $address2;
 
@@ -392,9 +316,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if ((strlen($administrativeArea) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 20.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -417,9 +338,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if ((strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -442,9 +360,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 50.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -467,9 +382,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-        if ((strlen($firstName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['firstName'] = $firstName;
 
@@ -492,9 +404,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-        if ((strlen($lastName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['lastName'] = $lastName;
 
@@ -517,9 +426,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 15.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 
@@ -542,9 +448,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setEmail($email)
     {
-        if ((strlen($email) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 255.');
-        }
 
         $this->container['email'] = $email;
 
@@ -567,9 +470,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if ((strlen($postalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Riskv1authenticationsOrderInformationBillTo., must be smaller than or equal to 10.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 

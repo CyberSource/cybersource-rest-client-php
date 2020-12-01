@@ -180,14 +180,6 @@ class Vasv2taxTaxInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['reportingDate']) && (strlen($this->container['reportingDate']) > 8)) {
-            $invalid_properties[] = "invalid value for 'reportingDate', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['dateOverrideReason']) && (strlen($this->container['dateOverrideReason']) > 50)) {
-            $invalid_properties[] = "invalid value for 'dateOverrideReason', the character length must be smaller than or equal to 50.";
-        }
-
         return $invalid_properties;
     }
 
@@ -200,12 +192,6 @@ class Vasv2taxTaxInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['reportingDate']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['dateOverrideReason']) > 50) {
-            return false;
-        }
         return true;
     }
 
@@ -226,9 +212,6 @@ class Vasv2taxTaxInformation implements ArrayAccess
      */
     public function setReportingDate($reportingDate)
     {
-        if (!is_null($reportingDate) && (strlen($reportingDate) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $reportingDate when calling Vasv2taxTaxInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['reportingDate'] = $reportingDate;
 
@@ -251,9 +234,6 @@ class Vasv2taxTaxInformation implements ArrayAccess
      */
     public function setDateOverrideReason($dateOverrideReason)
     {
-        if (!is_null($dateOverrideReason) && (strlen($dateOverrideReason) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $dateOverrideReason when calling Vasv2taxTaxInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['dateOverrideReason'] = $dateOverrideReason;
 

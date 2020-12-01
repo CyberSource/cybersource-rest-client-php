@@ -144,10 +144,6 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 45)) {
-            $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 45.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
     public function valid()
     {
 
-        if (strlen($this->container['ipAddress']) > 45) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
      */
     public function setIpAddress($ipAddress)
     {
-        if (!is_null($ipAddress) && (strlen($ipAddress) > 45)) {
-            throw new \InvalidArgumentException('invalid length for $ipAddress when calling TssV2TransactionsPost201ResponseEmbeddedDeviceInformation., must be smaller than or equal to 45.');
-        }
 
         $this->container['ipAddress'] = $ipAddress;
 

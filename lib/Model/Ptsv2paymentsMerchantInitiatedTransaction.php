@@ -156,18 +156,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['reason']) && (strlen($this->container['reason']) > 1)) {
-            $invalid_properties[] = "invalid value for 'reason', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['previousTransactionId']) && (strlen($this->container['previousTransactionId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'previousTransactionId', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['originalAuthorizedAmount']) && (strlen($this->container['originalAuthorizedAmount']) > 61)) {
-            $invalid_properties[] = "invalid value for 'originalAuthorizedAmount', the character length must be smaller than or equal to 61.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     public function valid()
     {
 
-        if (strlen($this->container['reason']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['previousTransactionId']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['originalAuthorizedAmount']) > 61) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
      */
     public function setReason($reason)
     {
-        if (!is_null($reason) && (strlen($reason) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $reason when calling Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction., must be smaller than or equal to 1.');
-        }
 
         $this->container['reason'] = $reason;
 
@@ -234,9 +210,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
      */
     public function setPreviousTransactionId($previousTransactionId)
     {
-        if (!is_null($previousTransactionId) && (strlen($previousTransactionId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $previousTransactionId when calling Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction., must be smaller than or equal to 15.');
-        }
 
         $this->container['previousTransactionId'] = $previousTransactionId;
 
@@ -259,9 +232,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
      */
     public function setOriginalAuthorizedAmount($originalAuthorizedAmount)
     {
-        if (!is_null($originalAuthorizedAmount) && (strlen($originalAuthorizedAmount) > 61)) {
-            throw new \InvalidArgumentException('invalid length for $originalAuthorizedAmount when calling Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction., must be smaller than or equal to 61.');
-        }
 
         $this->container['originalAuthorizedAmount'] = $originalAuthorizedAmount;
 

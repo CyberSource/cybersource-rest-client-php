@@ -162,22 +162,6 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['shipFromLocality']) && (strlen($this->container['shipFromLocality']) > 50)) {
-            $invalid_properties[] = "invalid value for 'shipFromLocality', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['shipFromCountry']) && (strlen($this->container['shipFromCountry']) > 2)) {
-            $invalid_properties[] = "invalid value for 'shipFromCountry', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['shipFromPostalCode']) && (strlen($this->container['shipFromPostalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'shipFromPostalCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['shipFromAdministrativeArea']) && (strlen($this->container['shipFromAdministrativeArea']) > 2)) {
-            $invalid_properties[] = "invalid value for 'shipFromAdministrativeArea', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['shipFromLocality']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['shipFromCountry']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['shipFromPostalCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['shipFromAdministrativeArea']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
      */
     public function setShipFromLocality($shipFromLocality)
     {
-        if (!is_null($shipFromLocality) && (strlen($shipFromLocality) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $shipFromLocality when calling Vasv2taxOrderInformationShippingDetails., must be smaller than or equal to 50.');
-        }
 
         $this->container['shipFromLocality'] = $shipFromLocality;
 
@@ -247,9 +216,6 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
      */
     public function setShipFromCountry($shipFromCountry)
     {
-        if (!is_null($shipFromCountry) && (strlen($shipFromCountry) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $shipFromCountry when calling Vasv2taxOrderInformationShippingDetails., must be smaller than or equal to 2.');
-        }
 
         $this->container['shipFromCountry'] = $shipFromCountry;
 
@@ -272,9 +238,6 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
      */
     public function setShipFromPostalCode($shipFromPostalCode)
     {
-        if (!is_null($shipFromPostalCode) && (strlen($shipFromPostalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $shipFromPostalCode when calling Vasv2taxOrderInformationShippingDetails., must be smaller than or equal to 10.');
-        }
 
         $this->container['shipFromPostalCode'] = $shipFromPostalCode;
 
@@ -297,9 +260,6 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
      */
     public function setShipFromAdministrativeArea($shipFromAdministrativeArea)
     {
-        if (!is_null($shipFromAdministrativeArea) && (strlen($shipFromAdministrativeArea) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $shipFromAdministrativeArea when calling Vasv2taxOrderInformationShippingDetails., must be smaller than or equal to 2.');
-        }
 
         $this->container['shipFromAdministrativeArea'] = $shipFromAdministrativeArea;
 

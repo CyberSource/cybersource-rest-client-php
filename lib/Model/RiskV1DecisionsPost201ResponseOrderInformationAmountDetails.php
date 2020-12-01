@@ -144,10 +144,6 @@ class RiskV1DecisionsPost201ResponseOrderInformationAmountDetails implements Arr
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['currency']) && (strlen($this->container['currency']) > 3)) {
-            $invalid_properties[] = "invalid value for 'currency', the character length must be smaller than or equal to 3.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class RiskV1DecisionsPost201ResponseOrderInformationAmountDetails implements Arr
     public function valid()
     {
 
-        if (strlen($this->container['currency']) > 3) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class RiskV1DecisionsPost201ResponseOrderInformationAmountDetails implements Arr
      */
     public function setCurrency($currency)
     {
-        if (!is_null($currency) && (strlen($currency) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency when calling RiskV1DecisionsPost201ResponseOrderInformationAmountDetails., must be smaller than or equal to 3.');
-        }
 
         $this->container['currency'] = $currency;
 

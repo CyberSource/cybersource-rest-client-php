@@ -162,22 +162,6 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['acquirerBin']) && (strlen($this->container['acquirerBin']) > 6)) {
-            $invalid_properties[] = "invalid value for 'acquirerBin', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['password']) && (strlen($this->container['password']) > 8)) {
-            $invalid_properties[] = "invalid value for 'password', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['merchantId']) && (strlen($this->container['merchantId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'merchantId', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['acquirerBin']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['password']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['merchantId']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
      */
     public function setAcquirerBin($acquirerBin)
     {
-        if (!is_null($acquirerBin) && (strlen($acquirerBin) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $acquirerBin when calling Ptsv2paymentsAcquirerInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['acquirerBin'] = $acquirerBin;
 
@@ -247,9 +216,6 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsAcquirerInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -272,9 +238,6 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
      */
     public function setPassword($password)
     {
-        if (!is_null($password) && (strlen($password) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $password when calling Ptsv2paymentsAcquirerInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['password'] = $password;
 
@@ -297,9 +260,6 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
      */
     public function setMerchantId($merchantId)
     {
-        if (!is_null($merchantId) && (strlen($merchantId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $merchantId when calling Ptsv2paymentsAcquirerInformation., must be smaller than or equal to 15.');
-        }
 
         $this->container['merchantId'] = $merchantId;
 

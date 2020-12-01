@@ -156,14 +156,6 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['code']) && (strlen($this->container['code']) > 50)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['submitLocalDateTime']) && (strlen($this->container['submitLocalDateTime']) > 14)) {
-            $invalid_properties[] = "invalid value for 'submitLocalDateTime', the character length must be smaller than or equal to 14.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
     public function valid()
     {
 
-        if (strlen($this->container['code']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['submitLocalDateTime']) > 14) {
-            return false;
-        }
         return true;
     }
 
@@ -202,9 +188,6 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
      */
     public function setCode($code)
     {
-        if (!is_null($code) && (strlen($code) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling PtsV2PaymentsPost201ResponseClientReferenceInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['code'] = $code;
 
@@ -227,9 +210,6 @@ class PtsV2PaymentsPost201ResponseClientReferenceInformation implements ArrayAcc
      */
     public function setSubmitLocalDateTime($submitLocalDateTime)
     {
-        if (!is_null($submitLocalDateTime) && (strlen($submitLocalDateTime) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $submitLocalDateTime when calling PtsV2PaymentsPost201ResponseClientReferenceInformation., must be smaller than or equal to 14.');
-        }
 
         $this->container['submitLocalDateTime'] = $submitLocalDateTime;
 

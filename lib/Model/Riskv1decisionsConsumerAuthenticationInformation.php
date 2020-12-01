@@ -378,126 +378,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['authenticationType']) && (strlen($this->container['authenticationType']) > 2)) {
-            $invalid_properties[] = "invalid value for 'authenticationType', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['acsWindowSize']) && (strlen($this->container['acsWindowSize']) > 2)) {
-            $invalid_properties[] = "invalid value for 'acsWindowSize', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['alternateAuthenticationData']) && (strlen($this->container['alternateAuthenticationData']) > 2048)) {
-            $invalid_properties[] = "invalid value for 'alternateAuthenticationData', the character length must be smaller than or equal to 2048.";
-        }
-
-        if (!is_null($this->container['alternateAuthenticationDate']) && (strlen($this->container['alternateAuthenticationDate']) > 14)) {
-            $invalid_properties[] = "invalid value for 'alternateAuthenticationDate', the character length must be smaller than or equal to 14.";
-        }
-
-        if (!is_null($this->container['authenticationDate']) && (strlen($this->container['authenticationDate']) > 14)) {
-            $invalid_properties[] = "invalid value for 'authenticationDate', the character length must be smaller than or equal to 14.";
-        }
-
-        if (!is_null($this->container['authenticationTransactionId']) && (strlen($this->container['authenticationTransactionId']) > 20)) {
-            $invalid_properties[] = "invalid value for 'authenticationTransactionId', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['challengeCancelCode']) && (strlen($this->container['challengeCancelCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'challengeCancelCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['challengeStatus']) && (strlen($this->container['challengeStatus']) > 2)) {
-            $invalid_properties[] = "invalid value for 'challengeStatus', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['customerCardAlias']) && (strlen($this->container['customerCardAlias']) > 128)) {
-            $invalid_properties[] = "invalid value for 'customerCardAlias', the character length must be smaller than or equal to 128.";
-        }
-
-        if (!is_null($this->container['decoupledAuthenticationIndicator']) && (strlen($this->container['decoupledAuthenticationIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'decoupledAuthenticationIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['decoupledAuthenticationMaxTime']) && (strlen($this->container['decoupledAuthenticationMaxTime']) > 5)) {
-            $invalid_properties[] = "invalid value for 'decoupledAuthenticationMaxTime', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['deviceChannel']) && (strlen($this->container['deviceChannel']) > 10)) {
-            $invalid_properties[] = "invalid value for 'deviceChannel', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['merchantFraudRate']) && (strlen($this->container['merchantFraudRate']) > 2)) {
-            $invalid_properties[] = "invalid value for 'merchantFraudRate', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['marketingSource']) && (strlen($this->container['marketingSource']) > 40)) {
-            $invalid_properties[] = "invalid value for 'marketingSource', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['mcc']) && (strlen($this->container['mcc']) > 4)) {
-            $invalid_properties[] = "invalid value for 'mcc', the character length must be smaller than or equal to 4.";
-        }
-
-        if (!is_null($this->container['npaCode']) && (strlen($this->container['npaCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'npaCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['overrideCountryCode']) && (strlen($this->container['overrideCountryCode']) > 2)) {
-            $invalid_properties[] = "invalid value for 'overrideCountryCode', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['priorAuthenticationData']) && (strlen($this->container['priorAuthenticationData']) > 2048)) {
-            $invalid_properties[] = "invalid value for 'priorAuthenticationData', the character length must be smaller than or equal to 2048.";
-        }
-
-        if (!is_null($this->container['priorAuthenticationMethod']) && (strlen($this->container['priorAuthenticationMethod']) > 2)) {
-            $invalid_properties[] = "invalid value for 'priorAuthenticationMethod', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['priorAuthenticationReferenceId']) && (strlen($this->container['priorAuthenticationReferenceId']) > 36)) {
-            $invalid_properties[] = "invalid value for 'priorAuthenticationReferenceId', the character length must be smaller than or equal to 36.";
-        }
-
-        if (!is_null($this->container['priorAuthenticationTime']) && (strlen($this->container['priorAuthenticationTime']) > 12)) {
-            $invalid_properties[] = "invalid value for 'priorAuthenticationTime', the character length must be smaller than or equal to 12.";
-        }
-
-        if (!is_null($this->container['productCode']) && (strlen($this->container['productCode']) > 3)) {
-            $invalid_properties[] = "invalid value for 'productCode', the character length must be smaller than or equal to 3.";
-        }
-
-        if (!is_null($this->container['returnUrl']) && (strlen($this->container['returnUrl']) > 2048)) {
-            $invalid_properties[] = "invalid value for 'returnUrl', the character length must be smaller than or equal to 2048.";
-        }
-
-        if (!is_null($this->container['requestorId']) && (strlen($this->container['requestorId']) > 35)) {
-            $invalid_properties[] = "invalid value for 'requestorId', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['requestorInitiatedAuthenticationIndicator']) && (strlen($this->container['requestorInitiatedAuthenticationIndicator']) > 2)) {
-            $invalid_properties[] = "invalid value for 'requestorInitiatedAuthenticationIndicator', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['requestorName']) && (strlen($this->container['requestorName']) > 40)) {
-            $invalid_properties[] = "invalid value for 'requestorName', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['referenceId']) && (strlen($this->container['referenceId']) > 50)) {
-            $invalid_properties[] = "invalid value for 'referenceId', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['sdkMaxTimeout']) && (strlen($this->container['sdkMaxTimeout']) > 2)) {
-            $invalid_properties[] = "invalid value for 'sdkMaxTimeout', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['secureCorporatePaymentIndicator']) && (strlen($this->container['secureCorporatePaymentIndicator']) > 1)) {
-            $invalid_properties[] = "invalid value for 'secureCorporatePaymentIndicator', the character length must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['whiteListStatus']) && (strlen($this->container['whiteListStatus']) > 1)) {
-            $invalid_properties[] = "invalid value for 'whiteListStatus', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -510,96 +390,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['authenticationType']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['acsWindowSize']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['alternateAuthenticationData']) > 2048) {
-            return false;
-        }
-        if (strlen($this->container['alternateAuthenticationDate']) > 14) {
-            return false;
-        }
-        if (strlen($this->container['authenticationDate']) > 14) {
-            return false;
-        }
-        if (strlen($this->container['authenticationTransactionId']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['challengeCancelCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['challengeStatus']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['customerCardAlias']) > 128) {
-            return false;
-        }
-        if (strlen($this->container['decoupledAuthenticationIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['decoupledAuthenticationMaxTime']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['deviceChannel']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['merchantFraudRate']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['marketingSource']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['mcc']) > 4) {
-            return false;
-        }
-        if (strlen($this->container['npaCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['overrideCountryCode']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['priorAuthenticationData']) > 2048) {
-            return false;
-        }
-        if (strlen($this->container['priorAuthenticationMethod']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['priorAuthenticationReferenceId']) > 36) {
-            return false;
-        }
-        if (strlen($this->container['priorAuthenticationTime']) > 12) {
-            return false;
-        }
-        if (strlen($this->container['productCode']) > 3) {
-            return false;
-        }
-        if (strlen($this->container['returnUrl']) > 2048) {
-            return false;
-        }
-        if (strlen($this->container['requestorId']) > 35) {
-            return false;
-        }
-        if (strlen($this->container['requestorInitiatedAuthenticationIndicator']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['requestorName']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['referenceId']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['sdkMaxTimeout']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['secureCorporatePaymentIndicator']) > 1) {
-            return false;
-        }
-        if (strlen($this->container['whiteListStatus']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -641,9 +431,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAuthenticationType($authenticationType)
     {
-        if (!is_null($authenticationType) && (strlen($authenticationType) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationType when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['authenticationType'] = $authenticationType;
 
@@ -666,9 +453,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAcsWindowSize($acsWindowSize)
     {
-        if (!is_null($acsWindowSize) && (strlen($acsWindowSize) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $acsWindowSize when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['acsWindowSize'] = $acsWindowSize;
 
@@ -691,9 +475,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAlternateAuthenticationData($alternateAuthenticationData)
     {
-        if (!is_null($alternateAuthenticationData) && (strlen($alternateAuthenticationData) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $alternateAuthenticationData when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
-        }
 
         $this->container['alternateAuthenticationData'] = $alternateAuthenticationData;
 
@@ -716,9 +497,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAlternateAuthenticationDate($alternateAuthenticationDate)
     {
-        if (!is_null($alternateAuthenticationDate) && (strlen($alternateAuthenticationDate) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $alternateAuthenticationDate when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 14.');
-        }
 
         $this->container['alternateAuthenticationDate'] = $alternateAuthenticationDate;
 
@@ -762,9 +540,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAuthenticationDate($authenticationDate)
     {
-        if (!is_null($authenticationDate) && (strlen($authenticationDate) > 14)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationDate when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 14.');
-        }
 
         $this->container['authenticationDate'] = $authenticationDate;
 
@@ -787,9 +562,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)
     {
-        if (!is_null($authenticationTransactionId) && (strlen($authenticationTransactionId) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $authenticationTransactionId when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 20.');
-        }
 
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
 
@@ -812,9 +584,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setChallengeCancelCode($challengeCancelCode)
     {
-        if (!is_null($challengeCancelCode) && (strlen($challengeCancelCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $challengeCancelCode when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['challengeCancelCode'] = $challengeCancelCode;
 
@@ -858,9 +627,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setChallengeStatus($challengeStatus)
     {
-        if (!is_null($challengeStatus) && (strlen($challengeStatus) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $challengeStatus when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['challengeStatus'] = $challengeStatus;
 
@@ -883,9 +649,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setCustomerCardAlias($customerCardAlias)
     {
-        if (!is_null($customerCardAlias) && (strlen($customerCardAlias) > 128)) {
-            throw new \InvalidArgumentException('invalid length for $customerCardAlias when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 128.');
-        }
 
         $this->container['customerCardAlias'] = $customerCardAlias;
 
@@ -908,9 +671,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setDecoupledAuthenticationIndicator($decoupledAuthenticationIndicator)
     {
-        if (!is_null($decoupledAuthenticationIndicator) && (strlen($decoupledAuthenticationIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $decoupledAuthenticationIndicator when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['decoupledAuthenticationIndicator'] = $decoupledAuthenticationIndicator;
 
@@ -933,9 +693,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setDecoupledAuthenticationMaxTime($decoupledAuthenticationMaxTime)
     {
-        if (!is_null($decoupledAuthenticationMaxTime) && (strlen($decoupledAuthenticationMaxTime) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $decoupledAuthenticationMaxTime when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 5.');
-        }
 
         $this->container['decoupledAuthenticationMaxTime'] = $decoupledAuthenticationMaxTime;
 
@@ -979,9 +736,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setDeviceChannel($deviceChannel)
     {
-        if (!is_null($deviceChannel) && (strlen($deviceChannel) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $deviceChannel when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['deviceChannel'] = $deviceChannel;
 
@@ -1025,9 +779,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setMerchantFraudRate($merchantFraudRate)
     {
-        if (!is_null($merchantFraudRate) && (strlen($merchantFraudRate) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $merchantFraudRate when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['merchantFraudRate'] = $merchantFraudRate;
 
@@ -1071,9 +822,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setMarketingSource($marketingSource)
     {
-        if (!is_null($marketingSource) && (strlen($marketingSource) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $marketingSource when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 40.');
-        }
 
         $this->container['marketingSource'] = $marketingSource;
 
@@ -1096,9 +844,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setMcc($mcc)
     {
-        if (!is_null($mcc) && (strlen($mcc) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $mcc when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 4.');
-        }
 
         $this->container['mcc'] = $mcc;
 
@@ -1163,9 +908,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setNpaCode($npaCode)
     {
-        if (!is_null($npaCode) && (strlen($npaCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $npaCode when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['npaCode'] = $npaCode;
 
@@ -1209,9 +951,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setOverrideCountryCode($overrideCountryCode)
     {
-        if (!is_null($overrideCountryCode) && (strlen($overrideCountryCode) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $overrideCountryCode when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['overrideCountryCode'] = $overrideCountryCode;
 
@@ -1234,9 +973,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationData($priorAuthenticationData)
     {
-        if (!is_null($priorAuthenticationData) && (strlen($priorAuthenticationData) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $priorAuthenticationData when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
-        }
 
         $this->container['priorAuthenticationData'] = $priorAuthenticationData;
 
@@ -1259,9 +995,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationMethod($priorAuthenticationMethod)
     {
-        if (!is_null($priorAuthenticationMethod) && (strlen($priorAuthenticationMethod) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $priorAuthenticationMethod when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['priorAuthenticationMethod'] = $priorAuthenticationMethod;
 
@@ -1284,9 +1017,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationReferenceId($priorAuthenticationReferenceId)
     {
-        if (!is_null($priorAuthenticationReferenceId) && (strlen($priorAuthenticationReferenceId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $priorAuthenticationReferenceId when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 36.');
-        }
 
         $this->container['priorAuthenticationReferenceId'] = $priorAuthenticationReferenceId;
 
@@ -1309,9 +1039,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationTime($priorAuthenticationTime)
     {
-        if (!is_null($priorAuthenticationTime) && (strlen($priorAuthenticationTime) > 12)) {
-            throw new \InvalidArgumentException('invalid length for $priorAuthenticationTime when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 12.');
-        }
 
         $this->container['priorAuthenticationTime'] = $priorAuthenticationTime;
 
@@ -1334,9 +1061,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setProductCode($productCode)
     {
-        if (!is_null($productCode) && (strlen($productCode) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $productCode when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 3.');
-        }
 
         $this->container['productCode'] = $productCode;
 
@@ -1359,9 +1083,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setReturnUrl($returnUrl)
     {
-        if (!is_null($returnUrl) && (strlen($returnUrl) > 2048)) {
-            throw new \InvalidArgumentException('invalid length for $returnUrl when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2048.');
-        }
 
         $this->container['returnUrl'] = $returnUrl;
 
@@ -1384,9 +1105,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setRequestorId($requestorId)
     {
-        if (!is_null($requestorId) && (strlen($requestorId) > 35)) {
-            throw new \InvalidArgumentException('invalid length for $requestorId when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 35.');
-        }
 
         $this->container['requestorId'] = $requestorId;
 
@@ -1409,9 +1127,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setRequestorInitiatedAuthenticationIndicator($requestorInitiatedAuthenticationIndicator)
     {
-        if (!is_null($requestorInitiatedAuthenticationIndicator) && (strlen($requestorInitiatedAuthenticationIndicator) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $requestorInitiatedAuthenticationIndicator when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['requestorInitiatedAuthenticationIndicator'] = $requestorInitiatedAuthenticationIndicator;
 
@@ -1434,9 +1149,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setRequestorName($requestorName)
     {
-        if (!is_null($requestorName) && (strlen($requestorName) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $requestorName when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 40.');
-        }
 
         $this->container['requestorName'] = $requestorName;
 
@@ -1459,9 +1171,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setReferenceId($referenceId)
     {
-        if (!is_null($referenceId) && (strlen($referenceId) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $referenceId when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['referenceId'] = $referenceId;
 
@@ -1484,9 +1193,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setSdkMaxTimeout($sdkMaxTimeout)
     {
-        if (!is_null($sdkMaxTimeout) && (strlen($sdkMaxTimeout) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $sdkMaxTimeout when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['sdkMaxTimeout'] = $sdkMaxTimeout;
 
@@ -1509,9 +1215,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setSecureCorporatePaymentIndicator($secureCorporatePaymentIndicator)
     {
-        if (!is_null($secureCorporatePaymentIndicator) && (strlen($secureCorporatePaymentIndicator) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $secureCorporatePaymentIndicator when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['secureCorporatePaymentIndicator'] = $secureCorporatePaymentIndicator;
 
@@ -1555,9 +1258,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setWhiteListStatus($whiteListStatus)
     {
-        if (!is_null($whiteListStatus) && (strlen($whiteListStatus) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $whiteListStatus when calling Riskv1decisionsConsumerAuthenticationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['whiteListStatus'] = $whiteListStatus;
 

@@ -147,10 +147,6 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
         if ($this->container['code'] === null) {
             $invalid_properties[] = "'code' can't be null";
         }
-        if ((strlen($this->container['code']) > 50)) {
-            $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 50.";
-        }
-
         return $invalid_properties;
     }
 
@@ -164,9 +160,6 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
     {
 
         if ($this->container['code'] === null) {
-            return false;
-        }
-        if (strlen($this->container['code']) > 50) {
             return false;
         }
         return true;
@@ -189,9 +182,6 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
      */
     public function setCode($code)
     {
-        if ((strlen($code) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling Riskv1authenticationsetupsClientReferenceInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['code'] = $code;
 

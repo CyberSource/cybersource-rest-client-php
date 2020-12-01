@@ -234,50 +234,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['hostName']) && (strlen($this->container['hostName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'hostName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['ipAddress']) && (strlen($this->container['ipAddress']) > 45)) {
-            $invalid_properties[] = "invalid value for 'ipAddress', the character length must be smaller than or equal to 45.";
-        }
-
-        if (!is_null($this->container['userAgent']) && (strlen($this->container['userAgent']) > 40)) {
-            $invalid_properties[] = "invalid value for 'userAgent', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['httpAcceptBrowserValue']) && (strlen($this->container['httpAcceptBrowserValue']) > 255)) {
-            $invalid_properties[] = "invalid value for 'httpAcceptBrowserValue', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['httpAcceptContent']) && (strlen($this->container['httpAcceptContent']) > 256)) {
-            $invalid_properties[] = "invalid value for 'httpAcceptContent', the character length must be smaller than or equal to 256.";
-        }
-
-        if (!is_null($this->container['httpBrowserLanguage']) && (strlen($this->container['httpBrowserLanguage']) > 8)) {
-            $invalid_properties[] = "invalid value for 'httpBrowserLanguage', the character length must be smaller than or equal to 8.";
-        }
-
-        if (!is_null($this->container['httpBrowserColorDepth']) && (strlen($this->container['httpBrowserColorDepth']) > 2)) {
-            $invalid_properties[] = "invalid value for 'httpBrowserColorDepth', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['httpBrowserScreenHeight']) && (strlen($this->container['httpBrowserScreenHeight']) > 6)) {
-            $invalid_properties[] = "invalid value for 'httpBrowserScreenHeight', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['httpBrowserScreenWidth']) && (strlen($this->container['httpBrowserScreenWidth']) > 6)) {
-            $invalid_properties[] = "invalid value for 'httpBrowserScreenWidth', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['httpBrowserTimeDifference']) && (strlen($this->container['httpBrowserTimeDifference']) > 5)) {
-            $invalid_properties[] = "invalid value for 'httpBrowserTimeDifference', the character length must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['userAgentBrowserValue']) && (strlen($this->container['userAgentBrowserValue']) > 255)) {
-            $invalid_properties[] = "invalid value for 'userAgentBrowserValue', the character length must be smaller than or equal to 255.";
-        }
-
         return $invalid_properties;
     }
 
@@ -290,39 +246,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['hostName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['ipAddress']) > 45) {
-            return false;
-        }
-        if (strlen($this->container['userAgent']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['httpAcceptBrowserValue']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['httpAcceptContent']) > 256) {
-            return false;
-        }
-        if (strlen($this->container['httpBrowserLanguage']) > 8) {
-            return false;
-        }
-        if (strlen($this->container['httpBrowserColorDepth']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['httpBrowserScreenHeight']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['httpBrowserScreenWidth']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['httpBrowserTimeDifference']) > 5) {
-            return false;
-        }
-        if (strlen($this->container['userAgentBrowserValue']) > 255) {
-            return false;
-        }
         return true;
     }
 
@@ -343,9 +266,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHostName($hostName)
     {
-        if (!is_null($hostName) && (strlen($hostName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $hostName when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 60.');
-        }
 
         $this->container['hostName'] = $hostName;
 
@@ -368,9 +288,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setIpAddress($ipAddress)
     {
-        if (!is_null($ipAddress) && (strlen($ipAddress) > 45)) {
-            throw new \InvalidArgumentException('invalid length for $ipAddress when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 45.');
-        }
 
         $this->container['ipAddress'] = $ipAddress;
 
@@ -393,9 +310,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setUserAgent($userAgent)
     {
-        if (!is_null($userAgent) && (strlen($userAgent) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $userAgent when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 40.');
-        }
 
         $this->container['userAgent'] = $userAgent;
 
@@ -460,9 +374,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpAcceptBrowserValue($httpAcceptBrowserValue)
     {
-        if (!is_null($httpAcceptBrowserValue) && (strlen($httpAcceptBrowserValue) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $httpAcceptBrowserValue when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['httpAcceptBrowserValue'] = $httpAcceptBrowserValue;
 
@@ -485,9 +396,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpAcceptContent($httpAcceptContent)
     {
-        if (!is_null($httpAcceptContent) && (strlen($httpAcceptContent) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $httpAcceptContent when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 256.');
-        }
 
         $this->container['httpAcceptContent'] = $httpAcceptContent;
 
@@ -531,9 +439,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpBrowserLanguage($httpBrowserLanguage)
     {
-        if (!is_null($httpBrowserLanguage) && (strlen($httpBrowserLanguage) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $httpBrowserLanguage when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 8.');
-        }
 
         $this->container['httpBrowserLanguage'] = $httpBrowserLanguage;
 
@@ -598,9 +503,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpBrowserColorDepth($httpBrowserColorDepth)
     {
-        if (!is_null($httpBrowserColorDepth) && (strlen($httpBrowserColorDepth) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $httpBrowserColorDepth when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['httpBrowserColorDepth'] = $httpBrowserColorDepth;
 
@@ -623,9 +525,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpBrowserScreenHeight($httpBrowserScreenHeight)
     {
-        if (!is_null($httpBrowserScreenHeight) && (strlen($httpBrowserScreenHeight) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $httpBrowserScreenHeight when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['httpBrowserScreenHeight'] = $httpBrowserScreenHeight;
 
@@ -648,9 +547,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpBrowserScreenWidth($httpBrowserScreenWidth)
     {
-        if (!is_null($httpBrowserScreenWidth) && (strlen($httpBrowserScreenWidth) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $httpBrowserScreenWidth when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['httpBrowserScreenWidth'] = $httpBrowserScreenWidth;
 
@@ -673,9 +569,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setHttpBrowserTimeDifference($httpBrowserTimeDifference)
     {
-        if (!is_null($httpBrowserTimeDifference) && (strlen($httpBrowserTimeDifference) > 5)) {
-            throw new \InvalidArgumentException('invalid length for $httpBrowserTimeDifference when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 5.');
-        }
 
         $this->container['httpBrowserTimeDifference'] = $httpBrowserTimeDifference;
 
@@ -698,9 +591,6 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function setUserAgentBrowserValue($userAgentBrowserValue)
     {
-        if (!is_null($userAgentBrowserValue) && (strlen($userAgentBrowserValue) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $userAgentBrowserValue when calling Ptsv2paymentsDeviceInformation., must be smaller than or equal to 255.');
-        }
 
         $this->container['userAgentBrowserValue'] = $userAgentBrowserValue;
 

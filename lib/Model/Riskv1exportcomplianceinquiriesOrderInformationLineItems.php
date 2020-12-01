@@ -189,32 +189,12 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
         if ($this->container['unitPrice'] === null) {
             $invalid_properties[] = "'unitPrice' can't be null";
         }
-        if ((strlen($this->container['unitPrice']) > 15)) {
-            $invalid_properties[] = "invalid value for 'unitPrice', the character length must be smaller than or equal to 15.";
-        }
-
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 999999999)) {
             $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 999999999.";
         }
 
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['productSKU']) && (strlen($this->container['productSKU']) > 255)) {
-            $invalid_properties[] = "invalid value for 'productSKU', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['productRisk']) && (strlen($this->container['productRisk']) > 6)) {
-            $invalid_properties[] = "invalid value for 'productRisk', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['productName']) && (strlen($this->container['productName']) > 255)) {
-            $invalid_properties[] = "invalid value for 'productName', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['productCode']) && (strlen($this->container['productCode']) > 255)) {
-            $invalid_properties[] = "invalid value for 'productCode', the character length must be smaller than or equal to 255.";
         }
 
         return $invalid_properties;
@@ -232,25 +212,10 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
         if ($this->container['unitPrice'] === null) {
             return false;
         }
-        if (strlen($this->container['unitPrice']) > 15) {
-            return false;
-        }
         if ($this->container['quantity'] > 999999999) {
             return false;
         }
         if ($this->container['quantity'] < 1) {
-            return false;
-        }
-        if (strlen($this->container['productSKU']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['productRisk']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['productName']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['productCode']) > 255) {
             return false;
         }
         return true;
@@ -273,9 +238,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
      */
     public function setUnitPrice($unitPrice)
     {
-        if ((strlen($unitPrice) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $unitPrice when calling Riskv1exportcomplianceinquiriesOrderInformationLineItems., must be smaller than or equal to 15.');
-        }
 
         $this->container['unitPrice'] = $unitPrice;
 
@@ -340,7 +302,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
      */
     public function setQuantity($quantity)
     {
-
         if (!is_null($quantity) && ($quantity > 999999999)) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Riskv1exportcomplianceinquiriesOrderInformationLineItems., must be smaller than or equal to 999999999.');
         }
@@ -369,9 +330,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
      */
     public function setProductSKU($productSKU)
     {
-        if (!is_null($productSKU) && (strlen($productSKU) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $productSKU when calling Riskv1exportcomplianceinquiriesOrderInformationLineItems., must be smaller than or equal to 255.');
-        }
 
         $this->container['productSKU'] = $productSKU;
 
@@ -394,9 +352,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
      */
     public function setProductRisk($productRisk)
     {
-        if (!is_null($productRisk) && (strlen($productRisk) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $productRisk when calling Riskv1exportcomplianceinquiriesOrderInformationLineItems., must be smaller than or equal to 6.');
-        }
 
         $this->container['productRisk'] = $productRisk;
 
@@ -419,9 +374,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
      */
     public function setProductName($productName)
     {
-        if (!is_null($productName) && (strlen($productName) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $productName when calling Riskv1exportcomplianceinquiriesOrderInformationLineItems., must be smaller than or equal to 255.');
-        }
 
         $this->container['productName'] = $productName;
 
@@ -444,9 +396,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationLineItems implements ArrayA
      */
     public function setProductCode($productCode)
     {
-        if (!is_null($productCode) && (strlen($productCode) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $productCode when calling Riskv1exportcomplianceinquiriesOrderInformationLineItems., must be smaller than or equal to 255.');
-        }
 
         $this->container['productCode'] = $productCode;
 

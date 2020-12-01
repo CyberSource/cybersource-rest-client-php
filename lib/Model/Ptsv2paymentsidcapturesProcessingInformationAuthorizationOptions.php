@@ -156,18 +156,6 @@ class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions implement
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['authType']) && (strlen($this->container['authType']) > 15)) {
-            $invalid_properties[] = "invalid value for 'authType', the character length must be smaller than or equal to 15.";
-        }
-
-        if (!is_null($this->container['verbalAuthCode']) && (strlen($this->container['verbalAuthCode']) > 7)) {
-            $invalid_properties[] = "invalid value for 'verbalAuthCode', the character length must be smaller than or equal to 7.";
-        }
-
-        if (!is_null($this->container['verbalAuthTransactionId']) && (strlen($this->container['verbalAuthTransactionId']) > 15)) {
-            $invalid_properties[] = "invalid value for 'verbalAuthTransactionId', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions implement
     public function valid()
     {
 
-        if (strlen($this->container['authType']) > 15) {
-            return false;
-        }
-        if (strlen($this->container['verbalAuthCode']) > 7) {
-            return false;
-        }
-        if (strlen($this->container['verbalAuthTransactionId']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions implement
      */
     public function setAuthType($authType)
     {
-        if (!is_null($authType) && (strlen($authType) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $authType when calling Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions., must be smaller than or equal to 15.');
-        }
 
         $this->container['authType'] = $authType;
 
@@ -234,9 +210,6 @@ class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions implement
      */
     public function setVerbalAuthCode($verbalAuthCode)
     {
-        if (!is_null($verbalAuthCode) && (strlen($verbalAuthCode) > 7)) {
-            throw new \InvalidArgumentException('invalid length for $verbalAuthCode when calling Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions., must be smaller than or equal to 7.');
-        }
 
         $this->container['verbalAuthCode'] = $verbalAuthCode;
 
@@ -259,9 +232,6 @@ class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions implement
      */
     public function setVerbalAuthTransactionId($verbalAuthTransactionId)
     {
-        if (!is_null($verbalAuthTransactionId) && (strlen($verbalAuthTransactionId) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $verbalAuthTransactionId when calling Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions., must be smaller than or equal to 15.');
-        }
 
         $this->container['verbalAuthTransactionId'] = $verbalAuthTransactionId;
 

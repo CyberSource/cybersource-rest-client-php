@@ -162,22 +162,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination implemen
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 90)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 90.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 90)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 90.";
-        }
-
-        if (!is_null($this->container['latitude']) && (strlen($this->container['latitude']) > 10)) {
-            $invalid_properties[] = "invalid value for 'latitude', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['longitude']) && (strlen($this->container['longitude']) > 10)) {
-            $invalid_properties[] = "invalid value for 'longitude', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -190,18 +174,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination implemen
     public function valid()
     {
 
-        if (strlen($this->container['country']) > 90) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 90) {
-            return false;
-        }
-        if (strlen($this->container['latitude']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['longitude']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -222,9 +194,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination implemen
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 90)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination., must be smaller than or equal to 90.');
-        }
 
         $this->container['country'] = $country;
 
@@ -247,9 +216,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination implemen
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 90)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination., must be smaller than or equal to 90.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -272,9 +238,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination implemen
      */
     public function setLatitude($latitude)
     {
-        if (!is_null($latitude) && (strlen($latitude) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $latitude when calling PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination., must be smaller than or equal to 10.');
-        }
 
         $this->container['latitude'] = $latitude;
 
@@ -297,9 +260,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination implemen
      */
     public function setLongitude($longitude)
     {
-        if (!is_null($longitude) && (strlen($longitude) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $longitude when calling PtsV2PaymentsPost201ResponseRiskInformationTravelFirstDestination., must be smaller than or equal to 10.');
-        }
 
         $this->container['longitude'] = $longitude;
 

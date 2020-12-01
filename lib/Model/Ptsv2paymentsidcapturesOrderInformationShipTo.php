@@ -156,18 +156,6 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 2)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['administrativeArea']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling Ptsv2paymentsidcapturesOrderInformationShipTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -234,9 +210,6 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling Ptsv2paymentsidcapturesOrderInformationShipTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -259,9 +232,6 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2paymentsidcapturesOrderInformationShipTo., must be smaller than or equal to 10.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 

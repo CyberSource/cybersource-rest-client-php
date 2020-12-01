@@ -144,10 +144,6 @@ class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions implem
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['settlementMethod']) && (strlen($this->container['settlementMethod']) > 1)) {
-            $invalid_properties[] = "invalid value for 'settlementMethod', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions implem
     public function valid()
     {
 
-        if (strlen($this->container['settlementMethod']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions implem
      */
     public function setSettlementMethod($settlementMethod)
     {
-        if (!is_null($settlementMethod) && (strlen($settlementMethod) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $settlementMethod when calling PtsV2CreditsPost201ResponseProcessingInformationBankTransferOptions., must be smaller than or equal to 1.');
-        }
 
         $this->container['settlementMethod'] = $settlementMethod;
 

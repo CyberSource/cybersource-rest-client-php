@@ -60,7 +60,7 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
         'lastModifiedTime' => '\DateTime',
         'date' => '\DateTime',
         'mimeType' => 'string',
-        'size' => 'int'
+        'size' => 'float'
     ];
 
     /**
@@ -324,7 +324,7 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
 
     /**
      * Gets size
-     * @return int
+     * @return float
      */
     public function getSize()
     {
@@ -333,7 +333,7 @@ class V1FileDetailsGet200ResponseFileDetails implements ArrayAccess
 
     /**
      * Sets size
-     * @param int $size Size of the file in bytes
+     * @param float $size Size of the file in bytes
      * @return $this
      */
     public function setSize($size)

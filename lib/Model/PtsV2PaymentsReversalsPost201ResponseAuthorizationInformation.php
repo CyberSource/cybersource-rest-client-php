@@ -156,18 +156,6 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['approvalCode']) && (strlen($this->container['approvalCode']) > 6)) {
-            $invalid_properties[] = "invalid value for 'approvalCode', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['reasonCode']) && (strlen($this->container['reasonCode']) > 50)) {
-            $invalid_properties[] = "invalid value for 'reasonCode', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['reversalSubmitted']) && (strlen($this->container['reversalSubmitted']) > 1)) {
-            $invalid_properties[] = "invalid value for 'reversalSubmitted', the character length must be smaller than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
     public function valid()
     {
 
-        if (strlen($this->container['approvalCode']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['reasonCode']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['reversalSubmitted']) > 1) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
      */
     public function setApprovalCode($approvalCode)
     {
-        if (!is_null($approvalCode) && (strlen($approvalCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $approvalCode when calling PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['approvalCode'] = $approvalCode;
 
@@ -234,9 +210,6 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
      */
     public function setReasonCode($reasonCode)
     {
-        if (!is_null($reasonCode) && (strlen($reasonCode) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $reasonCode when calling PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation., must be smaller than or equal to 50.');
-        }
 
         $this->container['reasonCode'] = $reasonCode;
 
@@ -259,9 +232,6 @@ class PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation implements A
      */
     public function setReversalSubmitted($reversalSubmitted)
     {
-        if (!is_null($reversalSubmitted) && (strlen($reversalSubmitted) > 1)) {
-            throw new \InvalidArgumentException('invalid length for $reversalSubmitted when calling PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation., must be smaller than or equal to 1.');
-        }
 
         $this->container['reversalSubmitted'] = $reversalSubmitted;
 

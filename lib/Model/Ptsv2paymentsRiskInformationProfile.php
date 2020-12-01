@@ -145,10 +145,6 @@ class Ptsv2paymentsRiskInformationProfile implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 30)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
-        }
-
         return $invalid_properties;
     }
 
@@ -161,9 +157,6 @@ class Ptsv2paymentsRiskInformationProfile implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 30) {
-            return false;
-        }
         return true;
     }
 
@@ -184,9 +177,6 @@ class Ptsv2paymentsRiskInformationProfile implements ArrayAccess
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Ptsv2paymentsRiskInformationProfile., must be smaller than or equal to 30.');
-        }
 
         $this->container['name'] = $name;
 

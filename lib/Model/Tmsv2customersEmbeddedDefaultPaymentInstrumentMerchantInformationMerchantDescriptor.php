@@ -144,10 +144,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['alternateName']) && (strlen($this->container['alternateName']) > 13)) {
-            $invalid_properties[] = "invalid value for 'alternateName', the character length must be smaller than or equal to 13.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
     public function valid()
     {
 
-        if (strlen($this->container['alternateName']) > 13) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
      */
     public function setAlternateName($alternateName)
     {
-        if (!is_null($alternateName) && (strlen($alternateName) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $alternateName when calling Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantDescriptor., must be smaller than or equal to 13.');
-        }
 
         $this->container['alternateName'] = $alternateName;
 

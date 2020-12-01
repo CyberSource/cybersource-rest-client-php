@@ -150,10 +150,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationBank implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['correctedRoutingNumber']) && (strlen($this->container['correctedRoutingNumber']) > 9)) {
-            $invalid_properties[] = "invalid value for 'correctedRoutingNumber', the character length must be smaller than or equal to 9.";
-        }
-
         return $invalid_properties;
     }
 
@@ -166,9 +162,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationBank implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['correctedRoutingNumber']) > 9) {
-            return false;
-        }
         return true;
     }
 
@@ -210,9 +203,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationBank implements ArrayAccess
      */
     public function setCorrectedRoutingNumber($correctedRoutingNumber)
     {
-        if (!is_null($correctedRoutingNumber) && (strlen($correctedRoutingNumber) > 9)) {
-            throw new \InvalidArgumentException('invalid length for $correctedRoutingNumber when calling PtsV2PaymentsPost201ResponsePaymentInformationBank., must be smaller than or equal to 9.');
-        }
 
         $this->container['correctedRoutingNumber'] = $correctedRoutingNumber;
 

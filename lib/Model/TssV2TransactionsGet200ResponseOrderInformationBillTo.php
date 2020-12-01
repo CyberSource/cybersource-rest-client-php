@@ -222,62 +222,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['firstName']) && (strlen($this->container['firstName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'firstName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['middleName']) && (strlen($this->container['middleName']) > 60)) {
-            $invalid_properties[] = "invalid value for 'middleName', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['nameSuffix']) && (strlen($this->container['nameSuffix']) > 60)) {
-            $invalid_properties[] = "invalid value for 'nameSuffix', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address1']) && (strlen($this->container['address1']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address1', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['address2']) && (strlen($this->container['address2']) > 60)) {
-            $invalid_properties[] = "invalid value for 'address2', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['locality']) && (strlen($this->container['locality']) > 50)) {
-            $invalid_properties[] = "invalid value for 'locality', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && (strlen($this->container['administrativeArea']) > 20)) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['company']) && (strlen($this->container['company']) > 60)) {
-            $invalid_properties[] = "invalid value for 'company', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['email']) && (strlen($this->container['email']) > 255)) {
-            $invalid_properties[] = "invalid value for 'email', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['country']) && (strlen($this->container['country']) > 2)) {
-            $invalid_properties[] = "invalid value for 'country', the character length must be smaller than or equal to 2.";
-        }
-
-        if (!is_null($this->container['title']) && (strlen($this->container['title']) > 60)) {
-            $invalid_properties[] = "invalid value for 'title', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && (strlen($this->container['phoneNumber']) > 15)) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', the character length must be smaller than or equal to 15.";
-        }
-
         return $invalid_properties;
     }
 
@@ -290,48 +234,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
     public function valid()
     {
 
-        if (strlen($this->container['firstName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['lastName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['middleName']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['nameSuffix']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address1']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['address2']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['locality']) > 50) {
-            return false;
-        }
-        if (strlen($this->container['administrativeArea']) > 20) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['company']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['email']) > 255) {
-            return false;
-        }
-        if (strlen($this->container['country']) > 2) {
-            return false;
-        }
-        if (strlen($this->container['title']) > 60) {
-            return false;
-        }
-        if (strlen($this->container['phoneNumber']) > 15) {
-            return false;
-        }
         return true;
     }
 
@@ -352,9 +254,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setFirstName($firstName)
     {
-        if (!is_null($firstName) && (strlen($firstName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $firstName when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['firstName'] = $firstName;
 
@@ -377,9 +276,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['lastName'] = $lastName;
 
@@ -402,9 +298,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setMiddleName($middleName)
     {
-        if (!is_null($middleName) && (strlen($middleName) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $middleName when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['middleName'] = $middleName;
 
@@ -427,9 +320,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setNameSuffix($nameSuffix)
     {
-        if (!is_null($nameSuffix) && (strlen($nameSuffix) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $nameSuffix when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['nameSuffix'] = $nameSuffix;
 
@@ -452,9 +342,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setAddress1($address1)
     {
-        if (!is_null($address1) && (strlen($address1) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address1 when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address1'] = $address1;
 
@@ -477,9 +364,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setAddress2($address2)
     {
-        if (!is_null($address2) && (strlen($address2) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address2 when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['address2'] = $address2;
 
@@ -502,9 +386,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setLocality($locality)
     {
-        if (!is_null($locality) && (strlen($locality) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $locality when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 50.');
-        }
 
         $this->container['locality'] = $locality;
 
@@ -527,9 +408,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setAdministrativeArea($administrativeArea)
     {
-        if (!is_null($administrativeArea) && (strlen($administrativeArea) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $administrativeArea when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 20.');
-        }
 
         $this->container['administrativeArea'] = $administrativeArea;
 
@@ -552,9 +430,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 10.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 
@@ -577,9 +452,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setCompany($company)
     {
-        if (!is_null($company) && (strlen($company) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $company when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['company'] = $company;
 
@@ -602,9 +474,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setEmail($email)
     {
-        if (!is_null($email) && (strlen($email) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 255.');
-        }
 
         $this->container['email'] = $email;
 
@@ -627,9 +496,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setCountry($country)
     {
-        if (!is_null($country) && (strlen($country) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 2.');
-        }
 
         $this->container['country'] = $country;
 
@@ -652,9 +518,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setTitle($title)
     {
-        if (!is_null($title) && (strlen($title) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 60.');
-        }
 
         $this->container['title'] = $title;
 
@@ -677,9 +540,6 @@ class TssV2TransactionsGet200ResponseOrderInformationBillTo implements ArrayAcce
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (strlen($phoneNumber) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $phoneNumber when calling TssV2TransactionsGet200ResponseOrderInformationBillTo., must be smaller than or equal to 15.');
-        }
 
         $this->container['phoneNumber'] = $phoneNumber;
 

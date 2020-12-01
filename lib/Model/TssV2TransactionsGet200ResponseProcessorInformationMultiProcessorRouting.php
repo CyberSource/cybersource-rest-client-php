@@ -162,14 +162,6 @@ class TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting i
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['name']) && (strlen($this->container['name']) > 30)) {
-            $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['responseCode']) && (strlen($this->container['responseCode']) > 10)) {
-            $invalid_properties[] = "invalid value for 'responseCode', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalid_properties;
     }
 
@@ -182,12 +174,6 @@ class TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting i
     public function valid()
     {
 
-        if (strlen($this->container['name']) > 30) {
-            return false;
-        }
-        if (strlen($this->container['responseCode']) > 10) {
-            return false;
-        }
         return true;
     }
 
@@ -208,9 +194,6 @@ class TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting i
      */
     public function setName($name)
     {
-        if (!is_null($name) && (strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting., must be smaller than or equal to 30.');
-        }
 
         $this->container['name'] = $name;
 
@@ -233,9 +216,6 @@ class TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting i
      */
     public function setResponseCode($responseCode)
     {
-        if (!is_null($responseCode) && (strlen($responseCode) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $responseCode when calling TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting., must be smaller than or equal to 10.');
-        }
 
         $this->container['responseCode'] = $responseCode;
 

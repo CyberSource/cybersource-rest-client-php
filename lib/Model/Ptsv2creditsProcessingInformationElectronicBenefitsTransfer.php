@@ -144,10 +144,6 @@ class Ptsv2creditsProcessingInformationElectronicBenefitsTransfer implements Arr
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['category']) && (strlen($this->container['category']) > 4)) {
-            $invalid_properties[] = "invalid value for 'category', the character length must be smaller than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2creditsProcessingInformationElectronicBenefitsTransfer implements Arr
     public function valid()
     {
 
-        if (strlen($this->container['category']) > 4) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2creditsProcessingInformationElectronicBenefitsTransfer implements Arr
      */
     public function setCategory($category)
     {
-        if (!is_null($category) && (strlen($category) > 4)) {
-            throw new \InvalidArgumentException('invalid length for $category when calling Ptsv2creditsProcessingInformationElectronicBenefitsTransfer., must be smaller than or equal to 4.');
-        }
 
         $this->container['category'] = $category;
 

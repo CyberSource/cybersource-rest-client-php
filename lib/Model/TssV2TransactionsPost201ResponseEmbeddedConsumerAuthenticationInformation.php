@@ -156,14 +156,6 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['xid']) && (strlen($this->container['xid']) > 40)) {
-            $invalid_properties[] = "invalid value for 'xid', the character length must be smaller than or equal to 40.";
-        }
-
-        if (!is_null($this->container['eciRaw']) && (strlen($this->container['eciRaw']) > 2)) {
-            $invalid_properties[] = "invalid value for 'eciRaw', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalid_properties;
     }
 
@@ -176,12 +168,6 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
     public function valid()
     {
 
-        if (strlen($this->container['xid']) > 40) {
-            return false;
-        }
-        if (strlen($this->container['eciRaw']) > 2) {
-            return false;
-        }
         return true;
     }
 
@@ -202,9 +188,6 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
      */
     public function setXid($xid)
     {
-        if (!is_null($xid) && (strlen($xid) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $xid when calling TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation., must be smaller than or equal to 40.');
-        }
 
         $this->container['xid'] = $xid;
 
@@ -248,9 +231,6 @@ class TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation 
      */
     public function setEciRaw($eciRaw)
     {
-        if (!is_null($eciRaw) && (strlen($eciRaw) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $eciRaw when calling TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation., must be smaller than or equal to 2.');
-        }
 
         $this->container['eciRaw'] = $eciRaw;
 

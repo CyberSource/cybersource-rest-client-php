@@ -156,18 +156,6 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['accountId']) && (strlen($this->container['accountId']) > 10)) {
-            $invalid_properties[] = "invalid value for 'accountId', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['lastName']) && (strlen($this->container['lastName']) > 6)) {
-            $invalid_properties[] = "invalid value for 'lastName', the character length must be smaller than or equal to 6.";
-        }
-
-        if (!is_null($this->container['postalCode']) && (strlen($this->container['postalCode']) > 6)) {
-            $invalid_properties[] = "invalid value for 'postalCode', the character length must be smaller than or equal to 6.";
-        }
-
         return $invalid_properties;
     }
 
@@ -180,15 +168,6 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     public function valid()
     {
 
-        if (strlen($this->container['accountId']) > 10) {
-            return false;
-        }
-        if (strlen($this->container['lastName']) > 6) {
-            return false;
-        }
-        if (strlen($this->container['postalCode']) > 6) {
-            return false;
-        }
         return true;
     }
 
@@ -209,9 +188,6 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
      */
     public function setAccountId($accountId)
     {
-        if (!is_null($accountId) && (strlen($accountId) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $accountId when calling Ptsv2paymentsRecipientInformation., must be smaller than or equal to 10.');
-        }
 
         $this->container['accountId'] = $accountId;
 
@@ -234,9 +210,6 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-        if (!is_null($lastName) && (strlen($lastName) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $lastName when calling Ptsv2paymentsRecipientInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['lastName'] = $lastName;
 
@@ -259,9 +232,6 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-        if (!is_null($postalCode) && (strlen($postalCode) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $postalCode when calling Ptsv2paymentsRecipientInformation., must be smaller than or equal to 6.');
-        }
 
         $this->container['postalCode'] = $postalCode;
 

@@ -144,10 +144,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum imple
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['data']) && (strlen($this->container['data']) > 40)) {
-            $invalid_properties[] = "invalid value for 'data', the character length must be smaller than or equal to 40.";
-        }
-
         return $invalid_properties;
     }
 
@@ -160,9 +156,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum imple
     public function valid()
     {
 
-        if (strlen($this->container['data']) > 40) {
-            return false;
-        }
         return true;
     }
 
@@ -183,9 +176,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum imple
      */
     public function setData($data)
     {
-        if (!is_null($data) && (strlen($data) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $data when calling Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum., must be smaller than or equal to 40.');
-        }
 
         $this->container['data'] = $data;
 
