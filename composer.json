@@ -1,7 +1,7 @@
 {
-    "name": "cybersource/rest-client-php",
-    "version": "0.0.19",
-    "description": "Client SDK for CyberSource REST APIs",
+    "name": "vivianequinaia/rest-client-php",
+    "version": "0.0.20",
+    "description": "Client SDK for CyberSource REST APIs FORK",
     "keywords": [
         "cybersource", "payments", "ecommerce", "merchant", "merchants", "authorize", "visa", "payment", "payment-gateway", "payment-integration", "payment-module", "payment-processing", "payment-service", "payment-methods"
     ],
