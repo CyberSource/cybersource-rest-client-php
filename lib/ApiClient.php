@@ -119,7 +119,7 @@ class ApiClient
         $packages = json_decode(file_get_contents(__DIR__ . "/../../../../vendor/composer/installed.json"), true);
 
         foreach ($packages as $package) {
-            if (strcmp($package['name'], "cybersource/rest-client-php") == 0)
+            if (isset($package['name']) && strcmp($package['name'], "cybersource/rest-client-php") == 0)
             {
                 $versionInfo = "cybs-rest-sdk-php-" . $package['version'];
             }
