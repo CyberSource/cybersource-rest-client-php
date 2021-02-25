@@ -57,6 +57,9 @@ class GlobalParameter
 	const JWT_TOKEN_FAILS = " [ERROR] : Unable to generate JWT Token";
 	const AUTHENTICATION_REQ = "AuthenticationType is Mandatory\n";
 	const MERCHANT_KEY_ID_REQ = "Merchant ApikeyId is Mandatory\n";
+	const PORTFOLIO_ID_REQ = "Portfolio ID is Mandatory\n";
+	const PORTFOLIO_ID_EMPTY = "Portfolio ID is Empty\n";
+	const USE_METAKEY_EMPTY = "UseMetaKey value is empty\n";
 	const INVALID_PROXY_URL = "Proxy URL is Invalid! Assigining default proxy url: ";
 	const INVALID_PROXY_PORT = "Proxy URL is Invalid! Assigining default proxy port: ";
 	const DEFAULT_PROXY_URL = "userproxy.visa.com";
