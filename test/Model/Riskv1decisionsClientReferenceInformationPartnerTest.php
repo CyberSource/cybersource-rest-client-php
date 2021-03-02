@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1addressverificationsClientReferenceInformationTest
+ * Riskv1decisionsClientReferenceInformationPartnerTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * Riskv1addressverificationsClientReferenceInformationTest Class Doc Comment
+ * Riskv1decisionsClientReferenceInformationPartnerTest Class Doc Comment
  *
  * @category    Class */
-// * @description Riskv1addressverificationsClientReferenceInformation
+// * @description Riskv1decisionsClientReferenceInformationPartner
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1addressverificationsClientReferenceInformationTest extends \PHPUnit_Framework_TestCase
+class Riskv1decisionsClientReferenceInformationPartnerTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,23 @@ class Riskv1addressverificationsClientReferenceInformationTest extends \PHPUnit_
     }
 
     /**
-     * Test "Riskv1addressverificationsClientReferenceInformation"
+     * Test "Riskv1decisionsClientReferenceInformationPartner"
      */
-    public function testRiskv1addressverificationsClientReferenceInformation()
+    public function testRiskv1decisionsClientReferenceInformationPartner()
     {
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "developerId"
      */
-    public function testPropertyCode()
+    public function testPropertyDeveloperId()
     {
     }
 
     /**
-     * Test attribute "comments"
+     * Test attribute "solutionId"
      */
-    public function testPropertyComments()
+    public function testPropertySolutionId()
     {
     }
 }

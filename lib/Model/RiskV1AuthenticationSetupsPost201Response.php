@@ -59,6 +59,7 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'consumerAuthenticationInformation' => '\CyberSource\Model\RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation',
         'errorInformation' => '\CyberSource\Model\RiskV1AuthenticationSetupsPost201ResponseErrorInformation'
     ];
 
@@ -72,6 +73,7 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
         'submitTimeUtc' => null,
         'status' => null,
         'consumerAuthenticationInformation' => null,
+        'clientReferenceInformation' => null,
         'errorInformation' => null
     ];
 
@@ -95,6 +97,7 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'clientReferenceInformation' => 'clientReferenceInformation',
         'errorInformation' => 'errorInformation'
     ];
 
@@ -109,6 +112,7 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'clientReferenceInformation' => 'setClientReferenceInformation',
         'errorInformation' => 'setErrorInformation'
     ];
 
@@ -123,6 +127,7 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'clientReferenceInformation' => 'getClientReferenceInformation',
         'errorInformation' => 'getErrorInformation'
     ];
 
@@ -162,6 +167,7 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
     }
 
@@ -292,6 +298,27 @@ class RiskV1AuthenticationSetupsPost201Response implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
 
         return $this;
     }

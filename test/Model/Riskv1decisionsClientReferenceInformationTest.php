@@ -90,4 +90,11 @@ class Riskv1decisionsClientReferenceInformationTest extends \PHPUnit_Framework_T
     public function testPropertyComments()
     {
     }
+
+    /**
+     * Test attribute "partner"
+     */
+    public function testPropertyPartner()
+    {
+    }
 }

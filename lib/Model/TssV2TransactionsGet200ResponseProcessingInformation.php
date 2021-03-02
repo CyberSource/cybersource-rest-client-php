@@ -54,6 +54,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'industryDataType' => 'string',
         'paymentSolution' => 'string',
         'commerceIndicator' => 'string',
         'businessApplicationId' => 'string',
@@ -67,6 +68,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'industryDataType' => null,
         'paymentSolution' => null,
         'commerceIndicator' => null,
         'businessApplicationId' => null,
@@ -90,6 +92,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
+        'industryDataType' => 'industryDataType',
         'paymentSolution' => 'paymentSolution',
         'commerceIndicator' => 'commerceIndicator',
         'businessApplicationId' => 'businessApplicationId',
@@ -104,6 +107,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      * @var string[]
      */
     protected static $setters = [
+        'industryDataType' => 'setIndustryDataType',
         'paymentSolution' => 'setPaymentSolution',
         'commerceIndicator' => 'setCommerceIndicator',
         'businessApplicationId' => 'setBusinessApplicationId',
@@ -118,6 +122,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      * @var string[]
      */
     protected static $getters = [
+        'industryDataType' => 'getIndustryDataType',
         'paymentSolution' => 'getPaymentSolution',
         'commerceIndicator' => 'getCommerceIndicator',
         'businessApplicationId' => 'getBusinessApplicationId',
@@ -157,6 +162,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
@@ -189,6 +195,28 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         return true;
     }
 
+
+    /**
+     * Gets industryDataType
+     * @return string
+     */
+    public function getIndustryDataType()
+    {
+        return $this->container['industryDataType'];
+    }
+
+    /**
+     * Sets industryDataType
+     * @param string $industryDataType Indicates that the transaction includes industry-specific data.  Possible Values: - `airline` - `restaurant` - `lodging` - `auto_rental` - `transit` - `healthcare_medical` - `healthcare_transit` - `transit`  #### Card Present, Airlines and Auto Rental You must set this field to `airline` in order for airline data to be sent to the processor. For example, if this field is not set to `airline` or is not included in the request, no airline data is sent to the processor.  You must set this field to `restaurant` in order for restaurant data to be sent to the processor. When this field is not set to `restaurant` or is not included in the request, no restaurant data is sent to the processor.  You must set this field to `auto_rental` in order for auto rental data to be sent to the processor. For example, if this field is not set to `auto_rental` or is not included in the request, no auto rental data is sent to the processor.  Restaurant data is supported only on CyberSource through VisaNet.
+     * @return $this
+     */
+    public function setIndustryDataType($industryDataType)
+    {
+
+        $this->container['industryDataType'] = $industryDataType;
+
+        return $this;
+    }
 
     /**
      * Gets paymentSolution

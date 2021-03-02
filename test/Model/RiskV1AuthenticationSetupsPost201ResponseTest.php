@@ -113,6 +113,13 @@ class RiskV1AuthenticationSetupsPost201ResponseTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
+
+    /**
      * Test attribute "errorInformation"
      */
     public function testPropertyErrorInformation()

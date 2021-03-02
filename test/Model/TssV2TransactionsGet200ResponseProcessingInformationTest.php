@@ -78,6 +78,13 @@ class TssV2TransactionsGet200ResponseProcessingInformationTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "industryDataType"
+     */
+    public function testPropertyIndustryDataType()
+    {
+    }
+
+    /**
      * Test attribute "paymentSolution"
      */
     public function testPropertyPaymentSolution()

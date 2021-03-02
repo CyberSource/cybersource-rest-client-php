@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1addressverificationsClientReferenceInformation
+ * RiskV1DecisionsPost201ResponseClientReferenceInformation
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Riskv1addressverificationsClientReferenceInformation Class Doc Comment
+ * RiskV1DecisionsPost201ResponseClientReferenceInformation Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1addressverificationsClientReferenceInformation implements ArrayAccess
+class RiskV1DecisionsPost201ResponseClientReferenceInformation implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1addressverifications_clientReferenceInformation';
+    protected static $swaggerModelName = 'riskV1DecisionsPost201Response_clientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,7 +55,8 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'comments' => 'string'
+        'comments' => 'string',
+        'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
       */
     protected static $swaggerFormats = [
         'code' => null,
-        'comments' => null
+        'comments' => null,
+        'partner' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'comments' => 'comments'
+        'comments' => 'comments',
+        'partner' => 'partner'
     ];
 
 
@@ -93,7 +96,8 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
      */
     protected static $setters = [
         'code' => 'setCode',
-        'comments' => 'setComments'
+        'comments' => 'setComments',
+        'partner' => 'setPartner'
     ];
 
 
@@ -103,7 +107,8 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
      */
     protected static $getters = [
         'code' => 'getCode',
-        'comments' => 'getComments'
+        'comments' => 'getComments',
+        'partner' => 'getPartner'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
 
     /**
@@ -150,9 +156,6 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if ($this->container['code'] === null) {
-            $invalid_properties[] = "'code' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -165,9 +168,6 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
     public function valid()
     {
 
-        if ($this->container['code'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -212,6 +212,27 @@ class Riskv1addressverificationsClientReferenceInformation implements ArrayAcces
     {
 
         $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

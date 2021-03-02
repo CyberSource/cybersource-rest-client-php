@@ -61,7 +61,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'status' => 'string',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'paymentInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponsePaymentInformation',
-        'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseOrderInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation',
         'errorInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseErrorInformation'
@@ -370,7 +370,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -379,7 +379,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

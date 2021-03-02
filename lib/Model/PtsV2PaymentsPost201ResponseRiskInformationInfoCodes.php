@@ -57,6 +57,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
         'velocity' => 'string[]',
         'address' => 'string[]',
         'customerList' => 'string[]',
+        'deviceBehavior' => 'string[]',
         'identityChange' => 'string[]',
         'internet' => 'string[]',
         'phone' => 'string[]',
@@ -72,6 +73,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
         'velocity' => null,
         'address' => null,
         'customerList' => null,
+        'deviceBehavior' => null,
         'identityChange' => null,
         'internet' => null,
         'phone' => null,
@@ -97,6 +99,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
         'velocity' => 'velocity',
         'address' => 'address',
         'customerList' => 'customerList',
+        'deviceBehavior' => 'deviceBehavior',
         'identityChange' => 'identityChange',
         'internet' => 'internet',
         'phone' => 'phone',
@@ -113,6 +116,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
         'velocity' => 'setVelocity',
         'address' => 'setAddress',
         'customerList' => 'setCustomerList',
+        'deviceBehavior' => 'setDeviceBehavior',
         'identityChange' => 'setIdentityChange',
         'internet' => 'setInternet',
         'phone' => 'setPhone',
@@ -129,6 +133,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
         'velocity' => 'getVelocity',
         'address' => 'getAddress',
         'customerList' => 'getCustomerList',
+        'deviceBehavior' => 'getDeviceBehavior',
         'identityChange' => 'getIdentityChange',
         'internet' => 'getInternet',
         'phone' => 'getPhone',
@@ -170,6 +175,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
         $this->container['velocity'] = isset($data['velocity']) ? $data['velocity'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['customerList'] = isset($data['customerList']) ? $data['customerList'] : null;
+        $this->container['deviceBehavior'] = isset($data['deviceBehavior']) ? $data['deviceBehavior'] : null;
         $this->container['identityChange'] = isset($data['identityChange']) ? $data['identityChange'] : null;
         $this->container['internet'] = isset($data['internet']) ? $data['internet'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
@@ -213,7 +219,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets velocity
-     * @param string[] $velocity List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.  Returned by Decision Manager service.
+     * @param string[] $velocity List of information codes triggered by the order. These information codes were generated when you created the order and product velocity rules and are returned so that you can associate them with the rules.
      * @return $this
      */
     public function setVelocity($velocity)
@@ -234,7 +240,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets address
-     * @param string[] $address Indicates a mismatch between the customer’s billing and shipping addresses.  Returned by scoring service.
+     * @param string[] $address Indicates a mismatch between the customer’s billing and shipping addresses.
      * @return $this
      */
     public function setAddress($address)
@@ -255,12 +261,33 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets customerList
-     * @param string[] $customerList Indicates that customer information is associated with transactions that are either on the negative or the positive list.  Returned by scoring service.
+     * @param string[] $customerList Indicates that customer information is associated with transactions that are either on the negative or the positive list.
      * @return $this
      */
     public function setCustomerList($customerList)
     {
         $this->container['customerList'] = $customerList;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceBehavior
+     * @return string[]
+     */
+    public function getDeviceBehavior()
+    {
+        return $this->container['deviceBehavior'];
+    }
+
+    /**
+     * Sets deviceBehavior
+     * @param string[] $deviceBehavior Indicates the device behavior information code(s) returned from device fingerprinting.
+     * @return $this
+     */
+    public function setDeviceBehavior($deviceBehavior)
+    {
+        $this->container['deviceBehavior'] = $deviceBehavior;
 
         return $this;
     }
@@ -276,7 +303,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets identityChange
-     * @param string[] $identityChange Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared. This field can contain one or more information codes, separated by carets (^).  Returned by scoring service.
+     * @param string[] $identityChange Indicates excessive identity changes. The threshold is variable depending on the identity elements being compared.
      * @return $this
      */
     public function setIdentityChange($identityChange)
@@ -297,7 +324,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets internet
-     * @param string[] $internet Indicates a problem with the customer’s email address, IP address, or billing address.  Returned by scoring service.
+     * @param string[] $internet Indicates a problem with the customer’s email address, IP address, or billing address.
      * @return $this
      */
     public function setInternet($internet)
@@ -318,7 +345,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets phone
-     * @param string[] $phone Indicates a problem with the customer’s phone number.  Returned by scoring service.
+     * @param string[] $phone Indicates a problem with the customer’s phone number.
      * @return $this
      */
     public function setPhone($phone)
@@ -339,7 +366,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets suspicious
-     * @param string[] $suspicious Indicates that the customer provided potentially suspicious information.  Returned by scoring service.
+     * @param string[] $suspicious Indicates that the customer provided potentially suspicious information.
      * @return $this
      */
     public function setSuspicious($suspicious)
@@ -360,7 +387,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets globalVelocity
-     * @param string[] $globalVelocity Indicates that the customer has a high purchase frequency.  Returned by scoring service.
+     * @param string[] $globalVelocity Indicates that the customer has a high purchase frequency.
      * @return $this
      */
     public function setGlobalVelocity($globalVelocity)

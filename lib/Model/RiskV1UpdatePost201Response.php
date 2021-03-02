@@ -55,7 +55,7 @@ class RiskV1UpdatePost201Response implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'links' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks',
-        'clientReferenceInformaton' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
+        'clientReferenceInformaton' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation',
         'id' => 'string',
         'status' => 'string',
         'submitTimeUtc' => 'string'
@@ -207,7 +207,7 @@ class RiskV1UpdatePost201Response implements ArrayAccess
 
     /**
      * Gets clientReferenceInformaton
-     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation
      */
     public function getClientReferenceInformaton()
     {
@@ -216,7 +216,7 @@ class RiskV1UpdatePost201Response implements ArrayAccess
 
     /**
      * Sets clientReferenceInformaton
-     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation $clientReferenceInformaton
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation $clientReferenceInformaton
      * @return $this
      */
     public function setClientReferenceInformaton($clientReferenceInformaton)

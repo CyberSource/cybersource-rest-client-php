@@ -99,6 +99,13 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodesTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "deviceBehavior"
+     */
+    public function testPropertyDeviceBehavior()
+    {
+    }
+
+    /**
      * Test attribute "identityChange"
      */
     public function testPropertyIdentityChange()

@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1authenticationsetupsClientReferenceInformationTest
+ * RiskV1DecisionsPost201ResponseClientReferenceInformationTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * Riskv1authenticationsetupsClientReferenceInformationTest Class Doc Comment
+ * RiskV1DecisionsPost201ResponseClientReferenceInformationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Riskv1authenticationsetupsClientReferenceInformation
+// * @description RiskV1DecisionsPost201ResponseClientReferenceInformation
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1authenticationsetupsClientReferenceInformationTest extends \PHPUnit_Framework_TestCase
+class RiskV1DecisionsPost201ResponseClientReferenceInformationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class Riskv1authenticationsetupsClientReferenceInformationTest extends \PHPUnit_
     }
 
     /**
-     * Test "Riskv1authenticationsetupsClientReferenceInformation"
+     * Test "RiskV1DecisionsPost201ResponseClientReferenceInformation"
      */
-    public function testRiskv1authenticationsetupsClientReferenceInformation()
+    public function testRiskV1DecisionsPost201ResponseClientReferenceInformation()
     {
     }
 
@@ -81,6 +81,20 @@ class Riskv1authenticationsetupsClientReferenceInformationTest extends \PHPUnit_
      * Test attribute "code"
      */
     public function testPropertyCode()
+    {
+    }
+
+    /**
+     * Test attribute "comments"
+     */
+    public function testPropertyComments()
+    {
+    }
+
+    /**
+     * Test attribute "partner"
+     */
+    public function testPropertyPartner()
     {
     }
 }

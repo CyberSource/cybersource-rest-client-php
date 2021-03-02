@@ -60,7 +60,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'submitTimeLocal' => 'string',
         'status' => 'string',
         'message' => 'string',
-        'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation',
         'exportComplianceInformation' => '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation',
         'errorInformation' => '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'
     ];
@@ -337,7 +337,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation
+     * @return \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -346,7 +346,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

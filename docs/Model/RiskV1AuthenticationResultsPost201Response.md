@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **submitTimeLocal** | **string** | Time that the transaction was submitted in local time. | [optional] 
 **status** | **string** | The status for payerAuthentication 201 enroll and validate calls. Possible values are: - &#x60;AUTHENTICATION_SUCCESSFUL&#x60; - &#x60;PENDING_AUTHENTICATION&#x60; - &#x60;INVALID_REQUEST&#x60; - &#x60;AUTHENTICATION_FAILED&#x60; | [optional] 
 **message** | **string** | The message describing the reason of the status. Value is: - The cardholder is enrolled in Payer Authentication. Please authenticate the cardholder before continuing with the transaction. | [optional] 
-**clientReferenceInformation** | [**\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation**](PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation**](RiskV1DecisionsPost201ResponseClientReferenceInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**\CyberSource\Model\RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation**](RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformation.md) |  | [optional] 
 **errorInformation** | [**\CyberSource\Model\RiskV1AuthenticationsPost201ResponseErrorInformation**](RiskV1AuthenticationsPost201ResponseErrorInformation.md) |  | [optional] 
 

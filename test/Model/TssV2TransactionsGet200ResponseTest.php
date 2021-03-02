@@ -176,6 +176,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "healthCareInformation"
+     */
+    public function testPropertyHealthCareInformation()
+    {
+    }
+
+    /**
      * Test attribute "merchantDefinedInformation"
      */
     public function testPropertyMerchantDefinedInformation()
