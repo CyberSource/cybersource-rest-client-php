@@ -55,7 +55,8 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'comments' => 'string'
+        'comments' => 'string',
+        'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => null,
-        'comments' => null
+        'comments' => null,
+        'partner' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'comments' => 'comments'
+        'comments' => 'comments',
+        'partner' => 'partner'
     ];
 
 
@@ -93,7 +96,8 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-        'comments' => 'setComments'
+        'comments' => 'setComments',
+        'partner' => 'setPartner'
     ];
 
 
@@ -103,7 +107,8 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-        'comments' => 'getComments'
+        'comments' => 'getComments',
+        'partner' => 'getPartner'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
 
     /**
@@ -150,6 +156,9 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['code'] === null) {
+            $invalid_properties[] = "'code' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,6 +171,9 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['code'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -206,6 +218,27 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
     {
 
         $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

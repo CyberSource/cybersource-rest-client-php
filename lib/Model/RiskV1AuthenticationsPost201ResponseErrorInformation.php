@@ -183,7 +183,7 @@ class RiskV1AuthenticationsPost201ResponseErrorInformation implements ArrayAcces
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status. Possible values are: - `INVALID_MERCHANT_CONFIGURATION` - `PENDING_AUTHENTICATION` - `AUTHENTICATION_FAILED`
+     * @param string $reason The reason of the status. Possible values are: - `INVALID_MERCHANT_CONFIGURATION` - `CONSUMER_AUTHENTICATION_REQUIRED` - `CONSUMER_AUTHENTICATION_FAILED` - `AUTHENTICATION_FAILED`
      * @return $this
      */
     public function setReason($reason)

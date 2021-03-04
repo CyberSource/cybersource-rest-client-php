@@ -56,7 +56,7 @@ class Kmsv2keyssymClientReferenceInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'comments' => 'string',
-        'partner' => '\CyberSource\Model\Vasv2taxClientReferenceInformationPartner'
+        'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner'
     ];
 
     /**
@@ -217,7 +217,7 @@ class Kmsv2keyssymClientReferenceInformation implements ArrayAccess
 
     /**
      * Gets partner
-     * @return \CyberSource\Model\Vasv2taxClientReferenceInformationPartner
+     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner
      */
     public function getPartner()
     {
@@ -226,7 +226,7 @@ class Kmsv2keyssymClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets partner
-     * @param \CyberSource\Model\Vasv2taxClientReferenceInformationPartner $partner
+     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner $partner
      * @return $this
      */
     public function setPartner($partner)

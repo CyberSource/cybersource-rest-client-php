@@ -54,7 +54,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationsPaymentInformation',
         'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
@@ -240,7 +240,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation
+     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -249,7 +249,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

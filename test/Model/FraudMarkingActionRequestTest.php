@@ -83,4 +83,11 @@ class FraudMarkingActionRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyRiskInformation()
     {
     }
+
+    /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
 }

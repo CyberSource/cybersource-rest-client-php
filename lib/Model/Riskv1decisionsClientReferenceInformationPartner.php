@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1authenticationsetupsClientReferenceInformation
+ * Riskv1decisionsClientReferenceInformationPartner
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Riskv1authenticationsetupsClientReferenceInformation Class Doc Comment
+ * Riskv1decisionsClientReferenceInformationPartner Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAccess
+class Riskv1decisionsClientReferenceInformationPartner implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,15 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1authenticationsetups_clientReferenceInformation';
+    protected static $swaggerModelName = 'riskv1decisions_clientReferenceInformation_partner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string'
+        'developerId' => 'string',
+        'solutionId' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null
+        'developerId' => null,
+        'solutionId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code'
+        'developerId' => 'developerId',
+        'solutionId' => 'solutionId'
     ];
 
 
@@ -89,7 +92,8 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode'
+        'developerId' => 'setDeveloperId',
+        'solutionId' => 'setSolutionId'
     ];
 
 
@@ -98,7 +102,8 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode'
+        'developerId' => 'getDeveloperId',
+        'solutionId' => 'getSolutionId'
     ];
 
     public static function attributeMap()
@@ -132,7 +137,8 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['developerId'] = isset($data['developerId']) ? $data['developerId'] : null;
+        $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;
     }
 
     /**
@@ -144,9 +150,6 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
     {
         $invalid_properties = [];
 
-        if ($this->container['code'] === null) {
-            $invalid_properties[] = "'code' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -159,31 +162,50 @@ class Riskv1authenticationsetupsClientReferenceInformation implements ArrayAcces
     public function valid()
     {
 
-        if ($this->container['code'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets code
+     * Gets developerId
      * @return string
      */
-    public function getCode()
+    public function getDeveloperId()
     {
-        return $this->container['code'];
+        return $this->container['developerId'];
     }
 
     /**
-     * Sets code
-     * @param string $code Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
+     * Sets developerId
+     * @param string $developerId Identifier for the developer that helped integrate a partner solution to CyberSource.  Send this value in all requests that are sent through the partner solutions built by that developer. CyberSource assigns the ID to the developer.  **Note** When you see a developer ID of 999 in reports, the developer ID that was submitted is incorrect.
      * @return $this
      */
-    public function setCode($code)
+    public function setDeveloperId($developerId)
     {
 
-        $this->container['code'] = $code;
+        $this->container['developerId'] = $developerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets solutionId
+     * @return string
+     */
+    public function getSolutionId()
+    {
+        return $this->container['solutionId'];
+    }
+
+    /**
+     * Sets solutionId
+     * @param string $solutionId Identifier for the partner that is integrated to CyberSource.  Send this value in all requests that are sent through the partner solution. CyberSource assigns the ID to the partner.  **Note** When you see a solutionId of 999 in reports, the solutionId that was submitted is incorrect.
+     * @return $this
+     */
+    public function setSolutionId($solutionId)
+    {
+
+        $this->container['solutionId'] = $solutionId;
 
         return $this;
     }

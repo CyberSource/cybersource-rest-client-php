@@ -14,11 +14,11 @@ The CyberSource PHP client provides convenient access to the [CyberSource REST A
 * [CyberSource API Keys](https://prod.developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration/createCertSharedKey.html)
  
  ## Dependencies
-* PHP-JWT              			      : JWT token Generation
-* CURL          				            : Http communication with the payment gateway
-* PHP_APCU						                : Caching 
-* phpunit-5.7.25               	: unit testing
-* phpunit-5.7.25 code coverage 	: Sonar coverage
+* PHP-JWT                          : JWT token Generation
+* CURL                             : Http communication with the payment gateway
+* PHP_APCU                         : Caching 
+* phpunit-5.7.25                   : unit testing
+* phpunit-5.7.25 code coverage     : Sonar coverage
 
 ## Installation
 ### Composer
@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.19"
+  "cybersource/rest-client-php": "0.0.20"
   }
 }
 ```
@@ -54,9 +54,17 @@ Additionally, you can find details and examples of how our API is structured in 
 
 The API Reference Guide provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.
 
+## MetaKey Support
 
+A Meta Key is a single key that can be used by one, some, or all merchants (or accounts, if created by a Portfolio user) in the portfolio.
 
-## To set your API credentials for an API request,Configure the following information in ExternalConfiguration.php file:
+The Portfolio or Parent Account owns the key and is considered the transaction submitter when a Meta Key is used, while the merchant owns the transaction.
+
+MIDs continue to be able to create keys for themselves, even if a Meta Key is generated.
+
+Further information on MetaKey can be found in [New Business Center User Guide](https://developer.cybersource.com/library/documentation/dev_guides/Business_Center/New_Business_Center_User_Guide.pdf).
+
+## To set your API credentials for an API request, configure the following information in ExternalConfiguration.php file:
 
   Create a file in your application `ExternalConfiguration.php` inside a `Resources` folder and configure the following information as per requirement similar to [**this one**](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/ExternalConfiguration.php).
   
@@ -64,81 +72,109 @@ The API Reference Guide provides examples of what information is needed for a pa
   
   Configure the following information in `ExternalConfiguration.php` file
   
-*	Authentication Type:  Merchant should enter “HTTP_SIGNATURE” for HTTP authentication mechanism.
-*	Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
-*	MerchantSecretKey: Merchant will provide the secret Key value, which has taken from EBC portal.
-*	MerchantKeyId:  Merchant will provide the Key ID value, which has taken from EBC portal.
-*	Enable Log: To start the log entry provide _true_ else enter _false_.
+*    Authentication Type:  Merchant should enter "HTTP_SIGNATURE" for HTTP authentication mechanism.
+*    Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
+*    MerchantSecretKey: Merchant will provide the secret Key value, which has taken from EBC portal.
+*    MerchantKeyId:  Merchant will provide the Key ID value, which has taken from EBC portal.
+*    Enable Log: To start the log entry provide _true_ else enter _false_.
 *   LogDirectory :Merchant will provide directory path where logs will be created.
 *   LogMaximumSize :Merchant will provide size value for log file.
 *   LogFilename  :Merchant will provide log file name.
 
-
 ```
-   $this->authType = "HTTP_SIGNATURE";
-   $this->runEnv = "cyberSource.environment.SANDBOX";
-   $this->merchantID = <merchantID>;
-   $this->apiKeyID = <merchantKeyId>;
-   $this->screteKey = <merchantSecretKey>;
-   
-   $this->enableLog = true;
-   $this->logSize = <logMaximumSize>;
-   $this->logFile = <logDirectory>;
-   $this->logFilename = <logFilename>;
-   
-   $this->proxyUrl = <proxyHost>;
-   $this->proxyHost = <proxyPort>;
+   $this->authType          = "HTTP_SIGNATURE";
+   $this->runEnv            = "cyberSource.environment.SANDBOX";
+   $this->merchantID        = <merchantID>;
+   $this->apiKeyID          = <merchantKeyId>;
+   $this->secretKey         = <merchantSecretKey>;
+
+   $this->enableLog         = true;
+   $this->logSize           = <logMaximumSize>;
+   $this->logFile           = <logDirectory>;
+   $this->logFilename       = <logFilename>;
+
+   $this->proxyUrl          = <proxyHost>;
+   $this->proxyHost         = <proxyPort>;
+
+   $this->useMetaKey        = false;
 
 ```
   #### For Jwt Signature Authentication
 
   Configure the following information in the `ExternalConfiguration.php` file
   
-*	Authentication Type:  Merchant should enter “JWT” for JWT authentication mechanism.
-*	Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
-*	keyAlias: Alias of the Merchant ID, to be used while generating the JWT token.
-*	keyPassword: Alias of the Merchant password, to be used while generating the JWT token.
-*	keyFileName: Filename of the key generated from the EBC portal, without the extension part .P12
+*    Authentication Type:  Merchant should enter "JWT" for JWT authentication mechanism.
+*    Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
+*    keyAlias: Alias of the Merchant ID, to be used while generating the JWT token.
+*    keyPassword: Alias of the Merchant password, to be used while generating the JWT token.
+*    keyFileName: Filename of the key generated from the EBC portal, without the extension part .P12
 *   keysDirectory: path of the directory, where key is placed.
-*	Enable Log: To start the log entry provide _true_ else enter _false_.
+*    Enable Log: To start the log entry provide _true_ else enter _false_.
 *   LogDirectory :Merchant will provide directory path where logs will be created.
 *   LogMaximumSize :Merchant will provide size value for log file.
 *   LogFilename  :Merchant will provide log file name.
 
 ```
-   $this->authType = "JWT";
-   $this->runEnv = "cyberSource.environment.SANDBOX";
-   $this->merchantID = <merchantID>;
-   
-   $this->keyAlias = <keyAlias>;
-   $this->keyPass = <keyPassword>;
-   $this->keyFilename = <keyFileName>";
-   $this->keyDirectory = <keysDirectory>;
-   
-   $this->enableLog = true;
-   $this->logSize = <logMaximumSize>;
-   $this->logFile = <logDirectory>;
-   $this->logFilename = <logFilename>;
-   
-   $this->proxyUrl = <proxyHost>;
-   $this->proxyHost = <proxyPort>;
+   $this->authType            = "JWT";
+   $this->runEnv              = "cyberSource.environment.SANDBOX";
+   $this->merchantID          = <merchantID>;
+
+   $this->keyAlias            = <keyAlias>;
+   $this->keyPass             = <keyPassword>;
+   $this->keyFilename         = <keyFileName>";
+   $this->keyDirectory        = <keysDirectory>;
+
+   $this->enableLog           = true;
+   $this->logSize             = <logMaximumSize>;
+   $this->logFile             = <logDirectory>;
+   $this->logFilename         = <logFilename>;
+
+   $this->proxyUrl            = <proxyHost>;
+   $this->proxyHost           = <proxyPort>;
+
+   $this->useMetaKey          = false;
+```
+
+  #### For using MetaKey
+
+  MetaKey can be used for HTTP Signature and JWT authentication
+
+  For HTTP Signature Authentication - 
+
+```
+   $this->authType            = "HTTP_SIGNATURE";
+   $this->merchantID          = <child merchantID>;
+   $this->apiKeyID            = <MetaKey merchantKeyId>;
+   $this->secretKey           = <Metakey merchantsecretKey>;
+   $this->useMetaKey          = true;
+   $this->portfolioID         = <Portfolio ID>;
+```
+
+  For JWT Authentication - 
+
+```
+   $this->authenticationType  = "JWT";
+   $this->merchantID          = <child merchantID>;
+   $this->keyAlias            = <keyAlias>;
+   $this->keyPass             = <keyPassword>;
+   $this->keyFileName         = <keyFileName>;
+   $this->keyDirectory        = <keysDirectory>;
+   $this->useMetaKey          = true;
 ```
 
 ### Switching between the sandbox environment and the production environment
-CyberSource maintains a complete sandbox environment for testing and development purposes. This sandbox environment is an exact 
-duplicate of our production environment with the transaction authorization and settlement process simulated. By default, this SDK is 
-configured to communicate with the sandbox environment. To switch to the production environment, set the appropriate property 
-in Resources\ExternalConfiguration.php. For example:
+CyberSource maintains a complete sandbox environment for testing and development purposes. This sandbox environment is an exact duplicate of our production environment with the transaction authorization and settlement process simulated. By default, this SDK is configured to communicate with the sandbox environment. To switch to the production environment, set the appropriate property in Resources\ExternalConfiguration.php.
+
+For example:
 
 ```php
-// For TESTING use
-//  $this->runEnv = "cyberSource.environment.SANDBOX";
-// For PRODUCTION use
-  $this->runEnv = "cyberSource.environment.PRODUCTION";
+   // For TESTING use
+   // $this->runEnv = "cyberSource.environment.SANDBOX";
+   // For PRODUCTION use
+   $this->runEnv = "cyberSource.environment.PRODUCTION";
 ```
 
-The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request
-using this SDK.
+The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.
 
 [packagist_badge]: https://img.shields.io/packagist/v/cybersource/rest-client-php.svg
 [packagist]: https://packagist.org/packages/cybersource/rest-client-php

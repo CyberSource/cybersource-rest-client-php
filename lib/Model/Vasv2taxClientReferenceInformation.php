@@ -55,7 +55,7 @@ class Vasv2taxClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'partner' => '\CyberSource\Model\Vasv2taxClientReferenceInformationPartner',
+        'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner',
         'comments' => 'string'
     ];
 
@@ -196,7 +196,7 @@ class Vasv2taxClientReferenceInformation implements ArrayAccess
 
     /**
      * Gets partner
-     * @return \CyberSource\Model\Vasv2taxClientReferenceInformationPartner
+     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner
      */
     public function getPartner()
     {
@@ -205,7 +205,7 @@ class Vasv2taxClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets partner
-     * @param \CyberSource\Model\Vasv2taxClientReferenceInformationPartner $partner
+     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner $partner
      * @return $this
      */
     public function setPartner($partner)

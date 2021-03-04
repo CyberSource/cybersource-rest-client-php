@@ -68,6 +68,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'errorInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseErrorInformation',
         'installmentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseInstallmentInformation',
         'fraudMarkingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseFraudMarkingInformation',
+        'healthCareInformation' => '\CyberSource\Model\Ptsv2paymentsHealthCareInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseMerchantInformation',
         'orderInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformation',
@@ -99,6 +100,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'errorInformation' => null,
         'installmentInformation' => null,
         'fraudMarkingInformation' => null,
+        'healthCareInformation' => null,
         'merchantDefinedInformation' => null,
         'merchantInformation' => null,
         'orderInformation' => null,
@@ -140,6 +142,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'errorInformation' => 'errorInformation',
         'installmentInformation' => 'installmentInformation',
         'fraudMarkingInformation' => 'fraudMarkingInformation',
+        'healthCareInformation' => 'healthCareInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
         'merchantInformation' => 'merchantInformation',
         'orderInformation' => 'orderInformation',
@@ -172,6 +175,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'errorInformation' => 'setErrorInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'fraudMarkingInformation' => 'setFraudMarkingInformation',
+        'healthCareInformation' => 'setHealthCareInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
         'merchantInformation' => 'setMerchantInformation',
         'orderInformation' => 'setOrderInformation',
@@ -204,6 +208,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'errorInformation' => 'getErrorInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'fraudMarkingInformation' => 'getFraudMarkingInformation',
+        'healthCareInformation' => 'getHealthCareInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
         'merchantInformation' => 'getMerchantInformation',
         'orderInformation' => 'getOrderInformation',
@@ -261,6 +266,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['fraudMarkingInformation'] = isset($data['fraudMarkingInformation']) ? $data['fraudMarkingInformation'] : null;
+        $this->container['healthCareInformation'] = isset($data['healthCareInformation']) ? $data['healthCareInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
@@ -591,6 +597,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     public function setFraudMarkingInformation($fraudMarkingInformation)
     {
         $this->container['fraudMarkingInformation'] = $fraudMarkingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets healthCareInformation
+     * @return \CyberSource\Model\Ptsv2paymentsHealthCareInformation
+     */
+    public function getHealthCareInformation()
+    {
+        return $this->container['healthCareInformation'];
+    }
+
+    /**
+     * Sets healthCareInformation
+     * @param \CyberSource\Model\Ptsv2paymentsHealthCareInformation $healthCareInformation
+     * @return $this
+     */
+    public function setHealthCareInformation($healthCareInformation)
+    {
+        $this->container['healthCareInformation'] = $healthCareInformation;
 
         return $this;
     }

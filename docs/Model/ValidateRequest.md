@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation**](Riskv1authenticationsetupsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\Riskv1decisionsClientReferenceInformation**](Riskv1decisionsClientReferenceInformation.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation**](Riskv1authenticationsetupsProcessingInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Riskv1authenticationresultsOrderInformation**](Riskv1authenticationresultsOrderInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\Riskv1authenticationresultsPaymentInformation**](Riskv1authenticationresultsPaymentInformation.md) |  | [optional] 
