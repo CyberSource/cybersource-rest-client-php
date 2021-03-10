@@ -1,0 +1,3 @@
+[submodule "cybersource-rest-samples-php"]
+	path = cybersource-rest-samples-php
+	url = https://github.com/CyberSource/cybersource-rest-samples-php
