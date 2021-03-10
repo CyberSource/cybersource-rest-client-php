@@ -1,6 +1,6 @@
 # PHP Client SDK for CyberSource REST APIs
 
-[![Build Status](https://travis-ci.com/CyberSource/cybersource-rest-samples-php.svg?branch=travis-trial)](https://travis-ci.org/CyberSource/cybersource-rest-samples-php)
+[![Build Status](https://travis-ci.com/CyberSource/cybersource-rest-client-php.svg?branch=travis-trial)](https://travis-ci.com/CyberSource/cybersource-rest-client-php)
 
 The CyberSource PHP client provides convenient access to the [CyberSource REST API](https://developer.cybersource.com/api/reference/api-reference.html) from your PHP application.
 
