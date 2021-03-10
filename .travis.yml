@@ -20,7 +20,7 @@ before_script:
     - composer update --prefer-dist
     - cd ..
     - yes | cp -Rf vendor cybersource-rest-samples-php/
-    - rm -Rf cybersource-rest-samples-php/vendor/cybersource/rest-client-php
+    - rm -Rf cybersource-rest-samples-php/vendor/cybersource/rest-client-php/lib
     - cp -R lib cybersource-rest-samples-php/vendor/cybersource/rest-client-php/
     - ls cybersource-rest-samples-php/vendor/cybersource/rest-client-php/
 
