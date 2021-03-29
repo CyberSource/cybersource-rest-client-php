@@ -22,6 +22,7 @@ use \{{invokerPackage}}\ApiClient;
 use \{{invokerPackage}}\ApiException;
 use \{{invokerPackage}}\Configuration;
 use \{{invokerPackage}}\ObjectSerializer;
+use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
 
 /**
  * {{classname}} Class Doc Comment
@@ -33,6 +34,8 @@ use \{{invokerPackage}}\ObjectSerializer;
  */
 {{#operations}}class {{classname}}
 {
+    private $logger = null;
+    
     /**
      * API Client
      *
@@ -52,6 +55,8 @@ use \{{invokerPackage}}\ObjectSerializer;
         }
 
         $this->apiClient = $apiClient;
+
+        $this->logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
     }
 
     /**
@@ -97,7 +102,10 @@ use \{{invokerPackage}}\ObjectSerializer;
      */
     public function {{operationId}}({{#allParams}}${{paramName}}{{^required}} = {{#defaultValue}}'{{{.}}}'{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
     {
+        $this->logger->info('CALL TO METHOD {{operationId}} STARTED');
         list($response, $statusCode, $httpHeader) = $this->{{operationId}}WithHttpInfo({{#allParams}}${{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
+        $this->logger->info('CALL TO METHOD {{operationId}} ENDED');
+        $this->logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -124,43 +132,51 @@ use \{{invokerPackage}}\ObjectSerializer;
         {{#required}}
         // verify the required parameter '{{paramName}}' is set
         if (${{paramName}} === null) {
+            $this->logger->error("InvalidArgumentException : Missing the required parameter ${{paramName}} when calling {{operationId}}");
             throw new \InvalidArgumentException('Missing the required parameter ${{paramName}} when calling {{operationId}}');
         }
         {{/required}}
         {{#hasValidation}}
         {{#maxLength}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}(strlen(${{paramName}}) > {{maxLength}})) {
-            throw new \InvalidArgumentException('invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.');
+            $this->logger->error("InvalidArgumentException : Invalid length for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.");
+            throw new \InvalidArgumentException('Invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.');
         }
         {{/maxLength}}
         {{#minLength}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}(strlen(${{paramName}}) < {{minLength}})) {
-            throw new \InvalidArgumentException('invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.');
+            $this->logger->error("InvalidArgumentException : Invalid length for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.");
+            throw new \InvalidArgumentException('Invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.');
         }
         {{/minLength}}
         {{#maximum}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}(${{paramName}} >{{#exclusiveMaximum}}={{/exclusiveMaximum}} {{maximum}})) {
-            throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.');
+            $this->logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.");
+            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.');
         }
         {{/maximum}}
         {{#minimum}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}(${{paramName}} <{{#exclusiveMinimum}}={{/exclusiveMinimum}} {{minimum}})) {
-            throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than {{^exclusiveMinimum}}or equal to {{/exclusiveMinimum}}{{minimum}}.');
+            $this->logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be bigger than {{^exclusiveMinimum}}or equal to {{/exclusiveMinimum}}{{minimum}}.");
+            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than {{^exclusiveMinimum}}or equal to {{/exclusiveMinimum}}{{minimum}}.');
         }
         {{/minimum}}
         {{#pattern}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}!preg_match("{{{pattern}}}", ${{paramName}})) {
-            throw new \InvalidArgumentException("invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");
+            $this->logger->error("InvalidArgumentException : Invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");
+            throw new \InvalidArgumentException('Invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.');
         }
         {{/pattern}}
         {{#maxItems}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}(count(${{paramName}}) > {{maxItems}})) {
-            throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.');
+            $this->logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.");
+            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.');
         }
         {{/maxItems}}
         {{#minItems}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}(count(${{paramName}}) < {{minItems}})) {
-            throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.');
+            $this->logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.");
+            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.');
         }
         {{/minItems}}
 
@@ -267,6 +283,28 @@ use \{{invokerPackage}}\ObjectSerializer;
         }
         {{/isOAuth}}
         {{/authMethods}}
+        
+        // Logging
+        $this->logger->debug("Resource : {{httpMethod}} $resourcePath");
+        {{#queryParams}}
+        $this->logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        {{/queryParams}}
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            $this->logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+        $this->logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($headerParams));
+        {{#returnType}}
+        $this->logger->debug("Return Type : {{returnType}}");
+        {{/returnType}}
+        {{^returnType}}
+        $this->logger->debug("Return Type : null");
+        {{/returnType}}
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -283,6 +321,8 @@ use \{{invokerPackage}}\ObjectSerializer;
                 {{/returnType}}
                 '{{{path}}}'
             );
+            
+            $this->logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             {{#returnType}}
             return [$this->apiClient->getSerializer()->deserialize($response, '{{returnType}}', $httpHeader), $statusCode, $httpHeader];
@@ -302,6 +342,7 @@ use \{{invokerPackage}}\ObjectSerializer;
             {{/responses}}
             }
 
+            $this->logger->error("ApiException : $e");
             throw $e;
         }
     }

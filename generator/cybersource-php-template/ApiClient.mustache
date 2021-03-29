@@ -21,6 +21,7 @@ namespace {{invokerPackage}};
 use CyberSource\Authentication\Core\Authentication as Authentication;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\PayloadDigest\PayloadDigest as PayloadDigest;
+use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
 
 $stream_headers = array();
 
@@ -34,6 +35,8 @@ $stream_headers = array();
  */
 class ApiClient
 {
+    private $logger = null;
+    
     public static $PATCH = "PATCH";
     public static $POST = "POST";
     public static $GET = "GET";
@@ -96,6 +99,8 @@ class ApiClient
         $this->serializer = new ObjectSerializer();
 
         $this->clientId = $this->getClientId();
+
+        $this->logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
     }
 
     /**
@@ -189,6 +194,7 @@ class ApiClient
      */
     public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
     {
+        $this->logger->info("CALLING API \"$resourcePath\" STARTED");
         $headers = [];
         global $stream_headers;
 
@@ -293,6 +299,8 @@ class ApiClient
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method !== self::$GET) {
+            $this->logger->error("ApiException : Method . $method . is not recognized.");
+            $this->logger->close();
             throw new ApiException('Method ' . $method . ' is not recognized.');
         }
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -300,19 +308,28 @@ class ApiClient
         // Set user agent
         curl_setopt($curl, CURLOPT_USERAGENT, $this->config->getUserAgent());
 
+        if ($this->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+            $printPostData = \CyberSource\Utilities\Helpers\DataMasker::maskData($postData);
+        } else {
+            $printPostData = $postData;
+        }
+        $this->logger->debug("HTTP Request Body:\n" . print_r($printPostData, true));
+        
         // debugging for curl
-        if ($this->config->getDebug()) {
-            //$postData = $this->dataMasking($postData);
-            error_log("[DEBUG] HTTP Request body  ~BEGIN~".PHP_EOL.print_r($postData, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
-
+        if (($this->merchantConfig->getLogConfiguration())->isLoggingEnabled()) {
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
-            curl_setopt($curl, CURLOPT_STDERR, fopen($this->config->getDebugFile(), 'a'));
+            $tempBlowup = explode(DIRECTORY_SEPARATOR, ($this->merchantConfig->getLogConfiguration())->getDebugLogFile());
+            $normalLogFilename = end($tempBlowup);
+            $filenameIndex = key($tempBlowup);
+            $tempBlowup[$filenameIndex] = "curlNetwork.log";
+            $curlLog = join(DIRECTORY_SEPARATOR, $tempBlowup);
+            curl_setopt($curl, CURLOPT_STDERR, fopen($curlLog, 'a'));
         } else {
             curl_setopt($curl, CURLOPT_VERBOSE, 0);
         }
 
         // File download functionality
-		$fileHandle = Null;
+        $fileHandle = Null;
         if (isset($this->downloadFilePath) && trim($this->downloadFilePath) != '') {
             // obtain the HTTP response headers
             curl_setopt($curl, CURLOPT_HEADER, 0);
@@ -333,13 +350,14 @@ class ApiClient
             $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
             $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
             $http_body = substr($response, $http_header_size);
-            //$http_body = $this->dataMasking($http_body);
             $response_info = curl_getinfo($curl);
-    
-            // debug HTTP response body
-            if ($this->config->getDebug()) {
-                error_log("[DEBUG] HTTP Response body ~BEGIN~".PHP_EOL.print_r($http_body, true).PHP_EOL."~END~".PHP_EOL, 3, $this->config->getDebugFile());
+
+            if ($this->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($http_body);
+            } else {
+                $printHttpBody = $http_body;
             }
+            $this->logger->debug("HTTP Response Body:\n" . print_r($printHttpBody, true));
     
             // Handle the response
             if ($response_info['http_code'] === 0) {
@@ -353,12 +371,15 @@ class ApiClient
                         "This could happen if you are disconnected from the network.";
                 }
     
+                $this->logger->error("ApiException : " . print_r($error_message, true));
                 $exception = new ApiException($error_message, 0, null, null);
                 $exception->setResponseObject($response_info);
+                $this->logger->close();
                 throw $exception;
             } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
                 // return raw body if response is a file
                 if ($responseType === '\SplFileObject' || $responseType === 'string') {
+                    $this->logger->close();
                     return [$http_body, $response_info['http_code'], $http_header];
                 }
     
@@ -371,7 +392,9 @@ class ApiClient
                 if (json_last_error() > 0) { // if response is a string
                     $data = $http_body;
                 }
-    
+
+                $this->logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
+                $this->logger->close();
                 throw new ApiException(
                     "[".$response_info['http_code']."] Error connecting to the API ($url)",
                     $response_info['http_code'],
@@ -379,6 +402,7 @@ class ApiClient
                     $data
                 );
             }
+            $this->logger->close();
             return [$data, $response_info['http_code'], $http_header];
         } else {
             $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
@@ -405,14 +429,19 @@ class ApiClient
                         "This could happen if you are disconnected from the network.";
                 }
 
+                $this->logger->error("ApiException : " . print_r($error_message, true));
                 $exception = new ApiException($error_message, 0, null, null);
                 $exception->setResponseObject($response_info);
+                $this->logger->close();
                 throw $exception;
             } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
                 $stream_headers['http_code'] = $response_info['http_code'];
-                
+
+                $this->logger->close();
                 return [$http_body, $stream_headers['http_code'], $stream_headers];
             } else {
+                $this->logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
+                $this->logger->close();
                 throw new ApiException(
                     "[".$response_info['http_code']."] Error connecting to the API ($url)",
                     $response_info['http_code'],
@@ -426,7 +455,7 @@ class ApiClient
     function header_callback($curl, $header_line) { 
         global $stream_headers;
         
-		$stream_headers[] = $this->httpParseHeaders($header_line);
+        $stream_headers[] = $this->httpParseHeaders($header_line);
         return strlen($header_line);
     }
 
@@ -512,9 +541,9 @@ class ApiClient
     public function callAuthenticationHeader($method, $postData, $resourcePath)
     {
         $merchantConfig = $this->merchantConfig;
-        $authentication = new Authentication();
+        $authentication = new Authentication($merchantConfig->getLogConfiguration());
         $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig); 
-        if($merchantConfig->getAuthenticationType()==GlobalParameter::HTTP_SIGNATURE){
+        if($merchantConfig->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE){
             $host = "Host:".$merchantConfig->getHost();
             $vcMerchant = "v-c-merchant-id:".$merchantConfig->getMerchantID();
             $date = date("D, d M Y G:i:s ").GlobalParameter::GMT;
@@ -525,13 +554,14 @@ class ApiClient
                 'Date:'.$date
             ); 
 
-        } else if($merchantConfig->getAuthenticationType()==GlobalParameter::JWT){
+        } else if($merchantConfig->getAuthenticationType() == GlobalParameter::JWT){
             $headers = array(
                 'Authorization:'.$getToken
             );
         }
         else{
-            echo "Invalid Authentication type!";
+            $this->logger->error("InvalidArgumentException : Invalid Authentication Type : " . $merchantConfig->getAuthenticationType());
+            throw new \InvalidArgumentException("Invalid Authentication Type : " . $merchantConfig->getAuthenticationType());
         }
 
         array_push($headers, "v-c-client-id:" . $this->clientId);
@@ -542,50 +572,11 @@ class ApiClient
         // }
         
         if($method == GlobalParameter::POST || $method == GlobalParameter::PUT || $method== GlobalParameter::PATCH){
-             $digestCon = new PayloadDigest();
+            $digestCon = new PayloadDigest($merchantConfig->getLogConfiguration());
             $digest = $digestCon->generateDigest($postData);
-            $digestArry = array(GlobalParameter::POSTHTTPDIGEST.$digest);
-            $headers = array_merge($headers, $digestArry);
+            $digestArray = array(GlobalParameter::POSTHTTPDIGEST.$digest);
+            $headers = array_merge($headers, $digestArray);
         }
         return $headers;
-
-    }
-    
-    //set Fields to be mask
-    public function dataMasking($postData_json_raw)
-    {
-        $toBeMask = array("number"=>"XXXXX","expirationMonth"=>"XXXXX","expirationYear"=>"XXXX","email"=>"XXXXX","firstName"=>"XXXXX","lastName"=>"XXXXX","phoneNumber"=>"XXXXX","type"=>"XXXXX","securityCode"=>"XXXXX", "totalAmount" => "XXXXX", "token" => "XXXXX", "signature" => "XXXXX");
-        
-        $postData_json = json_decode($postData_json_raw, JSON_UNESCAPED_SLASHES);
-        if($postData_json == null){
-            return $postData_json_raw;
-        }else {
-            $postData_json = $this->dataMaskingIterate($postData_json, $toBeMask);
-            return json_encode($postData_json);
-
-        }
-        
-    }
-
-    //Data masking iteration
-    public function dataMaskingIterate($responceArr, $callback)
-    { 
-        if(!empty($responceArr)){
-            foreach ($responceArr as $k => $v) 
-            {
-                if(is_array($v)) {
-                    $responceArr[$k] = $this->dataMaskingIterate($v, $callback);
-                } 
-                else 
-                {
-                    if(array_key_exists($k, $callback)) 
-                    {
-                        $responceArr[$k]="XXXXXX";
-                    }
-                }
-            }
-        }
-        return $responceArr;
-
     }
 }
