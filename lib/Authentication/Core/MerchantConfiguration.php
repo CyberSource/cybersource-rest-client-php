@@ -641,7 +641,7 @@ class MerchantConfiguration
         $warning_message =""; $error_message ="";
         $config = new MerchantConfiguration();
         
-		if(is_bool($connectionDet->enableLog)){
+        if(is_bool($connectionDet->enableLog)){
             $config = $config->setDebug($connectionDet->enableLog);
             
         }
@@ -803,7 +803,7 @@ class MerchantConfiguration
         if(empty($this->getKeyPassword()) && $this->getAuthenticationType() == GlobalParameter::JWT){
             $warning_message .= GlobalParameter::KEY_PASSWORD_EMPTY . PHP_EOL;
         }
-		
+        
         if(empty($this->getKeysDirectory()) && $this->getAuthenticationType() == GlobalParameter::JWT){
             $warning_message .= GlobalParameter::KEY_DIRECTORY_EMPTY . PHP_EOL;
         }
