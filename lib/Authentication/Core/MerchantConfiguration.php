@@ -90,6 +90,62 @@ class MerchantConfiguration
     protected $portfolioID = '';
 
     /**
+     * flag for Enabling Client Cert
+     *
+     * @var bool
+     */
+    protected $enableClientCert = false;
+
+    /**
+     * Directory of Client Cert
+     *
+     * @var string
+     */
+    protected $clientCertDirectory = '';
+
+    /**
+     * Name of Client Cert
+     *
+     * @var string
+     */
+    protected $clientCertFile = '';
+
+    /**
+     * Password for Client Cert file
+     *
+     * @var string
+     */
+    protected $clientCertPassword = '';
+
+    /**
+     * Client Id for OAuth
+     *
+     * @var string
+     */
+    protected $clientId = '';
+
+    /**
+     * Client Secret for OAuth
+     *
+     * @var string
+     */
+    protected $clientSecret = '';
+
+    /**
+     * OAuth Access Token
+     *
+     * @var string
+     */
+    protected $accessToken = '';
+
+    /**
+     * OAuth Refresh Token
+     *
+     * @var string
+     */
+    protected $refreshToken = '';
+
+    /**
      * The host
      *
      * @var string
@@ -239,6 +295,22 @@ class MerchantConfiguration
         else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNPRODENVIRONMENT)) 
         {
            $this->host = GlobalParameter::IDCPRODUCTIONURL;
+        }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHSANDBOXENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::SANDBOXMAURL;
+        }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHPRODENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::PRODUCTIONMAURL;
+        }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNSITENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::SITURL;
+        }
+        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHSITENVIRONMENT)) 
+        {
+           $this->host = GlobalParameter::SITMAURL;
         }
         else
         {
@@ -514,6 +586,197 @@ class MerchantConfiguration
     public function getPortfolioID()
     {
         return $this->portfolioID;
+    }
+
+    /**
+     * Sets the flag for Client Cert
+     *
+     * @param bool flag for Client Cert
+     *
+     * @return $this
+     */
+    public function setEnableClientCert($enableClientCert)
+    {
+        if(!is_null($enableClientCert) && is_bool($enableClientCert))
+        {
+            $this->enableClientCert = $enableClientCert;
+        }
+        else
+        {
+            $this->enableClientCert = false;
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the flag for Client Cert
+     *
+     * @return bool flag for Client Cert
+     */
+    public function getEnableClientCert()
+    {
+        return $this->enableClientCert;
+    }
+
+    /**
+     * Sets the Directory for Client Cert
+     *
+     * @param string Directory for Client Cert
+     *
+     * @return $this
+     */
+    public function setClientCertDirectory($clientCertDirectory)
+    {
+        $this->clientCertDirectory = $clientCertDirectory;
+        return $this;
+    }
+
+    /**
+     * Gets the Directory for Client Cert
+     *
+     * @return string Directory for Client Cert
+     */
+    public function getClientCertDirectory()
+    {
+        return $this->clientCertDirectory;
+    }
+
+    /**
+     * Sets the name of Client Cert file
+     *
+     * @param string Name of Client Cert file
+     *
+     * @return $this
+     */
+    public function setClientCertFile($clientCertFile)
+    {
+        $this->clientCertFile = $clientCertFile;
+        return $this;
+    }
+
+    /**
+     * Gets the name of Client Cert file
+     *
+     * @return string Name of Client Cert file
+     */
+    public function getClientCertFile()
+    {
+        return $this->clientCertFile;
+    }
+
+    /**
+     * Sets the Password for Client Cert file
+     *
+     * @param string Password for Client Cert file
+     *
+     * @return $this
+     */
+    public function setClientCertPassword($clientCertPassword)
+    {
+        $this->clientCertPassword = $clientCertPassword;
+        return $this;
+    }
+
+    /**
+     * Gets the Password for Client Cert file
+     *
+     * @return string Password for Client Cert file
+     */
+    public function getClientCertPassword()
+    {
+        return $this->clientCertPassword;
+    }
+
+    /**
+     * Sets the ClientID for OAuth
+     *
+     * @param string ClientID for OAuth
+     *
+     * @return $this
+     */
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
+        return $this;
+    }
+
+    /**
+     * Gets the ClientID for OAuth
+     *
+     * @return string ClientID for OAuth
+     */
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
+     * Sets the Client Secret for OAuth
+     *
+     * @param string Client Secret for OAuth
+     *
+     * @return $this
+     */
+    public function setClientSecret($clientSecret)
+    {
+        $this->clientSecret = $clientSecret;
+        return $this;
+    }
+
+    /**
+     * Gets the Client Secret for OAuth
+     *
+     * @return string Client Secret for OAuth
+     */
+    public function getClientSecret()
+    {
+        return $this->clientSecret;
+    }
+
+    /**
+     * Sets the Access Token
+     *
+     * @param string OAuth Access Token
+     *
+     * @return $this
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
+    /**
+     * Gets the OAuth Access Token
+     *
+     * @return string OAuth Access Token
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
+
+    /**
+     * Sets the OAuth Refresh Token
+     *
+     * @param string OAuth Refresh Token
+     *
+     * @return $this
+     */
+    public function setRefreshToken($refreshToken)
+    {
+        $this->refreshToken = $refreshToken;
+        return $this;
+    }
+
+    /**
+     * Gets the OAuth Refresh Token
+     *
+     * @return string OAuth Refresh Token
+     */
+    public function getRefreshToken()
+    {
+        return $this->refreshToken;
     }
 
 
@@ -809,6 +1072,26 @@ class MerchantConfiguration
         else
             $warning_message .= GlobalParameter::PORTFOLIO_ID_EMPTY;
 
+        if(isset($connectionDet->enableClientCert))
+            $config = $config->setEnableClientCert($connectionDet->enableClientCert);
+        else
+            $warning_message .= GlobalParameter::ENABLE_CLIENT_CERT_EMPTY;
+
+        if(isset($connectionDet->clientCertDirectory))
+            $config = $config->setClientCertDirectory($connectionDet->clientCertDirectory);
+
+        if(isset($connectionDet->clientCertFile))
+            $config = $config->setClientCertFile($connectionDet->clientCertFile);
+
+        if(isset($connectionDet->clientCertPassword))
+            $config = $config->setClientCertPassword($connectionDet->clientCertPassword);
+
+        if(isset($connectionDet->clientId))
+            $config = $config->setClientId($connectionDet->clientId);
+
+        if(isset($connectionDet->clientSecret))
+            $config = $config->setClientSecret($connectionDet->clientSecret);
+
         if(isset($connectionDet->keysDirectory))
             $config = $config->setKeysDirectory($connectionDet->keysDirectory);
         else
@@ -917,6 +1200,46 @@ class MerchantConfiguration
         if(is_bool($config->getUseMetaKey()) && $config->getUseMetaKey() && empty($config->getPortfolioID()))
         {
             $error_message .= GlobalParameter::PORTFOLIO_ID_REQ;
+        }
+
+        if(is_bool($config->getEnableClientCert()) && $config->getEnableClientCert())
+        { 
+            if(empty($config->getClientCertDirectory()))
+            {
+                $error_message .= GlobalParameter::CLIENT_CERT_DIR_REQ;
+            }
+            if(empty($config->getClientCertFile()))
+            {
+                $error_message .= GlobalParameter::CLIENT_CERT_FILE_REQ;
+            }
+            if(empty($config->getClientCertPassword()))
+            {
+                $error_message .= GlobalParameter::CLIENT_CERT_PASSWORD_REQ;
+            }
+        }
+
+        if($config->getAuthenticationType() == GlobalParameter::MUTUAL_AUTH)
+        {
+            if(empty($config->getClientId()))
+            {
+                $error_message .= GlobalParameter::CLIENT_ID_REQ;
+            }
+            if(empty($config->getClientSecret()))
+            {
+                $error_message .= GlobalParameter::CLIENT_SECRET_REQ;
+            }
+        }
+
+        if($config->getAuthenticationType() == GlobalParameter::OAUTH)
+        {
+            if(empty($config->getAccessToken()))
+            {
+                $error_message .= GlobalParameter::ACCESS_TOKEN_REQ;
+            }
+            if(empty($config->getRefreshToken()))
+            {
+                $error_message .= GlobalParameter::REFRESH_TOKEN_REQ;
+            }
         }
 
         self::$logger->log($config, GlobalParameter::LOG_START_MSG);
