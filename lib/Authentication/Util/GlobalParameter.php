@@ -12,6 +12,8 @@ class GlobalParameter
 	const OPTIONS = "OPTIONS";	
 	const HTTP_SIGNATURE ="HTTP_SIGNATURE"; 
 	const JWT ="JWT";
+	const OAUTH = "OAUTH";
+	const MUTUAL_AUTH = "MUTUAL_AUTH";
 	const GMT ="GMT";
 	const HMACSHA256 = "HmacSHA256"; 
 	const DEFAULT_LOG_FILE = "Cybs.log";
@@ -22,8 +24,12 @@ class GlobalParameter
 	const POSTHTTPDIGEST = "Digest: SHA-256=";
 	const PRODUCTIONURL = "api.cybersource.com";
 	const SANDBOXURL = "apitest.cybersource.com";
+	const PRODUCTIONMAURL = "api-ma.cybersource.com";
+	const SANDBOXMAURL = "api-matest.cybersource.com";
 	const RUNENVIRONMENT = "cyberSource.environment.SANDBOX";
 	const RUNPRODENVIRONMENT = "cyberSource.environment.PRODUCTION";
+	const RUNMUTUALAUTHSANDBOXENVIRONMENT = "cyberSource.environment.mutualauth.SANDBOX";
+	const RUNMUTUALAUTHPRODENVIRONMENT = "cyberSource.environment.mutualauth.PRODUCTION";
 	const BOAPRODUCTIONURL = "api.merchant-services.bankofamerica.com";
 	const BOASANDBOXURL = "apitest.merchant-services.bankofamerica.com";
 	const BOARUNENVIRONMENT = "bankofamerica.environment.SANDBOX";
@@ -32,6 +38,10 @@ class GlobalParameter
 	const IDCSANDBOXURL = "apitest.cybersource.com";
 	const IDCRUNENVIRONMENT = "cybersource.in.environment.SANDBOX";
 	const IDCRUNPRODENVIRONMENT = "cybersource.in.environment.PRODUCTION";
+	const SITURL = "pnrstage.ic3.com:7448";
+	const SITMAURL = "pnrstage.ic3.com:8451";
+	const RUNSITENVIRONMENT = "cybesource.environment.SIT";
+	const RUNMUTUALAUTHSITENVIRONMENT = "cybesource.environment.mutualauth.SIT";
 	const KEY_DIR_PATH_DEFAULT = "Resources/";
 	const HTTPS_PREFIX = "https://"; 
 	const SIGNATURE = "Signature:";
@@ -60,6 +70,14 @@ class GlobalParameter
 	const PORTFOLIO_ID_REQ = "Portfolio ID is Mandatory\n";
 	const PORTFOLIO_ID_EMPTY = "Portfolio ID is Empty\n";
 	const USE_METAKEY_EMPTY = "UseMetaKey value is empty\n";
+	const ENABLE_CLIENT_CERT_EMPTY = "EnableClientCert value is empty\n";
+	const CLIENT_CERT_DIR_REQ = "ClientCert Directory is required\n";
+	const CLIENT_CERT_FILE_REQ = "ClientCert File is required\n";
+	const CLIENT_CERT_PASSWORD_REQ = "ClientCert Password is required\n";
+	const CLIENT_ID_REQ = "Client ID is required\n";
+	const CLIENT_SECRET_REQ = "Client Secret is required\n";
+	const ACCESS_TOKEN_REQ = "Access Token is required\n";
+	const REFRESH_TOKEN_REQ = "Refresh Token is required\n";
 	const INVALID_PROXY_URL = "Proxy URL is Invalid! Assigining default proxy url: ";
 	const INVALID_PROXY_PORT = "Proxy URL is Invalid! Assigining default proxy port: ";
 	const DEFAULT_PROXY_URL = "userproxy.visa.com";
