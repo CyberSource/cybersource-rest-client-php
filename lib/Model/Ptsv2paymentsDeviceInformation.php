@@ -58,6 +58,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'ipAddress' => 'string',
         'userAgent' => 'string',
         'fingerprintSessionId' => 'string',
+        'useRawFingerprintSessionId' => 'bool',
         'rawData' => '\CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]',
         'httpAcceptBrowserValue' => 'string',
         'httpAcceptContent' => 'string',
@@ -81,6 +82,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'ipAddress' => null,
         'userAgent' => null,
         'fingerprintSessionId' => null,
+        'useRawFingerprintSessionId' => null,
         'rawData' => null,
         'httpAcceptBrowserValue' => null,
         'httpAcceptContent' => null,
@@ -114,6 +116,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'ipAddress' => 'ipAddress',
         'userAgent' => 'userAgent',
         'fingerprintSessionId' => 'fingerprintSessionId',
+        'useRawFingerprintSessionId' => 'useRawFingerprintSessionId',
         'rawData' => 'rawData',
         'httpAcceptBrowserValue' => 'httpAcceptBrowserValue',
         'httpAcceptContent' => 'httpAcceptContent',
@@ -138,6 +141,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'ipAddress' => 'setIpAddress',
         'userAgent' => 'setUserAgent',
         'fingerprintSessionId' => 'setFingerprintSessionId',
+        'useRawFingerprintSessionId' => 'setUseRawFingerprintSessionId',
         'rawData' => 'setRawData',
         'httpAcceptBrowserValue' => 'setHttpAcceptBrowserValue',
         'httpAcceptContent' => 'setHttpAcceptContent',
@@ -162,6 +166,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'ipAddress' => 'getIpAddress',
         'userAgent' => 'getUserAgent',
         'fingerprintSessionId' => 'getFingerprintSessionId',
+        'useRawFingerprintSessionId' => 'getUseRawFingerprintSessionId',
         'rawData' => 'getRawData',
         'httpAcceptBrowserValue' => 'getHttpAcceptBrowserValue',
         'httpAcceptContent' => 'getHttpAcceptContent',
@@ -211,6 +216,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
         $this->container['userAgent'] = isset($data['userAgent']) ? $data['userAgent'] : null;
         $this->container['fingerprintSessionId'] = isset($data['fingerprintSessionId']) ? $data['fingerprintSessionId'] : null;
+        $this->container['useRawFingerprintSessionId'] = isset($data['useRawFingerprintSessionId']) ? $data['useRawFingerprintSessionId'] : null;
         $this->container['rawData'] = isset($data['rawData']) ? $data['rawData'] : null;
         $this->container['httpAcceptBrowserValue'] = isset($data['httpAcceptBrowserValue']) ? $data['httpAcceptBrowserValue'] : null;
         $this->container['httpAcceptContent'] = isset($data['httpAcceptContent']) ? $data['httpAcceptContent'] : null;
@@ -333,6 +339,27 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
     public function setFingerprintSessionId($fingerprintSessionId)
     {
         $this->container['fingerprintSessionId'] = $fingerprintSessionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets useRawFingerprintSessionId
+     * @return bool
+     */
+    public function getUseRawFingerprintSessionId()
+    {
+        return $this->container['useRawFingerprintSessionId'];
+    }
+
+    /**
+     * Sets useRawFingerprintSessionId
+     * @param bool $useRawFingerprintSessionId Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection.
+     * @return $this
+     */
+    public function setUseRawFingerprintSessionId($useRawFingerprintSessionId)
+    {
+        $this->container['useRawFingerprintSessionId'] = $useRawFingerprintSessionId;
 
         return $this;
     }
