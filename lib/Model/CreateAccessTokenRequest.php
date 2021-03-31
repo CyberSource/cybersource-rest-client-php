@@ -43,11 +43,11 @@ class CreateAccessTokenRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'refreshToken' => 'string',
-        'grantType' => 'string',
+        'refresh_token' => 'string',
+        'grant_type' => 'string',
         'code' => 'string',
-        'clientId' => 'string',
-        'clientSecret' => 'string'
+        'client_id' => 'string',
+        'client_secret' => 'string'
     ];
 
     /**
@@ -55,11 +55,11 @@ class CreateAccessTokenRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'refreshToken' => null,
-        'grantType' => null,
+        'refresh_token' => null,
+        'grant_type' => null,
         'code' => null,
-        'clientId' => null,
-        'clientSecret' => null
+        'client_id' => null,
+        'client_secret' => null
     ];
 
     public static function swaggerTypes()
@@ -77,11 +77,11 @@ class CreateAccessTokenRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'refreshToken' => 'refresh_token',
-        'grantType' => 'grant_type',
+        'refresh_token' => 'refresh_token',
+        'grant_type' => 'grant_type',
         'code' => 'code',
-        'clientId' => 'client_id',
-        'clientSecret' => 'client_secret'
+        'client_id' => 'client_id',
+        'client_secret' => 'client_secret'
     ];
 
 
@@ -90,11 +90,11 @@ class CreateAccessTokenRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'refreshToken' => 'setRefreshToken',
-        'grantType' => 'setGrantType',
+        'refresh_token' => 'setRefreshToken',
+        'grant_type' => 'setGrantType',
         'code' => 'setCode',
-        'clientId' => 'setClientId',
-        'clientSecret' => 'setClientSecret'
+        'client_id' => 'setClientId',
+        'client_secret' => 'setClientSecret'
     ];
 
 
@@ -103,11 +103,11 @@ class CreateAccessTokenRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'refreshToken' => 'getRefreshToken',
-        'grantType' => 'getGrantType',
+        'refresh_token' => 'getRefreshToken',
+        'grant_type' => 'getGrantType',
         'code' => 'getCode',
-        'clientId' => 'getClientId',
-        'clientSecret' => 'getClientSecret'
+        'client_id' => 'getClientId',
+        'client_secret' => 'getClientSecret'
     ];
 
     public static function attributeMap()
@@ -141,11 +141,11 @@ class CreateAccessTokenRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['refreshToken'] = isset($data['refreshToken']) ? $data['refreshToken'] : null;
-        $this->container['grantType'] = isset($data['grantType']) ? $data['grantType'] : null;
+        $this->container['refresh_token'] = isset($data['refresh_token']) ? $data['refresh_token'] : null;
+        $this->container['grant_type'] = isset($data['grant_type']) ? $data['grant_type'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
-        $this->container['clientSecret'] = isset($data['clientSecret']) ? $data['clientSecret'] : null;
+        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
+        $this->container['client_secret'] = isset($data['client_secret']) ? $data['client_secret'] : null;
     }
 
     /**
@@ -174,41 +174,41 @@ class CreateAccessTokenRequest implements ArrayAccess
 
 
     /**
-     * Gets refreshToken
+     * Gets refresh_token
      * @return string
      */
     public function getRefreshToken()
     {
-        return $this->container['refreshToken'];
+        return $this->container['refresh_token'];
     }
 
     /**
-     * Sets refreshToken
+     * Sets refresh_token
      * @return $this
      */
     public function setRefreshToken($refreshToken)
     {
-        $this->container['refreshToken'] = $refreshToken;
+        $this->container['refresh_token'] = $refreshToken;
 
         return $this;
     }
 
     /**
-     * Gets grantType
+     * Gets grant_type
      * @return string
      */
     public function getGrantType()
     {
-        return $this->container['grantType'];
+        return $this->container['grant_type'];
     }
 
     /**
-     * Sets grantType
+     * Sets grant_type
      * @return $this
      */
     public function setGrantType($grantType)
     {
-        $this->container['grantType'] = $grantType;
+        $this->container['grant_type'] = $grantType;
 
         return $this;
     }
@@ -234,41 +234,41 @@ class CreateAccessTokenRequest implements ArrayAccess
     }
 
     /**
-     * Gets clientId
+     * Gets client_id
      * @return string
      */
     public function getClientId()
     {
-        return $this->container['clientId'];
+        return $this->container['client_id'];
     }
 
     /**
-     * Sets clientId
+     * Sets client_id
      * @return $this
      */
     public function setClientId($clientId)
     {
-        $this->container['clientId'] = $clientId;
+        $this->container['client_id'] = $clientId;
 
         return $this;
     }
 
     /**
-     * Gets clientSecret
+     * Gets client_secret
      * @return string
      */
     public function getClientSecret()
     {
-        return $this->container['clientSecret'];
+        return $this->container['client_secret'];
     }
 
     /**
-     * Sets clientSecret
+     * Sets client_secret
      * @return $this
      */
     public function setClientSecret($clientSecret)
     {
-        $this->container['clientSecret'] = $clientSecret;
+        $this->container['client_secret'] = $clientSecret;
 
         return $this;
     }
