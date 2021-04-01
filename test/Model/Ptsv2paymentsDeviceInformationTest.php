@@ -106,6 +106,13 @@ class Ptsv2paymentsDeviceInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "useRawFingerprintSessionId"
+     */
+    public function testPropertyUseRawFingerprintSessionId()
+    {
+    }
+
+    /**
      * Test attribute "rawData"
      */
     public function testPropertyRawData()

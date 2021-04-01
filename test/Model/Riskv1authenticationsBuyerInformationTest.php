@@ -78,6 +78,13 @@ class Riskv1authenticationsBuyerInformationTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "merchantCustomerId"
+     */
+    public function testPropertyMerchantCustomerId()
+    {
+    }
+
+    /**
      * Test attribute "personalIdentification"
      */
     public function testPropertyPersonalIdentification()

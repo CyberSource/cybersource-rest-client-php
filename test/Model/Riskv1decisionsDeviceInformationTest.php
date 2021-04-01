@@ -106,6 +106,13 @@ class Riskv1decisionsDeviceInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "useRawFingerprintSessionId"
+     */
+    public function testPropertyUseRawFingerprintSessionId()
+    {
+    }
+
+    /**
      * Test attribute "httpBrowserEmail"
      */
     public function testPropertyHttpBrowserEmail()

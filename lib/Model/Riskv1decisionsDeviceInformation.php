@@ -58,6 +58,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         'ipAddress' => 'string',
         'hostName' => 'string',
         'fingerprintSessionId' => 'string',
+        'useRawFingerprintSessionId' => 'bool',
         'httpBrowserEmail' => 'string',
         'userAgent' => 'string',
         'rawData' => '\CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]',
@@ -82,6 +83,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         'ipAddress' => null,
         'hostName' => null,
         'fingerprintSessionId' => null,
+        'useRawFingerprintSessionId' => null,
         'httpBrowserEmail' => null,
         'userAgent' => null,
         'rawData' => null,
@@ -116,6 +118,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         'ipAddress' => 'ipAddress',
         'hostName' => 'hostName',
         'fingerprintSessionId' => 'fingerprintSessionId',
+        'useRawFingerprintSessionId' => 'useRawFingerprintSessionId',
         'httpBrowserEmail' => 'httpBrowserEmail',
         'userAgent' => 'userAgent',
         'rawData' => 'rawData',
@@ -141,6 +144,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         'ipAddress' => 'setIpAddress',
         'hostName' => 'setHostName',
         'fingerprintSessionId' => 'setFingerprintSessionId',
+        'useRawFingerprintSessionId' => 'setUseRawFingerprintSessionId',
         'httpBrowserEmail' => 'setHttpBrowserEmail',
         'userAgent' => 'setUserAgent',
         'rawData' => 'setRawData',
@@ -166,6 +170,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         'ipAddress' => 'getIpAddress',
         'hostName' => 'getHostName',
         'fingerprintSessionId' => 'getFingerprintSessionId',
+        'useRawFingerprintSessionId' => 'getUseRawFingerprintSessionId',
         'httpBrowserEmail' => 'getHttpBrowserEmail',
         'userAgent' => 'getUserAgent',
         'rawData' => 'getRawData',
@@ -216,6 +221,7 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
         $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
         $this->container['hostName'] = isset($data['hostName']) ? $data['hostName'] : null;
         $this->container['fingerprintSessionId'] = isset($data['fingerprintSessionId']) ? $data['fingerprintSessionId'] : null;
+        $this->container['useRawFingerprintSessionId'] = isset($data['useRawFingerprintSessionId']) ? $data['useRawFingerprintSessionId'] : null;
         $this->container['httpBrowserEmail'] = isset($data['httpBrowserEmail']) ? $data['httpBrowserEmail'] : null;
         $this->container['userAgent'] = isset($data['userAgent']) ? $data['userAgent'] : null;
         $this->container['rawData'] = isset($data['rawData']) ? $data['rawData'] : null;
@@ -338,6 +344,27 @@ class Riskv1decisionsDeviceInformation implements ArrayAccess
     public function setFingerprintSessionId($fingerprintSessionId)
     {
         $this->container['fingerprintSessionId'] = $fingerprintSessionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets useRawFingerprintSessionId
+     * @return bool
+     */
+    public function getUseRawFingerprintSessionId()
+    {
+        return $this->container['useRawFingerprintSessionId'];
+    }
+
+    /**
+     * Sets useRawFingerprintSessionId
+     * @param bool $useRawFingerprintSessionId Boolean that indicates whether request contains the device fingerprint information. Values: - `true`: Use raw fingerprintSessionId when looking up device details. - `false` (default): Use merchant id + fingerprintSessionId as the session id for Device detail collection.
+     * @return $this
+     */
+    public function setUseRawFingerprintSessionId($useRawFingerprintSessionId)
+    {
+        $this->container['useRawFingerprintSessionId'] = $useRawFingerprintSessionId;
 
         return $this;
     }
