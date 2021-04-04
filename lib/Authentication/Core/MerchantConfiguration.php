@@ -586,7 +586,7 @@ class MerchantConfiguration
      *
      * @param string Directory for Client Cert
      *
-     * @return $this
+     * @return void
      */
     public function setClientCertDirectory($clientCertDirectory)
     {
@@ -608,7 +608,7 @@ class MerchantConfiguration
      *
      * @param string Name of Client Cert file
      *
-     * @return $this
+     * @return void
      */
     public function setClientCertFile($clientCertFile)
     {
@@ -630,7 +630,7 @@ class MerchantConfiguration
      *
      * @param string Password for Client Cert file
      *
-     * @return $this
+     * @return void
      */
     public function setClientCertPassword($clientCertPassword)
     {
@@ -652,7 +652,7 @@ class MerchantConfiguration
      *
      * @param string ClientID for OAuth
      *
-     * @return $this
+     * @return void
      */
     public function setClientId($clientId)
     {
@@ -674,7 +674,7 @@ class MerchantConfiguration
      *
      * @param string Client Secret for OAuth
      *
-     * @return $this
+     * @return void
      */
     public function setClientSecret($clientSecret)
     {
@@ -696,7 +696,7 @@ class MerchantConfiguration
      *
      * @param string OAuth Access Token
      *
-     * @return $this
+     * @return void
      */
     public function setAccessToken($accessToken)
     {
@@ -718,7 +718,7 @@ class MerchantConfiguration
      *
      * @param string OAuth Refresh Token
      *
-     * @return $this
+     * @return void
      */
     public function setRefreshToken($refreshToken)
     {
@@ -1095,41 +1095,41 @@ class MerchantConfiguration
             $error_message .= GlobalParameter::PORTFOLIO_ID_REQ . PHP_EOL;
         }
 		
-        if(is_bool($config->isEnableClientCert()) && $config->isEnableClientCert())
+        if(is_bool($this->isEnableClientCert()) && $this->isEnableClientCert())
         { 
-            if(empty($config->getClientCertDirectory()))
+            if(empty($this->getClientCertDirectory()))
             {
                 $error_message .= GlobalParameter::CLIENT_CERT_DIR_REQ . PHP_EOL;
             }
-            if(empty($config->getClientCertFile()))
+            if(empty($this->getClientCertFile()))
             {
                 $error_message .= GlobalParameter::CLIENT_CERT_FILE_REQ . PHP_EOL;
             }
-            if(empty($config->getClientCertPassword()))
+            if(empty($this->getClientCertPassword()))
             {
                 $error_message .= GlobalParameter::CLIENT_CERT_PASSWORD_REQ . PHP_EOL;
             }
         }
 
-        if($config->getAuthenticationType() == GlobalParameter::MUTUAL_AUTH)
+        if($this->getAuthenticationType() == GlobalParameter::MUTUAL_AUTH)
         {
-            if(empty($config->getClientId()))
+            if(empty($this->getClientId()))
             {
                 $error_message .= GlobalParameter::CLIENT_ID_REQ . PHP_EOL;
             }
-            if(empty($config->getClientSecret()))
+            if(empty($this->getClientSecret()))
             {
                 $error_message .= GlobalParameter::CLIENT_SECRET_REQ . PHP_EOL;
             }
         }
 
-        if($config->getAuthenticationType() == GlobalParameter::OAUTH)
+        if($this->getAuthenticationType() == GlobalParameter::OAUTH)
         {
-            if(empty($config->getAccessToken()))
+            if(empty($this->getAccessToken()))
             {
                 $error_message .= GlobalParameter::ACCESS_TOKEN_REQ . PHP_EOL;
             }
-            if(empty($config->getRefreshToken()))
+            if(empty($this->getRefreshToken()))
             {
                 $error_message .= GlobalParameter::REFRESH_TOKEN_REQ . PHP_EOL;
             }
