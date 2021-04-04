@@ -1,10 +1,11 @@
 <?php
 /*
-Purpose : This is focusly on split the services HTTP or JWT 
+Purpose : This is focusly on split the services HTTP or JWT or OAuth
 */
 namespace CyberSource\Authentication\Core;
 use CyberSource\Authentication\Http\HttpSignatureGenerator as HttpSignatureGenerator;
 use CyberSource\Authentication\Jwt\JsonWebTokenGenerator as JsonWebTokenGenerator;
+use CyberSource\Authentication\OAuth\OAuthTokenGenerator as OAuthTokenGenerator;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Logging\LogFactory as LogFactory;
 
@@ -45,7 +46,9 @@ class Authentication
             return new HttpSignatureGenerator($merchantConfig->getLogConfiguration());
         } else if($authType == GlobalParameter::JWT){
             return new JsonWebTokenGenerator($merchantConfig->getLogConfiguration());
-        } else {
+        } else if($authType == GlobalParameter::OAUTH){
+			return new OAuthTokenGenerator();
+		} else {
             $exception = new AuthException(GlobalParameter::AUTH_ERROR, 0);
             if (null !== self::$logger) { self::$logger->error("Auth Exception : " . GlobalParameter::AUTH_ERROR); }
             throw $exception;

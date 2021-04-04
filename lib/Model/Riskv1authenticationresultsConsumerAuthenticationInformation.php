@@ -180,9 +180,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     {
         $invalid_properties = [];
 
-        if ($this->container['signedPares'] === null) {
-            $invalid_properties[] = "'signedPares' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -195,9 +192,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function valid()
     {
 
-        if ($this->container['signedPares'] === null) {
-            return false;
-        }
         return true;
     }
 

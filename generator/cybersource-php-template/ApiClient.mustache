@@ -226,8 +226,13 @@ class ApiClient
             $postData = json_encode(\{{invokerPackage}}\ObjectSerializer::sanitizeForSerialization($postData));
         }
         $resourcePath= utf8_encode($resourcePath);
-        $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
-        $headers = array_merge($headers, $authHeader);
+
+        if($this->merchantConfig->getAuthenticationType() != GlobalParameter::MUTUAL_AUTH)
+        {
+            $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
+            $headers = array_merge($headers, $authHeader);
+        }
+
         foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
             $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
@@ -341,6 +346,15 @@ class ApiClient
         } else {
             // obtain the HTTP response headers
             curl_setopt($curl, CURLOPT_HEADER, 1);
+        }
+
+        // Adding Client Cert if Required
+        if($this->merchantConfig->getEnableClientCert())
+        {
+            $clientCertPath = $this->merchantConfig->getClientCertDirectory().$this->merchantConfig->getClientCertFile();
+            curl_setopt($curl, CURLOPT_SSLCERT, $clientCertPath);
+            curl_setopt($curl, CURLOPT_SSLCERTTYPE, 'P12');
+            curl_setopt($curl, CURLOPT_SSLCERTPASSWD, $this->merchantConfig->getClientCertPassword());
         }
 
         // Make the request
@@ -555,6 +569,11 @@ class ApiClient
             ); 
 
         } else if($merchantConfig->getAuthenticationType() == GlobalParameter::JWT){
+            $headers = array(
+                'Authorization:'.$getToken
+            );
+        }
+        else if($merchantConfig->getAuthenticationType()==GlobalParameter::OAUTH){
             $headers = array(
                 'Authorization:'.$getToken
             );

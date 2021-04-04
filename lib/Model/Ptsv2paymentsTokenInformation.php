@@ -57,7 +57,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'jti' => 'string',
         'transientTokenJwt' => 'string',
         'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsTokenInformationPaymentInstrument',
-        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsTokenInformationShippingAddress'
+        'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsTokenInformationShippingAddress',
+        'networkTokenOption' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'jti' => null,
         'transientTokenJwt' => null,
         'paymentInstrument' => null,
-        'shippingAddress' => null
+        'shippingAddress' => null,
+        'networkTokenOption' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'jti' => 'jti',
         'transientTokenJwt' => 'transientTokenJwt',
         'paymentInstrument' => 'paymentInstrument',
-        'shippingAddress' => 'shippingAddress'
+        'shippingAddress' => 'shippingAddress',
+        'networkTokenOption' => 'networkTokenOption'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'jti' => 'setJti',
         'transientTokenJwt' => 'setTransientTokenJwt',
         'paymentInstrument' => 'setPaymentInstrument',
-        'shippingAddress' => 'setShippingAddress'
+        'shippingAddress' => 'setShippingAddress',
+        'networkTokenOption' => 'setNetworkTokenOption'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'jti' => 'getJti',
         'transientTokenJwt' => 'getTransientTokenJwt',
         'paymentInstrument' => 'getPaymentInstrument',
-        'shippingAddress' => 'getShippingAddress'
+        'shippingAddress' => 'getShippingAddress',
+        'networkTokenOption' => 'getNetworkTokenOption'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         $this->container['transientTokenJwt'] = isset($data['transientTokenJwt']) ? $data['transientTokenJwt'] : null;
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['networkTokenOption'] = isset($data['networkTokenOption']) ? $data['networkTokenOption'] : null;
     }
 
     /**
@@ -259,6 +265,27 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
     public function setShippingAddress($shippingAddress)
     {
         $this->container['shippingAddress'] = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkTokenOption
+     * @return string
+     */
+    public function getNetworkTokenOption()
+    {
+        return $this->container['networkTokenOption'];
+    }
+
+    /**
+     * Sets networkTokenOption
+     * @param string $networkTokenOption Indicates whether a payment network token associated with a TMS token should be used for authorization. This field can contain one of following values:  - `ignore`: Use a tokenized card number for an authorization, even if the TMS token has an associated payment network token. - `prefer`: (Default) Use an associated payment network token for an authorization if the TMS token has one; otherwise, use the tokenized card number.
+     * @return $this
+     */
+    public function setNetworkTokenOption($networkTokenOption)
+    {
+        $this->container['networkTokenOption'] = $networkTokenOption;
 
         return $this;
     }

@@ -85,6 +85,13 @@ class PtsV2PaymentsPost201ResponseProcessingInformationTest extends \PHPUnit_Fra
     }
 
     /**
+     * Test attribute "paymentSolution"
+     */
+    public function testPropertyPaymentSolution()
+    {
+    }
+
+    /**
      * Test attribute "enhancedDataEnabled"
      */
     public function testPropertyEnhancedDataEnabled()
