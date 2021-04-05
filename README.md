@@ -72,14 +72,14 @@ Further information on MetaKey can be found in [New Business Center User Guide](
   
   Configure the following information in `ExternalConfiguration.php` file
   
-*    Authentication Type:  Merchant should enter "HTTP_SIGNATURE" for HTTP authentication mechanism.
-*    Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
-*    MerchantSecretKey: Merchant will provide the secret Key value, which has taken from EBC portal.
-*    MerchantKeyId:  Merchant will provide the Key ID value, which has taken from EBC portal.
-*    Enable Log: To start the log entry provide _true_ else enter _false_.
-*   LogDirectory :Merchant will provide directory path where logs will be created.
-*   LogMaximumSize :Merchant will provide size value for log file.
-*   LogFilename  :Merchant will provide log file name.
+*   Authentication Type:      Merchant should enter "HTTP_SIGNATURE" for HTTP authentication mechanism.
+*   Merchant ID:              Merchant will provide the merchant ID, which has taken from EBC portal.
+*   MerchantSecretKey:        Merchant will provide the secret Key value, which has taken from EBC portal.
+*   MerchantKeyId:            Merchant will provide the Key ID value, which has taken from EBC portal.
+*   Enable Log:               To start the log entry provide _true_ else enter _false_.
+*   LogDirectory:             Merchant will provide directory path where logs will be created.
+*   LogMaximumSize:           Merchant will provide size value for log file.
+*   LogFilename:              Merchant will provide log file name.
 
 ```
    $this->authType          = "HTTP_SIGNATURE";
@@ -103,16 +103,16 @@ Further information on MetaKey can be found in [New Business Center User Guide](
 
   Configure the following information in the `ExternalConfiguration.php` file
   
-*    Authentication Type:  Merchant should enter "JWT" for JWT authentication mechanism.
-*    Merchant ID: Merchant will provide the merchant ID, which has taken from EBC portal.
-*    keyAlias: Alias of the Merchant ID, to be used while generating the JWT token.
-*    keyPassword: Alias of the Merchant password, to be used while generating the JWT token.
-*    keyFileName: Filename of the key generated from the EBC portal, without the extension part .P12
-*   keysDirectory: path of the directory, where key is placed.
-*    Enable Log: To start the log entry provide _true_ else enter _false_.
-*   LogDirectory :Merchant will provide directory path where logs will be created.
-*   LogMaximumSize :Merchant will provide size value for log file.
-*   LogFilename  :Merchant will provide log file name.
+*   Authentication Type:      Merchant should enter "JWT" for JWT authentication mechanism.
+*   Merchant ID:              Merchant will provide the merchant ID, which has taken from EBC portal.
+*   keyAlias:                 Alias of the Merchant ID, to be used while generating the JWT token.
+*   keyPassword:              Alias of the Merchant password, to be used while generating the JWT token.
+*   keyFileName:              Filename of the key generated from the EBC portal, without the extension part .P12
+*   keysDirectory:            Path of the directory, where key is placed.
+*   Enable Log:               To start the log entry provide _true_ else enter _false_.
+*   LogDirectory:             Merchant will provide directory path where logs will be created.
+*   LogMaximumSize:           Merchant will provide size value for log file.
+*   LogFilename:              Merchant will provide log file name.
 
 ```
    $this->authType            = "JWT";
@@ -139,7 +139,7 @@ Further information on MetaKey can be found in [New Business Center User Guide](
 
   MetaKey can be used for HTTP Signature and JWT authentication
 
-  For HTTP Signature Authentication - 
+  For HTTP Signature Authentication
 
 ```
    $this->authType            = "HTTP_SIGNATURE";
@@ -150,7 +150,7 @@ Further information on MetaKey can be found in [New Business Center User Guide](
    $this->portfolioID         = <Portfolio ID>;
 ```
 
-  For JWT Authentication - 
+  For JWT Authentication
 
 ```
    $this->authenticationType  = "JWT";
