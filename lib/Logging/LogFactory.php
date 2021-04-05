@@ -52,14 +52,14 @@ class LogFactory
         $errorHandler = new RotatingFileHandler($errorLogFile, $errorMaxFiles, $errorLogLevel);
         $errorHandler->setFormatter($errorFormatter);
 
-        self::$logger = new Logger($loggerName);
-        self::$logger->pushHandler($errorHandler);
+        $logger = new Logger($loggerName);
+        $logger->pushHandler($errorHandler);
 
         if ($logConfig->isLoggingEnabled()) {
-            self::$logger->pushHandler($debugHandler);
+            $logger->pushHandler($debugHandler);
         }
 
-        return self::$logger;
+        return $logger;
     }
 }
 ?>
