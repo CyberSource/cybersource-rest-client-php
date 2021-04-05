@@ -213,7 +213,9 @@ class MerchantConfiguration
         $this->tempFolderPath = sys_get_temp_dir();
         $this->logConfig = new LogConfiguration();
 
-        self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $this->logConfig);
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $this->logConfig);
+        }
     }
 
     /**

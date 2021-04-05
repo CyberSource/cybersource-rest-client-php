@@ -11,23 +11,23 @@ use Monolog\Formatter\LineFormatter;
 
 class LogFactory
 {
-    private $loggers = [];
+    private static $loggers = [];
 
     public function __construct()
     {
-        $this->loggers = [];
+        self::$loggers = [];
     }
 
     public function getLogger($loggerName, $logConfig = null) {
-        if (isset($this->loggers[$loggerName])) {
-            return $this->loggers[$loggerName];
+        if (isset(self::$loggers[$loggerName])) {
+            return self::$loggers[$loggerName];
         } else {
             if (!isset($logConfig)) {
                 $logConfig = new \CyberSource\Logging\LogConfiguration();
             }
 
             $newLogger = $this->createNewLogger($loggerName, $logConfig);
-            $this->loggers[$loggerName] = $newLogger;
+            self::$loggers[$loggerName] = $newLogger;
             return $newLogger;
         }
     }
@@ -52,14 +52,14 @@ class LogFactory
         $errorHandler = new RotatingFileHandler($errorLogFile, $errorMaxFiles, $errorLogLevel);
         $errorHandler->setFormatter($errorFormatter);
 
-        $logger = new Logger($loggerName);
-        $logger->pushHandler($errorHandler);
+        self::$logger = new Logger($loggerName);
+        self::$logger->pushHandler($errorHandler);
 
         if ($logConfig->isLoggingEnabled()) {
-            $logger->pushHandler($debugHandler);
+            self::$logger->pushHandler($debugHandler);
         }
 
-        return $logger;
+        return self::$logger;
     }
 }
 ?>

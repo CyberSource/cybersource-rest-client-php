@@ -35,7 +35,7 @@ $stream_headers = array();
  */
 class ApiClient
 {
-    private $logger = null;
+    private static $logger = null;
     
     public static $PATCH = "PATCH";
     public static $POST = "POST";
@@ -100,7 +100,9 @@ class ApiClient
 
         $this->clientId = $this->getClientId();
 
-        $this->logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -194,7 +196,7 @@ class ApiClient
      */
     public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
     {
-        $this->logger->info("CALLING API \"$resourcePath\" STARTED");
+        self::$logger->info("CALLING API \"$resourcePath\" STARTED");
         $headers = [];
         global $stream_headers;
 
@@ -304,8 +306,8 @@ class ApiClient
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
             curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
         } elseif ($method !== self::$GET) {
-            $this->logger->error("ApiException : Method . $method . is not recognized.");
-            $this->logger->close();
+            self::$logger->error("ApiException : Method . $method . is not recognized.");
+            self::$logger->close();
             throw new ApiException('Method ' . $method . ' is not recognized.');
         }
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -318,7 +320,7 @@ class ApiClient
         } else {
             $printPostData = $postData;
         }
-        $this->logger->debug("HTTP Request Body:\n" . print_r($printPostData, true));
+        self::$logger->debug("HTTP Request Body:\n" . print_r($printPostData, true));
         
         // debugging for curl
         if (($this->merchantConfig->getLogConfiguration())->isLoggingEnabled()) {
@@ -371,7 +373,7 @@ class ApiClient
             } else {
                 $printHttpBody = $http_body;
             }
-            $this->logger->debug("HTTP Response Body:\n" . print_r($printHttpBody, true));
+            self::$logger->debug("HTTP Response Body:\n" . print_r($printHttpBody, true));
     
             // Handle the response
             if ($response_info['http_code'] === 0) {
@@ -385,15 +387,15 @@ class ApiClient
                         "This could happen if you are disconnected from the network.";
                 }
     
-                $this->logger->error("ApiException : " . print_r($error_message, true));
+                self::$logger->error("ApiException : " . print_r($error_message, true));
                 $exception = new ApiException($error_message, 0, null, null);
                 $exception->setResponseObject($response_info);
-                $this->logger->close();
+                self::$logger->close();
                 throw $exception;
             } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
                 // return raw body if response is a file
                 if ($responseType === '\SplFileObject' || $responseType === 'string') {
-                    $this->logger->close();
+                    self::$logger->close();
                     return [$http_body, $response_info['http_code'], $http_header];
                 }
     
@@ -407,8 +409,8 @@ class ApiClient
                     $data = $http_body;
                 }
 
-                $this->logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
-                $this->logger->close();
+                self::$logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
+                self::$logger->close();
                 throw new ApiException(
                     "[".$response_info['http_code']."] Error connecting to the API ($url)",
                     $response_info['http_code'],
@@ -416,7 +418,7 @@ class ApiClient
                     $data
                 );
             }
-            $this->logger->close();
+            self::$logger->close();
             return [$data, $response_info['http_code'], $http_header];
         } else {
             $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
@@ -443,19 +445,19 @@ class ApiClient
                         "This could happen if you are disconnected from the network.";
                 }
 
-                $this->logger->error("ApiException : " . print_r($error_message, true));
+                self::$logger->error("ApiException : " . print_r($error_message, true));
                 $exception = new ApiException($error_message, 0, null, null);
                 $exception->setResponseObject($response_info);
-                $this->logger->close();
+                self::$logger->close();
                 throw $exception;
             } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
                 $stream_headers['http_code'] = $response_info['http_code'];
 
-                $this->logger->close();
+                self::$logger->close();
                 return [$http_body, $stream_headers['http_code'], $stream_headers];
             } else {
-                $this->logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
-                $this->logger->close();
+                self::$logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
+                self::$logger->close();
                 throw new ApiException(
                     "[".$response_info['http_code']."] Error connecting to the API ($url)",
                     $response_info['http_code'],
@@ -579,7 +581,7 @@ class ApiClient
             );
         }
         else{
-            $this->logger->error("InvalidArgumentException : Invalid Authentication Type : " . $merchantConfig->getAuthenticationType());
+            self::$logger->error("InvalidArgumentException : Invalid Authentication Type : " . $merchantConfig->getAuthenticationType());
             throw new \InvalidArgumentException("Invalid Authentication Type : " . $merchantConfig->getAuthenticationType());
         }
 

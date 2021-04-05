@@ -10,7 +10,7 @@ use CyberSource\Logging\LogFactory as LogFactory;
 
 class PayloadDigest
 {
-    private static $logger=null;
+    private static $logger = null;
     
     /**
      * Constructor

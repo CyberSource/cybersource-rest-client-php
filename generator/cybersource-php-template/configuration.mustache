@@ -177,7 +177,9 @@ class Configuration
     public function __construct()
     {
         $this->logConfig = new LogConfiguration();
-        self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $this->getLogConfiguration());
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $this->getLogConfiguration());
+        }
     }
 
     /**

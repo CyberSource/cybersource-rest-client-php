@@ -13,7 +13,7 @@ use CyberSource\Logging\LogFactory as LogFactory;
 //calling the interface
 class JsonWebTokenGenerator implements TokenGenerator
 {
-    private static $logger=null;
+    private static $logger = null;
     
     /**
      * Constructor

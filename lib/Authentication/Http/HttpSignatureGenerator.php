@@ -11,7 +11,7 @@ use CyberSource\Logging\LogFactory as LogFactory;
  
 class HttpSignatureGenerator implements TokenGenerator
 {
-    private static $logger=null;
+    private static $logger = null;
     
     /**
      * Constructor

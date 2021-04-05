@@ -13,7 +13,7 @@ require_once 'vendor/autoload.php';
 
 class JsonWebTokenHeader 
 {
-    private static $logger=null;
+    private static $logger = null;
     
     /**
      * Constructor
