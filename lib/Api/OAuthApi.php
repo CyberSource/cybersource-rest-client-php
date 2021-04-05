@@ -23,6 +23,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * OAuthApi Class Doc Comment
@@ -32,6 +33,8 @@ use \CyberSource\ObjectSerializer;
  */
 class OAuthApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -51,6 +54,10 @@ class OAuthApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -87,7 +94,10 @@ class OAuthApi
      */
     public function postAccessTokenRequest($createAccessTokenRequest)
     {
+        self::$logger->info('CALL TO METHOD postAccessTokenRequest STARTED');
         list($response, $statusCode, $httpHeader) = $this->postAccessTokenRequestWithHttpInfo($createAccessTokenRequest);
+        self::$logger->info('CALL TO METHOD postAccessTokenRequest ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -104,6 +114,7 @@ class OAuthApi
     {
         // verify the required parameter 'createAccessTokenRequest' is set
         if ($createAccessTokenRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createAccessTokenRequest when calling postAccessTokenRequest");
             throw new \InvalidArgumentException('Missing the required parameter $createAccessTokenRequest when calling postAccessTokenRequest');
         }
         // parse inputs
@@ -130,6 +141,20 @@ class OAuthApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($headerParams));
+        self::$logger->debug("Return Type : \CyberSource\Model\AccessTokenResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -141,6 +166,8 @@ class OAuthApi
                 '\CyberSource\Model\AccessTokenResponse',
                 '/oauth2/v3/token'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\AccessTokenResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -159,6 +186,7 @@ class OAuthApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
