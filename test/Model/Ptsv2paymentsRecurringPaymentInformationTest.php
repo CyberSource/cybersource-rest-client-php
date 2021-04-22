@@ -92,9 +92,23 @@ class Ptsv2paymentsRecurringPaymentInformationTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "numberOfPayments"
+     */
+    public function testPropertyNumberOfPayments()
+    {
+    }
+
+    /**
      * Test attribute "originalPurchaseDate"
      */
     public function testPropertyOriginalPurchaseDate()
+    {
+    }
+
+    /**
+     * Test attribute "sequenceNumber"
+     */
+    public function testPropertySequenceNumber()
     {
     }
 }

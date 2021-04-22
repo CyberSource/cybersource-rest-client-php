@@ -105,7 +105,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerPaymentInstrumentsList**
-> \CyberSource\Model\PaymentInstrumentListForCustomer getCustomerPaymentInstrumentsList($customerTokenId, $profileId, $offset, $limit)
+> \CyberSource\Model\PaymentInstrumentList getCustomerPaymentInstrumentsList($customerTokenId, $profileId, $offset, $limit)
 
 List Payment Instruments for a Customer
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\PaymentInstrumentListForCustomer**](../Model/PaymentInstrumentListForCustomer.md)
+[**\CyberSource\Model\PaymentInstrumentList**](../Model/PaymentInstrumentList.md)
 
 ### Authorization
 

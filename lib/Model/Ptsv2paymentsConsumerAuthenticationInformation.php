@@ -66,6 +66,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'string',
         'paSpecificationVersion' => 'string',
         'authenticationType' => 'string',
+        'acsTransactionId' => 'string',
         'acsWindowSize' => 'string',
         'alternateAuthenticationData' => 'string',
         'alternateAuthenticationDate' => 'string',
@@ -87,6 +88,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'mcc' => 'string',
         'merchantScore' => 'int',
         'messageCategory' => 'string',
+        'networkScore' => 'string',
         'npaCode' => 'string',
         'overridePaymentMethod' => 'string',
         'overrideCountryCode' => 'string',
@@ -125,6 +127,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => null,
         'paSpecificationVersion' => null,
         'authenticationType' => null,
+        'acsTransactionId' => null,
         'acsWindowSize' => null,
         'alternateAuthenticationData' => null,
         'alternateAuthenticationDate' => null,
@@ -146,6 +149,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'mcc' => null,
         'merchantScore' => null,
         'messageCategory' => null,
+        'networkScore' => null,
         'npaCode' => null,
         'overridePaymentMethod' => null,
         'overrideCountryCode' => null,
@@ -194,6 +198,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'directoryServerTransactionId',
         'paSpecificationVersion' => 'paSpecificationVersion',
         'authenticationType' => 'authenticationType',
+        'acsTransactionId' => 'acsTransactionId',
         'acsWindowSize' => 'acsWindowSize',
         'alternateAuthenticationData' => 'alternateAuthenticationData',
         'alternateAuthenticationDate' => 'alternateAuthenticationDate',
@@ -215,6 +220,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'mcc' => 'mcc',
         'merchantScore' => 'merchantScore',
         'messageCategory' => 'messageCategory',
+        'networkScore' => 'networkScore',
         'npaCode' => 'npaCode',
         'overridePaymentMethod' => 'overridePaymentMethod',
         'overrideCountryCode' => 'overrideCountryCode',
@@ -254,6 +260,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'setDirectoryServerTransactionId',
         'paSpecificationVersion' => 'setPaSpecificationVersion',
         'authenticationType' => 'setAuthenticationType',
+        'acsTransactionId' => 'setAcsTransactionId',
         'acsWindowSize' => 'setAcsWindowSize',
         'alternateAuthenticationData' => 'setAlternateAuthenticationData',
         'alternateAuthenticationDate' => 'setAlternateAuthenticationDate',
@@ -275,6 +282,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'mcc' => 'setMcc',
         'merchantScore' => 'setMerchantScore',
         'messageCategory' => 'setMessageCategory',
+        'networkScore' => 'setNetworkScore',
         'npaCode' => 'setNpaCode',
         'overridePaymentMethod' => 'setOverridePaymentMethod',
         'overrideCountryCode' => 'setOverrideCountryCode',
@@ -314,6 +322,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'getDirectoryServerTransactionId',
         'paSpecificationVersion' => 'getPaSpecificationVersion',
         'authenticationType' => 'getAuthenticationType',
+        'acsTransactionId' => 'getAcsTransactionId',
         'acsWindowSize' => 'getAcsWindowSize',
         'alternateAuthenticationData' => 'getAlternateAuthenticationData',
         'alternateAuthenticationDate' => 'getAlternateAuthenticationDate',
@@ -335,6 +344,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'mcc' => 'getMcc',
         'merchantScore' => 'getMerchantScore',
         'messageCategory' => 'getMessageCategory',
+        'networkScore' => 'getNetworkScore',
         'npaCode' => 'getNpaCode',
         'overridePaymentMethod' => 'getOverridePaymentMethod',
         'overrideCountryCode' => 'getOverrideCountryCode',
@@ -399,6 +409,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
         $this->container['paSpecificationVersion'] = isset($data['paSpecificationVersion']) ? $data['paSpecificationVersion'] : null;
         $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
+        $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['acsWindowSize'] = isset($data['acsWindowSize']) ? $data['acsWindowSize'] : null;
         $this->container['alternateAuthenticationData'] = isset($data['alternateAuthenticationData']) ? $data['alternateAuthenticationData'] : null;
         $this->container['alternateAuthenticationDate'] = isset($data['alternateAuthenticationDate']) ? $data['alternateAuthenticationDate'] : null;
@@ -420,6 +431,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['mcc'] = isset($data['mcc']) ? $data['mcc'] : null;
         $this->container['merchantScore'] = isset($data['merchantScore']) ? $data['merchantScore'] : null;
         $this->container['messageCategory'] = isset($data['messageCategory']) ? $data['messageCategory'] : null;
+        $this->container['networkScore'] = isset($data['networkScore']) ? $data['networkScore'] : null;
         $this->container['npaCode'] = isset($data['npaCode']) ? $data['npaCode'] : null;
         $this->container['overridePaymentMethod'] = isset($data['overridePaymentMethod']) ? $data['overridePaymentMethod'] : null;
         $this->container['overrideCountryCode'] = isset($data['overrideCountryCode']) ? $data['overrideCountryCode'] : null;
@@ -730,6 +742,28 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     }
 
     /**
+     * Gets acsTransactionId
+     * @return string
+     */
+    public function getAcsTransactionId()
+    {
+        return $this->container['acsTransactionId'];
+    }
+
+    /**
+     * Sets acsTransactionId
+     * @param string $acsTransactionId Unique transaction identifier assigned by the ACS to identify a single transaction.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC.
+     * @return $this
+     */
+    public function setAcsTransactionId($acsTransactionId)
+    {
+
+        $this->container['acsTransactionId'] = $acsTransactionId;
+
+        return $this;
+    }
+
+    /**
      * Gets acsWindowSize
      * @return string
      */
@@ -827,7 +861,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets authenticationDate
-     * @param string $authenticationDate The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.
+     * @param string $authenticationDate The date/time of the authentication at the 3DS servers. RISK update authorization service in auth request payload with value returned in `consumerAuthenticationInformation.alternateAuthenticationData` if merchant calls via CYBS or field can be provided by merchant in authorization request if calling an external 3DS provider.  This field is supported for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC. Format: YYYYMMDDHHMMSS
      * @return $this
      */
     public function setAuthenticationDate($authenticationDate)
@@ -1180,6 +1214,28 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     public function setMessageCategory($messageCategory)
     {
         $this->container['messageCategory'] = $messageCategory;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkScore
+     * @return string
+     */
+    public function getNetworkScore()
+    {
+        return $this->container['networkScore'];
+    }
+
+    /**
+     * Sets networkScore
+     * @param string $networkScore The global score calculated by the CB scoring platform and returned to merchants.  Possible values:  - '00' - '99'  When you request the payer authentication and authorization services separately, get the value for this field from the pa_network_score reply field.         This field is supported only for Cartes Bancaires Fast'R transactions on Credit Mutuel-CIC.
+     * @return $this
+     */
+    public function setNetworkScore($networkScore)
+    {
+
+        $this->container['networkScore'] = $networkScore;
 
         return $this;
     }
