@@ -162,6 +162,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "acsTransactionId"
+     */
+    public function testPropertyAcsTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "acsWindowSize"
      */
     public function testPropertyAcsWindowSize()
@@ -305,6 +312,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
      * Test attribute "messageCategory"
      */
     public function testPropertyMessageCategory()
+    {
+    }
+
+    /**
+     * Test attribute "networkScore"
+     */
+    public function testPropertyNetworkScore()
     {
     }
 

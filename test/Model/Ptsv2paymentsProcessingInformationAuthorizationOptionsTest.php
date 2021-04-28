@@ -169,9 +169,9 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     }
 
     /**
-     * Test attribute "transitTransactionType"
+     * Test attribute "transportationMode"
      */
-    public function testPropertyTransitTransactionType()
+    public function testPropertyTransportationMode()
     {
     }
 

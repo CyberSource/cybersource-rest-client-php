@@ -199,7 +199,7 @@ class Ptsv2paymentsHealthCareInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets amount
-     * @param string $amount Total Amount that has been spent on transit healthcare. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer.
+     * @param string $amount Total Amount that has been spent on the corresponding amountType. This is 13 byte field including sign. If the amount is positive, then it is a debit for the customer. If the amount is negative, then it is a credit for the customer.
      * @return $this
      */
     public function setAmount($amount)

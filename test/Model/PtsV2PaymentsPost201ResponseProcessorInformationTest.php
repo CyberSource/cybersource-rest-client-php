@@ -92,6 +92,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "cardReferenceData"
+     */
+    public function testPropertyCardReferenceData()
+    {
+    }
+
+    /**
      * Test attribute "transactionId"
      */
     public function testPropertyTransactionId()
