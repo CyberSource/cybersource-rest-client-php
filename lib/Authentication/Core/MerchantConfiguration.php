@@ -271,51 +271,13 @@ class MerchantConfiguration
     public function setRunEnvironment($runEnvironment)
     {
         $this->runEnvironment = $runEnvironment;
-        if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNENVIRONMENT))
+
+        if (in_array($this->runEnvironment, GlobalParameter::OLD_RUN_ENVIRONMENT_CONSTANTS))
         {
-            $this->host = GlobalParameter::SANDBOXURL;
-            
-        } 
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::PRODUCTIONURL;
+            throw new \Exception(GlobalParameter::DEPRECATED_RUN_ENVIRONMENT);
         }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::BOARUNENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::BOASANDBOXURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::BOARUNPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::BOAPRODUCTIONURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::IDCSANDBOXURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::IDCPRODUCTIONURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHSANDBOXENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::SANDBOXMAURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::PRODUCTIONMAURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNSITENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::SITURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHSITENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::SITMAURL;
-        }
-        else
-        {
-            $this->host =$this->runEnvironment;
-        }
+
+        $this->host =$this->runEnvironment;
         return $this;
     }
 
@@ -325,7 +287,12 @@ class MerchantConfiguration
      */
     public function getRunEnvironment()
     {
-        return $this->runEnvironment;
+        if (in_array(strtoupper($this->runEnvironment), GlobalParameter::OLD_RUN_ENVIRONMENT_CONSTANTS))
+        {
+            throw new \Exception(GlobalParameter::DEPRECATED_RUN_ENVIRONMENT);
+        } else {
+            return $this->runEnvironment;
+        }
     }
 
     /**
@@ -1120,7 +1087,6 @@ class MerchantConfiguration
 
     public function validateMerchantData($config)
     {
-       
         $error_message = "";
         $warning_message = "";
         if(empty($config->getMerchantID())){
