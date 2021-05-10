@@ -10,10 +10,13 @@ class ListHelper
                 if(is_array($v)){
                     return $k."[] = ".implode("&".$k."[] = ", $v);
                 }else{
+                    if (is_int($k)) {
+                        return $v;
+                    }
                     return $k." = ".$v;
                 }
-            }, 
-            $array, 
+            },
+            $array,
             array_keys($array)
         ));
     }

@@ -241,6 +241,8 @@ class ApiClient
         }
         $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
 
+        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($headers)));
+
         $curl = curl_init();
         // set timeout, if needed
         if ($this->config->getCurlTimeout() !== 0) {
@@ -351,7 +353,7 @@ class ApiClient
         }
 
         // Adding Client Cert if Required
-        if($this->merchantConfig->getEnableClientCert())
+        if($this->merchantConfig->isEnableClientCert())
         {
             $clientCertPath = $this->merchantConfig->getClientCertDirectory().$this->merchantConfig->getClientCertFile();
             curl_setopt($curl, CURLOPT_SSLCERT, $clientCertPath);

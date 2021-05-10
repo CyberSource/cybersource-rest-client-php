@@ -153,7 +153,7 @@ class OAuthApi
             
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
-        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($headerParams));
+
         self::$logger->debug("Return Type : \CyberSource\Model\AccessTokenResponse");
         // make the API Call
         try {
