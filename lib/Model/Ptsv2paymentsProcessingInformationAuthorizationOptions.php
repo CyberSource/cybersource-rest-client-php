@@ -67,7 +67,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'billPayment' => 'bool',
         'billPaymentType' => 'string',
         'redemptionInquiry' => 'bool',
-        'transitTransactionType' => 'string',
+        'transportationMode' => 'string',
         'aggregatedAuthIndicator' => 'string',
         'debtRecoveryIndicator' => 'string',
         'deferredAuthIndicator' => 'bool'
@@ -91,7 +91,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'billPayment' => null,
         'billPaymentType' => null,
         'redemptionInquiry' => null,
-        'transitTransactionType' => null,
+        'transportationMode' => null,
         'aggregatedAuthIndicator' => null,
         'debtRecoveryIndicator' => null,
         'deferredAuthIndicator' => null
@@ -125,7 +125,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'billPayment' => 'billPayment',
         'billPaymentType' => 'billPaymentType',
         'redemptionInquiry' => 'redemptionInquiry',
-        'transitTransactionType' => 'transitTransactionType',
+        'transportationMode' => 'transportationMode',
         'aggregatedAuthIndicator' => 'aggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'debtRecoveryIndicator',
         'deferredAuthIndicator' => 'deferredAuthIndicator'
@@ -150,7 +150,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'billPayment' => 'setBillPayment',
         'billPaymentType' => 'setBillPaymentType',
         'redemptionInquiry' => 'setRedemptionInquiry',
-        'transitTransactionType' => 'setTransitTransactionType',
+        'transportationMode' => 'setTransportationMode',
         'aggregatedAuthIndicator' => 'setAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'setDebtRecoveryIndicator',
         'deferredAuthIndicator' => 'setDeferredAuthIndicator'
@@ -175,7 +175,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'billPayment' => 'getBillPayment',
         'billPaymentType' => 'getBillPaymentType',
         'redemptionInquiry' => 'getRedemptionInquiry',
-        'transitTransactionType' => 'getTransitTransactionType',
+        'transportationMode' => 'getTransportationMode',
         'aggregatedAuthIndicator' => 'getAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'getDebtRecoveryIndicator',
         'deferredAuthIndicator' => 'getDeferredAuthIndicator'
@@ -225,7 +225,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['billPayment'] = isset($data['billPayment']) ? $data['billPayment'] : null;
         $this->container['billPaymentType'] = isset($data['billPaymentType']) ? $data['billPaymentType'] : null;
         $this->container['redemptionInquiry'] = isset($data['redemptionInquiry']) ? $data['redemptionInquiry'] : null;
-        $this->container['transitTransactionType'] = isset($data['transitTransactionType']) ? $data['transitTransactionType'] : null;
+        $this->container['transportationMode'] = isset($data['transportationMode']) ? $data['transportationMode'] : null;
         $this->container['aggregatedAuthIndicator'] = isset($data['aggregatedAuthIndicator']) ? $data['aggregatedAuthIndicator'] : null;
         $this->container['debtRecoveryIndicator'] = isset($data['debtRecoveryIndicator']) ? $data['debtRecoveryIndicator'] : null;
         $this->container['deferredAuthIndicator'] = isset($data['deferredAuthIndicator']) ? $data['deferredAuthIndicator'] : null;
@@ -534,22 +534,22 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     }
 
     /**
-     * Gets transitTransactionType
+     * Gets transportationMode
      * @return string
      */
-    public function getTransitTransactionType()
+    public function getTransportationMode()
     {
-        return $this->container['transitTransactionType'];
+        return $this->container['transportationMode'];
     }
 
     /**
-     * Sets transitTransactionType
-     * @param string $transitTransactionType Type of transportation mode :  Possible Values: - 00 = Unknown - 01 = Urban bus - 02 = Interurban bus - 03=Lighttrainmasstransit(Underground Metro LTR) - 04 = Train - 05 = Commuter train - 06 = Water-borne vehicle - 07 = Toll - 08 = Parking - 09 = Taxi - 10 = High-speed train - 11 = Rural bus - 12 = Express commuter train - 13 = Para transit - 14 = Self drive vehicle - 15 = Coach - 16 = Locomotive - 17 = Powered motor coach - 18 = Trailer - 19 = Regional train - 20 = Inter-city - 21 = Funicular train - 22 = Cable car
+     * Sets transportationMode
+     * @param string $transportationMode Type of transportation mode :  Possible Values: - 00 = Unknown - 01 = Urban bus - 02 = Interurban bus - 03=Lighttrainmasstransit(Underground Metro LTR) - 04 = Train - 05 = Commuter train - 06 = Water-borne vehicle - 07 = Toll - 08 = Parking - 09 = Taxi - 10 = High-speed train - 11 = Rural bus - 12 = Express commuter train - 13 = Para transit - 14 = Self drive vehicle - 15 = Coach - 16 = Locomotive - 17 = Powered motor coach - 18 = Trailer - 19 = Regional train - 20 = Inter-city - 21 = Funicular train - 22 = Cable car
      * @return $this
      */
-    public function setTransitTransactionType($transitTransactionType)
+    public function setTransportationMode($transportationMode)
     {
-        $this->container['transitTransactionType'] = $transitTransactionType;
+        $this->container['transportationMode'] = $transportationMode;
 
         return $this;
     }

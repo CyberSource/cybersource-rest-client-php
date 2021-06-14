@@ -57,7 +57,9 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'endDate' => 'string',
         'frequency' => 'int',
-        'originalPurchaseDate' => 'string'
+        'numberOfPayments' => 'int',
+        'originalPurchaseDate' => 'string',
+        'sequenceNumber' => 'int'
     ];
 
     /**
@@ -67,7 +69,9 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'endDate' => null,
         'frequency' => null,
-        'originalPurchaseDate' => null
+        'numberOfPayments' => null,
+        'originalPurchaseDate' => null,
+        'sequenceNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -87,7 +91,9 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     protected static $attributeMap = [
         'endDate' => 'endDate',
         'frequency' => 'frequency',
-        'originalPurchaseDate' => 'originalPurchaseDate'
+        'numberOfPayments' => 'numberOfPayments',
+        'originalPurchaseDate' => 'originalPurchaseDate',
+        'sequenceNumber' => 'sequenceNumber'
     ];
 
 
@@ -98,7 +104,9 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     protected static $setters = [
         'endDate' => 'setEndDate',
         'frequency' => 'setFrequency',
-        'originalPurchaseDate' => 'setOriginalPurchaseDate'
+        'numberOfPayments' => 'setNumberOfPayments',
+        'originalPurchaseDate' => 'setOriginalPurchaseDate',
+        'sequenceNumber' => 'setSequenceNumber'
     ];
 
 
@@ -109,7 +117,9 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     protected static $getters = [
         'endDate' => 'getEndDate',
         'frequency' => 'getFrequency',
-        'originalPurchaseDate' => 'getOriginalPurchaseDate'
+        'numberOfPayments' => 'getNumberOfPayments',
+        'originalPurchaseDate' => 'getOriginalPurchaseDate',
+        'sequenceNumber' => 'getSequenceNumber'
     ];
 
     public static function attributeMap()
@@ -145,7 +155,9 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     {
         $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
         $this->container['frequency'] = isset($data['frequency']) ? $data['frequency'] : null;
+        $this->container['numberOfPayments'] = isset($data['numberOfPayments']) ? $data['numberOfPayments'] : null;
         $this->container['originalPurchaseDate'] = isset($data['originalPurchaseDate']) ? $data['originalPurchaseDate'] : null;
+        $this->container['sequenceNumber'] = isset($data['sequenceNumber']) ? $data['sequenceNumber'] : null;
     }
 
     /**
@@ -217,6 +229,27 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     }
 
     /**
+     * Gets numberOfPayments
+     * @return int
+     */
+    public function getNumberOfPayments()
+    {
+        return $this->container['numberOfPayments'];
+    }
+
+    /**
+     * Sets numberOfPayments
+     * @param int $numberOfPayments Total number of payments for the duration of the recurring subscription.
+     * @return $this
+     */
+    public function setNumberOfPayments($numberOfPayments)
+    {
+        $this->container['numberOfPayments'] = $numberOfPayments;
+
+        return $this;
+    }
+
+    /**
      * Gets originalPurchaseDate
      * @return string
      */
@@ -234,6 +267,27 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     {
 
         $this->container['originalPurchaseDate'] = $originalPurchaseDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets sequenceNumber
+     * @return int
+     */
+    public function getSequenceNumber()
+    {
+        return $this->container['sequenceNumber'];
+    }
+
+    /**
+     * Sets sequenceNumber
+     * @param int $sequenceNumber This field is mandatory for Cartes Bancaires recurring transactions on Credit Mutuel-CIC.       This field records recurring sequence, e.g. 1st for initial,  2 for subsequent, 3 etc
+     * @return $this
+     */
+    public function setSequenceNumber($sequenceNumber)
+    {
+        $this->container['sequenceNumber'] = $sequenceNumber;
 
         return $this;
     }

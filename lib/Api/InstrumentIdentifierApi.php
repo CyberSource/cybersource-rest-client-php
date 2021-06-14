@@ -341,7 +341,7 @@ class InstrumentIdentifierApi
      * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\PaymentInstrumentListForCustomer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PaymentInstrumentList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierTokenId, $profileId = null, $offset = '0', $limit = '20')
     {
@@ -359,7 +359,7 @@ class InstrumentIdentifierApi
      * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\PaymentInstrumentListForCustomer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PaymentInstrumentList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierTokenId, $profileId = null, $offset = '0', $limit = '20')
     {
@@ -439,15 +439,15 @@ class InstrumentIdentifierApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\PaymentInstrumentListForCustomer',
+                '\CyberSource\Model\PaymentInstrumentList',
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PaymentInstrumentListForCustomer', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PaymentInstrumentList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PaymentInstrumentListForCustomer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PaymentInstrumentList', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
