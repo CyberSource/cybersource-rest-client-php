@@ -22,26 +22,8 @@ class GlobalParameter
 	const SHA256 = "sha256";
 	const SHA256DIGEST = "SHA-256=";
 	const POSTHTTPDIGEST = "Digest: SHA-256=";
-	const PRODUCTIONURL = "api.cybersource.com";
-	const SANDBOXURL = "apitest.cybersource.com";
-	const PRODUCTIONMAURL = "api-ma.cybersource.com";
-	const SANDBOXMAURL = "api-matest.cybersource.com";
-	const RUNENVIRONMENT = "cyberSource.environment.SANDBOX";
-	const RUNPRODENVIRONMENT = "cyberSource.environment.PRODUCTION";
-	const RUNMUTUALAUTHSANDBOXENVIRONMENT = "cyberSource.environment.mutualauth.SANDBOX";
-	const RUNMUTUALAUTHPRODENVIRONMENT = "cyberSource.environment.mutualauth.PRODUCTION";
-	const BOAPRODUCTIONURL = "api.merchant-services.bankofamerica.com";
-	const BOASANDBOXURL = "apitest.merchant-services.bankofamerica.com";
-	const BOARUNENVIRONMENT = "bankofamerica.environment.SANDBOX";
-	const BOARUNPRODENVIRONMENT = "bankofamerica.environment.PRODUCTION";
-	const IDCPRODUCTIONURL = "api.in.cybersource.com";
-	const IDCSANDBOXURL = "apitest.cybersource.com";
-	const IDCRUNENVIRONMENT = "cybersource.in.environment.SANDBOX";
-	const IDCRUNPRODENVIRONMENT = "cybersource.in.environment.PRODUCTION";
-	const SITURL = "pnrstage.ic3.com:7448";
-	const SITMAURL = "pnrstage.ic3.com:8451";
-	const RUNSITENVIRONMENT = "cybesource.environment.SIT";
-	const RUNMUTUALAUTHSITENVIRONMENT = "cybesource.environment.mutualauth.SIT";
+	const OLD_RUN_ENVIRONMENT_CONSTANTS = array("CYBERSOURCE.ENVIRONMENT.SANDBOX", "CYBERSOURCE.ENVIRONMENT.PRODUCTION", "CYBERSOURCE.ENVIRONMENT.MUTUALAUTH.SANDBOX", "CYBERSOURCE.ENVIRONMENT.MUTUALAUTH.PRODUCTION", "CYBERSOURCE.IN.ENVIRONMENT.SANDBOX", "CYBERSOURCE.IN.ENVIRONMENT.PRODUCTION", "CYBESOURCE.ENVIRONMENT.SIT", "CYBESOURCE.ENVIRONMENT.MUTUALAUTH.SIT");
+	const DEPRECATED_RUN_ENVIRONMENT = "The value provided for this field `RunEnvironment` has been deprecated and will not be used anymore.\n\nPlease refer to the README file [ https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/README.md ] for information about the new values that are accepted." . PHP_EOL;
 	const KEY_DIR_PATH_DEFAULT = "Resources/";
 	const HTTPS_PREFIX = "https://"; 
 	const SIGNATURE = "Signature:";
@@ -110,11 +92,5 @@ class GlobalParameter
 	const LOGFILENAME = "LogFilename ";
 	const REQTYPE = "RequestType ";
 	const KEYFILEFIELDDIR = "keysDirectory ";
-
-
-
-
 }
-
-
 ?>
