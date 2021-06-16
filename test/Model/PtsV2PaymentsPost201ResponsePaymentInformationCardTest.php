@@ -83,4 +83,32 @@ class PtsV2PaymentsPost201ResponsePaymentInformationCardTest extends \PHPUnit_Fr
     public function testPropertySuffix()
     {
     }
+
+    /**
+     * Test attribute "expirationMonth"
+     */
+    public function testPropertyExpirationMonth()
+    {
+    }
+
+    /**
+     * Test attribute "expirationYear"
+     */
+    public function testPropertyExpirationYear()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "prefix"
+     */
+    public function testPropertyPrefix()
+    {
+    }
 }

@@ -90,4 +90,11 @@ class PtsV2PaymentsPost201ResponseOrderInformationTest extends \PHPUnit_Framewor
     public function testPropertyInvoiceDetails()
     {
     }
+
+    /**
+     * Test attribute "rewardPointsDetails"
+     */
+    public function testPropertyRewardPointsDetails()
+    {
+    }
 }

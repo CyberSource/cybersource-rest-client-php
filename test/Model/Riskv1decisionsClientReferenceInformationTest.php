@@ -85,6 +85,13 @@ class Riskv1decisionsClientReferenceInformationTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "pausedRequestId"
+     */
+    public function testPropertyPausedRequestId()
+    {
+    }
+
+    /**
      * Test attribute "comments"
      */
     public function testPropertyComments()

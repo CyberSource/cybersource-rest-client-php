@@ -162,6 +162,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "responseAccessToken"
+     */
+    public function testPropertyResponseAccessToken()
+    {
+    }
+
+    /**
      * Test attribute "acsTransactionId"
      */
     public function testPropertyAcsTransactionId()
@@ -375,6 +382,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
      * Test attribute "productCode"
      */
     public function testPropertyProductCode()
+    {
+    }
+
+    /**
+     * Test attribute "returnUrl"
+     */
+    public function testPropertyReturnUrl()
     {
     }
 

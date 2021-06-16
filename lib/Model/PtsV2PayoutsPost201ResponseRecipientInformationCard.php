@@ -177,7 +177,7 @@ class PtsV2PayoutsPost201ResponseRecipientInformationCard implements ArrayAccess
 
     /**
      * Sets balance
-     * @param string $balance This field shows the available balance in the prepaid account.  Acquirers always receive the available balance in the transaction currency.
+     * @param string $balance This field shows the available balance in the prepaid account. Acquirers always receive the available balance in the transaction currency.
      * @return $this
      */
     public function setBalance($balance)

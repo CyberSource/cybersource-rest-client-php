@@ -97,4 +97,11 @@ class Ptsv2paymentsRiskInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBuyerHistory()
     {
     }
+
+    /**
+     * Test attribute "auxiliaryData"
+     */
+    public function testPropertyAuxiliaryData()
+    {
+    }
 }

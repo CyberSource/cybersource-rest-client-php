@@ -78,6 +78,13 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationTest extends 
     }
 
     /**
+     * Test attribute "accessToken"
+     */
+    public function testPropertyAccessToken()
+    {
+    }
+
+    /**
      * Test attribute "acsRenderingType"
      */
     public function testPropertyAcsRenderingType()

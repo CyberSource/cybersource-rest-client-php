@@ -66,6 +66,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'string',
         'paSpecificationVersion' => 'string',
         'authenticationType' => 'string',
+        'responseAccessToken' => 'string',
         'acsTransactionId' => 'string',
         'acsWindowSize' => 'string',
         'alternateAuthenticationData' => 'string',
@@ -97,6 +98,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'string',
         'priorAuthenticationTime' => 'string',
         'productCode' => 'string',
+        'returnUrl' => 'string',
         'requestorId' => 'string',
         'requestorInitiatedAuthenticationIndicator' => 'string',
         'requestorName' => 'string',
@@ -127,6 +129,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => null,
         'paSpecificationVersion' => null,
         'authenticationType' => null,
+        'responseAccessToken' => null,
         'acsTransactionId' => null,
         'acsWindowSize' => null,
         'alternateAuthenticationData' => null,
@@ -158,6 +161,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => null,
         'priorAuthenticationTime' => null,
         'productCode' => null,
+        'returnUrl' => null,
         'requestorId' => null,
         'requestorInitiatedAuthenticationIndicator' => null,
         'requestorName' => null,
@@ -198,6 +202,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'directoryServerTransactionId',
         'paSpecificationVersion' => 'paSpecificationVersion',
         'authenticationType' => 'authenticationType',
+        'responseAccessToken' => 'responseAccessToken',
         'acsTransactionId' => 'acsTransactionId',
         'acsWindowSize' => 'acsWindowSize',
         'alternateAuthenticationData' => 'alternateAuthenticationData',
@@ -229,6 +234,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'priorAuthenticationReferenceId',
         'priorAuthenticationTime' => 'priorAuthenticationTime',
         'productCode' => 'productCode',
+        'returnUrl' => 'returnUrl',
         'requestorId' => 'requestorId',
         'requestorInitiatedAuthenticationIndicator' => 'requestorInitiatedAuthenticationIndicator',
         'requestorName' => 'requestorName',
@@ -260,6 +266,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'setDirectoryServerTransactionId',
         'paSpecificationVersion' => 'setPaSpecificationVersion',
         'authenticationType' => 'setAuthenticationType',
+        'responseAccessToken' => 'setResponseAccessToken',
         'acsTransactionId' => 'setAcsTransactionId',
         'acsWindowSize' => 'setAcsWindowSize',
         'alternateAuthenticationData' => 'setAlternateAuthenticationData',
@@ -291,6 +298,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'setPriorAuthenticationReferenceId',
         'priorAuthenticationTime' => 'setPriorAuthenticationTime',
         'productCode' => 'setProductCode',
+        'returnUrl' => 'setReturnUrl',
         'requestorId' => 'setRequestorId',
         'requestorInitiatedAuthenticationIndicator' => 'setRequestorInitiatedAuthenticationIndicator',
         'requestorName' => 'setRequestorName',
@@ -322,6 +330,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'directoryServerTransactionId' => 'getDirectoryServerTransactionId',
         'paSpecificationVersion' => 'getPaSpecificationVersion',
         'authenticationType' => 'getAuthenticationType',
+        'responseAccessToken' => 'getResponseAccessToken',
         'acsTransactionId' => 'getAcsTransactionId',
         'acsWindowSize' => 'getAcsWindowSize',
         'alternateAuthenticationData' => 'getAlternateAuthenticationData',
@@ -353,6 +362,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'priorAuthenticationReferenceId' => 'getPriorAuthenticationReferenceId',
         'priorAuthenticationTime' => 'getPriorAuthenticationTime',
         'productCode' => 'getProductCode',
+        'returnUrl' => 'getReturnUrl',
         'requestorId' => 'getRequestorId',
         'requestorInitiatedAuthenticationIndicator' => 'getRequestorInitiatedAuthenticationIndicator',
         'requestorName' => 'getRequestorName',
@@ -409,6 +419,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
         $this->container['paSpecificationVersion'] = isset($data['paSpecificationVersion']) ? $data['paSpecificationVersion'] : null;
         $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
+        $this->container['responseAccessToken'] = isset($data['responseAccessToken']) ? $data['responseAccessToken'] : null;
         $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['acsWindowSize'] = isset($data['acsWindowSize']) ? $data['acsWindowSize'] : null;
         $this->container['alternateAuthenticationData'] = isset($data['alternateAuthenticationData']) ? $data['alternateAuthenticationData'] : null;
@@ -440,6 +451,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['priorAuthenticationReferenceId'] = isset($data['priorAuthenticationReferenceId']) ? $data['priorAuthenticationReferenceId'] : null;
         $this->container['priorAuthenticationTime'] = isset($data['priorAuthenticationTime']) ? $data['priorAuthenticationTime'] : null;
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
+        $this->container['returnUrl'] = isset($data['returnUrl']) ? $data['returnUrl'] : null;
         $this->container['requestorId'] = isset($data['requestorId']) ? $data['requestorId'] : null;
         $this->container['requestorInitiatedAuthenticationIndicator'] = isset($data['requestorInitiatedAuthenticationIndicator']) ? $data['requestorInitiatedAuthenticationIndicator'] : null;
         $this->container['requestorName'] = isset($data['requestorName']) ? $data['requestorName'] : null;
@@ -737,6 +749,27 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     {
 
         $this->container['authenticationType'] = $authenticationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseAccessToken
+     * @return string
+     */
+    public function getResponseAccessToken()
+    {
+        return $this->container['responseAccessToken'];
+    }
+
+    /**
+     * Sets responseAccessToken
+     * @param string $responseAccessToken JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters.
+     * @return $this
+     */
+    public function setResponseAccessToken($responseAccessToken)
+    {
+        $this->container['responseAccessToken'] = $responseAccessToken;
 
         return $this;
     }
@@ -1411,6 +1444,28 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     {
 
         $this->container['productCode'] = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnUrl
+     * @return string
+     */
+    public function getReturnUrl()
+    {
+        return $this->container['returnUrl'];
+    }
+
+    /**
+     * Sets returnUrl
+     * @param string $returnUrl The URL of the merchant’s return page. CyberSource adds this return URL to the step-up JWT and returns it in the response of the Payer Authentication enrollment call. The merchant's return URL page serves as a listening URL. Once the bank session completes, the merchant receives a POST to their URL. This response contains the completed bank session’s transactionId. The merchant’s return page should capture the transaction ID and send it in the Payer Authentication validation call.
+     * @return $this
+     */
+    public function setReturnUrl($returnUrl)
+    {
+
+        $this->container['returnUrl'] = $returnUrl;
 
         return $this;
     }
