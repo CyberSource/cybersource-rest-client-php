@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\Riskv1decisionsClientReferenceInformation**](Riskv1decisionsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\Riskv1liststypeentriesClientReferenceInformation**](Riskv1liststypeentriesClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Riskv1exportcomplianceinquiriesOrderInformation**](Riskv1exportcomplianceinquiriesOrderInformation.md) |  | [optional] 
 **buyerInformation** | [**\CyberSource\Model\Riskv1addressverificationsBuyerInformation**](Riskv1addressverificationsBuyerInformation.md) |  | [optional] 
 **deviceInformation** | [**\CyberSource\Model\Riskv1exportcomplianceinquiriesDeviceInformation**](Riskv1exportcomplianceinquiriesDeviceInformation.md) |  | [optional] 

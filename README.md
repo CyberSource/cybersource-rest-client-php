@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.22"
+  "cybersource/rest-client-php": "0.0.23"
   }
 }
 ```
@@ -83,7 +83,7 @@ Further information on MetaKey can be found in [New Business Center User Guide](
 
 ```
    $this->authType          = "HTTP_SIGNATURE";
-   $this->runEnv            = "cyberSource.environment.SANDBOX";
+   $this->runEnv            = "apitest.cybersource.com";
    $this->merchantID        = <merchantID>;
    $this->apiKeyID          = <merchantKeyId>;
    $this->secretKey         = <merchantSecretKey>;
@@ -108,15 +108,15 @@ Further information on MetaKey can be found in [New Business Center User Guide](
 *    keyAlias: Alias of the Merchant ID, to be used while generating the JWT token.
 *    keyPassword: Alias of the Merchant password, to be used while generating the JWT token.
 *    keyFileName: Filename of the key generated from the EBC portal, without the extension part .P12
-*   keysDirectory: path of the directory, where key is placed.
+*    keysDirectory: path of the directory, where key is placed.
 *    Enable Log: To start the log entry provide _true_ else enter _false_.
-*   LogDirectory :Merchant will provide directory path where logs will be created.
-*   LogMaximumSize :Merchant will provide size value for log file.
-*   LogFilename  :Merchant will provide log file name.
+*    LogDirectory :Merchant will provide directory path where logs will be created.
+*    LogMaximumSize :Merchant will provide size value for log file.
+*    LogFilename  :Merchant will provide log file name.
 
 ```
    $this->authType            = "JWT";
-   $this->runEnv              = "cyberSource.environment.SANDBOX";
+   $this->runEnv              = "apitest.cybersource.com";
    $this->merchantID          = <merchantID>;
 
    $this->keyAlias            = <keyAlias>;
@@ -169,9 +169,9 @@ For example:
 
 ```php
    // For TESTING use
-   // $this->runEnv = "cyberSource.environment.SANDBOX";
+   // $this->runEnv = "apitest.cybersource.com";
    // For PRODUCTION use
-   $this->runEnv = "cyberSource.environment.PRODUCTION";
+   $this->runEnv = "api.cybersource.com";
 ```
 
 The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.

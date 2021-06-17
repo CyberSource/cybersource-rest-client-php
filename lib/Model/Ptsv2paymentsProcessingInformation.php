@@ -79,7 +79,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'japanPaymentOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptions',
         'mobileRemotePaymentType' => 'string',
         'extendedCreditTotalCount' => 'string',
-        'networkRoutingOrder' => 'string'
+        'networkRoutingOrder' => 'string',
+        'payByPointsIndicator' => 'bool'
     ];
 
     /**
@@ -112,7 +113,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'japanPaymentOptions' => null,
         'mobileRemotePaymentType' => null,
         'extendedCreditTotalCount' => null,
-        'networkRoutingOrder' => null
+        'networkRoutingOrder' => null,
+        'payByPointsIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -155,7 +157,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'japanPaymentOptions' => 'japanPaymentOptions',
         'mobileRemotePaymentType' => 'mobileRemotePaymentType',
         'extendedCreditTotalCount' => 'extendedCreditTotalCount',
-        'networkRoutingOrder' => 'networkRoutingOrder'
+        'networkRoutingOrder' => 'networkRoutingOrder',
+        'payByPointsIndicator' => 'payByPointsIndicator'
     ];
 
 
@@ -189,7 +192,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'japanPaymentOptions' => 'setJapanPaymentOptions',
         'mobileRemotePaymentType' => 'setMobileRemotePaymentType',
         'extendedCreditTotalCount' => 'setExtendedCreditTotalCount',
-        'networkRoutingOrder' => 'setNetworkRoutingOrder'
+        'networkRoutingOrder' => 'setNetworkRoutingOrder',
+        'payByPointsIndicator' => 'setPayByPointsIndicator'
     ];
 
 
@@ -223,7 +227,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'japanPaymentOptions' => 'getJapanPaymentOptions',
         'mobileRemotePaymentType' => 'getMobileRemotePaymentType',
         'extendedCreditTotalCount' => 'getExtendedCreditTotalCount',
-        'networkRoutingOrder' => 'getNetworkRoutingOrder'
+        'networkRoutingOrder' => 'getNetworkRoutingOrder',
+        'payByPointsIndicator' => 'getPayByPointsIndicator'
     ];
 
     public static function attributeMap()
@@ -283,6 +288,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['mobileRemotePaymentType'] = isset($data['mobileRemotePaymentType']) ? $data['mobileRemotePaymentType'] : null;
         $this->container['extendedCreditTotalCount'] = isset($data['extendedCreditTotalCount']) ? $data['extendedCreditTotalCount'] : null;
         $this->container['networkRoutingOrder'] = isset($data['networkRoutingOrder']) ? $data['networkRoutingOrder'] : null;
+        $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
     }
 
     /**
@@ -449,7 +455,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
 
     /**
      * Sets paymentSolution
-     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.
+     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.
      * @return $this
      */
     public function setPaymentSolution($paymentSolution)
@@ -866,6 +872,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     {
 
         $this->container['networkRoutingOrder'] = $networkRoutingOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets payByPointsIndicator
+     * @return bool
+     */
+    public function getPayByPointsIndicator()
+    {
+        return $this->container['payByPointsIndicator'];
+    }
+
+    /**
+     * Sets payByPointsIndicator
+     * @param bool $payByPointsIndicator Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false
+     * @return $this
+     */
+    public function setPayByPointsIndicator($payByPointsIndicator)
+    {
+        $this->container['payByPointsIndicator'] = $payByPointsIndicator;
 
         return $this;
     }

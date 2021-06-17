@@ -236,6 +236,7 @@ class ApiClient
             $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
             $headers = array_merge($headers, $authHeader);
         }
+
         foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
             $this->config->addRequestHeader($splitArr[0], $splitArr[1]);

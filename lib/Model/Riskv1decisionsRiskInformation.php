@@ -56,7 +56,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'profile' => '\CyberSource\Model\Ptsv2paymentsRiskInformationProfile',
         'eventType' => 'string',
-        'buyerHistory' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory'
+        'buyerHistory' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory',
+        'auxiliaryData' => '\CyberSource\Model\Ptsv2paymentsRiskInformationAuxiliaryData[]'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'profile' => null,
         'eventType' => null,
-        'buyerHistory' => null
+        'buyerHistory' => null,
+        'auxiliaryData' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     protected static $attributeMap = [
         'profile' => 'profile',
         'eventType' => 'eventType',
-        'buyerHistory' => 'buyerHistory'
+        'buyerHistory' => 'buyerHistory',
+        'auxiliaryData' => 'auxiliaryData'
     ];
 
 
@@ -97,7 +100,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     protected static $setters = [
         'profile' => 'setProfile',
         'eventType' => 'setEventType',
-        'buyerHistory' => 'setBuyerHistory'
+        'buyerHistory' => 'setBuyerHistory',
+        'auxiliaryData' => 'setAuxiliaryData'
     ];
 
 
@@ -108,7 +112,8 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     protected static $getters = [
         'profile' => 'getProfile',
         'eventType' => 'getEventType',
-        'buyerHistory' => 'getBuyerHistory'
+        'buyerHistory' => 'getBuyerHistory',
+        'auxiliaryData' => 'getAuxiliaryData'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
         $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
         $this->container['buyerHistory'] = isset($data['buyerHistory']) ? $data['buyerHistory'] : null;
+        $this->container['auxiliaryData'] = isset($data['auxiliaryData']) ? $data['auxiliaryData'] : null;
     }
 
     /**
@@ -232,6 +238,27 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     public function setBuyerHistory($buyerHistory)
     {
         $this->container['buyerHistory'] = $buyerHistory;
+
+        return $this;
+    }
+
+    /**
+     * Gets auxiliaryData
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationAuxiliaryData[]
+     */
+    public function getAuxiliaryData()
+    {
+        return $this->container['auxiliaryData'];
+    }
+
+    /**
+     * Sets auxiliaryData
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationAuxiliaryData[] $auxiliaryData
+     * @return $this
+     */
+    public function setAuxiliaryData($auxiliaryData)
+    {
+        $this->container['auxiliaryData'] = $auxiliaryData;
 
         return $this;
     }

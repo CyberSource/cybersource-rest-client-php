@@ -55,7 +55,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'amountDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationAmountDetails',
-        'invoiceDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails'
+        'invoiceDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails',
+        'rewardPointsDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails'
     ];
 
     /**
@@ -64,7 +65,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'amountDetails' => null,
-        'invoiceDetails' => null
+        'invoiceDetails' => null,
+        'rewardPointsDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'amountDetails' => 'amountDetails',
-        'invoiceDetails' => 'invoiceDetails'
+        'invoiceDetails' => 'invoiceDetails',
+        'rewardPointsDetails' => 'rewardPointsDetails'
     ];
 
 
@@ -93,7 +96,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
      */
     protected static $setters = [
         'amountDetails' => 'setAmountDetails',
-        'invoiceDetails' => 'setInvoiceDetails'
+        'invoiceDetails' => 'setInvoiceDetails',
+        'rewardPointsDetails' => 'setRewardPointsDetails'
     ];
 
 
@@ -103,7 +107,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
      */
     protected static $getters = [
         'amountDetails' => 'getAmountDetails',
-        'invoiceDetails' => 'getInvoiceDetails'
+        'invoiceDetails' => 'getInvoiceDetails',
+        'rewardPointsDetails' => 'getRewardPointsDetails'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
+        $this->container['rewardPointsDetails'] = isset($data['rewardPointsDetails']) ? $data['rewardPointsDetails'] : null;
     }
 
     /**
@@ -204,6 +210,27 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
     public function setInvoiceDetails($invoiceDetails)
     {
         $this->container['invoiceDetails'] = $invoiceDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets rewardPointsDetails
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails
+     */
+    public function getRewardPointsDetails()
+    {
+        return $this->container['rewardPointsDetails'];
+    }
+
+    /**
+     * Sets rewardPointsDetails
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails $rewardPointsDetails
+     * @return $this
+     */
+    public function setRewardPointsDetails($rewardPointsDetails)
+    {
+        $this->container['rewardPointsDetails'] = $rewardPointsDetails;
 
         return $this;
     }

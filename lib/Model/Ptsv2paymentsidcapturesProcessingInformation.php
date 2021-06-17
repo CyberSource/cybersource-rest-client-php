@@ -64,7 +64,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'issuer' => '\CyberSource\Model\Ptsv2paymentsIssuerInformation',
         'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions',
         'captureOptions' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationCaptureOptions',
-        'loanOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationLoanOptions'
+        'loanOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationLoanOptions',
+        'payByPointsIndicator' => 'bool'
     ];
 
     /**
@@ -82,7 +83,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'issuer' => null,
         'authorizationOptions' => null,
         'captureOptions' => null,
-        'loanOptions' => null
+        'loanOptions' => null,
+        'payByPointsIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +112,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'issuer' => 'issuer',
         'authorizationOptions' => 'authorizationOptions',
         'captureOptions' => 'captureOptions',
-        'loanOptions' => 'loanOptions'
+        'loanOptions' => 'loanOptions',
+        'payByPointsIndicator' => 'payByPointsIndicator'
     ];
 
 
@@ -129,7 +132,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'issuer' => 'setIssuer',
         'authorizationOptions' => 'setAuthorizationOptions',
         'captureOptions' => 'setCaptureOptions',
-        'loanOptions' => 'setLoanOptions'
+        'loanOptions' => 'setLoanOptions',
+        'payByPointsIndicator' => 'setPayByPointsIndicator'
     ];
 
 
@@ -148,7 +152,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'issuer' => 'getIssuer',
         'authorizationOptions' => 'getAuthorizationOptions',
         'captureOptions' => 'getCaptureOptions',
-        'loanOptions' => 'getLoanOptions'
+        'loanOptions' => 'getLoanOptions',
+        'payByPointsIndicator' => 'getPayByPointsIndicator'
     ];
 
     public static function attributeMap()
@@ -193,6 +198,7 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
         $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
         $this->container['loanOptions'] = isset($data['loanOptions']) ? $data['loanOptions'] : null;
+        $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
     }
 
     /**
@@ -231,7 +237,7 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
 
     /**
      * Sets paymentSolution
-     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.
+     * @param string $paymentSolution Type of digital payment solution for the transaction. Possible Values:   - `visacheckout`: Visa Checkout. This value is required for Visa Checkout transactions. For details, see `payment_solution` field description in [Visa Checkout Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/VCO_SCMP_API/html/)  - `001`: Apple Pay.  - `004`: Cybersource In-App Solution.  - `005`: Masterpass. This value is required for Masterpass transactions on OmniPay Direct. For details, see \"Masterpass\" in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  - `006`: Android Pay.  - `007`: Chase Pay.  - `008`: Samsung Pay.  - `012`: Google Pay.  - `013`: Cybersource P2PE Decryption  - `014`: Mastercard credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.  - `015`: Visa credential on file (COF) payment network token. Returned in authorizations that use a payment network token associated with a TMS token.
      * @return $this
      */
     public function setPaymentSolution($paymentSolution)
@@ -454,6 +460,27 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
     public function setLoanOptions($loanOptions)
     {
         $this->container['loanOptions'] = $loanOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets payByPointsIndicator
+     * @return bool
+     */
+    public function getPayByPointsIndicator()
+    {
+        return $this->container['payByPointsIndicator'];
+    }
+
+    /**
+     * Sets payByPointsIndicator
+     * @param bool $payByPointsIndicator Flag that indicates if the transaction is pay by points transaction true: Transaction uses loyalty points false: Transaction does not use loyalty points Default: false
+     * @return $this
+     */
+    public function setPayByPointsIndicator($payByPointsIndicator)
+    {
+        $this->container['payByPointsIndicator'] = $payByPointsIndicator;
 
         return $this;
     }

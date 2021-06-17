@@ -97,4 +97,11 @@ class Riskv1decisionsRiskInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBuyerHistory()
     {
     }
+
+    /**
+     * Test attribute "auxiliaryData"
+     */
+    public function testPropertyAuxiliaryData()
+    {
+    }
 }
