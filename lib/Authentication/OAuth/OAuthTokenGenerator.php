@@ -10,7 +10,7 @@ use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
  
 class OAuthTokenGenerator implements TokenGenerator
 {
-	private static $logger=null;
+	private static $logger = null;
 	/**
      * Constructor
      */
