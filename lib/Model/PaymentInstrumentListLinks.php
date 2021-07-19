@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinks
+ * PaymentInstrumentListLinks
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PaymentInstrumentListForCustomerLinks Class Doc Comment
+ * PaymentInstrumentListLinks Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinks implements ArrayAccess
+class PaymentInstrumentListLinks implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,18 +47,18 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentInstrumentListForCustomer__links';
+    protected static $swaggerModelName = 'PaymentInstrumentList__links';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'self' => '\CyberSource\Model\PaymentInstrumentListForCustomerLinksSelf',
-        'first' => '\CyberSource\Model\PaymentInstrumentListForCustomerLinksFirst',
-        'prev' => '\CyberSource\Model\PaymentInstrumentListForCustomerLinksPrev',
-        'next' => '\CyberSource\Model\PaymentInstrumentListForCustomerLinksNext',
-        'last' => '\CyberSource\Model\PaymentInstrumentListForCustomerLinksLast'
+        'self' => '\CyberSource\Model\PaymentInstrumentListLinksSelf',
+        'first' => '\CyberSource\Model\PaymentInstrumentListLinksFirst',
+        'prev' => '\CyberSource\Model\PaymentInstrumentListLinksPrev',
+        'next' => '\CyberSource\Model\PaymentInstrumentListLinksNext',
+        'last' => '\CyberSource\Model\PaymentInstrumentListLinksLast'
     ];
 
     /**
@@ -186,7 +186,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerLinksSelf
+     * @return \CyberSource\Model\PaymentInstrumentListLinksSelf
      */
     public function getSelf()
     {
@@ -195,7 +195,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerLinksSelf $self
+     * @param \CyberSource\Model\PaymentInstrumentListLinksSelf $self
      * @return $this
      */
     public function setSelf($self)
@@ -207,7 +207,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Gets first
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerLinksFirst
+     * @return \CyberSource\Model\PaymentInstrumentListLinksFirst
      */
     public function getFirst()
     {
@@ -216,7 +216,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Sets first
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerLinksFirst $first
+     * @param \CyberSource\Model\PaymentInstrumentListLinksFirst $first
      * @return $this
      */
     public function setFirst($first)
@@ -228,7 +228,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Gets prev
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerLinksPrev
+     * @return \CyberSource\Model\PaymentInstrumentListLinksPrev
      */
     public function getPrev()
     {
@@ -237,7 +237,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Sets prev
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerLinksPrev $prev
+     * @param \CyberSource\Model\PaymentInstrumentListLinksPrev $prev
      * @return $this
      */
     public function setPrev($prev)
@@ -249,7 +249,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Gets next
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerLinksNext
+     * @return \CyberSource\Model\PaymentInstrumentListLinksNext
      */
     public function getNext()
     {
@@ -258,7 +258,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Sets next
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerLinksNext $next
+     * @param \CyberSource\Model\PaymentInstrumentListLinksNext $next
      * @return $this
      */
     public function setNext($next)
@@ -270,7 +270,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Gets last
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerLinksLast
+     * @return \CyberSource\Model\PaymentInstrumentListLinksLast
      */
     public function getLast()
     {
@@ -279,7 +279,7 @@ class PaymentInstrumentListForCustomerLinks implements ArrayAccess
 
     /**
      * Sets last
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerLinksLast $last
+     * @param \CyberSource\Model\PaymentInstrumentListLinksLast $last
      * @return $this
      */
     public function setLast($last)

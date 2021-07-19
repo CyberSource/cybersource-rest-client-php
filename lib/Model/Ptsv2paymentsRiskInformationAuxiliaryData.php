@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerEmbedded
+ * Ptsv2paymentsRiskInformationAuxiliaryData
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PaymentInstrumentListForCustomerEmbedded Class Doc Comment
+ * Ptsv2paymentsRiskInformationAuxiliaryData Class Doc Comment
  *
  * @category    Class
- * @description Payment Instrument Resources.
+ * @description Contains auxiliary key-value pairs.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
+class Ptsv2paymentsRiskInformationAuxiliaryData implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,14 +48,15 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentInstrumentListForCustomer__embedded';
+    protected static $swaggerModelName = 'ptsv2payments_riskInformation_auxiliaryData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentInstruments' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[]'
+        'key' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'paymentInstruments' => null
+        'key' => null,
+        'value' => null
     ];
 
     public static function swaggerTypes()
@@ -81,7 +83,8 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentInstruments' => 'paymentInstruments'
+        'key' => 'key',
+        'value' => 'value'
     ];
 
 
@@ -90,7 +93,8 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'paymentInstruments' => 'setPaymentInstruments'
+        'key' => 'setKey',
+        'value' => 'setValue'
     ];
 
 
@@ -99,7 +103,8 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'paymentInstruments' => 'getPaymentInstruments'
+        'key' => 'getKey',
+        'value' => 'getValue'
     ];
 
     public static function attributeMap()
@@ -133,7 +138,8 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['paymentInstruments'] = isset($data['paymentInstruments']) ? $data['paymentInstruments'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -162,22 +168,45 @@ class PaymentInstrumentListForCustomerEmbedded implements ArrayAccess
 
 
     /**
-     * Gets paymentInstruments
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[]
+     * Gets key
+     * @return string
      */
-    public function getPaymentInstruments()
+    public function getKey()
     {
-        return $this->container['paymentInstruments'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets paymentInstruments
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[] $paymentInstruments
+     * Sets key
+     * @param string $key Fields that you can use to send additional data to Risk services. **Warning** Auxiliary fields are not intended to and MUST NOT be used to capture personally identifying information. Accordingly, merchants are prohibited from capturing, obtaining, and/or transmitting any personally identifying information in or via the auxiliary data fields. Personally identifying information includes, but is not limited to, address, credit card number, social security number, driver's license number, state-issued identification number, passport number, and card verification numbers (CVV, CVC2, CVV2, CID, CVN). In the event CyberSource discovers that a merchant is capturing and/or transmitting personally identifying information via the auxiliary data fields, whether or not intentionally, CyberSource WILL immediately suspend the merchant's account, which will result in a rejection of any and all transaction requests submitted by the merchant after the point of suspension.
      * @return $this
      */
-    public function setPaymentInstruments($paymentInstruments)
+    public function setKey($key)
     {
-        $this->container['paymentInstruments'] = $paymentInstruments;
+
+        $this->container['key'] = $key;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     * @param string $value String value for the key
+     * @return $this
+     */
+    public function setValue($value)
+    {
+
+        $this->container['value'] = $value;
 
         return $this;
     }

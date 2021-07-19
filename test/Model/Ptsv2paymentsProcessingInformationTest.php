@@ -258,4 +258,11 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyNetworkRoutingOrder()
     {
     }
+
+    /**
+     * Test attribute "payByPointsIndicator"
+     */
+    public function testPropertyPayByPointsIndicator()
+    {
+    }
 }

@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * CustomerApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class CustomerApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class CustomerApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class CustomerApi
      */
     public function deleteCustomer($customerTokenId, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD deleteCustomer STARTED');
         list($response, $statusCode, $httpHeader) = $this->deleteCustomerWithHttpInfo($customerTokenId, $profileId);
+        self::$logger->info('CALL TO METHOD deleteCustomer ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,20 +127,25 @@ class CustomerApi
     {
         // verify the required parameter 'customerTokenId' is set
         if ($customerTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling deleteCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling deleteCustomer');
         }
         if ((strlen($customerTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$customerTokenId" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 32.');
         }
         if ((strlen($customerTokenId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$customerTokenId" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -164,6 +179,20 @@ class CustomerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : DELETE $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -175,6 +204,8 @@ class CustomerApi
                 null,
                 '/tms/v2/customers/{customerTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -205,6 +236,7 @@ class CustomerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -221,7 +253,10 @@ class CustomerApi
      */
     public function getCustomer($customerTokenId, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD getCustomer STARTED');
         list($response, $statusCode, $httpHeader) = $this->getCustomerWithHttpInfo($customerTokenId, $profileId);
+        self::$logger->info('CALL TO METHOD getCustomer ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -239,20 +274,25 @@ class CustomerApi
     {
         // verify the required parameter 'customerTokenId' is set
         if ($customerTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling getCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling getCustomer');
         }
         if ((strlen($customerTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$customerTokenId" when calling CustomerApi.getCustomer, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerApi.getCustomer, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerApi.getCustomer, must be smaller than or equal to 32.');
         }
         if ((strlen($customerTokenId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$customerTokenId" when calling CustomerApi.getCustomer, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerApi.getCustomer, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerApi.getCustomer, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.getCustomer, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.getCustomer, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.getCustomer, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.getCustomer, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.getCustomer, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.getCustomer, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -286,6 +326,20 @@ class CustomerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\TmsV2CustomersResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -297,6 +351,8 @@ class CustomerApi
                 '\CyberSource\Model\TmsV2CustomersResponse',
                 '/tms/v2/customers/{customerTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV2CustomersResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -331,6 +387,7 @@ class CustomerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -349,7 +406,10 @@ class CustomerApi
      */
     public function patchCustomer($customerTokenId, $patchCustomerRequest, $profileId = null, $ifMatch = null)
     {
+        self::$logger->info('CALL TO METHOD patchCustomer STARTED');
         list($response, $statusCode, $httpHeader) = $this->patchCustomerWithHttpInfo($customerTokenId, $patchCustomerRequest, $profileId, $ifMatch);
+        self::$logger->info('CALL TO METHOD patchCustomer ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -369,31 +429,39 @@ class CustomerApi
     {
         // verify the required parameter 'customerTokenId' is set
         if ($customerTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling patchCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling patchCustomer');
         }
         if ((strlen($customerTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$customerTokenId" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.');
         }
         if ((strlen($customerTokenId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$customerTokenId" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'patchCustomerRequest' is set
         if ($patchCustomerRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $patchCustomerRequest when calling patchCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $patchCustomerRequest when calling patchCustomer');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.patchCustomer, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.patchCustomer, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.patchCustomer, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.patchCustomer, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.patchCustomer, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.patchCustomer, must be bigger than or equal to 36.');
         }
 
         if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.');
         }
         if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -436,6 +504,20 @@ class CustomerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\TmsV2CustomersResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -447,6 +529,8 @@ class CustomerApi
                 '\CyberSource\Model\TmsV2CustomersResponse',
                 '/tms/v2/customers/{customerTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV2CustomersResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -485,6 +569,7 @@ class CustomerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -501,7 +586,10 @@ class CustomerApi
      */
     public function postCustomer($postCustomerRequest, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD postCustomer STARTED');
         list($response, $statusCode, $httpHeader) = $this->postCustomerWithHttpInfo($postCustomerRequest, $profileId);
+        self::$logger->info('CALL TO METHOD postCustomer ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -519,13 +607,16 @@ class CustomerApi
     {
         // verify the required parameter 'postCustomerRequest' is set
         if ($postCustomerRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $postCustomerRequest when calling postCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $postCustomerRequest when calling postCustomer');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.postCustomer, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.postCustomer, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.postCustomer, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling CustomerApi.postCustomer, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.postCustomer, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.postCustomer, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -556,6 +647,20 @@ class CustomerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\TmsV2CustomersResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -567,6 +672,8 @@ class CustomerApi
                 '\CyberSource\Model\TmsV2CustomersResponse',
                 '/tms/v2/customers'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsV2CustomersResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -593,6 +700,7 @@ class CustomerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

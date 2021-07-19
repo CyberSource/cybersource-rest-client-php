@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomer
+ * PaymentInstrumentList
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PaymentInstrumentListForCustomer Class Doc Comment
+ * PaymentInstrumentList Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomer implements ArrayAccess
+class PaymentInstrumentList implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,19 +47,19 @@ class PaymentInstrumentListForCustomer implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentInstrumentListForCustomer';
+    protected static $swaggerModelName = 'PaymentInstrumentList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\PaymentInstrumentListForCustomerLinks',
+        'links' => '\CyberSource\Model\PaymentInstrumentListLinks',
         'offset' => 'int',
         'limit' => 'int',
         'count' => 'int',
         'total' => 'int',
-        'embedded' => '\CyberSource\Model\PaymentInstrumentListForCustomerEmbedded'
+        'embedded' => '\CyberSource\Model\PaymentInstrumentListEmbedded'
     ];
 
     /**
@@ -192,7 +192,7 @@ class PaymentInstrumentListForCustomer implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerLinks
+     * @return \CyberSource\Model\PaymentInstrumentListLinks
      */
     public function getLinks()
     {
@@ -201,7 +201,7 @@ class PaymentInstrumentListForCustomer implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerLinks $links
+     * @param \CyberSource\Model\PaymentInstrumentListLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -297,7 +297,7 @@ class PaymentInstrumentListForCustomer implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\PaymentInstrumentListForCustomerEmbedded
+     * @return \CyberSource\Model\PaymentInstrumentListEmbedded
      */
     public function getEmbedded()
     {
@@ -306,7 +306,7 @@ class PaymentInstrumentListForCustomer implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\PaymentInstrumentListForCustomerEmbedded $embedded
+     * @param \CyberSource\Model\PaymentInstrumentListEmbedded $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

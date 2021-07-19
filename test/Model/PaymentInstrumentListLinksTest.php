@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksSelfTest
+ * PaymentInstrumentListLinksTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * PaymentInstrumentListForCustomerLinksSelfTest Class Doc Comment
+ * PaymentInstrumentListLinksTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaymentInstrumentListForCustomerLinksSelf
+// * @description PaymentInstrumentListLinks
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksSelfTest extends \PHPUnit_Framework_TestCase
+class PaymentInstrumentListLinksTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,44 @@ class PaymentInstrumentListForCustomerLinksSelfTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test "PaymentInstrumentListForCustomerLinksSelf"
+     * Test "PaymentInstrumentListLinks"
      */
-    public function testPaymentInstrumentListForCustomerLinksSelf()
+    public function testPaymentInstrumentListLinks()
     {
     }
 
     /**
-     * Test attribute "href"
+     * Test attribute "self"
      */
-    public function testPropertyHref()
+    public function testPropertySelf()
+    {
+    }
+
+    /**
+     * Test attribute "first"
+     */
+    public function testPropertyFirst()
+    {
+    }
+
+    /**
+     * Test attribute "prev"
+     */
+    public function testPropertyPrev()
+    {
+    }
+
+    /**
+     * Test attribute "next"
+     */
+    public function testPropertyNext()
+    {
+    }
+
+    /**
+     * Test attribute "last"
+     */
+    public function testPropertyLast()
     {
     }
 }

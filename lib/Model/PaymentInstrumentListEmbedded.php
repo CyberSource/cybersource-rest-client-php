@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksFirst
+ * PaymentInstrumentListEmbedded
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PaymentInstrumentListForCustomerLinksFirst Class Doc Comment
+ * PaymentInstrumentListEmbedded Class Doc Comment
  *
  * @category    Class
+ * @description Payment Instrument Resources.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
+class PaymentInstrumentListEmbedded implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +48,14 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentInstrumentListForCustomer__links_first';
+    protected static $swaggerModelName = 'PaymentInstrumentList__embedded';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'href' => 'string'
+        'paymentInstruments' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[]'
     ];
 
     /**
@@ -62,7 +63,7 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'href' => null
+        'paymentInstruments' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +81,7 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'href'
+        'paymentInstruments' => 'paymentInstruments'
     ];
 
 
@@ -89,7 +90,7 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'href' => 'setHref'
+        'paymentInstruments' => 'setPaymentInstruments'
     ];
 
 
@@ -98,7 +99,7 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'href' => 'getHref'
+        'paymentInstruments' => 'getPaymentInstruments'
     ];
 
     public static function attributeMap()
@@ -132,7 +133,7 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
+        $this->container['paymentInstruments'] = isset($data['paymentInstruments']) ? $data['paymentInstruments'] : null;
     }
 
     /**
@@ -161,22 +162,22 @@ class PaymentInstrumentListForCustomerLinksFirst implements ArrayAccess
 
 
     /**
-     * Gets href
-     * @return string
+     * Gets paymentInstruments
+     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[]
      */
-    public function getHref()
+    public function getPaymentInstruments()
     {
-        return $this->container['href'];
+        return $this->container['paymentInstruments'];
     }
 
     /**
-     * Sets href
-     * @param string $href Link to the first page.
+     * Sets paymentInstruments
+     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[] $paymentInstruments
      * @return $this
      */
-    public function setHref($href)
+    public function setPaymentInstruments($paymentInstruments)
     {
-        $this->container['href'] = $href;
+        $this->container['paymentInstruments'] = $paymentInstruments;
 
         return $this;
     }

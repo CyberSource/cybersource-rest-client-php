@@ -1,4 +1,4 @@
-# PaymentInstrumentListForCustomerLinksFirst
+# PaymentInstrumentListLinksFirst
 
 ## Properties
 Name | Type | Description | Notes

@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * AsymmetricKeyManagementApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class AsymmetricKeyManagementApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class AsymmetricKeyManagementApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class AsymmetricKeyManagementApi
      */
     public function createP12Keys($createP12KeysRequest)
     {
+        self::$logger->info('CALL TO METHOD createP12Keys STARTED');
         list($response, $statusCode, $httpHeader) = $this->createP12KeysWithHttpInfo($createP12KeysRequest);
+        self::$logger->info('CALL TO METHOD createP12Keys ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class AsymmetricKeyManagementApi
     {
         // verify the required parameter 'createP12KeysRequest' is set
         if ($createP12KeysRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createP12KeysRequest when calling createP12Keys");
             throw new \InvalidArgumentException('Missing the required parameter $createP12KeysRequest when calling createP12Keys');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class AsymmetricKeyManagementApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysAsymPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class AsymmetricKeyManagementApi
                 '\CyberSource\Model\KmsV2KeysAsymPost201Response',
                 '/kms/v2/keys-asym'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysAsymPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -170,6 +197,7 @@ class AsymmetricKeyManagementApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -185,7 +213,10 @@ class AsymmetricKeyManagementApi
      */
     public function deleteBulkP12Keys($deleteBulkP12KeysRequest)
     {
+        self::$logger->info('CALL TO METHOD deleteBulkP12Keys STARTED');
         list($response, $statusCode, $httpHeader) = $this->deleteBulkP12KeysWithHttpInfo($deleteBulkP12KeysRequest);
+        self::$logger->info('CALL TO METHOD deleteBulkP12Keys ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -202,6 +233,7 @@ class AsymmetricKeyManagementApi
     {
         // verify the required parameter 'deleteBulkP12KeysRequest' is set
         if ($deleteBulkP12KeysRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $deleteBulkP12KeysRequest when calling deleteBulkP12Keys");
             throw new \InvalidArgumentException('Missing the required parameter $deleteBulkP12KeysRequest when calling deleteBulkP12Keys');
         }
         // parse inputs
@@ -228,6 +260,20 @@ class AsymmetricKeyManagementApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysAsymDeletesPost200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -239,6 +285,8 @@ class AsymmetricKeyManagementApi
                 '\CyberSource\Model\KmsV2KeysAsymDeletesPost200Response',
                 '/kms/v2/keys-asym/deletes'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysAsymDeletesPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -257,6 +305,7 @@ class AsymmetricKeyManagementApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -272,7 +321,10 @@ class AsymmetricKeyManagementApi
      */
     public function getP12KeyDetails($keyId)
     {
+        self::$logger->info('CALL TO METHOD getP12KeyDetails STARTED');
         list($response, $statusCode, $httpHeader) = $this->getP12KeyDetailsWithHttpInfo($keyId);
+        self::$logger->info('CALL TO METHOD getP12KeyDetails ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -289,6 +341,7 @@ class AsymmetricKeyManagementApi
     {
         // verify the required parameter 'keyId' is set
         if ($keyId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling getP12KeyDetails");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling getP12KeyDetails');
         }
         // parse inputs
@@ -318,6 +371,20 @@ class AsymmetricKeyManagementApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysAsymGet200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -329,6 +396,8 @@ class AsymmetricKeyManagementApi
                 '\CyberSource\Model\KmsV2KeysAsymGet200Response',
                 '/kms/v2/keys-asym/{keyId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysAsymGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -347,6 +416,7 @@ class AsymmetricKeyManagementApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

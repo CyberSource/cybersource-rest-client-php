@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * ReportDownloadsApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class ReportDownloadsApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class ReportDownloadsApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -100,7 +107,10 @@ class ReportDownloadsApi
      */
     public function downloadReport($reportDate, $reportName, $organizationId = null)
     {
+        self::$logger->info('CALL TO METHOD downloadReport STARTED');
         list($response, $statusCode, $httpHeader) = $this->downloadReportWithHttpInfo($reportDate, $reportName, $organizationId);
+        self::$logger->info('CALL TO METHOD downloadReport ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -119,20 +129,25 @@ class ReportDownloadsApi
     {
         // verify the required parameter 'reportDate' is set
         if ($reportDate === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDate when calling downloadReport");
             throw new \InvalidArgumentException('Missing the required parameter $reportDate when calling downloadReport');
         }
         // verify the required parameter 'reportName' is set
         if ($reportName === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling downloadReport");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling downloadReport');
         }
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportDownloadsApi.downloadReport, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportDownloadsApi.downloadReport, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportDownloadsApi.downloadReport, must be smaller than or equal to 32.');
         }
         if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling ReportDownloadsApi.downloadReport, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportDownloadsApi.downloadReport, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportDownloadsApi.downloadReport, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling ReportDownloadsApi.downloadReport, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportDownloadsApi.downloadReport, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportDownloadsApi.downloadReport, must conform to the pattern /[a-zA-Z0-9-_]+/.');
         }
 
         // parse inputs
@@ -166,6 +181,23 @@ class ReportDownloadsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -177,6 +209,8 @@ class ReportDownloadsApi
                 null,
                 '/reporting/v3/report-downloads'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -187,6 +221,7 @@ class ReportDownloadsApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

@@ -56,6 +56,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'authIndicator' => 'string',
         'approvalCode' => 'string',
+        'cardReferenceData' => 'string',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
         'providerTransactionId' => 'string',
@@ -90,6 +91,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'authIndicator' => null,
         'approvalCode' => null,
+        'cardReferenceData' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
         'providerTransactionId' => null,
@@ -134,6 +136,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     protected static $attributeMap = [
         'authIndicator' => 'authIndicator',
         'approvalCode' => 'approvalCode',
+        'cardReferenceData' => 'cardReferenceData',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
         'providerTransactionId' => 'providerTransactionId',
@@ -169,6 +172,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     protected static $setters = [
         'authIndicator' => 'setAuthIndicator',
         'approvalCode' => 'setApprovalCode',
+        'cardReferenceData' => 'setCardReferenceData',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
         'providerTransactionId' => 'setProviderTransactionId',
@@ -204,6 +208,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     protected static $getters = [
         'authIndicator' => 'getAuthIndicator',
         'approvalCode' => 'getApprovalCode',
+        'cardReferenceData' => 'getCardReferenceData',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
         'providerTransactionId' => 'getProviderTransactionId',
@@ -264,6 +269,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     {
         $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
+        $this->container['cardReferenceData'] = isset($data['cardReferenceData']) ? $data['cardReferenceData'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
         $this->container['providerTransactionId'] = isset($data['providerTransactionId']) ? $data['providerTransactionId'] : null;
@@ -355,6 +361,28 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setApprovalCode($approvalCode)
     {
         $this->container['approvalCode'] = $approvalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardReferenceData
+     * @return string
+     */
+    public function getCardReferenceData()
+    {
+        return $this->container['cardReferenceData'];
+    }
+
+    /**
+     * Sets cardReferenceData
+     * @param string $cardReferenceData The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present.
+     * @return $this
+     */
+    public function setCardReferenceData($cardReferenceData)
+    {
+
+        $this->container['cardReferenceData'] = $cardReferenceData;
 
         return $this;
     }

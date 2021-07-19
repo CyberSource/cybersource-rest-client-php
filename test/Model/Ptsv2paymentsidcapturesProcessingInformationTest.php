@@ -153,4 +153,11 @@ class Ptsv2paymentsidcapturesProcessingInformationTest extends \PHPUnit_Framewor
     public function testPropertyLoanOptions()
     {
     }
+
+    /**
+     * Test attribute "payByPointsIndicator"
+     */
+    public function testPropertyPayByPointsIndicator()
+    {
+    }
 }

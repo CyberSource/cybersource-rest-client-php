@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksNext
+ * PaymentInstrumentListLinksLast
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PaymentInstrumentListForCustomerLinksNext Class Doc Comment
+ * PaymentInstrumentListLinksLast Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksNext implements ArrayAccess
+class PaymentInstrumentListLinksLast implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class PaymentInstrumentListForCustomerLinksNext implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentInstrumentListForCustomer__links_next';
+    protected static $swaggerModelName = 'PaymentInstrumentList__links_last';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -171,7 +171,7 @@ class PaymentInstrumentListForCustomerLinksNext implements ArrayAccess
 
     /**
      * Sets href
-     * @param string $href Link to the next page.
+     * @param string $href Link to the last page.
      * @return $this
      */
     public function setHref($href)

@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksFirstTest
+ * PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetailsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * PaymentInstrumentListForCustomerLinksFirstTest Class Doc Comment
+ * PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetailsTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaymentInstrumentListForCustomerLinksFirst
+// * @description PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksFirstTest extends \PHPUnit_Framework_TestCase
+class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetailsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,51 @@ class PaymentInstrumentListForCustomerLinksFirstTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test "PaymentInstrumentListForCustomerLinksFirst"
+     * Test "PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails"
      */
-    public function testPaymentInstrumentListForCustomerLinksFirst()
+    public function testPtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails()
     {
     }
 
     /**
-     * Test attribute "href"
+     * Test attribute "pointsBeforeRedemption"
      */
-    public function testPropertyHref()
+    public function testPropertyPointsBeforeRedemption()
+    {
+    }
+
+    /**
+     * Test attribute "pointsValueBeforeRedemption"
+     */
+    public function testPropertyPointsValueBeforeRedemption()
+    {
+    }
+
+    /**
+     * Test attribute "pointsRedeemed"
+     */
+    public function testPropertyPointsRedeemed()
+    {
+    }
+
+    /**
+     * Test attribute "pointsValueRedeemed"
+     */
+    public function testPropertyPointsValueRedeemed()
+    {
+    }
+
+    /**
+     * Test attribute "pointsAfterRedemption"
+     */
+    public function testPropertyPointsAfterRedemption()
+    {
+    }
+
+    /**
+     * Test attribute "pointsValueAfterRedemption"
+     */
+    public function testPropertyPointsValueAfterRedemption()
     {
     }
 }

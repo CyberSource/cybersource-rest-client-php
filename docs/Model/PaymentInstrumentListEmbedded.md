@@ -1,4 +1,4 @@
-# PaymentInstrumentListForCustomerEmbedded
+# PaymentInstrumentListEmbedded
 
 ## Properties
 Name | Type | Description | Notes

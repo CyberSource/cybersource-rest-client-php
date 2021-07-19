@@ -85,6 +85,13 @@ class Ptsv2paymentsidreversalsClientReferenceInformationTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "pausedRequestId"
+     */
+    public function testPropertyPausedRequestId()
+    {
+    }
+
+    /**
      * Test attribute "comments"
      */
     public function testPropertyComments()

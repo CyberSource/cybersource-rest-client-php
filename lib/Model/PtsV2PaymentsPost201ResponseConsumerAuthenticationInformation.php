@@ -54,6 +54,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'accessToken' => 'string',
         'acsRenderingType' => 'string',
         'acsTransactionId' => 'string',
         'acsUrl' => 'string',
@@ -101,6 +102,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'accessToken' => null,
         'acsRenderingType' => null,
         'acsTransactionId' => null,
         'acsUrl' => null,
@@ -158,6 +160,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
      * @var string[]
      */
     protected static $attributeMap = [
+        'accessToken' => 'accessToken',
         'acsRenderingType' => 'acsRenderingType',
         'acsTransactionId' => 'acsTransactionId',
         'acsUrl' => 'acsUrl',
@@ -206,6 +209,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
      * @var string[]
      */
     protected static $setters = [
+        'accessToken' => 'setAccessToken',
         'acsRenderingType' => 'setAcsRenderingType',
         'acsTransactionId' => 'setAcsTransactionId',
         'acsUrl' => 'setAcsUrl',
@@ -254,6 +258,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
      * @var string[]
      */
     protected static $getters = [
+        'accessToken' => 'getAccessToken',
         'acsRenderingType' => 'getAcsRenderingType',
         'acsTransactionId' => 'getAcsTransactionId',
         'acsUrl' => 'getAcsUrl',
@@ -327,6 +332,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
      */
     public function __construct(array $data = null)
     {
+        $this->container['accessToken'] = isset($data['accessToken']) ? $data['accessToken'] : null;
         $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
         $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['acsUrl'] = isset($data['acsUrl']) ? $data['acsUrl'] : null;
@@ -393,6 +399,27 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         return true;
     }
 
+
+    /**
+     * Gets accessToken
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->container['accessToken'];
+    }
+
+    /**
+     * Sets accessToken
+     * @param string $accessToken JSON Web Token (JWT) used to authenticate the consumer with the authentication provider, such as, CardinalCommerce or Rupay. Note - Max Length of this field is 2048 characters.
+     * @return $this
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->container['accessToken'] = $accessToken;
+
+        return $this;
+    }
 
     /**
      * Gets acsRenderingType

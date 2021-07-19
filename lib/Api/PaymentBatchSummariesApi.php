@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * PaymentBatchSummariesApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class PaymentBatchSummariesApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class PaymentBatchSummariesApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -103,7 +110,10 @@ class PaymentBatchSummariesApi
      */
     public function getPaymentBatchSummary($startTime, $endTime, $organizationId = null, $rollUp = null, $breakdown = null, $startDayOfWeek = null)
     {
+        self::$logger->info('CALL TO METHOD getPaymentBatchSummary STARTED');
         list($response, $statusCode, $httpHeader) = $this->getPaymentBatchSummaryWithHttpInfo($startTime, $endTime, $organizationId, $rollUp, $breakdown, $startDayOfWeek);
+        self::$logger->info('CALL TO METHOD getPaymentBatchSummary ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -125,27 +135,34 @@ class PaymentBatchSummariesApi
     {
         // verify the required parameter 'startTime' is set
         if ($startTime === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getPaymentBatchSummary");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getPaymentBatchSummary');
         }
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getPaymentBatchSummary");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getPaymentBatchSummary');
         }
         if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 32.');
         }
         if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$organizationId" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            throw new \InvalidArgumentException("invalid value for \"organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must conform to the pattern /[a-zA-Z0-9-_]+/.");
+            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must conform to the pattern /[a-zA-Z0-9-_]+/.');
         }
 
         if (!is_null($startDayOfWeek) && ($startDayOfWeek > 7)) {
-            throw new \InvalidArgumentException('invalid value for "$startDayOfWeek" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 7.');
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$startDayOfWeek\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 7.");
+            throw new \InvalidArgumentException('Invalid value for "$startDayOfWeek" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 7.');
         }
         if (!is_null($startDayOfWeek) && ($startDayOfWeek < 1)) {
-            throw new \InvalidArgumentException('invalid value for "$startDayOfWeek" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$startDayOfWeek\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid value for "$startDayOfWeek" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -191,6 +208,26 @@ class PaymentBatchSummariesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3PaymentBatchSummariesGet200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -202,6 +239,8 @@ class PaymentBatchSummariesApi
                 '\CyberSource\Model\ReportingV3PaymentBatchSummariesGet200Response',
                 '/reporting/v3/payment-batch-summaries'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ReportingV3PaymentBatchSummariesGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -216,6 +255,7 @@ class PaymentBatchSummariesApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

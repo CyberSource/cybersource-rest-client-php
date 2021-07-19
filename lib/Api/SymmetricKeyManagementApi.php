@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * SymmetricKeyManagementApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class SymmetricKeyManagementApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class SymmetricKeyManagementApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class SymmetricKeyManagementApi
      */
     public function createV2SharedSecretKeys($createSharedSecretKeysRequest)
     {
+        self::$logger->info('CALL TO METHOD createV2SharedSecretKeys STARTED');
         list($response, $statusCode, $httpHeader) = $this->createV2SharedSecretKeysWithHttpInfo($createSharedSecretKeysRequest);
+        self::$logger->info('CALL TO METHOD createV2SharedSecretKeys ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class SymmetricKeyManagementApi
     {
         // verify the required parameter 'createSharedSecretKeysRequest' is set
         if ($createSharedSecretKeysRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createSharedSecretKeysRequest when calling createV2SharedSecretKeys");
             throw new \InvalidArgumentException('Missing the required parameter $createSharedSecretKeysRequest when calling createV2SharedSecretKeys');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class SymmetricKeyManagementApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysSymPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class SymmetricKeyManagementApi
                 '\CyberSource\Model\KmsV2KeysSymPost201Response',
                 '/kms/v2/keys-sym'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -170,6 +197,7 @@ class SymmetricKeyManagementApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -185,7 +213,10 @@ class SymmetricKeyManagementApi
      */
     public function deleteBulkSymmetricKeys($deleteBulkSymmetricKeysRequest)
     {
+        self::$logger->info('CALL TO METHOD deleteBulkSymmetricKeys STARTED');
         list($response, $statusCode, $httpHeader) = $this->deleteBulkSymmetricKeysWithHttpInfo($deleteBulkSymmetricKeysRequest);
+        self::$logger->info('CALL TO METHOD deleteBulkSymmetricKeys ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -202,6 +233,7 @@ class SymmetricKeyManagementApi
     {
         // verify the required parameter 'deleteBulkSymmetricKeysRequest' is set
         if ($deleteBulkSymmetricKeysRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $deleteBulkSymmetricKeysRequest when calling deleteBulkSymmetricKeys");
             throw new \InvalidArgumentException('Missing the required parameter $deleteBulkSymmetricKeysRequest when calling deleteBulkSymmetricKeys');
         }
         // parse inputs
@@ -228,6 +260,20 @@ class SymmetricKeyManagementApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysSymDeletesPost200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -239,6 +285,8 @@ class SymmetricKeyManagementApi
                 '\CyberSource\Model\KmsV2KeysSymDeletesPost200Response',
                 '/kms/v2/keys-sym/deletes'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymDeletesPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -257,6 +305,7 @@ class SymmetricKeyManagementApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -272,7 +321,10 @@ class SymmetricKeyManagementApi
      */
     public function getKeyDetails($keyId)
     {
+        self::$logger->info('CALL TO METHOD getKeyDetails STARTED');
         list($response, $statusCode, $httpHeader) = $this->getKeyDetailsWithHttpInfo($keyId);
+        self::$logger->info('CALL TO METHOD getKeyDetails ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -289,6 +341,7 @@ class SymmetricKeyManagementApi
     {
         // verify the required parameter 'keyId' is set
         if ($keyId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling getKeyDetails");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling getKeyDetails');
         }
         // parse inputs
@@ -318,6 +371,20 @@ class SymmetricKeyManagementApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysSymGet200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -329,6 +396,8 @@ class SymmetricKeyManagementApi
                 '\CyberSource\Model\KmsV2KeysSymGet200Response',
                 '/kms/v2/keys-sym/{keyId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -347,6 +416,7 @@ class SymmetricKeyManagementApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

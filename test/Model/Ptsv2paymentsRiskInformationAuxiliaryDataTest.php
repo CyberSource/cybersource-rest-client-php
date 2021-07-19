@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksPrevTest
+ * Ptsv2paymentsRiskInformationAuxiliaryDataTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * PaymentInstrumentListForCustomerLinksPrevTest Class Doc Comment
+ * Ptsv2paymentsRiskInformationAuxiliaryDataTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaymentInstrumentListForCustomerLinksPrev
+// * @description Contains auxiliary key-value pairs.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksPrevTest extends \PHPUnit_Framework_TestCase
+class Ptsv2paymentsRiskInformationAuxiliaryDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,23 @@ class PaymentInstrumentListForCustomerLinksPrevTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test "PaymentInstrumentListForCustomerLinksPrev"
+     * Test "Ptsv2paymentsRiskInformationAuxiliaryData"
      */
-    public function testPaymentInstrumentListForCustomerLinksPrev()
+    public function testPtsv2paymentsRiskInformationAuxiliaryData()
     {
     }
 
     /**
-     * Test attribute "href"
+     * Test attribute "key"
      */
-    public function testPropertyHref()
+    public function testPropertyKey()
+    {
+    }
+
+    /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
     {
     }
 }

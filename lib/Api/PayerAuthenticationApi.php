@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * PayerAuthenticationApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class PayerAuthenticationApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class PayerAuthenticationApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class PayerAuthenticationApi
      */
     public function checkPayerAuthEnrollment($checkPayerAuthEnrollmentRequest)
     {
+        self::$logger->info('CALL TO METHOD checkPayerAuthEnrollment STARTED');
         list($response, $statusCode, $httpHeader) = $this->checkPayerAuthEnrollmentWithHttpInfo($checkPayerAuthEnrollmentRequest);
+        self::$logger->info('CALL TO METHOD checkPayerAuthEnrollment ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class PayerAuthenticationApi
     {
         // verify the required parameter 'checkPayerAuthEnrollmentRequest' is set
         if ($checkPayerAuthEnrollmentRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $checkPayerAuthEnrollmentRequest when calling checkPayerAuthEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $checkPayerAuthEnrollmentRequest when calling checkPayerAuthEnrollment');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class PayerAuthenticationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1AuthenticationsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class PayerAuthenticationApi
                 '\CyberSource\Model\RiskV1AuthenticationsPost201Response',
                 '/risk/v1/authentications'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1AuthenticationsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -170,6 +197,7 @@ class PayerAuthenticationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -185,7 +213,10 @@ class PayerAuthenticationApi
      */
     public function payerAuthSetup($payerAuthSetupRequest)
     {
+        self::$logger->info('CALL TO METHOD payerAuthSetup STARTED');
         list($response, $statusCode, $httpHeader) = $this->payerAuthSetupWithHttpInfo($payerAuthSetupRequest);
+        self::$logger->info('CALL TO METHOD payerAuthSetup ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -202,6 +233,7 @@ class PayerAuthenticationApi
     {
         // verify the required parameter 'payerAuthSetupRequest' is set
         if ($payerAuthSetupRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $payerAuthSetupRequest when calling payerAuthSetup");
             throw new \InvalidArgumentException('Missing the required parameter $payerAuthSetupRequest when calling payerAuthSetup');
         }
         // parse inputs
@@ -228,6 +260,20 @@ class PayerAuthenticationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1AuthenticationSetupsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -239,6 +285,8 @@ class PayerAuthenticationApi
                 '\CyberSource\Model\RiskV1AuthenticationSetupsPost201Response',
                 '/risk/v1/authentication-setups'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1AuthenticationSetupsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -257,6 +305,7 @@ class PayerAuthenticationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -272,7 +321,10 @@ class PayerAuthenticationApi
      */
     public function validateAuthenticationResults($validateRequest)
     {
+        self::$logger->info('CALL TO METHOD validateAuthenticationResults STARTED');
         list($response, $statusCode, $httpHeader) = $this->validateAuthenticationResultsWithHttpInfo($validateRequest);
+        self::$logger->info('CALL TO METHOD validateAuthenticationResults ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -289,6 +341,7 @@ class PayerAuthenticationApi
     {
         // verify the required parameter 'validateRequest' is set
         if ($validateRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $validateRequest when calling validateAuthenticationResults");
             throw new \InvalidArgumentException('Missing the required parameter $validateRequest when calling validateAuthenticationResults');
         }
         // parse inputs
@@ -315,6 +368,20 @@ class PayerAuthenticationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1AuthenticationResultsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -326,6 +393,8 @@ class PayerAuthenticationApi
                 '\CyberSource\Model\RiskV1AuthenticationResultsPost201Response',
                 '/risk/v1/authentication-results'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1AuthenticationResultsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -344,6 +413,7 @@ class PayerAuthenticationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

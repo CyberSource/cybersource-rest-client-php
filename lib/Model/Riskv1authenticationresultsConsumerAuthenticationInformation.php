@@ -273,7 +273,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
 
     /**
      * Sets responseAccessToken
-     * @param string $responseAccessToken A JWT returned by 3DS provider once the authentication is complete, required in cruise hybrid integration method when using CyberSource generated access token. Note - Max Length of this field is 2048 characters.
+     * @param string $responseAccessToken JWT returned by the 3D Secure provider when the authentication is complete. Required for Hybrid integration if you use the Cybersource-generated access token. Note: Max. length of this field is 2048 characters.
      * @return $this
      */
     public function setResponseAccessToken($responseAccessToken)

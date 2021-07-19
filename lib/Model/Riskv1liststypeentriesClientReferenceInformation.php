@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksPrev
+ * Riskv1liststypeentriesClientReferenceInformation
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PaymentInstrumentListForCustomerLinksPrev Class Doc Comment
+ * Riskv1liststypeentriesClientReferenceInformation Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
+class Riskv1liststypeentriesClientReferenceInformation implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,16 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentInstrumentListForCustomer__links_prev';
+    protected static $swaggerModelName = 'riskv1liststypeentries_clientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'href' => 'string'
+        'code' => 'string',
+        'comments' => 'string',
+        'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner'
     ];
 
     /**
@@ -62,7 +64,9 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'href' => null
+        'code' => null,
+        'comments' => null,
+        'partner' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'href' => 'href'
+        'code' => 'code',
+        'comments' => 'comments',
+        'partner' => 'partner'
     ];
 
 
@@ -89,7 +95,9 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'href' => 'setHref'
+        'code' => 'setCode',
+        'comments' => 'setComments',
+        'partner' => 'setPartner'
     ];
 
 
@@ -98,7 +106,9 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'href' => 'getHref'
+        'code' => 'getCode',
+        'comments' => 'getComments',
+        'partner' => 'getPartner'
     ];
 
     public static function attributeMap()
@@ -132,7 +142,9 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
 
     /**
@@ -144,6 +156,9 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['code'] === null) {
+            $invalid_properties[] = "'code' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -156,27 +171,74 @@ class PaymentInstrumentListForCustomerLinksPrev implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['code'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets href
+     * Gets code
      * @return string
      */
-    public function getHref()
+    public function getCode()
     {
-        return $this->container['href'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets href
-     * @param string $href Link to the previous page.
+     * Sets code
+     * @param string $code Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
-    public function setHref($href)
+    public function setCode($code)
     {
-        $this->container['href'] = $href;
+
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets comments
+     * @return string
+     */
+    public function getComments()
+    {
+        return $this->container['comments'];
+    }
+
+    /**
+     * Sets comments
+     * @param string $comments Brief description of the order or any comment you wish to add to the order.
+     * @return $this
+     */
+    public function setComments($comments)
+    {
+
+        $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

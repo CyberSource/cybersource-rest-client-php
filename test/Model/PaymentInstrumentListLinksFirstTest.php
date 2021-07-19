@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerLinksLastTest
+ * PaymentInstrumentListLinksFirstTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * PaymentInstrumentListForCustomerLinksLastTest Class Doc Comment
+ * PaymentInstrumentListLinksFirstTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaymentInstrumentListForCustomerLinksLast
+// * @description PaymentInstrumentListLinksFirst
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerLinksLastTest extends \PHPUnit_Framework_TestCase
+class PaymentInstrumentListLinksFirstTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class PaymentInstrumentListForCustomerLinksLastTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test "PaymentInstrumentListForCustomerLinksLast"
+     * Test "PaymentInstrumentListLinksFirst"
      */
-    public function testPaymentInstrumentListForCustomerLinksLast()
+    public function testPaymentInstrumentListLinksFirst()
     {
     }
 

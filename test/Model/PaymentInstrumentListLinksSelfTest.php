@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentInstrumentListForCustomerTest
+ * PaymentInstrumentListLinksSelfTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * PaymentInstrumentListForCustomerTest Class Doc Comment
+ * PaymentInstrumentListLinksSelfTest Class Doc Comment
  *
  * @category    Class */
-// * @description PaymentInstrumentListForCustomer
+// * @description PaymentInstrumentListLinksSelf
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PaymentInstrumentListForCustomerTest extends \PHPUnit_Framework_TestCase
+class PaymentInstrumentListLinksSelfTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,51 +71,16 @@ class PaymentInstrumentListForCustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PaymentInstrumentListForCustomer"
+     * Test "PaymentInstrumentListLinksSelf"
      */
-    public function testPaymentInstrumentListForCustomer()
+    public function testPaymentInstrumentListLinksSelf()
     {
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "href"
      */
-    public function testPropertyLinks()
-    {
-    }
-
-    /**
-     * Test attribute "offset"
-     */
-    public function testPropertyOffset()
-    {
-    }
-
-    /**
-     * Test attribute "limit"
-     */
-    public function testPropertyLimit()
-    {
-    }
-
-    /**
-     * Test attribute "count"
-     */
-    public function testPropertyCount()
-    {
-    }
-
-    /**
-     * Test attribute "total"
-     */
-    public function testPropertyTotal()
-    {
-    }
-
-    /**
-     * Test attribute "embedded"
-     */
-    public function testPropertyEmbedded()
+    public function testPropertyHref()
     {
     }
 }

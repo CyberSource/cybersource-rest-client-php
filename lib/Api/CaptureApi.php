@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * CaptureApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class CaptureApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class CaptureApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class CaptureApi
      */
     public function capturePayment($capturePaymentRequest, $id)
     {
+        self::$logger->info('CALL TO METHOD capturePayment STARTED');
         list($response, $statusCode, $httpHeader) = $this->capturePaymentWithHttpInfo($capturePaymentRequest, $id);
+        self::$logger->info('CALL TO METHOD capturePayment ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,10 +127,12 @@ class CaptureApi
     {
         // verify the required parameter 'capturePaymentRequest' is set
         if ($capturePaymentRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $capturePaymentRequest when calling capturePayment");
             throw new \InvalidArgumentException('Missing the required parameter $capturePaymentRequest when calling capturePayment');
         }
         // verify the required parameter 'id' is set
         if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling capturePayment");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling capturePayment');
         }
         // parse inputs
@@ -155,6 +167,20 @@ class CaptureApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsCapturesPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -166,6 +192,8 @@ class CaptureApi
                 '\CyberSource\Model\PtsV2PaymentsCapturesPost201Response',
                 '/pts/v2/payments/{id}/captures'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsCapturesPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -184,6 +212,7 @@ class CaptureApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

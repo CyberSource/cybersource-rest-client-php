@@ -251,50 +251,13 @@ class MerchantConfiguration
     {
         $this->runEnvironment = $runEnvironment;
 
-        if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNENVIRONMENT))
+        if (in_array($this->runEnvironment, GlobalParameter::OLD_RUN_ENVIRONMENT_CONSTANTS))
         {
-            $this->host = GlobalParameter::SANDBOXURL;
+            throw new \Exception(GlobalParameter::DEPRECATED_RUN_ENVIRONMENT);
         }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::PRODUCTIONURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::BOARUNENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::BOASANDBOXURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::BOARUNPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::BOAPRODUCTIONURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::IDCSANDBOXURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::IDCRUNPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::IDCPRODUCTIONURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHSANDBOXENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::SANDBOXMAURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHPRODENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::PRODUCTIONMAURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNSITENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::SITURL;
-        }
-        else if(strtoupper($this->runEnvironment) == strtoupper(GlobalParameter::RUNMUTUALAUTHSITENVIRONMENT)) 
-        {
-           $this->host = GlobalParameter::SITMAURL;
-        }
-        else
-        {
-            $this->host =$this->runEnvironment;
-        }
+
+        $this->host =$this->runEnvironment;
+        return $this;
     }
 
     /**
@@ -303,7 +266,12 @@ class MerchantConfiguration
      */
     public function getRunEnvironment()
     {
-        return $this->runEnvironment;
+        if (in_array(strtoupper($this->runEnvironment), GlobalParameter::OLD_RUN_ENVIRONMENT_CONSTANTS))
+        {
+            throw new \Exception(GlobalParameter::DEPRECATED_RUN_ENVIRONMENT);
+        } else {
+            return $this->runEnvironment;
+        }
     }
 
     /**
@@ -898,33 +866,33 @@ class MerchantConfiguration
         $warning_message =""; $error_message ="";
         $config = new MerchantConfiguration();
         
-        if(is_bool($connectionDet->enableLog)){
-            $config = $config->setDebug($connectionDet->enableLog);
+        // if(is_bool($connectionDet->enableLog)){
+        //     $config = $config->setDebug($connectionDet->enableLog);
             
-        }
-        else if(empty($connectionDet->enableLog)){
-            $config = $config->setDebug(true);
-            $warning_message .= GlobalParameter::ENBLOGFIELD;
-        }
-        else{
-            $config = $config->setDebug(false);
-            $warning_message .= GlobalParameter::ENBLOGFIELD;
-        }
+        // }
+        // else if(empty($connectionDet->enableLog)){
+        //     $config = $config->setDebug(true);
+        //     $warning_message .= GlobalParameter::ENBLOGFIELD;
+        // }
+        // else{
+        //     $config = $config->setDebug(false);
+        //     $warning_message .= GlobalParameter::ENBLOGFIELD;
+        // }
 
-        if(isset($connectionDet->logSize))
-            $config = $config->setLogSize($connectionDet->logSize);
-        else
-            $warning_message .= GlobalParameter::LOGSIZE;
+        // if(isset($connectionDet->logSize))
+        //     $config = $config->setLogSize($connectionDet->logSize);
+        // else
+        //     $warning_message .= GlobalParameter::LOGSIZE;
 
-        if(isset($connectionDet->logDirectory))
-            $config = $config->setDebugFile($connectionDet->logDirectory);
-        else
-            $warning_message .= GlobalParameter::LOGDIR;
+        // if(isset($connectionDet->logDirectory))
+        //     $config = $config->setDebugFile($connectionDet->logDirectory);
+        // else
+        //     $warning_message .= GlobalParameter::LOGDIR;
 
-        if(isset($connectionDet->logFilename))
-            $config = $config->setLogFileName($connectionDet->logFilename);
-        else
-            $warning_message .= GlobalParameter::LOGFILENAME;
+        // if(isset($connectionDet->logFilename))
+        //     $config = $config->setLogFileName($connectionDet->logFilename);
+        // else
+        //     $warning_message .= GlobalParameter::LOGFILENAME;
 
         if(isset($connectionDet->authenticationType))
             $config = $config->setAuthenticationType(strtoupper(trim($connectionDet->authenticationType)));

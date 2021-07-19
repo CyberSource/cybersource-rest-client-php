@@ -55,6 +55,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
+        'pausedRequestId' => 'string',
         'comments' => 'string',
         'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner'
     ];
@@ -65,6 +66,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => null,
+        'pausedRequestId' => null,
         'comments' => null,
         'partner' => null
     ];
@@ -85,6 +87,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
+        'pausedRequestId' => 'pausedRequestId',
         'comments' => 'comments',
         'partner' => 'partner'
     ];
@@ -96,6 +99,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
+        'pausedRequestId' => 'setPausedRequestId',
         'comments' => 'setComments',
         'partner' => 'setPartner'
     ];
@@ -107,6 +111,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
+        'pausedRequestId' => 'getPausedRequestId',
         'comments' => 'getComments',
         'partner' => 'getPartner'
     ];
@@ -143,6 +148,7 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['pausedRequestId'] = isset($data['pausedRequestId']) ? $data['pausedRequestId'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
         $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
@@ -196,6 +202,28 @@ class Riskv1decisionsClientReferenceInformation implements ArrayAccess
     {
 
         $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets pausedRequestId
+     * @return string
+     */
+    public function getPausedRequestId()
+    {
+        return $this->container['pausedRequestId'];
+    }
+
+    /**
+     * Sets pausedRequestId
+     * @param string $pausedRequestId Used to resume a transaction that was paused for an order modification rule to allow for payer authentication to complete. To resume and continue with the authorization/decision service flow, call the services and include the request id from the prior decision call.
+     * @return $this
+     */
+    public function setPausedRequestId($pausedRequestId)
+    {
+
+        $this->container['pausedRequestId'] = $pausedRequestId;
 
         return $this;
     }

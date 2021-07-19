@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * DecisionManagerApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class DecisionManagerApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class DecisionManagerApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class DecisionManagerApi
      */
     public function addNegative($type, $addNegativeListRequest)
     {
+        self::$logger->info('CALL TO METHOD addNegative STARTED');
         list($response, $statusCode, $httpHeader) = $this->addNegativeWithHttpInfo($type, $addNegativeListRequest);
+        self::$logger->info('CALL TO METHOD addNegative ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,10 +127,12 @@ class DecisionManagerApi
     {
         // verify the required parameter 'type' is set
         if ($type === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $type when calling addNegative");
             throw new \InvalidArgumentException('Missing the required parameter $type when calling addNegative');
         }
         // verify the required parameter 'addNegativeListRequest' is set
         if ($addNegativeListRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $addNegativeListRequest when calling addNegative");
             throw new \InvalidArgumentException('Missing the required parameter $addNegativeListRequest when calling addNegative');
         }
         // parse inputs
@@ -155,6 +167,20 @@ class DecisionManagerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1UpdatePost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -166,6 +192,8 @@ class DecisionManagerApi
                 '\CyberSource\Model\RiskV1UpdatePost201Response',
                 '/risk/v1/lists/{type}/entries'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1UpdatePost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -180,6 +208,7 @@ class DecisionManagerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -195,7 +224,10 @@ class DecisionManagerApi
      */
     public function createBundledDecisionManagerCase($createBundledDecisionManagerCaseRequest)
     {
+        self::$logger->info('CALL TO METHOD createBundledDecisionManagerCase STARTED');
         list($response, $statusCode, $httpHeader) = $this->createBundledDecisionManagerCaseWithHttpInfo($createBundledDecisionManagerCaseRequest);
+        self::$logger->info('CALL TO METHOD createBundledDecisionManagerCase ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -212,6 +244,7 @@ class DecisionManagerApi
     {
         // verify the required parameter 'createBundledDecisionManagerCaseRequest' is set
         if ($createBundledDecisionManagerCaseRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createBundledDecisionManagerCaseRequest when calling createBundledDecisionManagerCase");
             throw new \InvalidArgumentException('Missing the required parameter $createBundledDecisionManagerCaseRequest when calling createBundledDecisionManagerCase');
         }
         // parse inputs
@@ -238,6 +271,20 @@ class DecisionManagerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1DecisionsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -249,6 +296,8 @@ class DecisionManagerApi
                 '\CyberSource\Model\RiskV1DecisionsPost201Response',
                 '/risk/v1/decisions'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1DecisionsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -267,6 +316,7 @@ class DecisionManagerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -283,7 +333,10 @@ class DecisionManagerApi
      */
     public function fraudUpdate($id, $fraudMarkingActionRequest)
     {
+        self::$logger->info('CALL TO METHOD fraudUpdate STARTED');
         list($response, $statusCode, $httpHeader) = $this->fraudUpdateWithHttpInfo($id, $fraudMarkingActionRequest);
+        self::$logger->info('CALL TO METHOD fraudUpdate ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -301,10 +354,12 @@ class DecisionManagerApi
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling fraudUpdate");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling fraudUpdate');
         }
         // verify the required parameter 'fraudMarkingActionRequest' is set
         if ($fraudMarkingActionRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $fraudMarkingActionRequest when calling fraudUpdate");
             throw new \InvalidArgumentException('Missing the required parameter $fraudMarkingActionRequest when calling fraudUpdate');
         }
         // parse inputs
@@ -339,6 +394,20 @@ class DecisionManagerApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1UpdatePost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -350,6 +419,8 @@ class DecisionManagerApi
                 '\CyberSource\Model\RiskV1UpdatePost201Response',
                 '/risk/v1/decisions/{id}/marking'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1UpdatePost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -364,6 +435,7 @@ class DecisionManagerApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
