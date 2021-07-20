@@ -90,4 +90,11 @@ class Invoicingv2invoicesCustomerInformationTest extends \PHPUnit_Framework_Test
     public function testPropertyEmail()
     {
     }
+
+    /**
+     * Test attribute "merchantCustomerId"
+     */
+    public function testPropertyMerchantCustomerId()
+    {
+    }
 }

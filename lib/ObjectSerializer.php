@@ -29,6 +29,8 @@
 
 namespace CyberSource;
 
+use CyberSource\Logging\LogFactory as LogFactory;
+
 /**
  * ObjectSerializer Class Doc Comment
  *
@@ -273,8 +275,10 @@ class ObjectSerializer
             }
             $deserialized = new \SplFileObject($filename, "w");
             $byte_written = $deserialized->fwrite($data);
-            if (Configuration::getDefaultConfiguration()->getDebug()) {
-                error_log("[DEBUG] Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing.".PHP_EOL, 3, Configuration::getDefaultConfiguration()->getDebugFile());
+            if (Configuration::getDefaultConfiguration()->getLogConfiguration()->isLoggingEnabled()) {
+                $tempLogger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), Configuration::getDefaultConfiguration()->getLogConfiguration());
+                $tempLogger->debug("Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing.");
+                $tempLogger->close();
             }
 
             return $deserialized;

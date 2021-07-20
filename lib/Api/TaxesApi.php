@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * TaxesApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class TaxesApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class TaxesApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class TaxesApi
      */
     public function calculateTax($taxRequest)
     {
+        self::$logger->info('CALL TO METHOD calculateTax STARTED');
         list($response, $statusCode, $httpHeader) = $this->calculateTaxWithHttpInfo($taxRequest);
+        self::$logger->info('CALL TO METHOD calculateTax ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class TaxesApi
     {
         // verify the required parameter 'taxRequest' is set
         if ($taxRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $taxRequest when calling calculateTax");
             throw new \InvalidArgumentException('Missing the required parameter $taxRequest when calling calculateTax');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class TaxesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\VasV2PaymentsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class TaxesApi
                 '\CyberSource\Model\VasV2PaymentsPost201Response',
                 '/vas/v2/tax'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\VasV2PaymentsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -170,6 +197,7 @@ class TaxesApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -186,7 +214,10 @@ class TaxesApi
      */
     public function voidTax($voidTaxRequest, $id)
     {
+        self::$logger->info('CALL TO METHOD voidTax STARTED');
         list($response, $statusCode, $httpHeader) = $this->voidTaxWithHttpInfo($voidTaxRequest, $id);
+        self::$logger->info('CALL TO METHOD voidTax ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -204,10 +235,12 @@ class TaxesApi
     {
         // verify the required parameter 'voidTaxRequest' is set
         if ($voidTaxRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $voidTaxRequest when calling voidTax");
             throw new \InvalidArgumentException('Missing the required parameter $voidTaxRequest when calling voidTax');
         }
         // verify the required parameter 'id' is set
         if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling voidTax");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling voidTax');
         }
         // parse inputs
@@ -242,6 +275,20 @@ class TaxesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\VasV2TaxVoid200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -253,6 +300,8 @@ class TaxesApi
                 '\CyberSource\Model\VasV2TaxVoid200Response',
                 '/vas/v2/tax/{id}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\VasV2TaxVoid200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -271,6 +320,7 @@ class TaxesApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * VerificationApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class VerificationApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class VerificationApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class VerificationApi
      */
     public function validateExportCompliance($validateExportComplianceRequest)
     {
+        self::$logger->info('CALL TO METHOD validateExportCompliance STARTED');
         list($response, $statusCode, $httpHeader) = $this->validateExportComplianceWithHttpInfo($validateExportComplianceRequest);
+        self::$logger->info('CALL TO METHOD validateExportCompliance ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class VerificationApi
     {
         // verify the required parameter 'validateExportComplianceRequest' is set
         if ($validateExportComplianceRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $validateExportComplianceRequest when calling validateExportCompliance");
             throw new \InvalidArgumentException('Missing the required parameter $validateExportComplianceRequest when calling validateExportCompliance');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class VerificationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1ExportComplianceInquiriesPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class VerificationApi
                 '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201Response',
                 '/risk/v1/export-compliance-inquiries'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -170,6 +197,7 @@ class VerificationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -185,7 +213,10 @@ class VerificationApi
      */
     public function verifyCustomerAddress($verifyCustomerAddressRequest)
     {
+        self::$logger->info('CALL TO METHOD verifyCustomerAddress STARTED');
         list($response, $statusCode, $httpHeader) = $this->verifyCustomerAddressWithHttpInfo($verifyCustomerAddressRequest);
+        self::$logger->info('CALL TO METHOD verifyCustomerAddress ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -202,6 +233,7 @@ class VerificationApi
     {
         // verify the required parameter 'verifyCustomerAddressRequest' is set
         if ($verifyCustomerAddressRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $verifyCustomerAddressRequest when calling verifyCustomerAddress");
             throw new \InvalidArgumentException('Missing the required parameter $verifyCustomerAddressRequest when calling verifyCustomerAddress');
         }
         // parse inputs
@@ -228,6 +260,20 @@ class VerificationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\RiskV1AddressVerificationsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -239,6 +285,8 @@ class VerificationApi
                 '\CyberSource\Model\RiskV1AddressVerificationsPost201Response',
                 '/risk/v1/address-verifications'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\RiskV1AddressVerificationsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -257,6 +305,7 @@ class VerificationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

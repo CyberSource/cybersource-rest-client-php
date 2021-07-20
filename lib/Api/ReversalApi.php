@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * ReversalApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class ReversalApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class ReversalApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class ReversalApi
      */
     public function authReversal($id, $authReversalRequest)
     {
+        self::$logger->info('CALL TO METHOD authReversal STARTED');
         list($response, $statusCode, $httpHeader) = $this->authReversalWithHttpInfo($id, $authReversalRequest);
+        self::$logger->info('CALL TO METHOD authReversal ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,10 +127,12 @@ class ReversalApi
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling authReversal");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling authReversal');
         }
         // verify the required parameter 'authReversalRequest' is set
         if ($authReversalRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $authReversalRequest when calling authReversal");
             throw new \InvalidArgumentException('Missing the required parameter $authReversalRequest when calling authReversal');
         }
         // parse inputs
@@ -155,6 +167,20 @@ class ReversalApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsReversalsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -166,6 +192,8 @@ class ReversalApi
                 '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response',
                 '/pts/v2/payments/{id}/reversals'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -184,6 +212,7 @@ class ReversalApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -199,7 +228,10 @@ class ReversalApi
      */
     public function mitReversal($mitReversalRequest)
     {
+        self::$logger->info('CALL TO METHOD mitReversal STARTED');
         list($response, $statusCode, $httpHeader) = $this->mitReversalWithHttpInfo($mitReversalRequest);
+        self::$logger->info('CALL TO METHOD mitReversal ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -216,6 +248,7 @@ class ReversalApi
     {
         // verify the required parameter 'mitReversalRequest' is set
         if ($mitReversalRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $mitReversalRequest when calling mitReversal");
             throw new \InvalidArgumentException('Missing the required parameter $mitReversalRequest when calling mitReversal');
         }
         // parse inputs
@@ -242,6 +275,20 @@ class ReversalApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsReversalsPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -253,6 +300,8 @@ class ReversalApi
                 '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response',
                 '/pts/v2/reversals/'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -271,6 +320,7 @@ class ReversalApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

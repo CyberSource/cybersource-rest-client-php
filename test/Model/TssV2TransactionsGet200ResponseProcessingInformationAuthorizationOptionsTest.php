@@ -83,4 +83,11 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsTe
     public function testPropertyAuthType()
     {
     }
+
+    /**
+     * Test attribute "initiator"
+     */
+    public function testPropertyInitiator()
+    {
+    }
 }

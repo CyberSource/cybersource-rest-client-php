@@ -28,6 +28,9 @@
 
 namespace CyberSource;
 
+use CyberSource\Logging\LogFactory as LogFactory;
+use CyberSource\Logging\LogConfiguration as LogConfiguration;
+
 /**
  * Configuration Class Doc Comment
  * PHP version 5
@@ -40,6 +43,7 @@ namespace CyberSource;
 class Configuration
 {
     private static $defaultConfiguration;
+    private static $logger = null;
 
     /**
      * Associate array to store API key(s)
@@ -82,8 +86,8 @@ class Configuration
      * @var array
      */
     protected $defaultHeaders = [];
-	
-	/**
+    
+    /**
      * The default header(s)
      *
      * @var array
@@ -117,27 +121,6 @@ class Configuration
      * @var string
      */
     protected $userAgent = 'Swagger-Codegen/1.0.0/php';
-
-    /**
-     * Debug switch (default set to false)
-     *
-     * @var bool
-     */
-    protected $debug = false;
-
-    /**
-     * Debug file location (log to STDOUT by default)
-     *
-     * @var string
-     */
-    protected $debugFile = 'php://output';
-
-    /**
-     * Debug file location (log to STDOUT by default)
-     *
-     * @var string
-     */
-    protected $tempFolderPath;
 
     /**
      * Indicates if SSL verification should be enabled or disabled.
@@ -192,11 +175,21 @@ class Configuration
     protected $allowEncoding = false;
 
     /**
+     * Logging configuration
+     *
+     * @var LogConfiguration
+     */
+    protected $logConfig;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
-        $this->tempFolderPath = sys_get_temp_dir();
+        $this->logConfig = new LogConfiguration();
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $this->getLogConfiguration());
+        }
     }
 
     /**
@@ -332,6 +325,8 @@ class Configuration
     public function addDefaultHeader($headerName, $headerValue)
     {
         if (!is_string($headerName)) {
+            self::$logger->error("InvalidArgumentException : Header name must be a string.");
+            self::$logger->close();
             throw new \InvalidArgumentException('Header name must be a string.');
         }
 
@@ -348,7 +343,7 @@ class Configuration
     {
         return $this->defaultHeaders;
     }
-	/**
+    /**
      * Deletes a default header
      *
      * @param string $headerName the header to delete
@@ -360,8 +355,8 @@ class Configuration
         unset($this->defaultHeaders[$headerName]);
         return $this;
     }
-	
-	/**
+    
+    /**
      * Adds a request header
      *
      * @param string $headerName  header name (e.g. Token)
@@ -373,6 +368,8 @@ class Configuration
     public function addRequestHeader($headerName, $headerValue)
     {
         if (!is_string($headerName)) {
+            self::$logger->error("InvalidArgumentException : Header name must be a string.");
+            self::$logger->close();
             throw new \InvalidArgumentException('Header name must be a string.');
         }
 
@@ -437,6 +434,8 @@ class Configuration
     public function setUserAgent($userAgent)
     {
         if (!is_string($userAgent)) {
+            self::$logger->error("InvalidArgumentException : User-agent must be a string.");
+            self::$logger->close();
             throw new \InvalidArgumentException('User-agent must be a string.');
         }
 
@@ -465,6 +464,8 @@ class Configuration
     public function setCurlTimeout($seconds)
     {
         if (!is_numeric($seconds) || $seconds < 0) {
+            self::$logger->error("InvalidArgumentException : Timeout value must be numeric and a non-negative number.");
+            self::$logger->close();
             throw new \InvalidArgumentException('Timeout value must be numeric and a non-negative number.');
         }
 
@@ -493,6 +494,8 @@ class Configuration
     public function setCurlConnectTimeout($seconds)
     {
         if (!is_numeric($seconds) || $seconds < 0) {
+            self::$logger->error("InvalidArgumentException : Connect timeout value must be numeric and a non-negative number.");
+            self::$logger->close();
             throw new \InvalidArgumentException('Connect timeout value must be numeric and a non-negative number.');
         }
 
@@ -509,6 +512,18 @@ class Configuration
     public function setAllowEncoding($allowEncoding)
     {
         $this->allowEncoding = $allowEncoding;
+        return $this;
+    }
+    
+    /**
+     * Set logging configuration
+     * @param LogConfiguration $logConfig
+     *
+     * @return $this
+     */
+    public function setLogConfiguration($logConfig)
+    {
+        $this->logConfig = $logConfig;
         return $this;
     }
 
@@ -530,6 +545,16 @@ class Configuration
     public function getAllowEncoding()
     {
         return $this->allowEncoding;
+    }
+    
+    /**
+     * Get logging configuration
+     *
+     * @return LogConfiguration
+     */
+    public function getLogConfiguration()
+    {
+        return $this->logConfig;
     }
 
     /**
@@ -648,75 +673,6 @@ class Configuration
     }
 
     /**
-     * Sets debug flag
-     *
-     * @param bool $debug Debug flag
-     *
-     * @return $this
-     */
-    public function setDebug($debug)
-    {
-        $this->debug = $debug;
-        return $this;
-    }
-
-    /**
-     * Gets the debug flag
-     *
-     * @return bool
-     */
-    public function getDebug()
-    {
-        return $this->debug;
-    }
-
-    /**
-     * Sets the debug file
-     *
-     * @param string $debugFile Debug file
-     *
-     * @return $this
-     */
-    public function setDebugFile($debugFile)
-    {
-        $this->debugFile = $debugFile;
-        return $this;
-    }
-
-    /**
-     * Gets the debug file
-     *
-     * @return string
-     */
-    public function getDebugFile()
-    {
-        return $this->debugFile;
-    }
-
-    /**
-     * Sets the temp folder path
-     *
-     * @param string $tempFolderPath Temp folder path
-     *
-     * @return $this
-     */
-    public function setTempFolderPath($tempFolderPath)
-    {
-        $this->tempFolderPath = $tempFolderPath;
-        return $this;
-    }
-
-    /**
-     * Gets the temp folder path
-     *
-     * @return string Temp folder path
-     */
-    public function getTempFolderPath()
-    {
-        return $this->tempFolderPath;
-    }
-
-    /**
      * Sets if SSL verification should be enabled or disabled
      *
      * @param boolean $sslVerification True if the certificate should be validated, false otherwise
@@ -776,7 +732,6 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.0.1' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
     }

@@ -54,7 +54,8 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'authType' => 'string'
+        'authType' => 'string',
+        'initiator' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator'
     ];
 
     /**
@@ -62,7 +63,8 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'authType' => null
+        'authType' => null,
+        'initiator' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      * @var string[]
      */
     protected static $attributeMap = [
-        'authType' => 'authType'
+        'authType' => 'authType',
+        'initiator' => 'initiator'
     ];
 
 
@@ -89,7 +92,8 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      * @var string[]
      */
     protected static $setters = [
-        'authType' => 'setAuthType'
+        'authType' => 'setAuthType',
+        'initiator' => 'setInitiator'
     ];
 
 
@@ -98,7 +102,8 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      * @var string[]
      */
     protected static $getters = [
-        'authType' => 'getAuthType'
+        'authType' => 'getAuthType',
+        'initiator' => 'getInitiator'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
     public function __construct(array $data = null)
     {
         $this->container['authType'] = isset($data['authType']) ? $data['authType'] : null;
+        $this->container['initiator'] = isset($data['initiator']) ? $data['initiator'] : null;
     }
 
     /**
@@ -178,6 +184,27 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
     {
 
         $this->container['authType'] = $authType;
+
+        return $this;
+    }
+
+    /**
+     * Gets initiator
+     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator
+     */
+    public function getInitiator()
+    {
+        return $this->container['initiator'];
+    }
+
+    /**
+     * Sets initiator
+     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator $initiator
+     * @return $this
+     */
+    public function setInitiator($initiator)
+    {
+        $this->container['initiator'] = $initiator;
 
         return $this;
     }

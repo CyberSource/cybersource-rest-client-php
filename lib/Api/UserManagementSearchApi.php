@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * UserManagementSearchApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class UserManagementSearchApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class UserManagementSearchApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class UserManagementSearchApi
      */
     public function searchUsers($searchRequest)
     {
+        self::$logger->info('CALL TO METHOD searchUsers STARTED');
         list($response, $statusCode, $httpHeader) = $this->searchUsersWithHttpInfo($searchRequest);
+        self::$logger->info('CALL TO METHOD searchUsers ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class UserManagementSearchApi
     {
         // verify the required parameter 'searchRequest' is set
         if ($searchRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $searchRequest when calling searchUsers");
             throw new \InvalidArgumentException('Missing the required parameter $searchRequest when calling searchUsers');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class UserManagementSearchApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\UmsV1UsersGet200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class UserManagementSearchApi
                 '\CyberSource\Model\UmsV1UsersGet200Response',
                 '/ums/v1/users/search'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\UmsV1UsersGet200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -166,6 +193,7 @@ class UserManagementSearchApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

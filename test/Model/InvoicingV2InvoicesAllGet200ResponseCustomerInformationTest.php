@@ -83,4 +83,11 @@ class InvoicingV2InvoicesAllGet200ResponseCustomerInformationTest extends \PHPUn
     public function testPropertyName()
     {
     }
+
+    /**
+     * Test attribute "merchantCustomerId"
+     */
+    public function testPropertyMerchantCustomerId()
+    {
+    }
 }
