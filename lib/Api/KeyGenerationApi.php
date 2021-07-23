@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * KeyGenerationApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class KeyGenerationApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class KeyGenerationApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class KeyGenerationApi
      */
     public function generatePublicKey($format, $generatePublicKeyRequest)
     {
+        self::$logger->info('CALL TO METHOD generatePublicKey STARTED');
         list($response, $statusCode, $httpHeader) = $this->generatePublicKeyWithHttpInfo($format, $generatePublicKeyRequest);
+        self::$logger->info('CALL TO METHOD generatePublicKey ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,10 +127,12 @@ class KeyGenerationApi
     {
         // verify the required parameter 'format' is set
         if ($format === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $format when calling generatePublicKey");
             throw new \InvalidArgumentException('Missing the required parameter $format when calling generatePublicKey');
         }
         // verify the required parameter 'generatePublicKeyRequest' is set
         if ($generatePublicKeyRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $generatePublicKeyRequest when calling generatePublicKey");
             throw new \InvalidArgumentException('Missing the required parameter $generatePublicKeyRequest when calling generatePublicKey');
         }
         // parse inputs
@@ -151,6 +163,21 @@ class KeyGenerationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\FlexV1KeysPost200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -162,6 +189,8 @@ class KeyGenerationApi
                 '\CyberSource\Model\FlexV1KeysPost200Response',
                 '/flex/v1/keys'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\FlexV1KeysPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -176,6 +205,7 @@ class KeyGenerationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **processingInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformation**](PtsV2PaymentsPost201ResponseProcessingInformation.md) |  | [optional] 
 **processorInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformation**](PtsV2PaymentsPost201ResponseProcessorInformation.md) |  | [optional] 
 **issuerInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseIssuerInformation**](PtsV2PaymentsPost201ResponseIssuerInformation.md) |  | [optional] 
+**paymentAccountInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformation**](PtsV2PaymentsPost201ResponsePaymentAccountInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformation**](PtsV2PaymentsPost201ResponsePaymentInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformation**](PtsV2PaymentsPost201ResponseOrderInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation**](PtsV2PaymentsPost201ResponsePointOfSaleInformation.md) |  | [optional] 

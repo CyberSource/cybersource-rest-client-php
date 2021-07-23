@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * PaymentInstrumentApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class PaymentInstrumentApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class PaymentInstrumentApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class PaymentInstrumentApi
      */
     public function deletePaymentInstrument($paymentInstrumentTokenId, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD deletePaymentInstrument STARTED');
         list($response, $statusCode, $httpHeader) = $this->deletePaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $profileId);
+        self::$logger->info('CALL TO METHOD deletePaymentInstrument ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,20 +127,25 @@ class PaymentInstrumentApi
     {
         // verify the required parameter 'paymentInstrumentTokenId' is set
         if ($paymentInstrumentTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentTokenId when calling deletePaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentTokenId when calling deletePaymentInstrument');
         }
         if ((strlen($paymentInstrumentTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.');
         }
         if ((strlen($paymentInstrumentTokenId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -164,6 +179,20 @@ class PaymentInstrumentApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : DELETE $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -175,6 +204,8 @@ class PaymentInstrumentApi
                 null,
                 '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -201,6 +232,7 @@ class PaymentInstrumentApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -217,7 +249,10 @@ class PaymentInstrumentApi
      */
     public function getPaymentInstrument($paymentInstrumentTokenId, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD getPaymentInstrument STARTED');
         list($response, $statusCode, $httpHeader) = $this->getPaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $profileId);
+        self::$logger->info('CALL TO METHOD getPaymentInstrument ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -235,20 +270,25 @@ class PaymentInstrumentApi
     {
         // verify the required parameter 'paymentInstrumentTokenId' is set
         if ($paymentInstrumentTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentTokenId when calling getPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentTokenId when calling getPaymentInstrument');
         }
         if ((strlen($paymentInstrumentTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.');
         }
         if ((strlen($paymentInstrumentTokenId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -282,6 +322,20 @@ class PaymentInstrumentApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -293,6 +347,8 @@ class PaymentInstrumentApi
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument',
                 '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -327,6 +383,7 @@ class PaymentInstrumentApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -345,7 +402,10 @@ class PaymentInstrumentApi
      */
     public function patchPaymentInstrument($paymentInstrumentTokenId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
     {
+        self::$logger->info('CALL TO METHOD patchPaymentInstrument STARTED');
         list($response, $statusCode, $httpHeader) = $this->patchPaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $patchPaymentInstrumentRequest, $profileId, $ifMatch);
+        self::$logger->info('CALL TO METHOD patchPaymentInstrument ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -365,31 +425,39 @@ class PaymentInstrumentApi
     {
         // verify the required parameter 'paymentInstrumentTokenId' is set
         if ($paymentInstrumentTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentTokenId when calling patchPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentTokenId when calling patchPaymentInstrument');
         }
         if ((strlen($paymentInstrumentTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.');
         }
         if ((strlen($paymentInstrumentTokenId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'patchPaymentInstrumentRequest' is set
         if ($patchPaymentInstrumentRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $patchPaymentInstrumentRequest when calling patchPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $patchPaymentInstrumentRequest when calling patchPaymentInstrument');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 36.');
         }
 
         if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.');
         }
         if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -432,6 +500,20 @@ class PaymentInstrumentApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -443,6 +525,8 @@ class PaymentInstrumentApi
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument',
                 '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -481,6 +565,7 @@ class PaymentInstrumentApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -497,7 +582,10 @@ class PaymentInstrumentApi
      */
     public function postPaymentInstrument($postPaymentInstrumentRequest, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD postPaymentInstrument STARTED');
         list($response, $statusCode, $httpHeader) = $this->postPaymentInstrumentWithHttpInfo($postPaymentInstrumentRequest, $profileId);
+        self::$logger->info('CALL TO METHOD postPaymentInstrument ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -515,13 +603,16 @@ class PaymentInstrumentApi
     {
         // verify the required parameter 'postPaymentInstrumentRequest' is set
         if ($postPaymentInstrumentRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $postPaymentInstrumentRequest when calling postPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $postPaymentInstrumentRequest when calling postPaymentInstrument');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.postPaymentInstrument, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.postPaymentInstrument, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.postPaymentInstrument, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling PaymentInstrumentApi.postPaymentInstrument, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling PaymentInstrumentApi.postPaymentInstrument, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling PaymentInstrumentApi.postPaymentInstrument, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -552,6 +643,20 @@ class PaymentInstrumentApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -563,6 +668,8 @@ class PaymentInstrumentApi
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument',
                 '/tms/v1/paymentinstruments'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -589,6 +696,7 @@ class PaymentInstrumentApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

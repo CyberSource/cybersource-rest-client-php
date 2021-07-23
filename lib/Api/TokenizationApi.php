@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * TokenizationApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class TokenizationApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class TokenizationApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -98,7 +105,10 @@ class TokenizationApi
      */
     public function tokenize($tokenizeRequest)
     {
+        self::$logger->info('CALL TO METHOD tokenize STARTED');
         list($response, $statusCode, $httpHeader) = $this->tokenizeWithHttpInfo($tokenizeRequest);
+        self::$logger->info('CALL TO METHOD tokenize ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -115,6 +125,7 @@ class TokenizationApi
     {
         // verify the required parameter 'tokenizeRequest' is set
         if ($tokenizeRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $tokenizeRequest when calling tokenize");
             throw new \InvalidArgumentException('Missing the required parameter $tokenizeRequest when calling tokenize');
         }
         // parse inputs
@@ -141,6 +152,20 @@ class TokenizationApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\FlexV1TokensPost200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -152,6 +177,8 @@ class TokenizationApi
                 '\CyberSource\Model\FlexV1TokensPost200Response',
                 '/flex/v1/tokens'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\FlexV1TokensPost200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -166,6 +193,7 @@ class TokenizationApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

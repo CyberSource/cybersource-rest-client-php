@@ -231,6 +231,7 @@ class PtsV2PayoutsPost201ResponseMerchantInformationMerchantDescriptor implement
      */
     public function setCountry($country)
     {
+
         $this->container['country'] = $country;
 
         return $this;

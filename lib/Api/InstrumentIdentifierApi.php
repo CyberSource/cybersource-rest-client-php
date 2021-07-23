@@ -32,6 +32,7 @@ use \CyberSource\ApiClient;
 use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
+use \CyberSource\Logging\LogFactory as LogFactory;
 
 /**
  * InstrumentIdentifierApi Class Doc Comment
@@ -43,6 +44,8 @@ use \CyberSource\ObjectSerializer;
  */
 class InstrumentIdentifierApi
 {
+    private static $logger = null;
+    
     /**
      * API Client
      *
@@ -62,6 +65,10 @@ class InstrumentIdentifierApi
         }
 
         $this->apiClient = $apiClient;
+
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+        }
     }
 
     /**
@@ -99,7 +106,10 @@ class InstrumentIdentifierApi
      */
     public function deleteInstrumentIdentifier($instrumentIdentifierTokenId, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD deleteInstrumentIdentifier STARTED');
         list($response, $statusCode, $httpHeader) = $this->deleteInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $profileId);
+        self::$logger->info('CALL TO METHOD deleteInstrumentIdentifier ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -117,20 +127,25 @@ class InstrumentIdentifierApi
     {
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if ($instrumentIdentifierTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierTokenId when calling deleteInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling deleteInstrumentIdentifier');
         }
         if ((strlen($instrumentIdentifierTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.');
         }
         if ((strlen($instrumentIdentifierTokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -164,6 +179,20 @@ class InstrumentIdentifierApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : DELETE $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -175,6 +204,8 @@ class InstrumentIdentifierApi
                 null,
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -201,6 +232,7 @@ class InstrumentIdentifierApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -217,7 +249,10 @@ class InstrumentIdentifierApi
      */
     public function getInstrumentIdentifier($instrumentIdentifierTokenId, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD getInstrumentIdentifier STARTED');
         list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $profileId);
+        self::$logger->info('CALL TO METHOD getInstrumentIdentifier ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -235,20 +270,25 @@ class InstrumentIdentifierApi
     {
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if ($instrumentIdentifierTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierTokenId when calling getInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling getInstrumentIdentifier');
         }
         if ((strlen($instrumentIdentifierTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.');
         }
         if ((strlen($instrumentIdentifierTokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -282,6 +322,20 @@ class InstrumentIdentifierApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -293,6 +347,8 @@ class InstrumentIdentifierApi
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -327,6 +383,7 @@ class InstrumentIdentifierApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -345,7 +402,10 @@ class InstrumentIdentifierApi
      */
     public function getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierTokenId, $profileId = null, $offset = '0', $limit = '20')
     {
+        self::$logger->info('CALL TO METHOD getInstrumentIdentifierPaymentInstrumentsList STARTED');
         list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierTokenId, $profileId, $offset, $limit);
+        self::$logger->info('CALL TO METHOD getInstrumentIdentifierPaymentInstrumentsList ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -365,31 +425,39 @@ class InstrumentIdentifierApi
     {
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if ($instrumentIdentifierTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierTokenId when calling getInstrumentIdentifierPaymentInstrumentsList");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling getInstrumentIdentifierPaymentInstrumentsList');
         }
         if ((strlen($instrumentIdentifierTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 32.');
         }
         if ((strlen($instrumentIdentifierTokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 12.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 12.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 12.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 36.');
         }
 
         if (!is_null($offset) && ($offset < 0)) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 0.');
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$offset\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 0.");
+            throw new \InvalidArgumentException('Invalid value for "$offset" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 0.');
         }
 
         if (!is_null($limit) && ($limit > 100)) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 100.');
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 100.");
+            throw new \InvalidArgumentException('Invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 100.');
         }
         if (!is_null($limit) && ($limit < 1)) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -431,6 +499,22 @@ class InstrumentIdentifierApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PaymentInstrumentList");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -442,6 +526,8 @@ class InstrumentIdentifierApi
                 '\CyberSource\Model\PaymentInstrumentList',
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/paymentinstruments'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PaymentInstrumentList', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -476,6 +562,7 @@ class InstrumentIdentifierApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -494,7 +581,10 @@ class InstrumentIdentifierApi
      */
     public function patchInstrumentIdentifier($instrumentIdentifierTokenId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
     {
+        self::$logger->info('CALL TO METHOD patchInstrumentIdentifier STARTED');
         list($response, $statusCode, $httpHeader) = $this->patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierTokenId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch);
+        self::$logger->info('CALL TO METHOD patchInstrumentIdentifier ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -514,31 +604,39 @@ class InstrumentIdentifierApi
     {
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if ($instrumentIdentifierTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierTokenId when calling patchInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling patchInstrumentIdentifier');
         }
         if ((strlen($instrumentIdentifierTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
         }
         if ((strlen($instrumentIdentifierTokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 12.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 12.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 12.');
         }
 
         // verify the required parameter 'patchInstrumentIdentifierRequest' is set
         if ($patchInstrumentIdentifierRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 36.');
         }
 
         if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
         }
         if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
-            throw new \InvalidArgumentException('invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 1.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 1.');
         }
 
         // parse inputs
@@ -581,6 +679,20 @@ class InstrumentIdentifierApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -592,6 +704,8 @@ class InstrumentIdentifierApi
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -630,6 +744,7 @@ class InstrumentIdentifierApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -646,7 +761,10 @@ class InstrumentIdentifierApi
      */
     public function postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD postInstrumentIdentifier STARTED');
         list($response, $statusCode, $httpHeader) = $this->postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId);
+        self::$logger->info('CALL TO METHOD postInstrumentIdentifier ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -664,13 +782,16 @@ class InstrumentIdentifierApi
     {
         // verify the required parameter 'postInstrumentIdentifierRequest' is set
         if ($postInstrumentIdentifierRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -701,6 +822,20 @@ class InstrumentIdentifierApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -712,6 +847,8 @@ class InstrumentIdentifierApi
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
                 '/tms/v1/instrumentidentifiers'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -742,6 +879,7 @@ class InstrumentIdentifierApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }
@@ -759,7 +897,10 @@ class InstrumentIdentifierApi
      */
     public function postInstrumentIdentifierEnrollment($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId = null)
     {
+        self::$logger->info('CALL TO METHOD postInstrumentIdentifierEnrollment STARTED');
         list($response, $statusCode, $httpHeader) = $this->postInstrumentIdentifierEnrollmentWithHttpInfo($instrumentIdentifierTokenId, $postInstrumentIdentifierEnrollmentRequest, $profileId);
+        self::$logger->info('CALL TO METHOD postInstrumentIdentifierEnrollment ENDED');
+        self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
@@ -778,24 +919,30 @@ class InstrumentIdentifierApi
     {
         // verify the required parameter 'instrumentIdentifierTokenId' is set
         if ($instrumentIdentifierTokenId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierTokenId when calling postInstrumentIdentifierEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierTokenId when calling postInstrumentIdentifierEnrollment');
         }
         if ((strlen($instrumentIdentifierTokenId) > 32)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 32.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 32.');
         }
         if ((strlen($instrumentIdentifierTokenId) < 12)) {
-            throw new \InvalidArgumentException('invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 12.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierTokenId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 12.");
+            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierTokenId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 12.');
         }
 
         // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
         if ($postInstrumentIdentifierEnrollmentRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment');
         }
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 36.');
         }
         if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            throw new \InvalidArgumentException('invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 36.');
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 36.");
+            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 36.');
         }
 
         // parse inputs
@@ -834,6 +981,20 @@ class InstrumentIdentifierApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -845,6 +1006,8 @@ class InstrumentIdentifierApi
                 null,
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierTokenId}/enrollment'
             );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
             return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
@@ -875,6 +1038,7 @@ class InstrumentIdentifierApi
                     break;
             }
 
+            self::$logger->error("ApiException : $e");
             throw $e;
         }
     }

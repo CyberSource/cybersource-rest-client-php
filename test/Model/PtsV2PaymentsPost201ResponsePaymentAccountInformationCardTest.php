@@ -1,6 +1,6 @@
 <?php
 /**
- * PtsV2PaymentsPost201ResponsePaymentInformationCardTest
+ * PtsV2PaymentsPost201ResponsePaymentAccountInformationCardTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * PtsV2PaymentsPost201ResponsePaymentInformationCardTest Class Doc Comment
+ * PtsV2PaymentsPost201ResponsePaymentAccountInformationCardTest Class Doc Comment
  *
  * @category    Class */
-// * @description PtsV2PaymentsPost201ResponsePaymentInformationCard
+// * @description PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PtsV2PaymentsPost201ResponsePaymentInformationCardTest extends \PHPUnit_Framework_TestCase
+class PtsV2PaymentsPost201ResponsePaymentAccountInformationCardTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class PtsV2PaymentsPost201ResponsePaymentInformationCardTest extends \PHPUnit_Fr
     }
 
     /**
-     * Test "PtsV2PaymentsPost201ResponsePaymentInformationCard"
+     * Test "PtsV2PaymentsPost201ResponsePaymentAccountInformationCard"
      */
-    public function testPtsV2PaymentsPost201ResponsePaymentInformationCard()
+    public function testPtsV2PaymentsPost201ResponsePaymentAccountInformationCard()
     {
     }
 
