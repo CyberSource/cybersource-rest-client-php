@@ -4,7 +4,7 @@ namespace CyberSource\Utilities\Flex;
 
 use CyberSource\Logging\LogFactory as LogFactory;
 
-class TokenTokenUtility
+class TransientTokenUtility
 {
     private static $MyLogger=null;
     
