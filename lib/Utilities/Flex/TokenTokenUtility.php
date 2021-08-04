@@ -4,7 +4,7 @@ namespace CyberSource\Utilities\Flex;
 
 use CyberSource\Logging\LogFactory as LogFactory;
 
-class TokenGeneratorUtility
+class TokenTokenUtility
 {
     private static $MyLogger=null;
     
@@ -19,7 +19,7 @@ class TokenGeneratorUtility
     }
     
     /**
-     * Parse token for the given jwt strin 
+     * Parse token for the given jwt string
      */
     public function parseToken($jwt)
     {
