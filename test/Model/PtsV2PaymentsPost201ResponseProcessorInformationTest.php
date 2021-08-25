@@ -113,13 +113,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
-     * Test attribute "providerTransactionId"
-     */
-    public function testPropertyProviderTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "responseCode"
      */
     public function testPropertyResponseCode()

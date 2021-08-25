@@ -666,7 +666,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets settlementAmount
-     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account.
+     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions.
      * @return $this
      */
     public function setSettlementAmount($settlementAmount)
@@ -688,7 +688,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets settlementCurrency
-     * @param string $settlementCurrency This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account.
+     * @param string $settlementCurrency This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account. This field is returned for OCT transactions.
      * @return $this
      */
     public function setSettlementCurrency($settlementCurrency)

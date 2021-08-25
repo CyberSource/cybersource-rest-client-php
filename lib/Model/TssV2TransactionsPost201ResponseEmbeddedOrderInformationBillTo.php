@@ -56,6 +56,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     protected static $swaggerTypes = [
         'firstName' => 'string',
         'lastName' => 'string',
+        'address1' => 'string',
         'email' => 'string',
         'country' => 'string',
         'phoneNumber' => 'string'
@@ -68,6 +69,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     protected static $swaggerFormats = [
         'firstName' => null,
         'lastName' => null,
+        'address1' => null,
         'email' => null,
         'country' => null,
         'phoneNumber' => null
@@ -90,6 +92,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     protected static $attributeMap = [
         'firstName' => 'firstName',
         'lastName' => 'lastName',
+        'address1' => 'address1',
         'email' => 'email',
         'country' => 'country',
         'phoneNumber' => 'phoneNumber'
@@ -103,6 +106,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     protected static $setters = [
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
+        'address1' => 'setAddress1',
         'email' => 'setEmail',
         'country' => 'setCountry',
         'phoneNumber' => 'setPhoneNumber'
@@ -116,6 +120,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     protected static $getters = [
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
+        'address1' => 'getAddress1',
         'email' => 'getEmail',
         'country' => 'getCountry',
         'phoneNumber' => 'getPhoneNumber'
@@ -154,6 +159,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     {
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
@@ -224,6 +230,28 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillTo implements 
     {
 
         $this->container['lastName'] = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets address1
+     * @return string
+     */
+    public function getAddress1()
+    {
+        return $this->container['address1'];
+    }
+
+    /**
+     * Sets address1
+     * @param string $address1 Payment card billing street address as it appears on the credit card issuer’s records.  #### Atos This field must not contain colons (:).  #### CyberSource through VisaNet **Important** When you populate orderInformation.billTo.address1 and orderInformation.billTo.address2, CyberSource through VisaNet concatenates the two values. If the concatenated value exceeds 40 characters, CyberSource through VisaNet truncates the value at 40 characters before sending it to Visa and the issuing bank. Truncating this value affects AVS results and therefore might also affect risk decisions and chargebacks. Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### FDMS Nashville When the street name is numeric, it must be sent in numeric format. For example, if the address is _One First Street_, it must be sent as _1 1st Street_.  Required if keyed; not used if swiped.  String (20)  #### TSYS Acquiring Solutions Required when `processingInformation.billPaymentOptions.billPayment=true` and `pointOfSaleInformation.entryMode=keyed`.  #### All other processors: Optional. String (60)  #### For Payouts This field may be sent only for FDC Compass.  **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.
+     * @return $this
+     */
+    public function setAddress1($address1)
+    {
+
+        $this->container['address1'] = $address1;
 
         return $this;
     }

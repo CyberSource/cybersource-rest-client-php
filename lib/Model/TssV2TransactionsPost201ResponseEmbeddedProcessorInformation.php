@@ -203,6 +203,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      */
     public function setApprovalCode($approvalCode)
     {
+
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;

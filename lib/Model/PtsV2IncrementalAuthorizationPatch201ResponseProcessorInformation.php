@@ -206,6 +206,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      */
     public function setApprovalCode($approvalCode)
     {
+
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;

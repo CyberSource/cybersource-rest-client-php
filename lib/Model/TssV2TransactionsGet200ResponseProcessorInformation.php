@@ -59,7 +59,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
         'responseId' => 'string',
-        'providerTransactionId' => 'string',
         'approvalCode' => 'string',
         'responseCode' => 'string',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAvs',
@@ -80,7 +79,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'transactionId' => null,
         'networkTransactionId' => null,
         'responseId' => null,
-        'providerTransactionId' => null,
         'approvalCode' => null,
         'responseCode' => null,
         'avs' => null,
@@ -111,7 +109,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
         'responseId' => 'responseId',
-        'providerTransactionId' => 'providerTransactionId',
         'approvalCode' => 'approvalCode',
         'responseCode' => 'responseCode',
         'avs' => 'avs',
@@ -133,7 +130,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
         'responseId' => 'setResponseId',
-        'providerTransactionId' => 'setProviderTransactionId',
         'approvalCode' => 'setApprovalCode',
         'responseCode' => 'setResponseCode',
         'avs' => 'setAvs',
@@ -155,7 +151,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
         'responseId' => 'getResponseId',
-        'providerTransactionId' => 'getProviderTransactionId',
         'approvalCode' => 'getApprovalCode',
         'responseCode' => 'getResponseCode',
         'avs' => 'getAvs',
@@ -202,7 +197,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
         $this->container['responseId'] = isset($data['responseId']) ? $data['responseId'] : null;
-        $this->container['providerTransactionId'] = isset($data['providerTransactionId']) ? $data['providerTransactionId'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
@@ -313,7 +307,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets networkTransactionId
-     * @param string $networkTransactionId The description for this field is not available.
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
      * @return $this
      */
     public function setNetworkTransactionId($networkTransactionId)
@@ -345,27 +339,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     }
 
     /**
-     * Gets providerTransactionId
-     * @return string
-     */
-    public function getProviderTransactionId()
-    {
-        return $this->container['providerTransactionId'];
-    }
-
-    /**
-     * Sets providerTransactionId
-     * @param string $providerTransactionId The description for this field is not available.
-     * @return $this
-     */
-    public function setProviderTransactionId($providerTransactionId)
-    {
-        $this->container['providerTransactionId'] = $providerTransactionId;
-
-        return $this;
-    }
-
-    /**
      * Gets approvalCode
      * @return string
      */
@@ -381,6 +354,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
      */
     public function setApprovalCode($approvalCode)
     {
+
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;

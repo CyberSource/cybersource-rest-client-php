@@ -104,4 +104,11 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformationTest exten
     public function testPropertyTransactionId()
     {
     }
+
+    /**
+     * Test attribute "strongAuthentication"
+     */
+    public function testPropertyStrongAuthentication()
+    {
+    }
 }
