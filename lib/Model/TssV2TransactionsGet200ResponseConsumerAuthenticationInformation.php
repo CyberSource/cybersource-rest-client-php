@@ -57,7 +57,8 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
         'eciRaw' => 'string',
         'cavv' => 'string',
         'xid' => 'string',
-        'transactionId' => 'string'
+        'transactionId' => 'string',
+        'strongAuthentication' => '\CyberSource\Model\TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication'
     ];
 
     /**
@@ -68,7 +69,8 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
         'eciRaw' => null,
         'cavv' => null,
         'xid' => null,
-        'transactionId' => null
+        'transactionId' => null,
+        'strongAuthentication' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
         'eciRaw' => 'eciRaw',
         'cavv' => 'cavv',
         'xid' => 'xid',
-        'transactionId' => 'transactionId'
+        'transactionId' => 'transactionId',
+        'strongAuthentication' => 'strongAuthentication'
     ];
 
 
@@ -101,7 +104,8 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
         'eciRaw' => 'setEciRaw',
         'cavv' => 'setCavv',
         'xid' => 'setXid',
-        'transactionId' => 'setTransactionId'
+        'transactionId' => 'setTransactionId',
+        'strongAuthentication' => 'setStrongAuthentication'
     ];
 
 
@@ -113,7 +117,8 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
         'eciRaw' => 'getEciRaw',
         'cavv' => 'getCavv',
         'xid' => 'getXid',
-        'transactionId' => 'getTransactionId'
+        'transactionId' => 'getTransactionId',
+        'strongAuthentication' => 'getStrongAuthentication'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;
     }
 
     /**
@@ -261,6 +267,27 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
     public function setTransactionId($transactionId)
     {
         $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets strongAuthentication
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication
+     */
+    public function getStrongAuthentication()
+    {
+        return $this->container['strongAuthentication'];
+    }
+
+    /**
+     * Sets strongAuthentication
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseConsumerAuthenticationInformationStrongAuthentication $strongAuthentication
+     * @return $this
+     */
+    public function setStrongAuthentication($strongAuthentication)
+    {
+        $this->container['strongAuthentication'] = $strongAuthentication;
 
         return $this;
     }

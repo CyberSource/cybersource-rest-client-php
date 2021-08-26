@@ -113,13 +113,6 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     }
 
     /**
-     * Test attribute "providerTransactionId"
-     */
-    public function testPropertyProviderTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "approvalCode"
      */
     public function testPropertyApprovalCode()

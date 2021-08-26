@@ -59,7 +59,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'string',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
-        'providerTransactionId' => 'string',
         'responseCode' => 'string',
         'responseCodeSource' => 'string',
         'responseDetails' => 'string',
@@ -94,7 +93,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
-        'providerTransactionId' => null,
         'responseCode' => null,
         'responseCodeSource' => null,
         'responseDetails' => null,
@@ -139,7 +137,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'cardReferenceData',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
-        'providerTransactionId' => 'providerTransactionId',
         'responseCode' => 'responseCode',
         'responseCodeSource' => 'responseCodeSource',
         'responseDetails' => 'responseDetails',
@@ -175,7 +172,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'setCardReferenceData',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
-        'providerTransactionId' => 'setProviderTransactionId',
         'responseCode' => 'setResponseCode',
         'responseCodeSource' => 'setResponseCodeSource',
         'responseDetails' => 'setResponseDetails',
@@ -211,7 +207,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'getCardReferenceData',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
-        'providerTransactionId' => 'getProviderTransactionId',
         'responseCode' => 'getResponseCode',
         'responseCodeSource' => 'getResponseCodeSource',
         'responseDetails' => 'getResponseDetails',
@@ -272,7 +267,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['cardReferenceData'] = isset($data['cardReferenceData']) ? $data['cardReferenceData'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
-        $this->container['providerTransactionId'] = isset($data['providerTransactionId']) ? $data['providerTransactionId'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
@@ -360,6 +354,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setApprovalCode($approvalCode)
     {
+
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;
@@ -376,7 +371,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets cardReferenceData
-     * @param string $cardReferenceData The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present.
+     * @param string $cardReferenceData The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same transaction. This field is used by Streamline and HSBC UK only, at present.
      * @return $this
      */
     public function setCardReferenceData($cardReferenceData)
@@ -420,33 +415,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets networkTransactionId
-     * @param string $networkTransactionId The description for this field is not available.
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
      * @return $this
      */
     public function setNetworkTransactionId($networkTransactionId)
     {
         $this->container['networkTransactionId'] = $networkTransactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets providerTransactionId
-     * @return string
-     */
-    public function getProviderTransactionId()
-    {
-        return $this->container['providerTransactionId'];
-    }
-
-    /**
-     * Sets providerTransactionId
-     * @param string $providerTransactionId The description for this field is not available.
-     * @return $this
-     */
-    public function setProviderTransactionId($providerTransactionId)
-    {
-        $this->container['providerTransactionId'] = $providerTransactionId;
 
         return $this;
     }

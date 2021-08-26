@@ -608,7 +608,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets cardholderVerificationMethod
-     * @param string[] $cardholderVerificationMethod
+     * @param string[] $cardholderVerificationMethod Complete list of cardholder verification methods (CVMs) supported by the terminal. Optional field. Possible values: - `PIN` - `Signature`  **EXAMPLE**: [\"PIN\",\"Signature\"]  **NOTE**: You can submit one of the values or both of the above in a request.  For authorizations and credits, this field is only supported on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX
      * @return $this
      */
     public function setCardholderVerificationMethod($cardholderVerificationMethod)
@@ -629,7 +629,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets terminalInputCapability
-     * @param string[] $terminalInputCapability
+     * @param string[] $terminalInputCapability Complete list of card input methods supported by the terminal.  Possible values: - `Keyed`: Terminal can accept card data that is entered manually. - `Swiped`: Terminal can accept card data from a magnetic stripe reader. - `Contact`: Terminal can accept card data in EMV contact mode (\"dipping a card\"). - `Contactless`: Terminal can accept card data in EMV contactless mode (\"tapping a card\"). - `BarCode`: Terminal can read bar codes. - `QRcode`: Terminal can read or scan QR codes. - `OCR`: Terminal can perform optical character recognition (OCT) on the card.  **EXAMPLE**: [\"Keyed\",\"Swiped\",\"Contact\",\"Contactless\"]  #### Used by **Authorization and Credit** Optional. This field is supported only by client software that is installed on your POS terminals for the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX
      * @return $this
      */
     public function setTerminalInputCapability($terminalInputCapability)
