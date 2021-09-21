@@ -162,9 +162,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
     {
         $invalid_properties = [];
 
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -177,9 +174,6 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCard implements Arra
     public function valid()
     {
 
-        if ($this->container['type'] === null) {
-            return false;
-        }
         return true;
     }
 

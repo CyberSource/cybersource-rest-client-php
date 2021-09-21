@@ -20,7 +20,7 @@
         "ext-mbstring": "*",
         "cache/apcu-adapter": "1.1.0",
         "firebase/php-jwt": "^5.0.0",
-		"monolog/monolog": "^1.25.0"
+		"monolog/monolog": ">=1.25.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8"

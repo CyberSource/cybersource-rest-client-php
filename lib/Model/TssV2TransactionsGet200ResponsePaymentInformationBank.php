@@ -296,6 +296,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBank implements ArrayAcce
      */
     public function setIban($iban)
     {
+
         $this->container['iban'] = $iban;
 
         return $this;

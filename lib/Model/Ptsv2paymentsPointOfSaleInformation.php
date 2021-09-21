@@ -608,7 +608,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets cardholderVerificationMethod
-     * @param string[] $cardholderVerificationMethod Complete list of cardholder verification methods (CVMs) supported by the terminal. Optional field. Possible values: - `PIN` - `Signature`  **EXAMPLE**: [\"PIN\",\"Signature\"]  **NOTE**: You can submit one of the values or both of the above in a request.  For authorizations and credits, this field is only supported on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX
+     * @param string[] $cardholderVerificationMethod Complete list of cardholder verification methods (CVMs) supported by the terminal. Optional field. Possible values: - `PIN`: For terminals with a PIN Pad - `Signature`: For terminals capable of receiving a signature - `pinOnGlass`: For terminals where PIN is entered on a glass-based capture mechanism  **EXAMPLE**: [\"PIN\",\"Signature\"]; [\"pinOnGlass\",\"Signature\"]
      * @return $this
      */
     public function setCardholderVerificationMethod($cardholderVerificationMethod)
