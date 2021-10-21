@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
 $predefinedSubscriptionRequestBean = new \CyberSource\Model\PredefinedSubscriptionRequestBean(); // \CyberSource\Model\PredefinedSubscriptionRequestBean | Report subscription request payload
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $api_instance->createStandardOrClassicSubscription($predefinedSubscriptionRequestBean, $organizationId);
@@ -40,7 +40,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **predefinedSubscriptionRequestBean** | [**\CyberSource\Model\PredefinedSubscriptionRequestBean**](../Model/PredefinedSubscriptionRequestBean.md)| Report subscription request payload |
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -71,7 +71,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
 $createReportSubscriptionRequest = new \CyberSource\Model\CreateReportSubscriptionRequest(); // \CyberSource\Model\CreateReportSubscriptionRequest | Report subscription request payload
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $api_instance->createSubscription($createReportSubscriptionRequest, $organizationId);
@@ -86,7 +86,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createReportSubscriptionRequest** | [**\CyberSource\Model\CreateReportSubscriptionRequest**](../Model/CreateReportSubscriptionRequest.md)| Report subscription request payload |
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -117,7 +117,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
 $reportName = "reportName_example"; // string | Name of the Report to Delete
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $api_instance->deleteSubscription($reportName, $organizationId);
@@ -132,7 +132,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **string**| Name of the Report to Delete |
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -162,7 +162,7 @@ View a summary of all report subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $result = $api_instance->getAllSubscriptions($organizationId);
@@ -177,7 +177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -208,7 +208,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportSubscriptionsApi();
 $reportName = "reportName_example"; // string | Name of the Report to Retrieve
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $result = $api_instance->getSubscription($reportName, $organizationId);
@@ -224,7 +224,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportName** | **string**| Name of the Report to Retrieve |
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 
