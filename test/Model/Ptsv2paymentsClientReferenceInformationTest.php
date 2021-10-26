@@ -85,6 +85,13 @@ class Ptsv2paymentsClientReferenceInformationTest extends \PHPUnit_Framework_Tes
     }
 
     /**
+     * Test attribute "pausedRequestId"
+     */
+    public function testPropertyPausedRequestId()
+    {
+    }
+
+    /**
      * Test attribute "transactionId"
      */
     public function testPropertyTransactionId()

@@ -100,7 +100,7 @@ class ReportSubscriptionsApi
      * Create a Standard or Classic Subscription
      *
      * @param \CyberSource\Model\PredefinedSubscriptionRequestBean $predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
@@ -119,7 +119,7 @@ class ReportSubscriptionsApi
      * Create a Standard or Classic Subscription
      *
      * @param \CyberSource\Model\PredefinedSubscriptionRequestBean $predefinedSubscriptionRequestBean Report subscription request payload (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -220,7 +220,7 @@ class ReportSubscriptionsApi
      * Create Report Subscription for a Report Name by Organization
      *
      * @param \CyberSource\Model\CreateReportSubscriptionRequest $createReportSubscriptionRequest Report subscription request payload (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
@@ -239,7 +239,7 @@ class ReportSubscriptionsApi
      * Create Report Subscription for a Report Name by Organization
      *
      * @param \CyberSource\Model\CreateReportSubscriptionRequest $createReportSubscriptionRequest Report subscription request payload (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -340,7 +340,7 @@ class ReportSubscriptionsApi
      * Delete Subscription of a Report Name by Organization
      *
      * @param string $reportName Name of the Report to Delete (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
@@ -359,7 +359,7 @@ class ReportSubscriptionsApi
      * Delete Subscription of a Report Name by Organization
      *
      * @param string $reportName Name of the Report to Delete (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -479,7 +479,7 @@ class ReportSubscriptionsApi
      *
      * Get All Subscriptions
      *
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -497,7 +497,7 @@ class ReportSubscriptionsApi
      *
      * Get All Subscriptions
      *
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -592,7 +592,7 @@ class ReportSubscriptionsApi
      * Get Subscription for Report Name
      *
      * @param string $reportName Name of the Report to Retrieve (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
@@ -611,7 +611,7 @@ class ReportSubscriptionsApi
      * Get Subscription for Report Name
      *
      * @param string $reportName Name of the Report to Retrieve (required)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportSubscriptionsGet200ResponseSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
