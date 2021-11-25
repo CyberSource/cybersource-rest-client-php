@@ -106,6 +106,13 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     }
 
     /**
+     * Test attribute "retrievalReferenceNumber"
+     */
+    public function testPropertyRetrievalReferenceNumber()
+    {
+    }
+
+    /**
      * Test attribute "responseId"
      */
     public function testPropertyResponseId()

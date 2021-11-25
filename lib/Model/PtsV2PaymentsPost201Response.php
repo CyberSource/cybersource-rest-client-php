@@ -70,6 +70,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation',
         'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
         'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation',
+        'buyerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'
     ];
@@ -95,6 +96,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => null,
         'installmentInformation' => null,
         'tokenInformation' => null,
+        'buyerInformation' => null,
         'riskInformation' => null,
         'consumerAuthenticationInformation' => null
     ];
@@ -130,6 +132,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'installmentInformation' => 'installmentInformation',
         'tokenInformation' => 'tokenInformation',
+        'buyerInformation' => 'buyerInformation',
         'riskInformation' => 'riskInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
     ];
@@ -156,6 +159,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'tokenInformation' => 'setTokenInformation',
+        'buyerInformation' => 'setBuyerInformation',
         'riskInformation' => 'setRiskInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
     ];
@@ -182,6 +186,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'tokenInformation' => 'getTokenInformation',
+        'buyerInformation' => 'getBuyerInformation',
         'riskInformation' => 'getRiskInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
     ];
@@ -233,6 +238,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
+        $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
     }
@@ -596,6 +602,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setTokenInformation($tokenInformation)
     {
         $this->container['tokenInformation'] = $tokenInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation
+     */
+    public function getBuyerInformation()
+    {
+        return $this->container['buyerInformation'];
+    }
+
+    /**
+     * Sets buyerInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation $buyerInformation
+     * @return $this
+     */
+    public function setBuyerInformation($buyerInformation)
+    {
+        $this->container['buyerInformation'] = $buyerInformation;
 
         return $this;
     }

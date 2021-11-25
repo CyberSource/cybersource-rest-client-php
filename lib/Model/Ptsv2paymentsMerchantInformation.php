@@ -55,6 +55,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'merchantDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationMerchantDescriptor',
+        'domainName' => 'string',
         'salesOrganizationId' => 'string',
         'categoryCode' => 'int',
         'categoryCodeDomestic' => 'int',
@@ -72,6 +73,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'merchantDescriptor' => null,
+        'domainName' => null,
         'salesOrganizationId' => null,
         'categoryCode' => null,
         'categoryCodeDomestic' => null,
@@ -99,6 +101,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'merchantDescriptor' => 'merchantDescriptor',
+        'domainName' => 'domainName',
         'salesOrganizationId' => 'salesOrganizationId',
         'categoryCode' => 'categoryCode',
         'categoryCodeDomestic' => 'categoryCodeDomestic',
@@ -117,6 +120,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     protected static $setters = [
         'merchantDescriptor' => 'setMerchantDescriptor',
+        'domainName' => 'setDomainName',
         'salesOrganizationId' => 'setSalesOrganizationId',
         'categoryCode' => 'setCategoryCode',
         'categoryCodeDomestic' => 'setCategoryCodeDomestic',
@@ -135,6 +139,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     protected static $getters = [
         'merchantDescriptor' => 'getMerchantDescriptor',
+        'domainName' => 'getDomainName',
         'salesOrganizationId' => 'getSalesOrganizationId',
         'categoryCode' => 'getCategoryCode',
         'categoryCodeDomestic' => 'getCategoryCodeDomestic',
@@ -178,6 +183,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
+        $this->container['domainName'] = isset($data['domainName']) ? $data['domainName'] : null;
         $this->container['salesOrganizationId'] = isset($data['salesOrganizationId']) ? $data['salesOrganizationId'] : null;
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
         $this->container['categoryCodeDomestic'] = isset($data['categoryCodeDomestic']) ? $data['categoryCodeDomestic'] : null;
@@ -245,6 +251,28 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function setMerchantDescriptor($merchantDescriptor)
     {
         $this->container['merchantDescriptor'] = $merchantDescriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets domainName
+     * @return string
+     */
+    public function getDomainName()
+    {
+        return $this->container['domainName'];
+    }
+
+    /**
+     * Sets domainName
+     * @param string $domainName This field will contain either the merchant url or the reverse domain as per the requirement for DSRP Format 3. This might vary transaction to transaction and might not be static. Merchant needs to have access to send this value for all DSRP program.
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+
+        $this->container['domainName'] = $domainName;
 
         return $this;
     }

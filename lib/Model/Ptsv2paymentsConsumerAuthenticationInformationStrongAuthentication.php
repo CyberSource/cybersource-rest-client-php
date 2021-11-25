@@ -59,6 +59,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'trustedMerchantExemptionIndicator' => 'string',
         'secureCorporatePaymentIndicator' => 'string',
         'delegatedAuthenticationExemptionIndicator' => 'string',
+        'outageExemptionIndicator' => 'string',
         'authenticationIndicator' => 'string'
     ];
 
@@ -72,6 +73,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'trustedMerchantExemptionIndicator' => null,
         'secureCorporatePaymentIndicator' => null,
         'delegatedAuthenticationExemptionIndicator' => null,
+        'outageExemptionIndicator' => null,
         'authenticationIndicator' => null
     ];
 
@@ -95,6 +97,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'trustedMerchantExemptionIndicator' => 'trustedMerchantExemptionIndicator',
         'secureCorporatePaymentIndicator' => 'secureCorporatePaymentIndicator',
         'delegatedAuthenticationExemptionIndicator' => 'delegatedAuthenticationExemptionIndicator',
+        'outageExemptionIndicator' => 'outageExemptionIndicator',
         'authenticationIndicator' => 'authenticationIndicator'
     ];
 
@@ -109,6 +112,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'trustedMerchantExemptionIndicator' => 'setTrustedMerchantExemptionIndicator',
         'secureCorporatePaymentIndicator' => 'setSecureCorporatePaymentIndicator',
         'delegatedAuthenticationExemptionIndicator' => 'setDelegatedAuthenticationExemptionIndicator',
+        'outageExemptionIndicator' => 'setOutageExemptionIndicator',
         'authenticationIndicator' => 'setAuthenticationIndicator'
     ];
 
@@ -123,6 +127,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         'trustedMerchantExemptionIndicator' => 'getTrustedMerchantExemptionIndicator',
         'secureCorporatePaymentIndicator' => 'getSecureCorporatePaymentIndicator',
         'delegatedAuthenticationExemptionIndicator' => 'getDelegatedAuthenticationExemptionIndicator',
+        'outageExemptionIndicator' => 'getOutageExemptionIndicator',
         'authenticationIndicator' => 'getAuthenticationIndicator'
     ];
 
@@ -162,6 +167,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         $this->container['trustedMerchantExemptionIndicator'] = isset($data['trustedMerchantExemptionIndicator']) ? $data['trustedMerchantExemptionIndicator'] : null;
         $this->container['secureCorporatePaymentIndicator'] = isset($data['secureCorporatePaymentIndicator']) ? $data['secureCorporatePaymentIndicator'] : null;
         $this->container['delegatedAuthenticationExemptionIndicator'] = isset($data['delegatedAuthenticationExemptionIndicator']) ? $data['delegatedAuthenticationExemptionIndicator'] : null;
+        $this->container['outageExemptionIndicator'] = isset($data['outageExemptionIndicator']) ? $data['outageExemptionIndicator'] : null;
         $this->container['authenticationIndicator'] = isset($data['authenticationIndicator']) ? $data['authenticationIndicator'] : null;
     }
 
@@ -296,6 +302,28 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
     {
 
         $this->container['delegatedAuthenticationExemptionIndicator'] = $delegatedAuthenticationExemptionIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets outageExemptionIndicator
+     * @return string
+     */
+    public function getOutageExemptionIndicator()
+    {
+        return $this->container['outageExemptionIndicator'];
+    }
+
+    /**
+     * Sets outageExemptionIndicator
+     * @param string $outageExemptionIndicator This field will contain the outage exemption indicator with one of the following values: Possible values: - `0`  (Outage Authentication exemption does not apply to the transaction) - `1` (Outage exempt from SCA as authentication could not be done due to outage)
+     * @return $this
+     */
+    public function setOutageExemptionIndicator($outageExemptionIndicator)
+    {
+
+        $this->container['outageExemptionIndicator'] = $outageExemptionIndicator;
 
         return $this;
     }

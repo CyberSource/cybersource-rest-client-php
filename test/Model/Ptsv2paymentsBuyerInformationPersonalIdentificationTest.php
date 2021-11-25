@@ -97,4 +97,11 @@ class Ptsv2paymentsBuyerInformationPersonalIdentificationTest extends \PHPUnit_F
     public function testPropertyIssuedBy()
     {
     }
+
+    /**
+     * Test attribute "verificationResults"
+     */
+    public function testPropertyVerificationResults()
+    {
+    }
 }

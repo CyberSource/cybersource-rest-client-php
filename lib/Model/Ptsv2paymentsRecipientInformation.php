@@ -56,6 +56,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'accountId' => 'string',
         'lastName' => 'string',
+        'middleName' => 'string',
         'postalCode' => 'string'
     ];
 
@@ -66,6 +67,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'accountId' => null,
         'lastName' => null,
+        'middleName' => null,
         'postalCode' => null
     ];
 
@@ -86,6 +88,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     protected static $attributeMap = [
         'accountId' => 'accountId',
         'lastName' => 'lastName',
+        'middleName' => 'middleName',
         'postalCode' => 'postalCode'
     ];
 
@@ -97,6 +100,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     protected static $setters = [
         'accountId' => 'setAccountId',
         'lastName' => 'setLastName',
+        'middleName' => 'setMiddleName',
         'postalCode' => 'setPostalCode'
     ];
 
@@ -108,6 +112,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     protected static $getters = [
         'accountId' => 'getAccountId',
         'lastName' => 'getLastName',
+        'middleName' => 'getMiddleName',
         'postalCode' => 'getPostalCode'
     ];
 
@@ -144,6 +149,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     {
         $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
     }
 
@@ -212,6 +218,28 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     {
 
         $this->container['lastName'] = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleName
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middleName'];
+    }
+
+    /**
+     * Sets middleName
+     * @param string $middleName Recipient’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For details, see the `recipient_middlename` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setMiddleName($middleName)
+    {
+
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }

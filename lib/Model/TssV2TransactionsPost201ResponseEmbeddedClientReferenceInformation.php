@@ -56,7 +56,8 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     protected static $swaggerTypes = [
         'code' => 'string',
         'applicationName' => 'string',
-        'applicationUser' => 'string'
+        'applicationUser' => 'string',
+        'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner'
     ];
 
     /**
@@ -66,7 +67,8 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     protected static $swaggerFormats = [
         'code' => null,
         'applicationName' => null,
-        'applicationUser' => null
+        'applicationUser' => null,
+        'partner' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     protected static $attributeMap = [
         'code' => 'code',
         'applicationName' => 'applicationName',
-        'applicationUser' => 'applicationUser'
+        'applicationUser' => 'applicationUser',
+        'partner' => 'partner'
     ];
 
 
@@ -97,7 +100,8 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     protected static $setters = [
         'code' => 'setCode',
         'applicationName' => 'setApplicationName',
-        'applicationUser' => 'setApplicationUser'
+        'applicationUser' => 'setApplicationUser',
+        'partner' => 'setPartner'
     ];
 
 
@@ -108,7 +112,8 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     protected static $getters = [
         'code' => 'getCode',
         'applicationName' => 'getApplicationName',
-        'applicationUser' => 'getApplicationUser'
+        'applicationUser' => 'getApplicationUser',
+        'partner' => 'getPartner'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['applicationName'] = isset($data['applicationName']) ? $data['applicationName'] : null;
         $this->container['applicationUser'] = isset($data['applicationUser']) ? $data['applicationUser'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
     }
 
     /**
@@ -232,6 +238,27 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
     public function setApplicationUser($applicationUser)
     {
         $this->container['applicationUser'] = $applicationUser;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

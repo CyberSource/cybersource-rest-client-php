@@ -58,6 +58,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting[]',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
+        'retrievalReferenceNumber' => 'string',
         'responseId' => 'string',
         'approvalCode' => 'string',
         'responseCode' => 'string',
@@ -78,6 +79,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
+        'retrievalReferenceNumber' => null,
         'responseId' => null,
         'approvalCode' => null,
         'responseCode' => null,
@@ -108,6 +110,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => 'multiProcessorRouting',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
         'responseId' => 'responseId',
         'approvalCode' => 'approvalCode',
         'responseCode' => 'responseCode',
@@ -129,6 +132,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => 'setMultiProcessorRouting',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
         'responseId' => 'setResponseId',
         'approvalCode' => 'setApprovalCode',
         'responseCode' => 'setResponseCode',
@@ -150,6 +154,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => 'getMultiProcessorRouting',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
         'responseId' => 'getResponseId',
         'approvalCode' => 'getApprovalCode',
         'responseCode' => 'getResponseCode',
@@ -196,6 +201,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['multiProcessorRouting'] = isset($data['multiProcessorRouting']) ? $data['multiProcessorRouting'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
         $this->container['responseId'] = isset($data['responseId']) ? $data['responseId'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
@@ -313,6 +319,28 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     public function setNetworkTransactionId($networkTransactionId)
     {
         $this->container['networkTransactionId'] = $networkTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
 
         return $this;
     }
