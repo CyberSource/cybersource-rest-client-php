@@ -218,6 +218,13 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationTest extends 
     }
 
     /**
+     * Test attribute "strongAuthentication"
+     */
+    public function testPropertyStrongAuthentication()
+    {
+    }
+
+    /**
      * Test attribute "networkScore"
      */
     public function testPropertyNetworkScore()

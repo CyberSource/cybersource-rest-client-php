@@ -85,6 +85,13 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "domainName"
+     */
+    public function testPropertyDomainName()
+    {
+    }
+
+    /**
      * Test attribute "salesOrganizationId"
      */
     public function testPropertySalesOrganizationId()

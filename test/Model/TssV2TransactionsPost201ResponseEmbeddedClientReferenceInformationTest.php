@@ -97,4 +97,11 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationTest ext
     public function testPropertyApplicationUser()
     {
     }
+
+    /**
+     * Test attribute "partner"
+     */
+    public function testPropertyPartner()
+    {
+    }
 }

@@ -92,6 +92,13 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "middleName"
+     */
+    public function testPropertyMiddleName()
+    {
+    }
+
+    /**
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()

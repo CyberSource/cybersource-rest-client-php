@@ -80,7 +80,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'string',
         'name' => 'string',
         'routing' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting',
-        'merchantNumber' => 'string'
+        'merchantNumber' => 'string',
+        'retrievalReferenceNumber' => 'string'
     ];
 
     /**
@@ -114,7 +115,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => null,
         'name' => null,
         'routing' => null,
-        'merchantNumber' => null
+        'merchantNumber' => null,
+        'retrievalReferenceNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -158,7 +160,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'masterCardAuthenticationType',
         'name' => 'name',
         'routing' => 'routing',
-        'merchantNumber' => 'merchantNumber'
+        'merchantNumber' => 'merchantNumber',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber'
     ];
 
 
@@ -193,7 +196,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'setMasterCardAuthenticationType',
         'name' => 'setName',
         'routing' => 'setRouting',
-        'merchantNumber' => 'setMerchantNumber'
+        'merchantNumber' => 'setMerchantNumber',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber'
     ];
 
 
@@ -228,7 +232,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'getMasterCardAuthenticationType',
         'name' => 'getName',
         'routing' => 'getRouting',
-        'merchantNumber' => 'getMerchantNumber'
+        'merchantNumber' => 'getMerchantNumber',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber'
     ];
 
     public static function attributeMap()
@@ -289,6 +294,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
         $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
     }
 
     /**
@@ -897,6 +903,28 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     {
 
         $this->container['merchantNumber'] = $merchantNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
 
         return $this;
     }

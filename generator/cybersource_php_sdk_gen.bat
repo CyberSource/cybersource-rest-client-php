@@ -51,6 +51,10 @@ git checkout ..\README.md
 
 git checkout ..\composer.json
 
+git checkout ..\lib\Api\OAuthApi.php
+git checkout ..\lib\Model\AccessTokenResponse.php
+git checkout ..\lib\Model\CreateAccessTokenRequest.php
+
 pause
 
 

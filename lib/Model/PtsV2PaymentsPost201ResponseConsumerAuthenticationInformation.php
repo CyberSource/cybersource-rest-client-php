@@ -74,6 +74,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'eciRaw' => 'string',
         'effectiveAuthenticationType' => 'string',
         'ivr' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr',
+        'strongAuthentication' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication',
         'networkScore' => 'string',
         'pareq' => 'string',
         'paresStatus' => 'string',
@@ -122,6 +123,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'eciRaw' => null,
         'effectiveAuthenticationType' => null,
         'ivr' => null,
+        'strongAuthentication' => null,
         'networkScore' => null,
         'pareq' => null,
         'paresStatus' => null,
@@ -180,6 +182,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'eciRaw' => 'eciRaw',
         'effectiveAuthenticationType' => 'effectiveAuthenticationType',
         'ivr' => 'ivr',
+        'strongAuthentication' => 'strongAuthentication',
         'networkScore' => 'networkScore',
         'pareq' => 'pareq',
         'paresStatus' => 'paresStatus',
@@ -229,6 +232,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'eciRaw' => 'setEciRaw',
         'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
         'ivr' => 'setIvr',
+        'strongAuthentication' => 'setStrongAuthentication',
         'networkScore' => 'setNetworkScore',
         'pareq' => 'setPareq',
         'paresStatus' => 'setParesStatus',
@@ -278,6 +282,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'eciRaw' => 'getEciRaw',
         'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
         'ivr' => 'getIvr',
+        'strongAuthentication' => 'getStrongAuthentication',
         'networkScore' => 'getNetworkScore',
         'pareq' => 'getPareq',
         'paresStatus' => 'getParesStatus',
@@ -352,6 +357,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         $this->container['eciRaw'] = isset($data['eciRaw']) ? $data['eciRaw'] : null;
         $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
         $this->container['ivr'] = isset($data['ivr']) ? $data['ivr'] : null;
+        $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;
         $this->container['networkScore'] = isset($data['networkScore']) ? $data['networkScore'] : null;
         $this->container['pareq'] = isset($data['pareq']) ? $data['pareq'] : null;
         $this->container['paresStatus'] = isset($data['paresStatus']) ? $data['paresStatus'] : null;
@@ -828,6 +834,27 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
     public function setIvr($ivr)
     {
         $this->container['ivr'] = $ivr;
+
+        return $this;
+    }
+
+    /**
+     * Gets strongAuthentication
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication
+     */
+    public function getStrongAuthentication()
+    {
+        return $this->container['strongAuthentication'];
+    }
+
+    /**
+     * Sets strongAuthentication
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthentication $strongAuthentication
+     * @return $this
+     */
+    public function setStrongAuthentication($strongAuthentication)
+    {
+        $this->container['strongAuthentication'] = $strongAuthentication;
 
         return $this;
     }
