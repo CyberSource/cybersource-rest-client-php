@@ -55,6 +55,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'totalAmount' => 'string',
+        'subTotalAmount' => 'string',
         'currency' => 'string',
         'discountAmount' => 'string',
         'dutyAmount' => 'string',
@@ -87,6 +88,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'totalAmount' => null,
+        'subTotalAmount' => null,
         'currency' => null,
         'discountAmount' => null,
         'dutyAmount' => null,
@@ -129,6 +131,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $attributeMap = [
         'totalAmount' => 'totalAmount',
+        'subTotalAmount' => 'subTotalAmount',
         'currency' => 'currency',
         'discountAmount' => 'discountAmount',
         'dutyAmount' => 'dutyAmount',
@@ -162,6 +165,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $setters = [
         'totalAmount' => 'setTotalAmount',
+        'subTotalAmount' => 'setSubTotalAmount',
         'currency' => 'setCurrency',
         'discountAmount' => 'setDiscountAmount',
         'dutyAmount' => 'setDutyAmount',
@@ -195,6 +199,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $getters = [
         'totalAmount' => 'getTotalAmount',
+        'subTotalAmount' => 'getSubTotalAmount',
         'currency' => 'getCurrency',
         'discountAmount' => 'getDiscountAmount',
         'dutyAmount' => 'getDutyAmount',
@@ -253,6 +258,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
+        $this->container['subTotalAmount'] = isset($data['subTotalAmount']) ? $data['subTotalAmount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
         $this->container['dutyAmount'] = isset($data['dutyAmount']) ? $data['dutyAmount'] : null;
@@ -322,6 +328,28 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
     {
 
         $this->container['totalAmount'] = $totalAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets subTotalAmount
+     * @return string
+     */
+    public function getSubTotalAmount()
+    {
+        return $this->container['subTotalAmount'];
+    }
+
+    /**
+     * Sets subTotalAmount
+     * @param string $subTotalAmount Subtotal amount of all the items.This amount (which is the value of all items in the cart, not including the additional amounts such as tax, shipping, etc.) cannot change after a sessions request. When there is a change to any of the additional amounts, this field should be resent in the order request. When the sub total amount changes, you must initiate a new transaction starting with a sessions request. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point. This value can not be changed after a sessions request.
+     * @return $this
+     */
+    public function setSubTotalAmount($subTotalAmount)
+    {
+
+        $this->container['subTotalAmount'] = $subTotalAmount;
 
         return $this;
     }

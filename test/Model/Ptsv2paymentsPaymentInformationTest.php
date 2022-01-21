@@ -153,4 +153,11 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyInitiationChannel()
     {
     }
+
+    /**
+     * Test attribute "eWallet"
+     */
+    public function testPropertyEWallet()
+    {
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationBank
+ * Reportingv3reportsReportFilters
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationBank Class Doc Comment
+ * Reportingv3reportsReportFilters Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
+class Reportingv3reportsReportFilters implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,17 +47,17 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_bank';
+    protected static $swaggerModelName = 'reportingv3reports_reportFilters';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount',
-        'routingNumber' => 'string',
-        'iban' => 'string',
-        'swiftCode' => 'string'
+        'applicationName' => 'string[]',
+        'firstName' => 'string[]',
+        'lastName' => 'string[]',
+        'email' => 'string[]'
     ];
 
     /**
@@ -65,10 +65,10 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'account' => null,
-        'routingNumber' => null,
-        'iban' => null,
-        'swiftCode' => null
+        'applicationName' => null,
+        'firstName' => null,
+        'lastName' => null,
+        'email' => null
     ];
 
     public static function swaggerTypes()
@@ -86,10 +86,10 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'account' => 'account',
-        'routingNumber' => 'routingNumber',
-        'iban' => 'iban',
-        'swiftCode' => 'swiftCode'
+        'applicationName' => 'Application.Name',
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'email' => 'email'
     ];
 
 
@@ -98,10 +98,10 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'account' => 'setAccount',
-        'routingNumber' => 'setRoutingNumber',
-        'iban' => 'setIban',
-        'swiftCode' => 'setSwiftCode'
+        'applicationName' => 'setApplicationName',
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'email' => 'setEmail'
     ];
 
 
@@ -110,10 +110,10 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'account' => 'getAccount',
-        'routingNumber' => 'getRoutingNumber',
-        'iban' => 'getIban',
-        'swiftCode' => 'getSwiftCode'
+        'applicationName' => 'getApplicationName',
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'email' => 'getEmail'
     ];
 
     public static function attributeMap()
@@ -147,10 +147,10 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['account'] = isset($data['account']) ? $data['account'] : null;
-        $this->container['routingNumber'] = isset($data['routingNumber']) ? $data['routingNumber'] : null;
-        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
-        $this->container['swiftCode'] = isset($data['swiftCode']) ? $data['swiftCode'] : null;
+        $this->container['applicationName'] = isset($data['applicationName']) ? $data['applicationName'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -179,87 +179,85 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
 
 
     /**
-     * Gets account
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount
+     * Gets applicationName
+     * @return string[]
      */
-    public function getAccount()
+    public function getApplicationName()
     {
-        return $this->container['account'];
+        return $this->container['applicationName'];
     }
 
     /**
-     * Sets account
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount $account
+     * Sets applicationName
+     * @param string[] $applicationName
      * @return $this
      */
-    public function setAccount($account)
+    public function setApplicationName($applicationName)
     {
-        $this->container['account'] = $account;
+        $this->container['applicationName'] = $applicationName;
 
         return $this;
     }
 
     /**
-     * Gets routingNumber
-     * @return string
+     * Gets firstName
+     * @return string[]
      */
-    public function getRoutingNumber()
+    public function getFirstName()
     {
-        return $this->container['routingNumber'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets routingNumber
-     * @param string $routingNumber Bank routing number. This is also called the _transit number_.  For details, see `ecp_rdfi` request field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/)
+     * Sets firstName
+     * @param string[] $firstName
      * @return $this
      */
-    public function setRoutingNumber($routingNumber)
+    public function setFirstName($firstName)
     {
-
-        $this->container['routingNumber'] = $routingNumber;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets iban
-     * @return string
+     * Gets lastName
+     * @return string[]
      */
-    public function getIban()
+    public function getLastName()
     {
-        return $this->container['iban'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets iban
-     * @param string $iban International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * Sets lastName
+     * @param string[] $lastName
      * @return $this
      */
-    public function setIban($iban)
+    public function setLastName($lastName)
     {
-
-        $this->container['iban'] = $iban;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
 
     /**
-     * Gets swiftCode
-     * @return string
+     * Gets email
+     * @return string[]
      */
-    public function getSwiftCode()
+    public function getEmail()
     {
-        return $this->container['swiftCode'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets swiftCode
-     * @param string $swiftCode Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * Sets email
+     * @param string[] $email
      * @return $this
      */
-    public function setSwiftCode($swiftCode)
+    public function setEmail($email)
     {
-        $this->container['swiftCode'] = $swiftCode;
+        $this->container['email'] = $email;
 
         return $this;
     }

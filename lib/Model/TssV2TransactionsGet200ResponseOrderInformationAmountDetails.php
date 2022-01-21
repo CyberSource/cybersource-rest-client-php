@@ -59,7 +59,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'string',
         'authorizedAmount' => 'string',
         'settlementAmount' => 'string',
-        'settlementCurrency' => 'string'
+        'settlementCurrency' => 'string',
+        'surcharge' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge'
     ];
 
     /**
@@ -72,7 +73,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => null,
         'authorizedAmount' => null,
         'settlementAmount' => null,
-        'settlementCurrency' => null
+        'settlementCurrency' => null,
+        'surcharge' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'taxAmount',
         'authorizedAmount' => 'authorizedAmount',
         'settlementAmount' => 'settlementAmount',
-        'settlementCurrency' => 'settlementCurrency'
+        'settlementCurrency' => 'settlementCurrency',
+        'surcharge' => 'surcharge'
     ];
 
 
@@ -109,7 +112,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'setTaxAmount',
         'authorizedAmount' => 'setAuthorizedAmount',
         'settlementAmount' => 'setSettlementAmount',
-        'settlementCurrency' => 'setSettlementCurrency'
+        'settlementCurrency' => 'setSettlementCurrency',
+        'surcharge' => 'setSurcharge'
     ];
 
 
@@ -123,7 +127,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'getTaxAmount',
         'authorizedAmount' => 'getAuthorizedAmount',
         'settlementAmount' => 'getSettlementAmount',
-        'settlementCurrency' => 'getSettlementCurrency'
+        'settlementCurrency' => 'getSettlementCurrency',
+        'surcharge' => 'getSurcharge'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
         $this->container['settlementAmount'] = isset($data['settlementAmount']) ? $data['settlementAmount'] : null;
         $this->container['settlementCurrency'] = isset($data['settlementCurrency']) ? $data['settlementCurrency'] : null;
+        $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
     }
 
     /**
@@ -318,6 +324,27 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
     {
 
         $this->container['settlementCurrency'] = $settlementCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets surcharge
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge
+     */
+    public function getSurcharge()
+    {
+        return $this->container['surcharge'];
+    }
+
+    /**
+     * Sets surcharge
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge $surcharge
+     * @return $this
+     */
+    public function setSurcharge($surcharge)
+    {
+        $this->container['surcharge'] = $surcharge;
 
         return $this;
     }

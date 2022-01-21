@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationBank
+ * Ptsv2paymentsInvoiceDetails
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationBank Class Doc Comment
+ * Ptsv2paymentsInvoiceDetails Class Doc Comment
  *
  * @category    Class
+ * @description invoice Details
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
+class Ptsv2paymentsInvoiceDetails implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,17 +48,14 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_bank';
+    protected static $swaggerModelName = 'ptsv2payments_invoiceDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount',
-        'routingNumber' => 'string',
-        'iban' => 'string',
-        'swiftCode' => 'string'
+        'barcodeNumber' => 'string'
     ];
 
     /**
@@ -65,10 +63,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'account' => null,
-        'routingNumber' => null,
-        'iban' => null,
-        'swiftCode' => null
+        'barcodeNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -86,10 +81,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'account' => 'account',
-        'routingNumber' => 'routingNumber',
-        'iban' => 'iban',
-        'swiftCode' => 'swiftCode'
+        'barcodeNumber' => 'barcodeNumber'
     ];
 
 
@@ -98,10 +90,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'account' => 'setAccount',
-        'routingNumber' => 'setRoutingNumber',
-        'iban' => 'setIban',
-        'swiftCode' => 'setSwiftCode'
+        'barcodeNumber' => 'setBarcodeNumber'
     ];
 
 
@@ -110,10 +99,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'account' => 'getAccount',
-        'routingNumber' => 'getRoutingNumber',
-        'iban' => 'getIban',
-        'swiftCode' => 'getSwiftCode'
+        'barcodeNumber' => 'getBarcodeNumber'
     ];
 
     public static function attributeMap()
@@ -147,10 +133,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['account'] = isset($data['account']) ? $data['account'] : null;
-        $this->container['routingNumber'] = isset($data['routingNumber']) ? $data['routingNumber'] : null;
-        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
-        $this->container['swiftCode'] = isset($data['swiftCode']) ? $data['swiftCode'] : null;
+        $this->container['barcodeNumber'] = isset($data['barcodeNumber']) ? $data['barcodeNumber'] : null;
     }
 
     /**
@@ -179,87 +162,23 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
 
 
     /**
-     * Gets account
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount
-     */
-    public function getAccount()
-    {
-        return $this->container['account'];
-    }
-
-    /**
-     * Sets account
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount $account
-     * @return $this
-     */
-    public function setAccount($account)
-    {
-        $this->container['account'] = $account;
-
-        return $this;
-    }
-
-    /**
-     * Gets routingNumber
+     * Gets barcodeNumber
      * @return string
      */
-    public function getRoutingNumber()
+    public function getBarcodeNumber()
     {
-        return $this->container['routingNumber'];
+        return $this->container['barcodeNumber'];
     }
 
     /**
-     * Sets routingNumber
-     * @param string $routingNumber Bank routing number. This is also called the _transit number_.  For details, see `ecp_rdfi` request field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/)
+     * Sets barcodeNumber
+     * @param string $barcodeNumber Barcode ID scanned from the Payment Application.
      * @return $this
      */
-    public function setRoutingNumber($routingNumber)
+    public function setBarcodeNumber($barcodeNumber)
     {
 
-        $this->container['routingNumber'] = $routingNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets iban
-     * @return string
-     */
-    public function getIban()
-    {
-        return $this->container['iban'];
-    }
-
-    /**
-     * Sets iban
-     * @param string $iban International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
-     * @return $this
-     */
-    public function setIban($iban)
-    {
-
-        $this->container['iban'] = $iban;
-
-        return $this;
-    }
-
-    /**
-     * Gets swiftCode
-     * @return string
-     */
-    public function getSwiftCode()
-    {
-        return $this->container['swiftCode'];
-    }
-
-    /**
-     * Sets swiftCode
-     * @param string $swiftCode Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
-     * @return $this
-     */
-    public function setSwiftCode($swiftCode)
-    {
-        $this->container['swiftCode'] = $swiftCode;
+        $this->container['barcodeNumber'] = $barcodeNumber;
 
         return $this;
     }

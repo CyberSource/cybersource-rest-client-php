@@ -204,6 +204,20 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "invoiceDetails"
+     */
+    public function testPropertyInvoiceDetails()
+    {
+    }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
+    {
+    }
+
+    /**
      * Test attribute "riskInformation"
      */
     public function testPropertyRiskInformation()

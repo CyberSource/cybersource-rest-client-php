@@ -78,9 +78,23 @@ class Ptsv2paymentsOrderInformationShipToTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "title"
+     */
+    public function testPropertyTitle()
+    {
+    }
+
+    /**
      * Test attribute "firstName"
      */
     public function testPropertyFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "middleName"
+     */
+    public function testPropertyMiddleName()
     {
     }
 

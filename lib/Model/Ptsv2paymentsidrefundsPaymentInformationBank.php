@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationBank
+ * Ptsv2paymentsidrefundsPaymentInformationBank
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationBank Class Doc Comment
+ * Ptsv2paymentsidrefundsPaymentInformationBank Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
+class Ptsv2paymentsidrefundsPaymentInformationBank implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_bank';
+    protected static $swaggerModelName = 'ptsv2paymentsidrefunds_paymentInformation_bank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     protected static $swaggerTypes = [
         'account' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount',
         'routingNumber' => 'string',
-        'iban' => 'string',
-        'swiftCode' => 'string'
+        'iban' => 'string'
     ];
 
     /**
@@ -67,8 +66,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     protected static $swaggerFormats = [
         'account' => null,
         'routingNumber' => null,
-        'iban' => null,
-        'swiftCode' => null
+        'iban' => null
     ];
 
     public static function swaggerTypes()
@@ -88,8 +86,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     protected static $attributeMap = [
         'account' => 'account',
         'routingNumber' => 'routingNumber',
-        'iban' => 'iban',
-        'swiftCode' => 'swiftCode'
+        'iban' => 'iban'
     ];
 
 
@@ -100,8 +97,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     protected static $setters = [
         'account' => 'setAccount',
         'routingNumber' => 'setRoutingNumber',
-        'iban' => 'setIban',
-        'swiftCode' => 'setSwiftCode'
+        'iban' => 'setIban'
     ];
 
 
@@ -112,8 +108,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     protected static $getters = [
         'account' => 'getAccount',
         'routingNumber' => 'getRoutingNumber',
-        'iban' => 'getIban',
-        'swiftCode' => 'getSwiftCode'
+        'iban' => 'getIban'
     ];
 
     public static function attributeMap()
@@ -150,7 +145,6 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
         $this->container['routingNumber'] = isset($data['routingNumber']) ? $data['routingNumber'] : null;
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
-        $this->container['swiftCode'] = isset($data['swiftCode']) ? $data['swiftCode'] : null;
     }
 
     /**
@@ -239,27 +233,6 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     {
 
         $this->container['iban'] = $iban;
-
-        return $this;
-    }
-
-    /**
-     * Gets swiftCode
-     * @return string
-     */
-    public function getSwiftCode()
-    {
-        return $this->container['swiftCode'];
-    }
-
-    /**
-     * Sets swiftCode
-     * @param string $swiftCode Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
-     * @return $this
-     */
-    public function setSwiftCode($swiftCode)
-    {
-        $this->container['swiftCode'] = $swiftCode;
 
         return $this;
     }

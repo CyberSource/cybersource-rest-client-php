@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1authenticationresultsPaymentInformationTokenizedCardTest
+ * Reportingv3reportsReportFiltersTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * Riskv1authenticationresultsPaymentInformationTokenizedCardTest Class Doc Comment
+ * Reportingv3reportsReportFiltersTest Class Doc Comment
  *
  * @category    Class */
-// * @description Riskv1authenticationresultsPaymentInformationTokenizedCard
+// * @description Reportingv3reportsReportFilters
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1authenticationresultsPaymentInformationTokenizedCardTest extends \PHPUnit_Framework_TestCase
+class Reportingv3reportsReportFiltersTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,44 +71,37 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCardTest extends \PH
     }
 
     /**
-     * Test "Riskv1authenticationresultsPaymentInformationTokenizedCard"
+     * Test "Reportingv3reportsReportFilters"
      */
-    public function testRiskv1authenticationresultsPaymentInformationTokenizedCard()
+    public function testReportingv3reportsReportFilters()
     {
     }
 
     /**
-     * Test attribute "transactionType"
+     * Test attribute "applicationName"
      */
-    public function testPropertyTransactionType()
+    public function testPropertyApplicationName()
     {
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "firstName"
      */
-    public function testPropertyType()
+    public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "expirationMonth"
+     * Test attribute "lastName"
      */
-    public function testPropertyExpirationMonth()
+    public function testPropertyLastName()
     {
     }
 
     /**
-     * Test attribute "expirationYear"
+     * Test attribute "email"
      */
-    public function testPropertyExpirationYear()
-    {
-    }
-
-    /**
-     * Test attribute "number"
-     */
-    public function testPropertyNumber()
+    public function testPropertyEmail()
     {
     }
 }

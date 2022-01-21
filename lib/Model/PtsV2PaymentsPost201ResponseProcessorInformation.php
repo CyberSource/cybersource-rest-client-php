@@ -81,7 +81,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'name' => 'string',
         'routing' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting',
         'merchantNumber' => 'string',
-        'retrievalReferenceNumber' => 'string'
+        'retrievalReferenceNumber' => 'string',
+        'paymentUrl' => 'string',
+        'completeUrl' => 'string'
     ];
 
     /**
@@ -116,7 +118,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'name' => null,
         'routing' => null,
         'merchantNumber' => null,
-        'retrievalReferenceNumber' => null
+        'retrievalReferenceNumber' => null,
+        'paymentUrl' => null,
+        'completeUrl' => null
     ];
 
     public static function swaggerTypes()
@@ -161,7 +165,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'name' => 'name',
         'routing' => 'routing',
         'merchantNumber' => 'merchantNumber',
-        'retrievalReferenceNumber' => 'retrievalReferenceNumber'
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
+        'paymentUrl' => 'paymentUrl',
+        'completeUrl' => 'completeUrl'
     ];
 
 
@@ -197,7 +203,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'name' => 'setName',
         'routing' => 'setRouting',
         'merchantNumber' => 'setMerchantNumber',
-        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber'
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
+        'paymentUrl' => 'setPaymentUrl',
+        'completeUrl' => 'setCompleteUrl'
     ];
 
 
@@ -233,7 +241,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'name' => 'getName',
         'routing' => 'getRouting',
         'merchantNumber' => 'getMerchantNumber',
-        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber'
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
+        'paymentUrl' => 'getPaymentUrl',
+        'completeUrl' => 'getCompleteUrl'
     ];
 
     public static function attributeMap()
@@ -295,6 +305,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
         $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
         $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
+        $this->container['paymentUrl'] = isset($data['paymentUrl']) ? $data['paymentUrl'] : null;
+        $this->container['completeUrl'] = isset($data['completeUrl']) ? $data['completeUrl'] : null;
     }
 
     /**
@@ -925,6 +937,50 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     {
 
         $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentUrl
+     * @return string
+     */
+    public function getPaymentUrl()
+    {
+        return $this->container['paymentUrl'];
+    }
+
+    /**
+     * Sets paymentUrl
+     * @param string $paymentUrl Direct the customer to this URL to complete the payment.
+     * @return $this
+     */
+    public function setPaymentUrl($paymentUrl)
+    {
+
+        $this->container['paymentUrl'] = $paymentUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets completeUrl
+     * @return string
+     */
+    public function getCompleteUrl()
+    {
+        return $this->container['completeUrl'];
+    }
+
+    /**
+     * Sets completeUrl
+     * @param string $completeUrl The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL.
+     * @return $this
+     */
+    public function setCompleteUrl($completeUrl)
+    {
+
+        $this->container['completeUrl'] = $completeUrl;
 
         return $this;
     }

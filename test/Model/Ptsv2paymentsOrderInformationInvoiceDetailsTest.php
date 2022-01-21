@@ -181,4 +181,11 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTest extends \PHPUnit_Framework
     public function testPropertyInvoiceDate()
     {
     }
+
+    /**
+     * Test attribute "costCenter"
+     */
+    public function testPropertyCostCenter()
+    {
+    }
 }

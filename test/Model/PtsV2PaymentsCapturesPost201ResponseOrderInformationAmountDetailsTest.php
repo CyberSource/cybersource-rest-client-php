@@ -90,4 +90,11 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetailsTest exte
     public function testPropertyCurrency()
     {
     }
+
+    /**
+     * Test attribute "processorTransactionFee"
+     */
+    public function testPropertyProcessorTransactionFee()
+    {
+    }
 }

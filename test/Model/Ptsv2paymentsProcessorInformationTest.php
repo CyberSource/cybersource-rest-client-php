@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1authenticationresultsPaymentInformationTokenizedCardTest
+ * Ptsv2paymentsProcessorInformationTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * Riskv1authenticationresultsPaymentInformationTokenizedCardTest Class Doc Comment
+ * Ptsv2paymentsProcessorInformationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Riskv1authenticationresultsPaymentInformationTokenizedCard
+// * @description Processor Information
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1authenticationresultsPaymentInformationTokenizedCardTest extends \PHPUnit_Framework_TestCase
+class Ptsv2paymentsProcessorInformationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,44 +71,16 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCardTest extends \PH
     }
 
     /**
-     * Test "Riskv1authenticationresultsPaymentInformationTokenizedCard"
+     * Test "Ptsv2paymentsProcessorInformation"
      */
-    public function testRiskv1authenticationresultsPaymentInformationTokenizedCard()
+    public function testPtsv2paymentsProcessorInformation()
     {
     }
 
     /**
-     * Test attribute "transactionType"
+     * Test attribute "preApprovalToken"
      */
-    public function testPropertyTransactionType()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
-
-    /**
-     * Test attribute "expirationMonth"
-     */
-    public function testPropertyExpirationMonth()
-    {
-    }
-
-    /**
-     * Test attribute "expirationYear"
-     */
-    public function testPropertyExpirationYear()
-    {
-    }
-
-    /**
-     * Test attribute "number"
-     */
-    public function testPropertyNumber()
+    public function testPropertyPreApprovalToken()
     {
     }
 }
