@@ -68,7 +68,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataCode' => 'string',
         'referenceDataNumber' => 'string',
         'salesSlipNumber' => 'int',
-        'invoiceDate' => 'string'
+        'invoiceDate' => 'string',
+        'costCenter' => 'string'
     ];
 
     /**
@@ -90,7 +91,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataCode' => null,
         'referenceDataNumber' => null,
         'salesSlipNumber' => null,
-        'invoiceDate' => null
+        'invoiceDate' => null,
+        'costCenter' => null
     ];
 
     public static function swaggerTypes()
@@ -122,7 +124,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataCode' => 'referenceDataCode',
         'referenceDataNumber' => 'referenceDataNumber',
         'salesSlipNumber' => 'salesSlipNumber',
-        'invoiceDate' => 'invoiceDate'
+        'invoiceDate' => 'invoiceDate',
+        'costCenter' => 'costCenter'
     ];
 
 
@@ -145,7 +148,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataCode' => 'setReferenceDataCode',
         'referenceDataNumber' => 'setReferenceDataNumber',
         'salesSlipNumber' => 'setSalesSlipNumber',
-        'invoiceDate' => 'setInvoiceDate'
+        'invoiceDate' => 'setInvoiceDate',
+        'costCenter' => 'setCostCenter'
     ];
 
 
@@ -168,7 +172,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataCode' => 'getReferenceDataCode',
         'referenceDataNumber' => 'getReferenceDataNumber',
         'salesSlipNumber' => 'getSalesSlipNumber',
-        'invoiceDate' => 'getInvoiceDate'
+        'invoiceDate' => 'getInvoiceDate',
+        'costCenter' => 'getCostCenter'
     ];
 
     public static function attributeMap()
@@ -217,6 +222,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
         $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
         $this->container['invoiceDate'] = isset($data['invoiceDate']) ? $data['invoiceDate'] : null;
+        $this->container['costCenter'] = isset($data['costCenter']) ? $data['costCenter'] : null;
     }
 
     /**
@@ -574,6 +580,28 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
     {
 
         $this->container['invoiceDate'] = $invoiceDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets costCenter
+     * @return string
+     */
+    public function getCostCenter()
+    {
+        return $this->container['costCenter'];
+    }
+
+    /**
+     * Sets costCenter
+     * @param string $costCenter Cost centre of the merchant
+     * @return $this
+     */
+    public function setCostCenter($costCenter)
+    {
+
+        $this->container['costCenter'] = $costCenter;
 
         return $this;
     }

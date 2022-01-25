@@ -55,7 +55,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationCard',
-        'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
+        'bank' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationBank',
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
@@ -63,7 +63,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'instrumentIdentifier' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier',
         'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
         'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
-        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType'
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
+        'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet'
     ];
 
     /**
@@ -80,7 +81,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'instrumentIdentifier' => null,
         'shippingAddress' => null,
         'legacyToken' => null,
-        'paymentType' => null
+        'paymentType' => null,
+        'eWallet' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +109,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'instrumentIdentifier' => 'instrumentIdentifier',
         'shippingAddress' => 'shippingAddress',
         'legacyToken' => 'legacyToken',
-        'paymentType' => 'paymentType'
+        'paymentType' => 'paymentType',
+        'eWallet' => 'eWallet'
     ];
 
 
@@ -125,7 +128,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'instrumentIdentifier' => 'setInstrumentIdentifier',
         'shippingAddress' => 'setShippingAddress',
         'legacyToken' => 'setLegacyToken',
-        'paymentType' => 'setPaymentType'
+        'paymentType' => 'setPaymentType',
+        'eWallet' => 'setEWallet'
     ];
 
 
@@ -143,7 +147,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'instrumentIdentifier' => 'getInstrumentIdentifier',
         'shippingAddress' => 'getShippingAddress',
         'legacyToken' => 'getLegacyToken',
-        'paymentType' => 'getPaymentType'
+        'paymentType' => 'getPaymentType',
+        'eWallet' => 'getEWallet'
     ];
 
     public static function attributeMap()
@@ -187,6 +192,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
         $this->container['legacyToken'] = isset($data['legacyToken']) ? $data['legacyToken'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
     }
 
     /**
@@ -237,7 +243,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Gets bank
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBank
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationBank
      */
     public function getBank()
     {
@@ -246,7 +252,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Sets bank
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBank $bank
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationBank $bank
      * @return $this
      */
     public function setBank($bank)
@@ -420,6 +426,27 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     public function setPaymentType($paymentType)
     {
         $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets eWallet
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet
+     */
+    public function getEWallet()
+    {
+        return $this->container['eWallet'];
+    }
+
+    /**
+     * Sets eWallet
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet $eWallet
+     * @return $this
+     */
+    public function setEWallet($eWallet)
+    {
+        $this->container['eWallet'] = $eWallet;
 
         return $this;
     }

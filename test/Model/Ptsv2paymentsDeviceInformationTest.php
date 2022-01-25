@@ -113,6 +113,13 @@ class Ptsv2paymentsDeviceInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "deviceType"
+     */
+    public function testPropertyDeviceType()
+    {
+    }
+
+    /**
      * Test attribute "rawData"
      */
     public function testPropertyRawData()

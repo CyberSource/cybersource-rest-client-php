@@ -1,6 +1,6 @@
 <?php
 /**
- * Riskv1authenticationresultsPaymentInformationTokenizedCardTest
+ * Ptsv2paymentsidrefundsPaymentInformationBankTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * Riskv1authenticationresultsPaymentInformationTokenizedCardTest Class Doc Comment
+ * Ptsv2paymentsidrefundsPaymentInformationBankTest Class Doc Comment
  *
  * @category    Class */
-// * @description Riskv1authenticationresultsPaymentInformationTokenizedCard
+// * @description Ptsv2paymentsidrefundsPaymentInformationBank
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Riskv1authenticationresultsPaymentInformationTokenizedCardTest extends \PHPUnit_Framework_TestCase
+class Ptsv2paymentsidrefundsPaymentInformationBankTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,44 +71,30 @@ class Riskv1authenticationresultsPaymentInformationTokenizedCardTest extends \PH
     }
 
     /**
-     * Test "Riskv1authenticationresultsPaymentInformationTokenizedCard"
+     * Test "Ptsv2paymentsidrefundsPaymentInformationBank"
      */
-    public function testRiskv1authenticationresultsPaymentInformationTokenizedCard()
+    public function testPtsv2paymentsidrefundsPaymentInformationBank()
     {
     }
 
     /**
-     * Test attribute "transactionType"
+     * Test attribute "account"
      */
-    public function testPropertyTransactionType()
+    public function testPropertyAccount()
     {
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "routingNumber"
      */
-    public function testPropertyType()
+    public function testPropertyRoutingNumber()
     {
     }
 
     /**
-     * Test attribute "expirationMonth"
+     * Test attribute "iban"
      */
-    public function testPropertyExpirationMonth()
-    {
-    }
-
-    /**
-     * Test attribute "expirationYear"
-     */
-    public function testPropertyExpirationYear()
-    {
-    }
-
-    /**
-     * Test attribute "number"
-     */
-    public function testPropertyNumber()
+    public function testPropertyIban()
     {
     }
 }

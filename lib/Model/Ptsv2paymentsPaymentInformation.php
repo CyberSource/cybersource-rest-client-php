@@ -64,7 +64,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
-        'initiationChannel' => 'string'
+        'initiationChannel' => 'string',
+        'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet'
     ];
 
     /**
@@ -82,7 +83,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'legacyToken' => null,
         'bank' => null,
         'paymentType' => null,
-        'initiationChannel' => null
+        'initiationChannel' => null,
+        'eWallet' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +112,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'legacyToken' => 'legacyToken',
         'bank' => 'bank',
         'paymentType' => 'paymentType',
-        'initiationChannel' => 'initiationChannel'
+        'initiationChannel' => 'initiationChannel',
+        'eWallet' => 'eWallet'
     ];
 
 
@@ -129,7 +132,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'legacyToken' => 'setLegacyToken',
         'bank' => 'setBank',
         'paymentType' => 'setPaymentType',
-        'initiationChannel' => 'setInitiationChannel'
+        'initiationChannel' => 'setInitiationChannel',
+        'eWallet' => 'setEWallet'
     ];
 
 
@@ -148,7 +152,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'legacyToken' => 'getLegacyToken',
         'bank' => 'getBank',
         'paymentType' => 'getPaymentType',
-        'initiationChannel' => 'getInitiationChannel'
+        'initiationChannel' => 'getInitiationChannel',
+        'eWallet' => 'getEWallet'
     ];
 
     public static function attributeMap()
@@ -193,6 +198,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
+        $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
     }
 
     /**
@@ -448,6 +454,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     {
 
         $this->container['initiationChannel'] = $initiationChannel;
+
+        return $this;
+    }
+
+    /**
+     * Gets eWallet
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet
+     */
+    public function getEWallet()
+    {
+        return $this->container['eWallet'];
+    }
+
+    /**
+     * Sets eWallet
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet $eWallet
+     * @return $this
+     */
+    public function setEWallet($eWallet)
+    {
+        $this->container['eWallet'] = $eWallet;
 
         return $this;
     }

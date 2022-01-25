@@ -85,6 +85,13 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     }
 
     /**
+     * Test attribute "subTotalAmount"
+     */
+    public function testPropertySubTotalAmount()
+    {
+    }
+
+    /**
      * Test attribute "currency"
      */
     public function testPropertyCurrency()

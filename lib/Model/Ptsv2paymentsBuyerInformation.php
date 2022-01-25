@@ -60,6 +60,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'companyTaxId' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]',
         'hashedPassword' => 'string',
+        'gender' => 'string',
+        'language' => 'string',
         'mobilePhone' => 'int'
     ];
 
@@ -74,6 +76,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'companyTaxId' => null,
         'personalIdentification' => null,
         'hashedPassword' => null,
+        'gender' => null,
+        'language' => null,
         'mobilePhone' => null
     ];
 
@@ -98,6 +102,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'companyTaxId' => 'companyTaxId',
         'personalIdentification' => 'personalIdentification',
         'hashedPassword' => 'hashedPassword',
+        'gender' => 'gender',
+        'language' => 'language',
         'mobilePhone' => 'mobilePhone'
     ];
 
@@ -113,6 +119,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'companyTaxId' => 'setCompanyTaxId',
         'personalIdentification' => 'setPersonalIdentification',
         'hashedPassword' => 'setHashedPassword',
+        'gender' => 'setGender',
+        'language' => 'setLanguage',
         'mobilePhone' => 'setMobilePhone'
     ];
 
@@ -128,6 +136,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'companyTaxId' => 'getCompanyTaxId',
         'personalIdentification' => 'getPersonalIdentification',
         'hashedPassword' => 'getHashedPassword',
+        'gender' => 'getGender',
+        'language' => 'getLanguage',
         'mobilePhone' => 'getMobilePhone'
     ];
 
@@ -168,6 +178,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         $this->container['companyTaxId'] = isset($data['companyTaxId']) ? $data['companyTaxId'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
+        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
         $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
     }
 
@@ -323,6 +335,50 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     {
 
         $this->container['hashedPassword'] = $hashedPassword;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->container['gender'];
+    }
+
+    /**
+     * Sets gender
+     * @param string $gender Customer's gender. Possible values are F (female), M (male),O (other).
+     * @return $this
+     */
+    public function setGender($gender)
+    {
+
+        $this->container['gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     * @param string $language language setting of the user
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+
+        $this->container['language'] = $language;
 
         return $this;
     }

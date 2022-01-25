@@ -54,7 +54,8 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'numberOfInstallments' => 'string'
+        'numberOfInstallments' => 'string',
+        'identifier' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'numberOfInstallments' => null
+        'numberOfInstallments' => null,
+        'identifier' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'numberOfInstallments' => 'numberOfInstallments'
+        'numberOfInstallments' => 'numberOfInstallments',
+        'identifier' => 'identifier'
     ];
 
 
@@ -89,7 +92,8 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'numberOfInstallments' => 'setNumberOfInstallments'
+        'numberOfInstallments' => 'setNumberOfInstallments',
+        'identifier' => 'setIdentifier'
     ];
 
 
@@ -98,7 +102,8 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'numberOfInstallments' => 'getNumberOfInstallments'
+        'numberOfInstallments' => 'getNumberOfInstallments',
+        'identifier' => 'getIdentifier'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
     public function __construct(array $data = null)
     {
         $this->container['numberOfInstallments'] = isset($data['numberOfInstallments']) ? $data['numberOfInstallments'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class TssV2TransactionsGet200ResponseInstallmentInformation implements ArrayAcce
     public function setNumberOfInstallments($numberOfInstallments)
     {
         $this->container['numberOfInstallments'] = $numberOfInstallments;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifier
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->container['identifier'];
+    }
+
+    /**
+     * Sets identifier
+     * @param string $identifier Standing Instruction/Installment identifier.
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->container['identifier'] = $identifier;
 
         return $this;
     }

@@ -55,7 +55,8 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
       */
     protected static $swaggerTypes = [
         'totalAmount' => 'string',
-        'currency' => 'string'
+        'currency' => 'string',
+        'processorTransactionFee' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
       */
     protected static $swaggerFormats = [
         'totalAmount' => null,
-        'currency' => null
+        'currency' => null,
+        'processorTransactionFee' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
      */
     protected static $attributeMap = [
         'totalAmount' => 'totalAmount',
-        'currency' => 'currency'
+        'currency' => 'currency',
+        'processorTransactionFee' => 'processorTransactionFee'
     ];
 
 
@@ -93,7 +96,8 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
      */
     protected static $setters = [
         'totalAmount' => 'setTotalAmount',
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
+        'processorTransactionFee' => 'setProcessorTransactionFee'
     ];
 
 
@@ -103,7 +107,8 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
      */
     protected static $getters = [
         'totalAmount' => 'getTotalAmount',
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
+        'processorTransactionFee' => 'getProcessorTransactionFee'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
     {
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['processorTransactionFee'] = isset($data['processorTransactionFee']) ? $data['processorTransactionFee'] : null;
     }
 
     /**
@@ -206,6 +212,28 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationAmountDetails implemen
     {
 
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorTransactionFee
+     * @return string
+     */
+    public function getProcessorTransactionFee()
+    {
+        return $this->container['processorTransactionFee'];
+    }
+
+    /**
+     * Sets processorTransactionFee
+     * @param string $processorTransactionFee The fee decided by the PSP/Processor per transaction.
+     * @return $this
+     */
+    public function setProcessorTransactionFee($processorTransactionFee)
+    {
+
+        $this->container['processorTransactionFee'] = $processorTransactionFee;
 
         return $this;
     }

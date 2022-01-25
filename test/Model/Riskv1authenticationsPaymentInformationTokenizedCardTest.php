@@ -78,6 +78,13 @@ class Riskv1authenticationsPaymentInformationTokenizedCardTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "transactionType"
+     */
+    public function testPropertyTransactionType()
+    {
+    }
+
+    /**
      * Test attribute "type"
      */
     public function testPropertyType()

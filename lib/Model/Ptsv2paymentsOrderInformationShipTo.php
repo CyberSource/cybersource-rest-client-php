@@ -54,7 +54,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'title' => 'string',
         'firstName' => 'string',
+        'middleName' => 'string',
         'lastName' => 'string',
         'address1' => 'string',
         'address2' => 'string',
@@ -76,7 +78,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'title' => null,
         'firstName' => null,
+        'middleName' => null,
         'lastName' => null,
         'address1' => null,
         'address2' => null,
@@ -108,7 +112,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'title' => 'title',
         'firstName' => 'firstName',
+        'middleName' => 'middleName',
         'lastName' => 'lastName',
         'address1' => 'address1',
         'address2' => 'address2',
@@ -131,7 +137,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'title' => 'setTitle',
         'firstName' => 'setFirstName',
+        'middleName' => 'setMiddleName',
         'lastName' => 'setLastName',
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
@@ -154,7 +162,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'title' => 'getTitle',
         'firstName' => 'getFirstName',
+        'middleName' => 'getMiddleName',
         'lastName' => 'getLastName',
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
@@ -202,7 +212,9 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
@@ -245,6 +257,28 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
 
 
     /**
+     * Gets title
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     * @param string $title The title of the person receiving the product.
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
      * Gets firstName
      * @return string
      */
@@ -262,6 +296,28 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
     {
 
         $this->container['firstName'] = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleName
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middleName'];
+    }
+
+    /**
+     * Sets middleName
+     * @param string $middleName Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field.
+     * @return $this
+     */
+    public function setMiddleName($middleName)
+    {
+
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }

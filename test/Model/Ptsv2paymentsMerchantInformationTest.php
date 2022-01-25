@@ -148,6 +148,27 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "cancelUrl"
+     */
+    public function testPropertyCancelUrl()
+    {
+    }
+
+    /**
+     * Test attribute "successUrl"
+     */
+    public function testPropertySuccessUrl()
+    {
+    }
+
+    /**
+     * Test attribute "failureUrl"
+     */
+    public function testPropertyFailureUrl()
+    {
+    }
+
+    /**
      * Test attribute "merchantName"
      */
     public function testPropertyMerchantName()

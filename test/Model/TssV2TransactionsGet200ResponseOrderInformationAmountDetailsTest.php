@@ -118,4 +118,11 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetailsTest extends \
     public function testPropertySettlementCurrency()
     {
     }
+
+    /**
+     * Test attribute "surcharge"
+     */
+    public function testPropertySurcharge()
+    {
+    }
 }

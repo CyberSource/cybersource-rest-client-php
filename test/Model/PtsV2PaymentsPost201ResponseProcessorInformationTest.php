@@ -272,4 +272,18 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     public function testPropertyRetrievalReferenceNumber()
     {
     }
+
+    /**
+     * Test attribute "paymentUrl"
+     */
+    public function testPropertyPaymentUrl()
+    {
+    }
+
+    /**
+     * Test attribute "completeUrl"
+     */
+    public function testPropertyCompleteUrl()
+    {
+    }
 }

@@ -146,4 +146,11 @@ class Ptsv2paymentsidrefundsPaymentInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyPaymentType()
     {
     }
+
+    /**
+     * Test attribute "eWallet"
+     */
+    public function testPropertyEWallet()
+    {
+    }
 }

@@ -72,6 +72,8 @@ class CreatePaymentRequest implements ArrayAccess
         'healthCareInformation' => '\CyberSource\Model\Ptsv2paymentsHealthCareInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
         'tokenInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformation',
+        'invoiceDetails' => '\CyberSource\Model\Ptsv2paymentsInvoiceDetails',
+        'processorInformation' => '\CyberSource\Model\Ptsv2paymentsProcessorInformation',
         'riskInformation' => '\CyberSource\Model\Ptsv2paymentsRiskInformation',
         'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation'
@@ -100,6 +102,8 @@ class CreatePaymentRequest implements ArrayAccess
         'healthCareInformation' => null,
         'promotionInformation' => null,
         'tokenInformation' => null,
+        'invoiceDetails' => null,
+        'processorInformation' => null,
         'riskInformation' => null,
         'acquirerInformation' => null,
         'recurringPaymentInformation' => null
@@ -138,6 +142,8 @@ class CreatePaymentRequest implements ArrayAccess
         'healthCareInformation' => 'healthCareInformation',
         'promotionInformation' => 'promotionInformation',
         'tokenInformation' => 'tokenInformation',
+        'invoiceDetails' => 'invoiceDetails',
+        'processorInformation' => 'processorInformation',
         'riskInformation' => 'riskInformation',
         'acquirerInformation' => 'acquirerInformation',
         'recurringPaymentInformation' => 'recurringPaymentInformation'
@@ -167,6 +173,8 @@ class CreatePaymentRequest implements ArrayAccess
         'healthCareInformation' => 'setHealthCareInformation',
         'promotionInformation' => 'setPromotionInformation',
         'tokenInformation' => 'setTokenInformation',
+        'invoiceDetails' => 'setInvoiceDetails',
+        'processorInformation' => 'setProcessorInformation',
         'riskInformation' => 'setRiskInformation',
         'acquirerInformation' => 'setAcquirerInformation',
         'recurringPaymentInformation' => 'setRecurringPaymentInformation'
@@ -196,6 +204,8 @@ class CreatePaymentRequest implements ArrayAccess
         'healthCareInformation' => 'getHealthCareInformation',
         'promotionInformation' => 'getPromotionInformation',
         'tokenInformation' => 'getTokenInformation',
+        'invoiceDetails' => 'getInvoiceDetails',
+        'processorInformation' => 'getProcessorInformation',
         'riskInformation' => 'getRiskInformation',
         'acquirerInformation' => 'getAcquirerInformation',
         'recurringPaymentInformation' => 'getRecurringPaymentInformation'
@@ -250,6 +260,8 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['healthCareInformation'] = isset($data['healthCareInformation']) ? $data['healthCareInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
+        $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
         $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
@@ -654,6 +666,48 @@ class CreatePaymentRequest implements ArrayAccess
     public function setTokenInformation($tokenInformation)
     {
         $this->container['tokenInformation'] = $tokenInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceDetails
+     * @return \CyberSource\Model\Ptsv2paymentsInvoiceDetails
+     */
+    public function getInvoiceDetails()
+    {
+        return $this->container['invoiceDetails'];
+    }
+
+    /**
+     * Sets invoiceDetails
+     * @param \CyberSource\Model\Ptsv2paymentsInvoiceDetails $invoiceDetails
+     * @return $this
+     */
+    public function setInvoiceDetails($invoiceDetails)
+    {
+        $this->container['invoiceDetails'] = $invoiceDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

@@ -62,7 +62,7 @@ class CreateAdhocReportRequest implements ArrayAccess
         'timezone' => 'string',
         'reportStartTime' => '\DateTime',
         'reportEndTime' => '\DateTime',
-        'reportFilters' => 'map[string,string[]]',
+        'reportFilters' => '\CyberSource\Model\Reportingv3reportsReportFilters',
         'reportPreferences' => '\CyberSource\Model\Reportingv3reportsReportPreferences',
         'groupName' => 'string'
     ];
@@ -430,7 +430,7 @@ class CreateAdhocReportRequest implements ArrayAccess
 
     /**
      * Gets reportFilters
-     * @return map[string,string[]]
+     * @return \CyberSource\Model\Reportingv3reportsReportFilters
      */
     public function getReportFilters()
     {
@@ -439,7 +439,7 @@ class CreateAdhocReportRequest implements ArrayAccess
 
     /**
      * Sets reportFilters
-     * @param map[string,string[]] $reportFilters List of filters to apply
+     * @param \CyberSource\Model\Reportingv3reportsReportFilters $reportFilters
      * @return $this
      */
     public function setReportFilters($reportFilters)
