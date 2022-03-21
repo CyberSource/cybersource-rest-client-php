@@ -78,6 +78,13 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationTest extends \PHPUni
     }
 
     /**
+     * Test attribute "approvalCode"
+     */
+    public function testPropertyApprovalCode()
+    {
+    }
+
+    /**
      * Test attribute "transactionId"
      */
     public function testPropertyTransactionId()

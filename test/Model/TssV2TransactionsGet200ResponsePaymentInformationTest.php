@@ -118,4 +118,25 @@ class TssV2TransactionsGet200ResponsePaymentInformationTest extends \PHPUnit_Fra
     public function testPropertyAccountFeatures()
     {
     }
+
+    /**
+     * Test attribute "paymentInstrument"
+     */
+    public function testPropertyPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test attribute "instrumentIdentifier"
+     */
+    public function testPropertyInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "shippingAddress"
+     */
+    public function testPropertyShippingAddress()
+    {
+    }
 }

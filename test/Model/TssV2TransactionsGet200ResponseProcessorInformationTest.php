@@ -174,4 +174,11 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     public function testPropertyResponseCodeSource()
     {
     }
+
+    /**
+     * Test attribute "paymentAccountReferenceNumber"
+     */
+    public function testPropertyPaymentAccountReferenceNumber()
+    {
+    }
 }

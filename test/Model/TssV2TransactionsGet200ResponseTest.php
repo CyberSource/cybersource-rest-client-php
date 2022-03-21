@@ -106,13 +106,6 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
      * Test attribute "submitTimeUTC"
      */
     public function testPropertySubmitTimeUTC()
@@ -242,6 +235,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "senderInformation"
      */
     public function testPropertySenderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "tokenInformation"
+     */
+    public function testPropertyTokenInformation()
     {
     }
 
