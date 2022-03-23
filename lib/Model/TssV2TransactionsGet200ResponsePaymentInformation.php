@@ -55,11 +55,14 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'paymentType' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentType',
-        'customer' => '\CyberSource\Model\Riskv1authenticationsetupsPaymentInformationCustomer',
+        'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCard',
         'invoice' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInvoice',
         'bank' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBank',
-        'accountFeatures' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures'
+        'accountFeatures' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures',
+        'paymentInstrument' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument',
+        'instrumentIdentifier' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier',
+        'shippingAddress' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'
     ];
 
     /**
@@ -72,7 +75,10 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'card' => null,
         'invoice' => null,
         'bank' => null,
-        'accountFeatures' => null
+        'accountFeatures' => null,
+        'paymentInstrument' => null,
+        'instrumentIdentifier' => null,
+        'shippingAddress' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +101,10 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'card' => 'card',
         'invoice' => 'invoice',
         'bank' => 'bank',
-        'accountFeatures' => 'accountFeatures'
+        'accountFeatures' => 'accountFeatures',
+        'paymentInstrument' => 'paymentInstrument',
+        'instrumentIdentifier' => 'instrumentIdentifier',
+        'shippingAddress' => 'shippingAddress'
     ];
 
 
@@ -109,7 +118,10 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'card' => 'setCard',
         'invoice' => 'setInvoice',
         'bank' => 'setBank',
-        'accountFeatures' => 'setAccountFeatures'
+        'accountFeatures' => 'setAccountFeatures',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'instrumentIdentifier' => 'setInstrumentIdentifier',
+        'shippingAddress' => 'setShippingAddress'
     ];
 
 
@@ -123,7 +135,10 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'card' => 'getCard',
         'invoice' => 'getInvoice',
         'bank' => 'getBank',
-        'accountFeatures' => 'getAccountFeatures'
+        'accountFeatures' => 'getAccountFeatures',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'instrumentIdentifier' => 'getInstrumentIdentifier',
+        'shippingAddress' => 'getShippingAddress'
     ];
 
     public static function attributeMap()
@@ -163,6 +178,9 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['accountFeatures'] = isset($data['accountFeatures']) ? $data['accountFeatures'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
     }
 
     /**
@@ -213,7 +231,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationCustomer
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer
      */
     public function getCustomer()
     {
@@ -222,7 +240,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationCustomer $customer
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -312,6 +330,69 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
     public function setAccountFeatures($accountFeatures)
     {
         $this->container['accountFeatures'] = $accountFeatures;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier
+     */
+    public function getInstrumentIdentifier()
+    {
+        return $this->container['instrumentIdentifier'];
+    }
+
+    /**
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier $instrumentIdentifier
+     * @return $this
+     */
+    public function setInstrumentIdentifier($instrumentIdentifier)
+    {
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shippingAddress'];
+    }
+
+    /**
+     * Sets shippingAddress
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationShippingAddress $shippingAddress
+     * @return $this
+     */
+    public function setShippingAddress($shippingAddress)
+    {
+        $this->container['shippingAddress'] = $shippingAddress;
 
         return $this;
     }

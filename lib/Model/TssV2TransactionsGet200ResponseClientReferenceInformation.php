@@ -58,6 +58,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
         'applicationVersion' => 'string',
         'applicationName' => 'string',
         'applicationUser' => 'string',
+        'partner' => '\CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformationPartner',
         'comments' => 'string'
     ];
 
@@ -70,6 +71,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
         'applicationVersion' => null,
         'applicationName' => null,
         'applicationUser' => null,
+        'partner' => null,
         'comments' => null
     ];
 
@@ -92,6 +94,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
         'applicationVersion' => 'applicationVersion',
         'applicationName' => 'applicationName',
         'applicationUser' => 'applicationUser',
+        'partner' => 'partner',
         'comments' => 'comments'
     ];
 
@@ -105,6 +108,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
         'applicationVersion' => 'setApplicationVersion',
         'applicationName' => 'setApplicationName',
         'applicationUser' => 'setApplicationUser',
+        'partner' => 'setPartner',
         'comments' => 'setComments'
     ];
 
@@ -118,6 +122,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
         'applicationVersion' => 'getApplicationVersion',
         'applicationName' => 'getApplicationName',
         'applicationUser' => 'getApplicationUser',
+        'partner' => 'getPartner',
         'comments' => 'getComments'
     ];
 
@@ -156,6 +161,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
         $this->container['applicationVersion'] = isset($data['applicationVersion']) ? $data['applicationVersion'] : null;
         $this->container['applicationName'] = isset($data['applicationName']) ? $data['applicationName'] : null;
         $this->container['applicationUser'] = isset($data['applicationUser']) ? $data['applicationUser'] : null;
+        $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
         $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
     }
 
@@ -265,6 +271,27 @@ class TssV2TransactionsGet200ResponseClientReferenceInformation implements Array
     public function setApplicationUser($applicationUser)
     {
         $this->container['applicationUser'] = $applicationUser;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformationPartner
+     */
+    public function getPartner()
+    {
+        return $this->container['partner'];
+    }
+
+    /**
+     * Sets partner
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformationPartner $partner
+     * @return $this
+     */
+    public function setPartner($partner)
+    {
+        $this->container['partner'] = $partner;
 
         return $this;
     }

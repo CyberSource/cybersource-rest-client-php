@@ -57,7 +57,7 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
         'code' => 'string',
         'applicationName' => 'string',
         'applicationUser' => 'string',
-        'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner'
+        'partner' => '\CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformationPartner'
     ];
 
     /**
@@ -244,7 +244,7 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
 
     /**
      * Gets partner
-     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformationPartner
      */
     public function getPartner()
     {
@@ -253,7 +253,7 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation impleme
 
     /**
      * Sets partner
-     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner $partner
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformationPartner $partner
      * @return $this
      */
     public function setPartner($partner)

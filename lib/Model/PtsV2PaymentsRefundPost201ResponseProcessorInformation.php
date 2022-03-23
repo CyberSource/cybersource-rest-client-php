@@ -54,6 +54,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'approvalCode' => 'string',
         'transactionId' => 'string',
         'forwardedAcquirerCode' => 'string',
         'merchantNumber' => 'string',
@@ -66,6 +67,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'approvalCode' => null,
         'transactionId' => null,
         'forwardedAcquirerCode' => null,
         'merchantNumber' => null,
@@ -88,6 +90,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
+        'approvalCode' => 'approvalCode',
         'transactionId' => 'transactionId',
         'forwardedAcquirerCode' => 'forwardedAcquirerCode',
         'merchantNumber' => 'merchantNumber',
@@ -101,6 +104,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @var string[]
      */
     protected static $setters = [
+        'approvalCode' => 'setApprovalCode',
         'transactionId' => 'setTransactionId',
         'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
         'merchantNumber' => 'setMerchantNumber',
@@ -114,6 +118,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @var string[]
      */
     protected static $getters = [
+        'approvalCode' => 'getApprovalCode',
         'transactionId' => 'getTransactionId',
         'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
         'merchantNumber' => 'getMerchantNumber',
@@ -152,6 +157,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function __construct(array $data = null)
     {
+        $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['forwardedAcquirerCode'] = isset($data['forwardedAcquirerCode']) ? $data['forwardedAcquirerCode'] : null;
         $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
@@ -183,6 +189,28 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         return true;
     }
 
+
+    /**
+     * Gets approvalCode
+     * @return string
+     */
+    public function getApprovalCode()
+    {
+        return $this->container['approvalCode'];
+    }
+
+    /**
+     * Sets approvalCode
+     * @param string $approvalCode Authorization code. Returned only when the processor returns this value.  The length of this value depends on your processor.  Returned by authorization service.  #### PIN debit Authorization code that is returned by the processor.  Returned by PIN debit credit.  #### Elavon Encrypted Account Number Program The returned value is OFFLINE.  #### TSYS Acquiring Solutions The returned value for a successful zero amount authorization is 000000.
+     * @return $this
+     */
+    public function setApprovalCode($approvalCode)
+    {
+
+        $this->container['approvalCode'] = $approvalCode;
+
+        return $this;
+    }
 
     /**
      * Gets transactionId
