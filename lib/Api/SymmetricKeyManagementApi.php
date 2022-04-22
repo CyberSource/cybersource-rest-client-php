@@ -203,6 +203,125 @@ class SymmetricKeyManagementApi
     }
 
     /**
+     * Operation createV2SharedSecretKeysVerifi
+     *
+     * Create Shared-Secret Keys as per verifi spec
+     *
+     * @param string $vIcDomain domain (required)
+     * @param \CyberSource\Model\CreateSharedSecretKeysVerifiRequest $createSharedSecretKeysVerifiRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\KmsV2KeysSymPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createV2SharedSecretKeysVerifi($vIcDomain, $createSharedSecretKeysVerifiRequest)
+    {
+        self::$logger->info('CALL TO METHOD createV2SharedSecretKeysVerifi STARTED');
+        list($response, $statusCode, $httpHeader) = $this->createV2SharedSecretKeysVerifiWithHttpInfo($vIcDomain, $createSharedSecretKeysVerifiRequest);
+        self::$logger->info('CALL TO METHOD createV2SharedSecretKeysVerifi ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation createV2SharedSecretKeysVerifiWithHttpInfo
+     *
+     * Create Shared-Secret Keys as per verifi spec
+     *
+     * @param string $vIcDomain domain (required)
+     * @param \CyberSource\Model\CreateSharedSecretKeysVerifiRequest $createSharedSecretKeysVerifiRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\KmsV2KeysSymPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createV2SharedSecretKeysVerifiWithHttpInfo($vIcDomain, $createSharedSecretKeysVerifiRequest)
+    {
+        // verify the required parameter 'vIcDomain' is set
+        if ($vIcDomain === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $vIcDomain when calling createV2SharedSecretKeysVerifi");
+            throw new \InvalidArgumentException('Missing the required parameter $vIcDomain when calling createV2SharedSecretKeysVerifi');
+        }
+        // verify the required parameter 'createSharedSecretKeysVerifiRequest' is set
+        if ($createSharedSecretKeysVerifiRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createSharedSecretKeysVerifiRequest when calling createV2SharedSecretKeysVerifi");
+            throw new \InvalidArgumentException('Missing the required parameter $createSharedSecretKeysVerifiRequest when calling createV2SharedSecretKeysVerifi');
+        }
+        // parse inputs
+        $resourcePath = "/kms/v2/keys-sym/verifi";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // header params
+        if ($vIcDomain !== null) {
+            $headerParams['v-ic-domain'] = $this->apiClient->getSerializer()->toHeaderValue($vIcDomain);
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($createSharedSecretKeysVerifiRequest)) {
+            $_tempBody = $createSharedSecretKeysVerifiRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\KmsV2KeysSymPost201Response");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\KmsV2KeysSymPost201Response',
+                '/kms/v2/keys-sym/verifi'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\KmsV2KeysSymPost201Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\KmsV2KeysSymPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
      * Operation deleteBulkSymmetricKeys
      *
      * Delete one or more Symmetric keys
