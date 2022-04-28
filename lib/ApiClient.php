@@ -326,18 +326,21 @@ class ApiClient
 
         // Set user agent
         curl_setopt($curl, CURLOPT_USERAGENT, $this->config->getUserAgent());
-
-        if ($this->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+        
+        $logConfiguration = $this->merchantConfig->getLogConfiguration();
+        
+        if ($logConfiguration->isMaskingEnabled()) {
             $printPostData = \CyberSource\Utilities\Helpers\DataMasker::maskData($postData);
         } else {
             $printPostData = $postData;
         }
         self::$logger->debug("HTTP Request Body:\n" . print_r($printPostData, true));
         
+        
         // debugging for curl
-        if (($this->merchantConfig->getLogConfiguration())->isLoggingEnabled()) {
+        if ($logConfiguration->isLoggingEnabled()) {
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
-            $tempBlowup = explode(DIRECTORY_SEPARATOR, ($this->merchantConfig->getLogConfiguration())->getDebugLogFile());
+            $tempBlowup = explode(DIRECTORY_SEPARATOR, $logConfiguration->getDebugLogFile());
             $normalLogFilename = end($tempBlowup);
             $filenameIndex = key($tempBlowup);
             $tempBlowup[$filenameIndex] = "curlNetwork.log";
@@ -380,7 +383,7 @@ class ApiClient
             $http_body = substr($response, $http_header_size);
             $response_info = curl_getinfo($curl);
 
-            if ($this->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+            if ($logConfiguration->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($http_body);
             } else {
                 $printHttpBody = $http_body;
