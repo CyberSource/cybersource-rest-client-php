@@ -257,6 +257,11 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
             $_tempBody = ${{paramName}};
         }
         {{/bodyParams}}
+        {{^bodyParams}}
+        if ('{{httpMethod}}' == 'POST') {
+            $_tempBody = '{}';
+        }
+        {{/bodyParams}}
 
         // for model (json/xml)
         if (isset($_tempBody)) {
