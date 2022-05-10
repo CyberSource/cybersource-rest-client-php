@@ -51,7 +51,7 @@ class GlobalParameter
     const KEY_FILE_NULL_EMPTY = "KeyFileName Empty/Null. Assigining merchantID value\n";
     const REQUEST_JSON_ERROR = "[ERROR] : Request Json File missing. So, Static payload data have been taking from PayloadData.php";
     const KEY_FILE_INCORRECT = "[ERROR] : KeyFileName/Directory is Incorrect! Unable to read the Certificate!\n";
-    const REFER_LOG = "EnableLog is Invalid. Default value will be true.\n";
+    const REFER_LOG = "enableLogging is Invalid. Default value will be true.\n";
     const MERCHANTID_REQ = "[ERROR] : MerchantID is mandatory\n";
     const NOT_ENTERED = "The Following Parameter is Missing in Cybs.json::";
     const INCORRECT_KEY_PASSWORD = "The Entered key_password is Incorrect\n";
