@@ -56,7 +56,7 @@ class Riskv1authenticationresultsPaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformationTokenizedCard',
-        'fluidData' => '\CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData',
+        'fluidData' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
     ];
 
@@ -222,7 +222,7 @@ class Riskv1authenticationresultsPaymentInformation implements ArrayAccess
 
     /**
      * Gets fluidData
-     * @return \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData
+     * @return \CyberSource\Model\Riskv1authenticationresultsPaymentInformationFluidData
      */
     public function getFluidData()
     {
@@ -231,7 +231,7 @@ class Riskv1authenticationresultsPaymentInformation implements ArrayAccess
 
     /**
      * Sets fluidData
-     * @param \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData $fluidData
+     * @param \CyberSource\Model\Riskv1authenticationresultsPaymentInformationFluidData $fluidData
      * @return $this
      */
     public function setFluidData($fluidData)

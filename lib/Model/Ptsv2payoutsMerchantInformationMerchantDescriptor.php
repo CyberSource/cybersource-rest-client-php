@@ -249,6 +249,7 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setCountry($country)
     {
+
         $this->container['country'] = $country;
 
         return $this;

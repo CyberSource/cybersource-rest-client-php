@@ -113,6 +113,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationTest ext
     }
 
     /**
+     * Test attribute "outageExemptionIndicator"
+     */
+    public function testPropertyOutageExemptionIndicator()
+    {
+    }
+
+    /**
      * Test attribute "authenticationIndicator"
      */
     public function testPropertyAuthenticationIndicator()

@@ -113,13 +113,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
-     * Test attribute "providerTransactionId"
-     */
-    public function testPropertyProviderTransactionId()
-    {
-    }
-
-    /**
      * Test attribute "responseCode"
      */
     public function testPropertyResponseCode()
@@ -270,6 +263,27 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
      * Test attribute "merchantNumber"
      */
     public function testPropertyMerchantNumber()
+    {
+    }
+
+    /**
+     * Test attribute "retrievalReferenceNumber"
+     */
+    public function testPropertyRetrievalReferenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "paymentUrl"
+     */
+    public function testPropertyPaymentUrl()
+    {
+    }
+
+    /**
+     * Test attribute "completeUrl"
+     */
+    public function testPropertyCompleteUrl()
     {
     }
 }

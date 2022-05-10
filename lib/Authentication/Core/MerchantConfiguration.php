@@ -990,10 +990,6 @@ class MerchantConfiguration
         $error_message = "";
         $warning_message = "";
 
-        if(empty($this->getMerchantID())){
-            $error_message .= GlobalParameter::MERCHANTID_REQ . PHP_EOL;
-        }
-
         if(empty($this->getAuthenticationType())){
             $error_message .= GlobalParameter::AUTHENTICATION_REQ . PHP_EOL;
         }
@@ -1037,6 +1033,10 @@ class MerchantConfiguration
             $this->setLogConfiguration($logConfig);
         }
 
+        if(empty($this->getMerchantID()) && $this->getAuthenticationType() == GlobalParameter::JWT){
+            $error_message .= GlobalParameter::MERCHANTID_REQ . PHP_EOL;
+        }
+
         if(empty($this->getKeyAlias()) && $this->getAuthenticationType() == GlobalParameter::JWT){
             $warning_message .= GlobalParameter::KEY_ALIAS_NULL_EMPTY . PHP_EOL;
         }
@@ -1051,6 +1051,10 @@ class MerchantConfiguration
         
         if(empty($this->getKeysDirectory()) && $this->getAuthenticationType() == GlobalParameter::JWT){
             $warning_message .= GlobalParameter::KEY_DIRECTORY_EMPTY . PHP_EOL;
+        }
+
+        if(empty($this->getMerchantID()) && $this->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE){
+            $error_message .= GlobalParameter::MERCHANTID_REQ . PHP_EOL;
         }
 
         if(empty($this->getApiKeyID()) && $this->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE ){

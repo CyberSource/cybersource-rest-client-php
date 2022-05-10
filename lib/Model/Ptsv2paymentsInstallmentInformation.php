@@ -66,7 +66,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'eligibilityInquiry' => 'string',
         'gracePeriodDuration' => 'string',
         'gracePeriodDurationType' => 'string',
-        'firstInstallmentAmount' => 'string'
+        'firstInstallmentAmount' => 'string',
+        'validationIndicator' => 'string',
+        'identifier' => 'string'
     ];
 
     /**
@@ -86,7 +88,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'eligibilityInquiry' => null,
         'gracePeriodDuration' => null,
         'gracePeriodDurationType' => null,
-        'firstInstallmentAmount' => null
+        'firstInstallmentAmount' => null,
+        'validationIndicator' => null,
+        'identifier' => null
     ];
 
     public static function swaggerTypes()
@@ -116,7 +120,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'eligibilityInquiry' => 'eligibilityInquiry',
         'gracePeriodDuration' => 'gracePeriodDuration',
         'gracePeriodDurationType' => 'gracePeriodDurationType',
-        'firstInstallmentAmount' => 'firstInstallmentAmount'
+        'firstInstallmentAmount' => 'firstInstallmentAmount',
+        'validationIndicator' => 'validationIndicator',
+        'identifier' => 'identifier'
     ];
 
 
@@ -137,7 +143,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'eligibilityInquiry' => 'setEligibilityInquiry',
         'gracePeriodDuration' => 'setGracePeriodDuration',
         'gracePeriodDurationType' => 'setGracePeriodDurationType',
-        'firstInstallmentAmount' => 'setFirstInstallmentAmount'
+        'firstInstallmentAmount' => 'setFirstInstallmentAmount',
+        'validationIndicator' => 'setValidationIndicator',
+        'identifier' => 'setIdentifier'
     ];
 
 
@@ -158,7 +166,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'eligibilityInquiry' => 'getEligibilityInquiry',
         'gracePeriodDuration' => 'getGracePeriodDuration',
         'gracePeriodDurationType' => 'getGracePeriodDurationType',
-        'firstInstallmentAmount' => 'getFirstInstallmentAmount'
+        'firstInstallmentAmount' => 'getFirstInstallmentAmount',
+        'validationIndicator' => 'getValidationIndicator',
+        'identifier' => 'getIdentifier'
     ];
 
     public static function attributeMap()
@@ -205,6 +215,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         $this->container['gracePeriodDuration'] = isset($data['gracePeriodDuration']) ? $data['gracePeriodDuration'] : null;
         $this->container['gracePeriodDurationType'] = isset($data['gracePeriodDurationType']) ? $data['gracePeriodDurationType'] : null;
         $this->container['firstInstallmentAmount'] = isset($data['firstInstallmentAmount']) ? $data['firstInstallmentAmount'] : null;
+        $this->container['validationIndicator'] = isset($data['validationIndicator']) ? $data['validationIndicator'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
     }
 
     /**
@@ -533,6 +545,48 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
     {
 
         $this->container['firstInstallmentAmount'] = $firstInstallmentAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationIndicator
+     * @return string
+     */
+    public function getValidationIndicator()
+    {
+        return $this->container['validationIndicator'];
+    }
+
+    /**
+     * Sets validationIndicator
+     * @param string $validationIndicator Standing Instruction/Installment validation indicator. - '1': Prevalidated - '2': Not Validated
+     * @return $this
+     */
+    public function setValidationIndicator($validationIndicator)
+    {
+        $this->container['validationIndicator'] = $validationIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifier
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->container['identifier'];
+    }
+
+    /**
+     * Sets identifier
+     * @param string $identifier Standing Instruction/Installment identifier.
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->container['identifier'] = $identifier;
 
         return $this;
     }

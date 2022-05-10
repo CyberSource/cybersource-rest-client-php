@@ -148,6 +148,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentAccountInformation"
+     */
+    public function testPropertyPaymentAccountInformation()
+    {
+    }
+
+    /**
      * Test attribute "paymentInformation"
      */
     public function testPropertyPaymentInformation()
@@ -179,6 +186,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "tokenInformation"
      */
     public function testPropertyTokenInformation()
+    {
+    }
+
+    /**
+     * Test attribute "buyerInformation"
+     */
+    public function testPropertyBuyerInformation()
     {
     }
 

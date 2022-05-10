@@ -58,7 +58,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'rootId' => 'string',
         'reconciliationId' => 'string',
         'merchantId' => 'string',
-        'status' => 'string',
         'submitTimeUTC' => 'string',
         'applicationInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation',
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBuyerInformation',
@@ -78,6 +77,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'pointOfSaleInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePointOfSaleInformation',
         'riskInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformation',
         'senderInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseSenderInformation',
+        'tokenInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseTokenInformation',
         'links' => '\CyberSource\Model\TssV2TransactionsGet200ResponseLinks'
     ];
 
@@ -90,7 +90,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'rootId' => null,
         'reconciliationId' => null,
         'merchantId' => null,
-        'status' => null,
         'submitTimeUTC' => null,
         'applicationInformation' => null,
         'buyerInformation' => null,
@@ -110,6 +109,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'pointOfSaleInformation' => null,
         'riskInformation' => null,
         'senderInformation' => null,
+        'tokenInformation' => null,
         'links' => null
     ];
 
@@ -132,7 +132,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'rootId' => 'rootId',
         'reconciliationId' => 'reconciliationId',
         'merchantId' => 'merchantId',
-        'status' => 'status',
         'submitTimeUTC' => 'submitTimeUTC',
         'applicationInformation' => 'applicationInformation',
         'buyerInformation' => 'buyerInformation',
@@ -152,6 +151,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'riskInformation' => 'riskInformation',
         'senderInformation' => 'senderInformation',
+        'tokenInformation' => 'tokenInformation',
         'links' => '_links'
     ];
 
@@ -165,7 +165,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'rootId' => 'setRootId',
         'reconciliationId' => 'setReconciliationId',
         'merchantId' => 'setMerchantId',
-        'status' => 'setStatus',
         'submitTimeUTC' => 'setSubmitTimeUTC',
         'applicationInformation' => 'setApplicationInformation',
         'buyerInformation' => 'setBuyerInformation',
@@ -185,6 +184,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'riskInformation' => 'setRiskInformation',
         'senderInformation' => 'setSenderInformation',
+        'tokenInformation' => 'setTokenInformation',
         'links' => 'setLinks'
     ];
 
@@ -198,7 +198,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'rootId' => 'getRootId',
         'reconciliationId' => 'getReconciliationId',
         'merchantId' => 'getMerchantId',
-        'status' => 'getStatus',
         'submitTimeUTC' => 'getSubmitTimeUTC',
         'applicationInformation' => 'getApplicationInformation',
         'buyerInformation' => 'getBuyerInformation',
@@ -218,6 +217,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'riskInformation' => 'getRiskInformation',
         'senderInformation' => 'getSenderInformation',
+        'tokenInformation' => 'getTokenInformation',
         'links' => 'getLinks'
     ];
 
@@ -256,7 +256,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['rootId'] = isset($data['rootId']) ? $data['rootId'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['submitTimeUTC'] = isset($data['submitTimeUTC']) ? $data['submitTimeUTC'] : null;
         $this->container['applicationInformation'] = isset($data['applicationInformation']) ? $data['applicationInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
@@ -276,6 +275,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
+        $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
     }
 
@@ -315,7 +315,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services.
+     * @param string $id An unique identification number generated by Cybersource to identify the submitted request. Returned by all services. It is also appended to the endpoint of the resource. On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)
@@ -359,7 +359,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets reconciliationId
-     * @param string $reconciliationId Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60)
+     * @param string $reconciliationId Reference number for the transaction. Depending on how your Cybersource account is configured, this value could either be provided in the API request or generated by CyberSource. The actual value used in the request to the processor is provided back to you by Cybersource in the response.
      * @return $this
      */
     public function setReconciliationId($reconciliationId)
@@ -392,27 +392,6 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     }
 
     /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * Gets submitTimeUTC
      * @return string
      */
@@ -423,7 +402,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets submitTimeUTC
-     * @param string $submitTimeUTC Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal.
+     * @param string $submitTimeUTC Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
      * @return $this
      */
     public function setSubmitTimeUTC($submitTimeUTC)
@@ -807,6 +786,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     public function setSenderInformation($senderInformation)
     {
         $this->container['senderInformation'] = $senderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenInformation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseTokenInformation
+     */
+    public function getTokenInformation()
+    {
+        return $this->container['tokenInformation'];
+    }
+
+    /**
+     * Sets tokenInformation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseTokenInformation $tokenInformation
+     * @return $this
+     */
+    public function setTokenInformation($tokenInformation)
+    {
+        $this->container['tokenInformation'] = $tokenInformation;
 
         return $this;
     }

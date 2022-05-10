@@ -55,6 +55,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'merchantDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationMerchantDescriptor',
+        'domainName' => 'string',
         'salesOrganizationId' => 'string',
         'categoryCode' => 'int',
         'categoryCodeDomestic' => 'int',
@@ -63,6 +64,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cardAcceptorReferenceNumber' => 'string',
         'transactionLocalDateTime' => 'string',
         'serviceFeeDescriptor' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceFeeDescriptor',
+        'cancelUrl' => 'string',
+        'successUrl' => 'string',
+        'failureUrl' => 'string',
         'merchantName' => 'string'
     ];
 
@@ -72,6 +76,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'merchantDescriptor' => null,
+        'domainName' => null,
         'salesOrganizationId' => null,
         'categoryCode' => null,
         'categoryCodeDomestic' => null,
@@ -80,6 +85,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cardAcceptorReferenceNumber' => null,
         'transactionLocalDateTime' => null,
         'serviceFeeDescriptor' => null,
+        'cancelUrl' => null,
+        'successUrl' => null,
+        'failureUrl' => null,
         'merchantName' => null
     ];
 
@@ -99,6 +107,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'merchantDescriptor' => 'merchantDescriptor',
+        'domainName' => 'domainName',
         'salesOrganizationId' => 'salesOrganizationId',
         'categoryCode' => 'categoryCode',
         'categoryCodeDomestic' => 'categoryCodeDomestic',
@@ -107,6 +116,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cardAcceptorReferenceNumber' => 'cardAcceptorReferenceNumber',
         'transactionLocalDateTime' => 'transactionLocalDateTime',
         'serviceFeeDescriptor' => 'serviceFeeDescriptor',
+        'cancelUrl' => 'cancelUrl',
+        'successUrl' => 'successUrl',
+        'failureUrl' => 'failureUrl',
         'merchantName' => 'merchantName'
     ];
 
@@ -117,6 +129,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     protected static $setters = [
         'merchantDescriptor' => 'setMerchantDescriptor',
+        'domainName' => 'setDomainName',
         'salesOrganizationId' => 'setSalesOrganizationId',
         'categoryCode' => 'setCategoryCode',
         'categoryCodeDomestic' => 'setCategoryCodeDomestic',
@@ -125,6 +138,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cardAcceptorReferenceNumber' => 'setCardAcceptorReferenceNumber',
         'transactionLocalDateTime' => 'setTransactionLocalDateTime',
         'serviceFeeDescriptor' => 'setServiceFeeDescriptor',
+        'cancelUrl' => 'setCancelUrl',
+        'successUrl' => 'setSuccessUrl',
+        'failureUrl' => 'setFailureUrl',
         'merchantName' => 'setMerchantName'
     ];
 
@@ -135,6 +151,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     protected static $getters = [
         'merchantDescriptor' => 'getMerchantDescriptor',
+        'domainName' => 'getDomainName',
         'salesOrganizationId' => 'getSalesOrganizationId',
         'categoryCode' => 'getCategoryCode',
         'categoryCodeDomestic' => 'getCategoryCodeDomestic',
@@ -143,6 +160,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cardAcceptorReferenceNumber' => 'getCardAcceptorReferenceNumber',
         'transactionLocalDateTime' => 'getTransactionLocalDateTime',
         'serviceFeeDescriptor' => 'getServiceFeeDescriptor',
+        'cancelUrl' => 'getCancelUrl',
+        'successUrl' => 'getSuccessUrl',
+        'failureUrl' => 'getFailureUrl',
         'merchantName' => 'getMerchantName'
     ];
 
@@ -178,6 +198,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
+        $this->container['domainName'] = isset($data['domainName']) ? $data['domainName'] : null;
         $this->container['salesOrganizationId'] = isset($data['salesOrganizationId']) ? $data['salesOrganizationId'] : null;
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
         $this->container['categoryCodeDomestic'] = isset($data['categoryCodeDomestic']) ? $data['categoryCodeDomestic'] : null;
@@ -186,6 +207,9 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         $this->container['cardAcceptorReferenceNumber'] = isset($data['cardAcceptorReferenceNumber']) ? $data['cardAcceptorReferenceNumber'] : null;
         $this->container['transactionLocalDateTime'] = isset($data['transactionLocalDateTime']) ? $data['transactionLocalDateTime'] : null;
         $this->container['serviceFeeDescriptor'] = isset($data['serviceFeeDescriptor']) ? $data['serviceFeeDescriptor'] : null;
+        $this->container['cancelUrl'] = isset($data['cancelUrl']) ? $data['cancelUrl'] : null;
+        $this->container['successUrl'] = isset($data['successUrl']) ? $data['successUrl'] : null;
+        $this->container['failureUrl'] = isset($data['failureUrl']) ? $data['failureUrl'] : null;
         $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
     }
 
@@ -245,6 +269,28 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function setMerchantDescriptor($merchantDescriptor)
     {
         $this->container['merchantDescriptor'] = $merchantDescriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets domainName
+     * @return string
+     */
+    public function getDomainName()
+    {
+        return $this->container['domainName'];
+    }
+
+    /**
+     * Sets domainName
+     * @param string $domainName This field will contain either the merchant url or the reverse domain as per the requirement for DSRP Format 3. This might vary transaction to transaction and might not be static. Merchant needs to have access to send this value for all DSRP program.
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+
+        $this->container['domainName'] = $domainName;
 
         return $this;
     }
@@ -426,6 +472,72 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function setServiceFeeDescriptor($serviceFeeDescriptor)
     {
         $this->container['serviceFeeDescriptor'] = $serviceFeeDescriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelUrl
+     * @return string
+     */
+    public function getCancelUrl()
+    {
+        return $this->container['cancelUrl'];
+    }
+
+    /**
+     * Sets cancelUrl
+     * @param string $cancelUrl customer would be redirected to this url based on the decision of the transaction
+     * @return $this
+     */
+    public function setCancelUrl($cancelUrl)
+    {
+
+        $this->container['cancelUrl'] = $cancelUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets successUrl
+     * @return string
+     */
+    public function getSuccessUrl()
+    {
+        return $this->container['successUrl'];
+    }
+
+    /**
+     * Sets successUrl
+     * @param string $successUrl customer would be redirected to this url based on the decision of the transaction
+     * @return $this
+     */
+    public function setSuccessUrl($successUrl)
+    {
+
+        $this->container['successUrl'] = $successUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets failureUrl
+     * @return string
+     */
+    public function getFailureUrl()
+    {
+        return $this->container['failureUrl'];
+    }
+
+    /**
+     * Sets failureUrl
+     * @param string $failureUrl customer would be redirected to this url based on the decision of the transaction
+     * @return $this
+     */
+    public function setFailureUrl($failureUrl)
+    {
+
+        $this->container['failureUrl'] = $failureUrl;
 
         return $this;
     }

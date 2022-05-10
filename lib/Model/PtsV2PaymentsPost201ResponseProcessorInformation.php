@@ -59,7 +59,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'string',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
-        'providerTransactionId' => 'string',
         'responseCode' => 'string',
         'responseCodeSource' => 'string',
         'responseDetails' => 'string',
@@ -81,7 +80,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'string',
         'name' => 'string',
         'routing' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting',
-        'merchantNumber' => 'string'
+        'merchantNumber' => 'string',
+        'retrievalReferenceNumber' => 'string',
+        'paymentUrl' => 'string',
+        'completeUrl' => 'string'
     ];
 
     /**
@@ -94,7 +96,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
-        'providerTransactionId' => null,
         'responseCode' => null,
         'responseCodeSource' => null,
         'responseDetails' => null,
@@ -116,7 +117,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => null,
         'name' => null,
         'routing' => null,
-        'merchantNumber' => null
+        'merchantNumber' => null,
+        'retrievalReferenceNumber' => null,
+        'paymentUrl' => null,
+        'completeUrl' => null
     ];
 
     public static function swaggerTypes()
@@ -139,7 +143,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'cardReferenceData',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
-        'providerTransactionId' => 'providerTransactionId',
         'responseCode' => 'responseCode',
         'responseCodeSource' => 'responseCodeSource',
         'responseDetails' => 'responseDetails',
@@ -161,7 +164,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'masterCardAuthenticationType',
         'name' => 'name',
         'routing' => 'routing',
-        'merchantNumber' => 'merchantNumber'
+        'merchantNumber' => 'merchantNumber',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
+        'paymentUrl' => 'paymentUrl',
+        'completeUrl' => 'completeUrl'
     ];
 
 
@@ -175,7 +181,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'setCardReferenceData',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
-        'providerTransactionId' => 'setProviderTransactionId',
         'responseCode' => 'setResponseCode',
         'responseCodeSource' => 'setResponseCodeSource',
         'responseDetails' => 'setResponseDetails',
@@ -197,7 +202,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'setMasterCardAuthenticationType',
         'name' => 'setName',
         'routing' => 'setRouting',
-        'merchantNumber' => 'setMerchantNumber'
+        'merchantNumber' => 'setMerchantNumber',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
+        'paymentUrl' => 'setPaymentUrl',
+        'completeUrl' => 'setCompleteUrl'
     ];
 
 
@@ -211,7 +219,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'cardReferenceData' => 'getCardReferenceData',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
-        'providerTransactionId' => 'getProviderTransactionId',
         'responseCode' => 'getResponseCode',
         'responseCodeSource' => 'getResponseCodeSource',
         'responseDetails' => 'getResponseDetails',
@@ -233,7 +240,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'masterCardAuthenticationType' => 'getMasterCardAuthenticationType',
         'name' => 'getName',
         'routing' => 'getRouting',
-        'merchantNumber' => 'getMerchantNumber'
+        'merchantNumber' => 'getMerchantNumber',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
+        'paymentUrl' => 'getPaymentUrl',
+        'completeUrl' => 'getCompleteUrl'
     ];
 
     public static function attributeMap()
@@ -272,7 +282,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['cardReferenceData'] = isset($data['cardReferenceData']) ? $data['cardReferenceData'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
-        $this->container['providerTransactionId'] = isset($data['providerTransactionId']) ? $data['providerTransactionId'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
@@ -295,6 +304,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
         $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
+        $this->container['paymentUrl'] = isset($data['paymentUrl']) ? $data['paymentUrl'] : null;
+        $this->container['completeUrl'] = isset($data['completeUrl']) ? $data['completeUrl'] : null;
     }
 
     /**
@@ -360,6 +372,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
      */
     public function setApprovalCode($approvalCode)
     {
+
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;
@@ -376,7 +389,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets cardReferenceData
-     * @param string $cardReferenceData The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the  authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same  transaction. This field is used by Streamline and HSBC UK only, at present.
+     * @param string $cardReferenceData The Scheme reference data is a variable length data element up to a maximum of 56 characters. It may be sent by the acquirer in the authorisation response message, and by the terminal (unchanged) in subsequent authorisation request messages associated with the same transaction. This field is used by Streamline and HSBC UK only, at present.
      * @return $this
      */
     public function setCardReferenceData($cardReferenceData)
@@ -420,33 +433,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets networkTransactionId
-     * @param string $networkTransactionId The description for this field is not available.
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
      * @return $this
      */
     public function setNetworkTransactionId($networkTransactionId)
     {
         $this->container['networkTransactionId'] = $networkTransactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets providerTransactionId
-     * @return string
-     */
-    public function getProviderTransactionId()
-    {
-        return $this->container['providerTransactionId'];
-    }
-
-    /**
-     * Sets providerTransactionId
-     * @param string $providerTransactionId The description for this field is not available.
-     * @return $this
-     */
-    public function setProviderTransactionId($providerTransactionId)
-    {
-        $this->container['providerTransactionId'] = $providerTransactionId;
 
         return $this;
     }
@@ -923,6 +915,72 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     {
 
         $this->container['merchantNumber'] = $merchantNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentUrl
+     * @return string
+     */
+    public function getPaymentUrl()
+    {
+        return $this->container['paymentUrl'];
+    }
+
+    /**
+     * Sets paymentUrl
+     * @param string $paymentUrl Direct the customer to this URL to complete the payment.
+     * @return $this
+     */
+    public function setPaymentUrl($paymentUrl)
+    {
+
+        $this->container['paymentUrl'] = $paymentUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets completeUrl
+     * @return string
+     */
+    public function getCompleteUrl()
+    {
+        return $this->container['completeUrl'];
+    }
+
+    /**
+     * Sets completeUrl
+     * @param string $completeUrl The redirect URL for forwarding the consumer to complete page.  This redirect needed by PSP to track browser information of consumer. PSP then redirect consumer to merchant success URL.
+     * @return $this
+     */
+    public function setCompleteUrl($completeUrl)
+    {
+
+        $this->container['completeUrl'] = $completeUrl;
 
         return $this;
     }

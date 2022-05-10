@@ -120,13 +120,6 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
-     * Test attribute "pinEntryCapability"
-     */
-    public function testPropertyPinEntryCapability()
-    {
-    }
-
-    /**
      * Test attribute "operatingEnvironment"
      */
     public function testPropertyOperatingEnvironment()
@@ -249,6 +242,20 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
      * Test attribute "isDedicatedHardwareTerminal"
      */
     public function testPropertyIsDedicatedHardwareTerminal()
+    {
+    }
+
+    /**
+     * Test attribute "terminalModel"
+     */
+    public function testPropertyTerminalModel()
+    {
+    }
+
+    /**
+     * Test attribute "terminalMake"
+     */
+    public function testPropertyTerminalMake()
     {
     }
 }

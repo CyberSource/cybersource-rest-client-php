@@ -120,6 +120,20 @@ class Ptsv2paymentsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "gender"
+     */
+    public function testPropertyGender()
+    {
+    }
+
+    /**
+     * Test attribute "language"
+     */
+    public function testPropertyLanguage()
+    {
+    }
+
+    /**
      * Test attribute "mobilePhone"
      */
     public function testPropertyMobilePhone()

@@ -106,16 +106,16 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     }
 
     /**
-     * Test attribute "responseId"
+     * Test attribute "retrievalReferenceNumber"
      */
-    public function testPropertyResponseId()
+    public function testPropertyRetrievalReferenceNumber()
     {
     }
 
     /**
-     * Test attribute "providerTransactionId"
+     * Test attribute "responseId"
      */
-    public function testPropertyProviderTransactionId()
+    public function testPropertyResponseId()
     {
     }
 
@@ -172,6 +172,13 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
      * Test attribute "responseCodeSource"
      */
     public function testPropertyResponseCodeSource()
+    {
+    }
+
+    /**
+     * Test attribute "paymentAccountReferenceNumber"
+     */
+    public function testPropertyPaymentAccountReferenceNumber()
     {
     }
 }

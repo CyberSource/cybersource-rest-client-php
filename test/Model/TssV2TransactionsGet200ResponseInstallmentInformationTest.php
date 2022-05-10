@@ -83,4 +83,11 @@ class TssV2TransactionsGet200ResponseInstallmentInformationTest extends \PHPUnit
     public function testPropertyNumberOfInstallments()
     {
     }
+
+    /**
+     * Test attribute "identifier"
+     */
+    public function testPropertyIdentifier()
+    {
+    }
 }

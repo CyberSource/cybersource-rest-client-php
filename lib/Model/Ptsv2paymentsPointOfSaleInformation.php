@@ -60,7 +60,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'catLevel' => 'int',
         'entryMode' => 'string',
         'terminalCapability' => 'int',
-        'pinEntryCapability' => 'int',
         'operatingEnvironment' => 'string',
         'emv' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformationEmv',
         'amexCapnData' => 'string',
@@ -78,7 +77,9 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'partnerSdkVersion' => 'string',
         'emvApplicationIdentifierAndDedicatedFileName' => 'string',
         'terminalCompliance' => 'string',
-        'isDedicatedHardwareTerminal' => 'string'
+        'isDedicatedHardwareTerminal' => 'string',
+        'terminalModel' => 'string',
+        'terminalMake' => 'string'
     ];
 
     /**
@@ -92,7 +93,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'catLevel' => null,
         'entryMode' => null,
         'terminalCapability' => null,
-        'pinEntryCapability' => null,
         'operatingEnvironment' => null,
         'emv' => null,
         'amexCapnData' => null,
@@ -110,7 +110,9 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'partnerSdkVersion' => null,
         'emvApplicationIdentifierAndDedicatedFileName' => null,
         'terminalCompliance' => null,
-        'isDedicatedHardwareTerminal' => null
+        'isDedicatedHardwareTerminal' => null,
+        'terminalModel' => null,
+        'terminalMake' => null
     ];
 
     public static function swaggerTypes()
@@ -134,7 +136,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'catLevel' => 'catLevel',
         'entryMode' => 'entryMode',
         'terminalCapability' => 'terminalCapability',
-        'pinEntryCapability' => 'pinEntryCapability',
         'operatingEnvironment' => 'operatingEnvironment',
         'emv' => 'emv',
         'amexCapnData' => 'amexCapnData',
@@ -152,7 +153,9 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'partnerSdkVersion' => 'partnerSdkVersion',
         'emvApplicationIdentifierAndDedicatedFileName' => 'emvApplicationIdentifierAndDedicatedFileName',
         'terminalCompliance' => 'terminalCompliance',
-        'isDedicatedHardwareTerminal' => 'isDedicatedHardwareTerminal'
+        'isDedicatedHardwareTerminal' => 'isDedicatedHardwareTerminal',
+        'terminalModel' => 'terminalModel',
+        'terminalMake' => 'terminalMake'
     ];
 
 
@@ -167,7 +170,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'catLevel' => 'setCatLevel',
         'entryMode' => 'setEntryMode',
         'terminalCapability' => 'setTerminalCapability',
-        'pinEntryCapability' => 'setPinEntryCapability',
         'operatingEnvironment' => 'setOperatingEnvironment',
         'emv' => 'setEmv',
         'amexCapnData' => 'setAmexCapnData',
@@ -185,7 +187,9 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'partnerSdkVersion' => 'setPartnerSdkVersion',
         'emvApplicationIdentifierAndDedicatedFileName' => 'setEmvApplicationIdentifierAndDedicatedFileName',
         'terminalCompliance' => 'setTerminalCompliance',
-        'isDedicatedHardwareTerminal' => 'setIsDedicatedHardwareTerminal'
+        'isDedicatedHardwareTerminal' => 'setIsDedicatedHardwareTerminal',
+        'terminalModel' => 'setTerminalModel',
+        'terminalMake' => 'setTerminalMake'
     ];
 
 
@@ -200,7 +204,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'catLevel' => 'getCatLevel',
         'entryMode' => 'getEntryMode',
         'terminalCapability' => 'getTerminalCapability',
-        'pinEntryCapability' => 'getPinEntryCapability',
         'operatingEnvironment' => 'getOperatingEnvironment',
         'emv' => 'getEmv',
         'amexCapnData' => 'getAmexCapnData',
@@ -218,7 +221,9 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'partnerSdkVersion' => 'getPartnerSdkVersion',
         'emvApplicationIdentifierAndDedicatedFileName' => 'getEmvApplicationIdentifierAndDedicatedFileName',
         'terminalCompliance' => 'getTerminalCompliance',
-        'isDedicatedHardwareTerminal' => 'getIsDedicatedHardwareTerminal'
+        'isDedicatedHardwareTerminal' => 'getIsDedicatedHardwareTerminal',
+        'terminalModel' => 'getTerminalModel',
+        'terminalMake' => 'getTerminalMake'
     ];
 
     public static function attributeMap()
@@ -258,7 +263,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['catLevel'] = isset($data['catLevel']) ? $data['catLevel'] : null;
         $this->container['entryMode'] = isset($data['entryMode']) ? $data['entryMode'] : null;
         $this->container['terminalCapability'] = isset($data['terminalCapability']) ? $data['terminalCapability'] : null;
-        $this->container['pinEntryCapability'] = isset($data['pinEntryCapability']) ? $data['pinEntryCapability'] : null;
         $this->container['operatingEnvironment'] = isset($data['operatingEnvironment']) ? $data['operatingEnvironment'] : null;
         $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
         $this->container['amexCapnData'] = isset($data['amexCapnData']) ? $data['amexCapnData'] : null;
@@ -277,6 +281,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['emvApplicationIdentifierAndDedicatedFileName'] = isset($data['emvApplicationIdentifierAndDedicatedFileName']) ? $data['emvApplicationIdentifierAndDedicatedFileName'] : null;
         $this->container['terminalCompliance'] = isset($data['terminalCompliance']) ? $data['terminalCompliance'] : null;
         $this->container['isDedicatedHardwareTerminal'] = isset($data['isDedicatedHardwareTerminal']) ? $data['isDedicatedHardwareTerminal'] : null;
+        $this->container['terminalModel'] = isset($data['terminalModel']) ? $data['terminalModel'] : null;
+        $this->container['terminalMake'] = isset($data['terminalMake']) ? $data['terminalMake'] : null;
     }
 
     /**
@@ -302,14 +308,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
         if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] < 1)) {
             $invalid_properties[] = "invalid value for 'terminalCapability', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['pinEntryCapability']) && ($this->container['pinEntryCapability'] > 1)) {
-            $invalid_properties[] = "invalid value for 'pinEntryCapability', must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['pinEntryCapability']) && ($this->container['pinEntryCapability'] < 1)) {
-            $invalid_properties[] = "invalid value for 'pinEntryCapability', must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['pinBlockEncodingFormat']) && ($this->container['pinBlockEncodingFormat'] > 9)) {
@@ -338,12 +336,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
             return false;
         }
         if ($this->container['terminalCapability'] < 1) {
-            return false;
-        }
-        if ($this->container['pinEntryCapability'] > 1) {
-            return false;
-        }
-        if ($this->container['pinEntryCapability'] < 1) {
             return false;
         }
         if ($this->container['pinBlockEncodingFormat'] > 9) {
@@ -498,34 +490,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     }
 
     /**
-     * Gets pinEntryCapability
-     * @return int
-     */
-    public function getPinEntryCapability()
-    {
-        return $this->container['pinEntryCapability'];
-    }
-
-    /**
-     * Sets pinEntryCapability
-     * @param int $pinEntryCapability A one-digit code that identifies the capability of terminal to capture PINs. This code does not necessarily mean that a PIN was entered or is included in this message. For Payouts: This field is applicable for CtV. For details, see the `terminal_pin_capability` field description in [Card-Present Processing Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/Retail_SCMP_API/html/)
-     * @return $this
-     */
-    public function setPinEntryCapability($pinEntryCapability)
-    {
-        if (!is_null($pinEntryCapability) && ($pinEntryCapability > 1)) {
-            throw new \InvalidArgumentException('invalid value for $pinEntryCapability when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 1.');
-        }
-        if (!is_null($pinEntryCapability) && ($pinEntryCapability < 1)) {
-            throw new \InvalidArgumentException('invalid value for $pinEntryCapability when calling Ptsv2paymentsPointOfSaleInformation., must be bigger than or equal to 1.');
-        }
-
-        $this->container['pinEntryCapability'] = $pinEntryCapability;
-
-        return $this;
-    }
-
-    /**
      * Gets operatingEnvironment
      * @return string
      */
@@ -644,7 +608,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets cardholderVerificationMethod
-     * @param string[] $cardholderVerificationMethod
+     * @param string[] $cardholderVerificationMethod Complete list of cardholder verification methods (CVMs) supported by the terminal. Optional field. Possible values: - `PIN`: For terminals with a PIN Pad - `Signature`: For terminals capable of receiving a signature - `pinOnGlass`: For terminals where PIN is entered on a glass-based capture mechanism  **EXAMPLE**: [\"PIN\",\"Signature\"]; [\"pinOnGlass\",\"Signature\"]
      * @return $this
      */
     public function setCardholderVerificationMethod($cardholderVerificationMethod)
@@ -665,7 +629,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets terminalInputCapability
-     * @param string[] $terminalInputCapability
+     * @param string[] $terminalInputCapability Complete list of card input methods supported by the terminal.  Possible values: - `Keyed`: Terminal can accept card data that is entered manually. - `Swiped`: Terminal can accept card data from a magnetic stripe reader. - `Contact`: Terminal can accept card data in EMV contact mode (\"dipping a card\"). - `Contactless`: Terminal can accept card data in EMV contactless mode (\"tapping a card\"). - `BarCode`: Terminal can read bar codes. - `QRcode`: Terminal can read or scan QR codes. - `OCR`: Terminal can perform optical character recognition (OCT) on the card.  **EXAMPLE**: [\"Keyed\",\"Swiped\",\"Contact\",\"Contactless\"]  #### Used by **Authorization and Credit** Optional. This field is supported only by client software that is installed on your POS terminals for the following processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX
      * @return $this
      */
     public function setTerminalInputCapability($terminalInputCapability)
@@ -915,6 +879,50 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
 
         $this->container['isDedicatedHardwareTerminal'] = $isDedicatedHardwareTerminal;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalModel
+     * @return string
+     */
+    public function getTerminalModel()
+    {
+        return $this->container['terminalModel'];
+    }
+
+    /**
+     * Sets terminalModel
+     * @param string $terminalModel This is the model name of the reader which is used to accept the payment. Possible values:  - E3555  - P400  - A920
+     * @return $this
+     */
+    public function setTerminalModel($terminalModel)
+    {
+
+        $this->container['terminalModel'] = $terminalModel;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalMake
+     * @return string
+     */
+    public function getTerminalMake()
+    {
+        return $this->container['terminalMake'];
+    }
+
+    /**
+     * Sets terminalMake
+     * @param string $terminalMake This is the manufacturer name of the reader which is used to accept the payment. Possible values:  - PAX  - Verifone  - Ingenico
+     * @return $this
+     */
+    public function setTerminalMake($terminalMake)
+    {
+
+        $this->container['terminalMake'] = $terminalMake;
 
         return $this;
     }

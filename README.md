@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.23"
+  "cybersource/rest-client-php": "0.0.31"
   }
 }
 ```
@@ -175,6 +175,14 @@ For example:
 ```
 
 The [API Reference Guide](https://developer.cybersource.com/api/reference/api-reference.html) provides examples of what information is needed for a particular request and how that information would be formatted. Using those examples, you can easily determine what methods would be necessary to include that information in a request using this SDK.
+
+### Logging
+
+[![Generic badge](https://img.shields.io/badge/LOGGING-NEW-GREEN.svg)](https://shields.io/)
+
+Since v0.0.24, a new logging framework has been introduced in the SDK. This new logging framework makes use of Monolog, and standardizes the logging so that it can be integrated with the logging in the client application.
+
+More information about this new logging framework can be found in this file : [Logging.md](Logging.md)
 
 [packagist_badge]: https://img.shields.io/packagist/v/cybersource/rest-client-php.svg
 [packagist]: https://packagist.org/packages/cybersource/rest-client-php

@@ -59,7 +59,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'string',
         'authorizedAmount' => 'string',
         'settlementAmount' => 'string',
-        'settlementCurrency' => 'string'
+        'settlementCurrency' => 'string',
+        'surcharge' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge'
     ];
 
     /**
@@ -72,7 +73,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => null,
         'authorizedAmount' => null,
         'settlementAmount' => null,
-        'settlementCurrency' => null
+        'settlementCurrency' => null,
+        'surcharge' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'taxAmount',
         'authorizedAmount' => 'authorizedAmount',
         'settlementAmount' => 'settlementAmount',
-        'settlementCurrency' => 'settlementCurrency'
+        'settlementCurrency' => 'settlementCurrency',
+        'surcharge' => 'surcharge'
     ];
 
 
@@ -109,7 +112,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'setTaxAmount',
         'authorizedAmount' => 'setAuthorizedAmount',
         'settlementAmount' => 'setSettlementAmount',
-        'settlementCurrency' => 'setSettlementCurrency'
+        'settlementCurrency' => 'setSettlementCurrency',
+        'surcharge' => 'setSurcharge'
     ];
 
 
@@ -123,7 +127,8 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'taxAmount' => 'getTaxAmount',
         'authorizedAmount' => 'getAuthorizedAmount',
         'settlementAmount' => 'getSettlementAmount',
-        'settlementCurrency' => 'getSettlementCurrency'
+        'settlementCurrency' => 'getSettlementCurrency',
+        'surcharge' => 'getSurcharge'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
         $this->container['settlementAmount'] = isset($data['settlementAmount']) ? $data['settlementAmount'] : null;
         $this->container['settlementCurrency'] = isset($data['settlementCurrency']) ? $data['settlementCurrency'] : null;
+        $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
     }
 
     /**
@@ -289,7 +295,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
 
     /**
      * Sets settlementAmount
-     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account.
+     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions.
      * @return $this
      */
     public function setSettlementAmount($settlementAmount)
@@ -311,13 +317,34 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
 
     /**
      * Sets settlementCurrency
-     * @param string $settlementCurrency This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account.
+     * @param string $settlementCurrency This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer to bill the cardholder's account. This field is returned for OCT transactions.
      * @return $this
      */
     public function setSettlementCurrency($settlementCurrency)
     {
 
         $this->container['settlementCurrency'] = $settlementCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets surcharge
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge
+     */
+    public function getSurcharge()
+    {
+        return $this->container['surcharge'];
+    }
+
+    /**
+     * Sets surcharge
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge $surcharge
+     * @return $this
+     */
+    public function setSurcharge($surcharge)
+    {
+        $this->container['surcharge'] = $surcharge;
 
         return $this;
     }

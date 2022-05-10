@@ -339,6 +339,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     public function setCountry($country)
     {
+
         $this->container['country'] = $country;
 
         return $this;
@@ -398,7 +399,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
 
     /**
      * Sets phone
-     * @param string $phone Merchnat phone as contact information for CNP transactions
+     * @param string $phone Merchant phone as contact information for CNP transactions
      * @return $this
      */
     public function setPhone($phone)

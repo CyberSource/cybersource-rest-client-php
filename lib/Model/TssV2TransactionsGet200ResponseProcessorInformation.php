@@ -58,8 +58,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting[]',
         'transactionId' => 'string',
         'networkTransactionId' => 'string',
+        'retrievalReferenceNumber' => 'string',
         'responseId' => 'string',
-        'providerTransactionId' => 'string',
         'approvalCode' => 'string',
         'responseCode' => 'string',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAvs',
@@ -67,7 +67,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
         'electronicVerificationResults' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults',
         'systemTraceAuditNumber' => 'string',
-        'responseCodeSource' => 'string'
+        'responseCodeSource' => 'string',
+        'paymentAccountReferenceNumber' => 'string'
     ];
 
     /**
@@ -79,8 +80,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => null,
         'transactionId' => null,
         'networkTransactionId' => null,
+        'retrievalReferenceNumber' => null,
         'responseId' => null,
-        'providerTransactionId' => null,
         'approvalCode' => null,
         'responseCode' => null,
         'avs' => null,
@@ -88,7 +89,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'achVerification' => null,
         'electronicVerificationResults' => null,
         'systemTraceAuditNumber' => null,
-        'responseCodeSource' => null
+        'responseCodeSource' => null,
+        'paymentAccountReferenceNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -110,8 +112,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => 'multiProcessorRouting',
         'transactionId' => 'transactionId',
         'networkTransactionId' => 'networkTransactionId',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
         'responseId' => 'responseId',
-        'providerTransactionId' => 'providerTransactionId',
         'approvalCode' => 'approvalCode',
         'responseCode' => 'responseCode',
         'avs' => 'avs',
@@ -119,7 +121,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'achVerification' => 'achVerification',
         'electronicVerificationResults' => 'electronicVerificationResults',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
-        'responseCodeSource' => 'responseCodeSource'
+        'responseCodeSource' => 'responseCodeSource',
+        'paymentAccountReferenceNumber' => 'paymentAccountReferenceNumber'
     ];
 
 
@@ -132,8 +135,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => 'setMultiProcessorRouting',
         'transactionId' => 'setTransactionId',
         'networkTransactionId' => 'setNetworkTransactionId',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
         'responseId' => 'setResponseId',
-        'providerTransactionId' => 'setProviderTransactionId',
         'approvalCode' => 'setApprovalCode',
         'responseCode' => 'setResponseCode',
         'avs' => 'setAvs',
@@ -141,7 +144,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'achVerification' => 'setAchVerification',
         'electronicVerificationResults' => 'setElectronicVerificationResults',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
-        'responseCodeSource' => 'setResponseCodeSource'
+        'responseCodeSource' => 'setResponseCodeSource',
+        'paymentAccountReferenceNumber' => 'setPaymentAccountReferenceNumber'
     ];
 
 
@@ -154,8 +158,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'multiProcessorRouting' => 'getMultiProcessorRouting',
         'transactionId' => 'getTransactionId',
         'networkTransactionId' => 'getNetworkTransactionId',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
         'responseId' => 'getResponseId',
-        'providerTransactionId' => 'getProviderTransactionId',
         'approvalCode' => 'getApprovalCode',
         'responseCode' => 'getResponseCode',
         'avs' => 'getAvs',
@@ -163,7 +167,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'achVerification' => 'getAchVerification',
         'electronicVerificationResults' => 'getElectronicVerificationResults',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
-        'responseCodeSource' => 'getResponseCodeSource'
+        'responseCodeSource' => 'getResponseCodeSource',
+        'paymentAccountReferenceNumber' => 'getPaymentAccountReferenceNumber'
     ];
 
     public static function attributeMap()
@@ -201,8 +206,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['multiProcessorRouting'] = isset($data['multiProcessorRouting']) ? $data['multiProcessorRouting'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
         $this->container['responseId'] = isset($data['responseId']) ? $data['responseId'] : null;
-        $this->container['providerTransactionId'] = isset($data['providerTransactionId']) ? $data['providerTransactionId'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
@@ -211,6 +216,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['electronicVerificationResults'] = isset($data['electronicVerificationResults']) ? $data['electronicVerificationResults'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
+        $this->container['paymentAccountReferenceNumber'] = isset($data['paymentAccountReferenceNumber']) ? $data['paymentAccountReferenceNumber'] : null;
     }
 
     /**
@@ -313,12 +319,34 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets networkTransactionId
-     * @param string $networkTransactionId The description for this field is not available.
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
      * @return $this
      */
     public function setNetworkTransactionId($networkTransactionId)
     {
         $this->container['networkTransactionId'] = $networkTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
 
         return $this;
     }
@@ -345,27 +373,6 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     }
 
     /**
-     * Gets providerTransactionId
-     * @return string
-     */
-    public function getProviderTransactionId()
-    {
-        return $this->container['providerTransactionId'];
-    }
-
-    /**
-     * Sets providerTransactionId
-     * @param string $providerTransactionId The description for this field is not available.
-     * @return $this
-     */
-    public function setProviderTransactionId($providerTransactionId)
-    {
-        $this->container['providerTransactionId'] = $providerTransactionId;
-
-        return $this;
-    }
-
-    /**
      * Gets approvalCode
      * @return string
      */
@@ -381,6 +388,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
      */
     public function setApprovalCode($approvalCode)
     {
+
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;
@@ -532,6 +540,28 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     {
 
         $this->container['responseCodeSource'] = $responseCodeSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAccountReferenceNumber
+     * @return string
+     */
+    public function getPaymentAccountReferenceNumber()
+    {
+        return $this->container['paymentAccountReferenceNumber'];
+    }
+
+    /**
+     * Sets paymentAccountReferenceNumber
+     * @param string $paymentAccountReferenceNumber Visa-generated reference number that identifies a card-present transaction for which you provided one of the following:   - Visa primary account number (PAN)  - Visa-generated token for a PAN  This reference number serves as a link to the cardholder account and to all transactions for that account. This reply field is returned only for CyberSource through VisaNet.  **Note** On CyberSource through VisaNet, the value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR8 - Position: 79-110 - Field: Payment Account Reference  The TC 33 Capture file contains information about the purchases and refunds that a merchant submits to CyberSource. CyberSource through VisaNet creates the TC 33 Capture file at the end of the day and sends it to the merchant’s acquirer, who uses this information to facilitate end-of-day clearing processing with payment networks.
+     * @return $this
+     */
+    public function setPaymentAccountReferenceNumber($paymentAccountReferenceNumber)
+    {
+
+        $this->container['paymentAccountReferenceNumber'] = $paymentAccountReferenceNumber;
 
         return $this;
     }

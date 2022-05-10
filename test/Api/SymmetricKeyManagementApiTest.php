@@ -83,6 +83,16 @@ class SymmetricKeyManagementApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for createV2SharedSecretKeysVerifi
+     *
+     * Create Shared-Secret Keys as per verifi spec.
+     *
+     */
+    public function testCreateV2SharedSecretKeysVerifi()
+    {
+    }
+
+    /**
      * Test case for deleteBulkSymmetricKeys
      *
      * Delete one or more Symmetric keys.

@@ -1,6 +1,6 @@
 <?php
 /**
- * PtsV2PaymentsPost201ResponsePaymentInformationCard
+ * PtsV2PaymentsPost201ResponsePaymentAccountInformationCard
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PtsV2PaymentsPost201ResponsePaymentInformationCard Class Doc Comment
+ * PtsV2PaymentsPost201ResponsePaymentAccountInformationCard Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PtsV2PaymentsPost201ResponsePaymentInformationCard implements ArrayAccess
+class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_paymentInformation_card';
+    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_paymentAccountInformation_card';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

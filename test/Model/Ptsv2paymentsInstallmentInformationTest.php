@@ -167,4 +167,18 @@ class Ptsv2paymentsInstallmentInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyFirstInstallmentAmount()
     {
     }
+
+    /**
+     * Test attribute "validationIndicator"
+     */
+    public function testPropertyValidationIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "identifier"
+     */
+    public function testPropertyIdentifier()
+    {
+    }
 }

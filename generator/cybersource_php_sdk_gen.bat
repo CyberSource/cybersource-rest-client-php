@@ -15,17 +15,17 @@ powershell -Command " rename-item -Path ..\CyberSource\lib\Model\Tmsv2customersE
 
 REM powershell -Command " rename-item -Path ..\CyberSource\lib\Model\RiskV1AuthenticationExemptionsPost201ResponseConsumerAuthenticationInformationStrongAuthentication.php  -newname RiskV1AuthenticationExemptionsPost201ResponseStrongAuthentication.php"
 
-powershell -Command " rename-item -Path ..\CyberSource\lib\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.php  -newname Ptsv2paymentsMerchantInitiatedTransaction.php"
+REM powershell -Command " rename-item -Path ..\CyberSource\lib\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.php  -newname Ptsv2paymentsMerchantInitiatedTransaction.php"
 
 powershell -Command " rename-item -Path ..\CyberSource\docs\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md  -newname Tmsv2customersEmbeddedMerchantInitiatedTransaction.md"
 
-powershell -Command " rename-item -Path ..\CyberSource\docs\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md  -newname Ptsv2paymentsMerchantInitiatedTransaction.md"
+REM powershell -Command " rename-item -Path ..\CyberSource\docs\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction.md  -newname Ptsv2paymentsMerchantInitiatedTransaction.md"
 
 REM powershell -Command " rename-item -Path ..\CyberSource\docs\Model\RiskV1AuthenticationExemptionsPost201ResponseConsumerAuthenticationInformationStrongAuthentication.md  -newname RiskV1AuthenticationExemptionsPost201ResponseStrongAuthentication.md"
 
 powershell -Command " rename-item -Path ..\CyberSource\test\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname Tmsv2customersEmbeddedMerchantInitiatedTransactionTest.php"
 
-powershell -Command " rename-item -Path ..\CyberSource\test\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname Ptsv2paymentsMerchantInitiatedTransactionTest.php"
+REM powershell -Command " rename-item -Path ..\CyberSource\test\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransactionTest.php  -newname Ptsv2paymentsMerchantInitiatedTransactionTest.php"
 
 powershell -Command "(Get-Content ..\CyberSource\lib\Model\Tmsv2customersEmbeddedMerchantInitiatedTransaction.php) |  ForEach-Object { $_ -replace 'class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction', 'class Tmsv2customersEmbeddedMerchantInitiatedTransaction'}  | Set-Content ..\CyberSource\lib\Model\Tmsv2customersEmbeddedMerchantInitiatedTransaction.php"
 
@@ -50,6 +50,10 @@ rd /s /q ..\CyberSource
 git checkout ..\README.md
 
 git checkout ..\composer.json
+
+git checkout ..\lib\Api\OAuthApi.php
+git checkout ..\lib\Model\AccessTokenResponse.php
+git checkout ..\lib\Model\CreateAccessTokenRequest.php
 
 pause
 

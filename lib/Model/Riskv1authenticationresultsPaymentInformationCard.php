@@ -168,9 +168,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -183,9 +180,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['type'] === null) {
-            return false;
-        }
         return true;
     }
 

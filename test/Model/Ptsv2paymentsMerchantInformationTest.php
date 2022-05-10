@@ -85,6 +85,13 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "domainName"
+     */
+    public function testPropertyDomainName()
+    {
+    }
+
+    /**
      * Test attribute "salesOrganizationId"
      */
     public function testPropertySalesOrganizationId()
@@ -137,6 +144,27 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "serviceFeeDescriptor"
      */
     public function testPropertyServiceFeeDescriptor()
+    {
+    }
+
+    /**
+     * Test attribute "cancelUrl"
+     */
+    public function testPropertyCancelUrl()
+    {
+    }
+
+    /**
+     * Test attribute "successUrl"
+     */
+    public function testPropertySuccessUrl()
+    {
+    }
+
+    /**
+     * Test attribute "failureUrl"
+     */
+    public function testPropertyFailureUrl()
     {
     }
 

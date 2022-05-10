@@ -58,6 +58,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'account' => '\CyberSource\Model\Ptsv2payoutsSenderInformationAccount',
         'firstName' => 'string',
         'middleInitial' => 'string',
+        'middleName' => 'string',
         'lastName' => 'string',
         'name' => 'string',
         'address1' => 'string',
@@ -79,6 +80,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'account' => null,
         'firstName' => null,
         'middleInitial' => null,
+        'middleName' => null,
         'lastName' => null,
         'name' => null,
         'address1' => null,
@@ -110,6 +112,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'account' => 'account',
         'firstName' => 'firstName',
         'middleInitial' => 'middleInitial',
+        'middleName' => 'middleName',
         'lastName' => 'lastName',
         'name' => 'name',
         'address1' => 'address1',
@@ -132,6 +135,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'account' => 'setAccount',
         'firstName' => 'setFirstName',
         'middleInitial' => 'setMiddleInitial',
+        'middleName' => 'setMiddleName',
         'lastName' => 'setLastName',
         'name' => 'setName',
         'address1' => 'setAddress1',
@@ -154,6 +158,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'account' => 'getAccount',
         'firstName' => 'getFirstName',
         'middleInitial' => 'getMiddleInitial',
+        'middleName' => 'getMiddleName',
         'lastName' => 'getLastName',
         'name' => 'getName',
         'address1' => 'getAddress1',
@@ -201,6 +206,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['middleInitial'] = isset($data['middleInitial']) ? $data['middleInitial'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
@@ -321,6 +327,28 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
     {
 
         $this->container['middleInitial'] = $middleInitial;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleName
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middleName'];
+    }
+
+    /**
+     * Sets middleName
+     * @param string $middleName Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
+     * @return $this
+     */
+    public function setMiddleName($middleName)
+    {
+
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }

@@ -102,7 +102,7 @@ class ReportDefinitionsApi
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
      * @param string $reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv (optional)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -123,7 +123,7 @@ class ReportDefinitionsApi
      * @param string $reportDefinitionName Name of the Report definition to retrieve (required)
      * @param string $subscriptionType The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
      * @param string $reportMimeType The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv (optional)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsNameGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -241,7 +241,7 @@ class ReportDefinitionsApi
      * Get Reporting Resource Information
      *
      * @param string $subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -260,7 +260,7 @@ class ReportDefinitionsApi
      * Get Reporting Resource Information
      *
      * @param string $subscriptionType Valid Values: - CLASSIC - CUSTOM - STANDARD (optional)
-     * @param string $organizationId Valid Cybersource Organization Id (optional)
+     * @param string $organizationId Valid Organization Id (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ReportingV3ReportDefinitionsGet200Response, HTTP status code, HTTP response headers (array of strings)
      */

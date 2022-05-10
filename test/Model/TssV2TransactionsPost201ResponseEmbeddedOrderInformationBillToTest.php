@@ -92,6 +92,13 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationBillToTest extends
     }
 
     /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
+
+    /**
      * Test attribute "email"
      */
     public function testPropertyEmail()

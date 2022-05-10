@@ -58,7 +58,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'string',
         'commerceIndicator' => 'string',
         'reconciliationId' => 'string',
-        'payoutsOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationPayoutsOptions'
+        'payoutsOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationPayoutsOptions',
+        'transactionReason' => 'string',
+        'purposeOfPayment' => 'string'
     ];
 
     /**
@@ -70,7 +72,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => null,
         'commerceIndicator' => null,
         'reconciliationId' => null,
-        'payoutsOptions' => null
+        'payoutsOptions' => null,
+        'transactionReason' => null,
+        'purposeOfPayment' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'networkRoutingOrder',
         'commerceIndicator' => 'commerceIndicator',
         'reconciliationId' => 'reconciliationId',
-        'payoutsOptions' => 'payoutsOptions'
+        'payoutsOptions' => 'payoutsOptions',
+        'transactionReason' => 'transactionReason',
+        'purposeOfPayment' => 'purposeOfPayment'
     ];
 
 
@@ -105,7 +111,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'setNetworkRoutingOrder',
         'commerceIndicator' => 'setCommerceIndicator',
         'reconciliationId' => 'setReconciliationId',
-        'payoutsOptions' => 'setPayoutsOptions'
+        'payoutsOptions' => 'setPayoutsOptions',
+        'transactionReason' => 'setTransactionReason',
+        'purposeOfPayment' => 'setPurposeOfPayment'
     ];
 
 
@@ -118,7 +126,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'getNetworkRoutingOrder',
         'commerceIndicator' => 'getCommerceIndicator',
         'reconciliationId' => 'getReconciliationId',
-        'payoutsOptions' => 'getPayoutsOptions'
+        'payoutsOptions' => 'getPayoutsOptions',
+        'transactionReason' => 'getTransactionReason',
+        'purposeOfPayment' => 'getPurposeOfPayment'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['payoutsOptions'] = isset($data['payoutsOptions']) ? $data['payoutsOptions'] : null;
+        $this->container['transactionReason'] = isset($data['transactionReason']) ? $data['transactionReason'] : null;
+        $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
     }
 
     /**
@@ -289,6 +301,50 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
     public function setPayoutsOptions($payoutsOptions)
     {
         $this->container['payoutsOptions'] = $payoutsOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionReason
+     * @return string
+     */
+    public function getTransactionReason()
+    {
+        return $this->container['transactionReason'];
+    }
+
+    /**
+     * Sets transactionReason
+     * @param string $transactionReason Transaction reason code.
+     * @return $this
+     */
+    public function setTransactionReason($transactionReason)
+    {
+
+        $this->container['transactionReason'] = $transactionReason;
+
+        return $this;
+    }
+
+    /**
+     * Gets purposeOfPayment
+     * @return string
+     */
+    public function getPurposeOfPayment()
+    {
+        return $this->container['purposeOfPayment'];
+    }
+
+    /**
+     * Sets purposeOfPayment
+     * @param string $purposeOfPayment This will send purpose of funds code for original credit transactions (OCTs).
+     * @return $this
+     */
+    public function setPurposeOfPayment($purposeOfPayment)
+    {
+
+        $this->container['purposeOfPayment'] = $purposeOfPayment;
 
         return $this;
     }

@@ -90,4 +90,18 @@ class Ptsv2paymentsPaymentInformationBankTest extends \PHPUnit_Framework_TestCas
     public function testPropertyRoutingNumber()
     {
     }
+
+    /**
+     * Test attribute "iban"
+     */
+    public function testPropertyIban()
+    {
+    }
+
+    /**
+     * Test attribute "swiftCode"
+     */
+    public function testPropertySwiftCode()
+    {
+    }
 }

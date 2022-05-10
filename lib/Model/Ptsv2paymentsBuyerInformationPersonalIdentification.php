@@ -56,7 +56,8 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     protected static $swaggerTypes = [
         'type' => 'string',
         'id' => 'string',
-        'issuedBy' => 'string'
+        'issuedBy' => 'string',
+        'verificationResults' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     protected static $swaggerFormats = [
         'type' => null,
         'id' => null,
-        'issuedBy' => null
+        'issuedBy' => null,
+        'verificationResults' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     protected static $attributeMap = [
         'type' => 'type',
         'id' => 'id',
-        'issuedBy' => 'issuedBy'
+        'issuedBy' => 'issuedBy',
+        'verificationResults' => 'verificationResults'
     ];
 
 
@@ -97,7 +100,8 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     protected static $setters = [
         'type' => 'setType',
         'id' => 'setId',
-        'issuedBy' => 'setIssuedBy'
+        'issuedBy' => 'setIssuedBy',
+        'verificationResults' => 'setVerificationResults'
     ];
 
 
@@ -108,7 +112,8 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     protected static $getters = [
         'type' => 'getType',
         'id' => 'getId',
-        'issuedBy' => 'getIssuedBy'
+        'issuedBy' => 'getIssuedBy',
+        'verificationResults' => 'getVerificationResults'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['issuedBy'] = isset($data['issuedBy']) ? $data['issuedBy'] : null;
+        $this->container['verificationResults'] = isset($data['verificationResults']) ? $data['verificationResults'] : null;
     }
 
     /**
@@ -183,7 +189,7 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The type of the identification.  Possible values:   - `NATIONAL`   - `CPF`   - `CPNJ`   - `CURP`   - `SSN`   - `DRIVER_LICENSE`  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  For processor-specific information, see the `personal_id` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $type The type of the identification.  Possible values:   - `NATIONAL`   - `CPF`   - `CPNJ`   - `CURP`   - `SSN`   - `DRIVER_LICENSE`   - `PASSPORT_NUMBER`   - `PERSONAL_ID`   - `TAX_ID`  This field is supported only on the following processors.  #### ComercioLatino Set this field to the Cadastro de Pessoas Fisicas (CPF).  #### CyberSource Latin American Processing Supported for Redecard in Brazil. Set this field to the Cadastro de Pessoas Fisicas (CPF), which is required for AVS for Redecard in Brazil. **Note** CyberSource Latin American Processing is the name of a specific processing connection that CyberSource supports. In the CyberSource API documentation, CyberSource Latin American Processing does not refer to the general topic of processing in Latin America. The information in this field description is for the specific processing connection called CyberSource Latin American Processing. It is not for any other Latin American processors that CyberSource supports.  For processor-specific information, see the `personal_id` field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
      * @return $this
      */
     public function setType($type)
@@ -232,6 +238,27 @@ class Ptsv2paymentsBuyerInformationPersonalIdentification implements ArrayAccess
     public function setIssuedBy($issuedBy)
     {
         $this->container['issuedBy'] = $issuedBy;
+
+        return $this;
+    }
+
+    /**
+     * Gets verificationResults
+     * @return string
+     */
+    public function getVerificationResults()
+    {
+        return $this->container['verificationResults'];
+    }
+
+    /**
+     * Sets verificationResults
+     * @param string $verificationResults Verification results received from Issuer or Card Network for verification transactions. Response Only Field.
+     * @return $this
+     */
+    public function setVerificationResults($verificationResults)
+    {
+        $this->container['verificationResults'] = $verificationResults;
 
         return $this;
     }

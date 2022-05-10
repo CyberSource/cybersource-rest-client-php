@@ -24,7 +24,7 @@ $api_instance = new CyberSource\Api\ReportDefinitionsApi();
 $reportDefinitionName = "reportDefinitionName_example"; // string | Name of the Report definition to retrieve
 $subscriptionType = "subscriptionType_example"; // string | The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD
 $reportMimeType = "reportMimeType_example"; // string | The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $result = $api_instance->getResourceInfoByReportDefinition($reportDefinitionName, $subscriptionType, $reportMimeType, $organizationId);
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
  **reportDefinitionName** | **string**| Name of the Report definition to retrieve |
  **subscriptionType** | **string**| The subscription type for which report definition is required. By default the type will be CUSTOM. Valid Values: - CLASSIC - CUSTOM - STANDARD | [optional]
  **reportMimeType** | **string**| The format for which the report definition is required. By default the value will be CSV. Valid Values: - application/xml - text/csv | [optional]
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ReportDefinitionsApi();
 $subscriptionType = "subscriptionType_example"; // string | Valid Values: - CLASSIC - CUSTOM - STANDARD
-$organizationId = "organizationId_example"; // string | Valid Cybersource Organization Id
+$organizationId = "organizationId_example"; // string | Valid Organization Id
 
 try {
     $result = $api_instance->getResourceV2Info($subscriptionType, $organizationId);
@@ -89,7 +89,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionType** | **string**| Valid Values: - CLASSIC - CUSTOM - STANDARD | [optional]
- **organizationId** | **string**| Valid Cybersource Organization Id | [optional]
+ **organizationId** | **string**| Valid Organization Id | [optional]
 
 ### Return type
 

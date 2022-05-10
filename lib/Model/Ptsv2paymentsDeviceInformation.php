@@ -59,6 +59,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'userAgent' => 'string',
         'fingerprintSessionId' => 'string',
         'useRawFingerprintSessionId' => 'bool',
+        'deviceType' => 'string',
         'rawData' => '\CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]',
         'httpAcceptBrowserValue' => 'string',
         'httpAcceptContent' => 'string',
@@ -83,6 +84,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'userAgent' => null,
         'fingerprintSessionId' => null,
         'useRawFingerprintSessionId' => null,
+        'deviceType' => null,
         'rawData' => null,
         'httpAcceptBrowserValue' => null,
         'httpAcceptContent' => null,
@@ -117,6 +119,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'userAgent' => 'userAgent',
         'fingerprintSessionId' => 'fingerprintSessionId',
         'useRawFingerprintSessionId' => 'useRawFingerprintSessionId',
+        'deviceType' => 'deviceType',
         'rawData' => 'rawData',
         'httpAcceptBrowserValue' => 'httpAcceptBrowserValue',
         'httpAcceptContent' => 'httpAcceptContent',
@@ -142,6 +145,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'userAgent' => 'setUserAgent',
         'fingerprintSessionId' => 'setFingerprintSessionId',
         'useRawFingerprintSessionId' => 'setUseRawFingerprintSessionId',
+        'deviceType' => 'setDeviceType',
         'rawData' => 'setRawData',
         'httpAcceptBrowserValue' => 'setHttpAcceptBrowserValue',
         'httpAcceptContent' => 'setHttpAcceptContent',
@@ -167,6 +171,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'userAgent' => 'getUserAgent',
         'fingerprintSessionId' => 'getFingerprintSessionId',
         'useRawFingerprintSessionId' => 'getUseRawFingerprintSessionId',
+        'deviceType' => 'getDeviceType',
         'rawData' => 'getRawData',
         'httpAcceptBrowserValue' => 'getHttpAcceptBrowserValue',
         'httpAcceptContent' => 'getHttpAcceptContent',
@@ -217,6 +222,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         $this->container['userAgent'] = isset($data['userAgent']) ? $data['userAgent'] : null;
         $this->container['fingerprintSessionId'] = isset($data['fingerprintSessionId']) ? $data['fingerprintSessionId'] : null;
         $this->container['useRawFingerprintSessionId'] = isset($data['useRawFingerprintSessionId']) ? $data['useRawFingerprintSessionId'] : null;
+        $this->container['deviceType'] = isset($data['deviceType']) ? $data['deviceType'] : null;
         $this->container['rawData'] = isset($data['rawData']) ? $data['rawData'] : null;
         $this->container['httpAcceptBrowserValue'] = isset($data['httpAcceptBrowserValue']) ? $data['httpAcceptBrowserValue'] : null;
         $this->container['httpAcceptContent'] = isset($data['httpAcceptContent']) ? $data['httpAcceptContent'] : null;
@@ -360,6 +366,28 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
     public function setUseRawFingerprintSessionId($useRawFingerprintSessionId)
     {
         $this->container['useRawFingerprintSessionId'] = $useRawFingerprintSessionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceType
+     * @return string
+     */
+    public function getDeviceType()
+    {
+        return $this->container['deviceType'];
+    }
+
+    /**
+     * Sets deviceType
+     * @param string $deviceType The device type at the client side.
+     * @return $this
+     */
+    public function setDeviceType($deviceType)
+    {
+
+        $this->container['deviceType'] = $deviceType;
 
         return $this;
     }

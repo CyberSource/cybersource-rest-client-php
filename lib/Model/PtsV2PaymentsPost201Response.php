@@ -64,11 +64,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformation',
         'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseIssuerInformation',
+        'paymentAccountInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformation',
         'paymentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation',
         'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
         'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation',
+        'buyerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'
     ];
@@ -88,11 +90,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'processingInformation' => null,
         'processorInformation' => null,
         'issuerInformation' => null,
+        'paymentAccountInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
         'pointOfSaleInformation' => null,
         'installmentInformation' => null,
         'tokenInformation' => null,
+        'buyerInformation' => null,
         'riskInformation' => null,
         'consumerAuthenticationInformation' => null
     ];
@@ -122,11 +126,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
         'issuerInformation' => 'issuerInformation',
+        'paymentAccountInformation' => 'paymentAccountInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'installmentInformation' => 'installmentInformation',
         'tokenInformation' => 'tokenInformation',
+        'buyerInformation' => 'buyerInformation',
         'riskInformation' => 'riskInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
     ];
@@ -147,11 +153,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
         'issuerInformation' => 'setIssuerInformation',
+        'paymentAccountInformation' => 'setPaymentAccountInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'tokenInformation' => 'setTokenInformation',
+        'buyerInformation' => 'setBuyerInformation',
         'riskInformation' => 'setRiskInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
     ];
@@ -172,11 +180,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
         'issuerInformation' => 'getIssuerInformation',
+        'paymentAccountInformation' => 'getPaymentAccountInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'tokenInformation' => 'getTokenInformation',
+        'buyerInformation' => 'getBuyerInformation',
         'riskInformation' => 'getRiskInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
     ];
@@ -222,11 +232,13 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
+        $this->container['paymentAccountInformation'] = isset($data['paymentAccountInformation']) ? $data['paymentAccountInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
+        $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
     }
@@ -288,7 +300,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id An unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.  On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.  #### PIN debit Returned for all PIN debit services.
+     * @param string $id An unique identification number generated by Cybersource to identify the submitted request. Returned by all services. It is also appended to the endpoint of the resource. On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)
@@ -310,7 +322,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by authorization service.  #### PIN debit Time when the PIN debit credit, PIN debit purchase or PIN debit reversal was requested.  Returned by PIN debit credit, PIN debit purchase or PIN debit reversal.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -352,7 +364,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
     /**
      * Sets reconciliationId
-     * @param string $reconciliationId Reference number for the transaction. This value is not returned for all processors.  Returned by authorization service.  ##### PIN debit Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### Atos Positive string (6)  #### All other processors String (60)
+     * @param string $reconciliationId Reference number for the transaction. Depending on how your Cybersource account is configured, this value could either be provided in the API request or generated by CyberSource. The actual value used in the request to the processor is provided back to you by Cybersource in the response.
      * @return $this
      */
     public function setReconciliationId($reconciliationId)
@@ -469,6 +481,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     }
 
     /**
+     * Gets paymentAccountInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformation
+     */
+    public function getPaymentAccountInformation()
+    {
+        return $this->container['paymentAccountInformation'];
+    }
+
+    /**
+     * Sets paymentAccountInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformation $paymentAccountInformation
+     * @return $this
+     */
+    public function setPaymentAccountInformation($paymentAccountInformation)
+    {
+        $this->container['paymentAccountInformation'] = $paymentAccountInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets paymentInformation
      * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformation
      */
@@ -569,6 +602,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setTokenInformation($tokenInformation)
     {
         $this->container['tokenInformation'] = $tokenInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation
+     */
+    public function getBuyerInformation()
+    {
+        return $this->container['buyerInformation'];
+    }
+
+    /**
+     * Sets buyerInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation $buyerInformation
+     * @return $this
+     */
+    public function setBuyerInformation($buyerInformation)
+    {
+        $this->container['buyerInformation'] = $buyerInformation;
 
         return $this;
     }

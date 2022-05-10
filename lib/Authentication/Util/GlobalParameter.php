@@ -29,7 +29,7 @@ class GlobalParameter
     const SHA256DIGEST = "SHA-256=";
     const POSTHTTPDIGEST = "Digest: SHA-256=";
     const OLD_RUN_ENVIRONMENT_CONSTANTS = array("CYBERSOURCE.ENVIRONMENT.SANDBOX", "CYBERSOURCE.ENVIRONMENT.PRODUCTION", "CYBERSOURCE.ENVIRONMENT.MUTUALAUTH.SANDBOX", "CYBERSOURCE.ENVIRONMENT.MUTUALAUTH.PRODUCTION", "CYBERSOURCE.IN.ENVIRONMENT.SANDBOX", "CYBERSOURCE.IN.ENVIRONMENT.PRODUCTION", "CYBESOURCE.ENVIRONMENT.SIT", "CYBESOURCE.ENVIRONMENT.MUTUALAUTH.SIT");
-    const DEPRECATED_RUN_ENVIRONMENT = "The value provided for this field `RunEnvironment` has been deprecated and will not be used anymore.\n\nPlease refer to the README file [ https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/README.md ] for information about the new values that are accepted." . PHP_EOL;
+	const DEPRECATED_RUN_ENVIRONMENT = "The value provided for this field `RunEnvironment` has been deprecated and will not be used anymore.\n\nPlease refer to the README file [ https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/README.md ] for information about the new values that are accepted." . PHP_EOL;	
     const KEY_DIR_PATH_DEFAULT = "Resources/";
     const HTTPS_PREFIX = "https://";
     const SIGNATURE = "Signature:";

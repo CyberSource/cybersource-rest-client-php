@@ -56,7 +56,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'email' => 'string'
+        'email' => 'string',
+        'merchantCustomerId' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'email' => null
+        'email' => null,
+        'merchantCustomerId' => null
     ];
 
     public static function swaggerTypes()
@@ -84,7 +86,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'email' => 'email'
+        'email' => 'email',
+        'merchantCustomerId' => 'merchantCustomerId'
     ];
 
 
@@ -94,7 +97,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'email' => 'setEmail'
+        'email' => 'setEmail',
+        'merchantCustomerId' => 'setMerchantCustomerId'
     ];
 
 
@@ -104,7 +108,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'email' => 'getEmail'
+        'email' => 'getEmail',
+        'merchantCustomerId' => 'getMerchantCustomerId'
     ];
 
     public static function attributeMap()
@@ -140,6 +145,7 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
     }
 
     /**
@@ -207,6 +213,28 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     {
 
         $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantCustomerId
+     * @return string
+     */
+    public function getMerchantCustomerId()
+    {
+        return $this->container['merchantCustomerId'];
+    }
+
+    /**
+     * Sets merchantCustomerId
+     * @param string $merchantCustomerId Your identifier for the customer.  When a subscription or customer profile is being created, the maximum length for this field for most processors is 30. Otherwise, the maximum length is 100.  #### Comercio Latino For recurring payments in Mexico, the value is the customer’s contract number. Note Before you request the authorization, you must inform the issuer of the customer contract numbers that will be used for recurring transactions.  #### Worldpay VAP For a follow-on credit with Worldpay VAP, CyberSource checks the following locations, in the order given, for a customer account ID value and uses the first value it finds: 1. `customer_account_id` value in the follow-on credit request 2. Customer account ID value that was used for the capture that is being credited 3. Customer account ID value that was used for the original authorization If a customer account ID value cannot be found in any of these locations, then no value is used.  For processor-specific information, see the `customer_account_id` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @return $this
+     */
+    public function setMerchantCustomerId($merchantCustomerId)
+    {
+
+        $this->container['merchantCustomerId'] = $merchantCustomerId;
 
         return $this;
     }
