@@ -19,7 +19,9 @@ class DataMasker
             array("phoneNumber", "(\\+[0-9]{1,2} )?\\(?[0-9]{3}\\)?[ .-]?[0-9]{3}[ .-]?[0-9]{4}", "xxxxx"),
             array("type", "[-A-Za-z0-9 ]+", "xxxxx"),
             array("token", "[-.A-Za-z0-9 ]+", "xxxxx"),
-            array("signature", "[-.A-Za-z0-9 ]+", "xxxxx")
+            array("signature", "[-.A-Za-z0-9 ]+", "xxxxx"),
+            array("prefix", "(\\p{N}{6})(\\p{N}*)", "$1xxxxx"),
+            array("bin", "(\\p{N}{6})(\\p{N}*)", "$1xxxxx")
         );
 
         $postData_json = json_decode($postData_json_raw, true);
