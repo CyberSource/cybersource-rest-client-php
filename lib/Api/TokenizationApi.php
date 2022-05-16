@@ -163,7 +163,6 @@ class TokenizationApi
             }
             
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
-            self::$logger->debug(\CyberSource\Utilities\Helpers\DataMasker::maskData('{"keyId":"07iXTAz44M4FGPApYkkKTbBhXs3YxOge","prefix":"21123322","number":"1234 5678 9100 8921","cardInfo":{"bin":"100001","cardNumber":"4111 1111 1111 1111","cardExpirationMonth":"12","cardExpirationYear":"2031","cardType":"001"}}'));
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\FlexV1TokensPost200Response");
