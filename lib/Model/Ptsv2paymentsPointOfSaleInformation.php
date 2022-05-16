@@ -79,7 +79,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'string',
         'isDedicatedHardwareTerminal' => 'string',
         'terminalModel' => 'string',
-        'terminalMake' => 'string'
+        'terminalMake' => 'string',
+        'serviceCode' => 'string'
     ];
 
     /**
@@ -112,7 +113,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => null,
         'isDedicatedHardwareTerminal' => null,
         'terminalModel' => null,
-        'terminalMake' => null
+        'terminalMake' => null,
+        'serviceCode' => null
     ];
 
     public static function swaggerTypes()
@@ -155,7 +157,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'terminalCompliance',
         'isDedicatedHardwareTerminal' => 'isDedicatedHardwareTerminal',
         'terminalModel' => 'terminalModel',
-        'terminalMake' => 'terminalMake'
+        'terminalMake' => 'terminalMake',
+        'serviceCode' => 'serviceCode'
     ];
 
 
@@ -189,7 +192,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'setTerminalCompliance',
         'isDedicatedHardwareTerminal' => 'setIsDedicatedHardwareTerminal',
         'terminalModel' => 'setTerminalModel',
-        'terminalMake' => 'setTerminalMake'
+        'terminalMake' => 'setTerminalMake',
+        'serviceCode' => 'setServiceCode'
     ];
 
 
@@ -223,7 +227,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'getTerminalCompliance',
         'isDedicatedHardwareTerminal' => 'getIsDedicatedHardwareTerminal',
         'terminalModel' => 'getTerminalModel',
-        'terminalMake' => 'getTerminalMake'
+        'terminalMake' => 'getTerminalMake',
+        'serviceCode' => 'getServiceCode'
     ];
 
     public static function attributeMap()
@@ -283,6 +288,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['isDedicatedHardwareTerminal'] = isset($data['isDedicatedHardwareTerminal']) ? $data['isDedicatedHardwareTerminal'] : null;
         $this->container['terminalModel'] = isset($data['terminalModel']) ? $data['terminalModel'] : null;
         $this->container['terminalMake'] = isset($data['terminalMake']) ? $data['terminalMake'] : null;
+        $this->container['serviceCode'] = isset($data['serviceCode']) ? $data['serviceCode'] : null;
     }
 
     /**
@@ -923,6 +929,28 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
 
         $this->container['terminalMake'] = $terminalMake;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceCode
+     * @return string
+     */
+    public function getServiceCode()
+    {
+        return $this->container['serviceCode'];
+    }
+
+    /**
+     * Sets serviceCode
+     * @param string $serviceCode #### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect.
+     * @return $this
+     */
+    public function setServiceCode($serviceCode)
+    {
+
+        $this->container['serviceCode'] = $serviceCode;
 
         return $this;
     }

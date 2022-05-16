@@ -55,7 +55,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-        'codeRaw' => 'string'
+        'codeRaw' => 'string',
+        'nameMatch' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
       */
     protected static $swaggerFormats = [
         'code' => null,
-        'codeRaw' => null
+        'codeRaw' => null,
+        'nameMatch' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
      */
     protected static $attributeMap = [
         'code' => 'code',
-        'codeRaw' => 'codeRaw'
+        'codeRaw' => 'codeRaw',
+        'nameMatch' => 'nameMatch'
     ];
 
 
@@ -93,7 +96,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
      */
     protected static $setters = [
         'code' => 'setCode',
-        'codeRaw' => 'setCodeRaw'
+        'codeRaw' => 'setCodeRaw',
+        'nameMatch' => 'setNameMatch'
     ];
 
 
@@ -103,7 +107,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
      */
     protected static $getters = [
         'code' => 'getCode',
-        'codeRaw' => 'getCodeRaw'
+        'codeRaw' => 'getCodeRaw',
+        'nameMatch' => 'getNameMatch'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['codeRaw'] = isset($data['codeRaw']) ? $data['codeRaw'] : null;
+        $this->container['nameMatch'] = isset($data['nameMatch']) ? $data['nameMatch'] : null;
     }
 
     /**
@@ -206,6 +212,28 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice implements 
     {
 
         $this->container['codeRaw'] = $codeRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets nameMatch
+     * @return string
+     */
+    public function getNameMatch()
+    {
+        return $this->container['nameMatch'];
+    }
+
+    /**
+     * Sets nameMatch
+     * @param string $nameMatch #### Visa Platform Connect The field contains will contain the Account Name Request Result for zero amount Authorization request. Valid values are:  00 = Name Match Performed 01 = Name Match not Performed 02 = Name Match not supported
+     * @return $this
+     */
+    public function setNameMatch($nameMatch)
+    {
+
+        $this->container['nameMatch'] = $nameMatch;
 
         return $this;
     }

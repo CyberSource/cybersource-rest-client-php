@@ -146,4 +146,11 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptorTest extends \PHPUnit_Fr
     public function testPropertyUrl()
     {
     }
+
+    /**
+     * Test attribute "countryOfOrigin"
+     */
+    public function testPropertyCountryOfOrigin()
+    {
+    }
 }

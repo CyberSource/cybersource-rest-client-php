@@ -68,7 +68,10 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'postalCode' => 'string',
         'phoneNumber' => 'string',
         'dateOfBirth' => 'string',
-        'vatRegistrationNumber' => 'string'
+        'vatRegistrationNumber' => 'string',
+        'personalIdType' => 'string',
+        'type' => 'string',
+        'identificationNumber' => 'string'
     ];
 
     /**
@@ -90,7 +93,10 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'postalCode' => null,
         'phoneNumber' => null,
         'dateOfBirth' => null,
-        'vatRegistrationNumber' => null
+        'vatRegistrationNumber' => null,
+        'personalIdType' => null,
+        'type' => null,
+        'identificationNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -122,7 +128,10 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'postalCode' => 'postalCode',
         'phoneNumber' => 'phoneNumber',
         'dateOfBirth' => 'dateOfBirth',
-        'vatRegistrationNumber' => 'vatRegistrationNumber'
+        'vatRegistrationNumber' => 'vatRegistrationNumber',
+        'personalIdType' => 'personalIdType',
+        'type' => 'type',
+        'identificationNumber' => 'identificationNumber'
     ];
 
 
@@ -145,7 +154,10 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'postalCode' => 'setPostalCode',
         'phoneNumber' => 'setPhoneNumber',
         'dateOfBirth' => 'setDateOfBirth',
-        'vatRegistrationNumber' => 'setVatRegistrationNumber'
+        'vatRegistrationNumber' => 'setVatRegistrationNumber',
+        'personalIdType' => 'setPersonalIdType',
+        'type' => 'setType',
+        'identificationNumber' => 'setIdentificationNumber'
     ];
 
 
@@ -168,7 +180,10 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'postalCode' => 'getPostalCode',
         'phoneNumber' => 'getPhoneNumber',
         'dateOfBirth' => 'getDateOfBirth',
-        'vatRegistrationNumber' => 'getVatRegistrationNumber'
+        'vatRegistrationNumber' => 'getVatRegistrationNumber',
+        'personalIdType' => 'getPersonalIdType',
+        'type' => 'getType',
+        'identificationNumber' => 'getIdentificationNumber'
     ];
 
     public static function attributeMap()
@@ -217,6 +232,9 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
+        $this->container['personalIdType'] = isset($data['personalIdType']) ? $data['personalIdType'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['identificationNumber'] = isset($data['identificationNumber']) ? $data['identificationNumber'] : null;
     }
 
     /**
@@ -569,6 +587,72 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
     {
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalIdType
+     * @return string
+     */
+    public function getPersonalIdType()
+    {
+        return $this->container['personalIdType'];
+    }
+
+    /**
+     * Sets personalIdType
+     * @param string $personalIdType #### Visa Platform Connect This tag will contain the type of sender identification. The valid values are: • BTHD (Date of birth) • CUID (Customer identification (unspecified)) • NTID (National identification) • PASN (Passport number) • DRLN (Driver license) • TXIN (Tax identification) • CPNY (Company registration number) • PRXY (Proxy identification) • SSNB (Social security number) • ARNB (Alien registration number) • LAWE (Law enforcement identification) • MILI (Military identification) • TRVL (Travel identification (non-passport)) • EMAL (Email) • PHON (Phone number)
+     * @return $this
+     */
+    public function setPersonalIdType($personalIdType)
+    {
+
+        $this->container['personalIdType'] = $personalIdType;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type #### Visa Platform Connect This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are: • B (Business) • I (Individual)
+     * @return $this
+     */
+    public function setType($type)
+    {
+
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets identificationNumber
+     * @return string
+     */
+    public function getIdentificationNumber()
+    {
+        return $this->container['identificationNumber'];
+    }
+
+    /**
+     * Sets identificationNumber
+     * @param string $identificationNumber #### Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender.
+     * @return $this
+     */
+    public function setIdentificationNumber($identificationNumber)
+    {
+
+        $this->container['identificationNumber'] = $identificationNumber;
 
         return $this;
     }

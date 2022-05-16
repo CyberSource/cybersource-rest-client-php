@@ -420,6 +420,9 @@ class ReportSubscriptionsApi
                 $resourcePath
             );
         }
+        if ('DELETE' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -531,6 +534,9 @@ class ReportSubscriptionsApi
         // query params
         if ($organizationId !== null) {
             $queryParams['organizationId'] = $this->apiClient->getSerializer()->toQueryValue($organizationId);
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -671,6 +677,9 @@ class ReportSubscriptionsApi
                 $this->apiClient->getSerializer()->toPathValue($reportName),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

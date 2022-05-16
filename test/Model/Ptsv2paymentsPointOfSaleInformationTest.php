@@ -258,4 +258,11 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyTerminalMake()
     {
     }
+
+    /**
+     * Test attribute "serviceCode"
+     */
+    public function testPropertyServiceCode()
+    {
+    }
 }

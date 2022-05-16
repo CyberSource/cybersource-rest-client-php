@@ -111,4 +111,11 @@ class Ptsv2paymentsPointOfSaleInformationEmvTest extends \PHPUnit_Framework_Test
     public function testPropertyFallbackCondition()
     {
     }
+
+    /**
+     * Test attribute "isRepeat"
+     */
+    public function testPropertyIsRepeat()
+    {
+    }
 }

@@ -167,6 +167,9 @@ class SecureFileShareApi
                 $resourcePath
             );
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -307,6 +310,9 @@ class SecureFileShareApi
         // query params
         if ($name !== null) {
             $queryParams['name'] = $this->apiClient->getSerializer()->toQueryValue($name);
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

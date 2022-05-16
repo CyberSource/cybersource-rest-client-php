@@ -63,7 +63,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'postalCode' => 'string',
         'administrativeArea' => 'string',
         'phone' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'countryOfOrigin' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'postalCode' => null,
         'administrativeArea' => null,
         'phone' => null,
-        'url' => null
+        'url' => null,
+        'countryOfOrigin' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +109,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'postalCode' => 'postalCode',
         'administrativeArea' => 'administrativeArea',
         'phone' => 'phone',
-        'url' => 'url'
+        'url' => 'url',
+        'countryOfOrigin' => 'countryOfOrigin'
     ];
 
 
@@ -125,7 +128,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'postalCode' => 'setPostalCode',
         'administrativeArea' => 'setAdministrativeArea',
         'phone' => 'setPhone',
-        'url' => 'setUrl'
+        'url' => 'setUrl',
+        'countryOfOrigin' => 'setCountryOfOrigin'
     ];
 
 
@@ -143,7 +147,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'postalCode' => 'getPostalCode',
         'administrativeArea' => 'getAdministrativeArea',
         'phone' => 'getPhone',
-        'url' => 'getUrl'
+        'url' => 'getUrl',
+        'countryOfOrigin' => 'getCountryOfOrigin'
     ];
 
     public static function attributeMap()
@@ -187,6 +192,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['countryOfOrigin'] = isset($data['countryOfOrigin']) ? $data['countryOfOrigin'] : null;
     }
 
     /**
@@ -428,6 +434,28 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
     {
 
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryOfOrigin
+     * @return string
+     */
+    public function getCountryOfOrigin()
+    {
+        return $this->container['countryOfOrigin'];
+    }
+
+    /**
+     * Sets countryOfOrigin
+     * @param string $countryOfOrigin #### Visa Platform Connect This field will indicate merchant country of origin
+     * @return $this
+     */
+    public function setCountryOfOrigin($countryOfOrigin)
+    {
+
+        $this->container['countryOfOrigin'] = $countryOfOrigin;
 
         return $this;
     }

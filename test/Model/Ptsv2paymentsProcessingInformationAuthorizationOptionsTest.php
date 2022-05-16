@@ -85,6 +85,13 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     }
 
     /**
+     * Test attribute "panReturnIndicator"
+     */
+    public function testPropertyPanReturnIndicator()
+    {
+    }
+
+    /**
      * Test attribute "verbalAuthCode"
      */
     public function testPropertyVerbalAuthCode()

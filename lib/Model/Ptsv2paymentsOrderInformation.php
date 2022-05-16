@@ -61,6 +61,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'invoiceDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationInvoiceDetails',
         'shippingDetails' => '\CyberSource\Model\Ptsv2paymentsOrderInformationShippingDetails',
         'returnsAccepted' => 'bool',
+        'isCryptocurrencyPurchase' => 'string',
         'preOrder' => 'string',
         'preOrderDate' => 'string',
         'reordered' => 'bool',
@@ -79,6 +80,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'invoiceDetails' => null,
         'shippingDetails' => null,
         'returnsAccepted' => null,
+        'isCryptocurrencyPurchase' => null,
         'preOrder' => null,
         'preOrderDate' => null,
         'reordered' => null,
@@ -107,6 +109,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'invoiceDetails' => 'invoiceDetails',
         'shippingDetails' => 'shippingDetails',
         'returnsAccepted' => 'returnsAccepted',
+        'isCryptocurrencyPurchase' => 'isCryptocurrencyPurchase',
         'preOrder' => 'preOrder',
         'preOrderDate' => 'preOrderDate',
         'reordered' => 'reordered',
@@ -126,6 +129,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'invoiceDetails' => 'setInvoiceDetails',
         'shippingDetails' => 'setShippingDetails',
         'returnsAccepted' => 'setReturnsAccepted',
+        'isCryptocurrencyPurchase' => 'setIsCryptocurrencyPurchase',
         'preOrder' => 'setPreOrder',
         'preOrderDate' => 'setPreOrderDate',
         'reordered' => 'setReordered',
@@ -145,6 +149,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         'invoiceDetails' => 'getInvoiceDetails',
         'shippingDetails' => 'getShippingDetails',
         'returnsAccepted' => 'getReturnsAccepted',
+        'isCryptocurrencyPurchase' => 'getIsCryptocurrencyPurchase',
         'preOrder' => 'getPreOrder',
         'preOrderDate' => 'getPreOrderDate',
         'reordered' => 'getReordered',
@@ -189,6 +194,7 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
         $this->container['shippingDetails'] = isset($data['shippingDetails']) ? $data['shippingDetails'] : null;
         $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;
+        $this->container['isCryptocurrencyPurchase'] = isset($data['isCryptocurrencyPurchase']) ? $data['isCryptocurrencyPurchase'] : null;
         $this->container['preOrder'] = isset($data['preOrder']) ? $data['preOrder'] : null;
         $this->container['preOrderDate'] = isset($data['preOrderDate']) ? $data['preOrderDate'] : null;
         $this->container['reordered'] = isset($data['reordered']) ? $data['reordered'] : null;
@@ -363,6 +369,27 @@ class Ptsv2paymentsOrderInformation implements ArrayAccess
     public function setReturnsAccepted($returnsAccepted)
     {
         $this->container['returnsAccepted'] = $returnsAccepted;
+
+        return $this;
+    }
+
+    /**
+     * Gets isCryptocurrencyPurchase
+     * @return string
+     */
+    public function getIsCryptocurrencyPurchase()
+    {
+        return $this->container['isCryptocurrencyPurchase'];
+    }
+
+    /**
+     * Sets isCryptocurrencyPurchase
+     * @param string $isCryptocurrencyPurchase #### Visa Platform Connect : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. Additional values to add : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. valid values are - Y/y, true - N/n, false
+     * @return $this
+     */
+    public function setIsCryptocurrencyPurchase($isCryptocurrencyPurchase)
+    {
+        $this->container['isCryptocurrencyPurchase'] = $isCryptocurrencyPurchase;
 
         return $this;
     }
