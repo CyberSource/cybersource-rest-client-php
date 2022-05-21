@@ -60,7 +60,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'string',
         'payoutsOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationPayoutsOptions',
         'transactionReason' => 'string',
-        'purposeOfPayment' => 'string'
+        'purposeOfPayment' => 'string',
+        'fundingOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationFundingOptions'
     ];
 
     /**
@@ -74,7 +75,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'reconciliationId' => null,
         'payoutsOptions' => null,
         'transactionReason' => null,
-        'purposeOfPayment' => null
+        'purposeOfPayment' => null,
+        'fundingOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -98,7 +100,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'payoutsOptions' => 'payoutsOptions',
         'transactionReason' => 'transactionReason',
-        'purposeOfPayment' => 'purposeOfPayment'
+        'purposeOfPayment' => 'purposeOfPayment',
+        'fundingOptions' => 'fundingOptions'
     ];
 
 
@@ -113,7 +116,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'payoutsOptions' => 'setPayoutsOptions',
         'transactionReason' => 'setTransactionReason',
-        'purposeOfPayment' => 'setPurposeOfPayment'
+        'purposeOfPayment' => 'setPurposeOfPayment',
+        'fundingOptions' => 'setFundingOptions'
     ];
 
 
@@ -128,7 +132,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'payoutsOptions' => 'getPayoutsOptions',
         'transactionReason' => 'getTransactionReason',
-        'purposeOfPayment' => 'getPurposeOfPayment'
+        'purposeOfPayment' => 'getPurposeOfPayment',
+        'fundingOptions' => 'getFundingOptions'
     ];
 
     public static function attributeMap()
@@ -169,6 +174,7 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         $this->container['payoutsOptions'] = isset($data['payoutsOptions']) ? $data['payoutsOptions'] : null;
         $this->container['transactionReason'] = isset($data['transactionReason']) ? $data['transactionReason'] : null;
         $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
+        $this->container['fundingOptions'] = isset($data['fundingOptions']) ? $data['fundingOptions'] : null;
     }
 
     /**
@@ -345,6 +351,27 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
     {
 
         $this->container['purposeOfPayment'] = $purposeOfPayment;
+
+        return $this;
+    }
+
+    /**
+     * Gets fundingOptions
+     * @return \CyberSource\Model\Ptsv2payoutsProcessingInformationFundingOptions
+     */
+    public function getFundingOptions()
+    {
+        return $this->container['fundingOptions'];
+    }
+
+    /**
+     * Sets fundingOptions
+     * @param \CyberSource\Model\Ptsv2payoutsProcessingInformationFundingOptions $fundingOptions
+     * @return $this
+     */
+    public function setFundingOptions($fundingOptions)
+    {
+        $this->container['fundingOptions'] = $fundingOptions;
 
         return $this;
     }

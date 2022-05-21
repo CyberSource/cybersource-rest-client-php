@@ -155,6 +155,9 @@ class NotificationOfChangesApi
         if ($endTime !== null) {
             $queryParams['endTime'] = $this->apiClient->getSerializer()->toQueryValue($endTime);
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {

@@ -55,7 +55,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'preApprovalToken' => 'string'
+        'preApprovalToken' => 'string',
+        'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationAuthorizationOptions'
     ];
 
     /**
@@ -63,7 +64,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'preApprovalToken' => null
+        'preApprovalToken' => null,
+        'authorizationOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -81,7 +83,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'preApprovalToken' => 'preApprovalToken'
+        'preApprovalToken' => 'preApprovalToken',
+        'authorizationOptions' => 'authorizationOptions'
     ];
 
 
@@ -90,7 +93,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'preApprovalToken' => 'setPreApprovalToken'
+        'preApprovalToken' => 'setPreApprovalToken',
+        'authorizationOptions' => 'setAuthorizationOptions'
     ];
 
 
@@ -99,7 +103,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'preApprovalToken' => 'getPreApprovalToken'
+        'preApprovalToken' => 'getPreApprovalToken',
+        'authorizationOptions' => 'getAuthorizationOptions'
     ];
 
     public static function attributeMap()
@@ -134,6 +139,7 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['preApprovalToken'] = isset($data['preApprovalToken']) ? $data['preApprovalToken'] : null;
+        $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
     }
 
     /**
@@ -179,6 +185,27 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
     {
 
         $this->container['preApprovalToken'] = $preApprovalToken;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationOptions
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationAuthorizationOptions
+     */
+    public function getAuthorizationOptions()
+    {
+        return $this->container['authorizationOptions'];
+    }
+
+    /**
+     * Sets authorizationOptions
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationAuthorizationOptions $authorizationOptions
+     * @return $this
+     */
+    public function setAuthorizationOptions($authorizationOptions)
+    {
+        $this->container['authorizationOptions'] = $authorizationOptions;
 
         return $this;
     }

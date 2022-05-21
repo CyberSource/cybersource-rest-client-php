@@ -201,6 +201,9 @@ class PaymentBatchSummariesApi
         if ($startDayOfWeek !== null) {
             $queryParams['startDayOfWeek'] = $this->apiClient->getSerializer()->toQueryValue($startDayOfWeek);
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {

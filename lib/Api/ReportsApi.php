@@ -287,6 +287,9 @@ class ReportsApi
                 $resourcePath
             );
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -461,6 +464,9 @@ class ReportsApi
         // query params
         if ($reportStatus !== null) {
             $queryParams['reportStatus'] = $this->apiClient->getSerializer()->toQueryValue($reportStatus);
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

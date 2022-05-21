@@ -90,4 +90,11 @@ class Ptsv2payoutsOrderInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBillTo()
     {
     }
+
+    /**
+     * Test attribute "isCryptocurrencyPurchase"
+     */
+    public function testPropertyIsCryptocurrencyPurchase()
+    {
+    }
 }

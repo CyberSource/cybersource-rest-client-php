@@ -60,7 +60,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'authorizedAmount' => 'string',
         'settlementAmount' => 'string',
         'settlementCurrency' => 'string',
-        'surcharge' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge'
+        'surcharge' => '\CyberSource\Model\Ptsv2payoutsOrderInformationAmountDetailsSurcharge'
     ];
 
     /**
@@ -330,7 +330,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
 
     /**
      * Gets surcharge
-     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge
+     * @return \CyberSource\Model\Ptsv2payoutsOrderInformationAmountDetailsSurcharge
      */
     public function getSurcharge()
     {
@@ -339,7 +339,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
 
     /**
      * Sets surcharge
-     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsSurcharge $surcharge
+     * @param \CyberSource\Model\Ptsv2payoutsOrderInformationAmountDetailsSurcharge $surcharge
      * @return $this
      */
     public function setSurcharge($surcharge)

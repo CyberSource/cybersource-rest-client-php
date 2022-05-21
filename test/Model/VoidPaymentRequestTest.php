@@ -90,4 +90,11 @@ class VoidPaymentRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPaymentInformation()
     {
     }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
+    {
+    }
 }

@@ -55,7 +55,8 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'amountDetails' => '\CyberSource\Model\Ptsv2payoutsOrderInformationAmountDetails',
-        'billTo' => '\CyberSource\Model\Ptsv2payoutsOrderInformationBillTo'
+        'billTo' => '\CyberSource\Model\Ptsv2payoutsOrderInformationBillTo',
+        'isCryptocurrencyPurchase' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'amountDetails' => null,
-        'billTo' => null
+        'billTo' => null,
+        'isCryptocurrencyPurchase' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'amountDetails' => 'amountDetails',
-        'billTo' => 'billTo'
+        'billTo' => 'billTo',
+        'isCryptocurrencyPurchase' => 'isCryptocurrencyPurchase'
     ];
 
 
@@ -93,7 +96,8 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
      */
     protected static $setters = [
         'amountDetails' => 'setAmountDetails',
-        'billTo' => 'setBillTo'
+        'billTo' => 'setBillTo',
+        'isCryptocurrencyPurchase' => 'setIsCryptocurrencyPurchase'
     ];
 
 
@@ -103,7 +107,8 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
      */
     protected static $getters = [
         'amountDetails' => 'getAmountDetails',
-        'billTo' => 'getBillTo'
+        'billTo' => 'getBillTo',
+        'isCryptocurrencyPurchase' => 'getIsCryptocurrencyPurchase'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
+        $this->container['isCryptocurrencyPurchase'] = isset($data['isCryptocurrencyPurchase']) ? $data['isCryptocurrencyPurchase'] : null;
     }
 
     /**
@@ -204,6 +210,27 @@ class Ptsv2payoutsOrderInformation implements ArrayAccess
     public function setBillTo($billTo)
     {
         $this->container['billTo'] = $billTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets isCryptocurrencyPurchase
+     * @return string
+     */
+    public function getIsCryptocurrencyPurchase()
+    {
+        return $this->container['isCryptocurrencyPurchase'];
+    }
+
+    /**
+     * Sets isCryptocurrencyPurchase
+     * @param string $isCryptocurrencyPurchase #### Visa Platform Connect : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. Additional values to add : This API will contain the Flag that specifies whether the payment is for the purchase of cryptocurrency. valid values are - Y/y, true - N/n, false
+     * @return $this
+     */
+    public function setIsCryptocurrencyPurchase($isCryptocurrencyPurchase)
+    {
+        $this->container['isCryptocurrencyPurchase'] = $isCryptocurrencyPurchase;
 
         return $this;
     }

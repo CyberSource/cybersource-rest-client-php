@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **payoutsOptions** | [**\CyberSource\Model\Ptsv2payoutsProcessingInformationPayoutsOptions**](Ptsv2payoutsProcessingInformationPayoutsOptions.md) |  | [optional] 
 **transactionReason** | **string** | Transaction reason code. | [optional] 
 **purposeOfPayment** | **string** | This will send purpose of funds code for original credit transactions (OCTs). | [optional] 
+**fundingOptions** | [**\CyberSource\Model\Ptsv2payoutsProcessingInformationFundingOptions**](Ptsv2payoutsProcessingInformationFundingOptions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

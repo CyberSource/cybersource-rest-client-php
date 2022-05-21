@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.31"
+  "cybersource/rest-client-php": "0.0.32"
   }
 }
 ```
@@ -104,7 +104,7 @@ Further information on MetaKey can be found in [New Business Center User Guide](
   Configure the following information in the `ExternalConfiguration.php` file
   
 *   Authentication Type:      Merchant should enter "JWT" for JWT authentication mechanism.
-*   Merchant ID:              Merchant will provide the merchant ID, which has taken from EBC portal.
+*   Merchant ID:              Merchant will provide the merchant ID, which was taken from EBC portal.
 *   keyAlias:                 Alias of the Merchant ID, to be used while generating the JWT token.
 *   keyPassword:              Alias of the Merchant password, to be used while generating the JWT token.
 *   keyFileName:              Filename of the key generated from the EBC portal, without the extension part .P12

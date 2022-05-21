@@ -172,6 +172,9 @@ class CustomerApi
                 $resourcePath
             );
         }
+        if ('DELETE' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -318,6 +321,9 @@ class CustomerApi
                 $this->apiClient->getSerializer()->toPathValue($customerTokenId),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

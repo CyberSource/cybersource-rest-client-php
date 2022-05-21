@@ -180,6 +180,9 @@ class NetFundingsApi
         if ($groupName !== null) {
             $queryParams['groupName'] = $this->apiClient->getSerializer()->toQueryValue($groupName);
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {

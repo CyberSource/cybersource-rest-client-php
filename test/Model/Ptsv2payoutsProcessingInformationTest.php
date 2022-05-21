@@ -125,4 +125,11 @@ class Ptsv2payoutsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPurposeOfPayment()
     {
     }
+
+    /**
+     * Test attribute "fundingOptions"
+     */
+    public function testPropertyFundingOptions()
+    {
+    }
 }
