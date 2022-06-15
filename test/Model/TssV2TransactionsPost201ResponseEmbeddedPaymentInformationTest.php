@@ -97,4 +97,11 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationTest extends \PH
     public function testPropertyCard()
     {
     }
+
+    /**
+     * Test attribute "bank"
+     */
+    public function testPropertyBank()
+    {
+    }
 }

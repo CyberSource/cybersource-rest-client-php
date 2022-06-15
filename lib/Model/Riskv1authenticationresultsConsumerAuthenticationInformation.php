@@ -55,6 +55,8 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
       */
     protected static $swaggerTypes = [
         'authenticationTransactionId' => 'string',
+        'authenticationTransactionContext' => 'string',
+        'otpToken' => 'string',
         'authenticationType' => 'string',
         'effectiveAuthenticationType' => 'string',
         'responseAccessToken' => 'string',
@@ -69,6 +71,8 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
       */
     protected static $swaggerFormats = [
         'authenticationTransactionId' => null,
+        'authenticationTransactionContext' => null,
+        'otpToken' => null,
         'authenticationType' => null,
         'effectiveAuthenticationType' => null,
         'responseAccessToken' => null,
@@ -93,6 +97,8 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     protected static $attributeMap = [
         'authenticationTransactionId' => 'authenticationTransactionId',
+        'authenticationTransactionContext' => 'authenticationTransactionContext',
+        'otpToken' => 'otpToken',
         'authenticationType' => 'authenticationType',
         'effectiveAuthenticationType' => 'effectiveAuthenticationType',
         'responseAccessToken' => 'responseAccessToken',
@@ -108,6 +114,8 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     protected static $setters = [
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
+        'authenticationTransactionContext' => 'setAuthenticationTransactionContext',
+        'otpToken' => 'setOtpToken',
         'authenticationType' => 'setAuthenticationType',
         'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
         'responseAccessToken' => 'setResponseAccessToken',
@@ -123,6 +131,8 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      */
     protected static $getters = [
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
+        'authenticationTransactionContext' => 'getAuthenticationTransactionContext',
+        'otpToken' => 'getOtpToken',
         'authenticationType' => 'getAuthenticationType',
         'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
         'responseAccessToken' => 'getResponseAccessToken',
@@ -163,6 +173,8 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function __construct(array $data = null)
     {
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
+        $this->container['authenticationTransactionContext'] = isset($data['authenticationTransactionContext']) ? $data['authenticationTransactionContext'] : null;
+        $this->container['otpToken'] = isset($data['otpToken']) ? $data['otpToken'] : null;
         $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
         $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
         $this->container['responseAccessToken'] = isset($data['responseAccessToken']) ? $data['responseAccessToken'] : null;
@@ -207,13 +219,57 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
 
     /**
      * Sets authenticationTransactionId
-     * @param string $authenticationTransactionId Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service.
+     * @param string $authenticationTransactionId Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service.
      * @return $this
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)
     {
 
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationTransactionContext
+     * @return string
+     */
+    public function getAuthenticationTransactionContext()
+    {
+        return $this->container['authenticationTransactionContext'];
+    }
+
+    /**
+     * Sets authenticationTransactionContext
+     * @param string $authenticationTransactionContext Authentication transaction context is used as a unique identifier to link enroll and validate call.
+     * @return $this
+     */
+    public function setAuthenticationTransactionContext($authenticationTransactionContext)
+    {
+
+        $this->container['authenticationTransactionContext'] = $authenticationTransactionContext;
+
+        return $this;
+    }
+
+    /**
+     * Gets otpToken
+     * @return string
+     */
+    public function getOtpToken()
+    {
+        return $this->container['otpToken'];
+    }
+
+    /**
+     * Sets otpToken
+     * @param string $otpToken OTP entered by the card holder.
+     * @return $this
+     */
+    public function setOtpToken($otpToken)
+    {
+
+        $this->container['otpToken'] = $otpToken;
 
         return $this;
     }
@@ -229,7 +285,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
 
     /**
      * Sets authenticationType
-     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
+     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
      * @return $this
      */
     public function setAuthenticationType($authenticationType)

@@ -62,6 +62,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'alternateAuthenticationMethod' => 'string',
         'authenticationDate' => 'string',
         'authenticationTransactionId' => 'string',
+        'transactionFlowIndicator' => 'int',
         'challengeCancelCode' => 'string',
         'challengeCode' => 'string',
         'challengeStatus' => 'string',
@@ -109,6 +110,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'alternateAuthenticationMethod' => null,
         'authenticationDate' => null,
         'authenticationTransactionId' => null,
+        'transactionFlowIndicator' => null,
         'challengeCancelCode' => null,
         'challengeCode' => null,
         'challengeStatus' => null,
@@ -166,6 +168,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'alternateAuthenticationMethod' => 'alternateAuthenticationMethod',
         'authenticationDate' => 'authenticationDate',
         'authenticationTransactionId' => 'authenticationTransactionId',
+        'transactionFlowIndicator' => 'transactionFlowIndicator',
         'challengeCancelCode' => 'challengeCancelCode',
         'challengeCode' => 'challengeCode',
         'challengeStatus' => 'challengeStatus',
@@ -214,6 +217,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'alternateAuthenticationMethod' => 'setAlternateAuthenticationMethod',
         'authenticationDate' => 'setAuthenticationDate',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
+        'transactionFlowIndicator' => 'setTransactionFlowIndicator',
         'challengeCancelCode' => 'setChallengeCancelCode',
         'challengeCode' => 'setChallengeCode',
         'challengeStatus' => 'setChallengeStatus',
@@ -262,6 +266,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'alternateAuthenticationMethod' => 'getAlternateAuthenticationMethod',
         'authenticationDate' => 'getAuthenticationDate',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
+        'transactionFlowIndicator' => 'getTransactionFlowIndicator',
         'challengeCancelCode' => 'getChallengeCancelCode',
         'challengeCode' => 'getChallengeCode',
         'challengeStatus' => 'getChallengeStatus',
@@ -335,6 +340,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['alternateAuthenticationMethod'] = isset($data['alternateAuthenticationMethod']) ? $data['alternateAuthenticationMethod'] : null;
         $this->container['authenticationDate'] = isset($data['authenticationDate']) ? $data['authenticationDate'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
+        $this->container['transactionFlowIndicator'] = isset($data['transactionFlowIndicator']) ? $data['transactionFlowIndicator'] : null;
         $this->container['challengeCancelCode'] = isset($data['challengeCancelCode']) ? $data['challengeCancelCode'] : null;
         $this->container['challengeCode'] = isset($data['challengeCode']) ? $data['challengeCode'] : null;
         $this->container['challengeStatus'] = isset($data['challengeStatus']) ? $data['challengeStatus'] : null;
@@ -426,7 +432,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets authenticationType
-     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
+     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
      * @return $this
      */
     public function setAuthenticationType($authenticationType)
@@ -557,13 +563,34 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets authenticationTransactionId
-     * @param string $authenticationTransactionId Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages. **Note**: Required for Standard integration for enroll service. Required for Hybrid integration for validate service.
+     * @param string $authenticationTransactionId Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.For Rupay,this is passed only in Re-Send OTP usecase. **Note**: Required for Standard integration, Rupay Seamless server to server integration for enroll service. Required for Hybrid integration for validate service.
      * @return $this
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)
     {
 
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionFlowIndicator
+     * @return int
+     */
+    public function getTransactionFlowIndicator()
+    {
+        return $this->container['transactionFlowIndicator'];
+    }
+
+    /**
+     * Sets transactionFlowIndicator
+     * @param int $transactionFlowIndicator This  field is only applicable to Rupay and is optional. Merchant will have to pass a valid value from 01 through 07 which indicates the transaction flow. Below are the possible values. 01:NW – Transaction performed at domestic merchant. 02:TW - Transaction performed at domestic merchant along with Token provisioning. 03:IT – Transaction performed at International merchant. 04:AT- Authentication Transaction Only. 05:AW- Authentication transaction for provisioning. 06:DI- Domestic InApp Transaction. 07:II- International InApp transaction.
+     * @return $this
+     */
+    public function setTransactionFlowIndicator($transactionFlowIndicator)
+    {
+        $this->container['transactionFlowIndicator'] = $transactionFlowIndicator;
 
         return $this;
     }

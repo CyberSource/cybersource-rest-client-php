@@ -85,6 +85,20 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
+     * Test attribute "authenticationTransactionContext"
+     */
+    public function testPropertyAuthenticationTransactionContext()
+    {
+    }
+
+    /**
+     * Test attribute "otpToken"
+     */
+    public function testPropertyOtpToken()
+    {
+    }
+
+    /**
      * Test attribute "authenticationType"
      */
     public function testPropertyAuthenticationType()

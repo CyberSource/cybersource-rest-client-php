@@ -7,8 +7,8 @@ class DataMasker
     public static function maskData($postData_json_raw) {
         $maskingArray = array(
             array("securityCode", "[0-9]{3,4}", "xxxxx"),
-            array("number", "(\s*\p{N}\s*)+(\p{N}{4})(\s*)", "xxxxx$2"),
-            array("cardNumber", "(\s*\p{N}\s*)+(\p{N}{4})(\s*)", "xxxxx$2"),
+            array("number", ".*(.{3}[^\s\"])\s?", "xxxxx$1"),
+            array("cardNumber", ".*(.{3}[^\s\"])\s?", "xxxxx$1"),
             array("expirationMonth", "[0-1][0-9]", "xxxx"),
             array("expirationYear", "2[0-9][0-9][0-9]", "xxxx"),
             array("account", "(\s*\p{N}\s*)+(\p{N}{4})(\s*)", "xxxxx$2"),

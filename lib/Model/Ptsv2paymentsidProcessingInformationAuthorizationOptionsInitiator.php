@@ -54,7 +54,7 @@ class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator implemen
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'storedCredentialUsed' => 'string'
+        'storedCredentialUsed' => 'bool'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator implemen
 
     /**
      * Gets storedCredentialUsed
-     * @return string
+     * @return bool
      */
     public function getStoredCredentialUsed()
     {
@@ -171,7 +171,7 @@ class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator implemen
 
     /**
      * Sets storedCredentialUsed
-     * @param string $storedCredentialUsed Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **Y** means the merchant-initiated transaction came from a card that was already stored on file. - **N**  means the merchant-initiated transaction came from a card that was not stored on file.
+     * @param bool $storedCredentialUsed Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file.
      * @return $this
      */
     public function setStoredCredentialUsed($storedCredentialUsed)

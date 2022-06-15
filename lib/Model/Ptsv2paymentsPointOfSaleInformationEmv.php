@@ -59,7 +59,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         'cardSequenceNumber' => 'string',
         'fallback' => 'bool',
         'fallbackCondition' => 'int',
-        'isRepeat' => 'string'
+        'isRepeat' => 'bool'
     ];
 
     /**
@@ -299,7 +299,7 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Gets isRepeat
-     * @return string
+     * @return bool
      */
     public function getIsRepeat()
     {
@@ -308,12 +308,11 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets isRepeat
-     * @param string $isRepeat #### Visa Platform Connect Value 1  indicates this transaction is intentionally duplicated  The field contains value “1” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN.
+     * @param bool $isRepeat #### Visa Platform Connect Value “true” indicates this transaction is intentionally duplicated . The field contains value “true” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN.
      * @return $this
      */
     public function setIsRepeat($isRepeat)
     {
-
         $this->container['isRepeat'] = $isRepeat;
 
         return $this;

@@ -80,7 +80,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'string',
         'extendedCreditTotalCount' => 'string',
         'networkRoutingOrder' => 'string',
-        'payByPointsIndicator' => 'bool'
+        'payByPointsIndicator' => 'bool',
+        'isReturnAuthRecordEnabled' => 'bool'
     ];
 
     /**
@@ -114,7 +115,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => null,
         'extendedCreditTotalCount' => null,
         'networkRoutingOrder' => null,
-        'payByPointsIndicator' => null
+        'payByPointsIndicator' => null,
+        'isReturnAuthRecordEnabled' => null
     ];
 
     public static function swaggerTypes()
@@ -158,7 +160,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'mobileRemotePaymentType',
         'extendedCreditTotalCount' => 'extendedCreditTotalCount',
         'networkRoutingOrder' => 'networkRoutingOrder',
-        'payByPointsIndicator' => 'payByPointsIndicator'
+        'payByPointsIndicator' => 'payByPointsIndicator',
+        'isReturnAuthRecordEnabled' => 'isReturnAuthRecordEnabled'
     ];
 
 
@@ -193,7 +196,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'setMobileRemotePaymentType',
         'extendedCreditTotalCount' => 'setExtendedCreditTotalCount',
         'networkRoutingOrder' => 'setNetworkRoutingOrder',
-        'payByPointsIndicator' => 'setPayByPointsIndicator'
+        'payByPointsIndicator' => 'setPayByPointsIndicator',
+        'isReturnAuthRecordEnabled' => 'setIsReturnAuthRecordEnabled'
     ];
 
 
@@ -228,7 +232,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'getMobileRemotePaymentType',
         'extendedCreditTotalCount' => 'getExtendedCreditTotalCount',
         'networkRoutingOrder' => 'getNetworkRoutingOrder',
-        'payByPointsIndicator' => 'getPayByPointsIndicator'
+        'payByPointsIndicator' => 'getPayByPointsIndicator',
+        'isReturnAuthRecordEnabled' => 'getIsReturnAuthRecordEnabled'
     ];
 
     public static function attributeMap()
@@ -289,6 +294,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['extendedCreditTotalCount'] = isset($data['extendedCreditTotalCount']) ? $data['extendedCreditTotalCount'] : null;
         $this->container['networkRoutingOrder'] = isset($data['networkRoutingOrder']) ? $data['networkRoutingOrder'] : null;
         $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
+        $this->container['isReturnAuthRecordEnabled'] = isset($data['isReturnAuthRecordEnabled']) ? $data['isReturnAuthRecordEnabled'] : null;
     }
 
     /**
@@ -893,6 +899,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setPayByPointsIndicator($payByPointsIndicator)
     {
         $this->container['payByPointsIndicator'] = $payByPointsIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets isReturnAuthRecordEnabled
+     * @return bool
+     */
+    public function getIsReturnAuthRecordEnabled()
+    {
+        return $this->container['isReturnAuthRecordEnabled'];
+    }
+
+    /**
+     * Sets isReturnAuthRecordEnabled
+     * @param bool $isReturnAuthRecordEnabled Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false
+     * @return $this
+     */
+    public function setIsReturnAuthRecordEnabled($isReturnAuthRecordEnabled)
+    {
+        $this->container['isReturnAuthRecordEnabled'] = $isReturnAuthRecordEnabled;
 
         return $this;
     }

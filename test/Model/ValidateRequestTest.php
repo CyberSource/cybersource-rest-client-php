@@ -111,4 +111,11 @@ class ValidateRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyConsumerAuthenticationInformation()
     {
     }
+
+    /**
+     * Test attribute "deviceInformation"
+     */
+    public function testPropertyDeviceInformation()
+    {
+    }
 }

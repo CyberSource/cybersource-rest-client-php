@@ -67,7 +67,8 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'issueNumber' => 'string',
         'startMonth' => 'string',
         'startYear' => 'string',
-        'productName' => 'string'
+        'productName' => 'string',
+        'typeSelectionIndicator' => 'string'
     ];
 
     /**
@@ -88,7 +89,8 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'issueNumber' => null,
         'startMonth' => null,
         'startYear' => null,
-        'productName' => null
+        'productName' => null,
+        'typeSelectionIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -119,7 +121,8 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'issueNumber' => 'issueNumber',
         'startMonth' => 'startMonth',
         'startYear' => 'startYear',
-        'productName' => 'productName'
+        'productName' => 'productName',
+        'typeSelectionIndicator' => 'typeSelectionIndicator'
     ];
 
 
@@ -141,7 +144,8 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'issueNumber' => 'setIssueNumber',
         'startMonth' => 'setStartMonth',
         'startYear' => 'setStartYear',
-        'productName' => 'setProductName'
+        'productName' => 'setProductName',
+        'typeSelectionIndicator' => 'setTypeSelectionIndicator'
     ];
 
 
@@ -163,7 +167,8 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'issueNumber' => 'getIssueNumber',
         'startMonth' => 'getStartMonth',
         'startYear' => 'getStartYear',
-        'productName' => 'getProductName'
+        'productName' => 'getProductName',
+        'typeSelectionIndicator' => 'getTypeSelectionIndicator'
     ];
 
     public static function attributeMap()
@@ -211,6 +216,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         $this->container['startMonth'] = isset($data['startMonth']) ? $data['startMonth'] : null;
         $this->container['startYear'] = isset($data['startYear']) ? $data['startYear'] : null;
         $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
+        $this->container['typeSelectionIndicator'] = isset($data['typeSelectionIndicator']) ? $data['typeSelectionIndicator'] : null;
     }
 
     /**
@@ -541,6 +547,28 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
     {
 
         $this->container['productName'] = $productName;
+
+        return $this;
+    }
+
+    /**
+     * Gets typeSelectionIndicator
+     * @return string
+     */
+    public function getTypeSelectionIndicator()
+    {
+        return $this->container['typeSelectionIndicator'];
+    }
+
+    /**
+     * Sets typeSelectionIndicator
+     * @param string $typeSelectionIndicator Flag that identifies how the card type was selected.  Possible values: - 0: Card type was selected based on default acquirer settings. - 1: Customer selected the card type.
+     * @return $this
+     */
+    public function setTypeSelectionIndicator($typeSelectionIndicator)
+    {
+
+        $this->container['typeSelectionIndicator'] = $typeSelectionIndicator;
 
         return $this;
     }

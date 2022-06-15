@@ -55,7 +55,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
       */
     protected static $swaggerTypes = [
         'authType' => 'string',
-        'initiator' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator'
+        'initiator' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator'
     ];
 
     /**
@@ -190,7 +190,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
 
     /**
      * Gets initiator
-     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator
      */
     public function getInitiator()
     {
@@ -199,7 +199,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
 
     /**
      * Sets initiator
-     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator $initiator
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator $initiator
      * @return $this
      */
     public function setInitiator($initiator)

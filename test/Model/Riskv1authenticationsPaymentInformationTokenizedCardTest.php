@@ -106,6 +106,20 @@ class Riskv1authenticationsPaymentInformationTokenizedCardTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "cryptogram"
+     */
+    public function testPropertyCryptogram()
+    {
+    }
+
+    /**
+     * Test attribute "securityCode"
+     */
+    public function testPropertySecurityCode()
+    {
+    }
+
+    /**
      * Test attribute "number"
      */
     public function testPropertyNumber()
