@@ -265,4 +265,11 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPayByPointsIndicator()
     {
     }
+
+    /**
+     * Test attribute "isReturnAuthRecordEnabled"
+     */
+    public function testPropertyIsReturnAuthRecordEnabled()
+    {
+    }
 }

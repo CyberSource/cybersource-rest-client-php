@@ -66,6 +66,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseIssuerInformation',
         'paymentAccountInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformation',
         'paymentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformation',
+        'paymentInsightsInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation',
         'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
@@ -92,6 +93,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'issuerInformation' => null,
         'paymentAccountInformation' => null,
         'paymentInformation' => null,
+        'paymentInsightsInformation' => null,
         'orderInformation' => null,
         'pointOfSaleInformation' => null,
         'installmentInformation' => null,
@@ -128,6 +130,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'issuerInformation' => 'issuerInformation',
         'paymentAccountInformation' => 'paymentAccountInformation',
         'paymentInformation' => 'paymentInformation',
+        'paymentInsightsInformation' => 'paymentInsightsInformation',
         'orderInformation' => 'orderInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'installmentInformation' => 'installmentInformation',
@@ -155,6 +158,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'issuerInformation' => 'setIssuerInformation',
         'paymentAccountInformation' => 'setPaymentAccountInformation',
         'paymentInformation' => 'setPaymentInformation',
+        'paymentInsightsInformation' => 'setPaymentInsightsInformation',
         'orderInformation' => 'setOrderInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'installmentInformation' => 'setInstallmentInformation',
@@ -182,6 +186,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'issuerInformation' => 'getIssuerInformation',
         'paymentAccountInformation' => 'getPaymentAccountInformation',
         'paymentInformation' => 'getPaymentInformation',
+        'paymentInsightsInformation' => 'getPaymentInsightsInformation',
         'orderInformation' => 'getOrderInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'installmentInformation' => 'getInstallmentInformation',
@@ -234,6 +239,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['paymentAccountInformation'] = isset($data['paymentAccountInformation']) ? $data['paymentAccountInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
+        $this->container['paymentInsightsInformation'] = isset($data['paymentInsightsInformation']) ? $data['paymentInsightsInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
@@ -518,6 +524,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setPaymentInformation($paymentInformation)
     {
         $this->container['paymentInformation'] = $paymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInsightsInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation
+     */
+    public function getPaymentInsightsInformation()
+    {
+        return $this->container['paymentInsightsInformation'];
+    }
+
+    /**
+     * Sets paymentInsightsInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation $paymentInsightsInformation
+     * @return $this
+     */
+    public function setPaymentInsightsInformation($paymentInsightsInformation)
+    {
+        $this->container['paymentInsightsInformation'] = $paymentInsightsInformation;
 
         return $this;
     }

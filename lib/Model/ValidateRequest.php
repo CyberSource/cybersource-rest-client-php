@@ -58,7 +58,8 @@ class ValidateRequest implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformation',
-        'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1authenticationresultsConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1authenticationresultsConsumerAuthenticationInformation',
+        'deviceInformation' => '\CyberSource\Model\Riskv1authenticationresultsDeviceInformation'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ValidateRequest implements ArrayAccess
         'processingInformation' => null,
         'orderInformation' => null,
         'paymentInformation' => null,
-        'consumerAuthenticationInformation' => null
+        'consumerAuthenticationInformation' => null,
+        'deviceInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class ValidateRequest implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'orderInformation' => 'orderInformation',
         'paymentInformation' => 'paymentInformation',
-        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'deviceInformation' => 'deviceInformation'
     ];
 
 
@@ -105,7 +108,8 @@ class ValidateRequest implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'orderInformation' => 'setOrderInformation',
         'paymentInformation' => 'setPaymentInformation',
-        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'deviceInformation' => 'setDeviceInformation'
     ];
 
 
@@ -118,7 +122,8 @@ class ValidateRequest implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'orderInformation' => 'getOrderInformation',
         'paymentInformation' => 'getPaymentInformation',
-        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'deviceInformation' => 'getDeviceInformation'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class ValidateRequest implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class ValidateRequest implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceInformation
+     * @return \CyberSource\Model\Riskv1authenticationresultsDeviceInformation
+     */
+    public function getDeviceInformation()
+    {
+        return $this->container['deviceInformation'];
+    }
+
+    /**
+     * Sets deviceInformation
+     * @param \CyberSource\Model\Riskv1authenticationresultsDeviceInformation $deviceInformation
+     * @return $this
+     */
+    public function setDeviceInformation($deviceInformation)
+    {
+        $this->container['deviceInformation'] = $deviceInformation;
 
         return $this;
     }

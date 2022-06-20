@@ -58,6 +58,9 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'acsTransactionId' => 'string',
         'authenticationResult' => 'string',
         'authenticationStatusMsg' => 'string',
+        'authenticationTransactionId' => 'string',
+        'authenticationTransactionContextId' => 'string',
+        'transactionToken' => 'string',
         'authorizationPayload' => 'string',
         'cavv' => 'string',
         'cavvAlgorithm' => 'string',
@@ -88,6 +91,9 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'acsTransactionId' => null,
         'authenticationResult' => null,
         'authenticationStatusMsg' => null,
+        'authenticationTransactionId' => null,
+        'authenticationTransactionContextId' => null,
+        'transactionToken' => null,
         'authorizationPayload' => null,
         'cavv' => null,
         'cavvAlgorithm' => null,
@@ -128,6 +134,9 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'acsTransactionId' => 'acsTransactionId',
         'authenticationResult' => 'authenticationResult',
         'authenticationStatusMsg' => 'authenticationStatusMsg',
+        'authenticationTransactionId' => 'authenticationTransactionId',
+        'authenticationTransactionContextId' => 'authenticationTransactionContextId',
+        'transactionToken' => 'transactionToken',
         'authorizationPayload' => 'authorizationPayload',
         'cavv' => 'cavv',
         'cavvAlgorithm' => 'cavvAlgorithm',
@@ -159,6 +168,9 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'acsTransactionId' => 'setAcsTransactionId',
         'authenticationResult' => 'setAuthenticationResult',
         'authenticationStatusMsg' => 'setAuthenticationStatusMsg',
+        'authenticationTransactionId' => 'setAuthenticationTransactionId',
+        'authenticationTransactionContextId' => 'setAuthenticationTransactionContextId',
+        'transactionToken' => 'setTransactionToken',
         'authorizationPayload' => 'setAuthorizationPayload',
         'cavv' => 'setCavv',
         'cavvAlgorithm' => 'setCavvAlgorithm',
@@ -190,6 +202,9 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'acsTransactionId' => 'getAcsTransactionId',
         'authenticationResult' => 'getAuthenticationResult',
         'authenticationStatusMsg' => 'getAuthenticationStatusMsg',
+        'authenticationTransactionId' => 'getAuthenticationTransactionId',
+        'authenticationTransactionContextId' => 'getAuthenticationTransactionContextId',
+        'transactionToken' => 'getTransactionToken',
         'authorizationPayload' => 'getAuthorizationPayload',
         'cavv' => 'getCavv',
         'cavvAlgorithm' => 'getCavvAlgorithm',
@@ -246,6 +261,9 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
         $this->container['authenticationResult'] = isset($data['authenticationResult']) ? $data['authenticationResult'] : null;
         $this->container['authenticationStatusMsg'] = isset($data['authenticationStatusMsg']) ? $data['authenticationStatusMsg'] : null;
+        $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
+        $this->container['authenticationTransactionContextId'] = isset($data['authenticationTransactionContextId']) ? $data['authenticationTransactionContextId'] : null;
+        $this->container['transactionToken'] = isset($data['transactionToken']) ? $data['transactionToken'] : null;
         $this->container['authorizationPayload'] = isset($data['authorizationPayload']) ? $data['authorizationPayload'] : null;
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['cavvAlgorithm'] = isset($data['cavvAlgorithm']) ? $data['cavvAlgorithm'] : null;
@@ -373,6 +391,72 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setAuthenticationStatusMsg($authenticationStatusMsg)
     {
         $this->container['authenticationStatusMsg'] = $authenticationStatusMsg;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationTransactionId
+     * @return string
+     */
+    public function getAuthenticationTransactionId()
+    {
+        return $this->container['authenticationTransactionId'];
+    }
+
+    /**
+     * Sets authenticationTransactionId
+     * @param string $authenticationTransactionId Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case.
+     * @return $this
+     */
+    public function setAuthenticationTransactionId($authenticationTransactionId)
+    {
+
+        $this->container['authenticationTransactionId'] = $authenticationTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationTransactionContextId
+     * @return string
+     */
+    public function getAuthenticationTransactionContextId()
+    {
+        return $this->container['authenticationTransactionContextId'];
+    }
+
+    /**
+     * Sets authenticationTransactionContextId
+     * @param string $authenticationTransactionContextId Payer authentication transaction identifier passed to link the validation and authorization calls.
+     * @return $this
+     */
+    public function setAuthenticationTransactionContextId($authenticationTransactionContextId)
+    {
+
+        $this->container['authenticationTransactionContextId'] = $authenticationTransactionContextId;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionToken
+     * @return string
+     */
+    public function getTransactionToken()
+    {
+        return $this->container['transactionToken'];
+    }
+
+    /**
+     * Sets transactionToken
+     * @param string $transactionToken Web based token used to authenticate consumer with Rupay authentication provider.
+     * @return $this
+     */
+    public function setTransactionToken($transactionToken)
+    {
+
+        $this->container['transactionToken'] = $transactionToken;
 
         return $this;
     }

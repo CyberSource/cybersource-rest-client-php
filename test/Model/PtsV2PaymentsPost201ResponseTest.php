@@ -162,6 +162,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentInsightsInformation"
+     */
+    public function testPropertyPaymentInsightsInformation()
+    {
+    }
+
+    /**
      * Test attribute "orderInformation"
      */
     public function testPropertyOrderInformation()

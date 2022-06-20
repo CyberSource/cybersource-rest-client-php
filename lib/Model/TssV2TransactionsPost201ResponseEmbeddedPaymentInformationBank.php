@@ -1,6 +1,6 @@
 <?php
 /**
- * TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+ * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedDeviceInformation Class Doc Comment
+ * TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements ArrayAccess
+class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBank implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_deviceInformation';
+    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_paymentInformation_bank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'ipAddress' => 'string'
+        'account' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount'
     ];
 
     /**
@@ -62,7 +62,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'ipAddress' => null
+        'account' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
      * @var string[]
      */
     protected static $attributeMap = [
-        'ipAddress' => 'ipAddress'
+        'account' => 'account'
     ];
 
 
@@ -89,7 +89,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
      * @var string[]
      */
     protected static $setters = [
-        'ipAddress' => 'setIpAddress'
+        'account' => 'setAccount'
     ];
 
 
@@ -98,7 +98,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
      * @var string[]
      */
     protected static $getters = [
-        'ipAddress' => 'getIpAddress'
+        'account' => 'getAccount'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
      */
     public function __construct(array $data = null)
     {
-        $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
+        $this->container['account'] = isset($data['account']) ? $data['account'] : null;
     }
 
     /**
@@ -161,23 +161,22 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformation implements Array
 
 
     /**
-     * Gets ipAddress
-     * @return string
+     * Gets account
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount
      */
-    public function getIpAddress()
+    public function getAccount()
     {
-        return $this->container['ipAddress'];
+        return $this->container['account'];
     }
 
     /**
-     * Sets ipAddress
-     * @param string $ipAddress IP address of the customer.  #### Used by **Authorization, Capture, and Credit** Optional field.
+     * Sets account
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount $account
      * @return $this
      */
-    public function setIpAddress($ipAddress)
+    public function setAccount($account)
     {
-
-        $this->container['ipAddress'] = $ipAddress;
+        $this->container['account'] = $account;
 
         return $this;
     }

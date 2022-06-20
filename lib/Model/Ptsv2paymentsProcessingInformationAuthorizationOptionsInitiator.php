@@ -56,7 +56,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator implements
     protected static $swaggerTypes = [
         'type' => 'string',
         'credentialStoredOnFile' => 'bool',
-        'storedCredentialUsed' => 'string',
+        'storedCredentialUsed' => 'bool',
         'merchantInitiatedTransaction' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'
     ];
 
@@ -222,7 +222,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator implements
 
     /**
      * Gets storedCredentialUsed
-     * @return string
+     * @return bool
      */
     public function getStoredCredentialUsed()
     {
@@ -231,7 +231,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiator implements
 
     /**
      * Sets storedCredentialUsed
-     * @param string $storedCredentialUsed Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **Y** means the merchant-initiated transaction came from a card that was already stored on file. - **N**  means the merchant-initiated transaction came from a card that was not stored on file.
+     * @param bool $storedCredentialUsed Indicates to an issuing bank whether a merchant-initiated transaction came from a card that was already stored on file.  Possible values: - **true** means the merchant-initiated transaction came from a card that was already stored on file. - **false**  means the merchant-initiated transaction came from a card that was not stored on file.
      * @return $this
      */
     public function setStoredCredentialUsed($storedCredentialUsed)

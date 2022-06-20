@@ -106,6 +106,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "authenticationTransactionId"
+     */
+    public function testPropertyAuthenticationTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "authenticationTransactionContextId"
+     */
+    public function testPropertyAuthenticationTransactionContextId()
+    {
+    }
+
+    /**
+     * Test attribute "transactionToken"
+     */
+    public function testPropertyTransactionToken()
+    {
+    }
+
+    /**
      * Test attribute "authorizationPayload"
      */
     public function testPropertyAuthorizationPayload()

@@ -545,7 +545,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
 
     /**
      * Sets authenticationTransactionId
-     * @param string $authenticationTransactionId Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.
+     * @param string $authenticationTransactionId Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case.
      * @return $this
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)

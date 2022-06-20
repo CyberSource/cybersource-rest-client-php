@@ -104,4 +104,11 @@ class PtsV2PaymentsPost201ResponseIssuerInformationTest extends \PHPUnit_Framewo
     public function testPropertyResponseCode()
     {
     }
+
+    /**
+     * Test attribute "responseRaw"
+     */
+    public function testPropertyResponseRaw()
+    {
+    }
 }

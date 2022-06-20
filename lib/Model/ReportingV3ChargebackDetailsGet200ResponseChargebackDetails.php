@@ -75,7 +75,8 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
         'reasonCode' => 'string',
         'representmentCPTime' => '\DateTime',
         'applications' => 'string',
-        'eventRequestedTime' => '\DateTime'
+        'eventRequestedTime' => '\DateTime',
+        'preDisputeFlag' => 'string'
     ];
 
     /**
@@ -104,7 +105,8 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
         'reasonCode' => null,
         'representmentCPTime' => 'date-time',
         'applications' => null,
-        'eventRequestedTime' => 'date-time'
+        'eventRequestedTime' => 'date-time',
+        'preDisputeFlag' => null
     ];
 
     public static function swaggerTypes()
@@ -143,7 +145,8 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
         'reasonCode' => 'reasonCode',
         'representmentCPTime' => 'representmentCPTime',
         'applications' => 'applications',
-        'eventRequestedTime' => 'eventRequestedTime'
+        'eventRequestedTime' => 'eventRequestedTime',
+        'preDisputeFlag' => 'preDisputeFlag'
     ];
 
 
@@ -173,7 +176,8 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
         'reasonCode' => 'setReasonCode',
         'representmentCPTime' => 'setRepresentmentCPTime',
         'applications' => 'setApplications',
-        'eventRequestedTime' => 'setEventRequestedTime'
+        'eventRequestedTime' => 'setEventRequestedTime',
+        'preDisputeFlag' => 'setPreDisputeFlag'
     ];
 
 
@@ -203,7 +207,8 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
         'reasonCode' => 'getReasonCode',
         'representmentCPTime' => 'getRepresentmentCPTime',
         'applications' => 'getApplications',
-        'eventRequestedTime' => 'getEventRequestedTime'
+        'eventRequestedTime' => 'getEventRequestedTime',
+        'preDisputeFlag' => 'getPreDisputeFlag'
     ];
 
     public static function attributeMap()
@@ -259,6 +264,7 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
         $this->container['representmentCPTime'] = isset($data['representmentCPTime']) ? $data['representmentCPTime'] : null;
         $this->container['applications'] = isset($data['applications']) ? $data['applications'] : null;
         $this->container['eventRequestedTime'] = isset($data['eventRequestedTime']) ? $data['eventRequestedTime'] : null;
+        $this->container['preDisputeFlag'] = isset($data['preDisputeFlag']) ? $data['preDisputeFlag'] : null;
     }
 
     /**
@@ -744,6 +750,27 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
     public function setEventRequestedTime($eventRequestedTime)
     {
         $this->container['eventRequestedTime'] = $eventRequestedTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets preDisputeFlag
+     * @return string
+     */
+    public function getPreDisputeFlag()
+    {
+        return $this->container['preDisputeFlag'];
+    }
+
+    /**
+     * Sets preDisputeFlag
+     * @param string $preDisputeFlag Pre Dispute Flag
+     * @return $this
+     */
+    public function setPreDisputeFlag($preDisputeFlag)
+    {
+        $this->container['preDisputeFlag'] = $preDisputeFlag;
 
         return $this;
     }

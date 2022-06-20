@@ -61,7 +61,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation',
-        'deviceInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedDeviceInformation',
+        'deviceInformation' => '\CyberSource\Model\Riskv1authenticationresultsDeviceInformation',
         'fraudMarkingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseFraudMarkingInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedMerchantInformation',
@@ -412,7 +412,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Gets deviceInformation
-     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+     * @return \CyberSource\Model\Riskv1authenticationresultsDeviceInformation
      */
     public function getDeviceInformation()
     {
@@ -421,7 +421,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Sets deviceInformation
-     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedDeviceInformation $deviceInformation
+     * @param \CyberSource\Model\Riskv1authenticationresultsDeviceInformation $deviceInformation
      * @return $this
      */
     public function setDeviceInformation($deviceInformation)

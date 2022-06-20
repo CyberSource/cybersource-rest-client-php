@@ -153,7 +153,7 @@ class SecureFileShareApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
 
         // query params
         if ($organizationId !== null) {
@@ -293,7 +293,7 @@ class SecureFileShareApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
 
         // query params
         if ($startDate !== null) {
