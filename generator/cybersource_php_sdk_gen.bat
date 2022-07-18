@@ -41,7 +41,9 @@ REM powershell -Command "(Get-Content ..\CyberSource\lib\Model\ReportingV3Report
 
 REM powershell -Command "(Get-Content ..\CyberSource\lib\Model\ReportingV3ReportDefinitionsGet200ResponseReportDefinitions.php) |  ForEach-Object { $_ -replace '\$this->container\[\''supportedFormats\''] = \$supportedFormats', '} $this->container[''supportedFormats''] = $supportedFormats'}  | Set-Content ..\CyberSource\lib\Model\ReportingV3ReportDefinitionsGet200ResponseReportDefinitions.php"
 
-powershell -Command "(Get-Content ..\CyberSource\lib\Api\SecureFileShareApi.php) | ForEach-Object { $_ -replace 'selectHeaderContentType\(\[''application/json;charset=utf-8', 'selectHeaderContentType([''*/*' } | Set-Content ..\CyberSource\lib\Api\SecureFileShareApi.php"
+powershell -Command "(Get-Content ..\CyberSource\lib\Api\SecureFileShareApi.php) | ForEach-Object { $_ -replace 'selectHeaderContentType\(\[''\*_\/_\*;charset=utf-8', 'selectHeaderContentType([''*/*;charset=utf-8' } | Set-Content ..\CyberSource\lib\Api\SecureFileShareApi.php"
+
+powershell -Command "(Get-Content ..\CyberSource\docs\Api\SecureFileShareApi.md) | ForEach-Object { $_ -replace '\*\*Content-Type\*\*: \*_\/_\*;charset=utf-8', '**Content-Type**: */*;charset=utf-8' } | Set-Content ..\CyberSource\docs\Api\SecureFileShareApi.md"
 
 xcopy ..\CyberSource ..\ /s /e /y
 

@@ -59,7 +59,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'forwardedAcquirerCode' => 'string',
         'merchantNumber' => 'string',
         'responseCode' => 'string',
-        'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification'
+        'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
+        'networkTransactionId' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'forwardedAcquirerCode' => null,
         'merchantNumber' => null,
         'responseCode' => null,
-        'achVerification' => null
+        'achVerification' => null,
+        'networkTransactionId' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'forwardedAcquirerCode' => 'forwardedAcquirerCode',
         'merchantNumber' => 'merchantNumber',
         'responseCode' => 'responseCode',
-        'achVerification' => 'achVerification'
+        'achVerification' => 'achVerification',
+        'networkTransactionId' => 'networkTransactionId'
     ];
 
 
@@ -109,7 +112,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
         'merchantNumber' => 'setMerchantNumber',
         'responseCode' => 'setResponseCode',
-        'achVerification' => 'setAchVerification'
+        'achVerification' => 'setAchVerification',
+        'networkTransactionId' => 'setNetworkTransactionId'
     ];
 
 
@@ -123,7 +127,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
         'merchantNumber' => 'getMerchantNumber',
         'responseCode' => 'getResponseCode',
-        'achVerification' => 'getAchVerification'
+        'achVerification' => 'getAchVerification',
+        'networkTransactionId' => 'getNetworkTransactionId'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         $this->container['merchantNumber'] = isset($data['merchantNumber']) ? $data['merchantNumber'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['achVerification'] = isset($data['achVerification']) ? $data['achVerification'] : null;
+        $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
     }
 
     /**
@@ -317,6 +323,27 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     public function setAchVerification($achVerification)
     {
         $this->container['achVerification'] = $achVerification;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkTransactionId
+     * @return string
+     */
+    public function getNetworkTransactionId()
+    {
+        return $this->container['networkTransactionId'];
+    }
+
+    /**
+     * Sets networkTransactionId
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
+     * @return $this
+     */
+    public function setNetworkTransactionId($networkTransactionId)
+    {
+        $this->container['networkTransactionId'] = $networkTransactionId;
 
         return $this;
     }
