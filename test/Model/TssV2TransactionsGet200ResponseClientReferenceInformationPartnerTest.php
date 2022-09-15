@@ -83,4 +83,11 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartnerTest exten
     public function testPropertySolutionId()
     {
     }
+
+    /**
+     * Test attribute "thirdPartyCertificationNumber"
+     */
+    public function testPropertyThirdPartyCertificationNumber()
+    {
+    }
 }

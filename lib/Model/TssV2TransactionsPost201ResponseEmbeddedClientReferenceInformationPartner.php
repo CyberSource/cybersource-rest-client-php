@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod
+ * TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod Class Doc Comment
+ * TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
+class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationPartner implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_clientReferenceInformation_partner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string'
+        'solutionId' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null
+        'solutionId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'solutionId' => 'solutionId'
     ];
 
 
@@ -89,7 +89,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'solutionId' => 'setSolutionId'
     ];
 
 
@@ -98,7 +98,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'solutionId' => 'getSolutionId'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;
     }
 
     /**
@@ -161,22 +161,23 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets solutionId
      * @return string
      */
-    public function getName()
+    public function getSolutionId()
     {
-        return $this->container['name'];
+        return $this->container['solutionId'];
     }
 
     /**
-     * Sets name
-     * @param string $name A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data
+     * Sets solutionId
+     * @param string $solutionId Identifier for the partner that is integrated to CyberSource.  Send this value in all requests that are sent through the partner solution. CyberSource assigns the ID to the partner.  **Note** When you see a solutionId of 999 in reports, the solutionId that was submitted is incorrect.
      * @return $this
      */
-    public function setName($name)
+    public function setSolutionId($solutionId)
     {
-        $this->container['name'] = $name;
+
+        $this->container['solutionId'] = $solutionId;
 
         return $this;
     }

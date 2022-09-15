@@ -202,4 +202,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     public function testPropertyDeferredAuthIndicator()
     {
     }
+
+    /**
+     * Test attribute "cashAdvanceIndicator"
+     */
+    public function testPropertyCashAdvanceIndicator()
+    {
+    }
 }

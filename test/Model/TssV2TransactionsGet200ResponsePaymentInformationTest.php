@@ -139,4 +139,11 @@ class TssV2TransactionsGet200ResponsePaymentInformationTest extends \PHPUnit_Fra
     public function testPropertyShippingAddress()
     {
     }
+
+    /**
+     * Test attribute "fluidData"
+     */
+    public function testPropertyFluidData()
+    {
+    }
 }

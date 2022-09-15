@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod
+ * TssV2TransactionsGet200ResponsePaymentInformationFluidData
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod Class Doc Comment
+ * TssV2TransactionsGet200ResponsePaymentInformationFluidData Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
+class TssV2TransactionsGet200ResponsePaymentInformationFluidData implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_paymentInformation_fluidData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string'
+        'descriptor' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null
+        'descriptor' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'descriptor' => 'descriptor'
     ];
 
 
@@ -89,7 +89,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'descriptor' => 'setDescriptor'
     ];
 
 
@@ -98,7 +98,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'descriptor' => 'getDescriptor'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['descriptor'] = isset($data['descriptor']) ? $data['descriptor'] : null;
     }
 
     /**
@@ -161,22 +161,23 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets descriptor
      * @return string
      */
-    public function getName()
+    public function getDescriptor()
     {
-        return $this->container['name'];
+        return $this->container['descriptor'];
     }
 
     /**
-     * Sets name
-     * @param string $name A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data
+     * Sets descriptor
+     * @param string $descriptor The identifier for a payment solution, which is sending the encrypted payment data for decryption. Valid values: Samsung Pay: RklEPUNPTU1PTi5TQU1TVU5HLklOQVBQLlBBWU1FTlQ= Note: For other payment solutions, the value may be specific to the terminal or device initiatinf the payment. For example, the descriptor for a Bluefin payment encryption would be a device-generated descriptor. Used by Authorization and Standalone Credits. Required for authorizations and standalone credits.  Card Present processing: Format of the encrypted payment data. The value for Bluefin PCI P2PE is `Ymx1ZWZpbg==`. paymentInformation.fluidData.encoding must be `Base64`. The value for Cybersource P2PE decryption depends on the encoding method used and identified in encoding field. If paymentInformation.fluidData.encoding is `Base64`, the value is: `RklEPUVNVi5QQVlNRU5ULkFQSQ==` If paymentInformation.fluidData.encoding is `HEX`, the value is: `4649443D454D562E5041594D454E542E41504`
      * @return $this
      */
-    public function setName($name)
+    public function setDescriptor($descriptor)
     {
-        $this->container['name'] = $name;
+
+        $this->container['descriptor'] = $descriptor;
 
         return $this;
     }

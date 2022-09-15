@@ -54,7 +54,8 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'solutionId' => 'string'
+        'solutionId' => 'string',
+        'thirdPartyCertificationNumber' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'solutionId' => null
+        'solutionId' => null,
+        'thirdPartyCertificationNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
      * @var string[]
      */
     protected static $attributeMap = [
-        'solutionId' => 'solutionId'
+        'solutionId' => 'solutionId',
+        'thirdPartyCertificationNumber' => 'thirdPartyCertificationNumber'
     ];
 
 
@@ -89,7 +92,8 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
      * @var string[]
      */
     protected static $setters = [
-        'solutionId' => 'setSolutionId'
+        'solutionId' => 'setSolutionId',
+        'thirdPartyCertificationNumber' => 'setThirdPartyCertificationNumber'
     ];
 
 
@@ -98,7 +102,8 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
      * @var string[]
      */
     protected static $getters = [
-        'solutionId' => 'getSolutionId'
+        'solutionId' => 'getSolutionId',
+        'thirdPartyCertificationNumber' => 'getThirdPartyCertificationNumber'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
     public function __construct(array $data = null)
     {
         $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;
+        $this->container['thirdPartyCertificationNumber'] = isset($data['thirdPartyCertificationNumber']) ? $data['thirdPartyCertificationNumber'] : null;
     }
 
     /**
@@ -178,6 +184,28 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
     {
 
         $this->container['solutionId'] = $solutionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets thirdPartyCertificationNumber
+     * @return string
+     */
+    public function getThirdPartyCertificationNumber()
+    {
+        return $this->container['thirdPartyCertificationNumber'];
+    }
+
+    /**
+     * Sets thirdPartyCertificationNumber
+     * @param string $thirdPartyCertificationNumber Value that identifies the application vendor and application version for a third party gateway. CyberSource provides you with this value during testing and validation. This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization, Authorization Reversal, Capture, Credit, Incremental Authorization, and Void** Optional field.  #### PIN debit Required field for PIN debit credit, PIN debit purchase, or PIN debit reversal request.
+     * @return $this
+     */
+    public function setThirdPartyCertificationNumber($thirdPartyCertificationNumber)
+    {
+
+        $this->container['thirdPartyCertificationNumber'] = $thirdPartyCertificationNumber;
 
         return $this;
     }

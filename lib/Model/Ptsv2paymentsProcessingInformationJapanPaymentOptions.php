@@ -55,6 +55,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
       */
     protected static $swaggerTypes = [
         'paymentMethod' => 'string',
+        'bonuses' => 'string',
+        'bonusMonth' => 'string',
+        'secondBonusMonth' => 'string',
+        'bonusAmount' => 'string',
+        'secondBonusAmount' => 'string',
+        'preapprovalType' => 'string',
         'installments' => 'string',
         'terminalId' => 'string',
         'firstBillingMonth' => 'string',
@@ -70,6 +76,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
       */
     protected static $swaggerFormats = [
         'paymentMethod' => null,
+        'bonuses' => null,
+        'bonusMonth' => null,
+        'secondBonusMonth' => null,
+        'bonusAmount' => null,
+        'secondBonusAmount' => null,
+        'preapprovalType' => null,
         'installments' => null,
         'terminalId' => null,
         'firstBillingMonth' => null,
@@ -95,6 +107,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     protected static $attributeMap = [
         'paymentMethod' => 'paymentMethod',
+        'bonuses' => 'bonuses',
+        'bonusMonth' => 'bonusMonth',
+        'secondBonusMonth' => 'secondBonusMonth',
+        'bonusAmount' => 'bonusAmount',
+        'secondBonusAmount' => 'secondBonusAmount',
+        'preapprovalType' => 'preapprovalType',
         'installments' => 'installments',
         'terminalId' => 'terminalId',
         'firstBillingMonth' => 'firstBillingMonth',
@@ -111,6 +129,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     protected static $setters = [
         'paymentMethod' => 'setPaymentMethod',
+        'bonuses' => 'setBonuses',
+        'bonusMonth' => 'setBonusMonth',
+        'secondBonusMonth' => 'setSecondBonusMonth',
+        'bonusAmount' => 'setBonusAmount',
+        'secondBonusAmount' => 'setSecondBonusAmount',
+        'preapprovalType' => 'setPreapprovalType',
         'installments' => 'setInstallments',
         'terminalId' => 'setTerminalId',
         'firstBillingMonth' => 'setFirstBillingMonth',
@@ -127,6 +151,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
      */
     protected static $getters = [
         'paymentMethod' => 'getPaymentMethod',
+        'bonuses' => 'getBonuses',
+        'bonusMonth' => 'getBonusMonth',
+        'secondBonusMonth' => 'getSecondBonusMonth',
+        'bonusAmount' => 'getBonusAmount',
+        'secondBonusAmount' => 'getSecondBonusAmount',
+        'preapprovalType' => 'getPreapprovalType',
         'installments' => 'getInstallments',
         'terminalId' => 'getTerminalId',
         'firstBillingMonth' => 'getFirstBillingMonth',
@@ -168,6 +198,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     public function __construct(array $data = null)
     {
         $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
+        $this->container['bonuses'] = isset($data['bonuses']) ? $data['bonuses'] : null;
+        $this->container['bonusMonth'] = isset($data['bonusMonth']) ? $data['bonusMonth'] : null;
+        $this->container['secondBonusMonth'] = isset($data['secondBonusMonth']) ? $data['secondBonusMonth'] : null;
+        $this->container['bonusAmount'] = isset($data['bonusAmount']) ? $data['bonusAmount'] : null;
+        $this->container['secondBonusAmount'] = isset($data['secondBonusAmount']) ? $data['secondBonusAmount'] : null;
+        $this->container['preapprovalType'] = isset($data['preapprovalType']) ? $data['preapprovalType'] : null;
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['firstBillingMonth'] = isset($data['firstBillingMonth']) ? $data['firstBillingMonth'] : null;
@@ -220,6 +256,138 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     {
 
         $this->container['paymentMethod'] = $paymentMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets bonuses
+     * @return string
+     */
+    public function getBonuses()
+    {
+        return $this->container['bonuses'];
+    }
+
+    /**
+     * Sets bonuses
+     * @param string $bonuses This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6.
+     * @return $this
+     */
+    public function setBonuses($bonuses)
+    {
+
+        $this->container['bonuses'] = $bonuses;
+
+        return $this;
+    }
+
+    /**
+     * Gets bonusMonth
+     * @return string
+     */
+    public function getBonusMonth()
+    {
+        return $this->container['bonusMonth'];
+    }
+
+    /**
+     * Sets bonusMonth
+     * @param string $bonusMonth This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12.
+     * @return $this
+     */
+    public function setBonusMonth($bonusMonth)
+    {
+
+        $this->container['bonusMonth'] = $bonusMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets secondBonusMonth
+     * @return string
+     */
+    public function getSecondBonusMonth()
+    {
+        return $this->container['secondBonusMonth'];
+    }
+
+    /**
+     * Sets secondBonusMonth
+     * @param string $secondBonusMonth This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12.
+     * @return $this
+     */
+    public function setSecondBonusMonth($secondBonusMonth)
+    {
+
+        $this->container['secondBonusMonth'] = $secondBonusMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets bonusAmount
+     * @return string
+     */
+    public function getBonusAmount()
+    {
+        return $this->container['bonusAmount'];
+    }
+
+    /**
+     * Sets bonusAmount
+     * @param string $bonusAmount This value contains the bonus amount of the first month. Maximum value without decimal 99999999.
+     * @return $this
+     */
+    public function setBonusAmount($bonusAmount)
+    {
+
+        $this->container['bonusAmount'] = $bonusAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets secondBonusAmount
+     * @return string
+     */
+    public function getSecondBonusAmount()
+    {
+        return $this->container['secondBonusAmount'];
+    }
+
+    /**
+     * Sets secondBonusAmount
+     * @param string $secondBonusAmount This value contains the bonus amount of the second month. Maximum value without decimal 99999999.
+     * @return $this
+     */
+    public function setSecondBonusAmount($secondBonusAmount)
+    {
+
+        $this->container['secondBonusAmount'] = $secondBonusAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets preapprovalType
+     * @return string
+     */
+    public function getPreapprovalType()
+    {
+        return $this->container['preapprovalType'];
+    }
+
+    /**
+     * Sets preapprovalType
+     * @param string $preapprovalType This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 = Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 = Negative card authorization (authorization-only with 0 or 1 amount) - 2 = Reservation of authorization (authorization-only with amount) - 3 = Cancel transaction - 4 = Merchant-initiated reversal/refund transactions - 5 = Cancel reservation of authorization - 6 = Post authorization
+     * @return $this
+     */
+    public function setPreapprovalType($preapprovalType)
+    {
+
+        $this->container['preapprovalType'] = $preapprovalType;
 
         return $this;
     }

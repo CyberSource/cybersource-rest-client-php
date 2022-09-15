@@ -62,7 +62,8 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'accountFeatures' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures',
         'paymentInstrument' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument',
         'instrumentIdentifier' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier',
-        'shippingAddress' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationShippingAddress'
+        'shippingAddress' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationShippingAddress',
+        'fluidData' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFluidData'
     ];
 
     /**
@@ -78,7 +79,8 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'accountFeatures' => null,
         'paymentInstrument' => null,
         'instrumentIdentifier' => null,
-        'shippingAddress' => null
+        'shippingAddress' => null,
+        'fluidData' => null
     ];
 
     public static function swaggerTypes()
@@ -104,7 +106,8 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'accountFeatures' => 'accountFeatures',
         'paymentInstrument' => 'paymentInstrument',
         'instrumentIdentifier' => 'instrumentIdentifier',
-        'shippingAddress' => 'shippingAddress'
+        'shippingAddress' => 'shippingAddress',
+        'fluidData' => 'fluidData'
     ];
 
 
@@ -121,7 +124,8 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'accountFeatures' => 'setAccountFeatures',
         'paymentInstrument' => 'setPaymentInstrument',
         'instrumentIdentifier' => 'setInstrumentIdentifier',
-        'shippingAddress' => 'setShippingAddress'
+        'shippingAddress' => 'setShippingAddress',
+        'fluidData' => 'setFluidData'
     ];
 
 
@@ -138,7 +142,8 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'accountFeatures' => 'getAccountFeatures',
         'paymentInstrument' => 'getPaymentInstrument',
         'instrumentIdentifier' => 'getInstrumentIdentifier',
-        'shippingAddress' => 'getShippingAddress'
+        'shippingAddress' => 'getShippingAddress',
+        'fluidData' => 'getFluidData'
     ];
 
     public static function attributeMap()
@@ -181,6 +186,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
         $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
+        $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
     }
 
     /**
@@ -393,6 +399,27 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
     public function setShippingAddress($shippingAddress)
     {
         $this->container['shippingAddress'] = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets fluidData
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFluidData
+     */
+    public function getFluidData()
+    {
+        return $this->container['fluidData'];
+    }
+
+    /**
+     * Sets fluidData
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFluidData $fluidData
+     * @return $this
+     */
+    public function setFluidData($fluidData)
+    {
+        $this->container['fluidData'] = $fluidData;
 
         return $this;
     }

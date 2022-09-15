@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod
+ * InlineResponse502
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod Class Doc Comment
+ * InlineResponse502 Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
+class InlineResponse502 implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,18 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'inline_response_502';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string'
+        'submitTimeUtc' => 'string',
+        'status' => 'string',
+        'reason' => 'string',
+        'message' => 'string',
+        'statusCode' => 'string'
     ];
 
     /**
@@ -62,7 +66,11 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null
+        'submitTimeUtc' => null,
+        'status' => null,
+        'reason' => null,
+        'message' => null,
+        'statusCode' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +88,11 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'submitTimeUtc' => 'submitTimeUtc',
+        'status' => 'status',
+        'reason' => 'reason',
+        'message' => 'message',
+        'statusCode' => 'statusCode'
     ];
 
 
@@ -89,7 +101,11 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'status' => 'setStatus',
+        'reason' => 'setReason',
+        'message' => 'setMessage',
+        'statusCode' => 'setStatusCode'
     ];
 
 
@@ -98,7 +114,11 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'status' => 'getStatus',
+        'reason' => 'getReason',
+        'message' => 'getMessage',
+        'statusCode' => 'getStatusCode'
     ];
 
     public static function attributeMap()
@@ -132,7 +152,11 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
     }
 
     /**
@@ -161,22 +185,106 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets submitTimeUtc
      * @return string
      */
-    public function getName()
+    public function getSubmitTimeUtc()
     {
-        return $this->container['name'];
+        return $this->container['submitTimeUtc'];
     }
 
     /**
-     * Sets name
-     * @param string $name A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
      * @return $this
      */
-    public function setName($name)
+    public function setSubmitTimeUtc($submitTimeUtc)
     {
-        $this->container['name'] = $name;
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted transaction.  Possible values:  - SERVER_ERROR
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     * @param string $message The detail message related to the status and reason listed above.
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusCode
+     * @return string
+     */
+    public function getStatusCode()
+    {
+        return $this->container['statusCode'];
+    }
+
+    /**
+     * Sets statusCode
+     * @param string $statusCode HTTP status code of the submitted request.  Possible values:  - 500
+     * @return $this
+     */
+    public function setStatusCode($statusCode)
+    {
+        $this->container['statusCode'] = $statusCode;
 
         return $this;
     }

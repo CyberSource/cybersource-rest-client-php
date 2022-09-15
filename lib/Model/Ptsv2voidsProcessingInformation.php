@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod
+ * Ptsv2voidsProcessingInformation
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv2paymentsPaymentInformationPaymentTypeMethod Class Doc Comment
+ * Ptsv2voidsProcessingInformation Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
+class Ptsv2voidsProcessingInformation implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,14 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_paymentType_method';
+    protected static $swaggerModelName = 'ptsv2voids_processingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string'
+        'paymentId' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null
+        'paymentId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'paymentId' => 'paymentId'
     ];
 
 
@@ -89,7 +89,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'paymentId' => 'setPaymentId'
     ];
 
 
@@ -98,7 +98,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'paymentId' => 'getPaymentId'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['paymentId'] = isset($data['paymentId']) ? $data['paymentId'] : null;
     }
 
     /**
@@ -161,22 +161,23 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets paymentId
      * @return string
      */
-    public function getName()
+    public function getPaymentId()
     {
-        return $this->container['name'];
+        return $this->container['paymentId'];
     }
 
     /**
-     * Sets name
-     * @param string $name A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data
+     * Sets paymentId
+     * @param string $paymentId This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
      * @return $this
      */
-    public function setName($name)
+    public function setPaymentId($paymentId)
     {
-        $this->container['name'] = $name;
+
+        $this->container['paymentId'] = $paymentId;
 
         return $this;
     }

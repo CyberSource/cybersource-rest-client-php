@@ -71,7 +71,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'string',
         'aggregatedAuthIndicator' => 'string',
         'debtRecoveryIndicator' => 'string',
-        'deferredAuthIndicator' => 'bool'
+        'deferredAuthIndicator' => 'bool',
+        'cashAdvanceIndicator' => 'bool'
     ];
 
     /**
@@ -96,7 +97,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => null,
         'aggregatedAuthIndicator' => null,
         'debtRecoveryIndicator' => null,
-        'deferredAuthIndicator' => null
+        'deferredAuthIndicator' => null,
+        'cashAdvanceIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -131,7 +133,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'transportationMode',
         'aggregatedAuthIndicator' => 'aggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'debtRecoveryIndicator',
-        'deferredAuthIndicator' => 'deferredAuthIndicator'
+        'deferredAuthIndicator' => 'deferredAuthIndicator',
+        'cashAdvanceIndicator' => 'cashAdvanceIndicator'
     ];
 
 
@@ -157,7 +160,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'setTransportationMode',
         'aggregatedAuthIndicator' => 'setAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'setDebtRecoveryIndicator',
-        'deferredAuthIndicator' => 'setDeferredAuthIndicator'
+        'deferredAuthIndicator' => 'setDeferredAuthIndicator',
+        'cashAdvanceIndicator' => 'setCashAdvanceIndicator'
     ];
 
 
@@ -183,7 +187,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'getTransportationMode',
         'aggregatedAuthIndicator' => 'getAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'getDebtRecoveryIndicator',
-        'deferredAuthIndicator' => 'getDeferredAuthIndicator'
+        'deferredAuthIndicator' => 'getDeferredAuthIndicator',
+        'cashAdvanceIndicator' => 'getCashAdvanceIndicator'
     ];
 
     public static function attributeMap()
@@ -235,6 +240,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['aggregatedAuthIndicator'] = isset($data['aggregatedAuthIndicator']) ? $data['aggregatedAuthIndicator'] : null;
         $this->container['debtRecoveryIndicator'] = isset($data['debtRecoveryIndicator']) ? $data['debtRecoveryIndicator'] : null;
         $this->container['deferredAuthIndicator'] = isset($data['deferredAuthIndicator']) ? $data['deferredAuthIndicator'] : null;
+        $this->container['cashAdvanceIndicator'] = isset($data['cashAdvanceIndicator']) ? $data['cashAdvanceIndicator'] : null;
     }
 
     /**
@@ -641,6 +647,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function setDeferredAuthIndicator($deferredAuthIndicator)
     {
         $this->container['deferredAuthIndicator'] = $deferredAuthIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets cashAdvanceIndicator
+     * @return bool
+     */
+    public function getCashAdvanceIndicator()
+    {
+        return $this->container['cashAdvanceIndicator'];
+    }
+
+    /**
+     * Sets cashAdvanceIndicator
+     * @param bool $cashAdvanceIndicator This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported)
+     * @return $this
+     */
+    public function setCashAdvanceIndicator($cashAdvanceIndicator)
+    {
+        $this->container['cashAdvanceIndicator'] = $cashAdvanceIndicator;
 
         return $this;
     }

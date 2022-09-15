@@ -56,6 +56,7 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'organizationId' => 'string',
+        'externalOrganizationId' => 'string',
         'referenceNumber' => 'string',
         'keyId' => 'string',
         'key' => 'string',
@@ -71,6 +72,7 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'organizationId' => null,
+        'externalOrganizationId' => null,
         'referenceNumber' => null,
         'keyId' => null,
         'key' => null,
@@ -96,6 +98,7 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'organizationId' => 'organizationId',
+        'externalOrganizationId' => 'externalOrganizationId',
         'referenceNumber' => 'referenceNumber',
         'keyId' => 'keyId',
         'key' => 'key',
@@ -112,6 +115,7 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
      */
     protected static $setters = [
         'organizationId' => 'setOrganizationId',
+        'externalOrganizationId' => 'setExternalOrganizationId',
         'referenceNumber' => 'setReferenceNumber',
         'keyId' => 'setKeyId',
         'key' => 'setKey',
@@ -128,6 +132,7 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
      */
     protected static $getters = [
         'organizationId' => 'getOrganizationId',
+        'externalOrganizationId' => 'getExternalOrganizationId',
         'referenceNumber' => 'getReferenceNumber',
         'keyId' => 'getKeyId',
         'key' => 'getKey',
@@ -169,6 +174,7 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['organizationId'] = isset($data['organizationId']) ? $data['organizationId'] : null;
+        $this->container['externalOrganizationId'] = isset($data['externalOrganizationId']) ? $data['externalOrganizationId'] : null;
         $this->container['referenceNumber'] = isset($data['referenceNumber']) ? $data['referenceNumber'] : null;
         $this->container['keyId'] = isset($data['keyId']) ? $data['keyId'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
@@ -220,6 +226,27 @@ class KmsV2KeysSymPost201ResponseKeyInformation implements ArrayAccess
     public function setOrganizationId($organizationId)
     {
         $this->container['organizationId'] = $organizationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets externalOrganizationId
+     * @return string
+     */
+    public function getExternalOrganizationId()
+    {
+        return $this->container['externalOrganizationId'];
+    }
+
+    /**
+     * Sets externalOrganizationId
+     * @param string $externalOrganizationId Payworks MerchantId for given organizationId.
+     * @return $this
+     */
+    public function setExternalOrganizationId($externalOrganizationId)
+    {
+        $this->container['externalOrganizationId'] = $externalOrganizationId;
 
         return $this;
     }

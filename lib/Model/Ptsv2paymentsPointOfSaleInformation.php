@@ -56,6 +56,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'terminalId' => 'string',
         'terminalSerialNumber' => 'string',
+        'cardholderVerificationMethodUsed' => 'int',
         'laneNumber' => 'string',
         'catLevel' => 'int',
         'entryMode' => 'string',
@@ -90,6 +91,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'terminalId' => null,
         'terminalSerialNumber' => null,
+        'cardholderVerificationMethodUsed' => null,
         'laneNumber' => null,
         'catLevel' => null,
         'entryMode' => null,
@@ -134,6 +136,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $attributeMap = [
         'terminalId' => 'terminalId',
         'terminalSerialNumber' => 'terminalSerialNumber',
+        'cardholderVerificationMethodUsed' => 'cardholderVerificationMethodUsed',
         'laneNumber' => 'laneNumber',
         'catLevel' => 'catLevel',
         'entryMode' => 'entryMode',
@@ -169,6 +172,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $setters = [
         'terminalId' => 'setTerminalId',
         'terminalSerialNumber' => 'setTerminalSerialNumber',
+        'cardholderVerificationMethodUsed' => 'setCardholderVerificationMethodUsed',
         'laneNumber' => 'setLaneNumber',
         'catLevel' => 'setCatLevel',
         'entryMode' => 'setEntryMode',
@@ -204,6 +208,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $getters = [
         'terminalId' => 'getTerminalId',
         'terminalSerialNumber' => 'getTerminalSerialNumber',
+        'cardholderVerificationMethodUsed' => 'getCardholderVerificationMethodUsed',
         'laneNumber' => 'getLaneNumber',
         'catLevel' => 'getCatLevel',
         'entryMode' => 'getEntryMode',
@@ -264,6 +269,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['terminalSerialNumber'] = isset($data['terminalSerialNumber']) ? $data['terminalSerialNumber'] : null;
+        $this->container['cardholderVerificationMethodUsed'] = isset($data['cardholderVerificationMethodUsed']) ? $data['cardholderVerificationMethodUsed'] : null;
         $this->container['laneNumber'] = isset($data['laneNumber']) ? $data['laneNumber'] : null;
         $this->container['catLevel'] = isset($data['catLevel']) ? $data['catLevel'] : null;
         $this->container['entryMode'] = isset($data['entryMode']) ? $data['entryMode'] : null;
@@ -391,6 +397,27 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
 
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardholderVerificationMethodUsed
+     * @return int
+     */
+    public function getCardholderVerificationMethodUsed()
+    {
+        return $this->container['cardholderVerificationMethodUsed'];
+    }
+
+    /**
+     * Sets cardholderVerificationMethodUsed
+     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM
+     * @return $this
+     */
+    public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)
+    {
+        $this->container['cardholderVerificationMethodUsed'] = $cardholderVerificationMethodUsed;
 
         return $this;
     }

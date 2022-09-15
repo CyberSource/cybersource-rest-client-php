@@ -92,6 +92,13 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "cardholderVerificationMethodUsed"
+     */
+    public function testPropertyCardholderVerificationMethodUsed()
+    {
+    }
+
+    /**
      * Test attribute "laneNumber"
      */
     public function testPropertyLaneNumber()
