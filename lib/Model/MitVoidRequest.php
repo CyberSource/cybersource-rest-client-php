@@ -56,7 +56,8 @@ class MitVoidRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsPaymentInformation',
-        'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsOrderInformation'
+        'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsOrderInformation',
+        'processingInformation' => '\CyberSource\Model\Ptsv2voidsProcessingInformation'
     ];
 
     /**
@@ -66,7 +67,8 @@ class MitVoidRequest implements ArrayAccess
     protected static $swaggerFormats = [
         'clientReferenceInformation' => null,
         'paymentInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'processingInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class MitVoidRequest implements ArrayAccess
     protected static $attributeMap = [
         'clientReferenceInformation' => 'clientReferenceInformation',
         'paymentInformation' => 'paymentInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'processingInformation' => 'processingInformation'
     ];
 
 
@@ -97,7 +100,8 @@ class MitVoidRequest implements ArrayAccess
     protected static $setters = [
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'paymentInformation' => 'setPaymentInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'processingInformation' => 'setProcessingInformation'
     ];
 
 
@@ -108,7 +112,8 @@ class MitVoidRequest implements ArrayAccess
     protected static $getters = [
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'paymentInformation' => 'getPaymentInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'processingInformation' => 'getProcessingInformation'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class MitVoidRequest implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
     }
 
     /**
@@ -231,6 +237,27 @@ class MitVoidRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\Ptsv2voidsProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\Ptsv2voidsProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

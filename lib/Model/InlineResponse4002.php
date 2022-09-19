@@ -57,7 +57,8 @@ class InlineResponse4002 implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'reason' => 'string',
-        'message' => 'string'
+        'message' => 'string',
+        'statusCode' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class InlineResponse4002 implements ArrayAccess
         'submitTimeUtc' => null,
         'status' => null,
         'reason' => null,
-        'message' => null
+        'message' => null,
+        'statusCode' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class InlineResponse4002 implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
         'reason' => 'reason',
-        'message' => 'message'
+        'message' => 'message',
+        'statusCode' => 'statusCode'
     ];
 
 
@@ -101,7 +104,8 @@ class InlineResponse4002 implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
         'reason' => 'setReason',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'statusCode' => 'setStatusCode'
     ];
 
 
@@ -113,7 +117,8 @@ class InlineResponse4002 implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
         'reason' => 'getReason',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'statusCode' => 'getStatusCode'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class InlineResponse4002 implements ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
     }
 
     /**
@@ -231,7 +237,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA
+     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD
      * @return $this
      */
     public function setReason($reason)
@@ -258,6 +264,27 @@ class InlineResponse4002 implements ArrayAccess
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusCode
+     * @return string
+     */
+    public function getStatusCode()
+    {
+        return $this->container['statusCode'];
+    }
+
+    /**
+     * Sets statusCode
+     * @param string $statusCode HTTP status code of the submitted request.  Possible values:  - 500
+     * @return $this
+     */
+    public function setStatusCode($statusCode)
+    {
+        $this->container['statusCode'] = $statusCode;
 
         return $this;
     }

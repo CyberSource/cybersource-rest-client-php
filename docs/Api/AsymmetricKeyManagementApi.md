@@ -4,17 +4,17 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createP12Keys**](AsymmetricKeyManagementApi.md#createP12Keys) | **POST** /kms/v2/keys-asym | Create one or more PKCS#12 keys
-[**deleteBulkP12Keys**](AsymmetricKeyManagementApi.md#deleteBulkP12Keys) | **POST** /kms/v2/keys-asym/deletes | Delete one or more PKCS#12 keys
-[**getP12KeyDetails**](AsymmetricKeyManagementApi.md#getP12KeyDetails) | **GET** /kms/v2/keys-asym/{keyId} | Retrieves PKCS#12 key details
+[**createP12Keys**](AsymmetricKeyManagementApi.md#createP12Keys) | **POST** /kms/v2/keys-asym | Create one or more PKCS12 keys
+[**deleteBulkP12Keys**](AsymmetricKeyManagementApi.md#deleteBulkP12Keys) | **POST** /kms/v2/keys-asym/deletes | Delete one or more PKCS12 keys
+[**getP12KeyDetails**](AsymmetricKeyManagementApi.md#getP12KeyDetails) | **GET** /kms/v2/keys-asym/{keyId} | Retrieves PKCS12 key details
 
 
 # **createP12Keys**
 > \CyberSource\Model\KmsV2KeysAsymPost201Response createP12Keys($createP12KeysRequest)
 
-Create one or more PKCS#12 keys
+Create one or more PKCS12 keys
 
-'Create one or more PKCS#12 keys'
+'Create one or more PKCS12 keys'
 
 ### Example
 ```php
@@ -57,9 +57,9 @@ No authorization required
 # **deleteBulkP12Keys**
 > \CyberSource\Model\KmsV2KeysAsymDeletesPost200Response deleteBulkP12Keys($deleteBulkP12KeysRequest)
 
-Delete one or more PKCS#12 keys
+Delete one or more PKCS12 keys
 
-'Delete one or more PKCS#12 keys'
+'Delete one or more PKCS12 keys'
 
 ### Example
 ```php
@@ -102,7 +102,7 @@ No authorization required
 # **getP12KeyDetails**
 > \CyberSource\Model\KmsV2KeysAsymGet200Response getP12KeyDetails($keyId)
 
-Retrieves PKCS#12 key details
+Retrieves PKCS12 key details
 
 Retrieves keys details by providing the key id.
 

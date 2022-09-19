@@ -120,6 +120,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "commerceIndicatorLabel"
+     */
+    public function testPropertyCommerceIndicatorLabel()
+    {
+    }
+
+    /**
      * Test attribute "paymentSolution"
      */
     public function testPropertyPaymentSolution()
@@ -144,6 +151,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "purchaseLevel"
      */
     public function testPropertyPurchaseLevel()
+    {
+    }
+
+    /**
+     * Test attribute "paymentId"
+     */
+    public function testPropertyPaymentId()
     {
     }
 

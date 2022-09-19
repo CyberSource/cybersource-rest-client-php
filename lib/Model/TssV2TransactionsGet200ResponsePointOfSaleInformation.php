@@ -57,6 +57,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         'terminalId' => 'string',
         'entryMode' => 'string',
         'terminalCapability' => 'int',
+        'cardholderVerificationMethodUsed' => 'int',
         'emv' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv'
     ];
 
@@ -68,6 +69,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         'terminalId' => null,
         'entryMode' => null,
         'terminalCapability' => null,
+        'cardholderVerificationMethodUsed' => null,
         'emv' => null
     ];
 
@@ -89,6 +91,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         'terminalId' => 'terminalId',
         'entryMode' => 'entryMode',
         'terminalCapability' => 'terminalCapability',
+        'cardholderVerificationMethodUsed' => 'cardholderVerificationMethodUsed',
         'emv' => 'emv'
     ];
 
@@ -101,6 +104,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         'terminalId' => 'setTerminalId',
         'entryMode' => 'setEntryMode',
         'terminalCapability' => 'setTerminalCapability',
+        'cardholderVerificationMethodUsed' => 'setCardholderVerificationMethodUsed',
         'emv' => 'setEmv'
     ];
 
@@ -113,6 +117,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         'terminalId' => 'getTerminalId',
         'entryMode' => 'getEntryMode',
         'terminalCapability' => 'getTerminalCapability',
+        'cardholderVerificationMethodUsed' => 'getCardholderVerificationMethodUsed',
         'emv' => 'getEmv'
     ];
 
@@ -150,6 +155,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['entryMode'] = isset($data['entryMode']) ? $data['entryMode'] : null;
         $this->container['terminalCapability'] = isset($data['terminalCapability']) ? $data['terminalCapability'] : null;
+        $this->container['cardholderVerificationMethodUsed'] = isset($data['cardholderVerificationMethodUsed']) ? $data['cardholderVerificationMethodUsed'] : null;
         $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
     }
 
@@ -260,6 +266,27 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
         }
 
         $this->container['terminalCapability'] = $terminalCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardholderVerificationMethodUsed
+     * @return int
+     */
+    public function getCardholderVerificationMethodUsed()
+    {
+        return $this->container['cardholderVerificationMethodUsed'];
+    }
+
+    /**
+     * Sets cardholderVerificationMethodUsed
+     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM
+     * @return $this
+     */
+    public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)
+    {
+        $this->container['cardholderVerificationMethodUsed'] = $cardholderVerificationMethodUsed;
 
         return $this;
     }

@@ -97,4 +97,11 @@ class MitVoidRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
 }

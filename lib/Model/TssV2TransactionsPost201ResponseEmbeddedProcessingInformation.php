@@ -56,7 +56,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     protected static $swaggerTypes = [
         'paymentSolution' => 'string',
         'businessApplicationId' => 'string',
-        'commerceIndicator' => 'string'
+        'commerceIndicator' => 'string',
+        'commerceIndicatorLabel' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     protected static $swaggerFormats = [
         'paymentSolution' => null,
         'businessApplicationId' => null,
-        'commerceIndicator' => null
+        'commerceIndicator' => null,
+        'commerceIndicatorLabel' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     protected static $attributeMap = [
         'paymentSolution' => 'paymentSolution',
         'businessApplicationId' => 'businessApplicationId',
-        'commerceIndicator' => 'commerceIndicator'
+        'commerceIndicator' => 'commerceIndicator',
+        'commerceIndicatorLabel' => 'commerceIndicatorLabel'
     ];
 
 
@@ -97,7 +100,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     protected static $setters = [
         'paymentSolution' => 'setPaymentSolution',
         'businessApplicationId' => 'setBusinessApplicationId',
-        'commerceIndicator' => 'setCommerceIndicator'
+        'commerceIndicator' => 'setCommerceIndicator',
+        'commerceIndicatorLabel' => 'setCommerceIndicatorLabel'
     ];
 
 
@@ -108,7 +112,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     protected static $getters = [
         'paymentSolution' => 'getPaymentSolution',
         'businessApplicationId' => 'getBusinessApplicationId',
-        'commerceIndicator' => 'getCommerceIndicator'
+        'commerceIndicator' => 'getCommerceIndicator',
+        'commerceIndicatorLabel' => 'getCommerceIndicatorLabel'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
         $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
+        $this->container['commerceIndicatorLabel'] = isset($data['commerceIndicatorLabel']) ? $data['commerceIndicatorLabel'] : null;
     }
 
     /**
@@ -233,6 +239,28 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
     {
 
         $this->container['commerceIndicator'] = $commerceIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets commerceIndicatorLabel
+     * @return string
+     */
+    public function getCommerceIndicatorLabel()
+    {
+        return $this->container['commerceIndicatorLabel'];
+    }
+
+    /**
+     * Sets commerceIndicatorLabel
+     * @param string $commerceIndicatorLabel Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\"
+     * @return $this
+     */
+    public function setCommerceIndicatorLabel($commerceIndicatorLabel)
+    {
+
+        $this->container['commerceIndicatorLabel'] = $commerceIndicatorLabel;
 
         return $this;
     }

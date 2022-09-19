@@ -171,7 +171,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal
+     * @param string $name A Payment Type is enabled through a Method. Examples: Visa, Master Card, ApplePay, iDeal  For Japan Payment Processing Valid Values: - 1 Banking Data - 2 Authorization Data
      * @return $this
      */
     public function setName($name)

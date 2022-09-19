@@ -57,6 +57,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'industryDataType' => 'string',
         'paymentSolution' => 'string',
         'commerceIndicator' => 'string',
+        'commerceIndicatorLabel' => 'string',
         'businessApplicationId' => 'string',
         'authorizationOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions',
         'bankTransferOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions',
@@ -71,6 +72,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'industryDataType' => null,
         'paymentSolution' => null,
         'commerceIndicator' => null,
+        'commerceIndicatorLabel' => null,
         'businessApplicationId' => null,
         'authorizationOptions' => null,
         'bankTransferOptions' => null,
@@ -95,6 +97,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'industryDataType' => 'industryDataType',
         'paymentSolution' => 'paymentSolution',
         'commerceIndicator' => 'commerceIndicator',
+        'commerceIndicatorLabel' => 'commerceIndicatorLabel',
         'businessApplicationId' => 'businessApplicationId',
         'authorizationOptions' => 'authorizationOptions',
         'bankTransferOptions' => 'bankTransferOptions',
@@ -110,6 +113,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'industryDataType' => 'setIndustryDataType',
         'paymentSolution' => 'setPaymentSolution',
         'commerceIndicator' => 'setCommerceIndicator',
+        'commerceIndicatorLabel' => 'setCommerceIndicatorLabel',
         'businessApplicationId' => 'setBusinessApplicationId',
         'authorizationOptions' => 'setAuthorizationOptions',
         'bankTransferOptions' => 'setBankTransferOptions',
@@ -125,6 +129,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'industryDataType' => 'getIndustryDataType',
         'paymentSolution' => 'getPaymentSolution',
         'commerceIndicator' => 'getCommerceIndicator',
+        'commerceIndicatorLabel' => 'getCommerceIndicatorLabel',
         'businessApplicationId' => 'getBusinessApplicationId',
         'authorizationOptions' => 'getAuthorizationOptions',
         'bankTransferOptions' => 'getBankTransferOptions',
@@ -165,6 +170,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
+        $this->container['commerceIndicatorLabel'] = isset($data['commerceIndicatorLabel']) ? $data['commerceIndicatorLabel'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
         $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
@@ -258,6 +264,28 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
     {
 
         $this->container['commerceIndicator'] = $commerceIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets commerceIndicatorLabel
+     * @return string
+     */
+    public function getCommerceIndicatorLabel()
+    {
+        return $this->container['commerceIndicatorLabel'];
+    }
+
+    /**
+     * Sets commerceIndicatorLabel
+     * @param string $commerceIndicatorLabel Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\"
+     * @return $this
+     */
+    public function setCommerceIndicatorLabel($commerceIndicatorLabel)
+    {
+
+        $this->container['commerceIndicatorLabel'] = $commerceIndicatorLabel;
 
         return $this;
     }

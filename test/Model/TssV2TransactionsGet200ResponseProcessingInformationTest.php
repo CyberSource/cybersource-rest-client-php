@@ -99,6 +99,13 @@ class TssV2TransactionsGet200ResponseProcessingInformationTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "commerceIndicatorLabel"
+     */
+    public function testPropertyCommerceIndicatorLabel()
+    {
+    }
+
+    /**
      * Test attribute "businessApplicationId"
      */
     public function testPropertyBusinessApplicationId()

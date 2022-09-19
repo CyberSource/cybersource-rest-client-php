@@ -97,7 +97,7 @@ class AsymmetricKeyManagementApi
     /**
      * Operation createP12Keys
      *
-     * Create one or more PKCS#12 keys
+     * Create one or more PKCS12 keys
      *
      * @param \CyberSource\Model\CreateP12KeysRequest $createP12KeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -115,7 +115,7 @@ class AsymmetricKeyManagementApi
     /**
      * Operation createP12KeysWithHttpInfo
      *
-     * Create one or more PKCS#12 keys
+     * Create one or more PKCS12 keys
      *
      * @param \CyberSource\Model\CreateP12KeysRequest $createP12KeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -192,7 +192,7 @@ class AsymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -205,7 +205,7 @@ class AsymmetricKeyManagementApi
     /**
      * Operation deleteBulkP12Keys
      *
-     * Delete one or more PKCS#12 keys
+     * Delete one or more PKCS12 keys
      *
      * @param \CyberSource\Model\DeleteBulkP12KeysRequest $deleteBulkP12KeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -223,7 +223,7 @@ class AsymmetricKeyManagementApi
     /**
      * Operation deleteBulkP12KeysWithHttpInfo
      *
-     * Delete one or more PKCS#12 keys
+     * Delete one or more PKCS12 keys
      *
      * @param \CyberSource\Model\DeleteBulkP12KeysRequest $deleteBulkP12KeysRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -300,7 +300,7 @@ class AsymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -313,7 +313,7 @@ class AsymmetricKeyManagementApi
     /**
      * Operation getP12KeyDetails
      *
-     * Retrieves PKCS#12 key details
+     * Retrieves PKCS12 key details
      *
      * @param string $keyId Key ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -331,7 +331,7 @@ class AsymmetricKeyManagementApi
     /**
      * Operation getP12KeyDetailsWithHttpInfo
      *
-     * Retrieves PKCS#12 key details
+     * Retrieves PKCS12 key details
      *
      * @param string $keyId Key ID. (required)
      * @throws \CyberSource\ApiException on non-2xx response
@@ -414,7 +414,7 @@ class AsymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse502', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

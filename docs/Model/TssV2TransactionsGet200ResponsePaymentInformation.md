@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **paymentInstrument** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument**](PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument.md) |  | [optional] 
 **instrumentIdentifier** | [**\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier**](TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier.md) |  | [optional] 
 **shippingAddress** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationShippingAddress**](PtsV2PaymentsPost201ResponseTokenInformationShippingAddress.md) |  | [optional] 
+**fluidData** | [**\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFluidData**](TssV2TransactionsGet200ResponsePaymentInformationFluidData.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
