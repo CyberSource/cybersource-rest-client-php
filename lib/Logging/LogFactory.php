@@ -53,9 +53,9 @@ class LogFactory
         $errorHandler->setFormatter($errorFormatter);
 
         $logger = new Logger($loggerName);
-        $logger->pushHandler($errorHandler);
 
         if ($logConfig->isLoggingEnabled()) {
+            $logger->pushHandler($errorHandler);
             $logger->pushHandler($debugHandler);
         }
 

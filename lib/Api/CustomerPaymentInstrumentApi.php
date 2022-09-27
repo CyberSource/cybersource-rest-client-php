@@ -196,6 +196,9 @@ class CustomerPaymentInstrumentApi
                 $resourcePath
             );
         }
+        if ('DELETE' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -366,6 +369,9 @@ class CustomerPaymentInstrumentApi
                 $this->apiClient->getSerializer()->toPathValue($paymentInstrumentTokenId),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -543,6 +549,9 @@ class CustomerPaymentInstrumentApi
                 $this->apiClient->getSerializer()->toPathValue($customerTokenId),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

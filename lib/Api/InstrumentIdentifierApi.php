@@ -172,6 +172,9 @@ class InstrumentIdentifierApi
                 $resourcePath
             );
         }
+        if ('DELETE' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -314,6 +317,9 @@ class InstrumentIdentifierApi
                 $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -491,6 +497,9 @@ class InstrumentIdentifierApi
                 $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierTokenId),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

@@ -230,4 +230,11 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetailsTest extends \P
     public function testPropertyEventRequestedTime()
     {
     }
+
+    /**
+     * Test attribute "preDisputeFlag"
+     */
+    public function testPropertyPreDisputeFlag()
+    {
+    }
 }

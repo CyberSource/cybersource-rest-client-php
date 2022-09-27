@@ -277,6 +277,9 @@ class InvoicesApi
         if ($status !== null) {
             $queryParams['status'] = $this->apiClient->getSerializer()->toQueryValue($status);
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -395,6 +398,9 @@ class InvoicesApi
                 $resourcePath
             );
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -510,6 +516,9 @@ class InvoicesApi
                 $resourcePath
             );
         }
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -624,6 +633,9 @@ class InvoicesApi
                 $this->apiClient->getSerializer()->toPathValue($id),
                 $resourcePath
             );
+        }
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

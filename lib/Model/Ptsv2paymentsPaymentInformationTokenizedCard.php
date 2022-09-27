@@ -63,7 +63,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'transactionType' => 'string',
         'assuranceLevel' => 'string',
         'storageMethod' => 'string',
-        'securityCode' => 'string'
+        'securityCode' => 'string',
+        'securityCodeIndicator' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'transactionType' => null,
         'assuranceLevel' => null,
         'storageMethod' => null,
-        'securityCode' => null
+        'securityCode' => null,
+        'securityCodeIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +109,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'transactionType' => 'transactionType',
         'assuranceLevel' => 'assuranceLevel',
         'storageMethod' => 'storageMethod',
-        'securityCode' => 'securityCode'
+        'securityCode' => 'securityCode',
+        'securityCodeIndicator' => 'securityCodeIndicator'
     ];
 
 
@@ -125,7 +128,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'transactionType' => 'setTransactionType',
         'assuranceLevel' => 'setAssuranceLevel',
         'storageMethod' => 'setStorageMethod',
-        'securityCode' => 'setSecurityCode'
+        'securityCode' => 'setSecurityCode',
+        'securityCodeIndicator' => 'setSecurityCodeIndicator'
     ];
 
 
@@ -143,7 +147,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'transactionType' => 'getTransactionType',
         'assuranceLevel' => 'getAssuranceLevel',
         'storageMethod' => 'getStorageMethod',
-        'securityCode' => 'getSecurityCode'
+        'securityCode' => 'getSecurityCode',
+        'securityCodeIndicator' => 'getSecurityCodeIndicator'
     ];
 
     public static function attributeMap()
@@ -187,6 +192,7 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         $this->container['assuranceLevel'] = isset($data['assuranceLevel']) ? $data['assuranceLevel'] : null;
         $this->container['storageMethod'] = isset($data['storageMethod']) ? $data['storageMethod'] : null;
         $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
+        $this->container['securityCodeIndicator'] = isset($data['securityCodeIndicator']) ? $data['securityCodeIndicator'] : null;
     }
 
     /**
@@ -312,7 +318,7 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
 
     /**
      * Sets cryptogram
-     * @param string $cryptogram This field is used internally.
+     * @param string $cryptogram This field contains token information.
      * @return $this
      */
     public function setCryptogram($cryptogram)
@@ -356,7 +362,7 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
 
     /**
      * Sets transactionType
-     * @param string $transactionType Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used.
+     * @param string $transactionType Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: For Rupay and In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used.
      * @return $this
      */
     public function setTransactionType($transactionType)
@@ -429,6 +435,28 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
     {
 
         $this->container['securityCode'] = $securityCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets securityCodeIndicator
+     * @return string
+     */
+    public function getSecurityCodeIndicator()
+    {
+        return $this->container['securityCodeIndicator'];
+    }
+
+    /**
+     * Sets securityCodeIndicator
+     * @param string $securityCodeIndicator Indicates whether a CVN code was sent. Possible values:   - `0` (default): CVN service not requested. This default value is used when you do not include      `securityCode` field in the request.  - `1` (default): CVN service requested and supported. This default value is used when you include      `securityCode` field in the request.  - `2`: CVN on credit card is illegible.  - `9`: CVN was not imprinted on credit card.  #### FDMS Nashville Required for American Express cards; otherwise, optional.  #### TSYS Acquiring Solutions Optional if `pointOfSaleInformation.entryMode=keyed`; otherwise, not used.  #### All other processors Optional.
+     * @return $this
+     */
+    public function setSecurityCodeIndicator($securityCodeIndicator)
+    {
+
+        $this->container['securityCodeIndicator'] = $securityCodeIndicator;
 
         return $this;
     }

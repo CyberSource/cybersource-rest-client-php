@@ -92,6 +92,13 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "cardholderVerificationMethodUsed"
+     */
+    public function testPropertyCardholderVerificationMethodUsed()
+    {
+    }
+
+    /**
      * Test attribute "laneNumber"
      */
     public function testPropertyLaneNumber()
@@ -256,6 +263,13 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
      * Test attribute "terminalMake"
      */
     public function testPropertyTerminalMake()
+    {
+    }
+
+    /**
+     * Test attribute "serviceCode"
+     */
+    public function testPropertyServiceCode()
     {
     }
 }

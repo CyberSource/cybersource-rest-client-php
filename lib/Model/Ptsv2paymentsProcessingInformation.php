@@ -60,10 +60,12 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'processorId' => 'string',
         'businessApplicationId' => 'string',
         'commerceIndicator' => 'string',
+        'commerceIndicatorLabel' => 'string',
         'paymentSolution' => 'string',
         'reconciliationId' => 'string',
         'linkId' => 'string',
         'purchaseLevel' => 'string',
+        'paymentId' => 'string',
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
         'industryDataType' => 'string',
@@ -80,7 +82,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'string',
         'extendedCreditTotalCount' => 'string',
         'networkRoutingOrder' => 'string',
-        'payByPointsIndicator' => 'bool'
+        'payByPointsIndicator' => 'bool',
+        'isReturnAuthRecordEnabled' => 'bool'
     ];
 
     /**
@@ -94,10 +97,12 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'processorId' => null,
         'businessApplicationId' => null,
         'commerceIndicator' => null,
+        'commerceIndicatorLabel' => null,
         'paymentSolution' => null,
         'reconciliationId' => null,
         'linkId' => null,
         'purchaseLevel' => null,
+        'paymentId' => null,
         'reportGroup' => null,
         'visaCheckoutId' => null,
         'industryDataType' => null,
@@ -114,7 +119,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => null,
         'extendedCreditTotalCount' => null,
         'networkRoutingOrder' => null,
-        'payByPointsIndicator' => null
+        'payByPointsIndicator' => null,
+        'isReturnAuthRecordEnabled' => null
     ];
 
     public static function swaggerTypes()
@@ -138,10 +144,12 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'processorId' => 'processorId',
         'businessApplicationId' => 'businessApplicationId',
         'commerceIndicator' => 'commerceIndicator',
+        'commerceIndicatorLabel' => 'commerceIndicatorLabel',
         'paymentSolution' => 'paymentSolution',
         'reconciliationId' => 'reconciliationId',
         'linkId' => 'linkId',
         'purchaseLevel' => 'purchaseLevel',
+        'paymentId' => 'paymentId',
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
         'industryDataType' => 'industryDataType',
@@ -158,7 +166,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'mobileRemotePaymentType',
         'extendedCreditTotalCount' => 'extendedCreditTotalCount',
         'networkRoutingOrder' => 'networkRoutingOrder',
-        'payByPointsIndicator' => 'payByPointsIndicator'
+        'payByPointsIndicator' => 'payByPointsIndicator',
+        'isReturnAuthRecordEnabled' => 'isReturnAuthRecordEnabled'
     ];
 
 
@@ -173,10 +182,12 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'processorId' => 'setProcessorId',
         'businessApplicationId' => 'setBusinessApplicationId',
         'commerceIndicator' => 'setCommerceIndicator',
+        'commerceIndicatorLabel' => 'setCommerceIndicatorLabel',
         'paymentSolution' => 'setPaymentSolution',
         'reconciliationId' => 'setReconciliationId',
         'linkId' => 'setLinkId',
         'purchaseLevel' => 'setPurchaseLevel',
+        'paymentId' => 'setPaymentId',
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
         'industryDataType' => 'setIndustryDataType',
@@ -193,7 +204,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'setMobileRemotePaymentType',
         'extendedCreditTotalCount' => 'setExtendedCreditTotalCount',
         'networkRoutingOrder' => 'setNetworkRoutingOrder',
-        'payByPointsIndicator' => 'setPayByPointsIndicator'
+        'payByPointsIndicator' => 'setPayByPointsIndicator',
+        'isReturnAuthRecordEnabled' => 'setIsReturnAuthRecordEnabled'
     ];
 
 
@@ -208,10 +220,12 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'processorId' => 'getProcessorId',
         'businessApplicationId' => 'getBusinessApplicationId',
         'commerceIndicator' => 'getCommerceIndicator',
+        'commerceIndicatorLabel' => 'getCommerceIndicatorLabel',
         'paymentSolution' => 'getPaymentSolution',
         'reconciliationId' => 'getReconciliationId',
         'linkId' => 'getLinkId',
         'purchaseLevel' => 'getPurchaseLevel',
+        'paymentId' => 'getPaymentId',
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
         'industryDataType' => 'getIndustryDataType',
@@ -228,7 +242,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'mobileRemotePaymentType' => 'getMobileRemotePaymentType',
         'extendedCreditTotalCount' => 'getExtendedCreditTotalCount',
         'networkRoutingOrder' => 'getNetworkRoutingOrder',
-        'payByPointsIndicator' => 'getPayByPointsIndicator'
+        'payByPointsIndicator' => 'getPayByPointsIndicator',
+        'isReturnAuthRecordEnabled' => 'getIsReturnAuthRecordEnabled'
     ];
 
     public static function attributeMap()
@@ -268,10 +283,12 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['processorId'] = isset($data['processorId']) ? $data['processorId'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
         $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
+        $this->container['commerceIndicatorLabel'] = isset($data['commerceIndicatorLabel']) ? $data['commerceIndicatorLabel'] : null;
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['linkId'] = isset($data['linkId']) ? $data['linkId'] : null;
         $this->container['purchaseLevel'] = isset($data['purchaseLevel']) ? $data['purchaseLevel'] : null;
+        $this->container['paymentId'] = isset($data['paymentId']) ? $data['paymentId'] : null;
         $this->container['reportGroup'] = isset($data['reportGroup']) ? $data['reportGroup'] : null;
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
         $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
@@ -289,6 +306,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['extendedCreditTotalCount'] = isset($data['extendedCreditTotalCount']) ? $data['extendedCreditTotalCount'] : null;
         $this->container['networkRoutingOrder'] = isset($data['networkRoutingOrder']) ? $data['networkRoutingOrder'] : null;
         $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
+        $this->container['isReturnAuthRecordEnabled'] = isset($data['isReturnAuthRecordEnabled']) ? $data['isReturnAuthRecordEnabled'] : null;
     }
 
     /**
@@ -445,6 +463,28 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     }
 
     /**
+     * Gets commerceIndicatorLabel
+     * @return string
+     */
+    public function getCommerceIndicatorLabel()
+    {
+        return $this->container['commerceIndicatorLabel'];
+    }
+
+    /**
+     * Sets commerceIndicatorLabel
+     * @param string $commerceIndicatorLabel Type of transaction. Some payment card companies use this information when determining discount rates.  #### Used by **Authorization** Required payer authentication transactions; otherwise, optional. **Credit** Required for standalone credits on Chase Paymentech solutions; otherwise, optional.  The list of valid values in this field depends on your processor. See Appendix I, \"Commerce Indicators,\" on page 441 of the Cybersource Credit Card Guide.  #### Ingenico ePayments When you omit this field for Ingenico ePayments, the processor uses the default transaction type they have on file for you instead of the default value (listed in Appendix I, \"Commerce Indicators,\" on page 441.)  #### Payer Authentication Transactions For the possible values and requirements, see \"Payer Authentication,\" page 195.  #### Card Present You must set this field to `retail`. This field is required for a card-present transaction. Note that this should ONLY be used when the cardholder and card are present at the time of the transaction. For all keyed transactions originated from a POS terminal where the cardholder and card are not present, commerceIndicator should be submitted as “moto\"
+     * @return $this
+     */
+    public function setCommerceIndicatorLabel($commerceIndicatorLabel)
+    {
+
+        $this->container['commerceIndicatorLabel'] = $commerceIndicatorLabel;
+
+        return $this;
+    }
+
+    /**
      * Gets paymentSolution
      * @return string
      */
@@ -528,6 +568,28 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     {
 
         $this->container['purchaseLevel'] = $purchaseLevel;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentId
+     * @return string
+     */
+    public function getPaymentId()
+    {
+        return $this->container['paymentId'];
+    }
+
+    /**
+     * Sets paymentId
+     * @param string $paymentId This field is to accept the id of credit/capture in the body of L1 requests so the type of void can be identified and processed correctly downstream.
+     * @return $this
+     */
+    public function setPaymentId($paymentId)
+    {
+
+        $this->container['paymentId'] = $paymentId;
 
         return $this;
     }
@@ -893,6 +955,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setPayByPointsIndicator($payByPointsIndicator)
     {
         $this->container['payByPointsIndicator'] = $payByPointsIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets isReturnAuthRecordEnabled
+     * @return bool
+     */
+    public function getIsReturnAuthRecordEnabled()
+    {
+        return $this->container['isReturnAuthRecordEnabled'];
+    }
+
+    /**
+     * Sets isReturnAuthRecordEnabled
+     * @param bool $isReturnAuthRecordEnabled Flag that indicates the functionality we are having for merchants for which auth is done through Cybersource but settlement is done by themselves. true: functionality is supported. Processor should send raw processor auth response to Merchant. false: functionality is not supported. Default: false
+     * @return $this
+     */
+    public function setIsReturnAuthRecordEnabled($isReturnAuthRecordEnabled)
+    {
+        $this->container['isReturnAuthRecordEnabled'] = $isReturnAuthRecordEnabled;
 
         return $this;
     }

@@ -111,4 +111,11 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCardTest extends \PHP
     public function testPropertyPrefix()
     {
     }
+
+    /**
+     * Test attribute "hashedNumber"
+     */
+    public function testPropertyHashedNumber()
+    {
+    }
 }

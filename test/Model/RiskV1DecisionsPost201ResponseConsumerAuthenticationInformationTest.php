@@ -120,9 +120,30 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformationTest extend
     }
 
     /**
+     * Test attribute "authenticationType"
+     */
+    public function testPropertyAuthenticationType()
+    {
+    }
+
+    /**
      * Test attribute "authenticationTransactionId"
      */
     public function testPropertyAuthenticationTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "authenticationTransactionContextId"
+     */
+    public function testPropertyAuthenticationTransactionContextId()
+    {
+    }
+
+    /**
+     * Test attribute "validityPeriod"
+     */
+    public function testPropertyValidityPeriod()
     {
     }
 

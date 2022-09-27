@@ -9,21 +9,21 @@ The CyberSource PHP client provides convenient access to the [CyberSource REST A
 * Enable cURL PHP Extension
 * Enable JSON PHP Extension
 * Enable MBString PHP Extension
-* Enable PHP_APCU PHP Extension. You will need to download it for your platform (Windows/Linux/Mac) 
+* Enable PHP_APCU PHP Extension. You will need to download it for your platform (Windows/Linux/Mac)
 * [CyberSource Account](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
 * [CyberSource API Keys](https://prod.developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration/createCertSharedKey.html)
- 
+
  ## Dependencies
 * PHP-JWT                          : JWT token Generation
 * CURL                             : Http communication with the payment gateway
-* PHP_APCU                         : Caching 
+* PHP_APCU                         : Caching
 * phpunit-5.7.25                   : unit testing
 * phpunit-5.7.25 code coverage     : Sonar coverage
 
 ## Installation
 ### Composer
 We recommend using [`Composer`](http://getcomposer.org). *(Note: we never recommend you
-override the new secure-http default setting)*. 
+override the new secure-http default setting)*.
 *Update your composer.json file as per the example below and then run
 `composer update`.*
 
@@ -31,7 +31,7 @@ override the new secure-http default setting)*.
 {
   "require": {
   "php": ">=5.6",
-  "cybersource/rest-client-php": "0.0.31"
+  "cybersource/rest-client-php": "0.0.35"
   }
 }
 ```
@@ -39,9 +39,9 @@ override the new secure-http default setting)*.
 ## Registration & Configuration
 Use of this SDK and the CyberSource APIs requires having an account on our system. You can find details of getting a test account and creating your keys [here](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
 
-Once you have your keys, simply load them into the appropriate variables in your code, as per the below sample code dealing with the authentication part of the API request. 
+Once you have your keys, simply load them into the appropriate variables in your code, as per the below sample code dealing with the authentication part of the API request.
 
-Remember this SDK is for use in server-side PHP applications that access the CyberSource REST API and credentials should always be securely stored and accessed appropriately. 
+Remember this SDK is for use in server-side PHP applications that access the CyberSource REST API and credentials should always be securely stored and accessed appropriately.
 
 ## SDK Usage Examples and Sample Code
 To get started using this SDK, it's highly recommended to download our sample code repository:
@@ -67,11 +67,11 @@ Further information on MetaKey can be found in [New Business Center User Guide](
 ## To set your API credentials for an API request, configure the following information in ExternalConfiguration.php file:
 
   Create a file in your application `ExternalConfiguration.php` inside a `Resources` folder and configure the following information as per requirement similar to [**this one**](https://github.com/CyberSource/cybersource-rest-samples-php/blob/master/Resources/ExternalConfiguration.php).
-  
-  #### For Http Signature Authentication 
-  
+
+  #### For Http Signature Authentication
+
   Configure the following information in `ExternalConfiguration.php` file
-  
+
 *   Authentication Type:      Merchant should enter "HTTP_SIGNATURE" for HTTP authentication mechanism.
 *   Merchant ID:              Merchant will provide the merchant ID, which has taken from EBC portal.
 *   MerchantSecretKey:        Merchant will provide the secret Key value, which has taken from EBC portal.
@@ -102,9 +102,9 @@ Further information on MetaKey can be found in [New Business Center User Guide](
   #### For Jwt Signature Authentication
 
   Configure the following information in the `ExternalConfiguration.php` file
-  
+
 *   Authentication Type:      Merchant should enter "JWT" for JWT authentication mechanism.
-*   Merchant ID:              Merchant will provide the merchant ID, which has taken from EBC portal.
+*   Merchant ID:              Merchant will provide the merchant ID, which was taken from EBC portal.
 *   keyAlias:                 Alias of the Merchant ID, to be used while generating the JWT token.
 *   keyPassword:              Alias of the Merchant password, to be used while generating the JWT token.
 *   keyFileName:              Filename of the key generated from the EBC portal, without the extension part .P12

@@ -69,7 +69,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataNumber' => 'string',
         'salesSlipNumber' => 'int',
         'invoiceDate' => 'string',
-        'costCenter' => 'string'
+        'costCenter' => 'string',
+        'issuerMessage' => 'string'
     ];
 
     /**
@@ -92,7 +93,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataNumber' => null,
         'salesSlipNumber' => null,
         'invoiceDate' => null,
-        'costCenter' => null
+        'costCenter' => null,
+        'issuerMessage' => null
     ];
 
     public static function swaggerTypes()
@@ -125,7 +127,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataNumber' => 'referenceDataNumber',
         'salesSlipNumber' => 'salesSlipNumber',
         'invoiceDate' => 'invoiceDate',
-        'costCenter' => 'costCenter'
+        'costCenter' => 'costCenter',
+        'issuerMessage' => 'issuerMessage'
     ];
 
 
@@ -149,7 +152,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataNumber' => 'setReferenceDataNumber',
         'salesSlipNumber' => 'setSalesSlipNumber',
         'invoiceDate' => 'setInvoiceDate',
-        'costCenter' => 'setCostCenter'
+        'costCenter' => 'setCostCenter',
+        'issuerMessage' => 'setIssuerMessage'
     ];
 
 
@@ -173,7 +177,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'referenceDataNumber' => 'getReferenceDataNumber',
         'salesSlipNumber' => 'getSalesSlipNumber',
         'invoiceDate' => 'getInvoiceDate',
-        'costCenter' => 'getCostCenter'
+        'costCenter' => 'getCostCenter',
+        'issuerMessage' => 'getIssuerMessage'
     ];
 
     public static function attributeMap()
@@ -223,6 +228,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
         $this->container['invoiceDate'] = isset($data['invoiceDate']) ? $data['invoiceDate'] : null;
         $this->container['costCenter'] = isset($data['costCenter']) ? $data['costCenter'] : null;
+        $this->container['issuerMessage'] = isset($data['issuerMessage']) ? $data['issuerMessage'] : null;
     }
 
     /**
@@ -602,6 +608,28 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
     {
 
         $this->container['costCenter'] = $costCenter;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerMessage
+     * @return string
+     */
+    public function getIssuerMessage()
+    {
+        return $this->container['issuerMessage'];
+    }
+
+    /**
+     * Sets issuerMessage
+     * @param string $issuerMessage Text message from the issuer. If you give the customer a receipt, display this value on the receipt.
+     * @return $this
+     */
+    public function setIssuerMessage($issuerMessage)
+    {
+
+        $this->container['issuerMessage'] = $issuerMessage;
 
         return $this;
     }

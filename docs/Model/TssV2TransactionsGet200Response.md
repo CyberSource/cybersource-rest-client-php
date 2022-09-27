@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **merchantInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseMerchantInformation**](TssV2TransactionsGet200ResponseMerchantInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformation**](TssV2TransactionsGet200ResponseOrderInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformation**](TssV2TransactionsGet200ResponsePaymentInformation.md) |  | [optional] 
+**paymentInsightsInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation**](PtsV2PaymentsPost201ResponsePaymentInsightsInformation.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformation**](TssV2TransactionsGet200ResponseProcessingInformation.md) |  | [optional] 
 **processorInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformation**](TssV2TransactionsGet200ResponseProcessorInformation.md) |  | [optional] 
 **pointOfSaleInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponsePointOfSaleInformation**](TssV2TransactionsGet200ResponsePointOfSaleInformation.md) |  | [optional] 

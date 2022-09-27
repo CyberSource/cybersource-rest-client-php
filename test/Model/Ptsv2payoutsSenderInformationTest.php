@@ -181,4 +181,25 @@ class Ptsv2payoutsSenderInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyVatRegistrationNumber()
     {
     }
+
+    /**
+     * Test attribute "personalIdType"
+     */
+    public function testPropertyPersonalIdType()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "identificationNumber"
+     */
+    public function testPropertyIdentificationNumber()
+    {
+    }
 }

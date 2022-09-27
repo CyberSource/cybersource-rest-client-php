@@ -174,6 +174,9 @@ class ReportDownloadsApi
         if ($reportName !== null) {
             $queryParams['reportName'] = $this->apiClient->getSerializer()->toQueryValue($reportName);
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {

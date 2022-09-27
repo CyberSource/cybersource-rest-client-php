@@ -58,7 +58,8 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
         'expirationMonth' => 'string',
         'expirationYear' => 'string',
         'type' => 'string',
-        'prefix' => 'string'
+        'prefix' => 'string',
+        'hashedNumber' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
         'expirationMonth' => null,
         'expirationYear' => null,
         'type' => null,
-        'prefix' => null
+        'prefix' => null,
+        'hashedNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
         'expirationMonth' => 'expirationMonth',
         'expirationYear' => 'expirationYear',
         'type' => 'type',
-        'prefix' => 'prefix'
+        'prefix' => 'prefix',
+        'hashedNumber' => 'hashedNumber'
     ];
 
 
@@ -105,7 +108,8 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
         'expirationMonth' => 'setExpirationMonth',
         'expirationYear' => 'setExpirationYear',
         'type' => 'setType',
-        'prefix' => 'setPrefix'
+        'prefix' => 'setPrefix',
+        'hashedNumber' => 'setHashedNumber'
     ];
 
 
@@ -118,7 +122,8 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
         'expirationMonth' => 'getExpirationMonth',
         'expirationYear' => 'getExpirationYear',
         'type' => 'getType',
-        'prefix' => 'getPrefix'
+        'prefix' => 'getPrefix',
+        'hashedNumber' => 'getHashedNumber'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
         $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['prefix'] = isset($data['prefix']) ? $data['prefix'] : null;
+        $this->container['hashedNumber'] = isset($data['hashedNumber']) ? $data['hashedNumber'] : null;
     }
 
     /**
@@ -288,6 +294,28 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
     {
 
         $this->container['prefix'] = $prefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets hashedNumber
+     * @return string
+     */
+    public function getHashedNumber()
+    {
+        return $this->container['hashedNumber'];
+    }
+
+    /**
+     * Sets hashedNumber
+     * @param string $hashedNumber #### Visa Platform Connect This API field will contain the SHA 256 hashed value of PAN.
+     * @return $this
+     */
+    public function setHashedNumber($hashedNumber)
+    {
+
+        $this->container['hashedNumber'] = $hashedNumber;
 
         return $this;
     }

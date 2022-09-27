@@ -58,7 +58,8 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         'cardholderVerificationMethodUsed' => 'int',
         'cardSequenceNumber' => 'string',
         'fallback' => 'bool',
-        'fallbackCondition' => 'int'
+        'fallbackCondition' => 'int',
+        'isRepeat' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         'cardholderVerificationMethodUsed' => null,
         'cardSequenceNumber' => null,
         'fallback' => null,
-        'fallbackCondition' => null
+        'fallbackCondition' => null,
+        'isRepeat' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         'cardholderVerificationMethodUsed' => 'cardholderVerificationMethodUsed',
         'cardSequenceNumber' => 'cardSequenceNumber',
         'fallback' => 'fallback',
-        'fallbackCondition' => 'fallbackCondition'
+        'fallbackCondition' => 'fallbackCondition',
+        'isRepeat' => 'isRepeat'
     ];
 
 
@@ -105,7 +108,8 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         'cardholderVerificationMethodUsed' => 'setCardholderVerificationMethodUsed',
         'cardSequenceNumber' => 'setCardSequenceNumber',
         'fallback' => 'setFallback',
-        'fallbackCondition' => 'setFallbackCondition'
+        'fallbackCondition' => 'setFallbackCondition',
+        'isRepeat' => 'setIsRepeat'
     ];
 
 
@@ -118,7 +122,8 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         'cardholderVerificationMethodUsed' => 'getCardholderVerificationMethodUsed',
         'cardSequenceNumber' => 'getCardSequenceNumber',
         'fallback' => 'getFallback',
-        'fallbackCondition' => 'getFallbackCondition'
+        'fallbackCondition' => 'getFallbackCondition',
+        'isRepeat' => 'getIsRepeat'
     ];
 
     public static function attributeMap()
@@ -155,8 +160,9 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['cardholderVerificationMethodUsed'] = isset($data['cardholderVerificationMethodUsed']) ? $data['cardholderVerificationMethodUsed'] : null;
         $this->container['cardSequenceNumber'] = isset($data['cardSequenceNumber']) ? $data['cardSequenceNumber'] : null;
-        $this->container['fallback'] = isset($data['fallback']) ? $data['fallback'] : false;
+        $this->container['fallback'] = isset($data['fallback']) ? $data['fallback'] : null;
         $this->container['fallbackCondition'] = isset($data['fallbackCondition']) ? $data['fallbackCondition'] : null;
+        $this->container['isRepeat'] = isset($data['isRepeat']) ? $data['isRepeat'] : null;
     }
 
     /**
@@ -281,12 +287,33 @@ class Ptsv2paymentsPointOfSaleInformationEmv implements ArrayAccess
 
     /**
      * Sets fallbackCondition
-     * @param int $fallbackCondition Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - `1`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal either used information from a successful chip read or it was not a chip transaction.  - `2`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the       EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**.  **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field  when the EMV terminal does not have any applications in common with the EMV card.
+     * @param int $fallbackCondition Reason for the EMV fallback transaction. An EMV fallback transaction occurs when an EMV transaction fails for one of these reasons:   - Technical failure: the EMV terminal or EMV card cannot read and process chip data.  - Empty candidate list failure: the EMV terminal does not have any applications in common with the EMV card.    EMV terminals are coded to determine whether the terminal and EMV card have any applications in common.    EMV terminals provide this information to you.  Possible values:   - `1`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal either used information from a successful chip read or it was not a chip transaction.  - `2`: Transaction was initiated with information from a magnetic stripe, and the previous transaction at the     EMV terminal was an EMV fallback transaction because the attempted chip read was unsuccessful.  This field is supported only on **GPN** and **JCN Gateway**. **NOTE**: This field is required when an EMV transaction fails for a technical reason. Do not include this field when the EMV terminal does not have any applications in common with the EMV card.
      * @return $this
      */
     public function setFallbackCondition($fallbackCondition)
     {
         $this->container['fallbackCondition'] = $fallbackCondition;
+
+        return $this;
+    }
+
+    /**
+     * Gets isRepeat
+     * @return bool
+     */
+    public function getIsRepeat()
+    {
+        return $this->container['isRepeat'];
+    }
+
+    /**
+     * Sets isRepeat
+     * @param bool $isRepeat #### Visa Platform Connect Value “true” indicates this transaction is intentionally duplicated . The field contains value “true” which indicates that merchant has intentionally duplicated single tap transaction. Merchant is intentionally sending a duplicate auth request for a single tap txn because the issuer requested a PIN.
+     * @return $this
+     */
+    public function setIsRepeat($isRepeat)
+    {
+        $this->container['isRepeat'] = $isRepeat;
 
         return $this;
     }

@@ -118,4 +118,11 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationTest extends \PHPUni
     public function testPropertyAchVerification()
     {
     }
+
+    /**
+     * Test attribute "networkTransactionId"
+     */
+    public function testPropertyNetworkTransactionId()
+    {
+    }
 }

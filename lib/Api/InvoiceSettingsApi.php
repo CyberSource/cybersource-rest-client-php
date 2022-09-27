@@ -133,6 +133,9 @@ class InvoiceSettingsApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {

@@ -75,7 +75,7 @@ class AsymmetricKeyManagementApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for createP12Keys
      *
-     * Create one or more PKCS#12 keys.
+     * Create one or more PKCS12 keys.
      *
      */
     public function testCreateP12Keys()
@@ -85,7 +85,7 @@ class AsymmetricKeyManagementApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for deleteBulkP12Keys
      *
-     * Delete one or more PKCS#12 keys.
+     * Delete one or more PKCS12 keys.
      *
      */
     public function testDeleteBulkP12Keys()
@@ -95,7 +95,7 @@ class AsymmetricKeyManagementApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getP12KeyDetails
      *
-     * Retrieves PKCS#12 key details.
+     * Retrieves PKCS12 key details.
      *
      */
     public function testGetP12KeyDetails()

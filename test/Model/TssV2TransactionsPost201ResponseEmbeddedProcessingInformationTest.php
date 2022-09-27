@@ -97,4 +97,11 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformationTest extends 
     public function testPropertyCommerceIndicator()
     {
     }
+
+    /**
+     * Test attribute "commerceIndicatorLabel"
+     */
+    public function testPropertyCommerceIndicatorLabel()
+    {
+    }
 }

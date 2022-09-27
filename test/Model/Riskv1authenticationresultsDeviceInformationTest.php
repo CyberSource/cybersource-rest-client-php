@@ -1,6 +1,6 @@
 <?php
 /**
- * TssV2TransactionsPost201ResponseEmbeddedDeviceInformationTest
+ * Riskv1authenticationresultsDeviceInformationTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedDeviceInformationTest Class Doc Comment
+ * Riskv1authenticationresultsDeviceInformationTest Class Doc Comment
  *
  * @category    Class */
-// * @description TssV2TransactionsPost201ResponseEmbeddedDeviceInformation
+// * @description Riskv1authenticationresultsDeviceInformation
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TssV2TransactionsPost201ResponseEmbeddedDeviceInformationTest extends \PHPUnit_Framework_TestCase
+class Riskv1authenticationresultsDeviceInformationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class TssV2TransactionsPost201ResponseEmbeddedDeviceInformationTest extends \PHP
     }
 
     /**
-     * Test "TssV2TransactionsPost201ResponseEmbeddedDeviceInformation"
+     * Test "Riskv1authenticationresultsDeviceInformation"
      */
-    public function testTssV2TransactionsPost201ResponseEmbeddedDeviceInformation()
+    public function testRiskv1authenticationresultsDeviceInformation()
     {
     }
 

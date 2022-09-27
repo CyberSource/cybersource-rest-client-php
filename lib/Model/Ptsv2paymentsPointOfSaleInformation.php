@@ -56,6 +56,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'terminalId' => 'string',
         'terminalSerialNumber' => 'string',
+        'cardholderVerificationMethodUsed' => 'int',
         'laneNumber' => 'string',
         'catLevel' => 'int',
         'entryMode' => 'string',
@@ -79,7 +80,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'string',
         'isDedicatedHardwareTerminal' => 'string',
         'terminalModel' => 'string',
-        'terminalMake' => 'string'
+        'terminalMake' => 'string',
+        'serviceCode' => 'string'
     ];
 
     /**
@@ -89,6 +91,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'terminalId' => null,
         'terminalSerialNumber' => null,
+        'cardholderVerificationMethodUsed' => null,
         'laneNumber' => null,
         'catLevel' => null,
         'entryMode' => null,
@@ -112,7 +115,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => null,
         'isDedicatedHardwareTerminal' => null,
         'terminalModel' => null,
-        'terminalMake' => null
+        'terminalMake' => null,
+        'serviceCode' => null
     ];
 
     public static function swaggerTypes()
@@ -132,6 +136,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $attributeMap = [
         'terminalId' => 'terminalId',
         'terminalSerialNumber' => 'terminalSerialNumber',
+        'cardholderVerificationMethodUsed' => 'cardholderVerificationMethodUsed',
         'laneNumber' => 'laneNumber',
         'catLevel' => 'catLevel',
         'entryMode' => 'entryMode',
@@ -155,7 +160,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'terminalCompliance',
         'isDedicatedHardwareTerminal' => 'isDedicatedHardwareTerminal',
         'terminalModel' => 'terminalModel',
-        'terminalMake' => 'terminalMake'
+        'terminalMake' => 'terminalMake',
+        'serviceCode' => 'serviceCode'
     ];
 
 
@@ -166,6 +172,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $setters = [
         'terminalId' => 'setTerminalId',
         'terminalSerialNumber' => 'setTerminalSerialNumber',
+        'cardholderVerificationMethodUsed' => 'setCardholderVerificationMethodUsed',
         'laneNumber' => 'setLaneNumber',
         'catLevel' => 'setCatLevel',
         'entryMode' => 'setEntryMode',
@@ -189,7 +196,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'setTerminalCompliance',
         'isDedicatedHardwareTerminal' => 'setIsDedicatedHardwareTerminal',
         'terminalModel' => 'setTerminalModel',
-        'terminalMake' => 'setTerminalMake'
+        'terminalMake' => 'setTerminalMake',
+        'serviceCode' => 'setServiceCode'
     ];
 
 
@@ -200,6 +208,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     protected static $getters = [
         'terminalId' => 'getTerminalId',
         'terminalSerialNumber' => 'getTerminalSerialNumber',
+        'cardholderVerificationMethodUsed' => 'getCardholderVerificationMethodUsed',
         'laneNumber' => 'getLaneNumber',
         'catLevel' => 'getCatLevel',
         'entryMode' => 'getEntryMode',
@@ -223,7 +232,8 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCompliance' => 'getTerminalCompliance',
         'isDedicatedHardwareTerminal' => 'getIsDedicatedHardwareTerminal',
         'terminalModel' => 'getTerminalModel',
-        'terminalMake' => 'getTerminalMake'
+        'terminalMake' => 'getTerminalMake',
+        'serviceCode' => 'getServiceCode'
     ];
 
     public static function attributeMap()
@@ -259,6 +269,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['terminalSerialNumber'] = isset($data['terminalSerialNumber']) ? $data['terminalSerialNumber'] : null;
+        $this->container['cardholderVerificationMethodUsed'] = isset($data['cardholderVerificationMethodUsed']) ? $data['cardholderVerificationMethodUsed'] : null;
         $this->container['laneNumber'] = isset($data['laneNumber']) ? $data['laneNumber'] : null;
         $this->container['catLevel'] = isset($data['catLevel']) ? $data['catLevel'] : null;
         $this->container['entryMode'] = isset($data['entryMode']) ? $data['entryMode'] : null;
@@ -283,6 +294,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['isDedicatedHardwareTerminal'] = isset($data['isDedicatedHardwareTerminal']) ? $data['isDedicatedHardwareTerminal'] : null;
         $this->container['terminalModel'] = isset($data['terminalModel']) ? $data['terminalModel'] : null;
         $this->container['terminalMake'] = isset($data['terminalMake']) ? $data['terminalMake'] : null;
+        $this->container['serviceCode'] = isset($data['serviceCode']) ? $data['serviceCode'] : null;
     }
 
     /**
@@ -385,6 +397,27 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
 
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardholderVerificationMethodUsed
+     * @return int
+     */
+    public function getCardholderVerificationMethodUsed()
+    {
+        return $this->container['cardholderVerificationMethodUsed'];
+    }
+
+    /**
+     * Sets cardholderVerificationMethodUsed
+     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM
+     * @return $this
+     */
+    public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)
+    {
+        $this->container['cardholderVerificationMethodUsed'] = $cardholderVerificationMethodUsed;
 
         return $this;
     }
@@ -923,6 +956,28 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
 
         $this->container['terminalMake'] = $terminalMake;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceCode
+     * @return string
+     */
+    public function getServiceCode()
+    {
+        return $this->container['serviceCode'];
+    }
+
+    /**
+     * Sets serviceCode
+     * @param string $serviceCode #### Visa Platform Connect Mastercard service code that is included in the track data. You can extract the service code from the track data and provide it in this API field. This field is supported only for Mastercard on Visa Platform Connect.
+     * @return $this
+     */
+    public function setServiceCode($serviceCode)
+    {
+
+        $this->container['serviceCode'] = $serviceCode;
 
         return $this;
     }

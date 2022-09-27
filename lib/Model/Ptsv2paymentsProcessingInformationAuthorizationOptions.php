@@ -55,6 +55,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
       */
     protected static $swaggerTypes = [
         'authType' => 'string',
+        'panReturnIndicator' => 'string',
         'verbalAuthCode' => 'string',
         'verbalAuthTransactionId' => 'string',
         'authIndicator' => 'string',
@@ -70,7 +71,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'string',
         'aggregatedAuthIndicator' => 'string',
         'debtRecoveryIndicator' => 'string',
-        'deferredAuthIndicator' => 'bool'
+        'deferredAuthIndicator' => 'bool',
+        'cashAdvanceIndicator' => 'bool'
     ];
 
     /**
@@ -79,6 +81,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
       */
     protected static $swaggerFormats = [
         'authType' => null,
+        'panReturnIndicator' => null,
         'verbalAuthCode' => null,
         'verbalAuthTransactionId' => null,
         'authIndicator' => null,
@@ -94,7 +97,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => null,
         'aggregatedAuthIndicator' => null,
         'debtRecoveryIndicator' => null,
-        'deferredAuthIndicator' => null
+        'deferredAuthIndicator' => null,
+        'cashAdvanceIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -113,6 +117,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     protected static $attributeMap = [
         'authType' => 'authType',
+        'panReturnIndicator' => 'panReturnIndicator',
         'verbalAuthCode' => 'verbalAuthCode',
         'verbalAuthTransactionId' => 'verbalAuthTransactionId',
         'authIndicator' => 'authIndicator',
@@ -128,7 +133,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'transportationMode',
         'aggregatedAuthIndicator' => 'aggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'debtRecoveryIndicator',
-        'deferredAuthIndicator' => 'deferredAuthIndicator'
+        'deferredAuthIndicator' => 'deferredAuthIndicator',
+        'cashAdvanceIndicator' => 'cashAdvanceIndicator'
     ];
 
 
@@ -138,6 +144,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     protected static $setters = [
         'authType' => 'setAuthType',
+        'panReturnIndicator' => 'setPanReturnIndicator',
         'verbalAuthCode' => 'setVerbalAuthCode',
         'verbalAuthTransactionId' => 'setVerbalAuthTransactionId',
         'authIndicator' => 'setAuthIndicator',
@@ -153,7 +160,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'setTransportationMode',
         'aggregatedAuthIndicator' => 'setAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'setDebtRecoveryIndicator',
-        'deferredAuthIndicator' => 'setDeferredAuthIndicator'
+        'deferredAuthIndicator' => 'setDeferredAuthIndicator',
+        'cashAdvanceIndicator' => 'setCashAdvanceIndicator'
     ];
 
 
@@ -163,6 +171,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     protected static $getters = [
         'authType' => 'getAuthType',
+        'panReturnIndicator' => 'getPanReturnIndicator',
         'verbalAuthCode' => 'getVerbalAuthCode',
         'verbalAuthTransactionId' => 'getVerbalAuthTransactionId',
         'authIndicator' => 'getAuthIndicator',
@@ -178,7 +187,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'transportationMode' => 'getTransportationMode',
         'aggregatedAuthIndicator' => 'getAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'getDebtRecoveryIndicator',
-        'deferredAuthIndicator' => 'getDeferredAuthIndicator'
+        'deferredAuthIndicator' => 'getDeferredAuthIndicator',
+        'cashAdvanceIndicator' => 'getCashAdvanceIndicator'
     ];
 
     public static function attributeMap()
@@ -213,6 +223,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['authType'] = isset($data['authType']) ? $data['authType'] : null;
+        $this->container['panReturnIndicator'] = isset($data['panReturnIndicator']) ? $data['panReturnIndicator'] : null;
         $this->container['verbalAuthCode'] = isset($data['verbalAuthCode']) ? $data['verbalAuthCode'] : null;
         $this->container['verbalAuthTransactionId'] = isset($data['verbalAuthTransactionId']) ? $data['verbalAuthTransactionId'] : null;
         $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;
@@ -229,6 +240,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['aggregatedAuthIndicator'] = isset($data['aggregatedAuthIndicator']) ? $data['aggregatedAuthIndicator'] : null;
         $this->container['debtRecoveryIndicator'] = isset($data['debtRecoveryIndicator']) ? $data['debtRecoveryIndicator'] : null;
         $this->container['deferredAuthIndicator'] = isset($data['deferredAuthIndicator']) ? $data['deferredAuthIndicator'] : null;
+        $this->container['cashAdvanceIndicator'] = isset($data['cashAdvanceIndicator']) ? $data['cashAdvanceIndicator'] : null;
     }
 
     /**
@@ -274,6 +286,28 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     {
 
         $this->container['authType'] = $authType;
+
+        return $this;
+    }
+
+    /**
+     * Gets panReturnIndicator
+     * @return string
+     */
+    public function getPanReturnIndicator()
+    {
+        return $this->container['panReturnIndicator'];
+    }
+
+    /**
+     * Sets panReturnIndicator
+     * @param string $panReturnIndicator #### Visa Platform Connect The field contains the PAN translation indicator for American Express Contactless Transaction. Valid value is   1- Expresspay Translation, PAN request 2- Expresspay Translation, PAN and Expiry date request
+     * @return $this
+     */
+    public function setPanReturnIndicator($panReturnIndicator)
+    {
+
+        $this->container['panReturnIndicator'] = $panReturnIndicator;
 
         return $this;
     }
@@ -613,6 +647,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function setDeferredAuthIndicator($deferredAuthIndicator)
     {
         $this->container['deferredAuthIndicator'] = $deferredAuthIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets cashAdvanceIndicator
+     * @return bool
+     */
+    public function getCashAdvanceIndicator()
+    {
+        return $this->container['cashAdvanceIndicator'];
+    }
+
+    /**
+     * Sets cashAdvanceIndicator
+     * @param bool $cashAdvanceIndicator This API field enables the merchant to indicate that a given transaction is Cash Advance.  Cash advance or Cash disbursement functionality allows a merchant to dispense cash at a point of sale. It provides the ability of a POS system to act like an ATM. These terminals are typically seen in bank branches where customers can use their card and withdraw cash or at merchant locations where ATMs are sparse.  Possible values:   - `true` (Cash advance is supported)   - `false` (default: cash advance is not supported)
+     * @return $this
+     */
+    public function setCashAdvanceIndicator($cashAdvanceIndicator)
+    {
+        $this->container['cashAdvanceIndicator'] = $cashAdvanceIndicator;
 
         return $this;
     }

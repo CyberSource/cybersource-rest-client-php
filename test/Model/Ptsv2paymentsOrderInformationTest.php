@@ -127,6 +127,13 @@ class Ptsv2paymentsOrderInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "isCryptocurrencyPurchase"
+     */
+    public function testPropertyIsCryptocurrencyPurchase()
+    {
+    }
+
+    /**
      * Test attribute "preOrder"
      */
     public function testPropertyPreOrder()

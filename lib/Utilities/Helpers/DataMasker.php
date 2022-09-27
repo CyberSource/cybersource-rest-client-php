@@ -7,11 +7,11 @@ class DataMasker
     public static function maskData($postData_json_raw) {
         $maskingArray = array(
             array("securityCode", "[0-9]{3,4}", "xxxxx"),
-            array("number", "(\\p{N}+)(\\p{N}{4})", "xxxxx$2"),
-            array("cardNumber", "(\\p{N}+)(\\p{N}{4})", "xxxxx$2"),
+            array("number", ".*(.{3}[^\s\"])\s?", "xxxxx$1"),
+            array("cardNumber", ".*(.{3}[^\s\"])\s?", "xxxxx$1"),
             array("expirationMonth", "[0-1][0-9]", "xxxx"),
             array("expirationYear", "2[0-9][0-9][0-9]", "xxxx"),
-            array("account", "(\\p{N}+)(\\p{N}{4})", "xxxxx$2"),
+            array("account", "(\s*\p{N}\s*)+(\p{N}{4})(\s*)", "xxxxx$2"),
             array("routingNumber","[0-9]+", "xxxxx"),
             array("email", "[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", "xxxxx"),
             array("firstName", "([a-zA-Z]+( )?[a-zA-Z]*'?-?[a-zA-Z]*( )?([a-zA-Z]*)?)", "xxxxx"),
@@ -19,7 +19,9 @@ class DataMasker
             array("phoneNumber", "(\\+[0-9]{1,2} )?\\(?[0-9]{3}\\)?[ .-]?[0-9]{3}[ .-]?[0-9]{4}", "xxxxx"),
             array("type", "[-A-Za-z0-9 ]+", "xxxxx"),
             array("token", "[-.A-Za-z0-9 ]+", "xxxxx"),
-            array("signature", "[-.A-Za-z0-9 ]+", "xxxxx")
+            array("signature", "[-.A-Za-z0-9 ]+", "xxxxx"),
+            array("prefix", "(\s*)(\p{N}{4})(\s*)(\p{N}{2})(\s*\p{N}*\s*)", "$2$4xxxxx"),
+            array("bin", "(\s*)(\p{N}{4})(\s*)(\p{N}{2})(\s*\p{N}*\s*)", "$2$4xxxxx")
         );
 
         $postData_json = json_decode($postData_json_raw, true);
@@ -72,7 +74,6 @@ class DataMasker
             $tagName = $v[0];
             $pattern = "/$v[2]/";
             $replacement = $v[3];
-
             $input = preg_replace($pattern, $replacement, $input);
         }
 

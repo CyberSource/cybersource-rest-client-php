@@ -153,7 +153,7 @@ class SecureFileShareApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
 
         // query params
         if ($organizationId !== null) {
@@ -166,6 +166,9 @@ class SecureFileShareApi
                 $this->apiClient->getSerializer()->toPathValue($fileId),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -290,7 +293,7 @@ class SecureFileShareApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*']);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['*/*;charset=utf-8']);
 
         // query params
         if ($startDate !== null) {
@@ -307,6 +310,9 @@ class SecureFileShareApi
         // query params
         if ($name !== null) {
             $queryParams['name'] = $this->apiClient->getSerializer()->toQueryValue($name);
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

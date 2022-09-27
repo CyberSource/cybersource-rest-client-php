@@ -865,34 +865,6 @@ class MerchantConfiguration
     {
         $warning_message =""; $error_message ="";
         $config = new MerchantConfiguration();
-        
-        if(is_bool($connectionDet->enableLog)){
-            $config = $config->setDebug($connectionDet->enableLog);
-            
-        }
-        else if(empty($connectionDet->enableLog)){
-            $config = $config->setDebug(true);
-            $warning_message .= GlobalParameter::ENBLOGFIELD;
-        }
-        else{
-            $config = $config->setDebug(false);
-            $warning_message .= GlobalParameter::ENBLOGFIELD;
-        }
-
-        if(isset($connectionDet->logSize))
-            $config = $config->setLogSize($connectionDet->logSize);
-        else
-            $warning_message .= GlobalParameter::LOGSIZE;
-
-        if(isset($connectionDet->logDirectory))
-            $config = $config->setDebugFile($connectionDet->logDirectory);
-        else
-            $warning_message .= GlobalParameter::LOGDIR;
-
-        if(isset($connectionDet->logFilename))
-            $config = $config->setLogFileName($connectionDet->logFilename);
-        else
-            $warning_message .= GlobalParameter::LOGFILENAME;
 
         if(isset($connectionDet->authenticationType))
             $config = $config->setAuthenticationType(strtoupper(trim($connectionDet->authenticationType)));

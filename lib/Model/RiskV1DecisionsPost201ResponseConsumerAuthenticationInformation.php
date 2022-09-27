@@ -60,7 +60,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'acsUrl' => 'string',
         'authenticationPath' => 'string',
         'authorizationPayload' => 'string',
+        'authenticationType' => 'string',
         'authenticationTransactionId' => 'string',
+        'authenticationTransactionContextId' => 'string',
+        'validityPeriod' => 'int',
         'cardholderMessage' => 'string',
         'cavv' => 'string',
         'cavvAlgorithm' => 'string',
@@ -103,7 +106,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'acsUrl' => null,
         'authenticationPath' => null,
         'authorizationPayload' => null,
+        'authenticationType' => null,
         'authenticationTransactionId' => null,
+        'authenticationTransactionContextId' => null,
+        'validityPeriod' => null,
         'cardholderMessage' => null,
         'cavv' => null,
         'cavvAlgorithm' => null,
@@ -156,7 +162,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'acsUrl' => 'acsUrl',
         'authenticationPath' => 'authenticationPath',
         'authorizationPayload' => 'authorizationPayload',
+        'authenticationType' => 'authenticationType',
         'authenticationTransactionId' => 'authenticationTransactionId',
+        'authenticationTransactionContextId' => 'authenticationTransactionContextId',
+        'validityPeriod' => 'validityPeriod',
         'cardholderMessage' => 'cardholderMessage',
         'cavv' => 'cavv',
         'cavvAlgorithm' => 'cavvAlgorithm',
@@ -200,7 +209,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'acsUrl' => 'setAcsUrl',
         'authenticationPath' => 'setAuthenticationPath',
         'authorizationPayload' => 'setAuthorizationPayload',
+        'authenticationType' => 'setAuthenticationType',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
+        'authenticationTransactionContextId' => 'setAuthenticationTransactionContextId',
+        'validityPeriod' => 'setValidityPeriod',
         'cardholderMessage' => 'setCardholderMessage',
         'cavv' => 'setCavv',
         'cavvAlgorithm' => 'setCavvAlgorithm',
@@ -244,7 +256,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'acsUrl' => 'getAcsUrl',
         'authenticationPath' => 'getAuthenticationPath',
         'authorizationPayload' => 'getAuthorizationPayload',
+        'authenticationType' => 'getAuthenticationType',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
+        'authenticationTransactionContextId' => 'getAuthenticationTransactionContextId',
+        'validityPeriod' => 'getValidityPeriod',
         'cardholderMessage' => 'getCardholderMessage',
         'cavv' => 'getCavv',
         'cavvAlgorithm' => 'getCavvAlgorithm',
@@ -313,7 +328,10 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         $this->container['acsUrl'] = isset($data['acsUrl']) ? $data['acsUrl'] : null;
         $this->container['authenticationPath'] = isset($data['authenticationPath']) ? $data['authenticationPath'] : null;
         $this->container['authorizationPayload'] = isset($data['authorizationPayload']) ? $data['authorizationPayload'] : null;
+        $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
+        $this->container['authenticationTransactionContextId'] = isset($data['authenticationTransactionContextId']) ? $data['authenticationTransactionContextId'] : null;
+        $this->container['validityPeriod'] = isset($data['validityPeriod']) ? $data['validityPeriod'] : null;
         $this->container['cardholderMessage'] = isset($data['cardholderMessage']) ? $data['cardholderMessage'] : null;
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['cavvAlgorithm'] = isset($data['cavvAlgorithm']) ? $data['cavvAlgorithm'] : null;
@@ -499,6 +517,28 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
     }
 
     /**
+     * Gets authenticationType
+     * @return string
+     */
+    public function getAuthenticationType()
+    {
+        return $this->container['authenticationType'];
+    }
+
+    /**
+     * Sets authenticationType
+     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
+     * @return $this
+     */
+    public function setAuthenticationType($authenticationType)
+    {
+
+        $this->container['authenticationType'] = $authenticationType;
+
+        return $this;
+    }
+
+    /**
      * Gets authenticationTransactionId
      * @return string
      */
@@ -509,13 +549,56 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Sets authenticationTransactionId
-     * @param string $authenticationTransactionId Payer authentication transaction identifier passed to link the check enrollment and validate authentication messages.
+     * @param string $authenticationTransactionId Payer authentication transaction identifier is used to link the check enrollment and validate authentication messages. For Rupay, this field should be passed as request only for Resend OTP use case.
      * @return $this
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)
     {
 
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationTransactionContextId
+     * @return string
+     */
+    public function getAuthenticationTransactionContextId()
+    {
+        return $this->container['authenticationTransactionContextId'];
+    }
+
+    /**
+     * Sets authenticationTransactionContextId
+     * @param string $authenticationTransactionContextId Payer authentication transaction identifier passed to link the validation and authorization calls.
+     * @return $this
+     */
+    public function setAuthenticationTransactionContextId($authenticationTransactionContextId)
+    {
+
+        $this->container['authenticationTransactionContextId'] = $authenticationTransactionContextId;
+
+        return $this;
+    }
+
+    /**
+     * Gets validityPeriod
+     * @return int
+     */
+    public function getValidityPeriod()
+    {
+        return $this->container['validityPeriod'];
+    }
+
+    /**
+     * Sets validityPeriod
+     * @param int $validityPeriod Describes validity of OTP in minutes for incoming transaction.        .
+     * @return $this
+     */
+    public function setValidityPeriod($validityPeriod)
+    {
+        $this->container['validityPeriod'] = $validityPeriod;
 
         return $this;
     }

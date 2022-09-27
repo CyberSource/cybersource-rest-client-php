@@ -160,6 +160,9 @@ class TransactionBatchesApi
                 $resourcePath
             );
         }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -280,6 +283,9 @@ class TransactionBatchesApi
                 $this->apiClient->getSerializer()->toPathValue($id),
                 $resourcePath
             );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -410,6 +416,9 @@ class TransactionBatchesApi
         // query params
         if ($endTime !== null) {
             $queryParams['endTime'] = $this->apiClient->getSerializer()->toQueryValue($endTime);
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)

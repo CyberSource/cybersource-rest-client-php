@@ -58,6 +58,8 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         'type' => 'string',
         'expirationMonth' => 'string',
         'expirationYear' => 'string',
+        'cryptogram' => 'string',
+        'securityCode' => 'string',
         'number' => 'string'
     ];
 
@@ -70,6 +72,8 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         'type' => null,
         'expirationMonth' => null,
         'expirationYear' => null,
+        'cryptogram' => null,
+        'securityCode' => null,
         'number' => null
     ];
 
@@ -92,6 +96,8 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         'type' => 'type',
         'expirationMonth' => 'expirationMonth',
         'expirationYear' => 'expirationYear',
+        'cryptogram' => 'cryptogram',
+        'securityCode' => 'securityCode',
         'number' => 'number'
     ];
 
@@ -105,6 +111,8 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         'type' => 'setType',
         'expirationMonth' => 'setExpirationMonth',
         'expirationYear' => 'setExpirationYear',
+        'cryptogram' => 'setCryptogram',
+        'securityCode' => 'setSecurityCode',
         'number' => 'setNumber'
     ];
 
@@ -118,6 +126,8 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         'type' => 'getType',
         'expirationMonth' => 'getExpirationMonth',
         'expirationYear' => 'getExpirationYear',
+        'cryptogram' => 'getCryptogram',
+        'securityCode' => 'getSecurityCode',
         'number' => 'getNumber'
     ];
 
@@ -156,6 +166,8 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
         $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
+        $this->container['cryptogram'] = isset($data['cryptogram']) ? $data['cryptogram'] : null;
+        $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
     }
 
@@ -168,6 +180,9 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
     {
         $invalid_properties = [];
 
+        if ($this->container['transactionType'] === null) {
+            $invalid_properties[] = "'transactionType' can't be null";
+        }
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
@@ -176,6 +191,12 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
         }
         if ($this->container['expirationYear'] === null) {
             $invalid_properties[] = "'expirationYear' can't be null";
+        }
+        if ($this->container['cryptogram'] === null) {
+            $invalid_properties[] = "'cryptogram' can't be null";
+        }
+        if ($this->container['securityCode'] === null) {
+            $invalid_properties[] = "'securityCode' can't be null";
         }
         if ($this->container['number'] === null) {
             $invalid_properties[] = "'number' can't be null";
@@ -192,6 +213,9 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
     public function valid()
     {
 
+        if ($this->container['transactionType'] === null) {
+            return false;
+        }
         if ($this->container['type'] === null) {
             return false;
         }
@@ -199,6 +223,12 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
             return false;
         }
         if ($this->container['expirationYear'] === null) {
+            return false;
+        }
+        if ($this->container['cryptogram'] === null) {
+            return false;
+        }
+        if ($this->container['securityCode'] === null) {
             return false;
         }
         if ($this->container['number'] === null) {
@@ -219,7 +249,7 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
 
     /**
      * Sets transactionType
-     * @param string $transactionType Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used.
+     * @param string $transactionType Type of transaction that provided the token data. This value does not specify the token service provider; it specifies the entity that provided you with information about the token.  Possible value: - `2`: Near-field communication (NFC) transaction. The customer’s mobile device provided the token data for a contactless EMV transaction. For recurring transactions, use this value if the original transaction was a contactless EMV transaction.  #### Visa Platform Connect - `1`: For Rupay and In App tokenization. Example: InApp apple pay. - `3`: Card/Credential On File Tokenization.  **NOTE** No CyberSource through VisaNet acquirers support EMV at this time.  Required field for PIN debit credit or PIN debit purchase transactions that use payment network tokens; otherwise, not used.
      * @return $this
      */
     public function setTransactionType($transactionType)
@@ -291,6 +321,50 @@ class Riskv1authenticationsPaymentInformationTokenizedCard implements ArrayAcces
     {
 
         $this->container['expirationYear'] = $expirationYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets cryptogram
+     * @return string
+     */
+    public function getCryptogram()
+    {
+        return $this->container['cryptogram'];
+    }
+
+    /**
+     * Sets cryptogram
+     * @param string $cryptogram This field contains token information.
+     * @return $this
+     */
+    public function setCryptogram($cryptogram)
+    {
+
+        $this->container['cryptogram'] = $cryptogram;
+
+        return $this;
+    }
+
+    /**
+     * Gets securityCode
+     * @return string
+     */
+    public function getSecurityCode()
+    {
+        return $this->container['securityCode'];
+    }
+
+    /**
+     * Sets securityCode
+     * @param string $securityCode Card Verification Number (CVN).  #### Ingenico ePayments Do not include this field when **commerceIndicator=recurring**. **Note** Ingenico ePayments was previously called _Global Collect_.  For details, see `customer_cc_cv_number` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setSecurityCode($securityCode)
+    {
+
+        $this->container['securityCode'] = $securityCode;
 
         return $this;
     }

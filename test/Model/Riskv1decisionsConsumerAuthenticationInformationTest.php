@@ -134,6 +134,13 @@ class Riskv1decisionsConsumerAuthenticationInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "transactionFlowIndicator"
+     */
+    public function testPropertyTransactionFlowIndicator()
+    {
+    }
+
+    /**
      * Test attribute "challengeCancelCode"
      */
     public function testPropertyChallengeCancelCode()

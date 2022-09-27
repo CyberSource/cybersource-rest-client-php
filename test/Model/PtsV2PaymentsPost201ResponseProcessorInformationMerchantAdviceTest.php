@@ -90,4 +90,11 @@ class PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdviceTest extends
     public function testPropertyCodeRaw()
     {
     }
+
+    /**
+     * Test attribute "nameMatch"
+     */
+    public function testPropertyNameMatch()
+    {
+    }
 }

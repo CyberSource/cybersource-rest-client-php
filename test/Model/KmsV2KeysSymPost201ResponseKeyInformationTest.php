@@ -85,6 +85,13 @@ class KmsV2KeysSymPost201ResponseKeyInformationTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "externalOrganizationId"
+     */
+    public function testPropertyExternalOrganizationId()
+    {
+    }
+
+    /**
      * Test attribute "referenceNumber"
      */
     public function testPropertyReferenceNumber()

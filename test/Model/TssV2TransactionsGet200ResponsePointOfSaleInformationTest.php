@@ -99,6 +99,13 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformationTest extends \PHPUnit
     }
 
     /**
+     * Test attribute "cardholderVerificationMethodUsed"
+     */
+    public function testPropertyCardholderVerificationMethodUsed()
+    {
+    }
+
+    /**
      * Test attribute "emv"
      */
     public function testPropertyEmv()
