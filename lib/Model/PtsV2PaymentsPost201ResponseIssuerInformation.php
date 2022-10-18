@@ -57,8 +57,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'string',
         'discretionaryData' => 'string',
         'countrySpecificDiscretionaryData' => 'string',
-        'responseCode' => 'string',
-        'responseRaw' => 'string'
+        'responseCode' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => null,
         'discretionaryData' => null,
         'countrySpecificDiscretionaryData' => null,
-        'responseCode' => null,
-        'responseRaw' => null
+        'responseCode' => null
     ];
 
     public static function swaggerTypes()
@@ -91,8 +89,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'country',
         'discretionaryData' => 'discretionaryData',
         'countrySpecificDiscretionaryData' => 'countrySpecificDiscretionaryData',
-        'responseCode' => 'responseCode',
-        'responseRaw' => 'responseRaw'
+        'responseCode' => 'responseCode'
     ];
 
 
@@ -104,8 +101,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'setCountry',
         'discretionaryData' => 'setDiscretionaryData',
         'countrySpecificDiscretionaryData' => 'setCountrySpecificDiscretionaryData',
-        'responseCode' => 'setResponseCode',
-        'responseRaw' => 'setResponseRaw'
+        'responseCode' => 'setResponseCode'
     ];
 
 
@@ -117,8 +113,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'getCountry',
         'discretionaryData' => 'getDiscretionaryData',
         'countrySpecificDiscretionaryData' => 'getCountrySpecificDiscretionaryData',
-        'responseCode' => 'getResponseCode',
-        'responseRaw' => 'getResponseRaw'
+        'responseCode' => 'getResponseCode'
     ];
 
     public static function attributeMap()
@@ -156,7 +151,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         $this->container['discretionaryData'] = isset($data['discretionaryData']) ? $data['discretionaryData'] : null;
         $this->container['countrySpecificDiscretionaryData'] = isset($data['countrySpecificDiscretionaryData']) ? $data['countrySpecificDiscretionaryData'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
-        $this->container['responseRaw'] = isset($data['responseRaw']) ? $data['responseRaw'] : null;
     }
 
     /**
@@ -268,28 +262,6 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     {
 
         $this->container['responseCode'] = $responseCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets responseRaw
-     * @return string
-     */
-    public function getResponseRaw()
-    {
-        return $this->container['responseRaw'];
-    }
-
-    /**
-     * Sets responseRaw
-     * @param string $responseRaw issuerInformation.responseRaw is the raw processor auth response returned to merchant in CYBS auth response if auth request includes \"processingInformation.isReturnAuthRecordEnabled=true\".  If supported by the gateway code, it is available to merchants who auth through CYBS and run their own settlement processing.
-     * @return $this
-     */
-    public function setResponseRaw($responseRaw)
-    {
-
-        $this->container['responseRaw'] = $responseRaw;
 
         return $this;
     }

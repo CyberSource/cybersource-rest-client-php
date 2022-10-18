@@ -90,4 +90,25 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
     public function testPropertyTrustedMerchantExemptionResult()
     {
     }
+
+    /**
+     * Test attribute "lowValueExemptionResult"
+     */
+    public function testPropertyLowValueExemptionResult()
+    {
+    }
+
+    /**
+     * Test attribute "secureCorporatePaymentResult"
+     */
+    public function testPropertySecureCorporatePaymentResult()
+    {
+    }
+
+    /**
+     * Test attribute "transactionRiskAnalysisExemptionResult"
+     */
+    public function testPropertyTransactionRiskAnalysisExemptionResult()
+    {
+    }
 }

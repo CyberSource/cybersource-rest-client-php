@@ -153,4 +153,11 @@ class PtsV2PayoutsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyRecipientInformation()
     {
     }
+
+    /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
+    {
+    }
 }
