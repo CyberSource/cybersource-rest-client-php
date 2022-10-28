@@ -64,7 +64,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseMerchantInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseOrderInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseProcessorInformation',
-        'recipientInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseRecipientInformation'
+        'recipientInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseRecipientInformation',
+        'issuerInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseIssuerInformation'
     ];
 
     /**
@@ -82,7 +83,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'merchantInformation' => null,
         'orderInformation' => null,
         'processorInformation' => null,
-        'recipientInformation' => null
+        'recipientInformation' => null,
+        'issuerInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +112,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'merchantInformation' => 'merchantInformation',
         'orderInformation' => 'orderInformation',
         'processorInformation' => 'processorInformation',
-        'recipientInformation' => 'recipientInformation'
+        'recipientInformation' => 'recipientInformation',
+        'issuerInformation' => 'issuerInformation'
     ];
 
 
@@ -129,7 +132,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'merchantInformation' => 'setMerchantInformation',
         'orderInformation' => 'setOrderInformation',
         'processorInformation' => 'setProcessorInformation',
-        'recipientInformation' => 'setRecipientInformation'
+        'recipientInformation' => 'setRecipientInformation',
+        'issuerInformation' => 'setIssuerInformation'
     ];
 
 
@@ -148,7 +152,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'merchantInformation' => 'getMerchantInformation',
         'orderInformation' => 'getOrderInformation',
         'processorInformation' => 'getProcessorInformation',
-        'recipientInformation' => 'getRecipientInformation'
+        'recipientInformation' => 'getRecipientInformation',
+        'issuerInformation' => 'getIssuerInformation'
     ];
 
     public static function attributeMap()
@@ -193,6 +198,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
     }
 
     /**
@@ -449,6 +455,27 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
     public function setRecipientInformation($recipientInformation)
     {
         $this->container['recipientInformation'] = $recipientInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseIssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\PtsV2PayoutsPost201ResponseIssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
 
         return $this;
     }

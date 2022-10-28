@@ -55,7 +55,10 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
       */
     protected static $swaggerTypes = [
         'riskAnalysisExemptionResult' => 'string',
-        'trustedMerchantExemptionResult' => 'string'
+        'trustedMerchantExemptionResult' => 'string',
+        'lowValueExemptionResult' => 'string',
+        'secureCorporatePaymentResult' => 'string',
+        'transactionRiskAnalysisExemptionResult' => 'string'
     ];
 
     /**
@@ -64,7 +67,10 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
       */
     protected static $swaggerFormats = [
         'riskAnalysisExemptionResult' => null,
-        'trustedMerchantExemptionResult' => null
+        'trustedMerchantExemptionResult' => null,
+        'lowValueExemptionResult' => null,
+        'secureCorporatePaymentResult' => null,
+        'transactionRiskAnalysisExemptionResult' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +89,10 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     protected static $attributeMap = [
         'riskAnalysisExemptionResult' => 'riskAnalysisExemptionResult',
-        'trustedMerchantExemptionResult' => 'trustedMerchantExemptionResult'
+        'trustedMerchantExemptionResult' => 'trustedMerchantExemptionResult',
+        'lowValueExemptionResult' => 'lowValueExemptionResult',
+        'secureCorporatePaymentResult' => 'secureCorporatePaymentResult',
+        'transactionRiskAnalysisExemptionResult' => 'transactionRiskAnalysisExemptionResult'
     ];
 
 
@@ -93,7 +102,10 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     protected static $setters = [
         'riskAnalysisExemptionResult' => 'setRiskAnalysisExemptionResult',
-        'trustedMerchantExemptionResult' => 'setTrustedMerchantExemptionResult'
+        'trustedMerchantExemptionResult' => 'setTrustedMerchantExemptionResult',
+        'lowValueExemptionResult' => 'setLowValueExemptionResult',
+        'secureCorporatePaymentResult' => 'setSecureCorporatePaymentResult',
+        'transactionRiskAnalysisExemptionResult' => 'setTransactionRiskAnalysisExemptionResult'
     ];
 
 
@@ -103,7 +115,10 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     protected static $getters = [
         'riskAnalysisExemptionResult' => 'getRiskAnalysisExemptionResult',
-        'trustedMerchantExemptionResult' => 'getTrustedMerchantExemptionResult'
+        'trustedMerchantExemptionResult' => 'getTrustedMerchantExemptionResult',
+        'lowValueExemptionResult' => 'getLowValueExemptionResult',
+        'secureCorporatePaymentResult' => 'getSecureCorporatePaymentResult',
+        'transactionRiskAnalysisExemptionResult' => 'getTransactionRiskAnalysisExemptionResult'
     ];
 
     public static function attributeMap()
@@ -139,6 +154,9 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
     {
         $this->container['riskAnalysisExemptionResult'] = isset($data['riskAnalysisExemptionResult']) ? $data['riskAnalysisExemptionResult'] : null;
         $this->container['trustedMerchantExemptionResult'] = isset($data['trustedMerchantExemptionResult']) ? $data['trustedMerchantExemptionResult'] : null;
+        $this->container['lowValueExemptionResult'] = isset($data['lowValueExemptionResult']) ? $data['lowValueExemptionResult'] : null;
+        $this->container['secureCorporatePaymentResult'] = isset($data['secureCorporatePaymentResult']) ? $data['secureCorporatePaymentResult'] : null;
+        $this->container['transactionRiskAnalysisExemptionResult'] = isset($data['transactionRiskAnalysisExemptionResult']) ? $data['transactionRiskAnalysisExemptionResult'] : null;
     }
 
     /**
@@ -206,6 +224,72 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
     {
 
         $this->container['trustedMerchantExemptionResult'] = $trustedMerchantExemptionResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets lowValueExemptionResult
+     * @return string
+     */
+    public function getLowValueExemptionResult()
+    {
+        return $this->container['lowValueExemptionResult'];
+    }
+
+    /**
+     * Sets lowValueExemptionResult
+     * @param string $lowValueExemptionResult This will be the value returned by Visanet when low value exemption has been requested.  Valid values: Visa Platform Connect - `2` Low value exemption validated/honored - `3` Low value exemption failed validation/not honored
+     * @return $this
+     */
+    public function setLowValueExemptionResult($lowValueExemptionResult)
+    {
+
+        $this->container['lowValueExemptionResult'] = $lowValueExemptionResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets secureCorporatePaymentResult
+     * @return string
+     */
+    public function getSecureCorporatePaymentResult()
+    {
+        return $this->container['secureCorporatePaymentResult'];
+    }
+
+    /**
+     * Sets secureCorporatePaymentResult
+     * @param string $secureCorporatePaymentResult This will be the value returned by Visanet when secure corporate payment (scp) exemption has been requested.  Valid values: Visa Platform Connect - `2` Secure corporate payment exemption validated/honored - `3` Secure corporate payment exemption failed validation/not honored
+     * @return $this
+     */
+    public function setSecureCorporatePaymentResult($secureCorporatePaymentResult)
+    {
+
+        $this->container['secureCorporatePaymentResult'] = $secureCorporatePaymentResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionRiskAnalysisExemptionResult
+     * @return string
+     */
+    public function getTransactionRiskAnalysisExemptionResult()
+    {
+        return $this->container['transactionRiskAnalysisExemptionResult'];
+    }
+
+    /**
+     * Sets transactionRiskAnalysisExemptionResult
+     * @param string $transactionRiskAnalysisExemptionResult This will be the value returned by Visanet when transaction risk analysis (TRA) exemption has been requested.    Valid values: Visa Platform Connect   - `2` transaction risk analysis (TRA) exemption validated/honored   - `3` transaction risk analysis (TRA) exemption failed validation/not honored
+     * @return $this
+     */
+    public function setTransactionRiskAnalysisExemptionResult($transactionRiskAnalysisExemptionResult)
+    {
+
+        $this->container['transactionRiskAnalysisExemptionResult'] = $transactionRiskAnalysisExemptionResult;
 
         return $this;
     }

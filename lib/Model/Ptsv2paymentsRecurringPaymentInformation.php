@@ -59,7 +59,13 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
         'frequency' => 'int',
         'numberOfPayments' => 'int',
         'originalPurchaseDate' => 'string',
-        'sequenceNumber' => 'int'
+        'sequenceNumber' => 'int',
+        'type' => 'string',
+        'occurrence' => 'string',
+        'validationIndicator' => 'string',
+        'amountType' => 'string',
+        'maximumAmount' => 'string',
+        'referenceNumber' => 'string'
     ];
 
     /**
@@ -71,7 +77,13 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
         'frequency' => null,
         'numberOfPayments' => null,
         'originalPurchaseDate' => null,
-        'sequenceNumber' => null
+        'sequenceNumber' => null,
+        'type' => null,
+        'occurrence' => null,
+        'validationIndicator' => null,
+        'amountType' => null,
+        'maximumAmount' => null,
+        'referenceNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -93,7 +105,13 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
         'frequency' => 'frequency',
         'numberOfPayments' => 'numberOfPayments',
         'originalPurchaseDate' => 'originalPurchaseDate',
-        'sequenceNumber' => 'sequenceNumber'
+        'sequenceNumber' => 'sequenceNumber',
+        'type' => 'type',
+        'occurrence' => 'occurrence',
+        'validationIndicator' => 'validationIndicator',
+        'amountType' => 'amountType',
+        'maximumAmount' => 'maximumAmount',
+        'referenceNumber' => 'referenceNumber'
     ];
 
 
@@ -106,7 +124,13 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
         'frequency' => 'setFrequency',
         'numberOfPayments' => 'setNumberOfPayments',
         'originalPurchaseDate' => 'setOriginalPurchaseDate',
-        'sequenceNumber' => 'setSequenceNumber'
+        'sequenceNumber' => 'setSequenceNumber',
+        'type' => 'setType',
+        'occurrence' => 'setOccurrence',
+        'validationIndicator' => 'setValidationIndicator',
+        'amountType' => 'setAmountType',
+        'maximumAmount' => 'setMaximumAmount',
+        'referenceNumber' => 'setReferenceNumber'
     ];
 
 
@@ -119,7 +143,13 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
         'frequency' => 'getFrequency',
         'numberOfPayments' => 'getNumberOfPayments',
         'originalPurchaseDate' => 'getOriginalPurchaseDate',
-        'sequenceNumber' => 'getSequenceNumber'
+        'sequenceNumber' => 'getSequenceNumber',
+        'type' => 'getType',
+        'occurrence' => 'getOccurrence',
+        'validationIndicator' => 'getValidationIndicator',
+        'amountType' => 'getAmountType',
+        'maximumAmount' => 'getMaximumAmount',
+        'referenceNumber' => 'getReferenceNumber'
     ];
 
     public static function attributeMap()
@@ -158,6 +188,12 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
         $this->container['numberOfPayments'] = isset($data['numberOfPayments']) ? $data['numberOfPayments'] : null;
         $this->container['originalPurchaseDate'] = isset($data['originalPurchaseDate']) ? $data['originalPurchaseDate'] : null;
         $this->container['sequenceNumber'] = isset($data['sequenceNumber']) ? $data['sequenceNumber'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['occurrence'] = isset($data['occurrence']) ? $data['occurrence'] : null;
+        $this->container['validationIndicator'] = isset($data['validationIndicator']) ? $data['validationIndicator'] : null;
+        $this->container['amountType'] = isset($data['amountType']) ? $data['amountType'] : null;
+        $this->container['maximumAmount'] = isset($data['maximumAmount']) ? $data['maximumAmount'] : null;
+        $this->container['referenceNumber'] = isset($data['referenceNumber']) ? $data['referenceNumber'] : null;
     }
 
     /**
@@ -288,6 +324,138 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     public function setSequenceNumber($sequenceNumber)
     {
         $this->container['sequenceNumber'] = $sequenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type This contains the type of recurring payment. Valid Values : 1 - Registration/First transaction 2 - Subsequent transaction 3 - Modification 4 - Cancellation
+     * @return $this
+     */
+    public function setType($type)
+    {
+
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets occurrence
+     * @return string
+     */
+    public function getOccurrence()
+    {
+        return $this->container['occurrence'];
+    }
+
+    /**
+     * Sets occurrence
+     * @param string $occurrence This value indicates how often a recurring payment occurs. Valid Values : • 01 (Daily) • 02 (Twice weekly) • 03 (Weekly) • 04 (Ten days) • 05 (Fortnightly) • 06 (Monthly) • 07 (Every two months) • 08 (Trimester) • 09 (Quarterly) • 10 (Twice yearly) • 11 (Annually) • 12 (Unscheduled)
+     * @return $this
+     */
+    public function setOccurrence($occurrence)
+    {
+
+        $this->container['occurrence'] = $occurrence;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationIndicator
+     * @return string
+     */
+    public function getValidationIndicator()
+    {
+        return $this->container['validationIndicator'];
+    }
+
+    /**
+     * Sets validationIndicator
+     * @param string $validationIndicator This tag will contain a value that indicates whether or not the recurring payment transaction has been validated. Valid values : 0- Not validated 1- Validated
+     * @return $this
+     */
+    public function setValidationIndicator($validationIndicator)
+    {
+
+        $this->container['validationIndicator'] = $validationIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets amountType
+     * @return string
+     */
+    public function getAmountType()
+    {
+        return $this->container['amountType'];
+    }
+
+    /**
+     * Sets amountType
+     * @param string $amountType Indicates recurring amount type agreed by the cardholder Valid Values : 1- Fixed amount recurring payment 2- Recurring payment with maximum amount
+     * @return $this
+     */
+    public function setAmountType($amountType)
+    {
+
+        $this->container['amountType'] = $amountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets maximumAmount
+     * @return string
+     */
+    public function getMaximumAmount()
+    {
+        return $this->container['maximumAmount'];
+    }
+
+    /**
+     * Sets maximumAmount
+     * @param string $maximumAmount This API field will contain the maximum amount agreed to by the cardholder. The currency of this amount will be specified in Field 49—Currency Code,Transaction.
+     * @return $this
+     */
+    public function setMaximumAmount($maximumAmount)
+    {
+
+        $this->container['maximumAmount'] = $maximumAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceNumber
+     * @return string
+     */
+    public function getReferenceNumber()
+    {
+        return $this->container['referenceNumber'];
+    }
+
+    /**
+     * Sets referenceNumber
+     * @param string $referenceNumber This will contain a unique reference number for the recurring payment transaction.
+     * @return $this
+     */
+    public function setReferenceNumber($referenceNumber)
+    {
+
+        $this->container['referenceNumber'] = $referenceNumber;
 
         return $this;
     }

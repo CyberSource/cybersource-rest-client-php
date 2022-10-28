@@ -111,4 +111,46 @@ class Ptsv2paymentsRecurringPaymentInformationTest extends \PHPUnit_Framework_Te
     public function testPropertySequenceNumber()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "occurrence"
+     */
+    public function testPropertyOccurrence()
+    {
+    }
+
+    /**
+     * Test attribute "validationIndicator"
+     */
+    public function testPropertyValidationIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "amountType"
+     */
+    public function testPropertyAmountType()
+    {
+    }
+
+    /**
+     * Test attribute "maximumAmount"
+     */
+    public function testPropertyMaximumAmount()
+    {
+    }
+
+    /**
+     * Test attribute "referenceNumber"
+     */
+    public function testPropertyReferenceNumber()
+    {
+    }
 }

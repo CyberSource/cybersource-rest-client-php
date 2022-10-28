@@ -1,1 +1,5 @@
 vendor
+.php_cs
+.swagger-codegen-ignore
+.travis.yml
+.swagger-codegen
