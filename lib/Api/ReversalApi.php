@@ -252,7 +252,7 @@ class ReversalApi
             throw new \InvalidArgumentException('Missing the required parameter $mitReversalRequest when calling mitReversal');
         }
         // parse inputs
-        $resourcePath = "/pts/v2/reversals/";
+        $resourcePath = "/pts/v2/reversals";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -298,7 +298,7 @@ class ReversalApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsReversalsPost201Response',
-                '/pts/v2/reversals/'
+                '/pts/v2/reversals'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

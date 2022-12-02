@@ -423,4 +423,127 @@ class AsymmetricKeyManagementApi
             throw $e;
         }
     }
+
+    /**
+     * Operation updateAsymKey
+     *
+     * Activate or De-activate Asymmetric Key
+     *
+     * @param string $keyId Key ID. (required)
+     * @param \CyberSource\Model\UpdateAsymKeysRequest $updateAsymKeysRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAsymKey($keyId, $updateAsymKeysRequest)
+    {
+        self::$logger->info('CALL TO METHOD updateAsymKey STARTED');
+        list($response, $statusCode, $httpHeader) = $this->updateAsymKeyWithHttpInfo($keyId, $updateAsymKeysRequest);
+        self::$logger->info('CALL TO METHOD updateAsymKey ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation updateAsymKeyWithHttpInfo
+     *
+     * Activate or De-activate Asymmetric Key
+     *
+     * @param string $keyId Key ID. (required)
+     * @param \CyberSource\Model\UpdateAsymKeysRequest $updateAsymKeysRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateAsymKeyWithHttpInfo($keyId, $updateAsymKeysRequest)
+    {
+        // verify the required parameter 'keyId' is set
+        if ($keyId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling updateAsymKey");
+            throw new \InvalidArgumentException('Missing the required parameter $keyId when calling updateAsymKey');
+        }
+        // verify the required parameter 'updateAsymKeysRequest' is set
+        if ($updateAsymKeysRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $updateAsymKeysRequest when calling updateAsymKey");
+            throw new \InvalidArgumentException('Missing the required parameter $updateAsymKeysRequest when calling updateAsymKey');
+        }
+        // parse inputs
+        $resourcePath = "/kms/v2/keys-asym/{keyId}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($keyId !== null) {
+            $resourcePath = str_replace(
+                "{" . "keyId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($keyId),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($updateAsymKeysRequest)) {
+            $_tempBody = $updateAsymKeysRequest;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : object");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/kms/v2/keys-asym/{keyId}'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4003', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
 }

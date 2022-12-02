@@ -101,4 +101,14 @@ class AsymmetricKeyManagementApiTest extends \PHPUnit_Framework_TestCase
     public function testGetP12KeyDetails()
     {
     }
+
+    /**
+     * Test case for updateAsymKey
+     *
+     * Activate or De-activate Asymmetric Key.
+     *
+     */
+    public function testUpdateAsymKey()
+    {
+    }
 }

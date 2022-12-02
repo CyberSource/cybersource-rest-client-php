@@ -312,7 +312,7 @@ class CreateSearchRequest implements ArrayAccess
 
     /**
      * Sets limit
-     * @param int $limit Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2000.
+     * @param int $limit Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500.
      * @return $this
      */
     public function setLimit($limit)
