@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4003Details
+ * InlineResponse500
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse4003Details Class Doc Comment
+ * InlineResponse500 Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse4003Details implements ArrayAccess
+class InlineResponse500 implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,16 @@ class InlineResponse4003Details implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_400_3_details';
+    protected static $swaggerModelName = 'inline_response_500';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'location' => 'string',
+        'submitTimeUtc' => 'string',
+        'status' => 'string',
+        'reason' => 'string',
         'message' => 'string'
     ];
 
@@ -63,7 +65,9 @@ class InlineResponse4003Details implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'location' => null,
+        'submitTimeUtc' => null,
+        'status' => null,
+        'reason' => null,
         'message' => null
     ];
 
@@ -82,7 +86,9 @@ class InlineResponse4003Details implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'location' => 'location',
+        'submitTimeUtc' => 'submitTimeUtc',
+        'status' => 'status',
+        'reason' => 'reason',
         'message' => 'message'
     ];
 
@@ -92,7 +98,9 @@ class InlineResponse4003Details implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'location' => 'setLocation',
+        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'status' => 'setStatus',
+        'reason' => 'setReason',
         'message' => 'setMessage'
     ];
 
@@ -102,7 +110,9 @@ class InlineResponse4003Details implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'location' => 'getLocation',
+        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'status' => 'getStatus',
+        'reason' => 'getReason',
         'message' => 'getMessage'
     ];
 
@@ -137,7 +147,9 @@ class InlineResponse4003Details implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
@@ -167,22 +179,64 @@ class InlineResponse4003Details implements ArrayAccess
 
 
     /**
-     * Gets location
+     * Gets submitTimeUtc
      * @return string
      */
-    public function getLocation()
+    public function getSubmitTimeUtc()
     {
-        return $this->container['location'];
+        return $this->container['submitTimeUtc'];
     }
 
     /**
-     * Sets location
-     * @param string $location
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
      * @return $this
      */
-    public function setLocation($location)
+    public function setSubmitTimeUtc($submitTimeUtc)
     {
-        $this->container['location'] = $location;
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted request.  Possible values:  - SERVER_ERROR
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -198,7 +252,7 @@ class InlineResponse4003Details implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message
+     * @param string $message The detail message related to the status and reason listed above.
      * @return $this
      */
     public function setMessage($message)

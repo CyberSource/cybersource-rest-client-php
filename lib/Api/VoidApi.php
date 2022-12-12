@@ -129,7 +129,7 @@ class VoidApi
             throw new \InvalidArgumentException('Missing the required parameter $mitVoidRequest when calling mitVoid');
         }
         // parse inputs
-        $resourcePath = "/pts/v2/voids/";
+        $resourcePath = "/pts/v2/voids";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -175,7 +175,7 @@ class VoidApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
-                '/pts/v2/voids/'
+                '/pts/v2/voids'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

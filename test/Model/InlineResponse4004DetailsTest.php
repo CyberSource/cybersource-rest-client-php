@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse4003DetailsTest
+ * InlineResponse4004DetailsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace CyberSource;
 
 /**
- * InlineResponse4003DetailsTest Class Doc Comment
+ * InlineResponse4004DetailsTest Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse4003Details
+// * @description InlineResponse4004Details
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse4003DetailsTest extends \PHPUnit_Framework_TestCase
+class InlineResponse4004DetailsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class InlineResponse4003DetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse4003Details"
+     * Test "InlineResponse4004Details"
      */
-    public function testInlineResponse4003Details()
+    public function testInlineResponse4004Details()
     {
     }
 

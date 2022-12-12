@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createP12Keys**](AsymmetricKeyManagementApi.md#createP12Keys) | **POST** /kms/v2/keys-asym | Create one or more PKCS12 keys
 [**deleteBulkP12Keys**](AsymmetricKeyManagementApi.md#deleteBulkP12Keys) | **POST** /kms/v2/keys-asym/deletes | Delete one or more PKCS12 keys
 [**getP12KeyDetails**](AsymmetricKeyManagementApi.md#getP12KeyDetails) | **GET** /kms/v2/keys-asym/{keyId} | Retrieves PKCS12 key details
+[**updateAsymKey**](AsymmetricKeyManagementApi.md#updateAsymKey) | **PATCH** /kms/v2/keys-asym/{keyId} | Activate or De-activate Asymmetric Key
 
 
 # **createP12Keys**
@@ -132,6 +133,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\CyberSource\Model\KmsV2KeysAsymGet200Response**](../Model/KmsV2KeysAsymGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateAsymKey**
+> object updateAsymKey($keyId, $updateAsymKeysRequest)
+
+Activate or De-activate Asymmetric Key
+
+Activate or De-activate Asymmetric Key
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\AsymmetricKeyManagementApi();
+$keyId = "keyId_example"; // string | Key ID.
+$updateAsymKeysRequest = new \CyberSource\Model\UpdateAsymKeysRequest(); // \CyberSource\Model\UpdateAsymKeysRequest | 
+
+try {
+    $result = $api_instance->updateAsymKey($keyId, $updateAsymKeysRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AsymmetricKeyManagementApi->updateAsymKey: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keyId** | **string**| Key ID. |
+ **updateAsymKeysRequest** | [**\CyberSource\Model\UpdateAsymKeysRequest**](../Model/UpdateAsymKeysRequest.md)|  |
+
+### Return type
+
+**object**
 
 ### Authorization
 
