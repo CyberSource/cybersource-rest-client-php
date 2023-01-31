@@ -286,4 +286,18 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     public function testPropertyCompleteUrl()
     {
     }
+
+    /**
+     * Test attribute "signature"
+     */
+    public function testPropertySignature()
+    {
+    }
+
+    /**
+     * Test attribute "publicKey"
+     */
+    public function testPropertyPublicKey()
+    {
+    }
 }

@@ -169,6 +169,13 @@ class Ptsv2paymentsOrderInformationBillToTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "county"
+     */
+    public function testPropertyCounty()
+    {
+    }
+
+    /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
@@ -214,6 +221,13 @@ class Ptsv2paymentsOrderInformationBillToTest extends \PHPUnit_Framework_TestCas
      * Test attribute "phoneType"
      */
     public function testPropertyPhoneType()
+    {
+    }
+
+    /**
+     * Test attribute "verificationStatus"
+     */
+    public function testPropertyVerificationStatus()
     {
     }
 }

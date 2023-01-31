@@ -54,7 +54,7 @@ class Ptsv2paymentsidvoidsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType'
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Ptsv2paymentsidvoidsPaymentInformation implements ArrayAccess
 
     /**
      * Gets paymentType
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType
      */
     public function getPaymentType()
     {
@@ -171,7 +171,7 @@ class Ptsv2paymentsidvoidsPaymentInformation implements ArrayAccess
 
     /**
      * Sets paymentType
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType $paymentType
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType $paymentType
      * @return $this
      */
     public function setPaymentType($paymentType)

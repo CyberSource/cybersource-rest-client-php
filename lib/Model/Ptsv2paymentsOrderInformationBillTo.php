@@ -67,13 +67,15 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'locality' => 'string',
         'administrativeArea' => 'string',
         'postalCode' => 'string',
+        'county' => 'string',
         'country' => 'string',
         'district' => 'string',
         'buildingNumber' => 'string',
         'email' => 'string',
         'emailDomain' => 'string',
         'phoneNumber' => 'string',
-        'phoneType' => 'string'
+        'phoneType' => 'string',
+        'verificationStatus' => 'string'
     ];
 
     /**
@@ -94,13 +96,15 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'locality' => null,
         'administrativeArea' => null,
         'postalCode' => null,
+        'county' => null,
         'country' => null,
         'district' => null,
         'buildingNumber' => null,
         'email' => null,
         'emailDomain' => null,
         'phoneNumber' => null,
-        'phoneType' => null
+        'phoneType' => null,
+        'verificationStatus' => null
     ];
 
     public static function swaggerTypes()
@@ -131,13 +135,15 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'locality' => 'locality',
         'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
+        'county' => 'county',
         'country' => 'country',
         'district' => 'district',
         'buildingNumber' => 'buildingNumber',
         'email' => 'email',
         'emailDomain' => 'emailDomain',
         'phoneNumber' => 'phoneNumber',
-        'phoneType' => 'phoneType'
+        'phoneType' => 'phoneType',
+        'verificationStatus' => 'verificationStatus'
     ];
 
 
@@ -159,13 +165,15 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'locality' => 'setLocality',
         'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
+        'county' => 'setCounty',
         'country' => 'setCountry',
         'district' => 'setDistrict',
         'buildingNumber' => 'setBuildingNumber',
         'email' => 'setEmail',
         'emailDomain' => 'setEmailDomain',
         'phoneNumber' => 'setPhoneNumber',
-        'phoneType' => 'setPhoneType'
+        'phoneType' => 'setPhoneType',
+        'verificationStatus' => 'setVerificationStatus'
     ];
 
 
@@ -187,13 +195,15 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'locality' => 'getLocality',
         'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
+        'county' => 'getCounty',
         'country' => 'getCountry',
         'district' => 'getDistrict',
         'buildingNumber' => 'getBuildingNumber',
         'email' => 'getEmail',
         'emailDomain' => 'getEmailDomain',
         'phoneNumber' => 'getPhoneNumber',
-        'phoneType' => 'getPhoneType'
+        'phoneType' => 'getPhoneType',
+        'verificationStatus' => 'getVerificationStatus'
     ];
 
     public static function attributeMap()
@@ -240,6 +250,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['county'] = isset($data['county']) ? $data['county'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['district'] = isset($data['district']) ? $data['district'] : null;
         $this->container['buildingNumber'] = isset($data['buildingNumber']) ? $data['buildingNumber'] : null;
@@ -247,6 +258,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         $this->container['emailDomain'] = isset($data['emailDomain']) ? $data['emailDomain'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['phoneType'] = isset($data['phoneType']) ? $data['phoneType'] : null;
+        $this->container['verificationStatus'] = isset($data['verificationStatus']) ? $data['verificationStatus'] : null;
     }
 
     /**
@@ -560,6 +572,28 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
     }
 
     /**
+     * Gets county
+     * @return string
+     */
+    public function getCounty()
+    {
+        return $this->container['county'];
+    }
+
+    /**
+     * Sets county
+     * @param string $county U.S. county if available.
+     * @return $this
+     */
+    public function setCounty($county)
+    {
+
+        $this->container['county'] = $county;
+
+        return $this;
+    }
+
+    /**
      * Gets country
      * @return string
      */
@@ -708,6 +742,27 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
     public function setPhoneType($phoneType)
     {
         $this->container['phoneType'] = $phoneType;
+
+        return $this;
+    }
+
+    /**
+     * Gets verificationStatus
+     * @return string
+     */
+    public function getVerificationStatus()
+    {
+        return $this->container['verificationStatus'];
+    }
+
+    /**
+     * Sets verificationStatus
+     * @param string $verificationStatus Whether buyer has verified their identity. Used in case of PayPal transactions.  Possible Values: * VERIFIED * UNVERIFIED
+     * @return $this
+     */
+    public function setVerificationStatus($verificationStatus)
+    {
+        $this->container['verificationStatus'] = $verificationStatus;
 
         return $this;
     }

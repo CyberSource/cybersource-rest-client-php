@@ -54,14 +54,18 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'title' => 'string',
         'firstName' => 'string',
+        'middleName' => 'string',
         'lastName' => 'string',
         'company' => '\CyberSource\Model\Ptsv2paymentsOrderInformationBillToCompany',
         'address1' => 'string',
         'address2' => 'string',
         'locality' => 'string',
+        'district' => 'string',
         'administrativeArea' => 'string',
         'postalCode' => 'string',
+        'county' => 'string',
         'country' => 'string',
         'email' => 'string',
         'phoneNumber' => 'string'
@@ -72,14 +76,18 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'title' => null,
         'firstName' => null,
+        'middleName' => null,
         'lastName' => null,
         'company' => null,
         'address1' => null,
         'address2' => null,
         'locality' => null,
+        'district' => null,
         'administrativeArea' => null,
         'postalCode' => null,
+        'county' => null,
         'country' => null,
         'email' => null,
         'phoneNumber' => null
@@ -100,14 +108,18 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'title' => 'title',
         'firstName' => 'firstName',
+        'middleName' => 'middleName',
         'lastName' => 'lastName',
         'company' => 'company',
         'address1' => 'address1',
         'address2' => 'address2',
         'locality' => 'locality',
+        'district' => 'district',
         'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
+        'county' => 'county',
         'country' => 'country',
         'email' => 'email',
         'phoneNumber' => 'phoneNumber'
@@ -119,14 +131,18 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'title' => 'setTitle',
         'firstName' => 'setFirstName',
+        'middleName' => 'setMiddleName',
         'lastName' => 'setLastName',
         'company' => 'setCompany',
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
         'locality' => 'setLocality',
+        'district' => 'setDistrict',
         'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
+        'county' => 'setCounty',
         'country' => 'setCountry',
         'email' => 'setEmail',
         'phoneNumber' => 'setPhoneNumber'
@@ -138,14 +154,18 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'title' => 'getTitle',
         'firstName' => 'getFirstName',
+        'middleName' => 'getMiddleName',
         'lastName' => 'getLastName',
         'company' => 'getCompany',
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
         'locality' => 'getLocality',
+        'district' => 'getDistrict',
         'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
+        'county' => 'getCounty',
         'country' => 'getCountry',
         'email' => 'getEmail',
         'phoneNumber' => 'getPhoneNumber'
@@ -182,14 +202,18 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['company'] = isset($data['company']) ? $data['company'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
+        $this->container['district'] = isset($data['district']) ? $data['district'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['county'] = isset($data['county']) ? $data['county'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
@@ -221,6 +245,28 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
 
 
     /**
+     * Gets title
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     * @param string $title Title.
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
      * Gets firstName
      * @return string
      */
@@ -238,6 +284,28 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
     {
 
         $this->container['firstName'] = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleName
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middleName'];
+    }
+
+    /**
+     * Sets middleName
+     * @param string $middleName Customer’s middle name.
+     * @return $this
+     */
+    public function setMiddleName($middleName)
+    {
+
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }
@@ -352,6 +420,28 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
     }
 
     /**
+     * Gets district
+     * @return string
+     */
+    public function getDistrict()
+    {
+        return $this->container['district'];
+    }
+
+    /**
+     * Sets district
+     * @param string $district Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality. This field is available only on **Cielo**.
+     * @return $this
+     */
+    public function setDistrict($district)
+    {
+
+        $this->container['district'] = $district;
+
+        return $this;
+    }
+
+    /**
      * Gets administrativeArea
      * @return string
      */
@@ -391,6 +481,28 @@ class Ptsv2paymentsidcapturesOrderInformationBillTo implements ArrayAccess
     {
 
         $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets county
+     * @return string
+     */
+    public function getCounty()
+    {
+        return $this->container['county'];
+    }
+
+    /**
+     * Sets county
+     * @param string $county U.S. county if available.
+     * @return $this
+     */
+    public function setCounty($county)
+    {
+
+        $this->container['county'] = $county;
 
         return $this;
     }

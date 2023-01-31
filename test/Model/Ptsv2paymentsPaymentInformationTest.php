@@ -78,6 +78,20 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "intent"
+     */
+    public function testPropertyIntent()
+    {
+    }
+
+    /**
+     * Test attribute "countryCode"
+     */
+    public function testPropertyCountryCode()
+    {
+    }
+
+    /**
      * Test attribute "card"
      */
     public function testPropertyCard()

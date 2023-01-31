@@ -97,4 +97,11 @@ class Ptsv2paymentsidrefundsPaymentInformationBankTest extends \PHPUnit_Framewor
     public function testPropertyIban()
     {
     }
+
+    /**
+     * Test attribute "swiftCode"
+     */
+    public function testPropertySwiftCode()
+    {
+    }
 }

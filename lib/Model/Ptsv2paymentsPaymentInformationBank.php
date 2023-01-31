@@ -57,7 +57,8 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         'account' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount',
         'routingNumber' => 'string',
         'iban' => 'string',
-        'swiftCode' => 'string'
+        'swiftCode' => 'string',
+        'code' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         'account' => null,
         'routingNumber' => null,
         'iban' => null,
-        'swiftCode' => null
+        'swiftCode' => null,
+        'code' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         'account' => 'account',
         'routingNumber' => 'routingNumber',
         'iban' => 'iban',
-        'swiftCode' => 'swiftCode'
+        'swiftCode' => 'swiftCode',
+        'code' => 'code'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         'account' => 'setAccount',
         'routingNumber' => 'setRoutingNumber',
         'iban' => 'setIban',
-        'swiftCode' => 'setSwiftCode'
+        'swiftCode' => 'setSwiftCode',
+        'code' => 'setCode'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         'account' => 'getAccount',
         'routingNumber' => 'getRoutingNumber',
         'iban' => 'getIban',
-        'swiftCode' => 'getSwiftCode'
+        'swiftCode' => 'getSwiftCode',
+        'code' => 'getCode'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
         $this->container['routingNumber'] = isset($data['routingNumber']) ? $data['routingNumber'] : null;
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['swiftCode'] = isset($data['swiftCode']) ? $data['swiftCode'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
     }
 
     /**
@@ -260,6 +266,28 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
     public function setSwiftCode($swiftCode)
     {
         $this->container['swiftCode'] = $swiftCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code Bank code of the consumer’s account
+     * @return $this
+     */
+    public function setCode($code)
+    {
+
+        $this->container['code'] = $code;
 
         return $this;
     }

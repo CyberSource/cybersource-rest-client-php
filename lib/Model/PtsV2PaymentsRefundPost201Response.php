@@ -59,7 +59,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'reconciliationId' => 'string',
-        'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseClientReferenceInformation',
         'refundAmountDetails' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseRefundAmountDetails',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation',
@@ -323,7 +323,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation
+     * @return \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -332,7 +332,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

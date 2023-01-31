@@ -85,13 +85,6 @@ class Ptsv2paymentsPaymentInformationPaymentTypeTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test attribute "subTypeName"
-     */
-    public function testPropertySubTypeName()
-    {
-    }
-
-    /**
      * Test attribute "method"
      */
     public function testPropertyMethod()

@@ -54,7 +54,7 @@ class RefundPaymentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsClientReferenceInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsOrderInformation',
@@ -228,7 +228,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -237,7 +237,7 @@ class RefundPaymentRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

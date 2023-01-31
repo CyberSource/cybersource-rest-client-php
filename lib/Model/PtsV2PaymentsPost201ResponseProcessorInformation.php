@@ -83,7 +83,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'merchantNumber' => 'string',
         'retrievalReferenceNumber' => 'string',
         'paymentUrl' => 'string',
-        'completeUrl' => 'string'
+        'completeUrl' => 'string',
+        'signature' => 'string',
+        'publicKey' => 'string'
     ];
 
     /**
@@ -120,7 +122,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'merchantNumber' => null,
         'retrievalReferenceNumber' => null,
         'paymentUrl' => null,
-        'completeUrl' => null
+        'completeUrl' => null,
+        'signature' => null,
+        'publicKey' => null
     ];
 
     public static function swaggerTypes()
@@ -167,7 +171,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'merchantNumber' => 'merchantNumber',
         'retrievalReferenceNumber' => 'retrievalReferenceNumber',
         'paymentUrl' => 'paymentUrl',
-        'completeUrl' => 'completeUrl'
+        'completeUrl' => 'completeUrl',
+        'signature' => 'signature',
+        'publicKey' => 'publicKey'
     ];
 
 
@@ -205,7 +211,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'merchantNumber' => 'setMerchantNumber',
         'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
         'paymentUrl' => 'setPaymentUrl',
-        'completeUrl' => 'setCompleteUrl'
+        'completeUrl' => 'setCompleteUrl',
+        'signature' => 'setSignature',
+        'publicKey' => 'setPublicKey'
     ];
 
 
@@ -243,7 +251,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'merchantNumber' => 'getMerchantNumber',
         'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
         'paymentUrl' => 'getPaymentUrl',
-        'completeUrl' => 'getCompleteUrl'
+        'completeUrl' => 'getCompleteUrl',
+        'signature' => 'getSignature',
+        'publicKey' => 'getPublicKey'
     ];
 
     public static function attributeMap()
@@ -307,6 +317,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
         $this->container['paymentUrl'] = isset($data['paymentUrl']) ? $data['paymentUrl'] : null;
         $this->container['completeUrl'] = isset($data['completeUrl']) ? $data['completeUrl'] : null;
+        $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
+        $this->container['publicKey'] = isset($data['publicKey']) ? $data['publicKey'] : null;
     }
 
     /**
@@ -981,6 +993,48 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     {
 
         $this->container['completeUrl'] = $completeUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets signature
+     * @return string
+     */
+    public function getSignature()
+    {
+        return $this->container['signature'];
+    }
+
+    /**
+     * Sets signature
+     * @param string $signature
+     * @return $this
+     */
+    public function setSignature($signature)
+    {
+        $this->container['signature'] = $signature;
+
+        return $this;
+    }
+
+    /**
+     * Gets publicKey
+     * @return string
+     */
+    public function getPublicKey()
+    {
+        return $this->container['publicKey'];
+    }
+
+    /**
+     * Sets publicKey
+     * @param string $publicKey
+     * @return $this
+     */
+    public function setPublicKey($publicKey)
+    {
+        $this->container['publicKey'] = $publicKey;
 
         return $this;
     }

@@ -63,7 +63,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'string',
         'startYear' => 'string',
         'sourceAccountType' => 'string',
-        'sourceAccountTypeDetails' => 'string'
+        'sourceAccountTypeDetails' => 'string',
+        'securityCode' => 'string',
+        'useAs' => 'string'
     ];
 
     /**
@@ -80,7 +82,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'startMonth' => null,
         'startYear' => null,
         'sourceAccountType' => null,
-        'sourceAccountTypeDetails' => null
+        'sourceAccountTypeDetails' => null,
+        'securityCode' => null,
+        'useAs' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +111,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'startMonth',
         'startYear' => 'startYear',
         'sourceAccountType' => 'sourceAccountType',
-        'sourceAccountTypeDetails' => 'sourceAccountTypeDetails'
+        'sourceAccountTypeDetails' => 'sourceAccountTypeDetails',
+        'securityCode' => 'securityCode',
+        'useAs' => 'useAs'
     ];
 
 
@@ -125,7 +131,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'setStartMonth',
         'startYear' => 'setStartYear',
         'sourceAccountType' => 'setSourceAccountType',
-        'sourceAccountTypeDetails' => 'setSourceAccountTypeDetails'
+        'sourceAccountTypeDetails' => 'setSourceAccountTypeDetails',
+        'securityCode' => 'setSecurityCode',
+        'useAs' => 'setUseAs'
     ];
 
 
@@ -143,7 +151,9 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'getStartMonth',
         'startYear' => 'getStartYear',
         'sourceAccountType' => 'getSourceAccountType',
-        'sourceAccountTypeDetails' => 'getSourceAccountTypeDetails'
+        'sourceAccountTypeDetails' => 'getSourceAccountTypeDetails',
+        'securityCode' => 'getSecurityCode',
+        'useAs' => 'getUseAs'
     ];
 
     public static function attributeMap()
@@ -187,6 +197,8 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
         $this->container['startYear'] = isset($data['startYear']) ? $data['startYear'] : null;
         $this->container['sourceAccountType'] = isset($data['sourceAccountType']) ? $data['sourceAccountType'] : null;
         $this->container['sourceAccountTypeDetails'] = isset($data['sourceAccountTypeDetails']) ? $data['sourceAccountTypeDetails'] : null;
+        $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
+        $this->container['useAs'] = isset($data['useAs']) ? $data['useAs'] : null;
     }
 
     /**
@@ -429,6 +441,50 @@ class Ptsv2paymentsidrefundsPaymentInformationCard implements ArrayAccess
     {
 
         $this->container['sourceAccountTypeDetails'] = $sourceAccountTypeDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets securityCode
+     * @return string
+     */
+    public function getSecurityCode()
+    {
+        return $this->container['securityCode'];
+    }
+
+    /**
+     * Sets securityCode
+     * @param string $securityCode Card Verification Number.  #### FDMS Nashville Required for American Express or if swiped; otherwise, optional.  #### Ingenico ePayments Do not include this field when `commerceIndicator=recurring`. **Note** Ingenico ePayments was previously called _Global Collect_.  #### TSYS Acquiring Solutions Optional if pointOfSaleInformation.entryMode=keyed; otherwise, not used.  #### GPX Optional.  #### All other processors: Optional.
+     * @return $this
+     */
+    public function setSecurityCode($securityCode)
+    {
+
+        $this->container['securityCode'] = $securityCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets useAs
+     * @return string
+     */
+    public function getUseAs()
+    {
+        return $this->container['useAs'];
+    }
+
+    /**
+     * Sets useAs
+     * @param string $useAs Flag that specifies the type of account associated with the card. The cardholder provides this information during the payment process.  Possible values:   - C: Credit transaction  - D: Debit transaction  This field is supported only for all card Types on Visa Platform Connect.  This field is required for:  - Debit transactions on Cielo and Comercio Latino.  - Transactions with Brazilian-issued cards on CyberSource through VisaNet.  **Note** The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP07 TCR0 - Position: 51 - Field: Combination Card Transaction Identifier
+     * @return $this
+     */
+    public function setUseAs($useAs)
+    {
+
+        $this->container['useAs'] = $useAs;
 
         return $this;
     }
