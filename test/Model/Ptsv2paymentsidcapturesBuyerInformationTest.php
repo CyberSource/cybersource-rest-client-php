@@ -90,4 +90,32 @@ class Ptsv2paymentsidcapturesBuyerInformationTest extends \PHPUnit_Framework_Tes
     public function testPropertyVatRegistrationNumber()
     {
     }
+
+    /**
+     * Test attribute "dateOfBirth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "gender"
+     */
+    public function testPropertyGender()
+    {
+    }
+
+    /**
+     * Test attribute "language"
+     */
+    public function testPropertyLanguage()
+    {
+    }
+
+    /**
+     * Test attribute "personalIdentification"
+     */
+    public function testPropertyPersonalIdentification()
+    {
+    }
 }

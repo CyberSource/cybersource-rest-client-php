@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPayment**](PaymentsApi.md#createPayment) | **POST** /pts/v2/payments | Process a Payment
 [**incrementAuth**](PaymentsApi.md#incrementAuth) | **PATCH** /pts/v2/payments/{id} | Increment an Authorization
+[**refreshPaymentStatus**](PaymentsApi.md#refreshPaymentStatus) | **POST** /pts/v2/refresh-payment-status/{id} | Check a Payment Status
 
 
 # **createPayment**
@@ -88,6 +89,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response**](../Model/PtsV2IncrementalAuthorizationPatch201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **refreshPaymentStatus**
+> \CyberSource\Model\PtsV2PaymentsPost201Response1 refreshPaymentStatus($id, $refreshPaymentStatusRequest)
+
+Check a Payment Status
+
+Checks and updates the payment status
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\PaymentsApi();
+$id = "id_example"; // string | The payment id whose status needs to be checked and updated.
+$refreshPaymentStatusRequest = new \CyberSource\Model\RefreshPaymentStatusRequest(); // \CyberSource\Model\RefreshPaymentStatusRequest | 
+
+try {
+    $result = $api_instance->refreshPaymentStatus($id, $refreshPaymentStatusRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PaymentsApi->refreshPaymentStatus: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The payment id whose status needs to be checked and updated. |
+ **refreshPaymentStatusRequest** | [**\CyberSource\Model\RefreshPaymentStatusRequest**](../Model/RefreshPaymentStatusRequest.md)|  |
+
+### Return type
+
+[**\CyberSource\Model\PtsV2PaymentsPost201Response1**](../Model/PtsV2PaymentsPost201Response1.md)
 
 ### Authorization
 

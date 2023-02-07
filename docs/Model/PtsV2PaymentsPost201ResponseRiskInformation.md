@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **localTime** | **string** | The customer&#39;s local time (&#x60;hh:mm:ss&#x60;), which is calculated from the transaction request time and the customer&#39;s billing address.  For details, see the &#x60;score_time_local&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) | [optional] 
 **score** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationScore**](PtsV2PaymentsPost201ResponseRiskInformationScore.md) |  | [optional] 
 **ipAddress** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationIpAddress**](PtsV2PaymentsPost201ResponseRiskInformationIpAddress.md) |  | [optional] 
-**providers** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationProviders**](PtsV2PaymentsPost201ResponseRiskInformationProviders.md) |  | [optional] 
+**providers** | [**map[string,map[string,string]]**](map.md) | Name of the 3rd party provider, for example, Emailage. For all possible values, see the &#x60;decision_provider_#_name&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). | [optional] 
 **travel** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationTravel**](PtsV2PaymentsPost201ResponseRiskInformationTravel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

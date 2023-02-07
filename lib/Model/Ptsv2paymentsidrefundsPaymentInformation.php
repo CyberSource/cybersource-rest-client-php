@@ -63,8 +63,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'instrumentIdentifier' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationInstrumentIdentifier',
         'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
         'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
-        'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
-        'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet'
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType',
+        'eWallet' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationEWallet'
     ];
 
     /**
@@ -411,7 +411,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Gets paymentType
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType
      */
     public function getPaymentType()
     {
@@ -420,7 +420,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Sets paymentType
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType $paymentType
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType $paymentType
      * @return $this
      */
     public function setPaymentType($paymentType)
@@ -432,7 +432,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Gets eWallet
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationEWallet
      */
     public function getEWallet()
     {
@@ -441,7 +441,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
 
     /**
      * Sets eWallet
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet $eWallet
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationEWallet $eWallet
      * @return $this
      */
     public function setEWallet($eWallet)

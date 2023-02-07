@@ -67,6 +67,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cancelUrl' => 'string',
         'successUrl' => 'string',
         'failureUrl' => 'string',
+        'returnUrl' => 'string',
         'merchantName' => 'string'
     ];
 
@@ -88,6 +89,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cancelUrl' => null,
         'successUrl' => null,
         'failureUrl' => null,
+        'returnUrl' => null,
         'merchantName' => null
     ];
 
@@ -119,6 +121,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cancelUrl' => 'cancelUrl',
         'successUrl' => 'successUrl',
         'failureUrl' => 'failureUrl',
+        'returnUrl' => 'returnUrl',
         'merchantName' => 'merchantName'
     ];
 
@@ -141,6 +144,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cancelUrl' => 'setCancelUrl',
         'successUrl' => 'setSuccessUrl',
         'failureUrl' => 'setFailureUrl',
+        'returnUrl' => 'setReturnUrl',
         'merchantName' => 'setMerchantName'
     ];
 
@@ -163,6 +167,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'cancelUrl' => 'getCancelUrl',
         'successUrl' => 'getSuccessUrl',
         'failureUrl' => 'getFailureUrl',
+        'returnUrl' => 'getReturnUrl',
         'merchantName' => 'getMerchantName'
     ];
 
@@ -210,6 +215,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         $this->container['cancelUrl'] = isset($data['cancelUrl']) ? $data['cancelUrl'] : null;
         $this->container['successUrl'] = isset($data['successUrl']) ? $data['successUrl'] : null;
         $this->container['failureUrl'] = isset($data['failureUrl']) ? $data['failureUrl'] : null;
+        $this->container['returnUrl'] = isset($data['returnUrl']) ? $data['returnUrl'] : null;
         $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
     }
 
@@ -538,6 +544,28 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     {
 
         $this->container['failureUrl'] = $failureUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets returnUrl
+     * @return string
+     */
+    public function getReturnUrl()
+    {
+        return $this->container['returnUrl'];
+    }
+
+    /**
+     * Sets returnUrl
+     * @param string $returnUrl URL for displaying payment results to the consumer (notifications) after the transaction is processed. Usually this URL belongs to merchant and its behavior is defined by merchant
+     * @return $this
+     */
+    public function setReturnUrl($returnUrl)
+    {
+
+        $this->container['returnUrl'] = $returnUrl;
 
         return $this;
     }

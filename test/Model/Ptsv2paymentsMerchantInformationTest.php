@@ -169,6 +169,13 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "returnUrl"
+     */
+    public function testPropertyReturnUrl()
+    {
+    }
+
+    /**
      * Test attribute "merchantName"
      */
     public function testPropertyMerchantName()

@@ -85,6 +85,13 @@ class PtsV2PaymentsRefundPost201ResponseRefundAmountDetailsTest extends \PHPUnit
     }
 
     /**
+     * Test attribute "creditAmount"
+     */
+    public function testPropertyCreditAmount()
+    {
+    }
+
+    /**
      * Test attribute "currency"
      */
     public function testPropertyCurrency()

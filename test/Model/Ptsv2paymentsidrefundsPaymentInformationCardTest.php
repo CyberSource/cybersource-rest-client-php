@@ -146,4 +146,18 @@ class Ptsv2paymentsidrefundsPaymentInformationCardTest extends \PHPUnit_Framewor
     public function testPropertySourceAccountTypeDetails()
     {
     }
+
+    /**
+     * Test attribute "securityCode"
+     */
+    public function testPropertySecurityCode()
+    {
+    }
+
+    /**
+     * Test attribute "useAs"
+     */
+    public function testPropertyUseAs()
+    {
+    }
 }

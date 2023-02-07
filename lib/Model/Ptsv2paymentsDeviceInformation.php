@@ -60,6 +60,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'fingerprintSessionId' => 'string',
         'useRawFingerprintSessionId' => 'bool',
         'deviceType' => 'string',
+        'appUrl' => 'string',
         'rawData' => '\CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]',
         'httpAcceptBrowserValue' => 'string',
         'httpAcceptContent' => 'string',
@@ -85,6 +86,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'fingerprintSessionId' => null,
         'useRawFingerprintSessionId' => null,
         'deviceType' => null,
+        'appUrl' => null,
         'rawData' => null,
         'httpAcceptBrowserValue' => null,
         'httpAcceptContent' => null,
@@ -120,6 +122,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'fingerprintSessionId' => 'fingerprintSessionId',
         'useRawFingerprintSessionId' => 'useRawFingerprintSessionId',
         'deviceType' => 'deviceType',
+        'appUrl' => 'appUrl',
         'rawData' => 'rawData',
         'httpAcceptBrowserValue' => 'httpAcceptBrowserValue',
         'httpAcceptContent' => 'httpAcceptContent',
@@ -146,6 +149,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'fingerprintSessionId' => 'setFingerprintSessionId',
         'useRawFingerprintSessionId' => 'setUseRawFingerprintSessionId',
         'deviceType' => 'setDeviceType',
+        'appUrl' => 'setAppUrl',
         'rawData' => 'setRawData',
         'httpAcceptBrowserValue' => 'setHttpAcceptBrowserValue',
         'httpAcceptContent' => 'setHttpAcceptContent',
@@ -172,6 +176,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'fingerprintSessionId' => 'getFingerprintSessionId',
         'useRawFingerprintSessionId' => 'getUseRawFingerprintSessionId',
         'deviceType' => 'getDeviceType',
+        'appUrl' => 'getAppUrl',
         'rawData' => 'getRawData',
         'httpAcceptBrowserValue' => 'getHttpAcceptBrowserValue',
         'httpAcceptContent' => 'getHttpAcceptContent',
@@ -223,6 +228,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         $this->container['fingerprintSessionId'] = isset($data['fingerprintSessionId']) ? $data['fingerprintSessionId'] : null;
         $this->container['useRawFingerprintSessionId'] = isset($data['useRawFingerprintSessionId']) ? $data['useRawFingerprintSessionId'] : null;
         $this->container['deviceType'] = isset($data['deviceType']) ? $data['deviceType'] : null;
+        $this->container['appUrl'] = isset($data['appUrl']) ? $data['appUrl'] : null;
         $this->container['rawData'] = isset($data['rawData']) ? $data['rawData'] : null;
         $this->container['httpAcceptBrowserValue'] = isset($data['httpAcceptBrowserValue']) ? $data['httpAcceptBrowserValue'] : null;
         $this->container['httpAcceptContent'] = isset($data['httpAcceptContent']) ? $data['httpAcceptContent'] : null;
@@ -388,6 +394,27 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
     {
 
         $this->container['deviceType'] = $deviceType;
+
+        return $this;
+    }
+
+    /**
+     * Gets appUrl
+     * @return string
+     */
+    public function getAppUrl()
+    {
+        return $this->container['appUrl'];
+    }
+
+    /**
+     * Sets appUrl
+     * @param string $appUrl This field will contain the deep link that would help the Customer App to wake up.
+     * @return $this
+     */
+    public function setAppUrl($appUrl)
+    {
+        $this->container['appUrl'] = $appUrl;
 
         return $this;
     }

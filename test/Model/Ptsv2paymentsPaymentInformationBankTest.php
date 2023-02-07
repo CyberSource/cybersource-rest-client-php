@@ -104,4 +104,11 @@ class Ptsv2paymentsPaymentInformationBankTest extends \PHPUnit_Framework_TestCas
     public function testPropertySwiftCode()
     {
     }
+
+    /**
+     * Test attribute "code"
+     */
+    public function testPropertyCode()
+    {
+    }
 }

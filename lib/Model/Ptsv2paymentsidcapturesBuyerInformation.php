@@ -55,7 +55,11 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'merchantCustomerId' => 'string',
-        'vatRegistrationNumber' => 'string'
+        'vatRegistrationNumber' => 'string',
+        'dateOfBirth' => 'string',
+        'gender' => 'string',
+        'language' => 'string',
+        'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification[]'
     ];
 
     /**
@@ -64,7 +68,11 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'merchantCustomerId' => null,
-        'vatRegistrationNumber' => null
+        'vatRegistrationNumber' => null,
+        'dateOfBirth' => null,
+        'gender' => null,
+        'language' => null,
+        'personalIdentification' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +91,11 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'merchantCustomerId' => 'merchantCustomerId',
-        'vatRegistrationNumber' => 'vatRegistrationNumber'
+        'vatRegistrationNumber' => 'vatRegistrationNumber',
+        'dateOfBirth' => 'dateOfBirth',
+        'gender' => 'gender',
+        'language' => 'language',
+        'personalIdentification' => 'personalIdentification'
     ];
 
 
@@ -93,7 +105,11 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
      */
     protected static $setters = [
         'merchantCustomerId' => 'setMerchantCustomerId',
-        'vatRegistrationNumber' => 'setVatRegistrationNumber'
+        'vatRegistrationNumber' => 'setVatRegistrationNumber',
+        'dateOfBirth' => 'setDateOfBirth',
+        'gender' => 'setGender',
+        'language' => 'setLanguage',
+        'personalIdentification' => 'setPersonalIdentification'
     ];
 
 
@@ -103,7 +119,11 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
      */
     protected static $getters = [
         'merchantCustomerId' => 'getMerchantCustomerId',
-        'vatRegistrationNumber' => 'getVatRegistrationNumber'
+        'vatRegistrationNumber' => 'getVatRegistrationNumber',
+        'dateOfBirth' => 'getDateOfBirth',
+        'gender' => 'getGender',
+        'language' => 'getLanguage',
+        'personalIdentification' => 'getPersonalIdentification'
     ];
 
     public static function attributeMap()
@@ -139,6 +159,10 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
     {
         $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
+        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
+        $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
     }
 
     /**
@@ -206,6 +230,93 @@ class Ptsv2paymentsidcapturesBuyerInformation implements ArrayAccess
     {
 
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateOfBirth
+     * @return string
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['dateOfBirth'];
+    }
+
+    /**
+     * Sets dateOfBirth
+     * @param string $dateOfBirth Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setDateOfBirth($dateOfBirth)
+    {
+
+        $this->container['dateOfBirth'] = $dateOfBirth;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->container['gender'];
+    }
+
+    /**
+     * Sets gender
+     * @param string $gender Customer's gender. Possible values are F (female), M (male),O (other).
+     * @return $this
+     */
+    public function setGender($gender)
+    {
+
+        $this->container['gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     * @param string $language language setting of the user
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+
+        $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalIdentification
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification[]
+     */
+    public function getPersonalIdentification()
+    {
+        return $this->container['personalIdentification'];
+    }
+
+    /**
+     * Sets personalIdentification
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification[] $personalIdentification
+     * @return $this
+     */
+    public function setPersonalIdentification($personalIdentification)
+    {
+        $this->container['personalIdentification'] = $personalIdentification;
 
         return $this;
     }
