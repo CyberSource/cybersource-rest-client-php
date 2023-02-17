@@ -104,7 +104,7 @@ class JsonWebTokenHeader
     }
 
     public function PemToDer($Pem){
-        $lines = explode("\n", trim($Pem));
+        $lines = explode("\n", trim($Pem ?? ''));
         unset($lines[count($lines)-1]);
         unset($lines[0]);
         return implode("\n", $lines);
