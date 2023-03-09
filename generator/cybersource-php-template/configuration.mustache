@@ -391,6 +391,22 @@ class Configuration
     }
 
     /**
+     * Get a request headerName if exist in requestHeader arr by case-insensitive else return -1
+     *
+     * @param string $headerName the header to find in arr
+     *
+     * @return headerName or -1
+     */
+    public function getHeaderIfExistInRequestHeaderByCaseInsensitive($headerName){
+        foreach ($this->getRequestHeaders() as $header => $val) {
+            if(strcasecmp($header,$headerName)==0){
+                return $header;
+            }
+        }
+        return -1;
+    }
+
+    /**
      * Sets the host
      *
      * @param string $host Host

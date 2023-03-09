@@ -243,7 +243,7 @@ class ApiClient
         {
             $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         }
-        
+
         foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
             $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
@@ -301,7 +301,7 @@ class ApiClient
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($curl, CURLOPT_HTTPHEADER,$requestHeaders);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $requestHeaders);
 
         // disable SSL verification, if needed
         if ($this->config->getSSLVerification() === false) {

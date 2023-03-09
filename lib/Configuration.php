@@ -399,7 +399,7 @@ class Configuration
         unset($this->requestHeaders[$headerName]);
         return $this;
     }
-    
+
     /**
      * Get a request headerName if exist in requestHeader arr by case-insensitive else return -1
      *
