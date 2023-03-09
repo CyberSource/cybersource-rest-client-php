@@ -242,16 +242,51 @@ class ApiClient
         if($this->merchantConfig->getAuthenticationType() != GlobalParameter::MUTUAL_AUTH)
         {
             $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
-            $headers = array_merge($headers, $authHeader);
         }
-
+        
         foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
             $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
         }
-        $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
 
-        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($headers)));
+        foreach ($authHeader as $value) {
+            $splitArr= explode(":", $value, 2);
+
+            if(strcasecmp($splitArr[0],"Signature")==0){
+                $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
+                if($requestHeader != -1){
+                    $this->config->deleteRequestHeader($requestHeader);
+                }
+            }
+            if(strcasecmp($splitArr[0],"Authorization")==0){
+                $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
+                if($requestHeader != -1){
+                    $this->config->deleteRequestHeader(requestHeader);
+                }
+            }
+            $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
+            if($requestHeader == -1){
+                $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+            }
+        }
+
+        $requestHeaders=[];
+        foreach ( $this->config->getRequestHeaders() as $key => $val) {
+            $requestHeaders[] = "$key: $val";
+        }
+
+        if ($this->merchantConfig->getIntermediateHost()) {
+            $intermediateHostUrl= $this->merchantConfig->getIntermediateHost();
+            if(substr( $intermediateHostUrl, 0, 7 ) === "http://" || substr( $intermediateHostUrl, 0, 8 ) === "https://"){
+                $url = $this->merchantConfig->getIntermediateHost() . $resourcePath;
+            }else{
+                $url =  GlobalParameter::HTTPS_PREFIX.$this->merchantConfig->getIntermediateHost() . $resourcePath;
+            }
+        }else{
+            $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
+        }
+
+        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($requestHeaders)));
 
         $curl = curl_init();
         // set timeout, if needed
@@ -266,7 +301,7 @@ class ApiClient
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_HTTPHEADER,$requestHeaders);
 
         // disable SSL verification, if needed
         if ($this->config->getSSLVerification() === false) {
