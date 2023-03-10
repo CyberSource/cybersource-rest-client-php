@@ -239,6 +239,8 @@ class FlexV1KeysPost200Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+	#[\ReturnTypeWillChange]
+
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -249,6 +251,8 @@ class FlexV1KeysPost200Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
+
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
