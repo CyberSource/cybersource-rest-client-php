@@ -125,9 +125,9 @@ class CreateAccessTokenRequest implements ArrayAccess
         return self::$getters;
     }
 
-    
 
-    
+
+
 
     /**
      * Associative array for storing property values
@@ -273,7 +273,7 @@ class CreateAccessTokenRequest implements ArrayAccess
         return $this;
     }
 
-    
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -289,6 +289,7 @@ class CreateAccessTokenRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

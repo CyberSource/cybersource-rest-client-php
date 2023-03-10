@@ -341,6 +341,7 @@ class AccessTokenResponse implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

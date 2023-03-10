@@ -249,6 +249,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseErrorInformation implements A
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

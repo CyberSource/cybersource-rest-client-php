@@ -196,6 +196,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationInstrumentIdentifier impl
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

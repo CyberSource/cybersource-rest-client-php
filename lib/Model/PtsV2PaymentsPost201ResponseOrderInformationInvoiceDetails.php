@@ -233,6 +233,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails implements Arra
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

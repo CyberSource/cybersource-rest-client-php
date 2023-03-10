@@ -195,6 +195,7 @@ class TssV2PostEmvTags200Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

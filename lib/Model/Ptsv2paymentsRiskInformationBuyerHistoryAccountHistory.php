@@ -223,6 +223,7 @@ class Ptsv2paymentsRiskInformationBuyerHistoryAccountHistory implements ArrayAcc
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

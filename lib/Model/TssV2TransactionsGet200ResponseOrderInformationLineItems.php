@@ -383,6 +383,7 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;

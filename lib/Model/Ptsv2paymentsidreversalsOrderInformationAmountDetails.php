@@ -196,6 +196,7 @@ class Ptsv2paymentsidreversalsOrderInformationAmountDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
