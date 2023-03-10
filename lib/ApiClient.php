@@ -374,7 +374,7 @@ class ApiClient
         // Make the request
         $response = curl_exec($curl);
 
-        if (!isset($this->downloadFilePath) && trim($this->downloadFilePath) == '') {
+        if (!isset($this->downloadFilePath) && trim((string)$this->downloadFilePath) == '') {
             $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
             $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
             $http_body = substr($response, $http_header_size);
