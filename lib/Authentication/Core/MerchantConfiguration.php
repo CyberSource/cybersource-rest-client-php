@@ -867,7 +867,7 @@ class MerchantConfiguration
         $config = new MerchantConfiguration();
 
         if(isset($connectionDet->authenticationType))
-            $config = $config->setAuthenticationType(strtoupper(trim($connectionDet->authenticationType)));
+            $config = $config->setAuthenticationType(strtoupper(trim($connectionDet->authenticationType ?? '')));
         else
             $error_message .= GlobalParameter::AUTHTYPE;
 
