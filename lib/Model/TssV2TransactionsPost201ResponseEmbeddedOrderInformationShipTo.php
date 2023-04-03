@@ -200,7 +200,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -222,7 +221,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -244,7 +242,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -266,7 +263,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -288,7 +284,6 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -298,6 +293,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -308,6 +304,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -319,6 +316,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -333,6 +331,7 @@ class TssV2TransactionsPost201ResponseEmbeddedOrderInformationShipTo implements 
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -168,10 +168,6 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['categoryCode']) && ($this->container['categoryCode'] > 9999)) {
-            $invalid_properties[] = "invalid value for 'categoryCode', must be smaller than or equal to 9999.";
-        }
-
         return $invalid_properties;
     }
 
@@ -184,9 +180,6 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['categoryCode'] > 9999) {
-            return false;
-        }
         return true;
     }
 
@@ -228,10 +221,6 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      */
     public function setCategoryCode($categoryCode)
     {
-        if (!is_null($categoryCode) && ($categoryCode > 9999)) {
-            throw new \InvalidArgumentException('invalid value for $categoryCode when calling Ptsv2paymentsidrefundsMerchantInformation., must be smaller than or equal to 9999.');
-        }
-
         $this->container['categoryCode'] = $categoryCode;
 
         return $this;
@@ -253,7 +242,6 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
         return $this;
@@ -275,7 +263,6 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      */
     public function setCardAcceptorReferenceNumber($cardAcceptorReferenceNumber)
     {
-
         $this->container['cardAcceptorReferenceNumber'] = $cardAcceptorReferenceNumber;
 
         return $this;
@@ -297,7 +284,6 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      */
     public function setTaxId($taxId)
     {
-
         $this->container['taxId'] = $taxId;
 
         return $this;
@@ -307,6 +293,7 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -317,6 +304,7 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -328,6 +316,7 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -342,6 +331,7 @@ class Ptsv2paymentsidrefundsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

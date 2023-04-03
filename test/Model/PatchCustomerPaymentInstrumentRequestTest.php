@@ -113,6 +113,13 @@ class PatchCustomerPaymentInstrumentRequestTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
      * Test attribute "bankAccount"
      */
     public function testPropertyBankAccount()

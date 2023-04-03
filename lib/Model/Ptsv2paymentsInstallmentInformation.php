@@ -228,14 +228,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['sequence']) && ($this->container['sequence'] > 99)) {
-            $invalid_properties[] = "invalid value for 'sequence', must be smaller than or equal to 99.";
-        }
-
-        if (!is_null($this->container['totalCount']) && ($this->container['totalCount'] > 99)) {
-            $invalid_properties[] = "invalid value for 'totalCount', must be smaller than or equal to 99.";
-        }
-
         return $invalid_properties;
     }
 
@@ -248,12 +240,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['sequence'] > 99) {
-            return false;
-        }
-        if ($this->container['totalCount'] > 99) {
-            return false;
-        }
         return true;
     }
 
@@ -274,7 +260,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setAmount($amount)
     {
-
         $this->container['amount'] = $amount;
 
         return $this;
@@ -296,7 +281,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setFrequency($frequency)
     {
-
         $this->container['frequency'] = $frequency;
 
         return $this;
@@ -318,7 +302,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setPlanType($planType)
     {
-
         $this->container['planType'] = $planType;
 
         return $this;
@@ -340,10 +323,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setSequence($sequence)
     {
-        if (!is_null($sequence) && ($sequence > 99)) {
-            throw new \InvalidArgumentException('invalid value for $sequence when calling Ptsv2paymentsInstallmentInformation., must be smaller than or equal to 99.');
-        }
-
         $this->container['sequence'] = $sequence;
 
         return $this;
@@ -365,7 +344,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setTotalAmount($totalAmount)
     {
-
         $this->container['totalAmount'] = $totalAmount;
 
         return $this;
@@ -387,10 +365,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setTotalCount($totalCount)
     {
-        if (!is_null($totalCount) && ($totalCount > 99)) {
-            throw new \InvalidArgumentException('invalid value for $totalCount when calling Ptsv2paymentsInstallmentInformation., must be smaller than or equal to 99.');
-        }
-
         $this->container['totalCount'] = $totalCount;
 
         return $this;
@@ -412,7 +386,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setFirstInstallmentDate($firstInstallmentDate)
     {
-
         $this->container['firstInstallmentDate'] = $firstInstallmentDate;
 
         return $this;
@@ -434,7 +407,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setInvoiceData($invoiceData)
     {
-
         $this->container['invoiceData'] = $invoiceData;
 
         return $this;
@@ -456,7 +428,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setPaymentType($paymentType)
     {
-
         $this->container['paymentType'] = $paymentType;
 
         return $this;
@@ -478,7 +449,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setEligibilityInquiry($eligibilityInquiry)
     {
-
         $this->container['eligibilityInquiry'] = $eligibilityInquiry;
 
         return $this;
@@ -521,7 +491,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setGracePeriodDurationType($gracePeriodDurationType)
     {
-
         $this->container['gracePeriodDurationType'] = $gracePeriodDurationType;
 
         return $this;
@@ -543,7 +512,6 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      */
     public function setFirstInstallmentAmount($firstInstallmentAmount)
     {
-
         $this->container['firstInstallmentAmount'] = $firstInstallmentAmount;
 
         return $this;
@@ -595,6 +563,7 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -605,6 +574,7 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -616,6 +586,7 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -630,6 +601,7 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -236,7 +236,6 @@ class PushFunds201Response implements ArrayAccess
      */
     public function setId($id)
     {
-
         $this->container['id'] = $id;
 
         return $this;
@@ -258,7 +257,6 @@ class PushFunds201Response implements ArrayAccess
      */
     public function setSubmitTimeUtc($submitTimeUtc)
     {
-
         $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
@@ -280,7 +278,6 @@ class PushFunds201Response implements ArrayAccess
      */
     public function setStatus($status)
     {
-
         $this->container['status'] = $status;
 
         return $this;
@@ -302,7 +299,6 @@ class PushFunds201Response implements ArrayAccess
      */
     public function setReconciliationId($reconciliationId)
     {
-
         $this->container['reconciliationId'] = $reconciliationId;
 
         return $this;
@@ -459,6 +455,7 @@ class PushFunds201Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -469,6 +466,7 @@ class PushFunds201Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -480,6 +478,7 @@ class PushFunds201Response implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -494,6 +493,7 @@ class PushFunds201Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -54,8 +54,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'intent' => 'string',
-        'countryCode' => 'string',
         'card' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
@@ -75,8 +73,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'intent' => null,
-        'countryCode' => null,
         'card' => null,
         'tokenizedCard' => null,
         'fluidData' => null,
@@ -106,8 +102,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'intent' => 'intent',
-        'countryCode' => 'countryCode',
         'card' => 'card',
         'tokenizedCard' => 'tokenizedCard',
         'fluidData' => 'fluidData',
@@ -128,8 +122,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'intent' => 'setIntent',
-        'countryCode' => 'setCountryCode',
         'card' => 'setCard',
         'tokenizedCard' => 'setTokenizedCard',
         'fluidData' => 'setFluidData',
@@ -150,8 +142,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'intent' => 'getIntent',
-        'countryCode' => 'getCountryCode',
         'card' => 'getCard',
         'tokenizedCard' => 'getTokenizedCard',
         'fluidData' => 'getFluidData',
@@ -197,8 +187,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['intent'] = isset($data['intent']) ? $data['intent'] : null;
-        $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
@@ -237,48 +225,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets intent
-     * @return string
-     */
-    public function getIntent()
-    {
-        return $this->container['intent'];
-    }
-
-    /**
-     * Sets intent
-     * @param string $intent Intent.
-     * @return $this
-     */
-    public function setIntent($intent)
-    {
-        $this->container['intent'] = $intent;
-
-        return $this;
-    }
-
-    /**
-     * Gets countryCode
-     * @return string
-     */
-    public function getCountryCode()
-    {
-        return $this->container['countryCode'];
-    }
-
-    /**
-     * Sets countryCode
-     * @param string $countryCode Country code.
-     * @return $this
-     */
-    public function setCountryCode($countryCode)
-    {
-        $this->container['countryCode'] = $countryCode;
-
-        return $this;
-    }
 
     /**
      * Gets card
@@ -506,7 +452,6 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      */
     public function setInitiationChannel($initiationChannel)
     {
-
         $this->container['initiationChannel'] = $initiationChannel;
 
         return $this;
@@ -537,6 +482,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -547,6 +493,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -558,6 +505,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -572,6 +520,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -272,7 +272,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -294,7 +293,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setAddress2($address2)
     {
-
         $this->container['address2'] = $address2;
 
         return $this;
@@ -316,7 +314,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setAddress3($address3)
     {
-
         $this->container['address3'] = $address3;
 
         return $this;
@@ -338,7 +335,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setAddress4($address4)
     {
-
         $this->container['address4'] = $address4;
 
         return $this;
@@ -360,7 +356,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -382,7 +377,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -404,7 +398,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -426,7 +419,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -469,7 +461,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -491,7 +482,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -513,7 +503,6 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -523,6 +512,7 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -533,6 +523,7 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -544,6 +535,7 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -558,6 +550,7 @@ class Riskv1exportcomplianceinquiriesOrderInformationBillTo implements ArrayAcce
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -390,22 +390,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['numberOfRooms']) && ($this->container['numberOfRooms'] > 99)) {
-            $invalid_properties[] = "invalid value for 'numberOfRooms', must be smaller than or equal to 99.";
-        }
-
-        if (!is_null($this->container['numberOfRooms']) && ($this->container['numberOfRooms'] < 1)) {
-            $invalid_properties[] = "invalid value for 'numberOfRooms', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['numberOfGuests']) && ($this->container['numberOfGuests'] > 99)) {
-            $invalid_properties[] = "invalid value for 'numberOfGuests', must be smaller than or equal to 99.";
-        }
-
-        if (!is_null($this->container['numberOfGuests']) && ($this->container['numberOfGuests'] < 1)) {
-            $invalid_properties[] = "invalid value for 'numberOfGuests', must be bigger than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -418,18 +402,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['numberOfRooms'] > 99) {
-            return false;
-        }
-        if ($this->container['numberOfRooms'] < 1) {
-            return false;
-        }
-        if ($this->container['numberOfGuests'] > 99) {
-            return false;
-        }
-        if ($this->container['numberOfGuests'] < 1) {
-            return false;
-        }
         return true;
     }
 
@@ -450,7 +422,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCheckInDate($checkInDate)
     {
-
         $this->container['checkInDate'] = $checkInDate;
 
         return $this;
@@ -472,7 +443,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCheckOutDate($checkOutDate)
     {
-
         $this->container['checkOutDate'] = $checkOutDate;
 
         return $this;
@@ -515,7 +485,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setSmokingPreference($smokingPreference)
     {
-
         $this->container['smokingPreference'] = $smokingPreference;
 
         return $this;
@@ -537,13 +506,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNumberOfRooms($numberOfRooms)
     {
-        if (!is_null($numberOfRooms) && ($numberOfRooms > 99)) {
-            throw new \InvalidArgumentException('invalid value for $numberOfRooms when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 99.');
-        }
-        if (!is_null($numberOfRooms) && ($numberOfRooms < 1)) {
-            throw new \InvalidArgumentException('invalid value for $numberOfRooms when calling Ptsv2paymentsTravelInformationLodging., must be bigger than or equal to 1.');
-        }
-
         $this->container['numberOfRooms'] = $numberOfRooms;
 
         return $this;
@@ -565,13 +527,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNumberOfGuests($numberOfGuests)
     {
-        if (!is_null($numberOfGuests) && ($numberOfGuests > 99)) {
-            throw new \InvalidArgumentException('invalid value for $numberOfGuests when calling Ptsv2paymentsTravelInformationLodging., must be smaller than or equal to 99.');
-        }
-        if (!is_null($numberOfGuests) && ($numberOfGuests < 1)) {
-            throw new \InvalidArgumentException('invalid value for $numberOfGuests when calling Ptsv2paymentsTravelInformationLodging., must be bigger than or equal to 1.');
-        }
-
         $this->container['numberOfGuests'] = $numberOfGuests;
 
         return $this;
@@ -593,7 +548,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomBedType($roomBedType)
     {
-
         $this->container['roomBedType'] = $roomBedType;
 
         return $this;
@@ -615,7 +569,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomTaxType($roomTaxType)
     {
-
         $this->container['roomTaxType'] = $roomTaxType;
 
         return $this;
@@ -637,7 +590,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomRateType($roomRateType)
     {
-
         $this->container['roomRateType'] = $roomRateType;
 
         return $this;
@@ -659,7 +611,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setGuestName($guestName)
     {
-
         $this->container['guestName'] = $guestName;
 
         return $this;
@@ -681,7 +632,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCustomerServicePhoneNumber($customerServicePhoneNumber)
     {
-
         $this->container['customerServicePhoneNumber'] = $customerServicePhoneNumber;
 
         return $this;
@@ -703,7 +653,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCorporateClientCode($corporateClientCode)
     {
-
         $this->container['corporateClientCode'] = $corporateClientCode;
 
         return $this;
@@ -725,7 +674,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setAdditionalDiscountAmount($additionalDiscountAmount)
     {
-
         $this->container['additionalDiscountAmount'] = $additionalDiscountAmount;
 
         return $this;
@@ -747,7 +695,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomLocation($roomLocation)
     {
-
         $this->container['roomLocation'] = $roomLocation;
 
         return $this;
@@ -769,7 +716,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setSpecialProgramCode($specialProgramCode)
     {
-
         $this->container['specialProgramCode'] = $specialProgramCode;
 
         return $this;
@@ -791,7 +737,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setTotalTaxAmount($totalTaxAmount)
     {
-
         $this->container['totalTaxAmount'] = $totalTaxAmount;
 
         return $this;
@@ -813,7 +758,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setPrepaidCost($prepaidCost)
     {
-
         $this->container['prepaidCost'] = $prepaidCost;
 
         return $this;
@@ -835,7 +779,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setFoodAndBeverageCost($foodAndBeverageCost)
     {
-
         $this->container['foodAndBeverageCost'] = $foodAndBeverageCost;
 
         return $this;
@@ -857,7 +800,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomTaxAmount($roomTaxAmount)
     {
-
         $this->container['roomTaxAmount'] = $roomTaxAmount;
 
         return $this;
@@ -879,7 +821,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setAdjustmentAmount($adjustmentAmount)
     {
-
         $this->container['adjustmentAmount'] = $adjustmentAmount;
 
         return $this;
@@ -901,7 +842,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setPhoneCost($phoneCost)
     {
-
         $this->container['phoneCost'] = $phoneCost;
 
         return $this;
@@ -923,7 +863,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRestaurantCost($restaurantCost)
     {
-
         $this->container['restaurantCost'] = $restaurantCost;
 
         return $this;
@@ -945,7 +884,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setRoomServiceCost($roomServiceCost)
     {
-
         $this->container['roomServiceCost'] = $roomServiceCost;
 
         return $this;
@@ -967,7 +905,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setMiniBarCost($miniBarCost)
     {
-
         $this->container['miniBarCost'] = $miniBarCost;
 
         return $this;
@@ -989,7 +926,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setLaundryCost($laundryCost)
     {
-
         $this->container['laundryCost'] = $laundryCost;
 
         return $this;
@@ -1011,7 +947,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setMiscellaneousCost($miscellaneousCost)
     {
-
         $this->container['miscellaneousCost'] = $miscellaneousCost;
 
         return $this;
@@ -1033,7 +968,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setGiftShopCost($giftShopCost)
     {
-
         $this->container['giftShopCost'] = $giftShopCost;
 
         return $this;
@@ -1055,7 +989,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setMovieCost($movieCost)
     {
-
         $this->container['movieCost'] = $movieCost;
 
         return $this;
@@ -1077,7 +1010,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setHealthClubCost($healthClubCost)
     {
-
         $this->container['healthClubCost'] = $healthClubCost;
 
         return $this;
@@ -1099,7 +1031,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setValetParkingCost($valetParkingCost)
     {
-
         $this->container['valetParkingCost'] = $valetParkingCost;
 
         return $this;
@@ -1121,7 +1052,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setCashDisbursementCost($cashDisbursementCost)
     {
-
         $this->container['cashDisbursementCost'] = $cashDisbursementCost;
 
         return $this;
@@ -1143,7 +1073,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNonRoomCost($nonRoomCost)
     {
-
         $this->container['nonRoomCost'] = $nonRoomCost;
 
         return $this;
@@ -1165,7 +1094,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setBusinessCenterCost($businessCenterCost)
     {
-
         $this->container['businessCenterCost'] = $businessCenterCost;
 
         return $this;
@@ -1187,7 +1115,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setLoungeBarCost($loungeBarCost)
     {
-
         $this->container['loungeBarCost'] = $loungeBarCost;
 
         return $this;
@@ -1209,7 +1136,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setTransportationCost($transportationCost)
     {
-
         $this->container['transportationCost'] = $transportationCost;
 
         return $this;
@@ -1231,7 +1157,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setGratuityAmount($gratuityAmount)
     {
-
         $this->container['gratuityAmount'] = $gratuityAmount;
 
         return $this;
@@ -1253,7 +1178,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setConferenceRoomCost($conferenceRoomCost)
     {
-
         $this->container['conferenceRoomCost'] = $conferenceRoomCost;
 
         return $this;
@@ -1275,7 +1199,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setAudioVisualCost($audioVisualCost)
     {
-
         $this->container['audioVisualCost'] = $audioVisualCost;
 
         return $this;
@@ -1297,7 +1220,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setBanquestCost($banquestCost)
     {
-
         $this->container['banquestCost'] = $banquestCost;
 
         return $this;
@@ -1319,7 +1241,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setNonRoomTaxAmount($nonRoomTaxAmount)
     {
-
         $this->container['nonRoomTaxAmount'] = $nonRoomTaxAmount;
 
         return $this;
@@ -1341,7 +1262,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setEarlyCheckOutCost($earlyCheckOutCost)
     {
-
         $this->container['earlyCheckOutCost'] = $earlyCheckOutCost;
 
         return $this;
@@ -1363,7 +1283,6 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      */
     public function setInternetAccessCost($internetAccessCost)
     {
-
         $this->container['internetAccessCost'] = $internetAccessCost;
 
         return $this;
@@ -1373,6 +1292,7 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -1383,6 +1303,7 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -1394,6 +1315,7 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -1408,6 +1330,7 @@ class Ptsv2paymentsTravelInformationLodging implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

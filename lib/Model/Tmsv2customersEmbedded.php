@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Tmsv2customersEmbedded Class Doc Comment
  *
  * @category    Class
- * @description Additional resources for the Customer token.
+ * @description Additional resources for the Customer.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -213,6 +213,7 @@ class Tmsv2customersEmbedded implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -223,6 +224,7 @@ class Tmsv2customersEmbedded implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -234,6 +236,7 @@ class Tmsv2customersEmbedded implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -248,6 +251,7 @@ class Tmsv2customersEmbedded implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -443,7 +443,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setCustomerName($customerName)
     {
-
         $this->container['customerName'] = $customerName;
 
         return $this;
@@ -465,7 +464,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setVehicleClass($vehicleClass)
     {
-
         $this->container['vehicleClass'] = $vehicleClass;
 
         return $this;
@@ -487,7 +485,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setDistanceTravelled($distanceTravelled)
     {
-
         $this->container['distanceTravelled'] = $distanceTravelled;
 
         return $this;
@@ -509,7 +506,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setDistanceUnit($distanceUnit)
     {
-
         $this->container['distanceUnit'] = $distanceUnit;
 
         return $this;
@@ -531,7 +527,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setReturnDateTime($returnDateTime)
     {
-
         $this->container['returnDateTime'] = $returnDateTime;
 
         return $this;
@@ -553,7 +548,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setRentalDateTime($rentalDateTime)
     {
-
         $this->container['rentalDateTime'] = $rentalDateTime;
 
         return $this;
@@ -575,7 +569,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setMaxFreeDistance($maxFreeDistance)
     {
-
         $this->container['maxFreeDistance'] = $maxFreeDistance;
 
         return $this;
@@ -618,7 +611,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setProgramCode($programCode)
     {
-
         $this->container['programCode'] = $programCode;
 
         return $this;
@@ -682,7 +674,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setAgreementNumber($agreementNumber)
     {
-
         $this->container['agreementNumber'] = $agreementNumber;
 
         return $this;
@@ -704,7 +695,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setOdometerReading($odometerReading)
     {
-
         $this->container['odometerReading'] = $odometerReading;
 
         return $this;
@@ -726,7 +716,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setVehicleIdentificationNumber($vehicleIdentificationNumber)
     {
-
         $this->container['vehicleIdentificationNumber'] = $vehicleIdentificationNumber;
 
         return $this;
@@ -748,7 +737,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setCompanyId($companyId)
     {
-
         $this->container['companyId'] = $companyId;
 
         return $this;
@@ -770,7 +758,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setNumberOfAdditionalDrivers($numberOfAdditionalDrivers)
     {
-
         $this->container['numberOfAdditionalDrivers'] = $numberOfAdditionalDrivers;
 
         return $this;
@@ -792,7 +779,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setDriverAge($driverAge)
     {
-
         $this->container['driverAge'] = $driverAge;
 
         return $this;
@@ -814,7 +800,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setSpecialProgramCode($specialProgramCode)
     {
-
         $this->container['specialProgramCode'] = $specialProgramCode;
 
         return $this;
@@ -836,7 +821,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setVehicleMake($vehicleMake)
     {
-
         $this->container['vehicleMake'] = $vehicleMake;
 
         return $this;
@@ -858,7 +842,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setVehicleModel($vehicleModel)
     {
-
         $this->container['vehicleModel'] = $vehicleModel;
 
         return $this;
@@ -880,7 +863,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setTimePeriod($timePeriod)
     {
-
         $this->container['timePeriod'] = $timePeriod;
 
         return $this;
@@ -902,7 +884,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setCommodityCode($commodityCode)
     {
-
         $this->container['commodityCode'] = $commodityCode;
 
         return $this;
@@ -924,7 +905,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setCustomerServicePhoneNumber($customerServicePhoneNumber)
     {
-
         $this->container['customerServicePhoneNumber'] = $customerServicePhoneNumber;
 
         return $this;
@@ -967,7 +947,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setInsuranceAmount($insuranceAmount)
     {
-
         $this->container['insuranceAmount'] = $insuranceAmount;
 
         return $this;
@@ -989,7 +968,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setOneWayDropOffAmount($oneWayDropOffAmount)
     {
-
         $this->container['oneWayDropOffAmount'] = $oneWayDropOffAmount;
 
         return $this;
@@ -1011,7 +989,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setAdjustedAmountIndicator($adjustedAmountIndicator)
     {
-
         $this->container['adjustedAmountIndicator'] = $adjustedAmountIndicator;
 
         return $this;
@@ -1033,7 +1010,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setAdjustedAmount($adjustedAmount)
     {
-
         $this->container['adjustedAmount'] = $adjustedAmount;
 
         return $this;
@@ -1055,7 +1031,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setFuelCharges($fuelCharges)
     {
-
         $this->container['fuelCharges'] = $fuelCharges;
 
         return $this;
@@ -1077,7 +1052,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setWeeklyRentalRate($weeklyRentalRate)
     {
-
         $this->container['weeklyRentalRate'] = $weeklyRentalRate;
 
         return $this;
@@ -1099,7 +1073,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setDailyRentalRate($dailyRentalRate)
     {
-
         $this->container['dailyRentalRate'] = $dailyRentalRate;
 
         return $this;
@@ -1121,7 +1094,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setRatePerMile($ratePerMile)
     {
-
         $this->container['ratePerMile'] = $ratePerMile;
 
         return $this;
@@ -1143,7 +1115,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setMileageCharge($mileageCharge)
     {
-
         $this->container['mileageCharge'] = $mileageCharge;
 
         return $this;
@@ -1165,7 +1136,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setExtraMileageCharge($extraMileageCharge)
     {
-
         $this->container['extraMileageCharge'] = $extraMileageCharge;
 
         return $this;
@@ -1187,7 +1157,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setLateFeeAmount($lateFeeAmount)
     {
-
         $this->container['lateFeeAmount'] = $lateFeeAmount;
 
         return $this;
@@ -1209,7 +1178,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setTowingCharge($towingCharge)
     {
-
         $this->container['towingCharge'] = $towingCharge;
 
         return $this;
@@ -1231,7 +1199,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setExtraCharge($extraCharge)
     {
-
         $this->container['extraCharge'] = $extraCharge;
 
         return $this;
@@ -1253,7 +1220,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setGpsCharge($gpsCharge)
     {
-
         $this->container['gpsCharge'] = $gpsCharge;
 
         return $this;
@@ -1275,7 +1241,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setPhoneCharge($phoneCharge)
     {
-
         $this->container['phoneCharge'] = $phoneCharge;
 
         return $this;
@@ -1297,7 +1262,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setParkingViolationCharge($parkingViolationCharge)
     {
-
         $this->container['parkingViolationCharge'] = $parkingViolationCharge;
 
         return $this;
@@ -1319,7 +1283,6 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      */
     public function setOtherCharges($otherCharges)
     {
-
         $this->container['otherCharges'] = $otherCharges;
 
         return $this;
@@ -1329,6 +1292,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -1339,6 +1303,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -1350,6 +1315,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -1364,6 +1330,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

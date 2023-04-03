@@ -56,7 +56,8 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'merchantCustomerId' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]',
-        'mobilePhone' => 'int'
+        'mobilePhone' => 'int',
+        'workPhone' => 'int'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'merchantCustomerId' => null,
         'personalIdentification' => null,
-        'mobilePhone' => null
+        'mobilePhone' => null,
+        'workPhone' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     protected static $attributeMap = [
         'merchantCustomerId' => 'merchantCustomerId',
         'personalIdentification' => 'personalIdentification',
-        'mobilePhone' => 'mobilePhone'
+        'mobilePhone' => 'mobilePhone',
+        'workPhone' => 'workPhone'
     ];
 
 
@@ -97,7 +100,8 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     protected static $setters = [
         'merchantCustomerId' => 'setMerchantCustomerId',
         'personalIdentification' => 'setPersonalIdentification',
-        'mobilePhone' => 'setMobilePhone'
+        'mobilePhone' => 'setMobilePhone',
+        'workPhone' => 'setWorkPhone'
     ];
 
 
@@ -108,7 +112,8 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
     protected static $getters = [
         'merchantCustomerId' => 'getMerchantCustomerId',
         'personalIdentification' => 'getPersonalIdentification',
-        'mobilePhone' => 'getMobilePhone'
+        'mobilePhone' => 'getMobilePhone',
+        'workPhone' => 'getWorkPhone'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
         $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
         $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
+        $this->container['workPhone'] = isset($data['workPhone']) ? $data['workPhone'] : null;
     }
 
     /**
@@ -194,7 +200,6 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 
         return $this;
@@ -241,11 +246,33 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets workPhone
+     * @return int
+     */
+    public function getWorkPhone()
+    {
+        return $this->container['workPhone'];
+    }
+
+    /**
+     * Sets workPhone
+     * @param int $workPhone Cardholder's work phone number.
+     * @return $this
+     */
+    public function setWorkPhone($workPhone)
+    {
+        $this->container['workPhone'] = $workPhone;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -256,6 +283,7 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -267,6 +295,7 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -281,6 +310,7 @@ class Riskv1authenticationsBuyerInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

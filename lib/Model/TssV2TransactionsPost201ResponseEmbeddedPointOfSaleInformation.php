@@ -57,7 +57,8 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => 'string',
         'terminalSerialNumber' => 'string',
         'deviceId' => 'string',
-        'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner'
+        'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner',
+        'emv' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv'
     ];
 
     /**
@@ -68,7 +69,8 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => null,
         'terminalSerialNumber' => null,
         'deviceId' => null,
-        'partner' => null
+        'partner' => null,
+        'emv' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => 'terminalId',
         'terminalSerialNumber' => 'terminalSerialNumber',
         'deviceId' => 'deviceId',
-        'partner' => 'partner'
+        'partner' => 'partner',
+        'emv' => 'emv'
     ];
 
 
@@ -101,7 +104,8 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => 'setTerminalId',
         'terminalSerialNumber' => 'setTerminalSerialNumber',
         'deviceId' => 'setDeviceId',
-        'partner' => 'setPartner'
+        'partner' => 'setPartner',
+        'emv' => 'setEmv'
     ];
 
 
@@ -113,7 +117,8 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalId' => 'getTerminalId',
         'terminalSerialNumber' => 'getTerminalSerialNumber',
         'deviceId' => 'getDeviceId',
-        'partner' => 'getPartner'
+        'partner' => 'getPartner',
+        'emv' => 'getEmv'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         $this->container['terminalSerialNumber'] = isset($data['terminalSerialNumber']) ? $data['terminalSerialNumber'] : null;
         $this->container['deviceId'] = isset($data['deviceId']) ? $data['deviceId'] : null;
         $this->container['partner'] = isset($data['partner']) ? $data['partner'] : null;
+        $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
     }
 
     /**
@@ -194,7 +200,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      */
     public function setTerminalId($terminalId)
     {
-
         $this->container['terminalId'] = $terminalId;
 
         return $this;
@@ -216,7 +221,6 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      */
     public function setTerminalSerialNumber($terminalSerialNumber)
     {
-
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
 
         return $this;
@@ -263,11 +267,33 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
         return $this;
     }
+
+    /**
+     * Gets emv
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv
+     */
+    public function getEmv()
+    {
+        return $this->container['emv'];
+    }
+
+    /**
+     * Sets emv
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv $emv
+     * @return $this
+     */
+    public function setEmv($emv)
+    {
+        $this->container['emv'] = $emv;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -278,6 +304,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -289,6 +316,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -303,6 +331,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -139,4 +139,11 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     public function testPropertyWhiteListStatus()
     {
     }
+
+    /**
+     * Test attribute "credentialEncrypted"
+     */
+    public function testPropertyCredentialEncrypted()
+    {
+    }
 }

@@ -209,7 +209,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      */
     public function setFieldName($fieldName)
     {
-
         $this->container['fieldName'] = $fieldName;
 
         return $this;
@@ -231,7 +230,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      */
     public function setInformationCode($informationCode)
     {
-
         $this->container['informationCode'] = $informationCode;
 
         return $this;
@@ -241,6 +239,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -251,6 +250,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -262,6 +262,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -276,6 +277,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationVelocityMorphing implements Arr
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

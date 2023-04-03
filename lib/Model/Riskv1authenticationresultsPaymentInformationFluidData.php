@@ -194,7 +194,6 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      */
     public function setValue($value)
     {
-
         $this->container['value'] = $value;
 
         return $this;
@@ -237,7 +236,6 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      */
     public function setDescriptor($descriptor)
     {
-
         $this->container['descriptor'] = $descriptor;
 
         return $this;
@@ -259,7 +257,6 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      */
     public function setEncoding($encoding)
     {
-
         $this->container['encoding'] = $encoding;
 
         return $this;
@@ -269,6 +266,7 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -279,6 +277,7 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -290,6 +289,7 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -304,6 +304,7 @@ class Riskv1authenticationresultsPaymentInformationFluidData implements ArrayAcc
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -206,7 +206,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      */
     public function setApprovalCode($approvalCode)
     {
-
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;
@@ -228,7 +227,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      */
     public function setTransactionId($transactionId)
     {
-
         $this->container['transactionId'] = $transactionId;
 
         return $this;
@@ -250,7 +248,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      */
     public function setResponseCode($responseCode)
     {
-
         $this->container['responseCode'] = $responseCode;
 
         return $this;
@@ -272,7 +269,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
     {
-
         $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
 
         return $this;
@@ -294,7 +290,6 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      */
     public function setResponseDetails($responseDetails)
     {
-
         $this->container['responseDetails'] = $responseDetails;
 
         return $this;
@@ -325,6 +320,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -335,6 +331,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -346,6 +343,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -360,6 +358,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

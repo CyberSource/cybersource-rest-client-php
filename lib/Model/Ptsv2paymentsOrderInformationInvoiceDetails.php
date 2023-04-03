@@ -240,10 +240,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['salesSlipNumber']) && ($this->container['salesSlipNumber'] > 99999)) {
-            $invalid_properties[] = "invalid value for 'salesSlipNumber', must be smaller than or equal to 99999.";
-        }
-
         return $invalid_properties;
     }
 
@@ -256,9 +252,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['salesSlipNumber'] > 99999) {
-            return false;
-        }
         return true;
     }
 
@@ -342,7 +335,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setPurchaseOrderNumber($purchaseOrderNumber)
     {
-
         $this->container['purchaseOrderNumber'] = $purchaseOrderNumber;
 
         return $this;
@@ -364,7 +356,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setPurchaseOrderDate($purchaseOrderDate)
     {
-
         $this->container['purchaseOrderDate'] = $purchaseOrderDate;
 
         return $this;
@@ -386,7 +377,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setPurchaseContactName($purchaseContactName)
     {
-
         $this->container['purchaseContactName'] = $purchaseContactName;
 
         return $this;
@@ -429,7 +419,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setVatInvoiceReferenceNumber($vatInvoiceReferenceNumber)
     {
-
         $this->container['vatInvoiceReferenceNumber'] = $vatInvoiceReferenceNumber;
 
         return $this;
@@ -451,7 +440,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setCommodityCode($commodityCode)
     {
-
         $this->container['commodityCode'] = $commodityCode;
 
         return $this;
@@ -515,7 +503,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setReferenceDataCode($referenceDataCode)
     {
-
         $this->container['referenceDataCode'] = $referenceDataCode;
 
         return $this;
@@ -537,7 +524,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setReferenceDataNumber($referenceDataNumber)
     {
-
         $this->container['referenceDataNumber'] = $referenceDataNumber;
 
         return $this;
@@ -559,10 +545,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setSalesSlipNumber($salesSlipNumber)
     {
-        if (!is_null($salesSlipNumber) && ($salesSlipNumber > 99999)) {
-            throw new \InvalidArgumentException('invalid value for $salesSlipNumber when calling Ptsv2paymentsOrderInformationInvoiceDetails., must be smaller than or equal to 99999.');
-        }
-
         $this->container['salesSlipNumber'] = $salesSlipNumber;
 
         return $this;
@@ -584,7 +566,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setInvoiceDate($invoiceDate)
     {
-
         $this->container['invoiceDate'] = $invoiceDate;
 
         return $this;
@@ -606,7 +587,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setCostCenter($costCenter)
     {
-
         $this->container['costCenter'] = $costCenter;
 
         return $this;
@@ -628,7 +608,6 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      */
     public function setIssuerMessage($issuerMessage)
     {
-
         $this->container['issuerMessage'] = $issuerMessage;
 
         return $this;
@@ -638,6 +617,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -648,6 +628,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -659,6 +640,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -673,6 +655,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

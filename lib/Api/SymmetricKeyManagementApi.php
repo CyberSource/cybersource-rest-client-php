@@ -188,7 +188,7 @@ class SymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -307,7 +307,7 @@ class SymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -415,7 +415,7 @@ class SymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -529,7 +529,7 @@ class SymmetricKeyManagementApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:

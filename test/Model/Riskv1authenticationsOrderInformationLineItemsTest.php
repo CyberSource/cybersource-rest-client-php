@@ -146,4 +146,74 @@ class Riskv1authenticationsOrderInformationLineItemsTest extends \PHPUnit_Framew
     public function testPropertyTaxAmount()
     {
     }
+
+    /**
+     * Test attribute "shippingAddress1"
+     */
+    public function testPropertyShippingAddress1()
+    {
+    }
+
+    /**
+     * Test attribute "shippingAddress2"
+     */
+    public function testPropertyShippingAddress2()
+    {
+    }
+
+    /**
+     * Test attribute "shippingCity"
+     */
+    public function testPropertyShippingCity()
+    {
+    }
+
+    /**
+     * Test attribute "shippingCountryCode"
+     */
+    public function testPropertyShippingCountryCode()
+    {
+    }
+
+    /**
+     * Test attribute "shippingFirstName"
+     */
+    public function testPropertyShippingFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "shippingLastName"
+     */
+    public function testPropertyShippingLastName()
+    {
+    }
+
+    /**
+     * Test attribute "shippingMiddleName"
+     */
+    public function testPropertyShippingMiddleName()
+    {
+    }
+
+    /**
+     * Test attribute "shippingPhone"
+     */
+    public function testPropertyShippingPhone()
+    {
+    }
+
+    /**
+     * Test attribute "shippingPostalCode"
+     */
+    public function testPropertyShippingPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "shippingState"
+     */
+    public function testPropertyShippingState()
+    {
+    }
 }

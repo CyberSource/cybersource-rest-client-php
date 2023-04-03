@@ -206,7 +206,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setAmount($amount)
     {
-
         $this->container['amount'] = $amount;
 
         return $this;
@@ -228,7 +227,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setRate($rate)
     {
-
         $this->container['rate'] = $rate;
 
         return $this;
@@ -271,7 +269,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setExemptionCode($exemptionCode)
     {
-
         $this->container['exemptionCode'] = $exemptionCode;
 
         return $this;
@@ -293,7 +290,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setTaxType($taxType)
     {
-
         $this->container['taxType'] = $taxType;
 
         return $this;
@@ -315,7 +311,6 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      */
     public function setTaxSummary($taxSummary)
     {
-
         $this->container['taxSummary'] = $taxSummary;
 
         return $this;
@@ -325,6 +320,7 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -335,6 +331,7 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -346,6 +343,7 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -360,6 +358,7 @@ class Ptsv2paymentsTravelInformationAutoRentalTaxDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -33,7 +33,7 @@ namespace CyberSource;
  * Vasv2taxOrderInformationOrderAcceptanceTest Class Doc Comment
  *
  * @category    Class */
-// * @description The place of business where you accept/approve the customer’s order, thereby becoming contractually obligated to make the sale.
+// * @description The Order Acceptance address fields may be used by the tax service to determine the taxability of the order or applicable taxing jurisdictions. You should consult your tax, legal and/or accounting advisors to determine if you should include an Order Acceptance address in your tax service request for some or all of your transactions based on your business.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

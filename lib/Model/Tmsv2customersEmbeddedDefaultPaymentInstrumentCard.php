@@ -61,6 +61,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
         'startMonth' => 'string',
         'startYear' => 'string',
         'useAs' => 'string',
+        'hash' => 'string',
         'tokenizedInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCardTokenizedInformation'
     ];
 
@@ -76,6 +77,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
         'startMonth' => null,
         'startYear' => null,
         'useAs' => null,
+        'hash' => null,
         'tokenizedInformation' => null
     ];
 
@@ -101,6 +103,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
         'startMonth' => 'startMonth',
         'startYear' => 'startYear',
         'useAs' => 'useAs',
+        'hash' => 'hash',
         'tokenizedInformation' => 'tokenizedInformation'
     ];
 
@@ -117,6 +120,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
         'startMonth' => 'setStartMonth',
         'startYear' => 'setStartYear',
         'useAs' => 'setUseAs',
+        'hash' => 'setHash',
         'tokenizedInformation' => 'setTokenizedInformation'
     ];
 
@@ -133,6 +137,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
         'startMonth' => 'getStartMonth',
         'startYear' => 'getStartYear',
         'useAs' => 'getUseAs',
+        'hash' => 'getHash',
         'tokenizedInformation' => 'getTokenizedInformation'
     ];
 
@@ -174,6 +179,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
         $this->container['startMonth'] = isset($data['startMonth']) ? $data['startMonth'] : null;
         $this->container['startYear'] = isset($data['startYear']) ? $data['startYear'] : null;
         $this->container['useAs'] = isset($data['useAs']) ? $data['useAs'] : null;
+        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
         $this->container['tokenizedInformation'] = isset($data['tokenizedInformation']) ? $data['tokenizedInformation'] : null;
     }
 
@@ -213,12 +219,11 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the payment card expires.  Format: `MM`.  Valid values: `01` through `12`.
+     * @param string $expirationMonth Two-digit month in which the payment card expires.  Format: `MM`.  Possible Values: `01` through `12`.
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
     {
-
         $this->container['expirationMonth'] = $expirationMonth;
 
         return $this;
@@ -240,7 +245,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setExpirationYear($expirationYear)
     {
-
         $this->container['expirationYear'] = $expirationYear;
 
         return $this;
@@ -257,7 +261,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type Value that indicates the card type. Valid v2 : v1 - description values:   * 001 : visa   * 002 : mastercard - Eurocard—European regional brand of Mastercard   * 003 : american express   * 004 : discover   * 005 : diners club   * 006 : carte blanche   * 007 : jcb   * 008 : optima   * 011 : twinpay credit   * 012 : twinpay debit   * 013 : walmart   * 014 : enRoute   * 015 : lowes consumer   * 016 : home depot consumer   * 017 : mbna   * 018 : dicks sportswear   * 019 : casual corner   * 020 : sears   * 021 : jal   * 023 : disney   * 024 : maestro uk domestic   * 025 : sams club consumer   * 026 : sams club business   * 028 : bill me later   * 029 : bebe   * 030 : restoration hardware   * 031 : delta online — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * 032 : solo   * 033 : visa electron   * 034 : dankort   * 035 : laser   * 036 : carte bleue — formerly Cartes Bancaires   * 037 : carta si   * 038 : pinless debit   * 039 : encoded account   * 040 : uatp   * 041 : household   * 042 : maestro international   * 043 : ge money uk   * 044 : korean cards   * 045 : style   * 046 : jcrew   * 047 : payease china processing ewallet   * 048 : payease china processing bank transfer   * 049 : meijer private label   * 050 : hipercard — supported only by the Comercio Latino processor.   * 051 : aura — supported only by the Comercio Latino processor.   * 052 : redecard   * 054 : elo — supported only by the Comercio Latino processor.   * 055 : capital one private label   * 056 : synchrony private label   * 057 : costco private label   * 060 : mada   * 062 : china union pay   * 063 : falabella private label
+     * @param string $type Value that indicates the card type. Possible Values v2 : v1:   * 001 : visa   * 002 : mastercard - Eurocard—European regional brand of Mastercard   * 003 : american express   * 004 : discover   * 005 : diners club   * 006 : carte blanche   * 007 : jcb   * 008 : optima   * 011 : twinpay credit   * 012 : twinpay debit   * 013 : walmart   * 014 : enRoute   * 015 : lowes consumer   * 016 : home depot consumer   * 017 : mbna   * 018 : dicks sportswear   * 019 : casual corner   * 020 : sears   * 021 : jal   * 023 : disney   * 024 : maestro uk domestic   * 025 : sams club consumer   * 026 : sams club business   * 028 : bill me later   * 029 : bebe   * 030 : restoration hardware   * 031 : delta online — use this value only for Ingenico ePayments. For other processors, use 001 for all Visa card types.   * 032 : solo   * 033 : visa electron   * 034 : dankort   * 035 : laser   * 036 : carte bleue — formerly Cartes Bancaires   * 037 : carta si   * 038 : pinless debit   * 039 : encoded account   * 040 : uatp   * 041 : household   * 042 : maestro international   * 043 : ge money uk   * 044 : korean cards   * 045 : style   * 046 : jcrew   * 047 : payease china processing ewallet   * 048 : payease china processing bank transfer   * 049 : meijer private label   * 050 : hipercard — supported only by the Comercio Latino processor.   * 051 : aura — supported only by the Comercio Latino processor.   * 052 : redecard   * 054 : elo — supported only by the Comercio Latino processor.   * 055 : capital one private label   * 056 : synchrony private label   * 057 : costco private label   * 060 : mada   * 062 : china union pay   * 063 : falabella private label
      * @return $this
      */
     public function setType($type)
@@ -283,7 +287,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setIssueNumber($issueNumber)
     {
-
         $this->container['issueNumber'] = $issueNumber;
 
         return $this;
@@ -300,12 +303,11 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
 
     /**
      * Sets startMonth
-     * @param string $startMonth Month of the start of the Maestro (UK Domestic) card validity period. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card. `Format: MM`. Valid values: 01 through 12.  **Note** The start date is not required for Maestro (UK Domestic) transactions.
+     * @param string $startMonth Month of the start of the Maestro (UK Domestic) card validity period. Do not include the field, even with a blank value, if the card is not a Maestro (UK Domestic) card. `Format: MM`. Possible Values: 01 through 12.  **Note** The start date is not required for Maestro (UK Domestic) transactions.
      * @return $this
      */
     public function setStartMonth($startMonth)
     {
-
         $this->container['startMonth'] = $startMonth;
 
         return $this;
@@ -327,7 +329,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      */
     public function setStartYear($startYear)
     {
-
         $this->container['startYear'] = $startYear;
 
         return $this;
@@ -350,6 +351,27 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
     public function setUseAs($useAs)
     {
         $this->container['useAs'] = $useAs;
+
+        return $this;
+    }
+
+    /**
+     * Gets hash
+     * @return string
+     */
+    public function getHash()
+    {
+        return $this->container['hash'];
+    }
+
+    /**
+     * Sets hash
+     * @param string $hash Hash value representing the card.
+     * @return $this
+     */
+    public function setHash($hash)
+    {
+        $this->container['hash'] = $hash;
 
         return $this;
     }
@@ -379,6 +401,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -389,6 +412,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -400,6 +424,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -414,6 +439,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentCard implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

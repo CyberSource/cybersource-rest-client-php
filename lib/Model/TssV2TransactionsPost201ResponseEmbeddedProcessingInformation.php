@@ -194,7 +194,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     public function setPaymentSolution($paymentSolution)
     {
-
         $this->container['paymentSolution'] = $paymentSolution;
 
         return $this;
@@ -237,7 +236,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     public function setCommerceIndicator($commerceIndicator)
     {
-
         $this->container['commerceIndicator'] = $commerceIndicator;
 
         return $this;
@@ -259,7 +257,6 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      */
     public function setCommerceIndicatorLabel($commerceIndicatorLabel)
     {
-
         $this->container['commerceIndicatorLabel'] = $commerceIndicatorLabel;
 
         return $this;
@@ -269,6 +266,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -279,6 +277,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -290,6 +289,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -304,6 +304,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessingInformation implements A
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

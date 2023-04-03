@@ -56,7 +56,8 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
     protected static $swaggerTypes = [
         'accountInformation' => '\CyberSource\Model\UmsV1UsersGet200ResponseAccountInformation',
         'organizationInformation' => '\CyberSource\Model\UmsV1UsersGet200ResponseOrganizationInformation',
-        'contactInformation' => '\CyberSource\Model\UmsV1UsersGet200ResponseContactInformation'
+        'contactInformation' => '\CyberSource\Model\UmsV1UsersGet200ResponseContactInformation',
+        'customFields' => 'map[string,string]'
     ];
 
     /**
@@ -66,7 +67,8 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
     protected static $swaggerFormats = [
         'accountInformation' => null,
         'organizationInformation' => null,
-        'contactInformation' => null
+        'contactInformation' => null,
+        'customFields' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
     protected static $attributeMap = [
         'accountInformation' => 'accountInformation',
         'organizationInformation' => 'organizationInformation',
-        'contactInformation' => 'contactInformation'
+        'contactInformation' => 'contactInformation',
+        'customFields' => 'customFields'
     ];
 
 
@@ -97,7 +100,8 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
     protected static $setters = [
         'accountInformation' => 'setAccountInformation',
         'organizationInformation' => 'setOrganizationInformation',
-        'contactInformation' => 'setContactInformation'
+        'contactInformation' => 'setContactInformation',
+        'customFields' => 'setCustomFields'
     ];
 
 
@@ -108,7 +112,8 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
     protected static $getters = [
         'accountInformation' => 'getAccountInformation',
         'organizationInformation' => 'getOrganizationInformation',
-        'contactInformation' => 'getContactInformation'
+        'contactInformation' => 'getContactInformation',
+        'customFields' => 'getCustomFields'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
         $this->container['accountInformation'] = isset($data['accountInformation']) ? $data['accountInformation'] : null;
         $this->container['organizationInformation'] = isset($data['organizationInformation']) ? $data['organizationInformation'] : null;
         $this->container['contactInformation'] = isset($data['contactInformation']) ? $data['contactInformation'] : null;
+        $this->container['customFields'] = isset($data['customFields']) ? $data['customFields'] : null;
     }
 
     /**
@@ -234,11 +240,33 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets customFields
+     * @return map[string,string]
+     */
+    public function getCustomFields()
+    {
+        return $this->container['customFields'];
+    }
+
+    /**
+     * Sets customFields
+     * @param map[string,string] $customFields
+     * @return $this
+     */
+    public function setCustomFields($customFields)
+    {
+        $this->container['customFields'] = $customFields;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -249,6 +277,7 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -260,6 +289,7 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -274,6 +304,7 @@ class UmsV1UsersGet200ResponseUsers implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

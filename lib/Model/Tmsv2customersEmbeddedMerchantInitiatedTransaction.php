@@ -54,7 +54,8 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'previousTransactionId' => 'string'
+        'previousTransactionId' => 'string',
+        'originalAuthorizedAmount' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'previousTransactionId' => null
+        'previousTransactionId' => null,
+        'originalAuthorizedAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'previousTransactionId' => 'previousTransactionId'
+        'previousTransactionId' => 'previousTransactionId',
+        'originalAuthorizedAmount' => 'originalAuthorizedAmount'
     ];
 
 
@@ -89,7 +92,8 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'previousTransactionId' => 'setPreviousTransactionId'
+        'previousTransactionId' => 'setPreviousTransactionId',
+        'originalAuthorizedAmount' => 'setOriginalAuthorizedAmount'
     ];
 
 
@@ -98,7 +102,8 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'previousTransactionId' => 'getPreviousTransactionId'
+        'previousTransactionId' => 'getPreviousTransactionId',
+        'originalAuthorizedAmount' => 'getOriginalAuthorizedAmount'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['previousTransactionId'] = isset($data['previousTransactionId']) ? $data['previousTransactionId'] : null;
+        $this->container['originalAuthorizedAmount'] = isset($data['originalAuthorizedAmount']) ? $data['originalAuthorizedAmount'] : null;
     }
 
     /**
@@ -176,8 +182,28 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      */
     public function setPreviousTransactionId($previousTransactionId)
     {
-
         $this->container['previousTransactionId'] = $previousTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets originalAuthorizedAmount
+     * @return string
+     */
+    public function getOriginalAuthorizedAmount()
+    {
+        return $this->container['originalAuthorizedAmount'];
+    }
+
+    /**
+     * Sets originalAuthorizedAmount
+     * @param string $originalAuthorizedAmount Amount of the original authorization.
+     * @return $this
+     */
+    public function setOriginalAuthorizedAmount($originalAuthorizedAmount)
+    {
+        $this->container['originalAuthorizedAmount'] = $originalAuthorizedAmount;
 
         return $this;
     }
@@ -186,6 +212,7 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -196,6 +223,7 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -207,6 +235,7 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -221,6 +250,7 @@ class Tmsv2customersEmbeddedMerchantInitiatedTransaction implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

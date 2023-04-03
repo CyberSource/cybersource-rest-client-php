@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**intent** | **string** | Intent. | [optional] 
-**countryCode** | **string** | Country code. | [optional] 
 **card** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationCard**](Ptsv2paymentsPaymentInformationCard.md) |  | [optional] 
 **tokenizedCard** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard**](Ptsv2paymentsPaymentInformationTokenizedCard.md) |  | [optional] 
 **fluidData** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData**](Ptsv2paymentsPaymentInformationFluidData.md) |  | [optional] 

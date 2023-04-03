@@ -228,14 +228,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['categoryCode']) && ($this->container['categoryCode'] > 9999)) {
-            $invalid_properties[] = "invalid value for 'categoryCode', must be smaller than or equal to 9999.";
-        }
-
-        if (!is_null($this->container['categoryCodeDomestic']) && ($this->container['categoryCodeDomestic'] > 9999)) {
-            $invalid_properties[] = "invalid value for 'categoryCodeDomestic', must be smaller than or equal to 9999.";
-        }
-
         return $invalid_properties;
     }
 
@@ -248,12 +240,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['categoryCode'] > 9999) {
-            return false;
-        }
-        if ($this->container['categoryCodeDomestic'] > 9999) {
-            return false;
-        }
         return true;
     }
 
@@ -295,7 +281,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setDomainName($domainName)
     {
-
         $this->container['domainName'] = $domainName;
 
         return $this;
@@ -317,7 +302,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setSalesOrganizationId($salesOrganizationId)
     {
-
         $this->container['salesOrganizationId'] = $salesOrganizationId;
 
         return $this;
@@ -339,10 +323,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCategoryCode($categoryCode)
     {
-        if (!is_null($categoryCode) && ($categoryCode > 9999)) {
-            throw new \InvalidArgumentException('invalid value for $categoryCode when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 9999.');
-        }
-
         $this->container['categoryCode'] = $categoryCode;
 
         return $this;
@@ -364,10 +344,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCategoryCodeDomestic($categoryCodeDomestic)
     {
-        if (!is_null($categoryCodeDomestic) && ($categoryCodeDomestic > 9999)) {
-            throw new \InvalidArgumentException('invalid value for $categoryCodeDomestic when calling Ptsv2paymentsMerchantInformation., must be smaller than or equal to 9999.');
-        }
-
         $this->container['categoryCodeDomestic'] = $categoryCodeDomestic;
 
         return $this;
@@ -389,7 +365,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setTaxId($taxId)
     {
-
         $this->container['taxId'] = $taxId;
 
         return $this;
@@ -411,7 +386,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
-
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
         return $this;
@@ -433,7 +407,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCardAcceptorReferenceNumber($cardAcceptorReferenceNumber)
     {
-
         $this->container['cardAcceptorReferenceNumber'] = $cardAcceptorReferenceNumber;
 
         return $this;
@@ -455,7 +428,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setTransactionLocalDateTime($transactionLocalDateTime)
     {
-
         $this->container['transactionLocalDateTime'] = $transactionLocalDateTime;
 
         return $this;
@@ -498,7 +470,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setCancelUrl($cancelUrl)
     {
-
         $this->container['cancelUrl'] = $cancelUrl;
 
         return $this;
@@ -520,7 +491,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setSuccessUrl($successUrl)
     {
-
         $this->container['successUrl'] = $successUrl;
 
         return $this;
@@ -542,7 +512,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setFailureUrl($failureUrl)
     {
-
         $this->container['failureUrl'] = $failureUrl;
 
         return $this;
@@ -564,7 +533,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setReturnUrl($returnUrl)
     {
-
         $this->container['returnUrl'] = $returnUrl;
 
         return $this;
@@ -586,7 +554,6 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      */
     public function setMerchantName($merchantName)
     {
-
         $this->container['merchantName'] = $merchantName;
 
         return $this;
@@ -596,6 +563,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -606,6 +574,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -617,6 +586,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -631,6 +601,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

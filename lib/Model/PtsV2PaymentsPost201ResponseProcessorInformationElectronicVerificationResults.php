@@ -242,7 +242,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setCode($code)
     {
-
         $this->container['code'] = $code;
 
         return $this;
@@ -264,7 +263,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setCodeRaw($codeRaw)
     {
-
         $this->container['codeRaw'] = $codeRaw;
 
         return $this;
@@ -286,7 +284,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -308,7 +305,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setEmailRaw($emailRaw)
     {
-
         $this->container['emailRaw'] = $emailRaw;
 
         return $this;
@@ -330,7 +326,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -352,7 +347,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPhoneNumberRaw($phoneNumberRaw)
     {
-
         $this->container['phoneNumberRaw'] = $phoneNumberRaw;
 
         return $this;
@@ -374,7 +368,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -396,7 +389,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setPostalCodeRaw($postalCodeRaw)
     {
-
         $this->container['postalCodeRaw'] = $postalCodeRaw;
 
         return $this;
@@ -418,7 +410,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setStreet($street)
     {
-
         $this->container['street'] = $street;
 
         return $this;
@@ -440,7 +431,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setStreetRaw($streetRaw)
     {
-
         $this->container['streetRaw'] = $streetRaw;
 
         return $this;
@@ -462,7 +452,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setName($name)
     {
-
         $this->container['name'] = $name;
 
         return $this;
@@ -484,7 +473,6 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      */
     public function setNameRaw($nameRaw)
     {
-
         $this->container['nameRaw'] = $nameRaw;
 
         return $this;
@@ -494,6 +482,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -504,6 +493,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -515,6 +505,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -529,6 +520,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

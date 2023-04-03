@@ -205,12 +205,11 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Valid values: `01` through `12`.
+     * @param string $expirationMonth Two-digit month in which the customer’s latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`.
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
     {
-
         $this->container['expirationMonth'] = $expirationMonth;
 
         return $this;
@@ -232,7 +231,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setExpirationYear($expirationYear)
     {
-
         $this->container['expirationYear'] = $expirationYear;
 
         return $this;
@@ -242,6 +240,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -252,6 +251,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -263,6 +263,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -277,6 +278,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

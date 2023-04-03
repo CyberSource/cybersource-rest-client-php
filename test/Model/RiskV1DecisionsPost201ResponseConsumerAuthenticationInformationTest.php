@@ -349,4 +349,46 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformationTest extend
     public function testPropertyDirectoryServerTransactionId()
     {
     }
+
+    /**
+     * Test attribute "acsOperatorID"
+     */
+    public function testPropertyAcsOperatorID()
+    {
+    }
+
+    /**
+     * Test attribute "acsReferenceNumber"
+     */
+    public function testPropertyAcsReferenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "idciDecision"
+     */
+    public function testPropertyIdciDecision()
+    {
+    }
+
+    /**
+     * Test attribute "idciReasonCode1"
+     */
+    public function testPropertyIdciReasonCode1()
+    {
+    }
+
+    /**
+     * Test attribute "idciReasonCode2"
+     */
+    public function testPropertyIdciReasonCode2()
+    {
+    }
+
+    /**
+     * Test attribute "idciScore"
+     */
+    public function testPropertyIdciScore()
+    {
+    }
 }

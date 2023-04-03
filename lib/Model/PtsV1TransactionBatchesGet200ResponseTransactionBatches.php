@@ -222,7 +222,6 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
         if (!is_null($id) && (!preg_match("/^[a-zA-Z0-9_+-]*$/", $id))) {
             throw new \InvalidArgumentException("invalid value for $id when calling PtsV1TransactionBatchesGet200ResponseTransactionBatches., must conform to the pattern /^[a-zA-Z0-9_+-]*$/.");
         }
-
         $this->container['id'] = $id;
 
         return $this;
@@ -358,6 +357,7 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -368,6 +368,7 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -379,6 +380,7 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -393,6 +395,7 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

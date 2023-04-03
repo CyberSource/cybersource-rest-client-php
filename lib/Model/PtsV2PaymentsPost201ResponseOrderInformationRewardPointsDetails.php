@@ -206,7 +206,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      */
     public function setPointsBeforeRedemption($pointsBeforeRedemption)
     {
-
         $this->container['pointsBeforeRedemption'] = $pointsBeforeRedemption;
 
         return $this;
@@ -228,7 +227,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      */
     public function setPointsValueBeforeRedemption($pointsValueBeforeRedemption)
     {
-
         $this->container['pointsValueBeforeRedemption'] = $pointsValueBeforeRedemption;
 
         return $this;
@@ -250,7 +248,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      */
     public function setPointsRedeemed($pointsRedeemed)
     {
-
         $this->container['pointsRedeemed'] = $pointsRedeemed;
 
         return $this;
@@ -272,7 +269,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      */
     public function setPointsValueRedeemed($pointsValueRedeemed)
     {
-
         $this->container['pointsValueRedeemed'] = $pointsValueRedeemed;
 
         return $this;
@@ -294,7 +290,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      */
     public function setPointsAfterRedemption($pointsAfterRedemption)
     {
-
         $this->container['pointsAfterRedemption'] = $pointsAfterRedemption;
 
         return $this;
@@ -316,7 +311,6 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      */
     public function setPointsValueAfterRedemption($pointsValueAfterRedemption)
     {
-
         $this->container['pointsValueAfterRedemption'] = $pointsValueAfterRedemption;
 
         return $this;
@@ -326,6 +320,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -336,6 +331,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -347,6 +343,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -361,6 +358,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

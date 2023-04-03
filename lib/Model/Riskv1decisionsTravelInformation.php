@@ -212,7 +212,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setActualFinalDestination($actualFinalDestination)
     {
-
         $this->container['actualFinalDestination'] = $actualFinalDestination;
 
         return $this;
@@ -234,7 +233,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setCompleteRoute($completeRoute)
     {
-
         $this->container['completeRoute'] = $completeRoute;
 
         return $this;
@@ -256,7 +254,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setDepartureTime($departureTime)
     {
-
         $this->container['departureTime'] = $departureTime;
 
         return $this;
@@ -278,7 +275,6 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      */
     public function setJourneyType($journeyType)
     {
-
         $this->container['journeyType'] = $journeyType;
 
         return $this;
@@ -351,6 +347,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -361,6 +358,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -372,6 +370,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -386,6 +385,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -54,10 +54,7 @@ class InlineResponse500 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'reason' => 'string',
-        'message' => 'string'
+        'errors' => '\CyberSource\Model\InlineResponse500Errors[]'
     ];
 
     /**
@@ -65,10 +62,7 @@ class InlineResponse500 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
-        'status' => null,
-        'reason' => null,
-        'message' => null
+        'errors' => null
     ];
 
     public static function swaggerTypes()
@@ -86,10 +80,7 @@ class InlineResponse500 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'reason' => 'reason',
-        'message' => 'message'
+        'errors' => 'errors'
     ];
 
 
@@ -98,10 +89,7 @@ class InlineResponse500 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'reason' => 'setReason',
-        'message' => 'setMessage'
+        'errors' => 'setErrors'
     ];
 
 
@@ -110,10 +98,7 @@ class InlineResponse500 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'reason' => 'getReason',
-        'message' => 'getMessage'
+        'errors' => 'getErrors'
     ];
 
     public static function attributeMap()
@@ -147,10 +132,7 @@ class InlineResponse500 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
     /**
@@ -179,85 +161,22 @@ class InlineResponse500 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return string
+     * Gets errors
+     * @return \CyberSource\Model\InlineResponse500Errors[]
      */
-    public function getSubmitTimeUtc()
+    public function getErrors()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * Sets errors
+     * @param \CyberSource\Model\InlineResponse500Errors[] $errors
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setErrors($errors)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status The status of the submitted request.  Possible values:  - SERVER_ERROR
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
+        $this->container['errors'] = $errors;
 
         return $this;
     }
@@ -266,6 +185,7 @@ class InlineResponse500 implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -276,6 +196,7 @@ class InlineResponse500 implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -287,6 +208,7 @@ class InlineResponse500 implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -301,6 +223,7 @@ class InlineResponse500 implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

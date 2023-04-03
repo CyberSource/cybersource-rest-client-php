@@ -171,12 +171,11 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
 
     /**
      * Sets alternateName
-     * @param string $alternateName Alternate contact information for your business,such as an email address or URL. This value might be displayed on the cardholder’s statement. When you do not include this value in your capture or credit request, CyberSource uses the merchant URL from your CyberSource account. Important This value must consist of English characters
+     * @param string $alternateName Alternate contact information for your business,such as an email address or URL. This value might be displayed on the cardholder’s statement. When you do not include this value in your capture or credit request, the merchant URL from your CyberSource account is used. Important This value must consist of English characters
      * @return $this
      */
     public function setAlternateName($alternateName)
     {
-
         $this->container['alternateName'] = $alternateName;
 
         return $this;
@@ -186,6 +185,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -196,6 +196,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -207,6 +208,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -221,6 +223,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformationMerchantD
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

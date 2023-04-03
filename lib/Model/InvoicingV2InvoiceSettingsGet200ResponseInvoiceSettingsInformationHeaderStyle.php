@@ -199,7 +199,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
         if (!is_null($fontColor) && (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $fontColor))) {
             throw new \InvalidArgumentException("invalid value for $fontColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.");
         }
-
         $this->container['fontColor'] = $fontColor;
 
         return $this;
@@ -224,7 +223,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
         if (!is_null($backgroundColor) && (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $backgroundColor))) {
             throw new \InvalidArgumentException("invalid value for $backgroundColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.");
         }
-
         $this->container['backgroundColor'] = $backgroundColor;
 
         return $this;
@@ -234,6 +232,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -244,6 +243,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -255,6 +255,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -269,6 +270,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

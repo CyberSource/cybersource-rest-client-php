@@ -258,7 +258,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id The id of the Instrument Identifier Token.
+     * @param string $id The Id of the Instrument Identifier Token.
      * @return $this
      */
     public function setId($id)
@@ -279,7 +279,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Sets object
-     * @param string $object The type of token.  Valid values: - instrumentIdentifier
+     * @param string $object The type.  Possible Values: - instrumentIdentifier
      * @return $this
      */
     public function setObject($object)
@@ -300,7 +300,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state Issuers state for the card number. Valid values: - ACTIVE - CLOSED : The account has been closed.
+     * @param string $state Issuers state for the card number. Possible Values: - ACTIVE - CLOSED : The account has been closed.
      * @return $this
      */
     public function setState($state)
@@ -321,7 +321,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The type of Instrument Identifier. Valid values: - enrollable card
+     * @param string $type The type of Instrument Identifier. Possible Values: - enrollable card
      * @return $this
      */
     public function setType($type)
@@ -482,6 +482,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -492,6 +493,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -503,6 +505,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -517,6 +520,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

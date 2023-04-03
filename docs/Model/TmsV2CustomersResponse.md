@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**\CyberSource\Model\Tmsv2customersLinks**](Tmsv2customersLinks.md) |  | [optional] 
-**id** | **string** | The id of the Customer Token. | [optional] 
+**id** | **string** | The Id of the Customer Token. | [optional] 
 **objectInformation** | [**\CyberSource\Model\Tmsv2customersObjectInformation**](Tmsv2customersObjectInformation.md) |  | [optional] 
 **buyerInformation** | [**\CyberSource\Model\Tmsv2customersBuyerInformation**](Tmsv2customersBuyerInformation.md) |  | [optional] 
 **clientReferenceInformation** | [**\CyberSource\Model\Tmsv2customersClientReferenceInformation**](Tmsv2customersClientReferenceInformation.md) |  | [optional] 

@@ -189,7 +189,6 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setCurrency($currency)
     {
-
         $this->container['currency'] = $currency;
 
         return $this;
@@ -211,7 +210,6 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      */
     public function setTotalAmount($totalAmount)
     {
-
         $this->container['totalAmount'] = $totalAmount;
 
         return $this;
@@ -221,6 +219,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -231,6 +230,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -242,6 +242,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -256,6 +257,7 @@ class Riskv1decisionsOrderInformationAmountDetails implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

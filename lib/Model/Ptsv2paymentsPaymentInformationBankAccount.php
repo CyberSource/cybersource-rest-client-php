@@ -200,7 +200,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setType($type)
     {
-
         $this->container['type'] = $type;
 
         return $this;
@@ -222,7 +221,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setNumber($number)
     {
-
         $this->container['number'] = $number;
 
         return $this;
@@ -244,7 +242,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setEncoderId($encoderId)
     {
-
         $this->container['encoderId'] = $encoderId;
 
         return $this;
@@ -266,7 +263,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setCheckNumber($checkNumber)
     {
-
         $this->container['checkNumber'] = $checkNumber;
 
         return $this;
@@ -288,7 +284,6 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      */
     public function setCheckImageReferenceNumber($checkImageReferenceNumber)
     {
-
         $this->container['checkImageReferenceNumber'] = $checkImageReferenceNumber;
 
         return $this;
@@ -298,6 +293,7 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -308,6 +304,7 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -319,6 +316,7 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -333,6 +331,7 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

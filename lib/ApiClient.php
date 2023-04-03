@@ -384,7 +384,7 @@ class ApiClient
 
         // File download functionality
         $fileHandle = Null;
-        if (isset($this->downloadFilePath) && trim($this->downloadFilePath) != '') {
+        if (isset($this->downloadFilePath) && trim($this->downloadFilePath ?? '') != '') {
             // obtain the HTTP response headers
             curl_setopt($curl, CURLOPT_HEADER, 0);
             curl_setopt($curl, CURLOPT_HEADERFUNCTION, array($this, 'header_callback'));
@@ -409,7 +409,7 @@ class ApiClient
         // Make the request
         $response = curl_exec($curl);
 
-        if (!isset($this->downloadFilePath) && trim($this->downloadFilePath) == '') {
+        if (!isset($this->downloadFilePath) && trim($this->downloadFilePath ?? '') == '') {
             $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
             $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
             $http_body = substr($response, $http_header_size);
@@ -576,21 +576,21 @@ class ApiClient
 
             if (isset($h[1])) {
                 if (!isset($headers[$h[0]])) {
-                    $headers[$h[0]] = trim($h[1]);
+                    $headers[$h[0]] = trim($h[1] ?? '');
                 } elseif (is_array($headers[$h[0]])) {
-                    $headers[$h[0]] = array_merge($headers[$h[0]], [trim($h[1])]);
+                    $headers[$h[0]] = array_merge($headers[$h[0]], [trim($h[1] ?? '')]);
                 } else {
-                    $headers[$h[0]] = array_merge([$headers[$h[0]]], [trim($h[1])]);
+                    $headers[$h[0]] = array_merge([$headers[$h[0]]], [trim($h[1] ?? '')]);
                 }
 
                 $key = $h[0];
             } else {
                 if (substr($h[0], 0, 1) === "\t") {
-                    $headers[$key] .= "\r\n\t".trim($h[0]);
+                    $headers[$key] .= "\r\n\t".trim($h[0] ?? '');
                 } elseif (!$key) {
-                    $headers[0] = trim($h[0]);
+                    $headers[0] = trim($h[0] ?? '');
                 }
-                trim($h[0]);
+                trim($h[0] ?? '');
             }
         }
 
@@ -634,7 +634,7 @@ class ApiClient
 
         array_push($headers, "v-c-client-id:" . $this->clientId);
 
-        // if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId()) != '')
+        // if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId() ?? '') != '')
         // {
             // array_push($headers, "v-c-solution-id:" . $merchantConfig->getSolutionId());
         // }

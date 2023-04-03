@@ -177,7 +177,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation implem
 
     /**
      * Sets billPaymentProgramEnabled
-     * @param bool $billPaymentProgramEnabled Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the `bill_payment` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Valid values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.
+     * @param bool $billPaymentProgramEnabled Flag that indicates that this is a payment for a bill or for an existing contractual loan. For processor-specific details, see the `bill_payment` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  Possible Values: - `true`: Bill payment or loan payment. - `false` (default): Not a bill payment or loan payment.
      * @return $this
      */
     public function setBillPaymentProgramEnabled($billPaymentProgramEnabled)
@@ -212,6 +212,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation implem
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -222,6 +223,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation implem
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -233,6 +235,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation implem
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -247,6 +250,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation implem
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

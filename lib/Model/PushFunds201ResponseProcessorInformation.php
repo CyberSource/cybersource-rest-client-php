@@ -227,7 +227,6 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCode($responseCode)
     {
-
         $this->container['responseCode'] = $responseCode;
 
         return $this;
@@ -249,7 +248,6 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      */
     public function setApprovalCode($approvalCode)
     {
-
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;
@@ -271,7 +269,6 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
     {
-
         $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
 
         return $this;
@@ -293,7 +290,6 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      */
     public function setResponseCodeSource($responseCodeSource)
     {
-
         $this->container['responseCodeSource'] = $responseCodeSource;
 
         return $this;
@@ -315,7 +311,6 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      */
     public function setRetrievalReferenceNumber($retrievalReferenceNumber)
     {
-
         $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
 
         return $this;
@@ -325,6 +320,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -335,6 +331,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -346,6 +343,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -360,6 +358,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

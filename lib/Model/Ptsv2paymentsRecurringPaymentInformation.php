@@ -237,7 +237,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setEndDate($endDate)
     {
-
         $this->container['endDate'] = $endDate;
 
         return $this;
@@ -301,7 +300,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setOriginalPurchaseDate($originalPurchaseDate)
     {
-
         $this->container['originalPurchaseDate'] = $originalPurchaseDate;
 
         return $this;
@@ -344,7 +342,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setType($type)
     {
-
         $this->container['type'] = $type;
 
         return $this;
@@ -366,7 +363,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setOccurrence($occurrence)
     {
-
         $this->container['occurrence'] = $occurrence;
 
         return $this;
@@ -388,7 +384,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setValidationIndicator($validationIndicator)
     {
-
         $this->container['validationIndicator'] = $validationIndicator;
 
         return $this;
@@ -410,7 +405,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setAmountType($amountType)
     {
-
         $this->container['amountType'] = $amountType;
 
         return $this;
@@ -432,7 +426,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setMaximumAmount($maximumAmount)
     {
-
         $this->container['maximumAmount'] = $maximumAmount;
 
         return $this;
@@ -454,7 +447,6 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      */
     public function setReferenceNumber($referenceNumber)
     {
-
         $this->container['referenceNumber'] = $referenceNumber;
 
         return $this;
@@ -464,6 +456,7 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -474,6 +467,7 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -485,6 +479,7 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -499,6 +494,7 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

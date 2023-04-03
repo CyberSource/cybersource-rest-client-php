@@ -218,7 +218,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      */
     public function setMerchantLogo($merchantLogo)
     {
-
         $this->container['merchantLogo'] = $merchantLogo;
 
         return $this;
@@ -240,7 +239,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      */
     public function setMerchantDisplayName($merchantDisplayName)
     {
-
         $this->container['merchantDisplayName'] = $merchantDisplayName;
 
         return $this;
@@ -262,7 +260,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      */
     public function setCustomEmailMessage($customEmailMessage)
     {
-
         $this->container['customEmailMessage'] = $customEmailMessage;
 
         return $this;
@@ -326,7 +323,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      */
     public function setDeliveryLanguage($deliveryLanguage)
     {
-
         $this->container['deliveryLanguage'] = $deliveryLanguage;
 
         return $this;
@@ -348,7 +344,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      */
     public function setDefaultCurrencyCode($defaultCurrencyCode)
     {
-
         $this->container['defaultCurrencyCode'] = $defaultCurrencyCode;
 
         return $this;
@@ -370,7 +365,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      */
     public function setPayerAuthentication3DSVersion($payerAuthentication3DSVersion)
     {
-
         $this->container['payerAuthentication3DSVersion'] = $payerAuthentication3DSVersion;
 
         return $this;
@@ -380,6 +374,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -390,6 +385,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -401,6 +397,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -415,6 +412,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -125,7 +125,7 @@ class InstrumentIdentifierApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for postInstrumentIdentifierEnrollment
      *
-     * Enroll an Instrument Identifier for Network Tokenization.
+     * Enroll an Instrument Identifier for Payment Network Token.
      *
      */
     public function testPostInstrumentIdentifierEnrollment()

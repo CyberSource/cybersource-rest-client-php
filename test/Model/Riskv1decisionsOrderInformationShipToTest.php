@@ -92,6 +92,13 @@ class Riskv1decisionsOrderInformationShipToTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "address3"
+     */
+    public function testPropertyAddress3()
+    {
+    }
+
+    /**
      * Test attribute "administrativeArea"
      */
     public function testPropertyAdministrativeArea()
@@ -130,6 +137,13 @@ class Riskv1decisionsOrderInformationShipToTest extends \PHPUnit_Framework_TestC
      * Test attribute "lastName"
      */
     public function testPropertyLastName()
+    {
+    }
+
+    /**
+     * Test attribute "middleName"
+     */
+    public function testPropertyMiddleName()
     {
     }
 
