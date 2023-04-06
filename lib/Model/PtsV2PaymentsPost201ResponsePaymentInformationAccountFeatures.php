@@ -278,7 +278,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setAccountType($accountType)
     {
-
         $this->container['accountType'] = $accountType;
 
         return $this;
@@ -300,7 +299,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setAccountStatus($accountStatus)
     {
-
         $this->container['accountStatus'] = $accountStatus;
 
         return $this;
@@ -343,7 +341,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceAmount($balanceAmount)
     {
-
         $this->container['balanceAmount'] = $balanceAmount;
 
         return $this;
@@ -365,7 +362,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceAmountType($balanceAmountType)
     {
-
         $this->container['balanceAmountType'] = $balanceAmountType;
 
         return $this;
@@ -387,7 +383,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setCurrency($currency)
     {
-
         $this->container['currency'] = $currency;
 
         return $this;
@@ -409,7 +404,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setBalanceSign($balanceSign)
     {
-
         $this->container['balanceSign'] = $balanceSign;
 
         return $this;
@@ -431,7 +425,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setAffluenceIndicator($affluenceIndicator)
     {
-
         $this->container['affluenceIndicator'] = $affluenceIndicator;
 
         return $this;
@@ -453,7 +446,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setCategory($category)
     {
-
         $this->container['category'] = $category;
 
         return $this;
@@ -475,7 +467,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setCommercial($commercial)
     {
-
         $this->container['commercial'] = $commercial;
 
         return $this;
@@ -497,7 +488,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setGroup($group)
     {
-
         $this->container['group'] = $group;
 
         return $this;
@@ -519,7 +509,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setHealthCare($healthCare)
     {
-
         $this->container['healthCare'] = $healthCare;
 
         return $this;
@@ -541,7 +530,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setPayroll($payroll)
     {
-
         $this->container['payroll'] = $payroll;
 
         return $this;
@@ -563,7 +551,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setLevel3Eligible($level3Eligible)
     {
-
         $this->container['level3Eligible'] = $level3Eligible;
 
         return $this;
@@ -585,7 +572,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setPinlessDebit($pinlessDebit)
     {
-
         $this->container['pinlessDebit'] = $pinlessDebit;
 
         return $this;
@@ -607,7 +593,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setSignatureDebit($signatureDebit)
     {
-
         $this->container['signatureDebit'] = $signatureDebit;
 
         return $this;
@@ -629,7 +614,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setPrepaid($prepaid)
     {
-
         $this->container['prepaid'] = $prepaid;
 
         return $this;
@@ -651,7 +635,6 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      */
     public function setRegulated($regulated)
     {
-
         $this->container['regulated'] = $regulated;
 
         return $this;
@@ -661,6 +644,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -671,6 +655,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -682,6 +667,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -696,6 +682,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

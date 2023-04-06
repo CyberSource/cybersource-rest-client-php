@@ -200,7 +200,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setTicketNumber($ticketNumber)
     {
-
         $this->container['ticketNumber'] = $ticketNumber;
 
         return $this;
@@ -222,7 +221,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setPassengerName($passengerName)
     {
-
         $this->container['passengerName'] = $passengerName;
 
         return $this;
@@ -244,7 +242,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setConnectedTicketNumber($connectedTicketNumber)
     {
-
         $this->container['connectedTicketNumber'] = $connectedTicketNumber;
 
         return $this;
@@ -266,7 +263,6 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      */
     public function setCreditReasonIndicator($creditReasonIndicator)
     {
-
         $this->container['creditReasonIndicator'] = $creditReasonIndicator;
 
         return $this;
@@ -297,6 +293,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -307,6 +304,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -318,6 +316,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -332,6 +331,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation implement
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

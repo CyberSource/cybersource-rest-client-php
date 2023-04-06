@@ -183,7 +183,7 @@ class InlineResponse400Errors implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The type of error.
+     * @param string $type The type of error.  Possible Values:   - invalidHeaders   - missingHeaders   - invalidFields   - missingFields   - unsupportedPaymentMethodModification   - invalidCombination
      * @return $this
      */
     public function setType($type)
@@ -204,7 +204,7 @@ class InlineResponse400Errors implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detailed message related to the type stated above.
+     * @param string $message The detailed message related to the type.
      * @return $this
      */
     public function setMessage($message)
@@ -239,6 +239,7 @@ class InlineResponse400Errors implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -249,6 +250,7 @@ class InlineResponse400Errors implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -260,6 +262,7 @@ class InlineResponse400Errors implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -274,6 +277,7 @@ class InlineResponse400Errors implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

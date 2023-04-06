@@ -290,7 +290,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setTotalAmount($totalAmount)
     {
-
         $this->container['totalAmount'] = $totalAmount;
 
         return $this;
@@ -312,7 +311,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setCurrency($currency)
     {
-
         $this->container['currency'] = $currency;
 
         return $this;
@@ -334,7 +332,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setDiscountAmount($discountAmount)
     {
-
         $this->container['discountAmount'] = $discountAmount;
 
         return $this;
@@ -356,7 +353,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setDutyAmount($dutyAmount)
     {
-
         $this->container['dutyAmount'] = $dutyAmount;
 
         return $this;
@@ -378,7 +374,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setGratuityAmount($gratuityAmount)
     {
-
         $this->container['gratuityAmount'] = $gratuityAmount;
 
         return $this;
@@ -400,7 +395,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setTaxAmount($taxAmount)
     {
-
         $this->container['taxAmount'] = $taxAmount;
 
         return $this;
@@ -422,7 +416,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setNationalTaxIncluded($nationalTaxIncluded)
     {
-
         $this->container['nationalTaxIncluded'] = $nationalTaxIncluded;
 
         return $this;
@@ -444,7 +437,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setTaxAppliedAfterDiscount($taxAppliedAfterDiscount)
     {
-
         $this->container['taxAppliedAfterDiscount'] = $taxAppliedAfterDiscount;
 
         return $this;
@@ -466,7 +458,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setTaxAppliedLevel($taxAppliedLevel)
     {
-
         $this->container['taxAppliedLevel'] = $taxAppliedLevel;
 
         return $this;
@@ -488,7 +479,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setTaxTypeCode($taxTypeCode)
     {
-
         $this->container['taxTypeCode'] = $taxTypeCode;
 
         return $this;
@@ -510,7 +500,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setFreightAmount($freightAmount)
     {
-
         $this->container['freightAmount'] = $freightAmount;
 
         return $this;
@@ -532,7 +521,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setForeignAmount($foreignAmount)
     {
-
         $this->container['foreignAmount'] = $foreignAmount;
 
         return $this;
@@ -554,7 +542,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setForeignCurrency($foreignCurrency)
     {
-
         $this->container['foreignCurrency'] = $foreignCurrency;
 
         return $this;
@@ -576,7 +563,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setExchangeRate($exchangeRate)
     {
-
         $this->container['exchangeRate'] = $exchangeRate;
 
         return $this;
@@ -598,7 +584,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setExchangeRateTimeStamp($exchangeRateTimeStamp)
     {
-
         $this->container['exchangeRateTimeStamp'] = $exchangeRateTimeStamp;
 
         return $this;
@@ -662,7 +647,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setServiceFeeAmount($serviceFeeAmount)
     {
-
         $this->container['serviceFeeAmount'] = $serviceFeeAmount;
 
         return $this;
@@ -684,7 +668,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setOriginalCurrency($originalCurrency)
     {
-
         $this->container['originalCurrency'] = $originalCurrency;
 
         return $this;
@@ -706,7 +689,6 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      */
     public function setCashbackAmount($cashbackAmount)
     {
-
         $this->container['cashbackAmount'] = $cashbackAmount;
 
         return $this;
@@ -716,6 +698,7 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -726,6 +709,7 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -737,6 +721,7 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -751,6 +736,7 @@ class Ptsv2paymentsidcapturesOrderInformationAmountDetails implements ArrayAcces
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

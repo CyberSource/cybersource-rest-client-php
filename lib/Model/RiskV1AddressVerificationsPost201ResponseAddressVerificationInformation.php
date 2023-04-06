@@ -218,7 +218,6 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      */
     public function setAddressType($addressType)
     {
-
         $this->container['addressType'] = $addressType;
 
         return $this;
@@ -261,7 +260,6 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      */
     public function setApplicableRegion($applicableRegion)
     {
-
         $this->container['applicableRegion'] = $applicableRegion;
 
         return $this;
@@ -283,7 +281,6 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      */
     public function setErrorCode($errorCode)
     {
-
         $this->container['errorCode'] = $errorCode;
 
         return $this;
@@ -305,7 +302,6 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      */
     public function setStatusCode($statusCode)
     {
-
         $this->container['statusCode'] = $statusCode;
 
         return $this;
@@ -327,7 +323,6 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      */
     public function setCareOf($careOf)
     {
-
         $this->container['careOf'] = $careOf;
 
         return $this;
@@ -379,6 +374,7 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -389,6 +385,7 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -400,6 +397,7 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -414,6 +412,7 @@ class RiskV1AddressVerificationsPost201ResponseAddressVerificationInformation im
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

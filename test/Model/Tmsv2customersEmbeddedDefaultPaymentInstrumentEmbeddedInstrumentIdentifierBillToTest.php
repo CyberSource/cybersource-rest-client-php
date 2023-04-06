@@ -33,7 +33,7 @@ namespace CyberSource;
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifierBillToTest Class Doc Comment
  *
  * @category    Class */
-// * @description This information is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier token.
+// * @description This information is sent to the issuer as part of network token enrollment and is not stored under the Instrument Identifier.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

@@ -97,4 +97,11 @@ class Riskv1authenticationsBuyerInformationTest extends \PHPUnit_Framework_TestC
     public function testPropertyMobilePhone()
     {
     }
+
+    /**
+     * Test attribute "workPhone"
+     */
+    public function testPropertyWorkPhone()
+    {
+    }
 }

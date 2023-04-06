@@ -212,7 +212,6 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      */
     public function setPurchaseOrderNumber($purchaseOrderNumber)
     {
-
         $this->container['purchaseOrderNumber'] = $purchaseOrderNumber;
 
         return $this;
@@ -234,7 +233,6 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      */
     public function setPurchaseOrderDate($purchaseOrderDate)
     {
-
         $this->container['purchaseOrderDate'] = $purchaseOrderDate;
 
         return $this;
@@ -256,7 +254,6 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      */
     public function setPurchaseContactName($purchaseContactName)
     {
-
         $this->container['purchaseContactName'] = $purchaseContactName;
 
         return $this;
@@ -299,7 +296,6 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      */
     public function setVatInvoiceReferenceNumber($vatInvoiceReferenceNumber)
     {
-
         $this->container['vatInvoiceReferenceNumber'] = $vatInvoiceReferenceNumber;
 
         return $this;
@@ -321,7 +317,6 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      */
     public function setCommodityCode($commodityCode)
     {
-
         $this->container['commodityCode'] = $commodityCode;
 
         return $this;
@@ -352,6 +347,7 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -362,6 +358,7 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -373,6 +370,7 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -387,6 +385,7 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

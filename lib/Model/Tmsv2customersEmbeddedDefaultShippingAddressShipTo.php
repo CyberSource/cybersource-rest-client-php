@@ -236,7 +236,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -258,7 +257,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -280,7 +278,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setCompany($company)
     {
-
         $this->container['company'] = $company;
 
         return $this;
@@ -302,7 +299,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -324,7 +320,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-
         $this->container['address2'] = $address2;
 
         return $this;
@@ -346,7 +341,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -368,7 +362,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -385,12 +378,11 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, CyberSource removes all nonalphanumeric characters and, if the remaining value is longer than nine characters, truncates the value starting from the right side.
+     * @param string $postalCode Postal code for the shipping address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits]  Example 12345-6789  When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space][numeric][alpha][numeric]  Example A1B 2C3  **American Express Direct**\\ Before sending the postal code to the processor, all nonalphanumeric characters are removed and, if the remaining value is longer than nine characters, truncates the value starting from the right side.
      * @return $this
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -412,7 +404,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -434,7 +425,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -456,7 +446,6 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -466,6 +455,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -476,6 +466,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -487,6 +478,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -501,6 +493,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressShipTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

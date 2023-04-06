@@ -207,12 +207,11 @@ class Vasv2taxTaxInformation implements ArrayAccess
 
     /**
      * Sets reportingDate
-     * @param string $reportingDate Reporting date of transaction. Format: YYYYMMDD. Defaults to current date if not specified. Also the default tax calculation date unless a different date is specified in `orderInformation.invoiceDetails.invoiceDate`.  Optional for U.S., Canadian, international tax, and value added taxes.
+     * @param string $reportingDate Reporting date of transaction. Format: YYYYMMDD. Defaults to current date if not specified. Optional for U.S., Canadian, international tax, and value added taxes.
      * @return $this
      */
     public function setReportingDate($reportingDate)
     {
-
         $this->container['reportingDate'] = $reportingDate;
 
         return $this;
@@ -234,7 +233,6 @@ class Vasv2taxTaxInformation implements ArrayAccess
      */
     public function setDateOverrideReason($dateOverrideReason)
     {
-
         $this->container['dateOverrideReason'] = $dateOverrideReason;
 
         return $this;
@@ -314,7 +312,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
 
     /**
      * Sets commitIndicator
-     * @param bool $commitIndicator Indicates whether this is a committed tax transaction. For a committed tax transaction, the status in the Tax Detail Report is “Committed.” For an uncommitted tax transaction, the status in the Tax Detail Report is “Uncommitted.” Possible values: - `true`: This is a committed tax transaction. - `false` (default): This is not a committed tax transaction.  A committed tax request is a tax service request that sets the status field in the Tax Detail Report to committed. The committed status indicates that the amount calculated by the tax service is included in the amount of a capture or credit.  Use a void service request to cancels a committed tax request or a committed refund tax request. The void transaction is included as a separate entry in the Tax Detail Report. The value of the status field is cancelled. The value of the link ID is the request ID of the committed tax request or refund tax request that was voided. You can use the value of the link ID to reconcile your orders.  Optional for U.S., Canadian, international tax, and value added taxes.
+     * @param bool $commitIndicator Indicates whether this is a committed tax transaction. For a committed tax transaction, the status in the Tax Detail Report is “Committed.” For an uncommitted tax transaction, the status in the Tax Detail Report is “Uncommitted.” Possible values: - `true`: This is a committed tax transaction. - `false` (default): This is not a committed tax transaction.  A committed tax request is a tax service request that sets the status field in the Tax Detail Report to committed. The committed status indicates that the amount calculated by the tax service is included in the amount of a capture or credit.  Use a void service request to cancel a committed tax request or a committed refund tax request. The void transaction is included as a separate entry in the Tax Detail Report. The value of the status field is cancelled. The value of the link ID is the request ID of the committed tax request or refund tax request that was voided. You can use the value of the link ID to reconcile your orders.  Optional for U.S., Canadian, international tax, and value added taxes. For more information on Tax Detail Report features refer the [Tax Service Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html).
      * @return $this
      */
     public function setCommitIndicator($commitIndicator)
@@ -335,7 +333,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
 
     /**
      * Sets refundIndicator
-     * @param bool $refundIndicator Indicates whether this is a refund tax transaction. For a refund tax transaction, amounts in the Tax Detail Report will be negative. Possible values: - `true`: This is a refund tax transaction. - `false` (default): This is not a refund tax transaction.  A refund tax request is a tax service request that sets the transaction type field in the Tax Detail Report to refunded and makes the reported amount negative. Tax amounts are returned as positive amounts in reply messages, but they are saved in reports as negative amounts which enables the reporting software to accurately calculate the aggregate amounts.  Optional for U.S., Canadian, international tax, and value added taxes.
+     * @param bool $refundIndicator Indicates whether this is a refund tax transaction. For a refund tax transaction, amounts in the Tax Detail Report will be negative. Possible values: - `true`: This is a refund tax transaction. - `false` (default): This is not a refund tax transaction.  A refund tax request is a tax service request that sets the transaction type field in the Tax Detail Report to refunded and makes the reported amount negative. Tax amounts are returned as positive amounts in reply messages, but they are saved in reports as negative amounts which enables the reporting software to accurately calculate the aggregate amounts.  Optional for U.S., Canadian, international tax, and value added taxes. For more information on Tax Detail Report features refer the [Tax Service Guide](https://developer.cybersource.com/docs/cybs/en-us/tax-calculation/developer/all/rest/tax-calculation/tax-overview.html).
      * @return $this
      */
     public function setRefundIndicator($refundIndicator)
@@ -349,6 +347,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -359,6 +358,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -370,6 +370,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -384,6 +385,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

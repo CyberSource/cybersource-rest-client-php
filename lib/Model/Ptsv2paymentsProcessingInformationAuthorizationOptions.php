@@ -284,7 +284,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     public function setAuthType($authType)
     {
-
         $this->container['authType'] = $authType;
 
         return $this;
@@ -306,7 +305,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     public function setPanReturnIndicator($panReturnIndicator)
     {
-
         $this->container['panReturnIndicator'] = $panReturnIndicator;
 
         return $this;
@@ -328,7 +326,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     public function setVerbalAuthCode($verbalAuthCode)
     {
-
         $this->container['verbalAuthCode'] = $verbalAuthCode;
 
         return $this;
@@ -350,7 +347,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     public function setVerbalAuthTransactionId($verbalAuthTransactionId)
     {
-
         $this->container['verbalAuthTransactionId'] = $verbalAuthTransactionId;
 
         return $this;
@@ -372,7 +368,6 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      */
     public function setAuthIndicator($authIndicator)
     {
-
         $this->container['authIndicator'] = $authIndicator;
 
         return $this;
@@ -676,6 +671,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -686,6 +682,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -697,6 +694,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -711,6 +709,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

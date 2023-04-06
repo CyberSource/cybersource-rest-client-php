@@ -182,7 +182,6 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      */
     public function setIpAddress($ipAddress)
     {
-
         $this->container['ipAddress'] = $ipAddress;
 
         return $this;
@@ -204,7 +203,6 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      */
     public function setNetworkIpAddress($networkIpAddress)
     {
-
         $this->container['networkIpAddress'] = $networkIpAddress;
 
         return $this;
@@ -214,6 +212,7 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -224,6 +223,7 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -235,6 +235,7 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -249,6 +250,7 @@ class Riskv1liststypeentriesDeviceInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

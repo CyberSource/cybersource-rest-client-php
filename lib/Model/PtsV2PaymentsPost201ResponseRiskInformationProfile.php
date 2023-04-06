@@ -188,7 +188,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      */
     public function setName($name)
     {
-
         $this->container['name'] = $name;
 
         return $this;
@@ -210,7 +209,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      */
     public function setDesinationQueue($desinationQueue)
     {
-
         $this->container['desinationQueue'] = $desinationQueue;
 
         return $this;
@@ -232,7 +230,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      */
     public function setSelectorRule($selectorRule)
     {
-
         $this->container['selectorRule'] = $selectorRule;
 
         return $this;
@@ -242,6 +239,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -252,6 +250,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -263,6 +262,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -277,6 +277,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationProfile implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

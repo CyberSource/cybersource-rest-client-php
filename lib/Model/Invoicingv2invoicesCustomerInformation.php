@@ -189,7 +189,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     public function setName($name)
     {
-
         $this->container['name'] = $name;
 
         return $this;
@@ -211,7 +210,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -233,7 +231,6 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      */
     public function setMerchantCustomerId($merchantCustomerId)
     {
-
         $this->container['merchantCustomerId'] = $merchantCustomerId;
 
         return $this;
@@ -243,6 +240,7 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -253,6 +251,7 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -264,6 +263,7 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -278,6 +278,7 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

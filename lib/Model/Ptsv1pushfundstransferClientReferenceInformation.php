@@ -194,7 +194,6 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      */
     public function setCode($code)
     {
-
         $this->container['code'] = $code;
 
         return $this;
@@ -216,7 +215,6 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      */
     public function setApplicationName($applicationName)
     {
-
         $this->container['applicationName'] = $applicationName;
 
         return $this;
@@ -238,7 +236,6 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      */
     public function setApplicationVersion($applicationVersion)
     {
-
         $this->container['applicationVersion'] = $applicationVersion;
 
         return $this;
@@ -260,7 +257,6 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      */
     public function setApplicationUser($applicationUser)
     {
-
         $this->container['applicationUser'] = $applicationUser;
 
         return $this;
@@ -270,6 +266,7 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -280,6 +277,7 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -291,6 +289,7 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -305,6 +304,7 @@ class Ptsv1pushfundstransferClientReferenceInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

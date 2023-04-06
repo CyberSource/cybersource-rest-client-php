@@ -203,7 +203,6 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      */
     public function setMerchantName($merchantName)
     {
-
         $this->container['merchantName'] = $merchantName;
 
         return $this;
@@ -213,6 +212,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -223,6 +223,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -234,6 +235,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -248,6 +250,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

@@ -242,16 +242,51 @@ class ApiClient
         if($this->merchantConfig->getAuthenticationType() != GlobalParameter::MUTUAL_AUTH)
         {
             $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
-            $headers = array_merge($headers, $authHeader);
         }
 
         foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
             $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
         }
-        $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
 
-        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($headers)));
+        foreach ($authHeader as $value) {
+            $splitArr= explode(":", $value, 2);
+
+            if(strcasecmp($splitArr[0],"Signature")==0){
+                $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
+                if($requestHeader != -1){
+                    $this->config->deleteRequestHeader($requestHeader);
+                }
+            }
+            if(strcasecmp($splitArr[0],"Authorization")==0){
+                $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
+                if($requestHeader != -1){
+                    $this->config->deleteRequestHeader(requestHeader);
+                }
+            }
+            $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
+            if($requestHeader == -1){
+                $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+            }
+        }
+
+        $requestHeaders=[];
+        foreach ( $this->config->getRequestHeaders() as $key => $val) {
+            $requestHeaders[] = "$key: $val";
+        }
+
+        if ($this->merchantConfig->getIntermediateHost()) {
+            $intermediateHostUrl= $this->merchantConfig->getIntermediateHost();
+            if(substr( $intermediateHostUrl, 0, 7 ) === "http://" || substr( $intermediateHostUrl, 0, 8 ) === "https://"){
+                $url = $this->merchantConfig->getIntermediateHost() . $resourcePath;
+            }else{
+                $url =  GlobalParameter::HTTPS_PREFIX.$this->merchantConfig->getIntermediateHost() . $resourcePath;
+            }
+        }else{
+            $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
+        }
+
+        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($requestHeaders)));
 
         $curl = curl_init();
         // set timeout, if needed
@@ -266,7 +301,7 @@ class ApiClient
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $requestHeaders);
 
         // disable SSL verification, if needed
         if ($this->config->getSSLVerification() === false) {
@@ -349,7 +384,7 @@ class ApiClient
 
         // File download functionality
         $fileHandle = Null;
-        if (isset($this->downloadFilePath) && trim($this->downloadFilePath) != '') {
+        if (isset($this->downloadFilePath) && trim($this->downloadFilePath ?? '') != '') {
             // obtain the HTTP response headers
             curl_setopt($curl, CURLOPT_HEADER, 0);
             curl_setopt($curl, CURLOPT_HEADERFUNCTION, array($this, 'header_callback'));
@@ -374,7 +409,7 @@ class ApiClient
         // Make the request
         $response = curl_exec($curl);
 
-        if (!isset($this->downloadFilePath) && trim($this->downloadFilePath) == '') {
+        if (!isset($this->downloadFilePath) && trim($this->downloadFilePath ?? '') == '') {
             $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
             $http_header = $this->httpParseHeaders(substr($response, 0, $http_header_size));
             $http_body = substr($response, $http_header_size);
@@ -541,21 +576,21 @@ class ApiClient
 
             if (isset($h[1])) {
                 if (!isset($headers[$h[0]])) {
-                    $headers[$h[0]] = trim($h[1]);
+                    $headers[$h[0]] = trim($h[1] ?? '');
                 } elseif (is_array($headers[$h[0]])) {
-                    $headers[$h[0]] = array_merge($headers[$h[0]], [trim($h[1])]);
+                    $headers[$h[0]] = array_merge($headers[$h[0]], [trim($h[1] ?? '')]);
                 } else {
-                    $headers[$h[0]] = array_merge([$headers[$h[0]]], [trim($h[1])]);
+                    $headers[$h[0]] = array_merge([$headers[$h[0]]], [trim($h[1] ?? '')]);
                 }
 
                 $key = $h[0];
             } else {
                 if (substr($h[0], 0, 1) === "\t") {
-                    $headers[$key] .= "\r\n\t".trim($h[0]);
+                    $headers[$key] .= "\r\n\t".trim($h[0] ?? '');
                 } elseif (!$key) {
-                    $headers[0] = trim($h[0]);
+                    $headers[0] = trim($h[0] ?? '');
                 }
-                trim($h[0]);
+                trim($h[0] ?? '');
             }
         }
 
@@ -599,7 +634,7 @@ class ApiClient
 
         array_push($headers, "v-c-client-id:" . $this->clientId);
 
-        // if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId()) != '')
+        // if ($merchantConfig->getSolutionId() != null && trim($merchantConfig->getSolutionId() ?? '') != '')
         // {
             // array_push($headers, "v-c-solution-id:" . $merchantConfig->getSolutionId());
         // }

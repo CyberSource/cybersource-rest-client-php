@@ -54,7 +54,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks',
+        'links' => '\CyberSource\Model\InlineResponse200Links',
         'submitTimeUtc' => 'string',
         'totalInvoices' => 'int',
         'invoices' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseInvoices[]'
@@ -180,7 +180,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks
+     * @return \CyberSource\Model\InlineResponse200Links
      */
     public function getLinks()
     {
@@ -189,7 +189,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks $links
+     * @param \CyberSource\Model\InlineResponse200Links $links
      * @return $this
      */
     public function setLinks($links)
@@ -266,6 +266,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -276,6 +277,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -287,6 +289,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -301,6 +304,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

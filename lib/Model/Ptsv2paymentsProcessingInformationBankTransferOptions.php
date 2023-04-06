@@ -236,7 +236,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setDeclineAvsFlags($declineAvsFlags)
     {
-
         $this->container['declineAvsFlags'] = $declineAvsFlags;
 
         return $this;
@@ -258,7 +257,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setSecCode($secCode)
     {
-
         $this->container['secCode'] = $secCode;
 
         return $this;
@@ -280,7 +278,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setTerminalCity($terminalCity)
     {
-
         $this->container['terminalCity'] = $terminalCity;
 
         return $this;
@@ -302,7 +299,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setTerminalState($terminalState)
     {
-
         $this->container['terminalState'] = $terminalState;
 
         return $this;
@@ -324,7 +320,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setEffectiveDate($effectiveDate)
     {
-
         $this->container['effectiveDate'] = $effectiveDate;
 
         return $this;
@@ -346,7 +341,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setPartialPaymentId($partialPaymentId)
     {
-
         $this->container['partialPaymentId'] = $partialPaymentId;
 
         return $this;
@@ -368,7 +362,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setCustomerMemo($customerMemo)
     {
-
         $this->container['customerMemo'] = $customerMemo;
 
         return $this;
@@ -390,7 +383,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setPaymentCategoryCode($paymentCategoryCode)
     {
-
         $this->container['paymentCategoryCode'] = $paymentCategoryCode;
 
         return $this;
@@ -412,7 +404,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setSettlementMethod($settlementMethod)
     {
-
         $this->container['settlementMethod'] = $settlementMethod;
 
         return $this;
@@ -434,7 +425,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setFraudScreeningLevel($fraudScreeningLevel)
     {
-
         $this->container['fraudScreeningLevel'] = $fraudScreeningLevel;
 
         return $this;
@@ -456,7 +446,6 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      */
     public function setCustomerPresent($customerPresent)
     {
-
         $this->container['customerPresent'] = $customerPresent;
 
         return $this;
@@ -466,6 +455,7 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -476,6 +466,7 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -487,6 +478,7 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -501,6 +493,7 @@ class Ptsv2paymentsProcessingInformationBankTransferOptions implements ArrayAcce
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

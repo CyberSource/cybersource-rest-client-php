@@ -58,7 +58,7 @@ class InlineResponse4002 implements ArrayAccess
         'status' => 'string',
         'reason' => 'string',
         'message' => 'string',
-        'statusCode' => 'string'
+        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse4002 implements ArrayAccess
         'status' => null,
         'reason' => null,
         'message' => null,
-        'statusCode' => null
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +92,7 @@ class InlineResponse4002 implements ArrayAccess
         'status' => 'status',
         'reason' => 'reason',
         'message' => 'message',
-        'statusCode' => 'statusCode'
+        'details' => 'details'
     ];
 
 
@@ -105,7 +105,7 @@ class InlineResponse4002 implements ArrayAccess
         'status' => 'setStatus',
         'reason' => 'setReason',
         'message' => 'setMessage',
-        'statusCode' => 'setStatusCode'
+        'details' => 'setDetails'
     ];
 
 
@@ -118,7 +118,7 @@ class InlineResponse4002 implements ArrayAccess
         'status' => 'getStatus',
         'reason' => 'getReason',
         'message' => 'getMessage',
-        'statusCode' => 'getStatusCode'
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -156,7 +156,7 @@ class InlineResponse4002 implements ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -237,7 +237,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD
+     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_CARD  - CARD_TYPE_NOT_ACCEPTED  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_CARD_TYPE
      * @return $this
      */
     public function setReason($reason)
@@ -269,22 +269,22 @@ class InlineResponse4002 implements ArrayAccess
     }
 
     /**
-     * Gets statusCode
-     * @return string
+     * Gets details
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
      */
-    public function getStatusCode()
+    public function getDetails()
     {
-        return $this->container['statusCode'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets statusCode
-     * @param string $statusCode HTTP status code of the submitted request.  Possible values:  - 500
+     * Sets details
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
      * @return $this
      */
-    public function setStatusCode($statusCode)
+    public function setDetails($details)
     {
-        $this->container['statusCode'] = $statusCode;
+        $this->container['details'] = $details;
 
         return $this;
     }
@@ -293,6 +293,7 @@ class InlineResponse4002 implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -303,6 +304,7 @@ class InlineResponse4002 implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -314,6 +316,7 @@ class InlineResponse4002 implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -328,6 +331,7 @@ class InlineResponse4002 implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

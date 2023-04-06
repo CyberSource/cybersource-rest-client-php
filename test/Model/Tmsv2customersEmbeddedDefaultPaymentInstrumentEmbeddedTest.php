@@ -33,7 +33,7 @@ namespace CyberSource;
  * Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedTest Class Doc Comment
  *
  * @category    Class */
-// * @description Additional resources for the Payment Instrument token.
+// * @description Additional resources for the Payment Instrument.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

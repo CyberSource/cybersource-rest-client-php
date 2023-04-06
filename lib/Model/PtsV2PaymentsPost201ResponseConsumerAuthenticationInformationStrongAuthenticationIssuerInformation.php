@@ -200,7 +200,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     public function setRiskAnalysisExemptionResult($riskAnalysisExemptionResult)
     {
-
         $this->container['riskAnalysisExemptionResult'] = $riskAnalysisExemptionResult;
 
         return $this;
@@ -222,7 +221,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     public function setTrustedMerchantExemptionResult($trustedMerchantExemptionResult)
     {
-
         $this->container['trustedMerchantExemptionResult'] = $trustedMerchantExemptionResult;
 
         return $this;
@@ -244,7 +242,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     public function setLowValueExemptionResult($lowValueExemptionResult)
     {
-
         $this->container['lowValueExemptionResult'] = $lowValueExemptionResult;
 
         return $this;
@@ -266,7 +263,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     public function setSecureCorporatePaymentResult($secureCorporatePaymentResult)
     {
-
         $this->container['secureCorporatePaymentResult'] = $secureCorporatePaymentResult;
 
         return $this;
@@ -288,7 +284,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      */
     public function setTransactionRiskAnalysisExemptionResult($transactionRiskAnalysisExemptionResult)
     {
-
         $this->container['transactionRiskAnalysisExemptionResult'] = $transactionRiskAnalysisExemptionResult;
 
         return $this;
@@ -298,6 +293,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -308,6 +304,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -319,6 +316,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -333,6 +331,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

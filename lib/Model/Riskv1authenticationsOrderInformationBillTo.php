@@ -56,6 +56,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
     protected static $swaggerTypes = [
         'address1' => 'string',
         'address2' => 'string',
+        'address3' => 'string',
         'administrativeArea' => 'string',
         'country' => 'string',
         'locality' => 'string',
@@ -73,6 +74,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
     protected static $swaggerFormats = [
         'address1' => null,
         'address2' => null,
+        'address3' => null,
         'administrativeArea' => null,
         'country' => null,
         'locality' => null,
@@ -100,6 +102,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
     protected static $attributeMap = [
         'address1' => 'address1',
         'address2' => 'address2',
+        'address3' => 'address3',
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
         'locality' => 'locality',
@@ -118,6 +121,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
     protected static $setters = [
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
+        'address3' => 'setAddress3',
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
         'locality' => 'setLocality',
@@ -136,6 +140,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
     protected static $getters = [
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
+        'address3' => 'getAddress3',
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
         'locality' => 'getLocality',
@@ -179,6 +184,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
     {
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['address3'] = isset($data['address3']) ? $data['address3'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
@@ -272,7 +278,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -294,8 +299,28 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-
         $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets address3
+     * @return string
+     */
+    public function getAddress3()
+    {
+        return $this->container['address3'];
+    }
+
+    /**
+     * Sets address3
+     * @param string $address3 Additional address information (third line of the billing address)
+     * @return $this
+     */
+    public function setAddress3($address3)
+    {
+        $this->container['address3'] = $address3;
 
         return $this;
     }
@@ -316,7 +341,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -338,7 +362,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -360,7 +383,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -382,7 +404,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -404,7 +425,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -426,7 +446,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -448,7 +467,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -470,7 +488,6 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -480,6 +497,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -490,6 +508,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -501,6 +520,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -515,6 +535,7 @@ class Riskv1authenticationsOrderInformationBillTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

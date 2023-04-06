@@ -218,7 +218,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setBusinessApplicationId($businessApplicationId)
     {
-
         $this->container['businessApplicationId'] = $businessApplicationId;
 
         return $this;
@@ -240,7 +239,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setNetworkRoutingOrder($networkRoutingOrder)
     {
-
         $this->container['networkRoutingOrder'] = $networkRoutingOrder;
 
         return $this;
@@ -262,7 +260,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setCommerceIndicator($commerceIndicator)
     {
-
         $this->container['commerceIndicator'] = $commerceIndicator;
 
         return $this;
@@ -284,7 +281,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setReconciliationId($reconciliationId)
     {
-
         $this->container['reconciliationId'] = $reconciliationId;
 
         return $this;
@@ -327,7 +323,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setTransactionReason($transactionReason)
     {
-
         $this->container['transactionReason'] = $transactionReason;
 
         return $this;
@@ -349,7 +344,6 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      */
     public function setPurposeOfPayment($purposeOfPayment)
     {
-
         $this->container['purposeOfPayment'] = $purposeOfPayment;
 
         return $this;
@@ -380,6 +374,7 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -390,6 +385,7 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -401,6 +397,7 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -415,6 +412,7 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

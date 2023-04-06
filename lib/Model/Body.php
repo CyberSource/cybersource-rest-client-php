@@ -47,16 +47,17 @@ class Body implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'body';
+    protected static $swaggerModelName = 'Body';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'requestor' => 'string',
-        'parsedTagLimit' => 'int',
-        'emvDetailsList' => '\CyberSource\Model\Tssv2transactionsemvTagDetailsEmvDetailsList[]'
+        'type' => 'string',
+        'included' => '\CyberSource\Model\Accountupdaterv1batchesIncluded',
+        'merchantReference' => 'string',
+        'notificationEmail' => 'string'
     ];
 
     /**
@@ -64,9 +65,10 @@ class Body implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'requestor' => null,
-        'parsedTagLimit' => null,
-        'emvDetailsList' => null
+        'type' => null,
+        'included' => null,
+        'merchantReference' => null,
+        'notificationEmail' => 'email'
     ];
 
     public static function swaggerTypes()
@@ -84,9 +86,10 @@ class Body implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'requestor' => 'requestor',
-        'parsedTagLimit' => 'parsedTagLimit',
-        'emvDetailsList' => 'emvDetailsList'
+        'type' => 'type',
+        'included' => 'included',
+        'merchantReference' => 'merchantReference',
+        'notificationEmail' => 'notificationEmail'
     ];
 
 
@@ -95,9 +98,10 @@ class Body implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'requestor' => 'setRequestor',
-        'parsedTagLimit' => 'setParsedTagLimit',
-        'emvDetailsList' => 'setEmvDetailsList'
+        'type' => 'setType',
+        'included' => 'setIncluded',
+        'merchantReference' => 'setMerchantReference',
+        'notificationEmail' => 'setNotificationEmail'
     ];
 
 
@@ -106,9 +110,10 @@ class Body implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'requestor' => 'getRequestor',
-        'parsedTagLimit' => 'getParsedTagLimit',
-        'emvDetailsList' => 'getEmvDetailsList'
+        'type' => 'getType',
+        'included' => 'getIncluded',
+        'merchantReference' => 'getMerchantReference',
+        'notificationEmail' => 'getNotificationEmail'
     ];
 
     public static function attributeMap()
@@ -142,9 +147,10 @@ class Body implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['requestor'] = isset($data['requestor']) ? $data['requestor'] : null;
-        $this->container['parsedTagLimit'] = isset($data['parsedTagLimit']) ? $data['parsedTagLimit'] : null;
-        $this->container['emvDetailsList'] = isset($data['emvDetailsList']) ? $data['emvDetailsList'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : 'oneOff';
+        $this->container['included'] = isset($data['included']) ? $data['included'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
+        $this->container['notificationEmail'] = isset($data['notificationEmail']) ? $data['notificationEmail'] : null;
     }
 
     /**
@@ -156,11 +162,8 @@ class Body implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['requestor'] === null) {
-            $invalid_properties[] = "'requestor' can't be null";
-        }
-        if ($this->container['emvDetailsList'] === null) {
-            $invalid_properties[] = "'emvDetailsList' can't be null";
+        if ($this->container['notificationEmail'] === null) {
+            $invalid_properties[] = "'notificationEmail' can't be null";
         }
         return $invalid_properties;
     }
@@ -174,10 +177,7 @@ class Body implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['requestor'] === null) {
-            return false;
-        }
-        if ($this->container['emvDetailsList'] === null) {
+        if ($this->container['notificationEmail'] === null) {
             return false;
         }
         return true;
@@ -185,64 +185,85 @@ class Body implements ArrayAccess
 
 
     /**
-     * Gets requestor
+     * Gets type
      * @return string
      */
-    public function getRequestor()
+    public function getType()
     {
-        return $this->container['requestor'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets requestor
-     * @param string $requestor Identifies the service requesting parsing
+     * Sets type
+     * @param string $type Valid Values:   * oneOff   * amexRegistration
      * @return $this
      */
-    public function setRequestor($requestor)
+    public function setType($type)
     {
-        $this->container['requestor'] = $requestor;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets parsedTagLimit
-     * @return int
+     * Gets included
+     * @return \CyberSource\Model\Accountupdaterv1batchesIncluded
      */
-    public function getParsedTagLimit()
+    public function getIncluded()
     {
-        return $this->container['parsedTagLimit'];
+        return $this->container['included'];
     }
 
     /**
-     * Sets parsedTagLimit
-     * @param int $parsedTagLimit Number of tags to parse for each EMV tag string provided.
+     * Sets included
+     * @param \CyberSource\Model\Accountupdaterv1batchesIncluded $included
      * @return $this
      */
-    public function setParsedTagLimit($parsedTagLimit)
+    public function setIncluded($included)
     {
-        $this->container['parsedTagLimit'] = $parsedTagLimit;
+        $this->container['included'] = $included;
 
         return $this;
     }
 
     /**
-     * Gets emvDetailsList
-     * @return \CyberSource\Model\Tssv2transactionsemvTagDetailsEmvDetailsList[]
+     * Gets merchantReference
+     * @return string
      */
-    public function getEmvDetailsList()
+    public function getMerchantReference()
     {
-        return $this->container['emvDetailsList'];
+        return $this->container['merchantReference'];
     }
 
     /**
-     * Sets emvDetailsList
-     * @param \CyberSource\Model\Tssv2transactionsemvTagDetailsEmvDetailsList[] $emvDetailsList An array of objects, each containing a requestId and the corresponding emvRequestCombinedTags
+     * Sets merchantReference
+     * @param string $merchantReference Reference used by merchant to identify batch.
      * @return $this
      */
-    public function setEmvDetailsList($emvDetailsList)
+    public function setMerchantReference($merchantReference)
     {
-        $this->container['emvDetailsList'] = $emvDetailsList;
+        $this->container['merchantReference'] = $merchantReference;
+
+        return $this;
+    }
+
+    /**
+     * Gets notificationEmail
+     * @return string
+     */
+    public function getNotificationEmail()
+    {
+        return $this->container['notificationEmail'];
+    }
+
+    /**
+     * Sets notificationEmail
+     * @param string $notificationEmail Email used to notify the batch status.
+     * @return $this
+     */
+    public function setNotificationEmail($notificationEmail)
+    {
+        $this->container['notificationEmail'] = $notificationEmail;
 
         return $this;
     }
@@ -251,6 +272,7 @@ class Body implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -261,6 +283,7 @@ class Body implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -272,6 +295,7 @@ class Body implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -286,6 +310,7 @@ class Body implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

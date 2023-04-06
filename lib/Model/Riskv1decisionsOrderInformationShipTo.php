@@ -56,12 +56,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
     protected static $swaggerTypes = [
         'address1' => 'string',
         'address2' => 'string',
+        'address3' => 'string',
         'administrativeArea' => 'string',
         'country' => 'string',
         'destinationTypes' => 'string',
         'locality' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
+        'middleName' => 'string',
         'phoneNumber' => 'string',
         'postalCode' => 'string',
         'destinationCode' => 'int',
@@ -75,12 +77,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
     protected static $swaggerFormats = [
         'address1' => null,
         'address2' => null,
+        'address3' => null,
         'administrativeArea' => null,
         'country' => null,
         'destinationTypes' => null,
         'locality' => null,
         'firstName' => null,
         'lastName' => null,
+        'middleName' => null,
         'phoneNumber' => null,
         'postalCode' => null,
         'destinationCode' => null,
@@ -104,12 +108,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
     protected static $attributeMap = [
         'address1' => 'address1',
         'address2' => 'address2',
+        'address3' => 'address3',
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
         'destinationTypes' => 'destinationTypes',
         'locality' => 'locality',
         'firstName' => 'firstName',
         'lastName' => 'lastName',
+        'middleName' => 'middleName',
         'phoneNumber' => 'phoneNumber',
         'postalCode' => 'postalCode',
         'destinationCode' => 'destinationCode',
@@ -124,12 +130,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
     protected static $setters = [
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
+        'address3' => 'setAddress3',
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
         'destinationTypes' => 'setDestinationTypes',
         'locality' => 'setLocality',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
+        'middleName' => 'setMiddleName',
         'phoneNumber' => 'setPhoneNumber',
         'postalCode' => 'setPostalCode',
         'destinationCode' => 'setDestinationCode',
@@ -144,12 +152,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
     protected static $getters = [
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
+        'address3' => 'getAddress3',
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
         'destinationTypes' => 'getDestinationTypes',
         'locality' => 'getLocality',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
+        'middleName' => 'getMiddleName',
         'phoneNumber' => 'getPhoneNumber',
         'postalCode' => 'getPostalCode',
         'destinationCode' => 'getDestinationCode',
@@ -189,12 +199,14 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
     {
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['address3'] = isset($data['address3']) ? $data['address3'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['destinationTypes'] = isset($data['destinationTypes']) ? $data['destinationTypes'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['destinationCode'] = isset($data['destinationCode']) ? $data['destinationCode'] : null;
@@ -242,7 +254,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -264,8 +275,28 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-
         $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets address3
+     * @return string
+     */
+    public function getAddress3()
+    {
+        return $this->container['address3'];
+    }
+
+    /**
+     * Sets address3
+     * @param string $address3 Third line of the shipping address.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present.
+     * @return $this
+     */
+    public function setAddress3($address3)
+    {
+        $this->container['address3'] = $address3;
 
         return $this;
     }
@@ -281,12 +312,11 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf)  Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present.
+     * @param string $administrativeArea State or province of the shipping address. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf) (maximum length: 2)   Required field for authorization if any shipping address information is included in the request and shipping to the U.S. or Canada; otherwise, optional.  #### Tax Calculation Optional field for U.S. and Canadian taxes. Not applicable to international and value added taxes. Billing address objects will be used to determine the cardholder’s location when shipTo objects are not present.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -308,7 +338,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -330,7 +359,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setDestinationTypes($destinationTypes)
     {
-
         $this->container['destinationTypes'] = $destinationTypes;
 
         return $this;
@@ -352,7 +380,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -374,7 +401,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -396,8 +422,28 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleName
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middleName'];
+    }
+
+    /**
+     * Sets middleName
+     * @param string $middleName Middle name of the recipient.  #### Litle Maximum length: 25  #### All other processors Maximum length: 60  Optional field.
+     * @return $this
+     */
+    public function setMiddleName($middleName)
+    {
+        $this->container['middleName'] = $middleName;
 
         return $this;
     }
@@ -418,7 +464,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -440,7 +485,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -483,7 +527,6 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      */
     public function setMethod($method)
     {
-
         $this->container['method'] = $method;
 
         return $this;
@@ -493,6 +536,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -503,6 +547,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -514,6 +559,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -528,6 +574,7 @@ class Riskv1decisionsOrderInformationShipTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

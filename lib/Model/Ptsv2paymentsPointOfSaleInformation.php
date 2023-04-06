@@ -71,6 +71,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCardCaptureCapability' => 'string',
         'terminalOutputCapability' => 'string',
         'terminalPinCapability' => 'int',
+        'pinEntrySolution' => 'string',
         'deviceId' => 'string',
         'pinBlockEncodingFormat' => 'int',
         'encryptedPin' => 'string',
@@ -106,6 +107,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCardCaptureCapability' => null,
         'terminalOutputCapability' => null,
         'terminalPinCapability' => null,
+        'pinEntrySolution' => null,
         'deviceId' => null,
         'pinBlockEncodingFormat' => null,
         'encryptedPin' => null,
@@ -151,6 +153,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCardCaptureCapability' => 'terminalCardCaptureCapability',
         'terminalOutputCapability' => 'terminalOutputCapability',
         'terminalPinCapability' => 'terminalPinCapability',
+        'pinEntrySolution' => 'pinEntrySolution',
         'deviceId' => 'deviceId',
         'pinBlockEncodingFormat' => 'pinBlockEncodingFormat',
         'encryptedPin' => 'encryptedPin',
@@ -187,6 +190,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCardCaptureCapability' => 'setTerminalCardCaptureCapability',
         'terminalOutputCapability' => 'setTerminalOutputCapability',
         'terminalPinCapability' => 'setTerminalPinCapability',
+        'pinEntrySolution' => 'setPinEntrySolution',
         'deviceId' => 'setDeviceId',
         'pinBlockEncodingFormat' => 'setPinBlockEncodingFormat',
         'encryptedPin' => 'setEncryptedPin',
@@ -223,6 +227,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'terminalCardCaptureCapability' => 'getTerminalCardCaptureCapability',
         'terminalOutputCapability' => 'getTerminalOutputCapability',
         'terminalPinCapability' => 'getTerminalPinCapability',
+        'pinEntrySolution' => 'getPinEntrySolution',
         'deviceId' => 'getDeviceId',
         'pinBlockEncodingFormat' => 'getPinBlockEncodingFormat',
         'encryptedPin' => 'getEncryptedPin',
@@ -284,6 +289,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['terminalCardCaptureCapability'] = isset($data['terminalCardCaptureCapability']) ? $data['terminalCardCaptureCapability'] : null;
         $this->container['terminalOutputCapability'] = isset($data['terminalOutputCapability']) ? $data['terminalOutputCapability'] : null;
         $this->container['terminalPinCapability'] = isset($data['terminalPinCapability']) ? $data['terminalPinCapability'] : null;
+        $this->container['pinEntrySolution'] = isset($data['pinEntrySolution']) ? $data['pinEntrySolution'] : null;
         $this->container['deviceId'] = isset($data['deviceId']) ? $data['deviceId'] : null;
         $this->container['pinBlockEncodingFormat'] = isset($data['pinBlockEncodingFormat']) ? $data['pinBlockEncodingFormat'] : null;
         $this->container['encryptedPin'] = isset($data['encryptedPin']) ? $data['encryptedPin'] : null;
@@ -306,26 +312,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['catLevel']) && ($this->container['catLevel'] > 9)) {
-            $invalid_properties[] = "invalid value for 'catLevel', must be smaller than or equal to 9.";
-        }
-
-        if (!is_null($this->container['catLevel']) && ($this->container['catLevel'] < 1)) {
-            $invalid_properties[] = "invalid value for 'catLevel', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] > 5)) {
-            $invalid_properties[] = "invalid value for 'terminalCapability', must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] < 1)) {
-            $invalid_properties[] = "invalid value for 'terminalCapability', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['pinBlockEncodingFormat']) && ($this->container['pinBlockEncodingFormat'] > 9)) {
-            $invalid_properties[] = "invalid value for 'pinBlockEncodingFormat', must be smaller than or equal to 9.";
-        }
-
         return $invalid_properties;
     }
 
@@ -338,21 +324,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['catLevel'] > 9) {
-            return false;
-        }
-        if ($this->container['catLevel'] < 1) {
-            return false;
-        }
-        if ($this->container['terminalCapability'] > 5) {
-            return false;
-        }
-        if ($this->container['terminalCapability'] < 1) {
-            return false;
-        }
-        if ($this->container['pinBlockEncodingFormat'] > 9) {
-            return false;
-        }
         return true;
     }
 
@@ -373,7 +344,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalId($terminalId)
     {
-
         $this->container['terminalId'] = $terminalId;
 
         return $this;
@@ -395,7 +365,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalSerialNumber($terminalSerialNumber)
     {
-
         $this->container['terminalSerialNumber'] = $terminalSerialNumber;
 
         return $this;
@@ -438,7 +407,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setLaneNumber($laneNumber)
     {
-
         $this->container['laneNumber'] = $laneNumber;
 
         return $this;
@@ -460,13 +428,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setCatLevel($catLevel)
     {
-        if (!is_null($catLevel) && ($catLevel > 9)) {
-            throw new \InvalidArgumentException('invalid value for $catLevel when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 9.');
-        }
-        if (!is_null($catLevel) && ($catLevel < 1)) {
-            throw new \InvalidArgumentException('invalid value for $catLevel when calling Ptsv2paymentsPointOfSaleInformation., must be bigger than or equal to 1.');
-        }
-
         $this->container['catLevel'] = $catLevel;
 
         return $this;
@@ -488,7 +449,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEntryMode($entryMode)
     {
-
         $this->container['entryMode'] = $entryMode;
 
         return $this;
@@ -510,13 +470,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalCapability($terminalCapability)
     {
-        if (!is_null($terminalCapability) && ($terminalCapability > 5)) {
-            throw new \InvalidArgumentException('invalid value for $terminalCapability when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 5.');
-        }
-        if (!is_null($terminalCapability) && ($terminalCapability < 1)) {
-            throw new \InvalidArgumentException('invalid value for $terminalCapability when calling Ptsv2paymentsPointOfSaleInformation., must be bigger than or equal to 1.');
-        }
-
         $this->container['terminalCapability'] = $terminalCapability;
 
         return $this;
@@ -538,7 +491,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setOperatingEnvironment($operatingEnvironment)
     {
-
         $this->container['operatingEnvironment'] = $operatingEnvironment;
 
         return $this;
@@ -581,7 +533,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setAmexCapnData($amexCapnData)
     {
-
         $this->container['amexCapnData'] = $amexCapnData;
 
         return $this;
@@ -624,7 +575,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setStoreAndForwardIndicator($storeAndForwardIndicator)
     {
-
         $this->container['storeAndForwardIndicator'] = $storeAndForwardIndicator;
 
         return $this;
@@ -688,7 +638,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalCardCaptureCapability($terminalCardCaptureCapability)
     {
-
         $this->container['terminalCardCaptureCapability'] = $terminalCardCaptureCapability;
 
         return $this;
@@ -710,7 +659,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalOutputCapability($terminalOutputCapability)
     {
-
         $this->container['terminalOutputCapability'] = $terminalOutputCapability;
 
         return $this;
@@ -727,12 +675,33 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets terminalPinCapability
-     * @param int $terminalPinCapability Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions.
+     * @param int $terminalPinCapability Maximum PIN length that the terminal can capture.  Possible values: -  0: No PIN capture capability -  1: PIN capture capability unknown -  2: PIN Pad down -  4: Four characters -  5: Five characters -  6: Six characters -  7: Seven characters -  8: Eight characters -  9: Nine characters - 10: Ten characters - 11: Eleven characters - 12: Twelve characters  This field is supported for authorizations and credits only on the following processors: - American Express Direct - Credit Mutuel-CIC - OmniPay Direct - SIX  Required field for authorization or credit of PIN transactions.
      * @return $this
      */
     public function setTerminalPinCapability($terminalPinCapability)
     {
         $this->container['terminalPinCapability'] = $terminalPinCapability;
+
+        return $this;
+    }
+
+    /**
+     * Gets pinEntrySolution
+     * @return string
+     */
+    public function getPinEntrySolution()
+    {
+        return $this->container['pinEntrySolution'];
+    }
+
+    /**
+     * Sets pinEntrySolution
+     * @param string $pinEntrySolution This field will contain the type of Pin Pad the terminal has.  Possible values: -   PCI-SPoC: Where the pin is being put on screen -   PCI-PTS: Where the pin is being put on actual hardware pin pad
+     * @return $this
+     */
+    public function setPinEntrySolution($pinEntrySolution)
+    {
+        $this->container['pinEntrySolution'] = $pinEntrySolution;
 
         return $this;
     }
@@ -753,7 +722,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setDeviceId($deviceId)
     {
-
         $this->container['deviceId'] = $deviceId;
 
         return $this;
@@ -775,10 +743,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setPinBlockEncodingFormat($pinBlockEncodingFormat)
     {
-        if (!is_null($pinBlockEncodingFormat) && ($pinBlockEncodingFormat > 9)) {
-            throw new \InvalidArgumentException('invalid value for $pinBlockEncodingFormat when calling Ptsv2paymentsPointOfSaleInformation., must be smaller than or equal to 9.');
-        }
-
         $this->container['pinBlockEncodingFormat'] = $pinBlockEncodingFormat;
 
         return $this;
@@ -800,7 +764,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEncryptedPin($encryptedPin)
     {
-
         $this->container['encryptedPin'] = $encryptedPin;
 
         return $this;
@@ -822,7 +785,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEncryptedKeySerialNumber($encryptedKeySerialNumber)
     {
-
         $this->container['encryptedKeySerialNumber'] = $encryptedKeySerialNumber;
 
         return $this;
@@ -844,7 +806,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setPartnerSdkVersion($partnerSdkVersion)
     {
-
         $this->container['partnerSdkVersion'] = $partnerSdkVersion;
 
         return $this;
@@ -866,7 +827,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setEmvApplicationIdentifierAndDedicatedFileName($emvApplicationIdentifierAndDedicatedFileName)
     {
-
         $this->container['emvApplicationIdentifierAndDedicatedFileName'] = $emvApplicationIdentifierAndDedicatedFileName;
 
         return $this;
@@ -888,7 +848,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalCompliance($terminalCompliance)
     {
-
         $this->container['terminalCompliance'] = $terminalCompliance;
 
         return $this;
@@ -910,7 +869,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setIsDedicatedHardwareTerminal($isDedicatedHardwareTerminal)
     {
-
         $this->container['isDedicatedHardwareTerminal'] = $isDedicatedHardwareTerminal;
 
         return $this;
@@ -932,7 +890,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalModel($terminalModel)
     {
-
         $this->container['terminalModel'] = $terminalModel;
 
         return $this;
@@ -954,7 +911,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setTerminalMake($terminalMake)
     {
-
         $this->container['terminalMake'] = $terminalMake;
 
         return $this;
@@ -976,7 +932,6 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      */
     public function setServiceCode($serviceCode)
     {
-
         $this->container['serviceCode'] = $serviceCode;
 
         return $this;
@@ -986,6 +941,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -996,6 +952,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -1007,6 +964,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -1021,6 +979,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

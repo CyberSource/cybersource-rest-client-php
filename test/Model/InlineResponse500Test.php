@@ -78,30 +78,9 @@ class InlineResponse500Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "errors"
      */
-    public function testPropertySubmitTimeUtc()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "reason"
-     */
-    public function testPropertyReason()
-    {
-    }
-
-    /**
-     * Test attribute "message"
-     */
-    public function testPropertyMessage()
+    public function testPropertyErrors()
     {
     }
 }

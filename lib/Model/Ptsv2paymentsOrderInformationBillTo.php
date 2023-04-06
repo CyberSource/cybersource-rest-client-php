@@ -302,7 +302,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -324,7 +323,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -346,7 +344,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setMiddleName($middleName)
     {
-
         $this->container['middleName'] = $middleName;
 
         return $this;
@@ -368,7 +365,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setNameSuffix($nameSuffix)
     {
-
         $this->container['nameSuffix'] = $nameSuffix;
 
         return $this;
@@ -390,7 +386,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setTitle($title)
     {
-
         $this->container['title'] = $title;
 
         return $this;
@@ -433,7 +428,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -455,7 +449,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress2($address2)
     {
-
         $this->container['address2'] = $address2;
 
         return $this;
@@ -477,7 +470,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress3($address3)
     {
-
         $this->container['address3'] = $address3;
 
         return $this;
@@ -499,7 +491,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAddress4($address4)
     {
-
         $this->container['address4'] = $address4;
 
         return $this;
@@ -521,7 +512,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -543,7 +533,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -565,7 +554,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -587,7 +575,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setCounty($county)
     {
-
         $this->container['county'] = $county;
 
         return $this;
@@ -609,7 +596,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -631,7 +617,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setDistrict($district)
     {
-
         $this->container['district'] = $district;
 
         return $this;
@@ -653,7 +638,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setBuildingNumber($buildingNumber)
     {
-
         $this->container['buildingNumber'] = $buildingNumber;
 
         return $this;
@@ -675,7 +659,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -697,7 +680,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setEmailDomain($emailDomain)
     {
-
         $this->container['emailDomain'] = $emailDomain;
 
         return $this;
@@ -719,7 +701,6 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -771,6 +752,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -781,6 +763,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -792,6 +775,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -806,6 +790,7 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

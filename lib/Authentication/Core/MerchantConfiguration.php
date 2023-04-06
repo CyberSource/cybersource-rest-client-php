@@ -192,6 +192,13 @@ class MerchantConfiguration
     protected $runEnvironment="";
 
     /**
+     * Curl RUN Environment
+     *
+     * @var string
+     */
+    protected $IntermediateHost="";
+
+    /**
      * Solution ID
      *
      * @var string
@@ -273,6 +280,29 @@ class MerchantConfiguration
             return $this->runEnvironment;
         }
     }
+
+    /**
+     * Sets the IntermediateHost for axa intermediate feature
+     *
+     * @param string $IntermediateHost url for intermediate host
+     *
+     * @return void
+     */
+    public function setIntermediateHost($IntermediateHost)
+    {
+        $this->IntermediateHost = $IntermediateHost;
+        return $this;
+    }
+
+    /**
+     * Gets the IntermediateHost for intermediate url
+     * @return string $IntermediateHost
+     */
+    public function getIntermediateHost()
+    {
+        return $this->IntermediateHost;
+    }
+
 
     /**
      * Sets the Solution ID
@@ -867,7 +897,7 @@ class MerchantConfiguration
         $config = new MerchantConfiguration();
 
         if(isset($connectionDet->authenticationType))
-            $config = $config->setAuthenticationType(strtoupper(trim($connectionDet->authenticationType)));
+            $config = $config->setAuthenticationType(strtoupper(trim($connectionDet->authenticationType ?? '')));
         else
             $error_message .= GlobalParameter::AUTHTYPE;
 

@@ -168,14 +168,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] > 5)) {
-            $invalid_properties[] = "invalid value for 'terminalCapability', must be smaller than or equal to 5.";
-        }
-
-        if (!is_null($this->container['terminalCapability']) && ($this->container['terminalCapability'] < 1)) {
-            $invalid_properties[] = "invalid value for 'terminalCapability', must be bigger than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -188,12 +180,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
     public function valid()
     {
 
-        if ($this->container['terminalCapability'] > 5) {
-            return false;
-        }
-        if ($this->container['terminalCapability'] < 1) {
-            return false;
-        }
         return true;
     }
 
@@ -214,7 +200,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     public function setTerminalId($terminalId)
     {
-
         $this->container['terminalId'] = $terminalId;
 
         return $this;
@@ -236,7 +221,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     public function setEntryMode($entryMode)
     {
-
         $this->container['entryMode'] = $entryMode;
 
         return $this;
@@ -258,13 +242,6 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      */
     public function setTerminalCapability($terminalCapability)
     {
-        if (!is_null($terminalCapability) && ($terminalCapability > 5)) {
-            throw new \InvalidArgumentException('invalid value for $terminalCapability when calling TssV2TransactionsGet200ResponsePointOfSaleInformation., must be smaller than or equal to 5.');
-        }
-        if (!is_null($terminalCapability) && ($terminalCapability < 1)) {
-            throw new \InvalidArgumentException('invalid value for $terminalCapability when calling TssV2TransactionsGet200ResponsePointOfSaleInformation., must be bigger than or equal to 1.');
-        }
-
         $this->container['terminalCapability'] = $terminalCapability;
 
         return $this;
@@ -316,6 +293,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -326,6 +304,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -337,6 +316,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -351,6 +331,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

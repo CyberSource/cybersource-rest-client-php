@@ -233,7 +233,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      */
     public function setEncryptionKey($encryptionKey)
     {
-
         $this->container['encryptionKey'] = $encryptionKey;
 
         return $this;
@@ -276,7 +275,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      */
     public function setEncryptionType($encryptionType)
     {
-
         $this->container['encryptionType'] = $encryptionType;
 
         return $this;
@@ -298,7 +296,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      */
     public function setLabel($label)
     {
-
         $this->container['label'] = $label;
 
         return $this;
@@ -320,7 +317,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      */
     public function setPrompt($prompt)
     {
-
         $this->container['prompt'] = $prompt;
 
         return $this;
@@ -342,7 +338,6 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      */
     public function setStatusMessage($statusMessage)
     {
-
         $this->container['statusMessage'] = $statusMessage;
 
         return $this;
@@ -352,6 +347,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -362,6 +358,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -373,6 +370,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -387,6 +385,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

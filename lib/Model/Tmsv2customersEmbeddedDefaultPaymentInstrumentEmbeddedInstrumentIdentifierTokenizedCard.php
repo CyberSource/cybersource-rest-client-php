@@ -56,6 +56,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $swaggerTypes = [
         'type' => 'string',
         'state' => 'string',
+        'reason' => 'string',
         'number' => 'string',
         'expirationMonth' => 'string',
         'expirationYear' => 'string',
@@ -70,6 +71,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $swaggerFormats = [
         'type' => null,
         'state' => null,
+        'reason' => null,
         'number' => null,
         'expirationMonth' => null,
         'expirationYear' => null,
@@ -94,6 +96,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $attributeMap = [
         'type' => 'type',
         'state' => 'state',
+        'reason' => 'reason',
         'number' => 'number',
         'expirationMonth' => 'expirationMonth',
         'expirationYear' => 'expirationYear',
@@ -109,6 +112,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $setters = [
         'type' => 'setType',
         'state' => 'setState',
+        'reason' => 'setReason',
         'number' => 'setNumber',
         'expirationMonth' => 'setExpirationMonth',
         'expirationYear' => 'setExpirationYear',
@@ -124,6 +128,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $getters = [
         'type' => 'getType',
         'state' => 'getState',
+        'reason' => 'getReason',
         'number' => 'getNumber',
         'expirationMonth' => 'getExpirationMonth',
         'expirationYear' => 'getExpirationYear',
@@ -164,6 +169,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
         $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
@@ -207,7 +213,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets type
-     * @param string $type The network token card association brand Valid values: - visa - mastercard
+     * @param string $type The network token card association brand Possible Values: - visa - mastercard
      * @return $this
      */
     public function setType($type)
@@ -228,12 +234,33 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets state
-     * @param string $state Issuers state for the network token Valid values: - ACTIVE - SUSPENDED : This state can change to ACTIVE or DELETED. - DELETED : This is a final state for the network token.
+     * @param string $state State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful.
      * @return $this
      */
     public function setState($state)
     {
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason Issuers state for the network token Possible Values: - INVALID_REQUEST : The network token provision request contained invalid data. - CARD_VERIFICATION_FAILED : The network token provision request contained data that could not be verified. - CARD_NOT_ELIGIBLE : Card can currently not be used with issuer for tokenization. - CARD_NOT_ALLOWED : Card can currently not be used with card association for tokenization. - DECLINED : Card can currently not be used with issuer for tokenization. - SERVICE_UNAVAILABLE : The network token service was unavailable or timed out. - SYSTEM_ERROR : An unexpected error occurred with network token service, check configuration.
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -249,7 +276,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets number
-     * @param string $number The token requestors customer’s payment network token
+     * @param string $number The token requestors network token
      * @return $this
      */
     public function setNumber($number)
@@ -270,12 +297,11 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the network token expires.  Format: `MM`.  Valid values: `01` through `12`.
+     * @param string $expirationMonth Two-digit month in which the network token expires.  Format: `MM`.  Possible Values: `01` through `12`.
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
     {
-
         $this->container['expirationMonth'] = $expirationMonth;
 
         return $this;
@@ -297,7 +323,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      */
     public function setExpirationYear($expirationYear)
     {
-
         $this->container['expirationYear'] = $expirationYear;
 
         return $this;
@@ -349,6 +374,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -359,6 +385,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -370,6 +397,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -384,6 +412,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

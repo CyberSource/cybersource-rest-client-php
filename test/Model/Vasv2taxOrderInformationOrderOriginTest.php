@@ -33,7 +33,7 @@ namespace CyberSource;
  * Vasv2taxOrderInformationOrderOriginTest Class Doc Comment
  *
  * @category    Class */
-// * @description The location of the buyer at the time of placing the order.
+// * @description The Order Origin address fields may be used by the tax service to determine the taxability of the order or applicable taxing jurisdictions. You should consult your tax, legal and/or accounting advisors to determine if you should include an Order Origin address in your tax service request for some or all of your transactions based on your business.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

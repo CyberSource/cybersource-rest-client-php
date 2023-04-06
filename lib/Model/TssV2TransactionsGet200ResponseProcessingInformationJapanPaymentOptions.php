@@ -194,7 +194,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      */
     public function setPaymentMethod($paymentMethod)
     {
-
         $this->container['paymentMethod'] = $paymentMethod;
 
         return $this;
@@ -216,7 +215,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      */
     public function setTerminalId($terminalId)
     {
-
         $this->container['terminalId'] = $terminalId;
 
         return $this;
@@ -238,7 +236,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      */
     public function setBusinessName($businessName)
     {
-
         $this->container['businessName'] = $businessName;
 
         return $this;
@@ -260,7 +257,6 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      */
     public function setBusinessNameKatakana($businessNameKatakana)
     {
-
         $this->container['businessNameKatakana'] = $businessNameKatakana;
 
         return $this;
@@ -270,6 +266,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -280,6 +277,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -291,6 +289,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -305,6 +304,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

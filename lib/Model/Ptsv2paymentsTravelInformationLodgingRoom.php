@@ -150,14 +150,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['numberOfNights']) && ($this->container['numberOfNights'] > 9999)) {
-            $invalid_properties[] = "invalid value for 'numberOfNights', must be smaller than or equal to 9999.";
-        }
-
-        if (!is_null($this->container['numberOfNights']) && ($this->container['numberOfNights'] < 1)) {
-            $invalid_properties[] = "invalid value for 'numberOfNights', must be bigger than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -170,12 +162,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['numberOfNights'] > 9999) {
-            return false;
-        }
-        if ($this->container['numberOfNights'] < 1) {
-            return false;
-        }
         return true;
     }
 
@@ -196,7 +182,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      */
     public function setDailyRate($dailyRate)
     {
-
         $this->container['dailyRate'] = $dailyRate;
 
         return $this;
@@ -218,13 +203,6 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      */
     public function setNumberOfNights($numberOfNights)
     {
-        if (!is_null($numberOfNights) && ($numberOfNights > 9999)) {
-            throw new \InvalidArgumentException('invalid value for $numberOfNights when calling Ptsv2paymentsTravelInformationLodgingRoom., must be smaller than or equal to 9999.');
-        }
-        if (!is_null($numberOfNights) && ($numberOfNights < 1)) {
-            throw new \InvalidArgumentException('invalid value for $numberOfNights when calling Ptsv2paymentsTravelInformationLodgingRoom., must be bigger than or equal to 1.');
-        }
-
         $this->container['numberOfNights'] = $numberOfNights;
 
         return $this;
@@ -234,6 +212,7 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -244,6 +223,7 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -255,6 +235,7 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -269,6 +250,7 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

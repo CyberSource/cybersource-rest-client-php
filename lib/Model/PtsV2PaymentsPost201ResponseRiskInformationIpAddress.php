@@ -213,7 +213,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setAnonymizerStatus($anonymizerStatus)
     {
-
         $this->container['anonymizerStatus'] = $anonymizerStatus;
 
         return $this;
@@ -235,7 +234,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -257,7 +255,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -279,7 +276,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -301,7 +297,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setRoutingMethod($routingMethod)
     {
-
         $this->container['routingMethod'] = $routingMethod;
 
         return $this;
@@ -323,7 +318,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setCarrier($carrier)
     {
-
         $this->container['carrier'] = $carrier;
 
         return $this;
@@ -345,7 +339,6 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      */
     public function setOrganization($organization)
     {
-
         $this->container['organization'] = $organization;
 
         return $this;
@@ -355,6 +348,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -365,6 +359,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -376,6 +371,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -390,6 +386,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

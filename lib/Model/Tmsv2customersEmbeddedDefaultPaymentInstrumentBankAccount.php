@@ -171,12 +171,11 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
 
     /**
      * Sets type
-     * @param string $type Account type.  Valid values:  - checking : C  - general ledger : G This value is supported only on Wells Fargo ACH  - savings : S (U.S. dollars only)  - corporate checking : X (U.S. dollars only)
+     * @param string $type Account type.  Possible Values:  - checking : C  - general ledger : G This value is supported only on Wells Fargo ACH  - savings : S (U.S. dollars only)  - corporate checking : X (U.S. dollars only)
      * @return $this
      */
     public function setType($type)
     {
-
         $this->container['type'] = $type;
 
         return $this;
@@ -186,6 +185,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -196,6 +196,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -207,6 +208,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -221,6 +223,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount implements Array
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

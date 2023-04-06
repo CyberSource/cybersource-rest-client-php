@@ -63,7 +63,17 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         'productName' => 'string',
         'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger',
         'shippingDestinationTypes' => 'string',
-        'taxAmount' => 'string'
+        'taxAmount' => 'string',
+        'shippingAddress1' => 'string',
+        'shippingAddress2' => 'string',
+        'shippingCity' => 'string',
+        'shippingCountryCode' => 'string',
+        'shippingFirstName' => 'string',
+        'shippingLastName' => 'string',
+        'shippingMiddleName' => 'string',
+        'shippingPhone' => 'int',
+        'shippingPostalCode' => 'int',
+        'shippingState' => 'string'
     ];
 
     /**
@@ -80,7 +90,17 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         'productName' => null,
         'passenger' => null,
         'shippingDestinationTypes' => null,
-        'taxAmount' => null
+        'taxAmount' => null,
+        'shippingAddress1' => null,
+        'shippingAddress2' => null,
+        'shippingCity' => null,
+        'shippingCountryCode' => null,
+        'shippingFirstName' => null,
+        'shippingLastName' => null,
+        'shippingMiddleName' => null,
+        'shippingPhone' => null,
+        'shippingPostalCode' => null,
+        'shippingState' => null
     ];
 
     public static function swaggerTypes()
@@ -107,7 +127,17 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         'productName' => 'productName',
         'passenger' => 'passenger',
         'shippingDestinationTypes' => 'shippingDestinationTypes',
-        'taxAmount' => 'taxAmount'
+        'taxAmount' => 'taxAmount',
+        'shippingAddress1' => 'shippingAddress1',
+        'shippingAddress2' => 'shippingAddress2',
+        'shippingCity' => 'shippingCity',
+        'shippingCountryCode' => 'shippingCountryCode',
+        'shippingFirstName' => 'shippingFirstName',
+        'shippingLastName' => 'shippingLastName',
+        'shippingMiddleName' => 'shippingMiddleName',
+        'shippingPhone' => 'shippingPhone',
+        'shippingPostalCode' => 'shippingPostalCode',
+        'shippingState' => 'shippingState'
     ];
 
 
@@ -125,7 +155,17 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         'productName' => 'setProductName',
         'passenger' => 'setPassenger',
         'shippingDestinationTypes' => 'setShippingDestinationTypes',
-        'taxAmount' => 'setTaxAmount'
+        'taxAmount' => 'setTaxAmount',
+        'shippingAddress1' => 'setShippingAddress1',
+        'shippingAddress2' => 'setShippingAddress2',
+        'shippingCity' => 'setShippingCity',
+        'shippingCountryCode' => 'setShippingCountryCode',
+        'shippingFirstName' => 'setShippingFirstName',
+        'shippingLastName' => 'setShippingLastName',
+        'shippingMiddleName' => 'setShippingMiddleName',
+        'shippingPhone' => 'setShippingPhone',
+        'shippingPostalCode' => 'setShippingPostalCode',
+        'shippingState' => 'setShippingState'
     ];
 
 
@@ -143,7 +183,17 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         'productName' => 'getProductName',
         'passenger' => 'getPassenger',
         'shippingDestinationTypes' => 'getShippingDestinationTypes',
-        'taxAmount' => 'getTaxAmount'
+        'taxAmount' => 'getTaxAmount',
+        'shippingAddress1' => 'getShippingAddress1',
+        'shippingAddress2' => 'getShippingAddress2',
+        'shippingCity' => 'getShippingCity',
+        'shippingCountryCode' => 'getShippingCountryCode',
+        'shippingFirstName' => 'getShippingFirstName',
+        'shippingLastName' => 'getShippingLastName',
+        'shippingMiddleName' => 'getShippingMiddleName',
+        'shippingPhone' => 'getShippingPhone',
+        'shippingPostalCode' => 'getShippingPostalCode',
+        'shippingState' => 'getShippingState'
     ];
 
     public static function attributeMap()
@@ -187,6 +237,16 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         $this->container['passenger'] = isset($data['passenger']) ? $data['passenger'] : null;
         $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
+        $this->container['shippingAddress1'] = isset($data['shippingAddress1']) ? $data['shippingAddress1'] : null;
+        $this->container['shippingAddress2'] = isset($data['shippingAddress2']) ? $data['shippingAddress2'] : null;
+        $this->container['shippingCity'] = isset($data['shippingCity']) ? $data['shippingCity'] : null;
+        $this->container['shippingCountryCode'] = isset($data['shippingCountryCode']) ? $data['shippingCountryCode'] : null;
+        $this->container['shippingFirstName'] = isset($data['shippingFirstName']) ? $data['shippingFirstName'] : null;
+        $this->container['shippingLastName'] = isset($data['shippingLastName']) ? $data['shippingLastName'] : null;
+        $this->container['shippingMiddleName'] = isset($data['shippingMiddleName']) ? $data['shippingMiddleName'] : null;
+        $this->container['shippingPhone'] = isset($data['shippingPhone']) ? $data['shippingPhone'] : null;
+        $this->container['shippingPostalCode'] = isset($data['shippingPostalCode']) ? $data['shippingPostalCode'] : null;
+        $this->container['shippingState'] = isset($data['shippingState']) ? $data['shippingState'] : null;
     }
 
     /**
@@ -201,14 +261,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
         if ($this->container['unitPrice'] === null) {
             $invalid_properties[] = "'unitPrice' can't be null";
         }
-        if (!is_null($this->container['quantity']) && ($this->container['quantity'] > 999999999)) {
-            $invalid_properties[] = "invalid value for 'quantity', must be smaller than or equal to 999999999.";
-        }
-
-        if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
-            $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
-        }
-
         return $invalid_properties;
     }
 
@@ -222,12 +274,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
     {
 
         if ($this->container['unitPrice'] === null) {
-            return false;
-        }
-        if ($this->container['quantity'] > 999999999) {
-            return false;
-        }
-        if ($this->container['quantity'] < 1) {
             return false;
         }
         return true;
@@ -250,7 +296,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setTotalAmount($totalAmount)
     {
-
         $this->container['totalAmount'] = $totalAmount;
 
         return $this;
@@ -272,7 +317,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setUnitPrice($unitPrice)
     {
-
         $this->container['unitPrice'] = $unitPrice;
 
         return $this;
@@ -294,13 +338,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setQuantity($quantity)
     {
-        if (!is_null($quantity) && ($quantity > 999999999)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling Riskv1authenticationsOrderInformationLineItems., must be smaller than or equal to 999999999.');
-        }
-        if (!is_null($quantity) && ($quantity < 1)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling Riskv1authenticationsOrderInformationLineItems., must be bigger than or equal to 1.');
-        }
-
         $this->container['quantity'] = $quantity;
 
         return $this;
@@ -343,7 +380,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setProductSKU($productSKU)
     {
-
         $this->container['productSKU'] = $productSKU;
 
         return $this;
@@ -386,7 +422,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setProductName($productName)
     {
-
         $this->container['productName'] = $productName;
 
         return $this;
@@ -429,7 +464,6 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setShippingDestinationTypes($shippingDestinationTypes)
     {
-
         $this->container['shippingDestinationTypes'] = $shippingDestinationTypes;
 
         return $this;
@@ -451,8 +485,217 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      */
     public function setTaxAmount($taxAmount)
     {
-
         $this->container['taxAmount'] = $taxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress1
+     * @return string
+     */
+    public function getShippingAddress1()
+    {
+        return $this->container['shippingAddress1'];
+    }
+
+    /**
+     * Sets shippingAddress1
+     * @param string $shippingAddress1 Address where item will be shipped
+     * @return $this
+     */
+    public function setShippingAddress1($shippingAddress1)
+    {
+        $this->container['shippingAddress1'] = $shippingAddress1;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingAddress2
+     * @return string
+     */
+    public function getShippingAddress2()
+    {
+        return $this->container['shippingAddress2'];
+    }
+
+    /**
+     * Sets shippingAddress2
+     * @param string $shippingAddress2 Address where item will be shipped
+     * @return $this
+     */
+    public function setShippingAddress2($shippingAddress2)
+    {
+        $this->container['shippingAddress2'] = $shippingAddress2;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingCity
+     * @return string
+     */
+    public function getShippingCity()
+    {
+        return $this->container['shippingCity'];
+    }
+
+    /**
+     * Sets shippingCity
+     * @param string $shippingCity City where item will be shipped
+     * @return $this
+     */
+    public function setShippingCity($shippingCity)
+    {
+        $this->container['shippingCity'] = $shippingCity;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingCountryCode
+     * @return string
+     */
+    public function getShippingCountryCode()
+    {
+        return $this->container['shippingCountryCode'];
+    }
+
+    /**
+     * Sets shippingCountryCode
+     * @param string $shippingCountryCode Country where item will be shipped
+     * @return $this
+     */
+    public function setShippingCountryCode($shippingCountryCode)
+    {
+        $this->container['shippingCountryCode'] = $shippingCountryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingFirstName
+     * @return string
+     */
+    public function getShippingFirstName()
+    {
+        return $this->container['shippingFirstName'];
+    }
+
+    /**
+     * Sets shippingFirstName
+     * @param string $shippingFirstName Customer's first name
+     * @return $this
+     */
+    public function setShippingFirstName($shippingFirstName)
+    {
+        $this->container['shippingFirstName'] = $shippingFirstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingLastName
+     * @return string
+     */
+    public function getShippingLastName()
+    {
+        return $this->container['shippingLastName'];
+    }
+
+    /**
+     * Sets shippingLastName
+     * @param string $shippingLastName Customer's last name
+     * @return $this
+     */
+    public function setShippingLastName($shippingLastName)
+    {
+        $this->container['shippingLastName'] = $shippingLastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingMiddleName
+     * @return string
+     */
+    public function getShippingMiddleName()
+    {
+        return $this->container['shippingMiddleName'];
+    }
+
+    /**
+     * Sets shippingMiddleName
+     * @param string $shippingMiddleName Customer's middle name
+     * @return $this
+     */
+    public function setShippingMiddleName($shippingMiddleName)
+    {
+        $this->container['shippingMiddleName'] = $shippingMiddleName;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingPhone
+     * @return int
+     */
+    public function getShippingPhone()
+    {
+        return $this->container['shippingPhone'];
+    }
+
+    /**
+     * Sets shippingPhone
+     * @param int $shippingPhone Phone number where item will be shipped
+     * @return $this
+     */
+    public function setShippingPhone($shippingPhone)
+    {
+        $this->container['shippingPhone'] = $shippingPhone;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingPostalCode
+     * @return int
+     */
+    public function getShippingPostalCode()
+    {
+        return $this->container['shippingPostalCode'];
+    }
+
+    /**
+     * Sets shippingPostalCode
+     * @param int $shippingPostalCode Postal code where item will be shipped
+     * @return $this
+     */
+    public function setShippingPostalCode($shippingPostalCode)
+    {
+        $this->container['shippingPostalCode'] = $shippingPostalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingState
+     * @return string
+     */
+    public function getShippingState()
+    {
+        return $this->container['shippingState'];
+    }
+
+    /**
+     * Sets shippingState
+     * @param string $shippingState State where item will be shipped
+     * @return $this
+     */
+    public function setShippingState($shippingState)
+    {
+        $this->container['shippingState'] = $shippingState;
 
         return $this;
     }
@@ -461,6 +704,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -471,6 +715,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -482,6 +727,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -496,6 +742,7 @@ class Riskv1authenticationsOrderInformationLineItems implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

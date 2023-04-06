@@ -101,7 +101,7 @@ class UnifiedCheckoutCaptureContextApi
      *
      * @param \CyberSource\Model\GenerateUnifiedCheckoutCaptureContextRequest $generateUnifiedCheckoutCaptureContextRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function generateUnifiedCheckoutCaptureContext($generateUnifiedCheckoutCaptureContextRequest)
     {
@@ -119,7 +119,7 @@ class UnifiedCheckoutCaptureContextApi
      *
      * @param \CyberSource\Model\GenerateUnifiedCheckoutCaptureContextRequest $generateUnifiedCheckoutCaptureContextRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function generateUnifiedCheckoutCaptureContextWithHttpInfo($generateUnifiedCheckoutCaptureContextRequest)
     {
@@ -165,7 +165,7 @@ class UnifiedCheckoutCaptureContextApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : null");
+        self::$logger->debug("Return Type : string");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -174,17 +174,21 @@ class UnifiedCheckoutCaptureContextApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                null,
+                'string',
                 '/up/v1/capture-contexts'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4006', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

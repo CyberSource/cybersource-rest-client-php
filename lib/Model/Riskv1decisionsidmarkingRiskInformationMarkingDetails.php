@@ -195,7 +195,6 @@ class Riskv1decisionsidmarkingRiskInformationMarkingDetails implements ArrayAcce
      */
     public function setNotes($notes)
     {
-
         $this->container['notes'] = $notes;
 
         return $this;
@@ -217,7 +216,6 @@ class Riskv1decisionsidmarkingRiskInformationMarkingDetails implements ArrayAcce
      */
     public function setReason($reason)
     {
-
         $this->container['reason'] = $reason;
 
         return $this;
@@ -269,6 +267,7 @@ class Riskv1decisionsidmarkingRiskInformationMarkingDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -279,6 +278,7 @@ class Riskv1decisionsidmarkingRiskInformationMarkingDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -290,6 +290,7 @@ class Riskv1decisionsidmarkingRiskInformationMarkingDetails implements ArrayAcce
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -304,6 +305,7 @@ class Riskv1decisionsidmarkingRiskInformationMarkingDetails implements ArrayAcce
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

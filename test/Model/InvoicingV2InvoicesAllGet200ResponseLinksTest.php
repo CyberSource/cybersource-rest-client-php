@@ -85,16 +85,23 @@ class InvoicingV2InvoicesAllGet200ResponseLinksTest extends \PHPUnit_Framework_T
     }
 
     /**
-     * Test attribute "next"
+     * Test attribute "update"
      */
-    public function testPropertyNext()
+    public function testPropertyUpdate()
     {
     }
 
     /**
-     * Test attribute "previous"
+     * Test attribute "deliver"
      */
-    public function testPropertyPrevious()
+    public function testPropertyDeliver()
+    {
+    }
+
+    /**
+     * Test attribute "cancel"
+     */
+    public function testPropertyCancel()
     {
     }
 }

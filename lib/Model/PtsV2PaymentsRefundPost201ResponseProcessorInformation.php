@@ -212,7 +212,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setApprovalCode($approvalCode)
     {
-
         $this->container['approvalCode'] = $approvalCode;
 
         return $this;
@@ -234,7 +233,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setTransactionId($transactionId)
     {
-
         $this->container['transactionId'] = $transactionId;
 
         return $this;
@@ -256,7 +254,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setForwardedAcquirerCode($forwardedAcquirerCode)
     {
-
         $this->container['forwardedAcquirerCode'] = $forwardedAcquirerCode;
 
         return $this;
@@ -278,7 +275,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setMerchantNumber($merchantNumber)
     {
-
         $this->container['merchantNumber'] = $merchantNumber;
 
         return $this;
@@ -300,7 +296,6 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      */
     public function setResponseCode($responseCode)
     {
-
         $this->container['responseCode'] = $responseCode;
 
         return $this;
@@ -352,6 +347,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -362,6 +358,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -373,6 +370,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -387,6 +385,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

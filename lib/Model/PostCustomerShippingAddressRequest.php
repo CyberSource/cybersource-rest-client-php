@@ -216,12 +216,11 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id The id of the Shipping Address Token.
+     * @param string $id The Id of the Shipping Address Token.
      * @return $this
      */
     public function setId($id)
     {
-
         $this->container['id'] = $id;
 
         return $this;
@@ -238,7 +237,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Sets default
-     * @param bool $default Flag that indicates whether customer shipping address is the dafault. Valid values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default.
+     * @param bool $default Flag that indicates whether customer shipping address is the dafault. Possible Values:  - `true`: Shipping Address is customer's default.  - `false`: Shipping Address is not customer's default.
      * @return $this
      */
     public function setDefault($default)
@@ -294,6 +293,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -304,6 +304,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -315,6 +316,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -329,6 +331,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

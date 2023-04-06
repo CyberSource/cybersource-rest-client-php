@@ -370,7 +370,6 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
         if (!is_null($reportInterval) && (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $reportInterval))) {
             throw new \InvalidArgumentException("invalid value for $reportInterval when calling ReportingV3ReportSubscriptionsGet200ResponseSubscriptions., must conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.");
         }
-
         $this->container['reportInterval'] = $reportInterval;
 
         return $this;
@@ -548,6 +547,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -558,6 +558,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -569,6 +570,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -583,6 +585,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

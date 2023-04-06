@@ -113,6 +113,13 @@ class PostCustomerPaymentInstrumentRequestTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
      * Test attribute "bankAccount"
      */
     public function testPropertyBankAccount()

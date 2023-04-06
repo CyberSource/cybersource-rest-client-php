@@ -99,16 +99,16 @@ class CustomerShippingAddressApi
      *
      * Delete a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $shippingAddressId The Id of a shipping address. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCustomerShippingAddress($customerTokenId, $shippingAddressTokenId, $profileId = null)
+    public function deleteCustomerShippingAddress($customerId, $shippingAddressId, $profileId = null)
     {
         self::$logger->info('CALL TO METHOD deleteCustomerShippingAddress STARTED');
-        list($response, $statusCode, $httpHeader) = $this->deleteCustomerShippingAddressWithHttpInfo($customerTokenId, $shippingAddressTokenId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->deleteCustomerShippingAddressWithHttpInfo($customerId, $shippingAddressId, $profileId);
         self::$logger->info('CALL TO METHOD deleteCustomerShippingAddress ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -119,40 +119,40 @@ class CustomerShippingAddressApi
      *
      * Delete a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $shippingAddressId The Id of a shipping address. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCustomerShippingAddressWithHttpInfo($customerTokenId, $shippingAddressTokenId, $profileId = null)
+    public function deleteCustomerShippingAddressWithHttpInfo($customerId, $shippingAddressId, $profileId = null)
     {
-        // verify the required parameter 'customerTokenId' is set
-        if ($customerTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling deleteCustomerShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling deleteCustomerShippingAddress');
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling deleteCustomerShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $customerId when calling deleteCustomerShippingAddress');
         }
-        if ((strlen($customerTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($customerId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($customerTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($customerId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'shippingAddressTokenId' is set
-        if ($shippingAddressTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressTokenId when calling deleteCustomerShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $shippingAddressTokenId when calling deleteCustomerShippingAddress');
+        // verify the required parameter 'shippingAddressId' is set
+        if ($shippingAddressId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling deleteCustomerShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling deleteCustomerShippingAddress');
         }
-        if ((strlen($shippingAddressTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressTokenId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressTokenId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($shippingAddressId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($shippingAddressTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressTokenId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressTokenId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($shippingAddressId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
@@ -165,7 +165,7 @@ class CustomerShippingAddressApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}";
+        $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -181,18 +181,18 @@ class CustomerShippingAddressApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($customerTokenId !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
-                "{" . "customerTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($customerTokenId),
+                "{" . "customerId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($customerId),
                 $resourcePath
             );
         }
         // path params
-        if ($shippingAddressTokenId !== null) {
+        if ($shippingAddressId !== null) {
             $resourcePath = str_replace(
-                "{" . "shippingAddressTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($shippingAddressTokenId),
+                "{" . "shippingAddressId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($shippingAddressId),
                 $resourcePath
             );
         }
@@ -229,7 +229,7 @@ class CustomerShippingAddressApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}'
+                '/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -242,23 +242,27 @@ class CustomerShippingAddressApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse409', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -273,16 +277,16 @@ class CustomerShippingAddressApi
      *
      * Retrieve a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $shippingAddressId The Id of a shipping address. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCustomerShippingAddress($customerTokenId, $shippingAddressTokenId, $profileId = null)
+    public function getCustomerShippingAddress($customerId, $shippingAddressId, $profileId = null)
     {
         self::$logger->info('CALL TO METHOD getCustomerShippingAddress STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getCustomerShippingAddressWithHttpInfo($customerTokenId, $shippingAddressTokenId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->getCustomerShippingAddressWithHttpInfo($customerId, $shippingAddressId, $profileId);
         self::$logger->info('CALL TO METHOD getCustomerShippingAddress ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -293,40 +297,40 @@ class CustomerShippingAddressApi
      *
      * Retrieve a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $shippingAddressTokenId The TokenId of an shipping address. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $shippingAddressId The Id of a shipping address. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCustomerShippingAddressWithHttpInfo($customerTokenId, $shippingAddressTokenId, $profileId = null)
+    public function getCustomerShippingAddressWithHttpInfo($customerId, $shippingAddressId, $profileId = null)
     {
-        // verify the required parameter 'customerTokenId' is set
-        if ($customerTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling getCustomerShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling getCustomerShippingAddress');
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerShippingAddress');
         }
-        if ((strlen($customerTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($customerId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($customerTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($customerId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'shippingAddressTokenId' is set
-        if ($shippingAddressTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressTokenId when calling getCustomerShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $shippingAddressTokenId when calling getCustomerShippingAddress');
+        // verify the required parameter 'shippingAddressId' is set
+        if ($shippingAddressId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling getCustomerShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling getCustomerShippingAddress');
         }
-        if ((strlen($shippingAddressTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressTokenId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressTokenId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($shippingAddressId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($shippingAddressTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressTokenId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressTokenId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($shippingAddressId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
@@ -339,7 +343,7 @@ class CustomerShippingAddressApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}";
+        $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -355,18 +359,18 @@ class CustomerShippingAddressApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($customerTokenId !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
-                "{" . "customerTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($customerTokenId),
+                "{" . "customerId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($customerId),
                 $resourcePath
             );
         }
         // path params
-        if ($shippingAddressTokenId !== null) {
+        if ($shippingAddressId !== null) {
             $resourcePath = str_replace(
-                "{" . "shippingAddressTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($shippingAddressTokenId),
+                "{" . "shippingAddressId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($shippingAddressId),
                 $resourcePath
             );
         }
@@ -403,7 +407,7 @@ class CustomerShippingAddressApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress',
-                '/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}'
+                '/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -420,23 +424,23 @@ class CustomerShippingAddressApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -451,17 +455,17 @@ class CustomerShippingAddressApi
      *
      * List Shipping Addresses for a Customer
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ShippingAddressListForCustomer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCustomerShippingAddressesList($customerTokenId, $profileId = null, $offset = '0', $limit = '20')
+    public function getCustomerShippingAddressesList($customerId, $profileId = null, $offset = '0', $limit = '20')
     {
         self::$logger->info('CALL TO METHOD getCustomerShippingAddressesList STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getCustomerShippingAddressesListWithHttpInfo($customerTokenId, $profileId, $offset, $limit);
+        list($response, $statusCode, $httpHeader) = $this->getCustomerShippingAddressesListWithHttpInfo($customerId, $profileId, $offset, $limit);
         self::$logger->info('CALL TO METHOD getCustomerShippingAddressesList ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -472,27 +476,27 @@ class CustomerShippingAddressApi
      *
      * List Shipping Addresses for a Customer
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ShippingAddressListForCustomer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCustomerShippingAddressesListWithHttpInfo($customerTokenId, $profileId = null, $offset = '0', $limit = '20')
+    public function getCustomerShippingAddressesListWithHttpInfo($customerId, $profileId = null, $offset = '0', $limit = '20')
     {
-        // verify the required parameter 'customerTokenId' is set
-        if ($customerTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling getCustomerShippingAddressesList");
-            throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling getCustomerShippingAddressesList');
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerShippingAddressesList");
+            throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerShippingAddressesList');
         }
-        if ((strlen($customerTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 32.');
+        if ((strlen($customerId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 32.');
         }
-        if ((strlen($customerTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.');
+        if ((strlen($customerId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
@@ -519,7 +523,7 @@ class CustomerShippingAddressApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v2/customers/{customerTokenId}/shipping-addresses";
+        $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -543,10 +547,10 @@ class CustomerShippingAddressApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($customerTokenId !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
-                "{" . "customerTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($customerTokenId),
+                "{" . "customerId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -585,7 +589,7 @@ class CustomerShippingAddressApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ShippingAddressListForCustomer',
-                '/tms/v2/customers/{customerTokenId}/shipping-addresses'
+                '/tms/v2/customers/{customerId}/shipping-addresses'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -602,23 +606,23 @@ class CustomerShippingAddressApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -633,18 +637,18 @@ class CustomerShippingAddressApi
      *
      * Update a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $shippingAddressTokenId The TokenId of an shipping address. (required)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $shippingAddressId The Id of a shipping address. (required)
      * @param \CyberSource\Model\PatchCustomerShippingAddressRequest $patchCustomerShippingAddressRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchCustomersShippingAddress($customerTokenId, $shippingAddressTokenId, $patchCustomerShippingAddressRequest, $profileId = null, $ifMatch = null)
+    public function patchCustomersShippingAddress($customerId, $shippingAddressId, $patchCustomerShippingAddressRequest, $profileId = null, $ifMatch = null)
     {
         self::$logger->info('CALL TO METHOD patchCustomersShippingAddress STARTED');
-        list($response, $statusCode, $httpHeader) = $this->patchCustomersShippingAddressWithHttpInfo($customerTokenId, $shippingAddressTokenId, $patchCustomerShippingAddressRequest, $profileId, $ifMatch);
+        list($response, $statusCode, $httpHeader) = $this->patchCustomersShippingAddressWithHttpInfo($customerId, $shippingAddressId, $patchCustomerShippingAddressRequest, $profileId, $ifMatch);
         self::$logger->info('CALL TO METHOD patchCustomersShippingAddress ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -655,42 +659,42 @@ class CustomerShippingAddressApi
      *
      * Update a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
-     * @param string $shippingAddressTokenId The TokenId of an shipping address. (required)
+     * @param string $customerId The Id of a Customer. (required)
+     * @param string $shippingAddressId The Id of a shipping address. (required)
      * @param \CyberSource\Model\PatchCustomerShippingAddressRequest $patchCustomerShippingAddressRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchCustomersShippingAddressWithHttpInfo($customerTokenId, $shippingAddressTokenId, $patchCustomerShippingAddressRequest, $profileId = null, $ifMatch = null)
+    public function patchCustomersShippingAddressWithHttpInfo($customerId, $shippingAddressId, $patchCustomerShippingAddressRequest, $profileId = null, $ifMatch = null)
     {
-        // verify the required parameter 'customerTokenId' is set
-        if ($customerTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling patchCustomersShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling patchCustomersShippingAddress');
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling patchCustomersShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $customerId when calling patchCustomersShippingAddress');
         }
-        if ((strlen($customerTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($customerId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($customerTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($customerId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'shippingAddressTokenId' is set
-        if ($shippingAddressTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressTokenId when calling patchCustomersShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $shippingAddressTokenId when calling patchCustomersShippingAddress');
+        // verify the required parameter 'shippingAddressId' is set
+        if ($shippingAddressId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling patchCustomersShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling patchCustomersShippingAddress');
         }
-        if ((strlen($shippingAddressTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressTokenId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressTokenId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($shippingAddressId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($shippingAddressTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressTokenId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressTokenId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($shippingAddressId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'patchCustomerShippingAddressRequest' is set
@@ -717,7 +721,7 @@ class CustomerShippingAddressApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}";
+        $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -737,18 +741,18 @@ class CustomerShippingAddressApi
             $headerParams['if-match'] = $this->apiClient->getSerializer()->toHeaderValue($ifMatch);
         }
         // path params
-        if ($customerTokenId !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
-                "{" . "customerTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($customerTokenId),
+                "{" . "customerId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($customerId),
                 $resourcePath
             );
         }
         // path params
-        if ($shippingAddressTokenId !== null) {
+        if ($shippingAddressId !== null) {
             $resourcePath = str_replace(
-                "{" . "shippingAddressTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($shippingAddressTokenId),
+                "{" . "shippingAddressId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($shippingAddressId),
                 $resourcePath
             );
         }
@@ -787,7 +791,7 @@ class CustomerShippingAddressApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress',
-                '/tms/v2/customers/{customerTokenId}/shipping-addresses/{shippingAddressTokenId}'
+                '/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -804,27 +808,27 @@ class CustomerShippingAddressApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse412', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -839,16 +843,16 @@ class CustomerShippingAddressApi
      *
      * Create a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
+     * @param string $customerId The Id of a Customer. (required)
      * @param \CyberSource\Model\PostCustomerShippingAddressRequest $postCustomerShippingAddressRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCustomerShippingAddress($customerTokenId, $postCustomerShippingAddressRequest, $profileId = null)
+    public function postCustomerShippingAddress($customerId, $postCustomerShippingAddressRequest, $profileId = null)
     {
         self::$logger->info('CALL TO METHOD postCustomerShippingAddress STARTED');
-        list($response, $statusCode, $httpHeader) = $this->postCustomerShippingAddressWithHttpInfo($customerTokenId, $postCustomerShippingAddressRequest, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->postCustomerShippingAddressWithHttpInfo($customerId, $postCustomerShippingAddressRequest, $profileId);
         self::$logger->info('CALL TO METHOD postCustomerShippingAddress ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -859,26 +863,26 @@ class CustomerShippingAddressApi
      *
      * Create a Customer Shipping Address
      *
-     * @param string $customerTokenId The TokenId of a customer. (required)
+     * @param string $customerId The Id of a Customer. (required)
      * @param \CyberSource\Model\PostCustomerShippingAddressRequest $postCustomerShippingAddressRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCustomerShippingAddressWithHttpInfo($customerTokenId, $postCustomerShippingAddressRequest, $profileId = null)
+    public function postCustomerShippingAddressWithHttpInfo($customerId, $postCustomerShippingAddressRequest, $profileId = null)
     {
-        // verify the required parameter 'customerTokenId' is set
-        if ($customerTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerTokenId when calling postCustomerShippingAddress");
-            throw new \InvalidArgumentException('Missing the required parameter $customerTokenId when calling postCustomerShippingAddress');
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling postCustomerShippingAddress");
+            throw new \InvalidArgumentException('Missing the required parameter $customerId when calling postCustomerShippingAddress');
         }
-        if ((strlen($customerTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 32.');
+        if ((strlen($customerId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 32.');
         }
-        if ((strlen($customerTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerTokenId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerTokenId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 1.');
+        if ((strlen($customerId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'postCustomerShippingAddressRequest' is set
@@ -896,7 +900,7 @@ class CustomerShippingAddressApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v2/customers/{customerTokenId}/shipping-addresses";
+        $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -912,10 +916,10 @@ class CustomerShippingAddressApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($customerTokenId !== null) {
+        if ($customerId !== null) {
             $resourcePath = str_replace(
-                "{" . "customerTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($customerTokenId),
+                "{" . "customerId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($customerId),
                 $resourcePath
             );
         }
@@ -954,7 +958,7 @@ class CustomerShippingAddressApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress',
-                '/tms/v2/customers/{customerTokenId}/shipping-addresses'
+                '/tms/v2/customers/{customerId}/shipping-addresses'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -971,15 +975,19 @@ class CustomerShippingAddressApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse409', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

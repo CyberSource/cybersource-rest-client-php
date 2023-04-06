@@ -94,7 +94,8 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'sdkMaxTimeout' => 'string',
         'secureCorporatePaymentIndicator' => 'string',
         'transactionMode' => 'string',
-        'whiteListStatus' => 'string'
+        'whiteListStatus' => 'string',
+        'scoreRequest' => 'int'
     ];
 
     /**
@@ -142,7 +143,8 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'sdkMaxTimeout' => null,
         'secureCorporatePaymentIndicator' => null,
         'transactionMode' => null,
-        'whiteListStatus' => null
+        'whiteListStatus' => null,
+        'scoreRequest' => null
     ];
 
     public static function swaggerTypes()
@@ -200,7 +202,8 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'sdkMaxTimeout' => 'sdkMaxTimeout',
         'secureCorporatePaymentIndicator' => 'secureCorporatePaymentIndicator',
         'transactionMode' => 'transactionMode',
-        'whiteListStatus' => 'whiteListStatus'
+        'whiteListStatus' => 'whiteListStatus',
+        'scoreRequest' => 'scoreRequest'
     ];
 
 
@@ -249,7 +252,8 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'sdkMaxTimeout' => 'setSdkMaxTimeout',
         'secureCorporatePaymentIndicator' => 'setSecureCorporatePaymentIndicator',
         'transactionMode' => 'setTransactionMode',
-        'whiteListStatus' => 'setWhiteListStatus'
+        'whiteListStatus' => 'setWhiteListStatus',
+        'scoreRequest' => 'setScoreRequest'
     ];
 
 
@@ -298,7 +302,8 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'sdkMaxTimeout' => 'getSdkMaxTimeout',
         'secureCorporatePaymentIndicator' => 'getSecureCorporatePaymentIndicator',
         'transactionMode' => 'getTransactionMode',
-        'whiteListStatus' => 'getWhiteListStatus'
+        'whiteListStatus' => 'getWhiteListStatus',
+        'scoreRequest' => 'getScoreRequest'
     ];
 
     public static function attributeMap()
@@ -373,6 +378,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['secureCorporatePaymentIndicator'] = isset($data['secureCorporatePaymentIndicator']) ? $data['secureCorporatePaymentIndicator'] : null;
         $this->container['transactionMode'] = isset($data['transactionMode']) ? $data['transactionMode'] : null;
         $this->container['whiteListStatus'] = isset($data['whiteListStatus']) ? $data['whiteListStatus'] : null;
+        $this->container['scoreRequest'] = isset($data['scoreRequest']) ? $data['scoreRequest'] : null;
     }
 
     /**
@@ -437,7 +443,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAuthenticationType($authenticationType)
     {
-
         $this->container['authenticationType'] = $authenticationType;
 
         return $this;
@@ -459,7 +464,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAcsWindowSize($acsWindowSize)
     {
-
         $this->container['acsWindowSize'] = $acsWindowSize;
 
         return $this;
@@ -481,7 +485,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAlternateAuthenticationData($alternateAuthenticationData)
     {
-
         $this->container['alternateAuthenticationData'] = $alternateAuthenticationData;
 
         return $this;
@@ -503,7 +506,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAlternateAuthenticationDate($alternateAuthenticationDate)
     {
-
         $this->container['alternateAuthenticationDate'] = $alternateAuthenticationDate;
 
         return $this;
@@ -546,7 +548,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAuthenticationDate($authenticationDate)
     {
-
         $this->container['authenticationDate'] = $authenticationDate;
 
         return $this;
@@ -568,7 +569,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setAuthenticationTransactionId($authenticationTransactionId)
     {
-
         $this->container['authenticationTransactionId'] = $authenticationTransactionId;
 
         return $this;
@@ -611,7 +611,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setChallengeCancelCode($challengeCancelCode)
     {
-
         $this->container['challengeCancelCode'] = $challengeCancelCode;
 
         return $this;
@@ -654,7 +653,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setChallengeStatus($challengeStatus)
     {
-
         $this->container['challengeStatus'] = $challengeStatus;
 
         return $this;
@@ -676,7 +674,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setCustomerCardAlias($customerCardAlias)
     {
-
         $this->container['customerCardAlias'] = $customerCardAlias;
 
         return $this;
@@ -698,7 +695,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setDecoupledAuthenticationIndicator($decoupledAuthenticationIndicator)
     {
-
         $this->container['decoupledAuthenticationIndicator'] = $decoupledAuthenticationIndicator;
 
         return $this;
@@ -720,7 +716,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setDecoupledAuthenticationMaxTime($decoupledAuthenticationMaxTime)
     {
-
         $this->container['decoupledAuthenticationMaxTime'] = $decoupledAuthenticationMaxTime;
 
         return $this;
@@ -763,7 +758,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setDeviceChannel($deviceChannel)
     {
-
         $this->container['deviceChannel'] = $deviceChannel;
 
         return $this;
@@ -806,7 +800,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setMerchantFraudRate($merchantFraudRate)
     {
-
         $this->container['merchantFraudRate'] = $merchantFraudRate;
 
         return $this;
@@ -849,7 +842,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setMarketingSource($marketingSource)
     {
-
         $this->container['marketingSource'] = $marketingSource;
 
         return $this;
@@ -871,7 +863,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setMcc($mcc)
     {
-
         $this->container['mcc'] = $mcc;
 
         return $this;
@@ -935,7 +926,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setNpaCode($npaCode)
     {
-
         $this->container['npaCode'] = $npaCode;
 
         return $this;
@@ -978,7 +968,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setOverrideCountryCode($overrideCountryCode)
     {
-
         $this->container['overrideCountryCode'] = $overrideCountryCode;
 
         return $this;
@@ -1000,7 +989,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationData($priorAuthenticationData)
     {
-
         $this->container['priorAuthenticationData'] = $priorAuthenticationData;
 
         return $this;
@@ -1022,7 +1010,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationMethod($priorAuthenticationMethod)
     {
-
         $this->container['priorAuthenticationMethod'] = $priorAuthenticationMethod;
 
         return $this;
@@ -1044,7 +1031,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationReferenceId($priorAuthenticationReferenceId)
     {
-
         $this->container['priorAuthenticationReferenceId'] = $priorAuthenticationReferenceId;
 
         return $this;
@@ -1066,7 +1052,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setPriorAuthenticationTime($priorAuthenticationTime)
     {
-
         $this->container['priorAuthenticationTime'] = $priorAuthenticationTime;
 
         return $this;
@@ -1088,7 +1073,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setProductCode($productCode)
     {
-
         $this->container['productCode'] = $productCode;
 
         return $this;
@@ -1110,7 +1094,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setReturnUrl($returnUrl)
     {
-
         $this->container['returnUrl'] = $returnUrl;
 
         return $this;
@@ -1132,7 +1115,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setRequestorId($requestorId)
     {
-
         $this->container['requestorId'] = $requestorId;
 
         return $this;
@@ -1154,7 +1136,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setRequestorInitiatedAuthenticationIndicator($requestorInitiatedAuthenticationIndicator)
     {
-
         $this->container['requestorInitiatedAuthenticationIndicator'] = $requestorInitiatedAuthenticationIndicator;
 
         return $this;
@@ -1176,7 +1157,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setRequestorName($requestorName)
     {
-
         $this->container['requestorName'] = $requestorName;
 
         return $this;
@@ -1198,7 +1178,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setReferenceId($referenceId)
     {
-
         $this->container['referenceId'] = $referenceId;
 
         return $this;
@@ -1220,7 +1199,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setSdkMaxTimeout($sdkMaxTimeout)
     {
-
         $this->container['sdkMaxTimeout'] = $sdkMaxTimeout;
 
         return $this;
@@ -1242,7 +1220,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setSecureCorporatePaymentIndicator($secureCorporatePaymentIndicator)
     {
-
         $this->container['secureCorporatePaymentIndicator'] = $secureCorporatePaymentIndicator;
 
         return $this;
@@ -1285,8 +1262,28 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     public function setWhiteListStatus($whiteListStatus)
     {
-
         $this->container['whiteListStatus'] = $whiteListStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets scoreRequest
+     * @return int
+     */
+    public function getScoreRequest()
+    {
+        return $this->container['scoreRequest'];
+    }
+
+    /**
+     * Sets scoreRequest
+     * @param int $scoreRequest Risk Assessment from Mastercard. This is to be sent by merchant if they would like to request a score
+     * @return $this
+     */
+    public function setScoreRequest($scoreRequest)
+    {
+        $this->container['scoreRequest'] = $scoreRequest;
 
         return $this;
     }
@@ -1295,6 +1292,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -1305,6 +1303,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -1316,6 +1315,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -1330,6 +1330,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

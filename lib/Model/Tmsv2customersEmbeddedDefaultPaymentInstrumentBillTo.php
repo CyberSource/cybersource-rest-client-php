@@ -236,7 +236,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setFirstName($firstName)
     {
-
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -258,7 +257,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setLastName($lastName)
     {
-
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -280,7 +278,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setCompany($company)
     {
-
         $this->container['company'] = $company;
 
         return $this;
@@ -302,7 +299,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setAddress1($address1)
     {
-
         $this->container['address1'] = $address1;
 
         return $this;
@@ -324,7 +320,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setAddress2($address2)
     {
-
         $this->container['address2'] = $address2;
 
         return $this;
@@ -346,7 +341,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setLocality($locality)
     {
-
         $this->container['locality'] = $locality;
 
         return $this;
@@ -368,7 +362,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setAdministrativeArea($administrativeArea)
     {
-
         $this->container['administrativeArea'] = $administrativeArea;
 
         return $this;
@@ -390,7 +383,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setPostalCode($postalCode)
     {
-
         $this->container['postalCode'] = $postalCode;
 
         return $this;
@@ -412,7 +404,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setCountry($country)
     {
-
         $this->container['country'] = $country;
 
         return $this;
@@ -434,7 +425,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setEmail($email)
     {
-
         $this->container['email'] = $email;
 
         return $this;
@@ -456,7 +446,6 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      */
     public function setPhoneNumber($phoneNumber)
     {
-
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -466,6 +455,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -476,6 +466,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -487,6 +478,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -501,6 +493,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

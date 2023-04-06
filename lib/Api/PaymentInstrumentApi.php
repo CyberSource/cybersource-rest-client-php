@@ -99,15 +99,15 @@ class PaymentInstrumentApi
      *
      * Delete a Payment Instrument
      *
-     * @param string $paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $paymentInstrumentId The Id of a payment instrument. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of void, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePaymentInstrument($paymentInstrumentTokenId, $profileId = null)
+    public function deletePaymentInstrument($paymentInstrumentId, $profileId = null)
     {
         self::$logger->info('CALL TO METHOD deletePaymentInstrument STARTED');
-        list($response, $statusCode, $httpHeader) = $this->deletePaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->deletePaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId);
         self::$logger->info('CALL TO METHOD deletePaymentInstrument ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -118,25 +118,25 @@ class PaymentInstrumentApi
      *
      * Delete a Payment Instrument
      *
-     * @param string $paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $paymentInstrumentId The Id of a payment instrument. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $profileId = null)
+    public function deletePaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId = null)
     {
-        // verify the required parameter 'paymentInstrumentTokenId' is set
-        if ($paymentInstrumentTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentTokenId when calling deletePaymentInstrument");
-            throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentTokenId when calling deletePaymentInstrument');
+        // verify the required parameter 'paymentInstrumentId' is set
+        if ($paymentInstrumentId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling deletePaymentInstrument");
+            throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling deletePaymentInstrument');
         }
-        if ((strlen($paymentInstrumentTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.');
+        if ((strlen($paymentInstrumentId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be smaller than or equal to 32.');
         }
-        if ((strlen($paymentInstrumentTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.');
+        if ((strlen($paymentInstrumentId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentId\" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentId" when calling PaymentInstrumentApi.deletePaymentInstrument, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
@@ -149,7 +149,7 @@ class PaymentInstrumentApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}";
+        $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -165,10 +165,10 @@ class PaymentInstrumentApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($paymentInstrumentTokenId !== null) {
+        if ($paymentInstrumentId !== null) {
             $resourcePath = str_replace(
-                "{" . "paymentInstrumentTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($paymentInstrumentTokenId),
+                "{" . "paymentInstrumentId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($paymentInstrumentId),
                 $resourcePath
             );
         }
@@ -205,7 +205,7 @@ class PaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}'
+                '/tms/v1/paymentinstruments/{paymentInstrumentId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -214,23 +214,23 @@ class PaymentInstrumentApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -245,15 +245,15 @@ class PaymentInstrumentApi
      *
      * Retrieve a Payment Instrument
      *
-     * @param string $paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $paymentInstrumentId The Id of a payment instrument. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentInstrument($paymentInstrumentTokenId, $profileId = null)
+    public function getPaymentInstrument($paymentInstrumentId, $profileId = null)
     {
         self::$logger->info('CALL TO METHOD getPaymentInstrument STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getPaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->getPaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId);
         self::$logger->info('CALL TO METHOD getPaymentInstrument ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -264,25 +264,25 @@ class PaymentInstrumentApi
      *
      * Retrieve a Payment Instrument
      *
-     * @param string $paymentInstrumentTokenId The TokenId of a payment instrument. (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $paymentInstrumentId The Id of a payment instrument. (required)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $profileId = null)
+    public function getPaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId = null)
     {
-        // verify the required parameter 'paymentInstrumentTokenId' is set
-        if ($paymentInstrumentTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentTokenId when calling getPaymentInstrument");
-            throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentTokenId when calling getPaymentInstrument');
+        // verify the required parameter 'paymentInstrumentId' is set
+        if ($paymentInstrumentId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling getPaymentInstrument");
+            throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling getPaymentInstrument');
         }
-        if ((strlen($paymentInstrumentTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.');
+        if ((strlen($paymentInstrumentId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentId" when calling PaymentInstrumentApi.getPaymentInstrument, must be smaller than or equal to 32.');
         }
-        if ((strlen($paymentInstrumentTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.');
+        if ((strlen($paymentInstrumentId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentId\" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentId" when calling PaymentInstrumentApi.getPaymentInstrument, must be bigger than or equal to 1.');
         }
 
         if (!is_null($profileId) && (strlen($profileId) > 36)) {
@@ -295,7 +295,7 @@ class PaymentInstrumentApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}";
+        $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -311,10 +311,10 @@ class PaymentInstrumentApi
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
         }
         // path params
-        if ($paymentInstrumentTokenId !== null) {
+        if ($paymentInstrumentId !== null) {
             $resourcePath = str_replace(
-                "{" . "paymentInstrumentTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($paymentInstrumentTokenId),
+                "{" . "paymentInstrumentId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($paymentInstrumentId),
                 $resourcePath
             );
         }
@@ -351,7 +351,7 @@ class PaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument',
-                '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}'
+                '/tms/v1/paymentinstruments/{paymentInstrumentId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -368,23 +368,23 @@ class PaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -399,17 +399,17 @@ class PaymentInstrumentApi
      *
      * Update a Payment Instrument
      *
-     * @param string $paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param string $paymentInstrumentId The Id of a payment instrument. (required)
      * @param \CyberSource\Model\PatchPaymentInstrumentRequest $patchPaymentInstrumentRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchPaymentInstrument($paymentInstrumentTokenId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
+    public function patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
     {
         self::$logger->info('CALL TO METHOD patchPaymentInstrument STARTED');
-        list($response, $statusCode, $httpHeader) = $this->patchPaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $patchPaymentInstrumentRequest, $profileId, $ifMatch);
+        list($response, $statusCode, $httpHeader) = $this->patchPaymentInstrumentWithHttpInfo($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $ifMatch);
         self::$logger->info('CALL TO METHOD patchPaymentInstrument ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -420,27 +420,27 @@ class PaymentInstrumentApi
      *
      * Update a Payment Instrument
      *
-     * @param string $paymentInstrumentTokenId The TokenId of a payment instrument. (required)
+     * @param string $paymentInstrumentId The Id of a payment instrument. (required)
      * @param \CyberSource\Model\PatchPaymentInstrumentRequest $patchPaymentInstrumentRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchPaymentInstrumentWithHttpInfo($paymentInstrumentTokenId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
+    public function patchPaymentInstrumentWithHttpInfo($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
     {
-        // verify the required parameter 'paymentInstrumentTokenId' is set
-        if ($paymentInstrumentTokenId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentTokenId when calling patchPaymentInstrument");
-            throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentTokenId when calling patchPaymentInstrument');
+        // verify the required parameter 'paymentInstrumentId' is set
+        if ($paymentInstrumentId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling patchPaymentInstrument");
+            throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling patchPaymentInstrument');
         }
-        if ((strlen($paymentInstrumentTokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.');
+        if ((strlen($paymentInstrumentId) > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be smaller than or equal to 32.');
         }
-        if ((strlen($paymentInstrumentTokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentTokenId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentTokenId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.');
+        if ((strlen($paymentInstrumentId) < 1)) {
+            self::$logger->error("InvalidArgumentException : Invalid length for \"$paymentInstrumentId\" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.");
+            throw new \InvalidArgumentException('Invalid length for "$paymentInstrumentId" when calling PaymentInstrumentApi.patchPaymentInstrument, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'patchPaymentInstrumentRequest' is set
@@ -467,7 +467,7 @@ class PaymentInstrumentApi
         }
 
         // parse inputs
-        $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentTokenId}";
+        $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -487,10 +487,10 @@ class PaymentInstrumentApi
             $headerParams['if-match'] = $this->apiClient->getSerializer()->toHeaderValue($ifMatch);
         }
         // path params
-        if ($paymentInstrumentTokenId !== null) {
+        if ($paymentInstrumentId !== null) {
             $resourcePath = str_replace(
-                "{" . "paymentInstrumentTokenId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($paymentInstrumentTokenId),
+                "{" . "paymentInstrumentId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($paymentInstrumentId),
                 $resourcePath
             );
         }
@@ -529,7 +529,7 @@ class PaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument',
-                '/tms/v1/paymentinstruments/{paymentInstrumentTokenId}'
+                '/tms/v1/paymentinstruments/{paymentInstrumentId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -546,27 +546,27 @@ class PaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 410:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse410', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 412:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse412', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -582,7 +582,7 @@ class PaymentInstrumentApi
      * Create a Payment Instrument
      *
      * @param \CyberSource\Model\PostPaymentInstrumentRequest $postPaymentInstrumentRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument, HTTP status code, HTTP response headers (array of strings)
      */
@@ -601,7 +601,7 @@ class PaymentInstrumentApi
      * Create a Payment Instrument
      *
      * @param \CyberSource\Model\PostPaymentInstrumentRequest $postPaymentInstrumentRequest  (required)
-     * @param string $profileId The id of a profile containing user specific TMS configuration. (optional)
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument, HTTP status code, HTTP response headers (array of strings)
      */
@@ -689,15 +689,19 @@ class PaymentInstrumentApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse409', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 424:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

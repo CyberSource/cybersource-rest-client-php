@@ -171,7 +171,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressMetadata implements ArrayAcces
 
     /**
      * Sets creator
-     * @param string $creator The creator of the Shipping Address token.
+     * @param string $creator The creator of the Shipping Address.
      * @return $this
      */
     public function setCreator($creator)
@@ -185,6 +185,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressMetadata implements ArrayAcces
      * @param  integer $offset Offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -195,6 +196,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressMetadata implements ArrayAcces
      * @param  integer $offset Offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -206,6 +208,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressMetadata implements ArrayAcces
      * @param  mixed   $value  Value to be set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -220,6 +223,7 @@ class Tmsv2customersEmbeddedDefaultShippingAddressMetadata implements ArrayAcces
      * @param  integer $offset Offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
