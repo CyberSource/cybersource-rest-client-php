@@ -64,6 +64,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseOrderInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation',
         'errorInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseErrorInformation'
     ];
 
@@ -82,6 +83,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'clientReferenceInformation' => null,
         'orderInformation' => null,
         'consumerAuthenticationInformation' => null,
+        'watchlistScreeningInformation' => null,
         'errorInformation' => null
     ];
 
@@ -110,6 +112,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'orderInformation' => 'orderInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'watchlistScreeningInformation',
         'errorInformation' => 'errorInformation'
     ];
 
@@ -129,6 +132,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'orderInformation' => 'setOrderInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'setWatchlistScreeningInformation',
         'errorInformation' => 'setErrorInformation'
     ];
 
@@ -148,6 +152,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'orderInformation' => 'getOrderInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'getWatchlistScreeningInformation',
         'errorInformation' => 'getErrorInformation'
     ];
 
@@ -192,6 +197,7 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
     }
 
@@ -426,6 +432,27 @@ class RiskV1DecisionsPost201Response implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets watchlistScreeningInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation
+     */
+    public function getWatchlistScreeningInformation()
+    {
+        return $this->container['watchlistScreeningInformation'];
+    }
+
+    /**
+     * Sets watchlistScreeningInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation $watchlistScreeningInformation
+     * @return $this
+     */
+    public function setWatchlistScreeningInformation($watchlistScreeningInformation)
+    {
+        $this->container['watchlistScreeningInformation'] = $watchlistScreeningInformation;
 
         return $this;
     }

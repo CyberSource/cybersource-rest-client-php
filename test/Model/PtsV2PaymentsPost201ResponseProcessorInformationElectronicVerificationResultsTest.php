@@ -160,4 +160,46 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
     public function testPropertyNameRaw()
     {
     }
+
+    /**
+     * Test attribute "firstNameRaw"
+     */
+    public function testPropertyFirstNameRaw()
+    {
+    }
+
+    /**
+     * Test attribute "firstName"
+     */
+    public function testPropertyFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "middleNameRaw"
+     */
+    public function testPropertyMiddleNameRaw()
+    {
+    }
+
+    /**
+     * Test attribute "middleName"
+     */
+    public function testPropertyMiddleName()
+    {
+    }
+
+    /**
+     * Test attribute "lastNameRaw"
+     */
+    public function testPropertyLastNameRaw()
+    {
+    }
+
+    /**
+     * Test attribute "lastName"
+     */
+    public function testPropertyLastName()
+    {
+    }
 }

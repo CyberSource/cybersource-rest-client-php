@@ -97,4 +97,11 @@ class PtsV2PaymentsPost201ResponseOrderInformationTest extends \PHPUnit_Framewor
     public function testPropertyRewardPointsDetails()
     {
     }
+
+    /**
+     * Test attribute "billTo"
+     */
+    public function testPropertyBillTo()
+    {
+    }
 }

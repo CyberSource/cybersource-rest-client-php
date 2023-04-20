@@ -216,4 +216,11 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyConsumerAuthenticationInformation()
     {
     }
+
+    /**
+     * Test attribute "watchlistScreeningInformation"
+     */
+    public function testPropertyWatchlistScreeningInformation()
+    {
+    }
 }

@@ -174,4 +174,18 @@ class Riskv1decisionsOrderInformationLineItemsTest extends \PHPUnit_Framework_Te
     public function testPropertyTaxAmount()
     {
     }
+
+    /**
+     * Test attribute "allowedExportCountries"
+     */
+    public function testPropertyAllowedExportCountries()
+    {
+    }
+
+    /**
+     * Test attribute "restrictedExportCountries"
+     */
+    public function testPropertyRestrictedExportCountries()
+    {
+    }
 }

@@ -153,4 +153,11 @@ class Ptsv2paymentsPaymentInformationTokenizedCardTest extends \PHPUnit_Framewor
     public function testPropertySecurityCodeIndicator()
     {
     }
+
+    /**
+     * Test attribute "assuranceMethod"
+     */
+    public function testPropertyAssuranceMethod()
+    {
+    }
 }

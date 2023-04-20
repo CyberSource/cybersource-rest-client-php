@@ -230,4 +230,18 @@ class Ptsv2paymentsOrderInformationBillToTest extends \PHPUnit_Framework_TestCas
     public function testPropertyVerificationStatus()
     {
     }
+
+    /**
+     * Test attribute "alternatePhoneNumber"
+     */
+    public function testPropertyAlternatePhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "alternateEmail"
+     */
+    public function testPropertyAlternateEmail()
+    {
+    }
 }

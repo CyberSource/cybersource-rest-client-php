@@ -84,7 +84,9 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'giftCardCurrency' => 'int',
         'shippingDestinationTypes' => 'string',
         'gift' => 'bool',
-        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger'
+        'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger',
+        'allowedExportCountries' => 'string[]',
+        'restrictedExportCountries' => 'string[]'
     ];
 
     /**
@@ -122,7 +124,9 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'giftCardCurrency' => null,
         'shippingDestinationTypes' => null,
         'gift' => null,
-        'passenger' => null
+        'passenger' => null,
+        'allowedExportCountries' => null,
+        'restrictedExportCountries' => null
     ];
 
     public static function swaggerTypes()
@@ -170,7 +174,9 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'giftCardCurrency' => 'giftCardCurrency',
         'shippingDestinationTypes' => 'shippingDestinationTypes',
         'gift' => 'gift',
-        'passenger' => 'passenger'
+        'passenger' => 'passenger',
+        'allowedExportCountries' => 'allowedExportCountries',
+        'restrictedExportCountries' => 'restrictedExportCountries'
     ];
 
 
@@ -209,7 +215,9 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'giftCardCurrency' => 'setGiftCardCurrency',
         'shippingDestinationTypes' => 'setShippingDestinationTypes',
         'gift' => 'setGift',
-        'passenger' => 'setPassenger'
+        'passenger' => 'setPassenger',
+        'allowedExportCountries' => 'setAllowedExportCountries',
+        'restrictedExportCountries' => 'setRestrictedExportCountries'
     ];
 
 
@@ -248,7 +256,9 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'giftCardCurrency' => 'getGiftCardCurrency',
         'shippingDestinationTypes' => 'getShippingDestinationTypes',
         'gift' => 'getGift',
-        'passenger' => 'getPassenger'
+        'passenger' => 'getPassenger',
+        'allowedExportCountries' => 'getAllowedExportCountries',
+        'restrictedExportCountries' => 'getRestrictedExportCountries'
     ];
 
     public static function attributeMap()
@@ -313,6 +323,8 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
         $this->container['gift'] = isset($data['gift']) ? $data['gift'] : null;
         $this->container['passenger'] = isset($data['passenger']) ? $data['passenger'] : null;
+        $this->container['allowedExportCountries'] = isset($data['allowedExportCountries']) ? $data['allowedExportCountries'] : null;
+        $this->container['restrictedExportCountries'] = isset($data['restrictedExportCountries']) ? $data['restrictedExportCountries'] : null;
     }
 
     /**
@@ -987,6 +999,48 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
     public function setPassenger($passenger)
     {
         $this->container['passenger'] = $passenger;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowedExportCountries
+     * @return string[]
+     */
+    public function getAllowedExportCountries()
+    {
+        return $this->container['allowedExportCountries'];
+    }
+
+    /**
+     * Sets allowedExportCountries
+     * @param string[] $allowedExportCountries
+     * @return $this
+     */
+    public function setAllowedExportCountries($allowedExportCountries)
+    {
+        $this->container['allowedExportCountries'] = $allowedExportCountries;
+
+        return $this;
+    }
+
+    /**
+     * Gets restrictedExportCountries
+     * @return string[]
+     */
+    public function getRestrictedExportCountries()
+    {
+        return $this->container['restrictedExportCountries'];
+    }
+
+    /**
+     * Sets restrictedExportCountries
+     * @param string[] $restrictedExportCountries
+     * @return $this
+     */
+    public function setRestrictedExportCountries($restrictedExportCountries)
+    {
+        $this->container['restrictedExportCountries'] = $restrictedExportCountries;
 
         return $this;
     }

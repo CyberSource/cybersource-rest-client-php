@@ -73,7 +73,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation',
         'buyerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
-        'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'
     ];
 
     /**
@@ -100,7 +101,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'tokenInformation' => null,
         'buyerInformation' => null,
         'riskInformation' => null,
-        'consumerAuthenticationInformation' => null
+        'consumerAuthenticationInformation' => null,
+        'watchlistScreeningInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -137,7 +139,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'tokenInformation' => 'tokenInformation',
         'buyerInformation' => 'buyerInformation',
         'riskInformation' => 'riskInformation',
-        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'watchlistScreeningInformation'
     ];
 
 
@@ -165,7 +168,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'tokenInformation' => 'setTokenInformation',
         'buyerInformation' => 'setBuyerInformation',
         'riskInformation' => 'setRiskInformation',
-        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
     ];
 
 
@@ -193,7 +197,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'tokenInformation' => 'getTokenInformation',
         'buyerInformation' => 'getBuyerInformation',
         'riskInformation' => 'getRiskInformation',
-        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
     ];
 
     public static function attributeMap()
@@ -247,6 +252,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
     }
 
     /**
@@ -690,6 +696,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets watchlistScreeningInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation
+     */
+    public function getWatchlistScreeningInformation()
+    {
+        return $this->container['watchlistScreeningInformation'];
+    }
+
+    /**
+     * Sets watchlistScreeningInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation $watchlistScreeningInformation
+     * @return $this
+     */
+    public function setWatchlistScreeningInformation($watchlistScreeningInformation)
+    {
+        $this->container['watchlistScreeningInformation'] = $watchlistScreeningInformation;
 
         return $this;
     }

@@ -65,7 +65,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
         'street' => 'string',
         'streetRaw' => 'string',
         'name' => 'string',
-        'nameRaw' => 'string'
+        'nameRaw' => 'string',
+        'firstNameRaw' => 'string',
+        'firstName' => 'string',
+        'middleNameRaw' => 'string',
+        'middleName' => 'string',
+        'lastNameRaw' => 'string',
+        'lastName' => 'string'
     ];
 
     /**
@@ -84,7 +90,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
         'street' => null,
         'streetRaw' => null,
         'name' => null,
-        'nameRaw' => null
+        'nameRaw' => null,
+        'firstNameRaw' => null,
+        'firstName' => null,
+        'middleNameRaw' => null,
+        'middleName' => null,
+        'lastNameRaw' => null,
+        'lastName' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +125,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
         'street' => 'street',
         'streetRaw' => 'streetRaw',
         'name' => 'name',
-        'nameRaw' => 'nameRaw'
+        'nameRaw' => 'nameRaw',
+        'firstNameRaw' => 'firstNameRaw',
+        'firstName' => 'firstName',
+        'middleNameRaw' => 'middleNameRaw',
+        'middleName' => 'middleName',
+        'lastNameRaw' => 'lastNameRaw',
+        'lastName' => 'lastName'
     ];
 
 
@@ -133,7 +151,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
         'street' => 'setStreet',
         'streetRaw' => 'setStreetRaw',
         'name' => 'setName',
-        'nameRaw' => 'setNameRaw'
+        'nameRaw' => 'setNameRaw',
+        'firstNameRaw' => 'setFirstNameRaw',
+        'firstName' => 'setFirstName',
+        'middleNameRaw' => 'setMiddleNameRaw',
+        'middleName' => 'setMiddleName',
+        'lastNameRaw' => 'setLastNameRaw',
+        'lastName' => 'setLastName'
     ];
 
 
@@ -153,7 +177,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
         'street' => 'getStreet',
         'streetRaw' => 'getStreetRaw',
         'name' => 'getName',
-        'nameRaw' => 'getNameRaw'
+        'nameRaw' => 'getNameRaw',
+        'firstNameRaw' => 'getFirstNameRaw',
+        'firstName' => 'getFirstName',
+        'middleNameRaw' => 'getMiddleNameRaw',
+        'middleName' => 'getMiddleName',
+        'lastNameRaw' => 'getLastNameRaw',
+        'lastName' => 'getLastName'
     ];
 
     public static function attributeMap()
@@ -199,6 +229,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
         $this->container['streetRaw'] = isset($data['streetRaw']) ? $data['streetRaw'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['nameRaw'] = isset($data['nameRaw']) ? $data['nameRaw'] : null;
+        $this->container['firstNameRaw'] = isset($data['firstNameRaw']) ? $data['firstNameRaw'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['middleNameRaw'] = isset($data['middleNameRaw']) ? $data['middleNameRaw'] : null;
+        $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
+        $this->container['lastNameRaw'] = isset($data['lastNameRaw']) ? $data['lastNameRaw'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
     }
 
     /**
@@ -447,7 +483,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets name
-     * @param string $name Mapped Electronic Verification response code for the customer’s name.
+     * @param string $name #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match
      * @return $this
      */
     public function setName($name)
@@ -468,12 +504,138 @@ class PtsV2PaymentsPost201ResponseProcessorInformationElectronicVerificationResu
 
     /**
      * Sets nameRaw
-     * @param string $nameRaw Raw Electronic Verification response code from the processor for the customer’s name.
+     * @param string $nameRaw #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match
      * @return $this
      */
     public function setNameRaw($nameRaw)
     {
         $this->container['nameRaw'] = $nameRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstNameRaw
+     * @return string
+     */
+    public function getFirstNameRaw()
+    {
+        return $this->container['firstNameRaw'];
+    }
+
+    /**
+     * Sets firstNameRaw
+     * @param string $firstNameRaw #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s first name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match
+     * @return $this
+     */
+    public function setFirstNameRaw($firstNameRaw)
+    {
+        $this->container['firstNameRaw'] = $firstNameRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstName
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->container['firstName'];
+    }
+
+    /**
+     * Sets firstName
+     * @param string $firstName #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s first name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match
+     * @return $this
+     */
+    public function setFirstName($firstName)
+    {
+        $this->container['firstName'] = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleNameRaw
+     * @return string
+     */
+    public function getMiddleNameRaw()
+    {
+        return $this->container['middleNameRaw'];
+    }
+
+    /**
+     * Sets middleNameRaw
+     * @param string $middleNameRaw #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s middle name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match
+     * @return $this
+     */
+    public function setMiddleNameRaw($middleNameRaw)
+    {
+        $this->container['middleNameRaw'] = $middleNameRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets middleName
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middleName'];
+    }
+
+    /**
+     * Sets middleName
+     * @param string $middleName #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s middle name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match
+     * @return $this
+     */
+    public function setMiddleName($middleName)
+    {
+        $this->container['middleName'] = $middleName;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastNameRaw
+     * @return string
+     */
+    public function getLastNameRaw()
+    {
+        return $this->container['lastNameRaw'];
+    }
+
+    /**
+     * Sets lastNameRaw
+     * @param string $lastNameRaw #### Visa Platform Connect Raw electronic verification response code from the processor for the customer’s last name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match
+     * @return $this
+     */
+    public function setLastNameRaw($lastNameRaw)
+    {
+        $this->container['lastNameRaw'] = $lastNameRaw;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastName
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['lastName'];
+    }
+
+    /**
+     * Sets lastName
+     * @param string $lastName #### Visa Platform Connect Mapped electronic verification response code from the processor for the customer’s last name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match
+     * @return $this
+     */
+    public function setLastName($lastName)
+    {
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **clientReferenceInformation** | [**\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation**](RiskV1DecisionsPost201ResponseClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\RiskV1DecisionsPost201ResponseOrderInformation**](RiskV1DecisionsPost201ResponseOrderInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**\CyberSource\Model\RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation**](RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation.md) |  | [optional] 
+**watchlistScreeningInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation**](PtsV2PaymentsPost201ResponseWatchlistScreeningInformation.md) |  | [optional] 
 **errorInformation** | [**\CyberSource\Model\RiskV1DecisionsPost201ResponseErrorInformation**](RiskV1DecisionsPost201ResponseErrorInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

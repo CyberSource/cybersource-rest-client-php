@@ -57,7 +57,8 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
         'acquirerMerchantId' => 'string',
         'acquirerBin' => 'string',
         'retrievalReferenceNumber' => 'string',
-        'accountFundingReferenceId' => 'string'
+        'accountFundingReferenceId' => 'string',
+        'deferredDateTime' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
         'acquirerMerchantId' => null,
         'acquirerBin' => null,
         'retrievalReferenceNumber' => null,
-        'accountFundingReferenceId' => null
+        'accountFundingReferenceId' => null,
+        'deferredDateTime' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
         'acquirerMerchantId' => 'acquirerMerchantId',
         'acquirerBin' => 'acquirerBin',
         'retrievalReferenceNumber' => 'retrievalReferenceNumber',
-        'accountFundingReferenceId' => 'accountFundingReferenceId'
+        'accountFundingReferenceId' => 'accountFundingReferenceId',
+        'deferredDateTime' => 'deferredDateTime'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
         'acquirerMerchantId' => 'setAcquirerMerchantId',
         'acquirerBin' => 'setAcquirerBin',
         'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
-        'accountFundingReferenceId' => 'setAccountFundingReferenceId'
+        'accountFundingReferenceId' => 'setAccountFundingReferenceId',
+        'deferredDateTime' => 'setDeferredDateTime'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
         'acquirerMerchantId' => 'getAcquirerMerchantId',
         'acquirerBin' => 'getAcquirerBin',
         'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
-        'accountFundingReferenceId' => 'getAccountFundingReferenceId'
+        'accountFundingReferenceId' => 'getAccountFundingReferenceId',
+        'deferredDateTime' => 'getDeferredDateTime'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
         $this->container['acquirerBin'] = isset($data['acquirerBin']) ? $data['acquirerBin'] : null;
         $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
         $this->container['accountFundingReferenceId'] = isset($data['accountFundingReferenceId']) ? $data['accountFundingReferenceId'] : null;
+        $this->container['deferredDateTime'] = isset($data['deferredDateTime']) ? $data['deferredDateTime'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class Ptsv2payoutsProcessingInformationPayoutsOptions implements ArrayAccess
     public function setAccountFundingReferenceId($accountFundingReferenceId)
     {
         $this->container['accountFundingReferenceId'] = $accountFundingReferenceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets deferredDateTime
+     * @return string
+     */
+    public function getDeferredDateTime()
+    {
+        return $this->container['deferredDateTime'];
+    }
+
+    /**
+     * Sets deferredDateTime
+     * @param string $deferredDateTime #### Visa Platform Connect  Contains date and time value indicating scheduled deferred OCT.  Format is : 'yyyyMMddHHmm', where  'YYYY' = year 'MM' = month 'DD' = day 'hh' = hour 'mm' = minutes
+     * @return $this
+     */
+    public function setDeferredDateTime($deferredDateTime)
+    {
+        $this->container['deferredDateTime'] = $deferredDateTime;
 
         return $this;
     }

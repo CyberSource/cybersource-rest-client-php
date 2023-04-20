@@ -72,7 +72,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'aggregatedAuthIndicator' => 'string',
         'debtRecoveryIndicator' => 'string',
         'deferredAuthIndicator' => 'bool',
-        'cashAdvanceIndicator' => 'bool'
+        'cashAdvanceIndicator' => 'bool',
+        'splitPaymentTransaction' => 'bool'
     ];
 
     /**
@@ -98,7 +99,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'aggregatedAuthIndicator' => null,
         'debtRecoveryIndicator' => null,
         'deferredAuthIndicator' => null,
-        'cashAdvanceIndicator' => null
+        'cashAdvanceIndicator' => null,
+        'splitPaymentTransaction' => null
     ];
 
     public static function swaggerTypes()
@@ -134,7 +136,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'aggregatedAuthIndicator' => 'aggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'debtRecoveryIndicator',
         'deferredAuthIndicator' => 'deferredAuthIndicator',
-        'cashAdvanceIndicator' => 'cashAdvanceIndicator'
+        'cashAdvanceIndicator' => 'cashAdvanceIndicator',
+        'splitPaymentTransaction' => 'splitPaymentTransaction'
     ];
 
 
@@ -161,7 +164,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'aggregatedAuthIndicator' => 'setAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'setDebtRecoveryIndicator',
         'deferredAuthIndicator' => 'setDeferredAuthIndicator',
-        'cashAdvanceIndicator' => 'setCashAdvanceIndicator'
+        'cashAdvanceIndicator' => 'setCashAdvanceIndicator',
+        'splitPaymentTransaction' => 'setSplitPaymentTransaction'
     ];
 
 
@@ -188,7 +192,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'aggregatedAuthIndicator' => 'getAggregatedAuthIndicator',
         'debtRecoveryIndicator' => 'getDebtRecoveryIndicator',
         'deferredAuthIndicator' => 'getDeferredAuthIndicator',
-        'cashAdvanceIndicator' => 'getCashAdvanceIndicator'
+        'cashAdvanceIndicator' => 'getCashAdvanceIndicator',
+        'splitPaymentTransaction' => 'getSplitPaymentTransaction'
     ];
 
     public static function attributeMap()
@@ -241,6 +246,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['debtRecoveryIndicator'] = isset($data['debtRecoveryIndicator']) ? $data['debtRecoveryIndicator'] : null;
         $this->container['deferredAuthIndicator'] = isset($data['deferredAuthIndicator']) ? $data['deferredAuthIndicator'] : null;
         $this->container['cashAdvanceIndicator'] = isset($data['cashAdvanceIndicator']) ? $data['cashAdvanceIndicator'] : null;
+        $this->container['splitPaymentTransaction'] = isset($data['splitPaymentTransaction']) ? $data['splitPaymentTransaction'] : null;
     }
 
     /**
@@ -663,6 +669,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function setCashAdvanceIndicator($cashAdvanceIndicator)
     {
         $this->container['cashAdvanceIndicator'] = $cashAdvanceIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets splitPaymentTransaction
+     * @return bool
+     */
+    public function getSplitPaymentTransaction()
+    {
+        return $this->container['splitPaymentTransaction'];
+    }
+
+    /**
+     * Sets splitPaymentTransaction
+     * @param bool $splitPaymentTransaction #### Visa Platform Connect Indicates split payment transaction. A split payment allows the use of two payment methods for a single transaction.  Possible values:   - `true` (split payment transaction is supported)   - `false` (default: split payment transaction is not supported)
+     * @return $this
+     */
+    public function setSplitPaymentTransaction($splitPaymentTransaction)
+    {
+        $this->container['splitPaymentTransaction'] = $splitPaymentTransaction;
 
         return $this;
     }

@@ -64,7 +64,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'administrativeArea' => 'string',
         'phone' => 'string',
         'url' => 'string',
-        'countryOfOrigin' => 'string'
+        'countryOfOrigin' => 'string',
+        'customerServicePhoneNumber' => 'string'
     ];
 
     /**
@@ -82,7 +83,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'administrativeArea' => null,
         'phone' => null,
         'url' => null,
-        'countryOfOrigin' => null
+        'countryOfOrigin' => null,
+        'customerServicePhoneNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +112,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'administrativeArea' => 'administrativeArea',
         'phone' => 'phone',
         'url' => 'url',
-        'countryOfOrigin' => 'countryOfOrigin'
+        'countryOfOrigin' => 'countryOfOrigin',
+        'customerServicePhoneNumber' => 'customerServicePhoneNumber'
     ];
 
 
@@ -129,7 +132,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'administrativeArea' => 'setAdministrativeArea',
         'phone' => 'setPhone',
         'url' => 'setUrl',
-        'countryOfOrigin' => 'setCountryOfOrigin'
+        'countryOfOrigin' => 'setCountryOfOrigin',
+        'customerServicePhoneNumber' => 'setCustomerServicePhoneNumber'
     ];
 
 
@@ -148,7 +152,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'administrativeArea' => 'getAdministrativeArea',
         'phone' => 'getPhone',
         'url' => 'getUrl',
-        'countryOfOrigin' => 'getCountryOfOrigin'
+        'countryOfOrigin' => 'getCountryOfOrigin',
+        'customerServicePhoneNumber' => 'getCustomerServicePhoneNumber'
     ];
 
     public static function attributeMap()
@@ -193,6 +198,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['countryOfOrigin'] = isset($data['countryOfOrigin']) ? $data['countryOfOrigin'] : null;
+        $this->container['customerServicePhoneNumber'] = isset($data['customerServicePhoneNumber']) ? $data['customerServicePhoneNumber'] : null;
     }
 
     /**
@@ -447,6 +453,27 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function setCountryOfOrigin($countryOfOrigin)
     {
         $this->container['countryOfOrigin'] = $countryOfOrigin;
+
+        return $this;
+    }
+
+    /**
+     * Gets customerServicePhoneNumber
+     * @return string
+     */
+    public function getCustomerServicePhoneNumber()
+    {
+        return $this->container['customerServicePhoneNumber'];
+    }
+
+    /**
+     * Sets customerServicePhoneNumber
+     * @param string $customerServicePhoneNumber #### Visa Platform Connect Indicates customer service phone number of Merchant.
+     * @return $this
+     */
+    public function setCustomerServicePhoneNumber($customerServicePhoneNumber)
+    {
+        $this->container['customerServicePhoneNumber'] = $customerServicePhoneNumber;
 
         return $this;
     }

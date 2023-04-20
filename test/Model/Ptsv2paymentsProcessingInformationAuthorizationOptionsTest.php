@@ -209,4 +209,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     public function testPropertyCashAdvanceIndicator()
     {
     }
+
+    /**
+     * Test attribute "splitPaymentTransaction"
+     */
+    public function testPropertySplitPaymentTransaction()
+    {
+    }
 }

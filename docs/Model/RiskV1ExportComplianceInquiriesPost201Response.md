@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **string** | The status for the call can be: - COMPLETED - INVALID_REQUEST - DECLINED | [optional] 
 **message** | **string** | The message describing the reason of the status. Value can be   - The customer matched the Denied Parties List   - The Export bill_country/ship_country  match   - Export email_country match   - Export hostname_country/ip_country match | [optional] 
 **clientReferenceInformation** | [**\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation**](RiskV1DecisionsPost201ResponseClientReferenceInformation.md) |  | [optional] 
-**exportComplianceInformation** | [**\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation**](RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation.md) |  | [optional] 
+**exportComplianceInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation**](PtsV2PaymentsPost201ResponseWatchlistScreeningInformation.md) |  | [optional] 
 **errorInformation** | [**\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation**](RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

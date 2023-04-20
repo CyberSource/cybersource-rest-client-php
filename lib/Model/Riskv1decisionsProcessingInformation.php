@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Riskv1decisionsProcessingInformation Class Doc Comment
  *
  * @category    Class
- * @description Decides whether to call Payer Authentication along with DM or not
+ * @description Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -172,7 +172,7 @@ class Riskv1decisionsProcessingInformation implements ArrayAccess
 
     /**
      * Sets actionList
-     * @param string[] $actionList Use CONSUMER_AUTHENTICATION to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run.
+     * @param string[] $actionList - Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service.
      * @return $this
      */
     public function setActionList($actionList)
