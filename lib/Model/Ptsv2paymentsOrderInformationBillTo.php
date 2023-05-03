@@ -75,7 +75,9 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'emailDomain' => 'string',
         'phoneNumber' => 'string',
         'phoneType' => 'string',
-        'verificationStatus' => 'string'
+        'verificationStatus' => 'string',
+        'alternatePhoneNumber' => 'string',
+        'alternateEmail' => 'string'
     ];
 
     /**
@@ -104,7 +106,9 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'emailDomain' => null,
         'phoneNumber' => null,
         'phoneType' => null,
-        'verificationStatus' => null
+        'verificationStatus' => null,
+        'alternatePhoneNumber' => null,
+        'alternateEmail' => null
     ];
 
     public static function swaggerTypes()
@@ -143,7 +147,9 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'emailDomain' => 'emailDomain',
         'phoneNumber' => 'phoneNumber',
         'phoneType' => 'phoneType',
-        'verificationStatus' => 'verificationStatus'
+        'verificationStatus' => 'verificationStatus',
+        'alternatePhoneNumber' => 'alternatePhoneNumber',
+        'alternateEmail' => 'alternateEmail'
     ];
 
 
@@ -173,7 +179,9 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'emailDomain' => 'setEmailDomain',
         'phoneNumber' => 'setPhoneNumber',
         'phoneType' => 'setPhoneType',
-        'verificationStatus' => 'setVerificationStatus'
+        'verificationStatus' => 'setVerificationStatus',
+        'alternatePhoneNumber' => 'setAlternatePhoneNumber',
+        'alternateEmail' => 'setAlternateEmail'
     ];
 
 
@@ -203,7 +211,9 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         'emailDomain' => 'getEmailDomain',
         'phoneNumber' => 'getPhoneNumber',
         'phoneType' => 'getPhoneType',
-        'verificationStatus' => 'getVerificationStatus'
+        'verificationStatus' => 'getVerificationStatus',
+        'alternatePhoneNumber' => 'getAlternatePhoneNumber',
+        'alternateEmail' => 'getAlternateEmail'
     ];
 
     public static function attributeMap()
@@ -259,6 +269,8 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['phoneType'] = isset($data['phoneType']) ? $data['phoneType'] : null;
         $this->container['verificationStatus'] = isset($data['verificationStatus']) ? $data['verificationStatus'] : null;
+        $this->container['alternatePhoneNumber'] = isset($data['alternatePhoneNumber']) ? $data['alternatePhoneNumber'] : null;
+        $this->container['alternateEmail'] = isset($data['alternateEmail']) ? $data['alternateEmail'] : null;
     }
 
     /**
@@ -744,6 +756,48 @@ class Ptsv2paymentsOrderInformationBillTo implements ArrayAccess
     public function setVerificationStatus($verificationStatus)
     {
         $this->container['verificationStatus'] = $verificationStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternatePhoneNumber
+     * @return string
+     */
+    public function getAlternatePhoneNumber()
+    {
+        return $this->container['alternatePhoneNumber'];
+    }
+
+    /**
+     * Sets alternatePhoneNumber
+     * @param string $alternatePhoneNumber #### Visa Platform Connect contains customer’s alternate phone number.
+     * @return $this
+     */
+    public function setAlternatePhoneNumber($alternatePhoneNumber)
+    {
+        $this->container['alternatePhoneNumber'] = $alternatePhoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternateEmail
+     * @return string
+     */
+    public function getAlternateEmail()
+    {
+        return $this->container['alternateEmail'];
+    }
+
+    /**
+     * Sets alternateEmail
+     * @param string $alternateEmail #### Visa Platform Connect contains customer’s alternate email address.
+     * @return $this
+     */
+    public function setAlternateEmail($alternateEmail)
+    {
+        $this->container['alternateEmail'] = $alternateEmail;
 
         return $this;
     }

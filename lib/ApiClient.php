@@ -261,7 +261,7 @@ class ApiClient
             if(strcasecmp($splitArr[0],"Authorization")==0){
                 $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
                 if($requestHeader != -1){
-                    $this->config->deleteRequestHeader(requestHeader);
+                    $this->config->deleteRequestHeader($requestHeader);
                 }
             }
             $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);

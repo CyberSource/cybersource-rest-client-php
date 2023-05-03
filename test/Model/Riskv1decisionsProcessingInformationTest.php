@@ -33,7 +33,7 @@ namespace CyberSource;
  * Riskv1decisionsProcessingInformationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Decides whether to call Payer Authentication along with DM or not
+// * @description Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

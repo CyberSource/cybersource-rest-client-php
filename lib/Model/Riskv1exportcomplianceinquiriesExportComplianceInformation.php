@@ -55,7 +55,7 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformation implements Arra
       */
     protected static $swaggerTypes = [
         'addressOperator' => 'string',
-        'weights' => '\CyberSource\Model\Riskv1exportcomplianceinquiriesExportComplianceInformationWeights',
+        'weights' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformationWeights',
         'sanctionLists' => 'string[]'
     ];
 
@@ -195,7 +195,7 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformation implements Arra
 
     /**
      * Gets weights
-     * @return \CyberSource\Model\Riskv1exportcomplianceinquiriesExportComplianceInformationWeights
+     * @return \CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformationWeights
      */
     public function getWeights()
     {
@@ -204,7 +204,7 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformation implements Arra
 
     /**
      * Sets weights
-     * @param \CyberSource\Model\Riskv1exportcomplianceinquiriesExportComplianceInformationWeights $weights
+     * @param \CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformationWeights $weights
      * @return $this
      */
     public function setWeights($weights)

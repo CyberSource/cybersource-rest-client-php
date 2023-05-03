@@ -68,6 +68,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'successUrl' => 'string',
         'failureUrl' => 'string',
         'returnUrl' => 'string',
+        'partnerIdCode' => 'string',
+        'serviceLocation' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceLocation',
         'merchantName' => 'string'
     ];
 
@@ -90,6 +92,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'successUrl' => null,
         'failureUrl' => null,
         'returnUrl' => null,
+        'partnerIdCode' => null,
+        'serviceLocation' => null,
         'merchantName' => null
     ];
 
@@ -122,6 +126,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'successUrl' => 'successUrl',
         'failureUrl' => 'failureUrl',
         'returnUrl' => 'returnUrl',
+        'partnerIdCode' => 'partnerIdCode',
+        'serviceLocation' => 'serviceLocation',
         'merchantName' => 'merchantName'
     ];
 
@@ -145,6 +151,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'successUrl' => 'setSuccessUrl',
         'failureUrl' => 'setFailureUrl',
         'returnUrl' => 'setReturnUrl',
+        'partnerIdCode' => 'setPartnerIdCode',
+        'serviceLocation' => 'setServiceLocation',
         'merchantName' => 'setMerchantName'
     ];
 
@@ -168,6 +176,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'successUrl' => 'getSuccessUrl',
         'failureUrl' => 'getFailureUrl',
         'returnUrl' => 'getReturnUrl',
+        'partnerIdCode' => 'getPartnerIdCode',
+        'serviceLocation' => 'getServiceLocation',
         'merchantName' => 'getMerchantName'
     ];
 
@@ -216,6 +226,8 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         $this->container['successUrl'] = isset($data['successUrl']) ? $data['successUrl'] : null;
         $this->container['failureUrl'] = isset($data['failureUrl']) ? $data['failureUrl'] : null;
         $this->container['returnUrl'] = isset($data['returnUrl']) ? $data['returnUrl'] : null;
+        $this->container['partnerIdCode'] = isset($data['partnerIdCode']) ? $data['partnerIdCode'] : null;
+        $this->container['serviceLocation'] = isset($data['serviceLocation']) ? $data['serviceLocation'] : null;
         $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
     }
 
@@ -534,6 +546,48 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function setReturnUrl($returnUrl)
     {
         $this->container['returnUrl'] = $returnUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets partnerIdCode
+     * @return string
+     */
+    public function getPartnerIdCode()
+    {
+        return $this->container['partnerIdCode'];
+    }
+
+    /**
+     * Sets partnerIdCode
+     * @param string $partnerIdCode #### Visa Platform Connect This field may be used for transactions on accounts issued under co-branding agreements when one of the co-branding partners.
+     * @return $this
+     */
+    public function setPartnerIdCode($partnerIdCode)
+    {
+        $this->container['partnerIdCode'] = $partnerIdCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceLocation
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantInformationServiceLocation
+     */
+    public function getServiceLocation()
+    {
+        return $this->container['serviceLocation'];
+    }
+
+    /**
+     * Sets serviceLocation
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantInformationServiceLocation $serviceLocation
+     * @return $this
+     */
+    public function setServiceLocation($serviceLocation)
+    {
+        $this->container['serviceLocation'] = $serviceLocation;
 
         return $this;
     }

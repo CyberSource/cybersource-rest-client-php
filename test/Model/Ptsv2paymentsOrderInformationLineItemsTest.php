@@ -293,4 +293,18 @@ class Ptsv2paymentsOrderInformationLineItemsTest extends \PHPUnit_Framework_Test
     public function testPropertyPassenger()
     {
     }
+
+    /**
+     * Test attribute "allowedExportCountries"
+     */
+    public function testPropertyAllowedExportCountries()
+    {
+    }
+
+    /**
+     * Test attribute "restrictedExportCountries"
+     */
+    public function testPropertyRestrictedExportCountries()
+    {
+    }
 }

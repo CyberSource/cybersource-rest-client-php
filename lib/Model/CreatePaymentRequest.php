@@ -76,7 +76,8 @@ class CreatePaymentRequest implements ArrayAccess
         'processorInformation' => '\CyberSource\Model\Ptsv2paymentsProcessorInformation',
         'riskInformation' => '\CyberSource\Model\Ptsv2paymentsRiskInformation',
         'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
-        'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation'
+        'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
+        'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation'
     ];
 
     /**
@@ -106,7 +107,8 @@ class CreatePaymentRequest implements ArrayAccess
         'processorInformation' => null,
         'riskInformation' => null,
         'acquirerInformation' => null,
-        'recurringPaymentInformation' => null
+        'recurringPaymentInformation' => null,
+        'watchlistScreeningInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -146,7 +148,8 @@ class CreatePaymentRequest implements ArrayAccess
         'processorInformation' => 'processorInformation',
         'riskInformation' => 'riskInformation',
         'acquirerInformation' => 'acquirerInformation',
-        'recurringPaymentInformation' => 'recurringPaymentInformation'
+        'recurringPaymentInformation' => 'recurringPaymentInformation',
+        'watchlistScreeningInformation' => 'watchlistScreeningInformation'
     ];
 
 
@@ -177,7 +180,8 @@ class CreatePaymentRequest implements ArrayAccess
         'processorInformation' => 'setProcessorInformation',
         'riskInformation' => 'setRiskInformation',
         'acquirerInformation' => 'setAcquirerInformation',
-        'recurringPaymentInformation' => 'setRecurringPaymentInformation'
+        'recurringPaymentInformation' => 'setRecurringPaymentInformation',
+        'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
     ];
 
 
@@ -208,7 +212,8 @@ class CreatePaymentRequest implements ArrayAccess
         'processorInformation' => 'getProcessorInformation',
         'riskInformation' => 'getRiskInformation',
         'acquirerInformation' => 'getAcquirerInformation',
-        'recurringPaymentInformation' => 'getRecurringPaymentInformation'
+        'recurringPaymentInformation' => 'getRecurringPaymentInformation',
+        'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
     ];
 
     public static function attributeMap()
@@ -265,6 +270,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
         $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
+        $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
     }
 
     /**
@@ -771,6 +777,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setRecurringPaymentInformation($recurringPaymentInformation)
     {
         $this->container['recurringPaymentInformation'] = $recurringPaymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets watchlistScreeningInformation
+     * @return \CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation
+     */
+    public function getWatchlistScreeningInformation()
+    {
+        return $this->container['watchlistScreeningInformation'];
+    }
+
+    /**
+     * Sets watchlistScreeningInformation
+     * @param \CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation $watchlistScreeningInformation
+     * @return $this
+     */
+    public function setWatchlistScreeningInformation($watchlistScreeningInformation)
+    {
+        $this->container['watchlistScreeningInformation'] = $watchlistScreeningInformation;
 
         return $this;
     }

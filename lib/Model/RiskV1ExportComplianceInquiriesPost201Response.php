@@ -61,7 +61,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
         'status' => 'string',
         'message' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\RiskV1DecisionsPost201ResponseClientReferenceInformation',
-        'exportComplianceInformation' => '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation',
+        'exportComplianceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation',
         'errorInformation' => '\CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseErrorInformation'
     ];
 
@@ -357,7 +357,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Gets exportComplianceInformation
-     * @return \CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation
      */
     public function getExportComplianceInformation()
     {
@@ -366,7 +366,7 @@ class RiskV1ExportComplianceInquiriesPost201Response implements ArrayAccess
 
     /**
      * Sets exportComplianceInformation
-     * @param \CyberSource\Model\RiskV1ExportComplianceInquiriesPost201ResponseExportComplianceInformation $exportComplianceInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation $exportComplianceInformation
      * @return $this
      */
     public function setExportComplianceInformation($exportComplianceInformation)

@@ -60,7 +60,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
         'assuranceLevel' => 'string',
         'expirationMonth' => 'string',
         'expirationYear' => 'string',
-        'requestorId' => 'string'
+        'requestorId' => 'string',
+        'assuranceMethod' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
         'assuranceLevel' => null,
         'expirationMonth' => null,
         'expirationYear' => null,
-        'requestorId' => null
+        'requestorId' => null,
+        'assuranceMethod' => null
     ];
 
     public static function swaggerTypes()
@@ -98,7 +100,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
         'assuranceLevel' => 'assuranceLevel',
         'expirationMonth' => 'expirationMonth',
         'expirationYear' => 'expirationYear',
-        'requestorId' => 'requestorId'
+        'requestorId' => 'requestorId',
+        'assuranceMethod' => 'assuranceMethod'
     ];
 
 
@@ -113,7 +116,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
         'assuranceLevel' => 'setAssuranceLevel',
         'expirationMonth' => 'setExpirationMonth',
         'expirationYear' => 'setExpirationYear',
-        'requestorId' => 'setRequestorId'
+        'requestorId' => 'setRequestorId',
+        'assuranceMethod' => 'setAssuranceMethod'
     ];
 
 
@@ -128,7 +132,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
         'assuranceLevel' => 'getAssuranceLevel',
         'expirationMonth' => 'getExpirationMonth',
         'expirationYear' => 'getExpirationYear',
-        'requestorId' => 'getRequestorId'
+        'requestorId' => 'getRequestorId',
+        'assuranceMethod' => 'getAssuranceMethod'
     ];
 
     public static function attributeMap()
@@ -169,6 +174,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
         $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
         $this->container['requestorId'] = isset($data['requestorId']) ? $data['requestorId'] : null;
+        $this->container['assuranceMethod'] = isset($data['assuranceMethod']) ? $data['assuranceMethod'] : null;
     }
 
     /**
@@ -270,7 +276,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
 
     /**
      * Sets assuranceLevel
-     * @param string $assuranceLevel Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.
+     * @param string $assuranceLevel Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field.
      * @return $this
      */
     public function setAssuranceLevel($assuranceLevel)
@@ -339,6 +345,27 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard implements Arr
     public function setRequestorId($requestorId)
     {
         $this->container['requestorId'] = $requestorId;
+
+        return $this;
+    }
+
+    /**
+     * Gets assuranceMethod
+     * @return string
+     */
+    public function getAssuranceMethod()
+    {
+        return $this->container['assuranceMethod'];
+    }
+
+    /**
+     * Sets assuranceMethod
+     * @param string $assuranceMethod Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect**
+     * @return $this
+     */
+    public function setAssuranceMethod($assuranceMethod)
+    {
+        $this->container['assuranceMethod'] = $assuranceMethod;
 
         return $this;
     }

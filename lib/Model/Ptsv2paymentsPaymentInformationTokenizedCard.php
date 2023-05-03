@@ -64,7 +64,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'assuranceLevel' => 'string',
         'storageMethod' => 'string',
         'securityCode' => 'string',
-        'securityCodeIndicator' => 'string'
+        'securityCodeIndicator' => 'string',
+        'assuranceMethod' => 'string'
     ];
 
     /**
@@ -82,7 +83,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'assuranceLevel' => null,
         'storageMethod' => null,
         'securityCode' => null,
-        'securityCodeIndicator' => null
+        'securityCodeIndicator' => null,
+        'assuranceMethod' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +112,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'assuranceLevel' => 'assuranceLevel',
         'storageMethod' => 'storageMethod',
         'securityCode' => 'securityCode',
-        'securityCodeIndicator' => 'securityCodeIndicator'
+        'securityCodeIndicator' => 'securityCodeIndicator',
+        'assuranceMethod' => 'assuranceMethod'
     ];
 
 
@@ -129,7 +132,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'assuranceLevel' => 'setAssuranceLevel',
         'storageMethod' => 'setStorageMethod',
         'securityCode' => 'setSecurityCode',
-        'securityCodeIndicator' => 'setSecurityCodeIndicator'
+        'securityCodeIndicator' => 'setSecurityCodeIndicator',
+        'assuranceMethod' => 'setAssuranceMethod'
     ];
 
 
@@ -148,7 +152,8 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         'assuranceLevel' => 'getAssuranceLevel',
         'storageMethod' => 'getStorageMethod',
         'securityCode' => 'getSecurityCode',
-        'securityCodeIndicator' => 'getSecurityCodeIndicator'
+        'securityCodeIndicator' => 'getSecurityCodeIndicator',
+        'assuranceMethod' => 'getAssuranceMethod'
     ];
 
     public static function attributeMap()
@@ -193,6 +198,7 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
         $this->container['storageMethod'] = isset($data['storageMethod']) ? $data['storageMethod'] : null;
         $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
         $this->container['securityCodeIndicator'] = isset($data['securityCodeIndicator']) ? $data['securityCodeIndicator'] : null;
+        $this->container['assuranceMethod'] = isset($data['assuranceMethod']) ? $data['assuranceMethod'] : null;
     }
 
     /**
@@ -378,7 +384,7 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
 
     /**
      * Sets assuranceLevel
-     * @param string $assuranceLevel Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.
+     * @param string $assuranceLevel Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **CyberSource through VisaNet** and **FDC Nashville Global**.  Returned by PIN debit credit or PIN debit purchase.  **Note** Merchants supported for **CyberSource through VisaNet**_/_**Visa Platform Connect** are advised not to use this field.
      * @return $this
      */
     public function setAssuranceLevel($assuranceLevel)
@@ -447,6 +453,27 @@ class Ptsv2paymentsPaymentInformationTokenizedCard implements ArrayAccess
     public function setSecurityCodeIndicator($securityCodeIndicator)
     {
         $this->container['securityCodeIndicator'] = $securityCodeIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets assuranceMethod
+     * @return string
+     */
+    public function getAssuranceMethod()
+    {
+        return $this->container['assuranceMethod'];
+    }
+
+    /**
+     * Sets assuranceMethod
+     * @param string $assuranceMethod Confidence level of the tokenization. This value is assigned by the token service provider.  **Note** This field is supported only for **Visa Platform Connect**
+     * @return $this
+     */
+    public function setAssuranceMethod($assuranceMethod)
+    {
+        $this->container['assuranceMethod'] = $assuranceMethod;
 
         return $this;
     }

@@ -67,7 +67,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\Riskv1decisionsMerchantInformation',
         'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
-        'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation'
     ];
 
     /**
@@ -88,7 +89,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'merchantInformation' => null,
         'acquirerInformation' => null,
         'recurringPaymentInformation' => null,
-        'consumerAuthenticationInformation' => null
+        'consumerAuthenticationInformation' => null,
+        'watchlistScreeningInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -119,7 +121,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'merchantInformation' => 'merchantInformation',
         'acquirerInformation' => 'acquirerInformation',
         'recurringPaymentInformation' => 'recurringPaymentInformation',
-        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'watchlistScreeningInformation'
     ];
 
 
@@ -141,7 +144,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'merchantInformation' => 'setMerchantInformation',
         'acquirerInformation' => 'setAcquirerInformation',
         'recurringPaymentInformation' => 'setRecurringPaymentInformation',
-        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
     ];
 
 
@@ -163,7 +167,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'merchantInformation' => 'getMerchantInformation',
         'acquirerInformation' => 'getAcquirerInformation',
         'recurringPaymentInformation' => 'getRecurringPaymentInformation',
-        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
     ];
 
     public static function attributeMap()
@@ -211,6 +216,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
         $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
     }
 
     /**
@@ -528,6 +534,27 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets watchlistScreeningInformation
+     * @return \CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation
+     */
+    public function getWatchlistScreeningInformation()
+    {
+        return $this->container['watchlistScreeningInformation'];
+    }
+
+    /**
+     * Sets watchlistScreeningInformation
+     * @param \CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation $watchlistScreeningInformation
+     * @return $this
+     */
+    public function setWatchlistScreeningInformation($watchlistScreeningInformation)
+    {
+        $this->container['watchlistScreeningInformation'] = $watchlistScreeningInformation;
 
         return $this;
     }
