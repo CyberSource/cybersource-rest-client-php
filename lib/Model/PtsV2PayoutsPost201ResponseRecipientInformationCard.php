@@ -198,7 +198,7 @@ class PtsV2PayoutsPost201ResponseRecipientInformationCard implements ArrayAccess
 
     /**
      * Sets currency
-     * @param string $currency This is a multicurrency-only field. It contains a 3-digit numeric code that identifies the currency used by the issuer.
+     * @param string $currency This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency.
      * @return $this
      */
     public function setCurrency($currency)

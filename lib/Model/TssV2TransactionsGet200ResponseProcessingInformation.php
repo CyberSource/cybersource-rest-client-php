@@ -54,6 +54,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'binSource' => 'string',
         'industryDataType' => 'string',
         'paymentSolution' => 'string',
         'commerceIndicator' => 'string',
@@ -69,6 +70,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'binSource' => null,
         'industryDataType' => null,
         'paymentSolution' => null,
         'commerceIndicator' => null,
@@ -94,6 +96,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
+        'binSource' => 'binSource',
         'industryDataType' => 'industryDataType',
         'paymentSolution' => 'paymentSolution',
         'commerceIndicator' => 'commerceIndicator',
@@ -110,6 +113,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      * @var string[]
      */
     protected static $setters = [
+        'binSource' => 'setBinSource',
         'industryDataType' => 'setIndustryDataType',
         'paymentSolution' => 'setPaymentSolution',
         'commerceIndicator' => 'setCommerceIndicator',
@@ -126,6 +130,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      * @var string[]
      */
     protected static $getters = [
+        'binSource' => 'getBinSource',
         'industryDataType' => 'getIndustryDataType',
         'paymentSolution' => 'getPaymentSolution',
         'commerceIndicator' => 'getCommerceIndicator',
@@ -167,6 +172,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        $this->container['binSource'] = isset($data['binSource']) ? $data['binSource'] : null;
         $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
@@ -201,6 +207,27 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         return true;
     }
 
+
+    /**
+     * Gets binSource
+     * @return string
+     */
+    public function getBinSource()
+    {
+        return $this->container['binSource'];
+    }
+
+    /**
+     * Sets binSource
+     * @param string $binSource Bin Source File Identifier. Possible values: - itmx - rupay
+     * @return $this
+     */
+    public function setBinSource($binSource)
+    {
+        $this->container['binSource'] = $binSource;
+
+        return $this;
+    }
 
     /**
      * Gets industryDataType

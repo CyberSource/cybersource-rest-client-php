@@ -57,7 +57,11 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'paymentType' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentType',
         'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCard',
+        'brands' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBrands[]',
+        'features' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFeatures',
         'invoice' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInvoice',
+        'network' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationNetwork',
+        'issuerInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation',
         'bank' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBank',
         'accountFeatures' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures',
         'paymentInstrument' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument',
@@ -74,7 +78,11 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'paymentType' => null,
         'customer' => null,
         'card' => null,
+        'brands' => null,
+        'features' => null,
         'invoice' => null,
+        'network' => null,
+        'issuerInformation' => null,
         'bank' => null,
         'accountFeatures' => null,
         'paymentInstrument' => null,
@@ -101,7 +109,11 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'paymentType' => 'paymentType',
         'customer' => 'customer',
         'card' => 'card',
+        'brands' => 'brands',
+        'features' => 'features',
         'invoice' => 'invoice',
+        'network' => 'network',
+        'issuerInformation' => 'issuerInformation',
         'bank' => 'bank',
         'accountFeatures' => 'accountFeatures',
         'paymentInstrument' => 'paymentInstrument',
@@ -119,7 +131,11 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'paymentType' => 'setPaymentType',
         'customer' => 'setCustomer',
         'card' => 'setCard',
+        'brands' => 'setBrands',
+        'features' => 'setFeatures',
         'invoice' => 'setInvoice',
+        'network' => 'setNetwork',
+        'issuerInformation' => 'setIssuerInformation',
         'bank' => 'setBank',
         'accountFeatures' => 'setAccountFeatures',
         'paymentInstrument' => 'setPaymentInstrument',
@@ -137,7 +153,11 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         'paymentType' => 'getPaymentType',
         'customer' => 'getCustomer',
         'card' => 'getCard',
+        'brands' => 'getBrands',
+        'features' => 'getFeatures',
         'invoice' => 'getInvoice',
+        'network' => 'getNetwork',
+        'issuerInformation' => 'getIssuerInformation',
         'bank' => 'getBank',
         'accountFeatures' => 'getAccountFeatures',
         'paymentInstrument' => 'getPaymentInstrument',
@@ -180,7 +200,11 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['brands'] = isset($data['brands']) ? $data['brands'] : null;
+        $this->container['features'] = isset($data['features']) ? $data['features'] : null;
         $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['accountFeatures'] = isset($data['accountFeatures']) ? $data['accountFeatures'] : null;
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
@@ -278,6 +302,48 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
     }
 
     /**
+     * Gets brands
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBrands[]
+     */
+    public function getBrands()
+    {
+        return $this->container['brands'];
+    }
+
+    /**
+     * Sets brands
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBrands[] $brands This array contains the supported brands.
+     * @return $this
+     */
+    public function setBrands($brands)
+    {
+        $this->container['brands'] = $brands;
+
+        return $this;
+    }
+
+    /**
+     * Gets features
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFeatures
+     */
+    public function getFeatures()
+    {
+        return $this->container['features'];
+    }
+
+    /**
+     * Sets features
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationFeatures $features
+     * @return $this
+     */
+    public function setFeatures($features)
+    {
+        $this->container['features'] = $features;
+
+        return $this;
+    }
+
+    /**
      * Gets invoice
      * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationInvoice
      */
@@ -294,6 +360,48 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
     public function setInvoice($invoice)
     {
         $this->container['invoice'] = $invoice;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationNetwork
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationNetwork $network
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
 
         return $this;
     }

@@ -57,7 +57,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'email' => 'string',
-        'merchantCustomerId' => 'string'
+        'merchantCustomerId' => 'string',
+        'company' => '\CyberSource\Model\Invoicingv2invoicesCustomerInformationCompany'
     ];
 
     /**
@@ -67,7 +68,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'name' => null,
         'email' => null,
-        'merchantCustomerId' => null
+        'merchantCustomerId' => null,
+        'company' => null
     ];
 
     public static function swaggerTypes()
@@ -87,7 +89,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'email' => 'email',
-        'merchantCustomerId' => 'merchantCustomerId'
+        'merchantCustomerId' => 'merchantCustomerId',
+        'company' => 'company'
     ];
 
 
@@ -98,7 +101,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'email' => 'setEmail',
-        'merchantCustomerId' => 'setMerchantCustomerId'
+        'merchantCustomerId' => 'setMerchantCustomerId',
+        'company' => 'setCompany'
     ];
 
 
@@ -109,7 +113,8 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'email' => 'getEmail',
-        'merchantCustomerId' => 'getMerchantCustomerId'
+        'merchantCustomerId' => 'getMerchantCustomerId',
+        'company' => 'getCompany'
     ];
 
     public static function attributeMap()
@@ -146,6 +151,7 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
+        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
     }
 
     /**
@@ -232,6 +238,27 @@ class Invoicingv2invoicesCustomerInformation implements ArrayAccess
     public function setMerchantCustomerId($merchantCustomerId)
     {
         $this->container['merchantCustomerId'] = $merchantCustomerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets company
+     * @return \CyberSource\Model\Invoicingv2invoicesCustomerInformationCompany
+     */
+    public function getCompany()
+    {
+        return $this->container['company'];
+    }
+
+    /**
+     * Sets company
+     * @param \CyberSource\Model\Invoicingv2invoicesCustomerInformationCompany $company
+     * @return $this
+     */
+    public function setCompany($company)
+    {
+        $this->container['company'] = $company;
 
         return $this;
     }

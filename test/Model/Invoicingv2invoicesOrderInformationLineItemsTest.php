@@ -104,4 +104,39 @@ class Invoicingv2invoicesOrderInformationLineItemsTest extends \PHPUnit_Framewor
     public function testPropertyUnitPrice()
     {
     }
+
+    /**
+     * Test attribute "discountAmount"
+     */
+    public function testPropertyDiscountAmount()
+    {
+    }
+
+    /**
+     * Test attribute "discountRate"
+     */
+    public function testPropertyDiscountRate()
+    {
+    }
+
+    /**
+     * Test attribute "taxAmount"
+     */
+    public function testPropertyTaxAmount()
+    {
+    }
+
+    /**
+     * Test attribute "taxRate"
+     */
+    public function testPropertyTaxRate()
+    {
+    }
+
+    /**
+     * Test attribute "totalAmount"
+     */
+    public function testPropertyTotalAmount()
+    {
+    }
 }

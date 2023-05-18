@@ -62,6 +62,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
         'startYear' => 'string',
         'issueNumber' => 'string',
         'type' => 'string',
+        'brandName' => 'string',
+        'currency' => 'string',
         'accountEncoderId' => 'string',
         'useAs' => 'string'
     ];
@@ -79,6 +81,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
         'startYear' => null,
         'issueNumber' => null,
         'type' => null,
+        'brandName' => null,
+        'currency' => null,
         'accountEncoderId' => null,
         'useAs' => null
     ];
@@ -106,6 +110,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
         'startYear' => 'startYear',
         'issueNumber' => 'issueNumber',
         'type' => 'type',
+        'brandName' => 'brandName',
+        'currency' => 'currency',
         'accountEncoderId' => 'accountEncoderId',
         'useAs' => 'useAs'
     ];
@@ -124,6 +130,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
         'startYear' => 'setStartYear',
         'issueNumber' => 'setIssueNumber',
         'type' => 'setType',
+        'brandName' => 'setBrandName',
+        'currency' => 'setCurrency',
         'accountEncoderId' => 'setAccountEncoderId',
         'useAs' => 'setUseAs'
     ];
@@ -142,6 +150,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
         'startYear' => 'getStartYear',
         'issueNumber' => 'getIssueNumber',
         'type' => 'getType',
+        'brandName' => 'getBrandName',
+        'currency' => 'getCurrency',
         'accountEncoderId' => 'getAccountEncoderId',
         'useAs' => 'getUseAs'
     ];
@@ -185,6 +195,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
         $this->container['startYear'] = isset($data['startYear']) ? $data['startYear'] : null;
         $this->container['issueNumber'] = isset($data['issueNumber']) ? $data['issueNumber'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['brandName'] = isset($data['brandName']) ? $data['brandName'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['accountEncoderId'] = isset($data['accountEncoderId']) ? $data['accountEncoderId'] : null;
         $this->container['useAs'] = isset($data['useAs']) ? $data['useAs'] : null;
     }
@@ -378,6 +390,48 @@ class TssV2TransactionsGet200ResponsePaymentInformationCard implements ArrayAcce
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets brandName
+     * @return string
+     */
+    public function getBrandName()
+    {
+        return $this->container['brandName'];
+    }
+
+    /**
+     * Sets brandName
+     * @param string $brandName This field contains the card brand name.   Some of the possible values (not an exhaustive list) are -    - VISA   - MASTERCARD   - AMERICAN EXPRESS   - DISCOVER   - DINERS CLUB   - CARTE BLANCHE   - JCB   - OPTIMA   - TWINPAY CREDIT CARD   - TWINPAY DEBIT CARD   - WALMART   - ENROUTE   - LOWES CONSUMER   - HOME DEPOT CONSUMER   - MBNA   - DICKS SPORTWEAR   - CASUAL CORNER   - SEARS   - JAL   - DISNEY CARD   - SWITCH/SOLO   - SAMS CLUB CONSUMER   - SAMS CLUB BUSINESS   - NICOS HOUSE CARD   - BEBE   - RESTORATION HARDWARE   - DELTA ONLINE   - SOLO   - VISA ELECTRON   - DANKORT   - LASER   - CARTE BANCAIRE   - CARTA SI   - ENCODED ACCOUNT   - UATP   - HOUSEHOLD   - MAESTRO   - GE CAPITAL   - KOREAN CARDS   - STYLE CARDS   - JCREW   - MEIJER   - HIPERCARD   - AURA   - REDECARD   - ORICO HOUSE CARD   - ELO   - CAPITAL ONE PRIVATE LABEL   - CARNET   - RUPAY   - CHINA UNION PAY   - FALABELLA PRIVATE LABEL   - PROMPTCARD   - KOREAN DOMESTIC   - BANRICOMPRAS
+     * @return $this
+     */
+    public function setBrandName($brandName)
+    {
+        $this->container['brandName'] = $brandName;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     * @param string $currency This field indicates the 3-letter [ISO Standard Currency Codes](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) for the card currency.
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
 
         return $this;
     }

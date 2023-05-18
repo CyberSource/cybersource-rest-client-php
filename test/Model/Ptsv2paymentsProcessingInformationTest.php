@@ -99,6 +99,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "binSource"
+     */
+    public function testPropertyBinSource()
+    {
+    }
+
+    /**
      * Test attribute "capture"
      */
     public function testPropertyCapture()
