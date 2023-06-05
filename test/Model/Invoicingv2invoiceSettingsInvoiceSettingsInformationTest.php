@@ -132,4 +132,18 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformationTest extends \PHPUnit_
     public function testPropertyPayerAuthenticationInInvoicing()
     {
     }
+
+    /**
+     * Test attribute "showVatNumber"
+     */
+    public function testPropertyShowVatNumber()
+    {
+    }
+
+    /**
+     * Test attribute "vatRegistrationNumber"
+     */
+    public function testPropertyVatRegistrationNumber()
+    {
+    }
 }

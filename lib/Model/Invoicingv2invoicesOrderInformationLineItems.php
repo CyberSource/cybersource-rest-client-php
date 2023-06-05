@@ -58,7 +58,12 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'productSku' => 'string',
         'productName' => 'string',
         'quantity' => 'int',
-        'unitPrice' => 'string'
+        'unitPrice' => 'string',
+        'discountAmount' => 'string',
+        'discountRate' => 'string',
+        'taxAmount' => 'string',
+        'taxRate' => 'string',
+        'totalAmount' => 'string'
     ];
 
     /**
@@ -69,7 +74,12 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'productSku' => null,
         'productName' => null,
         'quantity' => null,
-        'unitPrice' => null
+        'unitPrice' => null,
+        'discountAmount' => null,
+        'discountRate' => null,
+        'taxAmount' => null,
+        'taxRate' => null,
+        'totalAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -90,7 +100,12 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'productSku' => 'productSku',
         'productName' => 'productName',
         'quantity' => 'quantity',
-        'unitPrice' => 'unitPrice'
+        'unitPrice' => 'unitPrice',
+        'discountAmount' => 'discountAmount',
+        'discountRate' => 'discountRate',
+        'taxAmount' => 'taxAmount',
+        'taxRate' => 'taxRate',
+        'totalAmount' => 'totalAmount'
     ];
 
 
@@ -102,7 +117,12 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'productSku' => 'setProductSku',
         'productName' => 'setProductName',
         'quantity' => 'setQuantity',
-        'unitPrice' => 'setUnitPrice'
+        'unitPrice' => 'setUnitPrice',
+        'discountAmount' => 'setDiscountAmount',
+        'discountRate' => 'setDiscountRate',
+        'taxAmount' => 'setTaxAmount',
+        'taxRate' => 'setTaxRate',
+        'totalAmount' => 'setTotalAmount'
     ];
 
 
@@ -114,7 +134,12 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'productSku' => 'getProductSku',
         'productName' => 'getProductName',
         'quantity' => 'getQuantity',
-        'unitPrice' => 'getUnitPrice'
+        'unitPrice' => 'getUnitPrice',
+        'discountAmount' => 'getDiscountAmount',
+        'discountRate' => 'getDiscountRate',
+        'taxAmount' => 'getTaxAmount',
+        'taxRate' => 'getTaxRate',
+        'totalAmount' => 'getTotalAmount'
     ];
 
     public static function attributeMap()
@@ -152,6 +177,11 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
+        $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
+        $this->container['discountRate'] = isset($data['discountRate']) ? $data['discountRate'] : null;
+        $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
+        $this->container['taxRate'] = isset($data['taxRate']) ? $data['taxRate'] : null;
+        $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
     }
 
     /**
@@ -259,6 +289,111 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
     public function setUnitPrice($unitPrice)
     {
         $this->container['unitPrice'] = $unitPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountAmount
+     * @return string
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     * @param string $discountAmount Discount applied to the item.
+     * @return $this
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->container['discountAmount'] = $discountAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountRate
+     * @return string
+     */
+    public function getDiscountRate()
+    {
+        return $this->container['discountRate'];
+    }
+
+    /**
+     * Sets discountRate
+     * @param string $discountRate Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%)
+     * @return $this
+     */
+    public function setDiscountRate($discountRate)
+    {
+        $this->container['discountRate'] = $discountRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxAmount
+     * @return string
+     */
+    public function getTaxAmount()
+    {
+        return $this->container['taxAmount'];
+    }
+
+    /**
+     * Sets taxAmount
+     * @param string $taxAmount Total tax to apply to the product. This value cannot be negative. The tax amount and the offer amount must be in the same currency. The tax amount field is additive.  The following example uses a two-exponent currency such as USD:   1. You include each line item in your request.  ..- 1st line item has amount=10.00, quantity=1, and taxAmount=0.80  ..- 2nd line item has amount=20.00, quantity=1, and taxAmount=1.60  2. The total amount authorized will be 32.40, not 30.00 with 2.40 of tax included.  Optional field.  #### Airlines processing Tax portion of the order amount. This value cannot exceed 99999999999999 (fourteen 9s). Format: English characters only. Optional request field for a line item.  #### Tax Calculation Optional field for U.S., Canadian, international tax, and value added taxes.  Note if you send this field in your tax request, the value in the field will override the tax engine
+     * @return $this
+     */
+    public function setTaxAmount($taxAmount)
+    {
+        $this->container['taxAmount'] = $taxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxRate
+     * @return string
+     */
+    public function getTaxRate()
+    {
+        return $this->container['taxRate'];
+    }
+
+    /**
+     * Sets taxRate
+     * @param string $taxRate Tax rate applied to the item.  For details, see `tax_rate` field description in the [Level II and Level III Processing Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/Level_2_3_SCMP_API/html/)  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%).
+     * @return $this
+     */
+    public function setTaxRate($taxRate)
+    {
+        $this->container['taxRate'] = $taxRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalAmount
+     * @return string
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['totalAmount'];
+    }
+
+    /**
+     * Sets totalAmount
+     * @param string $totalAmount Total amount for the item. Normally calculated as the unit price times quantity.  When `orderInformation.lineItems[].productCode` is \"gift_card\", this is the purchase amount total for prepaid gift cards in major units.  Example: 123.45 USD = 123
+     * @return $this
+     */
+    public function setTotalAmount($totalAmount)
+    {
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }

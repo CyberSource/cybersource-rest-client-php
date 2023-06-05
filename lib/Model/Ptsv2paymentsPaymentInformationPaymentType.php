@@ -55,6 +55,7 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
+        'subTypeName' => 'string',
         'method' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentTypeMethod'
     ];
 
@@ -64,6 +65,7 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
+        'subTypeName' => null,
         'method' => null
     ];
 
@@ -83,6 +85,7 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'subTypeName' => 'subTypeName',
         'method' => 'method'
     ];
 
@@ -93,6 +96,7 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'subTypeName' => 'setSubTypeName',
         'method' => 'setMethod'
     ];
 
@@ -103,6 +107,7 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'subTypeName' => 'getSubTypeName',
         'method' => 'getMethod'
     ];
 
@@ -138,6 +143,7 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['subTypeName'] = isset($data['subTypeName']) ? $data['subTypeName'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
     }
 
@@ -183,6 +189,27 @@ class Ptsv2paymentsPaymentInformationPaymentType implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets subTypeName
+     * @return string
+     */
+    public function getSubTypeName()
+    {
+        return $this->container['subTypeName'];
+    }
+
+    /**
+     * Sets subTypeName
+     * @param string $subTypeName Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers.
+     * @return $this
+     */
+    public function setSubTypeName($subTypeName)
+    {
+        $this->container['subTypeName'] = $subTypeName;
 
         return $this;
     }

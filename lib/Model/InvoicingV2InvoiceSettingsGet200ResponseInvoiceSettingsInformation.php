@@ -61,7 +61,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'headerStyle' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle',
         'deliveryLanguage' => 'string',
         'defaultCurrencyCode' => 'string',
-        'payerAuthentication3DSVersion' => 'string'
+        'payerAuthentication3DSVersion' => 'bool',
+        'showVatNumber' => 'bool',
+        'vatRegistrationNumber' => 'string'
     ];
 
     /**
@@ -76,7 +78,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'headerStyle' => null,
         'deliveryLanguage' => null,
         'defaultCurrencyCode' => null,
-        'payerAuthentication3DSVersion' => null
+        'payerAuthentication3DSVersion' => null,
+        'showVatNumber' => null,
+        'vatRegistrationNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +105,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'headerStyle' => 'headerStyle',
         'deliveryLanguage' => 'deliveryLanguage',
         'defaultCurrencyCode' => 'defaultCurrencyCode',
-        'payerAuthentication3DSVersion' => 'payerAuthentication3DSVersion'
+        'payerAuthentication3DSVersion' => 'payerAuthentication3DSVersion',
+        'showVatNumber' => 'showVatNumber',
+        'vatRegistrationNumber' => 'vatRegistrationNumber'
     ];
 
 
@@ -117,7 +123,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'headerStyle' => 'setHeaderStyle',
         'deliveryLanguage' => 'setDeliveryLanguage',
         'defaultCurrencyCode' => 'setDefaultCurrencyCode',
-        'payerAuthentication3DSVersion' => 'setPayerAuthentication3DSVersion'
+        'payerAuthentication3DSVersion' => 'setPayerAuthentication3DSVersion',
+        'showVatNumber' => 'setShowVatNumber',
+        'vatRegistrationNumber' => 'setVatRegistrationNumber'
     ];
 
 
@@ -133,7 +141,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'headerStyle' => 'getHeaderStyle',
         'deliveryLanguage' => 'getDeliveryLanguage',
         'defaultCurrencyCode' => 'getDefaultCurrencyCode',
-        'payerAuthentication3DSVersion' => 'getPayerAuthentication3DSVersion'
+        'payerAuthentication3DSVersion' => 'getPayerAuthentication3DSVersion',
+        'showVatNumber' => 'getShowVatNumber',
+        'vatRegistrationNumber' => 'getVatRegistrationNumber'
     ];
 
     public static function attributeMap()
@@ -174,7 +184,9 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         $this->container['headerStyle'] = isset($data['headerStyle']) ? $data['headerStyle'] : null;
         $this->container['deliveryLanguage'] = isset($data['deliveryLanguage']) ? $data['deliveryLanguage'] : null;
         $this->container['defaultCurrencyCode'] = isset($data['defaultCurrencyCode']) ? $data['defaultCurrencyCode'] : null;
-        $this->container['payerAuthentication3DSVersion'] = isset($data['payerAuthentication3DSVersion']) ? $data['payerAuthentication3DSVersion'] : null;
+        $this->container['payerAuthentication3DSVersion'] = isset($data['payerAuthentication3DSVersion']) ? $data['payerAuthentication3DSVersion'] : false;
+        $this->container['showVatNumber'] = isset($data['showVatNumber']) ? $data['showVatNumber'] : false;
+        $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
     }
 
     /**
@@ -351,7 +363,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
 
     /**
      * Gets payerAuthentication3DSVersion
-     * @return string
+     * @return bool
      */
     public function getPayerAuthentication3DSVersion()
     {
@@ -360,12 +372,54 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
 
     /**
      * Sets payerAuthentication3DSVersion
-     * @param string $payerAuthentication3DSVersion The 3D Secure payer authentication version or status for a merchant's invoice payments. Possible values are: - `1` - `2` - `None` - `Disabled`
+     * @param bool $payerAuthentication3DSVersion The 3D Secure payer authentication status for a merchant's invoice payments.
      * @return $this
      */
     public function setPayerAuthentication3DSVersion($payerAuthentication3DSVersion)
     {
         $this->container['payerAuthentication3DSVersion'] = $payerAuthentication3DSVersion;
+
+        return $this;
+    }
+
+    /**
+     * Gets showVatNumber
+     * @return bool
+     */
+    public function getShowVatNumber()
+    {
+        return $this->container['showVatNumber'];
+    }
+
+    /**
+     * Sets showVatNumber
+     * @param bool $showVatNumber Display VAT number on Invoice.
+     * @return $this
+     */
+    public function setShowVatNumber($showVatNumber)
+    {
+        $this->container['showVatNumber'] = $showVatNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets vatRegistrationNumber
+     * @return string
+     */
+    public function getVatRegistrationNumber()
+    {
+        return $this->container['vatRegistrationNumber'];
+    }
+
+    /**
+     * Sets vatRegistrationNumber
+     * @param string $vatRegistrationNumber Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.
+     * @return $this
+     */
+    public function setVatRegistrationNumber($vatRegistrationNumber)
+    {
+        $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
         return $this;
     }

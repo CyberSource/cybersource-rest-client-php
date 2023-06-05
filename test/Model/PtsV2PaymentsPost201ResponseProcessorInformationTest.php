@@ -148,6 +148,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "settlementDate"
+     */
+    public function testPropertySettlementDate()
+    {
+    }
+
+    /**
      * Test attribute "avs"
      */
     public function testPropertyAvs()

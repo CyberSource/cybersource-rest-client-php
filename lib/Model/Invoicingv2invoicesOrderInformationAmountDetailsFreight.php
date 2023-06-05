@@ -56,7 +56,8 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
       */
     protected static $swaggerTypes = [
         'amount' => 'string',
-        'taxable' => 'bool'
+        'taxable' => 'bool',
+        'taxRate' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
       */
     protected static $swaggerFormats = [
         'amount' => null,
-        'taxable' => null
+        'taxable' => null,
+        'taxRate' => null
     ];
 
     public static function swaggerTypes()
@@ -84,7 +86,8 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'taxable' => 'taxable'
+        'taxable' => 'taxable',
+        'taxRate' => 'taxRate'
     ];
 
 
@@ -94,7 +97,8 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'taxable' => 'setTaxable'
+        'taxable' => 'setTaxable',
+        'taxRate' => 'setTaxRate'
     ];
 
 
@@ -104,7 +108,8 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'taxable' => 'getTaxable'
+        'taxable' => 'getTaxable',
+        'taxRate' => 'getTaxRate'
     ];
 
     public static function attributeMap()
@@ -140,6 +145,7 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['taxable'] = isset($data['taxable']) ? $data['taxable'] : null;
+        $this->container['taxRate'] = isset($data['taxRate']) ? $data['taxRate'] : null;
     }
 
     /**
@@ -205,6 +211,27 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
     public function setTaxable($taxable)
     {
         $this->container['taxable'] = $taxable;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxRate
+     * @return string
+     */
+    public function getTaxRate()
+    {
+        return $this->container['taxRate'];
+    }
+
+    /**
+     * Sets taxRate
+     * @param string $taxRate Shipping Tax rate applied to the freight amount.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%).
+     * @return $this
+     */
+    public function setTaxRate($taxRate)
+    {
+        $this->container['taxRate'] = $taxRate;
 
         return $this;
     }

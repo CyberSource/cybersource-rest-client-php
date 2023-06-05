@@ -64,6 +64,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseDetails' => 'string',
         'responseCategoryCode' => 'string',
         'forwardedAcquirerCode' => 'string',
+        'settlementDate' => 'string',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAvs',
         'cardVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationCardVerification',
         'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice',
@@ -103,6 +104,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseDetails' => null,
         'responseCategoryCode' => null,
         'forwardedAcquirerCode' => null,
+        'settlementDate' => null,
         'avs' => null,
         'cardVerification' => null,
         'merchantAdvice' => null,
@@ -152,6 +154,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseDetails' => 'responseDetails',
         'responseCategoryCode' => 'responseCategoryCode',
         'forwardedAcquirerCode' => 'forwardedAcquirerCode',
+        'settlementDate' => 'settlementDate',
         'avs' => 'avs',
         'cardVerification' => 'cardVerification',
         'merchantAdvice' => 'merchantAdvice',
@@ -192,6 +195,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseDetails' => 'setResponseDetails',
         'responseCategoryCode' => 'setResponseCategoryCode',
         'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
+        'settlementDate' => 'setSettlementDate',
         'avs' => 'setAvs',
         'cardVerification' => 'setCardVerification',
         'merchantAdvice' => 'setMerchantAdvice',
@@ -232,6 +236,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseDetails' => 'getResponseDetails',
         'responseCategoryCode' => 'getResponseCategoryCode',
         'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
+        'settlementDate' => 'getSettlementDate',
         'avs' => 'getAvs',
         'cardVerification' => 'getCardVerification',
         'merchantAdvice' => 'getMerchantAdvice',
@@ -297,6 +302,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['responseCategoryCode'] = isset($data['responseCategoryCode']) ? $data['responseCategoryCode'] : null;
         $this->container['forwardedAcquirerCode'] = isset($data['forwardedAcquirerCode']) ? $data['forwardedAcquirerCode'] : null;
+        $this->container['settlementDate'] = isset($data['settlementDate']) ? $data['settlementDate'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
         $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
@@ -552,6 +558,27 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setForwardedAcquirerCode($forwardedAcquirerCode)
     {
         $this->container['forwardedAcquirerCode'] = $forwardedAcquirerCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlementDate
+     * @return string
+     */
+    public function getSettlementDate()
+    {
+        return $this->container['settlementDate'];
+    }
+
+    /**
+     * Sets settlementDate
+     * @param string $settlementDate Field contains a settlement date. The date is in mmdd format, where: mm = month and dd = day.
+     * @return $this
+     */
+    public function setSettlementDate($settlementDate)
+    {
+        $this->container['settlementDate'] = $settlementDate;
 
         return $this;
     }

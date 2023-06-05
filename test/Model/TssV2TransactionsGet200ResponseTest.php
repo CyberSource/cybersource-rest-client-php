@@ -211,6 +211,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "payoutOptions"
+     */
+    public function testPropertyPayoutOptions()
+    {
+    }
+
+    /**
      * Test attribute "processingInformation"
      */
     public function testPropertyProcessingInformation()

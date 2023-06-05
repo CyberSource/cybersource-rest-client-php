@@ -73,6 +73,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'orderInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformation',
         'paymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformation',
         'paymentInsightsInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation',
+        'payoutOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePayoutOptions',
         'processingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePointOfSaleInformation',
@@ -106,6 +107,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'orderInformation' => null,
         'paymentInformation' => null,
         'paymentInsightsInformation' => null,
+        'payoutOptions' => null,
         'processingInformation' => null,
         'processorInformation' => null,
         'pointOfSaleInformation' => null,
@@ -149,6 +151,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'orderInformation' => 'orderInformation',
         'paymentInformation' => 'paymentInformation',
         'paymentInsightsInformation' => 'paymentInsightsInformation',
+        'payoutOptions' => 'payoutOptions',
         'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
@@ -183,6 +186,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'orderInformation' => 'setOrderInformation',
         'paymentInformation' => 'setPaymentInformation',
         'paymentInsightsInformation' => 'setPaymentInsightsInformation',
+        'payoutOptions' => 'setPayoutOptions',
         'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
@@ -217,6 +221,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'orderInformation' => 'getOrderInformation',
         'paymentInformation' => 'getPaymentInformation',
         'paymentInsightsInformation' => 'getPaymentInsightsInformation',
+        'payoutOptions' => 'getPayoutOptions',
         'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
@@ -276,6 +281,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['paymentInsightsInformation'] = isset($data['paymentInsightsInformation']) ? $data['paymentInsightsInformation'] : null;
+        $this->container['payoutOptions'] = isset($data['payoutOptions']) ? $data['payoutOptions'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
@@ -705,6 +711,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     public function setPaymentInsightsInformation($paymentInsightsInformation)
     {
         $this->container['paymentInsightsInformation'] = $paymentInsightsInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets payoutOptions
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponsePayoutOptions
+     */
+    public function getPayoutOptions()
+    {
+        return $this->container['payoutOptions'];
+    }
+
+    /**
+     * Sets payoutOptions
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponsePayoutOptions $payoutOptions
+     * @return $this
+     */
+    public function setPayoutOptions($payoutOptions)
+    {
+        $this->container['payoutOptions'] = $payoutOptions;
 
         return $this;
     }

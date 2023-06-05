@@ -61,7 +61,9 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
         'headerStyle' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle',
         'deliveryLanguage' => 'string',
         'defaultCurrencyCode' => 'string',
-        'payerAuthenticationInInvoicing' => 'string'
+        'payerAuthenticationInInvoicing' => 'string',
+        'showVatNumber' => 'bool',
+        'vatRegistrationNumber' => 'string'
     ];
 
     /**
@@ -76,7 +78,9 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
         'headerStyle' => null,
         'deliveryLanguage' => null,
         'defaultCurrencyCode' => null,
-        'payerAuthenticationInInvoicing' => null
+        'payerAuthenticationInInvoicing' => null,
+        'showVatNumber' => null,
+        'vatRegistrationNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +105,9 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
         'headerStyle' => 'headerStyle',
         'deliveryLanguage' => 'deliveryLanguage',
         'defaultCurrencyCode' => 'defaultCurrencyCode',
-        'payerAuthenticationInInvoicing' => 'payerAuthenticationInInvoicing'
+        'payerAuthenticationInInvoicing' => 'payerAuthenticationInInvoicing',
+        'showVatNumber' => 'showVatNumber',
+        'vatRegistrationNumber' => 'vatRegistrationNumber'
     ];
 
 
@@ -117,7 +123,9 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
         'headerStyle' => 'setHeaderStyle',
         'deliveryLanguage' => 'setDeliveryLanguage',
         'defaultCurrencyCode' => 'setDefaultCurrencyCode',
-        'payerAuthenticationInInvoicing' => 'setPayerAuthenticationInInvoicing'
+        'payerAuthenticationInInvoicing' => 'setPayerAuthenticationInInvoicing',
+        'showVatNumber' => 'setShowVatNumber',
+        'vatRegistrationNumber' => 'setVatRegistrationNumber'
     ];
 
 
@@ -133,7 +141,9 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
         'headerStyle' => 'getHeaderStyle',
         'deliveryLanguage' => 'getDeliveryLanguage',
         'defaultCurrencyCode' => 'getDefaultCurrencyCode',
-        'payerAuthenticationInInvoicing' => 'getPayerAuthenticationInInvoicing'
+        'payerAuthenticationInInvoicing' => 'getPayerAuthenticationInInvoicing',
+        'showVatNumber' => 'getShowVatNumber',
+        'vatRegistrationNumber' => 'getVatRegistrationNumber'
     ];
 
     public static function attributeMap()
@@ -175,6 +185,8 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
         $this->container['deliveryLanguage'] = isset($data['deliveryLanguage']) ? $data['deliveryLanguage'] : null;
         $this->container['defaultCurrencyCode'] = isset($data['defaultCurrencyCode']) ? $data['defaultCurrencyCode'] : null;
         $this->container['payerAuthenticationInInvoicing'] = isset($data['payerAuthenticationInInvoicing']) ? $data['payerAuthenticationInInvoicing'] : null;
+        $this->container['showVatNumber'] = isset($data['showVatNumber']) ? $data['showVatNumber'] : false;
+        $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
     }
 
     /**
@@ -366,6 +378,48 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformation implements ArrayAcces
     public function setPayerAuthenticationInInvoicing($payerAuthenticationInInvoicing)
     {
         $this->container['payerAuthenticationInInvoicing'] = $payerAuthenticationInInvoicing;
+
+        return $this;
+    }
+
+    /**
+     * Gets showVatNumber
+     * @return bool
+     */
+    public function getShowVatNumber()
+    {
+        return $this->container['showVatNumber'];
+    }
+
+    /**
+     * Sets showVatNumber
+     * @param bool $showVatNumber Display VAT number on Invoice.
+     * @return $this
+     */
+    public function setShowVatNumber($showVatNumber)
+    {
+        $this->container['showVatNumber'] = $showVatNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets vatRegistrationNumber
+     * @return string
+     */
+    public function getVatRegistrationNumber()
+    {
+        return $this->container['vatRegistrationNumber'];
+    }
+
+    /**
+     * Sets vatRegistrationNumber
+     * @param string $vatRegistrationNumber Your government-assigned tax identification number.  #### Tax Calculation Required field for value added tax only. Not applicable to U.S. and Canadian taxes.
+     * @return $this
+     */
+    public function setVatRegistrationNumber($vatRegistrationNumber)
+    {
+        $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
         return $this;
     }

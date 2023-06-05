@@ -57,6 +57,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'actionList' => 'string[]',
         'enableEscrowOption' => 'bool',
         'actionTokenTypes' => 'string[]',
+        'binSource' => 'string',
         'capture' => 'bool',
         'processorId' => 'string',
         'businessApplicationId' => 'string',
@@ -95,6 +96,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'actionList' => null,
         'enableEscrowOption' => null,
         'actionTokenTypes' => null,
+        'binSource' => null,
         'capture' => null,
         'processorId' => null,
         'businessApplicationId' => null,
@@ -143,6 +145,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'actionList' => 'actionList',
         'enableEscrowOption' => 'enableEscrowOption',
         'actionTokenTypes' => 'actionTokenTypes',
+        'binSource' => 'binSource',
         'capture' => 'capture',
         'processorId' => 'processorId',
         'businessApplicationId' => 'businessApplicationId',
@@ -182,6 +185,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'actionList' => 'setActionList',
         'enableEscrowOption' => 'setEnableEscrowOption',
         'actionTokenTypes' => 'setActionTokenTypes',
+        'binSource' => 'setBinSource',
         'capture' => 'setCapture',
         'processorId' => 'setProcessorId',
         'businessApplicationId' => 'setBusinessApplicationId',
@@ -221,6 +225,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'actionList' => 'getActionList',
         'enableEscrowOption' => 'getEnableEscrowOption',
         'actionTokenTypes' => 'getActionTokenTypes',
+        'binSource' => 'getBinSource',
         'capture' => 'getCapture',
         'processorId' => 'getProcessorId',
         'businessApplicationId' => 'getBusinessApplicationId',
@@ -285,6 +290,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
         $this->container['enableEscrowOption'] = isset($data['enableEscrowOption']) ? $data['enableEscrowOption'] : null;
         $this->container['actionTokenTypes'] = isset($data['actionTokenTypes']) ? $data['actionTokenTypes'] : null;
+        $this->container['binSource'] = isset($data['binSource']) ? $data['binSource'] : null;
         $this->container['capture'] = isset($data['capture']) ? $data['capture'] : false;
         $this->container['processorId'] = isset($data['processorId']) ? $data['processorId'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
@@ -399,6 +405,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setActionTokenTypes($actionTokenTypes)
     {
         $this->container['actionTokenTypes'] = $actionTokenTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets binSource
+     * @return string
+     */
+    public function getBinSource()
+    {
+        return $this->container['binSource'];
+    }
+
+    /**
+     * Sets binSource
+     * @param string $binSource Bin Source File Identifier. Possible values: - itmx - rupay
+     * @return $this
+     */
+    public function setBinSource($binSource)
+    {
+        $this->container['binSource'] = $binSource;
 
         return $this;
     }
