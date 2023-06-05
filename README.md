@@ -5,7 +5,7 @@ The CyberSource PHP client provides convenient access to the [CyberSource REST A
 [![Version         ][packagist_badge]][packagist]
 
 ## Requirements
-* PHP 5.6+
+* PHP 8.0.0+
 * Enable cURL PHP Extension
 * Enable JSON PHP Extension
 * Enable MBString PHP Extension
