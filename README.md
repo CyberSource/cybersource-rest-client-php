@@ -30,7 +30,7 @@ override the new secure-http default setting)*.
 ```json
 {
   "require": {
-  "php": ">=5.6",
+  "php": ">=8.0.0",
   "cybersource/rest-client-php": "0.0.41"
   }
 }
