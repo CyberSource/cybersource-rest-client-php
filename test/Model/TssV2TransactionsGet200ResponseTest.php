@@ -113,6 +113,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
      * Test attribute "applicationInformation"
      */
     public function testPropertyApplicationInformation()

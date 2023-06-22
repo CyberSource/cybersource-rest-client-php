@@ -99,6 +99,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummariesTest extends \
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
      * Test attribute "applicationInformation"
      */
     public function testPropertyApplicationInformation()
@@ -130,6 +137,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummariesTest extends \
      * Test attribute "deviceInformation"
      */
     public function testPropertyDeviceInformation()
+    {
+    }
+
+    /**
+     * Test attribute "errorInformation"
+     */
+    public function testPropertyErrorInformation()
     {
     }
 

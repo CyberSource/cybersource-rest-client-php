@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **activatePlan**
-> \CyberSource\Model\InlineResponse2004 activatePlan($id, $activatePlanRequest)
+> \CyberSource\Model\InlineResponse2004 activatePlan($id)
 
 Activate a Plan
 
@@ -28,10 +28,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\PlansApi();
 $id = "id_example"; // string | Plan Id
-$activatePlanRequest = NULL; // object | 
 
 try {
-    $result = $api_instance->activatePlan($id, $activatePlanRequest);
+    $result = $api_instance->activatePlan($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlansApi->activatePlan: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +43,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Plan Id |
- **activatePlanRequest** | **object**|  | [optional]
 
 ### Return type
 
@@ -107,7 +105,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deactivatePlan**
-> \CyberSource\Model\InlineResponse2004 deactivatePlan($id, $deactivatePlanRequest)
+> \CyberSource\Model\InlineResponse2004 deactivatePlan($id)
 
 Deactivate a Plan
 
@@ -120,10 +118,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\PlansApi();
 $id = "id_example"; // string | Plan Id
-$deactivatePlanRequest = NULL; // object | 
 
 try {
-    $result = $api_instance->deactivatePlan($id, $deactivatePlanRequest);
+    $result = $api_instance->deactivatePlan($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlansApi->deactivatePlan: ', $e->getMessage(), PHP_EOL;
@@ -136,7 +133,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Plan Id |
- **deactivatePlanRequest** | **object**|  | [optional]
 
 ### Return type
 

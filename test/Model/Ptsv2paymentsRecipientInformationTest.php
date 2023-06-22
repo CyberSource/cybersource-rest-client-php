@@ -104,4 +104,11 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPostalCode()
     {
     }
+
+    /**
+     * Test attribute "dateOfBirth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+    }
 }

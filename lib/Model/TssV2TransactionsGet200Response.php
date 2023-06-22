@@ -59,6 +59,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'string',
         'merchantId' => 'string',
         'submitTimeUTC' => 'string',
+        'status' => 'string',
         'applicationInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation',
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformation',
@@ -93,6 +94,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => null,
         'merchantId' => null,
         'submitTimeUTC' => null,
+        'status' => null,
         'applicationInformation' => null,
         'buyerInformation' => null,
         'clientReferenceInformation' => null,
@@ -137,6 +139,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'merchantId' => 'merchantId',
         'submitTimeUTC' => 'submitTimeUTC',
+        'status' => 'status',
         'applicationInformation' => 'applicationInformation',
         'buyerInformation' => 'buyerInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
@@ -172,6 +175,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'merchantId' => 'setMerchantId',
         'submitTimeUTC' => 'setSubmitTimeUTC',
+        'status' => 'setStatus',
         'applicationInformation' => 'setApplicationInformation',
         'buyerInformation' => 'setBuyerInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
@@ -207,6 +211,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'merchantId' => 'getMerchantId',
         'submitTimeUTC' => 'getSubmitTimeUTC',
+        'status' => 'getStatus',
         'applicationInformation' => 'getApplicationInformation',
         'buyerInformation' => 'getBuyerInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
@@ -267,6 +272,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
         $this->container['submitTimeUTC'] = isset($data['submitTimeUTC']) ? $data['submitTimeUTC'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['applicationInformation'] = isset($data['applicationInformation']) ? $data['applicationInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
@@ -417,6 +423,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     public function setSubmitTimeUTC($submitTimeUTC)
     {
         $this->container['submitTimeUTC'] = $submitTimeUTC;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted transaction.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }

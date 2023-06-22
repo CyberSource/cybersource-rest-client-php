@@ -56,6 +56,8 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     protected static $swaggerTypes = [
         'name' => 'string',
         'reasonCode' => 'string',
+        'status' => 'string',
+        'reason' => 'string',
         'rCode' => 'string',
         'rFlag' => 'string',
         'reconciliationId' => 'string',
@@ -70,6 +72,8 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     protected static $swaggerFormats = [
         'name' => null,
         'reasonCode' => null,
+        'status' => null,
+        'reason' => null,
         'rCode' => null,
         'rFlag' => null,
         'reconciliationId' => null,
@@ -94,6 +98,8 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     protected static $attributeMap = [
         'name' => 'name',
         'reasonCode' => 'reasonCode',
+        'status' => 'status',
+        'reason' => 'reason',
         'rCode' => 'rCode',
         'rFlag' => 'rFlag',
         'reconciliationId' => 'reconciliationId',
@@ -109,6 +115,8 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     protected static $setters = [
         'name' => 'setName',
         'reasonCode' => 'setReasonCode',
+        'status' => 'setStatus',
+        'reason' => 'setReason',
         'rCode' => 'setRCode',
         'rFlag' => 'setRFlag',
         'reconciliationId' => 'setReconciliationId',
@@ -124,6 +132,8 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     protected static $getters = [
         'name' => 'getName',
         'reasonCode' => 'getReasonCode',
+        'status' => 'getStatus',
+        'reason' => 'getReason',
         'rCode' => 'getRCode',
         'rFlag' => 'getRFlag',
         'reconciliationId' => 'getReconciliationId',
@@ -164,6 +174,8 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['reasonCode'] = isset($data['reasonCode']) ? $data['reasonCode'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['rCode'] = isset($data['rCode']) ? $data['rCode'] : null;
         $this->container['rFlag'] = isset($data['rFlag']) ? $data['rFlag'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
@@ -234,6 +246,48 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     public function setReasonCode($reasonCode)
     {
         $this->container['reasonCode'] = $reasonCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted transaction. Note: This field may not be returned for all transactions.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason Description of why a request failed. Note: This field may not be returned for all transactions.
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
 
         return $this;
     }

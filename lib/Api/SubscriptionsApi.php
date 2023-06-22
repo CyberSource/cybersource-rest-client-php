@@ -100,14 +100,13 @@ class SubscriptionsApi
      * Activate a Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param object $activateSubscriptionRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activateSubscription($id, $activateSubscriptionRequest = null)
+    public function activateSubscription($id)
     {
         self::$logger->info('CALL TO METHOD activateSubscription STARTED');
-        list($response, $statusCode, $httpHeader) = $this->activateSubscriptionWithHttpInfo($id, $activateSubscriptionRequest);
+        list($response, $statusCode, $httpHeader) = $this->activateSubscriptionWithHttpInfo($id);
         self::$logger->info('CALL TO METHOD activateSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -119,11 +118,10 @@ class SubscriptionsApi
      * Activate a Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param object $activateSubscriptionRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activateSubscriptionWithHttpInfo($id, $activateSubscriptionRequest = null)
+    public function activateSubscriptionWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -150,10 +148,8 @@ class SubscriptionsApi
                 $resourcePath
             );
         }
-        // body params
-        $_tempBody = null;
-        if (isset($activateSubscriptionRequest)) {
-            $_tempBody = $activateSubscriptionRequest;
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -222,14 +218,13 @@ class SubscriptionsApi
      * Cancel a Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param object $cancelSubscriptionRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancelSubscription($id, $cancelSubscriptionRequest = null)
+    public function cancelSubscription($id)
     {
         self::$logger->info('CALL TO METHOD cancelSubscription STARTED');
-        list($response, $statusCode, $httpHeader) = $this->cancelSubscriptionWithHttpInfo($id, $cancelSubscriptionRequest);
+        list($response, $statusCode, $httpHeader) = $this->cancelSubscriptionWithHttpInfo($id);
         self::$logger->info('CALL TO METHOD cancelSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -241,11 +236,10 @@ class SubscriptionsApi
      * Cancel a Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param object $cancelSubscriptionRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cancelSubscriptionWithHttpInfo($id, $cancelSubscriptionRequest = null)
+    public function cancelSubscriptionWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -272,10 +266,8 @@ class SubscriptionsApi
                 $resourcePath
             );
         }
-        // body params
-        $_tempBody = null;
-        if (isset($cancelSubscriptionRequest)) {
-            $_tempBody = $cancelSubscriptionRequest;
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -796,14 +788,13 @@ class SubscriptionsApi
      * Suspend a Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param object $suspendSubscriptionRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2021, HTTP status code, HTTP response headers (array of strings)
      */
-    public function suspendSubscription($id, $suspendSubscriptionRequest = null)
+    public function suspendSubscription($id)
     {
         self::$logger->info('CALL TO METHOD suspendSubscription STARTED');
-        list($response, $statusCode, $httpHeader) = $this->suspendSubscriptionWithHttpInfo($id, $suspendSubscriptionRequest);
+        list($response, $statusCode, $httpHeader) = $this->suspendSubscriptionWithHttpInfo($id);
         self::$logger->info('CALL TO METHOD suspendSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -815,11 +806,10 @@ class SubscriptionsApi
      * Suspend a Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param object $suspendSubscriptionRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2021, HTTP status code, HTTP response headers (array of strings)
      */
-    public function suspendSubscriptionWithHttpInfo($id, $suspendSubscriptionRequest = null)
+    public function suspendSubscriptionWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -846,10 +836,8 @@ class SubscriptionsApi
                 $resourcePath
             );
         }
-        // body params
-        $_tempBody = null;
-        if (isset($suspendSubscriptionRequest)) {
-            $_tempBody = $suspendSubscriptionRequest;
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
