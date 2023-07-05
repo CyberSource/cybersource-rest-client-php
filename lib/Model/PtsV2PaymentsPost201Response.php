@@ -74,6 +74,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'buyerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation',
+        'embeddedActions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActions',
         'watchlistScreeningInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'
     ];
 
@@ -102,6 +103,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'buyerInformation' => null,
         'riskInformation' => null,
         'consumerAuthenticationInformation' => null,
+        'embeddedActions' => null,
         'watchlistScreeningInformation' => null
     ];
 
@@ -140,6 +142,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'buyerInformation' => 'buyerInformation',
         'riskInformation' => 'riskInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'embeddedActions' => 'embeddedActions',
         'watchlistScreeningInformation' => 'watchlistScreeningInformation'
     ];
 
@@ -169,6 +172,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'buyerInformation' => 'setBuyerInformation',
         'riskInformation' => 'setRiskInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'embeddedActions' => 'setEmbeddedActions',
         'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
     ];
 
@@ -198,6 +202,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'buyerInformation' => 'getBuyerInformation',
         'riskInformation' => 'getRiskInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'embeddedActions' => 'getEmbeddedActions',
         'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
     ];
 
@@ -252,6 +257,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['embeddedActions'] = isset($data['embeddedActions']) ? $data['embeddedActions'] : null;
         $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
     }
 
@@ -696,6 +702,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets embeddedActions
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActions
+     */
+    public function getEmbeddedActions()
+    {
+        return $this->container['embeddedActions'];
+    }
+
+    /**
+     * Sets embeddedActions
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActions $embeddedActions
+     * @return $this
+     */
+    public function setEmbeddedActions($embeddedActions)
+    {
+        $this->container['embeddedActions'] = $embeddedActions;
 
         return $this;
     }

@@ -100,14 +100,13 @@ class PlansApi
      * Activate a Plan
      *
      * @param string $id Plan Id (required)
-     * @param object $activatePlanRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activatePlan($id, $activatePlanRequest = null)
+    public function activatePlan($id)
     {
         self::$logger->info('CALL TO METHOD activatePlan STARTED');
-        list($response, $statusCode, $httpHeader) = $this->activatePlanWithHttpInfo($id, $activatePlanRequest);
+        list($response, $statusCode, $httpHeader) = $this->activatePlanWithHttpInfo($id);
         self::$logger->info('CALL TO METHOD activatePlan ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -119,11 +118,10 @@ class PlansApi
      * Activate a Plan
      *
      * @param string $id Plan Id (required)
-     * @param object $activatePlanRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activatePlanWithHttpInfo($id, $activatePlanRequest = null)
+    public function activatePlanWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -136,7 +134,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -150,10 +148,8 @@ class PlansApi
                 $resourcePath
             );
         }
-        // body params
-        $_tempBody = null;
-        if (isset($activatePlanRequest)) {
-            $_tempBody = $activatePlanRequest;
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -256,7 +252,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -330,14 +326,13 @@ class PlansApi
      * Deactivate a Plan
      *
      * @param string $id Plan Id (required)
-     * @param object $deactivatePlanRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deactivatePlan($id, $deactivatePlanRequest = null)
+    public function deactivatePlan($id)
     {
         self::$logger->info('CALL TO METHOD deactivatePlan STARTED');
-        list($response, $statusCode, $httpHeader) = $this->deactivatePlanWithHttpInfo($id, $deactivatePlanRequest);
+        list($response, $statusCode, $httpHeader) = $this->deactivatePlanWithHttpInfo($id);
         self::$logger->info('CALL TO METHOD deactivatePlan ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -349,11 +344,10 @@ class PlansApi
      * Deactivate a Plan
      *
      * @param string $id Plan Id (required)
-     * @param object $deactivatePlanRequest  (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deactivatePlanWithHttpInfo($id, $deactivatePlanRequest = null)
+    public function deactivatePlanWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -366,7 +360,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -380,10 +374,8 @@ class PlansApi
                 $resourcePath
             );
         }
-        // body params
-        $_tempBody = null;
-        if (isset($deactivatePlanRequest)) {
-            $_tempBody = $deactivatePlanRequest;
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
         }
 
         // for model (json/xml)
@@ -486,7 +478,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -604,7 +596,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -715,7 +707,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -824,7 +816,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -962,7 +954,7 @@ class PlansApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }

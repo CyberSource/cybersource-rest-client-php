@@ -148,13 +148,6 @@ class TssV2TransactionsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
      * Test attribute "submitTimeUtc"
      */
     public function testPropertySubmitTimeUtc()

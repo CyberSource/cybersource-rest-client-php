@@ -57,7 +57,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'string',
         'lastName' => 'string',
         'middleName' => 'string',
-        'postalCode' => 'string'
+        'postalCode' => 'string',
+        'dateOfBirth' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => null,
         'lastName' => null,
         'middleName' => null,
-        'postalCode' => null
+        'postalCode' => null,
+        'dateOfBirth' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'accountId',
         'lastName' => 'lastName',
         'middleName' => 'middleName',
-        'postalCode' => 'postalCode'
+        'postalCode' => 'postalCode',
+        'dateOfBirth' => 'dateOfBirth'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'setAccountId',
         'lastName' => 'setLastName',
         'middleName' => 'setMiddleName',
-        'postalCode' => 'setPostalCode'
+        'postalCode' => 'setPostalCode',
+        'dateOfBirth' => 'setDateOfBirth'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'getAccountId',
         'lastName' => 'getLastName',
         'middleName' => 'getMiddleName',
-        'postalCode' => 'getPostalCode'
+        'postalCode' => 'getPostalCode',
+        'dateOfBirth' => 'getDateOfBirth'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     public function setPostalCode($postalCode)
     {
         $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateOfBirth
+     * @return string
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['dateOfBirth'];
+    }
+
+    /**
+     * Sets dateOfBirth
+     * @param string $dateOfBirth Recipient’s date of birth. **Format**: `YYYYMMDD`.  This field is a `pass-through`, which means that CyberSource ensures that the value is eight numeric characters but otherwise does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.  For more details, see `recipient_date_of_birth` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @return $this
+     */
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }

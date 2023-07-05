@@ -218,6 +218,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "embeddedActions"
+     */
+    public function testPropertyEmbeddedActions()
+    {
+    }
+
+    /**
      * Test attribute "watchlistScreeningInformation"
      */
     public function testPropertyWatchlistScreeningInformation()

@@ -57,11 +57,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'id' => 'string',
         'submitTimeUtc' => 'string',
         'merchantId' => 'string',
+        'status' => 'string',
         'applicationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformation',
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationresultsDeviceInformation',
+        'errorInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedErrorInformation',
         'fraudMarkingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseFraudMarkingInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedMerchantInformation',
@@ -82,11 +84,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'id' => null,
         'submitTimeUtc' => null,
         'merchantId' => null,
+        'status' => null,
         'applicationInformation' => null,
         'buyerInformation' => null,
         'clientReferenceInformation' => null,
         'consumerAuthenticationInformation' => null,
         'deviceInformation' => null,
+        'errorInformation' => null,
         'fraudMarkingInformation' => null,
         'merchantDefinedInformation' => null,
         'merchantInformation' => null,
@@ -117,11 +121,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'id' => 'id',
         'submitTimeUtc' => 'submitTimeUtc',
         'merchantId' => 'merchantId',
+        'status' => 'status',
         'applicationInformation' => 'applicationInformation',
         'buyerInformation' => 'buyerInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
         'deviceInformation' => 'deviceInformation',
+        'errorInformation' => 'errorInformation',
         'fraudMarkingInformation' => 'fraudMarkingInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
         'merchantInformation' => 'merchantInformation',
@@ -143,11 +149,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'id' => 'setId',
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'merchantId' => 'setMerchantId',
+        'status' => 'setStatus',
         'applicationInformation' => 'setApplicationInformation',
         'buyerInformation' => 'setBuyerInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
         'deviceInformation' => 'setDeviceInformation',
+        'errorInformation' => 'setErrorInformation',
         'fraudMarkingInformation' => 'setFraudMarkingInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
         'merchantInformation' => 'setMerchantInformation',
@@ -169,11 +177,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'id' => 'getId',
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'merchantId' => 'getMerchantId',
+        'status' => 'getStatus',
         'applicationInformation' => 'getApplicationInformation',
         'buyerInformation' => 'getBuyerInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
         'deviceInformation' => 'getDeviceInformation',
+        'errorInformation' => 'getErrorInformation',
         'fraudMarkingInformation' => 'getFraudMarkingInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
         'merchantInformation' => 'getMerchantInformation',
@@ -220,11 +230,13 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['applicationInformation'] = isset($data['applicationInformation']) ? $data['applicationInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
+        $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
         $this->container['fraudMarkingInformation'] = isset($data['fraudMarkingInformation']) ? $data['fraudMarkingInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
@@ -321,6 +333,27 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
     public function setMerchantId($merchantId)
     {
         $this->container['merchantId'] = $merchantId;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The status of the submitted transaction. Note: This field may not be returned for all transactions.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -426,6 +459,27 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
     public function setDeviceInformation($deviceInformation)
     {
         $this->container['deviceInformation'] = $deviceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorInformation
+     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedErrorInformation
+     */
+    public function getErrorInformation()
+    {
+        return $this->container['errorInformation'];
+    }
+
+    /**
+     * Sets errorInformation
+     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedErrorInformation $errorInformation
+     * @return $this
+     */
+    public function setErrorInformation($errorInformation)
+    {
+        $this->container['errorInformation'] = $errorInformation;
 
         return $this;
     }

@@ -92,6 +92,20 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformationApplications
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "reason"
+     */
+    public function testPropertyReason()
+    {
+    }
+
+    /**
      * Test attribute "rCode"
      */
     public function testPropertyRCode()

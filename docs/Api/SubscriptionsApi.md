@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **activateSubscription**
-> \CyberSource\Model\InlineResponse2009 activateSubscription($id, $activateSubscriptionRequest)
+> \CyberSource\Model\InlineResponse2009 activateSubscription($id)
 
 Activate a Subscription
 
@@ -28,10 +28,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\SubscriptionsApi();
 $id = "id_example"; // string | Subscription Id
-$activateSubscriptionRequest = NULL; // object | 
 
 try {
-    $result = $api_instance->activateSubscription($id, $activateSubscriptionRequest);
+    $result = $api_instance->activateSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionsApi->activateSubscription: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +43,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription Id |
- **activateSubscriptionRequest** | **object**|  | [optional]
 
 ### Return type
 
@@ -57,12 +55,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelSubscription**
-> \CyberSource\Model\InlineResponse202 cancelSubscription($id, $cancelSubscriptionRequest)
+> \CyberSource\Model\InlineResponse202 cancelSubscription($id)
 
 Cancel a Subscription
 
@@ -75,10 +73,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\SubscriptionsApi();
 $id = "id_example"; // string | Subscription Id
-$cancelSubscriptionRequest = NULL; // object | 
 
 try {
-    $result = $api_instance->cancelSubscription($id, $cancelSubscriptionRequest);
+    $result = $api_instance->cancelSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionsApi->cancelSubscription: ', $e->getMessage(), PHP_EOL;
@@ -91,7 +88,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription Id |
- **cancelSubscriptionRequest** | **object**|  | [optional]
 
 ### Return type
 
@@ -104,7 +100,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -149,7 +145,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -200,7 +196,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -245,7 +241,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -286,12 +282,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **suspendSubscription**
-> \CyberSource\Model\InlineResponse2021 suspendSubscription($id, $suspendSubscriptionRequest)
+> \CyberSource\Model\InlineResponse2021 suspendSubscription($id)
 
 Suspend a Subscription
 
@@ -304,10 +300,9 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\SubscriptionsApi();
 $id = "id_example"; // string | Subscription Id
-$suspendSubscriptionRequest = NULL; // object | 
 
 try {
-    $result = $api_instance->suspendSubscription($id, $suspendSubscriptionRequest);
+    $result = $api_instance->suspendSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionsApi->suspendSubscription: ', $e->getMessage(), PHP_EOL;
@@ -320,7 +315,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription Id |
- **suspendSubscriptionRequest** | **object**|  | [optional]
 
 ### Return type
 
@@ -333,7 +327,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -380,7 +374,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
