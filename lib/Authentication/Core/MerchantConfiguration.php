@@ -212,6 +212,14 @@ class MerchantConfiguration
      */
     protected $logConfig;
 
+
+    /**
+     * NetworkToken Cert file directory
+     *
+     * @var string
+     */
+    protected $jwePEMFileDirectory;
+
     /**
      * Constructor
      */
@@ -872,6 +880,22 @@ class MerchantConfiguration
     }
 
     /**
+     * @return string
+     */
+    public function getJwePEMFileDirectory(): string
+    {
+        return $this->jwePEMFileDirectory;
+    }
+
+    /**
+     * @param string $jwePEMFileDirectory
+     */
+    public function setJwePEMFileDirectory(string $jwePEMFileDirectory): void
+    {
+        $this->jwePEMFileDirectory = $jwePEMFileDirectory;
+    }
+
+    /**
      * Gets the essential information for debugging
      *
      * @return string The report for debugging
@@ -973,6 +997,10 @@ class MerchantConfiguration
 
         if(isset($connectionDet->solutionId))
             $config = $config->setSolutionId($connectionDet->solutionId);
+
+        if (isset($config->jwePEMFileDirectory)) {
+            $config = $config->setJwePEMFileDirectory($connectionDet->jwePEMFileDirectory);
+        }
        
         $config->validateMerchantData();
         if($error_message != null){

@@ -3,3 +3,5 @@ vendor
 .swagger-codegen-ignore
 .travis.yml
 .swagger-codegen
+.idea
+*.iml
