@@ -181,4 +181,11 @@ class CreateBundledDecisionManagerCaseRequestTest extends \PHPUnit_Framework_Tes
     public function testPropertyWatchlistScreeningInformation()
     {
     }
+
+    /**
+     * Test attribute "tokenInformation"
+     */
+    public function testPropertyTokenInformation()
+    {
+    }
 }

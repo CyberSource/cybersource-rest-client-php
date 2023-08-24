@@ -83,4 +83,11 @@ class Riskv1authenticationsetupsTokenInformationTest extends \PHPUnit_Framework_
     public function testPropertyTransientToken()
     {
     }
+
+    /**
+     * Test attribute "jti"
+     */
+    public function testPropertyJti()
+    {
+    }
 }

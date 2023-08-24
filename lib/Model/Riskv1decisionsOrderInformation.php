@@ -58,6 +58,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'amountDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationAmountDetails',
         'preOrder' => 'string',
         'preOrderDate' => 'string',
+        'cutoffDateTime' => 'string',
         'reordered' => 'bool',
         'shippingDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationShippingDetails',
         'shipTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationShipTo',
@@ -75,6 +76,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'amountDetails' => null,
         'preOrder' => null,
         'preOrderDate' => null,
+        'cutoffDateTime' => null,
         'reordered' => null,
         'shippingDetails' => null,
         'shipTo' => null,
@@ -102,6 +104,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'amountDetails' => 'amountDetails',
         'preOrder' => 'preOrder',
         'preOrderDate' => 'preOrderDate',
+        'cutoffDateTime' => 'cutoffDateTime',
         'reordered' => 'reordered',
         'shippingDetails' => 'shippingDetails',
         'shipTo' => 'shipTo',
@@ -120,6 +123,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'amountDetails' => 'setAmountDetails',
         'preOrder' => 'setPreOrder',
         'preOrderDate' => 'setPreOrderDate',
+        'cutoffDateTime' => 'setCutoffDateTime',
         'reordered' => 'setReordered',
         'shippingDetails' => 'setShippingDetails',
         'shipTo' => 'setShipTo',
@@ -138,6 +142,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'amountDetails' => 'getAmountDetails',
         'preOrder' => 'getPreOrder',
         'preOrderDate' => 'getPreOrderDate',
+        'cutoffDateTime' => 'getCutoffDateTime',
         'reordered' => 'getReordered',
         'shippingDetails' => 'getShippingDetails',
         'shipTo' => 'getShipTo',
@@ -181,6 +186,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['preOrder'] = isset($data['preOrder']) ? $data['preOrder'] : null;
         $this->container['preOrderDate'] = isset($data['preOrderDate']) ? $data['preOrderDate'] : null;
+        $this->container['cutoffDateTime'] = isset($data['cutoffDateTime']) ? $data['cutoffDateTime'] : null;
         $this->container['reordered'] = isset($data['reordered']) ? $data['reordered'] : null;
         $this->container['shippingDetails'] = isset($data['shippingDetails']) ? $data['shippingDetails'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
@@ -274,6 +280,27 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function setPreOrderDate($preOrderDate)
     {
         $this->container['preOrderDate'] = $preOrderDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets cutoffDateTime
+     * @return string
+     */
+    public function getCutoffDateTime()
+    {
+        return $this->container['cutoffDateTime'];
+    }
+
+    /**
+     * Sets cutoffDateTime
+     * @param string $cutoffDateTime Starting date and time for an event or a journey that is independent of which transportation mechanism, in UTC. The cutoffDateTime will supersede travelInformation.departureTime if both are supplied in the request. Format: YYYY-MM-DDThh:mm:ssZ. Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setCutoffDateTime($cutoffDateTime)
+    {
+        $this->container['cutoffDateTime'] = $cutoffDateTime;
 
         return $this;
     }

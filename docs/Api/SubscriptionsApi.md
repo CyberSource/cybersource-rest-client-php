@@ -55,7 +55,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -100,7 +100,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -145,7 +145,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -196,7 +196,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -241,7 +241,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -282,7 +282,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -327,7 +327,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -374,7 +374,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

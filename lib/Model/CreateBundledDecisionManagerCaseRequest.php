@@ -68,7 +68,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation',
-        'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation'
+        'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation',
+        'tokenInformation' => '\CyberSource\Model\Riskv1decisionsTokenInformation'
     ];
 
     /**
@@ -90,7 +91,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'acquirerInformation' => null,
         'recurringPaymentInformation' => null,
         'consumerAuthenticationInformation' => null,
-        'watchlistScreeningInformation' => null
+        'watchlistScreeningInformation' => null,
+        'tokenInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -122,7 +124,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'acquirerInformation' => 'acquirerInformation',
         'recurringPaymentInformation' => 'recurringPaymentInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
-        'watchlistScreeningInformation' => 'watchlistScreeningInformation'
+        'watchlistScreeningInformation' => 'watchlistScreeningInformation',
+        'tokenInformation' => 'tokenInformation'
     ];
 
 
@@ -145,7 +148,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'acquirerInformation' => 'setAcquirerInformation',
         'recurringPaymentInformation' => 'setRecurringPaymentInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
-        'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
+        'watchlistScreeningInformation' => 'setWatchlistScreeningInformation',
+        'tokenInformation' => 'setTokenInformation'
     ];
 
 
@@ -168,7 +172,8 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'acquirerInformation' => 'getAcquirerInformation',
         'recurringPaymentInformation' => 'getRecurringPaymentInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
-        'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
+        'watchlistScreeningInformation' => 'getWatchlistScreeningInformation',
+        'tokenInformation' => 'getTokenInformation'
     ];
 
     public static function attributeMap()
@@ -217,6 +222,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
+        $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
     }
 
     /**
@@ -555,6 +561,27 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
     public function setWatchlistScreeningInformation($watchlistScreeningInformation)
     {
         $this->container['watchlistScreeningInformation'] = $watchlistScreeningInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenInformation
+     * @return \CyberSource\Model\Riskv1decisionsTokenInformation
+     */
+    public function getTokenInformation()
+    {
+        return $this->container['tokenInformation'];
+    }
+
+    /**
+     * Sets tokenInformation
+     * @param \CyberSource\Model\Riskv1decisionsTokenInformation $tokenInformation
+     * @return $this
+     */
+    public function setTokenInformation($tokenInformation)
+    {
+        $this->container['tokenInformation'] = $tokenInformation;
 
         return $this;
     }
