@@ -59,7 +59,8 @@ class ValidateRequest implements ArrayAccess
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1authenticationresultsConsumerAuthenticationInformation',
-        'deviceInformation' => '\CyberSource\Model\Riskv1authenticationresultsDeviceInformation'
+        'deviceInformation' => '\CyberSource\Model\Riskv1authenticationresultsDeviceInformation',
+        'tokenInformation' => '\CyberSource\Model\Riskv1decisionsTokenInformation'
     ];
 
     /**
@@ -72,7 +73,8 @@ class ValidateRequest implements ArrayAccess
         'orderInformation' => null,
         'paymentInformation' => null,
         'consumerAuthenticationInformation' => null,
-        'deviceInformation' => null
+        'deviceInformation' => null,
+        'tokenInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class ValidateRequest implements ArrayAccess
         'orderInformation' => 'orderInformation',
         'paymentInformation' => 'paymentInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
-        'deviceInformation' => 'deviceInformation'
+        'deviceInformation' => 'deviceInformation',
+        'tokenInformation' => 'tokenInformation'
     ];
 
 
@@ -109,7 +112,8 @@ class ValidateRequest implements ArrayAccess
         'orderInformation' => 'setOrderInformation',
         'paymentInformation' => 'setPaymentInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
-        'deviceInformation' => 'setDeviceInformation'
+        'deviceInformation' => 'setDeviceInformation',
+        'tokenInformation' => 'setTokenInformation'
     ];
 
 
@@ -123,7 +127,8 @@ class ValidateRequest implements ArrayAccess
         'orderInformation' => 'getOrderInformation',
         'paymentInformation' => 'getPaymentInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
-        'deviceInformation' => 'getDeviceInformation'
+        'deviceInformation' => 'getDeviceInformation',
+        'tokenInformation' => 'getTokenInformation'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class ValidateRequest implements ArrayAccess
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
+        $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
     }
 
     /**
@@ -312,6 +318,27 @@ class ValidateRequest implements ArrayAccess
     public function setDeviceInformation($deviceInformation)
     {
         $this->container['deviceInformation'] = $deviceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenInformation
+     * @return \CyberSource\Model\Riskv1decisionsTokenInformation
+     */
+    public function getTokenInformation()
+    {
+        return $this->container['tokenInformation'];
+    }
+
+    /**
+     * Sets tokenInformation
+     * @param \CyberSource\Model\Riskv1decisionsTokenInformation $tokenInformation
+     * @return $this
+     */
+    public function setTokenInformation($tokenInformation)
+    {
+        $this->container['tokenInformation'] = $tokenInformation;
 
         return $this;
     }

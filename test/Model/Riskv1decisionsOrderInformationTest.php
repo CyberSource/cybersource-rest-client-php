@@ -99,6 +99,13 @@ class Riskv1decisionsOrderInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "cutoffDateTime"
+     */
+    public function testPropertyCutoffDateTime()
+    {
+    }
+
+    /**
      * Test attribute "reordered"
      */
     public function testPropertyReordered()

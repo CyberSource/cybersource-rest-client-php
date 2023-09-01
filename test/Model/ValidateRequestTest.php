@@ -118,4 +118,11 @@ class ValidateRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDeviceInformation()
     {
     }
+
+    /**
+     * Test attribute "tokenInformation"
+     */
+    public function testPropertyTokenInformation()
+    {
+    }
 }
