@@ -54,7 +54,8 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'transientToken' => 'string'
+        'transientToken' => 'string',
+        'jti' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'transientToken' => null
+        'transientToken' => null,
+        'jti' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transientToken' => 'transientToken'
+        'transientToken' => 'transientToken',
+        'jti' => 'jti'
     ];
 
 
@@ -89,7 +92,8 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transientToken' => 'setTransientToken'
+        'transientToken' => 'setTransientToken',
+        'jti' => 'setJti'
     ];
 
 
@@ -98,7 +102,8 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transientToken' => 'getTransientToken'
+        'transientToken' => 'getTransientToken',
+        'jti' => 'getJti'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['transientToken'] = isset($data['transientToken']) ? $data['transientToken'] : null;
+        $this->container['jti'] = isset($data['jti']) ? $data['jti'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class Riskv1authenticationsetupsTokenInformation implements ArrayAccess
     public function setTransientToken($transientToken)
     {
         $this->container['transientToken'] = $transientToken;
+
+        return $this;
+    }
+
+    /**
+     * Gets jti
+     * @return string
+     */
+    public function getJti()
+    {
+        return $this->container['jti'];
+    }
+
+    /**
+     * Sets jti
+     * @param string $jti TMS Transient Token, 64 hexadecimal id value representing captured payment credentials (including Sensitive Authentication Data, e.g. CVV).
+     * @return $this
+     */
+    public function setJti($jti)
+    {
+        $this->container['jti'] = $jti;
 
         return $this;
     }

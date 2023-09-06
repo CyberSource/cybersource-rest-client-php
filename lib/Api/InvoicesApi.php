@@ -134,7 +134,7 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -259,7 +259,7 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -384,7 +384,7 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -502,7 +502,7 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -620,7 +620,7 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -745,7 +745,7 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }

@@ -134,6 +134,13 @@ class Ptsv2paymentsOrderInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "cutoffDateTime"
+     */
+    public function testPropertyCutoffDateTime()
+    {
+    }
+
+    /**
      * Test attribute "preOrder"
      */
     public function testPropertyPreOrder()
