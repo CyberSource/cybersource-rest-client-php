@@ -18,7 +18,7 @@ use Jose\Component\KeyManagement\JWKFactory;
 
 
 class JWEUtility {
-    public static function loadKeyFromPEMFile($path) : JWK {
+    private static function loadKeyFromPEMFile($path) {
         return JWKFactory::createFromKeyFile(
             $path,
             '',                   // Secret if the key is encrypted
@@ -28,8 +28,14 @@ class JWEUtility {
         );
     }
 
-    public static function decryptJWEUsingPEM(MerchantConfiguration $merchantConfig, string $jweBase64Data) : ?string {
-        $jweKey = self::loadKeyFromPEMFile($merchantConfig -> getJwePEMFileDirectory());
+    public static function decryptJWEUsingPEM(MerchantConfiguration $merchantConfig, string $jweBase64Data) {
+        $cacheKey = 'privateKeyFromPEMFile';
+        $cache_key_store = apcu_exists($cacheKey);
+        if (!$cache_key_store) {
+            $privateKeyFromPEMFile = self::loadKeyFromPEMFile($merchantConfig -> getJwePEMFileDirectory());
+            apcu_store($cacheKey, $privateKeyFromPEMFile);
+        }
+        $jweKey = apcu_fetch($cacheKey);
         $serializerManager = new JWESerializerManager([
             new CompactSerializer(),
         ]);

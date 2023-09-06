@@ -882,7 +882,7 @@ class MerchantConfiguration
     /**
      * @return string
      */
-    public function getJwePEMFileDirectory(): string
+    public function getJwePEMFileDirectory()
     {
         return $this->jwePEMFileDirectory;
     }
@@ -890,7 +890,7 @@ class MerchantConfiguration
     /**
      * @param string $jwePEMFileDirectory
      */
-    public function setJwePEMFileDirectory(string $jwePEMFileDirectory): void
+    public function setJwePEMFileDirectory(string $jwePEMFileDirectory)
     {
         $this->jwePEMFileDirectory = $jwePEMFileDirectory;
     }

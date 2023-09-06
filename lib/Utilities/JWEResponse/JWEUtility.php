@@ -10,7 +10,7 @@ class JWEUtility {
     /**
      * @throws Exception
      */
-    public static function decryptJWEResponse($encodedResponse, MerchantConfiguration $merchantConfig) : string {
+    public static function decryptJWEResponse($encodedResponse, MerchantConfiguration $merchantConfig) {
         return AuthJWEUtility::decryptJWEUsingPEM($merchantConfig, $encodedResponse);
     }
 }
