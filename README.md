@@ -203,7 +203,7 @@ Download the applicable php_acpu dll version v5.1.21 from the official pecl site
 Download the applicable php_acpu dll version v5.1.22 from the official pecl site. But dll is missing on the pecl site for php v8.2
 Alternativly, you can refer to below stackoverflow link:
 https://stackoverflow.com/questions/75059436/missing-php-apcu-dll-for-php-8-2-apcu-5-1-22
-And can download the php_apcu dll from below link:
+Or can download the php_apcu dll from below link:
 https://github.com/gnongsie/apcu/actions/runs/6096614635
 
 For Mac/Linux/Unix:
