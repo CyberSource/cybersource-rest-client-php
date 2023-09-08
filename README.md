@@ -8,6 +8,8 @@ The CyberSource PHP client provides convenient access to the [CyberSource REST A
 * PHP 8.0.0+
 * Enable cURL PHP Extension
 * Enable JSON PHP Extension
+* Enable OpenSSL PHP Extension
+* Enable Zip PHP Extension
 * Enable MBString PHP Extension
 * Enable PHP_APCU PHP Extension. You will need to download it for your platform (Windows/Linux/Mac)
 * [CyberSource Account](https://developer.cybersource.com/api/developer-guides/dita-gettingstarted/registration.html)
@@ -186,3 +188,26 @@ More information about this new logging framework can be found in this file : [L
 
 [packagist_badge]: https://img.shields.io/packagist/v/cybersource/rest-client-php.svg
 [packagist]: https://packagist.org/packages/cybersource/rest-client-php
+
+### PHP_APCU PHP Extension
+Enable PHP_APCU PHP Extension in php.ini file. You will need to download it for your platform (Windows/Linux/Mac) and add in extensions. 
+
+Official PHP_APCU - https://pecl.php.net/package/APCu 
+
+For Windows: 
+1. PHP v8.0:
+Download the applicable php_apcu dll version v5.1.19 from the official pecl site.
+2. PHP v8.1:
+Download the applicable php_acpu dll version v5.1.21 from the official pecl site.
+3. PHP v8.2:
+Download the applicable php_acpu dll version v5.1.22 from the official pecl site. But dll is missing on the pecl site for php v8.2
+Alternativly, you can refer to below stackoverflow link:
+https://stackoverflow.com/questions/75059436/missing-php-apcu-dll-for-php-8-2-apcu-5-1-22
+And can download the php_apcu dll from below link:
+https://github.com/gnongsie/apcu/actions/runs/6096614635
+
+For Mac/Linux/Unix:
+Download the php_apcu using pecl command: pecl install apcu
+It will auto download the applicable apcu extension for the PHP v8.0, v8.1, v8.2.
+
+
