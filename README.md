@@ -207,7 +207,7 @@ Or can download the php_apcu dll from below link:
 https://github.com/gnongsie/apcu/actions/runs/6096614635
 
 For Mac/Linux/Unix:
-Download the php_apcu using pecl command: pecl install apcu
-It will auto download the applicable apcu extension for the PHP v8.0, v8.1, v8.2.
+
+Download the php_apcu using pecl command: "pecl install apcu". It will auto download the applicable apcu extension for the PHP v8.0, v8.1, v8.2.
 
 
