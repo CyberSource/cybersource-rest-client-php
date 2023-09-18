@@ -998,7 +998,7 @@ class MerchantConfiguration
         if(isset($connectionDet->solutionId))
             $config = $config->setSolutionId($connectionDet->solutionId);
 
-        if (isset($config->jwePEMFileDirectory)) {
+        if (isset($connectionDet->jwePEMFileDirectory)) {
             $config = $config->setJwePEMFileDirectory($connectionDet->jwePEMFileDirectory);
         }
        
