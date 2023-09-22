@@ -93,7 +93,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'whiteListStatusSource' => 'string',
         'xid' => 'string',
         'directoryServerTransactionId' => 'string',
-        'acsOperatorID' => 'int',
+        'acsOperatorID' => 'string',
         'acsReferenceNumber' => 'string',
         'idciDecision' => 'string',
         'idciReasonCode1' => 'string',
@@ -1245,7 +1245,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Gets acsOperatorID
-     * @return int
+     * @return string
      */
     public function getAcsOperatorID()
     {
@@ -1254,7 +1254,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
 
     /**
      * Sets acsOperatorID
-     * @param int $acsOperatorID Directory Server assigned ACS identifier.
+     * @param string $acsOperatorID Directory Server assigned ACS identifier.
      * @return $this
      */
     public function setAcsOperatorID($acsOperatorID)

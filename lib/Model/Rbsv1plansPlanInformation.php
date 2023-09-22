@@ -58,7 +58,7 @@ class Rbsv1plansPlanInformation implements ArrayAccess
         'name' => 'string',
         'description' => 'string',
         'status' => 'string',
-        'billingPeriod' => '\CyberSource\Model\InlineResponse200PlanInformationBillingPeriod',
+        'billingPeriod' => '\CyberSource\Model\GetAllPlansResponsePlanInformationBillingPeriod',
         'billingCycles' => '\CyberSource\Model\Rbsv1plansPlanInformationBillingCycles'
     ];
 
@@ -282,7 +282,7 @@ class Rbsv1plansPlanInformation implements ArrayAccess
 
     /**
      * Gets billingPeriod
-     * @return \CyberSource\Model\InlineResponse200PlanInformationBillingPeriod
+     * @return \CyberSource\Model\GetAllPlansResponsePlanInformationBillingPeriod
      */
     public function getBillingPeriod()
     {
@@ -291,7 +291,7 @@ class Rbsv1plansPlanInformation implements ArrayAccess
 
     /**
      * Sets billingPeriod
-     * @param \CyberSource\Model\InlineResponse200PlanInformationBillingPeriod $billingPeriod
+     * @param \CyberSource\Model\GetAllPlansResponsePlanInformationBillingPeriod $billingPeriod
      * @return $this
      */
     public function setBillingPeriod($billingPeriod)

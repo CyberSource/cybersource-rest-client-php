@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Riskv1decisionsProcessingInformation Class Doc Comment
  *
  * @category    Class
- * @description Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not
+ * @description Decides whether to call Payer Authentication or Watchlist Screening service along with DM or not.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

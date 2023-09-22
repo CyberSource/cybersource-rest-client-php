@@ -78,13 +78,6 @@ class InlineResponse201Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
-     */
-    public function testPropertyLinks()
-    {
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -102,13 +95,6 @@ class InlineResponse201Test extends \PHPUnit_Framework_TestCase
      * Test attribute "status"
      */
     public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "planInformation"
-     */
-    public function testPropertyPlanInformation()
     {
     }
 }

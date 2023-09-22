@@ -54,11 +54,16 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks',
-        'id' => 'string',
-        'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'planInformation' => '\CyberSource\Model\InlineResponse2003PlanInformation'
+        'version' => 'string',
+        'reportCreatedDate' => 'string',
+        'batchId' => 'string',
+        'batchSource' => 'string',
+        'batchCaEndpoints' => 'string',
+        'batchCreatedDate' => 'string',
+        'merchantReference' => 'string',
+        'totals' => '\CyberSource\Model\InlineResponse2002EmbeddedTotals',
+        'billing' => '\CyberSource\Model\InlineResponse2003Billing',
+        'records' => '\CyberSource\Model\InlineResponse2004Records[]'
     ];
 
     /**
@@ -66,11 +71,16 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'id' => null,
-        'submitTimeUtc' => null,
-        'status' => null,
-        'planInformation' => null
+        'version' => null,
+        'reportCreatedDate' => null,
+        'batchId' => null,
+        'batchSource' => null,
+        'batchCaEndpoints' => null,
+        'batchCreatedDate' => null,
+        'merchantReference' => null,
+        'totals' => null,
+        'billing' => null,
+        'records' => null
     ];
 
     public static function swaggerTypes()
@@ -88,11 +98,16 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
-        'id' => 'id',
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'planInformation' => 'planInformation'
+        'version' => 'version',
+        'reportCreatedDate' => 'reportCreatedDate',
+        'batchId' => 'batchId',
+        'batchSource' => 'batchSource',
+        'batchCaEndpoints' => 'batchCaEndpoints',
+        'batchCreatedDate' => 'batchCreatedDate',
+        'merchantReference' => 'merchantReference',
+        'totals' => 'totals',
+        'billing' => 'billing',
+        'records' => 'records'
     ];
 
 
@@ -101,11 +116,16 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'id' => 'setId',
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'planInformation' => 'setPlanInformation'
+        'version' => 'setVersion',
+        'reportCreatedDate' => 'setReportCreatedDate',
+        'batchId' => 'setBatchId',
+        'batchSource' => 'setBatchSource',
+        'batchCaEndpoints' => 'setBatchCaEndpoints',
+        'batchCreatedDate' => 'setBatchCreatedDate',
+        'merchantReference' => 'setMerchantReference',
+        'totals' => 'setTotals',
+        'billing' => 'setBilling',
+        'records' => 'setRecords'
     ];
 
 
@@ -114,11 +134,16 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'id' => 'getId',
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'planInformation' => 'getPlanInformation'
+        'version' => 'getVersion',
+        'reportCreatedDate' => 'getReportCreatedDate',
+        'batchId' => 'getBatchId',
+        'batchSource' => 'getBatchSource',
+        'batchCaEndpoints' => 'getBatchCaEndpoints',
+        'batchCreatedDate' => 'getBatchCreatedDate',
+        'merchantReference' => 'getMerchantReference',
+        'totals' => 'getTotals',
+        'billing' => 'getBilling',
+        'records' => 'getRecords'
     ];
 
     public static function attributeMap()
@@ -152,11 +177,16 @@ class InlineResponse2004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['planInformation'] = isset($data['planInformation']) ? $data['planInformation'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
+        $this->container['reportCreatedDate'] = isset($data['reportCreatedDate']) ? $data['reportCreatedDate'] : null;
+        $this->container['batchId'] = isset($data['batchId']) ? $data['batchId'] : null;
+        $this->container['batchSource'] = isset($data['batchSource']) ? $data['batchSource'] : null;
+        $this->container['batchCaEndpoints'] = isset($data['batchCaEndpoints']) ? $data['batchCaEndpoints'] : null;
+        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
+        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
+        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
+        $this->container['records'] = isset($data['records']) ? $data['records'] : null;
     }
 
     /**
@@ -185,106 +215,211 @@ class InlineResponse2004 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseLinks $links
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
+     * Gets version
      * @return string
      */
-    public function getId()
+    public function getVersion()
     {
-        return $this->container['id'];
+        return $this->container['version'];
     }
 
     /**
-     * Sets id
-     * @param string $id An unique identification number generated by Cybersource to identify the submitted request. Returned by all services. It is also appended to the endpoint of the resource. On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
+     * Sets version
+     * @param string $version
      * @return $this
      */
-    public function setId($id)
+    public function setVersion($version)
     {
-        $this->container['id'] = $id;
+        $this->container['version'] = $version;
 
         return $this;
     }
 
     /**
-     * Gets submitTimeUtc
+     * Gets reportCreatedDate
      * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getReportCreatedDate()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['reportCreatedDate'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * Sets reportCreatedDate
+     * @param string $reportCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setReportCreatedDate($reportCreatedDate)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['reportCreatedDate'] = $reportCreatedDate;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets batchId
      * @return string
      */
-    public function getStatus()
+    public function getBatchId()
     {
-        return $this->container['status'];
+        return $this->container['batchId'];
     }
 
     /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - COMPLETED
+     * Sets batchId
+     * @param string $batchId Unique identification number assigned to the submitted request.
      * @return $this
      */
-    public function setStatus($status)
+    public function setBatchId($batchId)
     {
-        $this->container['status'] = $status;
+        $this->container['batchId'] = $batchId;
 
         return $this;
     }
 
     /**
-     * Gets planInformation
-     * @return \CyberSource\Model\InlineResponse2003PlanInformation
+     * Gets batchSource
+     * @return string
      */
-    public function getPlanInformation()
+    public function getBatchSource()
     {
-        return $this->container['planInformation'];
+        return $this->container['batchSource'];
     }
 
     /**
-     * Sets planInformation
-     * @param \CyberSource\Model\InlineResponse2003PlanInformation $planInformation
+     * Sets batchSource
+     * @param string $batchSource Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE
      * @return $this
      */
-    public function setPlanInformation($planInformation)
+    public function setBatchSource($batchSource)
     {
-        $this->container['planInformation'] = $planInformation;
+        $this->container['batchSource'] = $batchSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchCaEndpoints
+     * @return string
+     */
+    public function getBatchCaEndpoints()
+    {
+        return $this->container['batchCaEndpoints'];
+    }
+
+    /**
+     * Sets batchCaEndpoints
+     * @param string $batchCaEndpoints
+     * @return $this
+     */
+    public function setBatchCaEndpoints($batchCaEndpoints)
+    {
+        $this->container['batchCaEndpoints'] = $batchCaEndpoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchCreatedDate
+     * @return string
+     */
+    public function getBatchCreatedDate()
+    {
+        return $this->container['batchCreatedDate'];
+    }
+
+    /**
+     * Sets batchCreatedDate
+     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+     * @return $this
+     */
+    public function setBatchCreatedDate($batchCreatedDate)
+    {
+        $this->container['batchCreatedDate'] = $batchCreatedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantReference
+     * @return string
+     */
+    public function getMerchantReference()
+    {
+        return $this->container['merchantReference'];
+    }
+
+    /**
+     * Sets merchantReference
+     * @param string $merchantReference Reference used by merchant to identify batch.
+     * @return $this
+     */
+    public function setMerchantReference($merchantReference)
+    {
+        $this->container['merchantReference'] = $merchantReference;
+
+        return $this;
+    }
+
+    /**
+     * Gets totals
+     * @return \CyberSource\Model\InlineResponse2002EmbeddedTotals
+     */
+    public function getTotals()
+    {
+        return $this->container['totals'];
+    }
+
+    /**
+     * Sets totals
+     * @param \CyberSource\Model\InlineResponse2002EmbeddedTotals $totals
+     * @return $this
+     */
+    public function setTotals($totals)
+    {
+        $this->container['totals'] = $totals;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing
+     * @return \CyberSource\Model\InlineResponse2003Billing
+     */
+    public function getBilling()
+    {
+        return $this->container['billing'];
+    }
+
+    /**
+     * Sets billing
+     * @param \CyberSource\Model\InlineResponse2003Billing $billing
+     * @return $this
+     */
+    public function setBilling($billing)
+    {
+        $this->container['billing'] = $billing;
+
+        return $this;
+    }
+
+    /**
+     * Gets records
+     * @return \CyberSource\Model\InlineResponse2004Records[]
+     */
+    public function getRecords()
+    {
+        return $this->container['records'];
+    }
+
+    /**
+     * Sets records
+     * @param \CyberSource\Model\InlineResponse2004Records[] $records
+     * @return $this
+     */
+    public function setRecords($records)
+    {
+        $this->container['records'] = $records;
 
         return $this;
     }

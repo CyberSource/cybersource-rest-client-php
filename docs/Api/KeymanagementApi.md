@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **searchKeys**
-> \CyberSource\Model\InlineResponse20011 searchKeys($offset, $limit, $sort, $organizationIds, $keyIds, $keyTypes, $expirationStartDate, $expirationEndDate)
+> \CyberSource\Model\InlineResponse2001 searchKeys($offset, $limit, $sort, $organizationIds, $keyIds, $keyTypes, $expirationStartDate, $expirationEndDate)
 
 Search Keys
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

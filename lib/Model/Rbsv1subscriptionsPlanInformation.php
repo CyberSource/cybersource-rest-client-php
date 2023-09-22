@@ -54,7 +54,7 @@ class Rbsv1subscriptionsPlanInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'billingPeriod' => '\CyberSource\Model\InlineResponse200PlanInformationBillingPeriod',
+        'billingPeriod' => '\CyberSource\Model\GetAllPlansResponsePlanInformationBillingPeriod',
         'billingCycles' => '\CyberSource\Model\Rbsv1plansPlanInformationBillingCycles'
     ];
 
@@ -168,7 +168,7 @@ class Rbsv1subscriptionsPlanInformation implements ArrayAccess
 
     /**
      * Gets billingPeriod
-     * @return \CyberSource\Model\InlineResponse200PlanInformationBillingPeriod
+     * @return \CyberSource\Model\GetAllPlansResponsePlanInformationBillingPeriod
      */
     public function getBillingPeriod()
     {
@@ -177,7 +177,7 @@ class Rbsv1subscriptionsPlanInformation implements ArrayAccess
 
     /**
      * Sets billingPeriod
-     * @param \CyberSource\Model\InlineResponse200PlanInformationBillingPeriod $billingPeriod
+     * @param \CyberSource\Model\GetAllPlansResponsePlanInformationBillingPeriod $billingPeriod
      * @return $this
      */
     public function setBillingPeriod($billingPeriod)

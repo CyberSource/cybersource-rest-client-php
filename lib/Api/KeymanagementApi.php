@@ -108,7 +108,7 @@ class KeymanagementApi
      * @param \DateTime $expirationStartDate Expiry Filter Start Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
      * @param \DateTime $expirationEndDate Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchKeys($offset = null, $limit = null, $sort = null, $organizationIds = null, $keyIds = null, $keyTypes = null, $expirationStartDate = null, $expirationEndDate = null)
     {
@@ -133,7 +133,7 @@ class KeymanagementApi
      * @param \DateTime $expirationStartDate Expiry Filter Start Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
      * @param \DateTime $expirationEndDate Expiry Filter End Date. When Expiration Date filter is provided, atleast one more filter needs to be provided (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchKeysWithHttpInfo($offset = null, $limit = null, $sort = null, $organizationIds = null, $keyIds = null, $keyTypes = null, $expirationStartDate = null, $expirationEndDate = null)
     {
@@ -231,7 +231,7 @@ class KeymanagementApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20011");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2001");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -240,25 +240,25 @@ class KeymanagementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20011',
+                '\CyberSource\Model\InlineResponse2001',
                 '/kms/v2/keys'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20011', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20011', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4006', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse5001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse5002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

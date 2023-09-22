@@ -78,16 +78,51 @@ class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "links"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyLinks()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "object"
      */
-    public function testPropertyStatus()
+    public function testPropertyObject()
+    {
+    }
+
+    /**
+     * Test attribute "offset"
+     */
+    public function testPropertyOffset()
+    {
+    }
+
+    /**
+     * Test attribute "limit"
+     */
+    public function testPropertyLimit()
+    {
+    }
+
+    /**
+     * Test attribute "count"
+     */
+    public function testPropertyCount()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
+    {
+    }
+
+    /**
+     * Test attribute "embedded"
+     */
+    public function testPropertyEmbedded()
     {
     }
 }
