@@ -58,7 +58,7 @@ class InlineResponse502 implements ArrayAccess
         'status' => 'string',
         'reason' => 'string',
         'message' => 'string',
-        'statusCode' => 'string'
+        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
     ];
 
     /**
@@ -70,7 +70,7 @@ class InlineResponse502 implements ArrayAccess
         'status' => null,
         'reason' => null,
         'message' => null,
-        'statusCode' => null
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +92,7 @@ class InlineResponse502 implements ArrayAccess
         'status' => 'status',
         'reason' => 'reason',
         'message' => 'message',
-        'statusCode' => 'statusCode'
+        'details' => 'details'
     ];
 
 
@@ -105,7 +105,7 @@ class InlineResponse502 implements ArrayAccess
         'status' => 'setStatus',
         'reason' => 'setReason',
         'message' => 'setMessage',
-        'statusCode' => 'setStatusCode'
+        'details' => 'setDetails'
     ];
 
 
@@ -118,7 +118,7 @@ class InlineResponse502 implements ArrayAccess
         'status' => 'getStatus',
         'reason' => 'getReason',
         'message' => 'getMessage',
-        'statusCode' => 'getStatusCode'
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -156,7 +156,7 @@ class InlineResponse502 implements ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -216,7 +216,7 @@ class InlineResponse502 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - SERVER_ERROR
+     * @param string $status The status of the submitted transaction. Possible values: - `SERVER_ERROR`
      * @return $this
      */
     public function setStatus($status)
@@ -237,7 +237,7 @@ class InlineResponse502 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT
+     * @param string $reason The reason of the status. Possible Values: - `INTERNAL_SERVICE_ERROR`
      * @return $this
      */
     public function setReason($reason)
@@ -258,7 +258,7 @@ class InlineResponse502 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message Application failed.
      * @return $this
      */
     public function setMessage($message)
@@ -269,22 +269,22 @@ class InlineResponse502 implements ArrayAccess
     }
 
     /**
-     * Gets statusCode
-     * @return string
+     * Gets details
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
      */
-    public function getStatusCode()
+    public function getDetails()
     {
-        return $this->container['statusCode'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets statusCode
-     * @param string $statusCode HTTP status code of the submitted request.  Possible values:  - 500
+     * Sets details
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
      * @return $this
      */
-    public function setStatusCode($statusCode)
+    public function setDetails($details)
     {
-        $this->container['statusCode'] = $statusCode;
+        $this->container['details'] = $details;
 
         return $this;
     }

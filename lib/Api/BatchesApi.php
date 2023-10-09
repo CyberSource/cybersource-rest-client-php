@@ -101,7 +101,7 @@ class BatchesApi
      *
      * @param string $batchId Unique identification number assigned to the submitted request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchReport($batchId)
     {
@@ -119,7 +119,7 @@ class BatchesApi
      *
      * @param string $batchId Unique identification number assigned to the submitted request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchReportWithHttpInfo($batchId)
     {
@@ -180,7 +180,7 @@ class BatchesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20014");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -189,17 +189,17 @@ class BatchesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20014',
+                '\CyberSource\Model\InlineResponse2004',
                 '/accountupdater/v1/batches/{batchId}/report'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
@@ -220,7 +220,7 @@ class BatchesApi
      *
      * @param string $batchId Unique identification number assigned to the submitted request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchStatus($batchId)
     {
@@ -238,7 +238,7 @@ class BatchesApi
      *
      * @param string $batchId Unique identification number assigned to the submitted request. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchStatusWithHttpInfo($batchId)
     {
@@ -299,7 +299,7 @@ class BatchesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20013");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2003");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -308,17 +308,17 @@ class BatchesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20013',
+                '\CyberSource\Model\InlineResponse2003',
                 '/accountupdater/v1/batches/{batchId}/status'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20013', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20013', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
@@ -342,7 +342,7 @@ class BatchesApi
      * @param string $fromDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @param string $toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchesList($offset = '0', $limit = '20', $fromDate = null, $toDate = null)
     {
@@ -363,7 +363,7 @@ class BatchesApi
      * @param string $fromDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @param string $toDate ISO-8601 format: yyyyMMddTHHmmssZ (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchesListWithHttpInfo($offset = '0', $limit = '20', $fromDate = null, $toDate = null)
     {
@@ -436,7 +436,7 @@ class BatchesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20012");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -445,17 +445,17 @@ class BatchesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20012',
+                '\CyberSource\Model\InlineResponse2002',
                 '/accountupdater/v1/batches'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20012', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20012', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
@@ -480,7 +480,7 @@ class BatchesApi
      *
      * @param \CyberSource\Model\Body $body  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
      */
     public function postBatch($body)
     {
@@ -498,7 +498,7 @@ class BatchesApi
      *
      * @param \CyberSource\Model\Body $body  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
      */
     public function postBatchWithHttpInfo($body)
     {
@@ -544,7 +544,7 @@ class BatchesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2022");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse202");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -553,17 +553,17 @@ class BatchesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2022',
+                '\CyberSource\Model\InlineResponse202',
                 '/accountupdater/v1/batches'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse202', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse202', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

@@ -85,30 +85,16 @@ class InlineResponse202Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "batchId"
      */
-    public function testPropertyId()
+    public function testPropertyBatchId()
     {
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "batchItemCount"
      */
-    public function testPropertySubmitTimeUtc()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "subscriptionInformation"
-     */
-    public function testPropertySubscriptionInformation()
+    public function testPropertyBatchItemCount()
     {
     }
 }

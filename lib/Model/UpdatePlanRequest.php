@@ -56,7 +56,7 @@ class UpdatePlanRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'planInformation' => '\CyberSource\Model\Rbsv1plansidPlanInformation',
         'processingInformation' => '\CyberSource\Model\Rbsv1plansidProcessingInformation',
-        'orderInformation' => '\CyberSource\Model\InlineResponse200OrderInformation'
+        'orderInformation' => '\CyberSource\Model\GetAllPlansResponseOrderInformation'
     ];
 
     /**
@@ -216,7 +216,7 @@ class UpdatePlanRequest implements ArrayAccess
 
     /**
      * Gets orderInformation
-     * @return \CyberSource\Model\InlineResponse200OrderInformation
+     * @return \CyberSource\Model\GetAllPlansResponseOrderInformation
      */
     public function getOrderInformation()
     {
@@ -225,7 +225,7 @@ class UpdatePlanRequest implements ArrayAccess
 
     /**
      * Sets orderInformation
-     * @param \CyberSource\Model\InlineResponse200OrderInformation $orderInformation
+     * @param \CyberSource\Model\GetAllPlansResponseOrderInformation $orderInformation
      * @return $this
      */
     public function setOrderInformation($orderInformation)

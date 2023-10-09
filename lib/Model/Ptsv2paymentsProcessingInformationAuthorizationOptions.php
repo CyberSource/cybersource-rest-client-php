@@ -73,7 +73,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'debtRecoveryIndicator' => 'string',
         'deferredAuthIndicator' => 'bool',
         'cashAdvanceIndicator' => 'bool',
-        'splitPaymentTransaction' => 'bool'
+        'splitPaymentTransaction' => 'bool',
+        'cardVerificationIndicator' => 'bool'
     ];
 
     /**
@@ -100,7 +101,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'debtRecoveryIndicator' => null,
         'deferredAuthIndicator' => null,
         'cashAdvanceIndicator' => null,
-        'splitPaymentTransaction' => null
+        'splitPaymentTransaction' => null,
+        'cardVerificationIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -137,7 +139,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'debtRecoveryIndicator' => 'debtRecoveryIndicator',
         'deferredAuthIndicator' => 'deferredAuthIndicator',
         'cashAdvanceIndicator' => 'cashAdvanceIndicator',
-        'splitPaymentTransaction' => 'splitPaymentTransaction'
+        'splitPaymentTransaction' => 'splitPaymentTransaction',
+        'cardVerificationIndicator' => 'cardVerificationIndicator'
     ];
 
 
@@ -165,7 +168,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'debtRecoveryIndicator' => 'setDebtRecoveryIndicator',
         'deferredAuthIndicator' => 'setDeferredAuthIndicator',
         'cashAdvanceIndicator' => 'setCashAdvanceIndicator',
-        'splitPaymentTransaction' => 'setSplitPaymentTransaction'
+        'splitPaymentTransaction' => 'setSplitPaymentTransaction',
+        'cardVerificationIndicator' => 'setCardVerificationIndicator'
     ];
 
 
@@ -193,7 +197,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'debtRecoveryIndicator' => 'getDebtRecoveryIndicator',
         'deferredAuthIndicator' => 'getDeferredAuthIndicator',
         'cashAdvanceIndicator' => 'getCashAdvanceIndicator',
-        'splitPaymentTransaction' => 'getSplitPaymentTransaction'
+        'splitPaymentTransaction' => 'getSplitPaymentTransaction',
+        'cardVerificationIndicator' => 'getCardVerificationIndicator'
     ];
 
     public static function attributeMap()
@@ -247,6 +252,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['deferredAuthIndicator'] = isset($data['deferredAuthIndicator']) ? $data['deferredAuthIndicator'] : null;
         $this->container['cashAdvanceIndicator'] = isset($data['cashAdvanceIndicator']) ? $data['cashAdvanceIndicator'] : null;
         $this->container['splitPaymentTransaction'] = isset($data['splitPaymentTransaction']) ? $data['splitPaymentTransaction'] : null;
+        $this->container['cardVerificationIndicator'] = isset($data['cardVerificationIndicator']) ? $data['cardVerificationIndicator'] : null;
     }
 
     /**
@@ -690,6 +696,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function setSplitPaymentTransaction($splitPaymentTransaction)
     {
         $this->container['splitPaymentTransaction'] = $splitPaymentTransaction;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardVerificationIndicator
+     * @return bool
+     */
+    public function getCardVerificationIndicator()
+    {
+        return $this->container['cardVerificationIndicator'];
+    }
+
+    /**
+     * Sets cardVerificationIndicator
+     * @param bool $cardVerificationIndicator This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value)
+     * @return $this
+     */
+    public function setCardVerificationIndicator($cardVerificationIndicator)
+    {
+        $this->container['cardVerificationIndicator'] = $cardVerificationIndicator;
 
         return $this;
     }

@@ -85,16 +85,37 @@ class InlineResponse2003Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "batchId"
      */
-    public function testPropertyId()
+    public function testPropertyBatchId()
     {
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "batchCreatedDate"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyBatchCreatedDate()
+    {
+    }
+
+    /**
+     * Test attribute "batchSource"
+     */
+    public function testPropertyBatchSource()
+    {
+    }
+
+    /**
+     * Test attribute "merchantReference"
+     */
+    public function testPropertyMerchantReference()
+    {
+    }
+
+    /**
+     * Test attribute "batchCaEndpoints"
+     */
+    public function testPropertyBatchCaEndpoints()
     {
     }
 
@@ -106,9 +127,23 @@ class InlineResponse2003Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "planInformation"
+     * Test attribute "totals"
      */
-    public function testPropertyPlanInformation()
+    public function testPropertyTotals()
+    {
+    }
+
+    /**
+     * Test attribute "billing"
+     */
+    public function testPropertyBilling()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
     }
 }

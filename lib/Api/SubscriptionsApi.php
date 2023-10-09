@@ -101,7 +101,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ActivateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function activateSubscription($id)
     {
@@ -119,7 +119,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ActivateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function activateSubscriptionWithHttpInfo($id)
     {
@@ -171,7 +171,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2009");
+        self::$logger->debug("Return Type : \CyberSource\Model\ActivateSubscriptionResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -180,21 +180,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2009',
+                '\CyberSource\Model\ActivateSubscriptionResponse',
                 '/rbs/v1/subscriptions/{id}/activate'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2009', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ActivateSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2009', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ActivateSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -219,7 +219,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CancelSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSubscription($id)
     {
@@ -237,7 +237,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse202, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CancelSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSubscriptionWithHttpInfo($id)
     {
@@ -289,7 +289,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse202");
+        self::$logger->debug("Return Type : \CyberSource\Model\CancelSubscriptionResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -298,21 +298,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse202',
+                '\CyberSource\Model\CancelSubscriptionResponse',
                 '/rbs/v1/subscriptions/{id}/cancel'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse202', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CancelSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse202', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CancelSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -337,7 +337,7 @@ class SubscriptionsApi
      *
      * @param \CyberSource\Model\CreateSubscriptionRequest $createSubscriptionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSubscription($createSubscriptionRequest)
     {
@@ -355,7 +355,7 @@ class SubscriptionsApi
      *
      * @param \CyberSource\Model\CreateSubscriptionRequest $createSubscriptionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSubscriptionWithHttpInfo($createSubscriptionRequest)
     {
@@ -401,7 +401,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2011");
+        self::$logger->debug("Return Type : \CyberSource\Model\CreateSubscriptionResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -410,21 +410,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2011',
+                '\CyberSource\Model\CreateSubscriptionResponse',
                 '/rbs/v1/subscriptions'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2011', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CreateSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2011', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CreateSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4003', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -448,7 +448,7 @@ class SubscriptionsApi
      * @param string $code Filter by Subscription Code (optional)
      * @param string $status Filter by Subscription Status (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetAllSubscriptionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllSubscriptions($offset = null, $limit = null, $code = null, $status = null)
     {
@@ -469,7 +469,7 @@ class SubscriptionsApi
      * @param string $code Filter by Subscription Code (optional)
      * @param string $status Filter by Subscription Status (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetAllSubscriptionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllSubscriptionsWithHttpInfo($offset = null, $limit = null, $code = null, $status = null)
     {
@@ -528,7 +528,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2006");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetAllSubscriptionsResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -537,21 +537,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2006',
+                '\CyberSource\Model\GetAllSubscriptionsResponse',
                 '/rbs/v1/subscriptions'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetAllSubscriptionsResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetAllSubscriptionsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -572,7 +572,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscription($id)
     {
@@ -590,7 +590,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionWithHttpInfo($id)
     {
@@ -642,7 +642,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2007");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetSubscriptionResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -651,21 +651,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2007',
+                '\CyberSource\Model\GetSubscriptionResponse',
                 '/rbs/v1/subscriptions/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2007', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2007', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -689,7 +689,7 @@ class SubscriptionsApi
      * Get a Subscription Code
      *
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetSubscriptionCodeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionCode()
     {
@@ -706,7 +706,7 @@ class SubscriptionsApi
      * Get a Subscription Code
      *
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20010, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetSubscriptionCodeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionCodeWithHttpInfo()
     {
@@ -745,7 +745,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20010");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetSubscriptionCodeResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -754,21 +754,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20010',
+                '\CyberSource\Model\GetSubscriptionCodeResponse',
                 '/rbs/v1/subscriptions/code'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20010', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetSubscriptionCodeResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20010', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetSubscriptionCodeResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -789,7 +789,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2021, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\SuspendSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function suspendSubscription($id)
     {
@@ -807,7 +807,7 @@ class SubscriptionsApi
      *
      * @param string $id Subscription Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2021, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\SuspendSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function suspendSubscriptionWithHttpInfo($id)
     {
@@ -859,7 +859,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2021");
+        self::$logger->debug("Return Type : \CyberSource\Model\SuspendSubscriptionResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -868,21 +868,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2021',
+                '\CyberSource\Model\SuspendSubscriptionResponse',
                 '/rbs/v1/subscriptions/{id}/suspend'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2021', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\SuspendSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 202:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2021', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\SuspendSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -908,7 +908,7 @@ class SubscriptionsApi
      * @param string $id Subscription Id (required)
      * @param \CyberSource\Model\UpdateSubscription $updateSubscription Update Subscription (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\UpdateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSubscription($id, $updateSubscription)
     {
@@ -927,7 +927,7 @@ class SubscriptionsApi
      * @param string $id Subscription Id (required)
      * @param \CyberSource\Model\UpdateSubscription $updateSubscription Update Subscription (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\UpdateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSubscriptionWithHttpInfo($id, $updateSubscription)
     {
@@ -986,7 +986,7 @@ class SubscriptionsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2008");
+        self::$logger->debug("Return Type : \CyberSource\Model\UpdateSubscriptionResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -995,21 +995,21 @@ class SubscriptionsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2008',
+                '\CyberSource\Model\UpdateSubscriptionResponse',
                 '/rbs/v1/subscriptions/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\UpdateSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2008', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\UpdateSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4003', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:

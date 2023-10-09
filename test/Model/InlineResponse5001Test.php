@@ -104,4 +104,11 @@ class InlineResponse5001Test extends \PHPUnit_Framework_TestCase
     public function testPropertyMessage()
     {
     }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
+    {
+    }
 }

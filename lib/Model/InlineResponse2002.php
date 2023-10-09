@@ -54,8 +54,13 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
-        'status' => 'string'
+        'links' => '\CyberSource\Model\InlineResponse2002Links[]',
+        'object' => 'string',
+        'offset' => 'int',
+        'limit' => 'int',
+        'count' => 'int',
+        'total' => 'int',
+        'embedded' => '\CyberSource\Model\InlineResponse2002Embedded'
     ];
 
     /**
@@ -63,8 +68,13 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
-        'status' => null
+        'links' => null,
+        'object' => null,
+        'offset' => null,
+        'limit' => null,
+        'count' => null,
+        'total' => null,
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +92,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status'
+        'links' => '_links',
+        'object' => 'object',
+        'offset' => 'offset',
+        'limit' => 'limit',
+        'count' => 'count',
+        'total' => 'total',
+        'embedded' => '_embedded'
     ];
 
 
@@ -92,8 +107,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus'
+        'links' => 'setLinks',
+        'object' => 'setObject',
+        'offset' => 'setOffset',
+        'limit' => 'setLimit',
+        'count' => 'setCount',
+        'total' => 'setTotal',
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -102,8 +122,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus'
+        'links' => 'getLinks',
+        'object' => 'getObject',
+        'offset' => 'getOffset',
+        'limit' => 'getLimit',
+        'count' => 'getCount',
+        'total' => 'getTotal',
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -137,8 +162,13 @@ class InlineResponse2002 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -167,43 +197,148 @@ class InlineResponse2002 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return string
+     * Gets links
+     * @return \CyberSource\Model\InlineResponse2002Links[]
      */
-    public function getSubmitTimeUtc()
+    public function getLinks()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * Sets links
+     * @param \CyberSource\Model\InlineResponse2002Links[] $links
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setLinks($links)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['links'] = $links;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets object
      * @return string
      */
-    public function getStatus()
+    public function getObject()
     {
-        return $this->container['status'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - COMPLETED
+     * Sets object
+     * @param string $object
      * @return $this
      */
-    public function setStatus($status)
+    public function setObject($object)
     {
-        $this->container['status'] = $status;
+        $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     * @param int $offset
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     * @param int $limit
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     * @param int $count
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     * @param int $total
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets embedded
+     * @return \CyberSource\Model\InlineResponse2002Embedded
+     */
+    public function getEmbedded()
+    {
+        return $this->container['embedded'];
+    }
+
+    /**
+     * Sets embedded
+     * @param \CyberSource\Model\InlineResponse2002Embedded $embedded
+     * @return $this
+     */
+    public function setEmbedded($embedded)
+    {
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }

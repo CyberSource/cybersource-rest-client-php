@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **activatePlan**
-> \CyberSource\Model\InlineResponse2004 activatePlan($id)
+> \CyberSource\Model\ActivateDeactivatePlanResponse activatePlan($id)
 
 Activate a Plan
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\CyberSource\Model\ActivateDeactivatePlanResponse**](../Model/ActivateDeactivatePlanResponse.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPlan**
-> \CyberSource\Model\InlineResponse201 createPlan($createPlanRequest)
+> \CyberSource\Model\CreatePlanResponse createPlan($createPlanRequest)
 
 Create a Plan
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\CyberSource\Model\CreatePlanResponse**](../Model/CreatePlanResponse.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deactivatePlan**
-> \CyberSource\Model\InlineResponse2004 deactivatePlan($id)
+> \CyberSource\Model\ActivateDeactivatePlanResponse deactivatePlan($id)
 
 Deactivate a Plan
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\CyberSource\Model\ActivateDeactivatePlanResponse**](../Model/ActivateDeactivatePlanResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deletePlan**
-> \CyberSource\Model\InlineResponse2002 deletePlan($id)
+> \CyberSource\Model\DeletePlanResponse deletePlan($id)
 
 Delete a Plan
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\DeletePlanResponse**](../Model/DeletePlanResponse.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlan**
-> \CyberSource\Model\InlineResponse2001 getPlan($id)
+> \CyberSource\Model\GetPlanResponse getPlan($id)
 
 Get a Plan
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\CyberSource\Model\GetPlanResponse**](../Model/GetPlanResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlanCode**
-> \CyberSource\Model\InlineResponse2005 getPlanCode()
+> \CyberSource\Model\GetPlanCodeResponse getPlanCode()
 
 Get a Plan Code
 
@@ -267,7 +267,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\CyberSource\Model\GetPlanCodeResponse**](../Model/GetPlanCodeResponse.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlans**
-> \CyberSource\Model\InlineResponse200 getPlans($offset, $limit, $code, $status, $name)
+> \CyberSource\Model\GetAllPlansResponse getPlans($offset, $limit, $code, $status, $name)
 
 Get a List of Plans
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\CyberSource\Model\GetAllPlansResponse**](../Model/GetAllPlansResponse.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePlan**
-> \CyberSource\Model\InlineResponse2003 updatePlan($id, $updatePlanRequest)
+> \CyberSource\Model\UpdatePlanResponse updatePlan($id, $updatePlanRequest)
 
 Update a Plan
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\CyberSource\Model\UpdatePlanResponse**](../Model/UpdatePlanResponse.md)
 
 ### Authorization
 

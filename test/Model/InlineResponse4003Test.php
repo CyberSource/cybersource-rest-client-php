@@ -33,7 +33,7 @@ namespace CyberSource;
  * InlineResponse4003Test Class Doc Comment
  *
  * @category    Class */
-// * @description Error Bean
+// * @description InlineResponse4003
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -78,9 +78,23 @@ class InlineResponse4003Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyCode()
+    public function testPropertySubmitTimeUtc()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "reason"
+     */
+    public function testPropertyReason()
     {
     }
 
@@ -92,30 +106,9 @@ class InlineResponse4003Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "localizationKey"
+     * Test attribute "details"
      */
-    public function testPropertyLocalizationKey()
-    {
-    }
-
-    /**
-     * Test attribute "correlationId"
-     */
-    public function testPropertyCorrelationId()
-    {
-    }
-
-    /**
-     * Test attribute "detail"
-     */
-    public function testPropertyDetail()
-    {
-    }
-
-    /**
-     * Test attribute "fields"
-     */
-    public function testPropertyFields()
+    public function testPropertyDetails()
     {
     }
 }

@@ -59,7 +59,7 @@ class CreateSubscriptionRequest implements ArrayAccess
         'planInformation' => '\CyberSource\Model\Rbsv1subscriptionsPlanInformation',
         'subscriptionInformation' => '\CyberSource\Model\Rbsv1subscriptionsSubscriptionInformation',
         'paymentInformation' => '\CyberSource\Model\Rbsv1subscriptionsPaymentInformation',
-        'orderInformation' => '\CyberSource\Model\InlineResponse200OrderInformation'
+        'orderInformation' => '\CyberSource\Model\GetAllPlansResponseOrderInformation'
     ];
 
     /**
@@ -297,7 +297,7 @@ class CreateSubscriptionRequest implements ArrayAccess
 
     /**
      * Gets orderInformation
-     * @return \CyberSource\Model\InlineResponse200OrderInformation
+     * @return \CyberSource\Model\GetAllPlansResponseOrderInformation
      */
     public function getOrderInformation()
     {
@@ -306,7 +306,7 @@ class CreateSubscriptionRequest implements ArrayAccess
 
     /**
      * Sets orderInformation
-     * @param \CyberSource\Model\InlineResponse200OrderInformation $orderInformation
+     * @param \CyberSource\Model\GetAllPlansResponseOrderInformation $orderInformation
      * @return $this
      */
     public function setOrderInformation($orderInformation)

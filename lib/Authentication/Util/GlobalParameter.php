@@ -33,8 +33,8 @@ class GlobalParameter
     const KEY_DIR_PATH_DEFAULT = "Resources/";
     const HTTPS_PREFIX = "https://";
     const SIGNATURE = "Signature:";
-    const POSTALGOHEADER = "host date (request-target) digest v-c-merchant-id";
-    const GETALGOHEADER = "host date (request-target) v-c-merchant-id";
+    const POSTALGOHEADER = "host date request-target digest v-c-merchant-id";
+    const GETALGOHEADER = "host date request-target v-c-merchant-id";
     const RS256 = "RS256";
     const FILE_NOT_FOUND = "[ERROR] : File not found, Re-Enter path/file name, Entered path/file name : ";
     const MISSING_REQUEST = "[ERROR] : Request Not Found.";

@@ -101,7 +101,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ActivateDeactivatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function activatePlan($id)
     {
@@ -119,7 +119,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ActivateDeactivatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function activatePlanWithHttpInfo($id)
     {
@@ -171,7 +171,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004");
+        self::$logger->debug("Return Type : \CyberSource\Model\ActivateDeactivatePlanResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -180,21 +180,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004',
+                '\CyberSource\Model\ActivateDeactivatePlanResponse',
                 '/rbs/v1/plans/{id}/activate'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ActivateDeactivatePlanResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ActivateDeactivatePlanResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -219,7 +219,7 @@ class PlansApi
      *
      * @param \CyberSource\Model\CreatePlanRequest $createPlanRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlan($createPlanRequest)
     {
@@ -237,7 +237,7 @@ class PlansApi
      *
      * @param \CyberSource\Model\CreatePlanRequest $createPlanRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlanWithHttpInfo($createPlanRequest)
     {
@@ -283,7 +283,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse201");
+        self::$logger->debug("Return Type : \CyberSource\Model\CreatePlanResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -292,21 +292,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse201',
+                '\CyberSource\Model\CreatePlanResponse',
                 '/rbs/v1/plans'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse201', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CreatePlanResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse201', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CreatePlanResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -327,7 +327,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ActivateDeactivatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deactivatePlan($id)
     {
@@ -345,7 +345,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\ActivateDeactivatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deactivatePlanWithHttpInfo($id)
     {
@@ -397,7 +397,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2004");
+        self::$logger->debug("Return Type : \CyberSource\Model\ActivateDeactivatePlanResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -406,21 +406,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2004',
+                '\CyberSource\Model\ActivateDeactivatePlanResponse',
                 '/rbs/v1/plans/{id}/deactivate'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2004', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\ActivateDeactivatePlanResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2004', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\ActivateDeactivatePlanResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -445,7 +445,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\DeletePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePlan($id)
     {
@@ -463,7 +463,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\DeletePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePlanWithHttpInfo($id)
     {
@@ -515,7 +515,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002");
+        self::$logger->debug("Return Type : \CyberSource\Model\DeletePlanResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -524,21 +524,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2002',
+                '\CyberSource\Model\DeletePlanResponse',
                 '/rbs/v1/plans/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\DeletePlanResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\DeletePlanResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -563,7 +563,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetPlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlan($id)
     {
@@ -581,7 +581,7 @@ class PlansApi
      *
      * @param string $id Plan Id (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetPlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlanWithHttpInfo($id)
     {
@@ -633,7 +633,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2001");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetPlanResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -642,21 +642,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2001',
+                '\CyberSource\Model\GetPlanResponse',
                 '/rbs/v1/plans/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetPlanResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetPlanResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -680,7 +680,7 @@ class PlansApi
      * Get a Plan Code
      *
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetPlanCodeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlanCode()
     {
@@ -697,7 +697,7 @@ class PlansApi
      * Get a Plan Code
      *
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetPlanCodeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlanCodeWithHttpInfo()
     {
@@ -736,7 +736,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2005");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetPlanCodeResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -745,21 +745,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2005',
+                '\CyberSource\Model\GetPlanCodeResponse',
                 '/rbs/v1/plans/code'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetPlanCodeResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetPlanCodeResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -784,7 +784,7 @@ class PlansApi
      * @param string $status Filter by Plan Status (optional)
      * @param string $name Filter by Plan Name. (First sub string or full string) **[Not Recommended]** (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetAllPlansResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlans($offset = null, $limit = null, $code = null, $status = null, $name = null)
     {
@@ -806,7 +806,7 @@ class PlansApi
      * @param string $status Filter by Plan Status (optional)
      * @param string $name Filter by Plan Name. (First sub string or full string) **[Not Recommended]** (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetAllPlansResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlansWithHttpInfo($offset = null, $limit = null, $code = null, $status = null, $name = null)
     {
@@ -870,7 +870,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse200");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetAllPlansResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -879,21 +879,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse200',
+                '\CyberSource\Model\GetAllPlansResponse',
                 '/rbs/v1/plans'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetAllPlansResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetAllPlansResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -915,7 +915,7 @@ class PlansApi
      * @param string $id Plan Id (required)
      * @param \CyberSource\Model\UpdatePlanRequest $updatePlanRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\UpdatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlan($id, $updatePlanRequest)
     {
@@ -934,7 +934,7 @@ class PlansApi
      * @param string $id Plan Id (required)
      * @param \CyberSource\Model\UpdatePlanRequest $updatePlanRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\UpdatePlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlanWithHttpInfo($id, $updatePlanRequest)
     {
@@ -993,7 +993,7 @@ class PlansApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2003");
+        self::$logger->debug("Return Type : \CyberSource\Model\UpdatePlanResponse");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -1002,21 +1002,21 @@ class PlansApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2003',
+                '\CyberSource\Model\UpdatePlanResponse',
                 '/rbs/v1/plans/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\UpdatePlanResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\UpdatePlanResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:

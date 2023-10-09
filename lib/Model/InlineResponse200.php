@@ -54,10 +54,10 @@ class InlineResponse200 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse200Links',
+        'id' => 'string',
         'submitTimeUtc' => 'string',
-        'totalCount' => 'int',
-        'plans' => '\CyberSource\Model\InlineResponse200Plans[]'
+        'status' => 'string',
+        'embedded' => '\CyberSource\Model\InlineResponse200Embedded'
     ];
 
     /**
@@ -65,10 +65,10 @@ class InlineResponse200 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
+        'id' => null,
         'submitTimeUtc' => null,
-        'totalCount' => null,
-        'plans' => null
+        'status' => null,
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -86,10 +86,10 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
+        'id' => 'id',
         'submitTimeUtc' => 'submitTimeUtc',
-        'totalCount' => 'totalCount',
-        'plans' => 'plans'
+        'status' => 'status',
+        'embedded' => '_embedded'
     ];
 
 
@@ -98,10 +98,10 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
+        'id' => 'setId',
         'submitTimeUtc' => 'setSubmitTimeUtc',
-        'totalCount' => 'setTotalCount',
-        'plans' => 'setPlans'
+        'status' => 'setStatus',
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -110,10 +110,10 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
+        'id' => 'getId',
         'submitTimeUtc' => 'getSubmitTimeUtc',
-        'totalCount' => 'getTotalCount',
-        'plans' => 'getPlans'
+        'status' => 'getStatus',
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -147,10 +147,10 @@ class InlineResponse200 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
-        $this->container['plans'] = isset($data['plans']) ? $data['plans'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -179,22 +179,22 @@ class InlineResponse200 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse200Links
+     * Gets id
+     * @return string
      */
-    public function getLinks()
+    public function getId()
     {
-        return $this->container['links'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse200Links $links
+     * Sets id
+     * @param string $id UUID uniquely generated for this comments.
      * @return $this
      */
-    public function setLinks($links)
+    public function setId($id)
     {
-        $this->container['links'] = $links;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -221,43 +221,43 @@ class InlineResponse200 implements ArrayAccess
     }
 
     /**
-     * Gets totalCount
-     * @return int
+     * Gets status
+     * @return string
      */
-    public function getTotalCount()
+    public function getStatus()
     {
-        return $this->container['totalCount'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets totalCount
-     * @param int $totalCount total number of plans created
+     * Sets status
+     * @param string $status The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED`
      * @return $this
      */
-    public function setTotalCount($totalCount)
+    public function setStatus($status)
     {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets plans
-     * @return \CyberSource\Model\InlineResponse200Plans[]
+     * Gets embedded
+     * @return \CyberSource\Model\InlineResponse200Embedded
      */
-    public function getPlans()
+    public function getEmbedded()
     {
-        return $this->container['plans'];
+        return $this->container['embedded'];
     }
 
     /**
-     * Sets plans
-     * @param \CyberSource\Model\InlineResponse200Plans[] $plans
+     * Sets embedded
+     * @param \CyberSource\Model\InlineResponse200Embedded $embedded
      * @return $this
      */
-    public function setPlans($plans)
+    public function setEmbedded($embedded)
     {
-        $this->container['plans'] = $plans;
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }

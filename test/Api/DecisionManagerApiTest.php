@@ -73,12 +73,32 @@ class DecisionManagerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for actionDecisionManagerCase
+     *
+     * Take action on a DM post-transactional case.
+     *
+     */
+    public function testActionDecisionManagerCase()
+    {
+    }
+
+    /**
      * Test case for addNegative
      *
      * List Management.
      *
      */
     public function testAddNegative()
+    {
+    }
+
+    /**
+     * Test case for commentDecisionManagerCase
+     *
+     * Add a comment to a DM post-transactional case.
+     *
+     */
+    public function testCommentDecisionManagerCase()
     {
     }
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getBatchReport**
-> \CyberSource\Model\InlineResponse20014 getBatchReport($batchId)
+> \CyberSource\Model\InlineResponse2004 getBatchReport($batchId)
 
 Retrieve a Batch Report
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchStatus**
-> \CyberSource\Model\InlineResponse20013 getBatchStatus($batchId)
+> \CyberSource\Model\InlineResponse2003 getBatchStatus($batchId)
 
 Retrieve a Batch Status
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\CyberSource\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchesList**
-> \CyberSource\Model\InlineResponse20012 getBatchesList($offset, $limit, $fromDate, $toDate)
+> \CyberSource\Model\InlineResponse2002 getBatchesList($offset, $limit, $fromDate, $toDate)
 
 List Batches
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postBatch**
-> \CyberSource\Model\InlineResponse2022 postBatch($body)
+> \CyberSource\Model\InlineResponse202 postBatch($body)
 
 Create a Batch
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2022**](../Model/InlineResponse2022.md)
+[**\CyberSource\Model\InlineResponse202**](../Model/InlineResponse202.md)
 
 ### Authorization
 
