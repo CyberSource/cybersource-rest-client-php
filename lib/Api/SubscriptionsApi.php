@@ -381,6 +381,9 @@ class SubscriptionsApi
         if (isset($createSubscriptionRequest)) {
             $_tempBody = $createSubscriptionRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateSubscriptionRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -966,6 +969,9 @@ class SubscriptionsApi
         if (isset($updateSubscription)) {
             $_tempBody = $updateSubscription;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\UpdateSubscription')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

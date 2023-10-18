@@ -145,6 +145,9 @@ class MicroformIntegrationApi
         if (isset($generateCaptureContextRequest)) {
             $_tempBody = $generateCaptureContextRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\GenerateCaptureContextRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

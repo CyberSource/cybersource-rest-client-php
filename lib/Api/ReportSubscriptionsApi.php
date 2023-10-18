@@ -164,6 +164,9 @@ class ReportSubscriptionsApi
         if (isset($predefinedSubscriptionRequestBean)) {
             $_tempBody = $predefinedSubscriptionRequestBean;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PredefinedSubscriptionRequestBean')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -284,6 +287,9 @@ class ReportSubscriptionsApi
         if (isset($createReportSubscriptionRequest)) {
             $_tempBody = $createReportSubscriptionRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateReportSubscriptionRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

@@ -160,6 +160,9 @@ class RefundApi
         if (isset($refundCaptureRequest)) {
             $_tempBody = $refundCaptureRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\RefundCaptureRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -283,6 +286,9 @@ class RefundApi
         if (isset($refundPaymentRequest)) {
             $_tempBody = $refundPaymentRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\RefundPaymentRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
