@@ -148,6 +148,13 @@ class CreateCreditRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "merchantDefinedSecureInformation"
+     */
+    public function testPropertyMerchantDefinedSecureInformation()
+    {
+    }
+
+    /**
      * Test attribute "installmentInformation"
      */
     public function testPropertyInstallmentInformation()

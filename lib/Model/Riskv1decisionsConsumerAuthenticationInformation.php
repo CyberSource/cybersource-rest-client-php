@@ -585,7 +585,7 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets transactionFlowIndicator
-     * @param int $transactionFlowIndicator This  field is only applicable to Rupay and is optional. Merchant will have to pass a valid value from 01 through 07 which indicates the transaction flow. Below are the possible values. 01:NW – Transaction performed at domestic merchant. 02:TW - Transaction performed at domestic merchant along with Token provisioning. 03:IT – Transaction performed at International merchant. 04:AT- Authentication Transaction Only. 05:AW- Authentication transaction for provisioning. 06:DI- Domestic InApp Transaction. 07:II- International InApp transaction.
+     * @param int $transactionFlowIndicator This  field is only applicable to Rupay and is optional. Merchant will have to pass a valid value from 01 through 07 which indicates the transaction flow. Below are the possible values. 01:NW- Transaction performed at domestic merchant. 02:TW- Transaction performed at domestic merchant along with Token provisioning. 03:IT- Transaction performed at International merchant. 04:AT- Authentication Transaction Only. 05:AW- Authentication transaction for provisioning. 06:DI- Domestic InApp Transaction. 07:II- International InApp transaction. 08:GC- Guest Checkout 09:ST- SI Authentication Transaction only 10:SW- SI Authorization along with token provisioning
      * @return $this
      */
     public function setTransactionFlowIndicator($transactionFlowIndicator)

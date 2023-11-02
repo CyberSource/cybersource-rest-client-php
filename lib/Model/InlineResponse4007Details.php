@@ -54,8 +54,8 @@ class InlineResponse4007Details implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'location' => 'string',
-        'message' => 'string'
+        'field' => 'string',
+        'reason' => 'string'
     ];
 
     /**
@@ -63,8 +63,8 @@ class InlineResponse4007Details implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'location' => null,
-        'message' => null
+        'field' => null,
+        'reason' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +82,8 @@ class InlineResponse4007Details implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'location' => 'location',
-        'message' => 'message'
+        'field' => 'field',
+        'reason' => 'reason'
     ];
 
 
@@ -92,8 +92,8 @@ class InlineResponse4007Details implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'location' => 'setLocation',
-        'message' => 'setMessage'
+        'field' => 'setField',
+        'reason' => 'setReason'
     ];
 
 
@@ -102,8 +102,8 @@ class InlineResponse4007Details implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'location' => 'getLocation',
-        'message' => 'getMessage'
+        'field' => 'getField',
+        'reason' => 'getReason'
     ];
 
     public static function attributeMap()
@@ -137,8 +137,8 @@ class InlineResponse4007Details implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['field'] = isset($data['field']) ? $data['field'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
 
     /**
@@ -167,43 +167,43 @@ class InlineResponse4007Details implements ArrayAccess
 
 
     /**
-     * Gets location
+     * Gets field
      * @return string
      */
-    public function getLocation()
+    public function getField()
     {
-        return $this->container['location'];
+        return $this->container['field'];
     }
 
     /**
-     * Sets location
-     * @param string $location
+     * Sets field
+     * @param string $field This is the flattened JSON object field name/path that is either missing or invalid.
      * @return $this
      */
-    public function setLocation($location)
+    public function setField($field)
     {
-        $this->container['location'] = $location;
+        $this->container['field'] = $field;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets reason
      * @return string
      */
-    public function getMessage()
+    public function getReason()
     {
-        return $this->container['message'];
+        return $this->container['reason'];
     }
 
     /**
-     * Sets message
-     * @param string $message
+     * Sets reason
+     * @param string $reason Possible reasons for the error.
      * @return $this
      */
-    public function setMessage($message)
+    public function setReason($reason)
     {
-        $this->container['message'] = $message;
+        $this->container['reason'] = $reason;
 
         return $this;
     }

@@ -55,6 +55,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'cavv' => 'string',
+        'transactionFlowIndicator' => 'string',
         'cavvAlgorithm' => 'string',
         'eciRaw' => 'string',
         'paresStatus' => 'string',
@@ -118,6 +119,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'cavv' => null,
+        'transactionFlowIndicator' => null,
         'cavvAlgorithm' => null,
         'eciRaw' => null,
         'paresStatus' => null,
@@ -191,6 +193,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'cavv' => 'cavv',
+        'transactionFlowIndicator' => 'transactionFlowIndicator',
         'cavvAlgorithm' => 'cavvAlgorithm',
         'eciRaw' => 'eciRaw',
         'paresStatus' => 'paresStatus',
@@ -255,6 +258,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
      */
     protected static $setters = [
         'cavv' => 'setCavv',
+        'transactionFlowIndicator' => 'setTransactionFlowIndicator',
         'cavvAlgorithm' => 'setCavvAlgorithm',
         'eciRaw' => 'setEciRaw',
         'paresStatus' => 'setParesStatus',
@@ -319,6 +323,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
      */
     protected static $getters = [
         'cavv' => 'getCavv',
+        'transactionFlowIndicator' => 'getTransactionFlowIndicator',
         'cavvAlgorithm' => 'getCavvAlgorithm',
         'eciRaw' => 'getEciRaw',
         'paresStatus' => 'getParesStatus',
@@ -408,6 +413,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
+        $this->container['transactionFlowIndicator'] = isset($data['transactionFlowIndicator']) ? $data['transactionFlowIndicator'] : null;
         $this->container['cavvAlgorithm'] = isset($data['cavvAlgorithm']) ? $data['cavvAlgorithm'] : null;
         $this->container['eciRaw'] = isset($data['eciRaw']) ? $data['eciRaw'] : null;
         $this->container['paresStatus'] = isset($data['paresStatus']) ? $data['paresStatus'] : null;
@@ -507,6 +513,27 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     public function setCavv($cavv)
     {
         $this->container['cavv'] = $cavv;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionFlowIndicator
+     * @return string
+     */
+    public function getTransactionFlowIndicator()
+    {
+        return $this->container['transactionFlowIndicator'];
+    }
+
+    /**
+     * Sets transactionFlowIndicator
+     * @param string $transactionFlowIndicator This field details out the type of transaction. Below are the possible values. 08:GC- Guest Checkout.
+     * @return $this
+     */
+    public function setTransactionFlowIndicator($transactionFlowIndicator)
+    {
+        $this->container['transactionFlowIndicator'] = $transactionFlowIndicator;
 
         return $this;
     }

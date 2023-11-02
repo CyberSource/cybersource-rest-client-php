@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**\CyberSource\Model\InlineResponse2002Links[]**](InlineResponse2002Links.md) |  | [optional] 
-**object** | **string** |  | [optional] 
-**offset** | **int** |  | [optional] 
-**limit** | **int** |  | [optional] 
-**count** | **int** |  | [optional] 
-**total** | **int** |  | [optional] 
-**embedded** | [**\CyberSource\Model\InlineResponse2002Embedded**](InlineResponse2002Embedded.md) |  | [optional] 
+**registrationInformation** | [**\CyberSource\Model\Boardingv1registrationsRegistrationInformation**](Boardingv1registrationsRegistrationInformation.md) |  | [optional] 
+**integrationInformation** | [**\CyberSource\Model\InlineResponse2002IntegrationInformation**](InlineResponse2002IntegrationInformation.md) |  | [optional] 
+**organizationInformation** | [**\CyberSource\Model\Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  | [optional] 
+**productInformation** | [**\CyberSource\Model\Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  | [optional] 
+**productInformationSetups** | [**\CyberSource\Model\InlineResponse2011ProductInformationSetups[]**](InlineResponse2011ProductInformationSetups.md) |  | [optional] 
+**documentInformation** | [**\CyberSource\Model\Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  | [optional] 
+**details** | [**map[string,object[]]**](array.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

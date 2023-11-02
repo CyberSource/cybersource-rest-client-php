@@ -54,16 +54,9 @@ class InlineResponse2003 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse2003Links',
-        'batchId' => 'string',
-        'batchCreatedDate' => 'string',
-        'batchSource' => 'string',
-        'merchantReference' => 'string',
-        'batchCaEndpoints' => 'string',
-        'status' => 'string',
-        'totals' => '\CyberSource\Model\InlineResponse2002EmbeddedTotals',
-        'billing' => '\CyberSource\Model\InlineResponse2003Billing',
-        'description' => 'string'
+        'productId' => 'string',
+        'productName' => 'string',
+        'eventTypes' => '\CyberSource\Model\Notificationsubscriptionsv1productsorganizationIdEventTypes[]'
     ];
 
     /**
@@ -71,16 +64,9 @@ class InlineResponse2003 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'batchId' => null,
-        'batchCreatedDate' => null,
-        'batchSource' => null,
-        'merchantReference' => null,
-        'batchCaEndpoints' => null,
-        'status' => null,
-        'totals' => null,
-        'billing' => null,
-        'description' => null
+        'productId' => null,
+        'productName' => null,
+        'eventTypes' => null
     ];
 
     public static function swaggerTypes()
@@ -98,16 +84,9 @@ class InlineResponse2003 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
-        'batchId' => 'batchId',
-        'batchCreatedDate' => 'batchCreatedDate',
-        'batchSource' => 'batchSource',
-        'merchantReference' => 'merchantReference',
-        'batchCaEndpoints' => 'batchCaEndpoints',
-        'status' => 'status',
-        'totals' => 'totals',
-        'billing' => 'billing',
-        'description' => 'description'
+        'productId' => 'productId',
+        'productName' => 'productName',
+        'eventTypes' => 'eventTypes'
     ];
 
 
@@ -116,16 +95,9 @@ class InlineResponse2003 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'batchId' => 'setBatchId',
-        'batchCreatedDate' => 'setBatchCreatedDate',
-        'batchSource' => 'setBatchSource',
-        'merchantReference' => 'setMerchantReference',
-        'batchCaEndpoints' => 'setBatchCaEndpoints',
-        'status' => 'setStatus',
-        'totals' => 'setTotals',
-        'billing' => 'setBilling',
-        'description' => 'setDescription'
+        'productId' => 'setProductId',
+        'productName' => 'setProductName',
+        'eventTypes' => 'setEventTypes'
     ];
 
 
@@ -134,16 +106,9 @@ class InlineResponse2003 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'batchId' => 'getBatchId',
-        'batchCreatedDate' => 'getBatchCreatedDate',
-        'batchSource' => 'getBatchSource',
-        'merchantReference' => 'getMerchantReference',
-        'batchCaEndpoints' => 'getBatchCaEndpoints',
-        'status' => 'getStatus',
-        'totals' => 'getTotals',
-        'billing' => 'getBilling',
-        'description' => 'getDescription'
+        'productId' => 'getProductId',
+        'productName' => 'getProductName',
+        'eventTypes' => 'getEventTypes'
     ];
 
     public static function attributeMap()
@@ -177,16 +142,9 @@ class InlineResponse2003 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['batchId'] = isset($data['batchId']) ? $data['batchId'] : null;
-        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
-        $this->container['batchSource'] = isset($data['batchSource']) ? $data['batchSource'] : null;
-        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
-        $this->container['batchCaEndpoints'] = isset($data['batchCaEndpoints']) ? $data['batchCaEndpoints'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
-        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
+        $this->container['eventTypes'] = isset($data['eventTypes']) ? $data['eventTypes'] : null;
     }
 
     /**
@@ -215,211 +173,64 @@ class InlineResponse2003 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse2003Links
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse2003Links $links
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets batchId
+     * Gets productId
      * @return string
      */
-    public function getBatchId()
+    public function getProductId()
     {
-        return $this->container['batchId'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets batchId
-     * @param string $batchId Unique identification number assigned to the submitted request.
+     * Sets productId
+     * @param string $productId Product ID.
      * @return $this
      */
-    public function setBatchId($batchId)
+    public function setProductId($productId)
     {
-        $this->container['batchId'] = $batchId;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets batchCreatedDate
+     * Gets productName
      * @return string
      */
-    public function getBatchCreatedDate()
+    public function getProductName()
     {
-        return $this->container['batchCreatedDate'];
+        return $this->container['productName'];
     }
 
     /**
-     * Sets batchCreatedDate
-     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+     * Sets productName
+     * @param string $productName Product Name.
      * @return $this
      */
-    public function setBatchCreatedDate($batchCreatedDate)
+    public function setProductName($productName)
     {
-        $this->container['batchCreatedDate'] = $batchCreatedDate;
+        $this->container['productName'] = $productName;
 
         return $this;
     }
 
     /**
-     * Gets batchSource
-     * @return string
+     * Gets eventTypes
+     * @return \CyberSource\Model\Notificationsubscriptionsv1productsorganizationIdEventTypes[]
      */
-    public function getBatchSource()
+    public function getEventTypes()
     {
-        return $this->container['batchSource'];
+        return $this->container['eventTypes'];
     }
 
     /**
-     * Sets batchSource
-     * @param string $batchSource Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE
+     * Sets eventTypes
+     * @param \CyberSource\Model\Notificationsubscriptionsv1productsorganizationIdEventTypes[] $eventTypes
      * @return $this
      */
-    public function setBatchSource($batchSource)
+    public function setEventTypes($eventTypes)
     {
-        $this->container['batchSource'] = $batchSource;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantReference
-     * @return string
-     */
-    public function getMerchantReference()
-    {
-        return $this->container['merchantReference'];
-    }
-
-    /**
-     * Sets merchantReference
-     * @param string $merchantReference Reference used by merchant to identify batch.
-     * @return $this
-     */
-    public function setMerchantReference($merchantReference)
-    {
-        $this->container['merchantReference'] = $merchantReference;
-
-        return $this;
-    }
-
-    /**
-     * Gets batchCaEndpoints
-     * @return string
-     */
-    public function getBatchCaEndpoints()
-    {
-        return $this->container['batchCaEndpoints'];
-    }
-
-    /**
-     * Sets batchCaEndpoints
-     * @param string $batchCaEndpoints
-     * @return $this
-     */
-    public function setBatchCaEndpoints($batchCaEndpoints)
-    {
-        $this->container['batchCaEndpoints'] = $batchCaEndpoints;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets totals
-     * @return \CyberSource\Model\InlineResponse2002EmbeddedTotals
-     */
-    public function getTotals()
-    {
-        return $this->container['totals'];
-    }
-
-    /**
-     * Sets totals
-     * @param \CyberSource\Model\InlineResponse2002EmbeddedTotals $totals
-     * @return $this
-     */
-    public function setTotals($totals)
-    {
-        $this->container['totals'] = $totals;
-
-        return $this;
-    }
-
-    /**
-     * Gets billing
-     * @return \CyberSource\Model\InlineResponse2003Billing
-     */
-    public function getBilling()
-    {
-        return $this->container['billing'];
-    }
-
-    /**
-     * Sets billing
-     * @param \CyberSource\Model\InlineResponse2003Billing $billing
-     * @return $this
-     */
-    public function setBilling($billing)
-    {
-        $this->container['billing'] = $billing;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $this->container['eventTypes'] = $eventTypes;
 
         return $this;
     }

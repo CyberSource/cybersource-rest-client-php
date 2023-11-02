@@ -33,7 +33,7 @@ namespace CyberSource;
  * ReportingV3PurchaseRefundDetailsGet200ResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description ReportingV3PurchaseRefundDetailsGet200Response
+// * @description PurchaseAndRefundDetails
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

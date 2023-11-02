@@ -64,6 +64,7 @@ class CreateCreditRequest implements ArrayAccess
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
+        'merchantDefinedSecureInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation',
         'installmentInformation' => '\CyberSource\Model\Ptsv2creditsInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
@@ -84,6 +85,7 @@ class CreateCreditRequest implements ArrayAccess
         'aggregatorInformation' => null,
         'pointOfSaleInformation' => null,
         'merchantDefinedInformation' => null,
+        'merchantDefinedSecureInformation' => null,
         'installmentInformation' => null,
         'travelInformation' => null,
         'promotionInformation' => null
@@ -114,6 +116,7 @@ class CreateCreditRequest implements ArrayAccess
         'aggregatorInformation' => 'aggregatorInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
+        'merchantDefinedSecureInformation' => 'merchantDefinedSecureInformation',
         'installmentInformation' => 'installmentInformation',
         'travelInformation' => 'travelInformation',
         'promotionInformation' => 'promotionInformation'
@@ -135,6 +138,7 @@ class CreateCreditRequest implements ArrayAccess
         'aggregatorInformation' => 'setAggregatorInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
+        'merchantDefinedSecureInformation' => 'setMerchantDefinedSecureInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'travelInformation' => 'setTravelInformation',
         'promotionInformation' => 'setPromotionInformation'
@@ -156,6 +160,7 @@ class CreateCreditRequest implements ArrayAccess
         'aggregatorInformation' => 'getAggregatorInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
+        'merchantDefinedSecureInformation' => 'getMerchantDefinedSecureInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'travelInformation' => 'getTravelInformation',
         'promotionInformation' => 'getPromotionInformation'
@@ -202,6 +207,7 @@ class CreateCreditRequest implements ArrayAccess
         $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
+        $this->container['merchantDefinedSecureInformation'] = isset($data['merchantDefinedSecureInformation']) ? $data['merchantDefinedSecureInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
@@ -438,6 +444,27 @@ class CreateCreditRequest implements ArrayAccess
     public function setMerchantDefinedInformation($merchantDefinedInformation)
     {
         $this->container['merchantDefinedInformation'] = $merchantDefinedInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDefinedSecureInformation
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation
+     */
+    public function getMerchantDefinedSecureInformation()
+    {
+        return $this->container['merchantDefinedSecureInformation'];
+    }
+
+    /**
+     * Sets merchantDefinedSecureInformation
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation $merchantDefinedSecureInformation
+     * @return $this
+     */
+    public function setMerchantDefinedSecureInformation($merchantDefinedSecureInformation)
+    {
+        $this->container['merchantDefinedSecureInformation'] = $merchantDefinedSecureInformation;
 
         return $this;
     }

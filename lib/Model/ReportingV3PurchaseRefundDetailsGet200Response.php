@@ -35,6 +35,7 @@ use \ArrayAccess;
  * ReportingV3PurchaseRefundDetailsGet200Response Class Doc Comment
  *
  * @category    Class
+ * @description PurchaseAndRefundDetails
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

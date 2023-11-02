@@ -67,6 +67,7 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => '\CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
+        'merchantDefinedSecureInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation',
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
         'healthCareInformation' => '\CyberSource\Model\Ptsv2paymentsHealthCareInformation',
@@ -98,6 +99,7 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => null,
         'pointOfSaleInformation' => null,
         'merchantDefinedInformation' => null,
+        'merchantDefinedSecureInformation' => null,
         'installmentInformation' => null,
         'travelInformation' => null,
         'healthCareInformation' => null,
@@ -139,6 +141,7 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
+        'merchantDefinedSecureInformation' => 'merchantDefinedSecureInformation',
         'installmentInformation' => 'installmentInformation',
         'travelInformation' => 'travelInformation',
         'healthCareInformation' => 'healthCareInformation',
@@ -171,6 +174,7 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
+        'merchantDefinedSecureInformation' => 'setMerchantDefinedSecureInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'travelInformation' => 'setTravelInformation',
         'healthCareInformation' => 'setHealthCareInformation',
@@ -203,6 +207,7 @@ class CreatePaymentRequest implements ArrayAccess
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
+        'merchantDefinedSecureInformation' => 'getMerchantDefinedSecureInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'travelInformation' => 'getTravelInformation',
         'healthCareInformation' => 'getHealthCareInformation',
@@ -260,6 +265,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
+        $this->container['merchantDefinedSecureInformation'] = isset($data['merchantDefinedSecureInformation']) ? $data['merchantDefinedSecureInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
         $this->container['healthCareInformation'] = isset($data['healthCareInformation']) ? $data['healthCareInformation'] : null;
@@ -567,6 +573,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setMerchantDefinedInformation($merchantDefinedInformation)
     {
         $this->container['merchantDefinedInformation'] = $merchantDefinedInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDefinedSecureInformation
+     * @return \CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation
+     */
+    public function getMerchantDefinedSecureInformation()
+    {
+        return $this->container['merchantDefinedSecureInformation'];
+    }
+
+    /**
+     * Sets merchantDefinedSecureInformation
+     * @param \CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation $merchantDefinedSecureInformation
+     * @return $this
+     */
+    public function setMerchantDefinedSecureInformation($merchantDefinedSecureInformation)
+    {
+        $this->container['merchantDefinedSecureInformation'] = $merchantDefinedSecureInformation;
 
         return $this;
     }

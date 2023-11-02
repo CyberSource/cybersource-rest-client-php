@@ -58,7 +58,8 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
         'agency' => '\CyberSource\Model\Ptsv2paymentsTravelInformationAgency',
         'autoRental' => '\CyberSource\Model\Ptsv2paymentsTravelInformationAutoRental',
         'lodging' => '\CyberSource\Model\Ptsv2paymentsTravelInformationLodging',
-        'transit' => '\CyberSource\Model\Ptsv2paymentsTravelInformationTransit'
+        'transit' => '\CyberSource\Model\Ptsv2paymentsTravelInformationTransit',
+        'vehicleData' => '\CyberSource\Model\Ptsv2paymentsTravelInformationVehicleData'
     ];
 
     /**
@@ -70,7 +71,8 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
         'agency' => null,
         'autoRental' => null,
         'lodging' => null,
-        'transit' => null
+        'transit' => null,
+        'vehicleData' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
         'agency' => 'agency',
         'autoRental' => 'autoRental',
         'lodging' => 'lodging',
-        'transit' => 'transit'
+        'transit' => 'transit',
+        'vehicleData' => 'vehicleData'
     ];
 
 
@@ -105,7 +108,8 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
         'agency' => 'setAgency',
         'autoRental' => 'setAutoRental',
         'lodging' => 'setLodging',
-        'transit' => 'setTransit'
+        'transit' => 'setTransit',
+        'vehicleData' => 'setVehicleData'
     ];
 
 
@@ -118,7 +122,8 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
         'agency' => 'getAgency',
         'autoRental' => 'getAutoRental',
         'lodging' => 'getLodging',
-        'transit' => 'getTransit'
+        'transit' => 'getTransit',
+        'vehicleData' => 'getVehicleData'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
         $this->container['autoRental'] = isset($data['autoRental']) ? $data['autoRental'] : null;
         $this->container['lodging'] = isset($data['lodging']) ? $data['lodging'] : null;
         $this->container['transit'] = isset($data['transit']) ? $data['transit'] : null;
+        $this->container['vehicleData'] = isset($data['vehicleData']) ? $data['vehicleData'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class Ptsv2paymentsTravelInformation implements ArrayAccess
     public function setTransit($transit)
     {
         $this->container['transit'] = $transit;
+
+        return $this;
+    }
+
+    /**
+     * Gets vehicleData
+     * @return \CyberSource\Model\Ptsv2paymentsTravelInformationVehicleData
+     */
+    public function getVehicleData()
+    {
+        return $this->container['vehicleData'];
+    }
+
+    /**
+     * Sets vehicleData
+     * @param \CyberSource\Model\Ptsv2paymentsTravelInformationVehicleData $vehicleData
+     * @return $this
+     */
+    public function setVehicleData($vehicleData)
+    {
+        $this->container['vehicleData'] = $vehicleData;
 
         return $this;
     }

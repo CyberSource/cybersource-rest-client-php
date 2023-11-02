@@ -78,72 +78,100 @@ class InlineResponse2004Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "version"
+     * Test attribute "webhookId"
      */
-    public function testPropertyVersion()
+    public function testPropertyWebhookId()
     {
     }
 
     /**
-     * Test attribute "reportCreatedDate"
+     * Test attribute "organizationId"
      */
-    public function testPropertyReportCreatedDate()
+    public function testPropertyOrganizationId()
     {
     }
 
     /**
-     * Test attribute "batchId"
+     * Test attribute "products"
      */
-    public function testPropertyBatchId()
+    public function testPropertyProducts()
     {
     }
 
     /**
-     * Test attribute "batchSource"
+     * Test attribute "webhookUrl"
      */
-    public function testPropertyBatchSource()
+    public function testPropertyWebhookUrl()
     {
     }
 
     /**
-     * Test attribute "batchCaEndpoints"
+     * Test attribute "healthCheckUrl"
      */
-    public function testPropertyBatchCaEndpoints()
+    public function testPropertyHealthCheckUrl()
     {
     }
 
     /**
-     * Test attribute "batchCreatedDate"
+     * Test attribute "notificationScope"
      */
-    public function testPropertyBatchCreatedDate()
+    public function testPropertyNotificationScope()
     {
     }
 
     /**
-     * Test attribute "merchantReference"
+     * Test attribute "status"
      */
-    public function testPropertyMerchantReference()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "totals"
+     * Test attribute "name"
      */
-    public function testPropertyTotals()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "billing"
+     * Test attribute "description"
      */
-    public function testPropertyBilling()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "records"
+     * Test attribute "retryPolicy"
      */
-    public function testPropertyRecords()
+    public function testPropertyRetryPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "securityPolicy"
+     */
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "updatedOn"
+     */
+    public function testPropertyUpdatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "additionalAttributes"
+     */
+    public function testPropertyAdditionalAttributes()
     {
     }
 }

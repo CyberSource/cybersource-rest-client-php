@@ -300,4 +300,11 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyIsReturnAuthRecordEnabled()
     {
     }
+
+    /**
+     * Test attribute "networkPartnerId"
+     */
+    public function testPropertyNetworkPartnerId()
+    {
+    }
 }
