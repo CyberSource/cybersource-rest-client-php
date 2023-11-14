@@ -78,16 +78,16 @@ class InlineResponse4007DetailsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "location"
+     * Test attribute "field"
      */
-    public function testPropertyLocation()
+    public function testPropertyField()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "reason"
      */
-    public function testPropertyMessage()
+    public function testPropertyReason()
     {
     }
 }

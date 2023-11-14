@@ -54,11 +54,11 @@ class InlineResponse4007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'correlationId' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse4007Details[]',
-        'informationLink' => 'string',
+        'submitTimeUtc' => '\DateTime',
+        'status' => 'string',
+        'reason' => 'string',
         'message' => 'string',
-        'reason' => 'string'
+        'details' => '\CyberSource\Model\InlineResponse4007Details[]'
     ];
 
     /**
@@ -66,11 +66,11 @@ class InlineResponse4007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'correlationId' => null,
-        'details' => null,
-        'informationLink' => null,
+        'submitTimeUtc' => 'date',
+        'status' => null,
+        'reason' => null,
         'message' => null,
-        'reason' => null
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -88,11 +88,11 @@ class InlineResponse4007 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'correlationId' => 'correlationId',
-        'details' => 'details',
-        'informationLink' => 'informationLink',
+        'submitTimeUtc' => 'submitTimeUtc',
+        'status' => 'status',
+        'reason' => 'reason',
         'message' => 'message',
-        'reason' => 'reason'
+        'details' => 'details'
     ];
 
 
@@ -101,11 +101,11 @@ class InlineResponse4007 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'correlationId' => 'setCorrelationId',
-        'details' => 'setDetails',
-        'informationLink' => 'setInformationLink',
+        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'status' => 'setStatus',
+        'reason' => 'setReason',
         'message' => 'setMessage',
-        'reason' => 'setReason'
+        'details' => 'setDetails'
     ];
 
 
@@ -114,11 +114,11 @@ class InlineResponse4007 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'correlationId' => 'getCorrelationId',
-        'details' => 'getDetails',
-        'informationLink' => 'getInformationLink',
+        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'status' => 'getStatus',
+        'reason' => 'getReason',
         'message' => 'getMessage',
-        'reason' => 'getReason'
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -136,21 +136,9 @@ class InlineResponse4007 implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_INVALID_APIKEY = 'INVALID_APIKEY';
-    const REASON_INVALID_SHIPPING_INPUT_PARAMS = 'INVALID_SHIPPING_INPUT_PARAMS';
-    const REASON_CAPTURE_CONTEXT_INVALID = 'CAPTURE_CONTEXT_INVALID';
-    const REASON_CAPTURE_CONTEXT_EXPIRED = 'CAPTURE_CONTEXT_EXPIRED';
-    const REASON_SDK_XHR_ERROR = 'SDK_XHR_ERROR';
-    const REASON_UNIFIEDPAYMENTS_VALIDATION_PARAMS = 'UNIFIEDPAYMENTS_VALIDATION_PARAMS';
-    const REASON_UNIFIEDPAYMENTS_VALIDATION_FIELDS = 'UNIFIEDPAYMENTS_VALIDATION_FIELDS';
-    const REASON_UNIFIEDPAYMENT_PAYMENT_PARAMITERS = 'UNIFIEDPAYMENT_PAYMENT_PARAMITERS';
-    const REASON_CREATE_TOKEN_TIMEOUT = 'CREATE_TOKEN_TIMEOUT';
-    const REASON_CREATE_TOKEN_XHR_ERROR = 'CREATE_TOKEN_XHR_ERROR';
-    const REASON_SHOW_LOAD_CONTAINER_SELECTOR = 'SHOW_LOAD_CONTAINER_SELECTOR';
-    const REASON_SHOW_LOAD_INVALID_CONTAINER = 'SHOW_LOAD_INVALID_CONTAINER';
-    const REASON_SHOW_TOKEN_TIMEOUT = 'SHOW_TOKEN_TIMEOUT';
-    const REASON_SHOW_TOKEN_XHR_ERROR = 'SHOW_TOKEN_XHR_ERROR';
-    const REASON_SHOW_PAYMENT_TIMEOUT = 'SHOW_PAYMENT_TIMEOUT';
+    const REASON_INVALID_DATA = 'INVALID_DATA';
+    const REASON_SYSTEM_ERROR = 'SYSTEM_ERROR';
+    const REASON_RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND';
     
 
     
@@ -161,21 +149,9 @@ class InlineResponse4007 implements ArrayAccess
     public function getReasonAllowableValues()
     {
         return [
-            self::REASON_INVALID_APIKEY,
-            self::REASON_INVALID_SHIPPING_INPUT_PARAMS,
-            self::REASON_CAPTURE_CONTEXT_INVALID,
-            self::REASON_CAPTURE_CONTEXT_EXPIRED,
-            self::REASON_SDK_XHR_ERROR,
-            self::REASON_UNIFIEDPAYMENTS_VALIDATION_PARAMS,
-            self::REASON_UNIFIEDPAYMENTS_VALIDATION_FIELDS,
-            self::REASON_UNIFIEDPAYMENT_PAYMENT_PARAMITERS,
-            self::REASON_CREATE_TOKEN_TIMEOUT,
-            self::REASON_CREATE_TOKEN_XHR_ERROR,
-            self::REASON_SHOW_LOAD_CONTAINER_SELECTOR,
-            self::REASON_SHOW_LOAD_INVALID_CONTAINER,
-            self::REASON_SHOW_TOKEN_TIMEOUT,
-            self::REASON_SHOW_TOKEN_XHR_ERROR,
-            self::REASON_SHOW_PAYMENT_TIMEOUT,
+            self::REASON_INVALID_DATA,
+            self::REASON_SYSTEM_ERROR,
+            self::REASON_RESOURCE_NOT_FOUND,
         ];
     }
     
@@ -192,11 +168,11 @@ class InlineResponse4007 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
-        $this->container['informationLink'] = isset($data['informationLink']) ? $data['informationLink'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -208,12 +184,6 @@ class InlineResponse4007 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['message'] === null) {
-            $invalid_properties[] = "'message' can't be null";
-        }
-        if ($this->container['reason'] === null) {
-            $invalid_properties[] = "'reason' can't be null";
-        }
         $allowed_values = $this->getReasonAllowableValues();
         if (!in_array($this->container['reason'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -234,12 +204,6 @@ class InlineResponse4007 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['message'] === null) {
-            return false;
-        }
-        if ($this->container['reason'] === null) {
-            return false;
-        }
         $allowed_values = $this->getReasonAllowableValues();
         if (!in_array($this->container['reason'], $allowed_values)) {
             return false;
@@ -249,22 +213,94 @@ class InlineResponse4007 implements ArrayAccess
 
 
     /**
-     * Gets correlationId
-     * @return string
+     * Gets submitTimeUtc
+     * @return \DateTime
      */
-    public function getCorrelationId()
+    public function getSubmitTimeUtc()
     {
-        return $this->container['correlationId'];
+        return $this->container['submitTimeUtc'];
     }
 
     /**
-     * Sets correlationId
-     * @param string $correlationId
+     * Sets submitTimeUtc
+     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
      * @return $this
      */
-    public function setCorrelationId($correlationId)
+    public function setSubmitTimeUtc($submitTimeUtc)
     {
-        $this->container['correlationId'] = $correlationId;
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The http status description of the submitted request.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND'
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $allowed_values = $this->getReasonAllowableValues();
+        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'reason', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
+        $this->container['reason'] = $reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     * @param string $message Descriptive message for the error.
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
 
         return $this;
     }
@@ -286,78 +322,6 @@ class InlineResponse4007 implements ArrayAccess
     public function setDetails($details)
     {
         $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
-     * Gets informationLink
-     * @return string
-     */
-    public function getInformationLink()
-    {
-        return $this->container['informationLink'];
-    }
-
-    /**
-     * Sets informationLink
-     * @param string $informationLink
-     * @return $this
-     */
-    public function setInformationLink($informationLink)
-    {
-        $this->container['informationLink'] = $informationLink;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     * @param string $message
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['reason'] = $reason;
 
         return $this;
     }

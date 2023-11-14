@@ -85,6 +85,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "transactionFlowIndicator"
+     */
+    public function testPropertyTransactionFlowIndicator()
+    {
+    }
+
+    /**
      * Test attribute "cavvAlgorithm"
      */
     public function testPropertyCavvAlgorithm()

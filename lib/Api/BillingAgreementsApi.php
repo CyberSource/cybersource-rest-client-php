@@ -160,6 +160,9 @@ class BillingAgreementsApi
         if (isset($modifyBillingAgreement)) {
             $_tempBody = $modifyBillingAgreement;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\ModifyBillingAgreement')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -283,6 +286,9 @@ class BillingAgreementsApi
         if (isset($intimateBillingAgreement)) {
             $_tempBody = $intimateBillingAgreement;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\IntimateBillingAgreement')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -391,6 +397,9 @@ class BillingAgreementsApi
         if (isset($createBillingAgreement)) {
             $_tempBody = $createBillingAgreement;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateBillingAgreement')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

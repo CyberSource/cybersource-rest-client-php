@@ -111,4 +111,11 @@ class Ptsv2paymentsTravelInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTransit()
     {
     }
+
+    /**
+     * Test attribute "vehicleData"
+     */
+    public function testPropertyVehicleData()
+    {
+    }
 }

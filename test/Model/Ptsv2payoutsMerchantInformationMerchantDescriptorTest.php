@@ -118,4 +118,11 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptorTest extends \PHPUnit_Fra
     public function testPropertyContact()
     {
     }
+
+    /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
 }

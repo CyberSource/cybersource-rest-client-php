@@ -85,7 +85,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'extendedCreditTotalCount' => 'string',
         'networkRoutingOrder' => 'string',
         'payByPointsIndicator' => 'bool',
-        'isReturnAuthRecordEnabled' => 'bool'
+        'isReturnAuthRecordEnabled' => 'bool',
+        'networkPartnerId' => 'string'
     ];
 
     /**
@@ -124,7 +125,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'extendedCreditTotalCount' => null,
         'networkRoutingOrder' => null,
         'payByPointsIndicator' => null,
-        'isReturnAuthRecordEnabled' => null
+        'isReturnAuthRecordEnabled' => null,
+        'networkPartnerId' => null
     ];
 
     public static function swaggerTypes()
@@ -173,7 +175,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'extendedCreditTotalCount' => 'extendedCreditTotalCount',
         'networkRoutingOrder' => 'networkRoutingOrder',
         'payByPointsIndicator' => 'payByPointsIndicator',
-        'isReturnAuthRecordEnabled' => 'isReturnAuthRecordEnabled'
+        'isReturnAuthRecordEnabled' => 'isReturnAuthRecordEnabled',
+        'networkPartnerId' => 'networkPartnerId'
     ];
 
 
@@ -213,7 +216,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'extendedCreditTotalCount' => 'setExtendedCreditTotalCount',
         'networkRoutingOrder' => 'setNetworkRoutingOrder',
         'payByPointsIndicator' => 'setPayByPointsIndicator',
-        'isReturnAuthRecordEnabled' => 'setIsReturnAuthRecordEnabled'
+        'isReturnAuthRecordEnabled' => 'setIsReturnAuthRecordEnabled',
+        'networkPartnerId' => 'setNetworkPartnerId'
     ];
 
 
@@ -253,7 +257,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'extendedCreditTotalCount' => 'getExtendedCreditTotalCount',
         'networkRoutingOrder' => 'getNetworkRoutingOrder',
         'payByPointsIndicator' => 'getPayByPointsIndicator',
-        'isReturnAuthRecordEnabled' => 'getIsReturnAuthRecordEnabled'
+        'isReturnAuthRecordEnabled' => 'getIsReturnAuthRecordEnabled',
+        'networkPartnerId' => 'getNetworkPartnerId'
     ];
 
     public static function attributeMap()
@@ -319,6 +324,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['networkRoutingOrder'] = isset($data['networkRoutingOrder']) ? $data['networkRoutingOrder'] : null;
         $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
         $this->container['isReturnAuthRecordEnabled'] = isset($data['isReturnAuthRecordEnabled']) ? $data['isReturnAuthRecordEnabled'] : null;
+        $this->container['networkPartnerId'] = isset($data['networkPartnerId']) ? $data['networkPartnerId'] : null;
     }
 
     /**
@@ -1014,6 +1020,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setIsReturnAuthRecordEnabled($isReturnAuthRecordEnabled)
     {
         $this->container['isReturnAuthRecordEnabled'] = $isReturnAuthRecordEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkPartnerId
+     * @return string
+     */
+    public function getNetworkPartnerId()
+    {
+        return $this->container['networkPartnerId'];
+    }
+
+    /**
+     * Sets networkPartnerId
+     * @param string $networkPartnerId Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.  This field is supported for Visa Platform Connect.
+     * @return $this
+     */
+    public function setNetworkPartnerId($networkPartnerId)
+    {
+        $this->container['networkPartnerId'] = $networkPartnerId;
 
         return $this;
     }

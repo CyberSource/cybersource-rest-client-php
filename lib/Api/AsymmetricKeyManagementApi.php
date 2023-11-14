@@ -145,6 +145,9 @@ class AsymmetricKeyManagementApi
         if (isset($createP12KeysRequest)) {
             $_tempBody = $createP12KeysRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateP12KeysRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -253,6 +256,9 @@ class AsymmetricKeyManagementApi
         if (isset($deleteBulkP12KeysRequest)) {
             $_tempBody = $deleteBulkP12KeysRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\DeleteBulkP12KeysRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -490,6 +496,9 @@ class AsymmetricKeyManagementApi
         if (isset($updateAsymKeysRequest)) {
             $_tempBody = $updateAsymKeysRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\UpdateAsymKeysRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

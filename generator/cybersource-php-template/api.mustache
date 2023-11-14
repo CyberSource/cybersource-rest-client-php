@@ -256,6 +256,9 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
         if (isset(${{paramName}})) {
             $_tempBody = ${{paramName}};
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '{{dataType}}')), $this->apiClient->merchantConfig->getRunEnvironment());
         {{/bodyParams}}
         {{^bodyParams}}
         if ('{{httpMethod}}' == 'POST') {

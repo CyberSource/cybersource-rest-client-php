@@ -145,6 +145,9 @@ class PayerAuthenticationApi
         if (isset($checkPayerAuthEnrollmentRequest)) {
             $_tempBody = $checkPayerAuthEnrollmentRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CheckPayerAuthEnrollmentRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -253,6 +256,9 @@ class PayerAuthenticationApi
         if (isset($payerAuthSetupRequest)) {
             $_tempBody = $payerAuthSetupRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PayerAuthSetupRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -361,6 +367,9 @@ class PayerAuthenticationApi
         if (isset($validateRequest)) {
             $_tempBody = $validateRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\ValidateRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

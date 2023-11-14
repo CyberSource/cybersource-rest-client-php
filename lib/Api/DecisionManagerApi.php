@@ -160,6 +160,9 @@ class DecisionManagerApi
         if (isset($caseManagementActionsRequest)) {
             $_tempBody = $caseManagementActionsRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CaseManagementActionsRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -299,6 +302,9 @@ class DecisionManagerApi
         if (isset($addNegativeListRequest)) {
             $_tempBody = $addNegativeListRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\AddNegativeListRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -418,6 +424,9 @@ class DecisionManagerApi
         if (isset($caseManagementCommentsRequest)) {
             $_tempBody = $caseManagementCommentsRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CaseManagementCommentsRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -542,6 +551,9 @@ class DecisionManagerApi
         if (isset($createBundledDecisionManagerCaseRequest)) {
             $_tempBody = $createBundledDecisionManagerCaseRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateBundledDecisionManagerCaseRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -665,6 +677,9 @@ class DecisionManagerApi
         if (isset($fraudMarkingActionRequest)) {
             $_tempBody = $fraudMarkingActionRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\FraudMarkingActionRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

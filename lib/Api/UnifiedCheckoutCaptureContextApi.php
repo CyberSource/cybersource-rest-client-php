@@ -145,6 +145,9 @@ class UnifiedCheckoutCaptureContextApi
         if (isset($generateUnifiedCheckoutCaptureContextRequest)) {
             $_tempBody = $generateUnifiedCheckoutCaptureContextRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\GenerateUnifiedCheckoutCaptureContextRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -188,7 +191,7 @@ class UnifiedCheckoutCaptureContextApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

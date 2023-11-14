@@ -57,7 +57,8 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'string',
         'discretionaryData' => 'string',
         'countrySpecificDiscretionaryData' => 'string',
-        'responseCode' => 'string'
+        'responseCode' => 'string',
+        'pinRequestIndicator' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => null,
         'discretionaryData' => null,
         'countrySpecificDiscretionaryData' => null,
-        'responseCode' => null
+        'responseCode' => null,
+        'pinRequestIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'country',
         'discretionaryData' => 'discretionaryData',
         'countrySpecificDiscretionaryData' => 'countrySpecificDiscretionaryData',
-        'responseCode' => 'responseCode'
+        'responseCode' => 'responseCode',
+        'pinRequestIndicator' => 'pinRequestIndicator'
     ];
 
 
@@ -101,7 +104,8 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'setCountry',
         'discretionaryData' => 'setDiscretionaryData',
         'countrySpecificDiscretionaryData' => 'setCountrySpecificDiscretionaryData',
-        'responseCode' => 'setResponseCode'
+        'responseCode' => 'setResponseCode',
+        'pinRequestIndicator' => 'setPinRequestIndicator'
     ];
 
 
@@ -113,7 +117,8 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         'country' => 'getCountry',
         'discretionaryData' => 'getDiscretionaryData',
         'countrySpecificDiscretionaryData' => 'getCountrySpecificDiscretionaryData',
-        'responseCode' => 'getResponseCode'
+        'responseCode' => 'getResponseCode',
+        'pinRequestIndicator' => 'getPinRequestIndicator'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
         $this->container['discretionaryData'] = isset($data['discretionaryData']) ? $data['discretionaryData'] : null;
         $this->container['countrySpecificDiscretionaryData'] = isset($data['countrySpecificDiscretionaryData']) ? $data['countrySpecificDiscretionaryData'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
+        $this->container['pinRequestIndicator'] = isset($data['pinRequestIndicator']) ? $data['pinRequestIndicator'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
     public function setResponseCode($responseCode)
     {
         $this->container['responseCode'] = $responseCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets pinRequestIndicator
+     * @return string
+     */
+    public function getPinRequestIndicator()
+    {
+        return $this->container['pinRequestIndicator'];
+    }
+
+    /**
+     * Sets pinRequestIndicator
+     * @param string $pinRequestIndicator This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect.
+     * @return $this
+     */
+    public function setPinRequestIndicator($pinRequestIndicator)
+    {
+        $this->container['pinRequestIndicator'] = $pinRequestIndicator;
 
         return $this;
     }

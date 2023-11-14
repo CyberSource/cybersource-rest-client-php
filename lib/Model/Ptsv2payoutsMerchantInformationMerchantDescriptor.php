@@ -59,7 +59,8 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'string',
         'administrativeArea' => 'string',
         'postalCode' => 'string',
-        'contact' => 'string'
+        'contact' => 'string',
+        'address1' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => null,
         'administrativeArea' => null,
         'postalCode' => null,
-        'contact' => null
+        'contact' => null,
+        'address1' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'country',
         'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
-        'contact' => 'contact'
+        'contact' => 'contact',
+        'address1' => 'address1'
     ];
 
 
@@ -109,7 +112,8 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'setCountry',
         'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
-        'contact' => 'setContact'
+        'contact' => 'setContact',
+        'address1' => 'setAddress1'
     ];
 
 
@@ -123,7 +127,8 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
         'country' => 'getCountry',
         'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
-        'contact' => 'getContact'
+        'contact' => 'getContact',
+        'address1' => 'getAddress1'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
+        $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
     }
 
     /**
@@ -312,6 +318,27 @@ class Ptsv2payoutsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function setContact($contact)
     {
         $this->container['contact'] = $contact;
+
+        return $this;
+    }
+
+    /**
+     * Gets address1
+     * @return string
+     */
+    public function getAddress1()
+    {
+        return $this->container['address1'];
+    }
+
+    /**
+     * Sets address1
+     * @param string $address1 First line of merchant's address. For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_street` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @return $this
+     */
+    public function setAddress1($address1)
+    {
+        $this->container['address1'] = $address1;
 
         return $this;
     }
