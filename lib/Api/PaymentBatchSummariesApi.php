@@ -143,27 +143,11 @@ class PaymentBatchSummariesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getPaymentBatchSummary");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getPaymentBatchSummary');
         }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must conform to the pattern /[a-zA-Z0-9-_]+/.');
         }
 
-        if (!is_null($startDayOfWeek) && ($startDayOfWeek > 7)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$startDayOfWeek\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 7.");
-            throw new \InvalidArgumentException('Invalid value for "$startDayOfWeek" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be smaller than or equal to 7.');
-        }
-        if (!is_null($startDayOfWeek) && ($startDayOfWeek < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$startDayOfWeek\" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid value for "$startDayOfWeek" when calling PaymentBatchSummariesApi.getPaymentBatchSummary, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/reporting/v3/payment-batch-summaries";

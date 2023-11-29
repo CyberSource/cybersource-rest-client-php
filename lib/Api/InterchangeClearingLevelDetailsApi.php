@@ -137,14 +137,6 @@ class InterchangeClearingLevelDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getInterchangeClearingLevelDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getInterchangeClearingLevelDetails');
         }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling InterchangeClearingLevelDetailsApi.getInterchangeClearingLevelDetails, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling InterchangeClearingLevelDetailsApi.getInterchangeClearingLevelDetails, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling InterchangeClearingLevelDetailsApi.getInterchangeClearingLevelDetails, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling InterchangeClearingLevelDetailsApi.getInterchangeClearingLevelDetails, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling InterchangeClearingLevelDetailsApi.getInterchangeClearingLevelDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling InterchangeClearingLevelDetailsApi.getInterchangeClearingLevelDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.');

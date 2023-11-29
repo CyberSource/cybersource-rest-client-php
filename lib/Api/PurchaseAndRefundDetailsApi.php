@@ -147,27 +147,11 @@ class PurchaseAndRefundDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getPurchaseAndRefundDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getPurchaseAndRefundDetails');
         }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.');
         }
 
-        if (!is_null($limit) && ($limit > 2000)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be smaller than or equal to 2000.");
-            throw new \InvalidArgumentException('Invalid value for "$limit" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be smaller than or equal to 2000.');
-        }
-        if (!is_null($limit) && ($limit < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid value for "$limit" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/reporting/v3/purchase-refund-details";

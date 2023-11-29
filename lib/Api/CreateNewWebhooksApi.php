@@ -341,14 +341,6 @@ class CreateNewWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCSenderOrganizationId when calling saveSymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCSenderOrganizationId when calling saveSymEgressKey');
         }
-        if ((strlen($vCSenderOrganizationId) > 100)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.");
-            throw new \InvalidArgumentException('Invalid length for "$vCSenderOrganizationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.');
-        }
-        if ((strlen($vCSenderOrganizationId) < 2)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.");
-            throw new \InvalidArgumentException('Invalid length for "$vCSenderOrganizationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.');
-        }
         if (!preg_match("/^[A-Za-z0-9\\-_]+$/", $vCSenderOrganizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.");
             throw new \InvalidArgumentException('Invalid value for \"vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.');
@@ -358,14 +350,6 @@ class CreateNewWebhooksApi
         if ($vCPermissions === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCPermissions when calling saveSymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCPermissions when calling saveSymEgressKey');
-        }
-        if (!is_null($vCCorrelationId) && (strlen($vCCorrelationId) > 100)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCCorrelationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.");
-            throw new \InvalidArgumentException('Invalid length for "$vCCorrelationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.');
-        }
-        if (!is_null($vCCorrelationId) && (strlen($vCCorrelationId) < 2)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCCorrelationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.");
-            throw new \InvalidArgumentException('Invalid length for "$vCCorrelationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.');
         }
         if (!is_null($vCCorrelationId) && !preg_match("/^[A-Za-z0-9\\.\\-_:]+$/", $vCCorrelationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"vCCorrelationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must conform to the pattern /^[A-Za-z0-9\\.\\-_:]+$/.");

@@ -132,37 +132,13 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling deleteCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling deleteCustomerShippingAddress');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.');
-        }
 
         // verify the required parameter 'shippingAddressId' is set
         if ($shippingAddressId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling deleteCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling deleteCustomerShippingAddress');
         }
-        if ((strlen($shippingAddressId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($shippingAddressId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 1.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.deleteCustomerShippingAddress, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
@@ -310,37 +286,13 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerShippingAddress');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.');
-        }
 
         // verify the required parameter 'shippingAddressId' is set
         if ($shippingAddressId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling getCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling getCustomerShippingAddress');
         }
-        if ((strlen($shippingAddressId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($shippingAddressId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 1.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.getCustomerShippingAddress, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
@@ -490,37 +442,9 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerShippingAddressesList");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerShippingAddressesList');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 36.');
-        }
 
-        if (!is_null($offset) && ($offset < 0)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$offset\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 0.");
-            throw new \InvalidArgumentException('Invalid value for "$offset" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 0.');
-        }
 
-        if (!is_null($limit) && ($limit > 100)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 100.");
-            throw new \InvalidArgumentException('Invalid value for "$limit" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be smaller than or equal to 100.');
-        }
-        if (!is_null($limit) && ($limit < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid value for "$limit" when calling CustomerShippingAddressApi.getCustomerShippingAddressesList, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses";
@@ -674,27 +598,11 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling patchCustomersShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling patchCustomersShippingAddress');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
-        }
 
         // verify the required parameter 'shippingAddressId' is set
         if ($shippingAddressId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling patchCustomersShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling patchCustomersShippingAddress');
-        }
-        if ((strlen($shippingAddressId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($shippingAddressId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$shippingAddressId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$shippingAddressId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'patchCustomerShippingAddressRequest' is set
@@ -702,23 +610,7 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchCustomerShippingAddressRequest when calling patchCustomersShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $patchCustomerShippingAddressRequest when calling patchCustomersShippingAddress');
         }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 36.');
-        }
 
-        if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be smaller than or equal to 32.');
-        }
-        if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling CustomerShippingAddressApi.patchCustomersShippingAddress, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
@@ -879,27 +771,11 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling postCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling postCustomerShippingAddress');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 1.');
-        }
 
         // verify the required parameter 'postCustomerShippingAddressRequest' is set
         if ($postCustomerShippingAddressRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postCustomerShippingAddressRequest when calling postCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $postCustomerShippingAddressRequest when calling postCustomerShippingAddress');
-        }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerShippingAddressApi.postCustomerShippingAddress, must be bigger than or equal to 36.');
         }
 
         // parse inputs

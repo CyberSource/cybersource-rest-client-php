@@ -142,30 +142,6 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
         }
         {{/required}}
         {{#hasValidation}}
-        {{#maxLength}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}(strlen(${{paramName}}) > {{maxLength}})) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.");
-            throw new \InvalidArgumentException('Invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.');
-        }
-        {{/maxLength}}
-        {{#minLength}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}(strlen(${{paramName}}) < {{minLength}})) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.");
-            throw new \InvalidArgumentException('Invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.');
-        }
-        {{/minLength}}
-        {{#maximum}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}(${{paramName}} >{{#exclusiveMaximum}}={{/exclusiveMaximum}} {{maximum}})) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.");
-            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than {{^exclusiveMaximum}}or equal to {{/exclusiveMaximum}}{{maximum}}.');
-        }
-        {{/maximum}}
-        {{#minimum}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}(${{paramName}} <{{#exclusiveMinimum}}={{/exclusiveMinimum}} {{minimum}})) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, must be bigger than {{^exclusiveMinimum}}or equal to {{/exclusiveMinimum}}{{minimum}}.");
-            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than {{^exclusiveMinimum}}or equal to {{/exclusiveMinimum}}{{minimum}}.');
-        }
-        {{/minimum}}
         {{#pattern}}
         if ({{^required}}!is_null(${{paramName}}) && {{/required}}!preg_match("{{{pattern}}}", ${{paramName}})) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");

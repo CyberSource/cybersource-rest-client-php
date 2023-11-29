@@ -130,23 +130,7 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling deleteInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling deleteInstrumentIdentifier');
         }
-        if ((strlen($instrumentIdentifierId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 32.');
-        }
-        if ((strlen($instrumentIdentifierId) < 12)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 12.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.deleteInstrumentIdentifier, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}";
@@ -280,23 +264,7 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifier');
         }
-        if ((strlen($instrumentIdentifierId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 32.');
-        }
-        if ((strlen($instrumentIdentifierId) < 12)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 12.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifier, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}";
@@ -438,37 +406,9 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifierPaymentInstrumentsList");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifierPaymentInstrumentsList');
         }
-        if ((strlen($instrumentIdentifierId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 32.');
-        }
-        if ((strlen($instrumentIdentifierId) < 12)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 12.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 12.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 36.');
-        }
 
-        if (!is_null($offset) && ($offset < 0)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$offset\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 0.");
-            throw new \InvalidArgumentException('Invalid value for "$offset" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 0.');
-        }
 
-        if (!is_null($limit) && ($limit > 100)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 100.");
-            throw new \InvalidArgumentException('Invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be smaller than or equal to 100.');
-        }
-        if (!is_null($limit) && ($limit < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"$limit\" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid value for "$limit" when calling InstrumentIdentifierApi.getInstrumentIdentifierPaymentInstrumentsList, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments";
@@ -620,37 +560,13 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling patchInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling patchInstrumentIdentifier');
         }
-        if ((strlen($instrumentIdentifierId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
-        }
-        if ((strlen($instrumentIdentifierId) < 12)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 12.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 12.');
-        }
 
         // verify the required parameter 'patchInstrumentIdentifierRequest' is set
         if ($patchInstrumentIdentifierRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier');
         }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 36.');
-        }
 
-        if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be smaller than or equal to 32.');
-        }
-        if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling InstrumentIdentifierApi.patchInstrumentIdentifier, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}";
@@ -801,14 +717,6 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier');
         }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifier, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers";
@@ -945,27 +853,11 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling postInstrumentIdentifierEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling postInstrumentIdentifierEnrollment');
         }
-        if ((strlen($instrumentIdentifierId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 32.');
-        }
-        if ((strlen($instrumentIdentifierId) < 12)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$instrumentIdentifierId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 12.");
-            throw new \InvalidArgumentException('Invalid length for "$instrumentIdentifierId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 12.');
-        }
 
         // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
         if ($postInstrumentIdentifierEnrollmentRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment');
-        }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling InstrumentIdentifierApi.postInstrumentIdentifierEnrollment, must be bigger than or equal to 36.');
         }
 
         // parse inputs

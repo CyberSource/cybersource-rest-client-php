@@ -52,8 +52,6 @@ for %%i in ("..\CyberSource\lib\Api\*.php") do (
   powershell -Command "(Get-Content '%%i') | Where-Object { $_ -notmatch 'DISCLAIMER_PLACEHOLDER_.*'} | Set-Content '%%i'"
 )
 
-powershell -File "RemovingIncorrectLengthCheckInBatchesAPI.ps1"
-
 xcopy ..\CyberSource ..\ /s /e /y
 
 rd /s /q ..\CyberSource

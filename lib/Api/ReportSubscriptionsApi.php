@@ -130,14 +130,6 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $predefinedSubscriptionRequestBean when calling createStandardOrClassicSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $predefinedSubscriptionRequestBean when calling createStandardOrClassicSubscription');
         }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.createStandardOrClassicSubscription, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.createStandardOrClassicSubscription, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.createStandardOrClassicSubscription, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.createStandardOrClassicSubscription, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.createStandardOrClassicSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.createStandardOrClassicSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.');
@@ -252,14 +244,6 @@ class ReportSubscriptionsApi
         if ($createReportSubscriptionRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createReportSubscriptionRequest when calling createSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $createReportSubscriptionRequest when calling createSubscription');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.createSubscription, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.createSubscription, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.createSubscription, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.createSubscription, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.createSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
@@ -376,27 +360,11 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling deleteSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling deleteSubscription');
         }
-        if ((strlen($reportName) > 80)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$reportName\" when calling ReportSubscriptionsApi.deleteSubscription, must be smaller than or equal to 80.");
-            throw new \InvalidArgumentException('Invalid length for "$reportName" when calling ReportSubscriptionsApi.deleteSubscription, must be smaller than or equal to 80.');
-        }
-        if ((strlen($reportName) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$reportName\" when calling ReportSubscriptionsApi.deleteSubscription, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$reportName" when calling ReportSubscriptionsApi.deleteSubscription, must be bigger than or equal to 1.');
-        }
         if (!preg_match("/[a-zA-Z0-9-_+]+/", $reportName)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"reportName\" when calling ReportSubscriptionsApi.deleteSubscription, must conform to the pattern /[a-zA-Z0-9-_+]+/.");
             throw new \InvalidArgumentException('Invalid value for \"reportName\" when calling ReportSubscriptionsApi.deleteSubscription, must conform to the pattern /[a-zA-Z0-9-_+]+/.');
         }
 
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.deleteSubscription, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.deleteSubscription, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.deleteSubscription, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.deleteSubscription, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.deleteSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.deleteSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.');
@@ -512,14 +480,6 @@ class ReportSubscriptionsApi
      */
     public function getAllSubscriptionsWithHttpInfo($organizationId = null)
     {
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.getAllSubscriptions, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.getAllSubscriptions, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.getAllSubscriptions, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.getAllSubscriptions, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.getAllSubscriptions, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.getAllSubscriptions, must conform to the pattern /[a-zA-Z0-9-_]+/.');
@@ -634,27 +594,11 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling getSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling getSubscription');
         }
-        if ((strlen($reportName) > 80)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$reportName\" when calling ReportSubscriptionsApi.getSubscription, must be smaller than or equal to 80.");
-            throw new \InvalidArgumentException('Invalid length for "$reportName" when calling ReportSubscriptionsApi.getSubscription, must be smaller than or equal to 80.');
-        }
-        if ((strlen($reportName) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$reportName\" when calling ReportSubscriptionsApi.getSubscription, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$reportName" when calling ReportSubscriptionsApi.getSubscription, must be bigger than or equal to 1.');
-        }
         if (!preg_match("/[a-zA-Z0-9-_+]+/", $reportName)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"reportName\" when calling ReportSubscriptionsApi.getSubscription, must conform to the pattern /[a-zA-Z0-9-_+]+/.");
             throw new \InvalidArgumentException('Invalid value for \"reportName\" when calling ReportSubscriptionsApi.getSubscription, must conform to the pattern /[a-zA-Z0-9-_+]+/.');
         }
 
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.getSubscription, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.getSubscription, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportSubscriptionsApi.getSubscription, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportSubscriptionsApi.getSubscription, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.getSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportSubscriptionsApi.getSubscription, must conform to the pattern /[a-zA-Z0-9-_]+/.');
