@@ -128,14 +128,14 @@ class BatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $batchId when calling getBatchReport");
             throw new \InvalidArgumentException('Missing the required parameter $batchId when calling getBatchReport');
         }
-//        if (($batchId > 32)) {
-//            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchReport, must be smaller than or equal to 32.");
-//            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchReport, must be smaller than or equal to 32.');
-//        }
-//        if (($batchId < 16)) {
-//            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchReport, must be bigger than or equal to 16.");
-//            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchReport, must be bigger than or equal to 16.');
-//        }
+        if (($batchId > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchReport, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchReport, must be smaller than or equal to 32.');
+        }
+        if (($batchId < 16)) {
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchReport, must be bigger than or equal to 16.");
+            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchReport, must be bigger than or equal to 16.');
+        }
 
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches/{batchId}/report";
@@ -247,14 +247,14 @@ class BatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $batchId when calling getBatchStatus");
             throw new \InvalidArgumentException('Missing the required parameter $batchId when calling getBatchStatus');
         }
-//        if (($batchId > 32)) {
-//            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchStatus, must be smaller than or equal to 32.");
-//            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchStatus, must be smaller than or equal to 32.');
-//        }
-//        if (($batchId < 16)) {
-//            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchStatus, must be bigger than or equal to 16.");
-//            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchStatus, must be bigger than or equal to 16.');
-//        }
+        if (($batchId > 32)) {
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchStatus, must be smaller than or equal to 32.");
+            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchStatus, must be smaller than or equal to 32.');
+        }
+        if (($batchId < 16)) {
+            self::$logger->error("InvalidArgumentException : Invalid value for \"$batchId\" when calling BatchesApi.getBatchStatus, must be bigger than or equal to 16.");
+            throw new \InvalidArgumentException('Invalid value for "$batchId" when calling BatchesApi.getBatchStatus, must be bigger than or equal to 16.');
+        }
 
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches/{batchId}/status";

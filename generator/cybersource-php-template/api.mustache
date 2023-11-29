@@ -98,7 +98,6 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
 {{/description}}
 {{#vendorExtensions.x-devcenter-metaData.apiLifeCycle}}
      DISCLAIMER_PLACEHOLDER_{{.}}
-     *
 {{/vendorExtensions.x-devcenter-metaData.apiLifeCycle}}
 {{#allParams}}
      * @param {{dataType}} ${{paramName}} {{description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
