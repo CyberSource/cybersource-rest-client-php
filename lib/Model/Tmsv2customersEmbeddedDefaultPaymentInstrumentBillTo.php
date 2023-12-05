@@ -231,7 +231,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
 
     /**
      * Sets firstName
-     * @param string $firstName Customer’s first name. This name must be the same as the name on the card.
+     * @param string $firstName Customer's first name. This name must be the same as the name on the card.
      * @return $this
      */
     public function setFirstName($firstName)
@@ -252,7 +252,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
 
     /**
      * Sets lastName
-     * @param string $lastName Customer’s last name. This name must be the same as the name on the card.
+     * @param string $lastName Customer's last name. This name must be the same as the name on the card.
      * @return $this
      */
     public function setLastName($lastName)
@@ -273,7 +273,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
 
     /**
      * Sets company
-     * @param string $company Name of the customer’s company.
+     * @param string $company Name of the customer's company.
      * @return $this
      */
     public function setCompany($company)
@@ -294,7 +294,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
 
     /**
      * Sets address1
-     * @param string $address1 Payment card billing street address as it appears on the credit card issuer’s records.
+     * @param string $address1 Payment card billing street address as it appears on the credit card issuer's records.
      * @return $this
      */
     public function setAddress1($address1)
@@ -441,7 +441,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo implements ArrayAcces
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Customer’s phone number.
+     * @param string $phoneNumber Customer's phone number.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

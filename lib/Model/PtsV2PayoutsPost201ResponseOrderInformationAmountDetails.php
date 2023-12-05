@@ -231,7 +231,7 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
 
     /**
      * Sets settlementAmount
-     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions.
+     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder's account. This field is returned for OCT transactions.
      * @return $this
      */
     public function setSettlementAmount($settlementAmount)

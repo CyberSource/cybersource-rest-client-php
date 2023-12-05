@@ -240,7 +240,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets address
-     * @param string[] $address Indicates a mismatch between the customer’s billing and shipping addresses.
+     * @param string[] $address Indicates a mismatch between the customer's billing and shipping addresses.
      * @return $this
      */
     public function setAddress($address)
@@ -324,7 +324,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets internet
-     * @param string[] $internet Indicates a problem with the customer’s email address, IP address, or billing address.
+     * @param string[] $internet Indicates a problem with the customer's email address, IP address, or billing address.
      * @return $this
      */
     public function setInternet($internet)
@@ -345,7 +345,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationInfoCodes implements ArrayAcces
 
     /**
      * Sets phone
-     * @param string[] $phone Indicates a problem with the customer’s phone number.
+     * @param string[] $phone Indicates a problem with the customer's phone number.
      * @return $this
      */
     public function setPhone($phone)

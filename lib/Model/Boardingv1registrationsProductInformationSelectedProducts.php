@@ -54,7 +54,7 @@ class Boardingv1registrationsProductInformationSelectedProducts implements Array
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'payments' => '\CyberSource\Model\PaymentProducts',
+        'payments' => '\CyberSource\Model\PaymentsProducts',
         'risk' => '\CyberSource\Model\RiskProducts',
         'commerceSolutions' => '\CyberSource\Model\CommerceSolutionsProducts',
         'valueAddedServices' => '\CyberSource\Model\ValueAddedServicesProducts'
@@ -180,7 +180,7 @@ class Boardingv1registrationsProductInformationSelectedProducts implements Array
 
     /**
      * Gets payments
-     * @return \CyberSource\Model\PaymentProducts
+     * @return \CyberSource\Model\PaymentsProducts
      */
     public function getPayments()
     {
@@ -189,7 +189,7 @@ class Boardingv1registrationsProductInformationSelectedProducts implements Array
 
     /**
      * Sets payments
-     * @param \CyberSource\Model\PaymentProducts $payments
+     * @param \CyberSource\Model\PaymentsProducts $payments
      * @return $this
      */
     public function setPayments($payments)

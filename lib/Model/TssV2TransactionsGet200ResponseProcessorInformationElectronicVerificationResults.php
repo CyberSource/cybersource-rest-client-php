@@ -225,7 +225,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets email
-     * @param string $email Mapped Electronic Verification response code for the customer’s email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $email Mapped Electronic Verification response code for the customer's email address.  For details, see `auth_ev_email` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setEmail($email)
@@ -246,7 +246,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets emailRaw
-     * @param string $emailRaw Raw Electronic Verification response code from the processor for the customer’s email address.
+     * @param string $emailRaw Raw Electronic Verification response code from the processor for the customer's email address.
      * @return $this
      */
     public function setEmailRaw($emailRaw)
@@ -267,7 +267,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets name
-     * @param string $name #### Visa Platform Connect Mapped Electronic Verification response code for the customer’s name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match
+     * @param string $name #### Visa Platform Connect Mapped Electronic Verification response code for the customer's name.  Valid values :  'Y'   Yes, the data Matches 'N'   No Match 'O'   Partial Match
      * @return $this
      */
     public function setName($name)
@@ -288,7 +288,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets nameRaw
-     * @param string $nameRaw #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer’s name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match
+     * @param string $nameRaw #### Visa Platform Connect Raw Electronic Verification response code from the processor for the customer's name.  Valid values :  '01'     Match '50'     Partial Match '99'     No Match
      * @return $this
      */
     public function setNameRaw($nameRaw)
@@ -309,7 +309,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Mapped Electronic Verification response code for the customer’s phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $phoneNumber Mapped Electronic Verification response code for the customer's phone number.  For details, see `auth_ev_phone_number` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)
@@ -330,7 +330,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets phoneNumberRaw
-     * @param string $phoneNumberRaw Raw Electronic Verification response code from the processor for the customer’s phone number.
+     * @param string $phoneNumberRaw Raw Electronic Verification response code from the processor for the customer's phone number.
      * @return $this
      */
     public function setPhoneNumberRaw($phoneNumberRaw)
@@ -351,7 +351,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets street
-     * @param string $street Mapped Electronic Verification response code for the customer’s street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $street Mapped Electronic Verification response code for the customer's street address.  For details, see `auth_ev_street` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setStreet($street)
@@ -372,7 +372,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets streetRaw
-     * @param string $streetRaw Raw Electronic Verification response code from the processor for the customer’s street address.
+     * @param string $streetRaw Raw Electronic Verification response code from the processor for the customer's street address.
      * @return $this
      */
     public function setStreetRaw($streetRaw)
@@ -393,7 +393,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets postalCode
-     * @param string $postalCode Mapped Electronic Verification response code for the customer’s postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $postalCode Mapped Electronic Verification response code for the customer's postal code.  For details, see `auth_ev_postal_code` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -414,7 +414,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
 
     /**
      * Sets postalCodeRaw
-     * @param string $postalCodeRaw Raw Electronic Verification response code from the processor for the customer’s postal code.
+     * @param string $postalCodeRaw Raw Electronic Verification response code from the processor for the customer's postal code.
      * @return $this
      */
     public function setPostalCodeRaw($postalCodeRaw)

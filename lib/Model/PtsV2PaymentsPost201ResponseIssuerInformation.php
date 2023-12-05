@@ -279,7 +279,7 @@ class PtsV2PaymentsPost201ResponseIssuerInformation implements ArrayAccess
 
     /**
      * Sets pinRequestIndicator
-     * @param string $pinRequestIndicator This field contains value ‘1’ which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect.
+     * @param string $pinRequestIndicator This field contains value '1' which is sent by Issuer in the response when PIN is requested by issuer,   This field is only supported for Visa Platform Connect.
      * @return $this
      */
     public function setPinRequestIndicator($pinRequestIndicator)

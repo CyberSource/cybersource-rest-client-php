@@ -189,7 +189,7 @@ class Ptsv2paymentsMerchantInformationServiceLocation implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality #### Visa Platform Connect  Merchant’s service location city name. When merchant provides services from a location other than the location identified as merchant location.
+     * @param string $locality #### Visa Platform Connect  Merchant's service location city name. When merchant provides services from a location other than the location identified as merchant location.
      * @return $this
      */
     public function setLocality($locality)
@@ -210,7 +210,7 @@ class Ptsv2paymentsMerchantInformationServiceLocation implements ArrayAccess
 
     /**
      * Sets countrySubdivisionCode
-     * @param string $countrySubdivisionCode #### Visa Platform Connect  Merchant’s service location country subdivision code. When merchant provides services from a location other than the location identified as merchant location.
+     * @param string $countrySubdivisionCode #### Visa Platform Connect  Merchant's service location country subdivision code. When merchant provides services from a location other than the location identified as merchant location.
      * @return $this
      */
     public function setCountrySubdivisionCode($countrySubdivisionCode)
@@ -231,7 +231,7 @@ class Ptsv2paymentsMerchantInformationServiceLocation implements ArrayAccess
 
     /**
      * Sets countryCode
-     * @param string $countryCode #### Visa Platform Connect  Merchant’s service location country code. When merchant provides services from a location other than the location identified as merchant location.
+     * @param string $countryCode #### Visa Platform Connect  Merchant's service location country code. When merchant provides services from a location other than the location identified as merchant location.
      * @return $this
      */
     public function setCountryCode($countryCode)
@@ -252,7 +252,7 @@ class Ptsv2paymentsMerchantInformationServiceLocation implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode #### Visa Platform Connect  Merchant’s service location postal code. When merchant provides services from a location other than the location identified as merchant location.
+     * @param string $postalCode #### Visa Platform Connect  Merchant's service location postal code. When merchant provides services from a location other than the location identified as merchant location.
      * @return $this
      */
     public function setPostalCode($postalCode)

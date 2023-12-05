@@ -201,7 +201,7 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccount implements ArrayAc
 
     /**
      * Sets lastChangeDate
-     * @param string $lastChangeDate Date the cardholder’s account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy.
+     * @param string $lastChangeDate Date the cardholder's account was last changed. This includes changes to the billing or shipping address, new payment accounts or new users added. Recommended for Discover ProtectBuy.
      * @return $this
      */
     public function setLastChangeDate($lastChangeDate)

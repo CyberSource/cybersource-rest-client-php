@@ -83,32 +83,32 @@ class ManageWebhooksApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getAllWebhooks
-     *
-     * Get Details On All Created Webhooks.
-     *
-     */
-    public function testGetAllWebhooks()
-    {
-    }
-
-    /**
-     * Test case for getWebhookDetails
+     * Test case for getWebhookSubscriptionById
      *
      * Get Details On a Single Webhook.
      *
      */
-    public function testGetWebhookDetails()
+    public function testGetWebhookSubscriptionById()
     {
     }
 
     /**
-     * Test case for replayPreviousWebhook
+     * Test case for getWebhookSubscriptionsByOrg
+     *
+     * Get Details On All Created Webhooks.
+     *
+     */
+    public function testGetWebhookSubscriptionsByOrg()
+    {
+    }
+
+    /**
+     * Test case for replayPreviousWebhooks
      *
      * Replay Previous Webhooks.
      *
      */
-    public function testReplayPreviousWebhook()
+    public function testReplayPreviousWebhooks()
     {
     }
 

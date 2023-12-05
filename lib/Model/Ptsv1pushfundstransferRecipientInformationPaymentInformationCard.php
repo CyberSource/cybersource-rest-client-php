@@ -255,7 +255,7 @@ class Ptsv1pushfundstransferRecipientInformationPaymentInformationCard implement
 
     /**
      * Sets number
-     * @param string $number The customer’s payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens.
+     * @param string $number The customer's payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens.
      * @return $this
      */
     public function setNumber($number)

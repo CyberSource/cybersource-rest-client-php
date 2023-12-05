@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **taxDetails** | [**\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsTaxDetails[]**](Ptsv2paymentsOrderInformationAmountDetailsTaxDetails.md) |  | [optional] 
 **serviceFeeAmount** | **string** | Service fee. Required for service fee transactions. | [optional] 
 **originalCurrency** | **string** | Your local pricing currency code.  For the possible values, see the [ISO Standard Currency Codes.](http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf) | [optional] 
-**cashbackAmount** | **string** | Cashback amount in the acquirer’s currency. If a cashback amount is included in the request, it must be included in the &#x60;orderInformation.amountDetails.totalAmount&#x60; value.  This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization** Optional. **Authorization Reversal** Optional.  #### PIN debit Optional field for PIN debit purchase, PIN debit credit or PIN debit reversal. | [optional] 
+**cashbackAmount** | **string** | Cashback amount in the acquirer&#39;s currency. If a cashback amount is included in the request, it must be included in the &#x60;orderInformation.amountDetails.totalAmount&#x60; value.  This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization** Optional. **Authorization Reversal** Optional.  #### PIN debit Optional field for PIN debit purchase, PIN debit credit or PIN debit reversal. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

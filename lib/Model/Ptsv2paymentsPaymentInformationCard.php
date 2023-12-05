@@ -255,7 +255,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets number
-     * @param string $number The customer’s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers.  #### FDMS Nashville Required. String (19)  #### GPX Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### All other processors Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.
+     * @param string $number The customer's payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers.  #### FDMS Nashville Required. String (19)  #### GPX Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.  #### All other processors Required if `pointOfSaleInformation.entryMode=keyed`. However, this field is optional if your account is configured for relaxed requirements for address data and expiration date. **Important** It is your responsibility to determine whether a field is required for the transaction you are requesting.
      * @return $this
      */
     public function setNumber($number)
@@ -444,7 +444,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
 
     /**
      * Sets accountEncoderId
-     * @param string $accountEncoderId Identifier for the issuing bank that provided the customer’s encoded account number. Contact your processor for the bank’s ID.
+     * @param string $accountEncoderId Identifier for the issuing bank that provided the customer's encoded account number. Contact your processor for the bank's ID.
      * @return $this
      */
     public function setAccountEncoderId($accountEncoderId)

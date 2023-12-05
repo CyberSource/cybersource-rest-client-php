@@ -4,13 +4,13 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebhook**](CreateNewWebhooksApi.md#createWebhook) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
-[**findProductToSubscribe**](CreateNewWebhooksApi.md#findProductToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
+[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
+[**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
-# **createWebhook**
-> \CyberSource\Model\InlineResponse2013 createWebhook($createWebhook)
+# **createWebhookSubscription**
+> \CyberSource\Model\InlineResponse2013 createWebhookSubscription($createWebhookRequest)
 
 Create a Webhook
 
@@ -22,13 +22,13 @@ Create a new webhook subscription. Before creating a webhook, ensure that a secu
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\CreateNewWebhooksApi();
-$createWebhook = new \CyberSource\Model\CreateWebhook(); // \CyberSource\Model\CreateWebhook | The webhook payload
+$createWebhookRequest = new \CyberSource\Model\CreateWebhookRequest(); // \CyberSource\Model\CreateWebhookRequest | The webhook payload
 
 try {
-    $result = $api_instance->createWebhook($createWebhook);
+    $result = $api_instance->createWebhookSubscription($createWebhookRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CreateNewWebhooksApi->createWebhook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CreateNewWebhooksApi->createWebhookSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createWebhook** | [**\CyberSource\Model\CreateWebhook**](../Model/CreateWebhook.md)| The webhook payload | [optional]
+ **createWebhookRequest** | [**\CyberSource\Model\CreateWebhookRequest**](../Model/CreateWebhookRequest.md)| The webhook payload | [optional]
 
 ### Return type
 
@@ -50,12 +50,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **findProductToSubscribe**
-> \CyberSource\Model\InlineResponse2003[] findProductToSubscribe($organizationId)
+# **findProductsToSubscribe**
+> \CyberSource\Model\InlineResponse2003[] findProductsToSubscribe($organizationId)
 
 Find Products You Can Subscribe To
 
@@ -70,10 +70,10 @@ $api_instance = new CyberSource\Api\CreateNewWebhooksApi();
 $organizationId = "organizationId_example"; // string | The Organization Identifier.
 
 try {
-    $result = $api_instance->findProductToSubscribe($organizationId);
+    $result = $api_instance->findProductsToSubscribe($organizationId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CreateNewWebhooksApi->findProductToSubscribe: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CreateNewWebhooksApi->findProductsToSubscribe: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -95,7 +95,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -146,7 +146,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

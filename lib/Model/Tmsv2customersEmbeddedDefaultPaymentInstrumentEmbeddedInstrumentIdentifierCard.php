@@ -190,7 +190,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets number
-     * @param string $number The customer’s payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers.
+     * @param string $number The customer's payment card number, also known as the Primary Account Number (PAN). You can also use this field for encoded account numbers.
      * @return $this
      */
     public function setNumber($number)

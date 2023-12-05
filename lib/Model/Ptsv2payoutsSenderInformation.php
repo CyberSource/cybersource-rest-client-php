@@ -357,7 +357,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Sender’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
+     * @param string $middleName Sender's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
      * @return $this
      */
     public function setMiddleName($middleName)
@@ -462,7 +462,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sender’s state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).
+     * @param string $administrativeArea Sender's state. Use the [State, Province, and Territory Codes for the United States and Canada](https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf).
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -504,7 +504,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Sender’s postal code. Required only for FDCCompass.
+     * @param string $postalCode Sender's postal code. Required only for FDCCompass.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -525,7 +525,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Sender’s phone number. Required only for FDCCompass.
+     * @param string $phoneNumber Sender's phone number. Required only for FDCCompass.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)
@@ -546,7 +546,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets dateOfBirth
-     * @param string $dateOfBirth Sender’s date of birth in YYYYMMDD format. Required only for FDCCompass.
+     * @param string $dateOfBirth Sender's date of birth in YYYYMMDD format. Required only for FDCCompass.
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)

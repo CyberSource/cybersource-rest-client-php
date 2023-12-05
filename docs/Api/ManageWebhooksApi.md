@@ -5,9 +5,9 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
-[**getAllWebhooks**](ManageWebhooksApi.md#getAllWebhooks) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
-[**getWebhookDetails**](ManageWebhooksApi.md#getWebhookDetails) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
-[**replayPreviousWebhook**](ManageWebhooksApi.md#replayPreviousWebhook) | **POST** /nrtf/v1/webhooks/{webhookId}/replays | Replay Previous Webhooks
+[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
+[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
+[**replayPreviousWebhooks**](ManageWebhooksApi.md#replayPreviousWebhooks) | **POST** /nrtf/v1/webhooks/{webhookId}/replays | Replay Previous Webhooks
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
 [**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
@@ -52,12 +52,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getAllWebhooks**
-> \CyberSource\Model\InlineResponse2004[] getAllWebhooks($organizationId, $productId, $eventType)
+# **getWebhookSubscriptionById**
+> \CyberSource\Model\InlineResponse2004 getWebhookSubscriptionById($webhookId)
+
+Get Details On a Single Webhook
+
+Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The webhook Identifier
+
+try {
+    $result = $api_instance->getWebhookSubscriptionById($webhookId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->getWebhookSubscriptionById: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The webhook Identifier |
+
+### Return type
+
+[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getWebhookSubscriptionsByOrg**
+> \CyberSource\Model\InlineResponse2004[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
 
 Get Details On All Created Webhooks
 
@@ -74,10 +119,10 @@ $productId = "productId_example"; // string | The Product Identifier.
 $eventType = "eventType_example"; // string | The Event Type.
 
 try {
-    $result = $api_instance->getAllWebhooks($organizationId, $productId, $eventType);
+    $result = $api_instance->getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->getAllWebhooks: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ManageWebhooksApi->getWebhookSubscriptionsByOrg: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -101,57 +146,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getWebhookDetails**
-> \CyberSource\Model\InlineResponse2004 getWebhookDetails($webhookId)
-
-Get Details On a Single Webhook
-
-Retrieve the details of a specific webhook by supplying the webhook ID in the path.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The webhook Identifier
-
-try {
-    $result = $api_instance->getWebhookDetails($webhookId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->getWebhookDetails: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The webhook Identifier |
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **replayPreviousWebhook**
-> replayPreviousWebhook($webhookId, $replayWebhooks)
+# **replayPreviousWebhooks**
+> replayPreviousWebhooks($webhookId, $replayWebhooksRequest)
 
 Replay Previous Webhooks
 
@@ -164,12 +164,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ManageWebhooksApi();
 $webhookId = "webhookId_example"; // string | The webhook uuid identifier.
-$replayWebhooks = new \CyberSource\Model\ReplayWebhooks(); // \CyberSource\Model\ReplayWebhooks | The request query
+$replayWebhooksRequest = new \CyberSource\Model\ReplayWebhooksRequest(); // \CyberSource\Model\ReplayWebhooksRequest | The request query
 
 try {
-    $api_instance->replayPreviousWebhook($webhookId, $replayWebhooks);
+    $api_instance->replayPreviousWebhooks($webhookId, $replayWebhooksRequest);
 } catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->replayPreviousWebhook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ManageWebhooksApi->replayPreviousWebhooks: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -179,7 +179,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookId** | **string**| The webhook uuid identifier. |
- **replayWebhooks** | [**\CyberSource\Model\ReplayWebhooks**](../Model/ReplayWebhooks.md)| The request query | [optional]
+ **replayWebhooksRequest** | [**\CyberSource\Model\ReplayWebhooksRequest**](../Model/ReplayWebhooksRequest.md)| The request query | [optional]
 
 ### Return type
 
@@ -192,7 +192,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -243,12 +243,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhookSubscription**
-> updateWebhookSubscription($webhookId, $updateWebhook)
+> updateWebhookSubscription($webhookId, $updateWebhookRequest)
 
 Update a Webhook Subscription
 
@@ -261,10 +261,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ManageWebhooksApi();
 $webhookId = "webhookId_example"; // string | The Webhook Identifier.
-$updateWebhook = new \CyberSource\Model\UpdateWebhook(); // \CyberSource\Model\UpdateWebhook | The webhook payload or changes to apply.
+$updateWebhookRequest = new \CyberSource\Model\UpdateWebhookRequest(); // \CyberSource\Model\UpdateWebhookRequest | The webhook payload or changes to apply.
 
 try {
-    $api_instance->updateWebhookSubscription($webhookId, $updateWebhook);
+    $api_instance->updateWebhookSubscription($webhookId, $updateWebhookRequest);
 } catch (Exception $e) {
     echo 'Exception when calling ManageWebhooksApi->updateWebhookSubscription: ', $e->getMessage(), PHP_EOL;
 }
@@ -276,7 +276,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **webhookId** | **string**| The Webhook Identifier. |
- **updateWebhook** | [**\CyberSource\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
+ **updateWebhookRequest** | [**\CyberSource\Model\UpdateWebhookRequest**](../Model/UpdateWebhookRequest.md)| The webhook payload or changes to apply. | [optional]
 
 ### Return type
 
@@ -289,7 +289,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

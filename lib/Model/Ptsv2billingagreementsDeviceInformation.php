@@ -183,7 +183,7 @@ class Ptsv2billingagreementsDeviceInformation implements ArrayAccess
 
     /**
      * Sets httpAcceptBrowserValue
-     * @param string $httpAcceptBrowserValue Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request.
+     * @param string $httpAcceptBrowserValue Value of the Accept header sent by the customer's web browser. **Note** If the customer's browser provides a value, you must include it in your request.
      * @return $this
      */
     public function setHttpAcceptBrowserValue($httpAcceptBrowserValue)
@@ -225,7 +225,7 @@ class Ptsv2billingagreementsDeviceInformation implements ArrayAccess
 
     /**
      * Sets userAgentBrowserValue
-     * @param string $userAgentBrowserValue Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request.
+     * @param string $userAgentBrowserValue Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request.
      * @return $this
      */
     public function setUserAgentBrowserValue($userAgentBrowserValue)

@@ -54,7 +54,7 @@ class RiskProductsFraudManagementEssentials implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subscriptionInformation' => '\CyberSource\Model\PaymentProductsPayerAuthenticationSubscriptionInformation',
+        'subscriptionInformation' => '\CyberSource\Model\PaymentsProductsPayerAuthenticationSubscriptionInformation',
         'configurationInformation' => '\CyberSource\Model\RiskProductsFraudManagementEssentialsConfigurationInformation'
     ];
 
@@ -168,7 +168,7 @@ class RiskProductsFraudManagementEssentials implements ArrayAccess
 
     /**
      * Gets subscriptionInformation
-     * @return \CyberSource\Model\PaymentProductsPayerAuthenticationSubscriptionInformation
+     * @return \CyberSource\Model\PaymentsProductsPayerAuthenticationSubscriptionInformation
      */
     public function getSubscriptionInformation()
     {
@@ -177,7 +177,7 @@ class RiskProductsFraudManagementEssentials implements ArrayAccess
 
     /**
      * Sets subscriptionInformation
-     * @param \CyberSource\Model\PaymentProductsPayerAuthenticationSubscriptionInformation $subscriptionInformation
+     * @param \CyberSource\Model\PaymentsProductsPayerAuthenticationSubscriptionInformation $subscriptionInformation
      * @return $this
      */
     public function setSubscriptionInformation($subscriptionInformation)

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organizationId** | **string** | Merchant Id | [optional] 
-**referenceNumber** | **string** | Reference number is a unique identifier provided by the client along with the organization Id. This is an optional field provided solely for the client’s convenience. If client specifies value for this field in the request, it is expected to be available in the response. | [optional] 
+**referenceNumber** | **string** | Reference number is a unique identifier provided by the client along with the organization Id. This is an optional field provided solely for the client&#39;s convenience. If client specifies value for this field in the request, it is expected to be available in the response. | [optional] 
 **keyId** | **string** | Key Serial Number | [optional] 
 **status** | **string** | The status of the key.  Possible values:  - FAILED  - ACTIVE  - INACTIVE  - EXPIRED | [optional] 
 **message** | **string** | message in case of failed key | [optional] 

@@ -54,8 +54,8 @@ class ValueAddedServicesProducts implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'reporting' => '\CyberSource\Model\PaymentProductsTax',
-        'transactionSearch' => '\CyberSource\Model\PaymentProductsTax'
+        'reporting' => '\CyberSource\Model\PaymentsProductsTax',
+        'transactionSearch' => '\CyberSource\Model\PaymentsProductsTax'
     ];
 
     /**
@@ -168,7 +168,7 @@ class ValueAddedServicesProducts implements ArrayAccess
 
     /**
      * Gets reporting
-     * @return \CyberSource\Model\PaymentProductsTax
+     * @return \CyberSource\Model\PaymentsProductsTax
      */
     public function getReporting()
     {
@@ -177,7 +177,7 @@ class ValueAddedServicesProducts implements ArrayAccess
 
     /**
      * Sets reporting
-     * @param \CyberSource\Model\PaymentProductsTax $reporting
+     * @param \CyberSource\Model\PaymentsProductsTax $reporting
      * @return $this
      */
     public function setReporting($reporting)
@@ -189,7 +189,7 @@ class ValueAddedServicesProducts implements ArrayAccess
 
     /**
      * Gets transactionSearch
-     * @return \CyberSource\Model\PaymentProductsTax
+     * @return \CyberSource\Model\PaymentsProductsTax
      */
     public function getTransactionSearch()
     {
@@ -198,7 +198,7 @@ class ValueAddedServicesProducts implements ArrayAccess
 
     /**
      * Sets transactionSearch
-     * @param \CyberSource\Model\PaymentProductsTax $transactionSearch
+     * @param \CyberSource\Model\PaymentsProductsTax $transactionSearch
      * @return $this
      */
     public function setTransactionSearch($transactionSearch)

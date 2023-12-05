@@ -321,7 +321,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets userAgent
-     * @param string $userAgent Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser.
+     * @param string $userAgent Customer's browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser.
      * @return $this
      */
     public function setUserAgent($userAgent)
@@ -342,7 +342,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets fingerprintSessionId
-     * @param string $fingerprintSessionId Field that contains the session ID that you send to Decision Manager to obtain the device fingerprint information. The string can contain uppercase and lowercase letters, digits, hyphen (-), and underscore (_). However, do not use the same uppercase and lowercase letters to indicate different session IDs.  The session ID must be unique for each merchant ID. You can use any string that you are already generating, such as an order number or web session ID.  The session ID must be unique for each page load, regardless of an individual’s web session ID. If a user navigates to a profiled page and is assigned a web session, navigates away from the profiled page, then navigates back to the profiled page, the generated session ID should be different and unique. You may use a web session ID, but it is preferable to use an application GUID (Globally Unique Identifier). This measure ensures that a unique ID is generated every time the page is loaded, even if it is the same user reloading the page.
+     * @param string $fingerprintSessionId Field that contains the session ID that you send to Decision Manager to obtain the device fingerprint information. The string can contain uppercase and lowercase letters, digits, hyphen (-), and underscore (_). However, do not use the same uppercase and lowercase letters to indicate different session IDs.  The session ID must be unique for each merchant ID. You can use any string that you are already generating, such as an order number or web session ID.  The session ID must be unique for each page load, regardless of an individual's web session ID. If a user navigates to a profiled page and is assigned a web session, navigates away from the profiled page, then navigates back to the profiled page, the generated session ID should be different and unique. You may use a web session ID, but it is preferable to use an application GUID (Globally Unique Identifier). This measure ensures that a unique ID is generated every time the page is loaded, even if it is the same user reloading the page.
      * @return $this
      */
     public function setFingerprintSessionId($fingerprintSessionId)
@@ -447,7 +447,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets httpAcceptBrowserValue
-     * @param string $httpAcceptBrowserValue Value of the Accept header sent by the customer’s web browser. **Note** If the customer’s browser provides a value, you must include it in your request.
+     * @param string $httpAcceptBrowserValue Value of the Accept header sent by the customer's web browser. **Note** If the customer's browser provides a value, you must include it in your request.
      * @return $this
      */
     public function setHttpAcceptBrowserValue($httpAcceptBrowserValue)
@@ -489,7 +489,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets httpBrowserEmail
-     * @param string $httpBrowserEmail Email address set in the customer’s browser, which may differ from customer email.
+     * @param string $httpBrowserEmail Email address set in the customer's browser, which may differ from customer email.
      * @return $this
      */
     public function setHttpBrowserEmail($httpBrowserEmail)
@@ -657,7 +657,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
 
     /**
      * Sets userAgentBrowserValue
-     * @param string $userAgentBrowserValue Value of the User-Agent header sent by the customer’s web browser. Note If the customer’s browser provides a value, you must include it in your request.
+     * @param string $userAgentBrowserValue Value of the User-Agent header sent by the customer's web browser. Note If the customer's browser provides a value, you must include it in your request.
      * @return $this
      */
     public function setUserAgentBrowserValue($userAgentBrowserValue)

@@ -231,7 +231,7 @@ class Upv1capturecontextsOrderInformationBillToCompany implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Name of the customer’s company.
+     * @param string $name Name of the customer's company.
      * @return $this
      */
     public function setName($name)
@@ -252,7 +252,7 @@ class Upv1capturecontextsOrderInformationBillToCompany implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 Payment card billing street address as it appears on the credit card issuer’s records.
+     * @param string $address1 Payment card billing street address as it appears on the credit card issuer's records.
      * @return $this
      */
     public function setAddress1($address1)
@@ -399,7 +399,7 @@ class Upv1capturecontextsOrderInformationBillToCompany implements ArrayAccess
 
     /**
      * Sets district
-     * @param string $district Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality
+     * @param string $district Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality
      * @return $this
      */
     public function setDistrict($district)

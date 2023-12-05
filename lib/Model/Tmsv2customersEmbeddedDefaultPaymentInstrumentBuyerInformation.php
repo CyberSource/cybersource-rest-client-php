@@ -189,7 +189,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation implements 
 
     /**
      * Sets companyTaxID
-     * @param string $companyTaxID Company’s tax identifier. This is only used for eCheck service.
+     * @param string $companyTaxID Company's tax identifier. This is only used for eCheck service.
      * @return $this
      */
     public function setCompanyTaxID($companyTaxID)
