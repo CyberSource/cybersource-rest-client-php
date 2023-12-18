@@ -678,7 +678,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets settlementAmount
-     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder’s account. This field is returned for OCT transactions.
+     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount (field 4), converted to the Currency used to bill the cardholder's account. This field is returned for OCT transactions.
      * @return $this
      */
     public function setSettlementAmount($settlementAmount)
@@ -825,7 +825,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets cashbackAmount
-     * @param string $cashbackAmount Cashback amount in the acquirer’s currency. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value.  This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization** Optional. **Authorization Reversal** Optional.  #### PIN debit Optional field for PIN debit purchase, PIN debit credit or PIN debit reversal.
+     * @param string $cashbackAmount Cashback amount in the acquirer's currency. If a cashback amount is included in the request, it must be included in the `orderInformation.amountDetails.totalAmount` value.  This field is supported only on CyberSource through VisaNet.  #### Used by **Authorization** Optional. **Authorization Reversal** Optional.  #### PIN debit Optional field for PIN debit purchase, PIN debit credit or PIN debit reversal.
      * @return $this
      */
     public function setCashbackAmount($cashbackAmount)

@@ -207,7 +207,7 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
 
     /**
      * Sets customerMemo
-     * @param string $customerMemo Payment related information.  This information is included on the customer’s statement.
+     * @param string $customerMemo Payment related information.  This information is included on the customer's statement.
      * @return $this
      */
     public function setCustomerMemo($customerMemo)

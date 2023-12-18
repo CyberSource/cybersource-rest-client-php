@@ -264,7 +264,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets systemTraceAuditNumber
-     * @param string $systemTraceAuditNumber System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer’s receipt.
+     * @param string $systemTraceAuditNumber System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer's receipt.
      * @return $this
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)

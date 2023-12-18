@@ -177,7 +177,7 @@ class PtsV2CreditsPost201ResponseCreditAmountDetails implements ArrayAccess
 
     /**
      * Sets creditAmount
-     * @param string $creditAmount Amount that was credited to the cardholder’s account.  Returned by PIN debit credit.
+     * @param string $creditAmount Amount that was credited to the cardholder's account.  Returned by PIN debit credit.
      * @return $this
      */
     public function setCreditAmount($creditAmount)

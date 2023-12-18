@@ -130,23 +130,7 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling deleteCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling deleteCustomer');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 1.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.deleteCustomer, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.deleteCustomer, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}";
@@ -280,23 +264,7 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomer');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerApi.getCustomer, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerApi.getCustomer, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerApi.getCustomer, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerApi.getCustomer, must be bigger than or equal to 1.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.getCustomer, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.getCustomer, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.getCustomer, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.getCustomer, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}";
@@ -438,37 +406,13 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling patchCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling patchCustomer');
         }
-        if ((strlen($customerId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.');
-        }
-        if ((strlen($customerId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$customerId\" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$customerId" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.');
-        }
 
         // verify the required parameter 'patchCustomerRequest' is set
         if ($patchCustomerRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchCustomerRequest when calling patchCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $patchCustomerRequest when calling patchCustomer');
         }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.patchCustomer, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.patchCustomer, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.patchCustomer, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.patchCustomer, must be bigger than or equal to 36.');
-        }
 
-        if (!is_null($ifMatch) && (strlen($ifMatch) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling CustomerApi.patchCustomer, must be smaller than or equal to 32.');
-        }
-        if (!is_null($ifMatch) && (strlen($ifMatch) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$ifMatch\" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$ifMatch" when calling CustomerApi.patchCustomer, must be bigger than or equal to 1.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}";
@@ -618,14 +562,6 @@ class CustomerApi
         if ($postCustomerRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postCustomerRequest when calling postCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $postCustomerRequest when calling postCustomer');
-        }
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.postCustomer, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.postCustomer, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling CustomerApi.postCustomer, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling CustomerApi.postCustomer, must be bigger than or equal to 36.');
         }
 
         // parse inputs

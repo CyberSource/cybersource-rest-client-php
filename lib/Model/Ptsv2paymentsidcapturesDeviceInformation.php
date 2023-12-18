@@ -225,7 +225,7 @@ class Ptsv2paymentsidcapturesDeviceInformation implements ArrayAccess
 
     /**
      * Sets userAgent
-     * @param string $userAgent Customer’s browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser.
+     * @param string $userAgent Customer's browser as identified from the HTTP header data. For example, `Mozilla` is the value that identifies the Netscape browser.
      * @return $this
      */
     public function setUserAgent($userAgent)

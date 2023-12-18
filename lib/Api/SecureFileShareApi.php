@@ -130,14 +130,6 @@ class SecureFileShareApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $fileId when calling getFile");
             throw new \InvalidArgumentException('Missing the required parameter $fileId when calling getFile');
         }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling SecureFileShareApi.getFile, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling SecureFileShareApi.getFile, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling SecureFileShareApi.getFile, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling SecureFileShareApi.getFile, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling SecureFileShareApi.getFile, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling SecureFileShareApi.getFile, must conform to the pattern /[a-zA-Z0-9-_]+/.');
@@ -264,14 +256,6 @@ class SecureFileShareApi
         if ($endDate === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endDate when calling getFileDetail");
             throw new \InvalidArgumentException('Missing the required parameter $endDate when calling getFileDetail');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling SecureFileShareApi.getFileDetail, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetail, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling SecureFileShareApi.getFileDetail, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling SecureFileShareApi.getFileDetail, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_]+/.");

@@ -95,35 +95,35 @@ class CreateNewWebhooksApi
     }
 
     /**
-     * Operation createWebhook
+     * Operation createWebhookSubscription
      *
      * Create a Webhook
      *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested (“Beta Product”) solely for the purpose of evaluating the functionality or marketability of the Beta Product (a “Beta Evaluation”). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer’s participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period (“Beta Product Form”). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer’s use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided “AS IS” and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      *
-     * @param \CyberSource\Model\CreateWebhook $createWebhook The webhook payload (optional)
+     * @param \CyberSource\Model\CreateWebhookRequest $createWebhookRequest The webhook payload (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createWebhook($createWebhook = null)
+    public function createWebhookSubscription($createWebhookRequest = null)
     {
-        self::$logger->info('CALL TO METHOD createWebhook STARTED');
-        list($response, $statusCode, $httpHeader) = $this->createWebhookWithHttpInfo($createWebhook);
-        self::$logger->info('CALL TO METHOD createWebhook ENDED');
+        self::$logger->info('CALL TO METHOD createWebhookSubscription STARTED');
+        list($response, $statusCode, $httpHeader) = $this->createWebhookSubscriptionWithHttpInfo($createWebhookRequest);
+        self::$logger->info('CALL TO METHOD createWebhookSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation createWebhookWithHttpInfo
+     * Operation createWebhookSubscriptionWithHttpInfo
      *
      * Create a Webhook
      *
-     * @param \CyberSource\Model\CreateWebhook $createWebhook The webhook payload (optional)
+     * @param \CyberSource\Model\CreateWebhookRequest $createWebhookRequest The webhook payload (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createWebhookWithHttpInfo($createWebhook = null)
+    public function createWebhookSubscriptionWithHttpInfo($createWebhookRequest = null)
     {
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/webhooks";
@@ -131,7 +131,7 @@ class CreateNewWebhooksApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -139,12 +139,12 @@ class CreateNewWebhooksApi
 
         // body params
         $_tempBody = null;
-        if (isset($createWebhook)) {
-            $_tempBody = $createWebhook;
+        if (isset($createWebhookRequest)) {
+            $_tempBody = $createWebhookRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateWebhook')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreateWebhookRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -195,27 +195,27 @@ class CreateNewWebhooksApi
     }
 
     /**
-     * Operation findProductToSubscribe
+     * Operation findProductsToSubscribe
      *
      * Find Products You Can Subscribe To
      *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested (“Beta Product”) solely for the purpose of evaluating the functionality or marketability of the Beta Product (a “Beta Evaluation”). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer’s participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period (“Beta Product Form”). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer’s use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided “AS IS” and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      *
      * @param string $organizationId The Organization Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findProductToSubscribe($organizationId)
+    public function findProductsToSubscribe($organizationId)
     {
-        self::$logger->info('CALL TO METHOD findProductToSubscribe STARTED');
-        list($response, $statusCode, $httpHeader) = $this->findProductToSubscribeWithHttpInfo($organizationId);
-        self::$logger->info('CALL TO METHOD findProductToSubscribe ENDED');
+        self::$logger->info('CALL TO METHOD findProductsToSubscribe STARTED');
+        list($response, $statusCode, $httpHeader) = $this->findProductsToSubscribeWithHttpInfo($organizationId);
+        self::$logger->info('CALL TO METHOD findProductsToSubscribe ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation findProductToSubscribeWithHttpInfo
+     * Operation findProductsToSubscribeWithHttpInfo
      *
      * Find Products You Can Subscribe To
      *
@@ -223,12 +223,12 @@ class CreateNewWebhooksApi
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function findProductToSubscribeWithHttpInfo($organizationId)
+    public function findProductsToSubscribeWithHttpInfo($organizationId)
     {
         // verify the required parameter 'organizationId' is set
         if ($organizationId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $organizationId when calling findProductToSubscribe");
-            throw new \InvalidArgumentException('Missing the required parameter $organizationId when calling findProductToSubscribe');
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $organizationId when calling findProductsToSubscribe");
+            throw new \InvalidArgumentException('Missing the required parameter $organizationId when calling findProductsToSubscribe');
         }
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/products/{organizationId}";
@@ -236,7 +236,7 @@ class CreateNewWebhooksApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
@@ -307,7 +307,7 @@ class CreateNewWebhooksApi
      *
      * Create Webhook Security Keys
      *
-     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested (“Beta Product”) solely for the purpose of evaluating the functionality or marketability of the Beta Product (a “Beta Evaluation”). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer’s participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period (“Beta Product Form”). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer’s use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided “AS IS” and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
+     * DISCLAIMER : Cybersource may allow Customer to access, use, and/or test a Cybersource product or service that may still be in development or has not been market-tested ("Beta Product") solely for the purpose of evaluating the functionality or marketability of the Beta Product (a "Beta Evaluation"). Notwithstanding any language to the contrary, the following terms shall apply with respect to Customer's participation in any Beta Evaluation (and the Beta Product(s)) accessed thereunder): The Parties will enter into a separate form agreement detailing the scope of the Beta Evaluation, requirements, pricing, the length of the beta evaluation period ("Beta Product Form"). Beta Products are not, and may not become, Transaction Services and have not yet been publicly released and are offered for the sole purpose of internal testing and non-commercial evaluation. Customer's use of the Beta Product shall be solely for the purpose of conducting the Beta Evaluation. Customer accepts all risks arising out of the access and use of the Beta Products. Cybersource may, in its sole discretion, at any time, terminate or discontinue the Beta Evaluation. Customer acknowledges and agrees that any Beta Product may still be in development and that Beta Product is provided "AS IS" and may not perform at the level of a commercially available service, may not operate as expected and may be modified prior to release. CYBERSOURCE SHALL NOT BE RESPONSIBLE OR LIABLE UNDER ANY CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE RELATING TO A BETA PRODUCT OR THE BETA EVALUATION (A) FOR LOSS OR INACCURACY OF DATA OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY, (B) ANY CLAIM, LOSSES, DAMAGES, OR CAUSE OF ACTION ARISING IN CONNECTION WITH THE BETA PRODUCT; OR (C) FOR ANY INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS OF PROFITS.
      *
      * @param string $vCSenderOrganizationId Sender organization id (required)
      * @param string $vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (required)
@@ -344,14 +344,6 @@ class CreateNewWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCSenderOrganizationId when calling saveSymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCSenderOrganizationId when calling saveSymEgressKey');
         }
-        if ((strlen($vCSenderOrganizationId) > 100)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.");
-            throw new \InvalidArgumentException('Invalid length for "$vCSenderOrganizationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.');
-        }
-        if ((strlen($vCSenderOrganizationId) < 2)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.");
-            throw new \InvalidArgumentException('Invalid length for "$vCSenderOrganizationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.');
-        }
         if (!preg_match("/^[A-Za-z0-9\\-_]+$/", $vCSenderOrganizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.");
             throw new \InvalidArgumentException('Invalid value for \"vCSenderOrganizationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.');
@@ -361,14 +353,6 @@ class CreateNewWebhooksApi
         if ($vCPermissions === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCPermissions when calling saveSymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCPermissions when calling saveSymEgressKey');
-        }
-        if (!is_null($vCCorrelationId) && (strlen($vCCorrelationId) > 100)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCCorrelationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.");
-            throw new \InvalidArgumentException('Invalid length for "$vCCorrelationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be smaller than or equal to 100.');
-        }
-        if (!is_null($vCCorrelationId) && (strlen($vCCorrelationId) < 2)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$vCCorrelationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.");
-            throw new \InvalidArgumentException('Invalid length for "$vCCorrelationId" when calling CreateNewWebhooksApi.saveSymEgressKey, must be bigger than or equal to 2.');
         }
         if (!is_null($vCCorrelationId) && !preg_match("/^[A-Za-z0-9\\.\\-_:]+$/", $vCCorrelationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"vCCorrelationId\" when calling CreateNewWebhooksApi.saveSymEgressKey, must conform to the pattern /^[A-Za-z0-9\\.\\-_:]+$/.");
@@ -381,7 +365,7 @@ class CreateNewWebhooksApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }

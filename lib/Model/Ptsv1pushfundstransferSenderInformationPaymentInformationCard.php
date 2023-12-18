@@ -264,7 +264,7 @@ class Ptsv1pushfundstransferSenderInformationPaymentInformationCard implements A
 
     /**
      * Sets number
-     * @param string $number The customer’s payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send.
+     * @param string $number The customer's payment card number, also known as the Primary Account Number (PAN).  This field is supported in Mastercard Send.
      * @return $this
      */
     public function setNumber($number)

@@ -60,7 +60,7 @@ No authorization required
 
 Get Report Based on Report Id
 
-Download a report using the reportId value. If you don’t already know this value, you can obtain it using the Retrieve available reports call.
+Download a report using the reportId value. If you don't already know this value, you can obtain it using the Retrieve available reports call.
 
 ### Example
 ```php

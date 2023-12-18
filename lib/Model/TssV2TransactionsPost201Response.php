@@ -306,7 +306,7 @@ class TssV2TransactionsPost201Response implements ArrayAccess
 
     /**
      * Sets timezone
-     * @param string $timezone Merchant’s time zone in ISO standard, using the TZ database format. For example: `America/Chicago`
+     * @param string $timezone Merchant's time zone in ISO standard, using the TZ database format. For example: `America/Chicago`
      * @return $this
      */
     public function setTimezone($timezone)

@@ -440,14 +440,14 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
 //        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
 //            $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
 //        }
-//
+
 //        if (!is_null($this->container['doingBusinessAs']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
 //            $invalid_properties[] = "invalid value for 'doingBusinessAs', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
 //        }
-//
-//        if (!is_null($this->container['description']) && !preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
-//            $invalid_properties[] = "invalid value for 'description', must be conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.";
-//        }
+
+        if (!is_null($this->container['description']) && !preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
+            $invalid_properties[] = "invalid value for 'description', must be conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.";
+        }
 
         $allowed_values = $this->getTimeZoneAllowableValues();
         if (!in_array($this->container['timeZone'], $allowed_values)) {
@@ -502,9 +502,9 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
 //        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
 //            return false;
 //        }
-//        if (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
-//            return false;
-//        }
+        if (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
+            return false;
+        }
         $allowed_values = $this->getTimeZoneAllowableValues();
         if (!in_array($this->container['timeZone'], $allowed_values)) {
             return false;
@@ -516,15 +516,15 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
-//        if (!preg_match("/\\d{9}/", $this->container['taxId'])) {
-//            return false;
-//        }
-//        if (!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $this->container['phoneNumber'])) {
-//            return false;
-//        }
-//        if (!preg_match("/^\\d{3,4}$/", $this->container['merchantCategoryCode'])) {
-//            return false;
-//        }
+        if (!preg_match("/\\d{9}/", $this->container['taxId'])) {
+            return false;
+        }
+        if (!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $this->container['phoneNumber'])) {
+            return false;
+        }
+        if (!preg_match("/^\\d{3,4}$/", $this->container['merchantCategoryCode'])) {
+            return false;
+        }
         return true;
     }
 

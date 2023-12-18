@@ -855,7 +855,7 @@ class Ptsv2paymentsTravelInformationTransitAirline implements ArrayAccess
 
     /**
      * Sets processIdentifier
-     * @param string $processIdentifier Airline process identifier. This value is the airline’s three-digit IATA1 code which is used to process extended payment airline tickets.
+     * @param string $processIdentifier Airline process identifier. This value is the airline's three-digit IATA1 code which is used to process extended payment airline tickets.
      * @return $this
      */
     public function setProcessIdentifier($processIdentifier)

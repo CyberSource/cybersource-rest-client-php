@@ -279,7 +279,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 Payment card billing street address as it appears on the credit card issuer’s records.
+     * @param string $address1 Payment card billing street address as it appears on the credit card issuer's records.
      * @return $this
      */
     public function setAddress1($address1)
@@ -426,7 +426,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets district
-     * @param string $district Customer’s neighborhood, community, or region (a barrio in Brazil) within the city or municipality
+     * @param string $district Customer's neighborhood, community, or region (a barrio in Brazil) within the city or municipality
      * @return $this
      */
     public function setDistrict($district)
@@ -531,7 +531,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName Customer’s first name. This name must be the same as the name on the card
+     * @param string $firstName Customer's first name. This name must be the same as the name on the card
      * @return $this
      */
     public function setFirstName($firstName)
@@ -552,7 +552,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName Customer’s last name. This name must be the same as the name on the card.
+     * @param string $lastName Customer's last name. This name must be the same as the name on the card.
      * @return $this
      */
     public function setLastName($lastName)
@@ -573,7 +573,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Customer’s middle name.
+     * @param string $middleName Customer's middle name.
      * @return $this
      */
     public function setMiddleName($middleName)
@@ -594,7 +594,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets nameSuffix
-     * @param string $nameSuffix Customer’s name suffix.
+     * @param string $nameSuffix Customer's name suffix.
      * @return $this
      */
     public function setNameSuffix($nameSuffix)
@@ -636,7 +636,7 @@ class Upv1capturecontextsOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Customer’s phone number.
+     * @param string $phoneNumber Customer's phone number.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

@@ -130,14 +130,6 @@ class ReportsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createAdhocReportRequest when calling createReport");
             throw new \InvalidArgumentException('Missing the required parameter $createAdhocReportRequest when calling createReport');
         }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportsApi.createReport, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportsApi.createReport, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportsApi.createReport, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportsApi.createReport, must be bigger than or equal to 1.');
-        }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportsApi.createReport, must conform to the pattern /[a-zA-Z0-9-_]+/.");
             throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportsApi.createReport, must conform to the pattern /[a-zA-Z0-9-_]+/.');
@@ -252,14 +244,6 @@ class ReportsApi
         if ($reportId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportId when calling getReportByReportId");
             throw new \InvalidArgumentException('Missing the required parameter $reportId when calling getReportByReportId');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportsApi.getReportByReportId, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportsApi.getReportByReportId, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportsApi.getReportByReportId, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportsApi.getReportByReportId, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportsApi.getReportByReportId, must conform to the pattern /[a-zA-Z0-9-_]+/.");
@@ -406,14 +390,6 @@ class ReportsApi
         if ($timeQueryType === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $timeQueryType when calling searchReports");
             throw new \InvalidArgumentException('Missing the required parameter $timeQueryType when calling searchReports');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportsApi.searchReports, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportsApi.searchReports, must be smaller than or equal to 32.');
-        }
-        if (!is_null($organizationId) && (strlen($organizationId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$organizationId\" when calling ReportsApi.searchReports, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$organizationId" when calling ReportsApi.searchReports, must be bigger than or equal to 1.');
         }
         if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
             self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportsApi.searchReports, must conform to the pattern /[a-zA-Z0-9-_]+/.");

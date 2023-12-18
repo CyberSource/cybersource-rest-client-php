@@ -171,7 +171,7 @@ class Riskv1addressverificationsBuyerInformation implements ArrayAccess
 
     /**
      * Sets merchantCustomerId
-     * @param string $merchantCustomerId Optional customer’s account ID, tracking number, reward number, or other unique number that you assign to the customer for the purpose that you choose
+     * @param string $merchantCustomerId Optional customer's account ID, tracking number, reward number, or other unique number that you assign to the customer for the purpose that you choose
      * @return $this
      */
     public function setMerchantCustomerId($merchantCustomerId)

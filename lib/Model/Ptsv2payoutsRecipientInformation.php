@@ -273,7 +273,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Recipient’s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
+     * @param string $middleName Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
      * @return $this
      */
     public function setMiddleName($middleName)

@@ -369,7 +369,7 @@ class Ptsv2paymentsTravelInformationTransitAirlineLegs implements ArrayAccess
 
     /**
      * Sets stopoverIndicator
-     * @param int $stopoverIndicator Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter “O”) (default): Stopover allowed - `X` (capital letter “X”): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
+     * @param int $stopoverIndicator Code that indicates whether a stopover is allowed on this leg of the trip. Possible values: - `O` (capital letter \"O\") (default): Stopover allowed - `X` (capital letter \"X\"): Stopover not allowed Format: English characters only. Restricted string data type that indicates a sequence of letters, numbers, and spaces; special characters are not included. Optional request field for travel legs.
      * @return $this
      */
     public function setStopoverIndicator($stopoverIndicator)

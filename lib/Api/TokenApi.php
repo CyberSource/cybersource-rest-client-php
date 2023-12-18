@@ -130,23 +130,7 @@ class TokenApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $tokenId when calling postTokenPaymentCredentials");
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling postTokenPaymentCredentials');
         }
-        if ((strlen($tokenId) > 32)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$tokenId\" when calling TokenApi.postTokenPaymentCredentials, must be smaller than or equal to 32.");
-            throw new \InvalidArgumentException('Invalid length for "$tokenId" when calling TokenApi.postTokenPaymentCredentials, must be smaller than or equal to 32.');
-        }
-        if ((strlen($tokenId) < 1)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$tokenId\" when calling TokenApi.postTokenPaymentCredentials, must be bigger than or equal to 1.");
-            throw new \InvalidArgumentException('Invalid length for "$tokenId" when calling TokenApi.postTokenPaymentCredentials, must be bigger than or equal to 1.');
-        }
 
-        if (!is_null($profileId) && (strlen($profileId) > 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling TokenApi.postTokenPaymentCredentials, must be smaller than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling TokenApi.postTokenPaymentCredentials, must be smaller than or equal to 36.');
-        }
-        if (!is_null($profileId) && (strlen($profileId) < 36)) {
-            self::$logger->error("InvalidArgumentException : Invalid length for \"$profileId\" when calling TokenApi.postTokenPaymentCredentials, must be bigger than or equal to 36.");
-            throw new \InvalidArgumentException('Invalid length for "$profileId" when calling TokenApi.postTokenPaymentCredentials, must be bigger than or equal to 36.');
-        }
 
         // parse inputs
         $resourcePath = "/tms/v2/tokens/{tokenId}/payment-credentials";

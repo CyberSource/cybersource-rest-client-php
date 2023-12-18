@@ -351,7 +351,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Sender’s postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass.
+     * @param string $postalCode Sender's postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Required for FDCCompass.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -435,7 +435,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sender’s state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf
+     * @param string $administrativeArea Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -498,7 +498,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets dateOfBirth
-     * @param string $dateOfBirth Sender’s date of birth in YYYYMMDD format.
+     * @param string $dateOfBirth Sender's date of birth in YYYYMMDD format.
      * @return $this
      */
     public function setDateOfBirth($dateOfBirth)
@@ -519,7 +519,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Sender’s phone number.
+     * @param string $phoneNumber Sender's phone number.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)

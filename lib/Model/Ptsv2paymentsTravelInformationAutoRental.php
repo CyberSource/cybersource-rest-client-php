@@ -501,7 +501,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
 
     /**
      * Sets distanceUnit
-     * @param string $distanceUnit Miles/Kilometers Indicator shows whether the “miles” fields are expressed in miles or kilometers.  Allowed values: - `K` - Kilometers - `M` - Miles
+     * @param string $distanceUnit Miles/Kilometers Indicator shows whether the \"miles\" fields are expressed in miles or kilometers.  Allowed values: - `K` - Kilometers - `M` - Miles
      * @return $this
      */
     public function setDistanceUnit($distanceUnit)
@@ -606,7 +606,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
 
     /**
      * Sets programCode
-     * @param string $programCode Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \"renter” or ”show”.  This code is `2 digit` value agreed by Merchant and processor.
+     * @param string $programCode Used to identify special circumstances applicable to the Card Transaction or Cardholder, such as \"renter\" or \"show\".  This code is `2 digit` value agreed by Merchant and processor.
      * @return $this
      */
     public function setProgramCode($programCode)
@@ -669,7 +669,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
 
     /**
      * Sets agreementNumber
-     * @param string $agreementNumber Auto rental agency’s agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement.
+     * @param string $agreementNumber Auto rental agency's agreement (invoice) number provided to the customer. It is used to trace any inquiries about transactions. This field is supported for Visa, MasterCard, and American Express. This Merchant-defined value, which may be composed of any combination of characters and/or numerals, may become part of the descriptive bill on the Cardmember's statement.
      * @return $this
      */
     public function setAgreementNumber($agreementNumber)
@@ -795,7 +795,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
 
     /**
      * Sets specialProgramCode
-     * @param string $specialProgramCode Program code used to identify special circumstances, such as “frequent renter” or “no show” status for the renter. Possible values: - `0`: not applicable (default) - `1`: frequent renter - `2`: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder.
+     * @param string $specialProgramCode Program code used to identify special circumstances, such as \"frequent renter\" or \"no show\" status for the renter. Possible values: - `0`: not applicable (default) - `1`: frequent renter - `2`: no show  For authorizations, this field is supported only for Visa.  For captures, this field is supported for Visa, MasterCard, and American Express.  Code for special programs applicable to the Card Transaction or the Cardholder.
      * @return $this
      */
     public function setSpecialProgramCode($specialProgramCode)

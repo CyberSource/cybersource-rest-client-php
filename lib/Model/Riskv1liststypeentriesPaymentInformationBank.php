@@ -211,7 +211,7 @@ class Riskv1liststypeentriesPaymentInformationBank implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Country-specific code used to identify the customer’s bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction. For specific requirements, see \"Required Bank Account Information by Country,\"
+     * @param string $code Country-specific code used to identify the customer's bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction. For specific requirements, see \"Required Bank Account Information by Country,\"
      * @return $this
      */
     public function setCode($code)

@@ -198,7 +198,7 @@ class Riskv1decisionsMerchantInformation implements ArrayAccess
 
     /**
      * Sets merchantName
-     * @param string $merchantName Your company’s name as you want it to appear to the customer in the issuing bank’s authentication form. This value overrides the value specified by your merchant bank.
+     * @param string $merchantName Your company's name as you want it to appear to the customer in the issuing bank's authentication form. This value overrides the value specified by your merchant bank.
      * @return $this
      */
     public function setMerchantName($merchantName)

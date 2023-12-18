@@ -177,7 +177,7 @@ class GetAllSubscriptionsResponseOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName Customer’s first name.
+     * @param string $firstName Customer's first name.
      * @return $this
      */
     public function setFirstName($firstName)
@@ -198,7 +198,7 @@ class GetAllSubscriptionsResponseOrderInformationBillTo implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName Customer’s last name.
+     * @param string $lastName Customer's last name.
      * @return $this
      */
     public function setLastName($lastName)

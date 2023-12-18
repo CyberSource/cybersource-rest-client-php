@@ -202,7 +202,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets address1
-     * @param string $address1 Payment card billing street address as it appears on the credit card issuer’s records.
+     * @param string $address1 Payment card billing street address as it appears on the credit card issuer's records.
      * @return $this
      */
     public function setAddress1($address1)

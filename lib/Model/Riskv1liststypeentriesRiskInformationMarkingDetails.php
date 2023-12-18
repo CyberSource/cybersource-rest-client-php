@@ -232,7 +232,7 @@ class Riskv1liststypeentriesRiskInformationMarkingDetails implements ArrayAccess
 
     /**
      * Sets recordName
-     * @param string $recordName Name of the customer’s record entered in the list. For the positive list, it is required if `action_ code`=`add_positive`. If absent from the request, `ics_risk_update` creates the value for this field by concatenating the customer’s first and last names. For the negative and the review lists, `record_name`, `customer_firstname`, and `customer_lastname` are optional.
+     * @param string $recordName Name of the customer's record entered in the list. For the positive list, it is required if `action_ code`=`add_positive`. If absent from the request, `ics_risk_update` creates the value for this field by concatenating the customer's first and last names. For the negative and the review lists, `record_name`, `customer_firstname`, and `customer_lastname` are optional.
      * @return $this
      */
     public function setRecordName($recordName)
@@ -253,7 +253,7 @@ class Riskv1liststypeentriesRiskInformationMarkingDetails implements ArrayAccess
 
     /**
      * Sets action
-     * @param string $action Indicates whether to add to or remove a customer’s identity from the negative or positive list. This field can contain one of the following values: - add: Add information to the list. - convert: moves the data. - delete: deletes the data from the list.
+     * @param string $action Indicates whether to add to or remove a customer's identity from the negative or positive list. This field can contain one of the following values: - add: Add information to the list. - convert: moves the data. - delete: deletes the data from the list.
      * @return $this
      */
     public function setAction($action)

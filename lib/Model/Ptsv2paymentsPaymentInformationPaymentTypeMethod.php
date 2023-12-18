@@ -198,7 +198,7 @@ class Ptsv2paymentsPaymentInformationPaymentTypeMethod implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The payment channel that facilitates the transactions. This parameter can be used if the payment channels are listed on the merchant’s site, and the payment channel is known.  Possible Values:  #### Via PPRO - `alfaVa` - `kredivo` - `consumerBarCode` - `merchantQrCode` - `dokuWallet`
+     * @param string $type The payment channel that facilitates the transactions. This parameter can be used if the payment channels are listed on the merchant's site, and the payment channel is known.  Possible Values:  #### Via PPRO - `alfaVa` - `kredivo` - `consumerBarCode` - `merchantQrCode` - `dokuWallet`
      * @return $this
      */
     public function setType($type)

@@ -183,7 +183,7 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
 
     /**
      * Sets trueIpaddress
-     * @param string $trueIpaddress Customer’s true IP address detected by the application.  For details, see the `true_ipaddress` field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link).
+     * @param string $trueIpaddress Customer's true IP address detected by the application.  For details, see the `true_ipaddress` field description in _Device Fingerprinting Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Device Fingerprinting Guide_ (PDF link).
      * @return $this
      */
     public function setTrueIpaddress($trueIpaddress)

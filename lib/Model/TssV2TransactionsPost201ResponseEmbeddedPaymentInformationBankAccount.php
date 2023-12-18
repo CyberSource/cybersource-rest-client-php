@@ -177,7 +177,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationBankAccount impl
 
     /**
      * Sets suffix
-     * @param string $suffix Last four digits of the customer’s payment account number.
+     * @param string $suffix Last four digits of the customer's payment account number.
      * @return $this
      */
     public function setSuffix($suffix)

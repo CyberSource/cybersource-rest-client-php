@@ -258,7 +258,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
 
     /**
      * Sets swiftCode
-     * @param string $swiftCode Bank’s SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @param string $swiftCode Bank's SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
      * @return $this
      */
     public function setSwiftCode($swiftCode)
@@ -279,7 +279,7 @@ class Ptsv2paymentsPaymentInformationBank implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Bank code of the consumer’s account
+     * @param string $code Bank code of the consumer's account
      * @return $this
      */
     public function setCode($code)
