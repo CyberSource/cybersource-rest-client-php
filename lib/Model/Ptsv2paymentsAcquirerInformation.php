@@ -57,7 +57,8 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
         'acquirerBin' => 'string',
         'country' => 'string',
         'password' => 'string',
-        'merchantId' => 'string'
+        'merchantId' => 'string',
+        'acquirerMerchantId' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
         'acquirerBin' => null,
         'country' => null,
         'password' => null,
-        'merchantId' => null
+        'merchantId' => null,
+        'acquirerMerchantId' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
         'acquirerBin' => 'acquirerBin',
         'country' => 'country',
         'password' => 'password',
-        'merchantId' => 'merchantId'
+        'merchantId' => 'merchantId',
+        'acquirerMerchantId' => 'acquirerMerchantId'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
         'acquirerBin' => 'setAcquirerBin',
         'country' => 'setCountry',
         'password' => 'setPassword',
-        'merchantId' => 'setMerchantId'
+        'merchantId' => 'setMerchantId',
+        'acquirerMerchantId' => 'setAcquirerMerchantId'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
         'acquirerBin' => 'getAcquirerBin',
         'country' => 'getCountry',
         'password' => 'getPassword',
-        'merchantId' => 'getMerchantId'
+        'merchantId' => 'getMerchantId',
+        'acquirerMerchantId' => 'getAcquirerMerchantId'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
+        $this->container['acquirerMerchantId'] = isset($data['acquirerMerchantId']) ? $data['acquirerMerchantId'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class Ptsv2paymentsAcquirerInformation implements ArrayAccess
     public function setMerchantId($merchantId)
     {
         $this->container['merchantId'] = $merchantId;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerMerchantId
+     * @return string
+     */
+    public function getAcquirerMerchantId()
+    {
+        return $this->container['acquirerMerchantId'];
+    }
+
+    /**
+     * Sets acquirerMerchantId
+     * @param string $acquirerMerchantId Acquirer assigned merchant id. Check if your processor supports this field.
+     * @return $this
+     */
+    public function setAcquirerMerchantId($acquirerMerchantId)
+    {
+        $this->container['acquirerMerchantId'] = $acquirerMerchantId;
 
         return $this;
     }

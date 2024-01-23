@@ -54,7 +54,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'transactionId' => 'string'
+        'transactionId' => 'string',
+        'networkTransactionId' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'transactionId' => null
+        'transactionId' => null,
+        'networkTransactionId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'transactionId' => 'transactionId'
+        'transactionId' => 'transactionId',
+        'networkTransactionId' => 'networkTransactionId'
     ];
 
 
@@ -89,7 +92,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'transactionId' => 'setTransactionId'
+        'transactionId' => 'setTransactionId',
+        'networkTransactionId' => 'setNetworkTransactionId'
     ];
 
 
@@ -98,7 +102,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'transactionId' => 'getTransactionId'
+        'transactionId' => 'getTransactionId',
+        'networkTransactionId' => 'getNetworkTransactionId'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     public function __construct(array $data = null)
     {
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     public function setTransactionId($transactionId)
     {
         $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkTransactionId
+     * @return string
+     */
+    public function getNetworkTransactionId()
+    {
+        return $this->container['networkTransactionId'];
+    }
+
+    /**
+     * Sets networkTransactionId
+     * @param string $networkTransactionId Network Transaction Identifier Applicable for online capture transactions only.
+     * @return $this
+     */
+    public function setNetworkTransactionId($networkTransactionId)
+    {
+        $this->container['networkTransactionId'] = $networkTransactionId;
 
         return $this;
     }

@@ -56,6 +56,8 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $swaggerTypes = [
         'type' => 'string',
         'state' => 'string',
+        'enrollmentId' => 'string',
+        'tokenReferenceId' => 'string',
         'reason' => 'string',
         'number' => 'string',
         'expirationMonth' => 'string',
@@ -71,6 +73,8 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $swaggerFormats = [
         'type' => null,
         'state' => null,
+        'enrollmentId' => null,
+        'tokenReferenceId' => null,
         'reason' => null,
         'number' => null,
         'expirationMonth' => null,
@@ -96,6 +100,8 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $attributeMap = [
         'type' => 'type',
         'state' => 'state',
+        'enrollmentId' => 'enrollmentId',
+        'tokenReferenceId' => 'tokenReferenceId',
         'reason' => 'reason',
         'number' => 'number',
         'expirationMonth' => 'expirationMonth',
@@ -112,6 +118,8 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $setters = [
         'type' => 'setType',
         'state' => 'setState',
+        'enrollmentId' => 'setEnrollmentId',
+        'tokenReferenceId' => 'setTokenReferenceId',
         'reason' => 'setReason',
         'number' => 'setNumber',
         'expirationMonth' => 'setExpirationMonth',
@@ -128,6 +136,8 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     protected static $getters = [
         'type' => 'getType',
         'state' => 'getState',
+        'enrollmentId' => 'getEnrollmentId',
+        'tokenReferenceId' => 'getTokenReferenceId',
         'reason' => 'getReason',
         'number' => 'getNumber',
         'expirationMonth' => 'getExpirationMonth',
@@ -169,6 +179,8 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['enrollmentId'] = isset($data['enrollmentId']) ? $data['enrollmentId'] : null;
+        $this->container['tokenReferenceId'] = isset($data['tokenReferenceId']) ? $data['tokenReferenceId'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
@@ -213,7 +225,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
 
     /**
      * Sets type
-     * @param string $type The network token card association brand Possible Values: - visa - mastercard
+     * @param string $type The network token card association brand Possible Values: - visa - mastercard - americanexpress
      * @return $this
      */
     public function setType($type)
@@ -240,6 +252,48 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     public function setState($state)
     {
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets enrollmentId
+     * @return string
+     */
+    public function getEnrollmentId()
+    {
+        return $this->container['enrollmentId'];
+    }
+
+    /**
+     * Sets enrollmentId
+     * @param string $enrollmentId Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully.
+     * @return $this
+     */
+    public function setEnrollmentId($enrollmentId)
+    {
+        $this->container['enrollmentId'] = $enrollmentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenReferenceId
+     * @return string
+     */
+    public function getTokenReferenceId()
+    {
+        return $this->container['tokenReferenceId'];
+    }
+
+    /**
+     * Sets tokenReferenceId
+     * @param string $tokenReferenceId Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully.
+     * @return $this
+     */
+    public function setTokenReferenceId($tokenReferenceId)
+    {
+        $this->container['tokenReferenceId'] = $tokenReferenceId;
 
         return $this;
     }

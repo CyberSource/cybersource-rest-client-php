@@ -104,4 +104,11 @@ class Ptsv2paymentsAcquirerInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMerchantId()
     {
     }
+
+    /**
+     * Test attribute "acquirerMerchantId"
+     */
+    public function testPropertyAcquirerMerchantId()
+    {
+    }
 }

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **travelInformation** | [**\CyberSource\Model\Riskv1decisionsTravelInformation**](Riskv1decisionsTravelInformation.md) |  | [optional] 
 **merchantDefinedInformation** | [**\CyberSource\Model\Riskv1decisionsMerchantDefinedInformation[]**](Riskv1decisionsMerchantDefinedInformation.md) |  | [optional] 
 **merchantInformation** | [**\CyberSource\Model\Riskv1decisionsMerchantInformation**](Riskv1decisionsMerchantInformation.md) |  | [optional] 
-**acquirerInformation** | [**\CyberSource\Model\Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
+**acquirerInformation** | [**\CyberSource\Model\Riskv1decisionsAcquirerInformation**](Riskv1decisionsAcquirerInformation.md) |  | [optional] 
 **recurringPaymentInformation** | [**\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 
 **consumerAuthenticationInformation** | [**\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation**](Riskv1decisionsConsumerAuthenticationInformation.md) |  | [optional] 
 **watchlistScreeningInformation** | [**\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation**](Ptsv2paymentsWatchlistScreeningInformation.md) |  | [optional] 

@@ -83,4 +83,11 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformationTest extends \PHPU
     public function testPropertyTransactionId()
     {
     }
+
+    /**
+     * Test attribute "networkTransactionId"
+     */
+    public function testPropertyNetworkTransactionId()
+    {
+    }
 }

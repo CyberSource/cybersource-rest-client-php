@@ -100,14 +100,15 @@ class TokenApi
      * Generate Payment Credentials for a TMS Token
      *
      * @param string $tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param \CyberSource\Model\PostPaymentCredentialsRequest $postPaymentCredentialsRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTokenPaymentCredentials($tokenId, $profileId = null)
+    public function postTokenPaymentCredentials($tokenId, $postPaymentCredentialsRequest, $profileId = null)
     {
         self::$logger->info('CALL TO METHOD postTokenPaymentCredentials STARTED');
-        list($response, $statusCode, $httpHeader) = $this->postTokenPaymentCredentialsWithHttpInfo($tokenId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->postTokenPaymentCredentialsWithHttpInfo($tokenId, $postPaymentCredentialsRequest, $profileId);
         self::$logger->info('CALL TO METHOD postTokenPaymentCredentials ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -119,11 +120,12 @@ class TokenApi
      * Generate Payment Credentials for a TMS Token
      *
      * @param string $tokenId The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. (required)
+     * @param \CyberSource\Model\PostPaymentCredentialsRequest $postPaymentCredentialsRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTokenPaymentCredentialsWithHttpInfo($tokenId, $profileId = null)
+    public function postTokenPaymentCredentialsWithHttpInfo($tokenId, $postPaymentCredentialsRequest, $profileId = null)
     {
         // verify the required parameter 'tokenId' is set
         if ($tokenId === null) {
@@ -131,6 +133,11 @@ class TokenApi
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling postTokenPaymentCredentials');
         }
 
+        // verify the required parameter 'postPaymentCredentialsRequest' is set
+        if ($postPaymentCredentialsRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $postPaymentCredentialsRequest when calling postTokenPaymentCredentials");
+            throw new \InvalidArgumentException('Missing the required parameter $postPaymentCredentialsRequest when calling postTokenPaymentCredentials');
+        }
 
         // parse inputs
         $resourcePath = "/tms/v2/tokens/{tokenId}/payment-credentials";
@@ -156,9 +163,14 @@ class TokenApi
                 $resourcePath
             );
         }
-        if ('POST' == 'POST') {
-            $_tempBody = '{}';
+        // body params
+        $_tempBody = null;
+        if (isset($postPaymentCredentialsRequest)) {
+            $_tempBody = $postPaymentCredentialsRequest;
         }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PostPaymentCredentialsRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
