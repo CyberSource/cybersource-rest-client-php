@@ -15,6 +15,7 @@ The CyberSource PHP client provides convenient access to the [CyberSource REST A
 * OpenSSL PHP Extension
 * Zip PHP Extension
 * MBString PHP Extension
+* Sodium PHP Extension
 * PHP_APCU PHP Extension. You will need to download it for your platform (Windows/Linux/Mac)
 
 ## Installation
