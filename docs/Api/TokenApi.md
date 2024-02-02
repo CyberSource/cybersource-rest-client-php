@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **postTokenPaymentCredentials**
-> string postTokenPaymentCredentials($tokenId, $profileId)
+> string postTokenPaymentCredentials($tokenId, $postPaymentCredentialsRequest, $profileId)
 
 Generate Payment Credentials for a TMS Token
 
@@ -21,10 +21,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\TokenApi();
 $tokenId = "tokenId_example"; // string | The Id of a token representing a Customer, Payment Instrument or Instrument Identifier.
+$postPaymentCredentialsRequest = new \CyberSource\Model\PostPaymentCredentialsRequest(); // \CyberSource\Model\PostPaymentCredentialsRequest | 
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
 
 try {
-    $result = $api_instance->postTokenPaymentCredentials($tokenId, $profileId);
+    $result = $api_instance->postTokenPaymentCredentials($tokenId, $postPaymentCredentialsRequest, $profileId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TokenApi->postTokenPaymentCredentials: ', $e->getMessage(), PHP_EOL;
@@ -37,6 +38,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenId** | **string**| The Id of a token representing a Customer, Payment Instrument or Instrument Identifier. |
+ **postPaymentCredentialsRequest** | [**\CyberSource\Model\PostPaymentCredentialsRequest**](../Model/PostPaymentCredentialsRequest.md)|  |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
 
 ### Return type

@@ -83,11 +83,4 @@ class Riskv1authenticationresultsOrderInformationTest extends \PHPUnit_Framework
     public function testPropertyAmountDetails()
     {
     }
-
-    /**
-     * Test attribute "lineItems"
-     */
-    public function testPropertyLineItems()
-    {
-    }
 }

@@ -128,6 +128,10 @@ class BatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $batchId when calling getBatchReport");
             throw new \InvalidArgumentException('Missing the required parameter $batchId when calling getBatchReport');
         }
+        if (!preg_match("/^[0-9]*$/", $batchId)) {
+            self::$logger->error("InvalidArgumentException : Invalid value for \"batchId\" when calling BatchesApi.getBatchReport, must conform to the pattern /^[0-9]*$/.");
+            throw new \InvalidArgumentException('Invalid value for \"batchId\" when calling BatchesApi.getBatchReport, must conform to the pattern /^[0-9]*$/.');
+        }
 
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches/{batchId}/report";
@@ -238,6 +242,10 @@ class BatchesApi
         if ($batchId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $batchId when calling getBatchStatus");
             throw new \InvalidArgumentException('Missing the required parameter $batchId when calling getBatchStatus');
+        }
+        if (!preg_match("/^[0-9]*$/", $batchId)) {
+            self::$logger->error("InvalidArgumentException : Invalid value for \"batchId\" when calling BatchesApi.getBatchStatus, must conform to the pattern /^[0-9]*$/.");
+            throw new \InvalidArgumentException('Invalid value for \"batchId\" when calling BatchesApi.getBatchStatus, must conform to the pattern /^[0-9]*$/.');
         }
 
         // parse inputs

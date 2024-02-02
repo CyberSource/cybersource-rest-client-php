@@ -54,8 +54,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amountDetails' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformationAmountDetails',
-        'lineItems' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformationLineItems[]'
+        'amountDetails' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformationAmountDetails'
     ];
 
     /**
@@ -63,8 +62,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'amountDetails' => null,
-        'lineItems' => null
+        'amountDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +80,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amountDetails' => 'amountDetails',
-        'lineItems' => 'lineItems'
+        'amountDetails' => 'amountDetails'
     ];
 
 
@@ -92,8 +89,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amountDetails' => 'setAmountDetails',
-        'lineItems' => 'setLineItems'
+        'amountDetails' => 'setAmountDetails'
     ];
 
 
@@ -102,8 +98,7 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amountDetails' => 'getAmountDetails',
-        'lineItems' => 'getLineItems'
+        'amountDetails' => 'getAmountDetails'
     ];
 
     public static function attributeMap()
@@ -138,7 +133,6 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
-        $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
     }
 
     /**
@@ -183,27 +177,6 @@ class Riskv1authenticationresultsOrderInformation implements ArrayAccess
     public function setAmountDetails($amountDetails)
     {
         $this->container['amountDetails'] = $amountDetails;
-
-        return $this;
-    }
-
-    /**
-     * Gets lineItems
-     * @return \CyberSource\Model\Riskv1authenticationresultsOrderInformationLineItems[]
-     */
-    public function getLineItems()
-    {
-        return $this->container['lineItems'];
-    }
-
-    /**
-     * Sets lineItems
-     * @param \CyberSource\Model\Riskv1authenticationresultsOrderInformationLineItems[] $lineItems
-     * @return $this
-     */
-    public function setLineItems($lineItems)
-    {
-        $this->container['lineItems'] = $lineItems;
 
         return $this;
     }

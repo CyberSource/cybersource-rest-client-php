@@ -288,7 +288,7 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - PENDING
+     * @param string $status The status of the submitted transaction.  Possible values:  - PENDING  - TRANSMITTED (Only for Online Capture enabled merchants)
      * @return $this
      */
     public function setStatus($status)

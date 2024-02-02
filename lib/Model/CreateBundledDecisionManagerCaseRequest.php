@@ -65,7 +65,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'travelInformation' => '\CyberSource\Model\Riskv1decisionsTravelInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Riskv1decisionsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\Riskv1decisionsMerchantInformation',
-        'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
+        'acquirerInformation' => '\CyberSource\Model\Riskv1decisionsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation',
         'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation',
@@ -483,7 +483,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
 
     /**
      * Gets acquirerInformation
-     * @return \CyberSource\Model\Ptsv2paymentsAcquirerInformation
+     * @return \CyberSource\Model\Riskv1decisionsAcquirerInformation
      */
     public function getAcquirerInformation()
     {
@@ -492,7 +492,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
 
     /**
      * Sets acquirerInformation
-     * @param \CyberSource\Model\Ptsv2paymentsAcquirerInformation $acquirerInformation
+     * @param \CyberSource\Model\Riskv1decisionsAcquirerInformation $acquirerInformation
      * @return $this
      */
     public function setAcquirerInformation($acquirerInformation)

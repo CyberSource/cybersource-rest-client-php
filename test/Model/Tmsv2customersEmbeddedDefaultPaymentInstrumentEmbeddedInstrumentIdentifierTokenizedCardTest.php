@@ -92,6 +92,20 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
     }
 
     /**
+     * Test attribute "enrollmentId"
+     */
+    public function testPropertyEnrollmentId()
+    {
+    }
+
+    /**
+     * Test attribute "tokenReferenceId"
+     */
+    public function testPropertyTokenReferenceId()
+    {
+    }
+
+    /**
      * Test attribute "reason"
      */
     public function testPropertyReason()
