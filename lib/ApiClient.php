@@ -125,6 +125,11 @@ class ApiClient
         $versionInfo = "";
         $packages = json_decode(file_get_contents(__DIR__ . "/../../../../vendor/composer/installed.json"), true);
 
+        // Composer V2 has "packages" key at the top level with the packages.
+        if (array_key_exists('packages', $packages)) {
+          $packages = $packages['packages'];
+        }
+
         foreach ($packages as $package) {
             if (isset($package['name']) && strcmp($package['name'], "cybersource/rest-client-php") == 0)
             {
