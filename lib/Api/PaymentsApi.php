@@ -147,7 +147,8 @@ class PaymentsApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreatePaymentRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $explode = explode('\\', '\CyberSource\Model\CreatePaymentRequest');
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($explode), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -273,7 +274,8 @@ class PaymentsApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\IncrementAuthRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $explode = explode('\\', '\CyberSource\Model\IncrementAuthRequest');
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($explode), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -399,7 +401,8 @@ class PaymentsApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\RefreshPaymentStatusRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $explode = explode('\\', '\CyberSource\Model\RefreshPaymentStatusRequest');
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($explode), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

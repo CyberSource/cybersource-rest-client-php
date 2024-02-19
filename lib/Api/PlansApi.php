@@ -265,7 +265,8 @@ class PlansApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\CreatePlanRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $explode = explode('\\', '\CyberSource\Model\CreatePlanRequest');
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($explode), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -978,7 +979,8 @@ class PlansApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\UpdatePlanRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $explode = explode('\\', '\CyberSource\Model\UpdatePlanRequest');
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($explode), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

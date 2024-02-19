@@ -246,7 +246,8 @@ class InvoiceSettingsApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\InvoiceSettingsRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $explode = explode('\\', '\CyberSource\Model\InvoiceSettingsRequest');
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($explode), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
