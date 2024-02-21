@@ -64,7 +64,7 @@ class PatchCustomerPaymentInstrumentRequest implements ArrayAccess
         'card' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard',
         'buyerInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation',
         'billTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo',
-        'processingInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation',
+        'processingInformation' => '\CyberSource\Model\TmsPaymentInstrumentProcessingInfo',
         'merchantInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation',
         'instrumentIdentifier' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier',
         'metadata' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata',
@@ -456,7 +456,7 @@ class PatchCustomerPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation
+     * @return \CyberSource\Model\TmsPaymentInstrumentProcessingInfo
      */
     public function getProcessingInformation()
     {
@@ -465,7 +465,7 @@ class PatchCustomerPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation $processingInformation
+     * @param \CyberSource\Model\TmsPaymentInstrumentProcessingInfo $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)

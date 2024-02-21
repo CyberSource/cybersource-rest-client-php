@@ -90,4 +90,25 @@ class Ptsv2payoutsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCustomer()
     {
     }
+
+    /**
+     * Test attribute "paymentInstrument"
+     */
+    public function testPropertyPaymentInstrument()
+    {
+    }
+
+    /**
+     * Test attribute "instrumentIdentifier"
+     */
+    public function testPropertyInstrumentIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "tokenizedCard"
+     */
+    public function testPropertyTokenizedCard()
+    {
+    }
 }

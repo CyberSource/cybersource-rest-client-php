@@ -236,7 +236,7 @@ class InstrumentIdentifierApi
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInstrumentIdentifier($instrumentIdentifierId, $profileId = null)
     {
@@ -255,7 +255,7 @@ class InstrumentIdentifierApi
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $profileId = null)
     {
@@ -313,7 +313,7 @@ class InstrumentIdentifierApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier");
+        self::$logger->debug("Return Type : \CyberSource\Model\TmsEmbeddedInstrumentIdentifier");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -322,17 +322,17 @@ class InstrumentIdentifierApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
+                '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier',
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -530,7 +530,7 @@ class InstrumentIdentifierApi
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
     {
@@ -551,7 +551,7 @@ class InstrumentIdentifierApi
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
     {
@@ -626,7 +626,7 @@ class InstrumentIdentifierApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier");
+        self::$logger->debug("Return Type : \CyberSource\Model\TmsEmbeddedInstrumentIdentifier");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -635,17 +635,17 @@ class InstrumentIdentifierApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
+                '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier',
                 '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -691,7 +691,7 @@ class InstrumentIdentifierApi
      * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId = null)
     {
@@ -710,7 +710,7 @@ class InstrumentIdentifierApi
      * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\TmsEmbeddedInstrumentIdentifier, HTTP status code, HTTP response headers (array of strings)
      */
     public function postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId = null)
     {
@@ -766,7 +766,7 @@ class InstrumentIdentifierApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier");
+        self::$logger->debug("Return Type : \CyberSource\Model\TmsEmbeddedInstrumentIdentifier");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -775,21 +775,21 @@ class InstrumentIdentifierApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier',
+                '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier',
                 '/tms/v1/instrumentidentifiers'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

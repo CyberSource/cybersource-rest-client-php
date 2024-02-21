@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **payouts** | [**\CyberSource\Model\InlineResponse2011SetupsPaymentsCardProcessing**](InlineResponse2011SetupsPaymentsCardProcessing.md) |  | [optional] 
 **payByLink** | [**\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments**](InlineResponse2011SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **unifiedCheckout** | [**\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments**](InlineResponse2011SetupsPaymentsDigitalPayments.md) |  | [optional] 
+**receivablesManager** | [**\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments**](InlineResponse2011SetupsPaymentsDigitalPayments.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -71,7 +71,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'purchaseOptions' => '\CyberSource\Model\Ptsv2creditsProcessingInformationPurchaseOptions',
         'electronicBenefitsTransfer' => '\CyberSource\Model\Ptsv2creditsProcessingInformationElectronicBenefitsTransfer',
         'loanOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationLoanOptions',
-        'japanPaymentOptions' => '\CyberSource\Model\Ptsv2creditsProcessingInformationJapanPaymentOptions'
+        'japanPaymentOptions' => '\CyberSource\Model\Ptsv2creditsProcessingInformationJapanPaymentOptions',
+        'refundOptions' => '\CyberSource\Model\Ptsv2creditsProcessingInformationRefundOptions'
     ];
 
     /**
@@ -96,7 +97,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'purchaseOptions' => null,
         'electronicBenefitsTransfer' => null,
         'loanOptions' => null,
-        'japanPaymentOptions' => null
+        'japanPaymentOptions' => null,
+        'refundOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -131,7 +133,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'purchaseOptions' => 'purchaseOptions',
         'electronicBenefitsTransfer' => 'electronicBenefitsTransfer',
         'loanOptions' => 'loanOptions',
-        'japanPaymentOptions' => 'japanPaymentOptions'
+        'japanPaymentOptions' => 'japanPaymentOptions',
+        'refundOptions' => 'refundOptions'
     ];
 
 
@@ -157,7 +160,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'purchaseOptions' => 'setPurchaseOptions',
         'electronicBenefitsTransfer' => 'setElectronicBenefitsTransfer',
         'loanOptions' => 'setLoanOptions',
-        'japanPaymentOptions' => 'setJapanPaymentOptions'
+        'japanPaymentOptions' => 'setJapanPaymentOptions',
+        'refundOptions' => 'setRefundOptions'
     ];
 
 
@@ -183,7 +187,8 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         'purchaseOptions' => 'getPurchaseOptions',
         'electronicBenefitsTransfer' => 'getElectronicBenefitsTransfer',
         'loanOptions' => 'getLoanOptions',
-        'japanPaymentOptions' => 'getJapanPaymentOptions'
+        'japanPaymentOptions' => 'getJapanPaymentOptions',
+        'refundOptions' => 'getRefundOptions'
     ];
 
     public static function attributeMap()
@@ -235,6 +240,7 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
         $this->container['electronicBenefitsTransfer'] = isset($data['electronicBenefitsTransfer']) ? $data['electronicBenefitsTransfer'] : null;
         $this->container['loanOptions'] = isset($data['loanOptions']) ? $data['loanOptions'] : null;
         $this->container['japanPaymentOptions'] = isset($data['japanPaymentOptions']) ? $data['japanPaymentOptions'] : null;
+        $this->container['refundOptions'] = isset($data['refundOptions']) ? $data['refundOptions'] : null;
     }
 
     /**
@@ -636,6 +642,27 @@ class Ptsv2creditsProcessingInformation implements ArrayAccess
     public function setJapanPaymentOptions($japanPaymentOptions)
     {
         $this->container['japanPaymentOptions'] = $japanPaymentOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets refundOptions
+     * @return \CyberSource\Model\Ptsv2creditsProcessingInformationRefundOptions
+     */
+    public function getRefundOptions()
+    {
+        return $this->container['refundOptions'];
+    }
+
+    /**
+     * Sets refundOptions
+     * @param \CyberSource\Model\Ptsv2creditsProcessingInformationRefundOptions $refundOptions
+     * @return $this
+     */
+    public function setRefundOptions($refundOptions)
+    {
+        $this->container['refundOptions'] = $refundOptions;
 
         return $this;
     }

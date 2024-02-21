@@ -85,6 +85,27 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsTe
     }
 
     /**
+     * Test attribute "authIndicator"
+     */
+    public function testPropertyAuthIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "extendAuthIndicator"
+     */
+    public function testPropertyExtendAuthIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "cardVerificationIndicator"
+     */
+    public function testPropertyCardVerificationIndicator()
+    {
+    }
+
+    /**
      * Test attribute "initiator"
      */
     public function testPropertyInitiator()

@@ -55,7 +55,7 @@ class PaymentsProductsVirtualTerminalConfigurationInformation implements ArrayAc
       */
     protected static $swaggerTypes = [
         'templateId' => 'string',
-        'configurations' => '\CyberSource\Model\PaymentsProductsVirtualTerminalConfigurationInformationConfigurations'
+        'configurations' => '\CyberSource\Model\VTConfig'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PaymentsProductsVirtualTerminalConfigurationInformation implements ArrayAc
 
     /**
      * Gets configurations
-     * @return \CyberSource\Model\PaymentsProductsVirtualTerminalConfigurationInformationConfigurations
+     * @return \CyberSource\Model\VTConfig
      */
     public function getConfigurations()
     {
@@ -198,7 +198,7 @@ class PaymentsProductsVirtualTerminalConfigurationInformation implements ArrayAc
 
     /**
      * Sets configurations
-     * @param \CyberSource\Model\PaymentsProductsVirtualTerminalConfigurationInformationConfigurations $configurations
+     * @param \CyberSource\Model\VTConfig $configurations
      * @return $this
      */
     public function setConfigurations($configurations)

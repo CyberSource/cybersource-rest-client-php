@@ -60,6 +60,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'verbalAuthTransactionId' => 'string',
         'authIndicator' => 'string',
         'partialAuthIndicator' => 'bool',
+        'extendAuthIndicator' => 'string',
         'balanceInquiry' => 'bool',
         'ignoreAvsResult' => 'bool',
         'declineAvsFlags' => 'string[]',
@@ -88,6 +89,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'verbalAuthTransactionId' => null,
         'authIndicator' => null,
         'partialAuthIndicator' => null,
+        'extendAuthIndicator' => null,
         'balanceInquiry' => null,
         'ignoreAvsResult' => null,
         'declineAvsFlags' => null,
@@ -126,6 +128,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'verbalAuthTransactionId' => 'verbalAuthTransactionId',
         'authIndicator' => 'authIndicator',
         'partialAuthIndicator' => 'partialAuthIndicator',
+        'extendAuthIndicator' => 'extendAuthIndicator',
         'balanceInquiry' => 'balanceInquiry',
         'ignoreAvsResult' => 'ignoreAvsResult',
         'declineAvsFlags' => 'declineAvsFlags',
@@ -155,6 +158,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'verbalAuthTransactionId' => 'setVerbalAuthTransactionId',
         'authIndicator' => 'setAuthIndicator',
         'partialAuthIndicator' => 'setPartialAuthIndicator',
+        'extendAuthIndicator' => 'setExtendAuthIndicator',
         'balanceInquiry' => 'setBalanceInquiry',
         'ignoreAvsResult' => 'setIgnoreAvsResult',
         'declineAvsFlags' => 'setDeclineAvsFlags',
@@ -184,6 +188,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'verbalAuthTransactionId' => 'getVerbalAuthTransactionId',
         'authIndicator' => 'getAuthIndicator',
         'partialAuthIndicator' => 'getPartialAuthIndicator',
+        'extendAuthIndicator' => 'getExtendAuthIndicator',
         'balanceInquiry' => 'getBalanceInquiry',
         'ignoreAvsResult' => 'getIgnoreAvsResult',
         'declineAvsFlags' => 'getDeclineAvsFlags',
@@ -238,6 +243,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['verbalAuthTransactionId'] = isset($data['verbalAuthTransactionId']) ? $data['verbalAuthTransactionId'] : null;
         $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;
         $this->container['partialAuthIndicator'] = isset($data['partialAuthIndicator']) ? $data['partialAuthIndicator'] : null;
+        $this->container['extendAuthIndicator'] = isset($data['extendAuthIndicator']) ? $data['extendAuthIndicator'] : null;
         $this->container['balanceInquiry'] = isset($data['balanceInquiry']) ? $data['balanceInquiry'] : null;
         $this->container['ignoreAvsResult'] = isset($data['ignoreAvsResult']) ? $data['ignoreAvsResult'] : false;
         $this->container['declineAvsFlags'] = isset($data['declineAvsFlags']) ? $data['declineAvsFlags'] : null;
@@ -402,6 +408,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function setPartialAuthIndicator($partialAuthIndicator)
     {
         $this->container['partialAuthIndicator'] = $partialAuthIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets extendAuthIndicator
+     * @return string
+     */
+    public function getExtendAuthIndicator()
+    {
+        return $this->container['extendAuthIndicator'];
+    }
+
+    /**
+     * Sets extendAuthIndicator
+     * @param string $extendAuthIndicator Flag that indicates whether the transaction is an extended authorization.
+     * @return $this
+     */
+    public function setExtendAuthIndicator($extendAuthIndicator)
+    {
+        $this->container['extendAuthIndicator'] = $extendAuthIndicator;
 
         return $this;
     }

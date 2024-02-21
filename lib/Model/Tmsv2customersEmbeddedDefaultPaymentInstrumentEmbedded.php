@@ -55,7 +55,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'instrumentIdentifier' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier'
+        'instrumentIdentifier' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifier'
     ];
 
     /**
@@ -163,7 +163,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded implements ArrayAcc
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier
+     * @return \CyberSource\Model\TmsEmbeddedInstrumentIdentifier
      */
     public function getInstrumentIdentifier()
     {
@@ -172,7 +172,7 @@ class Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded implements ArrayAcc
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\TmsEmbeddedInstrumentIdentifier $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)

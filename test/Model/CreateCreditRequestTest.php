@@ -169,6 +169,20 @@ class CreateCreditRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "recipientInformation"
+     */
+    public function testPropertyRecipientInformation()
+    {
+    }
+
+    /**
+     * Test attribute "senderInformation"
+     */
+    public function testPropertySenderInformation()
+    {
+    }
+
+    /**
      * Test attribute "promotionInformation"
      */
     public function testPropertyPromotionInformation()

@@ -67,6 +67,8 @@ class CreateCreditRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation',
         'installmentInformation' => '\CyberSource\Model\Ptsv2creditsInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
+        'recipientInformation' => '\CyberSource\Model\Ptsv2creditsRecipientInformation',
+        'senderInformation' => '\CyberSource\Model\Ptsv2creditsSenderInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
     ];
 
@@ -88,6 +90,8 @@ class CreateCreditRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => null,
         'installmentInformation' => null,
         'travelInformation' => null,
+        'recipientInformation' => null,
+        'senderInformation' => null,
         'promotionInformation' => null
     ];
 
@@ -119,6 +123,8 @@ class CreateCreditRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => 'merchantDefinedSecureInformation',
         'installmentInformation' => 'installmentInformation',
         'travelInformation' => 'travelInformation',
+        'recipientInformation' => 'recipientInformation',
+        'senderInformation' => 'senderInformation',
         'promotionInformation' => 'promotionInformation'
     ];
 
@@ -141,6 +147,8 @@ class CreateCreditRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => 'setMerchantDefinedSecureInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'travelInformation' => 'setTravelInformation',
+        'recipientInformation' => 'setRecipientInformation',
+        'senderInformation' => 'setSenderInformation',
         'promotionInformation' => 'setPromotionInformation'
     ];
 
@@ -163,6 +171,8 @@ class CreateCreditRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => 'getMerchantDefinedSecureInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'travelInformation' => 'getTravelInformation',
+        'recipientInformation' => 'getRecipientInformation',
+        'senderInformation' => 'getSenderInformation',
         'promotionInformation' => 'getPromotionInformation'
     ];
 
@@ -210,6 +220,8 @@ class CreateCreditRequest implements ArrayAccess
         $this->container['merchantDefinedSecureInformation'] = isset($data['merchantDefinedSecureInformation']) ? $data['merchantDefinedSecureInformation'] : null;
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
+        $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
+        $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
     }
 
@@ -507,6 +519,48 @@ class CreateCreditRequest implements ArrayAccess
     public function setTravelInformation($travelInformation)
     {
         $this->container['travelInformation'] = $travelInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipientInformation
+     * @return \CyberSource\Model\Ptsv2creditsRecipientInformation
+     */
+    public function getRecipientInformation()
+    {
+        return $this->container['recipientInformation'];
+    }
+
+    /**
+     * Sets recipientInformation
+     * @param \CyberSource\Model\Ptsv2creditsRecipientInformation $recipientInformation
+     * @return $this
+     */
+    public function setRecipientInformation($recipientInformation)
+    {
+        $this->container['recipientInformation'] = $recipientInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets senderInformation
+     * @return \CyberSource\Model\Ptsv2creditsSenderInformation
+     */
+    public function getSenderInformation()
+    {
+        return $this->container['senderInformation'];
+    }
+
+    /**
+     * Sets senderInformation
+     * @param \CyberSource\Model\Ptsv2creditsSenderInformation $senderInformation
+     * @return $this
+     */
+    public function setSenderInformation($senderInformation)
+    {
+        $this->container['senderInformation'] = $senderInformation;
 
         return $this;
     }

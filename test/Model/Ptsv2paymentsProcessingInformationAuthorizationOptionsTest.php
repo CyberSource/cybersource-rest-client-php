@@ -120,6 +120,13 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     }
 
     /**
+     * Test attribute "extendAuthIndicator"
+     */
+    public function testPropertyExtendAuthIndicator()
+    {
+    }
+
+    /**
      * Test attribute "balanceInquiry"
      */
     public function testPropertyBalanceInquiry()

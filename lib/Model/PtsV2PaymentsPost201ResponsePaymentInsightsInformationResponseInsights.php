@@ -55,7 +55,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
       */
     protected static $swaggerTypes = [
         'category' => 'string',
-        'categoryCode' => 'string'
+        'categoryCode' => 'string',
+        'processorRawName' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
       */
     protected static $swaggerFormats = [
         'category' => null,
-        'categoryCode' => null
+        'categoryCode' => null,
+        'processorRawName' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
      */
     protected static $attributeMap = [
         'category' => 'category',
-        'categoryCode' => 'categoryCode'
+        'categoryCode' => 'categoryCode',
+        'processorRawName' => 'processorRawName'
     ];
 
 
@@ -93,7 +96,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
      */
     protected static $setters = [
         'category' => 'setCategory',
-        'categoryCode' => 'setCategoryCode'
+        'categoryCode' => 'setCategoryCode',
+        'processorRawName' => 'setProcessorRawName'
     ];
 
 
@@ -103,7 +107,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
      */
     protected static $getters = [
         'category' => 'getCategory',
-        'categoryCode' => 'getCategoryCode'
+        'categoryCode' => 'getCategoryCode',
+        'processorRawName' => 'getProcessorRawName'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
     {
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
+        $this->container['processorRawName'] = isset($data['processorRawName']) ? $data['processorRawName'] : null;
     }
 
     /**
@@ -204,6 +210,27 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
     public function setCategoryCode($categoryCode)
     {
         $this->container['categoryCode'] = $categoryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorRawName
+     * @return string
+     */
+    public function getProcessorRawName()
+    {
+        return $this->container['processorRawName'];
+    }
+
+    /**
+     * Sets processorRawName
+     * @param string $processorRawName Raw name of the processor used for the transaction processing, especially useful during acquirer swing to see which processor transaction settled with
+     * @return $this
+     */
+    public function setProcessorRawName($processorRawName)
+    {
+        $this->container['processorRawName'] = $processorRawName;
 
         return $this;
     }

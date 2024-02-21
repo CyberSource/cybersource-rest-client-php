@@ -134,6 +134,20 @@ class TssV2TransactionsGet200ResponseProcessingInformationTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "captureOptions"
+     */
+    public function testPropertyCaptureOptions()
+    {
+    }
+
+    /**
+     * Test attribute "reconciliationId"
+     */
+    public function testPropertyReconciliationId()
+    {
+    }
+
+    /**
      * Test attribute "japanPaymentOptions"
      */
     public function testPropertyJapanPaymentOptions()

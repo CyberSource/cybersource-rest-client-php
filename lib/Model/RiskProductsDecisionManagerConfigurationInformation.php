@@ -55,7 +55,7 @@ class RiskProductsDecisionManagerConfigurationInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'templateId' => 'string',
-        'configurations' => '\CyberSource\Model\RiskProductsDecisionManagerConfigurationInformationConfigurations'
+        'configurations' => '\CyberSource\Model\DmConfig'
     ];
 
     /**
@@ -189,7 +189,7 @@ class RiskProductsDecisionManagerConfigurationInformation implements ArrayAccess
 
     /**
      * Gets configurations
-     * @return \CyberSource\Model\RiskProductsDecisionManagerConfigurationInformationConfigurations
+     * @return \CyberSource\Model\DmConfig
      */
     public function getConfigurations()
     {
@@ -198,7 +198,7 @@ class RiskProductsDecisionManagerConfigurationInformation implements ArrayAccess
 
     /**
      * Sets configurations
-     * @param \CyberSource\Model\RiskProductsDecisionManagerConfigurationInformationConfigurations $configurations
+     * @param \CyberSource\Model\DmConfig $configurations
      * @return $this
      */
     public function setConfigurations($configurations)
