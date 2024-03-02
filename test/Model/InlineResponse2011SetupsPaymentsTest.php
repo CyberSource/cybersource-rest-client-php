@@ -188,4 +188,11 @@ class InlineResponse2011SetupsPaymentsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUnifiedCheckout()
     {
     }
+
+    /**
+     * Test attribute "receivablesManager"
+     */
+    public function testPropertyReceivablesManager()
+    {
+    }
 }

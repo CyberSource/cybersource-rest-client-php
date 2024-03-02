@@ -55,7 +55,7 @@ class PaymentsProductsPayerAuthenticationConfigurationInformation implements Arr
       */
     protected static $swaggerTypes = [
         'templateId' => 'string',
-        'configurations' => '\CyberSource\Model\PaymentsProductsPayerAuthenticationConfigurationInformationConfigurations'
+        'configurations' => '\CyberSource\Model\PayerAuthConfig'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PaymentsProductsPayerAuthenticationConfigurationInformation implements Arr
 
     /**
      * Gets configurations
-     * @return \CyberSource\Model\PaymentsProductsPayerAuthenticationConfigurationInformationConfigurations
+     * @return \CyberSource\Model\PayerAuthConfig
      */
     public function getConfigurations()
     {
@@ -198,7 +198,7 @@ class PaymentsProductsPayerAuthenticationConfigurationInformation implements Arr
 
     /**
      * Sets configurations
-     * @param \CyberSource\Model\PaymentsProductsPayerAuthenticationConfigurationInformationConfigurations $configurations
+     * @param \CyberSource\Model\PayerAuthConfig $configurations
      * @return $this
      */
     public function setConfigurations($configurations)

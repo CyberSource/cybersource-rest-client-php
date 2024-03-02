@@ -202,4 +202,11 @@ class Ptsv2creditsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyJapanPaymentOptions()
     {
     }
+
+    /**
+     * Test attribute "refundOptions"
+     */
+    public function testPropertyRefundOptions()
+    {
+    }
 }

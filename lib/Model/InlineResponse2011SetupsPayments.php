@@ -69,7 +69,8 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
         'paymentOrchestration' => '\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments',
         'payouts' => '\CyberSource\Model\InlineResponse2011SetupsPaymentsCardProcessing',
         'payByLink' => '\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments',
-        'unifiedCheckout' => '\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments'
+        'unifiedCheckout' => '\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments',
+        'receivablesManager' => '\CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments'
     ];
 
     /**
@@ -92,7 +93,8 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
         'paymentOrchestration' => null,
         'payouts' => null,
         'payByLink' => null,
-        'unifiedCheckout' => null
+        'unifiedCheckout' => null,
+        'receivablesManager' => null
     ];
 
     public static function swaggerTypes()
@@ -125,7 +127,8 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
         'paymentOrchestration' => 'paymentOrchestration',
         'payouts' => 'payouts',
         'payByLink' => 'payByLink',
-        'unifiedCheckout' => 'unifiedCheckout'
+        'unifiedCheckout' => 'unifiedCheckout',
+        'receivablesManager' => 'receivablesManager'
     ];
 
 
@@ -149,7 +152,8 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
         'paymentOrchestration' => 'setPaymentOrchestration',
         'payouts' => 'setPayouts',
         'payByLink' => 'setPayByLink',
-        'unifiedCheckout' => 'setUnifiedCheckout'
+        'unifiedCheckout' => 'setUnifiedCheckout',
+        'receivablesManager' => 'setReceivablesManager'
     ];
 
 
@@ -173,7 +177,8 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
         'paymentOrchestration' => 'getPaymentOrchestration',
         'payouts' => 'getPayouts',
         'payByLink' => 'getPayByLink',
-        'unifiedCheckout' => 'getUnifiedCheckout'
+        'unifiedCheckout' => 'getUnifiedCheckout',
+        'receivablesManager' => 'getReceivablesManager'
     ];
 
     public static function attributeMap()
@@ -223,6 +228,7 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
         $this->container['payouts'] = isset($data['payouts']) ? $data['payouts'] : null;
         $this->container['payByLink'] = isset($data['payByLink']) ? $data['payByLink'] : null;
         $this->container['unifiedCheckout'] = isset($data['unifiedCheckout']) ? $data['unifiedCheckout'] : null;
+        $this->container['receivablesManager'] = isset($data['receivablesManager']) ? $data['receivablesManager'] : null;
     }
 
     /**
@@ -582,6 +588,27 @@ class InlineResponse2011SetupsPayments implements ArrayAccess
     public function setUnifiedCheckout($unifiedCheckout)
     {
         $this->container['unifiedCheckout'] = $unifiedCheckout;
+
+        return $this;
+    }
+
+    /**
+     * Gets receivablesManager
+     * @return \CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments
+     */
+    public function getReceivablesManager()
+    {
+        return $this->container['receivablesManager'];
+    }
+
+    /**
+     * Sets receivablesManager
+     * @param \CyberSource\Model\InlineResponse2011SetupsPaymentsDigitalPayments $receivablesManager
+     * @return $this
+     */
+    public function setReceivablesManager($receivablesManager)
+    {
+        $this->container['receivablesManager'] = $receivablesManager;
 
         return $this;
     }

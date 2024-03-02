@@ -55,7 +55,7 @@ class PaymentsProductsSecureAcceptanceConfigurationInformation implements ArrayA
       */
     protected static $swaggerTypes = [
         'templateId' => 'string',
-        'configurations' => '\CyberSource\Model\PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations'
+        'configurations' => '\CyberSource\Model\SAConfig'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PaymentsProductsSecureAcceptanceConfigurationInformation implements ArrayA
 
     /**
      * Gets configurations
-     * @return \CyberSource\Model\PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations
+     * @return \CyberSource\Model\SAConfig
      */
     public function getConfigurations()
     {
@@ -198,7 +198,7 @@ class PaymentsProductsSecureAcceptanceConfigurationInformation implements ArrayA
 
     /**
      * Sets configurations
-     * @param \CyberSource\Model\PaymentsProductsSecureAcceptanceConfigurationInformationConfigurations $configurations
+     * @param \CyberSource\Model\SAConfig $configurations
      * @return $this
      */
     public function setConfigurations($configurations)

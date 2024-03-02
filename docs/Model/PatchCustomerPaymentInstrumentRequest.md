@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **card** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard**](Tmsv2customersEmbeddedDefaultPaymentInstrumentCard.md) |  | [optional] 
 **buyerInformation** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation**](Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation.md) |  | [optional] 
 **billTo** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo**](Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo.md) |  | [optional] 
-**processingInformation** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation**](Tmsv2customersEmbeddedDefaultPaymentInstrumentProcessingInformation.md) |  | [optional] 
+**processingInformation** | [**\CyberSource\Model\TmsPaymentInstrumentProcessingInfo**](TmsPaymentInstrumentProcessingInfo.md) |  | [optional] 
 **merchantInformation** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation**](Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation.md) |  | [optional] 
 **instrumentIdentifier** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier**](Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier.md) |  | [optional] 
 **metadata** | [**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata**](Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata.md) |  | [optional] 

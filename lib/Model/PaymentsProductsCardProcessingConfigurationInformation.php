@@ -55,7 +55,7 @@ class PaymentsProductsCardProcessingConfigurationInformation implements ArrayAcc
       */
     protected static $swaggerTypes = [
         'templateId' => 'string',
-        'configurations' => '\CyberSource\Model\PaymentsProductsCardProcessingConfigurationInformationConfigurations'
+        'configurations' => '\CyberSource\Model\CardProcessingConfig'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PaymentsProductsCardProcessingConfigurationInformation implements ArrayAcc
 
     /**
      * Gets configurations
-     * @return \CyberSource\Model\PaymentsProductsCardProcessingConfigurationInformationConfigurations
+     * @return \CyberSource\Model\CardProcessingConfig
      */
     public function getConfigurations()
     {
@@ -198,7 +198,7 @@ class PaymentsProductsCardProcessingConfigurationInformation implements ArrayAcc
 
     /**
      * Sets configurations
-     * @param \CyberSource\Model\PaymentsProductsCardProcessingConfigurationInformationConfigurations $configurations
+     * @param \CyberSource\Model\CardProcessingConfig $configurations
      * @return $this
      */
     public function setConfigurations($configurations)

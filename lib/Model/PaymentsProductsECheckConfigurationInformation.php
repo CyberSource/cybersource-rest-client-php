@@ -55,7 +55,7 @@ class PaymentsProductsECheckConfigurationInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'templateId' => 'string',
-        'configurations' => '\CyberSource\Model\PaymentsProductsECheckConfigurationInformationConfigurations'
+        'configurations' => '\CyberSource\Model\ECheckConfig'
     ];
 
     /**
@@ -189,7 +189,7 @@ class PaymentsProductsECheckConfigurationInformation implements ArrayAccess
 
     /**
      * Gets configurations
-     * @return \CyberSource\Model\PaymentsProductsECheckConfigurationInformationConfigurations
+     * @return \CyberSource\Model\ECheckConfig
      */
     public function getConfigurations()
     {
@@ -198,7 +198,7 @@ class PaymentsProductsECheckConfigurationInformation implements ArrayAccess
 
     /**
      * Sets configurations
-     * @param \CyberSource\Model\PaymentsProductsECheckConfigurationInformationConfigurations $configurations
+     * @param \CyberSource\Model\ECheckConfig $configurations
      * @return $this
      */
     public function setConfigurations($configurations)

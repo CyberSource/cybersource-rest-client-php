@@ -55,7 +55,10 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Ptsv2payoutsPaymentInformationCard',
-        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
+        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
+        'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument',
+        'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier',
+        'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard'
     ];
 
     /**
@@ -64,7 +67,10 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'card' => null,
-        'customer' => null
+        'customer' => null,
+        'paymentInstrument' => null,
+        'instrumentIdentifier' => null,
+        'tokenizedCard' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +89,10 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'card' => 'card',
-        'customer' => 'customer'
+        'customer' => 'customer',
+        'paymentInstrument' => 'paymentInstrument',
+        'instrumentIdentifier' => 'instrumentIdentifier',
+        'tokenizedCard' => 'tokenizedCard'
     ];
 
 
@@ -93,7 +102,10 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'card' => 'setCard',
-        'customer' => 'setCustomer'
+        'customer' => 'setCustomer',
+        'paymentInstrument' => 'setPaymentInstrument',
+        'instrumentIdentifier' => 'setInstrumentIdentifier',
+        'tokenizedCard' => 'setTokenizedCard'
     ];
 
 
@@ -103,7 +115,10 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'card' => 'getCard',
-        'customer' => 'getCustomer'
+        'customer' => 'getCustomer',
+        'paymentInstrument' => 'getPaymentInstrument',
+        'instrumentIdentifier' => 'getInstrumentIdentifier',
+        'tokenizedCard' => 'getTokenizedCard'
     ];
 
     public static function attributeMap()
@@ -139,6 +154,9 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
+        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
+        $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
     }
 
     /**
@@ -204,6 +222,69 @@ class Ptsv2payoutsPaymentInformation implements ArrayAccess
     public function setCustomer($customer)
     {
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInstrument
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument
+     */
+    public function getPaymentInstrument()
+    {
+        return $this->container['paymentInstrument'];
+    }
+
+    /**
+     * Sets paymentInstrument
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument $paymentInstrument
+     * @return $this
+     */
+    public function setPaymentInstrument($paymentInstrument)
+    {
+        $this->container['paymentInstrument'] = $paymentInstrument;
+
+        return $this;
+    }
+
+    /**
+     * Gets instrumentIdentifier
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier
+     */
+    public function getInstrumentIdentifier()
+    {
+        return $this->container['instrumentIdentifier'];
+    }
+
+    /**
+     * Sets instrumentIdentifier
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationInstrumentIdentifier $instrumentIdentifier
+     * @return $this
+     */
+    public function setInstrumentIdentifier($instrumentIdentifier)
+    {
+        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenizedCard
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard
+     */
+    public function getTokenizedCard()
+    {
+        return $this->container['tokenizedCard'];
+    }
+
+    /**
+     * Sets tokenizedCard
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard $tokenizedCard
+     * @return $this
+     */
+    public function setTokenizedCard($tokenizedCard)
+    {
+        $this->container['tokenizedCard'] = $tokenizedCard;
 
         return $this;
     }

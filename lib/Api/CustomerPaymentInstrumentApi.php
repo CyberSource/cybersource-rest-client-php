@@ -655,7 +655,9 @@ class CustomerPaymentInstrumentApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PatchCustomerPaymentInstrumentRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\PatchCustomerPaymentInstrumentRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -809,7 +811,9 @@ class CustomerPaymentInstrumentApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PostCustomerPaymentInstrumentRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\PostCustomerPaymentInstrumentRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

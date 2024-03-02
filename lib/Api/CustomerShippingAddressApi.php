@@ -655,7 +655,9 @@ class CustomerShippingAddressApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PatchCustomerShippingAddressRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\PatchCustomerShippingAddressRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -809,7 +811,9 @@ class CustomerShippingAddressApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\PostCustomerShippingAddressRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\PostCustomerShippingAddressRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

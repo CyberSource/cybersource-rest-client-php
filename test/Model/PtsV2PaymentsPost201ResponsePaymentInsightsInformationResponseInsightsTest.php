@@ -90,4 +90,11 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsightsTest
     public function testPropertyCategoryCode()
     {
     }
+
+    /**
+     * Test attribute "processorRawName"
+     */
+    public function testPropertyProcessorRawName()
+    {
+    }
 }

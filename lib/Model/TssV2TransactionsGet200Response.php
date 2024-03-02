@@ -75,8 +75,10 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformation',
         'paymentInsightsInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation',
         'payoutOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePayoutOptions',
+        'unscheduledPaymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseUnscheduledPaymentInformation',
         'processingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformation',
+        'recurringPaymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRecurringPaymentInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePointOfSaleInformation',
         'riskInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRiskInformation',
         'senderInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseSenderInformation',
@@ -110,8 +112,10 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'paymentInformation' => null,
         'paymentInsightsInformation' => null,
         'payoutOptions' => null,
+        'unscheduledPaymentInformation' => null,
         'processingInformation' => null,
         'processorInformation' => null,
+        'recurringPaymentInformation' => null,
         'pointOfSaleInformation' => null,
         'riskInformation' => null,
         'senderInformation' => null,
@@ -155,8 +159,10 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'paymentInformation' => 'paymentInformation',
         'paymentInsightsInformation' => 'paymentInsightsInformation',
         'payoutOptions' => 'payoutOptions',
+        'unscheduledPaymentInformation' => 'unscheduledPaymentInformation',
         'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
+        'recurringPaymentInformation' => 'recurringPaymentInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'riskInformation' => 'riskInformation',
         'senderInformation' => 'senderInformation',
@@ -191,8 +197,10 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'paymentInformation' => 'setPaymentInformation',
         'paymentInsightsInformation' => 'setPaymentInsightsInformation',
         'payoutOptions' => 'setPayoutOptions',
+        'unscheduledPaymentInformation' => 'setUnscheduledPaymentInformation',
         'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
+        'recurringPaymentInformation' => 'setRecurringPaymentInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'riskInformation' => 'setRiskInformation',
         'senderInformation' => 'setSenderInformation',
@@ -227,8 +235,10 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'paymentInformation' => 'getPaymentInformation',
         'paymentInsightsInformation' => 'getPaymentInsightsInformation',
         'payoutOptions' => 'getPayoutOptions',
+        'unscheduledPaymentInformation' => 'getUnscheduledPaymentInformation',
         'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
+        'recurringPaymentInformation' => 'getRecurringPaymentInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'riskInformation' => 'getRiskInformation',
         'senderInformation' => 'getSenderInformation',
@@ -288,8 +298,10 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['paymentInsightsInformation'] = isset($data['paymentInsightsInformation']) ? $data['paymentInsightsInformation'] : null;
         $this->container['payoutOptions'] = isset($data['payoutOptions']) ? $data['payoutOptions'] : null;
+        $this->container['unscheduledPaymentInformation'] = isset($data['unscheduledPaymentInformation']) ? $data['unscheduledPaymentInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
@@ -764,6 +776,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     }
 
     /**
+     * Gets unscheduledPaymentInformation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseUnscheduledPaymentInformation
+     */
+    public function getUnscheduledPaymentInformation()
+    {
+        return $this->container['unscheduledPaymentInformation'];
+    }
+
+    /**
+     * Sets unscheduledPaymentInformation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseUnscheduledPaymentInformation $unscheduledPaymentInformation
+     * @return $this
+     */
+    public function setUnscheduledPaymentInformation($unscheduledPaymentInformation)
+    {
+        $this->container['unscheduledPaymentInformation'] = $unscheduledPaymentInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets processingInformation
      * @return \CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformation
      */
@@ -801,6 +834,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     public function setProcessorInformation($processorInformation)
     {
         $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurringPaymentInformation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseRecurringPaymentInformation
+     */
+    public function getRecurringPaymentInformation()
+    {
+        return $this->container['recurringPaymentInformation'];
+    }
+
+    /**
+     * Sets recurringPaymentInformation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseRecurringPaymentInformation $recurringPaymentInformation
+     * @return $this
+     */
+    public function setRecurringPaymentInformation($recurringPaymentInformation)
+    {
+        $this->container['recurringPaymentInformation'] = $recurringPaymentInformation;
 
         return $this;
     }

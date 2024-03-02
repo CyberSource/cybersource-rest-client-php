@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInstrumentIdentifier**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier getInstrumentIdentifier($instrumentIdentifierId, $profileId)
+> \CyberSource\Model\TmsEmbeddedInstrumentIdentifier getInstrumentIdentifier($instrumentIdentifierId, $profileId)
 
 Retrieve an Instrument Identifier
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**\CyberSource\Model\TmsEmbeddedInstrumentIdentifier**](../Model/TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchInstrumentIdentifier**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch)
+> \CyberSource\Model\TmsEmbeddedInstrumentIdentifier patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch)
 
 Update an Instrument Identifier
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**\CyberSource\Model\TmsEmbeddedInstrumentIdentifier**](../Model/TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postInstrumentIdentifier**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId)
+> \CyberSource\Model\TmsEmbeddedInstrumentIdentifier postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId)
 
 Create an Instrument Identifier
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbeddedInstrumentIdentifier.md)
+[**\CyberSource\Model\TmsEmbeddedInstrumentIdentifier**](../Model/TmsEmbeddedInstrumentIdentifier.md)
 
 ### Authorization
 

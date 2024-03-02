@@ -147,7 +147,9 @@ class VerificationApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\ValidateExportComplianceRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\ValidateExportComplianceRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -258,7 +260,9 @@ class VerificationApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\VerifyCustomerAddressRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\VerifyCustomerAddressRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

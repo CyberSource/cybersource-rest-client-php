@@ -54,7 +54,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation'
+        'issuerInformation' => '\CyberSource\Model\PaymentsStrongAuthIssuerInformation'
     ];
 
     /**
@@ -162,7 +162,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
 
     /**
      * Gets issuerInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation
+     * @return \CyberSource\Model\PaymentsStrongAuthIssuerInformation
      */
     public function getIssuerInformation()
     {
@@ -171,7 +171,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
 
     /**
      * Sets issuerInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthenticationIssuerInformation $issuerInformation
+     * @param \CyberSource\Model\PaymentsStrongAuthIssuerInformation $issuerInformation
      * @return $this
      */
     public function setIssuerInformation($issuerInformation)

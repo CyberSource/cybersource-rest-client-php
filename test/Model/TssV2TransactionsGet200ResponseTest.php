@@ -225,6 +225,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "unscheduledPaymentInformation"
+     */
+    public function testPropertyUnscheduledPaymentInformation()
+    {
+    }
+
+    /**
      * Test attribute "processingInformation"
      */
     public function testPropertyProcessingInformation()
@@ -235,6 +242,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "processorInformation"
      */
     public function testPropertyProcessorInformation()
+    {
+    }
+
+    /**
+     * Test attribute "recurringPaymentInformation"
+     */
+    public function testPropertyRecurringPaymentInformation()
     {
     }
 

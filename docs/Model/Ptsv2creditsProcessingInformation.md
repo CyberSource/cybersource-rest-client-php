@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **electronicBenefitsTransfer** | [**\CyberSource\Model\Ptsv2creditsProcessingInformationElectronicBenefitsTransfer**](Ptsv2creditsProcessingInformationElectronicBenefitsTransfer.md) |  | [optional] 
 **loanOptions** | [**\CyberSource\Model\Ptsv2paymentsProcessingInformationLoanOptions**](Ptsv2paymentsProcessingInformationLoanOptions.md) |  | [optional] 
 **japanPaymentOptions** | [**\CyberSource\Model\Ptsv2creditsProcessingInformationJapanPaymentOptions**](Ptsv2creditsProcessingInformationJapanPaymentOptions.md) |  | [optional] 
+**refundOptions** | [**\CyberSource\Model\Ptsv2creditsProcessingInformationRefundOptions**](Ptsv2creditsProcessingInformationRefundOptions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

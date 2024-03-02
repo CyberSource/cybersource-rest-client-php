@@ -70,7 +70,8 @@ class PaymentsProducts implements ArrayAccess
         'payouts' => '\CyberSource\Model\PaymentsProductsPayouts',
         'differentialFee' => '\CyberSource\Model\PaymentsProductsDifferentialFee',
         'payByLink' => '\CyberSource\Model\PaymentsProductsTax',
-        'unifiedCheckout' => '\CyberSource\Model\PaymentsProductsTax'
+        'unifiedCheckout' => '\CyberSource\Model\PaymentsProductsTax',
+        'receivablesManager' => '\CyberSource\Model\PaymentsProductsTax'
     ];
 
     /**
@@ -94,7 +95,8 @@ class PaymentsProducts implements ArrayAccess
         'payouts' => null,
         'differentialFee' => null,
         'payByLink' => null,
-        'unifiedCheckout' => null
+        'unifiedCheckout' => null,
+        'receivablesManager' => null
     ];
 
     public static function swaggerTypes()
@@ -128,7 +130,8 @@ class PaymentsProducts implements ArrayAccess
         'payouts' => 'payouts',
         'differentialFee' => 'differentialFee',
         'payByLink' => 'payByLink',
-        'unifiedCheckout' => 'unifiedCheckout'
+        'unifiedCheckout' => 'unifiedCheckout',
+        'receivablesManager' => 'receivablesManager'
     ];
 
 
@@ -153,7 +156,8 @@ class PaymentsProducts implements ArrayAccess
         'payouts' => 'setPayouts',
         'differentialFee' => 'setDifferentialFee',
         'payByLink' => 'setPayByLink',
-        'unifiedCheckout' => 'setUnifiedCheckout'
+        'unifiedCheckout' => 'setUnifiedCheckout',
+        'receivablesManager' => 'setReceivablesManager'
     ];
 
 
@@ -178,7 +182,8 @@ class PaymentsProducts implements ArrayAccess
         'payouts' => 'getPayouts',
         'differentialFee' => 'getDifferentialFee',
         'payByLink' => 'getPayByLink',
-        'unifiedCheckout' => 'getUnifiedCheckout'
+        'unifiedCheckout' => 'getUnifiedCheckout',
+        'receivablesManager' => 'getReceivablesManager'
     ];
 
     public static function attributeMap()
@@ -229,6 +234,7 @@ class PaymentsProducts implements ArrayAccess
         $this->container['differentialFee'] = isset($data['differentialFee']) ? $data['differentialFee'] : null;
         $this->container['payByLink'] = isset($data['payByLink']) ? $data['payByLink'] : null;
         $this->container['unifiedCheckout'] = isset($data['unifiedCheckout']) ? $data['unifiedCheckout'] : null;
+        $this->container['receivablesManager'] = isset($data['receivablesManager']) ? $data['receivablesManager'] : null;
     }
 
     /**
@@ -609,6 +615,27 @@ class PaymentsProducts implements ArrayAccess
     public function setUnifiedCheckout($unifiedCheckout)
     {
         $this->container['unifiedCheckout'] = $unifiedCheckout;
+
+        return $this;
+    }
+
+    /**
+     * Gets receivablesManager
+     * @return \CyberSource\Model\PaymentsProductsTax
+     */
+    public function getReceivablesManager()
+    {
+        return $this->container['receivablesManager'];
+    }
+
+    /**
+     * Sets receivablesManager
+     * @param \CyberSource\Model\PaymentsProductsTax $receivablesManager
+     * @return $this
+     */
+    public function setReceivablesManager($receivablesManager)
+    {
+        $this->container['receivablesManager'] = $receivablesManager;
 
         return $this;
     }

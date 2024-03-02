@@ -57,7 +57,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsIn
         'type' => 'string',
         'credentialStoredOnFile' => 'string',
         'storedCredentialUsed' => 'string',
-        'merchantInitiatedTransaction' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction'
+        'merchantInitiatedTransaction' => '\CyberSource\Model\MerchantInitiatedTransactionObject'
     ];
 
     /**
@@ -243,7 +243,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsIn
 
     /**
      * Gets merchantInitiatedTransaction
-     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction
+     * @return \CyberSource\Model\MerchantInitiatedTransactionObject
      */
     public function getMerchantInitiatedTransaction()
     {
@@ -252,7 +252,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsIn
 
     /**
      * Sets merchantInitiatedTransaction
-     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantInitiatedTransaction $merchantInitiatedTransaction
+     * @param \CyberSource\Model\MerchantInitiatedTransactionObject $merchantInitiatedTransaction
      * @return $this
      */
     public function setMerchantInitiatedTransaction($merchantInitiatedTransaction)

@@ -162,7 +162,9 @@ class ReversalApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\AuthReversalRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\AuthReversalRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -273,7 +275,9 @@ class ReversalApi
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end(explode('\\', '\CyberSource\Model\MitReversalRequest')), $this->apiClient->merchantConfig->getRunEnvironment());
+        $modelClassLocation = explode('\\', '\CyberSource\Model\MitReversalRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

@@ -55,6 +55,9 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
       */
     protected static $swaggerTypes = [
         'authType' => 'string',
+        'authIndicator' => 'string',
+        'extendAuthIndicator' => 'string',
+        'cardVerificationIndicator' => 'bool',
         'initiator' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptionsInitiator'
     ];
 
@@ -64,6 +67,9 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
       */
     protected static $swaggerFormats = [
         'authType' => null,
+        'authIndicator' => null,
+        'extendAuthIndicator' => null,
+        'cardVerificationIndicator' => null,
         'initiator' => null
     ];
 
@@ -83,6 +89,9 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      */
     protected static $attributeMap = [
         'authType' => 'authType',
+        'authIndicator' => 'authIndicator',
+        'extendAuthIndicator' => 'extendAuthIndicator',
+        'cardVerificationIndicator' => 'cardVerificationIndicator',
         'initiator' => 'initiator'
     ];
 
@@ -93,6 +102,9 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      */
     protected static $setters = [
         'authType' => 'setAuthType',
+        'authIndicator' => 'setAuthIndicator',
+        'extendAuthIndicator' => 'setExtendAuthIndicator',
+        'cardVerificationIndicator' => 'setCardVerificationIndicator',
         'initiator' => 'setInitiator'
     ];
 
@@ -103,6 +115,9 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      */
     protected static $getters = [
         'authType' => 'getAuthType',
+        'authIndicator' => 'getAuthIndicator',
+        'extendAuthIndicator' => 'getExtendAuthIndicator',
+        'cardVerificationIndicator' => 'getCardVerificationIndicator',
         'initiator' => 'getInitiator'
     ];
 
@@ -138,6 +153,9 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
     public function __construct(array $data = null)
     {
         $this->container['authType'] = isset($data['authType']) ? $data['authType'] : null;
+        $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;
+        $this->container['extendAuthIndicator'] = isset($data['extendAuthIndicator']) ? $data['extendAuthIndicator'] : null;
+        $this->container['cardVerificationIndicator'] = isset($data['cardVerificationIndicator']) ? $data['cardVerificationIndicator'] : null;
         $this->container['initiator'] = isset($data['initiator']) ? $data['initiator'] : null;
     }
 
@@ -183,6 +201,69 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
     public function setAuthType($authType)
     {
         $this->container['authType'] = $authType;
+
+        return $this;
+    }
+
+    /**
+     * Gets authIndicator
+     * @return string
+     */
+    public function getAuthIndicator()
+    {
+        return $this->container['authIndicator'];
+    }
+
+    /**
+     * Sets authIndicator
+     * @param string $authIndicator Flag that specifies the purpose of the authorization.  Possible values:  - **0**: Preauthorization  - **1**: Final authorization  To set the default for this field, contact CyberSource Customer Support.  #### Barclays and Elavon The default for Barclays and Elavon is 1 (final authorization). To change the default for this field, contact CyberSource Customer Support.  #### CyberSource through VisaNet When the value for this field is 0, it corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR0  - Position: 164  - Field: Additional Authorization Indicators When the value for this field is 1, it does not correspond to any data in the TC 33 capture file.
+     * @return $this
+     */
+    public function setAuthIndicator($authIndicator)
+    {
+        $this->container['authIndicator'] = $authIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets extendAuthIndicator
+     * @return string
+     */
+    public function getExtendAuthIndicator()
+    {
+        return $this->container['extendAuthIndicator'];
+    }
+
+    /**
+     * Sets extendAuthIndicator
+     * @param string $extendAuthIndicator Flag that indicates whether the transaction is an extended authorization.
+     * @return $this
+     */
+    public function setExtendAuthIndicator($extendAuthIndicator)
+    {
+        $this->container['extendAuthIndicator'] = $extendAuthIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardVerificationIndicator
+     * @return bool
+     */
+    public function getCardVerificationIndicator()
+    {
+        return $this->container['cardVerificationIndicator'];
+    }
+
+    /**
+     * Sets cardVerificationIndicator
+     * @param bool $cardVerificationIndicator This API field will indicate whether a card verification check is being performed during the transaction  Possible values:   - `true`   - `false` (default value)
+     * @return $this
+     */
+    public function setCardVerificationIndicator($cardVerificationIndicator)
+    {
+        $this->container['cardVerificationIndicator'] = $cardVerificationIndicator;
 
         return $this;
     }
