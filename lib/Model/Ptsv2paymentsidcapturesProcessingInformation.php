@@ -65,7 +65,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions',
         'captureOptions' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationCaptureOptions',
         'loanOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationLoanOptions',
-        'payByPointsIndicator' => 'bool'
+        'payByPointsIndicator' => 'bool',
+        'actionList' => 'string[]'
     ];
 
     /**
@@ -84,7 +85,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'authorizationOptions' => null,
         'captureOptions' => null,
         'loanOptions' => null,
-        'payByPointsIndicator' => null
+        'payByPointsIndicator' => null,
+        'actionList' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +115,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'authorizationOptions' => 'authorizationOptions',
         'captureOptions' => 'captureOptions',
         'loanOptions' => 'loanOptions',
-        'payByPointsIndicator' => 'payByPointsIndicator'
+        'payByPointsIndicator' => 'payByPointsIndicator',
+        'actionList' => 'actionList'
     ];
 
 
@@ -133,7 +136,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'authorizationOptions' => 'setAuthorizationOptions',
         'captureOptions' => 'setCaptureOptions',
         'loanOptions' => 'setLoanOptions',
-        'payByPointsIndicator' => 'setPayByPointsIndicator'
+        'payByPointsIndicator' => 'setPayByPointsIndicator',
+        'actionList' => 'setActionList'
     ];
 
 
@@ -153,7 +157,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'authorizationOptions' => 'getAuthorizationOptions',
         'captureOptions' => 'getCaptureOptions',
         'loanOptions' => 'getLoanOptions',
-        'payByPointsIndicator' => 'getPayByPointsIndicator'
+        'payByPointsIndicator' => 'getPayByPointsIndicator',
+        'actionList' => 'getActionList'
     ];
 
     public static function attributeMap()
@@ -199,6 +204,7 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
         $this->container['loanOptions'] = isset($data['loanOptions']) ? $data['loanOptions'] : null;
         $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
+        $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
     }
 
     /**
@@ -474,6 +480,27 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
     public function setPayByPointsIndicator($payByPointsIndicator)
     {
         $this->container['payByPointsIndicator'] = $payByPointsIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets actionList
+     * @return string[]
+     */
+    public function getActionList()
+    {
+        return $this->container['actionList'];
+    }
+
+    /**
+     * Sets actionList
+     * @param string[] $actionList Array of actions (one or more) to be included in the capture to invoke bundled services along with capture.  Possible values :   - `AP_CAPTURE`: Use this when Alternative Payment Capture service is requested.
+     * @return $this
+     */
+    public function setActionList($actionList)
+    {
+        $this->container['actionList'] = $actionList;
 
         return $this;
     }

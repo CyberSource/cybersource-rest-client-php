@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ipAddress** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationIpAddress**](PtsV2PaymentsPost201ResponseRiskInformationIpAddress.md) |  | [optional] 
 **providers** | [**map[string,map[string,string]]**](map.md) | Name of the 3rd party provider, for example, Emailage. For all possible values, see the &#x60;decision_provider_#_name&#x60; field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** &gt; **Documentation** &gt; **Guides** &gt; _Decision Manager Using the SCMP API Developer Guide_ (PDF link). | [optional] 
 **travel** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationTravel**](PtsV2PaymentsPost201ResponseRiskInformationTravel.md) |  | [optional] 
+**processorResults** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationProcessorResults**](PtsV2PaymentsPost201ResponseRiskInformationProcessorResults.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

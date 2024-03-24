@@ -86,7 +86,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentUrl' => 'string',
         'completeUrl' => 'string',
         'signature' => 'string',
-        'publicKey' => 'string'
+        'publicKey' => 'string',
+        'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection',
+        'transactionExpiryDate' => 'string'
     ];
 
     /**
@@ -126,7 +128,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentUrl' => null,
         'completeUrl' => null,
         'signature' => null,
-        'publicKey' => null
+        'publicKey' => null,
+        'sellerProtection' => null,
+        'transactionExpiryDate' => null
     ];
 
     public static function swaggerTypes()
@@ -176,7 +180,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentUrl' => 'paymentUrl',
         'completeUrl' => 'completeUrl',
         'signature' => 'signature',
-        'publicKey' => 'publicKey'
+        'publicKey' => 'publicKey',
+        'sellerProtection' => 'sellerProtection',
+        'transactionExpiryDate' => 'transactionExpiryDate'
     ];
 
 
@@ -217,7 +223,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentUrl' => 'setPaymentUrl',
         'completeUrl' => 'setCompleteUrl',
         'signature' => 'setSignature',
-        'publicKey' => 'setPublicKey'
+        'publicKey' => 'setPublicKey',
+        'sellerProtection' => 'setSellerProtection',
+        'transactionExpiryDate' => 'setTransactionExpiryDate'
     ];
 
 
@@ -258,7 +266,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'paymentUrl' => 'getPaymentUrl',
         'completeUrl' => 'getCompleteUrl',
         'signature' => 'getSignature',
-        'publicKey' => 'getPublicKey'
+        'publicKey' => 'getPublicKey',
+        'sellerProtection' => 'getSellerProtection',
+        'transactionExpiryDate' => 'getTransactionExpiryDate'
     ];
 
     public static function attributeMap()
@@ -325,6 +335,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['completeUrl'] = isset($data['completeUrl']) ? $data['completeUrl'] : null;
         $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
         $this->container['publicKey'] = isset($data['publicKey']) ? $data['publicKey'] : null;
+        $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
+        $this->container['transactionExpiryDate'] = isset($data['transactionExpiryDate']) ? $data['transactionExpiryDate'] : null;
     }
 
     /**
@@ -1041,6 +1053,48 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setPublicKey($publicKey)
     {
         $this->container['publicKey'] = $publicKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets sellerProtection
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection
+     */
+    public function getSellerProtection()
+    {
+        return $this->container['sellerProtection'];
+    }
+
+    /**
+     * Sets sellerProtection
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection $sellerProtection
+     * @return $this
+     */
+    public function setSellerProtection($sellerProtection)
+    {
+        $this->container['sellerProtection'] = $sellerProtection;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionExpiryDate
+     * @return string
+     */
+    public function getTransactionExpiryDate()
+    {
+        return $this->container['transactionExpiryDate'];
+    }
+
+    /**
+     * Sets transactionExpiryDate
+     * @param string $transactionExpiryDate The date on which the transaction expires and payment cannot be made.
+     * @return $this
+     */
+    public function setTransactionExpiryDate($transactionExpiryDate)
+    {
+        $this->container['transactionExpiryDate'] = $transactionExpiryDate;
 
         return $this;
     }

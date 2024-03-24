@@ -55,7 +55,10 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
       */
     protected static $swaggerTypes = [
         'transactionId' => 'string',
-        'networkTransactionId' => 'string'
+        'networkTransactionId' => 'string',
+        'responseDetails' => 'string',
+        'responseCode' => 'string',
+        'providerResponse' => 'string'
     ];
 
     /**
@@ -64,7 +67,10 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
       */
     protected static $swaggerFormats = [
         'transactionId' => null,
-        'networkTransactionId' => null
+        'networkTransactionId' => null,
+        'responseDetails' => null,
+        'responseCode' => null,
+        'providerResponse' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +89,10 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      */
     protected static $attributeMap = [
         'transactionId' => 'transactionId',
-        'networkTransactionId' => 'networkTransactionId'
+        'networkTransactionId' => 'networkTransactionId',
+        'responseDetails' => 'responseDetails',
+        'responseCode' => 'responseCode',
+        'providerResponse' => 'providerResponse'
     ];
 
 
@@ -93,7 +102,10 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      */
     protected static $setters = [
         'transactionId' => 'setTransactionId',
-        'networkTransactionId' => 'setNetworkTransactionId'
+        'networkTransactionId' => 'setNetworkTransactionId',
+        'responseDetails' => 'setResponseDetails',
+        'responseCode' => 'setResponseCode',
+        'providerResponse' => 'setProviderResponse'
     ];
 
 
@@ -103,7 +115,10 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
      */
     protected static $getters = [
         'transactionId' => 'getTransactionId',
-        'networkTransactionId' => 'getNetworkTransactionId'
+        'networkTransactionId' => 'getNetworkTransactionId',
+        'responseDetails' => 'getResponseDetails',
+        'responseCode' => 'getResponseCode',
+        'providerResponse' => 'getProviderResponse'
     ];
 
     public static function attributeMap()
@@ -139,6 +154,9 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     {
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
+        $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
+        $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
+        $this->container['providerResponse'] = isset($data['providerResponse']) ? $data['providerResponse'] : null;
     }
 
     /**
@@ -204,6 +222,69 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     public function setNetworkTransactionId($networkTransactionId)
     {
         $this->container['networkTransactionId'] = $networkTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseDetails
+     * @return string
+     */
+    public function getResponseDetails()
+    {
+        return $this->container['responseDetails'];
+    }
+
+    /**
+     * Sets responseDetails
+     * @param string $responseDetails The processor code that describes why the transaction state is pending or reversed.
+     * @return $this
+     */
+    public function setResponseDetails($responseDetails)
+    {
+        $this->container['responseDetails'] = $responseDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseCode
+     * @return string
+     */
+    public function getResponseCode()
+    {
+        return $this->container['responseCode'];
+    }
+
+    /**
+     * Sets responseCode
+     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)
+     * @return $this
+     */
+    public function setResponseCode($responseCode)
+    {
+        $this->container['responseCode'] = $responseCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets providerResponse
+     * @return string
+     */
+    public function getProviderResponse()
+    {
+        return $this->container['providerResponse'];
+    }
+
+    /**
+     * Sets providerResponse
+     * @param string $providerResponse Processor response to the API request.
+     * @return $this
+     */
+    public function setProviderResponse($providerResponse)
+    {
+        $this->container['providerResponse'] = $providerResponse;
 
         return $this;
     }

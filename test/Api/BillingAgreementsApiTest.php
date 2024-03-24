@@ -75,7 +75,7 @@ class BillingAgreementsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for billingAgreementsDeRegistration
      *
-     * Standing Instruction Cancellation or Modification.
+     * Modify a Billing Agreement.
      *
      */
     public function testBillingAgreementsDeRegistration()
@@ -95,7 +95,7 @@ class BillingAgreementsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for billingAgreementsRegistration
      *
-     * Standing Instruction completion registration.
+     * Create a Billing Agreement.
      *
      */
     public function testBillingAgreementsRegistration()

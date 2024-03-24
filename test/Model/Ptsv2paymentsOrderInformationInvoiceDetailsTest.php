@@ -195,4 +195,11 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTest extends \PHPUnit_Framework
     public function testPropertyIssuerMessage()
     {
     }
+
+    /**
+     * Test attribute "productDescription"
+     */
+    public function testPropertyProductDescription()
+    {
+    }
 }

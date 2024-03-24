@@ -58,7 +58,8 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
         'number' => 'string',
         'encoderId' => 'string',
         'checkNumber' => 'string',
-        'checkImageReferenceNumber' => 'string'
+        'checkImageReferenceNumber' => 'string',
+        'iban' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
         'number' => null,
         'encoderId' => null,
         'checkNumber' => null,
-        'checkImageReferenceNumber' => null
+        'checkImageReferenceNumber' => null,
+        'iban' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
         'number' => 'number',
         'encoderId' => 'encoderId',
         'checkNumber' => 'checkNumber',
-        'checkImageReferenceNumber' => 'checkImageReferenceNumber'
+        'checkImageReferenceNumber' => 'checkImageReferenceNumber',
+        'iban' => 'iban'
     ];
 
 
@@ -105,7 +108,8 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
         'number' => 'setNumber',
         'encoderId' => 'setEncoderId',
         'checkNumber' => 'setCheckNumber',
-        'checkImageReferenceNumber' => 'setCheckImageReferenceNumber'
+        'checkImageReferenceNumber' => 'setCheckImageReferenceNumber',
+        'iban' => 'setIban'
     ];
 
 
@@ -118,7 +122,8 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
         'number' => 'getNumber',
         'encoderId' => 'getEncoderId',
         'checkNumber' => 'getCheckNumber',
-        'checkImageReferenceNumber' => 'getCheckImageReferenceNumber'
+        'checkImageReferenceNumber' => 'getCheckImageReferenceNumber',
+        'iban' => 'getIban'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
         $this->container['encoderId'] = isset($data['encoderId']) ? $data['encoderId'] : null;
         $this->container['checkNumber'] = isset($data['checkNumber']) ? $data['checkNumber'] : null;
         $this->container['checkImageReferenceNumber'] = isset($data['checkImageReferenceNumber']) ? $data['checkImageReferenceNumber'] : null;
+        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class Ptsv2paymentsPaymentInformationBankAccount implements ArrayAccess
     public function setCheckImageReferenceNumber($checkImageReferenceNumber)
     {
         $this->container['checkImageReferenceNumber'] = $checkImageReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets iban
+     * @return string
+     */
+    public function getIban()
+    {
+        return $this->container['iban'];
+    }
+
+    /**
+     * Sets iban
+     * @param string $iban International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @return $this
+     */
+    public function setIban($iban)
+    {
+        $this->container['iban'] = $iban;
 
         return $this;
     }

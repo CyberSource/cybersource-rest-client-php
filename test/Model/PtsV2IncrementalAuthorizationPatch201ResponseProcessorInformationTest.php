@@ -118,4 +118,11 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformationTest exte
     public function testPropertyMerchantAdvice()
     {
     }
+
+    /**
+     * Test attribute "sellerProtection"
+     */
+    public function testPropertySellerProtection()
+    {
+    }
 }

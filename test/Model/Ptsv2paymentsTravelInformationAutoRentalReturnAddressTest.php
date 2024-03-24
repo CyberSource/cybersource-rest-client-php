@@ -106,6 +106,20 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddressTest extends \PHPUnit
     }
 
     /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
      * Test attribute "location"
      */
     public function testPropertyLocation()

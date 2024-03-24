@@ -97,4 +97,18 @@ class Ptsv2paymentsidcapturesOrderInformationShipToTest extends \PHPUnit_Framewo
     public function testPropertyPostalCode()
     {
     }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "county"
+     */
+    public function testPropertyCounty()
+    {
+    }
 }

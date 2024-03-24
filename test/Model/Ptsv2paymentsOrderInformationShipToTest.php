@@ -141,6 +141,13 @@ class Ptsv2paymentsOrderInformationShipToTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "county"
+     */
+    public function testPropertyCounty()
+    {
+    }
+
+    /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
@@ -165,6 +172,13 @@ class Ptsv2paymentsOrderInformationShipToTest extends \PHPUnit_Framework_TestCas
      * Test attribute "phoneNumber"
      */
     public function testPropertyPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
     {
     }
 

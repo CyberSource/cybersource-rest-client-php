@@ -97,4 +97,11 @@ class Ptsv2paymentsProcessingInformationCaptureOptionsTest extends \PHPUnit_Fram
     public function testPropertyDateToCapture()
     {
     }
+
+    /**
+     * Test attribute "isFinal"
+     */
+    public function testPropertyIsFinal()
+    {
+    }
 }

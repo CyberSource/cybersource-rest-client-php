@@ -97,4 +97,25 @@ class VoidCreditRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "agreementInformation"
+     */
+    public function testPropertyAgreementInformation()
+    {
+    }
+
+    /**
+     * Test attribute "merchantInformation"
+     */
+    public function testPropertyMerchantInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
 }

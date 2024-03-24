@@ -125,4 +125,11 @@ class PtsV2PaymentsVoidsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyProcessorInformation()
     {
     }
+
+    /**
+     * Test attribute "reconciliationId"
+     */
+    public function testPropertyReconciliationId()
+    {
+    }
 }

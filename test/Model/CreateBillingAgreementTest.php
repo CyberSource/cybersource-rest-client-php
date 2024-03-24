@@ -78,6 +78,13 @@ class CreateBillingAgreementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "agreementInformation"
+     */
+    public function testPropertyAgreementInformation()
+    {
+    }
+
+    /**
      * Test attribute "clientReferenceInformation"
      */
     public function testPropertyClientReferenceInformation()
@@ -137,6 +144,13 @@ class CreateBillingAgreementTest extends \PHPUnit_Framework_TestCase
      * Test attribute "processingInformation"
      */
     public function testPropertyProcessingInformation()
+    {
+    }
+
+    /**
+     * Test attribute "buyerInformation"
+     */
+    public function testPropertyBuyerInformation()
     {
     }
 }

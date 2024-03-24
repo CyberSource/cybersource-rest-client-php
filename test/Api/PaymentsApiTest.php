@@ -73,12 +73,32 @@ class PaymentsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for createOrderRequest
+     *
+     * Create a Payment Order Request.
+     *
+     */
+    public function testCreateOrderRequest()
+    {
+    }
+
+    /**
      * Test case for createPayment
      *
      * Process a Payment.
      *
      */
     public function testCreatePayment()
+    {
+    }
+
+    /**
+     * Test case for createSessionRequest
+     *
+     * Create Alternative Payments Sessions Request.
+     *
+     */
+    public function testCreateSessionRequest()
     {
     }
 
@@ -99,6 +119,16 @@ class PaymentsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testRefreshPaymentStatus()
+    {
+    }
+
+    /**
+     * Test case for updateSessionReq
+     *
+     * Update Alternative Payments Sessions Request.
+     *
+     */
+    public function testUpdateSessionReq()
     {
     }
 }

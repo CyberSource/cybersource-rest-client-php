@@ -58,7 +58,9 @@ class AuthReversalRequest implements ArrayAccess
         'reversalInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsReversalInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsProcessingInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsOrderInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation'
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation',
+        'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPaymentInformation',
+        'processorInformation' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversal'
     ];
 
     /**
@@ -70,7 +72,9 @@ class AuthReversalRequest implements ArrayAccess
         'reversalInformation' => null,
         'processingInformation' => null,
         'orderInformation' => null,
-        'pointOfSaleInformation' => null
+        'pointOfSaleInformation' => null,
+        'paymentInformation' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class AuthReversalRequest implements ArrayAccess
         'reversalInformation' => 'reversalInformation',
         'processingInformation' => 'processingInformation',
         'orderInformation' => 'orderInformation',
-        'pointOfSaleInformation' => 'pointOfSaleInformation'
+        'pointOfSaleInformation' => 'pointOfSaleInformation',
+        'paymentInformation' => 'paymentInformation',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -105,7 +111,9 @@ class AuthReversalRequest implements ArrayAccess
         'reversalInformation' => 'setReversalInformation',
         'processingInformation' => 'setProcessingInformation',
         'orderInformation' => 'setOrderInformation',
-        'pointOfSaleInformation' => 'setPointOfSaleInformation'
+        'pointOfSaleInformation' => 'setPointOfSaleInformation',
+        'paymentInformation' => 'setPaymentInformation',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -118,7 +126,9 @@ class AuthReversalRequest implements ArrayAccess
         'reversalInformation' => 'getReversalInformation',
         'processingInformation' => 'getProcessingInformation',
         'orderInformation' => 'getOrderInformation',
-        'pointOfSaleInformation' => 'getPointOfSaleInformation'
+        'pointOfSaleInformation' => 'getPointOfSaleInformation',
+        'paymentInformation' => 'getPaymentInformation',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class AuthReversalRequest implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
+        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -285,6 +297,48 @@ class AuthReversalRequest implements ArrayAccess
     public function setPointOfSaleInformation($pointOfSaleInformation)
     {
         $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPaymentInformation
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPaymentInformation $paymentInformation
+     * @return $this
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversal
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversal $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

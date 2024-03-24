@@ -83,4 +83,11 @@ class Ptsv2paymentsPaymentInformationEWalletTest extends \PHPUnit_Framework_Test
     public function testPropertyAccountId()
     {
     }
+
+    /**
+     * Test attribute "fundingSource"
+     */
+    public function testPropertyFundingSource()
+    {
+    }
 }

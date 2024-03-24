@@ -169,6 +169,20 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "transactionTimeout"
+     */
+    public function testPropertyTransactionTimeout()
+    {
+    }
+
+    /**
+     * Test attribute "intentsId"
+     */
+    public function testPropertyIntentsId()
+    {
+    }
+
+    /**
      * Test attribute "paymentId"
      */
     public function testPropertyPaymentId()
@@ -305,6 +319,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "networkPartnerId"
      */
     public function testPropertyNetworkPartnerId()
+    {
+    }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
     {
     }
 }

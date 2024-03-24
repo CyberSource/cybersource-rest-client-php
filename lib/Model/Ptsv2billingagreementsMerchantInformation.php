@@ -57,7 +57,10 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => '\CyberSource\Model\Ptsv2billingagreementsMerchantInformationMerchantDescriptor',
         'categoryCode' => 'int',
         'administrativeArea' => 'string',
-        'transactionLocalDateTime' => 'string'
+        'transactionLocalDateTime' => 'string',
+        'cancelUrl' => 'string',
+        'successUrl' => 'string',
+        'failureUrl' => 'string'
     ];
 
     /**
@@ -68,7 +71,10 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => null,
         'categoryCode' => null,
         'administrativeArea' => null,
-        'transactionLocalDateTime' => null
+        'transactionLocalDateTime' => null,
+        'cancelUrl' => null,
+        'successUrl' => null,
+        'failureUrl' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +95,10 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'merchantDescriptor',
         'categoryCode' => 'categoryCode',
         'administrativeArea' => 'administrativeArea',
-        'transactionLocalDateTime' => 'transactionLocalDateTime'
+        'transactionLocalDateTime' => 'transactionLocalDateTime',
+        'cancelUrl' => 'cancelUrl',
+        'successUrl' => 'successUrl',
+        'failureUrl' => 'failureUrl'
     ];
 
 
@@ -101,7 +110,10 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'setMerchantDescriptor',
         'categoryCode' => 'setCategoryCode',
         'administrativeArea' => 'setAdministrativeArea',
-        'transactionLocalDateTime' => 'setTransactionLocalDateTime'
+        'transactionLocalDateTime' => 'setTransactionLocalDateTime',
+        'cancelUrl' => 'setCancelUrl',
+        'successUrl' => 'setSuccessUrl',
+        'failureUrl' => 'setFailureUrl'
     ];
 
 
@@ -113,7 +125,10 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
         'merchantDescriptor' => 'getMerchantDescriptor',
         'categoryCode' => 'getCategoryCode',
         'administrativeArea' => 'getAdministrativeArea',
-        'transactionLocalDateTime' => 'getTransactionLocalDateTime'
+        'transactionLocalDateTime' => 'getTransactionLocalDateTime',
+        'cancelUrl' => 'getCancelUrl',
+        'successUrl' => 'getSuccessUrl',
+        'failureUrl' => 'getFailureUrl'
     ];
 
     public static function attributeMap()
@@ -151,6 +166,9 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['transactionLocalDateTime'] = isset($data['transactionLocalDateTime']) ? $data['transactionLocalDateTime'] : null;
+        $this->container['cancelUrl'] = isset($data['cancelUrl']) ? $data['cancelUrl'] : null;
+        $this->container['successUrl'] = isset($data['successUrl']) ? $data['successUrl'] : null;
+        $this->container['failureUrl'] = isset($data['failureUrl']) ? $data['failureUrl'] : null;
     }
 
     /**
@@ -258,6 +276,69 @@ class Ptsv2billingagreementsMerchantInformation implements ArrayAccess
     public function setTransactionLocalDateTime($transactionLocalDateTime)
     {
         $this->container['transactionLocalDateTime'] = $transactionLocalDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelUrl
+     * @return string
+     */
+    public function getCancelUrl()
+    {
+        return $this->container['cancelUrl'];
+    }
+
+    /**
+     * Sets cancelUrl
+     * @param string $cancelUrl URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate
+     * @return $this
+     */
+    public function setCancelUrl($cancelUrl)
+    {
+        $this->container['cancelUrl'] = $cancelUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets successUrl
+     * @return string
+     */
+    public function getSuccessUrl()
+    {
+        return $this->container['successUrl'];
+    }
+
+    /**
+     * Sets successUrl
+     * @param string $successUrl URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate
+     * @return $this
+     */
+    public function setSuccessUrl($successUrl)
+    {
+        $this->container['successUrl'] = $successUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets failureUrl
+     * @return string
+     */
+    public function getFailureUrl()
+    {
+        return $this->container['failureUrl'];
+    }
+
+    /**
+     * Sets failureUrl
+     * @param string $failureUrl URL to which the customer is directed if they fail to sign the mandate. #### SEPA Required for Create Mandate and Update Mandate #### BACS Required for Create Mandate
+     * @return $this
+     */
+    public function setFailureUrl($failureUrl)
+    {
+        $this->container['failureUrl'] = $failureUrl;
 
         return $this;
     }

@@ -307,4 +307,18 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     public function testPropertyPublicKey()
     {
     }
+
+    /**
+     * Test attribute "sellerProtection"
+     */
+    public function testPropertySellerProtection()
+    {
+    }
+
+    /**
+     * Test attribute "transactionExpiryDate"
+     */
+    public function testPropertyTransactionExpiryDate()
+    {
+    }
 }

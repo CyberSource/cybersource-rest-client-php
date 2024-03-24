@@ -59,7 +59,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseCode' => 'string',
         'systemTraceAuditNumber' => 'string',
         'responseDetails' => 'string',
-        'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice'
+        'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice',
+        'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'
     ];
 
     /**
@@ -72,7 +73,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseCode' => null,
         'systemTraceAuditNumber' => null,
         'responseDetails' => null,
-        'merchantAdvice' => null
+        'merchantAdvice' => null,
+        'sellerProtection' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseCode' => 'responseCode',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
         'responseDetails' => 'responseDetails',
-        'merchantAdvice' => 'merchantAdvice'
+        'merchantAdvice' => 'merchantAdvice',
+        'sellerProtection' => 'sellerProtection'
     ];
 
 
@@ -109,7 +112,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseCode' => 'setResponseCode',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
         'responseDetails' => 'setResponseDetails',
-        'merchantAdvice' => 'setMerchantAdvice'
+        'merchantAdvice' => 'setMerchantAdvice',
+        'sellerProtection' => 'setSellerProtection'
     ];
 
 
@@ -123,7 +127,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseCode' => 'getResponseCode',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
         'responseDetails' => 'getResponseDetails',
-        'merchantAdvice' => 'getMerchantAdvice'
+        'merchantAdvice' => 'getMerchantAdvice',
+        'sellerProtection' => 'getSellerProtection'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
+        $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
     }
 
     /**
@@ -312,6 +318,27 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     public function setMerchantAdvice($merchantAdvice)
     {
         $this->container['merchantAdvice'] = $merchantAdvice;
+
+        return $this;
+    }
+
+    /**
+     * Gets sellerProtection
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection
+     */
+    public function getSellerProtection()
+    {
+        return $this->container['sellerProtection'];
+    }
+
+    /**
+     * Sets sellerProtection
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection $sellerProtection
+     * @return $this
+     */
+    public function setSellerProtection($sellerProtection)
+    {
+        $this->container['sellerProtection'] = $sellerProtection;
 
         return $this;
     }

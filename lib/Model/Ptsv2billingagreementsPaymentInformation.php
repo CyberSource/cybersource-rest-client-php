@@ -55,7 +55,9 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Ptsv2billingagreementsPaymentInformationCard',
-        'tokenizedCard' => '\CyberSource\Model\Ptsv2billingagreementsPaymentInformationTokenizedCard'
+        'tokenizedCard' => '\CyberSource\Model\Ptsv2billingagreementsPaymentInformationTokenizedCard',
+        'paymentType' => '\CyberSource\Model\Ptsv2billingagreementsPaymentInformationPaymentType',
+        'bank' => '\CyberSource\Model\Ptsv2billingagreementsPaymentInformationBank'
     ];
 
     /**
@@ -64,7 +66,9 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'card' => null,
-        'tokenizedCard' => null
+        'tokenizedCard' => null,
+        'paymentType' => null,
+        'bank' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +87,9 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'card' => 'card',
-        'tokenizedCard' => 'tokenizedCard'
+        'tokenizedCard' => 'tokenizedCard',
+        'paymentType' => 'paymentType',
+        'bank' => 'bank'
     ];
 
 
@@ -93,7 +99,9 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'card' => 'setCard',
-        'tokenizedCard' => 'setTokenizedCard'
+        'tokenizedCard' => 'setTokenizedCard',
+        'paymentType' => 'setPaymentType',
+        'bank' => 'setBank'
     ];
 
 
@@ -103,7 +111,9 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'card' => 'getCard',
-        'tokenizedCard' => 'getTokenizedCard'
+        'tokenizedCard' => 'getTokenizedCard',
+        'paymentType' => 'getPaymentType',
+        'bank' => 'getBank'
     ];
 
     public static function attributeMap()
@@ -139,6 +149,8 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
     }
 
     /**
@@ -204,6 +216,48 @@ class Ptsv2billingagreementsPaymentInformation implements ArrayAccess
     public function setTokenizedCard($tokenizedCard)
     {
         $this->container['tokenizedCard'] = $tokenizedCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     * @return \CyberSource\Model\Ptsv2billingagreementsPaymentInformationPaymentType
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     * @param \CyberSource\Model\Ptsv2billingagreementsPaymentInformationPaymentType $paymentType
+     * @return $this
+     */
+    public function setPaymentType($paymentType)
+    {
+        $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank
+     * @return \CyberSource\Model\Ptsv2billingagreementsPaymentInformationBank
+     */
+    public function getBank()
+    {
+        return $this->container['bank'];
+    }
+
+    /**
+     * Sets bank
+     * @param \CyberSource\Model\Ptsv2billingagreementsPaymentInformationBank $bank
+     * @return $this
+     */
+    public function setBank($bank)
+    {
+        $this->container['bank'] = $bank;
 
         return $this;
     }
