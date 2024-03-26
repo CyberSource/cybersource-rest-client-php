@@ -190,6 +190,13 @@ class Ptsv2paymentsMerchantInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "noteToBuyer"
+     */
+    public function testPropertyNoteToBuyer()
+    {
+    }
+
+    /**
      * Test attribute "merchantName"
      */
     public function testPropertyMerchantName()

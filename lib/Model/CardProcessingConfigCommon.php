@@ -319,7 +319,7 @@ class CardProcessingConfigCommon implements ArrayAccess
 
     /**
      * Sets processors
-     * @param map[string,\CyberSource\Model\CardProcessingConfigCommonProcessors] $processors e.g. * amexdirect * barclays2 * CUP * EFTPOS * fdiglobal * gpx * smartfdc * tsys * vero * VPC  For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt;
+     * @param map[string,\CyberSource\Model\CardProcessingConfigCommonProcessors] $processors e.g. * amexdirect * barclays2 * CUP * EFTPOS * fdiglobal * gpngsapv3 * gpx * smartfdc * tsys * vero * VPC  For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt;
      * @return $this
      */
     public function setProcessors($processors)

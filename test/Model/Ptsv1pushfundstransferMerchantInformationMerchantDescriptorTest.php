@@ -113,6 +113,13 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptorTest extends \P
     }
 
     /**
+     * Test attribute "storeId"
+     */
+    public function testPropertyStoreId()
+    {
+    }
+
+    /**
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()

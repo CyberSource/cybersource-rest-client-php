@@ -62,6 +62,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'hashedPassword' => 'string',
         'gender' => 'string',
         'language' => 'string',
+        'noteToSeller' => 'string',
         'mobilePhone' => 'int'
     ];
 
@@ -78,6 +79,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'hashedPassword' => null,
         'gender' => null,
         'language' => null,
+        'noteToSeller' => null,
         'mobilePhone' => null
     ];
 
@@ -104,6 +106,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'hashedPassword' => 'hashedPassword',
         'gender' => 'gender',
         'language' => 'language',
+        'noteToSeller' => 'noteToSeller',
         'mobilePhone' => 'mobilePhone'
     ];
 
@@ -121,6 +124,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'hashedPassword' => 'setHashedPassword',
         'gender' => 'setGender',
         'language' => 'setLanguage',
+        'noteToSeller' => 'setNoteToSeller',
         'mobilePhone' => 'setMobilePhone'
     ];
 
@@ -138,6 +142,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'hashedPassword' => 'getHashedPassword',
         'gender' => 'getGender',
         'language' => 'getLanguage',
+        'noteToSeller' => 'getNoteToSeller',
         'mobilePhone' => 'getMobilePhone'
     ];
 
@@ -180,6 +185,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['language'] = isset($data['language']) ? $data['language'] : null;
+        $this->container['noteToSeller'] = isset($data['noteToSeller']) ? $data['noteToSeller'] : null;
         $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
     }
 
@@ -372,6 +378,27 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     public function setLanguage($language)
     {
         $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * Gets noteToSeller
+     * @return string
+     */
+    public function getNoteToSeller()
+    {
+        return $this->container['noteToSeller'];
+    }
+
+    /**
+     * Sets noteToSeller
+     * @param string $noteToSeller Note to the recipient of the funds in this transaction
+     * @return $this
+     */
+    public function setNoteToSeller($noteToSeller)
+    {
+        $this->container['noteToSeller'] = $noteToSeller;
 
         return $this;
     }

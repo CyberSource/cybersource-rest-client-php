@@ -66,7 +66,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'bin' => 'string',
         'accountType' => 'string',
         'issuer' => 'string',
-        'binCountry' => 'string'
+        'binCountry' => 'string',
+        'eWallet' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationEWallet'
     ];
 
     /**
@@ -86,7 +87,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'bin' => null,
         'accountType' => null,
         'issuer' => null,
-        'binCountry' => null
+        'binCountry' => null,
+        'eWallet' => null
     ];
 
     public static function swaggerTypes()
@@ -116,7 +118,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'bin' => 'bin',
         'accountType' => 'accountType',
         'issuer' => 'issuer',
-        'binCountry' => 'binCountry'
+        'binCountry' => 'binCountry',
+        'eWallet' => 'eWallet'
     ];
 
 
@@ -137,7 +140,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'bin' => 'setBin',
         'accountType' => 'setAccountType',
         'issuer' => 'setIssuer',
-        'binCountry' => 'setBinCountry'
+        'binCountry' => 'setBinCountry',
+        'eWallet' => 'setEWallet'
     ];
 
 
@@ -158,7 +162,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         'bin' => 'getBin',
         'accountType' => 'getAccountType',
         'issuer' => 'getIssuer',
-        'binCountry' => 'getBinCountry'
+        'binCountry' => 'getBinCountry',
+        'eWallet' => 'getEWallet'
     ];
 
     public static function attributeMap()
@@ -205,6 +210,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
         $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;
         $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
         $this->container['binCountry'] = isset($data['binCountry']) ? $data['binCountry'] : null;
+        $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
     }
 
     /**
@@ -501,6 +507,27 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function setBinCountry($binCountry)
     {
         $this->container['binCountry'] = $binCountry;
+
+        return $this;
+    }
+
+    /**
+     * Gets eWallet
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationEWallet
+     */
+    public function getEWallet()
+    {
+        return $this->container['eWallet'];
+    }
+
+    /**
+     * Sets eWallet
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationEWallet $eWallet
+     * @return $this
+     */
+    public function setEWallet($eWallet)
+    {
+        $this->container['eWallet'] = $eWallet;
 
         return $this;
     }

@@ -58,7 +58,8 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
         'dateOfBirth' => 'string',
         'vatRegistrationNumber' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]',
-        'taxId' => 'string'
+        'taxId' => 'string',
+        'loginId' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
         'dateOfBirth' => null,
         'vatRegistrationNumber' => null,
         'personalIdentification' => null,
-        'taxId' => null
+        'taxId' => null,
+        'loginId' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
         'dateOfBirth' => 'dateOfBirth',
         'vatRegistrationNumber' => 'vatRegistrationNumber',
         'personalIdentification' => 'personalIdentification',
-        'taxId' => 'taxId'
+        'taxId' => 'taxId',
+        'loginId' => 'loginId'
     ];
 
 
@@ -105,7 +108,8 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
         'dateOfBirth' => 'setDateOfBirth',
         'vatRegistrationNumber' => 'setVatRegistrationNumber',
         'personalIdentification' => 'setPersonalIdentification',
-        'taxId' => 'setTaxId'
+        'taxId' => 'setTaxId',
+        'loginId' => 'setLoginId'
     ];
 
 
@@ -118,7 +122,8 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
         'dateOfBirth' => 'getDateOfBirth',
         'vatRegistrationNumber' => 'getVatRegistrationNumber',
         'personalIdentification' => 'getPersonalIdentification',
-        'taxId' => 'getTaxId'
+        'taxId' => 'getTaxId',
+        'loginId' => 'getLoginId'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
         $this->container['taxId'] = isset($data['taxId']) ? $data['taxId'] : null;
+        $this->container['loginId'] = isset($data['loginId']) ? $data['loginId'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class PtsV2PaymentsPost201ResponseBuyerInformation implements ArrayAccess
     public function setTaxId($taxId)
     {
         $this->container['taxId'] = $taxId;
+
+        return $this;
+    }
+
+    /**
+     * Gets loginId
+     * @return string
+     */
+    public function getLoginId()
+    {
+        return $this->container['loginId'];
+    }
+
+    /**
+     * Sets loginId
+     * @param string $loginId The buyer's Alipay login Id, the id might be an email or mobile number. The id is partially masked for privacy. cao***@126.com  or 186***22156
+     * @return $this
+     */
+    public function setLoginId($loginId)
+    {
+        $this->container['loginId'] = $loginId;
 
         return $this;
     }

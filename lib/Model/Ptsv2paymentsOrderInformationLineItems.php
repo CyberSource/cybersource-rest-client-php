@@ -80,6 +80,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightUnit' => 'string',
         'referenceDataCode' => 'string',
         'referenceDataNumber' => 'string',
+        'unitTaxAmount' => 'string',
         'productDescription' => 'string',
         'giftCardCurrency' => 'int',
         'shippingDestinationTypes' => 'string',
@@ -120,6 +121,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightUnit' => null,
         'referenceDataCode' => null,
         'referenceDataNumber' => null,
+        'unitTaxAmount' => null,
         'productDescription' => null,
         'giftCardCurrency' => null,
         'shippingDestinationTypes' => null,
@@ -170,6 +172,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightUnit' => 'weightUnit',
         'referenceDataCode' => 'referenceDataCode',
         'referenceDataNumber' => 'referenceDataNumber',
+        'unitTaxAmount' => 'unitTaxAmount',
         'productDescription' => 'productDescription',
         'giftCardCurrency' => 'giftCardCurrency',
         'shippingDestinationTypes' => 'shippingDestinationTypes',
@@ -211,6 +214,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightUnit' => 'setWeightUnit',
         'referenceDataCode' => 'setReferenceDataCode',
         'referenceDataNumber' => 'setReferenceDataNumber',
+        'unitTaxAmount' => 'setUnitTaxAmount',
         'productDescription' => 'setProductDescription',
         'giftCardCurrency' => 'setGiftCardCurrency',
         'shippingDestinationTypes' => 'setShippingDestinationTypes',
@@ -252,6 +256,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'weightUnit' => 'getWeightUnit',
         'referenceDataCode' => 'getReferenceDataCode',
         'referenceDataNumber' => 'getReferenceDataNumber',
+        'unitTaxAmount' => 'getUnitTaxAmount',
         'productDescription' => 'getProductDescription',
         'giftCardCurrency' => 'getGiftCardCurrency',
         'shippingDestinationTypes' => 'getShippingDestinationTypes',
@@ -318,6 +323,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         $this->container['weightUnit'] = isset($data['weightUnit']) ? $data['weightUnit'] : null;
         $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
         $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
+        $this->container['unitTaxAmount'] = isset($data['unitTaxAmount']) ? $data['unitTaxAmount'] : null;
         $this->container['productDescription'] = isset($data['productDescription']) ? $data['productDescription'] : null;
         $this->container['giftCardCurrency'] = isset($data['giftCardCurrency']) ? $data['giftCardCurrency'] : null;
         $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
@@ -894,6 +900,27 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
     public function setReferenceDataNumber($referenceDataNumber)
     {
         $this->container['referenceDataNumber'] = $referenceDataNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets unitTaxAmount
+     * @return string
+     */
+    public function getUnitTaxAmount()
+    {
+        return $this->container['unitTaxAmount'];
+    }
+
+    /**
+     * Sets unitTaxAmount
+     * @param string $unitTaxAmount Per-item tax amount of the product. Note The amount value must be a non-negative number containing 2 decimal places and limited to 7 digits before the decimal point.
+     * @return $this
+     */
+    public function setUnitTaxAmount($unitTaxAmount)
+    {
+        $this->container['unitTaxAmount'] = $unitTaxAmount;
 
         return $this;
     }

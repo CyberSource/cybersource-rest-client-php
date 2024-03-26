@@ -95,6 +95,134 @@ class PaymentsApi
     }
 
     /**
+     * Operation createOrderRequest
+     *
+     * Create a Payment Order Request
+     *
+     * @param \CyberSource\Model\OrderPaymentRequest $orderPaymentRequest  (required)
+     * @param string $id Request identifier number for the order request. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsOrderPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createOrderRequest($orderPaymentRequest, $id)
+    {
+        self::$logger->info('CALL TO METHOD createOrderRequest STARTED');
+        list($response, $statusCode, $httpHeader) = $this->createOrderRequestWithHttpInfo($orderPaymentRequest, $id);
+        self::$logger->info('CALL TO METHOD createOrderRequest ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation createOrderRequestWithHttpInfo
+     *
+     * Create a Payment Order Request
+     *
+     * @param \CyberSource\Model\OrderPaymentRequest $orderPaymentRequest  (required)
+     * @param string $id Request identifier number for the order request. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsOrderPost201Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createOrderRequestWithHttpInfo($orderPaymentRequest, $id)
+    {
+        // verify the required parameter 'orderPaymentRequest' is set
+        if ($orderPaymentRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $orderPaymentRequest when calling createOrderRequest");
+            throw new \InvalidArgumentException('Missing the required parameter $orderPaymentRequest when calling createOrderRequest');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling createOrderRequest");
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling createOrderRequest');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v2/payment-references/{id}/intents";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($orderPaymentRequest)) {
+            $_tempBody = $orderPaymentRequest;
+        }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $modelClassLocation = explode('\\', '\CyberSource\Model\OrderPaymentRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsOrderPost201Response");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV2PaymentsOrderPost201Response',
+                '/pts/v2/payment-references/{id}/intents'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsOrderPost201Response', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsOrderPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
      * Operation createPayment
      *
      * Process a Payment
@@ -190,6 +318,119 @@ class PaymentsApi
             switch ($e->getCode()) {
                 case 201:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost201Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createSessionRequest
+     *
+     * Create Alternative Payments Sessions Request
+     *
+     * @param \CyberSource\Model\CreateSessionReq $createSessionReq  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsPost201Response2, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createSessionRequest($createSessionReq)
+    {
+        self::$logger->info('CALL TO METHOD createSessionRequest STARTED');
+        list($response, $statusCode, $httpHeader) = $this->createSessionRequestWithHttpInfo($createSessionReq);
+        self::$logger->info('CALL TO METHOD createSessionRequest ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation createSessionRequestWithHttpInfo
+     *
+     * Create Alternative Payments Sessions Request
+     *
+     * @param \CyberSource\Model\CreateSessionReq $createSessionReq  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsPost201Response2, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createSessionRequestWithHttpInfo($createSessionReq)
+    {
+        // verify the required parameter 'createSessionReq' is set
+        if ($createSessionReq === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createSessionReq when calling createSessionRequest");
+            throw new \InvalidArgumentException('Missing the required parameter $createSessionReq when calling createSessionRequest');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v2/payment-references";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($createSessionReq)) {
+            $_tempBody = $createSessionReq;
+        }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $modelClassLocation = explode('\\', '\CyberSource\Model\CreateSessionReq');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsPost201Response2");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV2PaymentsPost201Response2',
+                '/pts/v2/payment-references'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsPost201Response2', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost201Response2', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -446,6 +687,134 @@ class PaymentsApi
             switch ($e->getCode()) {
                 case 201:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost201Response1', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost400Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 502:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateSessionReq
+     *
+     * Update Alternative Payments Sessions Request
+     *
+     * @param \CyberSource\Model\CreateSessionRequest $createSessionRequest  (required)
+     * @param string $id The payment ID. This ID is returned from a previous payment request. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsPost201Response2, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateSessionReq($createSessionRequest, $id)
+    {
+        self::$logger->info('CALL TO METHOD updateSessionReq STARTED');
+        list($response, $statusCode, $httpHeader) = $this->updateSessionReqWithHttpInfo($createSessionRequest, $id);
+        self::$logger->info('CALL TO METHOD updateSessionReq ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation updateSessionReqWithHttpInfo
+     *
+     * Update Alternative Payments Sessions Request
+     *
+     * @param \CyberSource\Model\CreateSessionRequest $createSessionRequest  (required)
+     * @param string $id The payment ID. This ID is returned from a previous payment request. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\PtsV2PaymentsPost201Response2, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateSessionReqWithHttpInfo($createSessionRequest, $id)
+    {
+        // verify the required parameter 'createSessionRequest' is set
+        if ($createSessionRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createSessionRequest when calling updateSessionReq");
+            throw new \InvalidArgumentException('Missing the required parameter $createSessionRequest when calling updateSessionReq');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling updateSessionReq");
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling updateSessionReq');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v2/payment-references/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($createSessionRequest)) {
+            $_tempBody = $createSessionRequest;
+        }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $modelClassLocation = explode('\\', '\CyberSource\Model\CreateSessionRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsPost201Response2");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\PtsV2PaymentsPost201Response2',
+                '/pts/v2/payment-references/{id}'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2PaymentsPost201Response2', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost201Response2', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

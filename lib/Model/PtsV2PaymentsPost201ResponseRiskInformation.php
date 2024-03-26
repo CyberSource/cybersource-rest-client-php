@@ -64,7 +64,8 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
         'score' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationScore',
         'ipAddress' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationIpAddress',
         'providers' => 'map[string,map[string,string]]',
-        'travel' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationTravel'
+        'travel' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationTravel',
+        'processorResults' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationProcessorResults'
     ];
 
     /**
@@ -81,7 +82,8 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
         'score' => null,
         'ipAddress' => null,
         'providers' => null,
-        'travel' => null
+        'travel' => null,
+        'processorResults' => null
     ];
 
     public static function swaggerTypes()
@@ -108,7 +110,8 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
         'score' => 'score',
         'ipAddress' => 'ipAddress',
         'providers' => 'providers',
-        'travel' => 'travel'
+        'travel' => 'travel',
+        'processorResults' => 'processorResults'
     ];
 
 
@@ -126,7 +129,8 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
         'score' => 'setScore',
         'ipAddress' => 'setIpAddress',
         'providers' => 'setProviders',
-        'travel' => 'setTravel'
+        'travel' => 'setTravel',
+        'processorResults' => 'setProcessorResults'
     ];
 
 
@@ -144,7 +148,8 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
         'score' => 'getScore',
         'ipAddress' => 'getIpAddress',
         'providers' => 'getProviders',
-        'travel' => 'getTravel'
+        'travel' => 'getTravel',
+        'processorResults' => 'getProcessorResults'
     ];
 
     public static function attributeMap()
@@ -188,6 +193,7 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
         $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
         $this->container['providers'] = isset($data['providers']) ? $data['providers'] : null;
         $this->container['travel'] = isset($data['travel']) ? $data['travel'] : null;
+        $this->container['processorResults'] = isset($data['processorResults']) ? $data['processorResults'] : null;
     }
 
     /**
@@ -421,6 +427,27 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
     public function setTravel($travel)
     {
         $this->container['travel'] = $travel;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorResults
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationProcessorResults
+     */
+    public function getProcessorResults()
+    {
+        return $this->container['processorResults'];
+    }
+
+    /**
+     * Sets processorResults
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformationProcessorResults $processorResults
+     * @return $this
+     */
+    public function setProcessorResults($processorResults)
+    {
+        $this->container['processorResults'] = $processorResults;
 
         return $this;
     }

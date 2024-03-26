@@ -65,7 +65,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'phone' => 'string',
         'url' => 'string',
         'countryOfOrigin' => 'string',
-        'customerServicePhoneNumber' => 'string'
+        'customerServicePhoneNumber' => 'string',
+        'storeId' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'phone' => null,
         'url' => null,
         'countryOfOrigin' => null,
-        'customerServicePhoneNumber' => null
+        'customerServicePhoneNumber' => null,
+        'storeId' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +115,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'phone' => 'phone',
         'url' => 'url',
         'countryOfOrigin' => 'countryOfOrigin',
-        'customerServicePhoneNumber' => 'customerServicePhoneNumber'
+        'customerServicePhoneNumber' => 'customerServicePhoneNumber',
+        'storeId' => 'storeId'
     ];
 
 
@@ -133,7 +136,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'phone' => 'setPhone',
         'url' => 'setUrl',
         'countryOfOrigin' => 'setCountryOfOrigin',
-        'customerServicePhoneNumber' => 'setCustomerServicePhoneNumber'
+        'customerServicePhoneNumber' => 'setCustomerServicePhoneNumber',
+        'storeId' => 'setStoreId'
     ];
 
 
@@ -153,7 +157,8 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         'phone' => 'getPhone',
         'url' => 'getUrl',
         'countryOfOrigin' => 'getCountryOfOrigin',
-        'customerServicePhoneNumber' => 'getCustomerServicePhoneNumber'
+        'customerServicePhoneNumber' => 'getCustomerServicePhoneNumber',
+        'storeId' => 'getStoreId'
     ];
 
     public static function attributeMap()
@@ -199,6 +204,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['countryOfOrigin'] = isset($data['countryOfOrigin']) ? $data['countryOfOrigin'] : null;
         $this->container['customerServicePhoneNumber'] = isset($data['customerServicePhoneNumber']) ? $data['customerServicePhoneNumber'] : null;
+        $this->container['storeId'] = isset($data['storeId']) ? $data['storeId'] : null;
     }
 
     /**
@@ -474,6 +480,27 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function setCustomerServicePhoneNumber($customerServicePhoneNumber)
     {
         $this->container['customerServicePhoneNumber'] = $customerServicePhoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeId
+     * @return string
+     */
+    public function getStoreId()
+    {
+        return $this->container['storeId'];
+    }
+
+    /**
+     * Sets storeId
+     * @param string $storeId The unique id of the merchant's shop which assigned by the merchant
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->container['storeId'] = $storeId;
 
         return $this;
     }

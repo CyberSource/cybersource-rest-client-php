@@ -160,4 +160,11 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptorTest extends \PHPUnit_Fr
     public function testPropertyCustomerServicePhoneNumber()
     {
     }
+
+    /**
+     * Test attribute "storeId"
+     */
+    public function testPropertyStoreId()
+    {
+    }
 }

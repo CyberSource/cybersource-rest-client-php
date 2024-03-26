@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **tokenInformation** | [**\CyberSource\Model\Ptsv2paymentsTokenInformation**](Ptsv2paymentsTokenInformation.md) |  | [optional] 
 **invoiceDetails** | [**\CyberSource\Model\Ptsv2paymentsInvoiceDetails**](Ptsv2paymentsInvoiceDetails.md) |  | [optional] 
 **processorInformation** | [**\CyberSource\Model\Ptsv2paymentsProcessorInformation**](Ptsv2paymentsProcessorInformation.md) |  | [optional] 
+**agreementInformation** | [**\CyberSource\Model\Ptsv2paymentsAgreementInformation**](Ptsv2paymentsAgreementInformation.md) |  | [optional] 
 **riskInformation** | [**\CyberSource\Model\Ptsv2paymentsRiskInformation**](Ptsv2paymentsRiskInformation.md) |  | [optional] 
 **acquirerInformation** | [**\CyberSource\Model\Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
 **recurringPaymentInformation** | [**\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 

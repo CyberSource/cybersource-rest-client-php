@@ -90,4 +90,11 @@ class Ptsv2paymentsProcessorInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAuthorizationOptions()
     {
     }
+
+    /**
+     * Test attribute "reversal"
+     */
+    public function testPropertyReversal()
+    {
+    }
 }

@@ -54,7 +54,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amountDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationAmountDetails'
+        'amountDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationAmountDetails',
+        'invoiceDetails' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails'
     ];
 
     /**
@@ -62,7 +63,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'amountDetails' => null
+        'amountDetails' => null,
+        'invoiceDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
      * @var string[]
      */
     protected static $attributeMap = [
-        'amountDetails' => 'amountDetails'
+        'amountDetails' => 'amountDetails',
+        'invoiceDetails' => 'invoiceDetails'
     ];
 
 
@@ -89,7 +92,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
      * @var string[]
      */
     protected static $setters = [
-        'amountDetails' => 'setAmountDetails'
+        'amountDetails' => 'setAmountDetails',
+        'invoiceDetails' => 'setInvoiceDetails'
     ];
 
 
@@ -98,7 +102,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
      * @var string[]
      */
     protected static $getters = [
-        'amountDetails' => 'getAmountDetails'
+        'amountDetails' => 'getAmountDetails',
+        'invoiceDetails' => 'getInvoiceDetails'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
     public function __construct(array $data = null)
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
+        $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformation implements A
     public function setAmountDetails($amountDetails)
     {
         $this->container['amountDetails'] = $amountDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceDetails
+     * @return \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails
+     */
+    public function getInvoiceDetails()
+    {
+        return $this->container['invoiceDetails'];
+    }
+
+    /**
+     * Sets invoiceDetails
+     * @param \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationInvoiceDetails $invoiceDetails
+     * @return $this
+     */
+    public function setInvoiceDetails($invoiceDetails)
+    {
+        $this->container['invoiceDetails'] = $invoiceDetails;
 
         return $this;
     }

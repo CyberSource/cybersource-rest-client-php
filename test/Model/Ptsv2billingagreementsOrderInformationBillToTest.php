@@ -120,6 +120,13 @@ class Ptsv2billingagreementsOrderInformationBillToTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "county"
+     */
+    public function testPropertyCounty()
+    {
+    }
+
+    /**
      * Test attribute "district"
      */
     public function testPropertyDistrict()
@@ -137,6 +144,13 @@ class Ptsv2billingagreementsOrderInformationBillToTest extends \PHPUnit_Framewor
      * Test attribute "firstName"
      */
     public function testPropertyFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "middleName"
+     */
+    public function testPropertyMiddleName()
     {
     }
 
@@ -165,6 +179,13 @@ class Ptsv2billingagreementsOrderInformationBillToTest extends \PHPUnit_Framewor
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "title"
+     */
+    public function testPropertyTitle()
     {
     }
 }

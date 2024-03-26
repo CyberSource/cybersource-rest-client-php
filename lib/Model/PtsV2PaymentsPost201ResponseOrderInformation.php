@@ -57,7 +57,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
         'amountDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationAmountDetails',
         'invoiceDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationInvoiceDetails',
         'rewardPointsDetails' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails',
-        'billTo' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationBillTo'
+        'billTo' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationBillTo',
+        'shipTo' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationShipTo'
     ];
 
     /**
@@ -68,7 +69,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
         'amountDetails' => null,
         'invoiceDetails' => null,
         'rewardPointsDetails' => null,
-        'billTo' => null
+        'billTo' => null,
+        'shipTo' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
         'amountDetails' => 'amountDetails',
         'invoiceDetails' => 'invoiceDetails',
         'rewardPointsDetails' => 'rewardPointsDetails',
-        'billTo' => 'billTo'
+        'billTo' => 'billTo',
+        'shipTo' => 'shipTo'
     ];
 
 
@@ -101,7 +104,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
         'amountDetails' => 'setAmountDetails',
         'invoiceDetails' => 'setInvoiceDetails',
         'rewardPointsDetails' => 'setRewardPointsDetails',
-        'billTo' => 'setBillTo'
+        'billTo' => 'setBillTo',
+        'shipTo' => 'setShipTo'
     ];
 
 
@@ -113,7 +117,8 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
         'amountDetails' => 'getAmountDetails',
         'invoiceDetails' => 'getInvoiceDetails',
         'rewardPointsDetails' => 'getRewardPointsDetails',
-        'billTo' => 'getBillTo'
+        'billTo' => 'getBillTo',
+        'shipTo' => 'getShipTo'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
         $this->container['rewardPointsDetails'] = isset($data['rewardPointsDetails']) ? $data['rewardPointsDetails'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
+        $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class PtsV2PaymentsPost201ResponseOrderInformation implements ArrayAccess
     public function setBillTo($billTo)
     {
         $this->container['billTo'] = $billTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipTo
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationShipTo
+     */
+    public function getShipTo()
+    {
+        return $this->container['shipTo'];
+    }
+
+    /**
+     * Sets shipTo
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseOrderInformationShipTo $shipTo
+     * @return $this
+     */
+    public function setShipTo($shipTo)
+    {
+        $this->container['shipTo'] = $shipTo;
 
         return $this;
     }

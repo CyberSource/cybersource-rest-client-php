@@ -198,7 +198,7 @@ class Ptsv2billingagreementsProcessingInformation implements ArrayAccess
 
     /**
      * Sets actionList
-     * @param string[] $actionList - Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. - Use `UPDATE_AGREEMENT` - Use `BILLING_AGREEMENT_CREATE` - Use `CANCEL_AGREEMENT`
+     * @param string[] $actionList - Use `CONSUMER_AUTHENTICATION` to use Payer Authentication along with Decision Manager. For any other value, only Decision Manager will run. - Use `WATCHLIST_SCREENING`  when you want to call Watchlist Screening service. - Use `UPDATE_AGREEMENT` - Use `BILLING_AGREEMENT_CREATE` when Alternative Payment create mandate service is requested - Use `CANCEL_AGREEMENT` - Use `AP_IMPORT_AGREEMENT` when Alternative Payment import mandate service is requested.
      * @return $this
      */
     public function setActionList($actionList)

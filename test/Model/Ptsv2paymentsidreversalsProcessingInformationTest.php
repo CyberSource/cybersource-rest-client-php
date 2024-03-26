@@ -118,4 +118,11 @@ class Ptsv2paymentsidreversalsProcessingInformationTest extends \PHPUnit_Framewo
     public function testPropertyIssuer()
     {
     }
+
+    /**
+     * Test attribute "actionList"
+     */
+    public function testPropertyActionList()
+    {
+    }
 }

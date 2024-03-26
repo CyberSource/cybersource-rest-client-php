@@ -55,7 +55,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
       */
     protected static $swaggerTypes = [
         'captureSequenceNumber' => 'int',
-        'totalCaptureCount' => 'int'
+        'totalCaptureCount' => 'int',
+        'isFinal' => 'string'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
       */
     protected static $swaggerFormats = [
         'captureSequenceNumber' => null,
-        'totalCaptureCount' => null
+        'totalCaptureCount' => null,
+        'isFinal' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
      */
     protected static $attributeMap = [
         'captureSequenceNumber' => 'captureSequenceNumber',
-        'totalCaptureCount' => 'totalCaptureCount'
+        'totalCaptureCount' => 'totalCaptureCount',
+        'isFinal' => 'isFinal'
     ];
 
 
@@ -93,7 +96,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
      */
     protected static $setters = [
         'captureSequenceNumber' => 'setCaptureSequenceNumber',
-        'totalCaptureCount' => 'setTotalCaptureCount'
+        'totalCaptureCount' => 'setTotalCaptureCount',
+        'isFinal' => 'setIsFinal'
     ];
 
 
@@ -103,7 +107,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
      */
     protected static $getters = [
         'captureSequenceNumber' => 'getCaptureSequenceNumber',
-        'totalCaptureCount' => 'getTotalCaptureCount'
+        'totalCaptureCount' => 'getTotalCaptureCount',
+        'isFinal' => 'getIsFinal'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     {
         $this->container['captureSequenceNumber'] = isset($data['captureSequenceNumber']) ? $data['captureSequenceNumber'] : null;
         $this->container['totalCaptureCount'] = isset($data['totalCaptureCount']) ? $data['totalCaptureCount'] : null;
+        $this->container['isFinal'] = isset($data['isFinal']) ? $data['isFinal'] : null;
     }
 
     /**
@@ -204,6 +210,27 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     public function setTotalCaptureCount($totalCaptureCount)
     {
         $this->container['totalCaptureCount'] = $totalCaptureCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets isFinal
+     * @return string
+     */
+    public function getIsFinal()
+    {
+        return $this->container['isFinal'];
+    }
+
+    /**
+     * Sets isFinal
+     * @param string $isFinal Indicates whether to release the authorization hold on the remaining funds.   Possible Values: - `true` - `false`
+     * @return $this
+     */
+    public function setIsFinal($isFinal)
+    {
+        $this->container['isFinal'] = $isFinal;
 
         return $this;
     }

@@ -54,6 +54,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'giftWrapAmount' => 'string',
         'totalAmount' => 'string',
         'subTotalAmount' => 'string',
         'currency' => 'string',
@@ -79,7 +80,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalAmount' => 'string',
         'originalCurrency' => 'string',
         'cashbackAmount' => 'string',
-        'currencyConversion' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion'
+        'currencyConversion' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion',
+        'order' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOrder'
     ];
 
     /**
@@ -87,6 +89,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'giftWrapAmount' => null,
         'totalAmount' => null,
         'subTotalAmount' => null,
         'currency' => null,
@@ -112,7 +115,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalAmount' => null,
         'originalCurrency' => null,
         'cashbackAmount' => null,
-        'currencyConversion' => null
+        'currencyConversion' => null,
+        'order' => null
     ];
 
     public static function swaggerTypes()
@@ -130,6 +134,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'giftWrapAmount' => 'giftWrapAmount',
         'totalAmount' => 'totalAmount',
         'subTotalAmount' => 'subTotalAmount',
         'currency' => 'currency',
@@ -155,7 +160,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalAmount' => 'originalAmount',
         'originalCurrency' => 'originalCurrency',
         'cashbackAmount' => 'cashbackAmount',
-        'currencyConversion' => 'currencyConversion'
+        'currencyConversion' => 'currencyConversion',
+        'order' => 'order'
     ];
 
 
@@ -164,6 +170,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'giftWrapAmount' => 'setGiftWrapAmount',
         'totalAmount' => 'setTotalAmount',
         'subTotalAmount' => 'setSubTotalAmount',
         'currency' => 'setCurrency',
@@ -189,7 +196,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalAmount' => 'setOriginalAmount',
         'originalCurrency' => 'setOriginalCurrency',
         'cashbackAmount' => 'setCashbackAmount',
-        'currencyConversion' => 'setCurrencyConversion'
+        'currencyConversion' => 'setCurrencyConversion',
+        'order' => 'setOrder'
     ];
 
 
@@ -198,6 +206,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'giftWrapAmount' => 'getGiftWrapAmount',
         'totalAmount' => 'getTotalAmount',
         'subTotalAmount' => 'getSubTotalAmount',
         'currency' => 'getCurrency',
@@ -223,7 +232,8 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalAmount' => 'getOriginalAmount',
         'originalCurrency' => 'getOriginalCurrency',
         'cashbackAmount' => 'getCashbackAmount',
-        'currencyConversion' => 'getCurrencyConversion'
+        'currencyConversion' => 'getCurrencyConversion',
+        'order' => 'getOrder'
     ];
 
     public static function attributeMap()
@@ -257,6 +267,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['giftWrapAmount'] = isset($data['giftWrapAmount']) ? $data['giftWrapAmount'] : null;
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['subTotalAmount'] = isset($data['subTotalAmount']) ? $data['subTotalAmount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
@@ -283,6 +294,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         $this->container['originalCurrency'] = isset($data['originalCurrency']) ? $data['originalCurrency'] : null;
         $this->container['cashbackAmount'] = isset($data['cashbackAmount']) ? $data['cashbackAmount'] : null;
         $this->container['currencyConversion'] = isset($data['currencyConversion']) ? $data['currencyConversion'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
     }
 
     /**
@@ -309,6 +321,27 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets giftWrapAmount
+     * @return string
+     */
+    public function getGiftWrapAmount()
+    {
+        return $this->container['giftWrapAmount'];
+    }
+
+    /**
+     * Sets giftWrapAmount
+     * @param string $giftWrapAmount Amount being charged as gift wrap fee.
+     * @return $this
+     */
+    public function setGiftWrapAmount($giftWrapAmount)
+    {
+        $this->container['giftWrapAmount'] = $giftWrapAmount;
+
+        return $this;
+    }
 
     /**
      * Gets totalAmount
@@ -852,6 +885,27 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
     public function setCurrencyConversion($currencyConversion)
     {
         $this->container['currencyConversion'] = $currencyConversion;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOrder
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOrder $order
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
 
         return $this;
     }

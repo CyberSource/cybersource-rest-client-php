@@ -83,4 +83,11 @@ class PtsV2IncrementalAuthorizationPatch201ResponseOrderInformationTest extends 
     public function testPropertyAmountDetails()
     {
     }
+
+    /**
+     * Test attribute "invoiceDetails"
+     */
+    public function testPropertyInvoiceDetails()
+    {
+    }
 }

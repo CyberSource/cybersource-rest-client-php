@@ -111,4 +111,11 @@ class PtsV2PaymentsPost201ResponseBuyerInformationTest extends \PHPUnit_Framewor
     public function testPropertyTaxId()
     {
     }
+
+    /**
+     * Test attribute "loginId"
+     */
+    public function testPropertyLoginId()
+    {
+    }
 }

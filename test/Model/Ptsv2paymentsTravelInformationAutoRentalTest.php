@@ -370,4 +370,18 @@ class Ptsv2paymentsTravelInformationAutoRentalTest extends \PHPUnit_Framework_Te
     public function testPropertyOtherCharges()
     {
     }
+
+    /**
+     * Test attribute "companyName"
+     */
+    public function testPropertyCompanyName()
+    {
+    }
+
+    /**
+     * Test attribute "affiliateName"
+     */
+    public function testPropertyAffiliateName()
+    {
+    }
 }

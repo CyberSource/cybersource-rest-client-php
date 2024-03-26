@@ -134,6 +134,13 @@ class Ptsv2paymentsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "noteToSeller"
+     */
+    public function testPropertyNoteToSeller()
+    {
+    }
+
+    /**
      * Test attribute "mobilePhone"
      */
     public function testPropertyMobilePhone()

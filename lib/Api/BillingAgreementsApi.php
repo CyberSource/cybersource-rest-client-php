@@ -97,12 +97,12 @@ class BillingAgreementsApi
     /**
      * Operation billingAgreementsDeRegistration
      *
-     * Standing Instruction Cancellation or Modification
+     * Modify a Billing Agreement
      *
      * @param \CyberSource\Model\ModifyBillingAgreement $modifyBillingAgreement  (required)
      * @param string $id ID for de-registration or cancellation of Billing Agreement (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\PtsV2CreditsPost201Response1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function billingAgreementsDeRegistration($modifyBillingAgreement, $id)
     {
@@ -116,12 +116,12 @@ class BillingAgreementsApi
     /**
      * Operation billingAgreementsDeRegistrationWithHttpInfo
      *
-     * Standing Instruction Cancellation or Modification
+     * Modify a Billing Agreement
      *
      * @param \CyberSource\Model\ModifyBillingAgreement $modifyBillingAgreement  (required)
      * @param string $id ID for de-registration or cancellation of Billing Agreement (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\PtsV2CreditsPost201Response1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function billingAgreementsDeRegistrationWithHttpInfo($modifyBillingAgreement, $id)
     {
@@ -185,7 +185,7 @@ class BillingAgreementsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2CreditsPost201Response1");
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -194,25 +194,25 @@ class BillingAgreementsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\PtsV2CreditsPost201Response1',
+                '\CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response',
                 '/pts/v2/billing-agreements/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2CreditsPost201Response1', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreditsPost201Response1', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsRefundPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -336,11 +336,11 @@ class BillingAgreementsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsRefundPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -353,11 +353,11 @@ class BillingAgreementsApi
     /**
      * Operation billingAgreementsRegistration
      *
-     * Standing Instruction completion registration
+     * Create a Billing Agreement
      *
      * @param \CyberSource\Model\CreateBillingAgreement $createBillingAgreement  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\PtsV2CreditsPost201Response1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2CreateBillingAgreementPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function billingAgreementsRegistration($createBillingAgreement)
     {
@@ -371,11 +371,11 @@ class BillingAgreementsApi
     /**
      * Operation billingAgreementsRegistrationWithHttpInfo
      *
-     * Standing Instruction completion registration
+     * Create a Billing Agreement
      *
      * @param \CyberSource\Model\CreateBillingAgreement $createBillingAgreement  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\PtsV2CreditsPost201Response1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\PtsV2CreateBillingAgreementPost201Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function billingAgreementsRegistrationWithHttpInfo($createBillingAgreement)
     {
@@ -426,7 +426,7 @@ class BillingAgreementsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2CreditsPost201Response1");
+        self::$logger->debug("Return Type : \CyberSource\Model\PtsV2CreateBillingAgreementPost201Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -435,25 +435,25 @@ class BillingAgreementsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\PtsV2CreditsPost201Response1',
+                '\CyberSource\Model\PtsV2CreateBillingAgreementPost201Response',
                 '/pts/v2/billing-agreements'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2CreditsPost201Response1', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\PtsV2CreateBillingAgreementPost201Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreditsPost201Response1', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost201Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsRefundPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2PaymentsPost502Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV2CreateBillingAgreementPost502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

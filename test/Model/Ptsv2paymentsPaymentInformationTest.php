@@ -92,6 +92,13 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "directDebit"
+     */
+    public function testPropertyDirectDebit()
+    {
+    }
+
+    /**
      * Test attribute "fluidData"
      */
     public function testPropertyFluidData()
@@ -137,6 +144,13 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "bank"
      */
     public function testPropertyBank()
+    {
+    }
+
+    /**
+     * Test attribute "options"
+     */
+    public function testPropertyOptions()
     {
     }
 

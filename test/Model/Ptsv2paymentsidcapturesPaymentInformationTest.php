@@ -90,4 +90,11 @@ class Ptsv2paymentsidcapturesPaymentInformationTest extends \PHPUnit_Framework_T
     public function testPropertyCard()
     {
     }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
 }

@@ -54,7 +54,8 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'accountId' => 'string'
+        'accountId' => 'string',
+        'fundingSource' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'accountId' => null
+        'accountId' => null,
+        'fundingSource' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'accountId' => 'accountId'
+        'accountId' => 'accountId',
+        'fundingSource' => 'fundingSource'
     ];
 
 
@@ -89,7 +92,8 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'accountId' => 'setAccountId'
+        'accountId' => 'setAccountId',
+        'fundingSource' => 'setFundingSource'
     ];
 
 
@@ -98,7 +102,8 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'accountId' => 'getAccountId'
+        'accountId' => 'getAccountId',
+        'fundingSource' => 'getFundingSource'
     ];
 
     public static function attributeMap()
@@ -133,6 +138,7 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
+        $this->container['fundingSource'] = isset($data['fundingSource']) ? $data['fundingSource'] : null;
     }
 
     /**
@@ -177,6 +183,27 @@ class Ptsv2paymentsPaymentInformationEWallet implements ArrayAccess
     public function setAccountId($accountId)
     {
         $this->container['accountId'] = $accountId;
+
+        return $this;
+    }
+
+    /**
+     * Gets fundingSource
+     * @return string
+     */
+    public function getFundingSource()
+    {
+        return $this->container['fundingSource'];
+    }
+
+    /**
+     * Sets fundingSource
+     * @param string $fundingSource Payment method for the unit purchase. Possible values: - `UNRESTRICTED (default)—this value is only available if configured by PayPal for the merchant.` - `INSTANT`
+     * @return $this
+     */
+    public function setFundingSource($fundingSource)
+    {
+        $this->container['fundingSource'] = $fundingSource;
 
         return $this;
     }

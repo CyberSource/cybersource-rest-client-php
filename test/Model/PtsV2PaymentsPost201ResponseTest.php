@@ -92,6 +92,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
+    {
+    }
+
+    /**
      * Test attribute "submitTimeUtc"
      */
     public function testPropertySubmitTimeUtc()
@@ -200,6 +207,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "buyerInformation"
      */
     public function testPropertyBuyerInformation()
+    {
+    }
+
+    /**
+     * Test attribute "merchantInformation"
+     */
+    public function testPropertyMerchantInformation()
     {
     }
 

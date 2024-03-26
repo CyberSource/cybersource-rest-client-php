@@ -59,7 +59,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'linkId' => 'string',
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
-        'issuer' => '\CyberSource\Model\Ptsv2paymentsIssuerInformation'
+        'issuer' => '\CyberSource\Model\Ptsv2paymentsIssuerInformation',
+        'actionList' => 'string[]'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'linkId' => null,
         'reportGroup' => null,
         'visaCheckoutId' => null,
-        'issuer' => null
+        'issuer' => null,
+        'actionList' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'linkId' => 'linkId',
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
-        'issuer' => 'issuer'
+        'issuer' => 'issuer',
+        'actionList' => 'actionList'
     ];
 
 
@@ -109,7 +112,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'linkId' => 'setLinkId',
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
-        'issuer' => 'setIssuer'
+        'issuer' => 'setIssuer',
+        'actionList' => 'setActionList'
     ];
 
 
@@ -123,7 +127,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'linkId' => 'getLinkId',
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
-        'issuer' => 'getIssuer'
+        'issuer' => 'getIssuer',
+        'actionList' => 'getActionList'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         $this->container['reportGroup'] = isset($data['reportGroup']) ? $data['reportGroup'] : null;
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
         $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
+        $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
     }
 
     /**
@@ -312,6 +318,27 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
     public function setIssuer($issuer)
     {
         $this->container['issuer'] = $issuer;
+
+        return $this;
+    }
+
+    /**
+     * Gets actionList
+     * @return string[]
+     */
+    public function getActionList()
+    {
+        return $this->container['actionList'];
+    }
+
+    /**
+     * Sets actionList
+     * @param string[] $actionList Array of actions (one or more) to be included in the reversal Possible value: - `AP_AUTH_REVERSAL`: Use this when you want to reverse an Alternative Payment Authorization.
+     * @return $this
+     */
+    public function setActionList($actionList)
+    {
+        $this->container['actionList'] = $actionList;
 
         return $this;
     }

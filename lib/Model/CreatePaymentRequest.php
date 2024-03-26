@@ -75,6 +75,7 @@ class CreatePaymentRequest implements ArrayAccess
         'tokenInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformation',
         'invoiceDetails' => '\CyberSource\Model\Ptsv2paymentsInvoiceDetails',
         'processorInformation' => '\CyberSource\Model\Ptsv2paymentsProcessorInformation',
+        'agreementInformation' => '\CyberSource\Model\Ptsv2paymentsAgreementInformation',
         'riskInformation' => '\CyberSource\Model\Ptsv2paymentsRiskInformation',
         'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
@@ -107,6 +108,7 @@ class CreatePaymentRequest implements ArrayAccess
         'tokenInformation' => null,
         'invoiceDetails' => null,
         'processorInformation' => null,
+        'agreementInformation' => null,
         'riskInformation' => null,
         'acquirerInformation' => null,
         'recurringPaymentInformation' => null,
@@ -149,6 +151,7 @@ class CreatePaymentRequest implements ArrayAccess
         'tokenInformation' => 'tokenInformation',
         'invoiceDetails' => 'invoiceDetails',
         'processorInformation' => 'processorInformation',
+        'agreementInformation' => 'agreementInformation',
         'riskInformation' => 'riskInformation',
         'acquirerInformation' => 'acquirerInformation',
         'recurringPaymentInformation' => 'recurringPaymentInformation',
@@ -182,6 +185,7 @@ class CreatePaymentRequest implements ArrayAccess
         'tokenInformation' => 'setTokenInformation',
         'invoiceDetails' => 'setInvoiceDetails',
         'processorInformation' => 'setProcessorInformation',
+        'agreementInformation' => 'setAgreementInformation',
         'riskInformation' => 'setRiskInformation',
         'acquirerInformation' => 'setAcquirerInformation',
         'recurringPaymentInformation' => 'setRecurringPaymentInformation',
@@ -215,6 +219,7 @@ class CreatePaymentRequest implements ArrayAccess
         'tokenInformation' => 'getTokenInformation',
         'invoiceDetails' => 'getInvoiceDetails',
         'processorInformation' => 'getProcessorInformation',
+        'agreementInformation' => 'getAgreementInformation',
         'riskInformation' => 'getRiskInformation',
         'acquirerInformation' => 'getAcquirerInformation',
         'recurringPaymentInformation' => 'getRecurringPaymentInformation',
@@ -273,6 +278,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['agreementInformation'] = isset($data['agreementInformation']) ? $data['agreementInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
         $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
@@ -741,6 +747,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setProcessorInformation($processorInformation)
     {
         $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets agreementInformation
+     * @return \CyberSource\Model\Ptsv2paymentsAgreementInformation
+     */
+    public function getAgreementInformation()
+    {
+        return $this->container['agreementInformation'];
+    }
+
+    /**
+     * Sets agreementInformation
+     * @param \CyberSource\Model\Ptsv2paymentsAgreementInformation $agreementInformation
+     * @return $this
+     */
+    public function setAgreementInformation($agreementInformation)
+    {
+        $this->container['agreementInformation'] = $agreementInformation;
 
         return $this;
     }

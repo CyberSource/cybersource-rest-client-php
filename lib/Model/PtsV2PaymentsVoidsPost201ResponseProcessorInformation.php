@@ -54,7 +54,9 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'responseCode' => 'string'
+        'responseCode' => 'string',
+        'responseDetails' => 'string',
+        'transactionId' => 'string'
     ];
 
     /**
@@ -62,7 +64,9 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'responseCode' => null
+        'responseCode' => null,
+        'responseDetails' => null,
+        'transactionId' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'responseCode' => 'responseCode'
+        'responseCode' => 'responseCode',
+        'responseDetails' => 'responseDetails',
+        'transactionId' => 'transactionId'
     ];
 
 
@@ -89,7 +95,9 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'responseCode' => 'setResponseCode'
+        'responseCode' => 'setResponseCode',
+        'responseDetails' => 'setResponseDetails',
+        'transactionId' => 'setTransactionId'
     ];
 
 
@@ -98,7 +106,9 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'responseCode' => 'getResponseCode'
+        'responseCode' => 'getResponseCode',
+        'responseDetails' => 'getResponseDetails',
+        'transactionId' => 'getTransactionId'
     ];
 
     public static function attributeMap()
@@ -133,6 +143,8 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
     public function __construct(array $data = null)
     {
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
+        $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
+        $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
     }
 
     /**
@@ -177,6 +189,48 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
     public function setResponseCode($responseCode)
     {
         $this->container['responseCode'] = $responseCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseDetails
+     * @return string
+     */
+    public function getResponseDetails()
+    {
+        return $this->container['responseDetails'];
+    }
+
+    /**
+     * Sets responseDetails
+     * @param string $responseDetails The reason for when the transaction status is Pending or Reversed. Possible values: - `PAYER_SHIPPING_UNCONFIRMED` - `MULTI_CURRENCY` - `RISK_REVIEW` - `REGULATORY_REVIEW` - `VERIFICATION_REQUIRED` - `ORDER` - `OTHER`
+     * @return $this
+     */
+    public function setResponseDetails($responseDetails)
+    {
+        $this->container['responseDetails'] = $responseDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionId
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->container['transactionId'];
+    }
+
+    /**
+     * Sets transactionId
+     * @param string $transactionId Identifier of the order transaction.
+     * @return $this
+     */
+    public function setTransactionId($transactionId)
+    {
+        $this->container['transactionId'] = $transactionId;
 
         return $this;
     }

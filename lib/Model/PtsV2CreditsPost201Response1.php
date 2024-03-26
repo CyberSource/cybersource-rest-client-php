@@ -58,7 +58,7 @@ class PtsV2CreditsPost201Response1 implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'processorInformation' => '\CyberSource\Model\PtsV2CreditsPost201Response1ProcessorInformation',
-        'installmentInformation' => '\CyberSource\Model\PtsV2CreditsPost201Response1InstallmentInformation'
+        'installmentInformation' => '\CyberSource\Model\PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation'
     ];
 
     /**
@@ -270,7 +270,7 @@ class PtsV2CreditsPost201Response1 implements ArrayAccess
 
     /**
      * Gets installmentInformation
-     * @return \CyberSource\Model\PtsV2CreditsPost201Response1InstallmentInformation
+     * @return \CyberSource\Model\PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation
      */
     public function getInstallmentInformation()
     {
@@ -279,7 +279,7 @@ class PtsV2CreditsPost201Response1 implements ArrayAccess
 
     /**
      * Sets installmentInformation
-     * @param \CyberSource\Model\PtsV2CreditsPost201Response1InstallmentInformation $installmentInformation
+     * @param \CyberSource\Model\PtsV2CreateBillingAgreementPost201ResponseInstallmentInformation $installmentInformation
      * @return $this
      */
     public function setInstallmentInformation($installmentInformation)

@@ -146,4 +146,11 @@ class PtsV2PaymentsPost201ResponseRiskInformationTest extends \PHPUnit_Framework
     public function testPropertyTravel()
     {
     }
+
+    /**
+     * Test attribute "processorResults"
+     */
+    public function testPropertyProcessorResults()
+    {
+    }
 }

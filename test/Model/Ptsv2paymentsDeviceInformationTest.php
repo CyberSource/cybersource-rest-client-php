@@ -78,6 +78,13 @@ class Ptsv2paymentsDeviceInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
      * Test attribute "hostName"
      */
     public function testPropertyHostName()
@@ -123,6 +130,13 @@ class Ptsv2paymentsDeviceInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "appUrl"
      */
     public function testPropertyAppUrl()
+    {
+    }
+
+    /**
+     * Test attribute "metadata"
+     */
+    public function testPropertyMetadata()
     {
     }
 

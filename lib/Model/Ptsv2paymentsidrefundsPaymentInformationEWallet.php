@@ -171,7 +171,7 @@ class Ptsv2paymentsidrefundsPaymentInformationEWallet implements ArrayAccess
 
     /**
      * Sets fundingSource
-     * @param string $fundingSource Payment mode for the authorization or order transaction.  INSTANT_TRANSFER  MANUAL_BANK_TRANSFER  DELAYED_TRANSFER  ECHECK
+     * @param string $fundingSource Payment mode for the authorization or order transaction.  INSTANT_TRANSFER  MANUAL_BANK_TRANSFER  DELAYED_TRANSFER  ECHECK  UNRESTRICTED (default)—this value is available only when configured by PayPal for the merchant. INSTANT
      * @return $this
      */
     public function setFundingSource($fundingSource)

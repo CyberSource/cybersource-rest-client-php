@@ -167,4 +167,11 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTest extends \PHPUnit_Framew
     public function testPropertyBinCountry()
     {
     }
+
+    /**
+     * Test attribute "eWallet"
+     */
+    public function testPropertyEWallet()
+    {
+    }
 }

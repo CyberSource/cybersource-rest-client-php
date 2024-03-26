@@ -54,6 +54,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'string',
         'hostName' => 'string',
         'ipAddress' => 'string',
         'userAgent' => 'string',
@@ -61,6 +62,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'useRawFingerprintSessionId' => 'bool',
         'deviceType' => 'string',
         'appUrl' => 'string',
+        'metadata' => 'string',
         'rawData' => '\CyberSource\Model\Ptsv2paymentsDeviceInformationRawData[]',
         'httpAcceptBrowserValue' => 'string',
         'httpAcceptContent' => 'string',
@@ -80,6 +82,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'id' => null,
         'hostName' => null,
         'ipAddress' => null,
         'userAgent' => null,
@@ -87,6 +90,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'useRawFingerprintSessionId' => null,
         'deviceType' => null,
         'appUrl' => null,
+        'metadata' => null,
         'rawData' => null,
         'httpAcceptBrowserValue' => null,
         'httpAcceptContent' => null,
@@ -116,6 +120,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'hostName' => 'hostName',
         'ipAddress' => 'ipAddress',
         'userAgent' => 'userAgent',
@@ -123,6 +128,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'useRawFingerprintSessionId' => 'useRawFingerprintSessionId',
         'deviceType' => 'deviceType',
         'appUrl' => 'appUrl',
+        'metadata' => 'metadata',
         'rawData' => 'rawData',
         'httpAcceptBrowserValue' => 'httpAcceptBrowserValue',
         'httpAcceptContent' => 'httpAcceptContent',
@@ -143,6 +149,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'hostName' => 'setHostName',
         'ipAddress' => 'setIpAddress',
         'userAgent' => 'setUserAgent',
@@ -150,6 +157,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'useRawFingerprintSessionId' => 'setUseRawFingerprintSessionId',
         'deviceType' => 'setDeviceType',
         'appUrl' => 'setAppUrl',
+        'metadata' => 'setMetadata',
         'rawData' => 'setRawData',
         'httpAcceptBrowserValue' => 'setHttpAcceptBrowserValue',
         'httpAcceptContent' => 'setHttpAcceptContent',
@@ -170,6 +178,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'hostName' => 'getHostName',
         'ipAddress' => 'getIpAddress',
         'userAgent' => 'getUserAgent',
@@ -177,6 +186,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         'useRawFingerprintSessionId' => 'getUseRawFingerprintSessionId',
         'deviceType' => 'getDeviceType',
         'appUrl' => 'getAppUrl',
+        'metadata' => 'getMetadata',
         'rawData' => 'getRawData',
         'httpAcceptBrowserValue' => 'getHttpAcceptBrowserValue',
         'httpAcceptContent' => 'getHttpAcceptContent',
@@ -222,6 +232,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['hostName'] = isset($data['hostName']) ? $data['hostName'] : null;
         $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
         $this->container['userAgent'] = isset($data['userAgent']) ? $data['userAgent'] : null;
@@ -229,6 +240,7 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         $this->container['useRawFingerprintSessionId'] = isset($data['useRawFingerprintSessionId']) ? $data['useRawFingerprintSessionId'] : null;
         $this->container['deviceType'] = isset($data['deviceType']) ? $data['deviceType'] : null;
         $this->container['appUrl'] = isset($data['appUrl']) ? $data['appUrl'] : null;
+        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['rawData'] = isset($data['rawData']) ? $data['rawData'] : null;
         $this->container['httpAcceptBrowserValue'] = isset($data['httpAcceptBrowserValue']) ? $data['httpAcceptBrowserValue'] : null;
         $this->container['httpAcceptContent'] = isset($data['httpAcceptContent']) ? $data['httpAcceptContent'] : null;
@@ -267,6 +279,27 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id Value created by the client software that uniquely identifies the POS device. CyberSource does not forward this value to the processor. Instead, the value is forwarded to the CyberSource reporting functionality.  This field is supported only for authorizations and credits on these processors: - American Express Direct - Credit Mutuel-CIC - FDC Nashville Global - OmniPay Direct - SIX  Optional field. String (32)
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets hostName
@@ -411,6 +444,27 @@ class Ptsv2paymentsDeviceInformation implements ArrayAccess
     public function setAppUrl($appUrl)
     {
         $this->container['appUrl'] = $appUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     * @return string
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     * @param string $metadata Verifies that the payment is originating from a valid, user-approved application and device. Sending this field helps reduce fraud and declined transactions. Note The length is set for a hexadecimal representation of the GUID/UUID. This field accepts a 36-character string (with hyphens) or a 32-character string (without hyphens). Example 123e4567-e89b-12d3-a456-426655440000 Example 123e4567e89b12d3a456426655440000
+     * @return $this
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

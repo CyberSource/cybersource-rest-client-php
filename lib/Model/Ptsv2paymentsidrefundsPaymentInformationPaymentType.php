@@ -56,7 +56,7 @@ class Ptsv2paymentsidrefundsPaymentInformationPaymentType implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'subTypeName' => 'string',
-        'method' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod'
+        'method' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod'
     ];
 
     /**
@@ -216,7 +216,7 @@ class Ptsv2paymentsidrefundsPaymentInformationPaymentType implements ArrayAccess
 
     /**
      * Gets method
-     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod
      */
     public function getMethod()
     {
@@ -225,7 +225,7 @@ class Ptsv2paymentsidrefundsPaymentInformationPaymentType implements ArrayAccess
 
     /**
      * Sets method
-     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentTypeMethod $method
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationPaymentTypeMethod $method
      * @return $this
      */
     public function setMethod($method)

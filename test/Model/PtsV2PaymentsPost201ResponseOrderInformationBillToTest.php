@@ -78,6 +78,69 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillToTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "firstName"
+     */
+    public function testPropertyFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "lastName"
+     */
+    public function testPropertyLastName()
+    {
+    }
+
+    /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
+
+    /**
+     * Test attribute "address2"
+     */
+    public function testPropertyAddress2()
+    {
+    }
+
+    /**
+     * Test attribute "locality"
+     */
+    public function testPropertyLocality()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "administrativeArea"
+     */
+    public function testPropertyAdministrativeArea()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
      * Test attribute "alternatePhoneNumberVerificationStatus"
      */
     public function testPropertyAlternatePhoneNumberVerificationStatus()
@@ -88,6 +151,20 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillToTest extends \PHPUnit_Fr
      * Test attribute "alternateEmailVerificationStatus"
      */
     public function testPropertyAlternateEmailVerificationStatus()
+    {
+    }
+
+    /**
+     * Test attribute "phoneNumber"
+     */
+    public function testPropertyPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "nameSuffix"
+     */
+    public function testPropertyNameSuffix()
     {
     }
 }

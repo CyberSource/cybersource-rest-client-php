@@ -78,6 +78,13 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     }
 
     /**
+     * Test attribute "giftWrapAmount"
+     */
+    public function testPropertyGiftWrapAmount()
+    {
+    }
+
+    /**
      * Test attribute "totalAmount"
      */
     public function testPropertyTotalAmount()
@@ -256,6 +263,13 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
      * Test attribute "currencyConversion"
      */
     public function testPropertyCurrencyConversion()
+    {
+    }
+
+    /**
+     * Test attribute "order"
+     */
+    public function testPropertyOrder()
     {
     }
 }

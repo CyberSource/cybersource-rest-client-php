@@ -56,6 +56,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationTokenizedCard',
+        'directDebit' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationDirectDebit',
         'fluidData' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentInstrument',
@@ -63,6 +64,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
         'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
+        'options' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationOptions',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
         'initiationChannel' => 'string',
         'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet'
@@ -75,6 +77,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'card' => null,
         'tokenizedCard' => null,
+        'directDebit' => null,
         'fluidData' => null,
         'customer' => null,
         'paymentInstrument' => null,
@@ -82,6 +85,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'shippingAddress' => null,
         'legacyToken' => null,
         'bank' => null,
+        'options' => null,
         'paymentType' => null,
         'initiationChannel' => null,
         'eWallet' => null
@@ -104,6 +108,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     protected static $attributeMap = [
         'card' => 'card',
         'tokenizedCard' => 'tokenizedCard',
+        'directDebit' => 'directDebit',
         'fluidData' => 'fluidData',
         'customer' => 'customer',
         'paymentInstrument' => 'paymentInstrument',
@@ -111,6 +116,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'shippingAddress' => 'shippingAddress',
         'legacyToken' => 'legacyToken',
         'bank' => 'bank',
+        'options' => 'options',
         'paymentType' => 'paymentType',
         'initiationChannel' => 'initiationChannel',
         'eWallet' => 'eWallet'
@@ -124,6 +130,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     protected static $setters = [
         'card' => 'setCard',
         'tokenizedCard' => 'setTokenizedCard',
+        'directDebit' => 'setDirectDebit',
         'fluidData' => 'setFluidData',
         'customer' => 'setCustomer',
         'paymentInstrument' => 'setPaymentInstrument',
@@ -131,6 +138,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'shippingAddress' => 'setShippingAddress',
         'legacyToken' => 'setLegacyToken',
         'bank' => 'setBank',
+        'options' => 'setOptions',
         'paymentType' => 'setPaymentType',
         'initiationChannel' => 'setInitiationChannel',
         'eWallet' => 'setEWallet'
@@ -144,6 +152,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     protected static $getters = [
         'card' => 'getCard',
         'tokenizedCard' => 'getTokenizedCard',
+        'directDebit' => 'getDirectDebit',
         'fluidData' => 'getFluidData',
         'customer' => 'getCustomer',
         'paymentInstrument' => 'getPaymentInstrument',
@@ -151,6 +160,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'shippingAddress' => 'getShippingAddress',
         'legacyToken' => 'getLegacyToken',
         'bank' => 'getBank',
+        'options' => 'getOptions',
         'paymentType' => 'getPaymentType',
         'initiationChannel' => 'getInitiationChannel',
         'eWallet' => 'getEWallet'
@@ -189,6 +199,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
+        $this->container['directDebit'] = isset($data['directDebit']) ? $data['directDebit'] : null;
         $this->container['fluidData'] = isset($data['fluidData']) ? $data['fluidData'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
@@ -196,6 +207,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
         $this->container['legacyToken'] = isset($data['legacyToken']) ? $data['legacyToken'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
+        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
         $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
@@ -264,6 +276,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function setTokenizedCard($tokenizedCard)
     {
         $this->container['tokenizedCard'] = $tokenizedCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets directDebit
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationDirectDebit
+     */
+    public function getDirectDebit()
+    {
+        return $this->container['directDebit'];
+    }
+
+    /**
+     * Sets directDebit
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationDirectDebit $directDebit
+     * @return $this
+     */
+    public function setDirectDebit($directDebit)
+    {
+        $this->container['directDebit'] = $directDebit;
 
         return $this;
     }
@@ -411,6 +444,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function setBank($bank)
     {
         $this->container['bank'] = $bank;
+
+        return $this;
+    }
+
+    /**
+     * Gets options
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationOptions
+     */
+    public function getOptions()
+    {
+        return $this->container['options'];
+    }
+
+    /**
+     * Sets options
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationOptions $options
+     * @return $this
+     */
+    public function setOptions($options)
+    {
+        $this->container['options'] = $options;
 
         return $this;
     }

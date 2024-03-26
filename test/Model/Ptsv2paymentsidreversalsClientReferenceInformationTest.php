@@ -125,4 +125,18 @@ class Ptsv2paymentsidreversalsClientReferenceInformationTest extends \PHPUnit_Fr
     public function testPropertyApplicationUser()
     {
     }
+
+    /**
+     * Test attribute "reconciliationId"
+     */
+    public function testPropertyReconciliationId()
+    {
+    }
+
+    /**
+     * Test attribute "transactionId"
+     */
+    public function testPropertyTransactionId()
+    {
+    }
 }

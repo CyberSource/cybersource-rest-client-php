@@ -60,6 +60,7 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
         'locationId' => 'string',
         'address1' => 'string',
         'address2' => 'string',
+        'postalCode' => 'string',
         'location' => 'string'
     ];
 
@@ -74,6 +75,7 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
         'locationId' => null,
         'address1' => null,
         'address2' => null,
+        'postalCode' => null,
         'location' => null
     ];
 
@@ -98,6 +100,7 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
         'locationId' => 'locationId',
         'address1' => 'address1',
         'address2' => 'address2',
+        'postalCode' => 'postalCode',
         'location' => 'location'
     ];
 
@@ -113,6 +116,7 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
         'locationId' => 'setLocationId',
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
+        'postalCode' => 'setPostalCode',
         'location' => 'setLocation'
     ];
 
@@ -128,6 +132,7 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
         'locationId' => 'getLocationId',
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
+        'postalCode' => 'getPostalCode',
         'location' => 'getLocation'
     ];
 
@@ -168,6 +173,7 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
         $this->container['locationId'] = isset($data['locationId']) ? $data['locationId'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['location'] = isset($data['location']) ? $data['location'] : null;
     }
 
@@ -318,6 +324,27 @@ class Ptsv2paymentsTravelInformationAutoRentalRentalAddress implements ArrayAcce
     public function setAddress2($address2)
     {
         $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode When merchant wants to send the rental address's postal code.
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

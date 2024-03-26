@@ -111,4 +111,11 @@ class Ptsv2paymentsPaymentInformationBankAccountTest extends \PHPUnit_Framework_
     public function testPropertyCheckImageReferenceNumber()
     {
     }
+
+    /**
+     * Test attribute "iban"
+     */
+    public function testPropertyIban()
+    {
+    }
 }

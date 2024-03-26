@@ -54,8 +54,19 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'firstName' => 'string',
+        'lastName' => 'string',
+        'address1' => 'string',
+        'address2' => 'string',
+        'locality' => 'string',
+        'postalCode' => 'string',
+        'administrativeArea' => 'string',
+        'country' => 'string',
+        'email' => 'string',
         'alternatePhoneNumberVerificationStatus' => 'string',
-        'alternateEmailVerificationStatus' => 'string'
+        'alternateEmailVerificationStatus' => 'string',
+        'phoneNumber' => 'string',
+        'nameSuffix' => 'string'
     ];
 
     /**
@@ -63,8 +74,19 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'firstName' => null,
+        'lastName' => null,
+        'address1' => null,
+        'address2' => null,
+        'locality' => null,
+        'postalCode' => null,
+        'administrativeArea' => null,
+        'country' => null,
+        'email' => null,
         'alternatePhoneNumberVerificationStatus' => null,
-        'alternateEmailVerificationStatus' => null
+        'alternateEmailVerificationStatus' => null,
+        'phoneNumber' => null,
+        'nameSuffix' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +104,19 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'firstName' => 'firstName',
+        'lastName' => 'lastName',
+        'address1' => 'address1',
+        'address2' => 'address2',
+        'locality' => 'locality',
+        'postalCode' => 'postalCode',
+        'administrativeArea' => 'administrativeArea',
+        'country' => 'country',
+        'email' => 'email',
         'alternatePhoneNumberVerificationStatus' => 'alternatePhoneNumberVerificationStatus',
-        'alternateEmailVerificationStatus' => 'alternateEmailVerificationStatus'
+        'alternateEmailVerificationStatus' => 'alternateEmailVerificationStatus',
+        'phoneNumber' => 'phoneNumber',
+        'nameSuffix' => 'nameSuffix'
     ];
 
 
@@ -92,8 +125,19 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'firstName' => 'setFirstName',
+        'lastName' => 'setLastName',
+        'address1' => 'setAddress1',
+        'address2' => 'setAddress2',
+        'locality' => 'setLocality',
+        'postalCode' => 'setPostalCode',
+        'administrativeArea' => 'setAdministrativeArea',
+        'country' => 'setCountry',
+        'email' => 'setEmail',
         'alternatePhoneNumberVerificationStatus' => 'setAlternatePhoneNumberVerificationStatus',
-        'alternateEmailVerificationStatus' => 'setAlternateEmailVerificationStatus'
+        'alternateEmailVerificationStatus' => 'setAlternateEmailVerificationStatus',
+        'phoneNumber' => 'setPhoneNumber',
+        'nameSuffix' => 'setNameSuffix'
     ];
 
 
@@ -102,8 +146,19 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'firstName' => 'getFirstName',
+        'lastName' => 'getLastName',
+        'address1' => 'getAddress1',
+        'address2' => 'getAddress2',
+        'locality' => 'getLocality',
+        'postalCode' => 'getPostalCode',
+        'administrativeArea' => 'getAdministrativeArea',
+        'country' => 'getCountry',
+        'email' => 'getEmail',
         'alternatePhoneNumberVerificationStatus' => 'getAlternatePhoneNumberVerificationStatus',
-        'alternateEmailVerificationStatus' => 'getAlternateEmailVerificationStatus'
+        'alternateEmailVerificationStatus' => 'getAlternateEmailVerificationStatus',
+        'phoneNumber' => 'getPhoneNumber',
+        'nameSuffix' => 'getNameSuffix'
     ];
 
     public static function attributeMap()
@@ -137,8 +192,19 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
+        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['alternatePhoneNumberVerificationStatus'] = isset($data['alternatePhoneNumberVerificationStatus']) ? $data['alternatePhoneNumberVerificationStatus'] : null;
         $this->container['alternateEmailVerificationStatus'] = isset($data['alternateEmailVerificationStatus']) ? $data['alternateEmailVerificationStatus'] : null;
+        $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['nameSuffix'] = isset($data['nameSuffix']) ? $data['nameSuffix'] : null;
     }
 
     /**
@@ -165,6 +231,195 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets firstName
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->container['firstName'];
+    }
+
+    /**
+     * Sets firstName
+     * @param string $firstName
+     * @return $this
+     */
+    public function setFirstName($firstName)
+    {
+        $this->container['firstName'] = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastName
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['lastName'];
+    }
+
+    /**
+     * Sets lastName
+     * @param string $lastName
+     * @return $this
+     */
+    public function setLastName($lastName)
+    {
+        $this->container['lastName'] = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets address1
+     * @return string
+     */
+    public function getAddress1()
+    {
+        return $this->container['address1'];
+    }
+
+    /**
+     * Sets address1
+     * @param string $address1 First line of the billing street address.
+     * @return $this
+     */
+    public function setAddress1($address1)
+    {
+        $this->container['address1'] = $address1;
+
+        return $this;
+    }
+
+    /**
+     * Gets address2
+     * @return string
+     */
+    public function getAddress2()
+    {
+        return $this->container['address2'];
+    }
+
+    /**
+     * Sets address2
+     * @param string $address2 Second line of the billing street address.
+     * @return $this
+     */
+    public function setAddress2($address2)
+    {
+        $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets locality
+     * @return string
+     */
+    public function getLocality()
+    {
+        return $this->container['locality'];
+    }
+
+    /**
+     * Sets locality
+     * @param string $locality City of the billing address.
+     * @return $this
+     */
+    public function setLocality($locality)
+    {
+        $this->container['locality'] = $locality;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode Postal code for the billing address. The postal code must consist of 5 to 9 digits.  When the billing country is the U.S., the 9-digit postal code must follow this format: [5 digits][dash][4 digits] Example: 12345-6789 When the billing country is Canada, the 6-digit postal code must follow this format: [alpha][numeric][alpha][space] [numeric][alpha][numeric] Example: A1B 2C3
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets administrativeArea
+     * @return string
+     */
+    public function getAdministrativeArea()
+    {
+        return $this->container['administrativeArea'];
+    }
+
+    /**
+     * Sets administrativeArea
+     * @param string $administrativeArea State or province of the billing address. Use the State, Province, and Territory Codes for the United States and Canada.
+     * @return $this
+     */
+    public function setAdministrativeArea($administrativeArea)
+    {
+        $this->container['administrativeArea'] = $administrativeArea;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     * @param string $country Country of the billing address. Use the two-character ISO Standard Country Codes.
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Email address of the customer.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
 
     /**
      * Gets alternatePhoneNumberVerificationStatus
@@ -204,6 +459,48 @@ class PtsV2PaymentsPost201ResponseOrderInformationBillTo implements ArrayAccess
     public function setAlternateEmailVerificationStatus($alternateEmailVerificationStatus)
     {
         $this->container['alternateEmailVerificationStatus'] = $alternateEmailVerificationStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets phoneNumber
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phoneNumber'];
+    }
+
+    /**
+     * Sets phoneNumber
+     * @param string $phoneNumber Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S.  #### Chase Paymentech Solutions Optional field.  ####  Credit Mutuel-CIC Optional field.  #### CyberSource through VisaNet Credit card networks cannot process transactions that contain non-ASCII characters. CyberSource through VisaNet accepts and stores non-ASCII characters correctly and displays them correctly in reports. However, the limitations of the credit card networks prevent CyberSource through VisaNet from transmitting non-ASCII characters to the credit card networks. Therefore, CyberSource through VisaNet replaces non-ASCII characters with meaningless ASCII characters for transmission to the credit card networks.  #### For Payouts: This field may be sent only for FDC Compass.  #### OmniPay Direct Optional field.  #### SIX Optional field.  #### TSYS Acquiring Solutions Optional field.  #### Worldpay VAP Optional field.  #### All other processors Not used.
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets nameSuffix
+     * @return string
+     */
+    public function getNameSuffix()
+    {
+        return $this->container['nameSuffix'];
+    }
+
+    /**
+     * Sets nameSuffix
+     * @param string $nameSuffix Customer's name suffix.
+     * @return $this
+     */
+    public function setNameSuffix($nameSuffix)
+    {
+        $this->container['nameSuffix'] = $nameSuffix;
 
         return $this;
     }
