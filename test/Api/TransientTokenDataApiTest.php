@@ -73,6 +73,16 @@ class TransientTokenDataApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getPaymentCredentialsForTransientToken
+     *
+     * Get Payment Credentials.
+     *
+     */
+    public function testGetPaymentCredentialsForTransientToken()
+    {
+    }
+
+    /**
      * Test case for getTransactionForTransientToken
      *
      * Get Transient Token Data.

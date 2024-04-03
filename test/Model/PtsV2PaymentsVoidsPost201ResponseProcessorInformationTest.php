@@ -83,4 +83,18 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformationTest extends \PHPUnit
     public function testPropertyResponseCode()
     {
     }
+
+    /**
+     * Test attribute "responseDetails"
+     */
+    public function testPropertyResponseDetails()
+    {
+    }
+
+    /**
+     * Test attribute "transactionId"
+     */
+    public function testPropertyTransactionId()
+    {
+    }
 }

@@ -60,7 +60,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'status' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseClientReferenceInformation',
         'voidAmountDetails' => '\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails',
-        'processorInformation' => '\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseProcessorInformation'
+        'processorInformation' => '\CyberSource\Model\PtsV2PaymentsVoidsPost201ResponseProcessorInformation',
+        'reconciliationId' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'status' => null,
         'clientReferenceInformation' => null,
         'voidAmountDetails' => null,
-        'processorInformation' => null
+        'processorInformation' => null,
+        'reconciliationId' => null
     ];
 
     public static function swaggerTypes()
@@ -98,7 +100,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'status' => 'status',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'voidAmountDetails' => 'voidAmountDetails',
-        'processorInformation' => 'processorInformation'
+        'processorInformation' => 'processorInformation',
+        'reconciliationId' => 'reconciliationId'
     ];
 
 
@@ -113,7 +116,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'status' => 'setStatus',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'voidAmountDetails' => 'setVoidAmountDetails',
-        'processorInformation' => 'setProcessorInformation'
+        'processorInformation' => 'setProcessorInformation',
+        'reconciliationId' => 'setReconciliationId'
     ];
 
 
@@ -128,7 +132,8 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         'status' => 'getStatus',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'voidAmountDetails' => 'getVoidAmountDetails',
-        'processorInformation' => 'getProcessorInformation'
+        'processorInformation' => 'getProcessorInformation',
+        'reconciliationId' => 'getReconciliationId'
     ];
 
     public static function attributeMap()
@@ -169,6 +174,7 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['voidAmountDetails'] = isset($data['voidAmountDetails']) ? $data['voidAmountDetails'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
     }
 
     /**
@@ -270,7 +276,7 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - VOIDED
+     * @param string $status The status of the submitted transaction.  Possible values:  - VOIDED  - CANCELLED  - FAILED
      * @return $this
      */
     public function setStatus($status)
@@ -339,6 +345,27 @@ class PtsV2PaymentsVoidsPost201Response implements ArrayAccess
     public function setProcessorInformation($processorInformation)
     {
         $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets reconciliationId
+     * @return string
+     */
+    public function getReconciliationId()
+    {
+        return $this->container['reconciliationId'];
+    }
+
+    /**
+     * Sets reconciliationId
+     * @param string $reconciliationId Reference number that you use to reconcile CyberSource reports with your reports.
+     * @return $this
+     */
+    public function setReconciliationId($reconciliationId)
+    {
+        $this->container['reconciliationId'] = $reconciliationId;
 
         return $this;
     }

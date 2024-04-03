@@ -70,7 +70,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'salesSlipNumber' => 'int',
         'invoiceDate' => 'string',
         'costCenter' => 'string',
-        'issuerMessage' => 'string'
+        'issuerMessage' => 'string',
+        'productDescription' => 'string'
     ];
 
     /**
@@ -94,7 +95,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'salesSlipNumber' => null,
         'invoiceDate' => null,
         'costCenter' => null,
-        'issuerMessage' => null
+        'issuerMessage' => null,
+        'productDescription' => null
     ];
 
     public static function swaggerTypes()
@@ -128,7 +130,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'salesSlipNumber' => 'salesSlipNumber',
         'invoiceDate' => 'invoiceDate',
         'costCenter' => 'costCenter',
-        'issuerMessage' => 'issuerMessage'
+        'issuerMessage' => 'issuerMessage',
+        'productDescription' => 'productDescription'
     ];
 
 
@@ -153,7 +156,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'salesSlipNumber' => 'setSalesSlipNumber',
         'invoiceDate' => 'setInvoiceDate',
         'costCenter' => 'setCostCenter',
-        'issuerMessage' => 'setIssuerMessage'
+        'issuerMessage' => 'setIssuerMessage',
+        'productDescription' => 'setProductDescription'
     ];
 
 
@@ -178,7 +182,8 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         'salesSlipNumber' => 'getSalesSlipNumber',
         'invoiceDate' => 'getInvoiceDate',
         'costCenter' => 'getCostCenter',
-        'issuerMessage' => 'getIssuerMessage'
+        'issuerMessage' => 'getIssuerMessage',
+        'productDescription' => 'getProductDescription'
     ];
 
     public static function attributeMap()
@@ -229,6 +234,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
         $this->container['invoiceDate'] = isset($data['invoiceDate']) ? $data['invoiceDate'] : null;
         $this->container['costCenter'] = isset($data['costCenter']) ? $data['costCenter'] : null;
         $this->container['issuerMessage'] = isset($data['issuerMessage']) ? $data['issuerMessage'] : null;
+        $this->container['productDescription'] = isset($data['productDescription']) ? $data['productDescription'] : null;
     }
 
     /**
@@ -609,6 +615,27 @@ class Ptsv2paymentsOrderInformationInvoiceDetails implements ArrayAccess
     public function setIssuerMessage($issuerMessage)
     {
         $this->container['issuerMessage'] = $issuerMessage;
+
+        return $this;
+    }
+
+    /**
+     * Gets productDescription
+     * @return string
+     */
+    public function getProductDescription()
+    {
+        return $this->container['productDescription'];
+    }
+
+    /**
+     * Sets productDescription
+     * @param string $productDescription Brief description of item.
+     * @return $this
+     */
+    public function setProductDescription($productDescription)
+    {
+        $this->container['productDescription'] = $productDescription;
 
         return $this;
     }

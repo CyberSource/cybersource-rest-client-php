@@ -111,4 +111,18 @@ class AuthReversalRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPointOfSaleInformation()
     {
     }
+
+    /**
+     * Test attribute "paymentInformation"
+     */
+    public function testPropertyPaymentInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
+    {
+    }
 }

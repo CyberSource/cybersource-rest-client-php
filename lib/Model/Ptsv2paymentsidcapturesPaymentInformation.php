@@ -55,7 +55,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
-        'card' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationCard'
+        'card' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationCard',
+        'paymentType' => '\CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationPaymentType'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'customer' => null,
-        'card' => null
+        'card' => null,
+        'paymentType' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'customer' => 'customer',
-        'card' => 'card'
+        'card' => 'card',
+        'paymentType' => 'paymentType'
     ];
 
 
@@ -93,7 +96,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'customer' => 'setCustomer',
-        'card' => 'setCard'
+        'card' => 'setCard',
+        'paymentType' => 'setPaymentType'
     ];
 
 
@@ -103,7 +107,8 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'customer' => 'getCustomer',
-        'card' => 'getCard'
+        'card' => 'getCard',
+        'paymentType' => 'getPaymentType'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
     {
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
     }
 
     /**
@@ -204,6 +210,27 @@ class Ptsv2paymentsidcapturesPaymentInformation implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationPaymentType
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesPaymentInformationPaymentType $paymentType
+     * @return $this
+     */
+    public function setPaymentType($paymentType)
+    {
+        $this->container['paymentType'] = $paymentType;
 
         return $this;
     }

@@ -59,6 +59,7 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
         'country' => 'string',
         'locality' => 'string',
         'name' => 'string',
+        'storeId' => 'string',
         'postalCode' => 'string'
     ];
 
@@ -72,6 +73,7 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
         'country' => null,
         'locality' => null,
         'name' => null,
+        'storeId' => null,
         'postalCode' => null
     ];
 
@@ -95,6 +97,7 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
         'country' => 'country',
         'locality' => 'locality',
         'name' => 'name',
+        'storeId' => 'storeId',
         'postalCode' => 'postalCode'
     ];
 
@@ -109,6 +112,7 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
         'country' => 'setCountry',
         'locality' => 'setLocality',
         'name' => 'setName',
+        'storeId' => 'setStoreId',
         'postalCode' => 'setPostalCode'
     ];
 
@@ -123,6 +127,7 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
         'country' => 'getCountry',
         'locality' => 'getLocality',
         'name' => 'getName',
+        'storeId' => 'getStoreId',
         'postalCode' => 'getPostalCode'
     ];
 
@@ -162,6 +167,7 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['storeId'] = isset($data['storeId']) ? $data['storeId'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
     }
 
@@ -291,6 +297,27 @@ class Ptsv1pushfundstransferMerchantInformationMerchantDescriptor implements Arr
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeId
+     * @return string
+     */
+    public function getStoreId()
+    {
+        return $this->container['storeId'];
+    }
+
+    /**
+     * Sets storeId
+     * @param string $storeId The unique id of the merchant's shop which assigned by the merchant.
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->container['storeId'] = $storeId;
 
         return $this;
     }

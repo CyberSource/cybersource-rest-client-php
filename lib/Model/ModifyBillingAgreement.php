@@ -54,7 +54,8 @@ class ModifyBillingAgreement implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
+        'agreementInformation' => '\CyberSource\Model\Ptsv2billingagreementsidAgreementInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Ptsv2billingagreementsClientReferenceInformation',
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2billingagreementsAggregatorInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Ptsv2billingagreementsConsumerAuthenticationInformation',
         'deviceInformation' => '\CyberSource\Model\Ptsv2billingagreementsDeviceInformation',
@@ -62,7 +63,8 @@ class ModifyBillingAgreement implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\Ptsv2billingagreementsMerchantInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2billingagreementsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2billingagreementsPaymentInformation',
-        'processingInformation' => '\CyberSource\Model\Ptsv2billingagreementsProcessingInformation'
+        'processingInformation' => '\CyberSource\Model\Ptsv2billingagreementsidProcessingInformation',
+        'buyerInformation' => '\CyberSource\Model\Ptsv2billingagreementsidBuyerInformation'
     ];
 
     /**
@@ -70,6 +72,7 @@ class ModifyBillingAgreement implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'agreementInformation' => null,
         'clientReferenceInformation' => null,
         'aggregatorInformation' => null,
         'consumerAuthenticationInformation' => null,
@@ -78,7 +81,8 @@ class ModifyBillingAgreement implements ArrayAccess
         'merchantInformation' => null,
         'orderInformation' => null,
         'paymentInformation' => null,
-        'processingInformation' => null
+        'processingInformation' => null,
+        'buyerInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -96,6 +100,7 @@ class ModifyBillingAgreement implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'agreementInformation' => 'agreementInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'aggregatorInformation' => 'aggregatorInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
@@ -104,7 +109,8 @@ class ModifyBillingAgreement implements ArrayAccess
         'merchantInformation' => 'merchantInformation',
         'orderInformation' => 'orderInformation',
         'paymentInformation' => 'paymentInformation',
-        'processingInformation' => 'processingInformation'
+        'processingInformation' => 'processingInformation',
+        'buyerInformation' => 'buyerInformation'
     ];
 
 
@@ -113,6 +119,7 @@ class ModifyBillingAgreement implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'agreementInformation' => 'setAgreementInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'aggregatorInformation' => 'setAggregatorInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
@@ -121,7 +128,8 @@ class ModifyBillingAgreement implements ArrayAccess
         'merchantInformation' => 'setMerchantInformation',
         'orderInformation' => 'setOrderInformation',
         'paymentInformation' => 'setPaymentInformation',
-        'processingInformation' => 'setProcessingInformation'
+        'processingInformation' => 'setProcessingInformation',
+        'buyerInformation' => 'setBuyerInformation'
     ];
 
 
@@ -130,6 +138,7 @@ class ModifyBillingAgreement implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'agreementInformation' => 'getAgreementInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'aggregatorInformation' => 'getAggregatorInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
@@ -138,7 +147,8 @@ class ModifyBillingAgreement implements ArrayAccess
         'merchantInformation' => 'getMerchantInformation',
         'orderInformation' => 'getOrderInformation',
         'paymentInformation' => 'getPaymentInformation',
-        'processingInformation' => 'getProcessingInformation'
+        'processingInformation' => 'getProcessingInformation',
+        'buyerInformation' => 'getBuyerInformation'
     ];
 
     public static function attributeMap()
@@ -172,6 +182,7 @@ class ModifyBillingAgreement implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['agreementInformation'] = isset($data['agreementInformation']) ? $data['agreementInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
@@ -181,6 +192,7 @@ class ModifyBillingAgreement implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
     }
 
     /**
@@ -209,8 +221,29 @@ class ModifyBillingAgreement implements ArrayAccess
 
 
     /**
+     * Gets agreementInformation
+     * @return \CyberSource\Model\Ptsv2billingagreementsidAgreementInformation
+     */
+    public function getAgreementInformation()
+    {
+        return $this->container['agreementInformation'];
+    }
+
+    /**
+     * Sets agreementInformation
+     * @param \CyberSource\Model\Ptsv2billingagreementsidAgreementInformation $agreementInformation
+     * @return $this
+     */
+    public function setAgreementInformation($agreementInformation)
+    {
+        $this->container['agreementInformation'] = $agreementInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Ptsv2paymentsClientReferenceInformation
+     * @return \CyberSource\Model\Ptsv2billingagreementsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -219,7 +252,7 @@ class ModifyBillingAgreement implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Ptsv2paymentsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Ptsv2billingagreementsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -378,7 +411,7 @@ class ModifyBillingAgreement implements ArrayAccess
 
     /**
      * Gets processingInformation
-     * @return \CyberSource\Model\Ptsv2billingagreementsProcessingInformation
+     * @return \CyberSource\Model\Ptsv2billingagreementsidProcessingInformation
      */
     public function getProcessingInformation()
     {
@@ -387,12 +420,33 @@ class ModifyBillingAgreement implements ArrayAccess
 
     /**
      * Sets processingInformation
-     * @param \CyberSource\Model\Ptsv2billingagreementsProcessingInformation $processingInformation
+     * @param \CyberSource\Model\Ptsv2billingagreementsidProcessingInformation $processingInformation
      * @return $this
      */
     public function setProcessingInformation($processingInformation)
     {
         $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerInformation
+     * @return \CyberSource\Model\Ptsv2billingagreementsidBuyerInformation
+     */
+    public function getBuyerInformation()
+    {
+        return $this->container['buyerInformation'];
+    }
+
+    /**
+     * Sets buyerInformation
+     * @param \CyberSource\Model\Ptsv2billingagreementsidBuyerInformation $buyerInformation
+     * @return $this
+     */
+    public function setBuyerInformation($buyerInformation)
+    {
+        $this->container['buyerInformation'] = $buyerInformation;
 
         return $this;
     }

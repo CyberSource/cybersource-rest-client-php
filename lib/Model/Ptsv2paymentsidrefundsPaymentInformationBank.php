@@ -54,7 +54,7 @@ class Ptsv2paymentsidrefundsPaymentInformationBank implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount',
+        'account' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationBankAccount',
         'routingNumber' => 'string',
         'iban' => 'string',
         'swiftCode' => 'string'
@@ -180,7 +180,7 @@ class Ptsv2paymentsidrefundsPaymentInformationBank implements ArrayAccess
 
     /**
      * Gets account
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount
+     * @return \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationBankAccount
      */
     public function getAccount()
     {
@@ -189,7 +189,7 @@ class Ptsv2paymentsidrefundsPaymentInformationBank implements ArrayAccess
 
     /**
      * Sets account
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationBankAccount $account
+     * @param \CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationBankAccount $account
      * @return $this
      */
     public function setAccount($account)

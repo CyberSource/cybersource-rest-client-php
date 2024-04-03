@@ -260,6 +260,13 @@ class Ptsv2paymentsOrderInformationLineItemsTest extends \PHPUnit_Framework_Test
     }
 
     /**
+     * Test attribute "unitTaxAmount"
+     */
+    public function testPropertyUnitTaxAmount()
+    {
+    }
+
+    /**
      * Test attribute "productDescription"
      */
     public function testPropertyProductDescription()

@@ -90,4 +90,18 @@ class Ptsv2billingagreementsPaymentInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyTokenizedCard()
     {
     }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
+
+    /**
+     * Test attribute "bank"
+     */
+    public function testPropertyBank()
+    {
+    }
 }

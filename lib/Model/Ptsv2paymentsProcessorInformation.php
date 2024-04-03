@@ -56,7 +56,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'preApprovalToken' => 'string',
-        'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationAuthorizationOptions'
+        'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationAuthorizationOptions',
+        'reversal' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversal'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'preApprovalToken' => null,
-        'authorizationOptions' => null
+        'authorizationOptions' => null,
+        'reversal' => null
     ];
 
     public static function swaggerTypes()
@@ -84,7 +86,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'preApprovalToken' => 'preApprovalToken',
-        'authorizationOptions' => 'authorizationOptions'
+        'authorizationOptions' => 'authorizationOptions',
+        'reversal' => 'reversal'
     ];
 
 
@@ -94,7 +97,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      */
     protected static $setters = [
         'preApprovalToken' => 'setPreApprovalToken',
-        'authorizationOptions' => 'setAuthorizationOptions'
+        'authorizationOptions' => 'setAuthorizationOptions',
+        'reversal' => 'setReversal'
     ];
 
 
@@ -104,7 +108,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      */
     protected static $getters = [
         'preApprovalToken' => 'getPreApprovalToken',
-        'authorizationOptions' => 'getAuthorizationOptions'
+        'authorizationOptions' => 'getAuthorizationOptions',
+        'reversal' => 'getReversal'
     ];
 
     public static function attributeMap()
@@ -140,6 +145,7 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
     {
         $this->container['preApprovalToken'] = isset($data['preApprovalToken']) ? $data['preApprovalToken'] : null;
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
+        $this->container['reversal'] = isset($data['reversal']) ? $data['reversal'] : null;
     }
 
     /**
@@ -205,6 +211,27 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
     public function setAuthorizationOptions($authorizationOptions)
     {
         $this->container['authorizationOptions'] = $authorizationOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets reversal
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversal
+     */
+    public function getReversal()
+    {
+        return $this->container['reversal'];
+    }
+
+    /**
+     * Sets reversal
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversal $reversal
+     * @return $this
+     */
+    public function setReversal($reversal)
+    {
+        $this->container['reversal'] = $reversal;
 
         return $this;
     }

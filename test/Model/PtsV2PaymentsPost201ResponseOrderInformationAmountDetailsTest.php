@@ -97,4 +97,39 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetailsTest extends \PHP
     public function testPropertyCurrency()
     {
     }
+
+    /**
+     * Test attribute "processorTransactionFee"
+     */
+    public function testPropertyProcessorTransactionFee()
+    {
+    }
+
+    /**
+     * Test attribute "exchangeRate"
+     */
+    public function testPropertyExchangeRate()
+    {
+    }
+
+    /**
+     * Test attribute "foreignCurrency"
+     */
+    public function testPropertyForeignCurrency()
+    {
+    }
+
+    /**
+     * Test attribute "foreignAmount"
+     */
+    public function testPropertyForeignAmount()
+    {
+    }
+
+    /**
+     * Test attribute "discountAmount"
+     */
+    public function testPropertyDiscountAmount()
+    {
+    }
 }

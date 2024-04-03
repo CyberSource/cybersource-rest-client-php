@@ -58,6 +58,8 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
         'state' => 'string',
         'country' => 'string',
         'locationId' => 'string',
+        'address1' => 'string',
+        'postalCode' => 'string',
         'location' => 'string'
     ];
 
@@ -70,6 +72,8 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
         'state' => null,
         'country' => null,
         'locationId' => null,
+        'address1' => null,
+        'postalCode' => null,
         'location' => null
     ];
 
@@ -92,6 +96,8 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
         'state' => 'state',
         'country' => 'country',
         'locationId' => 'locationId',
+        'address1' => 'address1',
+        'postalCode' => 'postalCode',
         'location' => 'location'
     ];
 
@@ -105,6 +111,8 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
         'state' => 'setState',
         'country' => 'setCountry',
         'locationId' => 'setLocationId',
+        'address1' => 'setAddress1',
+        'postalCode' => 'setPostalCode',
         'location' => 'setLocation'
     ];
 
@@ -118,6 +126,8 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
         'state' => 'getState',
         'country' => 'getCountry',
         'locationId' => 'getLocationId',
+        'address1' => 'getAddress1',
+        'postalCode' => 'getPostalCode',
         'location' => 'getLocation'
     ];
 
@@ -156,6 +166,8 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['locationId'] = isset($data['locationId']) ? $data['locationId'] : null;
+        $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['location'] = isset($data['location']) ? $data['location'] : null;
     }
 
@@ -264,6 +276,48 @@ class Ptsv2paymentsTravelInformationAutoRentalReturnAddress implements ArrayAcce
     public function setLocationId($locationId)
     {
         $this->container['locationId'] = $locationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets address1
+     * @return string
+     */
+    public function getAddress1()
+    {
+        return $this->container['address1'];
+    }
+
+    /**
+     * Sets address1
+     * @param string $address1 When merchant wants to send the rental address's street address.
+     * @return $this
+     */
+    public function setAddress1($address1)
+    {
+        $this->container['address1'] = $address1;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode When merchant wants to send the return address's postal code.
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

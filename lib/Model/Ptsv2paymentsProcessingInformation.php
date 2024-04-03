@@ -67,6 +67,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'string',
         'linkId' => 'string',
         'purchaseLevel' => 'string',
+        'transactionTimeout' => 'int',
+        'intentsId' => 'string',
         'paymentId' => 'string',
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
@@ -86,7 +88,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'string',
         'payByPointsIndicator' => 'bool',
         'isReturnAuthRecordEnabled' => 'bool',
-        'networkPartnerId' => 'string'
+        'networkPartnerId' => 'string',
+        'paymentType' => 'string'
     ];
 
     /**
@@ -107,6 +110,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'reconciliationId' => null,
         'linkId' => null,
         'purchaseLevel' => null,
+        'transactionTimeout' => null,
+        'intentsId' => null,
         'paymentId' => null,
         'reportGroup' => null,
         'visaCheckoutId' => null,
@@ -126,7 +131,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => null,
         'payByPointsIndicator' => null,
         'isReturnAuthRecordEnabled' => null,
-        'networkPartnerId' => null
+        'networkPartnerId' => null,
+        'paymentType' => null
     ];
 
     public static function swaggerTypes()
@@ -157,6 +163,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'linkId' => 'linkId',
         'purchaseLevel' => 'purchaseLevel',
+        'transactionTimeout' => 'transactionTimeout',
+        'intentsId' => 'intentsId',
         'paymentId' => 'paymentId',
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
@@ -176,7 +184,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'networkRoutingOrder',
         'payByPointsIndicator' => 'payByPointsIndicator',
         'isReturnAuthRecordEnabled' => 'isReturnAuthRecordEnabled',
-        'networkPartnerId' => 'networkPartnerId'
+        'networkPartnerId' => 'networkPartnerId',
+        'paymentType' => 'paymentType'
     ];
 
 
@@ -198,6 +207,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'linkId' => 'setLinkId',
         'purchaseLevel' => 'setPurchaseLevel',
+        'transactionTimeout' => 'setTransactionTimeout',
+        'intentsId' => 'setIntentsId',
         'paymentId' => 'setPaymentId',
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
@@ -217,7 +228,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'setNetworkRoutingOrder',
         'payByPointsIndicator' => 'setPayByPointsIndicator',
         'isReturnAuthRecordEnabled' => 'setIsReturnAuthRecordEnabled',
-        'networkPartnerId' => 'setNetworkPartnerId'
+        'networkPartnerId' => 'setNetworkPartnerId',
+        'paymentType' => 'setPaymentType'
     ];
 
 
@@ -239,6 +251,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'linkId' => 'getLinkId',
         'purchaseLevel' => 'getPurchaseLevel',
+        'transactionTimeout' => 'getTransactionTimeout',
+        'intentsId' => 'getIntentsId',
         'paymentId' => 'getPaymentId',
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
@@ -258,7 +272,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkRoutingOrder' => 'getNetworkRoutingOrder',
         'payByPointsIndicator' => 'getPayByPointsIndicator',
         'isReturnAuthRecordEnabled' => 'getIsReturnAuthRecordEnabled',
-        'networkPartnerId' => 'getNetworkPartnerId'
+        'networkPartnerId' => 'getNetworkPartnerId',
+        'paymentType' => 'getPaymentType'
     ];
 
     public static function attributeMap()
@@ -305,6 +320,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['linkId'] = isset($data['linkId']) ? $data['linkId'] : null;
         $this->container['purchaseLevel'] = isset($data['purchaseLevel']) ? $data['purchaseLevel'] : null;
+        $this->container['transactionTimeout'] = isset($data['transactionTimeout']) ? $data['transactionTimeout'] : null;
+        $this->container['intentsId'] = isset($data['intentsId']) ? $data['intentsId'] : null;
         $this->container['paymentId'] = isset($data['paymentId']) ? $data['paymentId'] : null;
         $this->container['reportGroup'] = isset($data['reportGroup']) ? $data['reportGroup'] : null;
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
@@ -325,6 +342,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
         $this->container['isReturnAuthRecordEnabled'] = isset($data['isReturnAuthRecordEnabled']) ? $data['isReturnAuthRecordEnabled'] : null;
         $this->container['networkPartnerId'] = isset($data['networkPartnerId']) ? $data['networkPartnerId'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
     }
 
     /**
@@ -363,7 +381,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
 
     /**
      * Sets actionList
-     * @param string[] $actionList Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.
+     * @param string[] $actionList Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested.
      * @return $this
      */
     public function setActionList($actionList)
@@ -621,6 +639,48 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setPurchaseLevel($purchaseLevel)
     {
         $this->container['purchaseLevel'] = $purchaseLevel;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionTimeout
+     * @return int
+     */
+    public function getTransactionTimeout()
+    {
+        return $this->container['transactionTimeout'];
+    }
+
+    /**
+     * Sets transactionTimeout
+     * @param int $transactionTimeout The time-out limit in seconds for the transaction. The time-out limit starts when the customer is directed to the merchant URL that is included in the sale service response. The maximum value is 99999 (about 27 hours). When the transaction times out, the payment system changes the status to abandoned.
+     * @return $this
+     */
+    public function setTransactionTimeout($transactionTimeout)
+    {
+        $this->container['transactionTimeout'] = $transactionTimeout;
+
+        return $this;
+    }
+
+    /**
+     * Gets intentsId
+     * @return string
+     */
+    public function getIntentsId()
+    {
+        return $this->container['intentsId'];
+    }
+
+    /**
+     * Sets intentsId
+     * @param string $intentsId Set to the value of the requestID field returned in the order service response.
+     * @return $this
+     */
+    public function setIntentsId($intentsId)
+    {
+        $this->container['intentsId'] = $intentsId;
 
         return $this;
     }
@@ -1041,6 +1101,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setNetworkPartnerId($networkPartnerId)
     {
         $this->container['networkPartnerId'] = $networkPartnerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     * @return string
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     * @param string $paymentType Identifier for the payment type.
+     * @return $this
+     */
+    public function setPaymentType($paymentType)
+    {
+        $this->container['paymentType'] = $paymentType;
 
         return $this;
     }

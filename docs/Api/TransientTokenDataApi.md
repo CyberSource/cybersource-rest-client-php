@@ -4,8 +4,54 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /up/v1/payment-credentials/{jti} | Get Payment Credentials
 [**getTransactionForTransientToken**](TransientTokenDataApi.md#getTransactionForTransientToken) | **GET** /up/v1/payment-details/{transientToken} | Get Transient Token Data
 
+
+# **getPaymentCredentialsForTransientToken**
+> string getPaymentCredentialsForTransientToken($jti)
+
+Get Payment Credentials
+
+Retrieve the Payment data captured by Unified Checkout. This API is used to retrieve the detailed data represented by the Transient Token. This API will return PCI payment data captured by the Unified Checkout platform.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\TransientTokenDataApi();
+$jti = "jti_example"; // string | The jti field contained within the Transient token returned from a successful Unified Checkout transaction
+
+try {
+    $result = $api_instance->getPaymentCredentialsForTransientToken($jti);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TransientTokenDataApi->getPaymentCredentialsForTransientToken: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **jti** | **string**| The jti field contained within the Transient token returned from a successful Unified Checkout transaction |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransactionForTransientToken**
 > getTransactionForTransientToken($transientToken)

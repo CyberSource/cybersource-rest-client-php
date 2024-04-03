@@ -56,6 +56,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     protected static $swaggerTypes = [
         'links' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinks',
         'id' => 'string',
+        'message' => 'string',
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'reconciliationId' => 'string',
@@ -72,6 +73,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
         'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation',
         'buyerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation',
+        'merchantInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation',
         'embeddedActions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActions',
@@ -85,6 +87,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     protected static $swaggerFormats = [
         'links' => null,
         'id' => null,
+        'message' => null,
         'submitTimeUtc' => null,
         'status' => null,
         'reconciliationId' => null,
@@ -101,6 +104,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => null,
         'tokenInformation' => null,
         'buyerInformation' => null,
+        'merchantInformation' => null,
         'riskInformation' => null,
         'consumerAuthenticationInformation' => null,
         'embeddedActions' => null,
@@ -124,6 +128,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     protected static $attributeMap = [
         'links' => '_links',
         'id' => 'id',
+        'message' => 'message',
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
         'reconciliationId' => 'reconciliationId',
@@ -140,6 +145,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => 'installmentInformation',
         'tokenInformation' => 'tokenInformation',
         'buyerInformation' => 'buyerInformation',
+        'merchantInformation' => 'merchantInformation',
         'riskInformation' => 'riskInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
         'embeddedActions' => 'embeddedActions',
@@ -154,6 +160,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     protected static $setters = [
         'links' => 'setLinks',
         'id' => 'setId',
+        'message' => 'setMessage',
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
         'reconciliationId' => 'setReconciliationId',
@@ -170,6 +177,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => 'setInstallmentInformation',
         'tokenInformation' => 'setTokenInformation',
         'buyerInformation' => 'setBuyerInformation',
+        'merchantInformation' => 'setMerchantInformation',
         'riskInformation' => 'setRiskInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
         'embeddedActions' => 'setEmbeddedActions',
@@ -184,6 +192,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     protected static $getters = [
         'links' => 'getLinks',
         'id' => 'getId',
+        'message' => 'getMessage',
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
         'reconciliationId' => 'getReconciliationId',
@@ -200,6 +209,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => 'getInstallmentInformation',
         'tokenInformation' => 'getTokenInformation',
         'buyerInformation' => 'getBuyerInformation',
+        'merchantInformation' => 'getMerchantInformation',
         'riskInformation' => 'getRiskInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
         'embeddedActions' => 'getEmbeddedActions',
@@ -239,6 +249,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     {
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
@@ -255,6 +266,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
+        $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
         $this->container['embeddedActions'] = isset($data['embeddedActions']) ? $data['embeddedActions'] : null;
@@ -324,6 +336,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     * @param string $message More information about the transaction response.
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
 
         return $this;
     }
@@ -660,6 +693,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setBuyerInformation($buyerInformation)
     {
         $this->container['buyerInformation'] = $buyerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation
+     */
+    public function getMerchantInformation()
+    {
+        return $this->container['merchantInformation'];
+    }
+
+    /**
+     * Sets merchantInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation $merchantInformation
+     * @return $this
+     */
+    public function setMerchantInformation($merchantInformation)
+    {
+        $this->container['merchantInformation'] = $merchantInformation;
 
         return $this;
     }

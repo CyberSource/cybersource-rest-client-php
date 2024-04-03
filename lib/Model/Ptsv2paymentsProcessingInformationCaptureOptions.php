@@ -56,7 +56,8 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     protected static $swaggerTypes = [
         'captureSequenceNumber' => 'int',
         'totalCaptureCount' => 'int',
-        'dateToCapture' => 'string'
+        'dateToCapture' => 'string',
+        'isFinal' => 'string'
     ];
 
     /**
@@ -66,7 +67,8 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     protected static $swaggerFormats = [
         'captureSequenceNumber' => null,
         'totalCaptureCount' => null,
-        'dateToCapture' => null
+        'dateToCapture' => null,
+        'isFinal' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +88,8 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     protected static $attributeMap = [
         'captureSequenceNumber' => 'captureSequenceNumber',
         'totalCaptureCount' => 'totalCaptureCount',
-        'dateToCapture' => 'dateToCapture'
+        'dateToCapture' => 'dateToCapture',
+        'isFinal' => 'isFinal'
     ];
 
 
@@ -97,7 +100,8 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     protected static $setters = [
         'captureSequenceNumber' => 'setCaptureSequenceNumber',
         'totalCaptureCount' => 'setTotalCaptureCount',
-        'dateToCapture' => 'setDateToCapture'
+        'dateToCapture' => 'setDateToCapture',
+        'isFinal' => 'setIsFinal'
     ];
 
 
@@ -108,7 +112,8 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     protected static $getters = [
         'captureSequenceNumber' => 'getCaptureSequenceNumber',
         'totalCaptureCount' => 'getTotalCaptureCount',
-        'dateToCapture' => 'getDateToCapture'
+        'dateToCapture' => 'getDateToCapture',
+        'isFinal' => 'getIsFinal'
     ];
 
     public static function attributeMap()
@@ -145,6 +150,7 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         $this->container['captureSequenceNumber'] = isset($data['captureSequenceNumber']) ? $data['captureSequenceNumber'] : null;
         $this->container['totalCaptureCount'] = isset($data['totalCaptureCount']) ? $data['totalCaptureCount'] : null;
         $this->container['dateToCapture'] = isset($data['dateToCapture']) ? $data['dateToCapture'] : null;
+        $this->container['isFinal'] = isset($data['isFinal']) ? $data['isFinal'] : null;
     }
 
     /**
@@ -231,6 +237,27 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     public function setDateToCapture($dateToCapture)
     {
         $this->container['dateToCapture'] = $dateToCapture;
+
+        return $this;
+    }
+
+    /**
+     * Gets isFinal
+     * @return string
+     */
+    public function getIsFinal()
+    {
+        return $this->container['isFinal'];
+    }
+
+    /**
+     * Sets isFinal
+     * @param string $isFinal Indicates whether to release the authorization hold on the remaining funds.   Possible Values: - `true` - `false`
+     * @return $this
+     */
+    public function setIsFinal($isFinal)
+    {
+        $this->container['isFinal'] = $isFinal;
 
         return $this;
     }

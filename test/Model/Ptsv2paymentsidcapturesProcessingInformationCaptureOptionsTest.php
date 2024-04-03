@@ -90,4 +90,11 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptionsTest extends \PH
     public function testPropertyTotalCaptureCount()
     {
     }
+
+    /**
+     * Test attribute "isFinal"
+     */
+    public function testPropertyIsFinal()
+    {
+    }
 }

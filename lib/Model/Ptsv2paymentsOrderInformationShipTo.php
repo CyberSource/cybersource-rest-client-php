@@ -63,10 +63,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'locality' => 'string',
         'administrativeArea' => 'string',
         'postalCode' => 'string',
+        'county' => 'string',
         'country' => 'string',
         'district' => 'string',
         'buildingNumber' => 'string',
         'phoneNumber' => 'string',
+        'email' => 'string',
         'company' => 'string',
         'destinationTypes' => 'string',
         'destinationCode' => 'int',
@@ -87,10 +89,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'locality' => null,
         'administrativeArea' => null,
         'postalCode' => null,
+        'county' => null,
         'country' => null,
         'district' => null,
         'buildingNumber' => null,
         'phoneNumber' => null,
+        'email' => null,
         'company' => null,
         'destinationTypes' => null,
         'destinationCode' => null,
@@ -121,10 +125,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'locality' => 'locality',
         'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
+        'county' => 'county',
         'country' => 'country',
         'district' => 'district',
         'buildingNumber' => 'buildingNumber',
         'phoneNumber' => 'phoneNumber',
+        'email' => 'email',
         'company' => 'company',
         'destinationTypes' => 'destinationTypes',
         'destinationCode' => 'destinationCode',
@@ -146,10 +152,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'locality' => 'setLocality',
         'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
+        'county' => 'setCounty',
         'country' => 'setCountry',
         'district' => 'setDistrict',
         'buildingNumber' => 'setBuildingNumber',
         'phoneNumber' => 'setPhoneNumber',
+        'email' => 'setEmail',
         'company' => 'setCompany',
         'destinationTypes' => 'setDestinationTypes',
         'destinationCode' => 'setDestinationCode',
@@ -171,10 +179,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         'locality' => 'getLocality',
         'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
+        'county' => 'getCounty',
         'country' => 'getCountry',
         'district' => 'getDistrict',
         'buildingNumber' => 'getBuildingNumber',
         'phoneNumber' => 'getPhoneNumber',
+        'email' => 'getEmail',
         'company' => 'getCompany',
         'destinationTypes' => 'getDestinationTypes',
         'destinationCode' => 'getDestinationCode',
@@ -221,10 +231,12 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['county'] = isset($data['county']) ? $data['county'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['district'] = isset($data['district']) ? $data['district'] : null;
         $this->container['buildingNumber'] = isset($data['buildingNumber']) ? $data['buildingNumber'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['company'] = isset($data['company']) ? $data['company'] : null;
         $this->container['destinationTypes'] = isset($data['destinationTypes']) ? $data['destinationTypes'] : null;
         $this->container['destinationCode'] = isset($data['destinationCode']) ? $data['destinationCode'] : null;
@@ -446,6 +458,27 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
     }
 
     /**
+     * Gets county
+     * @return string
+     */
+    public function getCounty()
+    {
+        return $this->container['county'];
+    }
+
+    /**
+     * Sets county
+     * @param string $county U.S. county if available.
+     * @return $this
+     */
+    public function setCounty($county)
+    {
+        $this->container['county'] = $county;
+
+        return $this;
+    }
+
+    /**
      * Gets country
      * @return string
      */
@@ -525,6 +558,27 @@ class Ptsv2paymentsOrderInformationShipTo implements ArrayAccess
     public function setPhoneNumber($phoneNumber)
     {
         $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Email of the recipient.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

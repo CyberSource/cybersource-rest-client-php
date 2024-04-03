@@ -118,4 +118,18 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformationTest extends \PHP
     public function testPropertyMasterCardServiceReplyCode()
     {
     }
+
+    /**
+     * Test attribute "responseDetails"
+     */
+    public function testPropertyResponseDetails()
+    {
+    }
+
+    /**
+     * Test attribute "providerResponse"
+     */
+    public function testPropertyProviderResponse()
+    {
+    }
 }

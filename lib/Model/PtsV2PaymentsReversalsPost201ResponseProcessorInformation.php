@@ -59,7 +59,9 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'responseCategoryCode' => 'string',
         'forwardedAcquirerCode' => 'string',
         'masterCardServiceCode' => 'string',
-        'masterCardServiceReplyCode' => 'string'
+        'masterCardServiceReplyCode' => 'string',
+        'responseDetails' => 'string',
+        'providerResponse' => 'string'
     ];
 
     /**
@@ -72,7 +74,9 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'responseCategoryCode' => null,
         'forwardedAcquirerCode' => null,
         'masterCardServiceCode' => null,
-        'masterCardServiceReplyCode' => null
+        'masterCardServiceReplyCode' => null,
+        'responseDetails' => null,
+        'providerResponse' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +99,9 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'responseCategoryCode' => 'responseCategoryCode',
         'forwardedAcquirerCode' => 'forwardedAcquirerCode',
         'masterCardServiceCode' => 'masterCardServiceCode',
-        'masterCardServiceReplyCode' => 'masterCardServiceReplyCode'
+        'masterCardServiceReplyCode' => 'masterCardServiceReplyCode',
+        'responseDetails' => 'responseDetails',
+        'providerResponse' => 'providerResponse'
     ];
 
 
@@ -109,7 +115,9 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'responseCategoryCode' => 'setResponseCategoryCode',
         'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
         'masterCardServiceCode' => 'setMasterCardServiceCode',
-        'masterCardServiceReplyCode' => 'setMasterCardServiceReplyCode'
+        'masterCardServiceReplyCode' => 'setMasterCardServiceReplyCode',
+        'responseDetails' => 'setResponseDetails',
+        'providerResponse' => 'setProviderResponse'
     ];
 
 
@@ -123,7 +131,9 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'responseCategoryCode' => 'getResponseCategoryCode',
         'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
         'masterCardServiceCode' => 'getMasterCardServiceCode',
-        'masterCardServiceReplyCode' => 'getMasterCardServiceReplyCode'
+        'masterCardServiceReplyCode' => 'getMasterCardServiceReplyCode',
+        'responseDetails' => 'getResponseDetails',
+        'providerResponse' => 'getProviderResponse'
     ];
 
     public static function attributeMap()
@@ -163,6 +173,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         $this->container['forwardedAcquirerCode'] = isset($data['forwardedAcquirerCode']) ? $data['forwardedAcquirerCode'] : null;
         $this->container['masterCardServiceCode'] = isset($data['masterCardServiceCode']) ? $data['masterCardServiceCode'] : null;
         $this->container['masterCardServiceReplyCode'] = isset($data['masterCardServiceReplyCode']) ? $data['masterCardServiceReplyCode'] : null;
+        $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
+        $this->container['providerResponse'] = isset($data['providerResponse']) ? $data['providerResponse'] : null;
     }
 
     /**
@@ -312,6 +324,48 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     public function setMasterCardServiceReplyCode($masterCardServiceReplyCode)
     {
         $this->container['masterCardServiceReplyCode'] = $masterCardServiceReplyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseDetails
+     * @return string
+     */
+    public function getResponseDetails()
+    {
+        return $this->container['responseDetails'];
+    }
+
+    /**
+     * Sets responseDetails
+     * @param string $responseDetails This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**.
+     * @return $this
+     */
+    public function setResponseDetails($responseDetails)
+    {
+        $this->container['responseDetails'] = $responseDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets providerResponse
+     * @return string
+     */
+    public function getProviderResponse()
+    {
+        return $this->container['providerResponse'];
+    }
+
+    /**
+     * Sets providerResponse
+     * @param string $providerResponse Processor response to the API request.
+     * @return $this
+     */
+    public function setProviderResponse($providerResponse)
+    {
+        $this->container['providerResponse'] = $providerResponse;
 
         return $this;
     }

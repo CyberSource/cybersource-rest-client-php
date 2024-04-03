@@ -95,6 +95,112 @@ class TransientTokenDataApi
     }
 
     /**
+     * Operation getPaymentCredentialsForTransientToken
+     *
+     * Get Payment Credentials
+     *
+     * @param string $jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPaymentCredentialsForTransientToken($jti)
+    {
+        self::$logger->info('CALL TO METHOD getPaymentCredentialsForTransientToken STARTED');
+        list($response, $statusCode, $httpHeader) = $this->getPaymentCredentialsForTransientTokenWithHttpInfo($jti);
+        self::$logger->info('CALL TO METHOD getPaymentCredentialsForTransientToken ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation getPaymentCredentialsForTransientTokenWithHttpInfo
+     *
+     * Get Payment Credentials
+     *
+     * @param string $jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getPaymentCredentialsForTransientTokenWithHttpInfo($jti)
+    {
+        // verify the required parameter 'jti' is set
+        if ($jti === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $jti when calling getPaymentCredentialsForTransientToken");
+            throw new \InvalidArgumentException('Missing the required parameter $jti when calling getPaymentCredentialsForTransientToken');
+        }
+        // parse inputs
+        $resourcePath = "/up/v1/payment-credentials/{jti}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($jti !== null) {
+            $resourcePath = str_replace(
+                "{" . "jti" . "}",
+                $this->apiClient->getSerializer()->toPathValue($jti),
+                $resourcePath
+            );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : string");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'string',
+                '/up/v1/payment-credentials/{jti}'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getTransactionForTransientToken
      *
      * Get Transient Token Data

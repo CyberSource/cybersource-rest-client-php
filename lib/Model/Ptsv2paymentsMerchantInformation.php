@@ -70,6 +70,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'returnUrl' => 'string',
         'partnerIdCode' => 'string',
         'serviceLocation' => '\CyberSource\Model\Ptsv2paymentsMerchantInformationServiceLocation',
+        'noteToBuyer' => 'string',
         'merchantName' => 'string'
     ];
 
@@ -94,6 +95,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'returnUrl' => null,
         'partnerIdCode' => null,
         'serviceLocation' => null,
+        'noteToBuyer' => null,
         'merchantName' => null
     ];
 
@@ -128,6 +130,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'returnUrl' => 'returnUrl',
         'partnerIdCode' => 'partnerIdCode',
         'serviceLocation' => 'serviceLocation',
+        'noteToBuyer' => 'noteToBuyer',
         'merchantName' => 'merchantName'
     ];
 
@@ -153,6 +156,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'returnUrl' => 'setReturnUrl',
         'partnerIdCode' => 'setPartnerIdCode',
         'serviceLocation' => 'setServiceLocation',
+        'noteToBuyer' => 'setNoteToBuyer',
         'merchantName' => 'setMerchantName'
     ];
 
@@ -178,6 +182,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         'returnUrl' => 'getReturnUrl',
         'partnerIdCode' => 'getPartnerIdCode',
         'serviceLocation' => 'getServiceLocation',
+        'noteToBuyer' => 'getNoteToBuyer',
         'merchantName' => 'getMerchantName'
     ];
 
@@ -228,6 +233,7 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
         $this->container['returnUrl'] = isset($data['returnUrl']) ? $data['returnUrl'] : null;
         $this->container['partnerIdCode'] = isset($data['partnerIdCode']) ? $data['partnerIdCode'] : null;
         $this->container['serviceLocation'] = isset($data['serviceLocation']) ? $data['serviceLocation'] : null;
+        $this->container['noteToBuyer'] = isset($data['noteToBuyer']) ? $data['noteToBuyer'] : null;
         $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
     }
 
@@ -588,6 +594,27 @@ class Ptsv2paymentsMerchantInformation implements ArrayAccess
     public function setServiceLocation($serviceLocation)
     {
         $this->container['serviceLocation'] = $serviceLocation;
+
+        return $this;
+    }
+
+    /**
+     * Gets noteToBuyer
+     * @return string
+     */
+    public function getNoteToBuyer()
+    {
+        return $this->container['noteToBuyer'];
+    }
+
+    /**
+     * Sets noteToBuyer
+     * @param string $noteToBuyer Free-form text field.
+     * @return $this
+     */
+    public function setNoteToBuyer($noteToBuyer)
+    {
+        $this->container['noteToBuyer'] = $noteToBuyer;
 
         return $this;
     }

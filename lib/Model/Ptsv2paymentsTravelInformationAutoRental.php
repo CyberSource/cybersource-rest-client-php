@@ -95,7 +95,9 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
         'gpsCharge' => 'string',
         'phoneCharge' => 'string',
         'parkingViolationCharge' => 'string',
-        'otherCharges' => 'string'
+        'otherCharges' => 'string',
+        'companyName' => 'string',
+        'affiliateName' => 'string'
     ];
 
     /**
@@ -144,7 +146,9 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
         'gpsCharge' => null,
         'phoneCharge' => null,
         'parkingViolationCharge' => null,
-        'otherCharges' => null
+        'otherCharges' => null,
+        'companyName' => null,
+        'affiliateName' => null
     ];
 
     public static function swaggerTypes()
@@ -203,7 +207,9 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
         'gpsCharge' => 'gpsCharge',
         'phoneCharge' => 'phoneCharge',
         'parkingViolationCharge' => 'parkingViolationCharge',
-        'otherCharges' => 'otherCharges'
+        'otherCharges' => 'otherCharges',
+        'companyName' => 'companyName',
+        'affiliateName' => 'affiliateName'
     ];
 
 
@@ -253,7 +259,9 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
         'gpsCharge' => 'setGpsCharge',
         'phoneCharge' => 'setPhoneCharge',
         'parkingViolationCharge' => 'setParkingViolationCharge',
-        'otherCharges' => 'setOtherCharges'
+        'otherCharges' => 'setOtherCharges',
+        'companyName' => 'setCompanyName',
+        'affiliateName' => 'setAffiliateName'
     ];
 
 
@@ -303,7 +311,9 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
         'gpsCharge' => 'getGpsCharge',
         'phoneCharge' => 'getPhoneCharge',
         'parkingViolationCharge' => 'getParkingViolationCharge',
-        'otherCharges' => 'getOtherCharges'
+        'otherCharges' => 'getOtherCharges',
+        'companyName' => 'getCompanyName',
+        'affiliateName' => 'getAffiliateName'
     ];
 
     public static function attributeMap()
@@ -379,6 +389,8 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
         $this->container['phoneCharge'] = isset($data['phoneCharge']) ? $data['phoneCharge'] : null;
         $this->container['parkingViolationCharge'] = isset($data['parkingViolationCharge']) ? $data['parkingViolationCharge'] : null;
         $this->container['otherCharges'] = isset($data['otherCharges']) ? $data['otherCharges'] : null;
+        $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;
+        $this->container['affiliateName'] = isset($data['affiliateName']) ? $data['affiliateName'] : null;
     }
 
     /**
@@ -1284,6 +1296,48 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
     public function setOtherCharges($otherCharges)
     {
         $this->container['otherCharges'] = $otherCharges;
+
+        return $this;
+    }
+
+    /**
+     * Gets companyName
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->container['companyName'];
+    }
+
+    /**
+     * Sets companyName
+     * @param string $companyName Merchant to send their auto rental company name
+     * @return $this
+     */
+    public function setCompanyName($companyName)
+    {
+        $this->container['companyName'] = $companyName;
+
+        return $this;
+    }
+
+    /**
+     * Gets affiliateName
+     * @return string
+     */
+    public function getAffiliateName()
+    {
+        return $this->container['affiliateName'];
+    }
+
+    /**
+     * Sets affiliateName
+     * @param string $affiliateName When merchant wants to send the affiliate name.
+     * @return $this
+     */
+    public function setAffiliateName($affiliateName)
+    {
+        $this->container['affiliateName'] = $affiliateName;
 
         return $this;
     }

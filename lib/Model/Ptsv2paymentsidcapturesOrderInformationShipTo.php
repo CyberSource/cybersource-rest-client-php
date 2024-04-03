@@ -56,7 +56,9 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     protected static $swaggerTypes = [
         'administrativeArea' => 'string',
         'country' => 'string',
-        'postalCode' => 'string'
+        'postalCode' => 'string',
+        'email' => 'string',
+        'county' => 'string'
     ];
 
     /**
@@ -66,7 +68,9 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     protected static $swaggerFormats = [
         'administrativeArea' => null,
         'country' => null,
-        'postalCode' => null
+        'postalCode' => null,
+        'email' => null,
+        'county' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +90,9 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     protected static $attributeMap = [
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
-        'postalCode' => 'postalCode'
+        'postalCode' => 'postalCode',
+        'email' => 'email',
+        'county' => 'county'
     ];
 
 
@@ -97,7 +103,9 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     protected static $setters = [
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
-        'postalCode' => 'setPostalCode'
+        'postalCode' => 'setPostalCode',
+        'email' => 'setEmail',
+        'county' => 'setCounty'
     ];
 
 
@@ -108,7 +116,9 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     protected static $getters = [
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
-        'postalCode' => 'getPostalCode'
+        'postalCode' => 'getPostalCode',
+        'email' => 'getEmail',
+        'county' => 'getCounty'
     ];
 
     public static function attributeMap()
@@ -145,6 +155,8 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['county'] = isset($data['county']) ? $data['county'] : null;
     }
 
     /**
@@ -231,6 +243,48 @@ class Ptsv2paymentsidcapturesOrderInformationShipTo implements ArrayAccess
     public function setPostalCode($postalCode)
     {
         $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Email of the recipient.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets county
+     * @return string
+     */
+    public function getCounty()
+    {
+        return $this->container['county'];
+    }
+
+    /**
+     * Sets county
+     * @param string $county U.S. county if available.
+     * @return $this
+     */
+    public function setCounty($county)
+    {
+        $this->container['county'] = $county;
 
         return $this;
     }

@@ -104,4 +104,25 @@ class Ptsv2billingagreementsMerchantInformationTest extends \PHPUnit_Framework_T
     public function testPropertyTransactionLocalDateTime()
     {
     }
+
+    /**
+     * Test attribute "cancelUrl"
+     */
+    public function testPropertyCancelUrl()
+    {
+    }
+
+    /**
+     * Test attribute "successUrl"
+     */
+    public function testPropertySuccessUrl()
+    {
+    }
+
+    /**
+     * Test attribute "failureUrl"
+     */
+    public function testPropertyFailureUrl()
+    {
+    }
 }

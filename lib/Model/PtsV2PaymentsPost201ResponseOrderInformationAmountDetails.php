@@ -56,7 +56,12 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
     protected static $swaggerTypes = [
         'totalAmount' => 'string',
         'authorizedAmount' => 'string',
-        'currency' => 'string'
+        'currency' => 'string',
+        'processorTransactionFee' => 'string',
+        'exchangeRate' => 'string',
+        'foreignCurrency' => 'string',
+        'foreignAmount' => 'string',
+        'discountAmount' => 'string'
     ];
 
     /**
@@ -66,7 +71,12 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
     protected static $swaggerFormats = [
         'totalAmount' => null,
         'authorizedAmount' => null,
-        'currency' => null
+        'currency' => null,
+        'processorTransactionFee' => null,
+        'exchangeRate' => null,
+        'foreignCurrency' => null,
+        'foreignAmount' => null,
+        'discountAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +96,12 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
     protected static $attributeMap = [
         'totalAmount' => 'totalAmount',
         'authorizedAmount' => 'authorizedAmount',
-        'currency' => 'currency'
+        'currency' => 'currency',
+        'processorTransactionFee' => 'processorTransactionFee',
+        'exchangeRate' => 'exchangeRate',
+        'foreignCurrency' => 'foreignCurrency',
+        'foreignAmount' => 'foreignAmount',
+        'discountAmount' => 'discountAmount'
     ];
 
 
@@ -97,7 +112,12 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
     protected static $setters = [
         'totalAmount' => 'setTotalAmount',
         'authorizedAmount' => 'setAuthorizedAmount',
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
+        'processorTransactionFee' => 'setProcessorTransactionFee',
+        'exchangeRate' => 'setExchangeRate',
+        'foreignCurrency' => 'setForeignCurrency',
+        'foreignAmount' => 'setForeignAmount',
+        'discountAmount' => 'setDiscountAmount'
     ];
 
 
@@ -108,7 +128,12 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
     protected static $getters = [
         'totalAmount' => 'getTotalAmount',
         'authorizedAmount' => 'getAuthorizedAmount',
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
+        'processorTransactionFee' => 'getProcessorTransactionFee',
+        'exchangeRate' => 'getExchangeRate',
+        'foreignCurrency' => 'getForeignCurrency',
+        'foreignAmount' => 'getForeignAmount',
+        'discountAmount' => 'getDiscountAmount'
     ];
 
     public static function attributeMap()
@@ -145,6 +170,11 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['processorTransactionFee'] = isset($data['processorTransactionFee']) ? $data['processorTransactionFee'] : null;
+        $this->container['exchangeRate'] = isset($data['exchangeRate']) ? $data['exchangeRate'] : null;
+        $this->container['foreignCurrency'] = isset($data['foreignCurrency']) ? $data['foreignCurrency'] : null;
+        $this->container['foreignAmount'] = isset($data['foreignAmount']) ? $data['foreignAmount'] : null;
+        $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
     }
 
     /**
@@ -231,6 +261,111 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetails implements Array
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorTransactionFee
+     * @return string
+     */
+    public function getProcessorTransactionFee()
+    {
+        return $this->container['processorTransactionFee'];
+    }
+
+    /**
+     * Sets processorTransactionFee
+     * @param string $processorTransactionFee Amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
+     * @return $this
+     */
+    public function setProcessorTransactionFee($processorTransactionFee)
+    {
+        $this->container['processorTransactionFee'] = $processorTransactionFee;
+
+        return $this;
+    }
+
+    /**
+     * Gets exchangeRate
+     * @return string
+     */
+    public function getExchangeRate()
+    {
+        return $this->container['exchangeRate'];
+    }
+
+    /**
+     * Sets exchangeRate
+     * @param string $exchangeRate The rate of conversion of the currency given in the request to CNY. The conversion happens at the time when Alipay's trade order is created
+     * @return $this
+     */
+    public function setExchangeRate($exchangeRate)
+    {
+        $this->container['exchangeRate'] = $exchangeRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets foreignCurrency
+     * @return string
+     */
+    public function getForeignCurrency()
+    {
+        return $this->container['foreignCurrency'];
+    }
+
+    /**
+     * Sets foreignCurrency
+     * @param string $foreignCurrency Currency code for the transaction performed in cross border currency.
+     * @return $this
+     */
+    public function setForeignCurrency($foreignCurrency)
+    {
+        $this->container['foreignCurrency'] = $foreignCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets foreignAmount
+     * @return string
+     */
+    public function getForeignAmount()
+    {
+        return $this->container['foreignAmount'];
+    }
+
+    /**
+     * Sets foreignAmount
+     * @param string $foreignAmount The transaction amount in CNY.
+     * @return $this
+     */
+    public function setForeignAmount($foreignAmount)
+    {
+        $this->container['foreignAmount'] = $foreignAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets discountAmount
+     * @return string
+     */
+    public function getDiscountAmount()
+    {
+        return $this->container['discountAmount'];
+    }
+
+    /**
+     * Sets discountAmount
+     * @param string $discountAmount If coupons/vouchers are used in the transaction, the discount amount redeemed in the settlement currency will be returned. Otherwise, no return.
+     * @return $this
+     */
+    public function setDiscountAmount($discountAmount)
+    {
+        $this->container['discountAmount'] = $discountAmount;
 
         return $this;
     }
