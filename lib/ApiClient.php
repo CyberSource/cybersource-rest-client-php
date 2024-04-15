@@ -69,6 +69,13 @@ class ApiClient
     protected $config;
 
     /**
+     * MerchantConfiguration
+     *
+     * @var MerchantConfiguration
+     */
+    public $merchantConfig;
+
+    /**
      * Object Serializer
      *
      * @var ObjectSerializer

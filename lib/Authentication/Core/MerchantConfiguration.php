@@ -221,6 +221,13 @@ class MerchantConfiguration
     protected $jwePEMFileDirectory;
 
     /**
+     * tempFolderPath directory
+     *
+     * @var string
+     */
+    protected $tempFolderPath;
+
+    /**
      * Constructor
      */
     public function __construct()
