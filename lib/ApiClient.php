@@ -270,12 +270,12 @@ class ApiClient
             }
             $headerName= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0],$requestHeaders);
             if($headerName == -1){
-                //$this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+                // $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
                 $requestHeaders[$splitArr[0]] = $splitArr[1];
             }
         }
 
-        $reqHeaders = [];
+        $reqHeaders=[];
         foreach ( $requestHeaders as $key => $val) {
             $reqHeaders[] = "$key: $val";
         }
