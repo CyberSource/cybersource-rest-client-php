@@ -244,35 +244,40 @@ class ApiClient
             $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
         }
 
+        $requestHeaders=[];
         foreach ($headers as $value) {
             $splitArr= explode(":", $value, 2);
-            $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+            // $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+            $requestHeaders[$splitArr[0]] = $splitArr[1];
         }
 
         foreach ($authHeader as $value) {
             $splitArr= explode(":", $value, 2);
 
             if(strcasecmp($splitArr[0],"Signature")==0){
-                $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
-                if($requestHeader != -1){
-                    $this->config->deleteRequestHeader($requestHeader);
+                $headerName= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0],$requestHeaders);
+                if($headerName != -1){
+                    // $this->config->deleteRequestHeader($headerName);
+                    unset($requestHeaders[$headerName]);
                 }
             }
             if(strcasecmp($splitArr[0],"Authorization")==0){
-                $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
-                if($requestHeader != -1){
-                    $this->config->deleteRequestHeader($requestHeader);
+                $headerName= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0],$requestHeaders);
+                if($headerName != -1){
+                    // $this->config->deleteRequestHeader($headerName);
+                    unset($requestHeaders[$headerName]);
                 }
             }
-            $requestHeader= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0]);
-            if($requestHeader == -1){
-                $this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+            $headerName= $this->config->getHeaderIfExistInRequestHeaderByCaseInsensitive($splitArr[0],$requestHeaders);
+            if($headerName == -1){
+                //$this->config->addRequestHeader($splitArr[0], $splitArr[1]);
+                $requestHeaders[$splitArr[0]] = $splitArr[1];
             }
         }
 
-        $requestHeaders=[];
-        foreach ( $this->config->getRequestHeaders() as $key => $val) {
-            $requestHeaders[] = "$key: $val";
+        $reqHeaders = [];
+        foreach ( $requestHeaders as $key => $val) {
+            $reqHeaders[] = "$key: $val";
         }
 
         if ($this->merchantConfig->getIntermediateHost()) {
@@ -286,7 +291,7 @@ class ApiClient
             $url = GlobalParameter::HTTPS_PREFIX.$this->config->getHost() . $resourcePath;
         }
 
-        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($requestHeaders)));
+        self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($reqHeaders)));
 
         $curl = curl_init();
         // set timeout, if needed
@@ -301,7 +306,7 @@ class ApiClient
         // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $requestHeaders);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $reqHeaders);
 
         // disable SSL verification, if needed
         if ($this->config->getSSLVerification() === false) {
