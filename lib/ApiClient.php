@@ -130,7 +130,7 @@ class ApiClient
     public function getClientId()
     {
         $versionInfo = "";
-        $packages = json_decode(file_get_contents(__DIR__ . "/../../../../vendor/composer/installed.json"), true);
+        $packages = json_decode(file_get_contents(__DIR__ . "/../vendor/composer/installed.json"), true);
 
         foreach ($packages as $package) {
             if (isset($package['name']) && strcmp($package['name'], "cybersource/rest-client-php") == 0)
