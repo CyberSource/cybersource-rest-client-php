@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amountDetails** | [**\CyberSource\Model\Ptsv1pushfundstransferOrderInformationAmountDetails**](Ptsv1pushfundstransferOrderInformationAmountDetails.md) |  | [optional] 
+**amountDetails** | [**\CyberSource\Model\Ptsv1pushfundstransferOrderInformationAmountDetails**](Ptsv1pushfundstransferOrderInformationAmountDetails.md) |  | 
 **isCryptocurrencyPurchase** | **string** | This indicates that the funds transfer is for a crypto currency transaction. Optional Y/y, true N/n, false | [optional] 
 **surcharge** | [**\CyberSource\Model\Ptsv1pushfundstransferOrderInformationSurcharge**](Ptsv1pushfundstransferOrderInformationSurcharge.md) |  | [optional] 
 

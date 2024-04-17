@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerPaymentInstrument**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument getCustomerPaymentInstrument($customerId, $paymentInstrumentId, $profileId)
+> \CyberSource\Model\PostCustomerPaymentInstrumentRequest getCustomerPaymentInstrument($customerId, $paymentInstrumentId, $profileId)
 
 Retrieve a Customer Payment Instrument
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**\CyberSource\Model\PostCustomerPaymentInstrumentRequest**](../Model/PostCustomerPaymentInstrumentRequest.md)
 
 ### Authorization
 
@@ -160,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchCustomersPaymentInstrument**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument patchCustomersPaymentInstrument($customerId, $paymentInstrumentId, $patchCustomerPaymentInstrumentRequest, $profileId, $ifMatch)
+> \CyberSource\Model\PatchCustomerPaymentInstrumentRequest patchCustomersPaymentInstrument($customerId, $paymentInstrumentId, $patchCustomerPaymentInstrumentRequest, $profileId, $ifMatch)
 
 Update a Customer Payment Instrument
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**\CyberSource\Model\PatchCustomerPaymentInstrumentRequest**](../Model/PatchCustomerPaymentInstrumentRequest.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCustomerPaymentInstrument**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument postCustomerPaymentInstrument($customerId, $postCustomerPaymentInstrumentRequest, $profileId)
+> \CyberSource\Model\PostCustomerPaymentInstrumentRequest postCustomerPaymentInstrument($customerId, $postCustomerPaymentInstrumentRequest, $profileId)
 
 Create a Customer Payment Instrument
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument**](../Model/Tmsv2customersEmbeddedDefaultPaymentInstrument.md)
+[**\CyberSource\Model\PostCustomerPaymentInstrumentRequest**](../Model/PostCustomerPaymentInstrumentRequest.md)
 
 ### Authorization
 

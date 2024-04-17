@@ -1,10 +1,10 @@
-# CyberSource\KeymanagementpgpApi
+# CyberSource\KeyManagementPgpApi
 
 All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**updatePGP**](KeymanagementpgpApi.md#updatePGP) | **PATCH** /kms/v2/keys-pgp/{keyId} | Activate or De-activate PGP Key
+[**updatePGP**](KeyManagementPgpApi.md#updatePGP) | **PATCH** /kms/v2/keys-pgp/{keyId} | Activate or De-activate PGP Key
 
 
 # **updatePGP**
@@ -19,7 +19,7 @@ Activate or De-activate PGP Key
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new CyberSource\Api\KeymanagementpgpApi();
+$api_instance = new CyberSource\Api\KeyManagementPgpApi();
 $keyId = "keyId_example"; // string | Key ID.
 $updatePGPKeysRequest = new \CyberSource\Model\UpdatePGPKeysRequest(); // \CyberSource\Model\UpdatePGPKeysRequest | 
 
@@ -27,7 +27,7 @@ try {
     $result = $api_instance->updatePGP($keyId, $updatePGPKeysRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling KeymanagementpgpApi->updatePGP: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling KeyManagementPgpApi->updatePGP: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

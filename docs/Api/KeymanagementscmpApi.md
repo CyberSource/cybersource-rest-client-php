@@ -1,10 +1,10 @@
-# CyberSource\KeymanagementscmpApi
+# CyberSource\KeyManagementScmpApi
 
 All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**updateSCMP**](KeymanagementscmpApi.md#updateSCMP) | **PATCH** /kms/v2/keys-scmp/{keyId} | Update or Deactivate
+[**updateSCMP**](KeyManagementScmpApi.md#updateSCMP) | **PATCH** /kms/v2/keys-scmp/{keyId} | Update or Deactivate
 
 
 # **updateSCMP**
@@ -19,7 +19,7 @@ Update or Deactivate scmp api Key
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new CyberSource\Api\KeymanagementscmpApi();
+$api_instance = new CyberSource\Api\KeyManagementScmpApi();
 $keyId = "keyId_example"; // string | Key ID.
 $updatePGPKeysRequest = new \CyberSource\Model\UpdatePGPKeysRequest1(); // \CyberSource\Model\UpdatePGPKeysRequest1 | 
 
@@ -27,7 +27,7 @@ try {
     $result = $api_instance->updateSCMP($keyId, $updatePGPKeysRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling KeymanagementscmpApi->updateSCMP: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling KeyManagementScmpApi->updateSCMP: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

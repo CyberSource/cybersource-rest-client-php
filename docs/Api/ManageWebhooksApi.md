@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionById**
-> \CyberSource\Model\InlineResponse2004 getWebhookSubscriptionById($webhookId)
+> \CyberSource\Model\InlineResponse2005 getWebhookSubscriptionById($webhookId)
 
 Get Details On a Single Webhook
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
