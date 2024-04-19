@@ -58,6 +58,7 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
         'object' => 'string',
         'state' => 'string',
         'type' => 'string',
+        'tokenProvisioningInformation' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation',
         'card' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierCard',
         'bankAccount' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierBankAccount',
         'tokenizedCard' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenizedCard',
@@ -77,6 +78,7 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
         'object' => null,
         'state' => null,
         'type' => null,
+        'tokenProvisioningInformation' => null,
         'card' => null,
         'bankAccount' => null,
         'tokenizedCard' => null,
@@ -106,6 +108,7 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
         'object' => 'object',
         'state' => 'state',
         'type' => 'type',
+        'tokenProvisioningInformation' => 'tokenProvisioningInformation',
         'card' => 'card',
         'bankAccount' => 'bankAccount',
         'tokenizedCard' => 'tokenizedCard',
@@ -126,6 +129,7 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
         'object' => 'setObject',
         'state' => 'setState',
         'type' => 'setType',
+        'tokenProvisioningInformation' => 'setTokenProvisioningInformation',
         'card' => 'setCard',
         'bankAccount' => 'setBankAccount',
         'tokenizedCard' => 'setTokenizedCard',
@@ -146,6 +150,7 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
         'object' => 'getObject',
         'state' => 'getState',
         'type' => 'getType',
+        'tokenProvisioningInformation' => 'getTokenProvisioningInformation',
         'card' => 'getCard',
         'bankAccount' => 'getBankAccount',
         'tokenizedCard' => 'getTokenizedCard',
@@ -191,6 +196,7 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['tokenProvisioningInformation'] = isset($data['tokenProvisioningInformation']) ? $data['tokenProvisioningInformation'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
@@ -326,6 +332,27 @@ class TmsEmbeddedInstrumentIdentifier implements ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenProvisioningInformation
+     * @return \CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+     */
+    public function getTokenProvisioningInformation()
+    {
+        return $this->container['tokenProvisioningInformation'];
+    }
+
+    /**
+     * Sets tokenProvisioningInformation
+     * @param \CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation $tokenProvisioningInformation
+     * @return $this
+     */
+    public function setTokenProvisioningInformation($tokenProvisioningInformation)
+    {
+        $this->container['tokenProvisioningInformation'] = $tokenProvisioningInformation;
 
         return $this;
     }

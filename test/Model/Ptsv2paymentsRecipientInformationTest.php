@@ -110,4 +110,25 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDateOfBirth()
     {
     }
+
+    /**
+     * Test attribute "beneficiaryId"
+     */
+    public function testPropertyBeneficiaryId()
+    {
+    }
+
+    /**
+     * Test attribute "beneficiaryName"
+     */
+    public function testPropertyBeneficiaryName()
+    {
+    }
+
+    /**
+     * Test attribute "beneficiaryAddress"
+     */
+    public function testPropertyBeneficiaryAddress()
+    {
+    }
 }

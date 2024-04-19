@@ -145,4 +145,11 @@ class Ptsv2paymentsBuyerInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMobilePhone()
     {
     }
+
+    /**
+     * Test attribute "walletId"
+     */
+    public function testPropertyWalletId()
+    {
+    }
 }

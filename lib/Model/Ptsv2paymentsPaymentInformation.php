@@ -66,6 +66,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'options' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationOptions',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
         'initiationChannel' => 'string',
+        'sepa' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationSepa',
         'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet'
     ];
 
@@ -87,6 +88,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'options' => null,
         'paymentType' => null,
         'initiationChannel' => null,
+        'sepa' => null,
         'eWallet' => null
     ];
 
@@ -118,6 +120,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'options' => 'options',
         'paymentType' => 'paymentType',
         'initiationChannel' => 'initiationChannel',
+        'sepa' => 'sepa',
         'eWallet' => 'eWallet'
     ];
 
@@ -140,6 +143,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'options' => 'setOptions',
         'paymentType' => 'setPaymentType',
         'initiationChannel' => 'setInitiationChannel',
+        'sepa' => 'setSepa',
         'eWallet' => 'setEWallet'
     ];
 
@@ -162,6 +166,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'options' => 'getOptions',
         'paymentType' => 'getPaymentType',
         'initiationChannel' => 'getInitiationChannel',
+        'sepa' => 'getSepa',
         'eWallet' => 'getEWallet'
     ];
 
@@ -209,6 +214,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['options'] = isset($data['options']) ? $data['options'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
+        $this->container['sepa'] = isset($data['sepa']) ? $data['sepa'] : null;
         $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
     }
 
@@ -506,6 +512,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function setInitiationChannel($initiationChannel)
     {
         $this->container['initiationChannel'] = $initiationChannel;
+
+        return $this;
+    }
+
+    /**
+     * Gets sepa
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationSepa
+     */
+    public function getSepa()
+    {
+        return $this->container['sepa'];
+    }
+
+    /**
+     * Sets sepa
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationSepa $sepa
+     * @return $this
+     */
+    public function setSepa($sepa)
+    {
+        $this->container['sepa'] = $sepa;
 
         return $this;
     }

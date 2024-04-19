@@ -168,6 +168,13 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "sepa"
+     */
+    public function testPropertySepa()
+    {
+    }
+
+    /**
      * Test attribute "eWallet"
      */
     public function testPropertyEWallet()

@@ -77,6 +77,13 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformationTest extends \PHPUnit_Fr
     }
 
     /**
+     * Test attribute "amountDetails"
+     */
+    public function testPropertyAmountDetails()
+    {
+    }
+
+    /**
      * Test attribute "invoiceDetails"
      */
     public function testPropertyInvoiceDetails()

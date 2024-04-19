@@ -369,4 +369,32 @@ class Ptsv2paymentsTravelInformationLodgingTest extends \PHPUnit_Framework_TestC
     public function testPropertyInternetAccessCost()
     {
     }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "hotelName"
+     */
+    public function testPropertyHotelName()
+    {
+    }
+
+    /**
+     * Test attribute "checkInDateTime"
+     */
+    public function testPropertyCheckInDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "checkOutDateTime"
+     */
+    public function testPropertyCheckOutDateTime()
+    {
+    }
 }

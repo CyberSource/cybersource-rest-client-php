@@ -308,6 +308,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "timeout"
+     */
+    public function testPropertyTimeout()
+    {
+    }
+
+    /**
      * Test attribute "isReturnAuthRecordEnabled"
      */
     public function testPropertyIsReturnAuthRecordEnabled()

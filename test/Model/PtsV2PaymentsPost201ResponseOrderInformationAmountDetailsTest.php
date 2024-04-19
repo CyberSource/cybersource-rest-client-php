@@ -98,6 +98,34 @@ class PtsV2PaymentsPost201ResponseOrderInformationAmountDetailsTest extends \PHP
     }
 
     /**
+     * Test attribute "settlementAmount"
+     */
+    public function testPropertySettlementAmount()
+    {
+    }
+
+    /**
+     * Test attribute "settlementCurrency"
+     */
+    public function testPropertySettlementCurrency()
+    {
+    }
+
+    /**
+     * Test attribute "originalAmount"
+     */
+    public function testPropertyOriginalAmount()
+    {
+    }
+
+    /**
+     * Test attribute "originalCurrency"
+     */
+    public function testPropertyOriginalCurrency()
+    {
+    }
+
+    /**
      * Test attribute "processorTransactionFee"
      */
     public function testPropertyProcessorTransactionFee()

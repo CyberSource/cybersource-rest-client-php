@@ -77,6 +77,20 @@ class PtsV2PaymentsPost201ResponseMerchantInformationTest extends \PHPUnit_Frame
     }
 
     /**
+     * Test attribute "merchantName"
+     */
+    public function testPropertyMerchantName()
+    {
+    }
+
+    /**
+     * Test attribute "merchantDescriptor"
+     */
+    public function testPropertyMerchantDescriptor()
+    {
+    }
+
+    /**
      * Test attribute "returnUrl"
      */
     public function testPropertyReturnUrl()

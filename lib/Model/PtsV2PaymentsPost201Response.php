@@ -72,9 +72,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
         'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation',
         'buyerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseBuyerInformation',
-        'merchantInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation',
+        'merchantInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation',
         'embeddedActions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActions',
         'watchlistScreeningInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseWatchlistScreeningInformation'
     ];
@@ -103,9 +103,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => null,
         'tokenInformation' => null,
         'buyerInformation' => null,
-        'merchantInformation' => null,
         'riskInformation' => null,
         'consumerAuthenticationInformation' => null,
+        'merchantInformation' => null,
         'embeddedActions' => null,
         'watchlistScreeningInformation' => null
     ];
@@ -144,9 +144,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => 'installmentInformation',
         'tokenInformation' => 'tokenInformation',
         'buyerInformation' => 'buyerInformation',
-        'merchantInformation' => 'merchantInformation',
         'riskInformation' => 'riskInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'merchantInformation' => 'merchantInformation',
         'embeddedActions' => 'embeddedActions',
         'watchlistScreeningInformation' => 'watchlistScreeningInformation'
     ];
@@ -176,9 +176,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => 'setInstallmentInformation',
         'tokenInformation' => 'setTokenInformation',
         'buyerInformation' => 'setBuyerInformation',
-        'merchantInformation' => 'setMerchantInformation',
         'riskInformation' => 'setRiskInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'merchantInformation' => 'setMerchantInformation',
         'embeddedActions' => 'setEmbeddedActions',
         'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
     ];
@@ -208,9 +208,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'installmentInformation' => 'getInstallmentInformation',
         'tokenInformation' => 'getTokenInformation',
         'buyerInformation' => 'getBuyerInformation',
-        'merchantInformation' => 'getMerchantInformation',
         'riskInformation' => 'getRiskInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'merchantInformation' => 'getMerchantInformation',
         'embeddedActions' => 'getEmbeddedActions',
         'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
     ];
@@ -265,9 +265,9 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
-        $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['embeddedActions'] = isset($data['embeddedActions']) ? $data['embeddedActions'] : null;
         $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
     }
@@ -697,27 +697,6 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     }
 
     /**
-     * Gets merchantInformation
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation
-     */
-    public function getMerchantInformation()
-    {
-        return $this->container['merchantInformation'];
-    }
-
-    /**
-     * Sets merchantInformation
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation $merchantInformation
-     * @return $this
-     */
-    public function setMerchantInformation($merchantInformation)
-    {
-        $this->container['merchantInformation'] = $merchantInformation;
-
-        return $this;
-    }
-
-    /**
      * Gets riskInformation
      * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation
      */
@@ -755,6 +734,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)
     {
         $this->container['consumerAuthenticationInformation'] = $consumerAuthenticationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation
+     */
+    public function getMerchantInformation()
+    {
+        return $this->container['merchantInformation'];
+    }
+
+    /**
+     * Sets merchantInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformation $merchantInformation
+     * @return $this
+     */
+    public function setMerchantInformation($merchantInformation)
+    {
+        $this->container['merchantInformation'] = $merchantInformation;
 
         return $this;
     }

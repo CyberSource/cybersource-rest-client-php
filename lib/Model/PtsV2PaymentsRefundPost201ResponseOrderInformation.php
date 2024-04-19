@@ -53,6 +53,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'amountDetails' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails',
         'invoiceDetails' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails'
     ];
 
@@ -61,6 +62,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'amountDetails' => null,
         'invoiceDetails' => null
     ];
 
@@ -79,6 +81,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'amountDetails' => 'amountDetails',
         'invoiceDetails' => 'invoiceDetails'
     ];
 
@@ -88,6 +91,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'amountDetails' => 'setAmountDetails',
         'invoiceDetails' => 'setInvoiceDetails'
     ];
 
@@ -97,6 +101,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'amountDetails' => 'getAmountDetails',
         'invoiceDetails' => 'getInvoiceDetails'
     ];
 
@@ -131,6 +136,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
     }
 
@@ -158,6 +164,27 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets amountDetails
+     * @return \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails
+     */
+    public function getAmountDetails()
+    {
+        return $this->container['amountDetails'];
+    }
+
+    /**
+     * Sets amountDetails
+     * @param \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails $amountDetails
+     * @return $this
+     */
+    public function setAmountDetails($amountDetails)
+    {
+        $this->container['amountDetails'] = $amountDetails;
+
+        return $this;
+    }
 
     /**
      * Gets invoiceDetails

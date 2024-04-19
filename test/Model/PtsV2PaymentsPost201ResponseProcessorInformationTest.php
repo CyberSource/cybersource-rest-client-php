@@ -320,4 +320,25 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     public function testPropertyTransactionExpiryDate()
     {
     }
+
+    /**
+     * Test attribute "customUrl"
+     */
+    public function testPropertyCustomUrl()
+    {
+    }
+
+    /**
+     * Test attribute "schemeAssignedId"
+     */
+    public function testPropertySchemeAssignedId()
+    {
+    }
+
+    /**
+     * Test attribute "deviceUrl"
+     */
+    public function testPropertyDeviceUrl()
+    {
+    }
 }

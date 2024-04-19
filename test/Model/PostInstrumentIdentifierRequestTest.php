@@ -112,6 +112,13 @@ class PostInstrumentIdentifierRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "tokenProvisioningInformation"
+     */
+    public function testPropertyTokenProvisioningInformation()
+    {
+    }
+
+    /**
      * Test attribute "card"
      */
     public function testPropertyCard()

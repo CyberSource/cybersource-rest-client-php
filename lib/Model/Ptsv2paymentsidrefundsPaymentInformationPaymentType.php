@@ -203,7 +203,7 @@ class Ptsv2paymentsidrefundsPaymentInformationPaymentType implements ArrayAccess
 
     /**
      * Sets subTypeName
-     * @param string $subTypeName Detailed information about the Payment Type. Possible values: - `DEBIT`: Use this value to indicate a PIN debit transaction.  Examples: For Card, if Credit or Debit or PrePaid. For Bank Transfer, if Online Bank Transfer or Wire Transfers.
+     * @param string $subTypeName In case the APM supports multiple modes of initiation (e.g. Alipay via QR Code or Barcode)
      * @return $this
      */
     public function setSubTypeName($subTypeName)

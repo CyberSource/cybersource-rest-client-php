@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
 [**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
 [**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
-[**replayPreviousWebhooks**](ManageWebhooksApi.md#replayPreviousWebhooks) | **POST** /nrtf/v1/webhooks/{webhookId}/replays | Replay Previous Webhooks
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
 [**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
@@ -138,52 +137,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\CyberSource\Model\InlineResponse2004[]**](../Model/InlineResponse2004.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **replayPreviousWebhooks**
-> replayPreviousWebhooks($webhookId, $replayWebhooksRequest)
-
-Replay Previous Webhooks
-
-Initiate a webhook replay request to replay transactions that happened in the past.  Cannot execute more than 1 replay request at a time. While one request is processing, you will not be allowed to execute another replay.  The difference between Start and End time cannot exceed a 24 hour window, and 1 month is the farthest date back that is eligible for replay.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The webhook uuid identifier.
-$replayWebhooksRequest = new \CyberSource\Model\ReplayWebhooksRequest(); // \CyberSource\Model\ReplayWebhooksRequest | The request query
-
-try {
-    $api_instance->replayPreviousWebhooks($webhookId, $replayWebhooksRequest);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->replayPreviousWebhooks: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The webhook uuid identifier. |
- **replayWebhooksRequest** | [**\CyberSource\Model\ReplayWebhooksRequest**](../Model/ReplayWebhooksRequest.md)| The request query | [optional]
-
-### Return type
-
-void (empty response body)
 
 ### Authorization
 

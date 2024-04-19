@@ -112,6 +112,13 @@ class PostInstrumentIdentifierEnrollmentRequestTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "tokenProvisioningInformation"
+     */
+    public function testPropertyTokenProvisioningInformation()
+    {
+    }
+
+    /**
      * Test attribute "card"
      */
     public function testPropertyCard()

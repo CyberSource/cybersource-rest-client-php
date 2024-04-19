@@ -57,7 +57,10 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'lastName' => 'string',
         'middleName' => 'string',
         'postalCode' => 'string',
-        'dateOfBirth' => 'string'
+        'dateOfBirth' => 'string',
+        'beneficiaryId' => 'string',
+        'beneficiaryName' => 'string',
+        'beneficiaryAddress' => 'string'
     ];
 
     /**
@@ -69,7 +72,10 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'lastName' => null,
         'middleName' => null,
         'postalCode' => null,
-        'dateOfBirth' => null
+        'dateOfBirth' => null,
+        'beneficiaryId' => null,
+        'beneficiaryName' => null,
+        'beneficiaryAddress' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +97,10 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'lastName' => 'lastName',
         'middleName' => 'middleName',
         'postalCode' => 'postalCode',
-        'dateOfBirth' => 'dateOfBirth'
+        'dateOfBirth' => 'dateOfBirth',
+        'beneficiaryId' => 'beneficiaryId',
+        'beneficiaryName' => 'beneficiaryName',
+        'beneficiaryAddress' => 'beneficiaryAddress'
     ];
 
 
@@ -104,7 +113,10 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'lastName' => 'setLastName',
         'middleName' => 'setMiddleName',
         'postalCode' => 'setPostalCode',
-        'dateOfBirth' => 'setDateOfBirth'
+        'dateOfBirth' => 'setDateOfBirth',
+        'beneficiaryId' => 'setBeneficiaryId',
+        'beneficiaryName' => 'setBeneficiaryName',
+        'beneficiaryAddress' => 'setBeneficiaryAddress'
     ];
 
 
@@ -117,7 +129,10 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'lastName' => 'getLastName',
         'middleName' => 'getMiddleName',
         'postalCode' => 'getPostalCode',
-        'dateOfBirth' => 'getDateOfBirth'
+        'dateOfBirth' => 'getDateOfBirth',
+        'beneficiaryId' => 'getBeneficiaryId',
+        'beneficiaryName' => 'getBeneficiaryName',
+        'beneficiaryAddress' => 'getBeneficiaryAddress'
     ];
 
     public static function attributeMap()
@@ -156,6 +171,9 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
+        $this->container['beneficiaryId'] = isset($data['beneficiaryId']) ? $data['beneficiaryId'] : null;
+        $this->container['beneficiaryName'] = isset($data['beneficiaryName']) ? $data['beneficiaryName'] : null;
+        $this->container['beneficiaryAddress'] = isset($data['beneficiaryAddress']) ? $data['beneficiaryAddress'] : null;
     }
 
     /**
@@ -284,6 +302,69 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     public function setDateOfBirth($dateOfBirth)
     {
         $this->container['dateOfBirth'] = $dateOfBirth;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryId
+     * @return string
+     */
+    public function getBeneficiaryId()
+    {
+        return $this->container['beneficiaryId'];
+    }
+
+    /**
+     * Sets beneficiaryId
+     * @param string $beneficiaryId Only for e-wallets: ID, username, hash or anything uniquely identifying the ultimate beneficiary.
+     * @return $this
+     */
+    public function setBeneficiaryId($beneficiaryId)
+    {
+        $this->container['beneficiaryId'] = $beneficiaryId;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryName
+     * @return string
+     */
+    public function getBeneficiaryName()
+    {
+        return $this->container['beneficiaryName'];
+    }
+
+    /**
+     * Sets beneficiaryName
+     * @param string $beneficiaryName Only for e-wallets: The ultimate beneficiary's full name.
+     * @return $this
+     */
+    public function setBeneficiaryName($beneficiaryName)
+    {
+        $this->container['beneficiaryName'] = $beneficiaryName;
+
+        return $this;
+    }
+
+    /**
+     * Gets beneficiaryAddress
+     * @return string
+     */
+    public function getBeneficiaryAddress()
+    {
+        return $this->container['beneficiaryAddress'];
+    }
+
+    /**
+     * Sets beneficiaryAddress
+     * @param string $beneficiaryAddress Only for e-wallets: The ultimate beneficiary's street address (street, zip code, city), excluding the country. Example: \"Main street 1, 12345, Barcelona
+     * @return $this
+     */
+    public function setBeneficiaryAddress($beneficiaryAddress)
+    {
+        $this->container['beneficiaryAddress'] = $beneficiaryAddress;
 
         return $this;
     }

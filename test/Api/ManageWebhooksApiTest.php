@@ -102,16 +102,6 @@ class ManageWebhooksApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for replayPreviousWebhooks
-     *
-     * Replay Previous Webhooks.
-     *
-     */
-    public function testReplayPreviousWebhooks()
-    {
-    }
-
-    /**
      * Test case for saveAsymEgressKey
      *
      * Message Level Encryption.

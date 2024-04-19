@@ -77,6 +77,13 @@ class Ptsv2paymentsTravelInformationTransitAirlineTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "isDomestic"
+     */
+    public function testPropertyIsDomestic()
+    {
+    }
+
+    /**
      * Test attribute "bookingReferenceNumber"
      */
     public function testPropertyBookingReferenceNumber()
@@ -339,6 +346,48 @@ class Ptsv2paymentsTravelInformationTransitAirlineTest extends \PHPUnit_Framewor
      * Test attribute "ancillaryInformation"
      */
     public function testPropertyAncillaryInformation()
+    {
+    }
+
+    /**
+     * Test attribute "flightType"
+     */
+    public function testPropertyFlightType()
+    {
+    }
+
+    /**
+     * Test attribute "insuranceAmount"
+     */
+    public function testPropertyInsuranceAmount()
+    {
+    }
+
+    /**
+     * Test attribute "frequentFlyerNumber"
+     */
+    public function testPropertyFrequentFlyerNumber()
+    {
+    }
+
+    /**
+     * Test attribute "thirdPartyStatus"
+     */
+    public function testPropertyThirdPartyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "passengerType"
+     */
+    public function testPropertyPassengerType()
+    {
+    }
+
+    /**
+     * Test attribute "totalInsuranceAmount"
+     */
+    public function testPropertyTotalInsuranceAmount()
     {
     }
 }

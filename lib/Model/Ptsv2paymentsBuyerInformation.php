@@ -62,7 +62,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'gender' => 'string',
         'language' => 'string',
         'noteToSeller' => 'string',
-        'mobilePhone' => 'int'
+        'mobilePhone' => 'int',
+        'walletId' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'gender' => null,
         'language' => null,
         'noteToSeller' => null,
-        'mobilePhone' => null
+        'mobilePhone' => null,
+        'walletId' => null
     ];
 
     public static function swaggerTypes()
@@ -106,7 +108,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'gender' => 'gender',
         'language' => 'language',
         'noteToSeller' => 'noteToSeller',
-        'mobilePhone' => 'mobilePhone'
+        'mobilePhone' => 'mobilePhone',
+        'walletId' => 'walletId'
     ];
 
 
@@ -124,7 +127,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'gender' => 'setGender',
         'language' => 'setLanguage',
         'noteToSeller' => 'setNoteToSeller',
-        'mobilePhone' => 'setMobilePhone'
+        'mobilePhone' => 'setMobilePhone',
+        'walletId' => 'setWalletId'
     ];
 
 
@@ -142,7 +146,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'gender' => 'getGender',
         'language' => 'getLanguage',
         'noteToSeller' => 'getNoteToSeller',
-        'mobilePhone' => 'getMobilePhone'
+        'mobilePhone' => 'getMobilePhone',
+        'walletId' => 'getWalletId'
     ];
 
     public static function attributeMap()
@@ -186,6 +191,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         $this->container['language'] = isset($data['language']) ? $data['language'] : null;
         $this->container['noteToSeller'] = isset($data['noteToSeller']) ? $data['noteToSeller'] : null;
         $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
+        $this->container['walletId'] = isset($data['walletId']) ? $data['walletId'] : null;
     }
 
     /**
@@ -419,6 +425,27 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     public function setMobilePhone($mobilePhone)
     {
         $this->container['mobilePhone'] = $mobilePhone;
+
+        return $this;
+    }
+
+    /**
+     * Gets walletId
+     * @return string
+     */
+    public function getWalletId()
+    {
+        return $this->container['walletId'];
+    }
+
+    /**
+     * Sets walletId
+     * @param string $walletId The one-time identification code of the Alipay wallet user.  It is scanned from the barcode that is shown by the mobile application.
+     * @return $this
+     */
+    public function setWalletId($walletId)
+    {
+        $this->container['walletId'] = $walletId;
 
         return $this;
     }

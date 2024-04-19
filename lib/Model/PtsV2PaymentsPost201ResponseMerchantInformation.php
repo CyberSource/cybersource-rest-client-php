@@ -53,6 +53,8 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'merchantName' => 'string',
+        'merchantDescriptor' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor',
         'returnUrl' => 'string'
     ];
 
@@ -61,6 +63,8 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'merchantName' => null,
+        'merchantDescriptor' => null,
         'returnUrl' => null
     ];
 
@@ -79,6 +83,8 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'merchantName' => 'merchantName',
+        'merchantDescriptor' => 'merchantDescriptor',
         'returnUrl' => 'returnUrl'
     ];
 
@@ -88,6 +94,8 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'merchantName' => 'setMerchantName',
+        'merchantDescriptor' => 'setMerchantDescriptor',
         'returnUrl' => 'setReturnUrl'
     ];
 
@@ -97,6 +105,8 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'merchantName' => 'getMerchantName',
+        'merchantDescriptor' => 'getMerchantDescriptor',
         'returnUrl' => 'getReturnUrl'
     ];
 
@@ -131,6 +141,8 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;
+        $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
         $this->container['returnUrl'] = isset($data['returnUrl']) ? $data['returnUrl'] : null;
     }
 
@@ -158,6 +170,48 @@ class PtsV2PaymentsPost201ResponseMerchantInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets merchantName
+     * @return string
+     */
+    public function getMerchantName()
+    {
+        return $this->container['merchantName'];
+    }
+
+    /**
+     * Sets merchantName
+     * @param string $merchantName Use this field only if you are requesting payment with Payer Authentication serice together.  Your company's name as you want it to appear to the customer in the issuing bank's authentication form. This value overrides the value specified by your merchant bank.
+     * @return $this
+     */
+    public function setMerchantName($merchantName)
+    {
+        $this->container['merchantName'] = $merchantName;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDescriptor
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor
+     */
+    public function getMerchantDescriptor()
+    {
+        return $this->container['merchantDescriptor'];
+    }
+
+    /**
+     * Sets merchantDescriptor
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseMerchantInformationMerchantDescriptor $merchantDescriptor
+     * @return $this
+     */
+    public function setMerchantDescriptor($merchantDescriptor)
+    {
+        $this->container['merchantDescriptor'] = $merchantDescriptor;
+
+        return $this;
+    }
 
     /**
      * Gets returnUrl

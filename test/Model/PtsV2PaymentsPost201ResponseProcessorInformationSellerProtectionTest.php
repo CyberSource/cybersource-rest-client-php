@@ -84,9 +84,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtectionTest exten
     }
 
     /**
-     * Test attribute "eligibilty"
+     * Test attribute "eligibility"
      */
-    public function testPropertyEligibilty()
+    public function testPropertyEligibility()
     {
     }
 

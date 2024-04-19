@@ -210,13 +210,6 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchantInformation"
-     */
-    public function testPropertyMerchantInformation()
-    {
-    }
-
-    /**
      * Test attribute "riskInformation"
      */
     public function testPropertyRiskInformation()
@@ -227,6 +220,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "consumerAuthenticationInformation"
      */
     public function testPropertyConsumerAuthenticationInformation()
+    {
+    }
+
+    /**
+     * Test attribute "merchantInformation"
+     */
+    public function testPropertyMerchantInformation()
     {
     }
 

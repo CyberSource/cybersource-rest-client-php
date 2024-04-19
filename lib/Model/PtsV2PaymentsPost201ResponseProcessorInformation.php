@@ -87,7 +87,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'signature' => 'string',
         'publicKey' => 'string',
         'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection',
-        'transactionExpiryDate' => 'string'
+        'transactionExpiryDate' => 'string',
+        'customUrl' => 'string',
+        'schemeAssignedId' => 'string',
+        'deviceUrl' => 'string'
     ];
 
     /**
@@ -129,7 +132,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'signature' => null,
         'publicKey' => null,
         'sellerProtection' => null,
-        'transactionExpiryDate' => null
+        'transactionExpiryDate' => null,
+        'customUrl' => null,
+        'schemeAssignedId' => null,
+        'deviceUrl' => null
     ];
 
     public static function swaggerTypes()
@@ -181,7 +187,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'signature' => 'signature',
         'publicKey' => 'publicKey',
         'sellerProtection' => 'sellerProtection',
-        'transactionExpiryDate' => 'transactionExpiryDate'
+        'transactionExpiryDate' => 'transactionExpiryDate',
+        'customUrl' => 'customUrl',
+        'schemeAssignedId' => 'schemeAssignedId',
+        'deviceUrl' => 'deviceUrl'
     ];
 
 
@@ -224,7 +233,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'signature' => 'setSignature',
         'publicKey' => 'setPublicKey',
         'sellerProtection' => 'setSellerProtection',
-        'transactionExpiryDate' => 'setTransactionExpiryDate'
+        'transactionExpiryDate' => 'setTransactionExpiryDate',
+        'customUrl' => 'setCustomUrl',
+        'schemeAssignedId' => 'setSchemeAssignedId',
+        'deviceUrl' => 'setDeviceUrl'
     ];
 
 
@@ -267,7 +279,10 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'signature' => 'getSignature',
         'publicKey' => 'getPublicKey',
         'sellerProtection' => 'getSellerProtection',
-        'transactionExpiryDate' => 'getTransactionExpiryDate'
+        'transactionExpiryDate' => 'getTransactionExpiryDate',
+        'customUrl' => 'getCustomUrl',
+        'schemeAssignedId' => 'getSchemeAssignedId',
+        'deviceUrl' => 'getDeviceUrl'
     ];
 
     public static function attributeMap()
@@ -336,6 +351,9 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['publicKey'] = isset($data['publicKey']) ? $data['publicKey'] : null;
         $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
         $this->container['transactionExpiryDate'] = isset($data['transactionExpiryDate']) ? $data['transactionExpiryDate'] : null;
+        $this->container['customUrl'] = isset($data['customUrl']) ? $data['customUrl'] : null;
+        $this->container['schemeAssignedId'] = isset($data['schemeAssignedId']) ? $data['schemeAssignedId'] : null;
+        $this->container['deviceUrl'] = isset($data['deviceUrl']) ? $data['deviceUrl'] : null;
     }
 
     /**
@@ -1094,6 +1112,69 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setTransactionExpiryDate($transactionExpiryDate)
     {
         $this->container['transactionExpiryDate'] = $transactionExpiryDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets customUrl
+     * @return string
+     */
+    public function getCustomUrl()
+    {
+        return $this->container['customUrl'];
+    }
+
+    /**
+     * Sets customUrl
+     * @param string $customUrl For merchants to declare customs Customs declaration service URL.
+     * @return $this
+     */
+    public function setCustomUrl($customUrl)
+    {
+        $this->container['customUrl'] = $customUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets schemeAssignedId
+     * @return string
+     */
+    public function getSchemeAssignedId()
+    {
+        return $this->container['schemeAssignedId'];
+    }
+
+    /**
+     * Sets schemeAssignedId
+     * @param string $schemeAssignedId Unique id assigned to a merchant by the APM and not PSP The merchant ID, as boarded with Alipay
+     * @return $this
+     */
+    public function setSchemeAssignedId($schemeAssignedId)
+    {
+        $this->container['schemeAssignedId'] = $schemeAssignedId;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceUrl
+     * @return string
+     */
+    public function getDeviceUrl()
+    {
+        return $this->container['deviceUrl'];
+    }
+
+    /**
+     * Sets deviceUrl
+     * @param string $deviceUrl The QR code value. Convert this value into an image and send it to the POS terminal to be displayed. The terminal can also perform the conversion. The value is a URL like in the example below: https://qr.alipay.com/pmxabcka1ts5grar12.
+     * @return $this
+     */
+    public function setDeviceUrl($deviceUrl)
+    {
+        $this->container['deviceUrl'] = $deviceUrl;
 
         return $this;
     }
