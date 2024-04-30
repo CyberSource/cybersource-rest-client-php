@@ -1,10 +1,10 @@
-# CyberSource\KeymanagementpasswordApi
+# CyberSource\KeyManagementPasswordApi
 
 All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**updatePassword**](KeymanagementpasswordApi.md#updatePassword) | **PATCH** /kms/v2/keys-password/{keyId} | Activate or De-activate Password
+[**updatePassword**](KeyManagementPasswordApi.md#updatePassword) | **PATCH** /kms/v2/keys-password/{keyId} | Activate or De-activate Password
 
 
 # **updatePassword**
@@ -19,7 +19,7 @@ Activate or De-activate key of type password
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new CyberSource\Api\KeymanagementpasswordApi();
+$api_instance = new CyberSource\Api\KeyManagementPasswordApi();
 $keyId = "keyId_example"; // string | Key ID.
 $updatePasswordKeysRequest = new \CyberSource\Model\UpdatePasswordKeysRequest(); // \CyberSource\Model\UpdatePasswordKeysRequest | 
 
@@ -27,7 +27,7 @@ try {
     $result = $api_instance->updatePassword($keyId, $updatePasswordKeysRequest);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling KeymanagementpasswordApi->updatePassword: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling KeyManagementPasswordApi->updatePassword: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **riskInformation** | [**\CyberSource\Model\Ptsv2paymentsRiskInformation**](Ptsv2paymentsRiskInformation.md) |  | [optional] 
 **acquirerInformation** | [**\CyberSource\Model\Ptsv2paymentsAcquirerInformation**](Ptsv2paymentsAcquirerInformation.md) |  | [optional] 
 **recurringPaymentInformation** | [**\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation**](Ptsv2paymentsRecurringPaymentInformation.md) |  | [optional] 
+**hostedPaymentInformation** | [**\CyberSource\Model\Ptsv2paymentsHostedPaymentInformation**](Ptsv2paymentsHostedPaymentInformation.md) |  | [optional] 
 **watchlistScreeningInformation** | [**\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation**](Ptsv2paymentsWatchlistScreeningInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -45,6 +45,10 @@ Name | Type | Description | Notes
 **nonRoomTaxAmount** | **string** | Tax on non-room purchases. | [optional] 
 **earlyCheckOutCost** | **string** | Service fee for early departure. | [optional] 
 **internetAccessCost** | **string** | Cost of Internet access. | [optional] 
+**name** | **string** | Name of the hotel for which the reservation is for. Mandatory in case the merchant&#39;s business type is Hotel. | [optional] 
+**hotelName** | **string** | The name of the hotel for which the reservation was made. | [optional] 
+**checkInDateTime** | **string** | The date of the check-in in GMT+8 offset. | [optional] 
+**checkOutDateTime** | **string** | The date of the check-out in GMT+8 offset. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

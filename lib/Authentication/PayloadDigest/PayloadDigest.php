@@ -44,7 +44,7 @@ class PayloadDigest
     //Generated Encoded Payload Data
     public function generateDigest($payLoad)
     {
-        $utf8EncodedString = utf8_encode($payLoad);
+        $utf8EncodedString = mb_convert_encoding($payLoad, 'UTF-8', mb_detect_encoding($payLoad));
         $digestEncode = hash("sha256", $utf8EncodedString, true);
         self::$logger->close();
         return base64_encode($digestEncode);

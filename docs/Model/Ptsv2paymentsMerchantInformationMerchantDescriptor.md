@@ -14,8 +14,9 @@ Name | Type | Description | Notes
 **phone** | **string** | Merchant phone as contact information for CNP transactions | [optional] 
 **url** | **string** | Address of company&#39;s website provided by merchant | [optional] 
 **countryOfOrigin** | **string** | #### Visa Platform Connect This field will indicate merchant country of origin | [optional] 
+**storeId** | **string** | The identifier of the store. | [optional] 
+**storeName** | **string** | The name of the store. | [optional] 
 **customerServicePhoneNumber** | **string** | #### Visa Platform Connect Indicates customer service phone number of Merchant. | [optional] 
-**storeId** | **string** | The unique id of the merchant&#39;s shop which assigned by the merchant | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

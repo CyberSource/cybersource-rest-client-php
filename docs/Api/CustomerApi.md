@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomer**
-> \CyberSource\Model\TmsV2CustomersResponse getCustomer($customerId, $profileId)
+> \CyberSource\Model\PostCustomerRequest getCustomer($customerId, $profileId)
 
 Retrieve a Customer
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV2CustomersResponse**](../Model/TmsV2CustomersResponse.md)
+[**\CyberSource\Model\PostCustomerRequest**](../Model/PostCustomerRequest.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchCustomer**
-> \CyberSource\Model\TmsV2CustomersResponse patchCustomer($customerId, $patchCustomerRequest, $profileId, $ifMatch)
+> \CyberSource\Model\PatchCustomerRequest patchCustomer($customerId, $patchCustomerRequest, $profileId, $ifMatch)
 
 Update a Customer
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV2CustomersResponse**](../Model/TmsV2CustomersResponse.md)
+[**\CyberSource\Model\PatchCustomerRequest**](../Model/PatchCustomerRequest.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCustomer**
-> \CyberSource\Model\TmsV2CustomersResponse postCustomer($postCustomerRequest, $profileId)
+> \CyberSource\Model\PostCustomerRequest postCustomer($postCustomerRequest, $profileId)
 
 Create a Customer
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\TmsV2CustomersResponse**](../Model/TmsV2CustomersResponse.md)
+[**\CyberSource\Model\PostCustomerRequest**](../Model/PostCustomerRequest.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **string** | Valid Values:   * oneOff   * amexRegistration | [optional] [default to 'oneOff']
-**included** | [**\CyberSource\Model\Accountupdaterv1batchesIncluded**](Accountupdaterv1batchesIncluded.md) |  | [optional] 
+**included** | [**\CyberSource\Model\Accountupdaterv1batchesIncluded**](Accountupdaterv1batchesIncluded.md) |  | 
 **merchantReference** | **string** | Reference used by merchant to identify batch. | [optional] 
 **notificationEmail** | **string** | Email used to notify the batch status. | 
 

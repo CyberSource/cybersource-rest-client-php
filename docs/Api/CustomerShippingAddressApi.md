@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerShippingAddress**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress getCustomerShippingAddress($customerId, $shippingAddressId, $profileId)
+> \CyberSource\Model\PostCustomerShippingAddressRequest getCustomerShippingAddress($customerId, $shippingAddressId, $profileId)
 
 Retrieve a Customer Shipping Address
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress**](../Model/Tmsv2customersEmbeddedDefaultShippingAddress.md)
+[**\CyberSource\Model\PostCustomerShippingAddressRequest**](../Model/PostCustomerShippingAddressRequest.md)
 
 ### Authorization
 
@@ -160,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchCustomersShippingAddress**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress patchCustomersShippingAddress($customerId, $shippingAddressId, $patchCustomerShippingAddressRequest, $profileId, $ifMatch)
+> \CyberSource\Model\PatchCustomerShippingAddressRequest patchCustomersShippingAddress($customerId, $shippingAddressId, $patchCustomerShippingAddressRequest, $profileId, $ifMatch)
 
 Update a Customer Shipping Address
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress**](../Model/Tmsv2customersEmbeddedDefaultShippingAddress.md)
+[**\CyberSource\Model\PatchCustomerShippingAddressRequest**](../Model/PatchCustomerShippingAddressRequest.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCustomerShippingAddress**
-> \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress postCustomerShippingAddress($customerId, $postCustomerShippingAddressRequest, $profileId)
+> \CyberSource\Model\PostCustomerShippingAddressRequest postCustomerShippingAddress($customerId, $postCustomerShippingAddressRequest, $profileId)
 
 Create a Customer Shipping Address
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress**](../Model/Tmsv2customersEmbeddedDefaultShippingAddress.md)
+[**\CyberSource\Model\PostCustomerShippingAddressRequest**](../Model/PostCustomerShippingAddressRequest.md)
 
 ### Authorization
 
