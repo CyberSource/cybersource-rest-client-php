@@ -75,6 +75,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'eci' => 'string',
         'eciRaw' => 'string',
         'effectiveAuthenticationType' => 'string',
+        'exemptionDataRaw' => 'string',
         'ivr' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr',
         'networkScore' => 'string',
         'pareq' => 'string',
@@ -127,6 +128,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'eci' => null,
         'eciRaw' => null,
         'effectiveAuthenticationType' => null,
+        'exemptionDataRaw' => null,
         'ivr' => null,
         'networkScore' => null,
         'pareq' => null,
@@ -189,6 +191,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'eci' => 'eci',
         'eciRaw' => 'eciRaw',
         'effectiveAuthenticationType' => 'effectiveAuthenticationType',
+        'exemptionDataRaw' => 'exemptionDataRaw',
         'ivr' => 'ivr',
         'networkScore' => 'networkScore',
         'pareq' => 'pareq',
@@ -242,6 +245,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'eci' => 'setEci',
         'eciRaw' => 'setEciRaw',
         'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
+        'exemptionDataRaw' => 'setExemptionDataRaw',
         'ivr' => 'setIvr',
         'networkScore' => 'setNetworkScore',
         'pareq' => 'setPareq',
@@ -295,6 +299,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         'eci' => 'getEci',
         'eciRaw' => 'getEciRaw',
         'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
+        'exemptionDataRaw' => 'getExemptionDataRaw',
         'ivr' => 'getIvr',
         'networkScore' => 'getNetworkScore',
         'pareq' => 'getPareq',
@@ -373,6 +378,7 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
         $this->container['eci'] = isset($data['eci']) ? $data['eci'] : null;
         $this->container['eciRaw'] = isset($data['eciRaw']) ? $data['eciRaw'] : null;
         $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
+        $this->container['exemptionDataRaw'] = isset($data['exemptionDataRaw']) ? $data['exemptionDataRaw'] : null;
         $this->container['ivr'] = isset($data['ivr']) ? $data['ivr'] : null;
         $this->container['networkScore'] = isset($data['networkScore']) ? $data['networkScore'] : null;
         $this->container['pareq'] = isset($data['pareq']) ? $data['pareq'] : null;
@@ -881,6 +887,27 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformation implements
     public function setEffectiveAuthenticationType($effectiveAuthenticationType)
     {
         $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets exemptionDataRaw
+     * @return string
+     */
+    public function getExemptionDataRaw()
+    {
+        return $this->container['exemptionDataRaw'];
+    }
+
+    /**
+     * Sets exemptionDataRaw
+     * @param string $exemptionDataRaw Payer authentication exemption indicator for Carte Bancaire exemptions.  This is used with unbundled authentication and authorizations calls, for example: \"low fraud merchant program\". The value returned in this field should be passed in the authorization request under the field - `consumerAuthenticationInformation.strongAuthentication.issuerInformation.exemptionDataRaw`.
+     * @return $this
+     */
+    public function setExemptionDataRaw($exemptionDataRaw)
+    {
+        $this->container['exemptionDataRaw'] = $exemptionDataRaw;
 
         return $this;
     }

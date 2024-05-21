@@ -72,7 +72,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\InvoicesApi();
 $offset = 56; // int | Page offset number.
 $limit = 56; // int | Maximum number of items you would like returned.
-$status = "status_example"; // string | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED
+$status = "status_example"; // string | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING
 
 try {
     $result = $api_instance->getAllInvoices($offset, $limit, $status);
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page offset number. |
  **limit** | **int**| Maximum number of items you would like returned. |
- **status** | **string**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED | [optional]
+ **status** | **string**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING | [optional]
 
 ### Return type
 

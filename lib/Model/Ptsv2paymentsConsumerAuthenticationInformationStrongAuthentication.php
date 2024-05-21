@@ -53,6 +53,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'issuerInformation' => '\CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation',
         'lowValueExemptionIndicator' => 'string',
         'riskAnalysisExemptionIndicator' => 'string',
         'trustedMerchantExemptionIndicator' => 'string',
@@ -67,6 +68,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'issuerInformation' => null,
         'lowValueExemptionIndicator' => null,
         'riskAnalysisExemptionIndicator' => null,
         'trustedMerchantExemptionIndicator' => null,
@@ -91,6 +93,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      * @var string[]
      */
     protected static $attributeMap = [
+        'issuerInformation' => 'issuerInformation',
         'lowValueExemptionIndicator' => 'lowValueExemptionIndicator',
         'riskAnalysisExemptionIndicator' => 'riskAnalysisExemptionIndicator',
         'trustedMerchantExemptionIndicator' => 'trustedMerchantExemptionIndicator',
@@ -106,6 +109,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      * @var string[]
      */
     protected static $setters = [
+        'issuerInformation' => 'setIssuerInformation',
         'lowValueExemptionIndicator' => 'setLowValueExemptionIndicator',
         'riskAnalysisExemptionIndicator' => 'setRiskAnalysisExemptionIndicator',
         'trustedMerchantExemptionIndicator' => 'setTrustedMerchantExemptionIndicator',
@@ -121,6 +125,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      * @var string[]
      */
     protected static $getters = [
+        'issuerInformation' => 'getIssuerInformation',
         'lowValueExemptionIndicator' => 'getLowValueExemptionIndicator',
         'riskAnalysisExemptionIndicator' => 'getRiskAnalysisExemptionIndicator',
         'trustedMerchantExemptionIndicator' => 'getTrustedMerchantExemptionIndicator',
@@ -161,6 +166,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
      */
     public function __construct(array $data = null)
     {
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['lowValueExemptionIndicator'] = isset($data['lowValueExemptionIndicator']) ? $data['lowValueExemptionIndicator'] : null;
         $this->container['riskAnalysisExemptionIndicator'] = isset($data['riskAnalysisExemptionIndicator']) ? $data['riskAnalysisExemptionIndicator'] : null;
         $this->container['trustedMerchantExemptionIndicator'] = isset($data['trustedMerchantExemptionIndicator']) ? $data['trustedMerchantExemptionIndicator'] : null;
@@ -194,6 +200,27 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
         return true;
     }
 
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationIssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
+
+        return $this;
+    }
 
     /**
      * Gets lowValueExemptionIndicator
