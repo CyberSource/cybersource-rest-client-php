@@ -436,13 +436,13 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
-            $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
+        // if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
+        //     $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
+        // }
 
-        if (!is_null($this->container['doingBusinessAs']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
-            $invalid_properties[] = "invalid value for 'doingBusinessAs', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
+        // if (!is_null($this->container['doingBusinessAs']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
+        //     $invalid_properties[] = "invalid value for 'doingBusinessAs', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
+        // }
 
         if (!is_null($this->container['description']) && !preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
             $invalid_properties[] = "invalid value for 'description', must be conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.";
@@ -495,12 +495,12 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             return false;
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
-            return false;
-        }
+        // if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
+        //     return false;
+        // }
+        // if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
+        //     return false;
+        // }
         if (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
             return false;
         }
@@ -544,9 +544,9 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setName($name)
     {
-        if ((!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $name))) {
-            throw new \InvalidArgumentException("invalid value for $name when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.");
-        }
+        // if ((!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $name))) {
+        //     throw new \InvalidArgumentException("invalid value for $name when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.");
+        // }
         $this->container['name'] = $name;
 
         return $this;
@@ -568,9 +568,9 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setDoingBusinessAs($doingBusinessAs)
     {
-        if (!is_null($doingBusinessAs) && (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $doingBusinessAs))) {
-            throw new \InvalidArgumentException("invalid value for $doingBusinessAs when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.");
-        }
+        // if (!is_null($doingBusinessAs) && (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $doingBusinessAs))) {
+        //     throw new \InvalidArgumentException("invalid value for $doingBusinessAs when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.");
+        // }
         $this->container['doingBusinessAs'] = $doingBusinessAs;
 
         return $this;
