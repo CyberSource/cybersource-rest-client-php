@@ -8,12 +8,14 @@ use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\Core\AuthException as AuthException;
 use Firebase\JWT\JWT as JWT;
 use CyberSource\Logging\LogFactory as LogFactory;
+use CyberSource\Authentication\Util\Cache as Cache;
 
 require_once 'vendor/autoload.php';
 
 class JsonWebTokenHeader 
 {
     private static $logger = null;
+    private static $cache = null;
     
     /**
      * Constructor
@@ -21,8 +23,10 @@ class JsonWebTokenHeader
     public function __construct(\CyberSource\Logging\LogConfiguration $logConfig)
     {
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $logConfig);
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $logConfig);
         }
+
+        self::$cache = new Cache();
     }
 
     //Get the JasonWeb Token
@@ -71,12 +75,13 @@ class JsonWebTokenHeader
             throw $exception;
         }
 
-        if(!empty($cacheKey))
-            $cache_cert_store = apcu_fetch($cacheKey);
-        if($cache_cert_store ==false ){
-            $cache_cert_store="";
-            $result = apcu_store("$cacheKey", $cert_store);
-            $cache_cert_store = apcu_fetch($cacheKey);
+        if(!empty($cacheKey)) {
+            $cache_cert_store = self::$cache->fetchFromCache($cacheKey); // apcu_fetch($cacheKey);
+        }
+        if($cache_cert_store == false){
+            $cache_cert_store = "";
+            $result = self::$cache->storeInCache("$cacheKey", $cert_store); //apcu_store("$cacheKey", $cert_store);
+            $cache_cert_store = self::$cache->fetchFromCache($cacheKey); // apcu_fetch($cacheKey);
         }
         //read the certificate from cert obj    
         if (openssl_pkcs12_read($cache_cert_store, $cert_info, $keyPass)) 
