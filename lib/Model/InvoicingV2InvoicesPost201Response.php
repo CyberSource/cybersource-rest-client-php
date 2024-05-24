@@ -269,7 +269,7 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED
+     * @param string $status The status of the invoice.  Possible values: - DRAFT - CREATED - SENT - PARTIAL - PAID - CANCELED - PENDING
      * @return $this
      */
     public function setStatus($status)

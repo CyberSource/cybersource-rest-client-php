@@ -221,7 +221,7 @@ class InvoicesApi
      *
      * @param int $offset Page offset number. (required)
      * @param int $limit Maximum number of items you would like returned. (required)
-     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED (optional)
+     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InvoicingV2InvoicesAllGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -241,7 +241,7 @@ class InvoicesApi
      *
      * @param int $offset Page offset number. (required)
      * @param int $limit Maximum number of items you would like returned. (required)
-     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED (optional)
+     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InvoicingV2InvoicesAllGet200Response, HTTP status code, HTTP response headers (array of strings)
      */

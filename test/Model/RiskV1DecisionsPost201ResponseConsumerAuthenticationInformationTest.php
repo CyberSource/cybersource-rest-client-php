@@ -231,6 +231,13 @@ class RiskV1DecisionsPost201ResponseConsumerAuthenticationInformationTest extend
     }
 
     /**
+     * Test attribute "exemptionDataRaw"
+     */
+    public function testPropertyExemptionDataRaw()
+    {
+    }
+
+    /**
      * Test attribute "ivr"
      */
     public function testPropertyIvr()
