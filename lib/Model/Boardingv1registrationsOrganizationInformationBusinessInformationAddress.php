@@ -195,11 +195,11 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationAddress i
             $invalid_properties[] = "'locality' can't be null";
         }
         // if (!preg_match("/^[0-9a-zA-Z _\\-¡-￿]+$/", $this->container['locality'])) {
-            // $invalid_properties[] = "invalid value for 'locality', must be conform to the pattern /^[0-9a-zA-Z _\\-¡-￿]+$/.";
+        //     $invalid_properties[] = "invalid value for 'locality', must be conform to the pattern /^[0-9a-zA-Z _\\-¡-￿]+$/.";
         // }
 
         // if (!is_null($this->container['administrativeArea']) && !preg_match("/^[0-9a-zA-Z¡-￿ ]*$/", $this->container['administrativeArea'])) {
-            // $invalid_properties[] = "invalid value for 'administrativeArea', must be conform to the pattern /^[0-9a-zA-Z¡-￿ ]*$/.";
+        //     $invalid_properties[] = "invalid value for 'administrativeArea', must be conform to the pattern /^[0-9a-zA-Z¡-￿ ]*$/.";
         // }
 
         if (!is_null($this->container['postalCode']) && !preg_match("/^[0-9a-zA-Z ]*$/", $this->container['postalCode'])) {
@@ -237,10 +237,10 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationAddress i
             return false;
         }
         // if (!preg_match("/^[0-9a-zA-Z _\\-¡-￿]+$/", $this->container['locality'])) {
-            // return false;
+        //     return false;
         // }
         // if (!preg_match("/^[0-9a-zA-Z¡-￿ ]*$/", $this->container['administrativeArea'])) {
-            // return false;
+        //     return false;
         // }
         if (!preg_match("/^[0-9a-zA-Z ]*$/", $this->container['postalCode'])) {
             return false;
@@ -338,7 +338,7 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationAddress i
     public function setLocality($locality)
     {
         // if ((!preg_match("/^[0-9a-zA-Z _\\-¡-￿]+$/", $locality))) {
-            // throw new \InvalidArgumentException("invalid value for $locality when calling Boardingv1registrationsOrganizationInformationBusinessInformationAddress., must conform to the pattern /^[0-9a-zA-Z _\\-¡-￿]+$/.");
+        //     throw new \InvalidArgumentException("invalid value for $locality when calling Boardingv1registrationsOrganizationInformationBusinessInformationAddress., must conform to the pattern /^[0-9a-zA-Z _\\-¡-￿]+$/.");
         // }
         $this->container['locality'] = $locality;
 
@@ -362,7 +362,7 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationAddress i
     public function setAdministrativeArea($administrativeArea)
     {
         // if (!is_null($administrativeArea) && (!preg_match("/^[0-9a-zA-Z¡-￿ ]*$/", $administrativeArea))) {
-            // throw new \InvalidArgumentException("invalid value for $administrativeArea when calling Boardingv1registrationsOrganizationInformationBusinessInformationAddress., must conform to the pattern /^[0-9a-zA-Z¡-￿ ]*$/.");
+        //     throw new \InvalidArgumentException("invalid value for $administrativeArea when calling Boardingv1registrationsOrganizationInformationBusinessInformationAddress., must conform to the pattern /^[0-9a-zA-Z¡-￿ ]*$/.");
         // }
         $this->container['administrativeArea'] = $administrativeArea;
 
