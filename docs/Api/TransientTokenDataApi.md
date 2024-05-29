@@ -4,12 +4,12 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /up/v1/payment-credentials/{jti} | Get Payment Credentials
+[**getPaymentCredentialsForTransientToken**](TransientTokenDataApi.md#getPaymentCredentialsForTransientToken) | **GET** /flex/v2/payment-credentials/{paymentCredentialsReference} | Get Payment Credentials
 [**getTransactionForTransientToken**](TransientTokenDataApi.md#getTransactionForTransientToken) | **GET** /up/v1/payment-details/{transientToken} | Get Transient Token Data
 
 
 # **getPaymentCredentialsForTransientToken**
-> string getPaymentCredentialsForTransientToken($jti)
+> string getPaymentCredentialsForTransientToken($paymentCredentialsReference)
 
 Get Payment Credentials
 
@@ -21,10 +21,10 @@ Retrieve the Payment data captured by Unified Checkout. This API is used to retr
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\TransientTokenDataApi();
-$jti = "jti_example"; // string | The jti field contained within the Transient token returned from a successful Unified Checkout transaction
+$paymentCredentialsReference = "paymentCredentialsReference_example"; // string | The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction
 
 try {
-    $result = $api_instance->getPaymentCredentialsForTransientToken($jti);
+    $result = $api_instance->getPaymentCredentialsForTransientToken($paymentCredentialsReference);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransientTokenDataApi->getPaymentCredentialsForTransientToken: ', $e->getMessage(), PHP_EOL;
@@ -36,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jti** | **string**| The jti field contained within the Transient token returned from a successful Unified Checkout transaction |
+ **paymentCredentialsReference** | **string**| The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction |
 
 ### Return type
 

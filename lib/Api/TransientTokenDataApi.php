@@ -98,14 +98,14 @@ class TransientTokenDataApi
      *
      * Get Payment Credentials
      *
-     * @param string $jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction (required)
+     * @param string $paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentCredentialsForTransientToken($jti)
+    public function getPaymentCredentialsForTransientToken($paymentCredentialsReference)
     {
         self::$logger->info('CALL TO METHOD getPaymentCredentialsForTransientToken STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getPaymentCredentialsForTransientTokenWithHttpInfo($jti);
+        list($response, $statusCode, $httpHeader) = $this->getPaymentCredentialsForTransientTokenWithHttpInfo($paymentCredentialsReference);
         self::$logger->info('CALL TO METHOD getPaymentCredentialsForTransientToken ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -116,19 +116,19 @@ class TransientTokenDataApi
      *
      * Get Payment Credentials
      *
-     * @param string $jti The jti field contained within the Transient token returned from a successful Unified Checkout transaction (required)
+     * @param string $paymentCredentialsReference The paymentCredentialsReference field contained within the Transient token returned from a successful Unified Checkout transaction (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentCredentialsForTransientTokenWithHttpInfo($jti)
+    public function getPaymentCredentialsForTransientTokenWithHttpInfo($paymentCredentialsReference)
     {
-        // verify the required parameter 'jti' is set
-        if ($jti === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $jti when calling getPaymentCredentialsForTransientToken");
-            throw new \InvalidArgumentException('Missing the required parameter $jti when calling getPaymentCredentialsForTransientToken');
+        // verify the required parameter 'paymentCredentialsReference' is set
+        if ($paymentCredentialsReference === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentCredentialsReference when calling getPaymentCredentialsForTransientToken");
+            throw new \InvalidArgumentException('Missing the required parameter $paymentCredentialsReference when calling getPaymentCredentialsForTransientToken');
         }
         // parse inputs
-        $resourcePath = "/up/v1/payment-credentials/{jti}";
+        $resourcePath = "/flex/v2/payment-credentials/{paymentCredentialsReference}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -140,10 +140,10 @@ class TransientTokenDataApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
-        if ($jti !== null) {
+        if ($paymentCredentialsReference !== null) {
             $resourcePath = str_replace(
-                "{" . "jti" . "}",
-                $this->apiClient->getSerializer()->toPathValue($jti),
+                "{" . "paymentCredentialsReference" . "}",
+                $this->apiClient->getSerializer()->toPathValue($paymentCredentialsReference),
                 $resourcePath
             );
         }
@@ -180,7 +180,7 @@ class TransientTokenDataApi
                 $httpBody,
                 $headerParams,
                 'string',
-                '/up/v1/payment-credentials/{jti}'
+                '/flex/v2/payment-credentials/{paymentCredentialsReference}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

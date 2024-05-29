@@ -77,6 +77,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthenticationTest ext
     }
 
     /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
+    {
+    }
+
+    /**
      * Test attribute "lowValueExemptionIndicator"
      */
     public function testPropertyLowValueExemptionIndicator()
