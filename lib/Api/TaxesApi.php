@@ -127,6 +127,7 @@ class TaxesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $taxRequest when calling calculateTax");
             throw new \InvalidArgumentException('Missing the required parameter $taxRequest when calling calculateTax');
         }
+        
         // parse inputs
         $resourcePath = "/vas/v2/tax";
         $httpBody = '';
@@ -242,11 +243,13 @@ class TaxesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $voidTaxRequest when calling voidTax");
             throw new \InvalidArgumentException('Missing the required parameter $voidTaxRequest when calling voidTax');
         }
+        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling voidTax");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling voidTax');
         }
+        
         // parse inputs
         $resourcePath = "/vas/v2/tax/{id}";
         $httpBody = '';

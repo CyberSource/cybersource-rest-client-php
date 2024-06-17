@@ -127,6 +127,7 @@ class SubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling activateSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling activateSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions/{id}/activate";
         $httpBody = '';
@@ -245,6 +246,7 @@ class SubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling cancelSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling cancelSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions/{id}/cancel";
         $httpBody = '';
@@ -363,6 +365,7 @@ class SubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createSubscriptionRequest when calling createSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $createSubscriptionRequest when calling createSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions";
         $httpBody = '';
@@ -477,6 +480,10 @@ class SubscriptionsApi
      */
     public function getAllSubscriptionsWithHttpInfo($offset = null, $limit = null, $code = null, $status = null)
     {
+        
+        
+        
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions";
         $httpBody = '';
@@ -603,6 +610,7 @@ class SubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling getSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions/{id}";
         $httpBody = '';
@@ -820,6 +828,7 @@ class SubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling suspendSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling suspendSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions/{id}/suspend";
         $httpBody = '';
@@ -940,11 +949,13 @@ class SubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling updateSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateSubscription');
         }
+        
         // verify the required parameter 'updateSubscription' is set
         if ($updateSubscription === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updateSubscription when calling updateSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $updateSubscription when calling updateSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions/{id}";
         $httpBody = '';

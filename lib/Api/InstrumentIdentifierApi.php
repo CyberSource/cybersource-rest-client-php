@@ -129,8 +129,8 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling deleteInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling deleteInstrumentIdentifier');
         }
-
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}";
         $httpBody = '';
@@ -263,8 +263,8 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifier');
         }
-
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}";
         $httpBody = '';
@@ -405,10 +405,10 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifierPaymentInstrumentsList");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling getInstrumentIdentifierPaymentInstrumentsList');
         }
-
-
-
-
+        
+        
+        
+        
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments";
         $httpBody = '';
@@ -559,14 +559,15 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling patchInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling patchInstrumentIdentifier');
         }
-
+        
         // verify the required parameter 'patchInstrumentIdentifierRequest' is set
         if ($patchInstrumentIdentifierRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $patchInstrumentIdentifierRequest when calling patchInstrumentIdentifier');
         }
-
-
+        
+        
+        
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}";
         $httpBody = '';
@@ -718,7 +719,8 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier");
             throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierRequest when calling postInstrumentIdentifier');
         }
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers";
         $httpBody = '';
@@ -856,13 +858,14 @@ class InstrumentIdentifierApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling postInstrumentIdentifierEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling postInstrumentIdentifierEnrollment');
         }
-
+        
         // verify the required parameter 'postInstrumentIdentifierEnrollmentRequest' is set
         if ($postInstrumentIdentifierEnrollmentRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $postInstrumentIdentifierEnrollmentRequest when calling postInstrumentIdentifierEnrollment');
         }
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment";
         $httpBody = '';

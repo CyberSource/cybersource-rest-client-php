@@ -127,6 +127,7 @@ class PayerAuthenticationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $checkPayerAuthEnrollmentRequest when calling checkPayerAuthEnrollment");
             throw new \InvalidArgumentException('Missing the required parameter $checkPayerAuthEnrollmentRequest when calling checkPayerAuthEnrollment');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/authentications";
         $httpBody = '';
@@ -240,6 +241,7 @@ class PayerAuthenticationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $payerAuthSetupRequest when calling payerAuthSetup");
             throw new \InvalidArgumentException('Missing the required parameter $payerAuthSetupRequest when calling payerAuthSetup');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/authentication-setups";
         $httpBody = '';
@@ -353,6 +355,7 @@ class PayerAuthenticationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $validateRequest when calling validateAuthenticationResults");
             throw new \InvalidArgumentException('Missing the required parameter $validateRequest when calling validateAuthenticationResults');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/authentication-results";
         $httpBody = '';

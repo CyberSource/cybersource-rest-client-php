@@ -131,16 +131,14 @@ class ReportDownloadsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDate when calling downloadReport");
             throw new \InvalidArgumentException('Missing the required parameter $reportDate when calling downloadReport');
         }
+        
         // verify the required parameter 'reportName' is set
         if ($reportName === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling downloadReport");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling downloadReport');
         }
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportDownloadsApi.downloadReport, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportDownloadsApi.downloadReport, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
+        
+        
         // parse inputs
         $resourcePath = "/reporting/v3/report-downloads";
         $httpBody = '';

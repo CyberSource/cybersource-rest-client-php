@@ -127,6 +127,7 @@ class CreditApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createCreditRequest when calling createCredit");
             throw new \InvalidArgumentException('Missing the required parameter $createCreditRequest when calling createCredit');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/credits";
         $httpBody = '';

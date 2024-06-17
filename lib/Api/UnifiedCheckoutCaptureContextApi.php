@@ -127,6 +127,7 @@ class UnifiedCheckoutCaptureContextApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $generateUnifiedCheckoutCaptureContextRequest when calling generateUnifiedCheckoutCaptureContext");
             throw new \InvalidArgumentException('Missing the required parameter $generateUnifiedCheckoutCaptureContextRequest when calling generateUnifiedCheckoutCaptureContext');
         }
+        
         // parse inputs
         $resourcePath = "/up/v1/capture-contexts";
         $httpBody = '';

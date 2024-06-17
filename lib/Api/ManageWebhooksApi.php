@@ -129,6 +129,7 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling deleteWebhookSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling deleteWebhookSubscription');
         }
+        
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/webhooks/{webhookId}";
         $httpBody = '';
@@ -233,6 +234,7 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling getWebhookSubscriptionById");
             throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling getWebhookSubscriptionById');
         }
+        
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/webhooks/{webhookId}";
         $httpBody = '';
@@ -345,16 +347,19 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $organizationId when calling getWebhookSubscriptionsByOrg");
             throw new \InvalidArgumentException('Missing the required parameter $organizationId when calling getWebhookSubscriptionsByOrg');
         }
+        
         // verify the required parameter 'productId' is set
         if ($productId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $productId when calling getWebhookSubscriptionsByOrg");
             throw new \InvalidArgumentException('Missing the required parameter $productId when calling getWebhookSubscriptionsByOrg');
         }
+        
         // verify the required parameter 'eventType' is set
         if ($eventType === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $eventType when calling getWebhookSubscriptionsByOrg");
             throw new \InvalidArgumentException('Missing the required parameter $eventType when calling getWebhookSubscriptionsByOrg');
         }
+        
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/webhooks";
         $httpBody = '';
@@ -476,26 +481,20 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCSenderOrganizationId when calling saveAsymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCSenderOrganizationId when calling saveAsymEgressKey');
         }
-        if (!preg_match("/^[A-Za-z0-9\\-_]+$/", $vCSenderOrganizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"vCSenderOrganizationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.");
-            throw new \InvalidArgumentException('Invalid value for \"vCSenderOrganizationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.');
-        }
-
+        
         // verify the required parameter 'vCPermissions' is set
         if ($vCPermissions === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCPermissions when calling saveAsymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCPermissions when calling saveAsymEgressKey');
         }
+        
         // verify the required parameter 'saveAsymEgressKey' is set
         if ($saveAsymEgressKey === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $saveAsymEgressKey when calling saveAsymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $saveAsymEgressKey when calling saveAsymEgressKey');
         }
-        if (!is_null($vCCorrelationId) && !preg_match("/^[A-Za-z0-9\\.\\-_:]+$/", $vCCorrelationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"vCCorrelationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\.\\-_:]+$/.");
-            throw new \InvalidArgumentException('Invalid value for \"vCCorrelationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\.\\-_:]+$/.');
-        }
-
+        
+        
         // parse inputs
         $resourcePath = "/kms/egress/v2/keys-asym";
         $httpBody = '';
@@ -617,6 +616,8 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling updateWebhookSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling updateWebhookSubscription');
         }
+        
+        
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/webhooks/{webhookId}";
         $httpBody = '';

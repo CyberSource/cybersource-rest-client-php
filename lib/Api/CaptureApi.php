@@ -129,11 +129,13 @@ class CaptureApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $capturePaymentRequest when calling capturePayment");
             throw new \InvalidArgumentException('Missing the required parameter $capturePaymentRequest when calling capturePayment');
         }
+        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling capturePayment");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling capturePayment');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/payments/{id}/captures";
         $httpBody = '';

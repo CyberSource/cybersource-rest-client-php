@@ -129,11 +129,13 @@ class KeyManagementPgpApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling updatePGP");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling updatePGP');
         }
+        
         // verify the required parameter 'updatePGPKeysRequest' is set
         if ($updatePGPKeysRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updatePGPKeysRequest when calling updatePGP");
             throw new \InvalidArgumentException('Missing the required parameter $updatePGPKeysRequest when calling updatePGP');
         }
+        
         // parse inputs
         $resourcePath = "/kms/v2/keys-pgp/{keyId}";
         $httpBody = '';

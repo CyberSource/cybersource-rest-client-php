@@ -129,11 +129,13 @@ class BillingAgreementsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $modifyBillingAgreement when calling billingAgreementsDeRegistration");
             throw new \InvalidArgumentException('Missing the required parameter $modifyBillingAgreement when calling billingAgreementsDeRegistration');
         }
+        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling billingAgreementsDeRegistration");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling billingAgreementsDeRegistration');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/billing-agreements/{id}";
         $httpBody = '';
@@ -257,11 +259,13 @@ class BillingAgreementsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $intimateBillingAgreement when calling billingAgreementsIntimation");
             throw new \InvalidArgumentException('Missing the required parameter $intimateBillingAgreement when calling billingAgreementsIntimation');
         }
+        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling billingAgreementsIntimation");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling billingAgreementsIntimation');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/billing-agreements/{id}/intimations";
         $httpBody = '';
@@ -383,6 +387,7 @@ class BillingAgreementsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createBillingAgreement when calling billingAgreementsRegistration");
             throw new \InvalidArgumentException('Missing the required parameter $createBillingAgreement when calling billingAgreementsRegistration');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/billing-agreements";
         $httpBody = '';

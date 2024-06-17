@@ -129,6 +129,7 @@ class MerchantBoardingApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $registrationId when calling getRegistration");
             throw new \InvalidArgumentException('Missing the required parameter $registrationId when calling getRegistration');
         }
+        
         // parse inputs
         $resourcePath = "/boarding/v1/registrations/{registrationId}";
         $httpBody = '';
@@ -251,6 +252,8 @@ class MerchantBoardingApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postRegistrationBody when calling postRegistration");
             throw new \InvalidArgumentException('Missing the required parameter $postRegistrationBody when calling postRegistration');
         }
+        
+        
         // parse inputs
         $resourcePath = "/boarding/v1/registrations";
         $httpBody = '';

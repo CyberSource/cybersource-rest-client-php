@@ -129,11 +129,13 @@ class DecisionManagerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling actionDecisionManagerCase");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling actionDecisionManagerCase');
         }
+        
         // verify the required parameter 'caseManagementActionsRequest' is set
         if ($caseManagementActionsRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $caseManagementActionsRequest when calling actionDecisionManagerCase");
             throw new \InvalidArgumentException('Missing the required parameter $caseManagementActionsRequest when calling actionDecisionManagerCase');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/decisions/{id}/actions";
         $httpBody = '';
@@ -273,11 +275,13 @@ class DecisionManagerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $type when calling addNegative");
             throw new \InvalidArgumentException('Missing the required parameter $type when calling addNegative');
         }
+        
         // verify the required parameter 'addNegativeListRequest' is set
         if ($addNegativeListRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $addNegativeListRequest when calling addNegative");
             throw new \InvalidArgumentException('Missing the required parameter $addNegativeListRequest when calling addNegative');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/lists/{type}/entries";
         $httpBody = '';
@@ -397,11 +401,13 @@ class DecisionManagerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling commentDecisionManagerCase");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling commentDecisionManagerCase');
         }
+        
         // verify the required parameter 'caseManagementCommentsRequest' is set
         if ($caseManagementCommentsRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $caseManagementCommentsRequest when calling commentDecisionManagerCase");
             throw new \InvalidArgumentException('Missing the required parameter $caseManagementCommentsRequest when calling commentDecisionManagerCase');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/decisions/{id}/comments";
         $httpBody = '';
@@ -539,6 +545,7 @@ class DecisionManagerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createBundledDecisionManagerCaseRequest when calling createBundledDecisionManagerCase");
             throw new \InvalidArgumentException('Missing the required parameter $createBundledDecisionManagerCaseRequest when calling createBundledDecisionManagerCase');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/decisions";
         $httpBody = '';
@@ -654,11 +661,13 @@ class DecisionManagerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling fraudUpdate");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling fraudUpdate');
         }
+        
         // verify the required parameter 'fraudMarkingActionRequest' is set
         if ($fraudMarkingActionRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $fraudMarkingActionRequest when calling fraudUpdate");
             throw new \InvalidArgumentException('Missing the required parameter $fraudMarkingActionRequest when calling fraudUpdate');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/decisions/{id}/marking";
         $httpBody = '';

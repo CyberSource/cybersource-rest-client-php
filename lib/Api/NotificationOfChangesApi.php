@@ -129,11 +129,13 @@ class NotificationOfChangesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getNotificationOfChangeReport");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getNotificationOfChangeReport');
         }
+        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getNotificationOfChangeReport");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getNotificationOfChangeReport');
         }
+        
         // parse inputs
         $resourcePath = "/reporting/v3/notification-of-changes";
         $httpBody = '';

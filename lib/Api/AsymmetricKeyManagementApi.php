@@ -127,6 +127,7 @@ class AsymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createP12KeysRequest when calling createP12Keys");
             throw new \InvalidArgumentException('Missing the required parameter $createP12KeysRequest when calling createP12Keys');
         }
+        
         // parse inputs
         $resourcePath = "/kms/v2/keys-asym";
         $httpBody = '';
@@ -240,6 +241,7 @@ class AsymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $deleteBulkP12KeysRequest when calling deleteBulkP12Keys");
             throw new \InvalidArgumentException('Missing the required parameter $deleteBulkP12KeysRequest when calling deleteBulkP12Keys');
         }
+        
         // parse inputs
         $resourcePath = "/kms/v2/keys-asym/deletes";
         $httpBody = '';
@@ -353,6 +355,7 @@ class AsymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling getP12KeyDetails");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling getP12KeyDetails');
         }
+        
         // parse inputs
         $resourcePath = "/kms/v2/keys-asym/{keyId}";
         $httpBody = '';
@@ -469,11 +472,13 @@ class AsymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling updateAsymKey");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling updateAsymKey');
         }
+        
         // verify the required parameter 'updateAsymKeysRequest' is set
         if ($updateAsymKeysRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updateAsymKeysRequest when calling updateAsymKey");
             throw new \InvalidArgumentException('Missing the required parameter $updateAsymKeysRequest when calling updateAsymKey');
         }
+        
         // parse inputs
         $resourcePath = "/kms/v2/keys-asym/{keyId}";
         $httpBody = '';

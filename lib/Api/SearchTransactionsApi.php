@@ -127,6 +127,7 @@ class SearchTransactionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createSearchRequest when calling createSearch");
             throw new \InvalidArgumentException('Missing the required parameter $createSearchRequest when calling createSearch');
         }
+        
         // parse inputs
         $resourcePath = "/tss/v2/searches";
         $httpBody = '';
@@ -240,6 +241,7 @@ class SearchTransactionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $searchId when calling getSearch");
             throw new \InvalidArgumentException('Missing the required parameter $searchId when calling getSearch');
         }
+        
         // parse inputs
         $resourcePath = "/tss/v2/searches/{searchId}";
         $httpBody = '';

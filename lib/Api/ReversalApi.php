@@ -129,11 +129,13 @@ class ReversalApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling authReversal");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling authReversal');
         }
+        
         // verify the required parameter 'authReversalRequest' is set
         if ($authReversalRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $authReversalRequest when calling authReversal");
             throw new \InvalidArgumentException('Missing the required parameter $authReversalRequest when calling authReversal');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/payments/{id}/reversals";
         $httpBody = '';
@@ -255,6 +257,7 @@ class ReversalApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $mitReversalRequest when calling mitReversal");
             throw new \InvalidArgumentException('Missing the required parameter $mitReversalRequest when calling mitReversal');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/reversals";
         $httpBody = '';

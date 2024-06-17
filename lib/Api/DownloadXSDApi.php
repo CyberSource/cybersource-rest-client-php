@@ -127,6 +127,7 @@ class DownloadXSDApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDefinitionNameVersion when calling getXSDV2");
             throw new \InvalidArgumentException('Missing the required parameter $reportDefinitionNameVersion when calling getXSDV2');
         }
+        
         // parse inputs
         $resourcePath = "/reporting/v3/xsds/{reportDefinitionNameVersion}";
         $httpBody = '';

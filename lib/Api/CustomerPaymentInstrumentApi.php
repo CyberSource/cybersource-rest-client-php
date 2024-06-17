@@ -131,14 +131,14 @@ class CustomerPaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling deleteCustomerPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling deleteCustomerPaymentInstrument');
         }
-
+        
         // verify the required parameter 'paymentInstrumentId' is set
         if ($paymentInstrumentId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling deleteCustomerPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling deleteCustomerPaymentInstrument');
         }
-
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}";
         $httpBody = '';
@@ -285,14 +285,14 @@ class CustomerPaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerPaymentInstrument');
         }
-
+        
         // verify the required parameter 'paymentInstrumentId' is set
         if ($paymentInstrumentId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling getCustomerPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling getCustomerPaymentInstrument');
         }
-
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}";
         $httpBody = '';
@@ -441,10 +441,10 @@ class CustomerPaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerPaymentInstrumentsList");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerPaymentInstrumentsList');
         }
-
-
-
-
+        
+        
+        
+        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/payment-instruments";
         $httpBody = '';
@@ -597,20 +597,21 @@ class CustomerPaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling patchCustomersPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling patchCustomersPaymentInstrument');
         }
-
+        
         // verify the required parameter 'paymentInstrumentId' is set
         if ($paymentInstrumentId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling patchCustomersPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling patchCustomersPaymentInstrument');
         }
-
+        
         // verify the required parameter 'patchCustomerPaymentInstrumentRequest' is set
         if ($patchCustomerPaymentInstrumentRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchCustomerPaymentInstrumentRequest when calling patchCustomersPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $patchCustomerPaymentInstrumentRequest when calling patchCustomersPaymentInstrument');
         }
-
-
+        
+        
+        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}";
         $httpBody = '';
@@ -772,13 +773,14 @@ class CustomerPaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling postCustomerPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling postCustomerPaymentInstrument');
         }
-
+        
         // verify the required parameter 'postCustomerPaymentInstrumentRequest' is set
         if ($postCustomerPaymentInstrumentRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postCustomerPaymentInstrumentRequest when calling postCustomerPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $postCustomerPaymentInstrumentRequest when calling postCustomerPaymentInstrument');
         }
-
+        
+        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/payment-instruments";
         $httpBody = '';

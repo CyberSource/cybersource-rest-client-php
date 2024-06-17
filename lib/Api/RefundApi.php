@@ -129,11 +129,13 @@ class RefundApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $refundCaptureRequest when calling refundCapture");
             throw new \InvalidArgumentException('Missing the required parameter $refundCaptureRequest when calling refundCapture');
         }
+        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling refundCapture");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling refundCapture');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/captures/{id}/refunds";
         $httpBody = '';
@@ -257,11 +259,13 @@ class RefundApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $refundPaymentRequest when calling refundPayment");
             throw new \InvalidArgumentException('Missing the required parameter $refundPaymentRequest when calling refundPayment');
         }
+        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling refundPayment");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling refundPayment');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v2/payments/{id}/refunds";
         $httpBody = '';

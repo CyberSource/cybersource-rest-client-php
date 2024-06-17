@@ -136,16 +136,14 @@ class KeyManagementApi
      */
     public function searchKeysWithHttpInfo($offset = null, $limit = null, $sort = null, $organizationIds = null, $keyIds = null, $keyTypes = null, $expirationStartDate = null, $expirationEndDate = null)
     {
-        if (!is_null($expirationStartDate) && !preg_match("/yyyy-mm-dd/", $expirationStartDate)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"expirationStartDate\" when calling KeyManagementApi.searchKeys, must conform to the pattern /yyyy-mm-dd/.");
-            throw new \InvalidArgumentException('Invalid value for \"expirationStartDate\" when calling KeyManagementApi.searchKeys, must conform to the pattern /yyyy-mm-dd/.');
-        }
-
-        if (!is_null($expirationEndDate) && !preg_match("/yyyy-mm-dd/", $expirationEndDate)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"expirationEndDate\" when calling KeyManagementApi.searchKeys, must conform to the pattern /yyyy-mm-dd/.");
-            throw new \InvalidArgumentException('Invalid value for \"expirationEndDate\" when calling KeyManagementApi.searchKeys, must conform to the pattern /yyyy-mm-dd/.');
-        }
-
+        
+        
+        
+        
+        
+        
+        
+        
         // parse inputs
         $resourcePath = "/kms/v2/keys";
         $httpBody = '';

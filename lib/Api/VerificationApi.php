@@ -127,6 +127,7 @@ class VerificationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $validateExportComplianceRequest when calling validateExportCompliance");
             throw new \InvalidArgumentException('Missing the required parameter $validateExportComplianceRequest when calling validateExportCompliance');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/export-compliance-inquiries";
         $httpBody = '';
@@ -240,6 +241,7 @@ class VerificationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $verifyCustomerAddressRequest when calling verifyCustomerAddress");
             throw new \InvalidArgumentException('Missing the required parameter $verifyCustomerAddressRequest when calling verifyCustomerAddress');
         }
+        
         // parse inputs
         $resourcePath = "/risk/v1/address-verifications";
         $httpBody = '';

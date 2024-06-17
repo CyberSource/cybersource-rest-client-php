@@ -141,17 +141,19 @@ class PurchaseAndRefundDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getPurchaseAndRefundDetails");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getPurchaseAndRefundDetails');
         }
+        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getPurchaseAndRefundDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getPurchaseAndRefundDetails');
         }
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling PurchaseAndRefundDetailsApi.getPurchaseAndRefundDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
-
+        
+        
+        
+        
+        
+        
+        
         // parse inputs
         $resourcePath = "/reporting/v3/purchase-refund-details";
         $httpBody = '';

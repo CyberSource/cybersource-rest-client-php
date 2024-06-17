@@ -129,11 +129,8 @@ class SecureFileShareApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $fileId when calling getFile");
             throw new \InvalidArgumentException('Missing the required parameter $fileId when calling getFile');
         }
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling SecureFileShareApi.getFile, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling SecureFileShareApi.getFile, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
+        
+        
         // parse inputs
         $resourcePath = "/sfs/v1/files/{fileId}";
         $httpBody = '';
@@ -251,21 +248,15 @@ class SecureFileShareApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startDate when calling getFileDetail");
             throw new \InvalidArgumentException('Missing the required parameter $startDate when calling getFileDetail');
         }
+        
         // verify the required parameter 'endDate' is set
         if ($endDate === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endDate when calling getFileDetail");
             throw new \InvalidArgumentException('Missing the required parameter $endDate when calling getFileDetail');
         }
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
-        if (!is_null($name) && !preg_match("/[a-zA-Z0-9-_\\.]+/", $name)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"name\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_\\.]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"name\" when calling SecureFileShareApi.getFileDetail, must conform to the pattern /[a-zA-Z0-9-_\\.]+/.');
-        }
-
+        
+        
+        
         // parse inputs
         $resourcePath = "/sfs/v1/file-details";
         $httpBody = '';

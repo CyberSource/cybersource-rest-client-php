@@ -131,6 +131,8 @@ class ReplayWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling replayPreviousWebhooks");
             throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling replayPreviousWebhooks');
         }
+        
+        
         // parse inputs
         $resourcePath = "/nrtf/v1/webhooks/{webhookId}/replays";
         $httpBody = '';

@@ -127,6 +127,7 @@ class UserManagementSearchApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $searchRequest when calling searchUsers");
             throw new \InvalidArgumentException('Missing the required parameter $searchRequest when calling searchUsers');
         }
+        
         // parse inputs
         $resourcePath = "/ums/v1/users/search";
         $httpBody = '';

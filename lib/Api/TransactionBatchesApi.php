@@ -131,6 +131,9 @@ class TransactionBatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling getTransactionBatchDetails");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getTransactionBatchDetails');
         }
+        
+        
+        
         // parse inputs
         $resourcePath = "/pts/v1/transaction-batch-details/{id}";
         $httpBody = '';
@@ -263,6 +266,7 @@ class TransactionBatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling getTransactionBatchId");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getTransactionBatchId');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v1/transaction-batches/{id}";
         $httpBody = '';
@@ -391,11 +395,13 @@ class TransactionBatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getTransactionBatches");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getTransactionBatches');
         }
+        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getTransactionBatches");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getTransactionBatches');
         }
+        
         // parse inputs
         $resourcePath = "/pts/v1/transaction-batches";
         $httpBody = '';
