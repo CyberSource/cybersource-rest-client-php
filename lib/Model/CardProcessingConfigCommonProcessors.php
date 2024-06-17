@@ -1402,9 +1402,6 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
      */
     public function setMerchantTier($merchantTier)
     {
-        if (!is_null($merchantTier) && (!preg_match("/^[0-9]+$/", $merchantTier))) {
-            throw new \InvalidArgumentException("invalid value for $merchantTier when calling CardProcessingConfigCommonProcessors., must conform to the pattern /^[0-9]+$/.");
-        }
         $this->container['merchantTier'] = $merchantTier;
 
         return $this;

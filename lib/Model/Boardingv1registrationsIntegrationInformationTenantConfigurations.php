@@ -194,9 +194,6 @@ class Boardingv1registrationsIntegrationInformationTenantConfigurations implemen
      */
     public function setSolutionId($solutionId)
     {
-        if ((!preg_match("/^[0-9a-zA-Z_]+$/", $solutionId))) {
-            throw new \InvalidArgumentException("invalid value for $solutionId when calling Boardingv1registrationsIntegrationInformationTenantConfigurations., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['solutionId'] = $solutionId;
 
         return $this;

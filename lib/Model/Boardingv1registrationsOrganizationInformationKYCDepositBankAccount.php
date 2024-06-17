@@ -268,9 +268,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
      */
     public function setAccountHolderName($accountHolderName)
     {
-        if ((!preg_match("/^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $accountHolderName))) {
-            throw new \InvalidArgumentException("invalid value for $accountHolderName when calling Boardingv1registrationsOrganizationInformationKYCDepositBankAccount., must conform to the pattern /^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.");
-        }
         $this->container['accountHolderName'] = $accountHolderName;
 
         return $this;
@@ -322,9 +319,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
      */
     public function setAccountRoutingNumber($accountRoutingNumber)
     {
-        if ((!preg_match("/\\d{9}/", $accountRoutingNumber))) {
-            throw new \InvalidArgumentException("invalid value for $accountRoutingNumber when calling Boardingv1registrationsOrganizationInformationKYCDepositBankAccount., must conform to the pattern /\\d{9}/.");
-        }
         $this->container['accountRoutingNumber'] = $accountRoutingNumber;
 
         return $this;
@@ -346,9 +340,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
      */
     public function setAccountNumber($accountNumber)
     {
-        if ((!preg_match("/^\\d{5,17}$/", $accountNumber))) {
-            throw new \InvalidArgumentException("invalid value for $accountNumber when calling Boardingv1registrationsOrganizationInformationKYCDepositBankAccount., must conform to the pattern /^\\d{5,17}$/.");
-        }
         $this->container['accountNumber'] = $accountNumber;
 
         return $this;

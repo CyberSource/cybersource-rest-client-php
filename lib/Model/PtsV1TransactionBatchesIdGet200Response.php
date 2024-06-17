@@ -224,9 +224,6 @@ class PtsV1TransactionBatchesIdGet200Response implements ArrayAccess
      */
     public function setId($id)
     {
-        if (!is_null($id) && (!preg_match("/^[a-zA-Z0-9_+-]*$/", $id))) {
-            throw new \InvalidArgumentException("invalid value for $id when calling PtsV1TransactionBatchesIdGet200Response., must conform to the pattern /^[a-zA-Z0-9_+-]*$/.");
-        }
         $this->container['id'] = $id;
 
         return $this;

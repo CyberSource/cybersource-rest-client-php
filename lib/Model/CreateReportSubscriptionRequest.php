@@ -324,9 +324,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setOrganizationId($organizationId)
     {
-        if (!is_null($organizationId) && (!preg_match("/[a-zA-Z0-9-_]+/", $organizationId))) {
-            throw new \InvalidArgumentException("invalid value for $organizationId when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-_]+/.");
-        }
         $this->container['organizationId'] = $organizationId;
 
         return $this;
@@ -348,9 +345,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setReportDefinitionName($reportDefinitionName)
     {
-        if ((!preg_match("/[a-zA-Z0-9-]+/", $reportDefinitionName))) {
-            throw new \InvalidArgumentException("invalid value for $reportDefinitionName when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-]+/.");
-        }
         $this->container['reportDefinitionName'] = $reportDefinitionName;
 
         return $this;
@@ -435,9 +429,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setReportInterval($reportInterval)
     {
-        if (!is_null($reportInterval) && (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $reportInterval))) {
-            throw new \InvalidArgumentException("invalid value for $reportInterval when calling CreateReportSubscriptionRequest., must conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.");
-        }
         $this->container['reportInterval'] = $reportInterval;
 
         return $this;
@@ -459,9 +450,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setReportName($reportName)
     {
-        if ((!preg_match("/[a-zA-Z0-9-_ ]+/", $reportName))) {
-            throw new \InvalidArgumentException("invalid value for $reportName when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
-        }
         $this->container['reportName'] = $reportName;
 
         return $this;
@@ -588,9 +576,6 @@ class CreateReportSubscriptionRequest implements ArrayAccess
      */
     public function setGroupName($groupName)
     {
-        if (!is_null($groupName) && (!preg_match("/[a-zA-Z0-9-_ ]+/", $groupName))) {
-            throw new \InvalidArgumentException("invalid value for $groupName when calling CreateReportSubscriptionRequest., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
-        }
         $this->container['groupName'] = $groupName;
 
         return $this;

@@ -188,9 +188,6 @@ class InlineResponse2011ProductInformationSetups implements ArrayAccess
      */
     public function setOrganizationId($organizationId)
     {
-        if (!is_null($organizationId) && (!preg_match("/^[0-9a-zA-Z]+$/", $organizationId))) {
-            throw new \InvalidArgumentException("invalid value for $organizationId when calling InlineResponse2011ProductInformationSetups., must conform to the pattern /^[0-9a-zA-Z]+$/.");
-        }
         $this->container['organizationId'] = $organizationId;
 
         return $this;

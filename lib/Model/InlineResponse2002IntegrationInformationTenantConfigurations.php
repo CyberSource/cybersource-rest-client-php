@@ -241,9 +241,6 @@ class InlineResponse2002IntegrationInformationTenantConfigurations implements Ar
      */
     public function setSolutionId($solutionId)
     {
-        if (!is_null($solutionId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $solutionId))) {
-            throw new \InvalidArgumentException("invalid value for $solutionId when calling InlineResponse2002IntegrationInformationTenantConfigurations., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['solutionId'] = $solutionId;
 
         return $this;
@@ -265,9 +262,6 @@ class InlineResponse2002IntegrationInformationTenantConfigurations implements Ar
      */
     public function setTenantConfigurationId($tenantConfigurationId)
     {
-        if (!is_null($tenantConfigurationId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $tenantConfigurationId))) {
-            throw new \InvalidArgumentException("invalid value for $tenantConfigurationId when calling InlineResponse2002IntegrationInformationTenantConfigurations., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['tenantConfigurationId'] = $tenantConfigurationId;
 
         return $this;

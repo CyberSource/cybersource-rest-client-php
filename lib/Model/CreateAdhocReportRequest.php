@@ -263,9 +263,6 @@ class CreateAdhocReportRequest implements ArrayAccess
      */
     public function setOrganizationId($organizationId)
     {
-        if (!is_null($organizationId) && (!preg_match("/[a-zA-Z0-9-_]+/", $organizationId))) {
-            throw new \InvalidArgumentException("invalid value for $organizationId when calling CreateAdhocReportRequest., must conform to the pattern /[a-zA-Z0-9-_]+/.");
-        }
         $this->container['organizationId'] = $organizationId;
 
         return $this;
@@ -287,9 +284,6 @@ class CreateAdhocReportRequest implements ArrayAccess
      */
     public function setReportDefinitionName($reportDefinitionName)
     {
-        if (!is_null($reportDefinitionName) && (!preg_match("/[a-zA-Z0-9-]+/", $reportDefinitionName))) {
-            throw new \InvalidArgumentException("invalid value for $reportDefinitionName when calling CreateAdhocReportRequest., must conform to the pattern /[a-zA-Z0-9-]+/.");
-        }
         $this->container['reportDefinitionName'] = $reportDefinitionName;
 
         return $this;
@@ -353,9 +347,6 @@ class CreateAdhocReportRequest implements ArrayAccess
      */
     public function setReportName($reportName)
     {
-        if (!is_null($reportName) && (!preg_match("/[a-zA-Z0-9-_ ]+/", $reportName))) {
-            throw new \InvalidArgumentException("invalid value for $reportName when calling CreateAdhocReportRequest., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
-        }
         $this->container['reportName'] = $reportName;
 
         return $this;
@@ -482,9 +473,6 @@ class CreateAdhocReportRequest implements ArrayAccess
      */
     public function setGroupName($groupName)
     {
-        if (!is_null($groupName) && (!preg_match("/[0-9]*/", $groupName))) {
-            throw new \InvalidArgumentException("invalid value for $groupName when calling CreateAdhocReportRequest., must conform to the pattern /[0-9]*/.");
-        }
         $this->container['groupName'] = $groupName;
 
         return $this;

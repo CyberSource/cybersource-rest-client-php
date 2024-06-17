@@ -262,9 +262,6 @@ class PredefinedSubscriptionRequestBean implements ArrayAccess
      */
     public function setReportDefinitionName($reportDefinitionName)
     {
-        if ((!preg_match("/[a-zA-Z]+/", $reportDefinitionName))) {
-            throw new \InvalidArgumentException("invalid value for $reportDefinitionName when calling PredefinedSubscriptionRequestBean., must conform to the pattern /[a-zA-Z]+/.");
-        }
         $this->container['reportDefinitionName'] = $reportDefinitionName;
 
         return $this;
@@ -307,9 +304,6 @@ class PredefinedSubscriptionRequestBean implements ArrayAccess
      */
     public function setReportName($reportName)
     {
-        if (!is_null($reportName) && (!preg_match("/[a-zA-Z0-9-_ ]+/", $reportName))) {
-            throw new \InvalidArgumentException("invalid value for $reportName when calling PredefinedSubscriptionRequestBean., must conform to the pattern /[a-zA-Z0-9-_ ]+/.");
-        }
         $this->container['reportName'] = $reportName;
 
         return $this;
@@ -373,9 +367,6 @@ class PredefinedSubscriptionRequestBean implements ArrayAccess
      */
     public function setReportInterval($reportInterval)
     {
-        if (!is_null($reportInterval) && (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $reportInterval))) {
-            throw new \InvalidArgumentException("invalid value for $reportInterval when calling PredefinedSubscriptionRequestBean., must conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.");
-        }
         $this->container['reportInterval'] = $reportInterval;
 
         return $this;

@@ -299,9 +299,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
      */
     public function setOrganizationId($organizationId)
     {
-        if (!is_null($organizationId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $organizationId))) {
-            throw new \InvalidArgumentException("invalid value for $organizationId when calling Boardingv1registrationsOrganizationInformation., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['organizationId'] = $organizationId;
 
         return $this;
@@ -323,9 +320,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
      */
     public function setParentOrganizationId($parentOrganizationId)
     {
-        if (!is_null($parentOrganizationId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $parentOrganizationId))) {
-            throw new \InvalidArgumentException("invalid value for $parentOrganizationId when calling Boardingv1registrationsOrganizationInformation., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['parentOrganizationId'] = $parentOrganizationId;
 
         return $this;

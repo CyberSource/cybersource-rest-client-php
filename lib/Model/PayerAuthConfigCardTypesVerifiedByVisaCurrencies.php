@@ -222,9 +222,6 @@ class PayerAuthConfigCardTypesVerifiedByVisaCurrencies implements ArrayAccess
      */
     public function setAcquirerId($acquirerId)
     {
-        if (!is_null($acquirerId) && (!preg_match("/^[a-zA-Z0-9]{6,20}$/", $acquirerId))) {
-            throw new \InvalidArgumentException("invalid value for $acquirerId when calling PayerAuthConfigCardTypesVerifiedByVisaCurrencies., must conform to the pattern /^[a-zA-Z0-9]{6,20}$/.");
-        }
         $this->container['acquirerId'] = $acquirerId;
 
         return $this;
@@ -246,9 +243,6 @@ class PayerAuthConfigCardTypesVerifiedByVisaCurrencies implements ArrayAccess
      */
     public function setProcessorMerchantId($processorMerchantId)
     {
-        if (!is_null($processorMerchantId) && (!preg_match("/^[a-zA-Z0-9]{6,35}$/", $processorMerchantId))) {
-            throw new \InvalidArgumentException("invalid value for $processorMerchantId when calling PayerAuthConfigCardTypesVerifiedByVisaCurrencies., must conform to the pattern /^[a-zA-Z0-9]{6,35}$/.");
-        }
         $this->container['processorMerchantId'] = $processorMerchantId;
 
         return $this;

@@ -436,13 +436,13 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        // if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
-        //     $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        // }
+        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
+            $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
+        }
 
-        // if (!is_null($this->container['doingBusinessAs']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
-        //     $invalid_properties[] = "invalid value for 'doingBusinessAs', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        // }
+        if (!is_null($this->container['doingBusinessAs']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
+            $invalid_properties[] = "invalid value for 'doingBusinessAs', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
+        }
 
         if (!is_null($this->container['description']) && !preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
             $invalid_properties[] = "invalid value for 'description', must be conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.";
@@ -495,12 +495,12 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             return false;
         }
-        // if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
-        //     return false;
-        // }
-        // if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
-        //     return false;
-        // }
+        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
+            return false;
+        }
+        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
+            return false;
+        }
         if (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
             return false;
         }
@@ -544,9 +544,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setName($name)
     {
-        // if ((!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $name))) {
-        //     throw new \InvalidArgumentException("invalid value for $name when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.");
-        // }
         $this->container['name'] = $name;
 
         return $this;
@@ -568,9 +565,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setDoingBusinessAs($doingBusinessAs)
     {
-        // if (!is_null($doingBusinessAs) && (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $doingBusinessAs))) {
-        //     throw new \InvalidArgumentException("invalid value for $doingBusinessAs when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.");
-        // }
         $this->container['doingBusinessAs'] = $doingBusinessAs;
 
         return $this;
@@ -592,9 +586,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setDescription($description)
     {
-        if (!is_null($description) && (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $description))) {
-            throw new \InvalidArgumentException("invalid value for $description when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.");
-        }
         $this->container['description'] = $description;
 
         return $this;
@@ -688,9 +679,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setWebsiteUrl($websiteUrl)
     {
-        if (!is_null($websiteUrl) && (!preg_match("/\\b((?:https?:\/\/|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}\/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?Â«Â»â€œâ€â€˜â€™]))/", $websiteUrl))) {
-            throw new \InvalidArgumentException("invalid value for $websiteUrl when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /\\b((?:https?:\/\/|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}\/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?Â«Â»â€œâ€â€˜â€™]))/.");
-        }
         $this->container['websiteUrl'] = $websiteUrl;
 
         return $this;
@@ -742,9 +730,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setTaxId($taxId)
     {
-        if (!is_null($taxId) && (!preg_match("/\\d{9}/", $taxId))) {
-            throw new \InvalidArgumentException("invalid value for $taxId when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /\\d{9}/.");
-        }
         $this->container['taxId'] = $taxId;
 
         return $this;
@@ -766,9 +751,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if (!is_null($phoneNumber) && (!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $phoneNumber))) {
-            throw new \InvalidArgumentException("invalid value for $phoneNumber when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^[0-9a-zA-Z\\\\+\\\\-]+$/.");
-        }
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -853,9 +835,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setMerchantCategoryCode($merchantCategoryCode)
     {
-        if (!is_null($merchantCategoryCode) && (!preg_match("/^\\d{3,4}$/", $merchantCategoryCode))) {
-            throw new \InvalidArgumentException("invalid value for $merchantCategoryCode when calling Boardingv1registrationsOrganizationInformationBusinessInformation., must conform to the pattern /^\\d{3,4}$/.");
-        }
         $this->container['merchantCategoryCode'] = $merchantCategoryCode;
 
         return $this;

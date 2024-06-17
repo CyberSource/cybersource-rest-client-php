@@ -376,9 +376,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setFirstName($firstName)
     {
-        if ((!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $firstName))) {
-            throw new \InvalidArgumentException("invalid value for $firstName when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.");
-        }
         $this->container['firstName'] = $firstName;
 
         return $this;
@@ -400,9 +397,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setMiddleName($middleName)
     {
-        if (!is_null($middleName) && (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $middleName))) {
-            throw new \InvalidArgumentException("invalid value for $middleName when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.");
-        }
         $this->container['middleName'] = $middleName;
 
         return $this;
@@ -424,9 +418,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setLastName($lastName)
     {
-        if ((!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $lastName))) {
-            throw new \InvalidArgumentException("invalid value for $lastName when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.");
-        }
         $this->container['lastName'] = $lastName;
 
         return $this;
@@ -490,9 +481,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setSsn($ssn)
     {
-        if (!is_null($ssn) && (!preg_match("/^\\d{3}-\\d{2}-\\d{4}$|^\\d{9,9}$/", $ssn))) {
-            throw new \InvalidArgumentException("invalid value for $ssn when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /^\\d{3}-\\d{2}-\\d{4}$|^\\d{9,9}$/.");
-        }
         $this->container['ssn'] = $ssn;
 
         return $this;
@@ -514,9 +502,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setPassportNumber($passportNumber)
     {
-        if (!is_null($passportNumber) && (!preg_match("/^(?!^0+$)[a-zA-Z0-9]{3,20}$/", $passportNumber))) {
-            throw new \InvalidArgumentException("invalid value for $passportNumber when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /^(?!^0+$)[a-zA-Z0-9]{3,20}$/.");
-        }
         $this->container['passportNumber'] = $passportNumber;
 
         return $this;
@@ -538,9 +523,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setPassportCountry($passportCountry)
     {
-        if (!is_null($passportCountry) && (!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $passportCountry))) {
-            throw new \InvalidArgumentException("invalid value for $passportCountry when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/.");
-        }
         $this->container['passportCountry'] = $passportCountry;
 
         return $this;
@@ -562,9 +544,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setJobTitle($jobTitle)
     {
-        if ((!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $jobTitle))) {
-            throw new \InvalidArgumentException("invalid value for $jobTitle when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/.");
-        }
         $this->container['jobTitle'] = $jobTitle;
 
         return $this;
@@ -628,9 +607,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setPhoneNumber($phoneNumber)
     {
-        if ((!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $phoneNumber))) {
-            throw new \InvalidArgumentException("invalid value for $phoneNumber when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /^[0-9a-zA-Z\\\\+\\\\-]+$/.");
-        }
         $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
@@ -652,9 +628,6 @@ class Boardingv1registrationsOrganizationInformationOwners implements ArrayAcces
      */
     public function setEmail($email)
     {
-        if ((!preg_match("/^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,50}|[0-9]{1,3})(\\]?)$/", $email))) {
-            throw new \InvalidArgumentException("invalid value for $email when calling Boardingv1registrationsOrganizationInformationOwners., must conform to the pattern /^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,50}|[0-9]{1,3})(\\]?)$/.");
-        }
         $this->container['email'] = $email;
 
         return $this;

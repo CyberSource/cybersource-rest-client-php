@@ -213,9 +213,6 @@ class TssV2PostEmvTags200ResponseEmvTagBreakdownList implements ArrayAccess
      */
     public function setTag($tag)
     {
-        if (!is_null($tag) && (!preg_match("/^[0-9A-F]*$/", $tag))) {
-            throw new \InvalidArgumentException("invalid value for $tag when calling TssV2PostEmvTags200ResponseEmvTagBreakdownList., must conform to the pattern /^[0-9A-F]*$/.");
-        }
         $this->container['tag'] = $tag;
 
         return $this;
@@ -279,9 +276,6 @@ class TssV2PostEmvTags200ResponseEmvTagBreakdownList implements ArrayAccess
      */
     public function setValue($value)
     {
-        if (!is_null($value) && (!preg_match("/^[0-9A-F|X]*$/", $value))) {
-            throw new \InvalidArgumentException("invalid value for $value when calling TssV2PostEmvTags200ResponseEmvTagBreakdownList., must conform to the pattern /^[0-9A-F|X]*$/.");
-        }
         $this->container['value'] = $value;
 
         return $this;
