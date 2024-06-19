@@ -127,7 +127,6 @@ class PayoutsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $octCreatePaymentRequest when calling octCreatePayment");
             throw new \InvalidArgumentException('Missing the required parameter $octCreatePaymentRequest when calling octCreatePayment');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payouts";
         $httpBody = '';

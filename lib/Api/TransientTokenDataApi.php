@@ -127,7 +127,6 @@ class TransientTokenDataApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentCredentialsReference when calling getPaymentCredentialsForTransientToken");
             throw new \InvalidArgumentException('Missing the required parameter $paymentCredentialsReference when calling getPaymentCredentialsForTransientToken');
         }
-        
         // parse inputs
         $resourcePath = "/flex/v2/payment-credentials/{paymentCredentialsReference}";
         $httpBody = '';
@@ -234,7 +233,6 @@ class TransientTokenDataApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $transientToken when calling getTransactionForTransientToken");
             throw new \InvalidArgumentException('Missing the required parameter $transientToken when calling getTransactionForTransientToken');
         }
-        
         // parse inputs
         $resourcePath = "/up/v1/payment-details/{transientToken}";
         $httpBody = '';

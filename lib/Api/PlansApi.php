@@ -127,7 +127,6 @@ class PlansApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling activatePlan");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling activatePlan');
         }
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans/{id}/activate";
         $httpBody = '';
@@ -246,7 +245,6 @@ class PlansApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createPlanRequest when calling createPlan");
             throw new \InvalidArgumentException('Missing the required parameter $createPlanRequest when calling createPlan');
         }
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans";
         $httpBody = '';
@@ -360,7 +358,6 @@ class PlansApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling deactivatePlan");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling deactivatePlan');
         }
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans/{id}/deactivate";
         $httpBody = '';
@@ -479,7 +476,6 @@ class PlansApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling deletePlan");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling deletePlan');
         }
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans/{id}";
         $httpBody = '';
@@ -598,7 +594,6 @@ class PlansApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling getPlan");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getPlan');
         }
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans/{id}";
         $httpBody = '';
@@ -819,11 +814,6 @@ class PlansApi
      */
     public function getPlansWithHttpInfo($offset = null, $limit = null, $code = null, $status = null, $name = null)
     {
-        
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans";
         $httpBody = '';
@@ -957,13 +947,11 @@ class PlansApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling updatePlan");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updatePlan');
         }
-        
         // verify the required parameter 'updatePlanRequest' is set
         if ($updatePlanRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updatePlanRequest when calling updatePlan");
             throw new \InvalidArgumentException('Missing the required parameter $updatePlanRequest when calling updatePlan');
         }
-        
         // parse inputs
         $resourcePath = "/rbs/v1/plans/{id}";
         $httpBody = '';

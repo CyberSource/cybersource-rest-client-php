@@ -127,7 +127,6 @@ class MicroformIntegrationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $generateCaptureContextRequest when calling generateCaptureContext");
             throw new \InvalidArgumentException('Missing the required parameter $generateCaptureContextRequest when calling generateCaptureContext');
         }
-        
         // parse inputs
         $resourcePath = "/microform/v2/sessions";
         $httpBody = '';

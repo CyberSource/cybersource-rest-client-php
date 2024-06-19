@@ -129,13 +129,11 @@ class KeyManagementPasswordApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling updatePassword");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling updatePassword');
         }
-        
         // verify the required parameter 'updatePasswordKeysRequest' is set
         if ($updatePasswordKeysRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updatePasswordKeysRequest when calling updatePassword");
             throw new \InvalidArgumentException('Missing the required parameter $updatePasswordKeysRequest when calling updatePassword');
         }
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys-password/{keyId}";
         $httpBody = '';

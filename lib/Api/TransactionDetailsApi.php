@@ -127,7 +127,6 @@ class TransactionDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling getTransaction");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getTransaction');
         }
-        
         // parse inputs
         $resourcePath = "/tss/v2/transactions/{id}";
         $httpBody = '';

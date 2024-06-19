@@ -131,14 +131,11 @@ class RetrievalDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getRetrievalDetails");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getRetrievalDetails');
         }
-        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getRetrievalDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getRetrievalDetails');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/retrieval-details";
         $httpBody = '';

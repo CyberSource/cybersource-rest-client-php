@@ -124,7 +124,6 @@ class CreateNewWebhooksApi
      */
     public function createWebhookSubscriptionWithHttpInfo($createWebhookRequest = null)
     {
-        
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/webhooks";
         $httpBody = '';
@@ -232,7 +231,6 @@ class CreateNewWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $organizationId when calling findProductsToSubscribe");
             throw new \InvalidArgumentException('Missing the required parameter $organizationId when calling findProductsToSubscribe');
         }
-        
         // parse inputs
         $resourcePath = "/notification-subscriptions/v1/products/{organizationId}";
         $httpBody = '';
@@ -347,15 +345,11 @@ class CreateNewWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCSenderOrganizationId when calling saveSymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCSenderOrganizationId when calling saveSymEgressKey');
         }
-        
         // verify the required parameter 'vCPermissions' is set
         if ($vCPermissions === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCPermissions when calling saveSymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCPermissions when calling saveSymEgressKey');
         }
-        
-        
-        
         // parse inputs
         $resourcePath = "/kms/egress/v2/keys-sym";
         $httpBody = '';

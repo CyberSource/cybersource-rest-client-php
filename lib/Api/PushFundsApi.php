@@ -139,43 +139,36 @@ class PushFundsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $pushFundsRequest when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $pushFundsRequest when calling createPushFundsTransfer');
         }
-        
         // verify the required parameter 'contentType' is set
         if ($contentType === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $contentType when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $contentType when calling createPushFundsTransfer');
         }
-        
         // verify the required parameter 'xRequestid' is set
         if ($xRequestid === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $xRequestid when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $xRequestid when calling createPushFundsTransfer');
         }
-        
         // verify the required parameter 'vCMerchantId' is set
         if ($vCMerchantId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCMerchantId when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $vCMerchantId when calling createPushFundsTransfer');
         }
-        
         // verify the required parameter 'vCPermissions' is set
         if ($vCPermissions === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCPermissions when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $vCPermissions when calling createPushFundsTransfer');
         }
-        
         // verify the required parameter 'vCCorrelationId' is set
         if ($vCCorrelationId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCCorrelationId when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $vCCorrelationId when calling createPushFundsTransfer');
         }
-        
         // verify the required parameter 'vCOrganizationId' is set
         if ($vCOrganizationId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCOrganizationId when calling createPushFundsTransfer");
             throw new \InvalidArgumentException('Missing the required parameter $vCOrganizationId when calling createPushFundsTransfer');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v1/push-funds-transfer";
         $httpBody = '';

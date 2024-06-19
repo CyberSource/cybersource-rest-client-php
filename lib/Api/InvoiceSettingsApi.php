@@ -226,7 +226,6 @@ class InvoiceSettingsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $invoiceSettingsRequest when calling updateInvoiceSettings");
             throw new \InvalidArgumentException('Missing the required parameter $invoiceSettingsRequest when calling updateInvoiceSettings');
         }
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoiceSettings";
         $httpBody = '';

@@ -131,14 +131,11 @@ class ChargebackDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getChargebackDetails");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getChargebackDetails');
         }
-        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getChargebackDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getChargebackDetails');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/chargeback-details";
         $httpBody = '';

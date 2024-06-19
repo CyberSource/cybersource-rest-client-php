@@ -127,7 +127,6 @@ class DownloadDTDApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDefinitionNameVersion when calling getDTDV2");
             throw new \InvalidArgumentException('Missing the required parameter $reportDefinitionNameVersion when calling getDTDV2');
         }
-        
         // parse inputs
         $resourcePath = "/reporting/v3/dtds/{reportDefinitionNameVersion}";
         $httpBody = '';

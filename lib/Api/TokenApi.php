@@ -131,14 +131,11 @@ class TokenApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $tokenId when calling postTokenPaymentCredentials");
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling postTokenPaymentCredentials');
         }
-        
         // verify the required parameter 'postPaymentCredentialsRequest' is set
         if ($postPaymentCredentialsRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postPaymentCredentialsRequest when calling postTokenPaymentCredentials");
             throw new \InvalidArgumentException('Missing the required parameter $postPaymentCredentialsRequest when calling postTokenPaymentCredentials');
         }
-        
-        
         // parse inputs
         $resourcePath = "/tms/v2/tokens/{tokenId}/payment-credentials";
         $httpBody = '';

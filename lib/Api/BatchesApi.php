@@ -127,7 +127,6 @@ class BatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $batchId when calling getBatchReport");
             throw new \InvalidArgumentException('Missing the required parameter $batchId when calling getBatchReport');
         }
-        
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches/{batchId}/report";
         $httpBody = '';
@@ -238,7 +237,6 @@ class BatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $batchId when calling getBatchStatus");
             throw new \InvalidArgumentException('Missing the required parameter $batchId when calling getBatchStatus');
         }
-        
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches/{batchId}/status";
         $httpBody = '';
@@ -350,10 +348,6 @@ class BatchesApi
      */
     public function getBatchesListWithHttpInfo($offset = '0', $limit = '20', $fromDate = null, $toDate = null)
     {
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches";
         $httpBody = '';
@@ -480,7 +474,6 @@ class BatchesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $body when calling postBatch");
             throw new \InvalidArgumentException('Missing the required parameter $body when calling postBatch');
         }
-        
         // parse inputs
         $resourcePath = "/accountupdater/v1/batches";
         $httpBody = '';
