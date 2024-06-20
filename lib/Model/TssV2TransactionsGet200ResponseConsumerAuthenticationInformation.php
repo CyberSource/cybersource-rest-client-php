@@ -194,7 +194,7 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
 
     /**
      * Sets eciRaw
-     * @param string $eciRaw Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $eciRaw Raw electronic commerce indicator (ECI).
      * @return $this
      */
     public function setEciRaw($eciRaw)
@@ -236,7 +236,7 @@ class TssV2TransactionsGet200ResponseConsumerAuthenticationInformation implement
 
     /**
      * Sets xid
-     * @param string $xid Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $xid Transaction identifier.
      * @return $this
      */
     public function setXid($xid)

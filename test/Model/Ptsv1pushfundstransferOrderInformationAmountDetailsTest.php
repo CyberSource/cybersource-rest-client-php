@@ -89,4 +89,18 @@ class Ptsv1pushfundstransferOrderInformationAmountDetailsTest extends \PHPUnit_F
     public function testPropertyCurrency()
     {
     }
+
+    /**
+     * Test attribute "sourceCurrency"
+     */
+    public function testPropertySourceCurrency()
+    {
+    }
+
+    /**
+     * Test attribute "destinationCurrency"
+     */
+    public function testPropertyDestinationCurrency()
+    {
+    }
 }

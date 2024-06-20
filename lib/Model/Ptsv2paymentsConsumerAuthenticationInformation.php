@@ -569,7 +569,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets eciRaw
-     * @param string $eciRaw Raw electronic commerce indicator (ECI).  For details, see `eci_raw` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $eciRaw Raw electronic commerce indicator (ECI).
      * @return $this
      */
     public function setEciRaw($eciRaw)
@@ -590,7 +590,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets paresStatus
-     * @param string $paresStatus Payer authentication response status.  For details, see `pares_status` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $paresStatus Payer authentication response status.
      * @return $this
      */
     public function setParesStatus($paresStatus)
@@ -611,7 +611,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets veresEnrolled
-     * @param string $veresEnrolled Verification response enrollment status.  For details, see `veres_enrolled` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $veresEnrolled Verification response enrollment status.
      * @return $this
      */
     public function setVeresEnrolled($veresEnrolled)
@@ -632,7 +632,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets xid
-     * @param string $xid Transaction identifier.  For details, see `xid` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $xid Transaction identifier.
      * @return $this
      */
     public function setXid($xid)
@@ -653,7 +653,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets ucafCollectionIndicator
-     * @param string $ucafCollectionIndicator Universal cardholder authentication field (UCAF) collection indicator.  For details, see `ucaf_collection_indicator` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator
+     * @param string $ucafCollectionIndicator Universal cardholder authentication field (UCAF) collection indicator.  #### CyberSource through VisaNet The value for this field corresponds to the following data in the TC 33 capture file5: - Record: CP01 TCR7 - Position: 5 - Field: Mastercard Electronic Commerce Indicators—UCAF Collection Indicator
      * @return $this
      */
     public function setUcafCollectionIndicator($ucafCollectionIndicator)
@@ -674,7 +674,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets ucafAuthenticationData
-     * @param string $ucafAuthenticationData Universal cardholder authentication field (UCAF) data.  For details, see `ucaf_authentication_data` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $ucafAuthenticationData Universal cardholder authentication field (UCAF) data.
      * @return $this
      */
     public function setUcafAuthenticationData($ucafAuthenticationData)
@@ -968,7 +968,7 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
 
     /**
      * Sets challengeCode
-     * @param string $challengeCode Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`.  For details, see `pa_challenge_code` field description in [CyberSource Payer Authentication Using the SCMP API.] (https://apps.cybersource.com/library/documentation/dev_guides/Payer_Authentication_SCMP_API/html)
+     * @param string $challengeCode Possible values: - `01`: No preference - `02`: No challenge request - `03`: Challenge requested (3D Secure requestor preference) - `04`: Challenge requested (mandate) - `05`: No challenge requested (transactional risk analysis is already performed) - `06`: No challenge requested (Data share only) - `07`: No challenge requested (strong consumer authentication is already performed) - `08`: No challenge requested (utilize whitelist exemption if no challenge required) - `09`: Challenge requested (whitelist prompt requested if challenge required) **Note** This field will default to `01` on merchant configuration and can be overridden by the merchant. EMV 3D Secure version 2.1.0 supports values `01-04`. Version 2.2.0 supports values `01-09`.
      * @return $this
      */
     public function setChallengeCode($challengeCode)

@@ -96,4 +96,11 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentificationTest extends 
     public function testPropertyType()
     {
     }
+
+    /**
+     * Test attribute "issuingCountry"
+     */
+    public function testPropertyIssuingCountry()
+    {
+    }
 }

@@ -84,51 +84,9 @@ class Ptsv1pushfundstransferProcessingInformationTest extends \PHPUnit_Framework
     }
 
     /**
-     * Test attribute "commerceIndicator"
-     */
-    public function testPropertyCommerceIndicator()
-    {
-    }
-
-    /**
-     * Test attribute "networkRoutingOrder"
-     */
-    public function testPropertyNetworkRoutingOrder()
-    {
-    }
-
-    /**
      * Test attribute "payoutsOptions"
      */
     public function testPropertyPayoutsOptions()
-    {
-    }
-
-    /**
-     * Test attribute "purposeOfPayment"
-     */
-    public function testPropertyPurposeOfPayment()
-    {
-    }
-
-    /**
-     * Test attribute "reconciliationId"
-     */
-    public function testPropertyReconciliationId()
-    {
-    }
-
-    /**
-     * Test attribute "recurringOptions"
-     */
-    public function testPropertyRecurringOptions()
-    {
-    }
-
-    /**
-     * Test attribute "transactionReason"
-     */
-    public function testPropertyTransactionReason()
     {
     }
 }

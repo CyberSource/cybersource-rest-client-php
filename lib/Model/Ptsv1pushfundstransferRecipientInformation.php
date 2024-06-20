@@ -62,9 +62,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'country' => 'string',
         'firstName' => 'string',
         'middleName' => 'string',
-        'middleInitial' => 'string',
         'lastName' => 'string',
-        'dateOfBirth' => 'string',
         'phoneNumber' => 'string',
         'personalIdentification' => '\CyberSource\Model\Ptsv1pushfundstransferRecipientInformationPersonalIdentification'
     ];
@@ -83,9 +81,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'country' => null,
         'firstName' => null,
         'middleName' => null,
-        'middleInitial' => null,
         'lastName' => null,
-        'dateOfBirth' => null,
         'phoneNumber' => null,
         'personalIdentification' => null
     ];
@@ -114,9 +110,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'country' => 'country',
         'firstName' => 'firstName',
         'middleName' => 'middleName',
-        'middleInitial' => 'middleInitial',
         'lastName' => 'lastName',
-        'dateOfBirth' => 'dateOfBirth',
         'phoneNumber' => 'phoneNumber',
         'personalIdentification' => 'personalIdentification'
     ];
@@ -136,9 +130,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'country' => 'setCountry',
         'firstName' => 'setFirstName',
         'middleName' => 'setMiddleName',
-        'middleInitial' => 'setMiddleInitial',
         'lastName' => 'setLastName',
-        'dateOfBirth' => 'setDateOfBirth',
         'phoneNumber' => 'setPhoneNumber',
         'personalIdentification' => 'setPersonalIdentification'
     ];
@@ -158,9 +150,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'country' => 'getCountry',
         'firstName' => 'getFirstName',
         'middleName' => 'getMiddleName',
-        'middleInitial' => 'getMiddleInitial',
         'lastName' => 'getLastName',
-        'dateOfBirth' => 'getDateOfBirth',
         'phoneNumber' => 'getPhoneNumber',
         'personalIdentification' => 'getPersonalIdentification'
     ];
@@ -205,9 +195,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
-        $this->container['middleInitial'] = isset($data['middleInitial']) ? $data['middleInitial'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
-        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
     }
@@ -269,7 +257,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 First line of the recipient's address.  Required for Mastercard Send. This field is not supported for Visa Platform Connect.
+     * @param string $address1 First line of the recipient's address. Required for card payments
      * @return $this
      */
     public function setAddress1($address1)
@@ -290,7 +278,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets address2
-     * @param string $address2 Second line of the recipient's address  Optional for Mastercard Send. This field is not supported for Visa Platform Connect.
+     * @param string $address2 Second line of the recipient's address
      * @return $this
      */
     public function setAddress2($address2)
@@ -311,7 +299,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality Recipient city.  Required for Mastercard Send.
+     * @param string $locality Recipient city.
      * @return $this
      */
     public function setLocality($locality)
@@ -332,7 +320,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Recipient postal code.  For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Mastercard Send: Required for recipients in Canada and Canadian issued cards.
+     * @param string $postalCode Recipient postal code.   For USA, this must be a valid value of 5 digits or 5 digits hyphen 4 digits, for example '63368', '63368-5555'. For other regions, this can be alphanumeric, length 1-10.  Mandatory for card payments.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -353,7 +341,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea The recipient's province, state or territory. Conditional, required if recipient's country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  Required only for FDCCompass.  This field is not supported for Visa Platform Connect.
+     * @param string $administrativeArea The recipient's province, state or territory. Conditional, required if recipient's country is USA or CAN. Must be an ISO 3166-2 uppercase alpha 2 or 3 character country subdivision code. For example, Missouri is MO.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Required for card payments.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -374,7 +362,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Required for Mastercard Send.
+     * @param string $country Recipient country code. Use the ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf
      * @return $this
      */
     public function setCountry($country)
@@ -395,7 +383,7 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName First name of recipient.  Visa Platform Connect (14) Chase Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send.
+     * @param string $firstName First name of recipient.
      * @return $this
      */
     public function setFirstName($firstName)
@@ -427,27 +415,6 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
     }
 
     /**
-     * Gets middleInitial
-     * @return string
-     */
-    public function getMiddleInitial()
-    {
-        return $this->container['middleInitial'];
-    }
-
-    /**
-     * Sets middleInitial
-     * @param string $middleInitial Middle Initial of recipient.  This field is supported by FDC Compass.
-     * @return $this
-     */
-    public function setMiddleInitial($middleInitial)
-    {
-        $this->container['middleInitial'] = $middleInitial;
-
-        return $this;
-    }
-
-    /**
      * Gets lastName
      * @return string
      */
@@ -458,33 +425,12 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName Last name of recipient.  Visa Platform Connect (14) Paymentech (30) Mastercard Send (40)  This field is required for Mastercard Send.
+     * @param string $lastName Last name of recipient.
      * @return $this
      */
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Gets dateOfBirth
-     * @return string
-     */
-    public function getDateOfBirth()
-    {
-        return $this->container['dateOfBirth'];
-    }
-
-    /**
-     * Sets dateOfBirth
-     * @param string $dateOfBirth Recipient date of birth in YYYYMMDD format.
-     * @return $this
-     */
-    public function setDateOfBirth($dateOfBirth)
-    {
-        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }

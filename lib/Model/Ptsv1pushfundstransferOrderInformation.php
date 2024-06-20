@@ -53,9 +53,7 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amountDetails' => '\CyberSource\Model\Ptsv1pushfundstransferOrderInformationAmountDetails',
-        'isCryptocurrencyPurchase' => 'string',
-        'surcharge' => '\CyberSource\Model\Ptsv1pushfundstransferOrderInformationSurcharge'
+        'amountDetails' => '\CyberSource\Model\Ptsv1pushfundstransferOrderInformationAmountDetails'
     ];
 
     /**
@@ -63,9 +61,7 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'amountDetails' => null,
-        'isCryptocurrencyPurchase' => null,
-        'surcharge' => null
+        'amountDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -83,9 +79,7 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amountDetails' => 'amountDetails',
-        'isCryptocurrencyPurchase' => 'isCryptocurrencyPurchase',
-        'surcharge' => 'surcharge'
+        'amountDetails' => 'amountDetails'
     ];
 
 
@@ -94,9 +88,7 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amountDetails' => 'setAmountDetails',
-        'isCryptocurrencyPurchase' => 'setIsCryptocurrencyPurchase',
-        'surcharge' => 'setSurcharge'
+        'amountDetails' => 'setAmountDetails'
     ];
 
 
@@ -105,9 +97,7 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amountDetails' => 'getAmountDetails',
-        'isCryptocurrencyPurchase' => 'getIsCryptocurrencyPurchase',
-        'surcharge' => 'getSurcharge'
+        'amountDetails' => 'getAmountDetails'
     ];
 
     public static function attributeMap()
@@ -142,8 +132,6 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
-        $this->container['isCryptocurrencyPurchase'] = isset($data['isCryptocurrencyPurchase']) ? $data['isCryptocurrencyPurchase'] : null;
-        $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
     }
 
     /**
@@ -194,48 +182,6 @@ class Ptsv1pushfundstransferOrderInformation implements ArrayAccess
     public function setAmountDetails($amountDetails)
     {
         $this->container['amountDetails'] = $amountDetails;
-
-        return $this;
-    }
-
-    /**
-     * Gets isCryptocurrencyPurchase
-     * @return string
-     */
-    public function getIsCryptocurrencyPurchase()
-    {
-        return $this->container['isCryptocurrencyPurchase'];
-    }
-
-    /**
-     * Sets isCryptocurrencyPurchase
-     * @param string $isCryptocurrencyPurchase This indicates that the funds transfer is for a crypto currency transaction. Optional Y/y, true N/n, false
-     * @return $this
-     */
-    public function setIsCryptocurrencyPurchase($isCryptocurrencyPurchase)
-    {
-        $this->container['isCryptocurrencyPurchase'] = $isCryptocurrencyPurchase;
-
-        return $this;
-    }
-
-    /**
-     * Gets surcharge
-     * @return \CyberSource\Model\Ptsv1pushfundstransferOrderInformationSurcharge
-     */
-    public function getSurcharge()
-    {
-        return $this->container['surcharge'];
-    }
-
-    /**
-     * Sets surcharge
-     * @param \CyberSource\Model\Ptsv1pushfundstransferOrderInformationSurcharge $surcharge
-     * @return $this
-     */
-    public function setSurcharge($surcharge)
-    {
-        $this->container['surcharge'] = $surcharge;
 
         return $this;
     }

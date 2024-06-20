@@ -54,13 +54,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'businessApplicationId' => 'string',
-        'commerceIndicator' => 'string',
-        'networkRoutingOrder' => 'string',
-        'payoutsOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformationPayoutsOptions',
-        'purposeOfPayment' => 'string',
-        'reconciliationId' => 'string',
-        'recurringOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformationRecurringOptions',
-        'transactionReason' => 'string'
+        'payoutsOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformationPayoutsOptions'
     ];
 
     /**
@@ -69,13 +63,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'businessApplicationId' => null,
-        'commerceIndicator' => null,
-        'networkRoutingOrder' => null,
-        'payoutsOptions' => null,
-        'purposeOfPayment' => null,
-        'reconciliationId' => null,
-        'recurringOptions' => null,
-        'transactionReason' => null
+        'payoutsOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -94,13 +82,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'businessApplicationId' => 'businessApplicationId',
-        'commerceIndicator' => 'commerceIndicator',
-        'networkRoutingOrder' => 'networkRoutingOrder',
-        'payoutsOptions' => 'payoutsOptions',
-        'purposeOfPayment' => 'purposeOfPayment',
-        'reconciliationId' => 'reconciliationId',
-        'recurringOptions' => 'recurringOptions',
-        'transactionReason' => 'transactionReason'
+        'payoutsOptions' => 'payoutsOptions'
     ];
 
 
@@ -110,13 +92,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
      */
     protected static $setters = [
         'businessApplicationId' => 'setBusinessApplicationId',
-        'commerceIndicator' => 'setCommerceIndicator',
-        'networkRoutingOrder' => 'setNetworkRoutingOrder',
-        'payoutsOptions' => 'setPayoutsOptions',
-        'purposeOfPayment' => 'setPurposeOfPayment',
-        'reconciliationId' => 'setReconciliationId',
-        'recurringOptions' => 'setRecurringOptions',
-        'transactionReason' => 'setTransactionReason'
+        'payoutsOptions' => 'setPayoutsOptions'
     ];
 
 
@@ -126,13 +102,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
      */
     protected static $getters = [
         'businessApplicationId' => 'getBusinessApplicationId',
-        'commerceIndicator' => 'getCommerceIndicator',
-        'networkRoutingOrder' => 'getNetworkRoutingOrder',
-        'payoutsOptions' => 'getPayoutsOptions',
-        'purposeOfPayment' => 'getPurposeOfPayment',
-        'reconciliationId' => 'getReconciliationId',
-        'recurringOptions' => 'getRecurringOptions',
-        'transactionReason' => 'getTransactionReason'
+        'payoutsOptions' => 'getPayoutsOptions'
     ];
 
     public static function attributeMap()
@@ -167,13 +137,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
-        $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
-        $this->container['networkRoutingOrder'] = isset($data['networkRoutingOrder']) ? $data['networkRoutingOrder'] : null;
         $this->container['payoutsOptions'] = isset($data['payoutsOptions']) ? $data['payoutsOptions'] : null;
-        $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
-        $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
-        $this->container['recurringOptions'] = isset($data['recurringOptions']) ? $data['recurringOptions'] : null;
-        $this->container['transactionReason'] = isset($data['transactionReason']) ? $data['transactionReason'] : null;
     }
 
     /**
@@ -185,9 +149,6 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['commerceIndicator'] === null) {
-            $invalid_properties[] = "'commerceIndicator' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -200,9 +161,6 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['commerceIndicator'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -218,54 +176,12 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
 
     /**
      * Sets businessApplicationId
-     * @param string $businessApplicationId Payouts transaction type. Required for Mastercard Send.  Valid Values- Visa Platform Connect: - `AA`: Account to account. - `CP`: Card bill payment - `FD`: Funds disbursement (general) - `GD`: Government disbursement - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `PP`: Person to person. - `TU`: Top-up for enhanced prepaid loads.   Mastercard Send: - `BB`: Business to business. - `BD`: Business Disbursement - `CP`: Card bill payment - `GD`: Government disbursement - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `OG`: Online gambling payout.   Chase Paymentech Solutions: - `AA`: Account to account. - `FD`: Funds disbursement (general) - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `PP`: Person to person.   FDC Compass: - `BB`: Business to business. - `BI`: Bank-initiated money transfer. - `FD`: Funds disbursement (general) - `GD`: Government disbursement - `GP`: Gambling Payment - `LO`: Loyalty Offers - `MD`: Merchant disbursement (acquirers or aggregators settling to merchants). - `MI`: Merchant initated money transfer - `OG`: Online gambling payout. - `PD`: Payroll pension disbursement. - `PP`: Person to person. - `WT`: Wallet transfer.
+     * @param string $businessApplicationId Payouts transaction type.  Business Application ID: - `PP`: Person to person. - `FD`: Funds disbursement (general)
      * @return $this
      */
     public function setBusinessApplicationId($businessApplicationId)
     {
         $this->container['businessApplicationId'] = $businessApplicationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets commerceIndicator
-     * @return string
-     */
-    public function getCommerceIndicator()
-    {
-        return $this->container['commerceIndicator'];
-    }
-
-    /**
-     * Sets commerceIndicator
-     * @param string $commerceIndicator Type of transaction.  Value for an OCT transaction: internet  For details, see the e_commerce_indicator field description in Payouts Using the SCMP API.
-     * @return $this
-     */
-    public function setCommerceIndicator($commerceIndicator)
-    {
-        $this->container['commerceIndicator'] = $commerceIndicator;
-
-        return $this;
-    }
-
-    /**
-     * Gets networkRoutingOrder
-     * @return string
-     */
-    public function getNetworkRoutingOrder()
-    {
-        return $this->container['networkRoutingOrder'];
-    }
-
-    /**
-     * Sets networkRoutingOrder
-     * @param string $networkRoutingOrder Visa Platform Connect This field is optionally used by Push Payments Gateway participants (merchants and acquirers) to get the attributes for specified networks only. The networks specified in this field must be a subset of the information provided during program enrollment. Refer to Sharing Group Code/Network Routing Order. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service.  VisaNet checks to determine if there are issuer routing preferences for any of the networks specified by the network routing order. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on the issuer's preference. If an issuer preference exists for more than one of the specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on the acquirer's routing priorities.  For details, see the network_order field description in BIN Lookup Service Using the SCMP API.
-     * @return $this
-     */
-    public function setNetworkRoutingOrder($networkRoutingOrder)
-    {
-        $this->container['networkRoutingOrder'] = $networkRoutingOrder;
 
         return $this;
     }
@@ -287,90 +203,6 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     public function setPayoutsOptions($payoutsOptions)
     {
         $this->container['payoutsOptions'] = $payoutsOptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets purposeOfPayment
-     * @return string
-     */
-    public function getPurposeOfPayment()
-    {
-        return $this->container['purposeOfPayment'];
-    }
-
-    /**
-     * Sets purposeOfPayment
-     * @param string $purposeOfPayment This will send purpose of funds code for original credit transactions (OCTs).  Visa Platform Connect (VPC) This will send purpose of transaction code for original credit transactions (OCTs). Purpose of Payment codes are defined by the recipient issuer's country and vary by country.  Mastercard Send: - `00`: Family Support - `01`: Regular Labor Transfers (expatriates), - `02`: Travel & Tourism - `03`: Education - `04`: Hospitalization & Medical Treatment, - `05`: Emergency Need - `06`: Savings - `07`: Gifts - `08`: Other - `09`: Salary - `10`: Crowd lending - `11`: Crypto currency - `12`: Refund to original card - `13`: Refund to new card
-     * @return $this
-     */
-    public function setPurposeOfPayment($purposeOfPayment)
-    {
-        $this->container['purposeOfPayment'] = $purposeOfPayment;
-
-        return $this;
-    }
-
-    /**
-     * Gets reconciliationId
-     * @return string
-     */
-    public function getReconciliationId()
-    {
-        return $this->container['reconciliationId'];
-    }
-
-    /**
-     * Sets reconciliationId
-     * @param string $reconciliationId Please check with Cybersource customer support to see if your merchant account is configured correctly so you can include this field in your request.  For Payouts: max length for FDCCompass is String (22).
-     * @return $this
-     */
-    public function setReconciliationId($reconciliationId)
-    {
-        $this->container['reconciliationId'] = $reconciliationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets recurringOptions
-     * @return \CyberSource\Model\Ptsv1pushfundstransferProcessingInformationRecurringOptions
-     */
-    public function getRecurringOptions()
-    {
-        return $this->container['recurringOptions'];
-    }
-
-    /**
-     * Sets recurringOptions
-     * @param \CyberSource\Model\Ptsv1pushfundstransferProcessingInformationRecurringOptions $recurringOptions
-     * @return $this
-     */
-    public function setRecurringOptions($recurringOptions)
-    {
-        $this->container['recurringOptions'] = $recurringOptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets transactionReason
-     * @return string
-     */
-    public function getTransactionReason()
-    {
-        return $this->container['transactionReason'];
-    }
-
-    /**
-     * Sets transactionReason
-     * @param string $transactionReason Transaction reason code.  This field applies only to Visa Platform Connect
-     * @return $this
-     */
-    public function setTransactionReason($transactionReason)
-    {
-        $this->container['transactionReason'] = $transactionReason;
 
         return $this;
     }

@@ -98,13 +98,6 @@ class PushFundsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "processingOptions"
-     */
-    public function testPropertyProcessingOptions()
-    {
-    }
-
-    /**
      * Test attribute "recipientInformation"
      */
     public function testPropertyRecipientInformation()
@@ -115,34 +108,6 @@ class PushFundsRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "senderInformation"
      */
     public function testPropertySenderInformation()
-    {
-    }
-
-    /**
-     * Test attribute "aggregatorInformation"
-     */
-    public function testPropertyAggregatorInformation()
-    {
-    }
-
-    /**
-     * Test attribute "merchantDefinedInformation"
-     */
-    public function testPropertyMerchantDefinedInformation()
-    {
-    }
-
-    /**
-     * Test attribute "merchantInformation"
-     */
-    public function testPropertyMerchantInformation()
-    {
-    }
-
-    /**
-     * Test attribute "pointOfServiceInformation"
-     */
-    public function testPropertyPointOfServiceInformation()
     {
     }
 }

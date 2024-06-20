@@ -212,7 +212,7 @@ class Ptsv1pushfundstransferRecipientInformationPaymentInformationCard implement
 
     /**
      * Sets type
-     * @param string $type Three-digit value that indicates the card type. Mandatory if not present in a token.  Possible values:  Visa Platform Connect - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `033`: Visa Electron - `024`: Maestro  Mastercard Send: - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.
+     * @param string $type Three-digit value that indicates the card type.  Possible values:  Visa Platform Connect - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `033`: Visa Electron - `024`: Maestro  Mastercard Send: - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Yellow Pepper: - `001`: Visa - `002`: Mastercard, Eurocard, which is a European regional brand of Mastercard. - `005`: Diners Club - `033`: Visa Electron - `024`: Intl Maestro
      * @return $this
      */
     public function setType($type)

@@ -176,7 +176,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationCardVerification implement
 
     /**
      * Sets resultCode
-     * @param string $resultCode CVN result code.  For details, see the `auth_cv_result` reply field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $resultCode CVN result code.
      * @return $this
      */
     public function setResultCode($resultCode)

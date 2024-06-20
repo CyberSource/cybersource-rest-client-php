@@ -56,13 +56,8 @@ class PushFundsRequest implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\Ptsv1pushfundstransferClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv1pushfundstransferOrderInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformation',
-        'processingOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingOptions',
         'recipientInformation' => '\CyberSource\Model\Ptsv1pushfundstransferRecipientInformation',
-        'senderInformation' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformation',
-        'aggregatorInformation' => '\CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\Ptsv1pushfundstransferMerchantDefinedInformation',
-        'merchantInformation' => '\CyberSource\Model\Ptsv1pushfundstransferMerchantInformation',
-        'pointOfServiceInformation' => '\CyberSource\Model\Ptsv1pushfundstransferPointOfServiceInformation'
+        'senderInformation' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformation'
     ];
 
     /**
@@ -73,13 +68,8 @@ class PushFundsRequest implements ArrayAccess
         'clientReferenceInformation' => null,
         'orderInformation' => null,
         'processingInformation' => null,
-        'processingOptions' => null,
         'recipientInformation' => null,
-        'senderInformation' => null,
-        'aggregatorInformation' => null,
-        'merchantDefinedInformation' => null,
-        'merchantInformation' => null,
-        'pointOfServiceInformation' => null
+        'senderInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -100,13 +90,8 @@ class PushFundsRequest implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'orderInformation' => 'orderInformation',
         'processingInformation' => 'processingInformation',
-        'processingOptions' => 'processingOptions',
         'recipientInformation' => 'recipientInformation',
-        'senderInformation' => 'senderInformation',
-        'aggregatorInformation' => 'aggregatorInformation',
-        'merchantDefinedInformation' => 'merchantDefinedInformation',
-        'merchantInformation' => 'merchantInformation',
-        'pointOfServiceInformation' => 'pointOfServiceInformation'
+        'senderInformation' => 'senderInformation'
     ];
 
 
@@ -118,13 +103,8 @@ class PushFundsRequest implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'orderInformation' => 'setOrderInformation',
         'processingInformation' => 'setProcessingInformation',
-        'processingOptions' => 'setProcessingOptions',
         'recipientInformation' => 'setRecipientInformation',
-        'senderInformation' => 'setSenderInformation',
-        'aggregatorInformation' => 'setAggregatorInformation',
-        'merchantDefinedInformation' => 'setMerchantDefinedInformation',
-        'merchantInformation' => 'setMerchantInformation',
-        'pointOfServiceInformation' => 'setPointOfServiceInformation'
+        'senderInformation' => 'setSenderInformation'
     ];
 
 
@@ -136,13 +116,8 @@ class PushFundsRequest implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'orderInformation' => 'getOrderInformation',
         'processingInformation' => 'getProcessingInformation',
-        'processingOptions' => 'getProcessingOptions',
         'recipientInformation' => 'getRecipientInformation',
-        'senderInformation' => 'getSenderInformation',
-        'aggregatorInformation' => 'getAggregatorInformation',
-        'merchantDefinedInformation' => 'getMerchantDefinedInformation',
-        'merchantInformation' => 'getMerchantInformation',
-        'pointOfServiceInformation' => 'getPointOfServiceInformation'
+        'senderInformation' => 'getSenderInformation'
     ];
 
     public static function attributeMap()
@@ -179,13 +154,8 @@ class PushFundsRequest implements ArrayAccess
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
-        $this->container['processingOptions'] = isset($data['processingOptions']) ? $data['processingOptions'] : null;
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
-        $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
-        $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
-        $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
-        $this->container['pointOfServiceInformation'] = isset($data['pointOfServiceInformation']) ? $data['pointOfServiceInformation'] : null;
     }
 
     /**
@@ -203,9 +173,6 @@ class PushFundsRequest implements ArrayAccess
         if ($this->container['processingInformation'] === null) {
             $invalid_properties[] = "'processingInformation' can't be null";
         }
-        if ($this->container['senderInformation'] === null) {
-            $invalid_properties[] = "'senderInformation' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -222,9 +189,6 @@ class PushFundsRequest implements ArrayAccess
             return false;
         }
         if ($this->container['processingInformation'] === null) {
-            return false;
-        }
-        if ($this->container['senderInformation'] === null) {
             return false;
         }
         return true;
@@ -295,27 +259,6 @@ class PushFundsRequest implements ArrayAccess
     }
 
     /**
-     * Gets processingOptions
-     * @return \CyberSource\Model\Ptsv1pushfundstransferProcessingOptions
-     */
-    public function getProcessingOptions()
-    {
-        return $this->container['processingOptions'];
-    }
-
-    /**
-     * Sets processingOptions
-     * @param \CyberSource\Model\Ptsv1pushfundstransferProcessingOptions $processingOptions
-     * @return $this
-     */
-    public function setProcessingOptions($processingOptions)
-    {
-        $this->container['processingOptions'] = $processingOptions;
-
-        return $this;
-    }
-
-    /**
      * Gets recipientInformation
      * @return \CyberSource\Model\Ptsv1pushfundstransferRecipientInformation
      */
@@ -353,90 +296,6 @@ class PushFundsRequest implements ArrayAccess
     public function setSenderInformation($senderInformation)
     {
         $this->container['senderInformation'] = $senderInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets aggregatorInformation
-     * @return \CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation
-     */
-    public function getAggregatorInformation()
-    {
-        return $this->container['aggregatorInformation'];
-    }
-
-    /**
-     * Sets aggregatorInformation
-     * @param \CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation $aggregatorInformation
-     * @return $this
-     */
-    public function setAggregatorInformation($aggregatorInformation)
-    {
-        $this->container['aggregatorInformation'] = $aggregatorInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantDefinedInformation
-     * @return \CyberSource\Model\Ptsv1pushfundstransferMerchantDefinedInformation
-     */
-    public function getMerchantDefinedInformation()
-    {
-        return $this->container['merchantDefinedInformation'];
-    }
-
-    /**
-     * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\Ptsv1pushfundstransferMerchantDefinedInformation $merchantDefinedInformation
-     * @return $this
-     */
-    public function setMerchantDefinedInformation($merchantDefinedInformation)
-    {
-        $this->container['merchantDefinedInformation'] = $merchantDefinedInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantInformation
-     * @return \CyberSource\Model\Ptsv1pushfundstransferMerchantInformation
-     */
-    public function getMerchantInformation()
-    {
-        return $this->container['merchantInformation'];
-    }
-
-    /**
-     * Sets merchantInformation
-     * @param \CyberSource\Model\Ptsv1pushfundstransferMerchantInformation $merchantInformation
-     * @return $this
-     */
-    public function setMerchantInformation($merchantInformation)
-    {
-        $this->container['merchantInformation'] = $merchantInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets pointOfServiceInformation
-     * @return \CyberSource\Model\Ptsv1pushfundstransferPointOfServiceInformation
-     */
-    public function getPointOfServiceInformation()
-    {
-        return $this->container['pointOfServiceInformation'];
-    }
-
-    /**
-     * Sets pointOfServiceInformation
-     * @param \CyberSource\Model\Ptsv1pushfundstransferPointOfServiceInformation $pointOfServiceInformation
-     * @return $this
-     */
-    public function setPointOfServiceInformation($pointOfServiceInformation)
-    {
-        $this->container['pointOfServiceInformation'] = $pointOfServiceInformation;
 
         return $this;
     }

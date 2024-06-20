@@ -206,7 +206,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBank implements ArrayAcce
 
     /**
      * Sets routingNumber
-     * @param string $routingNumber Bank routing number. This is also called the transit number.  For details, see `ecp_rdfi` field description in the [Electronic Check Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/EChecks_SCMP_API/html/)
+     * @param string $routingNumber Bank routing number. This is also called the transit number.
      * @return $this
      */
     public function setRoutingNumber($routingNumber)
@@ -227,7 +227,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBank implements ArrayAcce
 
     /**
      * Sets branchCode
-     * @param string $branchCode Code used to identify the branch of the customer's bank. Required for some countries if you do not or are not allowed to provide the IBAN. Use this field only when scoring a direct debit transaction.  For all possible values, see the `branch_code` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @param string $branchCode Code used to identify the branch of the customer's bank. Required for some countries if you do not or are not allowed to provide the IBAN. Use this field only when scoring a direct debit transaction.
      * @return $this
      */
     public function setBranchCode($branchCode)
@@ -248,7 +248,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBank implements ArrayAcce
 
     /**
      * Sets swiftCode
-     * @param string $swiftCode Bank's SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.  For all possible values, see the `bank_swiftcode` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @param string $swiftCode Bank's SWIFT code. You can use this field only when scoring a direct debit transaction. Required only for crossborder transactions.
      * @return $this
      */
     public function setSwiftCode($swiftCode)
@@ -269,7 +269,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBank implements ArrayAcce
 
     /**
      * Sets bankCode
-     * @param string $bankCode Country-specific code used to identify the customer's bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_code` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @param string $bankCode Country-specific code used to identify the customer's bank. Required for some countries if you do not or are not allowed to provide the IBAN instead. You can use this field only when scoring a direct debit transaction.
      * @return $this
      */
     public function setBankCode($bankCode)
@@ -290,7 +290,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBank implements ArrayAcce
 
     /**
      * Sets iban
-     * @param string $iban International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_iban` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @param string $iban International Bank Account Number (IBAN) for the bank account. For some countries you can provide this number instead of the traditional bank account information. You can use this field only when scoring a direct debit transaction.
      * @return $this
      */
     public function setIban($iban)

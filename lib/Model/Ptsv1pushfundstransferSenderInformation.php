@@ -63,7 +63,6 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'locality' => 'string',
         'administrativeArea' => 'string',
         'country' => 'string',
-        'vatRegistrationNumber' => 'string',
         'dateOfBirth' => 'string',
         'phoneNumber' => 'string',
         'paymentInformation' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformationPaymentInformation',
@@ -87,7 +86,6 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'locality' => null,
         'administrativeArea' => null,
         'country' => null,
-        'vatRegistrationNumber' => null,
         'dateOfBirth' => null,
         'phoneNumber' => null,
         'paymentInformation' => null,
@@ -121,7 +119,6 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'locality' => 'locality',
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
-        'vatRegistrationNumber' => 'vatRegistrationNumber',
         'dateOfBirth' => 'dateOfBirth',
         'phoneNumber' => 'phoneNumber',
         'paymentInformation' => 'paymentInformation',
@@ -146,7 +143,6 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'locality' => 'setLocality',
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
-        'vatRegistrationNumber' => 'setVatRegistrationNumber',
         'dateOfBirth' => 'setDateOfBirth',
         'phoneNumber' => 'setPhoneNumber',
         'paymentInformation' => 'setPaymentInformation',
@@ -171,7 +167,6 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'locality' => 'getLocality',
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
-        'vatRegistrationNumber' => 'getVatRegistrationNumber',
         'dateOfBirth' => 'getDateOfBirth',
         'phoneNumber' => 'getPhoneNumber',
         'paymentInformation' => 'getPaymentInformation',
@@ -221,7 +216,6 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
@@ -287,7 +281,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName This field contains the first name of the entity funding the transaction.
+     * @param string $firstName This field contains the first name of the entity funding the transaction Mandatory for card payments
      * @return $this
      */
     public function setFirstName($firstName)
@@ -308,7 +302,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName This field contains the last name of the entity funding the transaction.
+     * @param string $lastName This field contains the last name of the entity funding the transaction Mandatory for card payments
      * @return $this
      */
     public function setLastName($lastName)
@@ -329,7 +323,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Supported only for Mastercard  transactions. This field contains the  middle name of the entity funding the transaction
+     * @param string $middleName This field contains the  middle name of the entity funding the transaction
      * @return $this
      */
     public function setMiddleName($middleName)
@@ -371,7 +365,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT.
+     * @param string $address1 Street address of sender.  Funds Disbursement  This value is the address of the originator sending the funds disbursement.  Required for card transactions
      * @return $this
      */
     public function setAddress1($address1)
@@ -392,7 +386,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets address2
-     * @param string $address2 Used for additional address information. For example: Attention: Accounts Payable Optional field.  This field is supported for only Mastercard Send.
+     * @param string $address2 Used for additional address information. For example: Attention: Accounts Payable  Optional field.
      * @return $this
      */
     public function setAddress2($address2)
@@ -413,7 +407,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality The sender's city  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT.
+     * @param string $locality The sender's city Mandatory for card payments
      * @return $this
      */
     public function setLocality($locality)
@@ -434,7 +428,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf
+     * @param string $administrativeArea Sender's state. Use the State, Province, and Territory Codes for the United States and Canada.The sender's province, state or territory. Conditional, required if sender's country is USA or CAN. Must be uppercase alpha 2 or 3 character country subdivision code.  See https://developer.cybersource.com/library/documentation/sbc/quickref/states_and_provinces.pdf  Mandatory for card payments
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -455,33 +449,12 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Sender's country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf  Visa Platform Connect Required for transactions using business application id of AA, BI, PP, and WT.  Required for Mastercard Send
+     * @param string $country Sender's country code. Use ISO Standard Alpha Country Codes.  https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf
      * @return $this
      */
     public function setCountry($country)
     {
         $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets vatRegistrationNumber
-     * @return string
-     */
-    public function getVatRegistrationNumber()
-    {
-        return $this->container['vatRegistrationNumber'];
-    }
-
-    /**
-     * Sets vatRegistrationNumber
-     * @param string $vatRegistrationNumber Customer's government-assigned tax identification number.
-     * @return $this
-     */
-    public function setVatRegistrationNumber($vatRegistrationNumber)
-    {
-        $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
         return $this;
     }

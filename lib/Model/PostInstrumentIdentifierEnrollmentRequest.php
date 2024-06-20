@@ -58,7 +58,7 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'object' => 'string',
         'state' => 'string',
         'type' => 'string',
-        'tokenProvisioningInformation' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation',
+        'tokenProvisioningInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation',
         'card' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierCard',
         'bankAccount' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierBankAccount',
         'tokenizedCard' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenizedCard',
@@ -326,7 +326,7 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The type of Instrument Identifier. Possible Values: - enrollable card
+     * @param string $type The type of Instrument Identifier. Possible Values: - enrollable card - enrollable token
      * @return $this
      */
     public function setType($type)
@@ -338,7 +338,7 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets tokenProvisioningInformation
-     * @return \CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation
      */
     public function getTokenProvisioningInformation()
     {
@@ -347,7 +347,7 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets tokenProvisioningInformation
-     * @param \CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation $tokenProvisioningInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation $tokenProvisioningInformation
      * @return $this
      */
     public function setTokenProvisioningInformation($tokenProvisioningInformation)

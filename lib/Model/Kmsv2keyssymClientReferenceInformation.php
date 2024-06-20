@@ -203,7 +203,7 @@ class Kmsv2keyssymClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets comments
-     * @param string $comments Comments
+     * @param string $comments Brief description of the order or any comment you wish to add to the order.
      * @return $this
      */
     public function setComments($comments)

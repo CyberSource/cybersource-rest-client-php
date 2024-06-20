@@ -57,7 +57,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'transientTokenJwt' => 'string',
         'paymentInstrument' => '\CyberSource\Model\Ptsv2paymentsTokenInformationPaymentInstrument',
         'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsTokenInformationShippingAddress',
-        'networkTokenOption' => 'string'
+        'networkTokenOption' => 'string',
+        'tokenProvisioningInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation'
     ];
 
     /**
@@ -69,7 +70,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'transientTokenJwt' => null,
         'paymentInstrument' => null,
         'shippingAddress' => null,
-        'networkTokenOption' => null
+        'networkTokenOption' => null,
+        'tokenProvisioningInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'transientTokenJwt' => 'transientTokenJwt',
         'paymentInstrument' => 'paymentInstrument',
         'shippingAddress' => 'shippingAddress',
-        'networkTokenOption' => 'networkTokenOption'
+        'networkTokenOption' => 'networkTokenOption',
+        'tokenProvisioningInformation' => 'tokenProvisioningInformation'
     ];
 
 
@@ -104,7 +107,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'transientTokenJwt' => 'setTransientTokenJwt',
         'paymentInstrument' => 'setPaymentInstrument',
         'shippingAddress' => 'setShippingAddress',
-        'networkTokenOption' => 'setNetworkTokenOption'
+        'networkTokenOption' => 'setNetworkTokenOption',
+        'tokenProvisioningInformation' => 'setTokenProvisioningInformation'
     ];
 
 
@@ -117,7 +121,8 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         'transientTokenJwt' => 'getTransientTokenJwt',
         'paymentInstrument' => 'getPaymentInstrument',
         'shippingAddress' => 'getShippingAddress',
-        'networkTokenOption' => 'getNetworkTokenOption'
+        'networkTokenOption' => 'getNetworkTokenOption',
+        'tokenProvisioningInformation' => 'getTokenProvisioningInformation'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;
         $this->container['shippingAddress'] = isset($data['shippingAddress']) ? $data['shippingAddress'] : null;
         $this->container['networkTokenOption'] = isset($data['networkTokenOption']) ? $data['networkTokenOption'] : null;
+        $this->container['tokenProvisioningInformation'] = isset($data['tokenProvisioningInformation']) ? $data['tokenProvisioningInformation'] : null;
     }
 
     /**
@@ -284,6 +290,27 @@ class Ptsv2paymentsTokenInformation implements ArrayAccess
     public function setNetworkTokenOption($networkTokenOption)
     {
         $this->container['networkTokenOption'] = $networkTokenOption;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenProvisioningInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation
+     */
+    public function getTokenProvisioningInformation()
+    {
+        return $this->container['tokenProvisioningInformation'];
+    }
+
+    /**
+     * Sets tokenProvisioningInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation $tokenProvisioningInformation
+     * @return $this
+     */
+    public function setTokenProvisioningInformation($tokenProvisioningInformation)
+    {
+        $this->container['tokenProvisioningInformation'] = $tokenProvisioningInformation;
 
         return $this;
     }

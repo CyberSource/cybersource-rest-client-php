@@ -82,18 +82,4 @@ class Ptsv1pushfundstransferOrderInformationTest extends \PHPUnit_Framework_Test
     public function testPropertyAmountDetails()
     {
     }
-
-    /**
-     * Test attribute "isCryptocurrencyPurchase"
-     */
-    public function testPropertyIsCryptocurrencyPurchase()
-    {
-    }
-
-    /**
-     * Test attribute "surcharge"
-     */
-    public function testPropertySurcharge()
-    {
-    }
 }

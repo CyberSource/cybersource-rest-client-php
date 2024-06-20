@@ -1,6 +1,6 @@
 <?php
 /**
- * TmsEmbeddedInstrumentIdentifierTokenProvisioningInformationTest
+ * Ptsv2paymentsTokenInformationTokenProvisioningInformationTest
  *
  * PHP version 5
  *
@@ -29,16 +29,16 @@
 namespace CyberSource;
 
 /**
- * TmsEmbeddedInstrumentIdentifierTokenProvisioningInformationTest Class Doc Comment
+ * Ptsv2paymentsTokenInformationTokenProvisioningInformationTest Class Doc Comment
  *
  * @category    Class */
-// * @description TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation
+// * @description Ptsv2paymentsTokenInformationTokenProvisioningInformation
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformationTest extends \PHPUnit_Framework_TestCase
+class Ptsv2paymentsTokenInformationTokenProvisioningInformationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class TmsEmbeddedInstrumentIdentifierTokenProvisioningInformationTest extends \P
     }
 
     /**
-     * Test "TmsEmbeddedInstrumentIdentifierTokenProvisioningInformation"
+     * Test "Ptsv2paymentsTokenInformationTokenProvisioningInformation"
      */
-    public function testTmsEmbeddedInstrumentIdentifierTokenProvisioningInformation()
+    public function testPtsv2paymentsTokenInformationTokenProvisioningInformation()
     {
     }
 

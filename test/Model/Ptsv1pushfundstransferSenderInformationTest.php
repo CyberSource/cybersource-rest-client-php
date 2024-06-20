@@ -147,13 +147,6 @@ class Ptsv1pushfundstransferSenderInformationTest extends \PHPUnit_Framework_Tes
     }
 
     /**
-     * Test attribute "vatRegistrationNumber"
-     */
-    public function testPropertyVatRegistrationNumber()
-    {
-    }
-
-    /**
      * Test attribute "dateOfBirth"
      */
     public function testPropertyDateOfBirth()

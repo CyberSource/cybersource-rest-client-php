@@ -1,6 +1,6 @@
 <?php
 /**
- * Ptsv1pushfundstransferProcessingInformationRecurringOptions
+ * Ptsv2paymentsTokenInformationTokenProvisioningInformation
  *
  * PHP version 5
  *
@@ -31,14 +31,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * Ptsv1pushfundstransferProcessingInformationRecurringOptions Class Doc Comment
+ * Ptsv2paymentsTokenInformationTokenProvisioningInformation Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements ArrayAccess
+class Ptsv2paymentsTokenInformationTokenProvisioningInformation implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,14 +46,15 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pushfundstransfer_processingInformation_recurringOptions';
+    protected static $swaggerModelName = 'ptsv2payments_tokenInformation_tokenProvisioningInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'loanPayment' => 'bool'
+        'consumerConsentObtained' => 'bool',
+        'multiFactorAuthenticated' => 'bool'
     ];
 
     /**
@@ -61,7 +62,8 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'loanPayment' => null
+        'consumerConsentObtained' => null,
+        'multiFactorAuthenticated' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'loanPayment' => 'loanPayment'
+        'consumerConsentObtained' => 'consumerConsentObtained',
+        'multiFactorAuthenticated' => 'multiFactorAuthenticated'
     ];
 
 
@@ -88,7 +91,8 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
      * @var string[]
      */
     protected static $setters = [
-        'loanPayment' => 'setLoanPayment'
+        'consumerConsentObtained' => 'setConsumerConsentObtained',
+        'multiFactorAuthenticated' => 'setMultiFactorAuthenticated'
     ];
 
 
@@ -97,7 +101,8 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
      * @var string[]
      */
     protected static $getters = [
-        'loanPayment' => 'getLoanPayment'
+        'consumerConsentObtained' => 'getConsumerConsentObtained',
+        'multiFactorAuthenticated' => 'getMultiFactorAuthenticated'
     ];
 
     public static function attributeMap()
@@ -131,7 +136,8 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
      */
     public function __construct(array $data = null)
     {
-        $this->container['loanPayment'] = isset($data['loanPayment']) ? $data['loanPayment'] : null;
+        $this->container['consumerConsentObtained'] = isset($data['consumerConsentObtained']) ? $data['consumerConsentObtained'] : null;
+        $this->container['multiFactorAuthenticated'] = isset($data['multiFactorAuthenticated']) ? $data['multiFactorAuthenticated'] : null;
     }
 
     /**
@@ -160,22 +166,43 @@ class Ptsv1pushfundstransferProcessingInformationRecurringOptions implements Arr
 
 
     /**
-     * Gets loanPayment
+     * Gets consumerConsentObtained
      * @return bool
      */
-    public function getLoanPayment()
+    public function getConsumerConsentObtained()
     {
-        return $this->container['loanPayment'];
+        return $this->container['consumerConsentObtained'];
     }
 
     /**
-     * Sets loanPayment
-     * @param bool $loanPayment boolean Default: false Flag that indicates whether this is a payment towards an existing contractual loan.  Possible values:  true: Loan payment false: (default) Not a loan payment  This field applies only to FDC Compass
+     * Sets consumerConsentObtained
+     * @param bool $consumerConsentObtained Flag that indicates whether the user consented to the tokenization of their credentials. Required for card network tokenization in certain markets, such as India. Possible Values: - `true`: Consumer has consented to tokenization of their credentials. - `false`: Consumer has not consented to tokenization of their credentials.
      * @return $this
      */
-    public function setLoanPayment($loanPayment)
+    public function setConsumerConsentObtained($consumerConsentObtained)
     {
-        $this->container['loanPayment'] = $loanPayment;
+        $this->container['consumerConsentObtained'] = $consumerConsentObtained;
+
+        return $this;
+    }
+
+    /**
+     * Gets multiFactorAuthenticated
+     * @return bool
+     */
+    public function getMultiFactorAuthenticated()
+    {
+        return $this->container['multiFactorAuthenticated'];
+    }
+
+    /**
+     * Sets multiFactorAuthenticated
+     * @param bool $multiFactorAuthenticated Flag that indicates whether AFA (Additional Factor of Authentication) for the PAN was completed. Required for card network tokenization in certain markets, such as India. Possible Values: - `true`: Consumer has been authenticated by the issuer. - `false`: Consumer has not been authenticated by the issuer.
+     * @return $this
+     */
+    public function setMultiFactorAuthenticated($multiFactorAuthenticated)
+    {
+        $this->container['multiFactorAuthenticated'] = $multiFactorAuthenticated;
 
         return $this;
     }
