@@ -129,13 +129,11 @@ class PaymentsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $orderPaymentRequest when calling createOrderRequest");
             throw new \InvalidArgumentException('Missing the required parameter $orderPaymentRequest when calling createOrderRequest');
         }
-        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling createOrderRequest");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling createOrderRequest');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payment-references/{id}/intents";
         $httpBody = '';
@@ -257,7 +255,6 @@ class PaymentsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createPaymentRequest when calling createPayment");
             throw new \InvalidArgumentException('Missing the required parameter $createPaymentRequest when calling createPayment');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payments";
         $httpBody = '';
@@ -371,7 +368,6 @@ class PaymentsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createSessionReq when calling createSessionRequest");
             throw new \InvalidArgumentException('Missing the required parameter $createSessionReq when calling createSessionRequest');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payment-references";
         $httpBody = '';
@@ -487,13 +483,11 @@ class PaymentsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling incrementAuth");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling incrementAuth');
         }
-        
         // verify the required parameter 'incrementAuthRequest' is set
         if ($incrementAuthRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $incrementAuthRequest when calling incrementAuth");
             throw new \InvalidArgumentException('Missing the required parameter $incrementAuthRequest when calling incrementAuth');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payments/{id}";
         $httpBody = '';
@@ -617,13 +611,11 @@ class PaymentsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling refreshPaymentStatus");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling refreshPaymentStatus');
         }
-        
         // verify the required parameter 'refreshPaymentStatusRequest' is set
         if ($refreshPaymentStatusRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $refreshPaymentStatusRequest when calling refreshPaymentStatus");
             throw new \InvalidArgumentException('Missing the required parameter $refreshPaymentStatusRequest when calling refreshPaymentStatus');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/refresh-payment-status/{id}";
         $httpBody = '';
@@ -747,13 +739,11 @@ class PaymentsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createSessionRequest when calling updateSessionReq");
             throw new \InvalidArgumentException('Missing the required parameter $createSessionRequest when calling updateSessionReq');
         }
-        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling updateSessionReq");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateSessionReq');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payment-references/{id}";
         $httpBody = '';

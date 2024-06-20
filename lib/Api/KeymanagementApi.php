@@ -136,14 +136,6 @@ class KeyManagementApi
      */
     public function searchKeysWithHttpInfo($offset = null, $limit = null, $sort = null, $organizationIds = null, $keyIds = null, $keyTypes = null, $expirationStartDate = null, $expirationEndDate = null)
     {
-        
-        
-        
-        
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys";
         $httpBody = '';

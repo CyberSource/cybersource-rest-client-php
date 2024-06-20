@@ -129,8 +129,6 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling deleteCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling deleteCustomer');
         }
-        
-        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}";
         $httpBody = '';
@@ -263,8 +261,6 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomer');
         }
-        
-        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}";
         $httpBody = '';
@@ -405,15 +401,11 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling patchCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling patchCustomer');
         }
-        
         // verify the required parameter 'patchCustomerRequest' is set
         if ($patchCustomerRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchCustomerRequest when calling patchCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $patchCustomerRequest when calling patchCustomer');
         }
-        
-        
-        
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}";
         $httpBody = '';
@@ -565,8 +557,6 @@ class CustomerApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postCustomerRequest when calling postCustomer");
             throw new \InvalidArgumentException('Missing the required parameter $postCustomerRequest when calling postCustomer');
         }
-        
-        
         // parse inputs
         $resourcePath = "/tms/v2/customers";
         $httpBody = '';

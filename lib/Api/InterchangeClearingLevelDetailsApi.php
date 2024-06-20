@@ -131,14 +131,11 @@ class InterchangeClearingLevelDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getInterchangeClearingLevelDetails");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getInterchangeClearingLevelDetails');
         }
-        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getInterchangeClearingLevelDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getInterchangeClearingLevelDetails');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/interchange-clearing-level-details";
         $httpBody = '';

@@ -137,17 +137,11 @@ class PaymentBatchSummariesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getPaymentBatchSummary");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getPaymentBatchSummary');
         }
-        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getPaymentBatchSummary");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getPaymentBatchSummary');
         }
-        
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/payment-batch-summaries";
         $httpBody = '';

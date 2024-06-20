@@ -133,15 +133,11 @@ class NetFundingsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling getNetFundingDetails");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling getNetFundingDetails');
         }
-        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getNetFundingDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getNetFundingDetails');
         }
-        
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/net-fundings";
         $httpBody = '';

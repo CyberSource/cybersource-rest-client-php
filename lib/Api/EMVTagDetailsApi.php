@@ -218,7 +218,6 @@ class EMVTagDetailsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $body when calling parseEmvTags");
             throw new \InvalidArgumentException('Missing the required parameter $body when calling parseEmvTags');
         }
-        
         // parse inputs
         $resourcePath = "/tss/v2/transactions/emvTagDetails";
         $httpBody = '';

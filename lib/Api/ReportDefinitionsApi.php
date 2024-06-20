@@ -133,10 +133,6 @@ class ReportDefinitionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDefinitionName when calling getResourceInfoByReportDefinition");
             throw new \InvalidArgumentException('Missing the required parameter $reportDefinitionName when calling getResourceInfoByReportDefinition');
         }
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-definitions/{reportDefinitionName}";
         $httpBody = '';
@@ -259,8 +255,6 @@ class ReportDefinitionsApi
      */
     public function getResourceV2InfoWithHttpInfo($subscriptionType = null, $organizationId = null)
     {
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-definitions";
         $httpBody = '';

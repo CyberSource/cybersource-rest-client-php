@@ -131,14 +131,11 @@ class ReportDownloadsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDate when calling downloadReport");
             throw new \InvalidArgumentException('Missing the required parameter $reportDate when calling downloadReport');
         }
-        
         // verify the required parameter 'reportName' is set
         if ($reportName === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling downloadReport");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling downloadReport');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-downloads";
         $httpBody = '';

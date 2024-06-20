@@ -127,7 +127,6 @@ class VoidApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $mitVoidRequest when calling mitVoid");
             throw new \InvalidArgumentException('Missing the required parameter $mitVoidRequest when calling mitVoid');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/voids";
         $httpBody = '';
@@ -243,13 +242,11 @@ class VoidApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $voidCaptureRequest when calling voidCapture");
             throw new \InvalidArgumentException('Missing the required parameter $voidCaptureRequest when calling voidCapture');
         }
-        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling voidCapture");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling voidCapture');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/captures/{id}/voids";
         $httpBody = '';
@@ -373,13 +370,11 @@ class VoidApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $voidCreditRequest when calling voidCredit");
             throw new \InvalidArgumentException('Missing the required parameter $voidCreditRequest when calling voidCredit');
         }
-        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling voidCredit");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling voidCredit');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/credits/{id}/voids";
         $httpBody = '';
@@ -503,13 +498,11 @@ class VoidApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $voidPaymentRequest when calling voidPayment");
             throw new \InvalidArgumentException('Missing the required parameter $voidPaymentRequest when calling voidPayment');
         }
-        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling voidPayment");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling voidPayment');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/payments/{id}/voids";
         $httpBody = '';
@@ -633,13 +626,11 @@ class VoidApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $voidRefundRequest when calling voidRefund");
             throw new \InvalidArgumentException('Missing the required parameter $voidRefundRequest when calling voidRefund');
         }
-        
         // verify the required parameter 'id' is set
         if ($id === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling voidRefund");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling voidRefund');
         }
-        
         // parse inputs
         $resourcePath = "/pts/v2/refunds/{id}/voids";
         $httpBody = '';

@@ -203,22 +203,6 @@ class CreateAdhocReportRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['organizationId']) && !preg_match("/[a-zA-Z0-9-_]+/", $this->container['organizationId'])) {
-            $invalid_properties[] = "invalid value for 'organizationId', must be conform to the pattern /[a-zA-Z0-9-_]+/.";
-        }
-
-        if (!is_null($this->container['reportDefinitionName']) && !preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
-            $invalid_properties[] = "invalid value for 'reportDefinitionName', must be conform to the pattern /[a-zA-Z0-9-]+/.";
-        }
-
-        if (!is_null($this->container['reportName']) && !preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
-            $invalid_properties[] = "invalid value for 'reportName', must be conform to the pattern /[a-zA-Z0-9-_ ]+/.";
-        }
-
-        if (!is_null($this->container['groupName']) && !preg_match("/[0-9]*/", $this->container['groupName'])) {
-            $invalid_properties[] = "invalid value for 'groupName', must be conform to the pattern /[0-9]*/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -231,18 +215,6 @@ class CreateAdhocReportRequest implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/[a-zA-Z0-9-_]+/", $this->container['organizationId'])) {
-            return false;
-        }
-        if (!preg_match("/[a-zA-Z0-9-]+/", $this->container['reportDefinitionName'])) {
-            return false;
-        }
-        if (!preg_match("/[a-zA-Z0-9-_ ]+/", $this->container['reportName'])) {
-            return false;
-        }
-        if (!preg_match("/[0-9]*/", $this->container['groupName'])) {
-            return false;
-        }
         return true;
     }
 

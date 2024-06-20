@@ -129,13 +129,11 @@ class KeyManagementScmpApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling updateSCMP");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling updateSCMP');
         }
-        
         // verify the required parameter 'updatePGPKeysRequest' is set
         if ($updatePGPKeysRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updatePGPKeysRequest when calling updateSCMP");
             throw new \InvalidArgumentException('Missing the required parameter $updatePGPKeysRequest when calling updateSCMP');
         }
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys-scmp/{keyId}";
         $httpBody = '';

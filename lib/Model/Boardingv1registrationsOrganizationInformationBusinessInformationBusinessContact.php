@@ -170,35 +170,15 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationBusinessC
         if ($this->container['firstName'] === null) {
             $invalid_properties[] = "'firstName' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['firstName'])) {
-            $invalid_properties[] = "invalid value for 'firstName', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
-
-        if (!is_null($this->container['middleName']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['middleName'])) {
-            $invalid_properties[] = "invalid value for 'middleName', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
-
         if ($this->container['lastName'] === null) {
             $invalid_properties[] = "'lastName' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['lastName'])) {
-            $invalid_properties[] = "invalid value for 'lastName', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
-
         if ($this->container['phoneNumber'] === null) {
             $invalid_properties[] = "'phoneNumber' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $this->container['phoneNumber'])) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', must be conform to the pattern /^[0-9a-zA-Z\\\\+\\\\-]+$/.";
-        }
-
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
-        if (!preg_match("/^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,50}|[0-9]{1,3})(\\]?)$/", $this->container['email'])) {
-            $invalid_properties[] = "invalid value for 'email', must be conform to the pattern /^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,50}|[0-9]{1,3})(\\]?)$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -214,28 +194,13 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationBusinessC
         if ($this->container['firstName'] === null) {
             return false;
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['firstName'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['middleName'])) {
-            return false;
-        }
         if ($this->container['lastName'] === null) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['lastName'])) {
             return false;
         }
         if ($this->container['phoneNumber'] === null) {
             return false;
         }
-        if (!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $this->container['phoneNumber'])) {
-            return false;
-        }
         if ($this->container['email'] === null) {
-            return false;
-        }
-        if (!preg_match("/^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,50}|[0-9]{1,3})(\\]?)$/", $this->container['email'])) {
             return false;
         }
         return true;

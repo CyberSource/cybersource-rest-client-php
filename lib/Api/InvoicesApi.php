@@ -127,7 +127,6 @@ class InvoicesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createInvoiceRequest when calling createInvoice");
             throw new \InvalidArgumentException('Missing the required parameter $createInvoiceRequest when calling createInvoice');
         }
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoices";
         $httpBody = '';
@@ -253,14 +252,11 @@ class InvoicesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $offset when calling getAllInvoices");
             throw new \InvalidArgumentException('Missing the required parameter $offset when calling getAllInvoices');
         }
-        
         // verify the required parameter 'limit' is set
         if ($limit === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $limit when calling getAllInvoices");
             throw new \InvalidArgumentException('Missing the required parameter $limit when calling getAllInvoices');
         }
-        
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoices";
         $httpBody = '';
@@ -386,7 +382,6 @@ class InvoicesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling getInvoice");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling getInvoice');
         }
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoices/{id}";
         $httpBody = '';
@@ -505,7 +500,6 @@ class InvoicesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling performCancelAction");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling performCancelAction');
         }
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoices/{id}/cancelation";
         $httpBody = '';
@@ -624,7 +618,6 @@ class InvoicesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling performSendAction");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling performSendAction');
         }
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoices/{id}/delivery";
         $httpBody = '';
@@ -745,13 +738,11 @@ class InvoicesApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling updateInvoice");
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateInvoice');
         }
-        
         // verify the required parameter 'updateInvoiceRequest' is set
         if ($updateInvoiceRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $updateInvoiceRequest when calling updateInvoice");
             throw new \InvalidArgumentException('Missing the required parameter $updateInvoiceRequest when calling updateInvoice');
         }
-        
         // parse inputs
         $resourcePath = "/invoicing/v2/invoices/{id}";
         $httpBody = '';

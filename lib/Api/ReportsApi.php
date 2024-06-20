@@ -129,8 +129,6 @@ class ReportsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createAdhocReportRequest when calling createReport");
             throw new \InvalidArgumentException('Missing the required parameter $createAdhocReportRequest when calling createReport');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/reports";
         $httpBody = '';
@@ -243,8 +241,6 @@ class ReportsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportId when calling getReportByReportId");
             throw new \InvalidArgumentException('Missing the required parameter $reportId when calling getReportByReportId');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/reports/{reportId}";
         $httpBody = '';
@@ -376,25 +372,16 @@ class ReportsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $startTime when calling searchReports");
             throw new \InvalidArgumentException('Missing the required parameter $startTime when calling searchReports');
         }
-        
         // verify the required parameter 'endTime' is set
         if ($endTime === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling searchReports");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling searchReports');
         }
-        
         // verify the required parameter 'timeQueryType' is set
         if ($timeQueryType === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $timeQueryType when calling searchReports");
             throw new \InvalidArgumentException('Missing the required parameter $timeQueryType when calling searchReports');
         }
-        
-        
-        
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/reports";
         $httpBody = '';

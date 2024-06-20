@@ -129,8 +129,6 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $predefinedSubscriptionRequestBean when calling createStandardOrClassicSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $predefinedSubscriptionRequestBean when calling createStandardOrClassicSubscription');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/predefined-report-subscriptions";
         $httpBody = '';
@@ -243,8 +241,6 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createReportSubscriptionRequest when calling createSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $createReportSubscriptionRequest when calling createSubscription');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions";
         $httpBody = '';
@@ -357,8 +353,6 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling deleteSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling deleteSubscription');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions/{reportName}";
         $httpBody = '';
@@ -469,7 +463,6 @@ class ReportSubscriptionsApi
      */
     public function getAllSubscriptionsWithHttpInfo($organizationId = null)
     {
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions";
         $httpBody = '';
@@ -579,8 +572,6 @@ class ReportSubscriptionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportName when calling getSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $reportName when calling getSubscription');
         }
-        
-        
         // parse inputs
         $resourcePath = "/reporting/v3/report-subscriptions/{reportName}";
         $httpBody = '';

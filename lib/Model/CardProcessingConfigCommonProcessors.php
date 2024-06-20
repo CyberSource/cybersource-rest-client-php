@@ -444,10 +444,6 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
             );
         }
 
-        if (!is_null($this->container['merchantTier']) && !preg_match("/^[0-9]+$/", $this->container['merchantTier'])) {
-            $invalid_properties[] = "invalid value for 'merchantTier', must be conform to the pattern /^[0-9]+$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -465,9 +461,6 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         }
         $allowed_values = $this->getIndustryCodeAllowableValues();
         if (!in_array($this->container['industryCode'], $allowed_values)) {
-            return false;
-        }
-        if (!preg_match("/^[0-9]+$/", $this->container['merchantTier'])) {
             return false;
         }
         return true;

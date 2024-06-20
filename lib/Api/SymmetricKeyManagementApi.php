@@ -127,7 +127,6 @@ class SymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createSharedSecretKeysRequest when calling createV2SharedSecretKeys");
             throw new \InvalidArgumentException('Missing the required parameter $createSharedSecretKeysRequest when calling createV2SharedSecretKeys');
         }
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys-sym";
         $httpBody = '';
@@ -243,13 +242,11 @@ class SymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vIcDomain when calling createV2SharedSecretKeysVerifi");
             throw new \InvalidArgumentException('Missing the required parameter $vIcDomain when calling createV2SharedSecretKeysVerifi');
         }
-        
         // verify the required parameter 'createSharedSecretKeysVerifiRequest' is set
         if ($createSharedSecretKeysVerifiRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $createSharedSecretKeysVerifiRequest when calling createV2SharedSecretKeysVerifi");
             throw new \InvalidArgumentException('Missing the required parameter $createSharedSecretKeysVerifiRequest when calling createV2SharedSecretKeysVerifi');
         }
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys-sym/verifi";
         $httpBody = '';
@@ -367,7 +364,6 @@ class SymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $deleteBulkSymmetricKeysRequest when calling deleteBulkSymmetricKeys");
             throw new \InvalidArgumentException('Missing the required parameter $deleteBulkSymmetricKeysRequest when calling deleteBulkSymmetricKeys');
         }
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys-sym/deletes";
         $httpBody = '';
@@ -481,7 +477,6 @@ class SymmetricKeyManagementApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling getKeyDetails");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling getKeyDetails');
         }
-        
         // parse inputs
         $resourcePath = "/kms/v2/keys-sym/{keyId}";
         $httpBody = '';

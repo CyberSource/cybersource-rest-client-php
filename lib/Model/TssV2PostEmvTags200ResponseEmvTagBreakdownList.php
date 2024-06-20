@@ -167,14 +167,6 @@ class TssV2PostEmvTags200ResponseEmvTagBreakdownList implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['tag']) && !preg_match("/^[0-9A-F]*$/", $this->container['tag'])) {
-            $invalid_properties[] = "invalid value for 'tag', must be conform to the pattern /^[0-9A-F]*$/.";
-        }
-
-        if (!is_null($this->container['value']) && !preg_match("/^[0-9A-F|X]*$/", $this->container['value'])) {
-            $invalid_properties[] = "invalid value for 'value', must be conform to the pattern /^[0-9A-F|X]*$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -187,12 +179,6 @@ class TssV2PostEmvTags200ResponseEmvTagBreakdownList implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^[0-9A-F]*$/", $this->container['tag'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9A-F|X]*$/", $this->container['value'])) {
-            return false;
-        }
         return true;
     }
 

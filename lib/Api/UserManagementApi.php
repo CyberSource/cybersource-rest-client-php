@@ -128,10 +128,6 @@ class UserManagementApi
      */
     public function getUsersWithHttpInfo($organizationId = null, $userName = null, $permissionId = null, $roleId = null)
     {
-        
-        
-        
-        
         // parse inputs
         $resourcePath = "/ums/v1/users";
         $httpBody = '';

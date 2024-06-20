@@ -185,10 +185,6 @@ class PtsV1TransactionBatchesIdGet200Response implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['id']) && !preg_match("/^[a-zA-Z0-9_+-]*$/", $this->container['id'])) {
-            $invalid_properties[] = "invalid value for 'id', must be conform to the pattern /^[a-zA-Z0-9_+-]*$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -201,9 +197,6 @@ class PtsV1TransactionBatchesIdGet200Response implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^[a-zA-Z0-9_+-]*$/", $this->container['id'])) {
-            return false;
-        }
         return true;
     }
 
