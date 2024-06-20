@@ -436,18 +436,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
-            $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
-
-        if (!is_null($this->container['doingBusinessAs']) && !preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
-            $invalid_properties[] = "invalid value for 'doingBusinessAs', must be conform to the pattern /^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/.";
-        }
-
-        if (!is_null($this->container['description']) && !preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
-            $invalid_properties[] = "invalid value for 'description', must be conform to the pattern /[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.";
-        }
-
         $allowed_values = $this->getTimeZoneAllowableValues();
         if (!in_array($this->container['timeZone'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -456,28 +444,12 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
             );
         }
 
-        if (!is_null($this->container['websiteUrl']) && !preg_match("/\\b((?:https?:\/\/|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}\/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?Â«Â»â€œâ€â€˜â€™]))/", $this->container['websiteUrl'])) {
-            $invalid_properties[] = "invalid value for 'websiteUrl', must be conform to the pattern /\\b((?:https?:\/\/|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}\/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?Â«Â»â€œâ€â€˜â€™]))/.";
-        }
-
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = sprintf(
                 "invalid value for 'type', must be one of '%s'",
                 implode("', '", $allowed_values)
             );
-        }
-
-        if (!is_null($this->container['taxId']) && !preg_match("/\\d{9}/", $this->container['taxId'])) {
-            $invalid_properties[] = "invalid value for 'taxId', must be conform to the pattern /\\d{9}/.";
-        }
-
-        if (!is_null($this->container['phoneNumber']) && !preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $this->container['phoneNumber'])) {
-            $invalid_properties[] = "invalid value for 'phoneNumber', must be conform to the pattern /^[0-9a-zA-Z\\\\+\\\\-]+$/.";
-        }
-
-        if (!is_null($this->container['merchantCategoryCode']) && !preg_match("/^\\d{3,4}$/", $this->container['merchantCategoryCode'])) {
-            $invalid_properties[] = "invalid value for 'merchantCategoryCode', must be conform to the pattern /^\\d{3,4}$/.";
         }
 
         return $invalid_properties;
@@ -495,33 +467,12 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             return false;
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['name'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z _\\-\\+\\.\\*\\\"\/'&\\,\\(\\)!$;:?@\\#¡-￿]+$/", $this->container['doingBusinessAs'])) {
-            return false;
-        }
-        if (!preg_match("/[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿ\\n\\ra-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['description'])) {
-            return false;
-        }
         $allowed_values = $this->getTimeZoneAllowableValues();
         if (!in_array($this->container['timeZone'], $allowed_values)) {
             return false;
         }
-        if (!preg_match("/\\b((?:https?:\/\/|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}\/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?Â«Â»â€œâ€â€˜â€™]))/", $this->container['websiteUrl'])) {
-            return false;
-        }
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            return false;
-        }
-        if (!preg_match("/\\d{9}/", $this->container['taxId'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z\\\\+\\\\-]+$/", $this->container['phoneNumber'])) {
-            return false;
-        }
-        if (!preg_match("/^\\d{3,4}$/", $this->container['merchantCategoryCode'])) {
             return false;
         }
         return true;

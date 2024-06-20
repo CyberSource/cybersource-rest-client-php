@@ -176,36 +176,12 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationAddress i
         if ($this->container['country'] === null) {
             $invalid_properties[] = "'country' can't be null";
         }
-        if (!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $this->container['country'])) {
-            $invalid_properties[] = "invalid value for 'country', must be conform to the pattern /^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/.";
-        }
-
         if ($this->container['address1'] === null) {
             $invalid_properties[] = "'address1' can't be null";
         }
-        if (!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $this->container['address1'])) {
-            $invalid_properties[] = "invalid value for 'address1', must be conform to the pattern /^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/.";
-        }
-
-        if (!is_null($this->container['address2']) && !preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $this->container['address2'])) {
-            $invalid_properties[] = "invalid value for 'address2', must be conform to the pattern /^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/.";
-        }
-
         if ($this->container['locality'] === null) {
             $invalid_properties[] = "'locality' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z _\\-¡-￿]+$/", $this->container['locality'])) {
-            $invalid_properties[] = "invalid value for 'locality', must be conform to the pattern /^[0-9a-zA-Z _\\-¡-￿]+$/.";
-        }
-
-        if (!is_null($this->container['administrativeArea']) && !preg_match("/^[0-9a-zA-Z¡-￿ ]*$/", $this->container['administrativeArea'])) {
-            $invalid_properties[] = "invalid value for 'administrativeArea', must be conform to the pattern /^[0-9a-zA-Z¡-￿ ]*$/.";
-        }
-
-        if (!is_null($this->container['postalCode']) && !preg_match("/^[0-9a-zA-Z ]*$/", $this->container['postalCode'])) {
-            $invalid_properties[] = "invalid value for 'postalCode', must be conform to the pattern /^[0-9a-zA-Z ]*$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -221,28 +197,10 @@ class Boardingv1registrationsOrganizationInformationBusinessInformationAddress i
         if ($this->container['country'] === null) {
             return false;
         }
-        if (!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $this->container['country'])) {
-            return false;
-        }
         if ($this->container['address1'] === null) {
             return false;
         }
-        if (!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $this->container['address1'])) {
-            return false;
-        }
-        if (!preg_match("/^[À-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/@$:!% ]{1,}$/", $this->container['address2'])) {
-            return false;
-        }
         if ($this->container['locality'] === null) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z _\\-¡-￿]+$/", $this->container['locality'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z¡-￿ ]*$/", $this->container['administrativeArea'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z ]*$/", $this->container['postalCode'])) {
             return false;
         }
         return true;

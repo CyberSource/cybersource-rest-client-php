@@ -155,14 +155,6 @@ class PayerAuthConfigCardTypesVerifiedByVisaCurrencies implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['acquirerId']) && !preg_match("/^[a-zA-Z0-9]{6,20}$/", $this->container['acquirerId'])) {
-            $invalid_properties[] = "invalid value for 'acquirerId', must be conform to the pattern /^[a-zA-Z0-9]{6,20}$/.";
-        }
-
-        if (!is_null($this->container['processorMerchantId']) && !preg_match("/^[a-zA-Z0-9]{6,35}$/", $this->container['processorMerchantId'])) {
-            $invalid_properties[] = "invalid value for 'processorMerchantId', must be conform to the pattern /^[a-zA-Z0-9]{6,35}$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -175,12 +167,6 @@ class PayerAuthConfigCardTypesVerifiedByVisaCurrencies implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^[a-zA-Z0-9]{6,20}$/", $this->container['acquirerId'])) {
-            return false;
-        }
-        if (!preg_match("/^[a-zA-Z0-9]{6,35}$/", $this->container['processorMerchantId'])) {
-            return false;
-        }
         return true;
     }
 
