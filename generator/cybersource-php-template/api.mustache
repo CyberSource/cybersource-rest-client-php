@@ -57,7 +57,7 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -142,27 +142,6 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
             throw new \InvalidArgumentException('Missing the required parameter ${{paramName}} when calling {{operationId}}');
         }
         {{/required}}
-        {{#hasValidation}}
-        {{#pattern}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}!preg_match("{{{pattern}}}", ${{paramName}})) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");
-            throw new \InvalidArgumentException('Invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.');
-        }
-        {{/pattern}}
-        {{#maxItems}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}(count(${{paramName}}) > {{maxItems}})) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.");
-            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.');
-        }
-        {{/maxItems}}
-        {{#minItems}}
-        if ({{^required}}!is_null(${{paramName}}) && {{/required}}(count(${{paramName}}) < {{minItems}})) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"${{paramName}}\" when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.");
-            throw new \InvalidArgumentException('Invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.');
-        }
-        {{/minItems}}
-
-        {{/hasValidation}}
         {{/allParams}}
         // parse inputs
         $resourcePath = "{{{path}}}";

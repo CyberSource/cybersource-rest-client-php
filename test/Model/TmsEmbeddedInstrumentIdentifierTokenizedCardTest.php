@@ -84,6 +84,13 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCardTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
+    {
+    }
+
+    /**
      * Test attribute "state"
      */
     public function testPropertyState()

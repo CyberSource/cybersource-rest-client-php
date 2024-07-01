@@ -177,14 +177,6 @@ class InlineResponse2011IntegrationInformationTenantConfigurations implements Ar
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['solutionId']) && !preg_match("/^[0-9a-zA-Z_]+$/", $this->container['solutionId'])) {
-            $invalid_properties[] = "invalid value for 'solutionId', must be conform to the pattern /^[0-9a-zA-Z_]+$/.";
-        }
-
-        if (!is_null($this->container['tenantConfigurationId']) && !preg_match("/^[0-9a-zA-Z_]+$/", $this->container['tenantConfigurationId'])) {
-            $invalid_properties[] = "invalid value for 'tenantConfigurationId', must be conform to the pattern /^[0-9a-zA-Z_]+$/.";
-        }
-
         $allowed_values = $this->getStatusAllowableValues();
         if (!in_array($this->container['status'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -205,12 +197,6 @@ class InlineResponse2011IntegrationInformationTenantConfigurations implements Ar
     public function valid()
     {
 
-        if (!preg_match("/^[0-9a-zA-Z_]+$/", $this->container['solutionId'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z_]+$/", $this->container['tenantConfigurationId'])) {
-            return false;
-        }
         $allowed_values = $this->getStatusAllowableValues();
         if (!in_array($this->container['status'], $allowed_values)) {
             return false;
@@ -235,9 +221,6 @@ class InlineResponse2011IntegrationInformationTenantConfigurations implements Ar
      */
     public function setSolutionId($solutionId)
     {
-        if (!is_null($solutionId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $solutionId))) {
-            throw new \InvalidArgumentException("invalid value for $solutionId when calling InlineResponse2011IntegrationInformationTenantConfigurations., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['solutionId'] = $solutionId;
 
         return $this;
@@ -259,9 +242,6 @@ class InlineResponse2011IntegrationInformationTenantConfigurations implements Ar
      */
     public function setTenantConfigurationId($tenantConfigurationId)
     {
-        if (!is_null($tenantConfigurationId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $tenantConfigurationId))) {
-            throw new \InvalidArgumentException("invalid value for $tenantConfigurationId when calling InlineResponse2011IntegrationInformationTenantConfigurations., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['tenantConfigurationId'] = $tenantConfigurationId;
 
         return $this;

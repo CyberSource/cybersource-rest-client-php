@@ -149,14 +149,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['fontColor']) && !preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['fontColor'])) {
-            $invalid_properties[] = "invalid value for 'fontColor', must be conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.";
-        }
-
-        if (!is_null($this->container['backgroundColor']) && !preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['backgroundColor'])) {
-            $invalid_properties[] = "invalid value for 'backgroundColor', must be conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -169,12 +161,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
     public function valid()
     {
 
-        if (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['fontColor'])) {
-            return false;
-        }
-        if (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $this->container['backgroundColor'])) {
-            return false;
-        }
         return true;
     }
 
@@ -195,9 +181,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      */
     public function setFontColor($fontColor)
     {
-        if (!is_null($fontColor) && (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $fontColor))) {
-            throw new \InvalidArgumentException("invalid value for $fontColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.");
-        }
         $this->container['fontColor'] = $fontColor;
 
         return $this;
@@ -219,9 +202,6 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderSt
      */
     public function setBackgroundColor($backgroundColor)
     {
-        if (!is_null($backgroundColor) && (!preg_match("/^#(?:[0-9a-fA-F]{3}){1,2}$/", $backgroundColor))) {
-            throw new \InvalidArgumentException("invalid value for $backgroundColor when calling InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationHeaderStyle., must conform to the pattern /^#(?:[0-9a-fA-F]{3}){1,2}$/.");
-        }
         $this->container['backgroundColor'] = $backgroundColor;
 
         return $this;

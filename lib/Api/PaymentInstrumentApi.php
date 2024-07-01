@@ -66,7 +66,7 @@ class PaymentInstrumentApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -129,8 +129,6 @@ class PaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling deletePaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling deletePaymentInstrument');
         }
-
-
         // parse inputs
         $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentId}";
         $httpBody = '';
@@ -259,8 +257,6 @@ class PaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling getPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling getPaymentInstrument');
         }
-
-
         // parse inputs
         $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentId}";
         $httpBody = '';
@@ -401,14 +397,11 @@ class PaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $paymentInstrumentId when calling patchPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $paymentInstrumentId when calling patchPaymentInstrument');
         }
-
         // verify the required parameter 'patchPaymentInstrumentRequest' is set
         if ($patchPaymentInstrumentRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchPaymentInstrumentRequest when calling patchPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $patchPaymentInstrumentRequest when calling patchPaymentInstrument');
         }
-
-
         // parse inputs
         $resourcePath = "/tms/v1/paymentinstruments/{paymentInstrumentId}";
         $httpBody = '';
@@ -560,7 +553,6 @@ class PaymentInstrumentApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postPaymentInstrumentRequest when calling postPaymentInstrument");
             throw new \InvalidArgumentException('Missing the required parameter $postPaymentInstrumentRequest when calling postPaymentInstrument');
         }
-
         // parse inputs
         $resourcePath = "/tms/v1/paymentinstruments";
         $httpBody = '';

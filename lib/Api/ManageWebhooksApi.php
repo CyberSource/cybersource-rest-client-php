@@ -66,7 +66,7 @@ class ManageWebhooksApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -476,11 +476,6 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCSenderOrganizationId when calling saveAsymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $vCSenderOrganizationId when calling saveAsymEgressKey');
         }
-        if (!preg_match("/^[A-Za-z0-9\\-_]+$/", $vCSenderOrganizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"vCSenderOrganizationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.");
-            throw new \InvalidArgumentException('Invalid value for \"vCSenderOrganizationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\-_]+$/.');
-        }
-
         // verify the required parameter 'vCPermissions' is set
         if ($vCPermissions === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $vCPermissions when calling saveAsymEgressKey");
@@ -491,11 +486,6 @@ class ManageWebhooksApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $saveAsymEgressKey when calling saveAsymEgressKey");
             throw new \InvalidArgumentException('Missing the required parameter $saveAsymEgressKey when calling saveAsymEgressKey');
         }
-        if (!is_null($vCCorrelationId) && !preg_match("/^[A-Za-z0-9\\.\\-_:]+$/", $vCCorrelationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"vCCorrelationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\.\\-_:]+$/.");
-            throw new \InvalidArgumentException('Invalid value for \"vCCorrelationId\" when calling ManageWebhooksApi.saveAsymEgressKey, must conform to the pattern /^[A-Za-z0-9\\.\\-_:]+$/.');
-        }
-
         // parse inputs
         $resourcePath = "/kms/egress/v2/keys-asym";
         $httpBody = '';

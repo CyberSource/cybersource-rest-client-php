@@ -179,10 +179,6 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['id']) && !preg_match("/^[a-zA-Z0-9_+-]*$/", $this->container['id'])) {
-            $invalid_properties[] = "invalid value for 'id', must be conform to the pattern /^[a-zA-Z0-9_+-]*$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -195,9 +191,6 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
     public function valid()
     {
 
-        if (!preg_match("/^[a-zA-Z0-9_+-]*$/", $this->container['id'])) {
-            return false;
-        }
         return true;
     }
 
@@ -218,9 +211,6 @@ class PtsV1TransactionBatchesGet200ResponseTransactionBatches implements ArrayAc
      */
     public function setId($id)
     {
-        if (!is_null($id) && (!preg_match("/^[a-zA-Z0-9_+-]*$/", $id))) {
-            throw new \InvalidArgumentException("invalid value for $id when calling PtsV1TransactionBatchesGet200ResponseTransactionBatches., must conform to the pattern /^[a-zA-Z0-9_+-]*$/.");
-        }
         $this->container['id'] = $id;
 
         return $this;

@@ -84,13 +84,6 @@ class Ptsv2payoutsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "middleInitial"
-     */
-    public function testPropertyMiddleInitial()
-    {
-    }
-
-    /**
      * Test attribute "middleName"
      */
     public function testPropertyMiddleName()
@@ -143,13 +136,6 @@ class Ptsv2payoutsRecipientInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "phoneNumber"
      */
     public function testPropertyPhoneNumber()
-    {
-    }
-
-    /**
-     * Test attribute "dateOfBirth"
-     */
-    public function testPropertyDateOfBirth()
     {
     }
 }

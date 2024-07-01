@@ -222,10 +222,6 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['reportInterval']) && !preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $this->container['reportInterval'])) {
-            $invalid_properties[] = "invalid value for 'reportInterval', must be conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -238,9 +234,6 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
     public function valid()
     {
 
-        if (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $this->container['reportInterval'])) {
-            return false;
-        }
         return true;
     }
 
@@ -366,9 +359,6 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
      */
     public function setReportInterval($reportInterval)
     {
-        if (!is_null($reportInterval) && (!preg_match("/^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/", $reportInterval))) {
-            throw new \InvalidArgumentException("invalid value for $reportInterval when calling ReportingV3ReportSubscriptionsGet200ResponseSubscriptions., must conform to the pattern /^PT((([1-9]|1[0-9]|2[0-3])H(([1-9]|[1-4][0-9]|5[0-9])M)?)|((([1-9]|1[0-9]|2[0-3])H)?([1-9]|[1-4][0-9]|5[0-9])M))$/.");
-        }
         $this->container['reportInterval'] = $reportInterval;
 
         return $this;

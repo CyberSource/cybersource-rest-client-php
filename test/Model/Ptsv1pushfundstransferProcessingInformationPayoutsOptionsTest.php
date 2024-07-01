@@ -77,16 +77,16 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptionsTest extends \PHP
     }
 
     /**
-     * Test attribute "accountFundingReferenceId"
+     * Test attribute "sourceCurrency"
      */
-    public function testPropertyAccountFundingReferenceId()
+    public function testPropertySourceCurrency()
     {
     }
 
     /**
-     * Test attribute "retrievalReferenceNumber"
+     * Test attribute "destinationCurrency"
      */
-    public function testPropertyRetrievalReferenceNumber()
+    public function testPropertyDestinationCurrency()
     {
     }
 }

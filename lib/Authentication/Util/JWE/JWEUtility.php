@@ -14,9 +14,12 @@ use Jose\Component\Encryption\JWEDecrypter;
 use Jose\Component\Encryption\Serializer\CompactSerializer;
 use Jose\Component\Encryption\Serializer\JWESerializerManager;
 use Jose\Component\KeyManagement\JWKFactory;
+use CyberSource\Authentication\Util\Cache as Cache;
 
 
 class JWEUtility {
+    private static $cache = null;
+    
     private static function loadKeyFromPEMFile($path) {
         return JWKFactory::createFromKeyFile(
             $path,
@@ -28,17 +31,20 @@ class JWEUtility {
     }
 
     public static function decryptJWEUsingPEM(MerchantConfiguration $merchantConfig, string $jweBase64Data) {
+        if (!isset(self::$cache)) {
+            self::$cache = new Cache();
+        }
         $filePath = $merchantConfig -> getJwePEMFileDirectory();
         if (!file_exists($filePath)) {
             return null;
         }
         $cacheKey = 'privateKeyFromPEMFile' . '_' . strtotime(date("F d Y H:i:s", filemtime($filePath)));
-        $cached_key = apcu_exists($cacheKey);
+        $cached_key = self::$cache->checkIfExistInCache($cacheKey); // apcu_exists($cacheKey);
         if (!$cached_key) {
             $privateKeyFromPEMFile = self::loadKeyFromPEMFile($merchantConfig->getJwePEMFileDirectory());
-            apcu_store($cacheKey, $privateKeyFromPEMFile);
+            self::$cache->storeInCache($cacheKey, $privateKeyFromPEMFile); // apcu_store($cacheKey, $privateKeyFromPEMFile);
         }
-        $jweKey = apcu_fetch($cacheKey);
+        $jweKey = self::$cache->fetchFromCache($cacheKey); // apcu_fetch($cacheKey);
         $serializerManager = new JWESerializerManager([
             new CompactSerializer(),
         ]);

@@ -223,14 +223,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['organizationId']) && !preg_match("/^[0-9a-zA-Z_]+$/", $this->container['organizationId'])) {
-            $invalid_properties[] = "invalid value for 'organizationId', must be conform to the pattern /^[0-9a-zA-Z_]+$/.";
-        }
-
-        if (!is_null($this->container['parentOrganizationId']) && !preg_match("/^[0-9a-zA-Z_]+$/", $this->container['parentOrganizationId'])) {
-            $invalid_properties[] = "invalid value for 'parentOrganizationId', must be conform to the pattern /^[0-9a-zA-Z_]+$/.";
-        }
-
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -262,12 +254,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
     public function valid()
     {
 
-        if (!preg_match("/^[0-9a-zA-Z_]+$/", $this->container['organizationId'])) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z_]+$/", $this->container['parentOrganizationId'])) {
-            return false;
-        }
         $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
@@ -299,9 +285,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
      */
     public function setOrganizationId($organizationId)
     {
-        if (!is_null($organizationId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $organizationId))) {
-            throw new \InvalidArgumentException("invalid value for $organizationId when calling Boardingv1registrationsOrganizationInformation., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['organizationId'] = $organizationId;
 
         return $this;
@@ -323,9 +306,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
      */
     public function setParentOrganizationId($parentOrganizationId)
     {
-        if (!is_null($parentOrganizationId) && (!preg_match("/^[0-9a-zA-Z_]+$/", $parentOrganizationId))) {
-            throw new \InvalidArgumentException("invalid value for $parentOrganizationId when calling Boardingv1registrationsOrganizationInformation., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['parentOrganizationId'] = $parentOrganizationId;
 
         return $this;

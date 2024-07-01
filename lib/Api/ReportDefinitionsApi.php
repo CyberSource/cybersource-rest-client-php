@@ -66,7 +66,7 @@ class ReportDefinitionsApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -133,11 +133,6 @@ class ReportDefinitionsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $reportDefinitionName when calling getResourceInfoByReportDefinition");
             throw new \InvalidArgumentException('Missing the required parameter $reportDefinitionName when calling getResourceInfoByReportDefinition');
         }
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportDefinitionsApi.getResourceInfoByReportDefinition, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportDefinitionsApi.getResourceInfoByReportDefinition, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
         // parse inputs
         $resourcePath = "/reporting/v3/report-definitions/{reportDefinitionName}";
         $httpBody = '';
@@ -260,11 +255,6 @@ class ReportDefinitionsApi
      */
     public function getResourceV2InfoWithHttpInfo($subscriptionType = null, $organizationId = null)
     {
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling ReportDefinitionsApi.getResourceV2Info, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling ReportDefinitionsApi.getResourceV2Info, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
         // parse inputs
         $resourcePath = "/reporting/v3/report-definitions";
         $httpBody = '';

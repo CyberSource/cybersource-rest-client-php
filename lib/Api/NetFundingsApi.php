@@ -66,7 +66,7 @@ class NetFundingsApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -138,11 +138,6 @@ class NetFundingsApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $endTime when calling getNetFundingDetails");
             throw new \InvalidArgumentException('Missing the required parameter $endTime when calling getNetFundingDetails');
         }
-        if (!is_null($organizationId) && !preg_match("/[a-zA-Z0-9-_]+/", $organizationId)) {
-            self::$logger->error("InvalidArgumentException : Invalid value for \"organizationId\" when calling NetFundingsApi.getNetFundingDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.");
-            throw new \InvalidArgumentException('Invalid value for \"organizationId\" when calling NetFundingsApi.getNetFundingDetails, must conform to the pattern /[a-zA-Z0-9-_]+/.');
-        }
-
         // parse inputs
         $resourcePath = "/reporting/v3/net-fundings";
         $httpBody = '';

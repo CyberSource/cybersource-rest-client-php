@@ -110,4 +110,11 @@ class Ptsv2paymentsTokenInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyNetworkTokenOption()
     {
     }
+
+    /**
+     * Test attribute "tokenProvisioningInformation"
+     */
+    public function testPropertyTokenProvisioningInformation()
+    {
+    }
 }

@@ -284,7 +284,7 @@ class PushFunds400Response implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.  Possible values: - Declined - One or more fields in the request contains invalid data - Declined - The request is missing one or more fields - Declined - There is a problem with your CyberSource merchant configuration.
+     * @param string $message The detail message related to the status and reason listed above.  Possible values: - One or more fields in the request contains invalid data. - The request is missing one or more required fields. - Declined - There is a problem with your CyberSource merchant configuration.
      * @return $this
      */
     public function setMessage($message)

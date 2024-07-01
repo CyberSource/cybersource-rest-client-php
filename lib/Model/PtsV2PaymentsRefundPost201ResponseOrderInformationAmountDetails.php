@@ -236,7 +236,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails implements
 
     /**
      * Sets exchangeRate
-     * @param string $exchangeRate Exchange rate returned by the DCC service. Includes a decimal point and a maximum of 4 decimal places.  For details, see `exchange_rate` request-level field description in the [Dynamic Currency Conversion For First Data Using the SCMP API](http://apps.cybersource.com/library/documentation/dev_guides/DCC_FirstData_SCMP/DCC_FirstData_SCMP_API.pdf)
+     * @param string $exchangeRate Exchange rate returned by the DCC service. Includes a decimal point and a maximum of 4 decimal places.
      * @return $this
      */
     public function setExchangeRate($exchangeRate)
@@ -257,7 +257,7 @@ class PtsV2PaymentsRefundPost201ResponseOrderInformationAmountDetails implements
 
     /**
      * Sets foreignAmount
-     * @param string $foreignAmount Set this field to the converted amount that was returned by the DCC provider. For processor-specific information, see the `foreign_amount` field description in the [Credit Card Services Using the SCMP API Guide.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $foreignAmount Set this field to the converted amount that was returned by the DCC provider.
      * @return $this
      */
     public function setForeignAmount($foreignAmount)

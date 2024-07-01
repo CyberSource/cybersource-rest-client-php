@@ -54,7 +54,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'issuingCountry' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'type' => null
+        'type' => null,
+        'issuingCountry' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'type' => 'type'
+        'type' => 'type',
+        'issuingCountry' => 'issuingCountry'
     ];
 
 
@@ -92,7 +95,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
      */
     protected static $setters = [
         'id' => 'setId',
-        'type' => 'setType'
+        'type' => 'setType',
+        'issuingCountry' => 'setIssuingCountry'
     ];
 
 
@@ -102,7 +106,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
      */
     protected static $getters = [
         'id' => 'getId',
-        'type' => 'getType'
+        'type' => 'getType',
+        'issuingCountry' => 'getIssuingCountry'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['issuingCountry'] = isset($data['issuingCountry']) ? $data['issuingCountry'] : null;
     }
 
     /**
@@ -176,7 +182,7 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
 
     /**
      * Sets id
-     * @param string $id The ID number/value.  Visa Platform Connect This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender.  Mastercard Send(80)
+     * @param string $id The ID number/value. Processor(35)
      * @return $this
      */
     public function setId($id)
@@ -197,12 +203,33 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
 
     /**
      * Sets type
-     * @param string $type This tag will contain the type of sender identification. The valid values are:  Visa Platform Connect: - `BTHD`: (Date of birth) - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `CPNY`: (Company registration number) - `PRXY`: (Proxy identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `LAWE`: (Law enforcement identification) - `MILI`: (Military identification) - `TRVL`: (Travel identification (non-passport)) - `EMAL`: (Email) - `PHON`: (Phone number)  Mastercard Send: - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `EIDN`: (Employer Identification Number) - `IDNB`: (Identity Card Number)
+     * @param string $type This tag will contain the type of sender identification.
      * @return $this
      */
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuingCountry
+     * @return string
+     */
+    public function getIssuingCountry()
+    {
+        return $this->container['issuingCountry'];
+    }
+
+    /**
+     * Sets issuingCountry
+     * @param string $issuingCountry Issuing country of the identification. The field format should be a 2 character ISO 3166-1 alpha-2 country code.
+     * @return $this
+     */
+    public function setIssuingCountry($issuingCountry)
+    {
+        $this->container['issuingCountry'] = $issuingCountry;
 
         return $this;
     }

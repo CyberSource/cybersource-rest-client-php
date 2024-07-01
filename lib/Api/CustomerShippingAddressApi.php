@@ -66,7 +66,7 @@ class CustomerShippingAddressApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -131,14 +131,11 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling deleteCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling deleteCustomerShippingAddress');
         }
-
         // verify the required parameter 'shippingAddressId' is set
         if ($shippingAddressId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling deleteCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling deleteCustomerShippingAddress');
         }
-
-
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
         $httpBody = '';
@@ -285,14 +282,11 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerShippingAddress');
         }
-
         // verify the required parameter 'shippingAddressId' is set
         if ($shippingAddressId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling getCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling getCustomerShippingAddress');
         }
-
-
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
         $httpBody = '';
@@ -441,10 +435,6 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling getCustomerShippingAddressesList");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling getCustomerShippingAddressesList');
         }
-
-
-
-
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses";
         $httpBody = '';
@@ -597,20 +587,16 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling patchCustomersShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling patchCustomersShippingAddress');
         }
-
         // verify the required parameter 'shippingAddressId' is set
         if ($shippingAddressId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $shippingAddressId when calling patchCustomersShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $shippingAddressId when calling patchCustomersShippingAddress');
         }
-
         // verify the required parameter 'patchCustomerShippingAddressRequest' is set
         if ($patchCustomerShippingAddressRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $patchCustomerShippingAddressRequest when calling patchCustomersShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $patchCustomerShippingAddressRequest when calling patchCustomersShippingAddress');
         }
-
-
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses/{shippingAddressId}";
         $httpBody = '';
@@ -772,13 +758,11 @@ class CustomerShippingAddressApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $customerId when calling postCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $customerId when calling postCustomerShippingAddress');
         }
-
         // verify the required parameter 'postCustomerShippingAddressRequest' is set
         if ($postCustomerShippingAddressRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postCustomerShippingAddressRequest when calling postCustomerShippingAddress");
             throw new \InvalidArgumentException('Missing the required parameter $postCustomerShippingAddressRequest when calling postCustomerShippingAddress');
         }
-
         // parse inputs
         $resourcePath = "/tms/v2/customers/{customerId}/shipping-addresses";
         $httpBody = '';

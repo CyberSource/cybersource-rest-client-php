@@ -54,7 +54,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'firstName' => 'string',
-        'middleInitial' => 'string',
         'middleName' => 'string',
         'lastName' => 'string',
         'address1' => 'string',
@@ -62,8 +61,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'string',
         'country' => 'string',
         'postalCode' => 'string',
-        'phoneNumber' => 'string',
-        'dateOfBirth' => 'string'
+        'phoneNumber' => 'string'
     ];
 
     /**
@@ -72,7 +70,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'firstName' => null,
-        'middleInitial' => null,
         'middleName' => null,
         'lastName' => null,
         'address1' => null,
@@ -80,8 +77,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => null,
         'country' => null,
         'postalCode' => null,
-        'phoneNumber' => null,
-        'dateOfBirth' => null
+        'phoneNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +96,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'firstName' => 'firstName',
-        'middleInitial' => 'middleInitial',
         'middleName' => 'middleName',
         'lastName' => 'lastName',
         'address1' => 'address1',
@@ -108,8 +103,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
         'postalCode' => 'postalCode',
-        'phoneNumber' => 'phoneNumber',
-        'dateOfBirth' => 'dateOfBirth'
+        'phoneNumber' => 'phoneNumber'
     ];
 
 
@@ -119,7 +113,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
      */
     protected static $setters = [
         'firstName' => 'setFirstName',
-        'middleInitial' => 'setMiddleInitial',
         'middleName' => 'setMiddleName',
         'lastName' => 'setLastName',
         'address1' => 'setAddress1',
@@ -127,8 +120,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
         'postalCode' => 'setPostalCode',
-        'phoneNumber' => 'setPhoneNumber',
-        'dateOfBirth' => 'setDateOfBirth'
+        'phoneNumber' => 'setPhoneNumber'
     ];
 
 
@@ -138,7 +130,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
      */
     protected static $getters = [
         'firstName' => 'getFirstName',
-        'middleInitial' => 'getMiddleInitial',
         'middleName' => 'getMiddleName',
         'lastName' => 'getLastName',
         'address1' => 'getAddress1',
@@ -146,8 +137,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
         'postalCode' => 'getPostalCode',
-        'phoneNumber' => 'getPhoneNumber',
-        'dateOfBirth' => 'getDateOfBirth'
+        'phoneNumber' => 'getPhoneNumber'
     ];
 
     public static function attributeMap()
@@ -182,7 +172,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['middleInitial'] = isset($data['middleInitial']) ? $data['middleInitial'] : null;
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
@@ -191,7 +180,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
-        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
     }
 
     /**
@@ -236,27 +224,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets middleInitial
-     * @return string
-     */
-    public function getMiddleInitial()
-    {
-        return $this->container['middleInitial'];
-    }
-
-    /**
-     * Sets middleInitial
-     * @param string $middleInitial Middle Initial of recipient. Required only for FDCCompass.
-     * @return $this
-     */
-    public function setMiddleInitial($middleInitial)
-    {
-        $this->container['middleInitial'] = $middleInitial;
 
         return $this;
     }
@@ -425,27 +392,6 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
     public function setPhoneNumber($phoneNumber)
     {
         $this->container['phoneNumber'] = $phoneNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets dateOfBirth
-     * @return string
-     */
-    public function getDateOfBirth()
-    {
-        return $this->container['dateOfBirth'];
-    }
-
-    /**
-     * Sets dateOfBirth
-     * @param string $dateOfBirth Recipient date of birth in YYYYMMDD format. Required only for FDCCompass.
-     * @return $this
-     */
-    public function setDateOfBirth($dateOfBirth)
-    {
-        $this->container['dateOfBirth'] = $dateOfBirth;
 
         return $this;
     }

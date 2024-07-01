@@ -54,7 +54,9 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'totalAmount' => 'string',
-        'currency' => 'string'
+        'currency' => 'string',
+        'sourceCurrency' => 'string',
+        'destinationCurrency' => 'string'
     ];
 
     /**
@@ -63,7 +65,9 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'totalAmount' => null,
-        'currency' => null
+        'currency' => null,
+        'sourceCurrency' => null,
+        'destinationCurrency' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +86,9 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $attributeMap = [
         'totalAmount' => 'totalAmount',
-        'currency' => 'currency'
+        'currency' => 'currency',
+        'sourceCurrency' => 'sourceCurrency',
+        'destinationCurrency' => 'destinationCurrency'
     ];
 
 
@@ -92,7 +98,9 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $setters = [
         'totalAmount' => 'setTotalAmount',
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
+        'sourceCurrency' => 'setSourceCurrency',
+        'destinationCurrency' => 'setDestinationCurrency'
     ];
 
 
@@ -102,7 +110,9 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
      */
     protected static $getters = [
         'totalAmount' => 'getTotalAmount',
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
+        'sourceCurrency' => 'getSourceCurrency',
+        'destinationCurrency' => 'getDestinationCurrency'
     ];
 
     public static function attributeMap()
@@ -138,6 +148,8 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
     {
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['sourceCurrency'] = isset($data['sourceCurrency']) ? $data['sourceCurrency'] : null;
+        $this->container['destinationCurrency'] = isset($data['destinationCurrency']) ? $data['destinationCurrency'] : null;
     }
 
     /**
@@ -188,7 +200,7 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets totalAmount
-     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.  The disbursement amount. Numeric integer, 1-999999999999. The decimal point is implied based on the relevant currency exponent. For example, a US Dollar $53 amount is a value of 5300.  Processor Amount Ranges: Visa Platform Connect: .01-9999999999.99  Mastercard Send: 1-9999999999.99  FDC Compass: .01- 9999999999.99  Chase Paymentech: .01-9999999999.99
+     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.
      * @return $this
      */
     public function setTotalAmount($totalAmount)
@@ -209,12 +221,54 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets currency
-     * @param string $currency Use a 3-character alpha currency code for currency of the sender.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor.
+     * @param string $currency Use a 3-character alpha currency code for currency of the funds transfer.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf  Currency must be supported by the processor.
      * @return $this
      */
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets sourceCurrency
+     * @return string
+     */
+    public function getSourceCurrency()
+    {
+        return $this->container['sourceCurrency'];
+    }
+
+    /**
+     * Sets sourceCurrency
+     * @param string $sourceCurrency Use a 3-character alpha currency code for source currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf
+     * @return $this
+     */
+    public function setSourceCurrency($sourceCurrency)
+    {
+        $this->container['sourceCurrency'] = $sourceCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets destinationCurrency
+     * @return string
+     */
+    public function getDestinationCurrency()
+    {
+        return $this->container['destinationCurrency'];
+    }
+
+    /**
+     * Sets destinationCurrency
+     * @param string $destinationCurrency Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect
+     * @return $this
+     */
+    public function setDestinationCurrency($destinationCurrency)
+    {
+        $this->container['destinationCurrency'] = $destinationCurrency;
 
         return $this;
     }

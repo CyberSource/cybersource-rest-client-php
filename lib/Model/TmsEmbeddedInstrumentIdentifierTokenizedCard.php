@@ -54,6 +54,7 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
+        'source' => 'string',
         'state' => 'string',
         'enrollmentId' => 'string',
         'tokenReferenceId' => 'string',
@@ -71,6 +72,7 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'type' => null,
+        'source' => null,
         'state' => null,
         'enrollmentId' => null,
         'tokenReferenceId' => null,
@@ -98,6 +100,7 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
+        'source' => 'source',
         'state' => 'state',
         'enrollmentId' => 'enrollmentId',
         'tokenReferenceId' => 'tokenReferenceId',
@@ -116,6 +119,7 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
+        'source' => 'setSource',
         'state' => 'setState',
         'enrollmentId' => 'setEnrollmentId',
         'tokenReferenceId' => 'setTokenReferenceId',
@@ -134,6 +138,7 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
+        'source' => 'getSource',
         'state' => 'getState',
         'enrollmentId' => 'getEnrollmentId',
         'tokenReferenceId' => 'getTokenReferenceId',
@@ -177,6 +182,7 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['enrollmentId'] = isset($data['enrollmentId']) ? $data['enrollmentId'] : null;
         $this->container['tokenReferenceId'] = isset($data['tokenReferenceId']) ? $data['tokenReferenceId'] : null;
@@ -230,6 +236,27 @@ class TmsEmbeddedInstrumentIdentifierTokenizedCard implements ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     * @param string $source This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
 
         return $this;
     }

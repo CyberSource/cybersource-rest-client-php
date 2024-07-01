@@ -91,23 +91,9 @@ class PushFunds201ResponseProcessorInformationTest extends \PHPUnit_Framework_Te
     }
 
     /**
-     * Test attribute "approvalCode"
-     */
-    public function testPropertyApprovalCode()
-    {
-    }
-
-    /**
      * Test attribute "systemTraceAuditNumber"
      */
     public function testPropertySystemTraceAuditNumber()
-    {
-    }
-
-    /**
-     * Test attribute "responseCodeSource"
-     */
-    public function testPropertyResponseCodeSource()
     {
     }
 

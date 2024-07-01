@@ -66,7 +66,7 @@ class TokenApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
@@ -131,13 +131,11 @@ class TokenApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $tokenId when calling postTokenPaymentCredentials");
             throw new \InvalidArgumentException('Missing the required parameter $tokenId when calling postTokenPaymentCredentials');
         }
-
         // verify the required parameter 'postPaymentCredentialsRequest' is set
         if ($postPaymentCredentialsRequest === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $postPaymentCredentialsRequest when calling postTokenPaymentCredentials");
             throw new \InvalidArgumentException('Missing the required parameter $postPaymentCredentialsRequest when calling postTokenPaymentCredentials');
         }
-
         // parse inputs
         $resourcePath = "/tms/v2/tokens/{tokenId}/payment-credentials";
         $httpBody = '';

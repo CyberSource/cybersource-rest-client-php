@@ -140,23 +140,9 @@ class Ptsv1pushfundstransferRecipientInformationTest extends \PHPUnit_Framework_
     }
 
     /**
-     * Test attribute "middleInitial"
-     */
-    public function testPropertyMiddleInitial()
-    {
-    }
-
-    /**
      * Test attribute "lastName"
      */
     public function testPropertyLastName()
-    {
-    }
-
-    /**
-     * Test attribute "dateOfBirth"
-     */
-    public function testPropertyDateOfBirth()
     {
     }
 

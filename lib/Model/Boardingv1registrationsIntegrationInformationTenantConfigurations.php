@@ -152,10 +152,6 @@ class Boardingv1registrationsIntegrationInformationTenantConfigurations implemen
         if ($this->container['solutionId'] === null) {
             $invalid_properties[] = "'solutionId' can't be null";
         }
-        if (!preg_match("/^[0-9a-zA-Z_]+$/", $this->container['solutionId'])) {
-            $invalid_properties[] = "invalid value for 'solutionId', must be conform to the pattern /^[0-9a-zA-Z_]+$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -169,9 +165,6 @@ class Boardingv1registrationsIntegrationInformationTenantConfigurations implemen
     {
 
         if ($this->container['solutionId'] === null) {
-            return false;
-        }
-        if (!preg_match("/^[0-9a-zA-Z_]+$/", $this->container['solutionId'])) {
             return false;
         }
         return true;
@@ -194,9 +187,6 @@ class Boardingv1registrationsIntegrationInformationTenantConfigurations implemen
      */
     public function setSolutionId($solutionId)
     {
-        if ((!preg_match("/^[0-9a-zA-Z_]+$/", $solutionId))) {
-            throw new \InvalidArgumentException("invalid value for $solutionId when calling Boardingv1registrationsIntegrationInformationTenantConfigurations., must conform to the pattern /^[0-9a-zA-Z_]+$/.");
-        }
         $this->container['solutionId'] = $solutionId;
 
         return $this;

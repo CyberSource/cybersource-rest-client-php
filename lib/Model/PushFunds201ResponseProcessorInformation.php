@@ -55,9 +55,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'transactionId' => 'int',
         'responseCode' => 'string',
-        'approvalCode' => 'string',
         'systemTraceAuditNumber' => 'string',
-        'responseCodeSource' => 'string',
         'retrievalReferenceNumber' => 'string'
     ];
 
@@ -68,9 +66,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'transactionId' => null,
         'responseCode' => null,
-        'approvalCode' => null,
         'systemTraceAuditNumber' => null,
-        'responseCodeSource' => null,
         'retrievalReferenceNumber' => null
     ];
 
@@ -91,9 +87,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     protected static $attributeMap = [
         'transactionId' => 'transactionId',
         'responseCode' => 'responseCode',
-        'approvalCode' => 'approvalCode',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
-        'responseCodeSource' => 'responseCodeSource',
         'retrievalReferenceNumber' => 'retrievalReferenceNumber'
     ];
 
@@ -105,9 +99,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     protected static $setters = [
         'transactionId' => 'setTransactionId',
         'responseCode' => 'setResponseCode',
-        'approvalCode' => 'setApprovalCode',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
-        'responseCodeSource' => 'setResponseCodeSource',
         'retrievalReferenceNumber' => 'setRetrievalReferenceNumber'
     ];
 
@@ -119,9 +111,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     protected static $getters = [
         'transactionId' => 'getTransactionId',
         'responseCode' => 'getResponseCode',
-        'approvalCode' => 'getApprovalCode',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
-        'responseCodeSource' => 'getResponseCodeSource',
         'retrievalReferenceNumber' => 'getRetrievalReferenceNumber'
     ];
 
@@ -158,9 +148,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     {
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
-        $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
-        $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
         $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
     }
 
@@ -232,27 +220,6 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
     }
 
     /**
-     * Gets approvalCode
-     * @return string
-     */
-    public function getApprovalCode()
-    {
-        return $this->container['approvalCode'];
-    }
-
-    /**
-     * Sets approvalCode
-     * @param string $approvalCode Issuer-generated approval code for the transaction.
-     * @return $this
-     */
-    public function setApprovalCode($approvalCode)
-    {
-        $this->container['approvalCode'] = $approvalCode;
-
-        return $this;
-    }
-
-    /**
      * Gets systemTraceAuditNumber
      * @return string
      */
@@ -263,33 +230,12 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets systemTraceAuditNumber
-     * @param string $systemTraceAuditNumber System audit number. Returned by authorization and incremental authorization services.  Visa Platform Connect  System trace number that must be printed on the customer's receipt.
+     * @param string $systemTraceAuditNumber System audit number. Returned by authorization and incremental authorization services.
      * @return $this
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
     {
         $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets responseCodeSource
-     * @return string
-     */
-    public function getResponseCodeSource()
-    {
-        return $this->container['responseCodeSource'];
-    }
-
-    /**
-     * Sets responseCodeSource
-     * @param string $responseCodeSource Used by Visa only and contains the response source/reason code that identifies the source of the response decision.
-     * @return $this
-     */
-    public function setResponseCodeSource($responseCodeSource)
-    {
-        $this->container['responseCodeSource'] = $responseCodeSource;
 
         return $this;
     }
@@ -305,7 +251,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets retrievalReferenceNumber
-     * @param string $retrievalReferenceNumber Unique reference number returned by the processor that identifies the transaction at the network.  Supported by Mastercard Send
+     * @param string $retrievalReferenceNumber Unique reference number returned by the processor that identifies the transaction at the network.
      * @return $this
      */
     public function setRetrievalReferenceNumber($retrievalReferenceNumber)

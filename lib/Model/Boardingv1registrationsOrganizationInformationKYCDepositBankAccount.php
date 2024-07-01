@@ -182,10 +182,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
         if ($this->container['accountHolderName'] === null) {
             $invalid_properties[] = "'accountHolderName' can't be null";
         }
-        if (!preg_match("/^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['accountHolderName'])) {
-            $invalid_properties[] = "invalid value for 'accountHolderName', must be conform to the pattern /^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.";
-        }
-
         if ($this->container['accountType'] === null) {
             $invalid_properties[] = "'accountType' can't be null";
         }
@@ -200,17 +196,9 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
         if ($this->container['accountRoutingNumber'] === null) {
             $invalid_properties[] = "'accountRoutingNumber' can't be null";
         }
-        if (!preg_match("/\\d{9}/", $this->container['accountRoutingNumber'])) {
-            $invalid_properties[] = "invalid value for 'accountRoutingNumber', must be conform to the pattern /\\d{9}/.";
-        }
-
         if ($this->container['accountNumber'] === null) {
             $invalid_properties[] = "'accountNumber' can't be null";
         }
-        if (!preg_match("/^\\d{5,17}$/", $this->container['accountNumber'])) {
-            $invalid_properties[] = "invalid value for 'accountNumber', must be conform to the pattern /^\\d{5,17}$/.";
-        }
-
         return $invalid_properties;
     }
 
@@ -226,9 +214,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
         if ($this->container['accountHolderName'] === null) {
             return false;
         }
-        if (!preg_match("/^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $this->container['accountHolderName'])) {
-            return false;
-        }
         if ($this->container['accountType'] === null) {
             return false;
         }
@@ -239,13 +224,7 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
         if ($this->container['accountRoutingNumber'] === null) {
             return false;
         }
-        if (!preg_match("/\\d{9}/", $this->container['accountRoutingNumber'])) {
-            return false;
-        }
         if ($this->container['accountNumber'] === null) {
-            return false;
-        }
-        if (!preg_match("/^\\d{5,17}$/", $this->container['accountNumber'])) {
             return false;
         }
         return true;
@@ -268,9 +247,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
      */
     public function setAccountHolderName($accountHolderName)
     {
-        if ((!preg_match("/^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/", $accountHolderName))) {
-            throw new \InvalidArgumentException("invalid value for $accountHolderName when calling Boardingv1registrationsOrganizationInformationKYCDepositBankAccount., must conform to the pattern /^[À-ÖØ-öø-ǿÀ-ÖØ-öø-ǿa-zA-Z0-9().\\-_#,;\/\\\\@$:&amp;!?%«»€₣«»€₣ ]{1,}$/.");
-        }
         $this->container['accountHolderName'] = $accountHolderName;
 
         return $this;
@@ -322,9 +298,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
      */
     public function setAccountRoutingNumber($accountRoutingNumber)
     {
-        if ((!preg_match("/\\d{9}/", $accountRoutingNumber))) {
-            throw new \InvalidArgumentException("invalid value for $accountRoutingNumber when calling Boardingv1registrationsOrganizationInformationKYCDepositBankAccount., must conform to the pattern /\\d{9}/.");
-        }
         $this->container['accountRoutingNumber'] = $accountRoutingNumber;
 
         return $this;
@@ -346,9 +319,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
      */
     public function setAccountNumber($accountNumber)
     {
-        if ((!preg_match("/^\\d{5,17}$/", $accountNumber))) {
-            throw new \InvalidArgumentException("invalid value for $accountNumber when calling Boardingv1registrationsOrganizationInformationKYCDepositBankAccount., must conform to the pattern /^\\d{5,17}$/.");
-        }
         $this->container['accountNumber'] = $accountNumber;
 
         return $this;

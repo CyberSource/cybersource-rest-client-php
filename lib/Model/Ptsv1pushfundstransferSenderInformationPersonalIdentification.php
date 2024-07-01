@@ -55,7 +55,8 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
     protected static $swaggerTypes = [
         'id' => 'string',
         'personalIdType' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'issuingCountry' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
     protected static $swaggerFormats = [
         'id' => null,
         'personalIdType' => null,
-        'type' => null
+        'type' => null,
+        'issuingCountry' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
     protected static $attributeMap = [
         'id' => 'id',
         'personalIdType' => 'personalIdType',
-        'type' => 'type'
+        'type' => 'type',
+        'issuingCountry' => 'issuingCountry'
     ];
 
 
@@ -96,7 +99,8 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
     protected static $setters = [
         'id' => 'setId',
         'personalIdType' => 'setPersonalIdType',
-        'type' => 'setType'
+        'type' => 'setType',
+        'issuingCountry' => 'setIssuingCountry'
     ];
 
 
@@ -107,7 +111,8 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
     protected static $getters = [
         'id' => 'getId',
         'personalIdType' => 'getPersonalIdType',
-        'type' => 'getType'
+        'type' => 'getType',
+        'issuingCountry' => 'getIssuingCountry'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['personalIdType'] = isset($data['personalIdType']) ? $data['personalIdType'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['issuingCountry'] = isset($data['issuingCountry']) ? $data['issuingCountry'] : null;
     }
 
     /**
@@ -182,7 +188,7 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
 
     /**
      * Sets id
-     * @param string $id Visa Platform Connect(35) This tag will contain an acquirer-populated value associated with the API : senderInformation.personalIdType which will identify the personal ID type of the sender.  Mastercard Send(80)
+     * @param string $id Processor(35)
      * @return $this
      */
     public function setId($id)
@@ -224,12 +230,33 @@ class Ptsv1pushfundstransferSenderInformationPersonalIdentification implements A
 
     /**
      * Sets type
-     * @param string $type This tag will contain the type of sender identification. The valid values are:  Visa Platform Connect: - `BTHD`: (Date of birth) - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `CPNY`: (Company registration number) - `PRXY`: (Proxy identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `LAWE`: (Law enforcement identification) - `MILI`: (Military identification) - `TRVL`: (Travel identification (non-passport)) - `EMAL`: (Email) - `PHON`: (Phone number)  Mastercard Send: - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `EIDN`: (Employer Identification Number) - `IDNB`: (Identity Card Number)
+     * @param string $type This tag will contain the type of sender identification. The valid values are:  Visa Platform Connect: - `BTHD`: (Date of birth) - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `CPNY`: (Company registration number) - `PRXY`: (Proxy identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `LAWE`: (Law enforcement identification) - `MILI`: (Military identification) - `TRVL`: (Travel identification (non-passport)) - `EMAL`: (Email) - `PHON`: (Phone number)
      * @return $this
      */
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuingCountry
+     * @return string
+     */
+    public function getIssuingCountry()
+    {
+        return $this->container['issuingCountry'];
+    }
+
+    /**
+     * Sets issuingCountry
+     * @param string $issuingCountry Issuing country of the identification. The field format should be a 2 character ISO 3166-1 alpha-2 country code.
+     * @return $this
+     */
+    public function setIssuingCountry($issuingCountry)
+    {
+        $this->container['issuingCountry'] = $issuingCountry;
 
         return $this;
     }

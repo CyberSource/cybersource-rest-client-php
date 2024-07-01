@@ -156,14 +156,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}} {{/parentSchema}}imple
 
         {{/isContainer}}
         {{/isEnum}}
-        {{#hasValidation}}
-        {{#pattern}}
-        if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}!preg_match("{{{pattern}}}", $this->container['{{name}}'])) {
-            $invalid_properties[] = "invalid value for '{{name}}', must be conform to the pattern {{{pattern}}}.";
-        }
-
-        {{/pattern}}
-        {{/hasValidation}}
         {{/vars}}
         return $invalid_properties;
     }
@@ -196,13 +188,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}} {{/parentSchema}}imple
         }
         {{/isContainer}}
         {{/isEnum}}
-        {{#hasValidation}}
-        {{#pattern}}
-        if (!preg_match("{{{pattern}}}", $this->container['{{name}}'])) {
-            return false;
-        }
-        {{/pattern}}
-        {{/hasValidation}}
         {{/vars}}
         return true;
     }
@@ -248,13 +233,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}} {{/parentSchema}}imple
         }
         {{/isContainer}}
         {{/isEnum}}
-        {{#hasValidation}}
-        {{#pattern}}
-        if ({{^required}}!is_null(${{name}}) && {{/required}}(!preg_match("{{{pattern}}}", ${{name}}))) {
-            throw new \InvalidArgumentException("invalid value for ${{name}} when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");
-        }
-        {{/pattern}}
-        {{/hasValidation}}
         $this->container['{{name}}'] = ${{name}};
 
         return $this;

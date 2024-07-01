@@ -311,7 +311,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets checkDigit
-     * @param string $checkDigit Code used to validate the customer's account number. Required for some countries if you do not or are not allowed to provide the IBAN instead. You may use this field only when scoring a direct debit transaction.  For all possible values, see the `bank_check_digit` field description in the _Decision Manager Using the SCMP API Developer Guide_ on the [CyberSource Business Center.](https://ebc2.cybersource.com/ebc2/) Click **Decision Manager** > **Documentation** > **Guides** > _Decision Manager Using the SCMP API Developer Guide_ (PDF link).
+     * @param string $checkDigit Code used to validate the customer's account number. Required for some countries if you do not or are not allowed to provide the IBAN instead. You may use this field only when scoring a direct debit transaction.
      * @return $this
      */
     public function setCheckDigit($checkDigit)
@@ -332,7 +332,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankAccount implements Ar
 
     /**
      * Sets encoderId
-     * @param string $encoderId Identifier for the bank that provided the customer's encoded account number.  To obtain the bank identifier, contact your processor.  For details, see `account_encoder_id` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $encoderId Identifier for the bank that provided the customer's encoded account number.  To obtain the bank identifier, contact your processor.
      * @return $this
      */
     public function setEncoderId($encoderId)
