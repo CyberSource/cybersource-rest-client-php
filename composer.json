@@ -18,7 +18,6 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "cache/apcu-adapter": ">=1.1.0",
         "firebase/php-jwt": "^6.0.0",
         "monolog/monolog": ">=1.25.0",
         "web-token/jwt-framework": "^2.2.11|^3.3.5"
