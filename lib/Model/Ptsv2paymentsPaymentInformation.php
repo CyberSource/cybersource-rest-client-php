@@ -67,7 +67,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentType',
         'initiationChannel' => 'string',
         'sepa' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationSepa',
-        'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet'
+        'eWallet' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationEWallet',
+        'paymentAccountReference' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentAccountReference'
     ];
 
     /**
@@ -89,7 +90,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'paymentType' => null,
         'initiationChannel' => null,
         'sepa' => null,
-        'eWallet' => null
+        'eWallet' => null,
+        'paymentAccountReference' => null
     ];
 
     public static function swaggerTypes()
@@ -121,7 +123,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'paymentType' => 'paymentType',
         'initiationChannel' => 'initiationChannel',
         'sepa' => 'sepa',
-        'eWallet' => 'eWallet'
+        'eWallet' => 'eWallet',
+        'paymentAccountReference' => 'paymentAccountReference'
     ];
 
 
@@ -144,7 +147,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'paymentType' => 'setPaymentType',
         'initiationChannel' => 'setInitiationChannel',
         'sepa' => 'setSepa',
-        'eWallet' => 'setEWallet'
+        'eWallet' => 'setEWallet',
+        'paymentAccountReference' => 'setPaymentAccountReference'
     ];
 
 
@@ -167,7 +171,8 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         'paymentType' => 'getPaymentType',
         'initiationChannel' => 'getInitiationChannel',
         'sepa' => 'getSepa',
-        'eWallet' => 'getEWallet'
+        'eWallet' => 'getEWallet',
+        'paymentAccountReference' => 'getPaymentAccountReference'
     ];
 
     public static function attributeMap()
@@ -216,6 +221,7 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
         $this->container['initiationChannel'] = isset($data['initiationChannel']) ? $data['initiationChannel'] : null;
         $this->container['sepa'] = isset($data['sepa']) ? $data['sepa'] : null;
         $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
+        $this->container['paymentAccountReference'] = isset($data['paymentAccountReference']) ? $data['paymentAccountReference'] : null;
     }
 
     /**
@@ -554,6 +560,27 @@ class Ptsv2paymentsPaymentInformation implements ArrayAccess
     public function setEWallet($eWallet)
     {
         $this->container['eWallet'] = $eWallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAccountReference
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentAccountReference
+     */
+    public function getPaymentAccountReference()
+    {
+        return $this->container['paymentAccountReference'];
+    }
+
+    /**
+     * Sets paymentAccountReference
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentAccountReference $paymentAccountReference
+     * @return $this
+     */
+    public function setPaymentAccountReference($paymentAccountReference)
+    {
+        $this->container['paymentAccountReference'] = $paymentAccountReference;
 
         return $this;
     }

@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2012Test Class Doc Comment
  *
  * @category    Class */
-// * @description Egress Key Information Response
+// * @description InlineResponse2012
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,6 +77,13 @@ class InlineResponse2012Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
      * Test attribute "submitTimeUtc"
      */
     public function testPropertySubmitTimeUtc()
@@ -91,16 +98,44 @@ class InlineResponse2012Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientReferenceInformation"
+     * Test attribute "registrationInformation"
      */
-    public function testPropertyClientReferenceInformation()
+    public function testPropertyRegistrationInformation()
     {
     }
 
     /**
-     * Test attribute "keyInformation"
+     * Test attribute "integrationInformation"
      */
-    public function testPropertyKeyInformation()
+    public function testPropertyIntegrationInformation()
+    {
+    }
+
+    /**
+     * Test attribute "organizationInformation"
+     */
+    public function testPropertyOrganizationInformation()
+    {
+    }
+
+    /**
+     * Test attribute "productInformationSetups"
+     */
+    public function testPropertyProductInformationSetups()
+    {
+    }
+
+    /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
+    {
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
     {
     }
 }

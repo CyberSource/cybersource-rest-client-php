@@ -54,7 +54,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postRegistration**
-> \CyberSource\Model\InlineResponse2011 postRegistration($postRegistrationBody, $vCIdempotencyId)
+> \CyberSource\Model\InlineResponse2012 postRegistration($postRegistrationBody, $vCIdempotencyId)
 
 Create a boarding registration
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\CyberSource\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
 
 ### Authorization
 

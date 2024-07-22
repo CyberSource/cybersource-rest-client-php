@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2014Test Class Doc Comment
  *
  * @category    Class */
-// * @description Egress Asymmetric Key Information Response.
+// * @description InlineResponse2014
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,9 +77,51 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "webhookId"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyWebhookId()
+    {
+    }
+
+    /**
+     * Test attribute "organizationId"
+     */
+    public function testPropertyOrganizationId()
+    {
+    }
+
+    /**
+     * Test attribute "productId"
+     */
+    public function testPropertyProductId()
+    {
+    }
+
+    /**
+     * Test attribute "eventTypes"
+     */
+    public function testPropertyEventTypes()
+    {
+    }
+
+    /**
+     * Test attribute "webhookUrl"
+     */
+    public function testPropertyWebhookUrl()
+    {
+    }
+
+    /**
+     * Test attribute "healthCheckUrl"
+     */
+    public function testPropertyHealthCheckUrl()
+    {
+    }
+
+    /**
+     * Test attribute "notificationScope"
+     */
+    public function testPropertyNotificationScope()
     {
     }
 
@@ -91,16 +133,51 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientReferenceInformation"
+     * Test attribute "name"
      */
-    public function testPropertyClientReferenceInformation()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "keyInformation"
+     * Test attribute "description"
      */
-    public function testPropertyKeyInformation()
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "retryPolicy"
+     */
+    public function testPropertyRetryPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "securityPolicy"
+     */
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "updatedOn"
+     */
+    public function testPropertyUpdatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "additionalAttributes"
+     */
+    public function testPropertyAdditionalAttributes()
     {
     }
 }

@@ -54,7 +54,8 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'businessApplicationId' => 'string',
-        'payoutsOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformationPayoutsOptions'
+        'payoutsOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformationPayoutsOptions',
+        'enablerId' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'businessApplicationId' => null,
-        'payoutsOptions' => null
+        'payoutsOptions' => null,
+        'enablerId' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'businessApplicationId' => 'businessApplicationId',
-        'payoutsOptions' => 'payoutsOptions'
+        'payoutsOptions' => 'payoutsOptions',
+        'enablerId' => 'enablerId'
     ];
 
 
@@ -92,7 +95,8 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
      */
     protected static $setters = [
         'businessApplicationId' => 'setBusinessApplicationId',
-        'payoutsOptions' => 'setPayoutsOptions'
+        'payoutsOptions' => 'setPayoutsOptions',
+        'enablerId' => 'setEnablerId'
     ];
 
 
@@ -102,7 +106,8 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
      */
     protected static $getters = [
         'businessApplicationId' => 'getBusinessApplicationId',
-        'payoutsOptions' => 'getPayoutsOptions'
+        'payoutsOptions' => 'getPayoutsOptions',
+        'enablerId' => 'getEnablerId'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     {
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
         $this->container['payoutsOptions'] = isset($data['payoutsOptions']) ? $data['payoutsOptions'] : null;
+        $this->container['enablerId'] = isset($data['enablerId']) ? $data['enablerId'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     public function setPayoutsOptions($payoutsOptions)
     {
         $this->container['payoutsOptions'] = $payoutsOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets enablerId
+     * @return string
+     */
+    public function getEnablerId()
+    {
+        return $this->container['enablerId'];
+    }
+
+    /**
+     * Sets enablerId
+     * @param string $enablerId Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers.
+     * @return $this
+     */
+    public function setEnablerId($enablerId)
+    {
+        $this->container['enablerId'] = $enablerId;
 
         return $this;
     }

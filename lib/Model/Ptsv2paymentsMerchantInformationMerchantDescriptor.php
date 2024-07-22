@@ -269,7 +269,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
 
     /**
      * Sets alternateName
-     * @param string $alternateName An alternate name for the merchant.  For the descriptions, used-by information, data types, and lengths for these fields, see the `merchant_descriptor_alternate` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)-->
+     * @param string $alternateName An alternate name for the merchant.
      * @return $this
      */
     public function setAlternateName($alternateName)
@@ -290,7 +290,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
 
     /**
      * Sets contact
-     * @param string $contact For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_contact` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)--> Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13)
+     * @param string $contact Contact information for the merchant.  **Note** These are the maximum data lengths for the following payment processors: - FDCCompass (13) - Paymentech (13)
      * @return $this
      */
     public function setContact($contact)
@@ -311,7 +311,7 @@ class Ptsv2paymentsMerchantInformationMerchantDescriptor implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 First line of merchant's address. For the descriptions, used-by information, data types, and lengths for these fields, see `merchant_descriptor_street` field description in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $address1 First line of merchant's address.
      * @return $this
      */
     public function setAddress1($address1)

@@ -152,4 +152,11 @@ class Ptsv2paymentsidrefundsPaymentInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyEWallet()
     {
     }
+
+    /**
+     * Test attribute "paymentAccountReference"
+     */
+    public function testPropertyPaymentAccountReference()
+    {
+    }
 }

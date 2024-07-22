@@ -82,4 +82,11 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationTest extends \PHPUni
     public function testPropertyResponseInsights()
     {
     }
+
+    /**
+     * Test attribute "orchestration"
+     */
+    public function testPropertyOrchestration()
+    {
+    }
 }

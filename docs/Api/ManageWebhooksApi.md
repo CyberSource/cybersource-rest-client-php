@@ -150,7 +150,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **saveAsymEgressKey**
-> \CyberSource\Model\InlineResponse2014 saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId)
+> \CyberSource\Model\InlineResponse2015 saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId)
 
 Message Level Encryption
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
 
 ### Authorization
 

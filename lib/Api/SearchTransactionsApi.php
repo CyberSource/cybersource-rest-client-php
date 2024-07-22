@@ -192,7 +192,7 @@ class SearchTransactionsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TssV2TransactionsPost400Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\BinLookupv400Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:

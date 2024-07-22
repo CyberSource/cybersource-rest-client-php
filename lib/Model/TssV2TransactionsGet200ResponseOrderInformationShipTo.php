@@ -371,7 +371,7 @@ class TssV2TransactionsGet200ResponseOrderInformationShipTo implements ArrayAcce
 
     /**
      * Sets company
-     * @param string $company Name of the customer's company.  For processor-specific information, see the company_name field in [Credit Card Services Using the SCMP API.](http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html)
+     * @param string $company Name of the customer's company.
      * @return $this
      */
     public function setCompany($company)

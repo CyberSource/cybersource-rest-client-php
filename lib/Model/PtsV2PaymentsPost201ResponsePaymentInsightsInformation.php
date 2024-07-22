@@ -53,7 +53,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'responseInsights' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights'
+        'responseInsights' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights',
+        'orchestration' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration'
     ];
 
     /**
@@ -61,7 +62,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'responseInsights' => null
+        'responseInsights' => null,
+        'orchestration' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'responseInsights' => 'responseInsights'
+        'responseInsights' => 'responseInsights',
+        'orchestration' => 'orchestration'
     ];
 
 
@@ -88,7 +91,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'responseInsights' => 'setResponseInsights'
+        'responseInsights' => 'setResponseInsights',
+        'orchestration' => 'setOrchestration'
     ];
 
 
@@ -97,7 +101,8 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'responseInsights' => 'getResponseInsights'
+        'responseInsights' => 'getResponseInsights',
+        'orchestration' => 'getOrchestration'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['responseInsights'] = isset($data['responseInsights']) ? $data['responseInsights'] : null;
+        $this->container['orchestration'] = isset($data['orchestration']) ? $data['orchestration'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformation implements ArrayAcc
     public function setResponseInsights($responseInsights)
     {
         $this->container['responseInsights'] = $responseInsights;
+
+        return $this;
+    }
+
+    /**
+     * Gets orchestration
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration
+     */
+    public function getOrchestration()
+    {
+        return $this->container['orchestration'];
+    }
+
+    /**
+     * Sets orchestration
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformationOrchestration $orchestration
+     * @return $this
+     */
+    public function setOrchestration($orchestration)
+    {
+        $this->container['orchestration'] = $orchestration;
 
         return $this;
     }
