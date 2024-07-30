@@ -223,7 +223,7 @@ class MerchantBoardingApi
      * @param \CyberSource\Model\PostRegistrationBody $postRegistrationBody Boarding registration data (required)
      * @param string $vCIdempotencyId defines idempotency of the request (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
      */
     public function postRegistration($postRegistrationBody, $vCIdempotencyId = null)
     {
@@ -242,7 +242,7 @@ class MerchantBoardingApi
      * @param \CyberSource\Model\PostRegistrationBody $postRegistrationBody Boarding registration data (required)
      * @param string $vCIdempotencyId defines idempotency of the request (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
      */
     public function postRegistrationWithHttpInfo($postRegistrationBody, $vCIdempotencyId = null)
     {
@@ -297,7 +297,7 @@ class MerchantBoardingApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2011");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2012");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -306,17 +306,17 @@ class MerchantBoardingApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2011',
+                '\CyberSource\Model\InlineResponse2012',
                 '/boarding/v1/registrations'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2011', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2012', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2011', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2012', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

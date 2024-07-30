@@ -271,4 +271,11 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     public function testPropertyOrder()
     {
     }
+
+    /**
+     * Test attribute "anticipatedAmount"
+     */
+    public function testPropertyAnticipatedAmount()
+    {
+    }
 }

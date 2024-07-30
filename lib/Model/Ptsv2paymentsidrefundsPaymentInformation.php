@@ -63,7 +63,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'shippingAddress' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationShippingAddress',
         'legacyToken' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationLegacyToken',
         'paymentType' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationPaymentType',
-        'eWallet' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationEWallet'
+        'eWallet' => '\CyberSource\Model\Ptsv2paymentsidrefundsPaymentInformationEWallet',
+        'paymentAccountReference' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentAccountReference'
     ];
 
     /**
@@ -81,7 +82,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'shippingAddress' => null,
         'legacyToken' => null,
         'paymentType' => null,
-        'eWallet' => null
+        'eWallet' => null,
+        'paymentAccountReference' => null
     ];
 
     public static function swaggerTypes()
@@ -109,7 +111,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'shippingAddress' => 'shippingAddress',
         'legacyToken' => 'legacyToken',
         'paymentType' => 'paymentType',
-        'eWallet' => 'eWallet'
+        'eWallet' => 'eWallet',
+        'paymentAccountReference' => 'paymentAccountReference'
     ];
 
 
@@ -128,7 +131,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'shippingAddress' => 'setShippingAddress',
         'legacyToken' => 'setLegacyToken',
         'paymentType' => 'setPaymentType',
-        'eWallet' => 'setEWallet'
+        'eWallet' => 'setEWallet',
+        'paymentAccountReference' => 'setPaymentAccountReference'
     ];
 
 
@@ -147,7 +151,8 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         'shippingAddress' => 'getShippingAddress',
         'legacyToken' => 'getLegacyToken',
         'paymentType' => 'getPaymentType',
-        'eWallet' => 'getEWallet'
+        'eWallet' => 'getEWallet',
+        'paymentAccountReference' => 'getPaymentAccountReference'
     ];
 
     public static function attributeMap()
@@ -192,6 +197,7 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
         $this->container['legacyToken'] = isset($data['legacyToken']) ? $data['legacyToken'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
+        $this->container['paymentAccountReference'] = isset($data['paymentAccountReference']) ? $data['paymentAccountReference'] : null;
     }
 
     /**
@@ -446,6 +452,27 @@ class Ptsv2paymentsidrefundsPaymentInformation implements ArrayAccess
     public function setEWallet($eWallet)
     {
         $this->container['eWallet'] = $eWallet;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAccountReference
+     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentAccountReference
+     */
+    public function getPaymentAccountReference()
+    {
+        return $this->container['paymentAccountReference'];
+    }
+
+    /**
+     * Sets paymentAccountReference
+     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationPaymentAccountReference $paymentAccountReference
+     * @return $this
+     */
+    public function setPaymentAccountReference($paymentAccountReference)
+    {
+        $this->container['paymentAccountReference'] = $paymentAccountReference;
 
         return $this;
     }

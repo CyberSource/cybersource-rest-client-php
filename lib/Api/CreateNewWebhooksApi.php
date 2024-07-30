@@ -102,7 +102,7 @@ class CreateNewWebhooksApi
      *
      * @param \CyberSource\Model\CreateWebhookRequest $createWebhookRequest The webhook payload (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebhookSubscription($createWebhookRequest = null)
     {
@@ -120,7 +120,7 @@ class CreateNewWebhooksApi
      *
      * @param \CyberSource\Model\CreateWebhookRequest $createWebhookRequest The webhook payload (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebhookSubscriptionWithHttpInfo($createWebhookRequest = null)
     {
@@ -166,7 +166,7 @@ class CreateNewWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2013");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2014");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -175,17 +175,17 @@ class CreateNewWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2013',
+                '\CyberSource\Model\InlineResponse2014',
                 '/notification-subscriptions/v1/webhooks'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2013', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2014', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2013', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2014', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -315,7 +315,7 @@ class CreateNewWebhooksApi
      * @param string $vCCorrelationId A globally unique id associated with your request (optional)
      * @param \CyberSource\Model\SaveSymEgressKey $saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveSymEgressKey($vCSenderOrganizationId, $vCPermissions, $vCCorrelationId = null, $saveSymEgressKey = null)
     {
@@ -336,7 +336,7 @@ class CreateNewWebhooksApi
      * @param string $vCCorrelationId A globally unique id associated with your request (optional)
      * @param \CyberSource\Model\SaveSymEgressKey $saveSymEgressKey Provide egress Symmetric key information to save (create or store or refresh) (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2012, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveSymEgressKeyWithHttpInfo($vCSenderOrganizationId, $vCPermissions, $vCCorrelationId = null, $saveSymEgressKey = null)
     {
@@ -404,7 +404,7 @@ class CreateNewWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2012");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2013");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -413,17 +413,17 @@ class CreateNewWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2012',
+                '\CyberSource\Model\InlineResponse2013',
                 '/kms/egress/v2/keys-sym'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2012', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2013', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2012', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2013', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

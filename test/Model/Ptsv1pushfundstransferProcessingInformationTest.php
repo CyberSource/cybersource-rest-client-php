@@ -89,4 +89,11 @@ class Ptsv1pushfundstransferProcessingInformationTest extends \PHPUnit_Framework
     public function testPropertyPayoutsOptions()
     {
     }
+
+    /**
+     * Test attribute "enablerId"
+     */
+    public function testPropertyEnablerId()
+    {
+    }
 }

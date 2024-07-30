@@ -182,13 +182,6 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "paymentId"
-     */
-    public function testPropertyPaymentId()
-    {
-    }
-
-    /**
      * Test attribute "reportGroup"
      */
     public function testPropertyReportGroup()
@@ -332,6 +325,13 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "paymentType"
      */
     public function testPropertyPaymentType()
+    {
+    }
+
+    /**
+     * Test attribute "enablerId"
+     */
+    public function testPropertyEnablerId()
     {
     }
 }

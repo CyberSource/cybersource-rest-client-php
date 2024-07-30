@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2013Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2013
+// * @description Egress Key Information Response
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,51 +77,9 @@ class InlineResponse2013Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyWebhookId()
-    {
-    }
-
-    /**
-     * Test attribute "organizationId"
-     */
-    public function testPropertyOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "productId"
-     */
-    public function testPropertyProductId()
-    {
-    }
-
-    /**
-     * Test attribute "eventTypes"
-     */
-    public function testPropertyEventTypes()
-    {
-    }
-
-    /**
-     * Test attribute "webhookUrl"
-     */
-    public function testPropertyWebhookUrl()
-    {
-    }
-
-    /**
-     * Test attribute "healthCheckUrl"
-     */
-    public function testPropertyHealthCheckUrl()
-    {
-    }
-
-    /**
-     * Test attribute "notificationScope"
-     */
-    public function testPropertyNotificationScope()
+    public function testPropertySubmitTimeUtc()
     {
     }
 
@@ -133,51 +91,16 @@ class InlineResponse2013Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "clientReferenceInformation"
      */
-    public function testPropertyName()
+    public function testPropertyClientReferenceInformation()
     {
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "keyInformation"
      */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "retryPolicy"
-     */
-    public function testPropertyRetryPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "securityPolicy"
-     */
-    public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "createdOn"
-     */
-    public function testPropertyCreatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "updatedOn"
-     */
-    public function testPropertyUpdatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "additionalAttributes"
-     */
-    public function testPropertyAdditionalAttributes()
+    public function testPropertyKeyInformation()
     {
     }
 }

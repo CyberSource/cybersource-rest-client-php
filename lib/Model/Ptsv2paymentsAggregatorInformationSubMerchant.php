@@ -293,7 +293,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 First line of the sub-merchant's street address.  For processor-specific details, see `submerchant_street` field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $address1 First line of the sub-merchant's street address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setAddress1($address1)
@@ -314,7 +314,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality Sub-merchant's city.  For processor-specific details, see `submerchant_city` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $locality Sub-merchant's city.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setLocality($locality)
@@ -335,7 +335,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Sub-merchant's state or province.  For possible values and also aggregator support, see `submerchant_state` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $administrativeArea Sub-merchant's state or province.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -356,7 +356,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets region
-     * @param string $region Sub-merchant's region.  **Example**\\ `NE` indicates that the sub-merchant is in the northeast region.  For processor-specific details, see `submerchant_region` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $region Sub-merchant's region.  **Example**\\ `NE` indicates that the sub-merchant is in the northeast region.
      * @return $this
      */
     public function setRegion($region)
@@ -377,7 +377,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets postalCode
-     * @param string $postalCode Partial postal code for the sub-merchant's address.  For processor-specific details, see `submerchant_postal_code` request field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
+     * @param string $postalCode Partial postal code for the sub-merchant's address.  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file5.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setPostalCode($postalCode)
@@ -398,7 +398,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.  For details, see the `submerchant_country` request-level field description in [Credit Card Services Using the SCMP API.](https://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SCMP_API/html/)
+     * @param string $country Sub-merchant's country. Use the [ISO Standard Country Codes](https://developer.cybersource.com/library/documentation/sbc/quickref/countries_alpha_list.pdf).  #### CyberSource through VisaNet The value for this field does not map to the TC 33 capture file.  #### FDC Compass This value must consist of uppercase characters.
      * @return $this
      */
     public function setCountry($country)

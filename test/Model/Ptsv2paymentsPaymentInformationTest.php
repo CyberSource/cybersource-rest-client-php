@@ -180,4 +180,11 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEWallet()
     {
     }
+
+    /**
+     * Test attribute "paymentAccountReference"
+     */
+    public function testPropertyPaymentAccountReference()
+    {
+    }
 }

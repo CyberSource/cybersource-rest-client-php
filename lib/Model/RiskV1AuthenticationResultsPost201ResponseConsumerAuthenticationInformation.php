@@ -698,7 +698,7 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
 
     /**
      * Sets specificationVersion
-     * @param string $specificationVersion This field contains the 3D Secure version that was used to process the transaction. For example, 1.0.2 or 2.0.0.
+     * @param string $specificationVersion This field contains the 3D Secure version that was used to process the transaction. For example: 2.2.0
      * @return $this
      */
     public function setSpecificationVersion($specificationVersion)
