@@ -64,6 +64,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCategoryCode' => 'string',
         'forwardedAcquirerCode' => 'string',
         'settlementDate' => 'string',
+        'sequenceNumber' => 'string',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAvs',
         'cardVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationCardVerification',
         'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice',
@@ -109,6 +110,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCategoryCode' => null,
         'forwardedAcquirerCode' => null,
         'settlementDate' => null,
+        'sequenceNumber' => null,
         'avs' => null,
         'cardVerification' => null,
         'merchantAdvice' => null,
@@ -164,6 +166,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCategoryCode' => 'responseCategoryCode',
         'forwardedAcquirerCode' => 'forwardedAcquirerCode',
         'settlementDate' => 'settlementDate',
+        'sequenceNumber' => 'sequenceNumber',
         'avs' => 'avs',
         'cardVerification' => 'cardVerification',
         'merchantAdvice' => 'merchantAdvice',
@@ -210,6 +213,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCategoryCode' => 'setResponseCategoryCode',
         'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
         'settlementDate' => 'setSettlementDate',
+        'sequenceNumber' => 'setSequenceNumber',
         'avs' => 'setAvs',
         'cardVerification' => 'setCardVerification',
         'merchantAdvice' => 'setMerchantAdvice',
@@ -256,6 +260,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCategoryCode' => 'getResponseCategoryCode',
         'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
         'settlementDate' => 'getSettlementDate',
+        'sequenceNumber' => 'getSequenceNumber',
         'avs' => 'getAvs',
         'cardVerification' => 'getCardVerification',
         'merchantAdvice' => 'getMerchantAdvice',
@@ -327,6 +332,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['responseCategoryCode'] = isset($data['responseCategoryCode']) ? $data['responseCategoryCode'] : null;
         $this->container['forwardedAcquirerCode'] = isset($data['forwardedAcquirerCode']) ? $data['forwardedAcquirerCode'] : null;
         $this->container['settlementDate'] = isset($data['settlementDate']) ? $data['settlementDate'] : null;
+        $this->container['sequenceNumber'] = isset($data['sequenceNumber']) ? $data['sequenceNumber'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
         $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
@@ -608,6 +614,27 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setSettlementDate($settlementDate)
     {
         $this->container['settlementDate'] = $settlementDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets sequenceNumber
+     * @return string
+     */
+    public function getSequenceNumber()
+    {
+        return $this->container['sequenceNumber'];
+    }
+
+    /**
+     * Sets sequenceNumber
+     * @param string $sequenceNumber This field serves as a unique identifier for initial and subsequent recurring transactions, specific to the payment brand, and is crucial for transaction tracking and recurrence management. Not all processors provide this value. Returned by the authorization service.
+     * @return $this
+     */
+    public function setSequenceNumber($sequenceNumber)
+    {
+        $this->container['sequenceNumber'] = $sequenceNumber;
 
         return $this;
     }

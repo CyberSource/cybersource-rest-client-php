@@ -204,7 +204,7 @@ class CreateNewWebhooksApi
      *
      * @param string $organizationId The Organization Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
      */
     public function findProductsToSubscribe($organizationId)
     {
@@ -222,7 +222,7 @@ class CreateNewWebhooksApi
      *
      * @param string $organizationId The Organization Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
      */
     public function findProductsToSubscribeWithHttpInfo($organizationId)
     {
@@ -274,7 +274,7 @@ class CreateNewWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2003[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002[]");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -283,17 +283,17 @@ class CreateNewWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2003[]',
+                '\CyberSource\Model\InlineResponse2002[]',
                 '/notification-subscriptions/v1/products/{organizationId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2002[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2002[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

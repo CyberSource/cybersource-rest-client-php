@@ -84,6 +84,20 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "accountType"
+     */
+    public function testPropertyAccountType()
+    {
+    }
+
+    /**
+     * Test attribute "firstName"
+     */
+    public function testPropertyFirstName()
+    {
+    }
+
+    /**
      * Test attribute "lastName"
      */
     public function testPropertyLastName()
@@ -98,9 +112,23 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
+
+    /**
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
     {
     }
 

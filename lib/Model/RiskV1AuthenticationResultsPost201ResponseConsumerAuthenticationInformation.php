@@ -54,8 +54,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
       */
     protected static $swaggerTypes = [
         'acsRenderingType' => 'string',
+        'acsReferenceNumber' => 'string',
         'acsTransactionId' => 'string',
+        'acsOperatorID' => 'string',
         'authenticationResult' => 'string',
+        'authenticationType' => 'string',
         'authenticationStatusMsg' => 'string',
         'authenticationTransactionId' => 'string',
         'authenticationTransactionContextId' => 'string',
@@ -63,8 +66,10 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'authorizationPayload' => 'string',
         'cavv' => 'string',
         'cavvAlgorithm' => 'string',
+        'challengeCancelCode' => 'string',
         'directoryServerErrorCode' => 'string',
         'directoryServerErrorDescription' => 'string',
+        'effectiveAuthenticationType' => 'string',
         'indicator' => 'string',
         'interactionCounter' => 'string',
         'eci' => 'string',
@@ -87,8 +92,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
       */
     protected static $swaggerFormats = [
         'acsRenderingType' => null,
+        'acsReferenceNumber' => null,
         'acsTransactionId' => null,
+        'acsOperatorID' => null,
         'authenticationResult' => null,
+        'authenticationType' => null,
         'authenticationStatusMsg' => null,
         'authenticationTransactionId' => null,
         'authenticationTransactionContextId' => null,
@@ -96,8 +104,10 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'authorizationPayload' => null,
         'cavv' => null,
         'cavvAlgorithm' => null,
+        'challengeCancelCode' => null,
         'directoryServerErrorCode' => null,
         'directoryServerErrorDescription' => null,
+        'effectiveAuthenticationType' => null,
         'indicator' => null,
         'interactionCounter' => null,
         'eci' => null,
@@ -130,8 +140,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     protected static $attributeMap = [
         'acsRenderingType' => 'acsRenderingType',
+        'acsReferenceNumber' => 'acsReferenceNumber',
         'acsTransactionId' => 'acsTransactionId',
+        'acsOperatorID' => 'acsOperatorID',
         'authenticationResult' => 'authenticationResult',
+        'authenticationType' => 'authenticationType',
         'authenticationStatusMsg' => 'authenticationStatusMsg',
         'authenticationTransactionId' => 'authenticationTransactionId',
         'authenticationTransactionContextId' => 'authenticationTransactionContextId',
@@ -139,8 +152,10 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'authorizationPayload' => 'authorizationPayload',
         'cavv' => 'cavv',
         'cavvAlgorithm' => 'cavvAlgorithm',
+        'challengeCancelCode' => 'challengeCancelCode',
         'directoryServerErrorCode' => 'directoryServerErrorCode',
         'directoryServerErrorDescription' => 'directoryServerErrorDescription',
+        'effectiveAuthenticationType' => 'effectiveAuthenticationType',
         'indicator' => 'indicator',
         'interactionCounter' => 'interactionCounter',
         'eci' => 'eci',
@@ -164,8 +179,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     protected static $setters = [
         'acsRenderingType' => 'setAcsRenderingType',
+        'acsReferenceNumber' => 'setAcsReferenceNumber',
         'acsTransactionId' => 'setAcsTransactionId',
+        'acsOperatorID' => 'setAcsOperatorID',
         'authenticationResult' => 'setAuthenticationResult',
+        'authenticationType' => 'setAuthenticationType',
         'authenticationStatusMsg' => 'setAuthenticationStatusMsg',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
         'authenticationTransactionContextId' => 'setAuthenticationTransactionContextId',
@@ -173,8 +191,10 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'authorizationPayload' => 'setAuthorizationPayload',
         'cavv' => 'setCavv',
         'cavvAlgorithm' => 'setCavvAlgorithm',
+        'challengeCancelCode' => 'setChallengeCancelCode',
         'directoryServerErrorCode' => 'setDirectoryServerErrorCode',
         'directoryServerErrorDescription' => 'setDirectoryServerErrorDescription',
+        'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
         'indicator' => 'setIndicator',
         'interactionCounter' => 'setInteractionCounter',
         'eci' => 'setEci',
@@ -198,8 +218,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      */
     protected static $getters = [
         'acsRenderingType' => 'getAcsRenderingType',
+        'acsReferenceNumber' => 'getAcsReferenceNumber',
         'acsTransactionId' => 'getAcsTransactionId',
+        'acsOperatorID' => 'getAcsOperatorID',
         'authenticationResult' => 'getAuthenticationResult',
+        'authenticationType' => 'getAuthenticationType',
         'authenticationStatusMsg' => 'getAuthenticationStatusMsg',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
         'authenticationTransactionContextId' => 'getAuthenticationTransactionContextId',
@@ -207,8 +230,10 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         'authorizationPayload' => 'getAuthorizationPayload',
         'cavv' => 'getCavv',
         'cavvAlgorithm' => 'getCavvAlgorithm',
+        'challengeCancelCode' => 'getChallengeCancelCode',
         'directoryServerErrorCode' => 'getDirectoryServerErrorCode',
         'directoryServerErrorDescription' => 'getDirectoryServerErrorDescription',
+        'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
         'indicator' => 'getIndicator',
         'interactionCounter' => 'getInteractionCounter',
         'eci' => 'getEci',
@@ -257,8 +282,11 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function __construct(array $data = null)
     {
         $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
+        $this->container['acsReferenceNumber'] = isset($data['acsReferenceNumber']) ? $data['acsReferenceNumber'] : null;
         $this->container['acsTransactionId'] = isset($data['acsTransactionId']) ? $data['acsTransactionId'] : null;
+        $this->container['acsOperatorID'] = isset($data['acsOperatorID']) ? $data['acsOperatorID'] : null;
         $this->container['authenticationResult'] = isset($data['authenticationResult']) ? $data['authenticationResult'] : null;
+        $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
         $this->container['authenticationStatusMsg'] = isset($data['authenticationStatusMsg']) ? $data['authenticationStatusMsg'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
         $this->container['authenticationTransactionContextId'] = isset($data['authenticationTransactionContextId']) ? $data['authenticationTransactionContextId'] : null;
@@ -266,8 +294,10 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
         $this->container['authorizationPayload'] = isset($data['authorizationPayload']) ? $data['authorizationPayload'] : null;
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['cavvAlgorithm'] = isset($data['cavvAlgorithm']) ? $data['cavvAlgorithm'] : null;
+        $this->container['challengeCancelCode'] = isset($data['challengeCancelCode']) ? $data['challengeCancelCode'] : null;
         $this->container['directoryServerErrorCode'] = isset($data['directoryServerErrorCode']) ? $data['directoryServerErrorCode'] : null;
         $this->container['directoryServerErrorDescription'] = isset($data['directoryServerErrorDescription']) ? $data['directoryServerErrorDescription'] : null;
+        $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
         $this->container['indicator'] = isset($data['indicator']) ? $data['indicator'] : null;
         $this->container['interactionCounter'] = isset($data['interactionCounter']) ? $data['interactionCounter'] : null;
         $this->container['eci'] = isset($data['eci']) ? $data['eci'] : null;
@@ -331,6 +361,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Gets acsReferenceNumber
+     * @return string
+     */
+    public function getAcsReferenceNumber()
+    {
+        return $this->container['acsReferenceNumber'];
+    }
+
+    /**
+     * Sets acsReferenceNumber
+     * @param string $acsReferenceNumber Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+     * @return $this
+     */
+    public function setAcsReferenceNumber($acsReferenceNumber)
+    {
+        $this->container['acsReferenceNumber'] = $acsReferenceNumber;
+
+        return $this;
+    }
+
+    /**
      * Gets acsTransactionId
      * @return string
      */
@@ -352,6 +403,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Gets acsOperatorID
+     * @return string
+     */
+    public function getAcsOperatorID()
+    {
+        return $this->container['acsOperatorID'];
+    }
+
+    /**
+     * Sets acsOperatorID
+     * @param string $acsOperatorID Directory Server assigned ACS identifier.
+     * @return $this
+     */
+    public function setAcsOperatorID($acsOperatorID)
+    {
+        $this->container['acsOperatorID'] = $acsOperatorID;
+
+        return $this;
+    }
+
+    /**
      * Gets authenticationResult
      * @return string
      */
@@ -368,6 +440,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setAuthenticationResult($authenticationResult)
     {
         $this->container['authenticationResult'] = $authenticationResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationType
+     * @return string
+     */
+    public function getAuthenticationType()
+    {
+        return $this->container['authenticationType'];
+    }
+
+    /**
+     * Sets authenticationType
+     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
+     * @return $this
+     */
+    public function setAuthenticationType($authenticationType)
+    {
+        $this->container['authenticationType'] = $authenticationType;
 
         return $this;
     }
@@ -520,6 +613,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Gets challengeCancelCode
+     * @return string
+     */
+    public function getChallengeCancelCode()
+    {
+        return $this->container['challengeCancelCode'];
+    }
+
+    /**
+     * Sets challengeCancelCode
+     * @param string $challengeCancelCode An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK
+     * @return $this
+     */
+    public function setChallengeCancelCode($challengeCancelCode)
+    {
+        $this->container['challengeCancelCode'] = $challengeCancelCode;
+
+        return $this;
+    }
+
+    /**
      * Gets directoryServerErrorCode
      * @return string
      */
@@ -557,6 +671,27 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     public function setDirectoryServerErrorDescription($directoryServerErrorDescription)
     {
         $this->container['directoryServerErrorDescription'] = $directoryServerErrorDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets effectiveAuthenticationType
+     * @return string
+     */
+    public function getEffectiveAuthenticationType()
+    {
+        return $this->container['effectiveAuthenticationType'];
+    }
+
+    /**
+     * Sets effectiveAuthenticationType
+     * @param string $effectiveAuthenticationType This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer).
+     * @return $this
+     */
+    public function setEffectiveAuthenticationType($effectiveAuthenticationType)
+    {
+        $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
 
         return $this;
     }

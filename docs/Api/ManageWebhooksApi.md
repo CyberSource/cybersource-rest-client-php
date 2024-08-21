@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionById**
-> \CyberSource\Model\InlineResponse2005 getWebhookSubscriptionById($webhookId)
+> \CyberSource\Model\InlineResponse2004 getWebhookSubscriptionById($webhookId)
 
 Get Details On a Single Webhook
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionsByOrg**
-> \CyberSource\Model\InlineResponse2004[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
+> \CyberSource\Model\InlineResponse2003[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
 
 Get Details On All Created Webhooks
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2004[]**](../Model/InlineResponse2004.md)
+[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

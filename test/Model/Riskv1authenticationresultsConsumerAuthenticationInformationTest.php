@@ -98,20 +98,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformationTest extends \
     }
 
     /**
-     * Test attribute "authenticationType"
-     */
-    public function testPropertyAuthenticationType()
-    {
-    }
-
-    /**
-     * Test attribute "effectiveAuthenticationType"
-     */
-    public function testPropertyEffectiveAuthenticationType()
-    {
-    }
-
-    /**
      * Test attribute "responseAccessToken"
      */
     public function testPropertyResponseAccessToken()

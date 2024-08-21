@@ -209,6 +209,30 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['httpAcceptContent'] === null) {
+            $invalid_properties[] = "'httpAcceptContent' can't be null";
+        }
+        if ($this->container['httpBrowserLanguage'] === null) {
+            $invalid_properties[] = "'httpBrowserLanguage' can't be null";
+        }
+        if ($this->container['httpBrowserJavaEnabled'] === null) {
+            $invalid_properties[] = "'httpBrowserJavaEnabled' can't be null";
+        }
+        if ($this->container['httpBrowserColorDepth'] === null) {
+            $invalid_properties[] = "'httpBrowserColorDepth' can't be null";
+        }
+        if ($this->container['httpBrowserScreenHeight'] === null) {
+            $invalid_properties[] = "'httpBrowserScreenHeight' can't be null";
+        }
+        if ($this->container['httpBrowserScreenWidth'] === null) {
+            $invalid_properties[] = "'httpBrowserScreenWidth' can't be null";
+        }
+        if ($this->container['httpBrowserTimeDifference'] === null) {
+            $invalid_properties[] = "'httpBrowserTimeDifference' can't be null";
+        }
+        if ($this->container['userAgentBrowserValue'] === null) {
+            $invalid_properties[] = "'userAgentBrowserValue' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -221,6 +245,30 @@ class Riskv1authenticationsDeviceInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['httpAcceptContent'] === null) {
+            return false;
+        }
+        if ($this->container['httpBrowserLanguage'] === null) {
+            return false;
+        }
+        if ($this->container['httpBrowserJavaEnabled'] === null) {
+            return false;
+        }
+        if ($this->container['httpBrowserColorDepth'] === null) {
+            return false;
+        }
+        if ($this->container['httpBrowserScreenHeight'] === null) {
+            return false;
+        }
+        if ($this->container['httpBrowserScreenWidth'] === null) {
+            return false;
+        }
+        if ($this->container['httpBrowserTimeDifference'] === null) {
+            return false;
+        }
+        if ($this->container['userAgentBrowserValue'] === null) {
+            return false;
+        }
         return true;
     }
 

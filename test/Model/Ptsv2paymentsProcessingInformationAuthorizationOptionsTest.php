@@ -229,4 +229,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     public function testPropertyCardVerificationIndicator()
     {
     }
+
+    /**
+     * Test attribute "aftIndicator"
+     */
+    public function testPropertyAftIndicator()
+    {
+    }
 }

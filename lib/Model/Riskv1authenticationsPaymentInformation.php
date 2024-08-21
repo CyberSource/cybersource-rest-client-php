@@ -53,7 +53,7 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card' => '\CyberSource\Model\Riskv1authenticationsPaymentInformationCard',
+        'card' => '\CyberSource\Model\Riskv1authenticationsetupsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Riskv1authenticationsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Riskv1authenticationsetupsPaymentInformationFluidData',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
@@ -179,7 +179,7 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\Riskv1authenticationsPaymentInformationCard
+     * @return \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationCard
      */
     public function getCard()
     {
@@ -188,7 +188,7 @@ class Riskv1authenticationsPaymentInformation implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\Riskv1authenticationsPaymentInformationCard $card
+     * @param \CyberSource\Model\Riskv1authenticationsetupsPaymentInformationCard $card
      * @return $this
      */
     public function setCard($card)

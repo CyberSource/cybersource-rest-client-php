@@ -77,23 +77,100 @@ class InlineResponse2003Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "productId"
+     * Test attribute "webhookId"
      */
-    public function testPropertyProductId()
+    public function testPropertyWebhookId()
     {
     }
 
     /**
-     * Test attribute "productName"
+     * Test attribute "organizationId"
      */
-    public function testPropertyProductName()
+    public function testPropertyOrganizationId()
     {
     }
 
     /**
-     * Test attribute "eventTypes"
+     * Test attribute "products"
      */
-    public function testPropertyEventTypes()
+    public function testPropertyProducts()
+    {
+    }
+
+    /**
+     * Test attribute "webhookUrl"
+     */
+    public function testPropertyWebhookUrl()
+    {
+    }
+
+    /**
+     * Test attribute "healthCheckUrl"
+     */
+    public function testPropertyHealthCheckUrl()
+    {
+    }
+
+    /**
+     * Test attribute "notificationScope"
+     */
+    public function testPropertyNotificationScope()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "retryPolicy"
+     */
+    public function testPropertyRetryPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "securityPolicy"
+     */
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "updatedOn"
+     */
+    public function testPropertyUpdatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "additionalAttributes"
+     */
+    public function testPropertyAdditionalAttributes()
     {
     }
 }

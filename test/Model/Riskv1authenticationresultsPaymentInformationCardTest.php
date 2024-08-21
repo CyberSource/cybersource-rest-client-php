@@ -77,13 +77,6 @@ class Riskv1authenticationresultsPaymentInformationCardTest extends \PHPUnit_Fra
     }
 
     /**
-     * Test attribute "bin"
-     */
-    public function testPropertyBin()
-    {
-    }
-
-    /**
      * Test attribute "type"
      */
     public function testPropertyType()

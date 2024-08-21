@@ -34,7 +34,6 @@ use \ArrayAccess;
  * InlineResponse2001 Class Doc Comment
  *
  * @category    Class
- * @description Successful searchKeysResponse
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,12 +53,13 @@ class InlineResponse2001 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
-        'totalCount' => 'int',
-        'offset' => 'int',
-        'limit' => 'int',
-        'sort' => 'string',
-        'keys' => '\CyberSource\Model\InlineResponse2001Keys[]'
+        'registrationInformation' => '\CyberSource\Model\Boardingv1registrationsRegistrationInformation',
+        'integrationInformation' => '\CyberSource\Model\InlineResponse2001IntegrationInformation',
+        'organizationInformation' => '\CyberSource\Model\Boardingv1registrationsOrganizationInformation',
+        'productInformation' => '\CyberSource\Model\Boardingv1registrationsProductInformation',
+        'productInformationSetups' => '\CyberSource\Model\InlineResponse2012ProductInformationSetups[]',
+        'documentInformation' => '\CyberSource\Model\Boardingv1registrationsDocumentInformation',
+        'details' => 'map[string,object[]]'
     ];
 
     /**
@@ -67,12 +67,13 @@ class InlineResponse2001 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
-        'totalCount' => null,
-        'offset' => null,
-        'limit' => null,
-        'sort' => null,
-        'keys' => null
+        'registrationInformation' => null,
+        'integrationInformation' => null,
+        'organizationInformation' => null,
+        'productInformation' => null,
+        'productInformationSetups' => null,
+        'documentInformation' => null,
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -90,12 +91,13 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'totalCount' => 'totalCount',
-        'offset' => 'offset',
-        'limit' => 'limit',
-        'sort' => 'sort',
-        'keys' => 'keys'
+        'registrationInformation' => 'registrationInformation',
+        'integrationInformation' => 'integrationInformation',
+        'organizationInformation' => 'organizationInformation',
+        'productInformation' => 'productInformation',
+        'productInformationSetups' => 'productInformationSetups',
+        'documentInformation' => 'documentInformation',
+        'details' => 'details'
     ];
 
 
@@ -104,12 +106,13 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'totalCount' => 'setTotalCount',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit',
-        'sort' => 'setSort',
-        'keys' => 'setKeys'
+        'registrationInformation' => 'setRegistrationInformation',
+        'integrationInformation' => 'setIntegrationInformation',
+        'organizationInformation' => 'setOrganizationInformation',
+        'productInformation' => 'setProductInformation',
+        'productInformationSetups' => 'setProductInformationSetups',
+        'documentInformation' => 'setDocumentInformation',
+        'details' => 'setDetails'
     ];
 
 
@@ -118,12 +121,13 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'totalCount' => 'getTotalCount',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit',
-        'sort' => 'getSort',
-        'keys' => 'getKeys'
+        'registrationInformation' => 'getRegistrationInformation',
+        'integrationInformation' => 'getIntegrationInformation',
+        'organizationInformation' => 'getOrganizationInformation',
+        'productInformation' => 'getProductInformation',
+        'productInformationSetups' => 'getProductInformationSetups',
+        'documentInformation' => 'getDocumentInformation',
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -157,12 +161,13 @@ class InlineResponse2001 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
-        $this->container['keys'] = isset($data['keys']) ? $data['keys'] : null;
+        $this->container['registrationInformation'] = isset($data['registrationInformation']) ? $data['registrationInformation'] : null;
+        $this->container['integrationInformation'] = isset($data['integrationInformation']) ? $data['integrationInformation'] : null;
+        $this->container['organizationInformation'] = isset($data['organizationInformation']) ? $data['organizationInformation'] : null;
+        $this->container['productInformation'] = isset($data['productInformation']) ? $data['productInformation'] : null;
+        $this->container['productInformationSetups'] = isset($data['productInformationSetups']) ? $data['productInformationSetups'] : null;
+        $this->container['documentInformation'] = isset($data['documentInformation']) ? $data['documentInformation'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -191,127 +196,148 @@ class InlineResponse2001 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return string
+     * Gets registrationInformation
+     * @return \CyberSource\Model\Boardingv1registrationsRegistrationInformation
      */
-    public function getSubmitTimeUtc()
+    public function getRegistrationInformation()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['registrationInformation'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * Sets registrationInformation
+     * @param \CyberSource\Model\Boardingv1registrationsRegistrationInformation $registrationInformation
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setRegistrationInformation($registrationInformation)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['registrationInformation'] = $registrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets totalCount
-     * @return int
+     * Gets integrationInformation
+     * @return \CyberSource\Model\InlineResponse2001IntegrationInformation
      */
-    public function getTotalCount()
+    public function getIntegrationInformation()
     {
-        return $this->container['totalCount'];
+        return $this->container['integrationInformation'];
     }
 
     /**
-     * Sets totalCount
-     * @param int $totalCount Specifies the total number of items found based on the request
+     * Sets integrationInformation
+     * @param \CyberSource\Model\InlineResponse2001IntegrationInformation $integrationInformation
      * @return $this
      */
-    public function setTotalCount($totalCount)
+    public function setIntegrationInformation($integrationInformation)
     {
-        $this->container['totalCount'] = $totalCount;
+        $this->container['integrationInformation'] = $integrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets offset
-     * @return int
+     * Gets organizationInformation
+     * @return \CyberSource\Model\Boardingv1registrationsOrganizationInformation
      */
-    public function getOffset()
+    public function getOrganizationInformation()
     {
-        return $this->container['offset'];
+        return $this->container['organizationInformation'];
     }
 
     /**
-     * Sets offset
-     * @param int $offset Specifies the record offset from the records are returned part of the response
+     * Sets organizationInformation
+     * @param \CyberSource\Model\Boardingv1registrationsOrganizationInformation $organizationInformation
      * @return $this
      */
-    public function setOffset($offset)
+    public function setOrganizationInformation($organizationInformation)
     {
-        $this->container['offset'] = $offset;
+        $this->container['organizationInformation'] = $organizationInformation;
 
         return $this;
     }
 
     /**
-     * Gets limit
-     * @return int
+     * Gets productInformation
+     * @return \CyberSource\Model\Boardingv1registrationsProductInformation
      */
-    public function getLimit()
+    public function getProductInformation()
     {
-        return $this->container['limit'];
+        return $this->container['productInformation'];
     }
 
     /**
-     * Sets limit
-     * @param int $limit Specifies the maximum number of records requested part of the response
+     * Sets productInformation
+     * @param \CyberSource\Model\Boardingv1registrationsProductInformation $productInformation
      * @return $this
      */
-    public function setLimit($limit)
+    public function setProductInformation($productInformation)
     {
-        $this->container['limit'] = $limit;
+        $this->container['productInformation'] = $productInformation;
 
         return $this;
     }
 
     /**
-     * Gets sort
-     * @return string
+     * Gets productInformationSetups
+     * @return \CyberSource\Model\InlineResponse2012ProductInformationSetups[]
      */
-    public function getSort()
+    public function getProductInformationSetups()
     {
-        return $this->container['sort'];
+        return $this->container['productInformationSetups'];
     }
 
     /**
-     * Sets sort
-     * @param string $sort Specifies a comma separated list of field names based on which the result is sorted.
+     * Sets productInformationSetups
+     * @param \CyberSource\Model\InlineResponse2012ProductInformationSetups[] $productInformationSetups
      * @return $this
      */
-    public function setSort($sort)
+    public function setProductInformationSetups($productInformationSetups)
     {
-        $this->container['sort'] = $sort;
+        $this->container['productInformationSetups'] = $productInformationSetups;
 
         return $this;
     }
 
     /**
-     * Gets keys
-     * @return \CyberSource\Model\InlineResponse2001Keys[]
+     * Gets documentInformation
+     * @return \CyberSource\Model\Boardingv1registrationsDocumentInformation
      */
-    public function getKeys()
+    public function getDocumentInformation()
     {
-        return $this->container['keys'];
+        return $this->container['documentInformation'];
     }
 
     /**
-     * Sets keys
-     * @param \CyberSource\Model\InlineResponse2001Keys[] $keys
+     * Sets documentInformation
+     * @param \CyberSource\Model\Boardingv1registrationsDocumentInformation $documentInformation
      * @return $this
      */
-    public function setKeys($keys)
+    public function setDocumentInformation($documentInformation)
     {
-        $this->container['keys'] = $keys;
+        $this->container['documentInformation'] = $documentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     * @return map[string,object[]]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     * @param map[string,object[]] $details
+     * @return $this
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

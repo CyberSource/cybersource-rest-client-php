@@ -53,7 +53,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bin' => 'string',
         'type' => 'string',
         'expirationMonth' => 'string',
         'expirationYear' => 'string',
@@ -65,7 +64,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'bin' => null,
         'type' => null,
         'expirationMonth' => null,
         'expirationYear' => null,
@@ -87,7 +85,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bin' => 'bin',
         'type' => 'type',
         'expirationMonth' => 'expirationMonth',
         'expirationYear' => 'expirationYear',
@@ -100,7 +97,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bin' => 'setBin',
         'type' => 'setType',
         'expirationMonth' => 'setExpirationMonth',
         'expirationYear' => 'setExpirationYear',
@@ -113,7 +109,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bin' => 'getBin',
         'type' => 'getType',
         'expirationMonth' => 'getExpirationMonth',
         'expirationYear' => 'getExpirationYear',
@@ -151,7 +146,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['bin'] = isset($data['bin']) ? $data['bin'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
         $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
@@ -182,27 +176,6 @@ class Riskv1authenticationresultsPaymentInformationCard implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets bin
-     * @return string
-     */
-    public function getBin()
-    {
-        return $this->container['bin'];
-    }
-
-    /**
-     * Sets bin
-     * @param string $bin description: The BIN is the first six digits of the card's Primary Account Number (PAN).
-     * @return $this
-     */
-    public function setBin($bin)
-    {
-        $this->container['bin'] = $bin;
-
-        return $this;
-    }
 
     /**
      * Gets type

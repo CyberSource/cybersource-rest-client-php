@@ -154,6 +154,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     }
 
     /**
+     * Test attribute "sequenceNumber"
+     */
+    public function testPropertySequenceNumber()
+    {
+    }
+
+    /**
      * Test attribute "avs"
      */
     public function testPropertyAvs()

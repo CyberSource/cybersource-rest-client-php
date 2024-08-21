@@ -98,13 +98,6 @@ class RiskV1AuthenticationsPost201ResponseTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
-     * Test attribute "submitTimeLocal"
-     */
-    public function testPropertySubmitTimeLocal()
-    {
-    }
-
-    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

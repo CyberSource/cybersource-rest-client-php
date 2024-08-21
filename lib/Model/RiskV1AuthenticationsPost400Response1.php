@@ -215,7 +215,7 @@ class RiskV1AuthenticationsPost400Response1 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status for payerAuthentication 201 enroll and validate calls. Value is: - `INVALID_REQUEST`
+     * @param string $status The status for payerAuthentication 400 enroll and validate calls. Value is: - `INVALID_REQUEST`
      * @return $this
      */
     public function setStatus($status)

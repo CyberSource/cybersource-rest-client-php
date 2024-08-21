@@ -84,13 +84,6 @@ class Riskv1decisionsConsumerAuthenticationInformationTest extends \PHPUnit_Fram
     }
 
     /**
-     * Test attribute "authenticationType"
-     */
-    public function testPropertyAuthenticationType()
-    {
-    }
-
-    /**
      * Test attribute "acsWindowSize"
      */
     public function testPropertyAcsWindowSize()

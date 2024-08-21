@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **status** | **string** | The http status description of the submitted request. | [optional] 
 **reason** | **string** | Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - &#39;INVALID_DATA&#39; | [optional] 
 **message** | **string** | Descriptive message for the error. | [optional] 
-**details** | [**\CyberSource\Model\InlineResponse4007Details[]**](InlineResponse4007Details.md) |  | [optional] 
+**details** | [**\CyberSource\Model\InlineResponse4005Details[]**](InlineResponse4005Details.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

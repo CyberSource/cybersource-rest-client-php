@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2001Test Class Doc Comment
  *
  * @category    Class */
-// * @description Successful searchKeysResponse
+// * @description InlineResponse2001
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,44 +77,51 @@ class InlineResponse2001Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "registrationInformation"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyRegistrationInformation()
     {
     }
 
     /**
-     * Test attribute "totalCount"
+     * Test attribute "integrationInformation"
      */
-    public function testPropertyTotalCount()
+    public function testPropertyIntegrationInformation()
     {
     }
 
     /**
-     * Test attribute "offset"
+     * Test attribute "organizationInformation"
      */
-    public function testPropertyOffset()
+    public function testPropertyOrganizationInformation()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "productInformation"
      */
-    public function testPropertyLimit()
+    public function testPropertyProductInformation()
     {
     }
 
     /**
-     * Test attribute "sort"
+     * Test attribute "productInformationSetups"
      */
-    public function testPropertySort()
+    public function testPropertyProductInformationSetups()
     {
     }
 
     /**
-     * Test attribute "keys"
+     * Test attribute "documentInformation"
      */
-    public function testPropertyKeys()
+    public function testPropertyDocumentInformation()
+    {
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
     {
     }
 }

@@ -53,7 +53,7 @@ class ValidateRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation',
         'processingInformation' => '\CyberSource\Model\Riskv1authenticationsetupsProcessingInformation',
         'orderInformation' => '\CyberSource\Model\Riskv1authenticationresultsOrderInformation',
         'paymentInformation' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformation',
@@ -197,7 +197,7 @@ class ValidateRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformation
+     * @return \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -206,7 +206,7 @@ class ValidateRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Riskv1authenticationsetupsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **findProductsToSubscribe**
-> \CyberSource\Model\InlineResponse2003[] findProductsToSubscribe($organizationId)
+> \CyberSource\Model\InlineResponse2002[] findProductsToSubscribe($organizationId)
 
 Find Products You Can Subscribe To
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
+[**\CyberSource\Model\InlineResponse2002[]**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

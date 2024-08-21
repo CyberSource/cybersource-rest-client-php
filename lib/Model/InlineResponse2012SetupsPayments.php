@@ -69,7 +69,8 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
         'payouts' => '\CyberSource\Model\InlineResponse2012SetupsPaymentsCardProcessing',
         'payByLink' => '\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments',
         'unifiedCheckout' => '\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments',
-        'receivablesManager' => '\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments'
+        'receivablesManager' => '\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments',
+        'serviceFee' => '\CyberSource\Model\InlineResponse2012SetupsPaymentsCardProcessing'
     ];
 
     /**
@@ -93,7 +94,8 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
         'payouts' => null,
         'payByLink' => null,
         'unifiedCheckout' => null,
-        'receivablesManager' => null
+        'receivablesManager' => null,
+        'serviceFee' => null
     ];
 
     public static function swaggerTypes()
@@ -127,7 +129,8 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
         'payouts' => 'payouts',
         'payByLink' => 'payByLink',
         'unifiedCheckout' => 'unifiedCheckout',
-        'receivablesManager' => 'receivablesManager'
+        'receivablesManager' => 'receivablesManager',
+        'serviceFee' => 'serviceFee'
     ];
 
 
@@ -152,7 +155,8 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
         'payouts' => 'setPayouts',
         'payByLink' => 'setPayByLink',
         'unifiedCheckout' => 'setUnifiedCheckout',
-        'receivablesManager' => 'setReceivablesManager'
+        'receivablesManager' => 'setReceivablesManager',
+        'serviceFee' => 'setServiceFee'
     ];
 
 
@@ -177,7 +181,8 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
         'payouts' => 'getPayouts',
         'payByLink' => 'getPayByLink',
         'unifiedCheckout' => 'getUnifiedCheckout',
-        'receivablesManager' => 'getReceivablesManager'
+        'receivablesManager' => 'getReceivablesManager',
+        'serviceFee' => 'getServiceFee'
     ];
 
     public static function attributeMap()
@@ -228,6 +233,7 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
         $this->container['payByLink'] = isset($data['payByLink']) ? $data['payByLink'] : null;
         $this->container['unifiedCheckout'] = isset($data['unifiedCheckout']) ? $data['unifiedCheckout'] : null;
         $this->container['receivablesManager'] = isset($data['receivablesManager']) ? $data['receivablesManager'] : null;
+        $this->container['serviceFee'] = isset($data['serviceFee']) ? $data['serviceFee'] : null;
     }
 
     /**
@@ -608,6 +614,27 @@ class InlineResponse2012SetupsPayments implements ArrayAccess
     public function setReceivablesManager($receivablesManager)
     {
         $this->container['receivablesManager'] = $receivablesManager;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceFee
+     * @return \CyberSource\Model\InlineResponse2012SetupsPaymentsCardProcessing
+     */
+    public function getServiceFee()
+    {
+        return $this->container['serviceFee'];
+    }
+
+    /**
+     * Sets serviceFee
+     * @param \CyberSource\Model\InlineResponse2012SetupsPaymentsCardProcessing $serviceFee
+     * @return $this
+     */
+    public function setServiceFee($serviceFee)
+    {
+        $this->container['serviceFee'] = $serviceFee;
 
         return $this;
     }

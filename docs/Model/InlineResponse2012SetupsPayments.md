@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **payByLink** | [**\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments**](InlineResponse2012SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **unifiedCheckout** | [**\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments**](InlineResponse2012SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **receivablesManager** | [**\CyberSource\Model\InlineResponse2012SetupsPaymentsDigitalPayments**](InlineResponse2012SetupsPaymentsDigitalPayments.md) |  | [optional] 
+**serviceFee** | [**\CyberSource\Model\InlineResponse2012SetupsPaymentsCardProcessing**](InlineResponse2012SetupsPaymentsCardProcessing.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

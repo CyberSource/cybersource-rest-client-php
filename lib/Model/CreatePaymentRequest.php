@@ -59,6 +59,7 @@ class CreatePaymentRequest implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsOrderInformation',
         'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsBuyerInformation',
+        'senderInformation' => '\CyberSource\Model\Ptsv2paymentsSenderInformation',
         'recipientInformation' => '\CyberSource\Model\Ptsv2paymentsRecipientInformation',
         'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantInformation',
@@ -93,6 +94,7 @@ class CreatePaymentRequest implements ArrayAccess
         'paymentInformation' => null,
         'orderInformation' => null,
         'buyerInformation' => null,
+        'senderInformation' => null,
         'recipientInformation' => null,
         'deviceInformation' => null,
         'merchantInformation' => null,
@@ -137,6 +139,7 @@ class CreatePaymentRequest implements ArrayAccess
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
         'buyerInformation' => 'buyerInformation',
+        'senderInformation' => 'senderInformation',
         'recipientInformation' => 'recipientInformation',
         'deviceInformation' => 'deviceInformation',
         'merchantInformation' => 'merchantInformation',
@@ -172,6 +175,7 @@ class CreatePaymentRequest implements ArrayAccess
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
         'buyerInformation' => 'setBuyerInformation',
+        'senderInformation' => 'setSenderInformation',
         'recipientInformation' => 'setRecipientInformation',
         'deviceInformation' => 'setDeviceInformation',
         'merchantInformation' => 'setMerchantInformation',
@@ -207,6 +211,7 @@ class CreatePaymentRequest implements ArrayAccess
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
         'buyerInformation' => 'getBuyerInformation',
+        'senderInformation' => 'getSenderInformation',
         'recipientInformation' => 'getRecipientInformation',
         'deviceInformation' => 'getDeviceInformation',
         'merchantInformation' => 'getMerchantInformation',
@@ -267,6 +272,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
+        $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
@@ -437,6 +443,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setBuyerInformation($buyerInformation)
     {
         $this->container['buyerInformation'] = $buyerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets senderInformation
+     * @return \CyberSource\Model\Ptsv2paymentsSenderInformation
+     */
+    public function getSenderInformation()
+    {
+        return $this->container['senderInformation'];
+    }
+
+    /**
+     * Sets senderInformation
+     * @param \CyberSource\Model\Ptsv2paymentsSenderInformation $senderInformation
+     * @return $this
+     */
+    public function setSenderInformation($senderInformation)
+    {
+        $this->container['senderInformation'] = $senderInformation;
 
         return $this;
     }
