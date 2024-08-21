@@ -5,8 +5,6 @@ namespace CyberSource\Utilities\Tracking;
 class SdkTracker
 {
     private static $inclusionList = array(
-        'CreateP12KeysRequest',
-        'DeleteBulkP12KeysRequest',
         'CapturePaymentRequest',
         'CreateCreditRequest',
         'AddNegativeListRequest',
@@ -24,9 +22,6 @@ class SdkTracker
         'MitReversalRequest',
         'CreateSubscriptionRequest',
         'UpdateSubscription',
-        'CreateSharedSecretKeysRequest',
-        'CreateSharedSecretKeysVerifiRequest',
-        'DeleteBulkSymmetricKeysRequest',
         'TaxRequest',
         'VoidTaxRequest',
         'ValidateExportComplianceRequest',
