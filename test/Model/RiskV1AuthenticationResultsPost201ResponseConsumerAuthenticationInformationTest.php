@@ -84,6 +84,13 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "acsReferenceNumber"
+     */
+    public function testPropertyAcsReferenceNumber()
+    {
+    }
+
+    /**
      * Test attribute "acsTransactionId"
      */
     public function testPropertyAcsTransactionId()
@@ -91,9 +98,23 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "acsOperatorID"
+     */
+    public function testPropertyAcsOperatorID()
+    {
+    }
+
+    /**
      * Test attribute "authenticationResult"
      */
     public function testPropertyAuthenticationResult()
+    {
+    }
+
+    /**
+     * Test attribute "authenticationType"
+     */
+    public function testPropertyAuthenticationType()
     {
     }
 
@@ -147,6 +168,13 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
     }
 
     /**
+     * Test attribute "challengeCancelCode"
+     */
+    public function testPropertyChallengeCancelCode()
+    {
+    }
+
+    /**
      * Test attribute "directoryServerErrorCode"
      */
     public function testPropertyDirectoryServerErrorCode()
@@ -157,6 +185,13 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      * Test attribute "directoryServerErrorDescription"
      */
     public function testPropertyDirectoryServerErrorDescription()
+    {
+    }
+
+    /**
+     * Test attribute "effectiveAuthenticationType"
+     */
+    public function testPropertyEffectiveAuthenticationType()
     {
     }
 

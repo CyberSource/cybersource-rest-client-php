@@ -182,7 +182,7 @@ class PayerAuthConfigCardTypesVerifiedByVisaCurrencies implements ArrayAccess
 
     /**
      * Sets currencyCodes
-     * @param string[] $currencyCodes
+     * @param string[] $currencyCodes Supported currency codes are numeric ISO 4217 codes, such as 840 for US Dollar and 978 for Euro.  For backward compatibility, we also support the 'ALL' code, which represents all currencies.  In the UI, 'ALL' is displayed as 'Default'.
      * @return $this
      */
     public function setCurrencyCodes($currencyCodes)

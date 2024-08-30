@@ -53,16 +53,16 @@ class InlineResponse2007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse2007Links',
+        'version' => 'string',
+        'reportCreatedDate' => 'string',
         'batchId' => 'string',
-        'batchCreatedDate' => 'string',
         'batchSource' => 'string',
-        'merchantReference' => 'string',
         'batchCaEndpoints' => 'string',
-        'status' => 'string',
-        'totals' => '\CyberSource\Model\InlineResponse2006EmbeddedTotals',
-        'billing' => '\CyberSource\Model\InlineResponse2007Billing',
-        'description' => 'string'
+        'batchCreatedDate' => 'string',
+        'merchantReference' => 'string',
+        'totals' => '\CyberSource\Model\InlineResponse2005EmbeddedTotals',
+        'billing' => '\CyberSource\Model\InlineResponse2006Billing',
+        'records' => '\CyberSource\Model\InlineResponse2007Records[]'
     ];
 
     /**
@@ -70,16 +70,16 @@ class InlineResponse2007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
+        'version' => null,
+        'reportCreatedDate' => null,
         'batchId' => null,
-        'batchCreatedDate' => null,
         'batchSource' => null,
-        'merchantReference' => null,
         'batchCaEndpoints' => null,
-        'status' => null,
+        'batchCreatedDate' => null,
+        'merchantReference' => null,
         'totals' => null,
         'billing' => null,
-        'description' => null
+        'records' => null
     ];
 
     public static function swaggerTypes()
@@ -97,16 +97,16 @@ class InlineResponse2007 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
+        'version' => 'version',
+        'reportCreatedDate' => 'reportCreatedDate',
         'batchId' => 'batchId',
-        'batchCreatedDate' => 'batchCreatedDate',
         'batchSource' => 'batchSource',
-        'merchantReference' => 'merchantReference',
         'batchCaEndpoints' => 'batchCaEndpoints',
-        'status' => 'status',
+        'batchCreatedDate' => 'batchCreatedDate',
+        'merchantReference' => 'merchantReference',
         'totals' => 'totals',
         'billing' => 'billing',
-        'description' => 'description'
+        'records' => 'records'
     ];
 
 
@@ -115,16 +115,16 @@ class InlineResponse2007 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
+        'version' => 'setVersion',
+        'reportCreatedDate' => 'setReportCreatedDate',
         'batchId' => 'setBatchId',
-        'batchCreatedDate' => 'setBatchCreatedDate',
         'batchSource' => 'setBatchSource',
-        'merchantReference' => 'setMerchantReference',
         'batchCaEndpoints' => 'setBatchCaEndpoints',
-        'status' => 'setStatus',
+        'batchCreatedDate' => 'setBatchCreatedDate',
+        'merchantReference' => 'setMerchantReference',
         'totals' => 'setTotals',
         'billing' => 'setBilling',
-        'description' => 'setDescription'
+        'records' => 'setRecords'
     ];
 
 
@@ -133,16 +133,16 @@ class InlineResponse2007 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
+        'version' => 'getVersion',
+        'reportCreatedDate' => 'getReportCreatedDate',
         'batchId' => 'getBatchId',
-        'batchCreatedDate' => 'getBatchCreatedDate',
         'batchSource' => 'getBatchSource',
-        'merchantReference' => 'getMerchantReference',
         'batchCaEndpoints' => 'getBatchCaEndpoints',
-        'status' => 'getStatus',
+        'batchCreatedDate' => 'getBatchCreatedDate',
+        'merchantReference' => 'getMerchantReference',
         'totals' => 'getTotals',
         'billing' => 'getBilling',
-        'description' => 'getDescription'
+        'records' => 'getRecords'
     ];
 
     public static function attributeMap()
@@ -176,16 +176,16 @@ class InlineResponse2007 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
+        $this->container['reportCreatedDate'] = isset($data['reportCreatedDate']) ? $data['reportCreatedDate'] : null;
         $this->container['batchId'] = isset($data['batchId']) ? $data['batchId'] : null;
-        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
         $this->container['batchSource'] = isset($data['batchSource']) ? $data['batchSource'] : null;
-        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
         $this->container['batchCaEndpoints'] = isset($data['batchCaEndpoints']) ? $data['batchCaEndpoints'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
         $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
         $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['records'] = isset($data['records']) ? $data['records'] : null;
     }
 
     /**
@@ -214,22 +214,43 @@ class InlineResponse2007 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse2007Links
+     * Gets version
+     * @return string
      */
-    public function getLinks()
+    public function getVersion()
     {
-        return $this->container['links'];
+        return $this->container['version'];
     }
 
     /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse2007Links $links
+     * Sets version
+     * @param string $version
      * @return $this
      */
-    public function setLinks($links)
+    public function setVersion($version)
     {
-        $this->container['links'] = $links;
+        $this->container['version'] = $version;
+
+        return $this;
+    }
+
+    /**
+     * Gets reportCreatedDate
+     * @return string
+     */
+    public function getReportCreatedDate()
+    {
+        return $this->container['reportCreatedDate'];
+    }
+
+    /**
+     * Sets reportCreatedDate
+     * @param string $reportCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+     * @return $this
+     */
+    public function setReportCreatedDate($reportCreatedDate)
+    {
+        $this->container['reportCreatedDate'] = $reportCreatedDate;
 
         return $this;
     }
@@ -256,27 +277,6 @@ class InlineResponse2007 implements ArrayAccess
     }
 
     /**
-     * Gets batchCreatedDate
-     * @return string
-     */
-    public function getBatchCreatedDate()
-    {
-        return $this->container['batchCreatedDate'];
-    }
-
-    /**
-     * Sets batchCreatedDate
-     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
-     * @return $this
-     */
-    public function setBatchCreatedDate($batchCreatedDate)
-    {
-        $this->container['batchCreatedDate'] = $batchCreatedDate;
-
-        return $this;
-    }
-
-    /**
      * Gets batchSource
      * @return string
      */
@@ -293,27 +293,6 @@ class InlineResponse2007 implements ArrayAccess
     public function setBatchSource($batchSource)
     {
         $this->container['batchSource'] = $batchSource;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantReference
-     * @return string
-     */
-    public function getMerchantReference()
-    {
-        return $this->container['merchantReference'];
-    }
-
-    /**
-     * Sets merchantReference
-     * @param string $merchantReference Reference used by merchant to identify batch.
-     * @return $this
-     */
-    public function setMerchantReference($merchantReference)
-    {
-        $this->container['merchantReference'] = $merchantReference;
 
         return $this;
     }
@@ -340,29 +319,50 @@ class InlineResponse2007 implements ArrayAccess
     }
 
     /**
-     * Gets status
+     * Gets batchCreatedDate
      * @return string
      */
-    public function getStatus()
+    public function getBatchCreatedDate()
     {
-        return $this->container['status'];
+        return $this->container['batchCreatedDate'];
     }
 
     /**
-     * Sets status
-     * @param string $status Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED
+     * Sets batchCreatedDate
+     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
      * @return $this
      */
-    public function setStatus($status)
+    public function setBatchCreatedDate($batchCreatedDate)
     {
-        $this->container['status'] = $status;
+        $this->container['batchCreatedDate'] = $batchCreatedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantReference
+     * @return string
+     */
+    public function getMerchantReference()
+    {
+        return $this->container['merchantReference'];
+    }
+
+    /**
+     * Sets merchantReference
+     * @param string $merchantReference Reference used by merchant to identify batch.
+     * @return $this
+     */
+    public function setMerchantReference($merchantReference)
+    {
+        $this->container['merchantReference'] = $merchantReference;
 
         return $this;
     }
 
     /**
      * Gets totals
-     * @return \CyberSource\Model\InlineResponse2006EmbeddedTotals
+     * @return \CyberSource\Model\InlineResponse2005EmbeddedTotals
      */
     public function getTotals()
     {
@@ -371,7 +371,7 @@ class InlineResponse2007 implements ArrayAccess
 
     /**
      * Sets totals
-     * @param \CyberSource\Model\InlineResponse2006EmbeddedTotals $totals
+     * @param \CyberSource\Model\InlineResponse2005EmbeddedTotals $totals
      * @return $this
      */
     public function setTotals($totals)
@@ -383,7 +383,7 @@ class InlineResponse2007 implements ArrayAccess
 
     /**
      * Gets billing
-     * @return \CyberSource\Model\InlineResponse2007Billing
+     * @return \CyberSource\Model\InlineResponse2006Billing
      */
     public function getBilling()
     {
@@ -392,7 +392,7 @@ class InlineResponse2007 implements ArrayAccess
 
     /**
      * Sets billing
-     * @param \CyberSource\Model\InlineResponse2007Billing $billing
+     * @param \CyberSource\Model\InlineResponse2006Billing $billing
      * @return $this
      */
     public function setBilling($billing)
@@ -403,22 +403,22 @@ class InlineResponse2007 implements ArrayAccess
     }
 
     /**
-     * Gets description
-     * @return string
+     * Gets records
+     * @return \CyberSource\Model\InlineResponse2007Records[]
      */
-    public function getDescription()
+    public function getRecords()
     {
-        return $this->container['description'];
+        return $this->container['records'];
     }
 
     /**
-     * Sets description
-     * @param string $description
+     * Sets records
+     * @param \CyberSource\Model\InlineResponse2007Records[] $records
      * @return $this
      */
-    public function setDescription($description)
+    public function setRecords($records)
     {
-        $this->container['description'] = $description;
+        $this->container['records'] = $records;
 
         return $this;
     }

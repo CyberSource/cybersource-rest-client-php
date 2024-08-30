@@ -77,100 +77,51 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "links"
      */
-    public function testPropertyWebhookId()
+    public function testPropertyLinks()
     {
     }
 
     /**
-     * Test attribute "organizationId"
+     * Test attribute "object"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertyObject()
     {
     }
 
     /**
-     * Test attribute "products"
+     * Test attribute "offset"
      */
-    public function testPropertyProducts()
+    public function testPropertyOffset()
     {
     }
 
     /**
-     * Test attribute "webhookUrl"
+     * Test attribute "limit"
      */
-    public function testPropertyWebhookUrl()
+    public function testPropertyLimit()
     {
     }
 
     /**
-     * Test attribute "healthCheckUrl"
+     * Test attribute "count"
      */
-    public function testPropertyHealthCheckUrl()
+    public function testPropertyCount()
     {
     }
 
     /**
-     * Test attribute "notificationScope"
+     * Test attribute "total"
      */
-    public function testPropertyNotificationScope()
+    public function testPropertyTotal()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "embedded"
      */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "retryPolicy"
-     */
-    public function testPropertyRetryPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "securityPolicy"
-     */
-    public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "createdOn"
-     */
-    public function testPropertyCreatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "updatedOn"
-     */
-    public function testPropertyUpdatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "additionalAttributes"
-     */
-    public function testPropertyAdditionalAttributes()
+    public function testPropertyEmbedded()
     {
     }
 }

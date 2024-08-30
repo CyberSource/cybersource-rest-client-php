@@ -77,9 +77,16 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "version"
      */
-    public function testPropertyLinks()
+    public function testPropertyVersion()
+    {
+    }
+
+    /**
+     * Test attribute "reportCreatedDate"
+     */
+    public function testPropertyReportCreatedDate()
     {
     }
 
@@ -91,23 +98,9 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "batchCreatedDate"
-     */
-    public function testPropertyBatchCreatedDate()
-    {
-    }
-
-    /**
      * Test attribute "batchSource"
      */
     public function testPropertyBatchSource()
-    {
-    }
-
-    /**
-     * Test attribute "merchantReference"
-     */
-    public function testPropertyMerchantReference()
     {
     }
 
@@ -119,9 +112,16 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "batchCreatedDate"
      */
-    public function testPropertyStatus()
+    public function testPropertyBatchCreatedDate()
+    {
+    }
+
+    /**
+     * Test attribute "merchantReference"
+     */
+    public function testPropertyMerchantReference()
     {
     }
 
@@ -140,9 +140,9 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "records"
      */
-    public function testPropertyDescription()
+    public function testPropertyRecords()
     {
     }
 }

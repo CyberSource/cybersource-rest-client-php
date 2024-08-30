@@ -77,51 +77,23 @@ class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "registrationInformation"
+     * Test attribute "productId"
      */
-    public function testPropertyRegistrationInformation()
+    public function testPropertyProductId()
     {
     }
 
     /**
-     * Test attribute "integrationInformation"
+     * Test attribute "productName"
      */
-    public function testPropertyIntegrationInformation()
+    public function testPropertyProductName()
     {
     }
 
     /**
-     * Test attribute "organizationInformation"
+     * Test attribute "eventTypes"
      */
-    public function testPropertyOrganizationInformation()
-    {
-    }
-
-    /**
-     * Test attribute "productInformation"
-     */
-    public function testPropertyProductInformation()
-    {
-    }
-
-    /**
-     * Test attribute "productInformationSetups"
-     */
-    public function testPropertyProductInformationSetups()
-    {
-    }
-
-    /**
-     * Test attribute "documentInformation"
-     */
-    public function testPropertyDocumentInformation()
-    {
-    }
-
-    /**
-     * Test attribute "details"
-     */
-    public function testPropertyDetails()
+    public function testPropertyEventTypes()
     {
     }
 }

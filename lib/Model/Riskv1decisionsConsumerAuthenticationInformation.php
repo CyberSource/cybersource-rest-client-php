@@ -54,7 +54,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'strongAuthentication' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication',
-        'authenticationType' => 'string',
         'acsWindowSize' => 'string',
         'alternateAuthenticationData' => 'string',
         'alternateAuthenticationDate' => 'string',
@@ -103,7 +102,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'strongAuthentication' => null,
-        'authenticationType' => null,
         'acsWindowSize' => null,
         'alternateAuthenticationData' => null,
         'alternateAuthenticationDate' => null,
@@ -162,7 +160,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'strongAuthentication' => 'strongAuthentication',
-        'authenticationType' => 'authenticationType',
         'acsWindowSize' => 'acsWindowSize',
         'alternateAuthenticationData' => 'alternateAuthenticationData',
         'alternateAuthenticationDate' => 'alternateAuthenticationDate',
@@ -212,7 +209,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     protected static $setters = [
         'strongAuthentication' => 'setStrongAuthentication',
-        'authenticationType' => 'setAuthenticationType',
         'acsWindowSize' => 'setAcsWindowSize',
         'alternateAuthenticationData' => 'setAlternateAuthenticationData',
         'alternateAuthenticationDate' => 'setAlternateAuthenticationDate',
@@ -262,7 +258,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
      */
     protected static $getters = [
         'strongAuthentication' => 'getStrongAuthentication',
-        'authenticationType' => 'getAuthenticationType',
         'acsWindowSize' => 'getAcsWindowSize',
         'alternateAuthenticationData' => 'getAlternateAuthenticationData',
         'alternateAuthenticationDate' => 'getAlternateAuthenticationDate',
@@ -337,7 +332,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;
-        $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
         $this->container['acsWindowSize'] = isset($data['acsWindowSize']) ? $data['acsWindowSize'] : null;
         $this->container['alternateAuthenticationData'] = isset($data['alternateAuthenticationData']) ? $data['alternateAuthenticationData'] : null;
         $this->container['alternateAuthenticationDate'] = isset($data['alternateAuthenticationDate']) ? $data['alternateAuthenticationDate'] : null;
@@ -389,6 +383,9 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['deviceChannel'] === null) {
+            $invalid_properties[] = "'deviceChannel' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -401,6 +398,9 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['deviceChannel'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -422,27 +422,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     public function setStrongAuthentication($strongAuthentication)
     {
         $this->container['strongAuthentication'] = $strongAuthentication;
-
-        return $this;
-    }
-
-    /**
-     * Gets authenticationType
-     * @return string
-     */
-    public function getAuthenticationType()
-    {
-        return $this->container['authenticationType'];
-    }
-
-    /**
-     * Sets authenticationType
-     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
-     * @return $this
-     */
-    public function setAuthenticationType($authenticationType)
-    {
-        $this->container['authenticationType'] = $authenticationType;
 
         return $this;
     }

@@ -84,44 +84,65 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "object"
+     * Test attribute "batchId"
      */
-    public function testPropertyObject()
+    public function testPropertyBatchId()
     {
     }
 
     /**
-     * Test attribute "offset"
+     * Test attribute "batchCreatedDate"
      */
-    public function testPropertyOffset()
+    public function testPropertyBatchCreatedDate()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "batchSource"
      */
-    public function testPropertyLimit()
+    public function testPropertyBatchSource()
     {
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "merchantReference"
      */
-    public function testPropertyCount()
+    public function testPropertyMerchantReference()
     {
     }
 
     /**
-     * Test attribute "total"
+     * Test attribute "batchCaEndpoints"
      */
-    public function testPropertyTotal()
+    public function testPropertyBatchCaEndpoints()
     {
     }
 
     /**
-     * Test attribute "embedded"
+     * Test attribute "status"
      */
-    public function testPropertyEmbedded()
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "totals"
+     */
+    public function testPropertyTotals()
+    {
+    }
+
+    /**
+     * Test attribute "billing"
+     */
+    public function testPropertyBilling()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
     }
 }

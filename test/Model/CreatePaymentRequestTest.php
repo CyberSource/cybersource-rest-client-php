@@ -119,6 +119,13 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "senderInformation"
+     */
+    public function testPropertySenderInformation()
+    {
+    }
+
+    /**
      * Test attribute "recipientInformation"
      */
     public function testPropertyRecipientInformation()

@@ -182,7 +182,7 @@ class PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION implemen
 
     /**
      * Sets status
-     * @param string $status The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `INVALID_REQUEST` - `AUTHENTICATION_FAILED`
+     * @param string $status The status for payerAuthentication 201 enroll and validate calls. Possible values are: - `AUTHENTICATION_SUCCESSFUL` - `PENDING_AUTHENTICATION` - `AUTHENTICATION_FAILED`
      * @return $this
      */
     public function setStatus($status)

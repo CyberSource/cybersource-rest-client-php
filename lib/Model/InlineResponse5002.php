@@ -53,7 +53,7 @@ class InlineResponse5002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
+        'submitTimeUtc' => '\DateTime',
         'status' => 'string',
         'reason' => 'string',
         'message' => 'string'
@@ -64,7 +64,7 @@ class InlineResponse5002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
+        'submitTimeUtc' => 'date',
         'status' => null,
         'reason' => null,
         'message' => null
@@ -130,8 +130,20 @@ class InlineResponse5002 implements ArrayAccess
         return self::$getters;
     }
 
+    const REASON_SYSTEM_ERROR = 'SYSTEM_ERROR';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getReasonAllowableValues()
+    {
+        return [
+            self::REASON_SYSTEM_ERROR,
+        ];
+    }
     
 
     /**
@@ -161,6 +173,14 @@ class InlineResponse5002 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        $allowed_values = $this->getReasonAllowableValues();
+        if (!in_array($this->container['reason'], $allowed_values)) {
+            $invalid_properties[] = sprintf(
+                "invalid value for 'reason', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
         return $invalid_properties;
     }
 
@@ -173,13 +193,17 @@ class InlineResponse5002 implements ArrayAccess
     public function valid()
     {
 
+        $allowed_values = $this->getReasonAllowableValues();
+        if (!in_array($this->container['reason'], $allowed_values)) {
+            return false;
+        }
         return true;
     }
 
 
     /**
      * Gets submitTimeUtc
-     * @return string
+     * @return \DateTime
      */
     public function getSubmitTimeUtc()
     {
@@ -188,7 +212,7 @@ class InlineResponse5002 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -209,7 +233,7 @@ class InlineResponse5002 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted request.  Possible values:  - SERVER_ERROR
+     * @param string $status The http status description of the submitted request.
      * @return $this
      */
     public function setStatus($status)
@@ -230,11 +254,20 @@ class InlineResponse5002 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - SYSTEM_ERROR  - SERVER_TIMEOUT  - SERVICE_TIMEOUT
+     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'SYSTEM_ERROR'
      * @return $this
      */
     public function setReason($reason)
     {
+        $allowed_values = $this->getReasonAllowableValues();
+        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'reason', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
         $this->container['reason'] = $reason;
 
         return $this;
@@ -251,7 +284,7 @@ class InlineResponse5002 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message Descriptive message for the error.
      * @return $this
      */
     public function setMessage($message)

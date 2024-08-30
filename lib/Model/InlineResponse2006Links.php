@@ -53,8 +53,8 @@ class InlineResponse2006Links implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'rel' => 'string',
-        'href' => 'string'
+        'self' => '\CyberSource\Model\InlineResponse202LinksStatus',
+        'report' => '\CyberSource\Model\InlineResponse2006LinksReport[]'
     ];
 
     /**
@@ -62,8 +62,8 @@ class InlineResponse2006Links implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'rel' => null,
-        'href' => null
+        'self' => null,
+        'report' => null
     ];
 
     public static function swaggerTypes()
@@ -81,8 +81,8 @@ class InlineResponse2006Links implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rel' => 'rel',
-        'href' => 'href'
+        'self' => 'self',
+        'report' => 'report'
     ];
 
 
@@ -91,8 +91,8 @@ class InlineResponse2006Links implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rel' => 'setRel',
-        'href' => 'setHref'
+        'self' => 'setSelf',
+        'report' => 'setReport'
     ];
 
 
@@ -101,8 +101,8 @@ class InlineResponse2006Links implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rel' => 'getRel',
-        'href' => 'getHref'
+        'self' => 'getSelf',
+        'report' => 'getReport'
     ];
 
     public static function attributeMap()
@@ -136,8 +136,8 @@ class InlineResponse2006Links implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['rel'] = isset($data['rel']) ? $data['rel'] : null;
-        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
+        $this->container['self'] = isset($data['self']) ? $data['self'] : null;
+        $this->container['report'] = isset($data['report']) ? $data['report'] : null;
     }
 
     /**
@@ -166,43 +166,43 @@ class InlineResponse2006Links implements ArrayAccess
 
 
     /**
-     * Gets rel
-     * @return string
+     * Gets self
+     * @return \CyberSource\Model\InlineResponse202LinksStatus
      */
-    public function getRel()
+    public function getSelf()
     {
-        return $this->container['rel'];
+        return $this->container['self'];
     }
 
     /**
-     * Sets rel
-     * @param string $rel Valid Values:   * self   * first   * last   * prev   * next
+     * Sets self
+     * @param \CyberSource\Model\InlineResponse202LinksStatus $self
      * @return $this
      */
-    public function setRel($rel)
+    public function setSelf($self)
     {
-        $this->container['rel'] = $rel;
+        $this->container['self'] = $self;
 
         return $this;
     }
 
     /**
-     * Gets href
-     * @return string
+     * Gets report
+     * @return \CyberSource\Model\InlineResponse2006LinksReport[]
      */
-    public function getHref()
+    public function getReport()
     {
-        return $this->container['href'];
+        return $this->container['report'];
     }
 
     /**
-     * Sets href
-     * @param string $href
+     * Sets report
+     * @param \CyberSource\Model\InlineResponse2006LinksReport[] $report
      * @return $this
      */
-    public function setHref($href)
+    public function setReport($report)
     {
-        $this->container['href'] = $href;
+        $this->container['report'] = $report;
 
         return $this;
     }

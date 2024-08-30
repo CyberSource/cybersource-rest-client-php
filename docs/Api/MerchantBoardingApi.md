@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getRegistration**
-> \CyberSource\Model\InlineResponse2002 getRegistration($registrationId)
+> \CyberSource\Model\InlineResponse2001 getRegistration($registrationId)
 
 Gets all the information on a boarding registration
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

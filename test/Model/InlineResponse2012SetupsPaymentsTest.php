@@ -194,4 +194,11 @@ class InlineResponse2012SetupsPaymentsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyReceivablesManager()
     {
     }
+
+    /**
+     * Test attribute "serviceFee"
+     */
+    public function testPropertyServiceFee()
+    {
+    }
 }

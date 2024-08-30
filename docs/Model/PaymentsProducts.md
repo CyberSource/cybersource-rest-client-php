@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **payByLink** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **unifiedCheckout** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **receivablesManager** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
+**serviceFee** | [**\CyberSource\Model\PaymentsProductsServiceFee**](PaymentsProductsServiceFee.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

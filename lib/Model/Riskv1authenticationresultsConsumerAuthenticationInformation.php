@@ -56,8 +56,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'string',
         'authenticationTransactionContext' => 'string',
         'otpToken' => 'string',
-        'authenticationType' => 'string',
-        'effectiveAuthenticationType' => 'string',
         'responseAccessToken' => 'string',
         'signedParesStatusReason' => 'string',
         'signedPares' => 'string',
@@ -73,8 +71,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => null,
         'authenticationTransactionContext' => null,
         'otpToken' => null,
-        'authenticationType' => null,
-        'effectiveAuthenticationType' => null,
         'responseAccessToken' => null,
         'signedParesStatusReason' => null,
         'signedPares' => null,
@@ -100,8 +96,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'authenticationTransactionId',
         'authenticationTransactionContext' => 'authenticationTransactionContext',
         'otpToken' => 'otpToken',
-        'authenticationType' => 'authenticationType',
-        'effectiveAuthenticationType' => 'effectiveAuthenticationType',
         'responseAccessToken' => 'responseAccessToken',
         'signedParesStatusReason' => 'signedParesStatusReason',
         'signedPares' => 'signedPares',
@@ -118,8 +112,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
         'authenticationTransactionContext' => 'setAuthenticationTransactionContext',
         'otpToken' => 'setOtpToken',
-        'authenticationType' => 'setAuthenticationType',
-        'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
         'responseAccessToken' => 'setResponseAccessToken',
         'signedParesStatusReason' => 'setSignedParesStatusReason',
         'signedPares' => 'setSignedPares',
@@ -136,8 +128,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
         'authenticationTransactionContext' => 'getAuthenticationTransactionContext',
         'otpToken' => 'getOtpToken',
-        'authenticationType' => 'getAuthenticationType',
-        'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
         'responseAccessToken' => 'getResponseAccessToken',
         'signedParesStatusReason' => 'getSignedParesStatusReason',
         'signedPares' => 'getSignedPares',
@@ -179,8 +169,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
         $this->container['authenticationTransactionContext'] = isset($data['authenticationTransactionContext']) ? $data['authenticationTransactionContext'] : null;
         $this->container['otpToken'] = isset($data['otpToken']) ? $data['otpToken'] : null;
-        $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
-        $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
         $this->container['responseAccessToken'] = isset($data['responseAccessToken']) ? $data['responseAccessToken'] : null;
         $this->container['signedParesStatusReason'] = isset($data['signedParesStatusReason']) ? $data['signedParesStatusReason'] : null;
         $this->container['signedPares'] = isset($data['signedPares']) ? $data['signedPares'] : null;
@@ -197,6 +185,9 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     {
         $invalid_properties = [];
 
+        if ($this->container['authenticationTransactionId'] === null) {
+            $invalid_properties[] = "'authenticationTransactionId' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -209,6 +200,9 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function valid()
     {
 
+        if ($this->container['authenticationTransactionId'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -272,48 +266,6 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
     public function setOtpToken($otpToken)
     {
         $this->container['otpToken'] = $otpToken;
-
-        return $this;
-    }
-
-    /**
-     * Gets authenticationType
-     * @return string
-     */
-    public function getAuthenticationType()
-    {
-        return $this->container['authenticationType'];
-    }
-
-    /**
-     * Sets authenticationType
-     * @param string $authenticationType Indicates the type of authentication that will be used to challenge the card holder.  Possible Values:  01 - Static  02 - Dynamic  03 - OOB (Out of Band)  04 - Decoupled  20 - OTP hosted at merchant end. (Rupay S2S flow) **NOTE**:  EMV 3-D Secure version 2.1.0 supports values 01-03.  Version 2.2.0 supports values 01-04.  Decoupled authentication is not supported at this time.
-     * @return $this
-     */
-    public function setAuthenticationType($authenticationType)
-    {
-        $this->container['authenticationType'] = $authenticationType;
-
-        return $this;
-    }
-
-    /**
-     * Gets effectiveAuthenticationType
-     * @return string
-     */
-    public function getEffectiveAuthenticationType()
-    {
-        return $this->container['effectiveAuthenticationType'];
-    }
-
-    /**
-     * Sets effectiveAuthenticationType
-     * @param string $effectiveAuthenticationType This field describes the type of 3DS transaction flow that took place.  It can be one of three possible flows; CH - Challenge FR - Frictionless FD - Frictionless with delegation, (challenge not generated by the issuer but by the scheme on behalf of the issuer).
-     * @return $this
-     */
-    public function setEffectiveAuthenticationType($effectiveAuthenticationType)
-    {
-        $this->container['effectiveAuthenticationType'] = $effectiveAuthenticationType;
 
         return $this;
     }
