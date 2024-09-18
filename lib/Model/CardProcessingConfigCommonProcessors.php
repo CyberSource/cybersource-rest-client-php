@@ -62,6 +62,9 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'terminalId' => 'string',
         'paymentTypes' => 'map[string,\CyberSource\Model\CardProcessingConfigCommonPaymentTypes]',
         'currencies' => 'map[string,\CyberSource\Model\CardProcessingConfigCommonCurrencies1]',
+        'visaAggregatorId' => 'string',
+        'amexAggregatorId' => 'string',
+        'masterCardAggregatorId' => 'string',
         'sicCode' => 'string',
         'allowMultipleBills' => 'bool',
         'allowMerchantDescriptorOverride' => 'bool',
@@ -113,6 +116,9 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'terminalId' => null,
         'paymentTypes' => null,
         'currencies' => null,
+        'visaAggregatorId' => null,
+        'amexAggregatorId' => null,
+        'masterCardAggregatorId' => null,
         'sicCode' => null,
         'allowMultipleBills' => null,
         'allowMerchantDescriptorOverride' => null,
@@ -174,6 +180,9 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'terminalId' => 'terminalId',
         'paymentTypes' => 'paymentTypes',
         'currencies' => 'currencies',
+        'visaAggregatorId' => 'visaAggregatorId',
+        'amexAggregatorId' => 'amexAggregatorId',
+        'masterCardAggregatorId' => 'masterCardAggregatorId',
         'sicCode' => 'sicCode',
         'allowMultipleBills' => 'allowMultipleBills',
         'allowMerchantDescriptorOverride' => 'allowMerchantDescriptorOverride',
@@ -226,6 +235,9 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'terminalId' => 'setTerminalId',
         'paymentTypes' => 'setPaymentTypes',
         'currencies' => 'setCurrencies',
+        'visaAggregatorId' => 'setVisaAggregatorId',
+        'amexAggregatorId' => 'setAmexAggregatorId',
+        'masterCardAggregatorId' => 'setMasterCardAggregatorId',
         'sicCode' => 'setSicCode',
         'allowMultipleBills' => 'setAllowMultipleBills',
         'allowMerchantDescriptorOverride' => 'setAllowMerchantDescriptorOverride',
@@ -278,6 +290,9 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'terminalId' => 'getTerminalId',
         'paymentTypes' => 'getPaymentTypes',
         'currencies' => 'getCurrencies',
+        'visaAggregatorId' => 'getVisaAggregatorId',
+        'amexAggregatorId' => 'getAmexAggregatorId',
+        'masterCardAggregatorId' => 'getMasterCardAggregatorId',
         'sicCode' => 'getSicCode',
         'allowMultipleBills' => 'getAllowMultipleBills',
         'allowMerchantDescriptorOverride' => 'getAllowMerchantDescriptorOverride',
@@ -387,6 +402,9 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['paymentTypes'] = isset($data['paymentTypes']) ? $data['paymentTypes'] : null;
         $this->container['currencies'] = isset($data['currencies']) ? $data['currencies'] : null;
+        $this->container['visaAggregatorId'] = isset($data['visaAggregatorId']) ? $data['visaAggregatorId'] : null;
+        $this->container['amexAggregatorId'] = isset($data['amexAggregatorId']) ? $data['amexAggregatorId'] : null;
+        $this->container['masterCardAggregatorId'] = isset($data['masterCardAggregatorId']) ? $data['masterCardAggregatorId'] : null;
         $this->container['sicCode'] = isset($data['sicCode']) ? $data['sicCode'] : null;
         $this->container['allowMultipleBills'] = isset($data['allowMultipleBills']) ? $data['allowMultipleBills'] : null;
         $this->container['allowMerchantDescriptorOverride'] = isset($data['allowMerchantDescriptorOverride']) ? $data['allowMerchantDescriptorOverride'] : null;
@@ -652,6 +670,69 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
     public function setCurrencies($currencies)
     {
         $this->container['currencies'] = $currencies;
+
+        return $this;
+    }
+
+    /**
+     * Gets visaAggregatorId
+     * @return string
+     */
+    public function getVisaAggregatorId()
+    {
+        return $this->container['visaAggregatorId'];
+    }
+
+    /**
+     * Sets visaAggregatorId
+     * @param string $visaAggregatorId This field is used as aggregator Id when Visa payment type is selected
+     * @return $this
+     */
+    public function setVisaAggregatorId($visaAggregatorId)
+    {
+        $this->container['visaAggregatorId'] = $visaAggregatorId;
+
+        return $this;
+    }
+
+    /**
+     * Gets amexAggregatorId
+     * @return string
+     */
+    public function getAmexAggregatorId()
+    {
+        return $this->container['amexAggregatorId'];
+    }
+
+    /**
+     * Sets amexAggregatorId
+     * @param string $amexAggregatorId This field is used as aggregator Id when Amex payment type is selected
+     * @return $this
+     */
+    public function setAmexAggregatorId($amexAggregatorId)
+    {
+        $this->container['amexAggregatorId'] = $amexAggregatorId;
+
+        return $this;
+    }
+
+    /**
+     * Gets masterCardAggregatorId
+     * @return string
+     */
+    public function getMasterCardAggregatorId()
+    {
+        return $this->container['masterCardAggregatorId'];
+    }
+
+    /**
+     * Sets masterCardAggregatorId
+     * @param string $masterCardAggregatorId This field is used as aggregator Id when Master Card payment type is selected
+     * @return $this
+     */
+    public function setMasterCardAggregatorId($masterCardAggregatorId)
+    {
+        $this->container['masterCardAggregatorId'] = $masterCardAggregatorId;
 
         return $this;
     }

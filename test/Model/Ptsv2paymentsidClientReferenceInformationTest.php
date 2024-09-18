@@ -110,4 +110,11 @@ class Ptsv2paymentsidClientReferenceInformationTest extends \PHPUnit_Framework_T
     public function testPropertyApplicationUser()
     {
     }
+
+    /**
+     * Test attribute "transactionId"
+     */
+    public function testPropertyTransactionId()
+    {
+    }
 }

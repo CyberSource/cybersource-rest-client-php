@@ -204,6 +204,12 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['endDate'] === null) {
+            $invalid_properties[] = "'endDate' can't be null";
+        }
+        if ($this->container['frequency'] === null) {
+            $invalid_properties[] = "'frequency' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -216,6 +222,12 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['endDate'] === null) {
+            return false;
+        }
+        if ($this->container['frequency'] === null) {
+            return false;
+        }
         return true;
     }
 
