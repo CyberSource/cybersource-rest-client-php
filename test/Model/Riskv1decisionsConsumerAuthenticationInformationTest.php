@@ -133,13 +133,6 @@ class Riskv1decisionsConsumerAuthenticationInformationTest extends \PHPUnit_Fram
     }
 
     /**
-     * Test attribute "challengeCancelCode"
-     */
-    public function testPropertyChallengeCancelCode()
-    {
-    }
-
-    /**
      * Test attribute "challengeCode"
      */
     public function testPropertyChallengeCode()

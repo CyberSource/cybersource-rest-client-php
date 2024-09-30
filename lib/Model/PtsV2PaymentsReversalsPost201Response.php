@@ -293,7 +293,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - REVERSED  - PARTIALLY_REVERSED
+     * @param string $status The status of the submitted transaction.  Possible values:  - REVERSED
      * @return $this
      */
     public function setStatus($status)

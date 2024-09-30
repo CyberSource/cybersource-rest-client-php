@@ -140,6 +140,27 @@ class CardProcessingConfigCommonProcessorsTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
+     * Test attribute "visaAggregatorId"
+     */
+    public function testPropertyVisaAggregatorId()
+    {
+    }
+
+    /**
+     * Test attribute "amexAggregatorId"
+     */
+    public function testPropertyAmexAggregatorId()
+    {
+    }
+
+    /**
+     * Test attribute "masterCardAggregatorId"
+     */
+    public function testPropertyMasterCardAggregatorId()
+    {
+    }
+
+    /**
      * Test attribute "sicCode"
      */
     public function testPropertySicCode()

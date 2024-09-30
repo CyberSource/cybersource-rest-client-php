@@ -56,7 +56,7 @@ class Riskv1authenticationresultsPaymentInformation implements ArrayAccess
         'card' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformationCard',
         'tokenizedCard' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformationTokenizedCard',
         'fluidData' => '\CyberSource\Model\Riskv1authenticationresultsPaymentInformationFluidData',
-        'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer'
+        'customer' => '\CyberSource\Model\Riskv1authenticationsPaymentInformationCustomer'
     ];
 
     /**
@@ -242,7 +242,7 @@ class Riskv1authenticationresultsPaymentInformation implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer
+     * @return \CyberSource\Model\Riskv1authenticationsPaymentInformationCustomer
      */
     public function getCustomer()
     {
@@ -251,7 +251,7 @@ class Riskv1authenticationresultsPaymentInformation implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer $customer
+     * @param \CyberSource\Model\Riskv1authenticationsPaymentInformationCustomer $customer
      * @return $this
      */
     public function setCustomer($customer)

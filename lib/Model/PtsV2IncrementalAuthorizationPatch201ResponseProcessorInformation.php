@@ -55,6 +55,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     protected static $swaggerTypes = [
         'approvalCode' => 'string',
         'transactionId' => 'string',
+        'networkTransactionId' => 'string',
         'responseCode' => 'string',
         'systemTraceAuditNumber' => 'string',
         'responseDetails' => 'string',
@@ -69,6 +70,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     protected static $swaggerFormats = [
         'approvalCode' => null,
         'transactionId' => null,
+        'networkTransactionId' => null,
         'responseCode' => null,
         'systemTraceAuditNumber' => null,
         'responseDetails' => null,
@@ -93,6 +95,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     protected static $attributeMap = [
         'approvalCode' => 'approvalCode',
         'transactionId' => 'transactionId',
+        'networkTransactionId' => 'networkTransactionId',
         'responseCode' => 'responseCode',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
         'responseDetails' => 'responseDetails',
@@ -108,6 +111,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     protected static $setters = [
         'approvalCode' => 'setApprovalCode',
         'transactionId' => 'setTransactionId',
+        'networkTransactionId' => 'setNetworkTransactionId',
         'responseCode' => 'setResponseCode',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
         'responseDetails' => 'setResponseDetails',
@@ -123,6 +127,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     protected static $getters = [
         'approvalCode' => 'getApprovalCode',
         'transactionId' => 'getTransactionId',
+        'networkTransactionId' => 'getNetworkTransactionId',
         'responseCode' => 'getResponseCode',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
         'responseDetails' => 'getResponseDetails',
@@ -163,6 +168,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     {
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
@@ -233,6 +239,27 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     public function setTransactionId($transactionId)
     {
         $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkTransactionId
+     * @return string
+     */
+    public function getNetworkTransactionId()
+    {
+        return $this->container['networkTransactionId'];
+    }
+
+    /**
+     * Sets networkTransactionId
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
+     * @return $this
+     */
+    public function setNetworkTransactionId($networkTransactionId)
+    {
+        $this->container['networkTransactionId'] = $networkTransactionId;
 
         return $this;
     }

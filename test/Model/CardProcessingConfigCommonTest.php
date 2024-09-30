@@ -222,4 +222,18 @@ class CardProcessingConfigCommonTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMerchantDescriptorInformation()
     {
     }
+
+    /**
+     * Test attribute "governmentControlled"
+     */
+    public function testPropertyGovernmentControlled()
+    {
+    }
+
+    /**
+     * Test attribute "dropBillingInfo"
+     */
+    public function testPropertyDropBillingInfo()
+    {
+    }
 }

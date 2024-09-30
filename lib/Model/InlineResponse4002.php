@@ -215,7 +215,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - INVALID_REQUEST
+     * @param string $status The status of the submitted transaction. Possible values: - `INVALID_REQUEST`
      * @return $this
      */
     public function setStatus($status)
@@ -236,7 +236,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION
+     * @param string $reason The reason of the status. Possible Values: - `INVALID_DATA`
      * @return $this
      */
     public function setReason($reason)
@@ -257,7 +257,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message Input request error.
      * @return $this
      */
     public function setMessage($message)

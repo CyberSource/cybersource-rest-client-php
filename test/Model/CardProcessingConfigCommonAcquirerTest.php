@@ -98,6 +98,20 @@ class CardProcessingConfigCommonAcquirerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "unionPayInstitutionId"
+     */
+    public function testPropertyUnionPayInstitutionId()
+    {
+    }
+
+    /**
+     * Test attribute "dinersClubInstitutionId"
+     */
+    public function testPropertyDinersClubInstitutionId()
+    {
+    }
+
+    /**
      * Test attribute "countryCode"
      */
     public function testPropertyCountryCode()

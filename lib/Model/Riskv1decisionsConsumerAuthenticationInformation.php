@@ -61,7 +61,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'authenticationDate' => 'string',
         'authenticationTransactionId' => 'string',
         'transactionFlowIndicator' => 'int',
-        'challengeCancelCode' => 'string',
         'challengeCode' => 'string',
         'challengeStatus' => 'string',
         'customerCardAlias' => 'string',
@@ -109,7 +108,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'authenticationDate' => null,
         'authenticationTransactionId' => null,
         'transactionFlowIndicator' => null,
-        'challengeCancelCode' => null,
         'challengeCode' => null,
         'challengeStatus' => null,
         'customerCardAlias' => null,
@@ -167,7 +165,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'authenticationDate' => 'authenticationDate',
         'authenticationTransactionId' => 'authenticationTransactionId',
         'transactionFlowIndicator' => 'transactionFlowIndicator',
-        'challengeCancelCode' => 'challengeCancelCode',
         'challengeCode' => 'challengeCode',
         'challengeStatus' => 'challengeStatus',
         'customerCardAlias' => 'customerCardAlias',
@@ -216,7 +213,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'authenticationDate' => 'setAuthenticationDate',
         'authenticationTransactionId' => 'setAuthenticationTransactionId',
         'transactionFlowIndicator' => 'setTransactionFlowIndicator',
-        'challengeCancelCode' => 'setChallengeCancelCode',
         'challengeCode' => 'setChallengeCode',
         'challengeStatus' => 'setChallengeStatus',
         'customerCardAlias' => 'setCustomerCardAlias',
@@ -265,7 +261,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         'authenticationDate' => 'getAuthenticationDate',
         'authenticationTransactionId' => 'getAuthenticationTransactionId',
         'transactionFlowIndicator' => 'getTransactionFlowIndicator',
-        'challengeCancelCode' => 'getChallengeCancelCode',
         'challengeCode' => 'getChallengeCode',
         'challengeStatus' => 'getChallengeStatus',
         'customerCardAlias' => 'getCustomerCardAlias',
@@ -339,7 +334,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['authenticationDate'] = isset($data['authenticationDate']) ? $data['authenticationDate'] : null;
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
         $this->container['transactionFlowIndicator'] = isset($data['transactionFlowIndicator']) ? $data['transactionFlowIndicator'] : null;
-        $this->container['challengeCancelCode'] = isset($data['challengeCancelCode']) ? $data['challengeCancelCode'] : null;
         $this->container['challengeCode'] = isset($data['challengeCode']) ? $data['challengeCode'] : null;
         $this->container['challengeStatus'] = isset($data['challengeStatus']) ? $data['challengeStatus'] : null;
         $this->container['customerCardAlias'] = isset($data['customerCardAlias']) ? $data['customerCardAlias'] : null;
@@ -569,27 +563,6 @@ class Riskv1decisionsConsumerAuthenticationInformation implements ArrayAccess
     public function setTransactionFlowIndicator($transactionFlowIndicator)
     {
         $this->container['transactionFlowIndicator'] = $transactionFlowIndicator;
-
-        return $this;
-    }
-
-    /**
-     * Gets challengeCancelCode
-     * @return string
-     */
-    public function getChallengeCancelCode()
-    {
-        return $this->container['challengeCancelCode'];
-    }
-
-    /**
-     * Sets challengeCancelCode
-     * @param string $challengeCancelCode An indicator as to why the transaction was canceled. Possible Values:  - `01`: Cardholder selected Cancel. - `02`: Reserved for future EMVCo use (values invalid until defined by EMVCo). - `03`: Transaction Timed Out—Decoupled Authentication - `04`: Transaction timed out at ACS—other timeouts - `05`: Transaction Timed out at ACS - First CReq not received by ACS - `06`: Transaction Error - `07`: Unknown - `08`: Transaction Timed Out at SDK
-     * @return $this
-     */
-    public function setChallengeCancelCode($challengeCancelCode)
-    {
-        $this->container['challengeCancelCode'] = $challengeCancelCode;
 
         return $this;
     }

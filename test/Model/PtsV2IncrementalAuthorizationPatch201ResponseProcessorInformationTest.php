@@ -91,6 +91,13 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformationTest exte
     }
 
     /**
+     * Test attribute "networkTransactionId"
+     */
+    public function testPropertyNetworkTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "responseCode"
      */
     public function testPropertyResponseCode()

@@ -70,7 +70,7 @@ class InlineResponse2012 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'submitTimeUtc' => 'date',
+        'submitTimeUtc' => 'date-time',
         'status' => null,
         'registrationInformation' => null,
         'integrationInformation' => null,

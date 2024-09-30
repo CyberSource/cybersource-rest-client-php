@@ -73,7 +73,9 @@ class CardProcessingConfigCommon implements ArrayAccess
         'subMerchantId' => 'string',
         'subMerchantBusinessName' => 'string',
         'preferCobadgedSecondaryBrand' => 'bool',
-        'merchantDescriptorInformation' => '\CyberSource\Model\CardProcessingConfigCommonMerchantDescriptorInformation'
+        'merchantDescriptorInformation' => '\CyberSource\Model\CardProcessingConfigCommonMerchantDescriptorInformation',
+        'governmentControlled' => 'bool',
+        'dropBillingInfo' => 'bool'
     ];
 
     /**
@@ -101,7 +103,9 @@ class CardProcessingConfigCommon implements ArrayAccess
         'subMerchantId' => null,
         'subMerchantBusinessName' => null,
         'preferCobadgedSecondaryBrand' => null,
-        'merchantDescriptorInformation' => null
+        'merchantDescriptorInformation' => null,
+        'governmentControlled' => null,
+        'dropBillingInfo' => null
     ];
 
     public static function swaggerTypes()
@@ -139,7 +143,9 @@ class CardProcessingConfigCommon implements ArrayAccess
         'subMerchantId' => 'subMerchantId',
         'subMerchantBusinessName' => 'subMerchantBusinessName',
         'preferCobadgedSecondaryBrand' => 'preferCobadgedSecondaryBrand',
-        'merchantDescriptorInformation' => 'merchantDescriptorInformation'
+        'merchantDescriptorInformation' => 'merchantDescriptorInformation',
+        'governmentControlled' => 'governmentControlled',
+        'dropBillingInfo' => 'dropBillingInfo'
     ];
 
 
@@ -168,7 +174,9 @@ class CardProcessingConfigCommon implements ArrayAccess
         'subMerchantId' => 'setSubMerchantId',
         'subMerchantBusinessName' => 'setSubMerchantBusinessName',
         'preferCobadgedSecondaryBrand' => 'setPreferCobadgedSecondaryBrand',
-        'merchantDescriptorInformation' => 'setMerchantDescriptorInformation'
+        'merchantDescriptorInformation' => 'setMerchantDescriptorInformation',
+        'governmentControlled' => 'setGovernmentControlled',
+        'dropBillingInfo' => 'setDropBillingInfo'
     ];
 
 
@@ -197,7 +205,9 @@ class CardProcessingConfigCommon implements ArrayAccess
         'subMerchantId' => 'getSubMerchantId',
         'subMerchantBusinessName' => 'getSubMerchantBusinessName',
         'preferCobadgedSecondaryBrand' => 'getPreferCobadgedSecondaryBrand',
-        'merchantDescriptorInformation' => 'getMerchantDescriptorInformation'
+        'merchantDescriptorInformation' => 'getMerchantDescriptorInformation',
+        'governmentControlled' => 'getGovernmentControlled',
+        'dropBillingInfo' => 'getDropBillingInfo'
     ];
 
     public static function attributeMap()
@@ -268,6 +278,8 @@ class CardProcessingConfigCommon implements ArrayAccess
         $this->container['subMerchantBusinessName'] = isset($data['subMerchantBusinessName']) ? $data['subMerchantBusinessName'] : null;
         $this->container['preferCobadgedSecondaryBrand'] = isset($data['preferCobadgedSecondaryBrand']) ? $data['preferCobadgedSecondaryBrand'] : null;
         $this->container['merchantDescriptorInformation'] = isset($data['merchantDescriptorInformation']) ? $data['merchantDescriptorInformation'] : null;
+        $this->container['governmentControlled'] = isset($data['governmentControlled']) ? $data['governmentControlled'] : null;
+        $this->container['dropBillingInfo'] = isset($data['dropBillingInfo']) ? $data['dropBillingInfo'] : null;
     }
 
     /**
@@ -753,6 +765,48 @@ class CardProcessingConfigCommon implements ArrayAccess
     public function setMerchantDescriptorInformation($merchantDescriptorInformation)
     {
         $this->container['merchantDescriptorInformation'] = $merchantDescriptorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets governmentControlled
+     * @return bool
+     */
+    public function getGovernmentControlled()
+    {
+        return $this->container['governmentControlled'];
+    }
+
+    /**
+     * Sets governmentControlled
+     * @param bool $governmentControlled Indicates whether the merchant is government controlled. Applicable for VPC processors.
+     * @return $this
+     */
+    public function setGovernmentControlled($governmentControlled)
+    {
+        $this->container['governmentControlled'] = $governmentControlled;
+
+        return $this;
+    }
+
+    /**
+     * Gets dropBillingInfo
+     * @return bool
+     */
+    public function getDropBillingInfo()
+    {
+        return $this->container['dropBillingInfo'];
+    }
+
+    /**
+     * Sets dropBillingInfo
+     * @param bool $dropBillingInfo This field is used to indicate whether the merchant wants to drop the billing information from the request. If this field is set to true, then the billing information will be dropped from the request. If this field is set to false, then the billing information will be sent in the request.
+     * @return $this
+     */
+    public function setDropBillingInfo($dropBillingInfo)
+    {
+        $this->container['dropBillingInfo'] = $dropBillingInfo;
 
         return $this;
     }

@@ -61,7 +61,8 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
         'state' => 'string',
         'street' => 'string',
         'zip' => 'string',
-        'url' => 'string'
+        'url' => 'string',
+        'countryOfOrigin' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
         'state' => null,
         'street' => null,
         'zip' => null,
-        'url' => null
+        'url' => null,
+        'countryOfOrigin' => null
     ];
 
     public static function swaggerTypes()
@@ -101,7 +103,8 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
         'state' => 'state',
         'street' => 'street',
         'zip' => 'zip',
-        'url' => 'url'
+        'url' => 'url',
+        'countryOfOrigin' => 'countryOfOrigin'
     ];
 
 
@@ -117,7 +120,8 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
         'state' => 'setState',
         'street' => 'setStreet',
         'zip' => 'setZip',
-        'url' => 'setUrl'
+        'url' => 'setUrl',
+        'countryOfOrigin' => 'setCountryOfOrigin'
     ];
 
 
@@ -133,7 +137,8 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
         'state' => 'getState',
         'street' => 'getStreet',
         'zip' => 'getZip',
-        'url' => 'getUrl'
+        'url' => 'getUrl',
+        'countryOfOrigin' => 'getCountryOfOrigin'
     ];
 
     public static function attributeMap()
@@ -175,6 +180,7 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['zip'] = isset($data['zip']) ? $data['zip'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['countryOfOrigin'] = isset($data['countryOfOrigin']) ? $data['countryOfOrigin'] : null;
     }
 
     /**
@@ -366,6 +372,27 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
     public function setUrl($url)
     {
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryOfOrigin
+     * @return string
+     */
+    public function getCountryOfOrigin()
+    {
+        return $this->container['countryOfOrigin'];
+    }
+
+    /**
+     * Sets countryOfOrigin
+     * @param string $countryOfOrigin Country Cf Origin of merchant is applicable for VPC Processors and is dependent on governmentControlled attribute.
+     * @return $this
+     */
+    public function setCountryOfOrigin($countryOfOrigin)
+    {
+        $this->container['countryOfOrigin'] = $countryOfOrigin;
 
         return $this;
     }
