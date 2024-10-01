@@ -519,7 +519,7 @@ class ManageWebhooksApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\SaveAsymEgressKey');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -636,7 +636,7 @@ class ManageWebhooksApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\UpdateWebhookRequest');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
