@@ -61,7 +61,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
         'tokenProvisioningInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation',
         'card' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierCard',
         'bankAccount' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierBankAccount',
-        'tokenizedCard' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenizedCard',
+        'tokenizedCard' => '\CyberSource\Model\Tmsv2TokenizedCard',
         'issuer' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierIssuer',
         'processingInformation' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierProcessingInformation',
         'billTo' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierBillTo',
@@ -401,7 +401,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Gets tokenizedCard
-     * @return \CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenizedCard
+     * @return \CyberSource\Model\Tmsv2TokenizedCard
      */
     public function getTokenizedCard()
     {
@@ -410,7 +410,7 @@ class PatchInstrumentIdentifierRequest implements ArrayAccess
 
     /**
      * Sets tokenizedCard
-     * @param \CyberSource\Model\TmsEmbeddedInstrumentIdentifierTokenizedCard $tokenizedCard
+     * @param \CyberSource\Model\Tmsv2TokenizedCard $tokenizedCard
      * @return $this
      */
     public function setTokenizedCard($tokenizedCard)

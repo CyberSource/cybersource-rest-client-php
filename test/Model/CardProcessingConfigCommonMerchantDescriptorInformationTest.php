@@ -131,4 +131,11 @@ class CardProcessingConfigCommonMerchantDescriptorInformationTest extends \PHPUn
     public function testPropertyUrl()
     {
     }
+
+    /**
+     * Test attribute "countryOfOrigin"
+     */
+    public function testPropertyCountryOfOrigin()
+    {
+    }
 }

@@ -143,6 +143,9 @@ class Riskv1authenticationsetupsPaymentInformationCustomer implements ArrayAcces
     {
         $invalid_properties = [];
 
+        if ($this->container['customerId'] === null) {
+            $invalid_properties[] = "'customerId' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -155,6 +158,9 @@ class Riskv1authenticationsetupsPaymentInformationCustomer implements ArrayAcces
     public function valid()
     {
 
+        if ($this->container['customerId'] === null) {
+            return false;
+        }
         return true;
     }
 

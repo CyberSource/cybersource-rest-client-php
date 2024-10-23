@@ -57,6 +57,8 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
         'institutionId' => 'string',
         'interbankCardAssociationId' => 'string',
         'discoverInstitutionId' => 'string',
+        'unionPayInstitutionId' => 'string',
+        'dinersClubInstitutionId' => 'string',
         'countryCode' => 'string',
         'fileDestinationBin' => 'string'
     ];
@@ -69,6 +71,8 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
         'institutionId' => null,
         'interbankCardAssociationId' => null,
         'discoverInstitutionId' => null,
+        'unionPayInstitutionId' => null,
+        'dinersClubInstitutionId' => null,
         'countryCode' => null,
         'fileDestinationBin' => null
     ];
@@ -91,6 +95,8 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
         'institutionId' => 'institutionId',
         'interbankCardAssociationId' => 'interbankCardAssociationId',
         'discoverInstitutionId' => 'discoverInstitutionId',
+        'unionPayInstitutionId' => 'unionPayInstitutionId',
+        'dinersClubInstitutionId' => 'dinersClubInstitutionId',
         'countryCode' => 'countryCode',
         'fileDestinationBin' => 'fileDestinationBin'
     ];
@@ -104,6 +110,8 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
         'institutionId' => 'setInstitutionId',
         'interbankCardAssociationId' => 'setInterbankCardAssociationId',
         'discoverInstitutionId' => 'setDiscoverInstitutionId',
+        'unionPayInstitutionId' => 'setUnionPayInstitutionId',
+        'dinersClubInstitutionId' => 'setDinersClubInstitutionId',
         'countryCode' => 'setCountryCode',
         'fileDestinationBin' => 'setFileDestinationBin'
     ];
@@ -117,6 +125,8 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
         'institutionId' => 'getInstitutionId',
         'interbankCardAssociationId' => 'getInterbankCardAssociationId',
         'discoverInstitutionId' => 'getDiscoverInstitutionId',
+        'unionPayInstitutionId' => 'getUnionPayInstitutionId',
+        'dinersClubInstitutionId' => 'getDinersClubInstitutionId',
         'countryCode' => 'getCountryCode',
         'fileDestinationBin' => 'getFileDestinationBin'
     ];
@@ -155,6 +165,8 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
         $this->container['institutionId'] = isset($data['institutionId']) ? $data['institutionId'] : null;
         $this->container['interbankCardAssociationId'] = isset($data['interbankCardAssociationId']) ? $data['interbankCardAssociationId'] : null;
         $this->container['discoverInstitutionId'] = isset($data['discoverInstitutionId']) ? $data['discoverInstitutionId'] : null;
+        $this->container['unionPayInstitutionId'] = isset($data['unionPayInstitutionId']) ? $data['unionPayInstitutionId'] : null;
+        $this->container['dinersClubInstitutionId'] = isset($data['dinersClubInstitutionId']) ? $data['dinersClubInstitutionId'] : null;
         $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
         $this->container['fileDestinationBin'] = isset($data['fileDestinationBin']) ? $data['fileDestinationBin'] : null;
     }
@@ -243,6 +255,48 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
     public function setDiscoverInstitutionId($discoverInstitutionId)
     {
         $this->container['discoverInstitutionId'] = $discoverInstitutionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets unionPayInstitutionId
+     * @return string
+     */
+    public function getUnionPayInstitutionId()
+    {
+        return $this->container['unionPayInstitutionId'];
+    }
+
+    /**
+     * Sets unionPayInstitutionId
+     * @param string $unionPayInstitutionId Assigned by China Union Pay to identify the acquirer. Applicable for VPC processors.
+     * @return $this
+     */
+    public function setUnionPayInstitutionId($unionPayInstitutionId)
+    {
+        $this->container['unionPayInstitutionId'] = $unionPayInstitutionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets dinersClubInstitutionId
+     * @return string
+     */
+    public function getDinersClubInstitutionId()
+    {
+        return $this->container['dinersClubInstitutionId'];
+    }
+
+    /**
+     * Sets dinersClubInstitutionId
+     * @param string $dinersClubInstitutionId Assigned by Diners Club to identify the acquirer. Applicable for VPC processors.
+     * @return $this
+     */
+    public function setDinersClubInstitutionId($dinersClubInstitutionId)
+    {
+        $this->container['dinersClubInstitutionId'] = $dinersClubInstitutionId;
 
         return $this;
     }

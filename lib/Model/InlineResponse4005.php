@@ -34,6 +34,7 @@ use \ArrayAccess;
  * InlineResponse4005 Class Doc Comment
  *
  * @category    Class
+ * @description Error Bean
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -53,11 +54,12 @@ class InlineResponse4005 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => '\DateTime',
-        'status' => 'string',
-        'reason' => 'string',
+        'code' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse4005Details[]'
+        'localizationKey' => 'string',
+        'correlationId' => 'string',
+        'detail' => 'string',
+        'fields' => '\CyberSource\Model\InlineResponse4005Fields[]'
     ];
 
     /**
@@ -65,11 +67,12 @@ class InlineResponse4005 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => 'date',
-        'status' => null,
-        'reason' => null,
+        'code' => null,
         'message' => null,
-        'details' => null
+        'localizationKey' => null,
+        'correlationId' => null,
+        'detail' => null,
+        'fields' => null
     ];
 
     public static function swaggerTypes()
@@ -87,11 +90,12 @@ class InlineResponse4005 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'reason' => 'reason',
+        'code' => 'code',
         'message' => 'message',
-        'details' => 'details'
+        'localizationKey' => 'localizationKey',
+        'correlationId' => 'correlationId',
+        'detail' => 'detail',
+        'fields' => 'fields'
     ];
 
 
@@ -100,11 +104,12 @@ class InlineResponse4005 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'reason' => 'setReason',
+        'code' => 'setCode',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'localizationKey' => 'setLocalizationKey',
+        'correlationId' => 'setCorrelationId',
+        'detail' => 'setDetail',
+        'fields' => 'setFields'
     ];
 
 
@@ -113,11 +118,12 @@ class InlineResponse4005 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'reason' => 'getReason',
+        'code' => 'getCode',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'localizationKey' => 'getLocalizationKey',
+        'correlationId' => 'getCorrelationId',
+        'detail' => 'getDetail',
+        'fields' => 'getFields'
     ];
 
     public static function attributeMap()
@@ -135,24 +141,8 @@ class InlineResponse4005 implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_INVALID_DATA = 'INVALID_DATA';
-    const REASON_SYSTEM_ERROR = 'SYSTEM_ERROR';
-    const REASON_RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_INVALID_DATA,
-            self::REASON_SYSTEM_ERROR,
-            self::REASON_RESOURCE_NOT_FOUND,
-        ];
-    }
     
 
     /**
@@ -167,11 +157,12 @@ class InlineResponse4005 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['localizationKey'] = isset($data['localizationKey']) ? $data['localizationKey'] : null;
+        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
+        $this->container['detail'] = isset($data['detail']) ? $data['detail'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
     /**
@@ -183,14 +174,12 @@ class InlineResponse4005 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
+        if ($this->container['code'] === null) {
+            $invalid_properties[] = "'code' can't be null";
         }
-
+        if ($this->container['message'] === null) {
+            $invalid_properties[] = "'message' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -203,8 +192,10 @@ class InlineResponse4005 implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
+        if ($this->container['code'] === null) {
+            return false;
+        }
+        if ($this->container['message'] === null) {
             return false;
         }
         return true;
@@ -212,73 +203,22 @@ class InlineResponse4005 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return \DateTime
-     */
-    public function getSubmitTimeUtc()
-    {
-        return $this->container['submitTimeUtc'];
-    }
-
-    /**
-     * Sets submitTimeUtc
-     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
-     * @return $this
-     */
-    public function setSubmitTimeUtc($submitTimeUtc)
-    {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
+     * Gets code
      * @return string
      */
-    public function getStatus()
+    public function getCode()
     {
-        return $this->container['status'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets status
-     * @param string $status The http status description of the submitted request.
+     * Sets code
+     * @param string $code Error code
      * @return $this
      */
-    public function setStatus($status)
+    public function setCode($code)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND'
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['reason'] = $reason;
+        $this->container['code'] = $code;
 
         return $this;
     }
@@ -294,7 +234,7 @@ class InlineResponse4005 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message Descriptive message for the error.
+     * @param string $message Error message
      * @return $this
      */
     public function setMessage($message)
@@ -305,22 +245,85 @@ class InlineResponse4005 implements ArrayAccess
     }
 
     /**
-     * Gets details
-     * @return \CyberSource\Model\InlineResponse4005Details[]
+     * Gets localizationKey
+     * @return string
      */
-    public function getDetails()
+    public function getLocalizationKey()
     {
-        return $this->container['details'];
+        return $this->container['localizationKey'];
     }
 
     /**
-     * Sets details
-     * @param \CyberSource\Model\InlineResponse4005Details[] $details
+     * Sets localizationKey
+     * @param string $localizationKey Localization Key Name
      * @return $this
      */
-    public function setDetails($details)
+    public function setLocalizationKey($localizationKey)
     {
-        $this->container['details'] = $details;
+        $this->container['localizationKey'] = $localizationKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets correlationId
+     * @return string
+     */
+    public function getCorrelationId()
+    {
+        return $this->container['correlationId'];
+    }
+
+    /**
+     * Sets correlationId
+     * @param string $correlationId Correlation Id
+     * @return $this
+     */
+    public function setCorrelationId($correlationId)
+    {
+        $this->container['correlationId'] = $correlationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets detail
+     * @return string
+     */
+    public function getDetail()
+    {
+        return $this->container['detail'];
+    }
+
+    /**
+     * Sets detail
+     * @param string $detail Error Detail
+     * @return $this
+     */
+    public function setDetail($detail)
+    {
+        $this->container['detail'] = $detail;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     * @return \CyberSource\Model\InlineResponse4005Fields[]
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     * @param \CyberSource\Model\InlineResponse4005Fields[] $fields Error fields List
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
 
         return $this;
     }
