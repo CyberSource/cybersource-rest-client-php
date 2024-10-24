@@ -54,10 +54,13 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
+        'email' => 'string',
         'firstName' => 'string',
         'lastName' => 'string',
         'middleName' => 'string',
         'postalCode' => 'string',
+        'buildingNumber' => 'string',
+        'streetName' => 'string',
         'address1' => 'string',
         'address2' => 'string',
         'locality' => 'string',
@@ -68,7 +71,9 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformationPaymentInformation',
         'referenceNumber' => 'string',
         'account' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformationAccount',
-        'personalIdentification' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformationPersonalIdentification'
+        'personalIdentification' => '\CyberSource\Model\Ptsv1pushfundstransferSenderInformationPersonalIdentification',
+        'type' => 'string',
+        'vatRegistrationNumber' => 'string'
     ];
 
     /**
@@ -77,10 +82,13 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
+        'email' => null,
         'firstName' => null,
         'lastName' => null,
         'middleName' => null,
         'postalCode' => null,
+        'buildingNumber' => null,
+        'streetName' => null,
         'address1' => null,
         'address2' => null,
         'locality' => null,
@@ -91,7 +99,9 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'paymentInformation' => null,
         'referenceNumber' => null,
         'account' => null,
-        'personalIdentification' => null
+        'personalIdentification' => null,
+        'type' => null,
+        'vatRegistrationNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -110,10 +120,13 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'email' => 'email',
         'firstName' => 'firstName',
         'lastName' => 'lastName',
         'middleName' => 'middleName',
         'postalCode' => 'postalCode',
+        'buildingNumber' => 'buildingNumber',
+        'streetName' => 'streetName',
         'address1' => 'address1',
         'address2' => 'address2',
         'locality' => 'locality',
@@ -124,7 +137,9 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'paymentInformation' => 'paymentInformation',
         'referenceNumber' => 'referenceNumber',
         'account' => 'account',
-        'personalIdentification' => 'personalIdentification'
+        'personalIdentification' => 'personalIdentification',
+        'type' => 'type',
+        'vatRegistrationNumber' => 'vatRegistrationNumber'
     ];
 
 
@@ -134,10 +149,13 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'email' => 'setEmail',
         'firstName' => 'setFirstName',
         'lastName' => 'setLastName',
         'middleName' => 'setMiddleName',
         'postalCode' => 'setPostalCode',
+        'buildingNumber' => 'setBuildingNumber',
+        'streetName' => 'setStreetName',
         'address1' => 'setAddress1',
         'address2' => 'setAddress2',
         'locality' => 'setLocality',
@@ -148,7 +166,9 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'paymentInformation' => 'setPaymentInformation',
         'referenceNumber' => 'setReferenceNumber',
         'account' => 'setAccount',
-        'personalIdentification' => 'setPersonalIdentification'
+        'personalIdentification' => 'setPersonalIdentification',
+        'type' => 'setType',
+        'vatRegistrationNumber' => 'setVatRegistrationNumber'
     ];
 
 
@@ -158,10 +178,13 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'email' => 'getEmail',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName',
         'middleName' => 'getMiddleName',
         'postalCode' => 'getPostalCode',
+        'buildingNumber' => 'getBuildingNumber',
+        'streetName' => 'getStreetName',
         'address1' => 'getAddress1',
         'address2' => 'getAddress2',
         'locality' => 'getLocality',
@@ -172,7 +195,9 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         'paymentInformation' => 'getPaymentInformation',
         'referenceNumber' => 'getReferenceNumber',
         'account' => 'getAccount',
-        'personalIdentification' => 'getPersonalIdentification'
+        'personalIdentification' => 'getPersonalIdentification',
+        'type' => 'getType',
+        'vatRegistrationNumber' => 'getVatRegistrationNumber'
     ];
 
     public static function attributeMap()
@@ -207,10 +232,13 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['buildingNumber'] = isset($data['buildingNumber']) ? $data['buildingNumber'] : null;
+        $this->container['streetName'] = isset($data['streetName']) ? $data['streetName'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
@@ -222,6 +250,8 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
         $this->container['referenceNumber'] = isset($data['referenceNumber']) ? $data['referenceNumber'] : null;
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
     }
 
     /**
@@ -260,12 +290,33 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement.
+     * @param string $name Name of sender.  Funds Disbursement  This value is the name of the originator sending the funds disbursement.  Government entities should use this field
      * @return $this
      */
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Customer's email address, including the full domain name.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }
@@ -350,6 +401,48 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
     public function setPostalCode($postalCode)
     {
         $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets buildingNumber
+     * @return string
+     */
+    public function getBuildingNumber()
+    {
+        return $this->container['buildingNumber'];
+    }
+
+    /**
+     * Sets buildingNumber
+     * @param string $buildingNumber Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only.
+     * @return $this
+     */
+    public function setBuildingNumber($buildingNumber)
+    {
+        $this->container['buildingNumber'] = $buildingNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets streetName
+     * @return string
+     */
+    public function getStreetName()
+    {
+        return $this->container['streetName'];
+    }
+
+    /**
+     * Sets streetName
+     * @param string $streetName This field contains the street name of the recipient's address.  Applicable to domestic Colombia transactions only.
+     * @return $this
+     */
+    public function setStreetName($streetName)
+    {
+        $this->container['streetName'] = $streetName;
 
         return $this;
     }
@@ -491,7 +584,7 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Sender's phone number.
+     * @param string $phoneNumber Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)
@@ -581,6 +674,48 @@ class Ptsv1pushfundstransferSenderInformation implements ArrayAccess
     public function setPersonalIdentification($personalIdentification)
     {
         $this->container['personalIdentification'] = $personalIdentification;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type `B` for Business or `I` for individual.
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets vatRegistrationNumber
+     * @return string
+     */
+    public function getVatRegistrationNumber()
+    {
+        return $this->container['vatRegistrationNumber'];
+    }
+
+    /**
+     * Sets vatRegistrationNumber
+     * @param string $vatRegistrationNumber Customer's government-assigned tax identification number.
+     * @return $this
+     */
+    public function setVatRegistrationNumber($vatRegistrationNumber)
+    {
+        $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
 
         return $this;
     }

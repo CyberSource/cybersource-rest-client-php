@@ -176,7 +176,7 @@ class Rbsv1subscriptionsProcessingInformation implements ArrayAccess
 
     /**
      * Sets commerceIndicator
-     * @param string $commerceIndicator Commerce Indicator is a way to identify the type of transaction. Some payment card companies use this information when determining discount rates.  Valid values: - `MOTO` - `RECURRING`
+     * @param string $commerceIndicator Commerce Indicator is a way to identify the type of transaction. Some payment card companies use this information when determining discount rates.  Valid values: - `MOTO` - `RECURRING`  Please add the ecommerce indicator based on the rules defined by your gateway/processor. Some gateways may not accept the Commerce Indicator `RECURRING` with a Zero Dollar Authorization, that is done for subscriptions starting at a future date.
      * @return $this
      */
     public function setCommerceIndicator($commerceIndicator)

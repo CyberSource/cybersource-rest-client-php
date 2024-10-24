@@ -115,26 +115,8 @@ class SAConfigPaymentMethods implements ArrayAccess
         return self::$getters;
     }
 
-    const ENABLED_PAYMENT_METHODS_CARD = 'CARD';
-    const ENABLED_PAYMENT_METHODS_ECHECK = 'ECHECK';
-    const ENABLED_PAYMENT_METHODS_VISACHECKOUT = 'VISACHECKOUT';
-    const ENABLED_PAYMENT_METHODS_PAYPAL = 'PAYPAL';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getEnabledPaymentMethodsAllowableValues()
-    {
-        return [
-            self::ENABLED_PAYMENT_METHODS_CARD,
-            self::ENABLED_PAYMENT_METHODS_ECHECK,
-            self::ENABLED_PAYMENT_METHODS_VISACHECKOUT,
-            self::ENABLED_PAYMENT_METHODS_PAYPAL,
-        ];
-    }
     
 
     /**
@@ -193,15 +175,6 @@ class SAConfigPaymentMethods implements ArrayAccess
      */
     public function setEnabledPaymentMethods($enabledPaymentMethods)
     {
-        $allowed_values = $this->getEnabledPaymentMethodsAllowableValues();
-        if (!is_null($enabledPaymentMethods) && array_diff($enabledPaymentMethods, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'enabledPaymentMethods', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['enabledPaymentMethods'] = $enabledPaymentMethods;
 
         return $this;

@@ -64,7 +64,11 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'middleName' => 'string',
         'lastName' => 'string',
         'phoneNumber' => 'string',
-        'personalIdentification' => '\CyberSource\Model\Ptsv1pushfundstransferRecipientInformationPersonalIdentification'
+        'email' => 'string',
+        'personalIdentification' => '\CyberSource\Model\Ptsv1pushfundstransferRecipientInformationPersonalIdentification',
+        'buildingNumber' => 'string',
+        'streetName' => 'string',
+        'type' => 'string'
     ];
 
     /**
@@ -83,7 +87,11 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'middleName' => null,
         'lastName' => null,
         'phoneNumber' => null,
-        'personalIdentification' => null
+        'email' => null,
+        'personalIdentification' => null,
+        'buildingNumber' => null,
+        'streetName' => null,
+        'type' => null
     ];
 
     public static function swaggerTypes()
@@ -112,7 +120,11 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'middleName' => 'middleName',
         'lastName' => 'lastName',
         'phoneNumber' => 'phoneNumber',
-        'personalIdentification' => 'personalIdentification'
+        'email' => 'email',
+        'personalIdentification' => 'personalIdentification',
+        'buildingNumber' => 'buildingNumber',
+        'streetName' => 'streetName',
+        'type' => 'type'
     ];
 
 
@@ -132,7 +144,11 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'middleName' => 'setMiddleName',
         'lastName' => 'setLastName',
         'phoneNumber' => 'setPhoneNumber',
-        'personalIdentification' => 'setPersonalIdentification'
+        'email' => 'setEmail',
+        'personalIdentification' => 'setPersonalIdentification',
+        'buildingNumber' => 'setBuildingNumber',
+        'streetName' => 'setStreetName',
+        'type' => 'setType'
     ];
 
 
@@ -152,7 +168,11 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         'middleName' => 'getMiddleName',
         'lastName' => 'getLastName',
         'phoneNumber' => 'getPhoneNumber',
-        'personalIdentification' => 'getPersonalIdentification'
+        'email' => 'getEmail',
+        'personalIdentification' => 'getPersonalIdentification',
+        'buildingNumber' => 'getBuildingNumber',
+        'streetName' => 'getStreetName',
+        'type' => 'getType'
     ];
 
     public static function attributeMap()
@@ -197,7 +217,11 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
+        $this->container['buildingNumber'] = isset($data['buildingNumber']) ? $data['buildingNumber'] : null;
+        $this->container['streetName'] = isset($data['streetName']) ? $data['streetName'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -446,12 +470,33 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
 
     /**
      * Sets phoneNumber
-     * @param string $phoneNumber Recipient phone number.  This field is supported by FDC Compass.  Mastercard Send: Max length is 15 with no dashes or spaces.
+     * @param string $phoneNumber Customer's phone number.  It is recommended that you include the country code when the order is from outside the U.S.
      * @return $this
      */
     public function setPhoneNumber($phoneNumber)
     {
         $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Customer's email address, including the full domain name.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }
@@ -473,6 +518,69 @@ class Ptsv1pushfundstransferRecipientInformation implements ArrayAccess
     public function setPersonalIdentification($personalIdentification)
     {
         $this->container['personalIdentification'] = $personalIdentification;
+
+        return $this;
+    }
+
+    /**
+     * Gets buildingNumber
+     * @return string
+     */
+    public function getBuildingNumber()
+    {
+        return $this->container['buildingNumber'];
+    }
+
+    /**
+     * Sets buildingNumber
+     * @param string $buildingNumber Building number in the street address.  For example, if the street address is: Rua da Quitanda 187 then the building number is 187.  Applicable to domestic Colombia transactions only.
+     * @return $this
+     */
+    public function setBuildingNumber($buildingNumber)
+    {
+        $this->container['buildingNumber'] = $buildingNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets streetName
+     * @return string
+     */
+    public function getStreetName()
+    {
+        return $this->container['streetName'];
+    }
+
+    /**
+     * Sets streetName
+     * @param string $streetName This field contains the street name of the recipient's address.  Applicable to domestic Colombia transactions only.
+     * @return $this
+     */
+    public function setStreetName($streetName)
+    {
+        $this->container['streetName'] = $streetName;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type `B` for Business or `I` for individual.
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

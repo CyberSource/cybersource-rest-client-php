@@ -130,26 +130,8 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
         return self::$getters;
     }
 
-    const ACCOUNT_TYPE_CHECKING = 'checking';
-    const ACCOUNT_TYPE_SAVINGS = 'savings';
-    const ACCOUNT_TYPE_CORPORATECHECKING = 'corporatechecking';
-    const ACCOUNT_TYPE_CORPORATESAVINGS = 'corporatesavings';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getAccountTypeAllowableValues()
-    {
-        return [
-            self::ACCOUNT_TYPE_CHECKING,
-            self::ACCOUNT_TYPE_SAVINGS,
-            self::ACCOUNT_TYPE_CORPORATECHECKING,
-            self::ACCOUNT_TYPE_CORPORATESAVINGS,
-        ];
-    }
     
 
     /**
@@ -185,14 +167,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
         if ($this->container['accountType'] === null) {
             $invalid_properties[] = "'accountType' can't be null";
         }
-        $allowed_values = $this->getAccountTypeAllowableValues();
-        if (!in_array($this->container['accountType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'accountType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if ($this->container['accountRoutingNumber'] === null) {
             $invalid_properties[] = "'accountRoutingNumber' can't be null";
         }
@@ -215,10 +189,6 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
             return false;
         }
         if ($this->container['accountType'] === null) {
-            return false;
-        }
-        $allowed_values = $this->getAccountTypeAllowableValues();
-        if (!in_array($this->container['accountType'], $allowed_values)) {
             return false;
         }
         if ($this->container['accountRoutingNumber'] === null) {
@@ -263,20 +233,11 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
 
     /**
      * Sets accountType
-     * @param string $accountType
+     * @param string $accountType Possible values: - checking - savings - corporatechecking - corporatesavings
      * @return $this
      */
     public function setAccountType($accountType)
     {
-        $allowed_values = $this->getAccountTypeAllowableValues();
-        if (!in_array($accountType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'accountType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['accountType'] = $accountType;
 
         return $this;

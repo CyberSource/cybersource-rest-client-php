@@ -125,24 +125,8 @@ class PaymentsProductsECheckSubscriptionInformation implements ArrayAccess
         return self::$getters;
     }
 
-    const SELF_SERVICEABILITY_SELF_SERVICEABLE = 'SELF_SERVICEABLE';
-    const SELF_SERVICEABILITY_NOT_SELF_SERVICEABLE = 'NOT_SELF_SERVICEABLE';
-    const SELF_SERVICEABILITY_SELF_SERVICE_ONLY = 'SELF_SERVICE_ONLY';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getSelfServiceabilityAllowableValues()
-    {
-        return [
-            self::SELF_SERVICEABILITY_SELF_SERVICEABLE,
-            self::SELF_SERVICEABILITY_NOT_SELF_SERVICEABLE,
-            self::SELF_SERVICEABILITY_SELF_SERVICE_ONLY,
-        ];
-    }
     
 
     /**
@@ -171,14 +155,6 @@ class PaymentsProductsECheckSubscriptionInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getSelfServiceabilityAllowableValues();
-        if (!in_array($this->container['selfServiceability'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'selfServiceability', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -191,10 +167,6 @@ class PaymentsProductsECheckSubscriptionInformation implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getSelfServiceabilityAllowableValues();
-        if (!in_array($this->container['selfServiceability'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -231,20 +203,11 @@ class PaymentsProductsECheckSubscriptionInformation implements ArrayAccess
 
     /**
      * Sets selfServiceability
-     * @param string $selfServiceability Indicates if the organization can enable this product using self service.
+     * @param string $selfServiceability Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY
      * @return $this
      */
     public function setSelfServiceability($selfServiceability)
     {
-        $allowed_values = $this->getSelfServiceabilityAllowableValues();
-        if (!is_null($selfServiceability) && !in_array($selfServiceability, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'selfServiceability', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['selfServiceability'] = $selfServiceability;
 
         return $this;

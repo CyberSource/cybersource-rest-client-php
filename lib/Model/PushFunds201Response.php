@@ -63,6 +63,8 @@ class PushFunds201Response implements ArrayAccess
         'errorInformation' => '\CyberSource\Model\PushFunds201ResponseErrorInformation',
         'processorInformation' => '\CyberSource\Model\PushFunds201ResponseProcessorInformation',
         'orderInformation' => '\CyberSource\Model\PushFunds201ResponseOrderInformation',
+        'paymentInformation' => '\CyberSource\Model\PushFunds201ResponsePaymentInformation',
+        'processingInformation' => '\CyberSource\Model\PushFunds201ResponseProcessingInformation',
         'links' => '\CyberSource\Model\PushFunds201ResponseLinks'
     ];
 
@@ -81,6 +83,8 @@ class PushFunds201Response implements ArrayAccess
         'errorInformation' => null,
         'processorInformation' => null,
         'orderInformation' => null,
+        'paymentInformation' => null,
+        'processingInformation' => null,
         'links' => null
     ];
 
@@ -109,6 +113,8 @@ class PushFunds201Response implements ArrayAccess
         'errorInformation' => 'errorInformation',
         'processorInformation' => 'processorInformation',
         'orderInformation' => 'orderInformation',
+        'paymentInformation' => 'paymentInformation',
+        'processingInformation' => 'processingInformation',
         'links' => '_links'
     ];
 
@@ -128,6 +134,8 @@ class PushFunds201Response implements ArrayAccess
         'errorInformation' => 'setErrorInformation',
         'processorInformation' => 'setProcessorInformation',
         'orderInformation' => 'setOrderInformation',
+        'paymentInformation' => 'setPaymentInformation',
+        'processingInformation' => 'setProcessingInformation',
         'links' => 'setLinks'
     ];
 
@@ -147,6 +155,8 @@ class PushFunds201Response implements ArrayAccess
         'errorInformation' => 'getErrorInformation',
         'processorInformation' => 'getProcessorInformation',
         'orderInformation' => 'getOrderInformation',
+        'paymentInformation' => 'getPaymentInformation',
+        'processingInformation' => 'getProcessingInformation',
         'links' => 'getLinks'
     ];
 
@@ -191,6 +201,8 @@ class PushFunds201Response implements ArrayAccess
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
     }
 
@@ -425,6 +437,48 @@ class PushFunds201Response implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     * @return \CyberSource\Model\PushFunds201ResponsePaymentInformation
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     * @param \CyberSource\Model\PushFunds201ResponsePaymentInformation $paymentInformation
+     * @return $this
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PushFunds201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PushFunds201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

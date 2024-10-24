@@ -53,7 +53,8 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card' => '\CyberSource\Model\PushFunds201ResponseRecipientInformationCard'
+        'card' => '\CyberSource\Model\PushFunds201ResponseRecipientInformationCard',
+        'email' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'card' => null
+        'card' => null,
+        'email' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'card' => 'card'
+        'card' => 'card',
+        'email' => 'email'
     ];
 
 
@@ -88,7 +91,8 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'card' => 'setCard'
+        'card' => 'setCard',
+        'email' => 'setEmail'
     ];
 
 
@@ -97,7 +101,8 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'card' => 'getCard'
+        'card' => 'getCard',
+        'email' => 'getEmail'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class PushFunds201ResponseRecipientInformation implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Customer's email address, including the full domain name.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

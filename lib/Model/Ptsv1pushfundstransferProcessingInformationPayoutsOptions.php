@@ -54,7 +54,10 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
       */
     protected static $swaggerTypes = [
         'sourceCurrency' => 'string',
-        'destinationCurrency' => 'string'
+        'destinationCurrency' => 'string',
+        'sourceAmount' => 'string',
+        'retrievalReferenceNumber' => 'string',
+        'accountFundingReferenceId' => 'string'
     ];
 
     /**
@@ -63,7 +66,10 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
       */
     protected static $swaggerFormats = [
         'sourceCurrency' => null,
-        'destinationCurrency' => null
+        'destinationCurrency' => null,
+        'sourceAmount' => null,
+        'retrievalReferenceNumber' => null,
+        'accountFundingReferenceId' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +88,10 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
      */
     protected static $attributeMap = [
         'sourceCurrency' => 'sourceCurrency',
-        'destinationCurrency' => 'destinationCurrency'
+        'destinationCurrency' => 'destinationCurrency',
+        'sourceAmount' => 'sourceAmount',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
+        'accountFundingReferenceId' => 'accountFundingReferenceId'
     ];
 
 
@@ -92,7 +101,10 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
      */
     protected static $setters = [
         'sourceCurrency' => 'setSourceCurrency',
-        'destinationCurrency' => 'setDestinationCurrency'
+        'destinationCurrency' => 'setDestinationCurrency',
+        'sourceAmount' => 'setSourceAmount',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
+        'accountFundingReferenceId' => 'setAccountFundingReferenceId'
     ];
 
 
@@ -102,7 +114,10 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
      */
     protected static $getters = [
         'sourceCurrency' => 'getSourceCurrency',
-        'destinationCurrency' => 'getDestinationCurrency'
+        'destinationCurrency' => 'getDestinationCurrency',
+        'sourceAmount' => 'getSourceAmount',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
+        'accountFundingReferenceId' => 'getAccountFundingReferenceId'
     ];
 
     public static function attributeMap()
@@ -138,6 +153,9 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
     {
         $this->container['sourceCurrency'] = isset($data['sourceCurrency']) ? $data['sourceCurrency'] : null;
         $this->container['destinationCurrency'] = isset($data['destinationCurrency']) ? $data['destinationCurrency'] : null;
+        $this->container['sourceAmount'] = isset($data['sourceAmount']) ? $data['sourceAmount'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
+        $this->container['accountFundingReferenceId'] = isset($data['accountFundingReferenceId']) ? $data['accountFundingReferenceId'] : null;
     }
 
     /**
@@ -176,7 +194,7 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
 
     /**
      * Sets sourceCurrency
-     * @param string $sourceCurrency Use a 3-character alpha currency code for source currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf
+     * @param string $sourceCurrency Use a 3-character alpha currency code for source currency of the funds transfer.  Required if sending processingInformation.payoutsOptions.sourceAmount.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf
      * @return $this
      */
     public function setSourceCurrency($sourceCurrency)
@@ -197,12 +215,75 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
 
     /**
      * Sets destinationCurrency
-     * @param string $destinationCurrency Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf
+     * @param string $destinationCurrency Use a 3-character alpha currency code for destination currency of the funds transfer.  Yellow Pepper  Supported for cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf
      * @return $this
      */
     public function setDestinationCurrency($destinationCurrency)
     {
         $this->container['destinationCurrency'] = $destinationCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets sourceAmount
+     * @return string
+     */
+    public function getSourceAmount()
+    {
+        return $this->container['sourceAmount'];
+    }
+
+    /**
+     * Sets sourceAmount
+     * @param string $sourceAmount Source Amount is required in certain markets to identify the transaction amount entered in the sender's currency code prior to FX conversion by the originating entity.  Format:  Minimum Value: 0  Maximum value: 999999999.99  Allowed fractional digits: 2
+     * @return $this
+     */
+    public function setSourceAmount($sourceAmount)
+    {
+        $this->container['sourceAmount'] = $sourceAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber Unique reference number returned by the processor that identifies the transaction at the network.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountFundingReferenceId
+     * @return string
+     */
+    public function getAccountFundingReferenceId()
+    {
+        return $this->container['accountFundingReferenceId'];
+    }
+
+    /**
+     * Sets accountFundingReferenceId
+     * @param string $accountFundingReferenceId Visa-generated transaction identifier (TID) that is unique for each original authorization and financial request.
+     * @return $this
+     */
+    public function setAccountFundingReferenceId($accountFundingReferenceId)
+    {
+        $this->container['accountFundingReferenceId'] = $accountFundingReferenceId;
 
         return $this;
     }

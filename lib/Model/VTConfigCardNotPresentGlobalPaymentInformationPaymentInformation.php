@@ -175,158 +175,8 @@ class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation implement
         return self::$getters;
     }
 
-    const DISPLAY_CARD_VERIFICATION_VALUE_VISA = 'VISA';
-    const DISPLAY_CARD_VERIFICATION_VALUE_MASTER_CARD = 'MASTER_CARD';
-    const DISPLAY_CARD_VERIFICATION_VALUE_AMEX = 'AMEX';
-    const DISPLAY_CARD_VERIFICATION_VALUE_DISCOVER = 'DISCOVER';
-    const DISPLAY_CARD_VERIFICATION_VALUE_DINERS_CLUB = 'DINERS_CLUB';
-    const DISPLAY_CARD_VERIFICATION_VALUE_CARTE_BLANCHE = 'CARTE_BLANCHE';
-    const DISPLAY_CARD_VERIFICATION_VALUE_JCB = 'JCB';
-    const DISPLAY_CARD_VERIFICATION_VALUE_ENROUTE = 'ENROUTE';
-    const DISPLAY_CARD_VERIFICATION_VALUE_JAL = 'JAL';
-    const DISPLAY_CARD_VERIFICATION_VALUE_SWITCH_SOLO = 'SWITCH_SOLO';
-    const DISPLAY_CARD_VERIFICATION_VALUE_DELTA = 'DELTA';
-    const DISPLAY_CARD_VERIFICATION_VALUE_VISA_ELECTRON = 'VISA_ELECTRON';
-    const DISPLAY_CARD_VERIFICATION_VALUE_DANKORT = 'DANKORT';
-    const DISPLAY_CARD_VERIFICATION_VALUE_LASER = 'LASER';
-    const DISPLAY_CARD_VERIFICATION_VALUE_CARTE_SBANCAIRES = 'CARTE_SBANCAIRES';
-    const DISPLAY_CARD_VERIFICATION_VALUE_CARTASI = 'CARTASI';
-    const DISPLAY_CARD_VERIFICATION_VALUE_MAESTRO_INTERNATIONAL = 'MAESTRO_INTERNATIONAL';
-    const DISPLAY_CARD_VERIFICATION_VALUE_GE_MONEY_UK_CARD = 'GE_MONEY_UK_CARD';
-    const DISPLAY_CARD_VERIFICATION_VALUE_HIPER_CARD = 'HIPER_CARD';
-    const DISPLAY_CARD_VERIFICATION_VALUE_ELO = 'ELO';
-    const REQUIRE_CARD_VERIFICATION_VALUE_VISA = 'VISA';
-    const REQUIRE_CARD_VERIFICATION_VALUE_MASTER_CARD = 'MASTER_CARD';
-    const REQUIRE_CARD_VERIFICATION_VALUE_AMEX = 'AMEX';
-    const REQUIRE_CARD_VERIFICATION_VALUE_DISCOVER = 'DISCOVER';
-    const REQUIRE_CARD_VERIFICATION_VALUE_DINERS_CLUB = 'DINERS_CLUB';
-    const REQUIRE_CARD_VERIFICATION_VALUE_CARTE_BLANCHE = 'CARTE_BLANCHE';
-    const REQUIRE_CARD_VERIFICATION_VALUE_JCB = 'JCB';
-    const REQUIRE_CARD_VERIFICATION_VALUE_ENROUTE = 'ENROUTE';
-    const REQUIRE_CARD_VERIFICATION_VALUE_JAL = 'JAL';
-    const REQUIRE_CARD_VERIFICATION_VALUE_SWITCH_SOLO = 'SWITCH_SOLO';
-    const REQUIRE_CARD_VERIFICATION_VALUE_DELTA = 'DELTA';
-    const REQUIRE_CARD_VERIFICATION_VALUE_VISA_ELECTRON = 'VISA_ELECTRON';
-    const REQUIRE_CARD_VERIFICATION_VALUE_DANKORT = 'DANKORT';
-    const REQUIRE_CARD_VERIFICATION_VALUE_LASER = 'LASER';
-    const REQUIRE_CARD_VERIFICATION_VALUE_CARTE_SBANCAIRES = 'CARTE_SBANCAIRES';
-    const REQUIRE_CARD_VERIFICATION_VALUE_CARTASI = 'CARTASI';
-    const REQUIRE_CARD_VERIFICATION_VALUE_MAESTRO_INTERNATIONAL = 'MAESTRO_INTERNATIONAL';
-    const REQUIRE_CARD_VERIFICATION_VALUE_GE_MONEY_UK_CARD = 'GE_MONEY_UK_CARD';
-    const REQUIRE_CARD_VERIFICATION_VALUE_HIPER_CARD = 'HIPER_CARD';
-    const REQUIRE_CARD_VERIFICATION_VALUE_ELO = 'ELO';
-    const ACCEPTED_CARD_TYPES_VISA = 'VISA';
-    const ACCEPTED_CARD_TYPES_MASTER_CARD = 'MASTER_CARD';
-    const ACCEPTED_CARD_TYPES_AMEX = 'AMEX';
-    const ACCEPTED_CARD_TYPES_DISCOVER = 'DISCOVER';
-    const ACCEPTED_CARD_TYPES_DINERS_CLUB = 'DINERS_CLUB';
-    const ACCEPTED_CARD_TYPES_CARTE_BLANCHE = 'CARTE_BLANCHE';
-    const ACCEPTED_CARD_TYPES_JCB = 'JCB';
-    const ACCEPTED_CARD_TYPES_ENROUTE = 'ENROUTE';
-    const ACCEPTED_CARD_TYPES_JAL = 'JAL';
-    const ACCEPTED_CARD_TYPES_SWITCH_SOLO = 'SWITCH_SOLO';
-    const ACCEPTED_CARD_TYPES_DELTA = 'DELTA';
-    const ACCEPTED_CARD_TYPES_VISA_ELECTRON = 'VISA_ELECTRON';
-    const ACCEPTED_CARD_TYPES_DANKORT = 'DANKORT';
-    const ACCEPTED_CARD_TYPES_LASER = 'LASER';
-    const ACCEPTED_CARD_TYPES_CARTE_SBANCAIRES = 'CARTE_SBANCAIRES';
-    const ACCEPTED_CARD_TYPES_CARTASI = 'CARTASI';
-    const ACCEPTED_CARD_TYPES_MAESTRO_INTERNATIONAL = 'MAESTRO_INTERNATIONAL';
-    const ACCEPTED_CARD_TYPES_GE_MONEY_UK_CARD = 'GE_MONEY_UK_CARD';
-    const ACCEPTED_CARD_TYPES_HIPER_CARD = 'HIPER_CARD';
-    const ACCEPTED_CARD_TYPES_ELO = 'ELO';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getDisplayCardVerificationValueAllowableValues()
-    {
-        return [
-            self::DISPLAY_CARD_VERIFICATION_VALUE_VISA,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_MASTER_CARD,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_AMEX,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_DISCOVER,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_DINERS_CLUB,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_CARTE_BLANCHE,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_JCB,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_ENROUTE,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_JAL,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_SWITCH_SOLO,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_DELTA,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_VISA_ELECTRON,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_DANKORT,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_LASER,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_CARTE_SBANCAIRES,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_CARTASI,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_MAESTRO_INTERNATIONAL,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_GE_MONEY_UK_CARD,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_HIPER_CARD,
-            self::DISPLAY_CARD_VERIFICATION_VALUE_ELO,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getRequireCardVerificationValueAllowableValues()
-    {
-        return [
-            self::REQUIRE_CARD_VERIFICATION_VALUE_VISA,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_MASTER_CARD,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_AMEX,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_DISCOVER,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_DINERS_CLUB,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_CARTE_BLANCHE,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_JCB,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_ENROUTE,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_JAL,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_SWITCH_SOLO,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_DELTA,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_VISA_ELECTRON,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_DANKORT,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_LASER,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_CARTE_SBANCAIRES,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_CARTASI,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_MAESTRO_INTERNATIONAL,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_GE_MONEY_UK_CARD,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_HIPER_CARD,
-            self::REQUIRE_CARD_VERIFICATION_VALUE_ELO,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getAcceptedCardTypesAllowableValues()
-    {
-        return [
-            self::ACCEPTED_CARD_TYPES_VISA,
-            self::ACCEPTED_CARD_TYPES_MASTER_CARD,
-            self::ACCEPTED_CARD_TYPES_AMEX,
-            self::ACCEPTED_CARD_TYPES_DISCOVER,
-            self::ACCEPTED_CARD_TYPES_DINERS_CLUB,
-            self::ACCEPTED_CARD_TYPES_CARTE_BLANCHE,
-            self::ACCEPTED_CARD_TYPES_JCB,
-            self::ACCEPTED_CARD_TYPES_ENROUTE,
-            self::ACCEPTED_CARD_TYPES_JAL,
-            self::ACCEPTED_CARD_TYPES_SWITCH_SOLO,
-            self::ACCEPTED_CARD_TYPES_DELTA,
-            self::ACCEPTED_CARD_TYPES_VISA_ELECTRON,
-            self::ACCEPTED_CARD_TYPES_DANKORT,
-            self::ACCEPTED_CARD_TYPES_LASER,
-            self::ACCEPTED_CARD_TYPES_CARTE_SBANCAIRES,
-            self::ACCEPTED_CARD_TYPES_CARTASI,
-            self::ACCEPTED_CARD_TYPES_MAESTRO_INTERNATIONAL,
-            self::ACCEPTED_CARD_TYPES_GE_MONEY_UK_CARD,
-            self::ACCEPTED_CARD_TYPES_HIPER_CARD,
-            self::ACCEPTED_CARD_TYPES_ELO,
-        ];
-    }
     
 
     /**
@@ -397,15 +247,6 @@ class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation implement
      */
     public function setDisplayCardVerificationValue($displayCardVerificationValue)
     {
-        $allowed_values = $this->getDisplayCardVerificationValueAllowableValues();
-        if (!is_null($displayCardVerificationValue) && array_diff($displayCardVerificationValue, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'displayCardVerificationValue', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['displayCardVerificationValue'] = $displayCardVerificationValue;
 
         return $this;
@@ -427,15 +268,6 @@ class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation implement
      */
     public function setRequireCardVerificationValue($requireCardVerificationValue)
     {
-        $allowed_values = $this->getRequireCardVerificationValueAllowableValues();
-        if (!is_null($requireCardVerificationValue) && array_diff($requireCardVerificationValue, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'requireCardVerificationValue', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['requireCardVerificationValue'] = $requireCardVerificationValue;
 
         return $this;
@@ -457,15 +289,6 @@ class VTConfigCardNotPresentGlobalPaymentInformationPaymentInformation implement
      */
     public function setAcceptedCardTypes($acceptedCardTypes)
     {
-        $allowed_values = $this->getAcceptedCardTypesAllowableValues();
-        if (!is_null($acceptedCardTypes) && array_diff($acceptedCardTypes, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'acceptedCardTypes', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['acceptedCardTypes'] = $acceptedCardTypes;
 
         return $this;

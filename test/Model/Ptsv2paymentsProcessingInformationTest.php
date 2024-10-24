@@ -334,4 +334,11 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyEnablerId()
     {
     }
+
+    /**
+     * Test attribute "processingInstruction"
+     */
+    public function testPropertyProcessingInstruction()
+    {
+    }
 }

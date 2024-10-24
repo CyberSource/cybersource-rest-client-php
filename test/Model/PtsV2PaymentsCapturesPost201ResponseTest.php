@@ -145,4 +145,11 @@ class PtsV2PaymentsCapturesPost201ResponseTest extends \PHPUnit_Framework_TestCa
     public function testPropertyProcessingInformation()
     {
     }
+
+    /**
+     * Test attribute "embeddedActions"
+     */
+    public function testPropertyEmbeddedActions()
+    {
+    }
 }

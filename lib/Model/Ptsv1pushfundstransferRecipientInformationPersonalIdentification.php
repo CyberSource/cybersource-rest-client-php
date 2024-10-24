@@ -55,7 +55,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     protected static $swaggerTypes = [
         'id' => 'string',
         'type' => 'string',
-        'issuingCountry' => 'string'
+        'issuingCountry' => 'string',
+        'personalIdType' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     protected static $swaggerFormats = [
         'id' => null,
         'type' => null,
-        'issuingCountry' => null
+        'issuingCountry' => null,
+        'personalIdType' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     protected static $attributeMap = [
         'id' => 'id',
         'type' => 'type',
-        'issuingCountry' => 'issuingCountry'
+        'issuingCountry' => 'issuingCountry',
+        'personalIdType' => 'personalIdType'
     ];
 
 
@@ -96,7 +99,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     protected static $setters = [
         'id' => 'setId',
         'type' => 'setType',
-        'issuingCountry' => 'setIssuingCountry'
+        'issuingCountry' => 'setIssuingCountry',
+        'personalIdType' => 'setPersonalIdType'
     ];
 
 
@@ -107,7 +111,8 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     protected static $getters = [
         'id' => 'getId',
         'type' => 'getType',
-        'issuingCountry' => 'getIssuingCountry'
+        'issuingCountry' => 'getIssuingCountry',
+        'personalIdType' => 'getPersonalIdType'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['issuingCountry'] = isset($data['issuingCountry']) ? $data['issuingCountry'] : null;
+        $this->container['personalIdType'] = isset($data['personalIdType']) ? $data['personalIdType'] : null;
     }
 
     /**
@@ -203,7 +209,7 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
 
     /**
      * Sets type
-     * @param string $type This tag will contain the type of sender identification.
+     * @param string $type This tag will contain the type of sender identification. The valid values are: - `BTHD`: (Date of birth) - `CUID`: (Customer identification (unspecified)) - `NTID`: (National identification) - `PASN`: (Passport number) - `DRLN`: (Driver license) - `TXIN`: (Tax identification) - `CPNY`: (Company registration number) - `PRXY`: (Proxy identification) - `SSNB`: (Social security number) - `ARNB`: (Alien registration number) - `LAWE`: (Law enforcement identification) - `MILI`: (Military identification) - `TRVL`: (Travel identification (non-passport)) - `EMAL`: (Email) - `PHON`: (Phone number)
      * @return $this
      */
     public function setType($type)
@@ -230,6 +236,27 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentification implement
     public function setIssuingCountry($issuingCountry)
     {
         $this->container['issuingCountry'] = $issuingCountry;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalIdType
+     * @return string
+     */
+    public function getPersonalIdType()
+    {
+        return $this->container['personalIdType'];
+    }
+
+    /**
+     * Sets personalIdType
+     * @param string $personalIdType This tag will denote whether the tax ID is a business or individual tax ID when personal ID Type contains the value of TXIN (Tax identification).  The valid values are:  - `B` (Business) - `I` (Individual)
+     * @return $this
+     */
+    public function setPersonalIdType($personalIdType)
+    {
+        $this->container['personalIdType'] = $personalIdType;
 
         return $this;
     }

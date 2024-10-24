@@ -180,220 +180,8 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         return self::$getters;
     }
 
-    const TIME_ZONE_PACIFICPAGO_PAGO = 'Pacific/Pago_Pago';
-    const TIME_ZONE_PACIFICHONOLULU = 'Pacific/Honolulu';
-    const TIME_ZONE_AMERICAANCHORAGE = 'America/Anchorage';
-    const TIME_ZONE_AMERICAVANCOUVER = 'America/Vancouver';
-    const TIME_ZONE_AMERICALOS_ANGELES = 'America/Los_Angeles';
-    const TIME_ZONE_AMERICAPHOENIX = 'America/Phoenix';
-    const TIME_ZONE_AMERICAEDMONTON = 'America/Edmonton';
-    const TIME_ZONE_AMERICADENVER = 'America/Denver';
-    const TIME_ZONE_AMERICAWINNIPEG = 'America/Winnipeg';
-    const TIME_ZONE_AMERICAMEXICO_CITY = 'America/Mexico_City';
-    const TIME_ZONE_AMERICACHICAGO = 'America/Chicago';
-    const TIME_ZONE_AMERICABOGOTA = 'America/Bogota';
-    const TIME_ZONE_AMERICAINDIANAPOLIS = 'America/Indianapolis';
-    const TIME_ZONE_AMERICANEW_YORK = 'America/New_York';
-    const TIME_ZONE_AMERICALA_PAZ = 'America/La_Paz';
-    const TIME_ZONE_AMERICAHALIFAX = 'America/Halifax';
-    const TIME_ZONE_AMERICAST_JOHNS = 'America/St_Johns';
-    const TIME_ZONE_AMERICABUENOS_AIRES = 'America/Buenos_Aires';
-    const TIME_ZONE_AMERICAGODTHAB = 'America/Godthab';
-    const TIME_ZONE_AMERICASAO_PAULO = 'America/Sao_Paulo';
-    const TIME_ZONE_AMERICANORONHA = 'America/Noronha';
-    const TIME_ZONE_ATLANTICCAPE_VERDE = 'Atlantic/Cape_Verde';
-    const TIME_ZONE_GMT = 'GMT';
-    const TIME_ZONE_EUROPEDUBLIN = 'Europe/Dublin';
-    const TIME_ZONE_EUROPELISBON = 'Europe/Lisbon';
-    const TIME_ZONE_EUROPELONDON = 'Europe/London';
-    const TIME_ZONE_AFRICATUNIS = 'Africa/Tunis';
-    const TIME_ZONE_EUROPEVIENNA = 'Europe/Vienna';
-    const TIME_ZONE_EUROPEBRUSSELS = 'Europe/Brussels';
-    const TIME_ZONE_EUROPEZURICH = 'Europe/Zurich';
-    const TIME_ZONE_EUROPEPRAGUE = 'Europe/Prague';
-    const TIME_ZONE_EUROPEBERLIN = 'Europe/Berlin';
-    const TIME_ZONE_EUROPECOPENHAGEN = 'Europe/Copenhagen';
-    const TIME_ZONE_EUROPEMADRID = 'Europe/Madrid';
-    const TIME_ZONE_EUROPEBUDAPEST = 'Europe/Budapest';
-    const TIME_ZONE_EUROPEROME = 'Europe/Rome';
-    const TIME_ZONE_AFRICATRIPOLI = 'Africa/Tripoli';
-    const TIME_ZONE_EUROPEMONACO = 'Europe/Monaco';
-    const TIME_ZONE_EUROPEMALTA = 'Europe/Malta';
-    const TIME_ZONE_EUROPEAMSTERDAM = 'Europe/Amsterdam';
-    const TIME_ZONE_EUROPEOSLO = 'Europe/Oslo';
-    const TIME_ZONE_EUROPEWARSAW = 'Europe/Warsaw';
-    const TIME_ZONE_EUROPESTOCKHOLM = 'Europe/Stockholm';
-    const TIME_ZONE_EUROPEBELGRADE = 'Europe/Belgrade';
-    const TIME_ZONE_EUROPEPARIS = 'Europe/Paris';
-    const TIME_ZONE_AFRICAJOHANNESBURG = 'Africa/Johannesburg';
-    const TIME_ZONE_EUROPEMINSK = 'Europe/Minsk';
-    const TIME_ZONE_AFRICACAIRO = 'Africa/Cairo';
-    const TIME_ZONE_EUROPEHELSINKI = 'Europe/Helsinki';
-    const TIME_ZONE_EUROPEATHENS = 'Europe/Athens';
-    const TIME_ZONE_ASIAJERUSALEM = 'Asia/Jerusalem';
-    const TIME_ZONE_EUROPERIGA = 'Europe/Riga';
-    const TIME_ZONE_EUROPEBUCHAREST = 'Europe/Bucharest';
-    const TIME_ZONE_EUROPEISTANBUL = 'Europe/Istanbul';
-    const TIME_ZONE_ASIARIYADH = 'Asia/Riyadh';
-    const TIME_ZONE_EUROPEMOSCOW = 'Europe/Moscow';
-    const TIME_ZONE_ASIADUBAI = 'Asia/Dubai';
-    const TIME_ZONE_ASIABAKU = 'Asia/Baku';
-    const TIME_ZONE_ASIATBILISI = 'Asia/Tbilisi';
-    const TIME_ZONE_ASIACALCUTTA = 'Asia/Calcutta';
-    const TIME_ZONE_ASIAKATMANDU = 'Asia/Katmandu';
-    const TIME_ZONE_ASIADACCA = 'Asia/Dacca';
-    const TIME_ZONE_ASIARANGOON = 'Asia/Rangoon';
-    const TIME_ZONE_ASIAJAKARTA = 'Asia/Jakarta';
-    const TIME_ZONE_ASIASAIGON = 'Asia/Saigon';
-    const TIME_ZONE_ASIABANGKOK = 'Asia/Bangkok';
-    const TIME_ZONE_AUSTRALIAPERTH = 'Australia/Perth';
-    const TIME_ZONE_ASIAHONG_KONG = 'Asia/Hong_Kong';
-    const TIME_ZONE_ASIAMACAO = 'Asia/Macao';
-    const TIME_ZONE_ASIAKUALA_LUMPUR = 'Asia/Kuala_Lumpur';
-    const TIME_ZONE_ASIAMANILA = 'Asia/Manila';
-    const TIME_ZONE_ASIASINGAPORE = 'Asia/Singapore';
-    const TIME_ZONE_ASIATAIPEI = 'Asia/Taipei';
-    const TIME_ZONE_ASIASHANGHAI = 'Asia/Shanghai';
-    const TIME_ZONE_ASIASEOUL = 'Asia/Seoul';
-    const TIME_ZONE_ASIATOKYO = 'Asia/Tokyo';
-    const TIME_ZONE_ASIAYAKUTSK = 'Asia/Yakutsk';
-    const TIME_ZONE_AUSTRALIAADELAIDE = 'Australia/Adelaide';
-    const TIME_ZONE_AUSTRALIABRISBANE = 'Australia/Brisbane';
-    const TIME_ZONE_AUSTRALIABROKEN_HILL = 'Australia/Broken_Hill';
-    const TIME_ZONE_AUSTRALIADARWIN = 'Australia/Darwin';
-    const TIME_ZONE_AUSTRALIAEUCLA = 'Australia/Eucla';
-    const TIME_ZONE_AUSTRALIAHOBART = 'Australia/Hobart';
-    const TIME_ZONE_AUSTRALIALINDEMAN = 'Australia/Lindeman';
-    const TIME_ZONE_AUSTRALIASYDNEY = 'Australia/Sydney';
-    const TIME_ZONE_AUSTRALIALORD_HOWE = 'Australia/Lord_Howe';
-    const TIME_ZONE_AUSTRALIAMELBOURNE = 'Australia/Melbourne';
-    const TIME_ZONE_ASIAMAGADAN = 'Asia/Magadan';
-    const TIME_ZONE_PACIFICNORFOLK = 'Pacific/Norfolk';
-    const TIME_ZONE_PACIFICAUCKLAND = 'Pacific/Auckland';
-    const TYPE_PARTNERSHIP = 'PARTNERSHIP';
-    const TYPE_SOLE_PROPRIETORSHIP = 'SOLE_PROPRIETORSHIP';
-    const TYPE_CORPORATION = 'CORPORATION';
-    const TYPE_LLC = 'LLC';
-    const TYPE_NON_PROFIT = 'NON_PROFIT';
-    const TYPE_TRUST = 'TRUST';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTimeZoneAllowableValues()
-    {
-        return [
-            self::TIME_ZONE_PACIFICPAGO_PAGO,
-            self::TIME_ZONE_PACIFICHONOLULU,
-            self::TIME_ZONE_AMERICAANCHORAGE,
-            self::TIME_ZONE_AMERICAVANCOUVER,
-            self::TIME_ZONE_AMERICALOS_ANGELES,
-            self::TIME_ZONE_AMERICAPHOENIX,
-            self::TIME_ZONE_AMERICAEDMONTON,
-            self::TIME_ZONE_AMERICADENVER,
-            self::TIME_ZONE_AMERICAWINNIPEG,
-            self::TIME_ZONE_AMERICAMEXICO_CITY,
-            self::TIME_ZONE_AMERICACHICAGO,
-            self::TIME_ZONE_AMERICABOGOTA,
-            self::TIME_ZONE_AMERICAINDIANAPOLIS,
-            self::TIME_ZONE_AMERICANEW_YORK,
-            self::TIME_ZONE_AMERICALA_PAZ,
-            self::TIME_ZONE_AMERICAHALIFAX,
-            self::TIME_ZONE_AMERICAST_JOHNS,
-            self::TIME_ZONE_AMERICABUENOS_AIRES,
-            self::TIME_ZONE_AMERICAGODTHAB,
-            self::TIME_ZONE_AMERICASAO_PAULO,
-            self::TIME_ZONE_AMERICANORONHA,
-            self::TIME_ZONE_ATLANTICCAPE_VERDE,
-            self::TIME_ZONE_GMT,
-            self::TIME_ZONE_EUROPEDUBLIN,
-            self::TIME_ZONE_EUROPELISBON,
-            self::TIME_ZONE_EUROPELONDON,
-            self::TIME_ZONE_AFRICATUNIS,
-            self::TIME_ZONE_EUROPEVIENNA,
-            self::TIME_ZONE_EUROPEBRUSSELS,
-            self::TIME_ZONE_EUROPEZURICH,
-            self::TIME_ZONE_EUROPEPRAGUE,
-            self::TIME_ZONE_EUROPEBERLIN,
-            self::TIME_ZONE_EUROPECOPENHAGEN,
-            self::TIME_ZONE_EUROPEMADRID,
-            self::TIME_ZONE_EUROPEBUDAPEST,
-            self::TIME_ZONE_EUROPEROME,
-            self::TIME_ZONE_AFRICATRIPOLI,
-            self::TIME_ZONE_EUROPEMONACO,
-            self::TIME_ZONE_EUROPEMALTA,
-            self::TIME_ZONE_EUROPEAMSTERDAM,
-            self::TIME_ZONE_EUROPEOSLO,
-            self::TIME_ZONE_EUROPEWARSAW,
-            self::TIME_ZONE_EUROPESTOCKHOLM,
-            self::TIME_ZONE_EUROPEBELGRADE,
-            self::TIME_ZONE_EUROPEPARIS,
-            self::TIME_ZONE_AFRICAJOHANNESBURG,
-            self::TIME_ZONE_EUROPEMINSK,
-            self::TIME_ZONE_AFRICACAIRO,
-            self::TIME_ZONE_EUROPEHELSINKI,
-            self::TIME_ZONE_EUROPEATHENS,
-            self::TIME_ZONE_ASIAJERUSALEM,
-            self::TIME_ZONE_EUROPERIGA,
-            self::TIME_ZONE_EUROPEBUCHAREST,
-            self::TIME_ZONE_EUROPEISTANBUL,
-            self::TIME_ZONE_ASIARIYADH,
-            self::TIME_ZONE_EUROPEMOSCOW,
-            self::TIME_ZONE_ASIADUBAI,
-            self::TIME_ZONE_ASIABAKU,
-            self::TIME_ZONE_ASIATBILISI,
-            self::TIME_ZONE_ASIACALCUTTA,
-            self::TIME_ZONE_ASIAKATMANDU,
-            self::TIME_ZONE_ASIADACCA,
-            self::TIME_ZONE_ASIARANGOON,
-            self::TIME_ZONE_ASIAJAKARTA,
-            self::TIME_ZONE_ASIASAIGON,
-            self::TIME_ZONE_ASIABANGKOK,
-            self::TIME_ZONE_AUSTRALIAPERTH,
-            self::TIME_ZONE_ASIAHONG_KONG,
-            self::TIME_ZONE_ASIAMACAO,
-            self::TIME_ZONE_ASIAKUALA_LUMPUR,
-            self::TIME_ZONE_ASIAMANILA,
-            self::TIME_ZONE_ASIASINGAPORE,
-            self::TIME_ZONE_ASIATAIPEI,
-            self::TIME_ZONE_ASIASHANGHAI,
-            self::TIME_ZONE_ASIASEOUL,
-            self::TIME_ZONE_ASIATOKYO,
-            self::TIME_ZONE_ASIAYAKUTSK,
-            self::TIME_ZONE_AUSTRALIAADELAIDE,
-            self::TIME_ZONE_AUSTRALIABRISBANE,
-            self::TIME_ZONE_AUSTRALIABROKEN_HILL,
-            self::TIME_ZONE_AUSTRALIADARWIN,
-            self::TIME_ZONE_AUSTRALIAEUCLA,
-            self::TIME_ZONE_AUSTRALIAHOBART,
-            self::TIME_ZONE_AUSTRALIALINDEMAN,
-            self::TIME_ZONE_AUSTRALIASYDNEY,
-            self::TIME_ZONE_AUSTRALIALORD_HOWE,
-            self::TIME_ZONE_AUSTRALIAMELBOURNE,
-            self::TIME_ZONE_ASIAMAGADAN,
-            self::TIME_ZONE_PACIFICNORFOLK,
-            self::TIME_ZONE_PACIFICAUCKLAND,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_PARTNERSHIP,
-            self::TYPE_SOLE_PROPRIETORSHIP,
-            self::TYPE_CORPORATION,
-            self::TYPE_LLC,
-            self::TYPE_NON_PROFIT,
-            self::TYPE_TRUST,
-        ];
-    }
     
 
     /**
@@ -436,22 +224,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        $allowed_values = $this->getTimeZoneAllowableValues();
-        if (!in_array($this->container['timeZone'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'timeZone', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -465,14 +237,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
     {
 
         if ($this->container['name'] === null) {
-            return false;
-        }
-        $allowed_values = $this->getTimeZoneAllowableValues();
-        if (!in_array($this->container['timeZone'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -600,15 +364,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setTimeZone($timeZone)
     {
-        $allowed_values = $this->getTimeZoneAllowableValues();
-        if (!is_null($timeZone) && !in_array($timeZone, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'timeZone', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['timeZone'] = $timeZone;
 
         return $this;
@@ -651,15 +406,6 @@ class Boardingv1registrationsOrganizationInformationBusinessInformation implemen
      */
     public function setType($type)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;

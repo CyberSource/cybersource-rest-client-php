@@ -135,48 +135,8 @@ class InlineResponse4001 implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_INVALID_APIKEY = 'INVALID_APIKEY';
-    const REASON_INVALID_SHIPPING_INPUT_PARAMS = 'INVALID_SHIPPING_INPUT_PARAMS';
-    const REASON_CAPTURE_CONTEXT_INVALID = 'CAPTURE_CONTEXT_INVALID';
-    const REASON_CAPTURE_CONTEXT_EXPIRED = 'CAPTURE_CONTEXT_EXPIRED';
-    const REASON_SDK_XHR_ERROR = 'SDK_XHR_ERROR';
-    const REASON_UNIFIEDPAYMENTS_VALIDATION_PARAMS = 'UNIFIEDPAYMENTS_VALIDATION_PARAMS';
-    const REASON_UNIFIEDPAYMENTS_VALIDATION_FIELDS = 'UNIFIEDPAYMENTS_VALIDATION_FIELDS';
-    const REASON_UNIFIEDPAYMENT_PAYMENT_PARAMITERS = 'UNIFIEDPAYMENT_PAYMENT_PARAMITERS';
-    const REASON_CREATE_TOKEN_TIMEOUT = 'CREATE_TOKEN_TIMEOUT';
-    const REASON_CREATE_TOKEN_XHR_ERROR = 'CREATE_TOKEN_XHR_ERROR';
-    const REASON_SHOW_LOAD_CONTAINER_SELECTOR = 'SHOW_LOAD_CONTAINER_SELECTOR';
-    const REASON_SHOW_LOAD_INVALID_CONTAINER = 'SHOW_LOAD_INVALID_CONTAINER';
-    const REASON_SHOW_TOKEN_TIMEOUT = 'SHOW_TOKEN_TIMEOUT';
-    const REASON_SHOW_TOKEN_XHR_ERROR = 'SHOW_TOKEN_XHR_ERROR';
-    const REASON_SHOW_PAYMENT_TIMEOUT = 'SHOW_PAYMENT_TIMEOUT';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_INVALID_APIKEY,
-            self::REASON_INVALID_SHIPPING_INPUT_PARAMS,
-            self::REASON_CAPTURE_CONTEXT_INVALID,
-            self::REASON_CAPTURE_CONTEXT_EXPIRED,
-            self::REASON_SDK_XHR_ERROR,
-            self::REASON_UNIFIEDPAYMENTS_VALIDATION_PARAMS,
-            self::REASON_UNIFIEDPAYMENTS_VALIDATION_FIELDS,
-            self::REASON_UNIFIEDPAYMENT_PAYMENT_PARAMITERS,
-            self::REASON_CREATE_TOKEN_TIMEOUT,
-            self::REASON_CREATE_TOKEN_XHR_ERROR,
-            self::REASON_SHOW_LOAD_CONTAINER_SELECTOR,
-            self::REASON_SHOW_LOAD_INVALID_CONTAINER,
-            self::REASON_SHOW_TOKEN_TIMEOUT,
-            self::REASON_SHOW_TOKEN_XHR_ERROR,
-            self::REASON_SHOW_PAYMENT_TIMEOUT,
-        ];
-    }
     
 
     /**
@@ -213,14 +173,6 @@ class InlineResponse4001 implements ArrayAccess
         if ($this->container['reason'] === null) {
             $invalid_properties[] = "'reason' can't be null";
         }
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -237,10 +189,6 @@ class InlineResponse4001 implements ArrayAccess
             return false;
         }
         if ($this->container['reason'] === null) {
-            return false;
-        }
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
             return false;
         }
         return true;
@@ -342,20 +290,11 @@ class InlineResponse4001 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason
+     * @param string $reason Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
      * @return $this
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

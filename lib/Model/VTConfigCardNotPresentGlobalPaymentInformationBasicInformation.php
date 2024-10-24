@@ -155,36 +155,8 @@ class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation implements 
         return self::$getters;
     }
 
-    const DEFAULT_TRANSACTION_TYPE_AUTHORIZATION = 'AUTHORIZATION';
-    const DEFAULT_TRANSACTION_TYPE_SALE = 'SALE';
-    const DEFAULT_PAYMENT_TYPE_CREDIT_CARD = 'CREDIT_CARD';
-    const DEFAULT_PAYMENT_TYPE_ECHECK = 'ECHECK';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getDefaultTransactionTypeAllowableValues()
-    {
-        return [
-            self::DEFAULT_TRANSACTION_TYPE_AUTHORIZATION,
-            self::DEFAULT_TRANSACTION_TYPE_SALE,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getDefaultPaymentTypeAllowableValues()
-    {
-        return [
-            self::DEFAULT_PAYMENT_TYPE_CREDIT_CARD,
-            self::DEFAULT_PAYMENT_TYPE_ECHECK,
-        ];
-    }
     
 
     /**
@@ -219,22 +191,6 @@ class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation implements 
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getDefaultTransactionTypeAllowableValues();
-        if (!in_array($this->container['defaultTransactionType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'defaultTransactionType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getDefaultPaymentTypeAllowableValues();
-        if (!in_array($this->container['defaultPaymentType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'defaultPaymentType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -247,14 +203,6 @@ class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation implements 
     public function valid()
     {
 
-        $allowed_values = $this->getDefaultTransactionTypeAllowableValues();
-        if (!in_array($this->container['defaultTransactionType'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getDefaultPaymentTypeAllowableValues();
-        if (!in_array($this->container['defaultPaymentType'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -333,20 +281,11 @@ class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation implements 
 
     /**
      * Sets defaultTransactionType
-     * @param string $defaultTransactionType
+     * @param string $defaultTransactionType Possible values: - AUTHORIZATION - SALE
      * @return $this
      */
     public function setDefaultTransactionType($defaultTransactionType)
     {
-        $allowed_values = $this->getDefaultTransactionTypeAllowableValues();
-        if (!is_null($defaultTransactionType) && !in_array($defaultTransactionType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'defaultTransactionType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['defaultTransactionType'] = $defaultTransactionType;
 
         return $this;
@@ -363,20 +302,11 @@ class VTConfigCardNotPresentGlobalPaymentInformationBasicInformation implements 
 
     /**
      * Sets defaultPaymentType
-     * @param string $defaultPaymentType
+     * @param string $defaultPaymentType Possible values: - CREDIT_CARD - ECHECK
      * @return $this
      */
     public function setDefaultPaymentType($defaultPaymentType)
     {
-        $allowed_values = $this->getDefaultPaymentTypeAllowableValues();
-        if (!is_null($defaultPaymentType) && !in_array($defaultPaymentType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'defaultPaymentType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['defaultPaymentType'] = $defaultPaymentType;
 
         return $this;

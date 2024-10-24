@@ -1,6 +1,6 @@
 <?php
 /**
- * BinLookupv400ResponseTest
+ * CreateOrderRequestTest
  *
  * PHP version 5
  *
@@ -29,16 +29,16 @@
 namespace CyberSource;
 
 /**
- * BinLookupv400ResponseTest Class Doc Comment
+ * CreateOrderRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description BinLookupv400Response
+// * @description CreateOrderRequest
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class BinLookupv400ResponseTest extends \PHPUnit_Framework_TestCase
+class CreateOrderRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,37 +70,44 @@ class BinLookupv400ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "BinLookupv400Response"
+     * Test "CreateOrderRequest"
      */
-    public function testBinLookupv400Response()
+    public function testCreateOrderRequest()
     {
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "clientReferenceInformation"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyClientReferenceInformation()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "processingInformation"
      */
-    public function testPropertyStatus()
+    public function testPropertyProcessingInformation()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "merchantInformation"
      */
-    public function testPropertyMessage()
+    public function testPropertyMerchantInformation()
     {
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "paymentInformation"
      */
-    public function testPropertyDetails()
+    public function testPropertyPaymentInformation()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
     {
     }
 }

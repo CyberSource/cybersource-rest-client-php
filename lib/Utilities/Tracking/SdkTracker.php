@@ -35,7 +35,7 @@ class SdkTracker
 
     public function __construct() {}
 
-    public function insertDeveloperIdTracker($requestObj, $requestClass, $runEnvironment)
+    public function insertDeveloperIdTracker($requestObj, $requestClass, $runEnvironment, $defaultDeveloperId)
     {
         if (in_array($requestClass, self::$inclusionList))
         {
@@ -48,6 +48,10 @@ class SdkTracker
             else
             {
                 $developer_id_value = 'S2TBCVPH';
+            }
+
+            if (isset($defaultDeveloperId) && !empty(trim($defaultDeveloperId))) {
+                $developer_id_value = trim($defaultDeveloperId);
             }
 
             if (!empty($requestObj->getClientReferenceInformation()))

@@ -58,7 +58,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
         'merchantId' => 'string',
         'status' => 'string',
         'applicationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedApplicationInformation',
-        'buyerInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedBuyerInformation',
+        'buyerInformation' => '\CyberSource\Model\PtsV2CreateOrderPost201ResponseBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedConsumerAuthenticationInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationresultsDeviceInformation',
@@ -380,7 +380,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+     * @return \CyberSource\Model\PtsV2CreateOrderPost201ResponseBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -389,7 +389,7 @@ class TssV2TransactionsPost201ResponseEmbeddedTransactionSummaries implements Ar
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\PtsV2CreateOrderPost201ResponseBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)

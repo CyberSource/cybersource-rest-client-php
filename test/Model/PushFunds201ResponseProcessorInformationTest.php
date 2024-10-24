@@ -103,4 +103,46 @@ class PushFunds201ResponseProcessorInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyRetrievalReferenceNumber()
     {
     }
+
+    /**
+     * Test attribute "actionCode"
+     */
+    public function testPropertyActionCode()
+    {
+    }
+
+    /**
+     * Test attribute "approvalCode"
+     */
+    public function testPropertyApprovalCode()
+    {
+    }
+
+    /**
+     * Test attribute "feeProgramIndicator"
+     */
+    public function testPropertyFeeProgramIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "routing"
+     */
+    public function testPropertyRouting()
+    {
+    }
+
+    /**
+     * Test attribute "settlement"
+     */
+    public function testPropertySettlement()
+    {
+    }
 }

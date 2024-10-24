@@ -32,7 +32,7 @@ namespace CyberSource;
  * Microformv2sessionsCheckoutApiInitializationTest Class Doc Comment
  *
  * @category    Class */
-// * @description Microformv2sessionsCheckoutApiInitialization
+// * @description Use the [Digital Accept Checkout API](https://developer.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Checkout_API/Secure_Acceptance_Checkout_API.pdf) in conjunction with Microform to provide a cohesive PCI SAQ A embedded payment application within your merchant e-commerce page.   The Digital Accept Checkout API provides access to payment processing and additional value-added services directly from the browser.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

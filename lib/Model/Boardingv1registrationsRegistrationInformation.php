@@ -68,7 +68,7 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'boardingRegistrationId' => null,
-        'submitTimeUtc' => 'date',
+        'submitTimeUtc' => 'date-time',
         'status' => null,
         'boardingPackageId' => null,
         'boardingFlow' => null,
@@ -145,56 +145,8 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
         return self::$getters;
     }
 
-    const STATUS_PROCESSING = 'PROCESSING';
-    const STATUS_SUCCESS = 'SUCCESS';
-    const STATUS_FAILURE = 'FAILURE';
-    const STATUS_PARTIAL = 'PARTIAL';
-    const BOARDING_FLOW_ENTERPRISE = 'ENTERPRISE';
-    const BOARDING_FLOW_SMB = 'SMB';
-    const BOARDING_FLOW_ADDPRODUCT = 'ADDPRODUCT';
-    const MODE_COMPLETE = 'COMPLETE';
-    const MODE_PARTIAL = 'PARTIAL';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_PROCESSING,
-            self::STATUS_SUCCESS,
-            self::STATUS_FAILURE,
-            self::STATUS_PARTIAL,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getBoardingFlowAllowableValues()
-    {
-        return [
-            self::BOARDING_FLOW_ENTERPRISE,
-            self::BOARDING_FLOW_SMB,
-            self::BOARDING_FLOW_ADDPRODUCT,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getModeAllowableValues()
-    {
-        return [
-            self::MODE_COMPLETE,
-            self::MODE_PARTIAL,
-        ];
-    }
     
 
     /**
@@ -227,30 +179,6 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getBoardingFlowAllowableValues();
-        if (!in_array($this->container['boardingFlow'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'boardingFlow', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getModeAllowableValues();
-        if (!in_array($this->container['mode'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'mode', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -263,18 +191,6 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getBoardingFlowAllowableValues();
-        if (!in_array($this->container['boardingFlow'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getModeAllowableValues();
-        if (!in_array($this->container['mode'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -337,15 +253,6 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
@@ -388,15 +295,6 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
      */
     public function setBoardingFlow($boardingFlow)
     {
-        $allowed_values = $this->getBoardingFlowAllowableValues();
-        if (!is_null($boardingFlow) && !in_array($boardingFlow, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'boardingFlow', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['boardingFlow'] = $boardingFlow;
 
         return $this;
@@ -418,15 +316,6 @@ class Boardingv1registrationsRegistrationInformation implements ArrayAccess
      */
     public function setMode($mode)
     {
-        $allowed_values = $this->getModeAllowableValues();
-        if (!is_null($mode) && !in_array($mode, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'mode', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['mode'] = $mode;
 
         return $this;

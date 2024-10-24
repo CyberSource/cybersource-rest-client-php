@@ -348,4 +348,39 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     public function testPropertyDeviceUrl()
     {
     }
+
+    /**
+     * Test attribute "disbursementMode"
+     */
+    public function testPropertyDisbursementMode()
+    {
+    }
+
+    /**
+     * Test attribute "updateTimeUtc"
+     */
+    public function testPropertyUpdateTimeUtc()
+    {
+    }
+
+    /**
+     * Test attribute "expirationTimeUtc"
+     */
+    public function testPropertyExpirationTimeUtc()
+    {
+    }
+
+    /**
+     * Test attribute "orderId"
+     */
+    public function testPropertyOrderId()
+    {
+    }
+
+    /**
+     * Test attribute "orderStatus"
+     */
+    public function testPropertyOrderStatus()
+    {
+    }
 }

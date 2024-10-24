@@ -110,4 +110,11 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformationTest extends \PHPU
     public function testPropertyProviderResponse()
     {
     }
+
+    /**
+     * Test attribute "updateTimeUtc"
+     */
+    public function testPropertyUpdateTimeUtc()
+    {
+    }
 }

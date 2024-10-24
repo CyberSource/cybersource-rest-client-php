@@ -189,7 +189,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets targetOrigins
-     * @param string[] $targetOrigins The merchant origin domain (e.g. https://example.com) used to initiate microform Integration. Required to comply with CORS and CSP standards.
+     * @param string[] $targetOrigins The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Microform is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080<br><br>  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \"https://example.com\",     \"https://basket.example.com\",     \"https://ecom.example.com\"   ]
      * @return $this
      */
     public function setTargetOrigins($targetOrigins)
@@ -210,7 +210,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedCardNetworks
-     * @param string[] $allowedCardNetworks
+     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MAESTRO - MASTERCARD - AMEX - DISCOVER - DINERSCLUB - JCB - CUP - CARTESBANCAIRES - CARNET
      * @return $this
      */
     public function setAllowedCardNetworks($allowedCardNetworks)
@@ -231,7 +231,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets clientVersion
-     * @param string $clientVersion
+     * @param string $clientVersion Specify the version of Microform that you want to use.
      * @return $this
      */
     public function setClientVersion($clientVersion)

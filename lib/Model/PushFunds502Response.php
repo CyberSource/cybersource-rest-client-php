@@ -257,7 +257,7 @@ class PushFunds502Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values: - SYSTEM_ERROR
+     * @param string $reason The reason of the status.  Possible values: - SYSTEM_ERROR - SERVICE_TIMEOUT
      * @return $this
      */
     public function setReason($reason)
@@ -278,7 +278,7 @@ class PushFunds502Response implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.  Possible values: - Error - General system failure.
+     * @param string $message The detail message related to the status and reason listed above.  Possible values: - Error - General system failure. - The request was received, but a service did not finish running in time.
      * @return $this
      */
     public function setMessage($message)

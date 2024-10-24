@@ -96,4 +96,11 @@ class PtsV2PaymentsPost201ResponseProcessingInformationTest extends \PHPUnit_Fra
     public function testPropertyEnhancedDataEnabled()
     {
     }
+
+    /**
+     * Test attribute "captureOptions"
+     */
+    public function testPropertyCaptureOptions()
+    {
+    }
 }

@@ -154,9 +154,37 @@ class Ptsv1pushfundstransferRecipientInformationTest extends \PHPUnit_Framework_
     }
 
     /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
      * Test attribute "personalIdentification"
      */
     public function testPropertyPersonalIdentification()
+    {
+    }
+
+    /**
+     * Test attribute "buildingNumber"
+     */
+    public function testPropertyBuildingNumber()
+    {
+    }
+
+    /**
+     * Test attribute "streetName"
+     */
+    public function testPropertyStreetName()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
     }
 }

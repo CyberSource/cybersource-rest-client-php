@@ -1,6 +1,6 @@
 <?php
 /**
- * TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+ * Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge
  *
  * PHP version 5
  *
@@ -31,14 +31,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedBuyerInformation Class Doc Comment
+ * Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayAccess
+class Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,14 +46,14 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_buyerInformation';
+    protected static $swaggerModelName = 'ptsv2payments_orderInformation_amountDetails_octsurcharge';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantCustomerId' => 'string'
+        'amount' => 'string'
     ];
 
     /**
@@ -61,7 +61,7 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'merchantCustomerId' => null
+        'amount' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +79,7 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchantCustomerId' => 'merchantCustomerId'
+        'amount' => 'amount'
     ];
 
 
@@ -88,7 +88,7 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'merchantCustomerId' => 'setMerchantCustomerId'
+        'amount' => 'setAmount'
     ];
 
 
@@ -97,7 +97,7 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'merchantCustomerId' => 'getMerchantCustomerId'
+        'amount' => 'getAmount'
     ];
 
     public static function attributeMap()
@@ -131,7 +131,7 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
     }
 
     /**
@@ -160,22 +160,22 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformation implements ArrayA
 
 
     /**
-     * Gets merchantCustomerId
+     * Gets amount
      * @return string
      */
-    public function getMerchantCustomerId()
+    public function getAmount()
     {
-        return $this->container['merchantCustomerId'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets merchantCustomerId
-     * @param string $merchantCustomerId Your identifier for the customer.  When a subscription or customer profile is being created, the maximum length for this field for most processors is 30. Otherwise, the maximum length is 100.  #### Comercio Latino For recurring payments in Mexico, the value is the customer's contract number. Note Before you request the authorization, you must inform the issuer of the customer contract numbers that will be used for recurring transactions.  #### Worldpay VAP For a follow-on credit with Worldpay VAP, CyberSource checks the following locations, in the order given, for a customer account ID value and uses the first value it finds: 1. `customer_account_id` value in the follow-on credit request 2. Customer account ID value that was used for the capture that is being credited 3. Customer account ID value that was used for the original authorization If a customer account ID value cannot be found in any of these locations, then no value is used.
+     * Sets amount
+     * @param string $amount The surcharge amount is included in the total transaction amount but is passed in a separate field to the issuer and acquirer for tracking.  The issuer can provide information about the surcharge amount to the customer.   If the amount is positive, then it is a debit for the customer.   If the amount is negative, then it is a credit for the customer.
      * @return $this
      */
-    public function setMerchantCustomerId($merchantCustomerId)
+    public function setAmount($amount)
     {
-        $this->container['merchantCustomerId'] = $merchantCustomerId;
+        $this->container['amount'] = $amount;
 
         return $this;
     }

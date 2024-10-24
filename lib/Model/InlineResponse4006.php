@@ -65,7 +65,7 @@ class InlineResponse4006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => 'date',
+        'submitTimeUtc' => 'date-time',
         'status' => null,
         'reason' => null,
         'message' => null,
@@ -135,24 +135,8 @@ class InlineResponse4006 implements ArrayAccess
         return self::$getters;
     }
 
-    const REASON_INVALID_DATA = 'INVALID_DATA';
-    const REASON_SYSTEM_ERROR = 'SYSTEM_ERROR';
-    const REASON_RESOURCE_NOT_FOUND = 'RESOURCE_NOT_FOUND';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_INVALID_DATA,
-            self::REASON_SYSTEM_ERROR,
-            self::REASON_RESOURCE_NOT_FOUND,
-        ];
-    }
     
 
     /**
@@ -183,14 +167,6 @@ class InlineResponse4006 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -203,10 +179,6 @@ class InlineResponse4006 implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -269,15 +241,6 @@ class InlineResponse4006 implements ArrayAccess
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

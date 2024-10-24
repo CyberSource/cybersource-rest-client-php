@@ -200,7 +200,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
 
     /**
      * Sets billingType
-     * @param string $billingType This field defines the type of Billing Address information captured through the Manual card Entry UX. FULL, PARTIAL
+     * @param string $billingType Configure Unified Checkout to capture billing address information.  Possible values: - FULL: Capture complete billing address information. - PARTIAL: Capture first name, last name, country and postal/zip code only. - NONE: Capture only first name and last name.
      * @return $this
      */
     public function setBillingType($billingType)
@@ -221,7 +221,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
 
     /**
      * Sets requestEmail
-     * @param bool $requestEmail Capture email contact information in the manual card acceptance screens.
+     * @param bool $requestEmail Configure Unified Checkout to capture customer email address.  Possible values:  - True  - False
      * @return $this
      */
     public function setRequestEmail($requestEmail)
@@ -242,7 +242,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
 
     /**
      * Sets requestPhone
-     * @param bool $requestPhone Capture email contact information in the manual card acceptance screens.
+     * @param bool $requestPhone Configure Unified Checkout to capture customer phone number.  Possible values: - True - False
      * @return $this
      */
     public function setRequestPhone($requestPhone)
@@ -263,7 +263,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
 
     /**
      * Sets requestShipping
-     * @param bool $requestShipping Capture email contact information in the manual card acceptance screens.
+     * @param bool $requestShipping Configure Unified Checkout to capture customer shipping details.  Possible values: - True - False
      * @return $this
      */
     public function setRequestShipping($requestShipping)
@@ -284,7 +284,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
 
     /**
      * Sets shipToCountries
-     * @param string[] $shipToCountries List of countries available to ship to. Use the two- character ISO Standard Country Codes.
+     * @param string[] $shipToCountries List of countries available to ship to.   Use the two-character ISO Standard Country Codes.
      * @return $this
      */
     public function setShipToCountries($shipToCountries)
@@ -305,7 +305,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
 
     /**
      * Sets showAcceptedNetworkIcons
-     * @param bool $showAcceptedNetworkIcons Show the list of accepted payment icons in the payment button
+     * @param bool $showAcceptedNetworkIcons Configure Unified Checkout to display the list of accepted card networks beneath the payment button  Possible values: - True - False
      * @return $this
      */
     public function setShowAcceptedNetworkIcons($showAcceptedNetworkIcons)

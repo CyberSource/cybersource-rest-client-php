@@ -55,7 +55,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     protected static $swaggerTypes = [
         'captureSequenceNumber' => 'int',
         'totalCaptureCount' => 'int',
-        'isFinal' => 'string'
+        'isFinal' => 'string',
+        'notes' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     protected static $swaggerFormats = [
         'captureSequenceNumber' => null,
         'totalCaptureCount' => null,
-        'isFinal' => null
+        'isFinal' => null,
+        'notes' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     protected static $attributeMap = [
         'captureSequenceNumber' => 'captureSequenceNumber',
         'totalCaptureCount' => 'totalCaptureCount',
-        'isFinal' => 'isFinal'
+        'isFinal' => 'isFinal',
+        'notes' => 'notes'
     ];
 
 
@@ -96,7 +99,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     protected static $setters = [
         'captureSequenceNumber' => 'setCaptureSequenceNumber',
         'totalCaptureCount' => 'setTotalCaptureCount',
-        'isFinal' => 'setIsFinal'
+        'isFinal' => 'setIsFinal',
+        'notes' => 'setNotes'
     ];
 
 
@@ -107,7 +111,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     protected static $getters = [
         'captureSequenceNumber' => 'getCaptureSequenceNumber',
         'totalCaptureCount' => 'getTotalCaptureCount',
-        'isFinal' => 'getIsFinal'
+        'isFinal' => 'getIsFinal',
+        'notes' => 'getNotes'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         $this->container['captureSequenceNumber'] = isset($data['captureSequenceNumber']) ? $data['captureSequenceNumber'] : null;
         $this->container['totalCaptureCount'] = isset($data['totalCaptureCount']) ? $data['totalCaptureCount'] : null;
         $this->container['isFinal'] = isset($data['isFinal']) ? $data['isFinal'] : null;
+        $this->container['notes'] = isset($data['notes']) ? $data['notes'] : null;
     }
 
     /**
@@ -230,6 +236,27 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     public function setIsFinal($isFinal)
     {
         $this->container['isFinal'] = $isFinal;
+
+        return $this;
+    }
+
+    /**
+     * Gets notes
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->container['notes'];
+    }
+
+    /**
+     * Sets notes
+     * @param string $notes An informational note about this settlement. Appears in both the payer's transaction history and the emails that the payer receives.
+     * @return $this
+     */
+    public function setNotes($notes)
+    {
+        $this->container['notes'] = $notes;
 
         return $this;
     }

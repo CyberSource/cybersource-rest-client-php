@@ -130,24 +130,8 @@ class InlineResponse2012IntegrationInformationTenantConfigurations implements Ar
         return self::$getters;
     }
 
-    const STATUS_LIVE = 'LIVE';
-    const STATUS_INACTIVE = 'INACTIVE';
-    const STATUS_TEST = 'TEST';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_LIVE,
-            self::STATUS_INACTIVE,
-            self::STATUS_TEST,
-        ];
-    }
     
 
     /**
@@ -177,14 +161,6 @@ class InlineResponse2012IntegrationInformationTenantConfigurations implements Ar
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -197,10 +173,6 @@ class InlineResponse2012IntegrationInformationTenantConfigurations implements Ar
     public function valid()
     {
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -258,20 +230,11 @@ class InlineResponse2012IntegrationInformationTenantConfigurations implements Ar
 
     /**
      * Sets status
-     * @param string $status
+     * @param string $status Possible values: - LIVE - INACTIVE - TEST
      * @return $this
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
