@@ -91,7 +91,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'transactionExpiryDate' => 'string',
         'customUrl' => 'string',
         'schemeAssignedId' => 'string',
-        'deviceUrl' => 'string'
+        'deviceUrl' => 'string',
+        'disbursementMode' => 'string',
+        'updateTimeUtc' => 'string',
+        'expirationTimeUtc' => 'string',
+        'orderId' => 'string',
+        'orderStatus' => 'string'
     ];
 
     /**
@@ -137,7 +142,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'transactionExpiryDate' => null,
         'customUrl' => null,
         'schemeAssignedId' => null,
-        'deviceUrl' => null
+        'deviceUrl' => null,
+        'disbursementMode' => null,
+        'updateTimeUtc' => null,
+        'expirationTimeUtc' => null,
+        'orderId' => null,
+        'orderStatus' => null
     ];
 
     public static function swaggerTypes()
@@ -193,7 +203,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'transactionExpiryDate' => 'transactionExpiryDate',
         'customUrl' => 'customUrl',
         'schemeAssignedId' => 'schemeAssignedId',
-        'deviceUrl' => 'deviceUrl'
+        'deviceUrl' => 'deviceUrl',
+        'disbursementMode' => 'disbursementMode',
+        'updateTimeUtc' => 'updateTimeUtc',
+        'expirationTimeUtc' => 'expirationTimeUtc',
+        'orderId' => 'orderId',
+        'orderStatus' => 'orderStatus'
     ];
 
 
@@ -240,7 +255,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'transactionExpiryDate' => 'setTransactionExpiryDate',
         'customUrl' => 'setCustomUrl',
         'schemeAssignedId' => 'setSchemeAssignedId',
-        'deviceUrl' => 'setDeviceUrl'
+        'deviceUrl' => 'setDeviceUrl',
+        'disbursementMode' => 'setDisbursementMode',
+        'updateTimeUtc' => 'setUpdateTimeUtc',
+        'expirationTimeUtc' => 'setExpirationTimeUtc',
+        'orderId' => 'setOrderId',
+        'orderStatus' => 'setOrderStatus'
     ];
 
 
@@ -287,7 +307,12 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'transactionExpiryDate' => 'getTransactionExpiryDate',
         'customUrl' => 'getCustomUrl',
         'schemeAssignedId' => 'getSchemeAssignedId',
-        'deviceUrl' => 'getDeviceUrl'
+        'deviceUrl' => 'getDeviceUrl',
+        'disbursementMode' => 'getDisbursementMode',
+        'updateTimeUtc' => 'getUpdateTimeUtc',
+        'expirationTimeUtc' => 'getExpirationTimeUtc',
+        'orderId' => 'getOrderId',
+        'orderStatus' => 'getOrderStatus'
     ];
 
     public static function attributeMap()
@@ -360,6 +385,11 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['customUrl'] = isset($data['customUrl']) ? $data['customUrl'] : null;
         $this->container['schemeAssignedId'] = isset($data['schemeAssignedId']) ? $data['schemeAssignedId'] : null;
         $this->container['deviceUrl'] = isset($data['deviceUrl']) ? $data['deviceUrl'] : null;
+        $this->container['disbursementMode'] = isset($data['disbursementMode']) ? $data['disbursementMode'] : null;
+        $this->container['updateTimeUtc'] = isset($data['updateTimeUtc']) ? $data['updateTimeUtc'] : null;
+        $this->container['expirationTimeUtc'] = isset($data['expirationTimeUtc']) ? $data['expirationTimeUtc'] : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['orderStatus'] = isset($data['orderStatus']) ? $data['orderStatus'] : null;
     }
 
     /**
@@ -503,7 +533,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets responseCode
-     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)
+     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)  #### paypalgateway Processor generated ID for the itemized detail.
      * @return $this
      */
     public function setResponseCode($responseCode)
@@ -1202,6 +1232,111 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setDeviceUrl($deviceUrl)
     {
         $this->container['deviceUrl'] = $deviceUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets disbursementMode
+     * @return string
+     */
+    public function getDisbursementMode()
+    {
+        return $this->container['disbursementMode'];
+    }
+
+    /**
+     * Sets disbursementMode
+     * @param string $disbursementMode The funds are released to the merchant immediately. INSTANT The funds are released to the merchant immediately. DELAYED The funds are held for a finite number of days. The actual duration depends on the region and type of integration. You can release the funds through a referenced payout. Otherwise, the funds disbursed automatically after the specified duration.
+     * @return $this
+     */
+    public function setDisbursementMode($disbursementMode)
+    {
+        $this->container['disbursementMode'] = $disbursementMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateTimeUtc
+     * @return string
+     */
+    public function getUpdateTimeUtc()
+    {
+        return $this->container['updateTimeUtc'];
+    }
+
+    /**
+     * Sets updateTimeUtc
+     * @param string $updateTimeUtc The date and time when the transaction was last updated, in Internet date and time format.
+     * @return $this
+     */
+    public function setUpdateTimeUtc($updateTimeUtc)
+    {
+        $this->container['updateTimeUtc'] = $updateTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationTimeUtc
+     * @return string
+     */
+    public function getExpirationTimeUtc()
+    {
+        return $this->container['expirationTimeUtc'];
+    }
+
+    /**
+     * Sets expirationTimeUtc
+     * @param string $expirationTimeUtc The date and time when the authorized payment expires, in Internet date and time format.
+     * @return $this
+     */
+    public function setExpirationTimeUtc($expirationTimeUtc)
+    {
+        $this->container['expirationTimeUtc'] = $expirationTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderId
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->container['orderId'];
+    }
+
+    /**
+     * Sets orderId
+     * @param string $orderId The id of the order
+     * @return $this
+     */
+    public function setOrderId($orderId)
+    {
+        $this->container['orderId'] = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderStatus
+     * @return string
+     */
+    public function getOrderStatus()
+    {
+        return $this->container['orderStatus'];
+    }
+
+    /**
+     * Sets orderStatus
+     * @param string $orderStatus The order status.  Possible values: - `CREATED` - `VOIDED` - `COMPLETED` - `PAYER_ACTION_REQUIRED`
+     * @return $this
+     */
+    public function setOrderStatus($orderStatus)
+    {
+        $this->container['orderStatus'] = $orderStatus;
 
         return $this;
     }

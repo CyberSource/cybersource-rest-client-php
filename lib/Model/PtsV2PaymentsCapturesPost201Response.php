@@ -62,7 +62,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessorInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseOrderInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation',
-        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation'
+        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation',
+        'embeddedActions' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseEmbeddedActions'
     ];
 
     /**
@@ -79,7 +80,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'processorInformation' => null,
         'orderInformation' => null,
         'pointOfSaleInformation' => null,
-        'processingInformation' => null
+        'processingInformation' => null,
+        'embeddedActions' => null
     ];
 
     public static function swaggerTypes()
@@ -106,7 +108,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'processorInformation' => 'processorInformation',
         'orderInformation' => 'orderInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation',
-        'processingInformation' => 'processingInformation'
+        'processingInformation' => 'processingInformation',
+        'embeddedActions' => 'embeddedActions'
     ];
 
 
@@ -124,7 +127,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'processorInformation' => 'setProcessorInformation',
         'orderInformation' => 'setOrderInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
-        'processingInformation' => 'setProcessingInformation'
+        'processingInformation' => 'setProcessingInformation',
+        'embeddedActions' => 'setEmbeddedActions'
     ];
 
 
@@ -142,7 +146,8 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         'processorInformation' => 'getProcessorInformation',
         'orderInformation' => 'getOrderInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
-        'processingInformation' => 'getProcessingInformation'
+        'processingInformation' => 'getProcessingInformation',
+        'embeddedActions' => 'getEmbeddedActions'
     ];
 
     public static function attributeMap()
@@ -186,6 +191,7 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['embeddedActions'] = isset($data['embeddedActions']) ? $data['embeddedActions'] : null;
     }
 
     /**
@@ -419,6 +425,27 @@ class PtsV2PaymentsCapturesPost201Response implements ArrayAccess
     public function setProcessingInformation($processingInformation)
     {
         $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets embeddedActions
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseEmbeddedActions
+     */
+    public function getEmbeddedActions()
+    {
+        return $this->container['embeddedActions'];
+    }
+
+    /**
+     * Sets embeddedActions
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseEmbeddedActions $embeddedActions
+     * @return $this
+     */
+    public function setEmbeddedActions($embeddedActions)
+    {
+        $this->container['embeddedActions'] = $embeddedActions;
 
         return $this;
     }

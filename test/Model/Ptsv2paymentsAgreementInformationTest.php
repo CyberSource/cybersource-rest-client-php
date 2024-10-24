@@ -82,4 +82,11 @@ class Ptsv2paymentsAgreementInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAgreementId()
     {
     }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
 }

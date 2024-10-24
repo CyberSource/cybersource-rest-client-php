@@ -1,6 +1,6 @@
 <?php
 /**
- * BinLookupv400Response
+ * Ptsv2intentsidMerchantInformation
  *
  * PHP version 5
  *
@@ -31,14 +31,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * BinLookupv400Response Class Doc Comment
+ * Ptsv2intentsidMerchantInformation Class Doc Comment
  *
  * @category    Class
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class BinLookupv400Response implements ArrayAccess
+class Ptsv2intentsidMerchantInformation implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,17 +46,14 @@ class BinLookupv400Response implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'binLookupv400Response';
+    protected static $swaggerModelName = 'ptsv2intentsid_merchantInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
+        'merchantDescriptor' => '\CyberSource\Model\Ptsv2intentsMerchantInformationMerchantDescriptor'
     ];
 
     /**
@@ -64,10 +61,7 @@ class BinLookupv400Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
-        'status' => null,
-        'message' => null,
-        'details' => null
+        'merchantDescriptor' => null
     ];
 
     public static function swaggerTypes()
@@ -85,10 +79,7 @@ class BinLookupv400Response implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'message' => 'message',
-        'details' => 'details'
+        'merchantDescriptor' => 'merchantDescriptor'
     ];
 
 
@@ -97,10 +88,7 @@ class BinLookupv400Response implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'merchantDescriptor' => 'setMerchantDescriptor'
     ];
 
 
@@ -109,10 +97,7 @@ class BinLookupv400Response implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'merchantDescriptor' => 'getMerchantDescriptor'
     ];
 
     public static function attributeMap()
@@ -146,10 +131,7 @@ class BinLookupv400Response implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
     }
 
     /**
@@ -178,85 +160,22 @@ class BinLookupv400Response implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return string
+     * Gets merchantDescriptor
+     * @return \CyberSource\Model\Ptsv2intentsMerchantInformationMerchantDescriptor
      */
-    public function getSubmitTimeUtc()
+    public function getMerchantDescriptor()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['merchantDescriptor'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * Sets merchantDescriptor
+     * @param \CyberSource\Model\Ptsv2intentsMerchantInformationMerchantDescriptor $merchantDescriptor
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setMerchantDescriptor($merchantDescriptor)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - INVALID_REQUEST
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
-     * @return $this
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['merchantDescriptor'] = $merchantDescriptor;
 
         return $this;
     }

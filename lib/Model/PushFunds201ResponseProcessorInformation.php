@@ -56,7 +56,13 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'int',
         'responseCode' => 'string',
         'systemTraceAuditNumber' => 'string',
-        'retrievalReferenceNumber' => 'string'
+        'retrievalReferenceNumber' => 'string',
+        'actionCode' => 'string',
+        'approvalCode' => 'string',
+        'feeProgramIndicator' => 'string',
+        'name' => 'string',
+        'routing' => '\CyberSource\Model\PushFunds201ResponseProcessorInformationRouting',
+        'settlement' => '\CyberSource\Model\PushFunds201ResponseProcessorInformationSettlement'
     ];
 
     /**
@@ -67,7 +73,13 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
         'transactionId' => null,
         'responseCode' => null,
         'systemTraceAuditNumber' => null,
-        'retrievalReferenceNumber' => null
+        'retrievalReferenceNumber' => null,
+        'actionCode' => null,
+        'approvalCode' => null,
+        'feeProgramIndicator' => null,
+        'name' => null,
+        'routing' => null,
+        'settlement' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +100,13 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'transactionId',
         'responseCode' => 'responseCode',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
-        'retrievalReferenceNumber' => 'retrievalReferenceNumber'
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
+        'actionCode' => 'actionCode',
+        'approvalCode' => 'approvalCode',
+        'feeProgramIndicator' => 'feeProgramIndicator',
+        'name' => 'name',
+        'routing' => 'routing',
+        'settlement' => 'settlement'
     ];
 
 
@@ -100,7 +118,13 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'setTransactionId',
         'responseCode' => 'setResponseCode',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
-        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber'
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
+        'actionCode' => 'setActionCode',
+        'approvalCode' => 'setApprovalCode',
+        'feeProgramIndicator' => 'setFeeProgramIndicator',
+        'name' => 'setName',
+        'routing' => 'setRouting',
+        'settlement' => 'setSettlement'
     ];
 
 
@@ -112,7 +136,13 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
         'transactionId' => 'getTransactionId',
         'responseCode' => 'getResponseCode',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
-        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber'
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
+        'actionCode' => 'getActionCode',
+        'approvalCode' => 'getApprovalCode',
+        'feeProgramIndicator' => 'getFeeProgramIndicator',
+        'name' => 'getName',
+        'routing' => 'getRouting',
+        'settlement' => 'getSettlement'
     ];
 
     public static function attributeMap()
@@ -150,6 +180,12 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
+        $this->container['actionCode'] = isset($data['actionCode']) ? $data['actionCode'] : null;
+        $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
+        $this->container['feeProgramIndicator'] = isset($data['feeProgramIndicator']) ? $data['feeProgramIndicator'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
+        $this->container['settlement'] = isset($data['settlement']) ? $data['settlement'] : null;
     }
 
     /**
@@ -230,7 +266,7 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets systemTraceAuditNumber
-     * @param string $systemTraceAuditNumber System audit number. Returned by authorization and incremental authorization services.
+     * @param string $systemTraceAuditNumber This field is returned by authorization and incremental authorization services. System trace number that must be printed on the customer's receipt.
      * @return $this
      */
     public function setSystemTraceAuditNumber($systemTraceAuditNumber)
@@ -251,12 +287,138 @@ class PushFunds201ResponseProcessorInformation implements ArrayAccess
 
     /**
      * Sets retrievalReferenceNumber
-     * @param string $retrievalReferenceNumber Unique reference number returned by the processor that identifies the transaction at the network.
+     * @param string $retrievalReferenceNumber This field contains a number that is used with other data elements as a key to identify and track all messages related to a given cardholder transaction; that is, to a given transaction set.  Recommended format: ydddhhnnnnnn  Positions 1-4: The yddd equivalent of the date, where y = 0-9 and ddd = 001 – 366. Positions 5-12: A unique identification number generated by the merchant or assigned by Cybersource.
      * @return $this
      */
     public function setRetrievalReferenceNumber($retrievalReferenceNumber)
     {
         $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets actionCode
+     * @return string
+     */
+    public function getActionCode()
+    {
+        return $this->container['actionCode'];
+    }
+
+    /**
+     * Sets actionCode
+     * @param string $actionCode The results of the transaction request  Note: The VisaNet Response Code for the transaction
+     * @return $this
+     */
+    public function setActionCode($actionCode)
+    {
+        $this->container['actionCode'] = $actionCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets approvalCode
+     * @return string
+     */
+    public function getApprovalCode()
+    {
+        return $this->container['approvalCode'];
+    }
+
+    /**
+     * Sets approvalCode
+     * @param string $approvalCode Issuer-generated approval code for the transaction.
+     * @return $this
+     */
+    public function setApprovalCode($approvalCode)
+    {
+        $this->container['approvalCode'] = $approvalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets feeProgramIndicator
+     * @return string
+     */
+    public function getFeeProgramIndicator()
+    {
+        return $this->container['feeProgramIndicator'];
+    }
+
+    /**
+     * Sets feeProgramIndicator
+     * @param string $feeProgramIndicator This field identifies the interchange fee program applicable to each financial transaction. Fee program indicator (FPI) values correspond to the fee descriptor and rate for each existing fee program.
+     * @return $this
+     */
+    public function setFeeProgramIndicator($feeProgramIndicator)
+    {
+        $this->container['feeProgramIndicator'] = $feeProgramIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name Name of the processor.
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets routing
+     * @return \CyberSource\Model\PushFunds201ResponseProcessorInformationRouting
+     */
+    public function getRouting()
+    {
+        return $this->container['routing'];
+    }
+
+    /**
+     * Sets routing
+     * @param \CyberSource\Model\PushFunds201ResponseProcessorInformationRouting $routing
+     * @return $this
+     */
+    public function setRouting($routing)
+    {
+        $this->container['routing'] = $routing;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlement
+     * @return \CyberSource\Model\PushFunds201ResponseProcessorInformationSettlement
+     */
+    public function getSettlement()
+    {
+        return $this->container['settlement'];
+    }
+
+    /**
+     * Sets settlement
+     * @param \CyberSource\Model\PushFunds201ResponseProcessorInformationSettlement $settlement
+     * @return $this
+     */
+    public function setSettlement($settlement)
+    {
+        $this->container['settlement'] = $settlement;
 
         return $this;
     }

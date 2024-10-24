@@ -82,4 +82,11 @@ class PushFunds201ResponseRecipientInformationTest extends \PHPUnit_Framework_Te
     public function testPropertyCard()
     {
     }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
 }

@@ -53,7 +53,8 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'agreementId' => 'string'
+        'agreementId' => 'string',
+        'id' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'agreementId' => null
+        'agreementId' => null,
+        'id' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'agreementId' => 'agreementId'
+        'agreementId' => 'agreementId',
+        'id' => 'id'
     ];
 
 
@@ -88,7 +91,8 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'agreementId' => 'setAgreementId'
+        'agreementId' => 'setAgreementId',
+        'id' => 'setId'
     ];
 
 
@@ -97,7 +101,8 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'agreementId' => 'getAgreementId'
+        'agreementId' => 'getAgreementId',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['agreementId'] = isset($data['agreementId']) ? $data['agreementId'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class Ptsv2paymentsAgreementInformation implements ArrayAccess
     public function setAgreementId($agreementId)
     {
         $this->container['agreementId'] = $agreementId;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id The processor specific billing agreement ID. References an approved recurring payment for goods or services. This value is sent by merchant via Cybersource to processor. The value sent in this field is procured by the merchant from the processor.
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

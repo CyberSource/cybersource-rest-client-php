@@ -135,46 +135,8 @@ class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInf
         return self::$getters;
     }
 
-    const PAYMENT_TYPE_MASTERDEBIT = 'MASTERDEBIT';
-    const PAYMENT_TYPE_MASTERCREDIT = 'MASTERCREDIT';
-    const PAYMENT_TYPE_VISACREDIT = 'VISACREDIT';
-    const PAYMENT_TYPE_VISADEBIT = 'VISADEBIT';
-    const PAYMENT_TYPE_DISCOVERCREDIT = 'DISCOVERCREDIT';
-    const PAYMENT_TYPE_AMEXCREDIT = 'AMEXCREDIT';
-    const PAYMENT_TYPE_ECHECK = 'ECHECK';
-    const FEE_TYPE_FLAT = 'FLAT';
-    const FEE_TYPE_PERCENTAGE = 'PERCENTAGE';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getPaymentTypeAllowableValues()
-    {
-        return [
-            self::PAYMENT_TYPE_MASTERDEBIT,
-            self::PAYMENT_TYPE_MASTERCREDIT,
-            self::PAYMENT_TYPE_VISACREDIT,
-            self::PAYMENT_TYPE_VISADEBIT,
-            self::PAYMENT_TYPE_DISCOVERCREDIT,
-            self::PAYMENT_TYPE_AMEXCREDIT,
-            self::PAYMENT_TYPE_ECHECK,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getFeeTypeAllowableValues()
-    {
-        return [
-            self::FEE_TYPE_FLAT,
-            self::FEE_TYPE_PERCENTAGE,
-        ];
-    }
     
 
     /**
@@ -205,22 +167,6 @@ class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInf
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getPaymentTypeAllowableValues();
-        if (!in_array($this->container['paymentType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'paymentType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getFeeTypeAllowableValues();
-        if (!in_array($this->container['feeType'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'feeType', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -233,14 +179,6 @@ class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInf
     public function valid()
     {
 
-        $allowed_values = $this->getPaymentTypeAllowableValues();
-        if (!in_array($this->container['paymentType'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getFeeTypeAllowableValues();
-        if (!in_array($this->container['feeType'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -256,20 +194,11 @@ class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInf
 
     /**
      * Sets paymentType
-     * @param string $paymentType Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK
+     * @param string $paymentType Payment types accepted by this merchant. The supported values are: MASTERDEBIT, MASTERCREDIT, VISACREDIT, VISADEBIT, DISCOVERCREDIT, AMEXCREDIT, ECHECK  Possible values: - MASTERDEBIT - MASTERCREDIT - VISACREDIT - VISADEBIT - DISCOVERCREDIT - AMEXCREDIT - ECHECK
      * @return $this
      */
     public function setPaymentType($paymentType)
     {
-        $allowed_values = $this->getPaymentTypeAllowableValues();
-        if (!is_null($paymentType) && !in_array($paymentType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'paymentType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['paymentType'] = $paymentType;
 
         return $this;
@@ -286,20 +215,11 @@ class PaymentsProductsServiceFeeConfigurationInformationConfigurationsPaymentInf
 
     /**
      * Sets feeType
-     * @param string $feeType Fee type for the selected payment type. Supported values are: Flat or Percentage.
+     * @param string $feeType Fee type for the selected payment type. Supported values are: Flat or Percentage.   Possible values: - FLAT - PERCENTAGE
      * @return $this
      */
     public function setFeeType($feeType)
     {
-        $allowed_values = $this->getFeeTypeAllowableValues();
-        if (!is_null($feeType) && !in_array($feeType, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'feeType', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['feeType'] = $feeType;
 
         return $this;

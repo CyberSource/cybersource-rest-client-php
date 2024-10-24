@@ -96,4 +96,11 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWalletTest extends \PH
     public function testPropertyFundingSourceSale()
     {
     }
+
+    /**
+     * Test attribute "userName"
+     */
+    public function testPropertyUserName()
+    {
+    }
 }

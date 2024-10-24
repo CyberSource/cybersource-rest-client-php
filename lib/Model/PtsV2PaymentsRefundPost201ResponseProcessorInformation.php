@@ -60,7 +60,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'responseCode' => 'string',
         'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
         'networkTransactionId' => 'string',
-        'settlementDate' => 'string'
+        'settlementDate' => 'string',
+        'updateTimeUtc' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'responseCode' => null,
         'achVerification' => null,
         'networkTransactionId' => null,
-        'settlementDate' => null
+        'settlementDate' => null,
+        'updateTimeUtc' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +102,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'responseCode' => 'responseCode',
         'achVerification' => 'achVerification',
         'networkTransactionId' => 'networkTransactionId',
-        'settlementDate' => 'settlementDate'
+        'settlementDate' => 'settlementDate',
+        'updateTimeUtc' => 'updateTimeUtc'
     ];
 
 
@@ -116,7 +119,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'responseCode' => 'setResponseCode',
         'achVerification' => 'setAchVerification',
         'networkTransactionId' => 'setNetworkTransactionId',
-        'settlementDate' => 'setSettlementDate'
+        'settlementDate' => 'setSettlementDate',
+        'updateTimeUtc' => 'setUpdateTimeUtc'
     ];
 
 
@@ -132,7 +136,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'responseCode' => 'getResponseCode',
         'achVerification' => 'getAchVerification',
         'networkTransactionId' => 'getNetworkTransactionId',
-        'settlementDate' => 'getSettlementDate'
+        'settlementDate' => 'getSettlementDate',
+        'updateTimeUtc' => 'getUpdateTimeUtc'
     ];
 
     public static function attributeMap()
@@ -174,6 +179,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         $this->container['achVerification'] = isset($data['achVerification']) ? $data['achVerification'] : null;
         $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
         $this->container['settlementDate'] = isset($data['settlementDate']) ? $data['settlementDate'] : null;
+        $this->container['updateTimeUtc'] = isset($data['updateTimeUtc']) ? $data['updateTimeUtc'] : null;
     }
 
     /**
@@ -296,7 +302,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
 
     /**
      * Sets responseCode
-     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)
+     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.  **Important** Do not use this field to evaluate the result of the authorization.  #### PIN debit Response value that is returned by the processor or bank. **Important** Do not use this field to evaluate the results of the transaction request.  Returned by PIN debit credit, PIN debit purchase, and PIN debit reversal.  #### AIBMS If this value is `08`, you can accept the transaction if the customer provides you with identification.  #### Atos This value is the response code sent from Atos and it might also include the response code from the bank. Format: `aa,bb` with the two values separated by a comma and where: - `aa` is the two-digit error message from Atos. - `bb` is the optional two-digit error message from the bank.  #### Comercio Latino This value is the status code and the error or response code received from the processor separated by a colon. Format: [status code]:E[error code] or [status code]:R[response code] Example `2:R06`  #### JCN Gateway Processor-defined detail error code. The associated response category code is in the `processorInformation.responseCategoryCode` field. String (3)  #### paypalgateway Processor generated ID for the itemized detail.
      * @return $this
      */
     public function setResponseCode($responseCode)
@@ -365,6 +371,27 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     public function setSettlementDate($settlementDate)
     {
         $this->container['settlementDate'] = $settlementDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateTimeUtc
+     * @return string
+     */
+    public function getUpdateTimeUtc()
+    {
+        return $this->container['updateTimeUtc'];
+    }
+
+    /**
+     * Sets updateTimeUtc
+     * @param string $updateTimeUtc The date and time when the transaction was last updated, in Internet date and time format.
+     * @return $this
+     */
+    public function setUpdateTimeUtc($updateTimeUtc)
+    {
+        $this->container['updateTimeUtc'] = $updateTimeUtc;
 
         return $this;
     }

@@ -147,6 +147,20 @@ class PushFunds201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "paymentInformation"
+     */
+    public function testPropertyPaymentInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
+
+    /**
      * Test attribute "links"
      */
     public function testPropertyLinks()

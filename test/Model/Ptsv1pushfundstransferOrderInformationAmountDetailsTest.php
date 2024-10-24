@@ -103,4 +103,11 @@ class Ptsv1pushfundstransferOrderInformationAmountDetailsTest extends \PHPUnit_F
     public function testPropertyDestinationCurrency()
     {
     }
+
+    /**
+     * Test attribute "surcharge"
+     */
+    public function testPropertySurcharge()
+    {
+    }
 }

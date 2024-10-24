@@ -54,7 +54,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
       */
     protected static $swaggerTypes = [
         'processor' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationProcessor',
-        'approvalCode' => 'string'
+        'approvalCode' => 'string',
+        'retrievalReferenceNumber' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
       */
     protected static $swaggerFormats = [
         'processor' => null,
-        'approvalCode' => null
+        'approvalCode' => null,
+        'retrievalReferenceNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      */
     protected static $attributeMap = [
         'processor' => 'processor',
-        'approvalCode' => 'approvalCode'
+        'approvalCode' => 'approvalCode',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber'
     ];
 
 
@@ -92,7 +95,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      */
     protected static $setters = [
         'processor' => 'setProcessor',
-        'approvalCode' => 'setApprovalCode'
+        'approvalCode' => 'setApprovalCode',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber'
     ];
 
 
@@ -102,7 +106,8 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
      */
     protected static $getters = [
         'processor' => 'getProcessor',
-        'approvalCode' => 'getApprovalCode'
+        'approvalCode' => 'getApprovalCode',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
     {
         $this->container['processor'] = isset($data['processor']) ? $data['processor'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
     public function setApprovalCode($approvalCode)
     {
         $this->container['approvalCode'] = $approvalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber #### Ingenico ePayments Unique number that CyberSource generates to identify the transaction. You can use this value to identify transactions in the Ingenico ePayments Collections Report, which provides settlement information. Contact customer support for information about the report.  ### CyberSource through VisaNet Retrieval request number.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
 
         return $this;
     }

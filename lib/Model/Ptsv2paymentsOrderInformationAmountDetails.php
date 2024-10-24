@@ -80,6 +80,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalCurrency' => 'string',
         'cashbackAmount' => 'string',
         'currencyConversion' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsCurrencyConversion',
+        'octSurcharge' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge',
         'order' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOrder',
         'anticipatedAmount' => 'string'
     ];
@@ -116,6 +117,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalCurrency' => null,
         'cashbackAmount' => null,
         'currencyConversion' => null,
+        'octSurcharge' => null,
         'order' => null,
         'anticipatedAmount' => null
     ];
@@ -162,6 +164,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalCurrency' => 'originalCurrency',
         'cashbackAmount' => 'cashbackAmount',
         'currencyConversion' => 'currencyConversion',
+        'octSurcharge' => 'oct-surcharge',
         'order' => 'order',
         'anticipatedAmount' => 'anticipatedAmount'
     ];
@@ -199,6 +202,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalCurrency' => 'setOriginalCurrency',
         'cashbackAmount' => 'setCashbackAmount',
         'currencyConversion' => 'setCurrencyConversion',
+        'octSurcharge' => 'setOctSurcharge',
         'order' => 'setOrder',
         'anticipatedAmount' => 'setAnticipatedAmount'
     ];
@@ -236,6 +240,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         'originalCurrency' => 'getOriginalCurrency',
         'cashbackAmount' => 'getCashbackAmount',
         'currencyConversion' => 'getCurrencyConversion',
+        'octSurcharge' => 'getOctSurcharge',
         'order' => 'getOrder',
         'anticipatedAmount' => 'getAnticipatedAmount'
     ];
@@ -298,6 +303,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         $this->container['originalCurrency'] = isset($data['originalCurrency']) ? $data['originalCurrency'] : null;
         $this->container['cashbackAmount'] = isset($data['cashbackAmount']) ? $data['cashbackAmount'] : null;
         $this->container['currencyConversion'] = isset($data['currencyConversion']) ? $data['currencyConversion'] : null;
+        $this->container['octSurcharge'] = isset($data['octSurcharge']) ? $data['octSurcharge'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['anticipatedAmount'] = isset($data['anticipatedAmount']) ? $data['anticipatedAmount'] : null;
     }
@@ -890,6 +896,27 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
     public function setCurrencyConversion($currencyConversion)
     {
         $this->container['currencyConversion'] = $currencyConversion;
+
+        return $this;
+    }
+
+    /**
+     * Gets octSurcharge
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge
+     */
+    public function getOctSurcharge()
+    {
+        return $this->container['octSurcharge'];
+    }
+
+    /**
+     * Sets octSurcharge
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge $octSurcharge
+     * @return $this
+     */
+    public function setOctSurcharge($octSurcharge)
+    {
+        $this->container['octSurcharge'] = $octSurcharge;
 
         return $this;
     }

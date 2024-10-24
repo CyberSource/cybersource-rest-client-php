@@ -96,4 +96,11 @@ class Ptsv1pushfundstransferRecipientInformationPersonalIdentificationTest exten
     public function testPropertyIssuingCountry()
     {
     }
+
+    /**
+     * Test attribute "personalIdType"
+     */
+    public function testPropertyPersonalIdType()
+    {
+    }
 }

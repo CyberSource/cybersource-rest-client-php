@@ -96,4 +96,11 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptionsTest extends \PH
     public function testPropertyIsFinal()
     {
     }
+
+    /**
+     * Test attribute "notes"
+     */
+    public function testPropertyNotes()
+    {
+    }
 }

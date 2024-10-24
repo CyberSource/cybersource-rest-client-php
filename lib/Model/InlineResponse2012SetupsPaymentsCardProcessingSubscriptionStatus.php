@@ -135,46 +135,8 @@ class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus implement
         return self::$getters;
     }
 
-    const STATUS_SUCCESS = 'SUCCESS';
-    const STATUS_FAILURE = 'FAILURE';
-    const STATUS_PARTIAL = 'PARTIAL';
-    const STATUS_PENDING = 'PENDING';
-    const REASON_DEPENDENT_PRODUCT_NOT_CONTRACTED = 'DEPENDENT_PRODUCT_NOT_CONTRACTED';
-    const REASON_DEPENDENT_FEATURE_NOT_CHOSEN = 'DEPENDENT_FEATURE_NOT_CHOSEN';
-    const REASON_MISSING_DATA = 'MISSING_DATA';
-    const REASON_INVALID_DATA = 'INVALID_DATA';
-    const REASON_DUPLICATE_FIELD = 'DUPLICATE_FIELD';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_SUCCESS,
-            self::STATUS_FAILURE,
-            self::STATUS_PARTIAL,
-            self::STATUS_PENDING,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getReasonAllowableValues()
-    {
-        return [
-            self::REASON_DEPENDENT_PRODUCT_NOT_CONTRACTED,
-            self::REASON_DEPENDENT_FEATURE_NOT_CHOSEN,
-            self::REASON_MISSING_DATA,
-            self::REASON_INVALID_DATA,
-            self::REASON_DUPLICATE_FIELD,
-        ];
-    }
     
 
     /**
@@ -205,22 +167,6 @@ class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus implement
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'reason', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -233,14 +179,6 @@ class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus implement
     public function valid()
     {
 
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!in_array($this->container['reason'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -277,20 +215,11 @@ class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus implement
 
     /**
      * Sets status
-     * @param string $status
+     * @param string $status Possible values: - SUCCESS - FAILURE - PARTIAL - PENDING
      * @return $this
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
@@ -307,20 +236,11 @@ class InlineResponse2012SetupsPaymentsCardProcessingSubscriptionStatus implement
 
     /**
      * Sets reason
-     * @param string $reason
+     * @param string $reason Possible values: - DEPENDENT_PRODUCT_NOT_CONTRACTED - DEPENDENT_FEATURE_NOT_CHOSEN - MISSING_DATA - INVALID_DATA - DUPLICATE_FIELD
      * @return $this
      */
     public function setReason($reason)
     {
-        $allowed_values = $this->getReasonAllowableValues();
-        if (!is_null($reason) && !in_array($reason, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'reason', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['reason'] = $reason;
 
         return $this;

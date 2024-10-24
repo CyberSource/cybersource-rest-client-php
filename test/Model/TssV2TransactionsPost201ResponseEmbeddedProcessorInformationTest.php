@@ -89,4 +89,11 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformationTest extends \
     public function testPropertyApprovalCode()
     {
     }
+
+    /**
+     * Test attribute "retrievalReferenceNumber"
+     */
+    public function testPropertyRetrievalReferenceNumber()
+    {
+    }
 }

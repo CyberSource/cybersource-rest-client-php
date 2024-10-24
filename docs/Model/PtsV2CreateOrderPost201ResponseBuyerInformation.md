@@ -1,4 +1,4 @@
-# TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+# PtsV2CreateOrderPost201ResponseBuyerInformation
 
 ## Properties
 Name | Type | Description | Notes

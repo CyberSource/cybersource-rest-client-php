@@ -56,7 +56,8 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
         'totalAmount' => 'string',
         'currency' => 'string',
         'sourceCurrency' => 'string',
-        'destinationCurrency' => 'string'
+        'destinationCurrency' => 'string',
+        'surcharge' => '\CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge'
     ];
 
     /**
@@ -67,7 +68,8 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
         'totalAmount' => null,
         'currency' => null,
         'sourceCurrency' => null,
-        'destinationCurrency' => null
+        'destinationCurrency' => null,
+        'surcharge' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
         'totalAmount' => 'totalAmount',
         'currency' => 'currency',
         'sourceCurrency' => 'sourceCurrency',
-        'destinationCurrency' => 'destinationCurrency'
+        'destinationCurrency' => 'destinationCurrency',
+        'surcharge' => 'surcharge'
     ];
 
 
@@ -100,7 +103,8 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
         'totalAmount' => 'setTotalAmount',
         'currency' => 'setCurrency',
         'sourceCurrency' => 'setSourceCurrency',
-        'destinationCurrency' => 'setDestinationCurrency'
+        'destinationCurrency' => 'setDestinationCurrency',
+        'surcharge' => 'setSurcharge'
     ];
 
 
@@ -112,7 +116,8 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
         'totalAmount' => 'getTotalAmount',
         'currency' => 'getCurrency',
         'sourceCurrency' => 'getSourceCurrency',
-        'destinationCurrency' => 'getDestinationCurrency'
+        'destinationCurrency' => 'getDestinationCurrency',
+        'surcharge' => 'getSurcharge'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['sourceCurrency'] = isset($data['sourceCurrency']) ? $data['sourceCurrency'] : null;
         $this->container['destinationCurrency'] = isset($data['destinationCurrency']) ? $data['destinationCurrency'] : null;
+        $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
     }
 
     /**
@@ -263,12 +269,33 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets destinationCurrency
-     * @param string $destinationCurrency Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf NOTE: This field is supported only for Visa Platform Connect
+     * @param string $destinationCurrency Use a 3-character alpha currency code for destination currency of the funds transfer. Supported for card and bank account based cross border funds transfers.  ISO standard currencies: http://apps.cybersource.com/library/documentation/sbc/quickref/currencies.pdf
      * @return $this
      */
     public function setDestinationCurrency($destinationCurrency)
     {
         $this->container['destinationCurrency'] = $destinationCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets surcharge
+     * @return \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge
+     */
+    public function getSurcharge()
+    {
+        return $this->container['surcharge'];
+    }
+
+    /**
+     * Sets surcharge
+     * @param \CyberSource\Model\Ptsv2paymentsOrderInformationAmountDetailsOctsurcharge $surcharge
+     * @return $this
+     */
+    public function setSurcharge($surcharge)
+    {
+        $this->container['surcharge'] = $surcharge;
 
         return $this;
     }

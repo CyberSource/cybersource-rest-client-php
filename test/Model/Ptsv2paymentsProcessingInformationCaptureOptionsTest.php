@@ -103,4 +103,11 @@ class Ptsv2paymentsProcessingInformationCaptureOptionsTest extends \PHPUnit_Fram
     public function testPropertyIsFinal()
     {
     }
+
+    /**
+     * Test attribute "notes"
+     */
+    public function testPropertyNotes()
+    {
+    }
 }

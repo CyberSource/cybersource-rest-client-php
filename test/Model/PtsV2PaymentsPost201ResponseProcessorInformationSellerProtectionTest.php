@@ -91,6 +91,13 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtectionTest exten
     }
 
     /**
+     * Test attribute "disputeCategories"
+     */
+    public function testPropertyDisputeCategories()
+    {
+    }
+
+    /**
      * Test attribute "eligibilityType"
      */
     public function testPropertyEligibilityType()

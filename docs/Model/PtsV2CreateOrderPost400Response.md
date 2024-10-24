@@ -1,4 +1,4 @@
-# BinLookupv400Response
+# PtsV2CreateOrderPost400Response
 
 ## Properties
 Name | Type | Description | Notes
