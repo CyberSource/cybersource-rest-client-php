@@ -118,7 +118,7 @@ class ApiClient
         $this->clientId = $this->getClientId();
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
         }
     }
 

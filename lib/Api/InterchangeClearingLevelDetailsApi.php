@@ -66,7 +66,7 @@ class InterchangeClearingLevelDetailsApi
         $this->apiClient = $apiClient;
 
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $apiClient->merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $apiClient->merchantConfig->getLogConfiguration());
         }
     }
 
