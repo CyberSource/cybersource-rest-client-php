@@ -225,24 +225,8 @@ class CardProcessingConfigCommon implements ArrayAccess
         return self::$getters;
     }
 
-    const DEFAULT_AUTH_TYPE_CODE_PRE = 'PRE';
-    const DEFAULT_AUTH_TYPE_CODE__FINAL = 'FINAL';
-    const DEFAULT_AUTH_TYPE_CODE_UNDEFINED = 'UNDEFINED';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getDefaultAuthTypeCodeAllowableValues()
-    {
-        return [
-            self::DEFAULT_AUTH_TYPE_CODE_PRE,
-            self::DEFAULT_AUTH_TYPE_CODE__FINAL,
-            self::DEFAULT_AUTH_TYPE_CODE_UNDEFINED,
-        ];
-    }
     
 
     /**
@@ -291,14 +275,6 @@ class CardProcessingConfigCommon implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getDefaultAuthTypeCodeAllowableValues();
-        if (!in_array($this->container['defaultAuthTypeCode'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'defaultAuthTypeCode', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -311,10 +287,6 @@ class CardProcessingConfigCommon implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getDefaultAuthTypeCodeAllowableValues();
-        if (!in_array($this->container['defaultAuthTypeCode'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -372,20 +344,11 @@ class CardProcessingConfigCommon implements ArrayAccess
 
     /**
      * Sets defaultAuthTypeCode
-     * @param string $defaultAuthTypeCode Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table>
+     * @param string $defaultAuthTypeCode Authorization Finality indicator. Please note that the input can be in small case or capitals but response is in small case as of now. It will be made capitals everywhere in the next version. Applicable for Elavon Americas (elavonamericas), TSYS (tsys), Barclays (barclays2), Streamline (streamline2), Six (six), Barclays HISO (barclayshiso), GPN (gpn), FDI Global (fdiglobal), GPX (gpx), Paymentech Tampa (paymentechtampa), FDC Nashville (smartfdc), VPC and Chase Paymentech Salem (chasepaymentechsalem) processors.  Validation details (for selected processors)...  <table> <thead><tr><th>Processor</th><th>Acceptance Type</th><th>Required</th><th>Default Value</th></tr></thead> <tr><td>Barclays</td><td>cnp, cp, hybrid</td><td>No</td><td>FINAL</td></tr> <tr><td>Barclays HISO</td><td>cnp, cp, hybrid</td><td>Yes</td><td>FINAL</td></tr> </table>   Possible values: - PRE - FINAL - UNDEFINED
      * @return $this
      */
     public function setDefaultAuthTypeCode($defaultAuthTypeCode)
     {
-        $allowed_values = $this->getDefaultAuthTypeCodeAllowableValues();
-        if (!is_null($defaultAuthTypeCode) && !in_array($defaultAuthTypeCode, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'defaultAuthTypeCode', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['defaultAuthTypeCode'] = $defaultAuthTypeCode;
 
         return $this;

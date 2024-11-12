@@ -55,7 +55,11 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'businessApplicationId' => 'string',
         'payoutsOptions' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformationPayoutsOptions',
-        'enablerId' => 'string'
+        'feeProgramId' => 'string',
+        'networkPartnerId' => 'string',
+        'processingCode' => 'string',
+        'sharingGroupCode' => 'string',
+        'purposeOfPayment' => 'string'
     ];
 
     /**
@@ -65,7 +69,11 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'businessApplicationId' => null,
         'payoutsOptions' => null,
-        'enablerId' => null
+        'feeProgramId' => null,
+        'networkPartnerId' => null,
+        'processingCode' => null,
+        'sharingGroupCode' => null,
+        'purposeOfPayment' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +93,11 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     protected static $attributeMap = [
         'businessApplicationId' => 'businessApplicationId',
         'payoutsOptions' => 'payoutsOptions',
-        'enablerId' => 'enablerId'
+        'feeProgramId' => 'feeProgramId',
+        'networkPartnerId' => 'networkPartnerId',
+        'processingCode' => 'processingCode',
+        'sharingGroupCode' => 'sharingGroupCode',
+        'purposeOfPayment' => 'purposeOfPayment'
     ];
 
 
@@ -96,7 +108,11 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     protected static $setters = [
         'businessApplicationId' => 'setBusinessApplicationId',
         'payoutsOptions' => 'setPayoutsOptions',
-        'enablerId' => 'setEnablerId'
+        'feeProgramId' => 'setFeeProgramId',
+        'networkPartnerId' => 'setNetworkPartnerId',
+        'processingCode' => 'setProcessingCode',
+        'sharingGroupCode' => 'setSharingGroupCode',
+        'purposeOfPayment' => 'setPurposeOfPayment'
     ];
 
 
@@ -107,7 +123,11 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     protected static $getters = [
         'businessApplicationId' => 'getBusinessApplicationId',
         'payoutsOptions' => 'getPayoutsOptions',
-        'enablerId' => 'getEnablerId'
+        'feeProgramId' => 'getFeeProgramId',
+        'networkPartnerId' => 'getNetworkPartnerId',
+        'processingCode' => 'getProcessingCode',
+        'sharingGroupCode' => 'getSharingGroupCode',
+        'purposeOfPayment' => 'getPurposeOfPayment'
     ];
 
     public static function attributeMap()
@@ -143,7 +163,11 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     {
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
         $this->container['payoutsOptions'] = isset($data['payoutsOptions']) ? $data['payoutsOptions'] : null;
-        $this->container['enablerId'] = isset($data['enablerId']) ? $data['enablerId'] : null;
+        $this->container['feeProgramId'] = isset($data['feeProgramId']) ? $data['feeProgramId'] : null;
+        $this->container['networkPartnerId'] = isset($data['networkPartnerId']) ? $data['networkPartnerId'] : null;
+        $this->container['processingCode'] = isset($data['processingCode']) ? $data['processingCode'] : null;
+        $this->container['sharingGroupCode'] = isset($data['sharingGroupCode']) ? $data['sharingGroupCode'] : null;
+        $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
     }
 
     /**
@@ -182,7 +206,7 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
 
     /**
      * Sets businessApplicationId
-     * @param string $businessApplicationId Payouts transaction type.  Business Application ID: - `PP`: Person to person. - `FD`: Funds disbursement (general)
+     * @param string $businessApplicationId Money Transfer (MT) - `AA`: Account to Account - `BI`: Bank-Initiated Money Transfer - `CD`: Cash Deposit - `FT`: Funds Transfer - `TU`: Prepaid Card Loan - `WT`: Wallet Transfer-Staged Digital Wallet (SDW) Transfer - `PP`: P2P Money Transfer  Funds Disbursement (FD) - `BB`: Business-to-business Supplier Payments - `BP`: Non-Card Bill Pay  - `CP`: Credit Card Bill Pay - `FD`: General Funds Disbursements - `GD`: Government Disbursements and Government Initiated Tax Refunds - `GP`: Gambling/Gaming Payouts (other than online gaming) - `LO`: Loyalty Payments - `MD`: Merchant Settlement - `MI`: Faster Refunds - `OG`: Online Gambling Payouts - `PD`: Payroll and Pension Disbursements - `RP`: Request-to-Pay Service
      * @return $this
      */
     public function setBusinessApplicationId($businessApplicationId)
@@ -214,22 +238,106 @@ class Ptsv1pushfundstransferProcessingInformation implements ArrayAccess
     }
 
     /**
-     * Gets enablerId
+     * Gets feeProgramId
      * @return string
      */
-    public function getEnablerId()
+    public function getFeeProgramId()
     {
-        return $this->container['enablerId'];
+        return $this->container['feeProgramId'];
     }
 
     /**
-     * Sets enablerId
-     * @param string $enablerId Enablers are payment processing entities that are not acquiring members and are often the primary relationship owner with merchants and originators. Enablers own technical solutions through which the merchant or originator will access acceptance. The Enabler ID is a five-character hexadecimal identifier that will be used by Visa to identify enablers. Enabler ID assignment will be determined by Visa. Visa will communicate Enablers assignments to enablers.
+     * Sets feeProgramId
+     * @param string $feeProgramId Fee Program Indicator. This field identifies the interchange fee program applicable to each financial transaction. Fee program indicator (FPI) values correspond to the fee descriptor and rate for each existing fee program.
      * @return $this
      */
-    public function setEnablerId($enablerId)
+    public function setFeeProgramId($feeProgramId)
     {
-        $this->container['enablerId'] = $enablerId;
+        $this->container['feeProgramId'] = $feeProgramId;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkPartnerId
+     * @return string
+     */
+    public function getNetworkPartnerId()
+    {
+        return $this->container['networkPartnerId'];
+    }
+
+    /**
+     * Sets networkPartnerId
+     * @param string $networkPartnerId Merchant payment gateway ID that is assigned by Mastercard and is provided by the acquirer when a registered merchant payment gateway service provider is involved in the transaction.
+     * @return $this
+     */
+    public function setNetworkPartnerId($networkPartnerId)
+    {
+        $this->container['networkPartnerId'] = $networkPartnerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingCode
+     * @return string
+     */
+    public function getProcessingCode()
+    {
+        return $this->container['processingCode'];
+    }
+
+    /**
+     * Sets processingCode
+     * @param string $processingCode This field contains coding that identifies (1) the customer transaction type and (2) the customer account types affected by the transaction.  Default: 5402 (Original Credit Transaction)  Contains codes that combined with some other fields such as the BAI (Business Application Id) identify some unique use cases. For Sales Tax rebates this field should be populated with the value 5120 (Value-added tax/Sales Tax) along with the businessApplicationId field set to the value 'FD' which indicates this push funds transfer is being conducted in order to facilitate a sales tax refund.
+     * @return $this
+     */
+    public function setProcessingCode($processingCode)
+    {
+        $this->container['processingCode'] = $processingCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets sharingGroupCode
+     * @return string
+     */
+    public function getSharingGroupCode()
+    {
+        return $this->container['sharingGroupCode'];
+    }
+
+    /**
+     * Sets sharingGroupCode
+     * @param string $sharingGroupCode This U.S.-only field is optionally used by PIN Debit Gateway Service participants (merchants and acquirers) to specify the network access priority. VisaNet checks to determine if there are issuer routing preferences for a network specified by the sharing group code. If an issuer preference exists for one of the specified debit networks, VisaNet makes a routing selection based on issuer preference. If an preference exists for multiple specified debit networks, or if no issuer preference exists, VisaNet makes a selection based on acquirer routing priorities.  Valid Values:  ACCEL_EXCHANGE_E  CU24_C  INTERLINK_G  MAESTRO_8  NYCE_Y  NYCE_F  PULSE_S  PULSE_L  PULSE_H  STAR_N  STAR_W  STAR_Z  STAR_Q  STAR_M  VISA_V
+     * @return $this
+     */
+    public function setSharingGroupCode($sharingGroupCode)
+    {
+        $this->container['sharingGroupCode'] = $sharingGroupCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets purposeOfPayment
+     * @return string
+     */
+    public function getPurposeOfPayment()
+    {
+        return $this->container['purposeOfPayment'];
+    }
+
+    /**
+     * Sets purposeOfPayment
+     * @param string $purposeOfPayment This will send purpose of funds code for original credit transactions (OCTs).
+     * @return $this
+     */
+    public function setPurposeOfPayment($purposeOfPayment)
+    {
+        $this->container['purposeOfPayment'] = $purposeOfPayment;
 
         return $this;
     }

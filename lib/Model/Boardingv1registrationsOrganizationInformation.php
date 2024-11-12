@@ -155,40 +155,8 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_TRANSACTING = 'TRANSACTING';
-    const TYPE_STRUCTURAL = 'STRUCTURAL';
-    const TYPE_MERCHANT = 'MERCHANT';
-    const STATUS_LIVE = 'LIVE';
-    const STATUS_TEST = 'TEST';
-    const STATUS_DRAFT = 'DRAFT';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_TRANSACTING,
-            self::TYPE_STRUCTURAL,
-            self::TYPE_MERCHANT,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_LIVE,
-            self::STATUS_TEST,
-            self::STATUS_DRAFT,
-        ];
-    }
     
 
     /**
@@ -223,22 +191,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if ($this->container['businessInformation'] === null) {
             $invalid_properties[] = "'businessInformation' can't be null";
         }
@@ -254,14 +206,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            return false;
-        }
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!in_array($this->container['status'], $allowed_values)) {
-            return false;
-        }
         if ($this->container['businessInformation'] === null) {
             return false;
         }
@@ -348,15 +292,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;
@@ -378,15 +313,6 @@ class Boardingv1registrationsOrganizationInformation implements ArrayAccess
      */
     public function setStatus($status)
     {
-        $allowed_values = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

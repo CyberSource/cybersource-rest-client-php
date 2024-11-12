@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**whenIsCustomerCharged** | **string** |  | 
+**whenIsCustomerCharged** | **string** | Possible values: - ONETIMEBEFORE - ONETIMEAFTER - OTHER | 
 **whenIsCustomerChargedDescription** | **string** |  | [optional] 
 **offerSubscriptions** | **bool** |  | 
 **monthlySubscriptionPercent** | **float** |  | [optional] 
 **quarterlySubscriptionPercent** | **float** |  | [optional] 
 **semiAnnualSubscriptionPercent** | **float** |  | [optional] 
 **annualSubscriptionPercent** | **float** |  | [optional] 
-**timeToProductDelivery** | **string** |  | 
+**timeToProductDelivery** | **string** | Possible values: - INSTANT - UPTO2 - UPTO5 - UPTO10 - GREATERTHAN10 | 
 **estimatedMonthlySales** | **float** |  | 
 **averageOrderAmount** | **float** |  | 
 **largestExpectedOrderAmount** | **float** |  | 

@@ -170,44 +170,8 @@ class Boardingv1registrationsOrganizationInformationKYC implements ArrayAccess
         return self::$getters;
     }
 
-    const WHEN_IS_CUSTOMER_CHARGED_ONETIMEBEFORE = 'ONETIMEBEFORE';
-    const WHEN_IS_CUSTOMER_CHARGED_ONETIMEAFTER = 'ONETIMEAFTER';
-    const WHEN_IS_CUSTOMER_CHARGED_OTHER = 'OTHER';
-    const TIME_TO_PRODUCT_DELIVERY_INSTANT = 'INSTANT';
-    const TIME_TO_PRODUCT_DELIVERY_UPTO2 = 'UPTO2';
-    const TIME_TO_PRODUCT_DELIVERY_UPTO5 = 'UPTO5';
-    const TIME_TO_PRODUCT_DELIVERY_UPTO10 = 'UPTO10';
-    const TIME_TO_PRODUCT_DELIVERY_GREATERTHAN10 = 'GREATERTHAN10';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getWhenIsCustomerChargedAllowableValues()
-    {
-        return [
-            self::WHEN_IS_CUSTOMER_CHARGED_ONETIMEBEFORE,
-            self::WHEN_IS_CUSTOMER_CHARGED_ONETIMEAFTER,
-            self::WHEN_IS_CUSTOMER_CHARGED_OTHER,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTimeToProductDeliveryAllowableValues()
-    {
-        return [
-            self::TIME_TO_PRODUCT_DELIVERY_INSTANT,
-            self::TIME_TO_PRODUCT_DELIVERY_UPTO2,
-            self::TIME_TO_PRODUCT_DELIVERY_UPTO5,
-            self::TIME_TO_PRODUCT_DELIVERY_UPTO10,
-            self::TIME_TO_PRODUCT_DELIVERY_GREATERTHAN10,
-        ];
-    }
     
 
     /**
@@ -248,28 +212,12 @@ class Boardingv1registrationsOrganizationInformationKYC implements ArrayAccess
         if ($this->container['whenIsCustomerCharged'] === null) {
             $invalid_properties[] = "'whenIsCustomerCharged' can't be null";
         }
-        $allowed_values = $this->getWhenIsCustomerChargedAllowableValues();
-        if (!in_array($this->container['whenIsCustomerCharged'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'whenIsCustomerCharged', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if ($this->container['offerSubscriptions'] === null) {
             $invalid_properties[] = "'offerSubscriptions' can't be null";
         }
         if ($this->container['timeToProductDelivery'] === null) {
             $invalid_properties[] = "'timeToProductDelivery' can't be null";
         }
-        $allowed_values = $this->getTimeToProductDeliveryAllowableValues();
-        if (!in_array($this->container['timeToProductDelivery'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'timeToProductDelivery', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         if ($this->container['estimatedMonthlySales'] === null) {
             $invalid_properties[] = "'estimatedMonthlySales' can't be null";
         }
@@ -294,18 +242,10 @@ class Boardingv1registrationsOrganizationInformationKYC implements ArrayAccess
         if ($this->container['whenIsCustomerCharged'] === null) {
             return false;
         }
-        $allowed_values = $this->getWhenIsCustomerChargedAllowableValues();
-        if (!in_array($this->container['whenIsCustomerCharged'], $allowed_values)) {
-            return false;
-        }
         if ($this->container['offerSubscriptions'] === null) {
             return false;
         }
         if ($this->container['timeToProductDelivery'] === null) {
-            return false;
-        }
-        $allowed_values = $this->getTimeToProductDeliveryAllowableValues();
-        if (!in_array($this->container['timeToProductDelivery'], $allowed_values)) {
             return false;
         }
         if ($this->container['estimatedMonthlySales'] === null) {
@@ -332,20 +272,11 @@ class Boardingv1registrationsOrganizationInformationKYC implements ArrayAccess
 
     /**
      * Sets whenIsCustomerCharged
-     * @param string $whenIsCustomerCharged
+     * @param string $whenIsCustomerCharged Possible values: - ONETIMEBEFORE - ONETIMEAFTER - OTHER
      * @return $this
      */
     public function setWhenIsCustomerCharged($whenIsCustomerCharged)
     {
-        $allowed_values = $this->getWhenIsCustomerChargedAllowableValues();
-        if (!in_array($whenIsCustomerCharged, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'whenIsCustomerCharged', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['whenIsCustomerCharged'] = $whenIsCustomerCharged;
 
         return $this;
@@ -488,20 +419,11 @@ class Boardingv1registrationsOrganizationInformationKYC implements ArrayAccess
 
     /**
      * Sets timeToProductDelivery
-     * @param string $timeToProductDelivery
+     * @param string $timeToProductDelivery Possible values: - INSTANT - UPTO2 - UPTO5 - UPTO10 - GREATERTHAN10
      * @return $this
      */
     public function setTimeToProductDelivery($timeToProductDelivery)
     {
-        $allowed_values = $this->getTimeToProductDeliveryAllowableValues();
-        if (!in_array($timeToProductDelivery, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'timeToProductDelivery', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['timeToProductDelivery'] = $timeToProductDelivery;
 
         return $this;

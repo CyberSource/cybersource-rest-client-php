@@ -77,6 +77,13 @@ class PushFundsRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "aggregatorInformation"
+     */
+    public function testPropertyAggregatorInformation()
+    {
+    }
+
+    /**
      * Test attribute "clientReferenceInformation"
      */
     public function testPropertyClientReferenceInformation()
@@ -108,6 +115,20 @@ class PushFundsRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "senderInformation"
      */
     public function testPropertySenderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "merchantInformation"
+     */
+    public function testPropertyMerchantInformation()
+    {
+    }
+
+    /**
+     * Test attribute "pointOfServiceInformation"
+     */
+    public function testPropertyPointOfServiceInformation()
     {
     }
 }

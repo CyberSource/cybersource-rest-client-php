@@ -163,7 +163,7 @@ class PaymentsApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\OrderPaymentRequest');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -276,7 +276,7 @@ class PaymentsApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\CreatePaymentRequest');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -389,7 +389,7 @@ class PaymentsApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\CreateSessionReq');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -517,7 +517,7 @@ class PaymentsApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\IncrementAuthRequest');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -645,7 +645,7 @@ class PaymentsApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\RefreshPaymentStatusRequest');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -773,7 +773,7 @@ class PaymentsApi
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '\CyberSource\Model\CreateSessionRequest');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody)) {

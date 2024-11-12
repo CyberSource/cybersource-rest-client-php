@@ -84,6 +84,13 @@ class Ptsv1pushfundstransferSenderInformationTest extends \PHPUnit_Framework_Tes
     }
 
     /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
      * Test attribute "firstName"
      */
     public function testPropertyFirstName()
@@ -108,6 +115,20 @@ class Ptsv1pushfundstransferSenderInformationTest extends \PHPUnit_Framework_Tes
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "buildingNumber"
+     */
+    public function testPropertyBuildingNumber()
+    {
+    }
+
+    /**
+     * Test attribute "streetName"
+     */
+    public function testPropertyStreetName()
     {
     }
 
@@ -185,6 +206,20 @@ class Ptsv1pushfundstransferSenderInformationTest extends \PHPUnit_Framework_Tes
      * Test attribute "personalIdentification"
      */
     public function testPropertyPersonalIdentification()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "vatRegistrationNumber"
+     */
+    public function testPropertyVatRegistrationNumber()
     {
     }
 }

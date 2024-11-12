@@ -55,7 +55,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'bankTransferOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions',
         'paymentSolution' => 'string',
-        'enhancedDataEnabled' => 'bool'
+        'enhancedDataEnabled' => 'bool',
+        'captureOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'
     ];
 
     /**
@@ -65,7 +66,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'bankTransferOptions' => null,
         'paymentSolution' => null,
-        'enhancedDataEnabled' => null
+        'enhancedDataEnabled' => null,
+        'captureOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     protected static $attributeMap = [
         'bankTransferOptions' => 'bankTransferOptions',
         'paymentSolution' => 'paymentSolution',
-        'enhancedDataEnabled' => 'enhancedDataEnabled'
+        'enhancedDataEnabled' => 'enhancedDataEnabled',
+        'captureOptions' => 'captureOptions'
     ];
 
 
@@ -96,7 +99,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     protected static $setters = [
         'bankTransferOptions' => 'setBankTransferOptions',
         'paymentSolution' => 'setPaymentSolution',
-        'enhancedDataEnabled' => 'setEnhancedDataEnabled'
+        'enhancedDataEnabled' => 'setEnhancedDataEnabled',
+        'captureOptions' => 'setCaptureOptions'
     ];
 
 
@@ -107,7 +111,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     protected static $getters = [
         'bankTransferOptions' => 'getBankTransferOptions',
         'paymentSolution' => 'getPaymentSolution',
-        'enhancedDataEnabled' => 'getEnhancedDataEnabled'
+        'enhancedDataEnabled' => 'getEnhancedDataEnabled',
+        'captureOptions' => 'getCaptureOptions'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         $this->container['bankTransferOptions'] = isset($data['bankTransferOptions']) ? $data['bankTransferOptions'] : null;
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['enhancedDataEnabled'] = isset($data['enhancedDataEnabled']) ? $data['enhancedDataEnabled'] : null;
+        $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
     }
 
     /**
@@ -230,6 +236,27 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     public function setEnhancedDataEnabled($enhancedDataEnabled)
     {
         $this->container['enhancedDataEnabled'] = $enhancedDataEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets captureOptions
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions
+     */
+    public function getCaptureOptions()
+    {
+        return $this->container['captureOptions'];
+    }
+
+    /**
+     * Sets captureOptions
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions $captureOptions
+     * @return $this
+     */
+    public function setCaptureOptions($captureOptions)
+    {
+        $this->container['captureOptions'] = $captureOptions;
 
         return $this;
     }

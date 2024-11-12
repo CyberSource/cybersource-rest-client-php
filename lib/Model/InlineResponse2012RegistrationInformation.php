@@ -125,22 +125,8 @@ class InlineResponse2012RegistrationInformation implements ArrayAccess
         return self::$getters;
     }
 
-    const MODE_COMPLETE = 'COMPLETE';
-    const MODE_PARTIAL = 'PARTIAL';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getModeAllowableValues()
-    {
-        return [
-            self::MODE_COMPLETE,
-            self::MODE_PARTIAL,
-        ];
-    }
     
 
     /**
@@ -169,14 +155,6 @@ class InlineResponse2012RegistrationInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = $this->getModeAllowableValues();
-        if (!in_array($this->container['mode'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'mode', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
-        }
-
         return $invalid_properties;
     }
 
@@ -189,10 +167,6 @@ class InlineResponse2012RegistrationInformation implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = $this->getModeAllowableValues();
-        if (!in_array($this->container['mode'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
@@ -234,15 +208,6 @@ class InlineResponse2012RegistrationInformation implements ArrayAccess
      */
     public function setMode($mode)
     {
-        $allowed_values = $this->getModeAllowableValues();
-        if (!is_null($mode) && !in_array($mode, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'mode', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['mode'] = $mode;
 
         return $this;

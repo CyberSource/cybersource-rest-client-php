@@ -89,7 +89,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'isReturnAuthRecordEnabled' => 'bool',
         'networkPartnerId' => 'string',
         'paymentType' => 'string',
-        'enablerId' => 'string'
+        'enablerId' => 'string',
+        'processingInstruction' => 'string'
     ];
 
     /**
@@ -133,7 +134,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'isReturnAuthRecordEnabled' => null,
         'networkPartnerId' => null,
         'paymentType' => null,
-        'enablerId' => null
+        'enablerId' => null,
+        'processingInstruction' => null
     ];
 
     public static function swaggerTypes()
@@ -187,7 +189,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'isReturnAuthRecordEnabled' => 'isReturnAuthRecordEnabled',
         'networkPartnerId' => 'networkPartnerId',
         'paymentType' => 'paymentType',
-        'enablerId' => 'enablerId'
+        'enablerId' => 'enablerId',
+        'processingInstruction' => 'processingInstruction'
     ];
 
 
@@ -232,7 +235,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'isReturnAuthRecordEnabled' => 'setIsReturnAuthRecordEnabled',
         'networkPartnerId' => 'setNetworkPartnerId',
         'paymentType' => 'setPaymentType',
-        'enablerId' => 'setEnablerId'
+        'enablerId' => 'setEnablerId',
+        'processingInstruction' => 'setProcessingInstruction'
     ];
 
 
@@ -277,7 +281,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'isReturnAuthRecordEnabled' => 'getIsReturnAuthRecordEnabled',
         'networkPartnerId' => 'getNetworkPartnerId',
         'paymentType' => 'getPaymentType',
-        'enablerId' => 'getEnablerId'
+        'enablerId' => 'getEnablerId',
+        'processingInstruction' => 'getProcessingInstruction'
     ];
 
     public static function attributeMap()
@@ -348,6 +353,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['networkPartnerId'] = isset($data['networkPartnerId']) ? $data['networkPartnerId'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['enablerId'] = isset($data['enablerId']) ? $data['enablerId'] : null;
+        $this->container['processingInstruction'] = isset($data['processingInstruction']) ? $data['processingInstruction'] : null;
     }
 
     /**
@@ -386,7 +392,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
 
     /**
      * Sets actionList
-     * @param string[] $actionList Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested.
+     * @param string[] $actionList Array of actions (one or more) to be included in the payment to invoke bundled services along with payment.  Possible values are one or more of follows:   - `DECISION_SKIP`: Use this when you want to skip Decision Manager service(s).   - `TOKEN_CREATE`: Use this when you want to create a token from the card/bank data in your payment request.   - `CONSUMER_AUTHENTICATION`: Use this when you want to check if a card is enrolled in Payer Authentication along with your payment request.   - `VALIDATE_CONSUMER_AUTHENTICATION`: Use this after you acquire a Payer Authentication result that needs to be included for your payment request.    - `AP_INITIATE`: Use this when Alternative Payment Initiate service is requested.   - `WATCHLIST_SCREENING` : Use this when you want to call Watchlist Screening service.   - `AP_SALE` : Use this when Alternative Payment Sale service is requested.    - `AP_AUTH` : Use this when Alternative Payment Authorize service is requested.   - `AP_REAUTH` : Use this when Alternative Payment Reauthorize service is requested.
      * @return $this
      */
     public function setActionList($actionList)
@@ -1148,6 +1154,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setEnablerId($enablerId)
     {
         $this->container['enablerId'] = $enablerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInstruction
+     * @return string
+     */
+    public function getProcessingInstruction()
+    {
+        return $this->container['processingInstruction'];
+    }
+
+    /**
+     * Sets processingInstruction
+     * @param string $processingInstruction The instruction to process an order. - default value: 'NO_INSTRUCTION' - 'ORDER_SAVED_EXPLICITLY'
+     * @return $this
+     */
+    public function setProcessingInstruction($processingInstruction)
+    {
+        $this->container['processingInstruction'] = $processingInstruction;
 
         return $this;
     }

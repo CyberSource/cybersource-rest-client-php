@@ -176,7 +176,7 @@ class Upv1capturecontextsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets totalAmount
-     * @param string $totalAmount
+     * @param string $totalAmount This field defines the total order amount.
      * @return $this
      */
     public function setTotalAmount($totalAmount)
@@ -197,7 +197,7 @@ class Upv1capturecontextsOrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets currency
-     * @param string $currency
+     * @param string $currency This field defines the currency applicable to the order.
      * @return $this
      */
     public function setCurrency($currency)

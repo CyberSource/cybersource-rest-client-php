@@ -1,6 +1,6 @@
 <?php
 /**
- * TssV2TransactionsPost201ResponseEmbeddedBuyerInformationTest
+ * Ptsv2intentsClientReferenceInformationTest
  *
  * PHP version 5
  *
@@ -29,16 +29,16 @@
 namespace CyberSource;
 
 /**
- * TssV2TransactionsPost201ResponseEmbeddedBuyerInformationTest Class Doc Comment
+ * Ptsv2intentsClientReferenceInformationTest Class Doc Comment
  *
  * @category    Class */
-// * @description TssV2TransactionsPost201ResponseEmbeddedBuyerInformation
+// * @description Ptsv2intentsClientReferenceInformation
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TssV2TransactionsPost201ResponseEmbeddedBuyerInformationTest extends \PHPUnit_Framework_TestCase
+class Ptsv2intentsClientReferenceInformationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,16 @@ class TssV2TransactionsPost201ResponseEmbeddedBuyerInformationTest extends \PHPU
     }
 
     /**
-     * Test "TssV2TransactionsPost201ResponseEmbeddedBuyerInformation"
+     * Test "Ptsv2intentsClientReferenceInformation"
      */
-    public function testTssV2TransactionsPost201ResponseEmbeddedBuyerInformation()
+    public function testPtsv2intentsClientReferenceInformation()
     {
     }
 
     /**
-     * Test attribute "merchantCustomerId"
+     * Test attribute "reconciliationId"
      */
-    public function testPropertyMerchantCustomerId()
+    public function testPropertyReconciliationId()
     {
     }
 }

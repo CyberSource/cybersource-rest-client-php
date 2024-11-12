@@ -219,7 +219,7 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
         $modelClassLocation = explode('\\', '{{dataType}}');
 
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment());
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
         {{/bodyParams}}
         {{^bodyParams}}
         if ('{{httpMethod}}' == 'POST') {

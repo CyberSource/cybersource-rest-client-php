@@ -34,6 +34,7 @@ use \ArrayAccess;
  * Microformv2sessionsCheckoutApiInitialization Class Doc Comment
  *
  * @category    Class
+ * @description Use the [Digital Accept Checkout API](https://developer.cybersource.com/library/documentation/dev_guides/Secure_Acceptance_Checkout_API/Secure_Acceptance_Checkout_API.pdf) in conjunction with Microform to provide a cohesive PCI SAQ A embedded payment application within your merchant e-commerce page.   The Digital Accept Checkout API provides access to payment processing and additional value-added services directly from the browser.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -371,7 +372,7 @@ class Microformv2sessionsCheckoutApiInitialization implements ArrayAccess
 
     /**
      * Sets locale
-     * @param string $locale
+     * @param string $locale Locale where application is being used.  This field controls aspects of the application such as the language it will be rendered in.
      * @return $this
      */
     public function setLocale($locale)

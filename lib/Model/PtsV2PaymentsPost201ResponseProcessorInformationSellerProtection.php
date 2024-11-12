@@ -55,6 +55,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
     protected static $swaggerTypes = [
         'type' => 'string',
         'eligibility' => 'string',
+        'disputeCategories' => 'string[]',
         'eligibilityType' => 'string'
     ];
 
@@ -65,6 +66,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
     protected static $swaggerFormats = [
         'type' => null,
         'eligibility' => null,
+        'disputeCategories' => null,
         'eligibilityType' => null
     ];
 
@@ -85,6 +87,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
     protected static $attributeMap = [
         'type' => 'type',
         'eligibility' => 'eligibility',
+        'disputeCategories' => 'disputeCategories',
         'eligibilityType' => 'eligibilityType'
     ];
 
@@ -96,6 +99,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
     protected static $setters = [
         'type' => 'setType',
         'eligibility' => 'setEligibility',
+        'disputeCategories' => 'setDisputeCategories',
         'eligibilityType' => 'setEligibilityType'
     ];
 
@@ -107,6 +111,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
     protected static $getters = [
         'type' => 'getType',
         'eligibility' => 'getEligibility',
+        'disputeCategories' => 'getDisputeCategories',
         'eligibilityType' => 'getEligibilityType'
     ];
 
@@ -143,6 +148,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['eligibility'] = isset($data['eligibility']) ? $data['eligibility'] : null;
+        $this->container['disputeCategories'] = isset($data['disputeCategories']) ? $data['disputeCategories'] : null;
         $this->container['eligibilityType'] = isset($data['eligibilityType']) ? $data['eligibilityType'] : null;
     }
 
@@ -203,12 +209,33 @@ class PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection implement
 
     /**
      * Sets eligibility
-     * @param string $eligibility The level of seller protection in force for the transaction. Possible values: - `ELIGIBLE` - `PARTIALLY_ELIGIBLE` - `INELIGIBLE`
+     * @param string $eligibility Indicates whether the transaction is eligible for seller protection. The values returned are described below. Possible values: - `ELIGIBLE` - `PARTIALLY_ELIGIBLE` - `INELIGIBLE` - `NOT_ELIGIBLE`
      * @return $this
      */
     public function setEligibility($eligibility)
     {
         $this->container['eligibility'] = $eligibility;
+
+        return $this;
+    }
+
+    /**
+     * Gets disputeCategories
+     * @return string[]
+     */
+    public function getDisputeCategories()
+    {
+        return $this->container['disputeCategories'];
+    }
+
+    /**
+     * Sets disputeCategories
+     * @param string[] $disputeCategories An array of conditions that are covered for the transaction.
+     * @return $this
+     */
+    public function setDisputeCategories($disputeCategories)
+    {
+        $this->container['disputeCategories'] = $disputeCategories;
 
         return $this;
     }

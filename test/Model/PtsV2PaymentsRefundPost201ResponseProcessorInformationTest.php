@@ -131,4 +131,11 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationTest extends \PHPUni
     public function testPropertySettlementDate()
     {
     }
+
+    /**
+     * Test attribute "updateTimeUtc"
+     */
+    public function testPropertyUpdateTimeUtc()
+    {
+    }
 }

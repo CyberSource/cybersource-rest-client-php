@@ -55,7 +55,8 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
     protected static $swaggerTypes = [
         'accountId' => 'string',
         'fundingSource' => 'string',
-        'fundingSourceSale' => 'string'
+        'fundingSourceSale' => 'string',
+        'userName' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
     protected static $swaggerFormats = [
         'accountId' => null,
         'fundingSource' => null,
-        'fundingSourceSale' => null
+        'fundingSourceSale' => null,
+        'userName' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
     protected static $attributeMap = [
         'accountId' => 'accountId',
         'fundingSource' => 'fundingSource',
-        'fundingSourceSale' => 'fundingSourceSale'
+        'fundingSourceSale' => 'fundingSourceSale',
+        'userName' => 'userName'
     ];
 
 
@@ -96,7 +99,8 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
     protected static $setters = [
         'accountId' => 'setAccountId',
         'fundingSource' => 'setFundingSource',
-        'fundingSourceSale' => 'setFundingSourceSale'
+        'fundingSourceSale' => 'setFundingSourceSale',
+        'userName' => 'setUserName'
     ];
 
 
@@ -107,7 +111,8 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
     protected static $getters = [
         'accountId' => 'getAccountId',
         'fundingSource' => 'getFundingSource',
-        'fundingSourceSale' => 'getFundingSourceSale'
+        'fundingSourceSale' => 'getFundingSourceSale',
+        'userName' => 'getUserName'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
         $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
         $this->container['fundingSource'] = isset($data['fundingSource']) ? $data['fundingSource'] : null;
         $this->container['fundingSourceSale'] = isset($data['fundingSourceSale']) ? $data['fundingSourceSale'] : null;
+        $this->container['userName'] = isset($data['userName']) ? $data['userName'] : null;
     }
 
     /**
@@ -230,6 +236,27 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
     public function setFundingSourceSale($fundingSourceSale)
     {
         $this->container['fundingSourceSale'] = $fundingSourceSale;
+
+        return $this;
+    }
+
+    /**
+     * Gets userName
+     * @return string
+     */
+    public function getUserName()
+    {
+        return $this->container['userName'];
+    }
+
+    /**
+     * Sets userName
+     * @param string $userName The Venmo user name chosen by the user, also know as a Venmo handle.
+     * @return $this
+     */
+    public function setUserName($userName)
+    {
+        $this->container['userName'] = $userName;
 
         return $this;
     }

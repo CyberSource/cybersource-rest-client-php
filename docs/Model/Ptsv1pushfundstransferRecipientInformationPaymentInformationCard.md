@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Three-digit value that indicates the card type.  Possible values:  Visa Platform Connect - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard. - &#x60;033&#x60;: Visa Electron - &#x60;024&#x60;: Maestro  Mastercard Send: - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard.  FDC Compass: - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Chase Paymentech: - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard.  Yellow Pepper: - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard. - &#x60;005&#x60;: Diners Club - &#x60;033&#x60;: Visa Electron - &#x60;024&#x60;: Intl Maestro | [optional] 
+**type** | **string** | - &#x60;001&#x60;: Visa - &#x60;002&#x60;: Mastercard, Eurocard, which is a European regional brand of Mastercard. - &#x60;033&#x60;: Visa Electron - &#x60;024&#x60;: Maestro - &#x60;042&#x60;: Maestro International | [optional] 
 **securityCode** | **string** | 3-digit value that indicates the cardCvv2Value. Values can be 0-9. | [optional] 
 **number** | **string** | The customer&#39;s payment card number, also known as the Primary Account Number (PAN).  Conditional: this field is required if not using tokens. | [optional] 
 **expirationMonth** | **string** | Two-digit month in which the payment card expires.  Format: MM.  Valid values: 01 through 12. Leading 0 is required. | [optional] 
