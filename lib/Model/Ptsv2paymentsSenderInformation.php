@@ -54,8 +54,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'firstName' => 'string',
-        'lastName' => 'string',
         'middleName' => 'string',
+        'lastName' => 'string',
         'address1' => 'string',
         'locality' => 'string',
         'administrativeArea' => 'string',
@@ -68,8 +68,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'firstName' => null,
-        'lastName' => null,
         'middleName' => null,
+        'lastName' => null,
         'address1' => null,
         'locality' => null,
         'administrativeArea' => null,
@@ -92,8 +92,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'firstName' => 'firstName',
-        'lastName' => 'lastName',
         'middleName' => 'middleName',
+        'lastName' => 'lastName',
         'address1' => 'address1',
         'locality' => 'locality',
         'administrativeArea' => 'administrativeArea',
@@ -107,8 +107,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
      */
     protected static $setters = [
         'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
         'middleName' => 'setMiddleName',
+        'lastName' => 'setLastName',
         'address1' => 'setAddress1',
         'locality' => 'setLocality',
         'administrativeArea' => 'setAdministrativeArea',
@@ -122,8 +122,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
      */
     protected static $getters = [
         'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
         'middleName' => 'getMiddleName',
+        'lastName' => 'getLastName',
         'address1' => 'getAddress1',
         'locality' => 'getLocality',
         'administrativeArea' => 'getAdministrativeArea',
@@ -162,8 +162,8 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
@@ -206,33 +206,12 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName First name of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         Values exceeding the above limits will be truncated.
+     * @param string $firstName First name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported.Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to the processor.
      * @return $this
      */
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     * @param string $lastName Last name of the sender.  **Applicable for Barclays AFT transactions only.** This field is optional for Visa and not applicable for Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  Values exceeding these limits will be truncated.
-     * @return $this
-     */
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -248,12 +227,33 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Middle name of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        Values exceeding these limits will be truncated.
+     * @param string $middleName Middle name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setMiddleName($middleName)
     {
         $this->container['middleName'] = $middleName;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastName
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['lastName'];
+    }
+
+    /**
+     * Sets lastName
+     * @param string $lastName Last name of the sender. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
+     * @return $this
+     */
+    public function setLastName($lastName)
+    {
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -269,7 +269,7 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 The street address of the sender.    **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.     Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 35 characters.  Values exceeding these limits will be truncated.
+     * @param string $address1 The street address of the sender. This field is applicable for AFT transactions.     Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setAddress1($address1)
@@ -290,7 +290,7 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality The city or locality of the sender.in  **Applicable for Barclays AFT transactions only.** The field is optional for Visa and not applicable for Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.  The field has a maximum length of 25 characters.  Values exceeding these limits will be truncated.
+     * @param string $locality The city or locality of the sender. This field is applicable for AFT transactions.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setLocality($locality)
@@ -311,7 +311,7 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea The state or province of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa AFT when the sender country is US or CA else it is optional for Visa AFT. This field is not applicable for Mastercard AFT.  Must be a two character value
+     * @param string $administrativeArea The state or province of the sender. This field is applicable for AFT transactions when the sender country is US or CA. Else it is optional.  Must be a two character value
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -332,7 +332,7 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
 
     /**
      * Sets countryCode
-     * @param string $countryCode The country associated with the address of the sender.  **Applicable for Barclays AFT transactions only.** The field is mandatory for Visa and not applicable for Mastercard AFT.   Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html)
+     * @param string $countryCode The country associated with the address of the sender. This field is applicable for AFT transactions.   Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html)
      * @return $this
      */
     public function setCountryCode($countryCode)

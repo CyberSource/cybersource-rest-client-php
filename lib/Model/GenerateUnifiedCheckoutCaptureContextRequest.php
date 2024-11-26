@@ -53,8 +53,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'targetOrigins' => 'string[]',
         'clientVersion' => 'string',
+        'targetOrigins' => 'string[]',
         'allowedCardNetworks' => 'string[]',
         'allowedPaymentTypes' => 'string[]',
         'country' => 'string',
@@ -69,8 +69,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'targetOrigins' => null,
         'clientVersion' => null,
+        'targetOrigins' => null,
         'allowedCardNetworks' => null,
         'allowedPaymentTypes' => null,
         'country' => null,
@@ -95,8 +95,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'targetOrigins' => 'targetOrigins',
         'clientVersion' => 'clientVersion',
+        'targetOrigins' => 'targetOrigins',
         'allowedCardNetworks' => 'allowedCardNetworks',
         'allowedPaymentTypes' => 'allowedPaymentTypes',
         'country' => 'country',
@@ -112,8 +112,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'targetOrigins' => 'setTargetOrigins',
         'clientVersion' => 'setClientVersion',
+        'targetOrigins' => 'setTargetOrigins',
         'allowedCardNetworks' => 'setAllowedCardNetworks',
         'allowedPaymentTypes' => 'setAllowedPaymentTypes',
         'country' => 'setCountry',
@@ -129,8 +129,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'targetOrigins' => 'getTargetOrigins',
         'clientVersion' => 'getClientVersion',
+        'targetOrigins' => 'getTargetOrigins',
         'allowedCardNetworks' => 'getAllowedCardNetworks',
         'allowedPaymentTypes' => 'getAllowedPaymentTypes',
         'country' => 'getCountry',
@@ -171,8 +171,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['targetOrigins'] = isset($data['targetOrigins']) ? $data['targetOrigins'] : null;
         $this->container['clientVersion'] = isset($data['clientVersion']) ? $data['clientVersion'] : null;
+        $this->container['targetOrigins'] = isset($data['targetOrigins']) ? $data['targetOrigins'] : null;
         $this->container['allowedCardNetworks'] = isset($data['allowedCardNetworks']) ? $data['allowedCardNetworks'] : null;
         $this->container['allowedPaymentTypes'] = isset($data['allowedPaymentTypes']) ? $data['allowedPaymentTypes'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
@@ -208,27 +208,6 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
 
 
     /**
-     * Gets targetOrigins
-     * @return string[]
-     */
-    public function getTargetOrigins()
-    {
-        return $this->container['targetOrigins'];
-    }
-
-    /**
-     * Sets targetOrigins
-     * @param string[] $targetOrigins The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Unified Checkout is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080<br><br>  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \"https://example.com\",     \"https://basket.example.com\",     \"https://ecom.example.com\"   ]
-     * @return $this
-     */
-    public function setTargetOrigins($targetOrigins)
-    {
-        $this->container['targetOrigins'] = $targetOrigins;
-
-        return $this;
-    }
-
-    /**
      * Gets clientVersion
      * @return string
      */
@@ -250,6 +229,27 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     }
 
     /**
+     * Gets targetOrigins
+     * @return string[]
+     */
+    public function getTargetOrigins()
+    {
+        return $this->container['targetOrigins'];
+    }
+
+    /**
+     * Sets targetOrigins
+     * @param string[] $targetOrigins The [target origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of the website on which you will be launching Unified Checkout is defined by the scheme (protocol), hostname (domain) and port number (if used).    You must use https://hostname (unless you use http://localhost) Wildcards are NOT supported.  Ensure that subdomains are included. Any valid top-level domain is supported (e.g. .com, .co.uk, .gov.br etc)  Examples:   - https://example.com   - https://subdomain.example.com   - https://example.com:8080<br><br>  If you are embedding within multiple nested iframes you need to specify the origins of all the browser contexts used, for example:    targetOrigins: [     \"https://example.com\",     \"https://basket.example.com\",     \"https://ecom.example.com\"   ]
+     * @return $this
+     */
+    public function setTargetOrigins($targetOrigins)
+    {
+        $this->container['targetOrigins'] = $targetOrigins;
+
+        return $this;
+    }
+
+    /**
      * Gets allowedCardNetworks
      * @return string[]
      */
@@ -260,7 +260,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedCardNetworks
-     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:   - VISA   - MASTERCARD   - AMEX   - DISCOVER   - DINERSCLUB   - JCB
+     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA
      * @return $this
      */
     public function setAllowedCardNetworks($allowedCardNetworks)

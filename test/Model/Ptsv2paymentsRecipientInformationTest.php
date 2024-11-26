@@ -98,16 +98,16 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "lastName"
+     * Test attribute "middleName"
      */
-    public function testPropertyLastName()
+    public function testPropertyMiddleName()
     {
     }
 
     /**
-     * Test attribute "middleName"
+     * Test attribute "lastName"
      */
-    public function testPropertyMiddleName()
+    public function testPropertyLastName()
     {
     }
 

@@ -58,7 +58,7 @@ class ECheckConfigCommonProcessors implements ArrayAccess
         'companyId' => 'string',
         'batchGroup' => 'string',
         'enableAccuityForAvs' => 'bool',
-        'accuityCheckType' => 'object',
+        'accuityCheckType' => 'string',
         'setCompletedState' => 'bool'
     ];
 
@@ -161,7 +161,7 @@ class ECheckConfigCommonProcessors implements ArrayAccess
         $this->container['companyId'] = isset($data['companyId']) ? $data['companyId'] : null;
         $this->container['batchGroup'] = isset($data['batchGroup']) ? $data['batchGroup'] : null;
         $this->container['enableAccuityForAvs'] = isset($data['enableAccuityForAvs']) ? $data['enableAccuityForAvs'] : true;
-        $this->container['accuityCheckType'] = isset($data['accuityCheckType']) ? $data['accuityCheckType'] : null;
+        $this->container['accuityCheckType'] = isset($data['accuityCheckType']) ? $data['accuityCheckType'] : 'ALWAYS';
         $this->container['setCompletedState'] = isset($data['setCompletedState']) ? $data['setCompletedState'] : false;
     }
 
@@ -282,7 +282,7 @@ class ECheckConfigCommonProcessors implements ArrayAccess
 
     /**
      * Gets accuityCheckType
-     * @return object
+     * @return string
      */
     public function getAccuityCheckType()
     {
@@ -291,7 +291,7 @@ class ECheckConfigCommonProcessors implements ArrayAccess
 
     /**
      * Sets accuityCheckType
-     * @param object $accuityCheckType *NEW*
+     * @param string $accuityCheckType *NEW*  Possible values: - ALWAYS
      * @return $this
      */
     public function setAccuityCheckType($accuityCheckType)

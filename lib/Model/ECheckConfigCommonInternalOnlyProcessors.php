@@ -58,8 +58,8 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
         'terminalId' => 'string',
         'enable15anTransactionReferenceNumber' => 'bool',
         'portalSupportedPaytypes' => 'string',
-        'settlementMethod' => 'object',
-        'verificationLevel' => 'object',
+        'settlementMethod' => 'string',
+        'verificationLevel' => 'string',
         'setCompletedState' => 'bool'
     ];
 
@@ -166,8 +166,8 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['enable15anTransactionReferenceNumber'] = isset($data['enable15anTransactionReferenceNumber']) ? $data['enable15anTransactionReferenceNumber'] : true;
         $this->container['portalSupportedPaytypes'] = isset($data['portalSupportedPaytypes']) ? $data['portalSupportedPaytypes'] : 'CHECK';
-        $this->container['settlementMethod'] = isset($data['settlementMethod']) ? $data['settlementMethod'] : null;
-        $this->container['verificationLevel'] = isset($data['verificationLevel']) ? $data['verificationLevel'] : null;
+        $this->container['settlementMethod'] = isset($data['settlementMethod']) ? $data['settlementMethod'] : 'BEST_GUESS';
+        $this->container['verificationLevel'] = isset($data['verificationLevel']) ? $data['verificationLevel'] : 'VALIDATION';
         $this->container['setCompletedState'] = isset($data['setCompletedState']) ? $data['setCompletedState'] : false;
     }
 
@@ -282,7 +282,7 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
 
     /**
      * Gets settlementMethod
-     * @return object
+     * @return string
      */
     public function getSettlementMethod()
     {
@@ -291,7 +291,7 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
 
     /**
      * Sets settlementMethod
-     * @param object $settlementMethod *NEW*
+     * @param string $settlementMethod *NEW*  Possible values: - BEST_GUESS
      * @return $this
      */
     public function setSettlementMethod($settlementMethod)
@@ -303,7 +303,7 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
 
     /**
      * Gets verificationLevel
-     * @return object
+     * @return string
      */
     public function getVerificationLevel()
     {
@@ -312,7 +312,7 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
 
     /**
      * Sets verificationLevel
-     * @param object $verificationLevel *NEW*
+     * @param string $verificationLevel *NEW*  Possible values: - VALIDATION
      * @return $this
      */
     public function setVerificationLevel($verificationLevel)
