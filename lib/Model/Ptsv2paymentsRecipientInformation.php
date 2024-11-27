@@ -56,8 +56,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'string',
         'accountType' => 'string',
         'firstName' => 'string',
-        'lastName' => 'string',
         'middleName' => 'string',
+        'lastName' => 'string',
         'address1' => 'string',
         'postalCode' => 'string',
         'country' => 'string',
@@ -75,8 +75,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => null,
         'accountType' => null,
         'firstName' => null,
-        'lastName' => null,
         'middleName' => null,
+        'lastName' => null,
         'address1' => null,
         'postalCode' => null,
         'country' => null,
@@ -104,8 +104,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'accountId',
         'accountType' => 'accountType',
         'firstName' => 'firstName',
-        'lastName' => 'lastName',
         'middleName' => 'middleName',
+        'lastName' => 'lastName',
         'address1' => 'address1',
         'postalCode' => 'postalCode',
         'country' => 'country',
@@ -124,8 +124,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'setAccountId',
         'accountType' => 'setAccountType',
         'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
         'middleName' => 'setMiddleName',
+        'lastName' => 'setLastName',
         'address1' => 'setAddress1',
         'postalCode' => 'setPostalCode',
         'country' => 'setCountry',
@@ -144,8 +144,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'accountId' => 'getAccountId',
         'accountType' => 'getAccountType',
         'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
         'middleName' => 'getMiddleName',
+        'lastName' => 'getLastName',
         'address1' => 'getAddress1',
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry',
@@ -189,8 +189,8 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
         $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
@@ -236,7 +236,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
 
     /**
      * Sets accountId
-     * @param string $accountId Identifier for the recipient's account.  **Applicable for Barclays AFT transactions only.** It is mandatory for both Visa and Mastercard AFT.  For Visa, the field has a maximum length of 34 character.        For Mastercard, the field has a maximum length of 50 character.
+     * @param string $accountId Identifier for the recipient's account. This field is applicable for AFT transactions.
      * @return $this
      */
     public function setAccountId($accountId)
@@ -257,7 +257,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
 
     /**
      * Sets accountType
-     * @param string $accountType Identifies the recipient's account type.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Valid values are:   - `00` for Other   - `01` for Routing Transit Number (RTN) + Bank Account Number (BAN)   - `02` for International Bank Account Number (IBAN)   - `03` for Card Account   - `06` for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code
+     * @param string $accountType Identifies the recipient's account type. This field is applicable for AFT transactions.  Valid values are:   - `00` for Other   - `01` for Routing Transit Number (RTN) + Bank Account Number (BAN)   - `02` for International Bank Account Number (IBAN)   - `03` for Card Account   - `06` for Bank Account Number (BAN) + Bank Identification Code (BIC), also known as a SWIFT code
      * @return $this
      */
     public function setAccountType($accountType)
@@ -278,33 +278,12 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName First name of the recipient.  **Applicable for Barclays AFT transactions only.** The field is mandatory for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.         For Mastercard, the field has a maximum length of 35 characters.  Values exceeding the above limits will be truncated.
+     * @param string $firstName First name of the recipient. This field is applicable for AFT transactions.    Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setFirstName($firstName)
     {
         $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     * @param string $lastName Last name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.  Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.  For Mastercard, the field has a maximum length of 35 characters.  Values exceeding these limits will be truncated.
-     * @return $this
-     */
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -320,12 +299,33 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Middle name of the recipient.  **Applicable for Barclays AFT transactions only.** This field is optional for both Visa and Mastercard AFT.   Only alpha numeric values are supported.  Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to Barclays.  For Visa, the maximum length of First Name, Middle Name and Last Name is 30 characters.        For Mastercard, the field has a maximum length of 1 character.  Values exceeding these limits will be truncated.
+     * @param string $middleName Middle name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setMiddleName($middleName)
     {
         $this->container['middleName'] = $middleName;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastName
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['lastName'];
+    }
+
+    /**
+     * Sets lastName
+     * @param string $lastName Last name of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
+     * @return $this
+     */
+    public function setLastName($lastName)
+    {
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -341,7 +341,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 The street address of the recipient    **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.    Only alpha numeric values are supported.  Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to Barclays.             The field has a maximum length of 50 characters.  Values exceeding these limits will be truncated.
+     * @param string $address1 The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setAddress1($address1)
@@ -383,7 +383,7 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country The country associated with the address of the recipient.  **Applicable for Barclays AFT transactions only.** This field is mandatory for Mastercard and not applicable for Visa AFT.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html)
+     * @param string $country The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html)
      * @return $this
      */
     public function setCountry($country)

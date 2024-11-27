@@ -175,6 +175,13 @@ class Ptsv2paymentsPaymentInformationCardTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "productSubtype"
+     */
+    public function testPropertyProductSubtype()
+    {
+    }
+
+    /**
      * Test attribute "typeSelectionIndicator"
      */
     public function testPropertyTypeSelectionIndicator()

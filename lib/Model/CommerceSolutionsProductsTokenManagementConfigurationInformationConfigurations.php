@@ -53,7 +53,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'parentProfileId' => 'string'
+        'parentProfileId' => 'string',
+        'vault' => '\CyberSource\Model\CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'
     ];
 
     /**
@@ -61,7 +62,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'parentProfileId' => null
+        'parentProfileId' => null,
+        'vault' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
      * @var string[]
      */
     protected static $attributeMap = [
-        'parentProfileId' => 'parentProfileId'
+        'parentProfileId' => 'parentProfileId',
+        'vault' => 'vault'
     ];
 
 
@@ -88,7 +91,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
      * @var string[]
      */
     protected static $setters = [
-        'parentProfileId' => 'setParentProfileId'
+        'parentProfileId' => 'setParentProfileId',
+        'vault' => 'setVault'
     ];
 
 
@@ -97,7 +101,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
      * @var string[]
      */
     protected static $getters = [
-        'parentProfileId' => 'getParentProfileId'
+        'parentProfileId' => 'getParentProfileId',
+        'vault' => 'getVault'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
     public function __construct(array $data = null)
     {
         $this->container['parentProfileId'] = isset($data['parentProfileId']) ? $data['parentProfileId'] : null;
+        $this->container['vault'] = isset($data['vault']) ? $data['vault'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
     public function setParentProfileId($parentProfileId)
     {
         $this->container['parentProfileId'] = $parentProfileId;
+
+        return $this;
+    }
+
+    /**
+     * Gets vault
+     * @return \CyberSource\Model\CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault
+     */
+    public function getVault()
+    {
+        return $this->container['vault'];
+    }
+
+    /**
+     * Sets vault
+     * @param \CyberSource\Model\CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault $vault
+     * @return $this
+     */
+    public function setVault($vault)
+    {
+        $this->container['vault'] = $vault;
 
         return $this;
     }

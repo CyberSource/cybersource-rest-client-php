@@ -54,7 +54,7 @@ class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors impleme
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'avsVersion' => 'object'
+        'avsVersion' => 'string'
     ];
 
     /**
@@ -132,7 +132,7 @@ class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors impleme
      */
     public function __construct(array $data = null)
     {
-        $this->container['avsVersion'] = isset($data['avsVersion']) ? $data['avsVersion'] : null;
+        $this->container['avsVersion'] = isset($data['avsVersion']) ? $data['avsVersion'] : '2';
     }
 
     /**
@@ -162,7 +162,7 @@ class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors impleme
 
     /**
      * Gets avsVersion
-     * @return object
+     * @return string
      */
     public function getAvsVersion()
     {
@@ -171,7 +171,7 @@ class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors impleme
 
     /**
      * Sets avsVersion
-     * @param object $avsVersion *NEW*
+     * @param string $avsVersion *NEW*  Possible values: - 2
      * @return $this
      */
     public function setAvsVersion($avsVersion)

@@ -77,6 +77,13 @@ class GenerateCaptureContextRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "clientVersion"
+     */
+    public function testPropertyClientVersion()
+    {
+    }
+
+    /**
      * Test attribute "targetOrigins"
      */
     public function testPropertyTargetOrigins()
@@ -87,13 +94,6 @@ class GenerateCaptureContextRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "allowedCardNetworks"
      */
     public function testPropertyAllowedCardNetworks()
-    {
-    }
-
-    /**
-     * Test attribute "clientVersion"
-     */
-    public function testPropertyClientVersion()
     {
     }
 

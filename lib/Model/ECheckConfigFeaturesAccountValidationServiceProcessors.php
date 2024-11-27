@@ -57,11 +57,11 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
         'avsAccountOwnershipService' => 'bool',
         'avsAccountStatusService' => 'bool',
         'avsSignedAgreement' => 'bool',
-        'avsCalculatedResponseBehavior' => 'object',
+        'avsCalculatedResponseBehavior' => 'string',
         'avsAdditionalId' => 'string',
         'enableAvs' => 'bool',
         'avsEntityId' => 'string',
-        'avsResultMode' => 'object',
+        'avsResultMode' => 'string',
         'enableAvsTokenCreation' => 'bool'
     ];
 
@@ -175,7 +175,7 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
         $this->container['avsAccountOwnershipService'] = isset($data['avsAccountOwnershipService']) ? $data['avsAccountOwnershipService'] : null;
         $this->container['avsAccountStatusService'] = isset($data['avsAccountStatusService']) ? $data['avsAccountStatusService'] : null;
         $this->container['avsSignedAgreement'] = isset($data['avsSignedAgreement']) ? $data['avsSignedAgreement'] : null;
-        $this->container['avsCalculatedResponseBehavior'] = isset($data['avsCalculatedResponseBehavior']) ? $data['avsCalculatedResponseBehavior'] : null;
+        $this->container['avsCalculatedResponseBehavior'] = isset($data['avsCalculatedResponseBehavior']) ? $data['avsCalculatedResponseBehavior'] : 'continue';
         $this->container['avsAdditionalId'] = isset($data['avsAdditionalId']) ? $data['avsAdditionalId'] : null;
         $this->container['enableAvs'] = isset($data['enableAvs']) ? $data['enableAvs'] : true;
         $this->container['avsEntityId'] = isset($data['avsEntityId']) ? $data['avsEntityId'] : null;
@@ -273,7 +273,7 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
 
     /**
      * Gets avsCalculatedResponseBehavior
-     * @return object
+     * @return string
      */
     public function getAvsCalculatedResponseBehavior()
     {
@@ -282,7 +282,7 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
 
     /**
      * Sets avsCalculatedResponseBehavior
-     * @param object $avsCalculatedResponseBehavior *NEW*
+     * @param string $avsCalculatedResponseBehavior *NEW*  Possible values: - continue
      * @return $this
      */
     public function setAvsCalculatedResponseBehavior($avsCalculatedResponseBehavior)
@@ -357,7 +357,7 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
 
     /**
      * Gets avsResultMode
-     * @return object
+     * @return string
      */
     public function getAvsResultMode()
     {
@@ -366,7 +366,7 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
 
     /**
      * Sets avsResultMode
-     * @param object $avsResultMode *NEW*
+     * @param string $avsResultMode *NEW*  Possible values: - FULL_RESPONSE - LOGIC_BOX
      * @return $this
      */
     public function setAvsResultMode($avsResultMode)

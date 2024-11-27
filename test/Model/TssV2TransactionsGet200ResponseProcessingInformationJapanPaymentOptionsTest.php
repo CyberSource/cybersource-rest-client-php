@@ -103,4 +103,39 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptionsTes
     public function testPropertyBusinessNameKatakana()
     {
     }
+
+    /**
+     * Test attribute "businessNameEnglish"
+     */
+    public function testPropertyBusinessNameEnglish()
+    {
+    }
+
+    /**
+     * Test attribute "bonuses"
+     */
+    public function testPropertyBonuses()
+    {
+    }
+
+    /**
+     * Test attribute "firstBillingMonth"
+     */
+    public function testPropertyFirstBillingMonth()
+    {
+    }
+
+    /**
+     * Test attribute "numberOfInstallments"
+     */
+    public function testPropertyNumberOfInstallments()
+    {
+    }
+
+    /**
+     * Test attribute "preApprovalType"
+     */
+    public function testPropertyPreApprovalType()
+    {
+    }
 }

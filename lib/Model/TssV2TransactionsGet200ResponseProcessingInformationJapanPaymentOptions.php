@@ -56,7 +56,12 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
         'paymentMethod' => 'string',
         'terminalId' => 'string',
         'businessName' => 'string',
-        'businessNameKatakana' => 'string'
+        'businessNameKatakana' => 'string',
+        'businessNameEnglish' => 'string',
+        'bonuses' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses[]',
+        'firstBillingMonth' => 'string',
+        'numberOfInstallments' => 'string',
+        'preApprovalType' => 'string'
     ];
 
     /**
@@ -67,7 +72,12 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
         'paymentMethod' => null,
         'terminalId' => null,
         'businessName' => null,
-        'businessNameKatakana' => null
+        'businessNameKatakana' => null,
+        'businessNameEnglish' => null,
+        'bonuses' => null,
+        'firstBillingMonth' => null,
+        'numberOfInstallments' => null,
+        'preApprovalType' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +98,12 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
         'paymentMethod' => 'paymentMethod',
         'terminalId' => 'terminalId',
         'businessName' => 'businessName',
-        'businessNameKatakana' => 'businessNameKatakana'
+        'businessNameKatakana' => 'businessNameKatakana',
+        'businessNameEnglish' => 'businessNameEnglish',
+        'bonuses' => 'bonuses',
+        'firstBillingMonth' => 'firstBillingMonth',
+        'numberOfInstallments' => 'numberOfInstallments',
+        'preApprovalType' => 'preApprovalType'
     ];
 
 
@@ -100,7 +115,12 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
         'paymentMethod' => 'setPaymentMethod',
         'terminalId' => 'setTerminalId',
         'businessName' => 'setBusinessName',
-        'businessNameKatakana' => 'setBusinessNameKatakana'
+        'businessNameKatakana' => 'setBusinessNameKatakana',
+        'businessNameEnglish' => 'setBusinessNameEnglish',
+        'bonuses' => 'setBonuses',
+        'firstBillingMonth' => 'setFirstBillingMonth',
+        'numberOfInstallments' => 'setNumberOfInstallments',
+        'preApprovalType' => 'setPreApprovalType'
     ];
 
 
@@ -112,7 +132,12 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
         'paymentMethod' => 'getPaymentMethod',
         'terminalId' => 'getTerminalId',
         'businessName' => 'getBusinessName',
-        'businessNameKatakana' => 'getBusinessNameKatakana'
+        'businessNameKatakana' => 'getBusinessNameKatakana',
+        'businessNameEnglish' => 'getBusinessNameEnglish',
+        'bonuses' => 'getBonuses',
+        'firstBillingMonth' => 'getFirstBillingMonth',
+        'numberOfInstallments' => 'getNumberOfInstallments',
+        'preApprovalType' => 'getPreApprovalType'
     ];
 
     public static function attributeMap()
@@ -150,6 +175,11 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['businessName'] = isset($data['businessName']) ? $data['businessName'] : null;
         $this->container['businessNameKatakana'] = isset($data['businessNameKatakana']) ? $data['businessNameKatakana'] : null;
+        $this->container['businessNameEnglish'] = isset($data['businessNameEnglish']) ? $data['businessNameEnglish'] : null;
+        $this->container['bonuses'] = isset($data['bonuses']) ? $data['bonuses'] : null;
+        $this->container['firstBillingMonth'] = isset($data['firstBillingMonth']) ? $data['firstBillingMonth'] : null;
+        $this->container['numberOfInstallments'] = isset($data['numberOfInstallments']) ? $data['numberOfInstallments'] : null;
+        $this->container['preApprovalType'] = isset($data['preApprovalType']) ? $data['preApprovalType'] : null;
     }
 
     /**
@@ -257,6 +287,111 @@ class TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions im
     public function setBusinessNameKatakana($businessNameKatakana)
     {
         $this->container['businessNameKatakana'] = $businessNameKatakana;
+
+        return $this;
+    }
+
+    /**
+     * Gets businessNameEnglish
+     * @return string
+     */
+    public function getBusinessNameEnglish()
+    {
+        return $this->container['businessNameEnglish'];
+    }
+
+    /**
+     * Sets businessNameEnglish
+     * @param string $businessNameEnglish Business name in English characters. This field is supported only on JCN Gateway and for the Sumitomo Mitsui Card Co. acquirer on CyberSource through VisaNet.
+     * @return $this
+     */
+    public function setBusinessNameEnglish($businessNameEnglish)
+    {
+        $this->container['businessNameEnglish'] = $businessNameEnglish;
+
+        return $this;
+    }
+
+    /**
+     * Gets bonuses
+     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses[]
+     */
+    public function getBonuses()
+    {
+        return $this->container['bonuses'];
+    }
+
+    /**
+     * Sets bonuses
+     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses[] $bonuses An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length = 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\"month\": \"1\",\"amount\": \"200\"}, {\"month\": \"3\",\"amount\": \"2500\"}, null]
+     * @return $this
+     */
+    public function setBonuses($bonuses)
+    {
+        $this->container['bonuses'] = $bonuses;
+
+        return $this;
+    }
+
+    /**
+     * Gets firstBillingMonth
+     * @return string
+     */
+    public function getFirstBillingMonth()
+    {
+        return $this->container['firstBillingMonth'];
+    }
+
+    /**
+     * Sets firstBillingMonth
+     * @param string $firstBillingMonth Billing month in MM format.
+     * @return $this
+     */
+    public function setFirstBillingMonth($firstBillingMonth)
+    {
+        $this->container['firstBillingMonth'] = $firstBillingMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets numberOfInstallments
+     * @return string
+     */
+    public function getNumberOfInstallments()
+    {
+        return $this->container['numberOfInstallments'];
+    }
+
+    /**
+     * Sets numberOfInstallments
+     * @param string $numberOfInstallments Number of Installments.
+     * @return $this
+     */
+    public function setNumberOfInstallments($numberOfInstallments)
+    {
+        $this->container['numberOfInstallments'] = $numberOfInstallments;
+
+        return $this;
+    }
+
+    /**
+     * Gets preApprovalType
+     * @return string
+     */
+    public function getPreApprovalType()
+    {
+        return $this->container['preApprovalType'];
+    }
+
+    /**
+     * Sets preApprovalType
+     * @param string $preApprovalType This will contain the details of the kind of transaction that has been processe. Used only for Japan. Possible Values: - 0 = Normal (authorization with amount and clearing/settlement; data capture or paper draft) - 1 = Negative card authorization (authorization-only with 0 or 1 amount) - 2 = Reservation of authorization (authorization-only with amount) - 3 = Cancel transaction - 4 = Merchant-initiated reversal/refund transactions - 5 = Cancel reservation of authorization - 6 = Post authorization
+     * @return $this
+     */
+    public function setPreApprovalType($preApprovalType)
+    {
+        $this->container['preApprovalType'] = $preApprovalType;
 
         return $this;
     }

@@ -77,16 +77,16 @@ class GenerateUnifiedCheckoutCaptureContextRequestTest extends \PHPUnit_Framewor
     }
 
     /**
-     * Test attribute "targetOrigins"
+     * Test attribute "clientVersion"
      */
-    public function testPropertyTargetOrigins()
+    public function testPropertyClientVersion()
     {
     }
 
     /**
-     * Test attribute "clientVersion"
+     * Test attribute "targetOrigins"
      */
-    public function testPropertyClientVersion()
+    public function testPropertyTargetOrigins()
     {
     }
 

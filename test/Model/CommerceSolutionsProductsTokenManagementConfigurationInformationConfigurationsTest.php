@@ -82,4 +82,11 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
     public function testPropertyParentProfileId()
     {
     }
+
+    /**
+     * Test attribute "vault"
+     */
+    public function testPropertyVault()
+    {
+    }
 }
