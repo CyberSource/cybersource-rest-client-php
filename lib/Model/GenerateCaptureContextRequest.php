@@ -54,9 +54,9 @@ class GenerateCaptureContextRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'clientVersion' => 'string',
         'targetOrigins' => 'string[]',
         'allowedCardNetworks' => 'string[]',
-        'clientVersion' => 'string',
         'checkoutApiInitialization' => '\CyberSource\Model\Microformv2sessionsCheckoutApiInitialization'
     ];
 
@@ -65,9 +65,9 @@ class GenerateCaptureContextRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'clientVersion' => null,
         'targetOrigins' => null,
         'allowedCardNetworks' => null,
-        'clientVersion' => null,
         'checkoutApiInitialization' => null
     ];
 
@@ -86,9 +86,9 @@ class GenerateCaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'clientVersion' => 'clientVersion',
         'targetOrigins' => 'targetOrigins',
         'allowedCardNetworks' => 'allowedCardNetworks',
-        'clientVersion' => 'clientVersion',
         'checkoutApiInitialization' => 'checkoutApiInitialization'
     ];
 
@@ -98,9 +98,9 @@ class GenerateCaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'clientVersion' => 'setClientVersion',
         'targetOrigins' => 'setTargetOrigins',
         'allowedCardNetworks' => 'setAllowedCardNetworks',
-        'clientVersion' => 'setClientVersion',
         'checkoutApiInitialization' => 'setCheckoutApiInitialization'
     ];
 
@@ -110,9 +110,9 @@ class GenerateCaptureContextRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'clientVersion' => 'getClientVersion',
         'targetOrigins' => 'getTargetOrigins',
         'allowedCardNetworks' => 'getAllowedCardNetworks',
-        'clientVersion' => 'getClientVersion',
         'checkoutApiInitialization' => 'getCheckoutApiInitialization'
     ];
 
@@ -147,9 +147,9 @@ class GenerateCaptureContextRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['clientVersion'] = isset($data['clientVersion']) ? $data['clientVersion'] : null;
         $this->container['targetOrigins'] = isset($data['targetOrigins']) ? $data['targetOrigins'] : null;
         $this->container['allowedCardNetworks'] = isset($data['allowedCardNetworks']) ? $data['allowedCardNetworks'] : null;
-        $this->container['clientVersion'] = isset($data['clientVersion']) ? $data['clientVersion'] : null;
         $this->container['checkoutApiInitialization'] = isset($data['checkoutApiInitialization']) ? $data['checkoutApiInitialization'] : null;
     }
 
@@ -177,6 +177,27 @@ class GenerateCaptureContextRequest implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets clientVersion
+     * @return string
+     */
+    public function getClientVersion()
+    {
+        return $this->container['clientVersion'];
+    }
+
+    /**
+     * Sets clientVersion
+     * @param string $clientVersion Specify the version of Microform that you want to use.
+     * @return $this
+     */
+    public function setClientVersion($clientVersion)
+    {
+        $this->container['clientVersion'] = $clientVersion;
+
+        return $this;
+    }
 
     /**
      * Gets targetOrigins
@@ -210,33 +231,12 @@ class GenerateCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedCardNetworks
-     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MAESTRO - MASTERCARD - AMEX - DISCOVER - DINERSCLUB - JCB - CUP - CARTESBANCAIRES - CARNET
+     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA
      * @return $this
      */
     public function setAllowedCardNetworks($allowedCardNetworks)
     {
         $this->container['allowedCardNetworks'] = $allowedCardNetworks;
-
-        return $this;
-    }
-
-    /**
-     * Gets clientVersion
-     * @return string
-     */
-    public function getClientVersion()
-    {
-        return $this->container['clientVersion'];
-    }
-
-    /**
-     * Sets clientVersion
-     * @param string $clientVersion Specify the version of Microform that you want to use.
-     * @return $this
-     */
-    public function setClientVersion($clientVersion)
-    {
-        $this->container['clientVersion'] = $clientVersion;
 
         return $this;
     }

@@ -54,11 +54,7 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
       */
     protected static $swaggerTypes = [
         'paymentMethod' => 'string',
-        'bonuses' => 'string',
-        'bonusMonth' => 'string',
-        'secondBonusMonth' => 'string',
-        'bonusAmount' => 'string',
-        'secondBonusAmount' => 'string',
+        'bonuses' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses[]',
         'preapprovalType' => 'string',
         'installments' => 'string',
         'terminalId' => 'string',
@@ -76,10 +72,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     protected static $swaggerFormats = [
         'paymentMethod' => null,
         'bonuses' => null,
-        'bonusMonth' => null,
-        'secondBonusMonth' => null,
-        'bonusAmount' => null,
-        'secondBonusAmount' => null,
         'preapprovalType' => null,
         'installments' => null,
         'terminalId' => null,
@@ -107,10 +99,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     protected static $attributeMap = [
         'paymentMethod' => 'paymentMethod',
         'bonuses' => 'bonuses',
-        'bonusMonth' => 'bonusMonth',
-        'secondBonusMonth' => 'secondBonusMonth',
-        'bonusAmount' => 'bonusAmount',
-        'secondBonusAmount' => 'secondBonusAmount',
         'preapprovalType' => 'preapprovalType',
         'installments' => 'installments',
         'terminalId' => 'terminalId',
@@ -129,10 +117,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     protected static $setters = [
         'paymentMethod' => 'setPaymentMethod',
         'bonuses' => 'setBonuses',
-        'bonusMonth' => 'setBonusMonth',
-        'secondBonusMonth' => 'setSecondBonusMonth',
-        'bonusAmount' => 'setBonusAmount',
-        'secondBonusAmount' => 'setSecondBonusAmount',
         'preapprovalType' => 'setPreapprovalType',
         'installments' => 'setInstallments',
         'terminalId' => 'setTerminalId',
@@ -151,10 +135,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     protected static $getters = [
         'paymentMethod' => 'getPaymentMethod',
         'bonuses' => 'getBonuses',
-        'bonusMonth' => 'getBonusMonth',
-        'secondBonusMonth' => 'getSecondBonusMonth',
-        'bonusAmount' => 'getBonusAmount',
-        'secondBonusAmount' => 'getSecondBonusAmount',
         'preapprovalType' => 'getPreapprovalType',
         'installments' => 'getInstallments',
         'terminalId' => 'getTerminalId',
@@ -198,10 +178,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
     {
         $this->container['paymentMethod'] = isset($data['paymentMethod']) ? $data['paymentMethod'] : null;
         $this->container['bonuses'] = isset($data['bonuses']) ? $data['bonuses'] : null;
-        $this->container['bonusMonth'] = isset($data['bonusMonth']) ? $data['bonusMonth'] : null;
-        $this->container['secondBonusMonth'] = isset($data['secondBonusMonth']) ? $data['secondBonusMonth'] : null;
-        $this->container['bonusAmount'] = isset($data['bonusAmount']) ? $data['bonusAmount'] : null;
-        $this->container['secondBonusAmount'] = isset($data['secondBonusAmount']) ? $data['secondBonusAmount'] : null;
         $this->container['preapprovalType'] = isset($data['preapprovalType']) ? $data['preapprovalType'] : null;
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
@@ -260,7 +236,7 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
 
     /**
      * Gets bonuses
-     * @return string
+     * @return \CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses[]
      */
     public function getBonuses()
     {
@@ -269,96 +245,12 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptions implements ArrayAcce
 
     /**
      * Sets bonuses
-     * @param string $bonuses This value is a 2-digit code indicating the Number of Bonuses. Valid value from 1 to 6.
+     * @param \CyberSource\Model\Ptsv2paymentsProcessingInformationJapanPaymentOptionsBonuses[] $bonuses An array of objects, each of which contains a bonus month and bonus amount.  Length of bonuses array is equal to the number of bonuses.  Max length = 6.  In case of bonus month and amount not specified, null objects to be returned in the array. Example: bonuses : [ {\"month\": \"1\",\"amount\": \"200\"}, {\"month\": \"3\",\"amount\": \"2500\"}, null]
      * @return $this
      */
     public function setBonuses($bonuses)
     {
         $this->container['bonuses'] = $bonuses;
-
-        return $this;
-    }
-
-    /**
-     * Gets bonusMonth
-     * @return string
-     */
-    public function getBonusMonth()
-    {
-        return $this->container['bonusMonth'];
-    }
-
-    /**
-     * Sets bonusMonth
-     * @param string $bonusMonth This value is a 2-digit code indicating the first bonus month. Valid value from 1 to 12.
-     * @return $this
-     */
-    public function setBonusMonth($bonusMonth)
-    {
-        $this->container['bonusMonth'] = $bonusMonth;
-
-        return $this;
-    }
-
-    /**
-     * Gets secondBonusMonth
-     * @return string
-     */
-    public function getSecondBonusMonth()
-    {
-        return $this->container['secondBonusMonth'];
-    }
-
-    /**
-     * Sets secondBonusMonth
-     * @param string $secondBonusMonth This value is a 2-digit code indicating the second bonus month. Valid value from 1 to 12.
-     * @return $this
-     */
-    public function setSecondBonusMonth($secondBonusMonth)
-    {
-        $this->container['secondBonusMonth'] = $secondBonusMonth;
-
-        return $this;
-    }
-
-    /**
-     * Gets bonusAmount
-     * @return string
-     */
-    public function getBonusAmount()
-    {
-        return $this->container['bonusAmount'];
-    }
-
-    /**
-     * Sets bonusAmount
-     * @param string $bonusAmount This value contains the bonus amount of the first month. Maximum value without decimal 99999999.
-     * @return $this
-     */
-    public function setBonusAmount($bonusAmount)
-    {
-        $this->container['bonusAmount'] = $bonusAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets secondBonusAmount
-     * @return string
-     */
-    public function getSecondBonusAmount()
-    {
-        return $this->container['secondBonusAmount'];
-    }
-
-    /**
-     * Sets secondBonusAmount
-     * @param string $secondBonusAmount This value contains the bonus amount of the second month. Maximum value without decimal 99999999.
-     * @return $this
-     */
-    public function setSecondBonusAmount($secondBonusAmount)
-    {
-        $this->container['secondBonusAmount'] = $secondBonusAmount;
 
         return $this;
     }

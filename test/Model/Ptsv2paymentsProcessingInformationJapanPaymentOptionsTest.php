@@ -91,34 +91,6 @@ class Ptsv2paymentsProcessingInformationJapanPaymentOptionsTest extends \PHPUnit
     }
 
     /**
-     * Test attribute "bonusMonth"
-     */
-    public function testPropertyBonusMonth()
-    {
-    }
-
-    /**
-     * Test attribute "secondBonusMonth"
-     */
-    public function testPropertySecondBonusMonth()
-    {
-    }
-
-    /**
-     * Test attribute "bonusAmount"
-     */
-    public function testPropertyBonusAmount()
-    {
-    }
-
-    /**
-     * Test attribute "secondBonusAmount"
-     */
-    public function testPropertySecondBonusAmount()
-    {
-    }
-
-    /**
      * Test attribute "preapprovalType"
      */
     public function testPropertyPreapprovalType()

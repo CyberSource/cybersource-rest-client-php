@@ -67,6 +67,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'string',
         'startYear' => 'string',
         'productName' => 'string',
+        'productSubtype' => 'string',
         'typeSelectionIndicator' => 'string'
     ];
 
@@ -89,6 +90,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'startMonth' => null,
         'startYear' => null,
         'productName' => null,
+        'productSubtype' => null,
         'typeSelectionIndicator' => null
     ];
 
@@ -121,6 +123,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'startMonth',
         'startYear' => 'startYear',
         'productName' => 'productName',
+        'productSubtype' => 'productSubtype',
         'typeSelectionIndicator' => 'typeSelectionIndicator'
     ];
 
@@ -144,6 +147,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'setStartMonth',
         'startYear' => 'setStartYear',
         'productName' => 'setProductName',
+        'productSubtype' => 'setProductSubtype',
         'typeSelectionIndicator' => 'setTypeSelectionIndicator'
     ];
 
@@ -167,6 +171,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         'startMonth' => 'getStartMonth',
         'startYear' => 'getStartYear',
         'productName' => 'getProductName',
+        'productSubtype' => 'getProductSubtype',
         'typeSelectionIndicator' => 'getTypeSelectionIndicator'
     ];
 
@@ -215,6 +220,7 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
         $this->container['startMonth'] = isset($data['startMonth']) ? $data['startMonth'] : null;
         $this->container['startYear'] = isset($data['startYear']) ? $data['startYear'] : null;
         $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
+        $this->container['productSubtype'] = isset($data['productSubtype']) ? $data['productSubtype'] : null;
         $this->container['typeSelectionIndicator'] = isset($data['typeSelectionIndicator']) ? $data['typeSelectionIndicator'] : null;
     }
 
@@ -533,6 +539,27 @@ class Ptsv2paymentsPaymentInformationCard implements ArrayAccess
     public function setProductName($productName)
     {
         $this->container['productName'] = $productName;
+
+        return $this;
+    }
+
+    /**
+     * Gets productSubtype
+     * @return string
+     */
+    public function getProductSubtype()
+    {
+        return $this->container['productSubtype'];
+    }
+
+    /**
+     * Sets productSubtype
+     * @param string $productSubtype This field would contain the indicator for transaction type  Possible values: - AC: Agriculture Maintenance Account - AE: Agriculture Debit Account/Electron  - AG: Agriculture  - AI: Agriculture Investment Loan - CG: Brazil Cargo - CS: Construction  - DS: Distribution  - HC: Healthcare - LP: Visa Large Purchase Advantage - MA: Visa Mobile Agent - MB: Interoperable Mobile Branchless Banking - MG: Visa Mobile General - VA: Visa Vale - Supermarket - VF: Visa Vale - Fuel - VR: Visa Vale - Restaurant
+     * @return $this
+     */
+    public function setProductSubtype($productSubtype)
+    {
+        $this->container['productSubtype'] = $productSubtype;
 
         return $this;
     }
