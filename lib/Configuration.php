@@ -187,7 +187,7 @@ class Configuration
     {
         $this->logConfig = new LogConfiguration();
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $this->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $this->getLogConfiguration());
         }
     }
 
