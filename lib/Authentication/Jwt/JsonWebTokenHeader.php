@@ -10,8 +10,6 @@ use Firebase\JWT\JWT as JWT;
 use CyberSource\Logging\LogFactory as LogFactory;
 use CyberSource\Authentication\Util\Cache as Cache;
 
-require_once 'vendor/autoload.php';
-
 class JsonWebTokenHeader 
 {
     private static $logger = null;
