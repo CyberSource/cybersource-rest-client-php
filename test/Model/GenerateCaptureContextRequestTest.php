@@ -32,7 +32,7 @@ namespace CyberSource;
  * GenerateCaptureContextRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description This is a server-to-server API request to generate the capture context that can be used to initiate instance of microform on a acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application.
+// * @description This is a server-to-server API request to generate the capture context that can be used to initiate an instance of Microform on an acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -98,9 +98,9 @@ class GenerateCaptureContextRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "checkoutApiInitialization"
+     * Test attribute "allowedPaymentTypes"
      */
-    public function testPropertyCheckoutApiInitialization()
+    public function testPropertyAllowedPaymentTypes()
     {
     }
 }

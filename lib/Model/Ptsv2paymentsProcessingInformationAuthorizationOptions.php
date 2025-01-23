@@ -75,7 +75,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'cashAdvanceIndicator' => 'bool',
         'splitPaymentTransaction' => 'bool',
         'cardVerificationIndicator' => 'bool',
-        'aftIndicator' => 'bool'
+        'transactionMode' => 'string',
+        'aftIndicator' => 'bool',
+        'serviceType' => 'string',
+        'balanceUpdate' => 'bool',
+        'moneyLoad' => 'bool'
     ];
 
     /**
@@ -105,7 +109,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'cashAdvanceIndicator' => null,
         'splitPaymentTransaction' => null,
         'cardVerificationIndicator' => null,
-        'aftIndicator' => null
+        'transactionMode' => null,
+        'aftIndicator' => null,
+        'serviceType' => null,
+        'balanceUpdate' => null,
+        'moneyLoad' => null
     ];
 
     public static function swaggerTypes()
@@ -145,7 +153,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'cashAdvanceIndicator' => 'cashAdvanceIndicator',
         'splitPaymentTransaction' => 'splitPaymentTransaction',
         'cardVerificationIndicator' => 'cardVerificationIndicator',
-        'aftIndicator' => 'aftIndicator'
+        'transactionMode' => 'transactionMode',
+        'aftIndicator' => 'aftIndicator',
+        'serviceType' => 'serviceType',
+        'balanceUpdate' => 'balanceUpdate',
+        'moneyLoad' => 'moneyLoad'
     ];
 
 
@@ -176,7 +188,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'cashAdvanceIndicator' => 'setCashAdvanceIndicator',
         'splitPaymentTransaction' => 'setSplitPaymentTransaction',
         'cardVerificationIndicator' => 'setCardVerificationIndicator',
-        'aftIndicator' => 'setAftIndicator'
+        'transactionMode' => 'setTransactionMode',
+        'aftIndicator' => 'setAftIndicator',
+        'serviceType' => 'setServiceType',
+        'balanceUpdate' => 'setBalanceUpdate',
+        'moneyLoad' => 'setMoneyLoad'
     ];
 
 
@@ -207,7 +223,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         'cashAdvanceIndicator' => 'getCashAdvanceIndicator',
         'splitPaymentTransaction' => 'getSplitPaymentTransaction',
         'cardVerificationIndicator' => 'getCardVerificationIndicator',
-        'aftIndicator' => 'getAftIndicator'
+        'transactionMode' => 'getTransactionMode',
+        'aftIndicator' => 'getAftIndicator',
+        'serviceType' => 'getServiceType',
+        'balanceUpdate' => 'getBalanceUpdate',
+        'moneyLoad' => 'getMoneyLoad'
     ];
 
     public static function attributeMap()
@@ -263,7 +283,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
         $this->container['cashAdvanceIndicator'] = isset($data['cashAdvanceIndicator']) ? $data['cashAdvanceIndicator'] : null;
         $this->container['splitPaymentTransaction'] = isset($data['splitPaymentTransaction']) ? $data['splitPaymentTransaction'] : null;
         $this->container['cardVerificationIndicator'] = isset($data['cardVerificationIndicator']) ? $data['cardVerificationIndicator'] : null;
+        $this->container['transactionMode'] = isset($data['transactionMode']) ? $data['transactionMode'] : null;
         $this->container['aftIndicator'] = isset($data['aftIndicator']) ? $data['aftIndicator'] : null;
+        $this->container['serviceType'] = isset($data['serviceType']) ? $data['serviceType'] : null;
+        $this->container['balanceUpdate'] = isset($data['balanceUpdate']) ? $data['balanceUpdate'] : null;
+        $this->container['moneyLoad'] = isset($data['moneyLoad']) ? $data['moneyLoad'] : null;
     }
 
     /**
@@ -428,7 +452,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets extendAuthIndicator
-     * @param string $extendAuthIndicator Flag that indicates whether the transaction is an extended authorization.
+     * @param string $extendAuthIndicator Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction.
      * @return $this
      */
     public function setExtendAuthIndicator($extendAuthIndicator)
@@ -575,7 +599,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
 
     /**
      * Sets billPaymentType
-     * @param string $billPaymentType Reason for the payment.  Possible values: - 001: Utility payment - 002: Government services - 003: Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet.
+     * @param string $billPaymentType Reason for the payment.  Possible values: - 001: Public utilities / Utility payment - 002: Government services - 003: Cellular / Mobile phone top-up - 004: Coupon payment - 005: Installment based repayment - 006: Billing payment - 007: Tax payment - 008: Tax payment refunds  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Brazil): - Record: CP07 TCR0 - Position: 48-50 - Field: Bill Payment Transaction Type Identifier  The value for this field corresponds to the following data in the TC 33A capture file (applicable to Installment) based Repayment): - Record: CP01 TCR6 - Position: 154-156 - Field: Bill Payment Transaction Type Identifier   This field is supported for 1. Bill payments in Brazil with Mastercard on CyberSource through VisaNet. 2. Installment based repayment transactions on Cybersource through VisaNet.
      * @return $this
      */
     public function setBillPaymentType($billPaymentType)
@@ -754,6 +778,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     }
 
     /**
+     * Gets transactionMode
+     * @return string
+     */
+    public function getTransactionMode()
+    {
+        return $this->container['transactionMode'];
+    }
+
+    /**
+     * Sets transactionMode
+     * @param string $transactionMode Transaction mode identifier. Identifies the specific channel from which the transaction originates.  Possible values: - M – Mobile Order - T – Telephone Order
+     * @return $this
+     */
+    public function setTransactionMode($transactionMode)
+    {
+        $this->container['transactionMode'] = $transactionMode;
+
+        return $this;
+    }
+
+    /**
      * Gets aftIndicator
      * @return bool
      */
@@ -770,6 +815,69 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptions implements ArrayAcc
     public function setAftIndicator($aftIndicator)
     {
         $this->container['aftIndicator'] = $aftIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceType
+     * @return string
+     */
+    public function getServiceType()
+    {
+        return $this->container['serviceType'];
+    }
+
+    /**
+     * Sets serviceType
+     * @param string $serviceType Field is used for back-to-back funding transaction and can be defined as a payment flow that automatically transfers funds through a real-time  funding or a live-load. This type of transaction can also be connected to a purchase.  In back-to-back funding of general purpose card that is used to make a purchase, two separate accounts are involved:  - account one is used to make the purchase - account two is used to automatically fund or reimburse account one  Possible values: - 0B = back to back funding transaction - 00 = normal transaction - 01 = originator hold - 02 = Visa deferred OCT hold, default interval - 03 = Visa deferred OCT hold, user-defined interval - 09 = Cancel pending deferred OCT request - 0I = Visa Direct custom program 1 - 0Q = uery the status of the deferred OCT - A0 = Alias Directory 2
+     * @return $this
+     */
+    public function setServiceType($serviceType)
+    {
+        $this->container['serviceType'] = $serviceType;
+
+        return $this;
+    }
+
+    /**
+     * Gets balanceUpdate
+     * @return bool
+     */
+    public function getBalanceUpdate()
+    {
+        return $this->container['balanceUpdate'];
+    }
+
+    /**
+     * Sets balanceUpdate
+     * @param bool $balanceUpdate Merchant to inform Cybersource whether a transaction is Money load with Balance Update.  Possible values:   - `true` (This is a Money load with balance update transaction)   - `false` (default value) (This is not a Money load with balance update transaction)
+     * @return $this
+     */
+    public function setBalanceUpdate($balanceUpdate)
+    {
+        $this->container['balanceUpdate'] = $balanceUpdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets moneyLoad
+     * @return bool
+     */
+    public function getMoneyLoad()
+    {
+        return $this->container['moneyLoad'];
+    }
+
+    /**
+     * Sets moneyLoad
+     * @param bool $moneyLoad Merchant to inform Cybersource whether a transaction is Money load with Money load only.  Possible values:   - `true` (This is a money load transaction)   - `false` (default value) (This is not a money load transaction)
+     * @return $this
+     */
+    public function setMoneyLoad($moneyLoad)
+    {
+        $this->container['moneyLoad'] = $moneyLoad;
 
         return $this;
     }

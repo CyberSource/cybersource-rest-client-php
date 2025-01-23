@@ -166,4 +166,11 @@ class PostInstrumentIdentifierRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMetadata()
     {
     }
+
+    /**
+     * Test attribute "embedded"
+     */
+    public function testPropertyEmbedded()
+    {
+    }
 }

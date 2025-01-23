@@ -110,4 +110,18 @@ class PtsV2PaymentsPost201ResponseEmbeddedActionsTest extends \PHPUnit_Framework
     public function testPropertyWATCHLISTSCREENING()
     {
     }
+
+    /**
+     * Test attribute "tOKENCREATE"
+     */
+    public function testPropertyTOKENCREATE()
+    {
+    }
+
+    /**
+     * Test attribute "tOKENUPDATE"
+     */
+    public function testPropertyTOKENUPDATE()
+    {
+    }
 }

@@ -124,4 +124,11 @@ class OctCreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPaymentInformation()
     {
     }
+
+    /**
+     * Test attribute "aggregatorInformation"
+     */
+    public function testPropertyAggregatorInformation()
+    {
+    }
 }

@@ -57,7 +57,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPaymentInstrument**
-> \CyberSource\Model\PostPaymentInstrumentRequest getPaymentInstrument($paymentInstrumentId, $profileId)
+> \CyberSource\Model\PostPaymentInstrumentRequest getPaymentInstrument($paymentInstrumentId, $profileId, $retrieveBinDetails)
 
 Retrieve a Payment Instrument
 
@@ -71,9 +71,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\PaymentInstrumentApi();
 $paymentInstrumentId = "paymentInstrumentId_example"; // string | The Id of a payment instrument.
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 
 try {
-    $result = $api_instance->getPaymentInstrument($paymentInstrumentId, $profileId);
+    $result = $api_instance->getPaymentInstrument($paymentInstrumentId, $profileId, $retrieveBinDetails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentInstrumentApi->getPaymentInstrument: ', $e->getMessage(), PHP_EOL;
@@ -87,6 +88,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **paymentInstrumentId** | **string**| The Id of a payment instrument. |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 
@@ -104,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchPaymentInstrument**
-> \CyberSource\Model\PatchPaymentInstrumentRequest patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $ifMatch)
+> \CyberSource\Model\PatchPaymentInstrumentRequest patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $retrieveBinDetails, $ifMatch)
 
 Update a Payment Instrument
 
@@ -119,10 +121,11 @@ $api_instance = new CyberSource\Api\PaymentInstrumentApi();
 $paymentInstrumentId = "paymentInstrumentId_example"; // string | The Id of a payment instrument.
 $patchPaymentInstrumentRequest = new \CyberSource\Model\PatchPaymentInstrumentRequest(); // \CyberSource\Model\PatchPaymentInstrumentRequest | 
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 $ifMatch = "ifMatch_example"; // string | Contains an ETag value from a GET request to make the request conditional.
 
 try {
-    $result = $api_instance->patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $ifMatch);
+    $result = $api_instance->patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $retrieveBinDetails, $ifMatch);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentInstrumentApi->patchPaymentInstrument: ', $e->getMessage(), PHP_EOL;
@@ -137,6 +140,7 @@ Name | Type | Description  | Notes
  **paymentInstrumentId** | **string**| The Id of a payment instrument. |
  **patchPaymentInstrumentRequest** | [**\CyberSource\Model\PatchPaymentInstrumentRequest**](../Model/PatchPaymentInstrumentRequest.md)|  |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
  **ifMatch** | **string**| Contains an ETag value from a GET request to make the request conditional. | [optional]
 
 ### Return type
@@ -155,7 +159,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postPaymentInstrument**
-> \CyberSource\Model\PostPaymentInstrumentRequest postPaymentInstrument($postPaymentInstrumentRequest, $profileId)
+> \CyberSource\Model\PostPaymentInstrumentRequest postPaymentInstrument($postPaymentInstrumentRequest, $profileId, $retrieveBinDetails)
 
 Create a Payment Instrument
 
@@ -169,9 +173,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\PaymentInstrumentApi();
 $postPaymentInstrumentRequest = new \CyberSource\Model\PostPaymentInstrumentRequest(); // \CyberSource\Model\PostPaymentInstrumentRequest | 
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 
 try {
-    $result = $api_instance->postPaymentInstrument($postPaymentInstrumentRequest, $profileId);
+    $result = $api_instance->postPaymentInstrument($postPaymentInstrumentRequest, $profileId, $retrieveBinDetails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentInstrumentApi->postPaymentInstrument: ', $e->getMessage(), PHP_EOL;
@@ -185,6 +190,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postPaymentInstrumentRequest** | [**\CyberSource\Model\PostPaymentInstrumentRequest**](../Model/PostPaymentInstrumentRequest.md)|  |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 

@@ -63,7 +63,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'recurringOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRecurringOptions',
         'industryDataType' => 'string',
         'paymentType' => 'string',
-        'refundOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRefundOptions'
+        'refundOptions' => '\CyberSource\Model\Ptsv2paymentsidrefundsProcessingInformationRefundOptions',
+        'transactionTypeIndicator' => 'string'
     ];
 
     /**
@@ -81,7 +82,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'recurringOptions' => null,
         'industryDataType' => null,
         'paymentType' => null,
-        'refundOptions' => null
+        'refundOptions' => null,
+        'transactionTypeIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -109,7 +111,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'recurringOptions' => 'recurringOptions',
         'industryDataType' => 'industryDataType',
         'paymentType' => 'paymentType',
-        'refundOptions' => 'refundOptions'
+        'refundOptions' => 'refundOptions',
+        'transactionTypeIndicator' => 'transactionTypeIndicator'
     ];
 
 
@@ -128,7 +131,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'recurringOptions' => 'setRecurringOptions',
         'industryDataType' => 'setIndustryDataType',
         'paymentType' => 'setPaymentType',
-        'refundOptions' => 'setRefundOptions'
+        'refundOptions' => 'setRefundOptions',
+        'transactionTypeIndicator' => 'setTransactionTypeIndicator'
     ];
 
 
@@ -147,7 +151,8 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         'recurringOptions' => 'getRecurringOptions',
         'industryDataType' => 'getIndustryDataType',
         'paymentType' => 'getPaymentType',
-        'refundOptions' => 'getRefundOptions'
+        'refundOptions' => 'getRefundOptions',
+        'transactionTypeIndicator' => 'getTransactionTypeIndicator'
     ];
 
     public static function attributeMap()
@@ -192,6 +197,7 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
         $this->container['industryDataType'] = isset($data['industryDataType']) ? $data['industryDataType'] : null;
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['refundOptions'] = isset($data['refundOptions']) ? $data['refundOptions'] : null;
+        $this->container['transactionTypeIndicator'] = isset($data['transactionTypeIndicator']) ? $data['transactionTypeIndicator'] : null;
     }
 
     /**
@@ -446,6 +452,27 @@ class Ptsv2paymentsidrefundsProcessingInformation implements ArrayAccess
     public function setRefundOptions($refundOptions)
     {
         $this->container['refundOptions'] = $refundOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionTypeIndicator
+     * @return string
+     */
+    public function getTransactionTypeIndicator()
+    {
+        return $this->container['transactionTypeIndicator'];
+    }
+
+    /**
+     * Sets transactionTypeIndicator
+     * @param string $transactionTypeIndicator This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities
+     * @return $this
+     */
+    public function setTransactionTypeIndicator($transactionTypeIndicator)
+    {
+        $this->container['transactionTypeIndicator'] = $transactionTypeIndicator;
 
         return $this;
     }

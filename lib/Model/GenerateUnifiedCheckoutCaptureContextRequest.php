@@ -60,8 +60,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'string',
         'locale' => 'string',
         'captureMandate' => '\CyberSource\Model\Upv1capturecontextsCaptureMandate',
-        'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation',
-        'checkoutApiInitialization' => '\CyberSource\Model\Upv1capturecontextsCheckoutApiInitialization'
+        'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation'
     ];
 
     /**
@@ -76,8 +75,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => null,
         'locale' => null,
         'captureMandate' => null,
-        'orderInformation' => null,
-        'checkoutApiInitialization' => null
+        'orderInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -102,8 +100,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'country',
         'locale' => 'locale',
         'captureMandate' => 'captureMandate',
-        'orderInformation' => 'orderInformation',
-        'checkoutApiInitialization' => 'checkoutApiInitialization'
+        'orderInformation' => 'orderInformation'
     ];
 
 
@@ -119,8 +116,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'setCountry',
         'locale' => 'setLocale',
         'captureMandate' => 'setCaptureMandate',
-        'orderInformation' => 'setOrderInformation',
-        'checkoutApiInitialization' => 'setCheckoutApiInitialization'
+        'orderInformation' => 'setOrderInformation'
     ];
 
 
@@ -136,8 +132,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'getCountry',
         'locale' => 'getLocale',
         'captureMandate' => 'getCaptureMandate',
-        'orderInformation' => 'getOrderInformation',
-        'checkoutApiInitialization' => 'getCheckoutApiInitialization'
+        'orderInformation' => 'getOrderInformation'
     ];
 
     public static function attributeMap()
@@ -179,7 +174,6 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
         $this->container['captureMandate'] = isset($data['captureMandate']) ? $data['captureMandate'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
-        $this->container['checkoutApiInitialization'] = isset($data['checkoutApiInitialization']) ? $data['checkoutApiInitialization'] : null;
     }
 
     /**
@@ -281,7 +275,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedPaymentTypes
-     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - PANENTRY                 - GOOGLEPAY   - SRC   - CHECK <br><br>  Possible values when launching Unified Checkout with Checkout API: - PANENTRY               - SRC <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - SRC and CLICKTOPAY are only available for Visa, Mastercard and AMEX.
+     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.
      * @return $this
      */
     public function setAllowedPaymentTypes($allowedPaymentTypes)
@@ -371,27 +365,6 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets checkoutApiInitialization
-     * @return \CyberSource\Model\Upv1capturecontextsCheckoutApiInitialization
-     */
-    public function getCheckoutApiInitialization()
-    {
-        return $this->container['checkoutApiInitialization'];
-    }
-
-    /**
-     * Sets checkoutApiInitialization
-     * @param \CyberSource\Model\Upv1capturecontextsCheckoutApiInitialization $checkoutApiInitialization
-     * @return $this
-     */
-    public function setCheckoutApiInitialization($checkoutApiInitialization)
-    {
-        $this->container['checkoutApiInitialization'] = $checkoutApiInitialization;
 
         return $this;
     }

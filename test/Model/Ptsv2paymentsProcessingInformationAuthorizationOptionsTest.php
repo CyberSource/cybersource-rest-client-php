@@ -231,9 +231,37 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsTest extends \PHPUni
     }
 
     /**
+     * Test attribute "transactionMode"
+     */
+    public function testPropertyTransactionMode()
+    {
+    }
+
+    /**
      * Test attribute "aftIndicator"
      */
     public function testPropertyAftIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "serviceType"
+     */
+    public function testPropertyServiceType()
+    {
+    }
+
+    /**
+     * Test attribute "balanceUpdate"
+     */
+    public function testPropertyBalanceUpdate()
+    {
+    }
+
+    /**
+     * Test attribute "moneyLoad"
+     */
+    public function testPropertyMoneyLoad()
     {
     }
 }

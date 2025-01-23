@@ -90,6 +90,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'whiteListStatusSource' => 'string',
         'xid' => 'string',
         'directoryServerTransactionId' => 'string',
+        'dataQualityIndicator' => 'string',
         'authenticationResult' => 'string',
         'authenticationStatusMsg' => 'string',
         'indicator' => 'string',
@@ -139,6 +140,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'whiteListStatusSource' => null,
         'xid' => null,
         'directoryServerTransactionId' => null,
+        'dataQualityIndicator' => null,
         'authenticationResult' => null,
         'authenticationStatusMsg' => null,
         'indicator' => null,
@@ -198,6 +200,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'whiteListStatusSource' => 'whiteListStatusSource',
         'xid' => 'xid',
         'directoryServerTransactionId' => 'directoryServerTransactionId',
+        'dataQualityIndicator' => 'dataQualityIndicator',
         'authenticationResult' => 'authenticationResult',
         'authenticationStatusMsg' => 'authenticationStatusMsg',
         'indicator' => 'indicator',
@@ -248,6 +251,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'whiteListStatusSource' => 'setWhiteListStatusSource',
         'xid' => 'setXid',
         'directoryServerTransactionId' => 'setDirectoryServerTransactionId',
+        'dataQualityIndicator' => 'setDataQualityIndicator',
         'authenticationResult' => 'setAuthenticationResult',
         'authenticationStatusMsg' => 'setAuthenticationStatusMsg',
         'indicator' => 'setIndicator',
@@ -298,6 +302,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         'whiteListStatusSource' => 'getWhiteListStatusSource',
         'xid' => 'getXid',
         'directoryServerTransactionId' => 'getDirectoryServerTransactionId',
+        'dataQualityIndicator' => 'getDataQualityIndicator',
         'authenticationResult' => 'getAuthenticationResult',
         'authenticationStatusMsg' => 'getAuthenticationStatusMsg',
         'indicator' => 'getIndicator',
@@ -373,6 +378,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
         $this->container['whiteListStatusSource'] = isset($data['whiteListStatusSource']) ? $data['whiteListStatusSource'] : null;
         $this->container['xid'] = isset($data['xid']) ? $data['xid'] : null;
         $this->container['directoryServerTransactionId'] = isset($data['directoryServerTransactionId']) ? $data['directoryServerTransactionId'] : null;
+        $this->container['dataQualityIndicator'] = isset($data['dataQualityIndicator']) ? $data['dataQualityIndicator'] : null;
         $this->container['authenticationResult'] = isset($data['authenticationResult']) ? $data['authenticationResult'] : null;
         $this->container['authenticationStatusMsg'] = isset($data['authenticationStatusMsg']) ? $data['authenticationStatusMsg'] : null;
         $this->container['indicator'] = isset($data['indicator']) ? $data['indicator'] : null;
@@ -1178,6 +1184,27 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
     public function setDirectoryServerTransactionId($directoryServerTransactionId)
     {
         $this->container['directoryServerTransactionId'] = $directoryServerTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets dataQualityIndicator
+     * @return string
+     */
+    public function getDataQualityIndicator()
+    {
+        return $this->container['dataQualityIndicator'];
+    }
+
+    /**
+     * Sets dataQualityIndicator
+     * @param string $dataQualityIndicator The field is used to indicate that a transaction does not meet the Visa Secure authentication data quality requirements.
+     * @return $this
+     */
+    public function setDataQualityIndicator($dataQualityIndicator)
+    {
+        $this->container['dataQualityIndicator'] = $dataQualityIndicator;
 
         return $this;
     }

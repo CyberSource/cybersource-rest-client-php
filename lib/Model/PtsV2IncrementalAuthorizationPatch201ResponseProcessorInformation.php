@@ -60,6 +60,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'systemTraceAuditNumber' => 'string',
         'responseDetails' => 'string',
         'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice',
+        'merchantRiskPrediction' => 'string',
         'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'
     ];
 
@@ -75,6 +76,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'systemTraceAuditNumber' => null,
         'responseDetails' => null,
         'merchantAdvice' => null,
+        'merchantRiskPrediction' => null,
         'sellerProtection' => null
     ];
 
@@ -100,6 +102,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
         'responseDetails' => 'responseDetails',
         'merchantAdvice' => 'merchantAdvice',
+        'merchantRiskPrediction' => 'merchantRiskPrediction',
         'sellerProtection' => 'sellerProtection'
     ];
 
@@ -116,6 +119,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
         'responseDetails' => 'setResponseDetails',
         'merchantAdvice' => 'setMerchantAdvice',
+        'merchantRiskPrediction' => 'setMerchantRiskPrediction',
         'sellerProtection' => 'setSellerProtection'
     ];
 
@@ -132,6 +136,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
         'responseDetails' => 'getResponseDetails',
         'merchantAdvice' => 'getMerchantAdvice',
+        'merchantRiskPrediction' => 'getMerchantRiskPrediction',
         'sellerProtection' => 'getSellerProtection'
     ];
 
@@ -173,6 +178,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
+        $this->container['merchantRiskPrediction'] = isset($data['merchantRiskPrediction']) ? $data['merchantRiskPrediction'] : null;
         $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
     }
 
@@ -344,6 +350,27 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     public function setMerchantAdvice($merchantAdvice)
     {
         $this->container['merchantAdvice'] = $merchantAdvice;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantRiskPrediction
+     * @return string
+     */
+    public function getMerchantRiskPrediction()
+    {
+        return $this->container['merchantRiskPrediction'];
+    }
+
+    /**
+     * Sets merchantRiskPrediction
+     * @param string $merchantRiskPrediction Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices.
+     * @return $this
+     */
+    public function setMerchantRiskPrediction($merchantRiskPrediction)
+    {
+        $this->container['merchantRiskPrediction'] = $merchantRiskPrediction;
 
         return $this;
     }

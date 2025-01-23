@@ -166,4 +166,11 @@ class PostInstrumentIdentifierEnrollmentRequestTest extends \PHPUnit_Framework_T
     public function testPropertyMetadata()
     {
     }
+
+    /**
+     * Test attribute "embedded"
+     */
+    public function testPropertyEmbedded()
+    {
+    }
 }

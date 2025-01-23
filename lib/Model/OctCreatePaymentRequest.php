@@ -59,7 +59,8 @@ class OctCreatePaymentRequest implements ArrayAccess
         'recipientInformation' => '\CyberSource\Model\Ptsv2payoutsRecipientInformation',
         'senderInformation' => '\CyberSource\Model\Ptsv2payoutsSenderInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2payoutsProcessingInformation',
-        'paymentInformation' => '\CyberSource\Model\Ptsv2payoutsPaymentInformation'
+        'paymentInformation' => '\CyberSource\Model\Ptsv2payoutsPaymentInformation',
+        'aggregatorInformation' => '\CyberSource\Model\Ptsv2payoutsAggregatorInformation'
     ];
 
     /**
@@ -73,7 +74,8 @@ class OctCreatePaymentRequest implements ArrayAccess
         'recipientInformation' => null,
         'senderInformation' => null,
         'processingInformation' => null,
-        'paymentInformation' => null
+        'paymentInformation' => null,
+        'aggregatorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +99,8 @@ class OctCreatePaymentRequest implements ArrayAccess
         'recipientInformation' => 'recipientInformation',
         'senderInformation' => 'senderInformation',
         'processingInformation' => 'processingInformation',
-        'paymentInformation' => 'paymentInformation'
+        'paymentInformation' => 'paymentInformation',
+        'aggregatorInformation' => 'aggregatorInformation'
     ];
 
 
@@ -112,7 +115,8 @@ class OctCreatePaymentRequest implements ArrayAccess
         'recipientInformation' => 'setRecipientInformation',
         'senderInformation' => 'setSenderInformation',
         'processingInformation' => 'setProcessingInformation',
-        'paymentInformation' => 'setPaymentInformation'
+        'paymentInformation' => 'setPaymentInformation',
+        'aggregatorInformation' => 'setAggregatorInformation'
     ];
 
 
@@ -127,7 +131,8 @@ class OctCreatePaymentRequest implements ArrayAccess
         'recipientInformation' => 'getRecipientInformation',
         'senderInformation' => 'getSenderInformation',
         'processingInformation' => 'getProcessingInformation',
-        'paymentInformation' => 'getPaymentInformation'
+        'paymentInformation' => 'getPaymentInformation',
+        'aggregatorInformation' => 'getAggregatorInformation'
     ];
 
     public static function attributeMap()
@@ -168,6 +173,7 @@ class OctCreatePaymentRequest implements ArrayAccess
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
+        $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
     }
 
     /**
@@ -338,6 +344,27 @@ class OctCreatePaymentRequest implements ArrayAccess
     public function setPaymentInformation($paymentInformation)
     {
         $this->container['paymentInformation'] = $paymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets aggregatorInformation
+     * @return \CyberSource\Model\Ptsv2payoutsAggregatorInformation
+     */
+    public function getAggregatorInformation()
+    {
+        return $this->container['aggregatorInformation'];
+    }
+
+    /**
+     * Sets aggregatorInformation
+     * @param \CyberSource\Model\Ptsv2payoutsAggregatorInformation $aggregatorInformation
+     * @return $this
+     */
+    public function setAggregatorInformation($aggregatorInformation)
+    {
+        $this->container['aggregatorInformation'] = $aggregatorInformation;
 
         return $this;
     }

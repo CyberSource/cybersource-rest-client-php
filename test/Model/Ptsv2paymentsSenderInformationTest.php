@@ -124,4 +124,32 @@ class Ptsv2paymentsSenderInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCountryCode()
     {
     }
+
+    /**
+     * Test attribute "aliasName"
+     */
+    public function testPropertyAliasName()
+    {
+    }
+
+    /**
+     * Test attribute "referenceNumber"
+     */
+    public function testPropertyReferenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "account"
+     */
+    public function testPropertyAccount()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
 }

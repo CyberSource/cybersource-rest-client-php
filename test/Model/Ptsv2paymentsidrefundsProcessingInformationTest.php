@@ -152,4 +152,11 @@ class Ptsv2paymentsidrefundsProcessingInformationTest extends \PHPUnit_Framework
     public function testPropertyRefundOptions()
     {
     }
+
+    /**
+     * Test attribute "transactionTypeIndicator"
+     */
+    public function testPropertyTransactionTypeIndicator()
+    {
+    }
 }

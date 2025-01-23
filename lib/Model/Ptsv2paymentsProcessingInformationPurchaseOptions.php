@@ -54,7 +54,10 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'isElectronicBenefitsTransfer' => 'bool',
-        'type' => 'string'
+        'type' => 'string',
+        'eligibilityIndicator' => 'string',
+        'benefitAmount' => 'string',
+        'benefitType' => 'string'
     ];
 
     /**
@@ -63,7 +66,10 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'isElectronicBenefitsTransfer' => null,
-        'type' => null
+        'type' => null,
+        'eligibilityIndicator' => null,
+        'benefitAmount' => null,
+        'benefitType' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +88,10 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
      */
     protected static $attributeMap = [
         'isElectronicBenefitsTransfer' => 'isElectronicBenefitsTransfer',
-        'type' => 'type'
+        'type' => 'type',
+        'eligibilityIndicator' => 'eligibilityIndicator',
+        'benefitAmount' => 'benefitAmount',
+        'benefitType' => 'benefitType'
     ];
 
 
@@ -92,7 +101,10 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
      */
     protected static $setters = [
         'isElectronicBenefitsTransfer' => 'setIsElectronicBenefitsTransfer',
-        'type' => 'setType'
+        'type' => 'setType',
+        'eligibilityIndicator' => 'setEligibilityIndicator',
+        'benefitAmount' => 'setBenefitAmount',
+        'benefitType' => 'setBenefitType'
     ];
 
 
@@ -102,7 +114,10 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
      */
     protected static $getters = [
         'isElectronicBenefitsTransfer' => 'getIsElectronicBenefitsTransfer',
-        'type' => 'getType'
+        'type' => 'getType',
+        'eligibilityIndicator' => 'getEligibilityIndicator',
+        'benefitAmount' => 'getBenefitAmount',
+        'benefitType' => 'getBenefitType'
     ];
 
     public static function attributeMap()
@@ -138,6 +153,9 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
     {
         $this->container['isElectronicBenefitsTransfer'] = isset($data['isElectronicBenefitsTransfer']) ? $data['isElectronicBenefitsTransfer'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['eligibilityIndicator'] = isset($data['eligibilityIndicator']) ? $data['eligibilityIndicator'] : null;
+        $this->container['benefitAmount'] = isset($data['benefitAmount']) ? $data['benefitAmount'] : null;
+        $this->container['benefitType'] = isset($data['benefitType']) ? $data['benefitType'] : null;
     }
 
     /**
@@ -203,6 +221,69 @@ class Ptsv2paymentsProcessingInformationPurchaseOptions implements ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets eligibilityIndicator
+     * @return string
+     */
+    public function getEligibilityIndicator()
+    {
+        return $this->container['eligibilityIndicator'];
+    }
+
+    /**
+     * Sets eligibilityIndicator
+     * @param string $eligibilityIndicator This field contains installment data defined by MasterCard. Possible values:   - Y = eligible   - N = not eligile
+     * @return $this
+     */
+    public function setEligibilityIndicator($eligibilityIndicator)
+    {
+        $this->container['eligibilityIndicator'] = $eligibilityIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets benefitAmount
+     * @return string
+     */
+    public function getBenefitAmount()
+    {
+        return $this->container['benefitAmount'];
+    }
+
+    /**
+     * Sets benefitAmount
+     * @param string $benefitAmount Workplace benefit amount.
+     * @return $this
+     */
+    public function setBenefitAmount($benefitAmount)
+    {
+        $this->container['benefitAmount'] = $benefitAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets benefitType
+     * @return string
+     */
+    public function getBenefitType()
+    {
+        return $this->container['benefitType'];
+    }
+
+    /**
+     * Sets benefitType
+     * @param string $benefitType Workplace benefit type. Possible values: - 70 = employee benefit - 4T = transportation / transit - 52 = general benefit - 53 = meal voucher - 54 = fuel - 55 = ecological / sustainability - 58 = philanthropy / patronage / consumption - 59 = gift - 5S = sport / culture - 5T = book / education
+     * @return $this
+     */
+    public function setBenefitType($benefitType)
+    {
+        $this->container['benefitType'] = $benefitType;
 
         return $this;
     }

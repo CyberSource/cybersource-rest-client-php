@@ -259,6 +259,13 @@ class CreatePaymentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "unscheduledPaymentInformation"
+     */
+    public function testPropertyUnscheduledPaymentInformation()
+    {
+    }
+
+    /**
      * Test attribute "hostedPaymentInformation"
      */
     public function testPropertyHostedPaymentInformation()

@@ -96,4 +96,11 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     public function testPropertyOriginalAuthorizedAmount()
     {
     }
+
+    /**
+     * Test attribute "agreementId"
+     */
+    public function testPropertyAgreementId()
+    {
+    }
 }

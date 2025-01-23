@@ -55,7 +55,12 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'aggregatorId' => 'string',
         'name' => 'string',
-        'subMerchant' => '\CyberSource\Model\Ptsv2paymentsAggregatorInformationSubMerchant'
+        'subMerchant' => '\CyberSource\Model\Ptsv2paymentsAggregatorInformationSubMerchant',
+        'streetAddress' => 'string',
+        'city' => 'string',
+        'state' => 'string',
+        'postalCode' => 'string',
+        'country' => 'string'
     ];
 
     /**
@@ -65,7 +70,12 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'aggregatorId' => null,
         'name' => null,
-        'subMerchant' => null
+        'subMerchant' => null,
+        'streetAddress' => null,
+        'city' => null,
+        'state' => null,
+        'postalCode' => null,
+        'country' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +95,12 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     protected static $attributeMap = [
         'aggregatorId' => 'aggregatorId',
         'name' => 'name',
-        'subMerchant' => 'subMerchant'
+        'subMerchant' => 'subMerchant',
+        'streetAddress' => 'streetAddress',
+        'city' => 'city',
+        'state' => 'state',
+        'postalCode' => 'postalCode',
+        'country' => 'country'
     ];
 
 
@@ -96,7 +111,12 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     protected static $setters = [
         'aggregatorId' => 'setAggregatorId',
         'name' => 'setName',
-        'subMerchant' => 'setSubMerchant'
+        'subMerchant' => 'setSubMerchant',
+        'streetAddress' => 'setStreetAddress',
+        'city' => 'setCity',
+        'state' => 'setState',
+        'postalCode' => 'setPostalCode',
+        'country' => 'setCountry'
     ];
 
 
@@ -107,7 +127,12 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     protected static $getters = [
         'aggregatorId' => 'getAggregatorId',
         'name' => 'getName',
-        'subMerchant' => 'getSubMerchant'
+        'subMerchant' => 'getSubMerchant',
+        'streetAddress' => 'getStreetAddress',
+        'city' => 'getCity',
+        'state' => 'getState',
+        'postalCode' => 'getPostalCode',
+        'country' => 'getCountry'
     ];
 
     public static function attributeMap()
@@ -144,6 +169,11 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         $this->container['aggregatorId'] = isset($data['aggregatorId']) ? $data['aggregatorId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['subMerchant'] = isset($data['subMerchant']) ? $data['subMerchant'] : null;
+        $this->container['streetAddress'] = isset($data['streetAddress']) ? $data['streetAddress'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
     /**
@@ -230,6 +260,111 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     public function setSubMerchant($subMerchant)
     {
         $this->container['subMerchant'] = $subMerchant;
+
+        return $this;
+    }
+
+    /**
+     * Gets streetAddress
+     * @return string
+     */
+    public function getStreetAddress()
+    {
+        return $this->container['streetAddress'];
+    }
+
+    /**
+     * Sets streetAddress
+     * @param string $streetAddress Acquirer street name.
+     * @return $this
+     */
+    public function setStreetAddress($streetAddress)
+    {
+        $this->container['streetAddress'] = $streetAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     * @param string $city Acquirer city.
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     * @param string $state Acquirer state.
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode Acquirer postal code.
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     * @param string $country Acquirer country.
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
 
         return $this;
     }

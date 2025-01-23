@@ -107,9 +107,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'secureCorporatePaymentIndicator' => 'string',
         'transactionMode' => 'string',
         'whiteListStatus' => 'string',
+        'authenticationBrand' => 'string',
         'effectiveAuthenticationType' => 'string',
         'signedParesStatusReason' => 'string',
-        'signedPares' => 'string'
+        'signedPares' => 'string',
+        'acsReferenceNumber' => 'string',
+        'dsReferenceNumber' => 'string'
     ];
 
     /**
@@ -171,9 +174,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'secureCorporatePaymentIndicator' => null,
         'transactionMode' => null,
         'whiteListStatus' => null,
+        'authenticationBrand' => null,
         'effectiveAuthenticationType' => null,
         'signedParesStatusReason' => null,
-        'signedPares' => null
+        'signedPares' => null,
+        'acsReferenceNumber' => null,
+        'dsReferenceNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -245,9 +251,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'secureCorporatePaymentIndicator' => 'secureCorporatePaymentIndicator',
         'transactionMode' => 'transactionMode',
         'whiteListStatus' => 'whiteListStatus',
+        'authenticationBrand' => 'authenticationBrand',
         'effectiveAuthenticationType' => 'effectiveAuthenticationType',
         'signedParesStatusReason' => 'signedParesStatusReason',
-        'signedPares' => 'signedPares'
+        'signedPares' => 'signedPares',
+        'acsReferenceNumber' => 'acsReferenceNumber',
+        'dsReferenceNumber' => 'dsReferenceNumber'
     ];
 
 
@@ -310,9 +319,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'secureCorporatePaymentIndicator' => 'setSecureCorporatePaymentIndicator',
         'transactionMode' => 'setTransactionMode',
         'whiteListStatus' => 'setWhiteListStatus',
+        'authenticationBrand' => 'setAuthenticationBrand',
         'effectiveAuthenticationType' => 'setEffectiveAuthenticationType',
         'signedParesStatusReason' => 'setSignedParesStatusReason',
-        'signedPares' => 'setSignedPares'
+        'signedPares' => 'setSignedPares',
+        'acsReferenceNumber' => 'setAcsReferenceNumber',
+        'dsReferenceNumber' => 'setDsReferenceNumber'
     ];
 
 
@@ -375,9 +387,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         'secureCorporatePaymentIndicator' => 'getSecureCorporatePaymentIndicator',
         'transactionMode' => 'getTransactionMode',
         'whiteListStatus' => 'getWhiteListStatus',
+        'authenticationBrand' => 'getAuthenticationBrand',
         'effectiveAuthenticationType' => 'getEffectiveAuthenticationType',
         'signedParesStatusReason' => 'getSignedParesStatusReason',
-        'signedPares' => 'getSignedPares'
+        'signedPares' => 'getSignedPares',
+        'acsReferenceNumber' => 'getAcsReferenceNumber',
+        'dsReferenceNumber' => 'getDsReferenceNumber'
     ];
 
     public static function attributeMap()
@@ -465,9 +480,12 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
         $this->container['secureCorporatePaymentIndicator'] = isset($data['secureCorporatePaymentIndicator']) ? $data['secureCorporatePaymentIndicator'] : null;
         $this->container['transactionMode'] = isset($data['transactionMode']) ? $data['transactionMode'] : null;
         $this->container['whiteListStatus'] = isset($data['whiteListStatus']) ? $data['whiteListStatus'] : null;
+        $this->container['authenticationBrand'] = isset($data['authenticationBrand']) ? $data['authenticationBrand'] : null;
         $this->container['effectiveAuthenticationType'] = isset($data['effectiveAuthenticationType']) ? $data['effectiveAuthenticationType'] : null;
         $this->container['signedParesStatusReason'] = isset($data['signedParesStatusReason']) ? $data['signedParesStatusReason'] : null;
         $this->container['signedPares'] = isset($data['signedPares']) ? $data['signedPares'] : null;
+        $this->container['acsReferenceNumber'] = isset($data['acsReferenceNumber']) ? $data['acsReferenceNumber'] : null;
+        $this->container['dsReferenceNumber'] = isset($data['dsReferenceNumber']) ? $data['dsReferenceNumber'] : null;
     }
 
     /**
@@ -1630,6 +1648,27 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     }
 
     /**
+     * Gets authenticationBrand
+     * @return string
+     */
+    public function getAuthenticationBrand()
+    {
+        return $this->container['authenticationBrand'];
+    }
+
+    /**
+     * Sets authenticationBrand
+     * @param string $authenticationBrand Indicates which directory server was used while authentication process, this data is useful in case of scenarios  when domestic scheme directory server is not present and authentication fallbacks to global scheme directory server. Possible values: - VISA - Returned for Mada VISA Co-badged cards, when authentication falls back to VISA Directory Server - MASTERCARD - Returned for Mada MasterCard Co-badged cards, when authentication falls back to MasterCard Directory Server
+     * @return $this
+     */
+    public function setAuthenticationBrand($authenticationBrand)
+    {
+        $this->container['authenticationBrand'] = $authenticationBrand;
+
+        return $this;
+    }
+
+    /**
      * Gets effectiveAuthenticationType
      * @return string
      */
@@ -1688,6 +1727,48 @@ class Ptsv2paymentsConsumerAuthenticationInformation implements ArrayAccess
     public function setSignedPares($signedPares)
     {
         $this->container['signedPares'] = $signedPares;
+
+        return $this;
+    }
+
+    /**
+     * Gets acsReferenceNumber
+     * @return string
+     */
+    public function getAcsReferenceNumber()
+    {
+        return $this->container['acsReferenceNumber'];
+    }
+
+    /**
+     * Sets acsReferenceNumber
+     * @param string $acsReferenceNumber Unique identifier assigned by the EMVCo Secretariat upon Testing and Approval.
+     * @return $this
+     */
+    public function setAcsReferenceNumber($acsReferenceNumber)
+    {
+        $this->container['acsReferenceNumber'] = $acsReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets dsReferenceNumber
+     * @return string
+     */
+    public function getDsReferenceNumber()
+    {
+        return $this->container['dsReferenceNumber'];
+    }
+
+    /**
+     * Sets dsReferenceNumber
+     * @param string $dsReferenceNumber EMVCo-assigned unique identifier. This field is required in Cardholder Initiated 3DS fully authenticated mada transactions. When you request the payer authentication and authorization services separately, get the value for this field from the payerAuthEnrollReply_dsReferenceNumber or payerAuthValidateReply_dsReferenceNumber response field.
+     * @return $this
+     */
+    public function setDsReferenceNumber($dsReferenceNumber)
+    {
+        $this->container['dsReferenceNumber'] = $dsReferenceNumber;
 
         return $this;
     }

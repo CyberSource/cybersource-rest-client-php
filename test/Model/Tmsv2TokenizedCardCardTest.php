@@ -32,7 +32,7 @@ namespace CyberSource;
  * Tmsv2TokenizedCardCardTest Class Doc Comment
  *
  * @category    Class */
-// * @description The latest card details associated with the network token
+// * @description Card object used to create a network token
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,9 +77,9 @@ class Tmsv2TokenizedCardCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "suffix"
+     * Test attribute "number"
      */
-    public function testPropertySuffix()
+    public function testPropertyNumber()
     {
     }
 
@@ -94,6 +94,20 @@ class Tmsv2TokenizedCardCardTest extends \PHPUnit_Framework_TestCase
      * Test attribute "expirationYear"
      */
     public function testPropertyExpirationYear()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "suffix"
+     */
+    public function testPropertySuffix()
     {
     }
 }

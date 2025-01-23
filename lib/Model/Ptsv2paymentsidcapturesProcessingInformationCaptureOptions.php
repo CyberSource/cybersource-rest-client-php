@@ -56,7 +56,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         'captureSequenceNumber' => 'int',
         'totalCaptureCount' => 'int',
         'isFinal' => 'string',
-        'notes' => 'string'
+        'notes' => 'string',
+        'reconciliationIdAlternate' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         'captureSequenceNumber' => null,
         'totalCaptureCount' => null,
         'isFinal' => null,
-        'notes' => null
+        'notes' => null,
+        'reconciliationIdAlternate' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         'captureSequenceNumber' => 'captureSequenceNumber',
         'totalCaptureCount' => 'totalCaptureCount',
         'isFinal' => 'isFinal',
-        'notes' => 'notes'
+        'notes' => 'notes',
+        'reconciliationIdAlternate' => 'reconciliationIdAlternate'
     ];
 
 
@@ -100,7 +103,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         'captureSequenceNumber' => 'setCaptureSequenceNumber',
         'totalCaptureCount' => 'setTotalCaptureCount',
         'isFinal' => 'setIsFinal',
-        'notes' => 'setNotes'
+        'notes' => 'setNotes',
+        'reconciliationIdAlternate' => 'setReconciliationIdAlternate'
     ];
 
 
@@ -112,7 +116,8 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         'captureSequenceNumber' => 'getCaptureSequenceNumber',
         'totalCaptureCount' => 'getTotalCaptureCount',
         'isFinal' => 'getIsFinal',
-        'notes' => 'getNotes'
+        'notes' => 'getNotes',
+        'reconciliationIdAlternate' => 'getReconciliationIdAlternate'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
         $this->container['totalCaptureCount'] = isset($data['totalCaptureCount']) ? $data['totalCaptureCount'] : null;
         $this->container['isFinal'] = isset($data['isFinal']) ? $data['isFinal'] : null;
         $this->container['notes'] = isset($data['notes']) ? $data['notes'] : null;
+        $this->container['reconciliationIdAlternate'] = isset($data['reconciliationIdAlternate']) ? $data['reconciliationIdAlternate'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
     public function setNotes($notes)
     {
         $this->container['notes'] = $notes;
+
+        return $this;
+    }
+
+    /**
+     * Gets reconciliationIdAlternate
+     * @return string
+     */
+    public function getReconciliationIdAlternate()
+    {
+        return $this->container['reconciliationIdAlternate'];
+    }
+
+    /**
+     * Sets reconciliationIdAlternate
+     * @param string $reconciliationIdAlternate Used by Nike merchant to send 12 digit order number
+     * @return $this
+     */
+    public function setReconciliationIdAlternate($reconciliationIdAlternate)
+    {
+        $this->container['reconciliationIdAlternate'] = $reconciliationIdAlternate;
 
         return $this;
     }

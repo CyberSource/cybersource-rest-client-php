@@ -32,7 +32,7 @@ namespace CyberSource;
  * Tmsv2TokenizedCardMetadataTest Class Doc Comment
  *
  * @category    Class */
-// * @description Tmsv2TokenizedCardMetadata
+// * @description Metadata associated with the tokenized card.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -80,6 +80,13 @@ class Tmsv2TokenizedCardMetadataTest extends \PHPUnit_Framework_TestCase
      * Test attribute "cardArt"
      */
     public function testPropertyCardArt()
+    {
+    }
+
+    /**
+     * Test attribute "issuer"
+     */
+    public function testPropertyIssuer()
     {
     }
 }

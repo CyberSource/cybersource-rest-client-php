@@ -56,7 +56,9 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         'bankTransferOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationBankTransferOptions',
         'paymentSolution' => 'string',
         'enhancedDataEnabled' => 'bool',
-        'captureOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions'
+        'captureOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationCaptureOptions',
+        'authorizationOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions',
+        'purchaseOptions' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions'
     ];
 
     /**
@@ -67,7 +69,9 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         'bankTransferOptions' => null,
         'paymentSolution' => null,
         'enhancedDataEnabled' => null,
-        'captureOptions' => null
+        'captureOptions' => null,
+        'authorizationOptions' => null,
+        'purchaseOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +92,9 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         'bankTransferOptions' => 'bankTransferOptions',
         'paymentSolution' => 'paymentSolution',
         'enhancedDataEnabled' => 'enhancedDataEnabled',
-        'captureOptions' => 'captureOptions'
+        'captureOptions' => 'captureOptions',
+        'authorizationOptions' => 'authorizationOptions',
+        'purchaseOptions' => 'purchaseOptions'
     ];
 
 
@@ -100,7 +106,9 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         'bankTransferOptions' => 'setBankTransferOptions',
         'paymentSolution' => 'setPaymentSolution',
         'enhancedDataEnabled' => 'setEnhancedDataEnabled',
-        'captureOptions' => 'setCaptureOptions'
+        'captureOptions' => 'setCaptureOptions',
+        'authorizationOptions' => 'setAuthorizationOptions',
+        'purchaseOptions' => 'setPurchaseOptions'
     ];
 
 
@@ -112,7 +120,9 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         'bankTransferOptions' => 'getBankTransferOptions',
         'paymentSolution' => 'getPaymentSolution',
         'enhancedDataEnabled' => 'getEnhancedDataEnabled',
-        'captureOptions' => 'getCaptureOptions'
+        'captureOptions' => 'getCaptureOptions',
+        'authorizationOptions' => 'getAuthorizationOptions',
+        'purchaseOptions' => 'getPurchaseOptions'
     ];
 
     public static function attributeMap()
@@ -150,6 +160,8 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
         $this->container['paymentSolution'] = isset($data['paymentSolution']) ? $data['paymentSolution'] : null;
         $this->container['enhancedDataEnabled'] = isset($data['enhancedDataEnabled']) ? $data['enhancedDataEnabled'] : null;
         $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
+        $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
+        $this->container['purchaseOptions'] = isset($data['purchaseOptions']) ? $data['purchaseOptions'] : null;
     }
 
     /**
@@ -257,6 +269,48 @@ class PtsV2PaymentsPost201ResponseProcessingInformation implements ArrayAccess
     public function setCaptureOptions($captureOptions)
     {
         $this->container['captureOptions'] = $captureOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationOptions
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions
+     */
+    public function getAuthorizationOptions()
+    {
+        return $this->container['authorizationOptions'];
+    }
+
+    /**
+     * Sets authorizationOptions
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationAuthorizationOptions $authorizationOptions
+     * @return $this
+     */
+    public function setAuthorizationOptions($authorizationOptions)
+    {
+        $this->container['authorizationOptions'] = $authorizationOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchaseOptions
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions
+     */
+    public function getPurchaseOptions()
+    {
+        return $this->container['purchaseOptions'];
+    }
+
+    /**
+     * Sets purchaseOptions
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions $purchaseOptions
+     * @return $this
+     */
+    public function setPurchaseOptions($purchaseOptions)
+    {
+        $this->container['purchaseOptions'] = $purchaseOptions;
 
         return $this;
     }

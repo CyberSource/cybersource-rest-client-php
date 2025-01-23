@@ -53,7 +53,7 @@ class Ptsv2voidsProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentId' => 'object'
+        'paymentId' => 'string'
     ];
 
     /**
@@ -161,7 +161,7 @@ class Ptsv2voidsProcessingInformation implements ArrayAccess
 
     /**
      * Gets paymentId
-     * @return object
+     * @return string
      */
     public function getPaymentId()
     {
@@ -170,7 +170,7 @@ class Ptsv2voidsProcessingInformation implements ArrayAccess
 
     /**
      * Sets paymentId
-     * @param object $paymentId This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.
+     * @param string $paymentId This field is to accept the id of credit/capture in the body of the requests so the type of void can be identified and processed correctly.
      * @return $this
      */
     public function setPaymentId($paymentId)

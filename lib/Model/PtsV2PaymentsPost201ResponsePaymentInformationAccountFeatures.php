@@ -70,7 +70,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         'pinlessDebit' => 'string',
         'signatureDebit' => 'string',
         'prepaid' => 'string',
-        'regulated' => 'string'
+        'regulated' => 'string',
+        'accountHolderType' => 'string'
     ];
 
     /**
@@ -95,7 +96,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         'pinlessDebit' => null,
         'signatureDebit' => null,
         'prepaid' => null,
-        'regulated' => null
+        'regulated' => null,
+        'accountHolderType' => null
     ];
 
     public static function swaggerTypes()
@@ -130,7 +132,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         'pinlessDebit' => 'pinlessDebit',
         'signatureDebit' => 'signatureDebit',
         'prepaid' => 'prepaid',
-        'regulated' => 'regulated'
+        'regulated' => 'regulated',
+        'accountHolderType' => 'accountHolderType'
     ];
 
 
@@ -156,7 +159,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         'pinlessDebit' => 'setPinlessDebit',
         'signatureDebit' => 'setSignatureDebit',
         'prepaid' => 'setPrepaid',
-        'regulated' => 'setRegulated'
+        'regulated' => 'setRegulated',
+        'accountHolderType' => 'setAccountHolderType'
     ];
 
 
@@ -182,7 +186,8 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         'pinlessDebit' => 'getPinlessDebit',
         'signatureDebit' => 'getSignatureDebit',
         'prepaid' => 'getPrepaid',
-        'regulated' => 'getRegulated'
+        'regulated' => 'getRegulated',
+        'accountHolderType' => 'getAccountHolderType'
     ];
 
     public static function attributeMap()
@@ -234,6 +239,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
         $this->container['signatureDebit'] = isset($data['signatureDebit']) ? $data['signatureDebit'] : null;
         $this->container['prepaid'] = isset($data['prepaid']) ? $data['prepaid'] : null;
         $this->container['regulated'] = isset($data['regulated']) ? $data['regulated'] : null;
+        $this->container['accountHolderType'] = isset($data['accountHolderType']) ? $data['accountHolderType'] : null;
     }
 
     /**
@@ -635,6 +641,27 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
     public function setRegulated($regulated)
     {
         $this->container['regulated'] = $regulated;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountHolderType
+     * @return string
+     */
+    public function getAccountHolderType()
+    {
+        return $this->container['accountHolderType'];
+    }
+
+    /**
+     * Sets accountHolderType
+     * @param string $accountHolderType This is the account owner information, valid values are: - `01` : primary account holder - `02` : secondary account holder This is returned in the response of an account verification transaction by the Issuer.
+     * @return $this
+     */
+    public function setAccountHolderType($accountHolderType)
+    {
+        $this->container['accountHolderType'] = $accountHolderType;
 
         return $this;
     }

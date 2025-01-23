@@ -55,6 +55,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     protected static $swaggerTypes = [
         'transactionId' => 'string',
         'responseCode' => 'string',
+        'networkTransactionId' => 'string',
         'responseCategoryCode' => 'string',
         'forwardedAcquirerCode' => 'string',
         'masterCardServiceCode' => 'string',
@@ -70,6 +71,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     protected static $swaggerFormats = [
         'transactionId' => null,
         'responseCode' => null,
+        'networkTransactionId' => null,
         'responseCategoryCode' => null,
         'forwardedAcquirerCode' => null,
         'masterCardServiceCode' => null,
@@ -95,6 +97,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     protected static $attributeMap = [
         'transactionId' => 'transactionId',
         'responseCode' => 'responseCode',
+        'networkTransactionId' => 'networkTransactionId',
         'responseCategoryCode' => 'responseCategoryCode',
         'forwardedAcquirerCode' => 'forwardedAcquirerCode',
         'masterCardServiceCode' => 'masterCardServiceCode',
@@ -111,6 +114,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     protected static $setters = [
         'transactionId' => 'setTransactionId',
         'responseCode' => 'setResponseCode',
+        'networkTransactionId' => 'setNetworkTransactionId',
         'responseCategoryCode' => 'setResponseCategoryCode',
         'forwardedAcquirerCode' => 'setForwardedAcquirerCode',
         'masterCardServiceCode' => 'setMasterCardServiceCode',
@@ -127,6 +131,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     protected static $getters = [
         'transactionId' => 'getTransactionId',
         'responseCode' => 'getResponseCode',
+        'networkTransactionId' => 'getNetworkTransactionId',
         'responseCategoryCode' => 'getResponseCategoryCode',
         'forwardedAcquirerCode' => 'getForwardedAcquirerCode',
         'masterCardServiceCode' => 'getMasterCardServiceCode',
@@ -168,6 +173,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     {
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
+        $this->container['networkTransactionId'] = isset($data['networkTransactionId']) ? $data['networkTransactionId'] : null;
         $this->container['responseCategoryCode'] = isset($data['responseCategoryCode']) ? $data['responseCategoryCode'] : null;
         $this->container['forwardedAcquirerCode'] = isset($data['forwardedAcquirerCode']) ? $data['forwardedAcquirerCode'] : null;
         $this->container['masterCardServiceCode'] = isset($data['masterCardServiceCode']) ? $data['masterCardServiceCode'] : null;
@@ -239,6 +245,27 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     public function setResponseCode($responseCode)
     {
         $this->container['responseCode'] = $responseCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkTransactionId
+     * @return string
+     */
+    public function getNetworkTransactionId()
+    {
+        return $this->container['networkTransactionId'];
+    }
+
+    /**
+     * Sets networkTransactionId
+     * @param string $networkTransactionId Same value as `processorInformation.transactionId`
+     * @return $this
+     */
+    public function setNetworkTransactionId($networkTransactionId)
+    {
+        $this->container['networkTransactionId'] = $networkTransactionId;
 
         return $this;
     }

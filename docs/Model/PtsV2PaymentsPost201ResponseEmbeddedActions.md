@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **cONSUMERAUTHENTICATION** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION**](PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION.md) |  | [optional] 
 **vALIDATECONSUMERAUTHENTICATION** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION**](PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION.md) |  | [optional] 
 **wATCHLISTSCREENING** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING**](PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING.md) |  | [optional] 
+**tOKENCREATE** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE**](PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE.md) |  | [optional] 
+**tOKENUPDATE** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE**](PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

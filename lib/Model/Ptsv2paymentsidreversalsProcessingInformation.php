@@ -59,7 +59,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'reportGroup' => 'string',
         'visaCheckoutId' => 'string',
         'issuer' => '\CyberSource\Model\Ptsv2paymentsIssuerInformation',
-        'actionList' => 'string[]'
+        'actionList' => 'string[]',
+        'transactionTypeIndicator' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'reportGroup' => null,
         'visaCheckoutId' => null,
         'issuer' => null,
-        'actionList' => null
+        'actionList' => null,
+        'transactionTypeIndicator' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +99,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'reportGroup' => 'reportGroup',
         'visaCheckoutId' => 'visaCheckoutId',
         'issuer' => 'issuer',
-        'actionList' => 'actionList'
+        'actionList' => 'actionList',
+        'transactionTypeIndicator' => 'transactionTypeIndicator'
     ];
 
 
@@ -112,7 +115,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'reportGroup' => 'setReportGroup',
         'visaCheckoutId' => 'setVisaCheckoutId',
         'issuer' => 'setIssuer',
-        'actionList' => 'setActionList'
+        'actionList' => 'setActionList',
+        'transactionTypeIndicator' => 'setTransactionTypeIndicator'
     ];
 
 
@@ -127,7 +131,8 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         'reportGroup' => 'getReportGroup',
         'visaCheckoutId' => 'getVisaCheckoutId',
         'issuer' => 'getIssuer',
-        'actionList' => 'getActionList'
+        'actionList' => 'getActionList',
+        'transactionTypeIndicator' => 'getTransactionTypeIndicator'
     ];
 
     public static function attributeMap()
@@ -168,6 +173,7 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
         $this->container['visaCheckoutId'] = isset($data['visaCheckoutId']) ? $data['visaCheckoutId'] : null;
         $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
         $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
+        $this->container['transactionTypeIndicator'] = isset($data['transactionTypeIndicator']) ? $data['transactionTypeIndicator'] : null;
     }
 
     /**
@@ -338,6 +344,27 @@ class Ptsv2paymentsidreversalsProcessingInformation implements ArrayAccess
     public function setActionList($actionList)
     {
         $this->container['actionList'] = $actionList;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionTypeIndicator
+     * @return string
+     */
+    public function getTransactionTypeIndicator()
+    {
+        return $this->container['transactionTypeIndicator'];
+    }
+
+    /**
+     * Sets transactionTypeIndicator
+     * @param string $transactionTypeIndicator This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities
+     * @return $this
+     */
+    public function setTransactionTypeIndicator($transactionTypeIndicator)
+    {
+        $this->container['transactionTypeIndicator'] = $transactionTypeIndicator;
 
         return $this;
     }

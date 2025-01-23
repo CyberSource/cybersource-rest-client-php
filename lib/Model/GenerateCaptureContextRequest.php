@@ -34,7 +34,7 @@ use \ArrayAccess;
  * GenerateCaptureContextRequest Class Doc Comment
  *
  * @category    Class
- * @description This is a server-to-server API request to generate the capture context that can be used to initiate instance of microform on a acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application.
+ * @description This is a server-to-server API request to generate the capture context that can be used to initiate an instance of Microform on an acceptance page.   The capture context is a digitally signed JWT that provides authentication, one-time keys, and the target origin to the Microform Integration application.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -57,7 +57,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'string',
         'targetOrigins' => 'string[]',
         'allowedCardNetworks' => 'string[]',
-        'checkoutApiInitialization' => '\CyberSource\Model\Microformv2sessionsCheckoutApiInitialization'
+        'allowedPaymentTypes' => 'string[]'
     ];
 
     /**
@@ -68,7 +68,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => null,
         'targetOrigins' => null,
         'allowedCardNetworks' => null,
-        'checkoutApiInitialization' => null
+        'allowedPaymentTypes' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +89,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'clientVersion',
         'targetOrigins' => 'targetOrigins',
         'allowedCardNetworks' => 'allowedCardNetworks',
-        'checkoutApiInitialization' => 'checkoutApiInitialization'
+        'allowedPaymentTypes' => 'allowedPaymentTypes'
     ];
 
 
@@ -101,7 +101,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'setClientVersion',
         'targetOrigins' => 'setTargetOrigins',
         'allowedCardNetworks' => 'setAllowedCardNetworks',
-        'checkoutApiInitialization' => 'setCheckoutApiInitialization'
+        'allowedPaymentTypes' => 'setAllowedPaymentTypes'
     ];
 
 
@@ -113,7 +113,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'getClientVersion',
         'targetOrigins' => 'getTargetOrigins',
         'allowedCardNetworks' => 'getAllowedCardNetworks',
-        'checkoutApiInitialization' => 'getCheckoutApiInitialization'
+        'allowedPaymentTypes' => 'getAllowedPaymentTypes'
     ];
 
     public static function attributeMap()
@@ -150,7 +150,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         $this->container['clientVersion'] = isset($data['clientVersion']) ? $data['clientVersion'] : null;
         $this->container['targetOrigins'] = isset($data['targetOrigins']) ? $data['targetOrigins'] : null;
         $this->container['allowedCardNetworks'] = isset($data['allowedCardNetworks']) ? $data['allowedCardNetworks'] : null;
-        $this->container['checkoutApiInitialization'] = isset($data['checkoutApiInitialization']) ? $data['checkoutApiInitialization'] : null;
+        $this->container['allowedPaymentTypes'] = isset($data['allowedPaymentTypes']) ? $data['allowedPaymentTypes'] : null;
     }
 
     /**
@@ -231,7 +231,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedCardNetworks
-     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA
+     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Accept Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (Accept Check) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Accept Card) and Microform (Accept Check) at least one card network should be specified in the allowedCardNetworks field in the capture context request.
      * @return $this
      */
     public function setAllowedCardNetworks($allowedCardNetworks)
@@ -242,22 +242,22 @@ class GenerateCaptureContextRequest implements ArrayAccess
     }
 
     /**
-     * Gets checkoutApiInitialization
-     * @return \CyberSource\Model\Microformv2sessionsCheckoutApiInitialization
+     * Gets allowedPaymentTypes
+     * @return string[]
      */
-    public function getCheckoutApiInitialization()
+    public function getAllowedPaymentTypes()
     {
-        return $this->container['checkoutApiInitialization'];
+        return $this->container['allowedPaymentTypes'];
     }
 
     /**
-     * Sets checkoutApiInitialization
-     * @param \CyberSource\Model\Microformv2sessionsCheckoutApiInitialization $checkoutApiInitialization
+     * Sets allowedPaymentTypes
+     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Microform: - CARD - CHECK <br><br>
      * @return $this
      */
-    public function setCheckoutApiInitialization($checkoutApiInitialization)
+    public function setAllowedPaymentTypes($allowedPaymentTypes)
     {
-        $this->container['checkoutApiInitialization'] = $checkoutApiInitialization;
+        $this->container['allowedPaymentTypes'] = $allowedPaymentTypes;
 
         return $this;
     }

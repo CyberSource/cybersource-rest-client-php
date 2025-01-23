@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **senderInformation** | [**\CyberSource\Model\Ptsv2payoutsSenderInformation**](Ptsv2payoutsSenderInformation.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\Ptsv2payoutsProcessingInformation**](Ptsv2payoutsProcessingInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\Ptsv2payoutsPaymentInformation**](Ptsv2payoutsPaymentInformation.md) |  | [optional] 
+**aggregatorInformation** | [**\CyberSource\Model\Ptsv2payoutsAggregatorInformation**](Ptsv2payoutsAggregatorInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

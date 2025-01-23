@@ -53,7 +53,8 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'emv' => '\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformationEmv'
+        'emv' => '\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformationEmv',
+        'terminalCategory' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'emv' => null
+        'emv' => null,
+        'terminalCategory' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'emv' => 'emv'
+        'emv' => 'emv',
+        'terminalCategory' => 'terminalCategory'
     ];
 
 
@@ -88,7 +91,8 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'emv' => 'setEmv'
+        'emv' => 'setEmv',
+        'terminalCategory' => 'setTerminalCategory'
     ];
 
 
@@ -97,7 +101,8 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'emv' => 'getEmv'
+        'emv' => 'getEmv',
+        'terminalCategory' => 'getTerminalCategory'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
+        $this->container['terminalCategory'] = isset($data['terminalCategory']) ? $data['terminalCategory'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class Ptsv2paymentsidrefundsPointOfSaleInformation implements ArrayAccess
     public function setEmv($emv)
     {
         $this->container['emv'] = $emv;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalCategory
+     * @return string
+     */
+    public function getTerminalCategory()
+    {
+        return $this->container['terminalCategory'];
+    }
+
+    /**
+     * Sets terminalCategory
+     * @param string $terminalCategory Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser
+     * @return $this
+     */
+    public function setTerminalCategory($terminalCategory)
+    {
+        $this->container['terminalCategory'] = $terminalCategory;
 
         return $this;
     }

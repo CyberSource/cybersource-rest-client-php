@@ -53,7 +53,7 @@ class PushFundsRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'aggregatorInformation' => '\CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation',
+        'aggregatorInformation' => '\CyberSource\Model\Ptsv2payoutsAggregatorInformation',
         'clientReferenceInformation' => '\CyberSource\Model\Ptsv1pushfundstransferClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv1pushfundstransferOrderInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv1pushfundstransferProcessingInformation',
@@ -209,7 +209,7 @@ class PushFundsRequest implements ArrayAccess
 
     /**
      * Gets aggregatorInformation
-     * @return \CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation
+     * @return \CyberSource\Model\Ptsv2payoutsAggregatorInformation
      */
     public function getAggregatorInformation()
     {
@@ -218,7 +218,7 @@ class PushFundsRequest implements ArrayAccess
 
     /**
      * Sets aggregatorInformation
-     * @param \CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation $aggregatorInformation
+     * @param \CyberSource\Model\Ptsv2payoutsAggregatorInformation $aggregatorInformation
      * @return $this
      */
     public function setAggregatorInformation($aggregatorInformation)

@@ -82,4 +82,11 @@ class Ptsv2paymentsidrefundsPointOfSaleInformationTest extends \PHPUnit_Framewor
     public function testPropertyEmv()
     {
     }
+
+    /**
+     * Test attribute "terminalCategory"
+     */
+    public function testPropertyTerminalCategory()
+    {
+    }
 }

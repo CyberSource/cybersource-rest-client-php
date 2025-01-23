@@ -96,7 +96,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'updateTimeUtc' => 'string',
         'expirationTimeUtc' => 'string',
         'orderId' => 'string',
-        'orderStatus' => 'string'
+        'orderStatus' => 'string',
+        'merchantRiskPrediction' => 'string'
     ];
 
     /**
@@ -147,7 +148,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'updateTimeUtc' => null,
         'expirationTimeUtc' => null,
         'orderId' => null,
-        'orderStatus' => null
+        'orderStatus' => null,
+        'merchantRiskPrediction' => null
     ];
 
     public static function swaggerTypes()
@@ -208,7 +210,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'updateTimeUtc' => 'updateTimeUtc',
         'expirationTimeUtc' => 'expirationTimeUtc',
         'orderId' => 'orderId',
-        'orderStatus' => 'orderStatus'
+        'orderStatus' => 'orderStatus',
+        'merchantRiskPrediction' => 'merchantRiskPrediction'
     ];
 
 
@@ -260,7 +263,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'updateTimeUtc' => 'setUpdateTimeUtc',
         'expirationTimeUtc' => 'setExpirationTimeUtc',
         'orderId' => 'setOrderId',
-        'orderStatus' => 'setOrderStatus'
+        'orderStatus' => 'setOrderStatus',
+        'merchantRiskPrediction' => 'setMerchantRiskPrediction'
     ];
 
 
@@ -312,7 +316,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'updateTimeUtc' => 'getUpdateTimeUtc',
         'expirationTimeUtc' => 'getExpirationTimeUtc',
         'orderId' => 'getOrderId',
-        'orderStatus' => 'getOrderStatus'
+        'orderStatus' => 'getOrderStatus',
+        'merchantRiskPrediction' => 'getMerchantRiskPrediction'
     ];
 
     public static function attributeMap()
@@ -390,6 +395,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['expirationTimeUtc'] = isset($data['expirationTimeUtc']) ? $data['expirationTimeUtc'] : null;
         $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
         $this->container['orderStatus'] = isset($data['orderStatus']) ? $data['orderStatus'] : null;
+        $this->container['merchantRiskPrediction'] = isset($data['merchantRiskPrediction']) ? $data['merchantRiskPrediction'] : null;
     }
 
     /**
@@ -1337,6 +1343,27 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setOrderStatus($orderStatus)
     {
         $this->container['orderStatus'] = $orderStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantRiskPrediction
+     * @return string
+     */
+    public function getMerchantRiskPrediction()
+    {
+        return $this->container['merchantRiskPrediction'];
+    }
+
+    /**
+     * Sets merchantRiskPrediction
+     * @param string $merchantRiskPrediction Mastercard is introducing the Merchant Risk Predict Service in the middle East/Africa Region. A newly launched service comprised of seven independent artificial intelligence (AI)-powered scores intended to augment existing merchant risk management practices.
+     * @return $this
+     */
+    public function setMerchantRiskPrediction($merchantRiskPrediction)
+    {
+        $this->container['merchantRiskPrediction'] = $merchantRiskPrediction;
 
         return $this;
     }

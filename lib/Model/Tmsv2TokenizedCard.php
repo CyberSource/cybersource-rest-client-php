@@ -53,17 +53,25 @@ class Tmsv2TokenizedCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
+        'links' => '\CyberSource\Model\Tmsv2TokenizedCardLinks',
+        'id' => 'string',
+        'object' => 'string',
+        'accountReferenceId' => 'string',
+        'consumerId' => 'string',
+        'createInstrumentIdentifier' => 'bool',
         'source' => 'string',
         'state' => 'string',
-        'enrollmentId' => 'string',
-        'tokenReferenceId' => 'string',
         'reason' => 'string',
         'number' => 'string',
-        'expirationMonth' => 'string',
-        'expirationYear' => 'string',
         'cryptogram' => 'string',
+        'securityCode' => 'string',
+        'eci' => 'string',
+        'requestorId' => 'string',
+        'enrollmentId' => 'string',
+        'tokenReferenceId' => 'string',
+        'paymentAccountReference' => 'string',
         'card' => '\CyberSource\Model\Tmsv2TokenizedCardCard',
+        'passcode' => '\CyberSource\Model\Tmsv2TokenizedCardPasscode',
         'metadata' => '\CyberSource\Model\Tmsv2TokenizedCardMetadata'
     ];
 
@@ -72,17 +80,25 @@ class Tmsv2TokenizedCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
+        'links' => null,
+        'id' => null,
+        'object' => null,
+        'accountReferenceId' => null,
+        'consumerId' => null,
+        'createInstrumentIdentifier' => null,
         'source' => null,
         'state' => null,
-        'enrollmentId' => null,
-        'tokenReferenceId' => null,
         'reason' => null,
         'number' => null,
-        'expirationMonth' => null,
-        'expirationYear' => null,
         'cryptogram' => null,
+        'securityCode' => null,
+        'eci' => null,
+        'requestorId' => null,
+        'enrollmentId' => null,
+        'tokenReferenceId' => null,
+        'paymentAccountReference' => null,
         'card' => null,
+        'passcode' => null,
         'metadata' => null
     ];
 
@@ -101,17 +117,25 @@ class Tmsv2TokenizedCard implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
+        'links' => '_links',
+        'id' => 'id',
+        'object' => 'object',
+        'accountReferenceId' => 'accountReferenceId',
+        'consumerId' => 'consumerId',
+        'createInstrumentIdentifier' => 'createInstrumentIdentifier',
         'source' => 'source',
         'state' => 'state',
-        'enrollmentId' => 'enrollmentId',
-        'tokenReferenceId' => 'tokenReferenceId',
         'reason' => 'reason',
         'number' => 'number',
-        'expirationMonth' => 'expirationMonth',
-        'expirationYear' => 'expirationYear',
         'cryptogram' => 'cryptogram',
+        'securityCode' => 'securityCode',
+        'eci' => 'eci',
+        'requestorId' => 'requestorId',
+        'enrollmentId' => 'enrollmentId',
+        'tokenReferenceId' => 'tokenReferenceId',
+        'paymentAccountReference' => 'paymentAccountReference',
         'card' => 'card',
+        'passcode' => 'passcode',
         'metadata' => 'metadata'
     ];
 
@@ -121,17 +145,25 @@ class Tmsv2TokenizedCard implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+        'links' => 'setLinks',
+        'id' => 'setId',
+        'object' => 'setObject',
+        'accountReferenceId' => 'setAccountReferenceId',
+        'consumerId' => 'setConsumerId',
+        'createInstrumentIdentifier' => 'setCreateInstrumentIdentifier',
         'source' => 'setSource',
         'state' => 'setState',
-        'enrollmentId' => 'setEnrollmentId',
-        'tokenReferenceId' => 'setTokenReferenceId',
         'reason' => 'setReason',
         'number' => 'setNumber',
-        'expirationMonth' => 'setExpirationMonth',
-        'expirationYear' => 'setExpirationYear',
         'cryptogram' => 'setCryptogram',
+        'securityCode' => 'setSecurityCode',
+        'eci' => 'setEci',
+        'requestorId' => 'setRequestorId',
+        'enrollmentId' => 'setEnrollmentId',
+        'tokenReferenceId' => 'setTokenReferenceId',
+        'paymentAccountReference' => 'setPaymentAccountReference',
         'card' => 'setCard',
+        'passcode' => 'setPasscode',
         'metadata' => 'setMetadata'
     ];
 
@@ -141,17 +173,25 @@ class Tmsv2TokenizedCard implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
+        'links' => 'getLinks',
+        'id' => 'getId',
+        'object' => 'getObject',
+        'accountReferenceId' => 'getAccountReferenceId',
+        'consumerId' => 'getConsumerId',
+        'createInstrumentIdentifier' => 'getCreateInstrumentIdentifier',
         'source' => 'getSource',
         'state' => 'getState',
-        'enrollmentId' => 'getEnrollmentId',
-        'tokenReferenceId' => 'getTokenReferenceId',
         'reason' => 'getReason',
         'number' => 'getNumber',
-        'expirationMonth' => 'getExpirationMonth',
-        'expirationYear' => 'getExpirationYear',
         'cryptogram' => 'getCryptogram',
+        'securityCode' => 'getSecurityCode',
+        'eci' => 'getEci',
+        'requestorId' => 'getRequestorId',
+        'enrollmentId' => 'getEnrollmentId',
+        'tokenReferenceId' => 'getTokenReferenceId',
+        'paymentAccountReference' => 'getPaymentAccountReference',
         'card' => 'getCard',
+        'passcode' => 'getPasscode',
         'metadata' => 'getMetadata'
     ];
 
@@ -186,17 +226,25 @@ class Tmsv2TokenizedCard implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['accountReferenceId'] = isset($data['accountReferenceId']) ? $data['accountReferenceId'] : null;
+        $this->container['consumerId'] = isset($data['consumerId']) ? $data['consumerId'] : null;
+        $this->container['createInstrumentIdentifier'] = isset($data['createInstrumentIdentifier']) ? $data['createInstrumentIdentifier'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['enrollmentId'] = isset($data['enrollmentId']) ? $data['enrollmentId'] : null;
-        $this->container['tokenReferenceId'] = isset($data['tokenReferenceId']) ? $data['tokenReferenceId'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
-        $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
-        $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
         $this->container['cryptogram'] = isset($data['cryptogram']) ? $data['cryptogram'] : null;
+        $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
+        $this->container['eci'] = isset($data['eci']) ? $data['eci'] : null;
+        $this->container['requestorId'] = isset($data['requestorId']) ? $data['requestorId'] : null;
+        $this->container['enrollmentId'] = isset($data['enrollmentId']) ? $data['enrollmentId'] : null;
+        $this->container['tokenReferenceId'] = isset($data['tokenReferenceId']) ? $data['tokenReferenceId'] : null;
+        $this->container['paymentAccountReference'] = isset($data['paymentAccountReference']) ? $data['paymentAccountReference'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['passcode'] = isset($data['passcode']) ? $data['passcode'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
     }
 
@@ -226,22 +274,127 @@ class Tmsv2TokenizedCard implements ArrayAccess
 
 
     /**
-     * Gets type
-     * @return string
+     * Gets links
+     * @return \CyberSource\Model\Tmsv2TokenizedCardLinks
      */
-    public function getType()
+    public function getLinks()
     {
-        return $this->container['type'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets type
-     * @param string $type The network token card association brand Possible Values: - visa - mastercard - americanexpress
+     * Sets links
+     * @param \CyberSource\Model\Tmsv2TokenizedCardLinks $links
      * @return $this
      */
-    public function setType($type)
+    public function setLinks($links)
     {
-        $this->container['type'] = $type;
+        $this->container['links'] = $links;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id The Id of the Tokenized Card.
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets object
+     * @return string
+     */
+    public function getObject()
+    {
+        return $this->container['object'];
+    }
+
+    /**
+     * Sets object
+     * @param string $object The type. Possible Values: - tokenizedCard
+     * @return $this
+     */
+    public function setObject($object)
+    {
+        $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountReferenceId
+     * @return string
+     */
+    public function getAccountReferenceId()
+    {
+        return $this->container['accountReferenceId'];
+    }
+
+    /**
+     * Sets accountReferenceId
+     * @param string $accountReferenceId An identifier provided by the issuer for the account.
+     * @return $this
+     */
+    public function setAccountReferenceId($accountReferenceId)
+    {
+        $this->container['accountReferenceId'] = $accountReferenceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets consumerId
+     * @return string
+     */
+    public function getConsumerId()
+    {
+        return $this->container['consumerId'];
+    }
+
+    /**
+     * Sets consumerId
+     * @param string $consumerId Identifier of the consumer within the wallet. Maximum 24 characters for VTS.
+     * @return $this
+     */
+    public function setConsumerId($consumerId)
+    {
+        $this->container['consumerId'] = $consumerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets createInstrumentIdentifier
+     * @return bool
+     */
+    public function getCreateInstrumentIdentifier()
+    {
+        return $this->container['createInstrumentIdentifier'];
+    }
+
+    /**
+     * Sets createInstrumentIdentifier
+     * @param bool $createInstrumentIdentifier Specifies whether the InstrumentId should be created (true) or not (false). Possible Values: - `true`: The InstrumentId should be created. - `false`: The InstrumentId should be created.
+     * @return $this
+     */
+    public function setCreateInstrumentIdentifier($createInstrumentIdentifier)
+    {
+        $this->container['createInstrumentIdentifier'] = $createInstrumentIdentifier;
 
         return $this;
     }
@@ -257,7 +410,7 @@ class Tmsv2TokenizedCard implements ArrayAccess
 
     /**
      * Sets source
-     * @param string $source This enumeration value indicates the origin of the payment instrument (PAN) and the technique employed to supply the payment instrument data. Possible Values: - TOKEN - ISSUER - ONFILE
+     * @param string $source Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER
      * @return $this
      */
     public function setSource($source)
@@ -278,54 +431,12 @@ class Tmsv2TokenizedCard implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state State of the network token or network token provision Possible Values: - ACTIVE : Network token is active. - SUSPENDED : Network token is suspended. This state can change back to ACTIVE. - DELETED : This is a final state for a network token instance. - UNPROVISIONED : A previous network token provision was unsuccessful.
+     * @param string $state State of the network token or network token provision. Possible Values:   ACTIVE : Network token is active.   SUSPENDED : Network token is suspended. This state can change back to ACTIVE.   DELETED : This is a final state for a network token instance.   UNPROVISIONED : A previous network token.
      * @return $this
      */
     public function setState($state)
     {
         $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets enrollmentId
-     * @return string
-     */
-    public function getEnrollmentId()
-    {
-        return $this->container['enrollmentId'];
-    }
-
-    /**
-     * Sets enrollmentId
-     * @param string $enrollmentId Unique Identifier for the enrolled PAN. This Id is provided by the card association when a network token is provisioned successfully.
-     * @return $this
-     */
-    public function setEnrollmentId($enrollmentId)
-    {
-        $this->container['enrollmentId'] = $enrollmentId;
-
-        return $this;
-    }
-
-    /**
-     * Gets tokenReferenceId
-     * @return string
-     */
-    public function getTokenReferenceId()
-    {
-        return $this->container['tokenReferenceId'];
-    }
-
-    /**
-     * Sets tokenReferenceId
-     * @param string $tokenReferenceId Unique Identifier for the network token. This Id is provided by the card association when a network token is provisioned successfully.
-     * @return $this
-     */
-    public function setTokenReferenceId($tokenReferenceId)
-    {
-        $this->container['tokenReferenceId'] = $tokenReferenceId;
 
         return $this;
     }
@@ -362,54 +473,12 @@ class Tmsv2TokenizedCard implements ArrayAccess
 
     /**
      * Sets number
-     * @param string $number The token requestors network token
+     * @param string $number The token requestor's network token for the provided PAN and consumer Id, if available.
      * @return $this
      */
     public function setNumber($number)
     {
         $this->container['number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets expirationMonth
-     * @return string
-     */
-    public function getExpirationMonth()
-    {
-        return $this->container['expirationMonth'];
-    }
-
-    /**
-     * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the network token expires.  Format: `MM`.  Possible Values: `01` through `12`.
-     * @return $this
-     */
-    public function setExpirationMonth($expirationMonth)
-    {
-        $this->container['expirationMonth'] = $expirationMonth;
-
-        return $this;
-    }
-
-    /**
-     * Gets expirationYear
-     * @return string
-     */
-    public function getExpirationYear()
-    {
-        return $this->container['expirationYear'];
-    }
-
-    /**
-     * Sets expirationYear
-     * @param string $expirationYear Four-digit year in which the network token expires.  Format: `YYYY`.
-     * @return $this
-     */
-    public function setExpirationYear($expirationYear)
-    {
-        $this->container['expirationYear'] = $expirationYear;
 
         return $this;
     }
@@ -425,12 +494,138 @@ class Tmsv2TokenizedCard implements ArrayAccess
 
     /**
      * Sets cryptogram
-     * @param string $cryptogram Generated value used in conjunction with the network token for making a payment.
+     * @param string $cryptogram Value generated by the card association to be used alongside the network token for processing a payment.
      * @return $this
      */
     public function setCryptogram($cryptogram)
     {
         $this->container['cryptogram'] = $cryptogram;
+
+        return $this;
+    }
+
+    /**
+     * Gets securityCode
+     * @return string
+     */
+    public function getSecurityCode()
+    {
+        return $this->container['securityCode'];
+    }
+
+    /**
+     * Sets securityCode
+     * @param string $securityCode 4-digit number generated by the card association to be used alogside the network token for processing a payment. Only supported for Amex and SCOF.
+     * @return $this
+     */
+    public function setSecurityCode($securityCode)
+    {
+        $this->container['securityCode'] = $securityCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets eci
+     * @return string
+     */
+    public function getEci()
+    {
+        return $this->container['eci'];
+    }
+
+    /**
+     * Sets eci
+     * @param string $eci Raw Electronic Commerce Indicator provided by the card association with the result of the cardholder authentication.
+     * @return $this
+     */
+    public function setEci($eci)
+    {
+        $this->container['eci'] = $eci;
+
+        return $this;
+    }
+
+    /**
+     * Gets requestorId
+     * @return string
+     */
+    public function getRequestorId()
+    {
+        return $this->container['requestorId'];
+    }
+
+    /**
+     * Sets requestorId
+     * @param string $requestorId 11-digit identifier that uniquely identifies the Token Requestor.
+     * @return $this
+     */
+    public function setRequestorId($requestorId)
+    {
+        $this->container['requestorId'] = $requestorId;
+
+        return $this;
+    }
+
+    /**
+     * Gets enrollmentId
+     * @return string
+     */
+    public function getEnrollmentId()
+    {
+        return $this->container['enrollmentId'];
+    }
+
+    /**
+     * Sets enrollmentId
+     * @param string $enrollmentId Unique id to identify this PAN/ enrollment.
+     * @return $this
+     */
+    public function setEnrollmentId($enrollmentId)
+    {
+        $this->container['enrollmentId'] = $enrollmentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenReferenceId
+     * @return string
+     */
+    public function getTokenReferenceId()
+    {
+        return $this->container['tokenReferenceId'];
+    }
+
+    /**
+     * Sets tokenReferenceId
+     * @param string $tokenReferenceId Unique ID for netwrok token.
+     * @return $this
+     */
+    public function setTokenReferenceId($tokenReferenceId)
+    {
+        $this->container['tokenReferenceId'] = $tokenReferenceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAccountReference
+     * @return string
+     */
+    public function getPaymentAccountReference()
+    {
+        return $this->container['paymentAccountReference'];
+    }
+
+    /**
+     * Sets paymentAccountReference
+     * @param string $paymentAccountReference Payment account reference.
+     * @return $this
+     */
+    public function setPaymentAccountReference($paymentAccountReference)
+    {
+        $this->container['paymentAccountReference'] = $paymentAccountReference;
 
         return $this;
     }
@@ -452,6 +647,27 @@ class Tmsv2TokenizedCard implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets passcode
+     * @return \CyberSource\Model\Tmsv2TokenizedCardPasscode
+     */
+    public function getPasscode()
+    {
+        return $this->container['passcode'];
+    }
+
+    /**
+     * Sets passcode
+     * @param \CyberSource\Model\Tmsv2TokenizedCardPasscode $passcode
+     * @return $this
+     */
+    public function setPasscode($passcode)
+    {
+        $this->container['passcode'] = $passcode;
 
         return $this;
     }
