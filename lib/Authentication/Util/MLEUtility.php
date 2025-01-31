@@ -10,7 +10,23 @@ class MLEUtility
     
     public static function checkIsMLEForAPI($merchantConfig, $isMLESupportedByCybsForApi, $operationIds) {
         $isMLEForAPI = false;
-        //complete the function logic
+        // Check here useMLEGlobally True or False
+        if ($isMLESupportedByCybsForApi && $merchantConfig->getUseMLEGlobally()) {
+            $isMLEForAPI = true;
+        }
+
+        // Operation IDs are array as there are multiple public functions for apiCallFunction such as apiCall, apiCallAsync ..
+        $operationArray = array_map('trim', explode(',', $operationIds));
+
+        // Control the MLE only from map
+        if (!empty($merchantConfig->getMapToControlMLEonAPI())) {
+            foreach ($operationArray as $operationId) {
+                if (array_key_exists($operationId, $merchantConfig->getMapToControlMLEonAPI())) {
+                    $isMLEForAPI = $merchantConfig->getMapToControlMLEonAPI()[$operationId];
+                    break;
+                }
+            }
+        }
         return $isMLEForAPI;
     }
 
