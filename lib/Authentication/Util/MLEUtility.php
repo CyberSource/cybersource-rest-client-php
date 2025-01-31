@@ -15,7 +15,7 @@ class MLEUtility
             $isMLEForAPI = true;
         }
 
-        // Operation IDs are array as there are multiple public functions for apiCallFunction such as apiCall, apiCallAsync ..
+        // Operation IDs are array as there are multiple public functions for apiCallFunction such as apiCall, apiCallWithHttpInfo ..
         $operationArray = array_map('trim', explode(',', $operationIds));
 
         // Control the MLE only from map
