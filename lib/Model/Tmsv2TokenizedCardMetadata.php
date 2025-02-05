@@ -34,6 +34,7 @@ use \ArrayAccess;
  * Tmsv2TokenizedCardMetadata Class Doc Comment
  *
  * @category    Class
+ * @description Metadata associated with the tokenized card.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -53,7 +54,8 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cardArt' => '\CyberSource\Model\Tmsv2TokenizedCardMetadataCardArt'
+        'cardArt' => '\CyberSource\Model\TmsCardArt',
+        'issuer' => '\CyberSource\Model\Tmsv2TokenizedCardMetadataIssuer'
     ];
 
     /**
@@ -61,7 +63,8 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'cardArt' => null
+        'cardArt' => null,
+        'issuer' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +82,8 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'cardArt' => 'cardArt'
+        'cardArt' => 'cardArt',
+        'issuer' => 'issuer'
     ];
 
 
@@ -88,7 +92,8 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'cardArt' => 'setCardArt'
+        'cardArt' => 'setCardArt',
+        'issuer' => 'setIssuer'
     ];
 
 
@@ -97,7 +102,8 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'cardArt' => 'getCardArt'
+        'cardArt' => 'getCardArt',
+        'issuer' => 'getIssuer'
     ];
 
     public static function attributeMap()
@@ -132,6 +138,7 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['cardArt'] = isset($data['cardArt']) ? $data['cardArt'] : null;
+        $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
     }
 
     /**
@@ -161,7 +168,7 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
 
     /**
      * Gets cardArt
-     * @return \CyberSource\Model\Tmsv2TokenizedCardMetadataCardArt
+     * @return \CyberSource\Model\TmsCardArt
      */
     public function getCardArt()
     {
@@ -170,12 +177,33 @@ class Tmsv2TokenizedCardMetadata implements ArrayAccess
 
     /**
      * Sets cardArt
-     * @param \CyberSource\Model\Tmsv2TokenizedCardMetadataCardArt $cardArt
+     * @param \CyberSource\Model\TmsCardArt $cardArt
      * @return $this
      */
     public function setCardArt($cardArt)
     {
         $this->container['cardArt'] = $cardArt;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuer
+     * @return \CyberSource\Model\Tmsv2TokenizedCardMetadataIssuer
+     */
+    public function getIssuer()
+    {
+        return $this->container['issuer'];
+    }
+
+    /**
+     * Sets issuer
+     * @param \CyberSource\Model\Tmsv2TokenizedCardMetadataIssuer $issuer
+     * @return $this
+     */
+    public function setIssuer($issuer)
+    {
+        $this->container['issuer'] = $issuer;
 
         return $this;
     }

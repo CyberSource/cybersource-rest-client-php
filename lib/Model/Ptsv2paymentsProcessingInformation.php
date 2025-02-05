@@ -90,7 +90,11 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkPartnerId' => 'string',
         'paymentType' => 'string',
         'enablerId' => 'string',
-        'processingInstruction' => 'string'
+        'processingInstruction' => 'string',
+        'transactionTypeIndicator' => 'string',
+        'purposeOfPayment' => 'string',
+        'languageCode' => 'string',
+        'originalPaymentId' => 'string'
     ];
 
     /**
@@ -135,7 +139,11 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkPartnerId' => null,
         'paymentType' => null,
         'enablerId' => null,
-        'processingInstruction' => null
+        'processingInstruction' => null,
+        'transactionTypeIndicator' => null,
+        'purposeOfPayment' => null,
+        'languageCode' => null,
+        'originalPaymentId' => null
     ];
 
     public static function swaggerTypes()
@@ -190,7 +198,11 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkPartnerId' => 'networkPartnerId',
         'paymentType' => 'paymentType',
         'enablerId' => 'enablerId',
-        'processingInstruction' => 'processingInstruction'
+        'processingInstruction' => 'processingInstruction',
+        'transactionTypeIndicator' => 'transactionTypeIndicator',
+        'purposeOfPayment' => 'purposeOfPayment',
+        'languageCode' => 'languageCode',
+        'originalPaymentId' => 'originalPaymentId'
     ];
 
 
@@ -236,7 +248,11 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkPartnerId' => 'setNetworkPartnerId',
         'paymentType' => 'setPaymentType',
         'enablerId' => 'setEnablerId',
-        'processingInstruction' => 'setProcessingInstruction'
+        'processingInstruction' => 'setProcessingInstruction',
+        'transactionTypeIndicator' => 'setTransactionTypeIndicator',
+        'purposeOfPayment' => 'setPurposeOfPayment',
+        'languageCode' => 'setLanguageCode',
+        'originalPaymentId' => 'setOriginalPaymentId'
     ];
 
 
@@ -282,7 +298,11 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'networkPartnerId' => 'getNetworkPartnerId',
         'paymentType' => 'getPaymentType',
         'enablerId' => 'getEnablerId',
-        'processingInstruction' => 'getProcessingInstruction'
+        'processingInstruction' => 'getProcessingInstruction',
+        'transactionTypeIndicator' => 'getTransactionTypeIndicator',
+        'purposeOfPayment' => 'getPurposeOfPayment',
+        'languageCode' => 'getLanguageCode',
+        'originalPaymentId' => 'getOriginalPaymentId'
     ];
 
     public static function attributeMap()
@@ -354,6 +374,10 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['enablerId'] = isset($data['enablerId']) ? $data['enablerId'] : null;
         $this->container['processingInstruction'] = isset($data['processingInstruction']) ? $data['processingInstruction'] : null;
+        $this->container['transactionTypeIndicator'] = isset($data['transactionTypeIndicator']) ? $data['transactionTypeIndicator'] : null;
+        $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
+        $this->container['languageCode'] = isset($data['languageCode']) ? $data['languageCode'] : null;
+        $this->container['originalPaymentId'] = isset($data['originalPaymentId']) ? $data['originalPaymentId'] : null;
     }
 
     /**
@@ -1175,6 +1199,90 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setProcessingInstruction($processingInstruction)
     {
         $this->container['processingInstruction'] = $processingInstruction;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionTypeIndicator
+     * @return string
+     */
+    public function getTransactionTypeIndicator()
+    {
+        return $this->container['transactionTypeIndicator'];
+    }
+
+    /**
+     * Sets transactionTypeIndicator
+     * @param string $transactionTypeIndicator This field is used identify the type of payment transaction taking place. This field is applicable for MasterCard transactions only. Possible values: - 201- Mastercard Rebate - 202- rePower Load Value - 203- Gaming Re-pay - 204- General Person-to-Person - 205- General Transfer to Own Account - 206- Agent Cash Out - 207- Payment of Own Credit Card Bill - 208- Business Disbursement - 209- Government/Non-Profit Disbursement - 210- Rapid Merchant Settlement - 211- Cash in at ATM (Usage limited to specific countries) - 212- Cash in at Point of Sale (Usage limited to specific countries) - 213- General Business to Business Transfer - 214- Mastercard Merchant Presented QR - 215- Mastercard Merchant Presented QR Refund Payment - 216- Utility Payments (for Brazil domestic use only) - 217- Government Services (for Brazil domestic use only) - 218- Mobile phone top-ups (for Brazil domestic use only) - 219- Coupon booklet payments (for Brazil domestic use only) - 220- General Person-to-Person Transfer - 221- Person-to-Person Transfer to Card Account - 222- General Transfer to Own Account - 223- Agent Cash Out - 224- Payment of Own Credit Card Bill - 225- Business Disbursement - 226- Transfer to Own Staged Digital Wallet Account - 227- Transfer to Own Debit or Prepaid Account - 228- General Business-to-Business Transfer - 229- Installment-based repayment - 230- Mastercard ATM Cash Pick-Up Transaction - 231- Cryptocurrency - 232- High-risk Securities
+     * @return $this
+     */
+    public function setTransactionTypeIndicator($transactionTypeIndicator)
+    {
+        $this->container['transactionTypeIndicator'] = $transactionTypeIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets purposeOfPayment
+     * @return string
+     */
+    public function getPurposeOfPayment()
+    {
+        return $this->container['purposeOfPayment'];
+    }
+
+    /**
+     * Sets purposeOfPayment
+     * @param string $purposeOfPayment Possible values: - `16` :  High Risk Security  Other values can also be accommodated in future for different transactions.  Currently this field is only used in OCT, we could not find any existing valid values for the past 30 days in production. Issuer may decline invalid purpose of payment code with response code 93.  This field is also applicable for AFT transactions. For list of supported values, please refer to Developer Guide.
+     * @return $this
+     */
+    public function setPurposeOfPayment($purposeOfPayment)
+    {
+        $this->container['purposeOfPayment'] = $purposeOfPayment;
+
+        return $this;
+    }
+
+    /**
+     * Gets languageCode
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->container['languageCode'];
+    }
+
+    /**
+     * Sets languageCode
+     * @param string $languageCode Contains the ISO 639-2 defined language Code
+     * @return $this
+     */
+    public function setLanguageCode($languageCode)
+    {
+        $this->container['languageCode'] = $languageCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets originalPaymentId
+     * @return string
+     */
+    public function getOriginalPaymentId()
+    {
+        return $this->container['originalPaymentId'];
+    }
+
+    /**
+     * Sets originalPaymentId
+     * @param string $originalPaymentId This value is used for linking Authorization extension transaction to the original Authorization transaction  and for linking MIT (Merchant initiated transaction) with the respective CIT (Customer initiated transaction).
+     * @return $this
+     */
+    public function setOriginalPaymentId($originalPaymentId)
+    {
+        $this->container['originalPaymentId'] = $originalPaymentId;
 
         return $this;
     }

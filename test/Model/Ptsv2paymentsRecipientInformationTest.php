@@ -119,6 +119,13 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "administrativeArea"
+     */
+    public function testPropertyAdministrativeArea()
+    {
+    }
+
+    /**
      * Test attribute "postalCode"
      */
     public function testPropertyPostalCode()
@@ -157,6 +164,48 @@ class Ptsv2paymentsRecipientInformationTest extends \PHPUnit_Framework_TestCase
      * Test attribute "beneficiaryAddress"
      */
     public function testPropertyBeneficiaryAddress()
+    {
+    }
+
+    /**
+     * Test attribute "aliasName"
+     */
+    public function testPropertyAliasName()
+    {
+    }
+
+    /**
+     * Test attribute "nationality"
+     */
+    public function testPropertyNationality()
+    {
+    }
+
+    /**
+     * Test attribute "countryOfBirth"
+     */
+    public function testPropertyCountryOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "occupation"
+     */
+    public function testPropertyOccupation()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "locality"
+     */
+    public function testPropertyLocality()
     {
     }
 }

@@ -201,4 +201,11 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeaturesTest extends 
     public function testPropertyRegulated()
     {
     }
+
+    /**
+     * Test attribute "accountHolderType"
+     */
+    public function testPropertyAccountHolderType()
+    {
+    }
 }

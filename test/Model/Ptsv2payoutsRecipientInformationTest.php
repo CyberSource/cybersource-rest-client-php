@@ -138,4 +138,39 @@ class Ptsv2payoutsRecipientInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPhoneNumber()
     {
     }
+
+    /**
+     * Test attribute "aliasName"
+     */
+    public function testPropertyAliasName()
+    {
+    }
+
+    /**
+     * Test attribute "nationality"
+     */
+    public function testPropertyNationality()
+    {
+    }
+
+    /**
+     * Test attribute "countryOfBirth"
+     */
+    public function testPropertyCountryOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "occupation"
+     */
+    public function testPropertyOccupation()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
 }

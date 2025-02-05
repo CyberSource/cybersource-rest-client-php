@@ -201,4 +201,11 @@ class Ptsv2payoutsSenderInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyIdentificationNumber()
     {
     }
+
+    /**
+     * Test attribute "aliasName"
+     */
+    public function testPropertyAliasName()
+    {
+    }
 }

@@ -228,13 +228,14 @@ class PaymentInstrumentApi
      *
      * @param string $paymentInstrumentId The Id of a payment instrument. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostPaymentInstrumentRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentInstrument($paymentInstrumentId, $profileId = null)
+    public function getPaymentInstrument($paymentInstrumentId, $profileId = null, $retrieveBinDetails = null)
     {
         self::$logger->info('CALL TO METHOD getPaymentInstrument STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getPaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->getPaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId, $retrieveBinDetails);
         self::$logger->info('CALL TO METHOD getPaymentInstrument ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -247,10 +248,11 @@ class PaymentInstrumentApi
      *
      * @param string $paymentInstrumentId The Id of a payment instrument. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostPaymentInstrumentRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId = null)
+    public function getPaymentInstrumentWithHttpInfo($paymentInstrumentId, $profileId = null, $retrieveBinDetails = null)
     {
         // verify the required parameter 'paymentInstrumentId' is set
         if ($paymentInstrumentId === null) {
@@ -269,6 +271,10 @@ class PaymentInstrumentApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
@@ -294,6 +300,7 @@ class PaymentInstrumentApi
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
@@ -365,14 +372,15 @@ class PaymentInstrumentApi
      * @param string $paymentInstrumentId The Id of a payment instrument. (required)
      * @param \CyberSource\Model\PatchPaymentInstrumentRequest $patchPaymentInstrumentRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PatchPaymentInstrumentRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
+    public function patchPaymentInstrument($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId = null, $retrieveBinDetails = null, $ifMatch = null)
     {
         self::$logger->info('CALL TO METHOD patchPaymentInstrument STARTED');
-        list($response, $statusCode, $httpHeader) = $this->patchPaymentInstrumentWithHttpInfo($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $ifMatch);
+        list($response, $statusCode, $httpHeader) = $this->patchPaymentInstrumentWithHttpInfo($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId, $retrieveBinDetails, $ifMatch);
         self::$logger->info('CALL TO METHOD patchPaymentInstrument ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -386,11 +394,12 @@ class PaymentInstrumentApi
      * @param string $paymentInstrumentId The Id of a payment instrument. (required)
      * @param \CyberSource\Model\PatchPaymentInstrumentRequest $patchPaymentInstrumentRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PatchPaymentInstrumentRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchPaymentInstrumentWithHttpInfo($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId = null, $ifMatch = null)
+    public function patchPaymentInstrumentWithHttpInfo($paymentInstrumentId, $patchPaymentInstrumentRequest, $profileId = null, $retrieveBinDetails = null, $ifMatch = null)
     {
         // verify the required parameter 'paymentInstrumentId' is set
         if ($paymentInstrumentId === null) {
@@ -414,6 +423,10 @@ class PaymentInstrumentApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
@@ -450,6 +463,7 @@ class PaymentInstrumentApi
         
         // Logging
         self::$logger->debug("Resource : PATCH $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
@@ -524,13 +538,14 @@ class PaymentInstrumentApi
      *
      * @param \CyberSource\Model\PostPaymentInstrumentRequest $postPaymentInstrumentRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostPaymentInstrumentRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postPaymentInstrument($postPaymentInstrumentRequest, $profileId = null)
+    public function postPaymentInstrument($postPaymentInstrumentRequest, $profileId = null, $retrieveBinDetails = null)
     {
         self::$logger->info('CALL TO METHOD postPaymentInstrument STARTED');
-        list($response, $statusCode, $httpHeader) = $this->postPaymentInstrumentWithHttpInfo($postPaymentInstrumentRequest, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->postPaymentInstrumentWithHttpInfo($postPaymentInstrumentRequest, $profileId, $retrieveBinDetails);
         self::$logger->info('CALL TO METHOD postPaymentInstrument ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -543,10 +558,11 @@ class PaymentInstrumentApi
      *
      * @param \CyberSource\Model\PostPaymentInstrumentRequest $postPaymentInstrumentRequest  (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostPaymentInstrumentRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postPaymentInstrumentWithHttpInfo($postPaymentInstrumentRequest, $profileId = null)
+    public function postPaymentInstrumentWithHttpInfo($postPaymentInstrumentRequest, $profileId = null, $retrieveBinDetails = null)
     {
         // verify the required parameter 'postPaymentInstrumentRequest' is set
         if ($postPaymentInstrumentRequest === null) {
@@ -565,6 +581,10 @@ class PaymentInstrumentApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
@@ -589,6 +609,7 @@ class PaymentInstrumentApi
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);

@@ -74,7 +74,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'paymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformation',
         'paymentInsightsInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInsightsInformation',
         'payoutOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePayoutOptions',
-        'unscheduledPaymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseUnscheduledPaymentInformation',
+        'unscheduledPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsUnscheduledPaymentInformation',
         'processingInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseRecurringPaymentInformation',
@@ -776,7 +776,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Gets unscheduledPaymentInformation
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseUnscheduledPaymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsUnscheduledPaymentInformation
      */
     public function getUnscheduledPaymentInformation()
     {
@@ -785,7 +785,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
 
     /**
      * Sets unscheduledPaymentInformation
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseUnscheduledPaymentInformation $unscheduledPaymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsUnscheduledPaymentInformation $unscheduledPaymentInformation
      * @return $this
      */
     public function setUnscheduledPaymentInformation($unscheduledPaymentInformation)

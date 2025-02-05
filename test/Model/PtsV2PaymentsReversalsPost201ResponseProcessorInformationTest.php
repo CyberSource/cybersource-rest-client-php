@@ -91,6 +91,13 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformationTest extends \PHP
     }
 
     /**
+     * Test attribute "networkTransactionId"
+     */
+    public function testPropertyNetworkTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "responseCategoryCode"
      */
     public function testPropertyResponseCategoryCode()

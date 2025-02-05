@@ -65,7 +65,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'processorInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseProcessorInformation',
         'recipientInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseRecipientInformation',
         'issuerInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseIssuerInformation',
-        'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation'
+        'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation',
+        'processingInformation' => '\CyberSource\Model\PtsV2PayoutsPost201ResponseProcessingInformation'
     ];
 
     /**
@@ -85,7 +86,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'processorInformation' => null,
         'recipientInformation' => null,
         'issuerInformation' => null,
-        'tokenInformation' => null
+        'tokenInformation' => null,
+        'processingInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -115,7 +117,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'processorInformation' => 'processorInformation',
         'recipientInformation' => 'recipientInformation',
         'issuerInformation' => 'issuerInformation',
-        'tokenInformation' => 'tokenInformation'
+        'tokenInformation' => 'tokenInformation',
+        'processingInformation' => 'processingInformation'
     ];
 
 
@@ -136,7 +139,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'processorInformation' => 'setProcessorInformation',
         'recipientInformation' => 'setRecipientInformation',
         'issuerInformation' => 'setIssuerInformation',
-        'tokenInformation' => 'setTokenInformation'
+        'tokenInformation' => 'setTokenInformation',
+        'processingInformation' => 'setProcessingInformation'
     ];
 
 
@@ -157,7 +161,8 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         'processorInformation' => 'getProcessorInformation',
         'recipientInformation' => 'getRecipientInformation',
         'issuerInformation' => 'getIssuerInformation',
-        'tokenInformation' => 'getTokenInformation'
+        'tokenInformation' => 'getTokenInformation',
+        'processingInformation' => 'getProcessingInformation'
     ];
 
     public static function attributeMap()
@@ -204,6 +209,7 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
         $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
     }
 
     /**
@@ -500,6 +506,27 @@ class PtsV2PayoutsPost201Response implements ArrayAccess
     public function setTokenInformation($tokenInformation)
     {
         $this->container['tokenInformation'] = $tokenInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PtsV2PayoutsPost201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PtsV2PayoutsPost201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

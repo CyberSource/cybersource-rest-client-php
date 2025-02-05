@@ -59,12 +59,19 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'middleName' => 'string',
         'lastName' => 'string',
         'address1' => 'string',
+        'administrativeArea' => 'string',
         'postalCode' => 'string',
         'country' => 'string',
         'dateOfBirth' => 'string',
         'beneficiaryId' => 'string',
         'beneficiaryName' => 'string',
-        'beneficiaryAddress' => 'string'
+        'beneficiaryAddress' => 'string',
+        'aliasName' => 'string',
+        'nationality' => 'string',
+        'countryOfBirth' => 'string',
+        'occupation' => 'string',
+        'email' => 'string',
+        'locality' => 'string'
     ];
 
     /**
@@ -78,12 +85,19 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'middleName' => null,
         'lastName' => null,
         'address1' => null,
+        'administrativeArea' => null,
         'postalCode' => null,
         'country' => null,
         'dateOfBirth' => null,
         'beneficiaryId' => null,
         'beneficiaryName' => null,
-        'beneficiaryAddress' => null
+        'beneficiaryAddress' => null,
+        'aliasName' => null,
+        'nationality' => null,
+        'countryOfBirth' => null,
+        'occupation' => null,
+        'email' => null,
+        'locality' => null
     ];
 
     public static function swaggerTypes()
@@ -107,12 +121,19 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'middleName' => 'middleName',
         'lastName' => 'lastName',
         'address1' => 'address1',
+        'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
         'country' => 'country',
         'dateOfBirth' => 'dateOfBirth',
         'beneficiaryId' => 'beneficiaryId',
         'beneficiaryName' => 'beneficiaryName',
-        'beneficiaryAddress' => 'beneficiaryAddress'
+        'beneficiaryAddress' => 'beneficiaryAddress',
+        'aliasName' => 'aliasName',
+        'nationality' => 'nationality',
+        'countryOfBirth' => 'countryOfBirth',
+        'occupation' => 'occupation',
+        'email' => 'email',
+        'locality' => 'locality'
     ];
 
 
@@ -127,12 +148,19 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'middleName' => 'setMiddleName',
         'lastName' => 'setLastName',
         'address1' => 'setAddress1',
+        'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
         'country' => 'setCountry',
         'dateOfBirth' => 'setDateOfBirth',
         'beneficiaryId' => 'setBeneficiaryId',
         'beneficiaryName' => 'setBeneficiaryName',
-        'beneficiaryAddress' => 'setBeneficiaryAddress'
+        'beneficiaryAddress' => 'setBeneficiaryAddress',
+        'aliasName' => 'setAliasName',
+        'nationality' => 'setNationality',
+        'countryOfBirth' => 'setCountryOfBirth',
+        'occupation' => 'setOccupation',
+        'email' => 'setEmail',
+        'locality' => 'setLocality'
     ];
 
 
@@ -147,12 +175,19 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         'middleName' => 'getMiddleName',
         'lastName' => 'getLastName',
         'address1' => 'getAddress1',
+        'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry',
         'dateOfBirth' => 'getDateOfBirth',
         'beneficiaryId' => 'getBeneficiaryId',
         'beneficiaryName' => 'getBeneficiaryName',
-        'beneficiaryAddress' => 'getBeneficiaryAddress'
+        'beneficiaryAddress' => 'getBeneficiaryAddress',
+        'aliasName' => 'getAliasName',
+        'nationality' => 'getNationality',
+        'countryOfBirth' => 'getCountryOfBirth',
+        'occupation' => 'getOccupation',
+        'email' => 'getEmail',
+        'locality' => 'getLocality'
     ];
 
     public static function attributeMap()
@@ -192,12 +227,19 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
         $this->container['middleName'] = isset($data['middleName']) ? $data['middleName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
+        $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['beneficiaryId'] = isset($data['beneficiaryId']) ? $data['beneficiaryId'] : null;
         $this->container['beneficiaryName'] = isset($data['beneficiaryName']) ? $data['beneficiaryName'] : null;
         $this->container['beneficiaryAddress'] = isset($data['beneficiaryAddress']) ? $data['beneficiaryAddress'] : null;
+        $this->container['aliasName'] = isset($data['aliasName']) ? $data['aliasName'] : null;
+        $this->container['nationality'] = isset($data['nationality']) ? $data['nationality'] : null;
+        $this->container['countryOfBirth'] = isset($data['countryOfBirth']) ? $data['countryOfBirth'] : null;
+        $this->container['occupation'] = isset($data['occupation']) ? $data['occupation'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
     }
 
     /**
@@ -352,6 +394,27 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     }
 
     /**
+     * Gets administrativeArea
+     * @return string
+     */
+    public function getAdministrativeArea()
+    {
+        return $this->container['administrativeArea'];
+    }
+
+    /**
+     * Sets administrativeArea
+     * @param string $administrativeArea The state or province of the recipient. This field is applicable for AFT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value
+     * @return $this
+     */
+    public function setAdministrativeArea($administrativeArea)
+    {
+        $this->container['administrativeArea'] = $administrativeArea;
+
+        return $this;
+    }
+
+    /**
      * Gets postalCode
      * @return string
      */
@@ -473,6 +536,132 @@ class Ptsv2paymentsRecipientInformation implements ArrayAccess
     public function setBeneficiaryAddress($beneficiaryAddress)
     {
         $this->container['beneficiaryAddress'] = $beneficiaryAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets aliasName
+     * @return string
+     */
+    public function getAliasName()
+    {
+        return $this->container['aliasName'];
+    }
+
+    /**
+     * Sets aliasName
+     * @param string $aliasName Account owner alias name.
+     * @return $this
+     */
+    public function setAliasName($aliasName)
+    {
+        $this->container['aliasName'] = $aliasName;
+
+        return $this;
+    }
+
+    /**
+     * Gets nationality
+     * @return string
+     */
+    public function getNationality()
+    {
+        return $this->container['nationality'];
+    }
+
+    /**
+     * Sets nationality
+     * @param string $nationality Account Owner Nationality
+     * @return $this
+     */
+    public function setNationality($nationality)
+    {
+        $this->container['nationality'] = $nationality;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryOfBirth
+     * @return string
+     */
+    public function getCountryOfBirth()
+    {
+        return $this->container['countryOfBirth'];
+    }
+
+    /**
+     * Sets countryOfBirth
+     * @param string $countryOfBirth Account Owner Country of Birth
+     * @return $this
+     */
+    public function setCountryOfBirth($countryOfBirth)
+    {
+        $this->container['countryOfBirth'] = $countryOfBirth;
+
+        return $this;
+    }
+
+    /**
+     * Gets occupation
+     * @return string
+     */
+    public function getOccupation()
+    {
+        return $this->container['occupation'];
+    }
+
+    /**
+     * Sets occupation
+     * @param string $occupation Account Owner Occupation
+     * @return $this
+     */
+    public function setOccupation($occupation)
+    {
+        $this->container['occupation'] = $occupation;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Account Owner email address
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets locality
+     * @return string
+     */
+    public function getLocality()
+    {
+        return $this->container['locality'];
+    }
+
+    /**
+     * Sets locality
+     * @param string $locality The city of the recipient. This field is applicable for AFT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor.
+     * @return $this
+     */
+    public function setLocality($locality)
+    {
+        $this->container['locality'] = $locality;
 
         return $this;
     }

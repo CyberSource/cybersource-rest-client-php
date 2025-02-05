@@ -61,7 +61,12 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'string',
         'country' => 'string',
         'postalCode' => 'string',
-        'phoneNumber' => 'string'
+        'phoneNumber' => 'string',
+        'aliasName' => 'string',
+        'nationality' => 'string',
+        'countryOfBirth' => 'string',
+        'occupation' => 'string',
+        'email' => 'string'
     ];
 
     /**
@@ -77,7 +82,12 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => null,
         'country' => null,
         'postalCode' => null,
-        'phoneNumber' => null
+        'phoneNumber' => null,
+        'aliasName' => null,
+        'nationality' => null,
+        'countryOfBirth' => null,
+        'occupation' => null,
+        'email' => null
     ];
 
     public static function swaggerTypes()
@@ -103,7 +113,12 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'administrativeArea',
         'country' => 'country',
         'postalCode' => 'postalCode',
-        'phoneNumber' => 'phoneNumber'
+        'phoneNumber' => 'phoneNumber',
+        'aliasName' => 'aliasName',
+        'nationality' => 'nationality',
+        'countryOfBirth' => 'countryOfBirth',
+        'occupation' => 'occupation',
+        'email' => 'email'
     ];
 
 
@@ -120,7 +135,12 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'setAdministrativeArea',
         'country' => 'setCountry',
         'postalCode' => 'setPostalCode',
-        'phoneNumber' => 'setPhoneNumber'
+        'phoneNumber' => 'setPhoneNumber',
+        'aliasName' => 'setAliasName',
+        'nationality' => 'setNationality',
+        'countryOfBirth' => 'setCountryOfBirth',
+        'occupation' => 'setOccupation',
+        'email' => 'setEmail'
     ];
 
 
@@ -137,7 +157,12 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         'administrativeArea' => 'getAdministrativeArea',
         'country' => 'getCountry',
         'postalCode' => 'getPostalCode',
-        'phoneNumber' => 'getPhoneNumber'
+        'phoneNumber' => 'getPhoneNumber',
+        'aliasName' => 'getAliasName',
+        'nationality' => 'getNationality',
+        'countryOfBirth' => 'getCountryOfBirth',
+        'occupation' => 'getOccupation',
+        'email' => 'getEmail'
     ];
 
     public static function attributeMap()
@@ -180,6 +205,11 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['aliasName'] = isset($data['aliasName']) ? $data['aliasName'] : null;
+        $this->container['nationality'] = isset($data['nationality']) ? $data['nationality'] : null;
+        $this->container['countryOfBirth'] = isset($data['countryOfBirth']) ? $data['countryOfBirth'] : null;
+        $this->container['occupation'] = isset($data['occupation']) ? $data['occupation'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -392,6 +422,111 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
     public function setPhoneNumber($phoneNumber)
     {
         $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets aliasName
+     * @return string
+     */
+    public function getAliasName()
+    {
+        return $this->container['aliasName'];
+    }
+
+    /**
+     * Sets aliasName
+     * @param string $aliasName Account owner alias name.
+     * @return $this
+     */
+    public function setAliasName($aliasName)
+    {
+        $this->container['aliasName'] = $aliasName;
+
+        return $this;
+    }
+
+    /**
+     * Gets nationality
+     * @return string
+     */
+    public function getNationality()
+    {
+        return $this->container['nationality'];
+    }
+
+    /**
+     * Sets nationality
+     * @param string $nationality Account Owner Nationality
+     * @return $this
+     */
+    public function setNationality($nationality)
+    {
+        $this->container['nationality'] = $nationality;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryOfBirth
+     * @return string
+     */
+    public function getCountryOfBirth()
+    {
+        return $this->container['countryOfBirth'];
+    }
+
+    /**
+     * Sets countryOfBirth
+     * @param string $countryOfBirth Account Owner Country of Birth
+     * @return $this
+     */
+    public function setCountryOfBirth($countryOfBirth)
+    {
+        $this->container['countryOfBirth'] = $countryOfBirth;
+
+        return $this;
+    }
+
+    /**
+     * Gets occupation
+     * @return string
+     */
+    public function getOccupation()
+    {
+        return $this->container['occupation'];
+    }
+
+    /**
+     * Sets occupation
+     * @param string $occupation Account Owner Occupation
+     * @return $this
+     */
+    public function setOccupation($occupation)
+    {
+        $this->container['occupation'] = $occupation;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Account Owner email address
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

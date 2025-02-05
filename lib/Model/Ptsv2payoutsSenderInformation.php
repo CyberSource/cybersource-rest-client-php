@@ -70,7 +70,8 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'vatRegistrationNumber' => 'string',
         'personalIdType' => 'string',
         'type' => 'string',
-        'identificationNumber' => 'string'
+        'identificationNumber' => 'string',
+        'aliasName' => 'string'
     ];
 
     /**
@@ -95,7 +96,8 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'vatRegistrationNumber' => null,
         'personalIdType' => null,
         'type' => null,
-        'identificationNumber' => null
+        'identificationNumber' => null,
+        'aliasName' => null
     ];
 
     public static function swaggerTypes()
@@ -130,7 +132,8 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'vatRegistrationNumber' => 'vatRegistrationNumber',
         'personalIdType' => 'personalIdType',
         'type' => 'type',
-        'identificationNumber' => 'identificationNumber'
+        'identificationNumber' => 'identificationNumber',
+        'aliasName' => 'aliasName'
     ];
 
 
@@ -156,7 +159,8 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'vatRegistrationNumber' => 'setVatRegistrationNumber',
         'personalIdType' => 'setPersonalIdType',
         'type' => 'setType',
-        'identificationNumber' => 'setIdentificationNumber'
+        'identificationNumber' => 'setIdentificationNumber',
+        'aliasName' => 'setAliasName'
     ];
 
 
@@ -182,7 +186,8 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         'vatRegistrationNumber' => 'getVatRegistrationNumber',
         'personalIdType' => 'getPersonalIdType',
         'type' => 'getType',
-        'identificationNumber' => 'getIdentificationNumber'
+        'identificationNumber' => 'getIdentificationNumber',
+        'aliasName' => 'getAliasName'
     ];
 
     public static function attributeMap()
@@ -234,6 +239,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
         $this->container['personalIdType'] = isset($data['personalIdType']) ? $data['personalIdType'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['identificationNumber'] = isset($data['identificationNumber']) ? $data['identificationNumber'] : null;
+        $this->container['aliasName'] = isset($data['aliasName']) ? $data['aliasName'] : null;
     }
 
     /**
@@ -635,6 +641,27 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
     public function setIdentificationNumber($identificationNumber)
     {
         $this->container['identificationNumber'] = $identificationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets aliasName
+     * @return string
+     */
+    public function getAliasName()
+    {
+        return $this->container['aliasName'];
+    }
+
+    /**
+     * Sets aliasName
+     * @param string $aliasName Sender's alias name.
+     * @return $this
+     */
+    public function setAliasName($aliasName)
+    {
+        $this->container['aliasName'] = $aliasName;
 
         return $this;
     }

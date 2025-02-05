@@ -89,4 +89,25 @@ class Ptsv2paymentsProcessingInformationPurchaseOptionsTest extends \PHPUnit_Fra
     public function testPropertyType()
     {
     }
+
+    /**
+     * Test attribute "eligibilityIndicator"
+     */
+    public function testPropertyEligibilityIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "benefitAmount"
+     */
+    public function testPropertyBenefitAmount()
+    {
+    }
+
+    /**
+     * Test attribute "benefitType"
+     */
+    public function testPropertyBenefitType()
+    {
+    }
 }

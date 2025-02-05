@@ -77,9 +77,44 @@ class Tmsv2TokenizedCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "links"
      */
-    public function testPropertyType()
+    public function testPropertyLinks()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "object"
+     */
+    public function testPropertyObject()
+    {
+    }
+
+    /**
+     * Test attribute "accountReferenceId"
+     */
+    public function testPropertyAccountReferenceId()
+    {
+    }
+
+    /**
+     * Test attribute "consumerId"
+     */
+    public function testPropertyConsumerId()
+    {
+    }
+
+    /**
+     * Test attribute "createInstrumentIdentifier"
+     */
+    public function testPropertyCreateInstrumentIdentifier()
     {
     }
 
@@ -98,20 +133,6 @@ class Tmsv2TokenizedCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "enrollmentId"
-     */
-    public function testPropertyEnrollmentId()
-    {
-    }
-
-    /**
-     * Test attribute "tokenReferenceId"
-     */
-    public function testPropertyTokenReferenceId()
-    {
-    }
-
-    /**
      * Test attribute "reason"
      */
     public function testPropertyReason()
@@ -126,20 +147,6 @@ class Tmsv2TokenizedCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "expirationMonth"
-     */
-    public function testPropertyExpirationMonth()
-    {
-    }
-
-    /**
-     * Test attribute "expirationYear"
-     */
-    public function testPropertyExpirationYear()
-    {
-    }
-
-    /**
      * Test attribute "cryptogram"
      */
     public function testPropertyCryptogram()
@@ -147,9 +154,58 @@ class Tmsv2TokenizedCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "securityCode"
+     */
+    public function testPropertySecurityCode()
+    {
+    }
+
+    /**
+     * Test attribute "eci"
+     */
+    public function testPropertyEci()
+    {
+    }
+
+    /**
+     * Test attribute "requestorId"
+     */
+    public function testPropertyRequestorId()
+    {
+    }
+
+    /**
+     * Test attribute "enrollmentId"
+     */
+    public function testPropertyEnrollmentId()
+    {
+    }
+
+    /**
+     * Test attribute "tokenReferenceId"
+     */
+    public function testPropertyTokenReferenceId()
+    {
+    }
+
+    /**
+     * Test attribute "paymentAccountReference"
+     */
+    public function testPropertyPaymentAccountReference()
+    {
+    }
+
+    /**
      * Test attribute "card"
      */
     public function testPropertyCard()
+    {
+    }
+
+    /**
+     * Test attribute "passcode"
+     */
+    public function testPropertyPasscode()
     {
     }
 

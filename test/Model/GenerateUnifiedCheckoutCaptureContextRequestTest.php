@@ -131,11 +131,4 @@ class GenerateUnifiedCheckoutCaptureContextRequestTest extends \PHPUnit_Framewor
     public function testPropertyOrderInformation()
     {
     }
-
-    /**
-     * Test attribute "checkoutApiInitialization"
-     */
-    public function testPropertyCheckoutApiInitialization()
-    {
-    }
 }

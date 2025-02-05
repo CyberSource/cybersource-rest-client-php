@@ -341,4 +341,32 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyProcessingInstruction()
     {
     }
+
+    /**
+     * Test attribute "transactionTypeIndicator"
+     */
+    public function testPropertyTransactionTypeIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "purposeOfPayment"
+     */
+    public function testPropertyPurposeOfPayment()
+    {
+    }
+
+    /**
+     * Test attribute "languageCode"
+     */
+    public function testPropertyLanguageCode()
+    {
+    }
+
+    /**
+     * Test attribute "originalPaymentId"
+     */
+    public function testPropertyOriginalPaymentId()
+    {
+    }
 }

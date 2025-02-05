@@ -166,4 +166,11 @@ class PtsV2PayoutsPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTokenInformation()
     {
     }
+
+    /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
 }

@@ -257,7 +257,7 @@ class TssV2TransactionsGet200ResponsePointOfSaleInformation implements ArrayAcce
 
     /**
      * Sets cardholderVerificationMethodUsed
-     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM
+     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP
      * @return $this
      */
     public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)

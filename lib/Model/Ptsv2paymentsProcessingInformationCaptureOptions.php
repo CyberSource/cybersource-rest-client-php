@@ -57,7 +57,9 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         'totalCaptureCount' => 'int',
         'dateToCapture' => 'string',
         'isFinal' => 'string',
-        'notes' => 'string'
+        'notes' => 'string',
+        'reconciliationId' => 'string',
+        'reconciliationIdAlternate' => 'string'
     ];
 
     /**
@@ -69,7 +71,9 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         'totalCaptureCount' => null,
         'dateToCapture' => null,
         'isFinal' => null,
-        'notes' => null
+        'notes' => null,
+        'reconciliationId' => null,
+        'reconciliationIdAlternate' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +95,9 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         'totalCaptureCount' => 'totalCaptureCount',
         'dateToCapture' => 'dateToCapture',
         'isFinal' => 'isFinal',
-        'notes' => 'notes'
+        'notes' => 'notes',
+        'reconciliationId' => 'reconciliationId',
+        'reconciliationIdAlternate' => 'reconciliationIdAlternate'
     ];
 
 
@@ -104,7 +110,9 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         'totalCaptureCount' => 'setTotalCaptureCount',
         'dateToCapture' => 'setDateToCapture',
         'isFinal' => 'setIsFinal',
-        'notes' => 'setNotes'
+        'notes' => 'setNotes',
+        'reconciliationId' => 'setReconciliationId',
+        'reconciliationIdAlternate' => 'setReconciliationIdAlternate'
     ];
 
 
@@ -117,7 +125,9 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         'totalCaptureCount' => 'getTotalCaptureCount',
         'dateToCapture' => 'getDateToCapture',
         'isFinal' => 'getIsFinal',
-        'notes' => 'getNotes'
+        'notes' => 'getNotes',
+        'reconciliationId' => 'getReconciliationId',
+        'reconciliationIdAlternate' => 'getReconciliationIdAlternate'
     ];
 
     public static function attributeMap()
@@ -156,6 +166,8 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
         $this->container['dateToCapture'] = isset($data['dateToCapture']) ? $data['dateToCapture'] : null;
         $this->container['isFinal'] = isset($data['isFinal']) ? $data['isFinal'] : null;
         $this->container['notes'] = isset($data['notes']) ? $data['notes'] : null;
+        $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
+        $this->container['reconciliationIdAlternate'] = isset($data['reconciliationIdAlternate']) ? $data['reconciliationIdAlternate'] : null;
     }
 
     /**
@@ -284,6 +296,48 @@ class Ptsv2paymentsProcessingInformationCaptureOptions implements ArrayAccess
     public function setNotes($notes)
     {
         $this->container['notes'] = $notes;
+
+        return $this;
+    }
+
+    /**
+     * Gets reconciliationId
+     * @return string
+     */
+    public function getReconciliationId()
+    {
+        return $this->container['reconciliationId'];
+    }
+
+    /**
+     * Sets reconciliationId
+     * @param string $reconciliationId Used for authbill request when capture field equals true
+     * @return $this
+     */
+    public function setReconciliationId($reconciliationId)
+    {
+        $this->container['reconciliationId'] = $reconciliationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets reconciliationIdAlternate
+     * @return string
+     */
+    public function getReconciliationIdAlternate()
+    {
+        return $this->container['reconciliationIdAlternate'];
+    }
+
+    /**
+     * Sets reconciliationIdAlternate
+     * @param string $reconciliationIdAlternate Used by Nike merchant to send 12 digit order number
+     * @return $this
+     */
+    public function setReconciliationIdAlternate($reconciliationIdAlternate)
+    {
+        $this->container['reconciliationIdAlternate'] = $reconciliationIdAlternate;
 
         return $this;
     }

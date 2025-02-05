@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **recipientInformation** | [**\CyberSource\Model\PtsV2PayoutsPost201ResponseRecipientInformation**](PtsV2PayoutsPost201ResponseRecipientInformation.md) |  | [optional] 
 **issuerInformation** | [**\CyberSource\Model\PtsV2PayoutsPost201ResponseIssuerInformation**](PtsV2PayoutsPost201ResponseIssuerInformation.md) |  | [optional] 
 **tokenInformation** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation**](PtsV2PaymentsPost201ResponseTokenInformation.md) |  | [optional] 
+**processingInformation** | [**\CyberSource\Model\PtsV2PayoutsPost201ResponseProcessingInformation**](PtsV2PayoutsPost201ResponseProcessingInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

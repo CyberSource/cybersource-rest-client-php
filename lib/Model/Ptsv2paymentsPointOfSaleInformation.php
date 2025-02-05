@@ -66,6 +66,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'trackData' => 'string',
         'storeAndForwardIndicator' => 'string',
         'cardholderVerificationMethod' => 'string[]',
+        'terminalCategory' => 'string',
         'terminalInputCapability' => 'string[]',
         'terminalCardCaptureCapability' => 'string',
         'terminalOutputCapability' => 'string',
@@ -102,6 +103,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'trackData' => null,
         'storeAndForwardIndicator' => null,
         'cardholderVerificationMethod' => null,
+        'terminalCategory' => null,
         'terminalInputCapability' => null,
         'terminalCardCaptureCapability' => null,
         'terminalOutputCapability' => null,
@@ -148,6 +150,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'trackData' => 'trackData',
         'storeAndForwardIndicator' => 'storeAndForwardIndicator',
         'cardholderVerificationMethod' => 'cardholderVerificationMethod',
+        'terminalCategory' => 'terminalCategory',
         'terminalInputCapability' => 'terminalInputCapability',
         'terminalCardCaptureCapability' => 'terminalCardCaptureCapability',
         'terminalOutputCapability' => 'terminalOutputCapability',
@@ -185,6 +188,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'trackData' => 'setTrackData',
         'storeAndForwardIndicator' => 'setStoreAndForwardIndicator',
         'cardholderVerificationMethod' => 'setCardholderVerificationMethod',
+        'terminalCategory' => 'setTerminalCategory',
         'terminalInputCapability' => 'setTerminalInputCapability',
         'terminalCardCaptureCapability' => 'setTerminalCardCaptureCapability',
         'terminalOutputCapability' => 'setTerminalOutputCapability',
@@ -222,6 +226,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         'trackData' => 'getTrackData',
         'storeAndForwardIndicator' => 'getStoreAndForwardIndicator',
         'cardholderVerificationMethod' => 'getCardholderVerificationMethod',
+        'terminalCategory' => 'getTerminalCategory',
         'terminalInputCapability' => 'getTerminalInputCapability',
         'terminalCardCaptureCapability' => 'getTerminalCardCaptureCapability',
         'terminalOutputCapability' => 'getTerminalOutputCapability',
@@ -284,6 +289,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
         $this->container['trackData'] = isset($data['trackData']) ? $data['trackData'] : null;
         $this->container['storeAndForwardIndicator'] = isset($data['storeAndForwardIndicator']) ? $data['storeAndForwardIndicator'] : null;
         $this->container['cardholderVerificationMethod'] = isset($data['cardholderVerificationMethod']) ? $data['cardholderVerificationMethod'] : null;
+        $this->container['terminalCategory'] = isset($data['terminalCategory']) ? $data['terminalCategory'] : null;
         $this->container['terminalInputCapability'] = isset($data['terminalInputCapability']) ? $data['terminalInputCapability'] : null;
         $this->container['terminalCardCaptureCapability'] = isset($data['terminalCardCaptureCapability']) ? $data['terminalCardCaptureCapability'] : null;
         $this->container['terminalOutputCapability'] = isset($data['terminalOutputCapability']) ? $data['terminalOutputCapability'] : null;
@@ -380,7 +386,7 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
 
     /**
      * Sets cardholderVerificationMethodUsed
-     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM
+     * @param int $cardholderVerificationMethodUsed Method that was used to verify the cardholder's identity. Possible values:    - `0`: No verification   - `1`: Signature   - `2`: PIN   - `3`: Cardholder device CVM   - `4`: Biometric   - `5`: OTP
      * @return $this
      */
     public function setCardholderVerificationMethodUsed($cardholderVerificationMethodUsed)
@@ -596,6 +602,27 @@ class Ptsv2paymentsPointOfSaleInformation implements ArrayAccess
     public function setCardholderVerificationMethod($cardholderVerificationMethod)
     {
         $this->container['cardholderVerificationMethod'] = $cardholderVerificationMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets terminalCategory
+     * @return string
+     */
+    public function getTerminalCategory()
+    {
+        return $this->container['terminalCategory'];
+    }
+
+    /**
+     * Sets terminalCategory
+     * @param string $terminalCategory Indicates the type of terminal.   Possible values: - `AFD`: Automated Fuel Dispenser
+     * @return $this
+     */
+    public function setTerminalCategory($terminalCategory)
+    {
+        $this->container['terminalCategory'] = $terminalCategory;
 
         return $this;
     }

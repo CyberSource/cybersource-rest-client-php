@@ -103,4 +103,11 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptionsTest extends \PH
     public function testPropertyNotes()
     {
     }
+
+    /**
+     * Test attribute "reconciliationIdAlternate"
+     */
+    public function testPropertyReconciliationIdAlternate()
+    {
+    }
 }

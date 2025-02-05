@@ -236,7 +236,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
 
     /**
      * Sets extendAuthIndicator
-     * @param string $extendAuthIndicator Flag that indicates whether the transaction is an extended authorization.
+     * @param string $extendAuthIndicator Indicates Authorization extension transaction. Extension transaction is used to prolong the settlement period by one additional settlement cycle period.  Possible values: - true: Transaction is an Authorization Extension transaction.  - false: Transaction is not an Authorization Extension transaction.
      * @return $this
      */
     public function setExtendAuthIndicator($extendAuthIndicator)

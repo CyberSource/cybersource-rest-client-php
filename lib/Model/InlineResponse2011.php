@@ -56,8 +56,8 @@ class InlineResponse2011 implements ArrayAccess
         'id' => 'string',
         'submitTimeUtc' => 'string',
         'status' => 'string',
-        'paymentAccountInformation' => '\CyberSource\Model\InlineResponse2011PaymentAccountInformation',
-        'issuerInformation' => '\CyberSource\Model\InlineResponse2011IssuerInformation',
+        'paymentAccountInformation' => '\CyberSource\Model\TmsBinLookupPaymentAccountInformation',
+        'issuerInformation' => '\CyberSource\Model\TmsBinLookupIssuerInformation',
         'payoutInformation' => '\CyberSource\Model\InlineResponse2011PayoutInformation'
     ];
 
@@ -254,7 +254,7 @@ class InlineResponse2011 implements ArrayAccess
 
     /**
      * Gets paymentAccountInformation
-     * @return \CyberSource\Model\InlineResponse2011PaymentAccountInformation
+     * @return \CyberSource\Model\TmsBinLookupPaymentAccountInformation
      */
     public function getPaymentAccountInformation()
     {
@@ -263,7 +263,7 @@ class InlineResponse2011 implements ArrayAccess
 
     /**
      * Sets paymentAccountInformation
-     * @param \CyberSource\Model\InlineResponse2011PaymentAccountInformation $paymentAccountInformation
+     * @param \CyberSource\Model\TmsBinLookupPaymentAccountInformation $paymentAccountInformation
      * @return $this
      */
     public function setPaymentAccountInformation($paymentAccountInformation)
@@ -275,7 +275,7 @@ class InlineResponse2011 implements ArrayAccess
 
     /**
      * Gets issuerInformation
-     * @return \CyberSource\Model\InlineResponse2011IssuerInformation
+     * @return \CyberSource\Model\TmsBinLookupIssuerInformation
      */
     public function getIssuerInformation()
     {
@@ -284,7 +284,7 @@ class InlineResponse2011 implements ArrayAccess
 
     /**
      * Sets issuerInformation
-     * @param \CyberSource\Model\InlineResponse2011IssuerInformation $issuerInformation
+     * @param \CyberSource\Model\TmsBinLookupIssuerInformation $issuerInformation
      * @return $this
      */
     public function setIssuerInformation($issuerInformation)

@@ -131,4 +131,18 @@ class Ptsv2payoutsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyFundingOptions()
     {
     }
+
+    /**
+     * Test attribute "languageCode"
+     */
+    public function testPropertyLanguageCode()
+    {
+    }
+
+    /**
+     * Test attribute "purchaseOptions"
+     */
+    public function testPropertyPurchaseOptions()
+    {
+    }
 }

@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Tmsv2TokenizedCardCard Class Doc Comment
  *
  * @category    Class
- * @description The latest card details associated with the network token
+ * @description Card object used to create a network token
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,9 +54,11 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'suffix' => 'string',
+        'number' => 'string',
         'expirationMonth' => 'string',
-        'expirationYear' => 'string'
+        'expirationYear' => 'string',
+        'type' => 'string',
+        'suffix' => 'string'
     ];
 
     /**
@@ -64,9 +66,11 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'suffix' => null,
+        'number' => null,
         'expirationMonth' => null,
-        'expirationYear' => null
+        'expirationYear' => null,
+        'type' => null,
+        'suffix' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +88,11 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'suffix' => 'suffix',
+        'number' => 'number',
         'expirationMonth' => 'expirationMonth',
-        'expirationYear' => 'expirationYear'
+        'expirationYear' => 'expirationYear',
+        'type' => 'type',
+        'suffix' => 'suffix'
     ];
 
 
@@ -95,9 +101,11 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'suffix' => 'setSuffix',
+        'number' => 'setNumber',
         'expirationMonth' => 'setExpirationMonth',
-        'expirationYear' => 'setExpirationYear'
+        'expirationYear' => 'setExpirationYear',
+        'type' => 'setType',
+        'suffix' => 'setSuffix'
     ];
 
 
@@ -106,9 +114,11 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'suffix' => 'getSuffix',
+        'number' => 'getNumber',
         'expirationMonth' => 'getExpirationMonth',
-        'expirationYear' => 'getExpirationYear'
+        'expirationYear' => 'getExpirationYear',
+        'type' => 'getType',
+        'suffix' => 'getSuffix'
     ];
 
     public static function attributeMap()
@@ -142,9 +152,11 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['suffix'] = isset($data['suffix']) ? $data['suffix'] : null;
+        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
         $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['suffix'] = isset($data['suffix']) ? $data['suffix'] : null;
     }
 
     /**
@@ -173,22 +185,22 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
 
 
     /**
-     * Gets suffix
+     * Gets number
      * @return string
      */
-    public function getSuffix()
+    public function getNumber()
     {
-        return $this->container['suffix'];
+        return $this->container['number'];
     }
 
     /**
-     * Sets suffix
-     * @param string $suffix The customer's latest payment card number suffix
+     * Sets number
+     * @param string $number The customer's payment card number, also known as the Primary Account Number (PAN).
      * @return $this
      */
-    public function setSuffix($suffix)
+    public function setNumber($number)
     {
-        $this->container['suffix'] = $suffix;
+        $this->container['number'] = $number;
 
         return $this;
     }
@@ -204,7 +216,7 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
 
     /**
      * Sets expirationMonth
-     * @param string $expirationMonth Two-digit month in which the customer's latest payment card expires.  Format: `MM`.  Possible Values: `01` through `12`.
+     * @param string $expirationMonth Two-digit month in which the payment card expires.  Format: `MM`.  Possible Values: `01` through `12`.
      * @return $this
      */
     public function setExpirationMonth($expirationMonth)
@@ -225,12 +237,54 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
 
     /**
      * Sets expirationYear
-     * @param string $expirationYear Four-digit year in which the customer's latest payment card expires.  Format: `YYYY`.
+     * @param string $expirationYear Four-digit year in which the credit card expires.  Format: `YYYY`.
      * @return $this
      */
     public function setExpirationYear($expirationYear)
     {
         $this->container['expirationYear'] = $expirationYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type The type of card(Card network). Possible Values: 001: visa
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets suffix
+     * @return string
+     */
+    public function getSuffix()
+    {
+        return $this->container['suffix'];
+    }
+
+    /**
+     * Sets suffix
+     * @param string $suffix The customer's latest payment card number suffix.
+     * @return $this
+     */
+    public function setSuffix($suffix)
+    {
+        $this->container['suffix'] = $suffix;
 
         return $this;
     }

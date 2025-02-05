@@ -168,6 +168,13 @@ class Ptsv2paymentsPointOfSaleInformationTest extends \PHPUnit_Framework_TestCas
     }
 
     /**
+     * Test attribute "terminalCategory"
+     */
+    public function testPropertyTerminalCategory()
+    {
+    }
+
+    /**
      * Test attribute "terminalInputCapability"
      */
     public function testPropertyTerminalInputCapability()

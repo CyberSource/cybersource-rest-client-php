@@ -65,7 +65,8 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'issuer' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierIssuer',
         'processingInformation' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierProcessingInformation',
         'billTo' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierBillTo',
-        'metadata' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierMetadata'
+        'metadata' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierMetadata',
+        'embedded' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierEmbedded'
     ];
 
     /**
@@ -85,7 +86,8 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'issuer' => null,
         'processingInformation' => null,
         'billTo' => null,
-        'metadata' => null
+        'metadata' => null,
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -115,7 +117,8 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'issuer' => 'issuer',
         'processingInformation' => 'processingInformation',
         'billTo' => 'billTo',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'embedded' => '_embedded'
     ];
 
 
@@ -136,7 +139,8 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'issuer' => 'setIssuer',
         'processingInformation' => 'setProcessingInformation',
         'billTo' => 'setBillTo',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -157,7 +161,8 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'issuer' => 'getIssuer',
         'processingInformation' => 'getProcessingInformation',
         'billTo' => 'getBillTo',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -204,6 +209,7 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -500,6 +506,27 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets embedded
+     * @return \CyberSource\Model\TmsEmbeddedInstrumentIdentifierEmbedded
+     */
+    public function getEmbedded()
+    {
+        return $this->container['embedded'];
+    }
+
+    /**
+     * Sets embedded
+     * @param \CyberSource\Model\TmsEmbeddedInstrumentIdentifierEmbedded $embedded
+     * @return $this
+     */
+    public function setEmbedded($embedded)
+    {
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }

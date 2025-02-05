@@ -336,6 +336,13 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationTest extends 
     }
 
     /**
+     * Test attribute "dataQualityIndicator"
+     */
+    public function testPropertyDataQualityIndicator()
+    {
+    }
+
+    /**
      * Test attribute "authenticationResult"
      */
     public function testPropertyAuthenticationResult()

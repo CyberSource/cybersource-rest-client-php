@@ -110,4 +110,18 @@ class Ptsv2paymentsProcessingInformationCaptureOptionsTest extends \PHPUnit_Fram
     public function testPropertyNotes()
     {
     }
+
+    /**
+     * Test attribute "reconciliationId"
+     */
+    public function testPropertyReconciliationId()
+    {
+    }
+
+    /**
+     * Test attribute "reconciliationIdAlternate"
+     */
+    public function testPropertyReconciliationIdAlternate()
+    {
+    }
 }

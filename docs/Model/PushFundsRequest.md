@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aggregatorInformation** | [**\CyberSource\Model\Ptsv1pushfundstransferAggregatorInformation**](Ptsv1pushfundstransferAggregatorInformation.md) |  | [optional] 
+**aggregatorInformation** | [**\CyberSource\Model\Ptsv2payoutsAggregatorInformation**](Ptsv2payoutsAggregatorInformation.md) |  | [optional] 
 **clientReferenceInformation** | [**\CyberSource\Model\Ptsv1pushfundstransferClientReferenceInformation**](Ptsv1pushfundstransferClientReferenceInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Ptsv1pushfundstransferOrderInformation**](Ptsv1pushfundstransferOrderInformation.md) |  | 
 **processingInformation** | [**\CyberSource\Model\Ptsv1pushfundstransferProcessingInformation**](Ptsv1pushfundstransferProcessingInformation.md) |  | [optional] 

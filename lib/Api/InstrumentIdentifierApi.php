@@ -232,13 +232,14 @@ class InstrumentIdentifierApi
      *
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostInstrumentIdentifierRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInstrumentIdentifier($instrumentIdentifierId, $profileId = null)
+    public function getInstrumentIdentifier($instrumentIdentifierId, $profileId = null, $retrieveBinDetails = null)
     {
         self::$logger->info('CALL TO METHOD getInstrumentIdentifier STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $profileId, $retrieveBinDetails);
         self::$logger->info('CALL TO METHOD getInstrumentIdentifier ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -251,10 +252,11 @@ class InstrumentIdentifierApi
      *
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostInstrumentIdentifierRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $profileId = null)
+    public function getInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $profileId = null, $retrieveBinDetails = null)
     {
         // verify the required parameter 'instrumentIdentifierId' is set
         if ($instrumentIdentifierId === null) {
@@ -273,6 +275,10 @@ class InstrumentIdentifierApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
@@ -298,6 +304,7 @@ class InstrumentIdentifierApi
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
@@ -368,15 +375,16 @@ class InstrumentIdentifierApi
      *
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PaymentInstrumentList1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierId, $profileId = null, $offset = '0', $limit = '20')
+    public function getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierId, $profileId = null, $retrieveBinDetails = null, $offset = '0', $limit = '20')
     {
         self::$logger->info('CALL TO METHOD getInstrumentIdentifierPaymentInstrumentsList STARTED');
-        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierId, $profileId, $offset, $limit);
+        list($response, $statusCode, $httpHeader) = $this->getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierId, $profileId, $retrieveBinDetails, $offset, $limit);
         self::$logger->info('CALL TO METHOD getInstrumentIdentifierPaymentInstrumentsList ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -389,12 +397,13 @@ class InstrumentIdentifierApi
      *
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param int $offset Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. (optional, default to 0)
      * @param int $limit The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. (optional, default to 20)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PaymentInstrumentList1, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierId, $profileId = null, $offset = '0', $limit = '20')
+    public function getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo($instrumentIdentifierId, $profileId = null, $retrieveBinDetails = null, $offset = '0', $limit = '20')
     {
         // verify the required parameter 'instrumentIdentifierId' is set
         if ($instrumentIdentifierId === null) {
@@ -413,6 +422,10 @@ class InstrumentIdentifierApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
@@ -446,6 +459,7 @@ class InstrumentIdentifierApi
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
@@ -519,14 +533,15 @@ class InstrumentIdentifierApi
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param \CyberSource\Model\PatchInstrumentIdentifierRequest $patchInstrumentIdentifierRequest Specify the previous transaction Id to update. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PatchInstrumentIdentifierRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
+    public function patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId = null, $retrieveBinDetails = null, $ifMatch = null)
     {
         self::$logger->info('CALL TO METHOD patchInstrumentIdentifier STARTED');
-        list($response, $statusCode, $httpHeader) = $this->patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch);
+        list($response, $statusCode, $httpHeader) = $this->patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $retrieveBinDetails, $ifMatch);
         self::$logger->info('CALL TO METHOD patchInstrumentIdentifier ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -540,11 +555,12 @@ class InstrumentIdentifierApi
      * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
      * @param \CyberSource\Model\PatchInstrumentIdentifierRequest $patchInstrumentIdentifierRequest Specify the previous transaction Id to update. (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @param string $ifMatch Contains an ETag value from a GET request to make the request conditional. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PatchInstrumentIdentifierRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId = null, $ifMatch = null)
+    public function patchInstrumentIdentifierWithHttpInfo($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId = null, $retrieveBinDetails = null, $ifMatch = null)
     {
         // verify the required parameter 'instrumentIdentifierId' is set
         if ($instrumentIdentifierId === null) {
@@ -568,6 +584,10 @@ class InstrumentIdentifierApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
@@ -604,6 +624,7 @@ class InstrumentIdentifierApi
         
         // Logging
         self::$logger->debug("Resource : PATCH $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
@@ -678,13 +699,14 @@ class InstrumentIdentifierApi
      *
      * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostInstrumentIdentifierRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId = null)
+    public function postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId = null, $retrieveBinDetails = null)
     {
         self::$logger->info('CALL TO METHOD postInstrumentIdentifier STARTED');
-        list($response, $statusCode, $httpHeader) = $this->postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId);
+        list($response, $statusCode, $httpHeader) = $this->postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId, $retrieveBinDetails);
         self::$logger->info('CALL TO METHOD postInstrumentIdentifier ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -697,10 +719,11 @@ class InstrumentIdentifierApi
      *
      * @param \CyberSource\Model\PostInstrumentIdentifierRequest $postInstrumentIdentifierRequest Specify either a Card, Bank Account or Enrollable Card (required)
      * @param string $profileId The Id of a profile containing user specific TMS configuration. (optional)
+     * @param bool $retrieveBinDetails Retrieve the Bin Details of PAN or network token (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\PostInstrumentIdentifierRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId = null)
+    public function postInstrumentIdentifierWithHttpInfo($postInstrumentIdentifierRequest, $profileId = null, $retrieveBinDetails = null)
     {
         // verify the required parameter 'postInstrumentIdentifierRequest' is set
         if ($postInstrumentIdentifierRequest === null) {
@@ -719,6 +742,10 @@ class InstrumentIdentifierApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($retrieveBinDetails !== null) {
+            $queryParams['retrieveBinDetails'] = $this->apiClient->getSerializer()->toQueryValue($retrieveBinDetails);
+        }
         // header params
         if ($profileId !== null) {
             $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
@@ -743,6 +770,7 @@ class InstrumentIdentifierApi
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody)) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);

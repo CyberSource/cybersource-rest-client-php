@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInstrumentIdentifier**
-> \CyberSource\Model\PostInstrumentIdentifierRequest getInstrumentIdentifier($instrumentIdentifierId, $profileId)
+> \CyberSource\Model\PostInstrumentIdentifierRequest getInstrumentIdentifier($instrumentIdentifierId, $profileId, $retrieveBinDetails)
 
 Retrieve an Instrument Identifier
 
@@ -73,9 +73,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $instrumentIdentifierId = "instrumentIdentifierId_example"; // string | The Id of an Instrument Identifier.
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 
 try {
-    $result = $api_instance->getInstrumentIdentifier($instrumentIdentifierId, $profileId);
+    $result = $api_instance->getInstrumentIdentifier($instrumentIdentifierId, $profileId, $retrieveBinDetails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->getInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -89,6 +90,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentIdentifierId** | **string**| The Id of an Instrument Identifier. |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 
@@ -106,7 +108,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInstrumentIdentifierPaymentInstrumentsList**
-> \CyberSource\Model\PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierId, $profileId, $offset, $limit)
+> \CyberSource\Model\PaymentInstrumentList1 getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierId, $profileId, $retrieveBinDetails, $offset, $limit)
 
 List Payment Instruments for an Instrument Identifier
 
@@ -120,11 +122,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $instrumentIdentifierId = "instrumentIdentifierId_example"; // string | The Id of an Instrument Identifier.
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 $offset = 0; // int | Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0.
 $limit = 20; // int | The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100.
 
 try {
-    $result = $api_instance->getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierId, $profileId, $offset, $limit);
+    $result = $api_instance->getInstrumentIdentifierPaymentInstrumentsList($instrumentIdentifierId, $profileId, $retrieveBinDetails, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->getInstrumentIdentifierPaymentInstrumentsList: ', $e->getMessage(), PHP_EOL;
@@ -138,6 +141,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instrumentIdentifierId** | **string**| The Id of an Instrument Identifier. |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
  **offset** | **int**| Starting record in zero-based dataset that should be returned as the first object in the array. Default is 0. | [optional] [default to 0]
  **limit** | **int**| The maximum number that can be returned in the array starting from the offset record in zero-based dataset. Default is 20, maximum is 100. | [optional] [default to 20]
 
@@ -157,7 +161,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchInstrumentIdentifier**
-> \CyberSource\Model\PatchInstrumentIdentifierRequest patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch)
+> \CyberSource\Model\PatchInstrumentIdentifierRequest patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $retrieveBinDetails, $ifMatch)
 
 Update an Instrument Identifier
 
@@ -172,10 +176,11 @@ $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $instrumentIdentifierId = "instrumentIdentifierId_example"; // string | The Id of an Instrument Identifier.
 $patchInstrumentIdentifierRequest = new \CyberSource\Model\PatchInstrumentIdentifierRequest(); // \CyberSource\Model\PatchInstrumentIdentifierRequest | Specify the previous transaction Id to update.
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 $ifMatch = "ifMatch_example"; // string | Contains an ETag value from a GET request to make the request conditional.
 
 try {
-    $result = $api_instance->patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $ifMatch);
+    $result = $api_instance->patchInstrumentIdentifier($instrumentIdentifierId, $patchInstrumentIdentifierRequest, $profileId, $retrieveBinDetails, $ifMatch);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->patchInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -190,6 +195,7 @@ Name | Type | Description  | Notes
  **instrumentIdentifierId** | **string**| The Id of an Instrument Identifier. |
  **patchInstrumentIdentifierRequest** | [**\CyberSource\Model\PatchInstrumentIdentifierRequest**](../Model/PatchInstrumentIdentifierRequest.md)| Specify the previous transaction Id to update. |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
  **ifMatch** | **string**| Contains an ETag value from a GET request to make the request conditional. | [optional]
 
 ### Return type
@@ -208,7 +214,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postInstrumentIdentifier**
-> \CyberSource\Model\PostInstrumentIdentifierRequest postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId)
+> \CyberSource\Model\PostInstrumentIdentifierRequest postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId, $retrieveBinDetails)
 
 Create an Instrument Identifier
 
@@ -222,9 +228,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\InstrumentIdentifierApi();
 $postInstrumentIdentifierRequest = new \CyberSource\Model\PostInstrumentIdentifierRequest(); // \CyberSource\Model\PostInstrumentIdentifierRequest | Specify either a Card, Bank Account or Enrollable Card
 $profileId = "profileId_example"; // string | The Id of a profile containing user specific TMS configuration.
+$retrieveBinDetails = true; // bool | Retrieve the Bin Details of PAN or network token
 
 try {
-    $result = $api_instance->postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId);
+    $result = $api_instance->postInstrumentIdentifier($postInstrumentIdentifierRequest, $profileId, $retrieveBinDetails);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstrumentIdentifierApi->postInstrumentIdentifier: ', $e->getMessage(), PHP_EOL;
@@ -238,6 +245,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postInstrumentIdentifierRequest** | [**\CyberSource\Model\PostInstrumentIdentifierRequest**](../Model/PostInstrumentIdentifierRequest.md)| Specify either a Card, Bank Account or Enrollable Card |
  **profileId** | **string**| The Id of a profile containing user specific TMS configuration. | [optional]
+ **retrieveBinDetails** | **bool**| Retrieve the Bin Details of PAN or network token | [optional]
 
 ### Return type
 

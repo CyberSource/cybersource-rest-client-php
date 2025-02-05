@@ -79,6 +79,7 @@ class CreatePaymentRequest implements ArrayAccess
         'riskInformation' => '\CyberSource\Model\Ptsv2paymentsRiskInformation',
         'acquirerInformation' => '\CyberSource\Model\Ptsv2paymentsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
+        'unscheduledPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsUnscheduledPaymentInformation',
         'hostedPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsHostedPaymentInformation',
         'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation'
     ];
@@ -114,6 +115,7 @@ class CreatePaymentRequest implements ArrayAccess
         'riskInformation' => null,
         'acquirerInformation' => null,
         'recurringPaymentInformation' => null,
+        'unscheduledPaymentInformation' => null,
         'hostedPaymentInformation' => null,
         'watchlistScreeningInformation' => null
     ];
@@ -159,6 +161,7 @@ class CreatePaymentRequest implements ArrayAccess
         'riskInformation' => 'riskInformation',
         'acquirerInformation' => 'acquirerInformation',
         'recurringPaymentInformation' => 'recurringPaymentInformation',
+        'unscheduledPaymentInformation' => 'unscheduledPaymentInformation',
         'hostedPaymentInformation' => 'hostedPaymentInformation',
         'watchlistScreeningInformation' => 'watchlistScreeningInformation'
     ];
@@ -195,6 +198,7 @@ class CreatePaymentRequest implements ArrayAccess
         'riskInformation' => 'setRiskInformation',
         'acquirerInformation' => 'setAcquirerInformation',
         'recurringPaymentInformation' => 'setRecurringPaymentInformation',
+        'unscheduledPaymentInformation' => 'setUnscheduledPaymentInformation',
         'hostedPaymentInformation' => 'setHostedPaymentInformation',
         'watchlistScreeningInformation' => 'setWatchlistScreeningInformation'
     ];
@@ -231,6 +235,7 @@ class CreatePaymentRequest implements ArrayAccess
         'riskInformation' => 'getRiskInformation',
         'acquirerInformation' => 'getAcquirerInformation',
         'recurringPaymentInformation' => 'getRecurringPaymentInformation',
+        'unscheduledPaymentInformation' => 'getUnscheduledPaymentInformation',
         'hostedPaymentInformation' => 'getHostedPaymentInformation',
         'watchlistScreeningInformation' => 'getWatchlistScreeningInformation'
     ];
@@ -292,6 +297,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
         $this->container['recurringPaymentInformation'] = isset($data['recurringPaymentInformation']) ? $data['recurringPaymentInformation'] : null;
+        $this->container['unscheduledPaymentInformation'] = isset($data['unscheduledPaymentInformation']) ? $data['unscheduledPaymentInformation'] : null;
         $this->container['hostedPaymentInformation'] = isset($data['hostedPaymentInformation']) ? $data['hostedPaymentInformation'] : null;
         $this->container['watchlistScreeningInformation'] = isset($data['watchlistScreeningInformation']) ? $data['watchlistScreeningInformation'] : null;
     }
@@ -863,6 +869,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setRecurringPaymentInformation($recurringPaymentInformation)
     {
         $this->container['recurringPaymentInformation'] = $recurringPaymentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets unscheduledPaymentInformation
+     * @return \CyberSource\Model\Ptsv2paymentsUnscheduledPaymentInformation
+     */
+    public function getUnscheduledPaymentInformation()
+    {
+        return $this->container['unscheduledPaymentInformation'];
+    }
+
+    /**
+     * Sets unscheduledPaymentInformation
+     * @param \CyberSource\Model\Ptsv2paymentsUnscheduledPaymentInformation $unscheduledPaymentInformation
+     * @return $this
+     */
+    public function setUnscheduledPaymentInformation($unscheduledPaymentInformation)
+    {
+        $this->container['unscheduledPaymentInformation'] = $unscheduledPaymentInformation;
 
         return $this;
     }

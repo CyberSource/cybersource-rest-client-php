@@ -126,6 +126,13 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformationTest exte
     }
 
     /**
+     * Test attribute "merchantRiskPrediction"
+     */
+    public function testPropertyMerchantRiskPrediction()
+    {
+    }
+
+    /**
      * Test attribute "sellerProtection"
      */
     public function testPropertySellerProtection()

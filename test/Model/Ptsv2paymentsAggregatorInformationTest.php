@@ -96,4 +96,39 @@ class Ptsv2paymentsAggregatorInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertySubMerchant()
     {
     }
+
+    /**
+     * Test attribute "streetAddress"
+     */
+    public function testPropertyStreetAddress()
+    {
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
+    {
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
 }

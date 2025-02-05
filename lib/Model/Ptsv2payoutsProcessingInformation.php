@@ -60,7 +60,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'payoutsOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationPayoutsOptions',
         'transactionReason' => 'string',
         'purposeOfPayment' => 'string',
-        'fundingOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationFundingOptions'
+        'fundingOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationFundingOptions',
+        'languageCode' => 'string',
+        'purchaseOptions' => '\CyberSource\Model\Ptsv2payoutsProcessingInformationPurchaseOptions'
     ];
 
     /**
@@ -75,7 +77,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'payoutsOptions' => null,
         'transactionReason' => null,
         'purposeOfPayment' => null,
-        'fundingOptions' => null
+        'fundingOptions' => null,
+        'languageCode' => null,
+        'purchaseOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +104,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'payoutsOptions' => 'payoutsOptions',
         'transactionReason' => 'transactionReason',
         'purposeOfPayment' => 'purposeOfPayment',
-        'fundingOptions' => 'fundingOptions'
+        'fundingOptions' => 'fundingOptions',
+        'languageCode' => 'languageCode',
+        'purchaseOptions' => 'purchaseOptions'
     ];
 
 
@@ -116,7 +122,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'payoutsOptions' => 'setPayoutsOptions',
         'transactionReason' => 'setTransactionReason',
         'purposeOfPayment' => 'setPurposeOfPayment',
-        'fundingOptions' => 'setFundingOptions'
+        'fundingOptions' => 'setFundingOptions',
+        'languageCode' => 'setLanguageCode',
+        'purchaseOptions' => 'setPurchaseOptions'
     ];
 
 
@@ -132,7 +140,9 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         'payoutsOptions' => 'getPayoutsOptions',
         'transactionReason' => 'getTransactionReason',
         'purposeOfPayment' => 'getPurposeOfPayment',
-        'fundingOptions' => 'getFundingOptions'
+        'fundingOptions' => 'getFundingOptions',
+        'languageCode' => 'getLanguageCode',
+        'purchaseOptions' => 'getPurchaseOptions'
     ];
 
     public static function attributeMap()
@@ -174,6 +184,8 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
         $this->container['transactionReason'] = isset($data['transactionReason']) ? $data['transactionReason'] : null;
         $this->container['purposeOfPayment'] = isset($data['purposeOfPayment']) ? $data['purposeOfPayment'] : null;
         $this->container['fundingOptions'] = isset($data['fundingOptions']) ? $data['fundingOptions'] : null;
+        $this->container['languageCode'] = isset($data['languageCode']) ? $data['languageCode'] : null;
+        $this->container['purchaseOptions'] = isset($data['purchaseOptions']) ? $data['purchaseOptions'] : null;
     }
 
     /**
@@ -365,6 +377,48 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
     public function setFundingOptions($fundingOptions)
     {
         $this->container['fundingOptions'] = $fundingOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets languageCode
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->container['languageCode'];
+    }
+
+    /**
+     * Sets languageCode
+     * @param string $languageCode Contains the ISO 639-2 defined language Code
+     * @return $this
+     */
+    public function setLanguageCode($languageCode)
+    {
+        $this->container['languageCode'] = $languageCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets purchaseOptions
+     * @return \CyberSource\Model\Ptsv2payoutsProcessingInformationPurchaseOptions
+     */
+    public function getPurchaseOptions()
+    {
+        return $this->container['purchaseOptions'];
+    }
+
+    /**
+     * Sets purchaseOptions
+     * @param \CyberSource\Model\Ptsv2payoutsProcessingInformationPurchaseOptions $purchaseOptions
+     * @return $this
+     */
+    public function setPurchaseOptions($purchaseOptions)
+    {
+        $this->container['purchaseOptions'] = $purchaseOptions;
 
         return $this;
     }

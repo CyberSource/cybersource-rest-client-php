@@ -455,6 +455,13 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "authenticationBrand"
+     */
+    public function testPropertyAuthenticationBrand()
+    {
+    }
+
+    /**
      * Test attribute "effectiveAuthenticationType"
      */
     public function testPropertyEffectiveAuthenticationType()
@@ -472,6 +479,20 @@ class Ptsv2paymentsConsumerAuthenticationInformationTest extends \PHPUnit_Framew
      * Test attribute "signedPares"
      */
     public function testPropertySignedPares()
+    {
+    }
+
+    /**
+     * Test attribute "acsReferenceNumber"
+     */
+    public function testPropertyAcsReferenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "dsReferenceNumber"
+     */
+    public function testPropertyDsReferenceNumber()
     {
     }
 }

@@ -12,6 +12,11 @@ Name | Type | Description | Notes
 **country** | **string** | Recipient country code. Required only for FDCCompass. | [optional] 
 **postalCode** | **string** | Recipient postal code. Required only for FDCCompass. | [optional] 
 **phoneNumber** | **string** | Recipient phone number. Required only for FDCCompass. | [optional] 
+**aliasName** | **string** | Account owner alias name. | [optional] 
+**nationality** | **string** | Account Owner Nationality | [optional] 
+**countryOfBirth** | **string** | Account Owner Country of Birth | [optional] 
+**occupation** | **string** | Account Owner Occupation | [optional] 
+**email** | **string** | Account Owner email address | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -59,7 +59,11 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'address1' => 'string',
         'locality' => 'string',
         'administrativeArea' => 'string',
-        'countryCode' => 'string'
+        'countryCode' => 'string',
+        'aliasName' => 'string',
+        'referenceNumber' => 'string',
+        'account' => '\CyberSource\Model\Ptsv2paymentsSenderInformationAccount',
+        'postalCode' => 'string'
     ];
 
     /**
@@ -73,7 +77,11 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'address1' => null,
         'locality' => null,
         'administrativeArea' => null,
-        'countryCode' => null
+        'countryCode' => null,
+        'aliasName' => null,
+        'referenceNumber' => null,
+        'account' => null,
+        'postalCode' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +105,11 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'address1' => 'address1',
         'locality' => 'locality',
         'administrativeArea' => 'administrativeArea',
-        'countryCode' => 'countryCode'
+        'countryCode' => 'countryCode',
+        'aliasName' => 'aliasName',
+        'referenceNumber' => 'referenceNumber',
+        'account' => 'account',
+        'postalCode' => 'postalCode'
     ];
 
 
@@ -112,7 +124,11 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'address1' => 'setAddress1',
         'locality' => 'setLocality',
         'administrativeArea' => 'setAdministrativeArea',
-        'countryCode' => 'setCountryCode'
+        'countryCode' => 'setCountryCode',
+        'aliasName' => 'setAliasName',
+        'referenceNumber' => 'setReferenceNumber',
+        'account' => 'setAccount',
+        'postalCode' => 'setPostalCode'
     ];
 
 
@@ -127,7 +143,11 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         'address1' => 'getAddress1',
         'locality' => 'getLocality',
         'administrativeArea' => 'getAdministrativeArea',
-        'countryCode' => 'getCountryCode'
+        'countryCode' => 'getCountryCode',
+        'aliasName' => 'getAliasName',
+        'referenceNumber' => 'getReferenceNumber',
+        'account' => 'getAccount',
+        'postalCode' => 'getPostalCode'
     ];
 
     public static function attributeMap()
@@ -168,6 +188,10 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
+        $this->container['aliasName'] = isset($data['aliasName']) ? $data['aliasName'] : null;
+        $this->container['referenceNumber'] = isset($data['referenceNumber']) ? $data['referenceNumber'] : null;
+        $this->container['account'] = isset($data['account']) ? $data['account'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
     }
 
     /**
@@ -338,6 +362,90 @@ class Ptsv2paymentsSenderInformation implements ArrayAccess
     public function setCountryCode($countryCode)
     {
         $this->container['countryCode'] = $countryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets aliasName
+     * @return string
+     */
+    public function getAliasName()
+    {
+        return $this->container['aliasName'];
+    }
+
+    /**
+     * Sets aliasName
+     * @param string $aliasName Sender's alias name.
+     * @return $this
+     */
+    public function setAliasName($aliasName)
+    {
+        $this->container['aliasName'] = $aliasName;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceNumber
+     * @return string
+     */
+    public function getReferenceNumber()
+    {
+        return $this->container['referenceNumber'];
+    }
+
+    /**
+     * Sets referenceNumber
+     * @param string $referenceNumber This field is applicable for AFT transactions.   Contains a transaction reference number provided by the Merchant. Only alpha numeric values are supported.
+     * @return $this
+     */
+    public function setReferenceNumber($referenceNumber)
+    {
+        $this->container['referenceNumber'] = $referenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets account
+     * @return \CyberSource\Model\Ptsv2paymentsSenderInformationAccount
+     */
+    public function getAccount()
+    {
+        return $this->container['account'];
+    }
+
+    /**
+     * Sets account
+     * @param \CyberSource\Model\Ptsv2paymentsSenderInformationAccount $account
+     * @return $this
+     */
+    public function setAccount($account)
+    {
+        $this->container['account'] = $account;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode Postal code of sender.
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

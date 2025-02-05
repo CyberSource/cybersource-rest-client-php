@@ -58,7 +58,9 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
         'dECISION' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsDECISION',
         'cONSUMERAUTHENTICATION' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION',
         'vALIDATECONSUMERAUTHENTICATION' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION',
-        'wATCHLISTSCREENING' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING'
+        'wATCHLISTSCREENING' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsWATCHLISTSCREENING',
+        'tOKENCREATE' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE',
+        'tOKENUPDATE' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE'
     ];
 
     /**
@@ -70,7 +72,9 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
         'dECISION' => null,
         'cONSUMERAUTHENTICATION' => null,
         'vALIDATECONSUMERAUTHENTICATION' => null,
-        'wATCHLISTSCREENING' => null
+        'wATCHLISTSCREENING' => null,
+        'tOKENCREATE' => null,
+        'tOKENUPDATE' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
         'dECISION' => 'DECISION',
         'cONSUMERAUTHENTICATION' => 'CONSUMER_AUTHENTICATION',
         'vALIDATECONSUMERAUTHENTICATION' => 'VALIDATE_CONSUMER_AUTHENTICATION',
-        'wATCHLISTSCREENING' => 'WATCHLIST_SCREENING'
+        'wATCHLISTSCREENING' => 'WATCHLIST_SCREENING',
+        'tOKENCREATE' => 'TOKEN_CREATE',
+        'tOKENUPDATE' => 'TOKEN_UPDATE'
     ];
 
 
@@ -105,7 +111,9 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
         'dECISION' => 'setDECISION',
         'cONSUMERAUTHENTICATION' => 'setCONSUMERAUTHENTICATION',
         'vALIDATECONSUMERAUTHENTICATION' => 'setVALIDATECONSUMERAUTHENTICATION',
-        'wATCHLISTSCREENING' => 'setWATCHLISTSCREENING'
+        'wATCHLISTSCREENING' => 'setWATCHLISTSCREENING',
+        'tOKENCREATE' => 'setTOKENCREATE',
+        'tOKENUPDATE' => 'setTOKENUPDATE'
     ];
 
 
@@ -118,7 +126,9 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
         'dECISION' => 'getDECISION',
         'cONSUMERAUTHENTICATION' => 'getCONSUMERAUTHENTICATION',
         'vALIDATECONSUMERAUTHENTICATION' => 'getVALIDATECONSUMERAUTHENTICATION',
-        'wATCHLISTSCREENING' => 'getWATCHLISTSCREENING'
+        'wATCHLISTSCREENING' => 'getWATCHLISTSCREENING',
+        'tOKENCREATE' => 'getTOKENCREATE',
+        'tOKENUPDATE' => 'getTOKENUPDATE'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
         $this->container['cONSUMERAUTHENTICATION'] = isset($data['cONSUMERAUTHENTICATION']) ? $data['cONSUMERAUTHENTICATION'] : null;
         $this->container['vALIDATECONSUMERAUTHENTICATION'] = isset($data['vALIDATECONSUMERAUTHENTICATION']) ? $data['vALIDATECONSUMERAUTHENTICATION'] : null;
         $this->container['wATCHLISTSCREENING'] = isset($data['wATCHLISTSCREENING']) ? $data['wATCHLISTSCREENING'] : null;
+        $this->container['tOKENCREATE'] = isset($data['tOKENCREATE']) ? $data['tOKENCREATE'] : null;
+        $this->container['tOKENUPDATE'] = isset($data['tOKENUPDATE']) ? $data['tOKENUPDATE'] : null;
     }
 
     /**
@@ -285,6 +297,48 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
     public function setWATCHLISTSCREENING($wATCHLISTSCREENING)
     {
         $this->container['wATCHLISTSCREENING'] = $wATCHLISTSCREENING;
+
+        return $this;
+    }
+
+    /**
+     * Gets tOKENCREATE
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE
+     */
+    public function getTOKENCREATE()
+    {
+        return $this->container['tOKENCREATE'];
+    }
+
+    /**
+     * Sets tOKENCREATE
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE $tOKENCREATE
+     * @return $this
+     */
+    public function setTOKENCREATE($tOKENCREATE)
+    {
+        $this->container['tOKENCREATE'] = $tOKENCREATE;
+
+        return $this;
+    }
+
+    /**
+     * Gets tOKENUPDATE
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE
+     */
+    public function getTOKENUPDATE()
+    {
+        return $this->container['tOKENUPDATE'];
+    }
+
+    /**
+     * Sets tOKENUPDATE
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENUPDATE $tOKENUPDATE
+     * @return $this
+     */
+    public function setTOKENUPDATE($tOKENUPDATE)
+    {
+        $this->container['tOKENUPDATE'] = $tOKENUPDATE;
 
         return $this;
     }

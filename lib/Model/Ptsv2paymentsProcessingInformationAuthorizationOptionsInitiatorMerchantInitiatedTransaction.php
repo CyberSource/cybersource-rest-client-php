@@ -55,7 +55,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     protected static $swaggerTypes = [
         'reason' => 'string',
         'previousTransactionId' => 'string',
-        'originalAuthorizedAmount' => 'string'
+        'originalAuthorizedAmount' => 'string',
+        'agreementId' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     protected static $swaggerFormats = [
         'reason' => null,
         'previousTransactionId' => null,
-        'originalAuthorizedAmount' => null
+        'originalAuthorizedAmount' => null,
+        'agreementId' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     protected static $attributeMap = [
         'reason' => 'reason',
         'previousTransactionId' => 'previousTransactionId',
-        'originalAuthorizedAmount' => 'originalAuthorizedAmount'
+        'originalAuthorizedAmount' => 'originalAuthorizedAmount',
+        'agreementId' => 'agreementId'
     ];
 
 
@@ -96,7 +99,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     protected static $setters = [
         'reason' => 'setReason',
         'previousTransactionId' => 'setPreviousTransactionId',
-        'originalAuthorizedAmount' => 'setOriginalAuthorizedAmount'
+        'originalAuthorizedAmount' => 'setOriginalAuthorizedAmount',
+        'agreementId' => 'setAgreementId'
     ];
 
 
@@ -107,7 +111,8 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     protected static $getters = [
         'reason' => 'getReason',
         'previousTransactionId' => 'getPreviousTransactionId',
-        'originalAuthorizedAmount' => 'getOriginalAuthorizedAmount'
+        'originalAuthorizedAmount' => 'getOriginalAuthorizedAmount',
+        'agreementId' => 'getAgreementId'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['previousTransactionId'] = isset($data['previousTransactionId']) ? $data['previousTransactionId'] : null;
         $this->container['originalAuthorizedAmount'] = isset($data['originalAuthorizedAmount']) ? $data['originalAuthorizedAmount'] : null;
+        $this->container['agreementId'] = isset($data['agreementId']) ? $data['agreementId'] : null;
     }
 
     /**
@@ -230,6 +236,27 @@ class Ptsv2paymentsProcessingInformationAuthorizationOptionsInitiatorMerchantIni
     public function setOriginalAuthorizedAmount($originalAuthorizedAmount)
     {
         $this->container['originalAuthorizedAmount'] = $originalAuthorizedAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets agreementId
+     * @return string
+     */
+    public function getAgreementId()
+    {
+        return $this->container['agreementId'];
+    }
+
+    /**
+     * Sets agreementId
+     * @param string $agreementId An API to carry the agreement ID generated for recurring and unscheduled Card on file transaction. the merchant generates this per card holder or per payment agreement and shares the generated unique ID in the subsequent transactions. This can contain foreign/arabic character set also. Cybersource forwards this value to the Saudi Payment processor.
+     * @return $this
+     */
+    public function setAgreementId($agreementId)
+    {
+        $this->container['agreementId'] = $agreementId;
 
         return $this;
     }

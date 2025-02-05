@@ -103,4 +103,18 @@ class PtsV2PaymentsPost201ResponseProcessingInformationTest extends \PHPUnit_Fra
     public function testPropertyCaptureOptions()
     {
     }
+
+    /**
+     * Test attribute "authorizationOptions"
+     */
+    public function testPropertyAuthorizationOptions()
+    {
+    }
+
+    /**
+     * Test attribute "purchaseOptions"
+     */
+    public function testPropertyPurchaseOptions()
+    {
+    }
 }
