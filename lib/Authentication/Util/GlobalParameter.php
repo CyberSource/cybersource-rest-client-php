@@ -104,6 +104,7 @@ class GlobalParameter
     const REQTYPE = "RequestType ";
     const KEYFILEFIELDDIR = "keysDirectory ";
     const DEFAULT_MLE_ALIAS_FOR_CERT = "CyberSource_SJC_US";
+    const CERTIFICATE_EXPIRY_DATE_WARNING_DAYS = 90;
     const MLE_AUTH_ERROR = "MLE is only supported in JWT auth type";
 }
 ?>
