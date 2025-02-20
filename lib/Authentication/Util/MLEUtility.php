@@ -1,7 +1,7 @@
 <?php
 
 namespace CyberSource\Authentication\Util;
-use Cybersource\Exception\AuthException;
+
 use Cybersource\GlobalParameter;
 use CyberSource\Authentication\Util\Cache as Cache;
 use CyberSource\Logging\LogFactory as LogFactory;
@@ -17,7 +17,7 @@ use Jose\Component\Encryption\Compression\CompressionMethodManager;
 use Jose\Component\Encryption\Compression\Deflate;
 
 /*
-Purpose : MLE encrption for request body
+Purpose : MLE encryption for request body
 */
 
 class MLEUtility
@@ -25,9 +25,10 @@ class MLEUtility
     private $logger = null;
     private static $cache = null;
 
-    public static function checkIsMLEForAPI($merchantConfig, $isMLESupportedByCybsForApi, $operationIds) {
+    public static function checkIsMLEForAPI($merchantConfig, $isMLESupportedByCybsForApi, $operationIds)
+    {
         $isMLEForAPI = false;
-       
+
         if ($isMLESupportedByCybsForApi && $merchantConfig->getUseMLEGlobally()) {
             $isMLEForAPI = true;
         }
@@ -45,11 +46,11 @@ class MLEUtility
         return $isMLEForAPI;
     }
 
-    public static function encryptRequestPayload($merchantConfig, $requestBody) {
-
+    public static function encryptRequestPayload($merchantConfig, $requestBody)
+    {
         $logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
 
-        $cert = self::getMLECert($merchantConfig, $logger);
+        $mleCert = self::getMLECert($merchantConfig, $logger);
 
         if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
             $printRequestBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($requestBody);
@@ -59,7 +60,7 @@ class MLEUtility
 
         $logger->debug("Request before MLE:\n" . print_r($printRequestBody, true));
 
-        $jweToken = self::generateToken($cert, $requestBody, $logger);
+        $jweToken = self::generateToken($mleCert, $requestBody, $logger);
         $mleRequest = json_encode(['encryptedRequest' => $jweToken]);
 
         $logger->debug("Request after MLE:\n" . print_r($mleRequest, true));
@@ -67,8 +68,8 @@ class MLEUtility
         return $mleRequest;
     }
 
-
-    private static function generateToken($cert, $requestBody, $logger) {
+    private static function generateToken($cert, $requestBody, $logger)
+    {
         try {
             $serialNumber = self::extractSerialNumber($cert, $logger);
 
@@ -171,26 +172,31 @@ class MLEUtility
         }
     }
 
-    public static function validateCertificateExpiry($certificate, $keyAlias, $logger) {
-    try {
-        $certDetails = openssl_x509_parse($certificate);
-        $notValidAfter = $certDetails['validTo_time_t'];
+    public static function validateCertificateExpiry($certificate, $keyAlias, $logger)
+    {
+        try {
+            $certDetails = openssl_x509_parse($certificate);
+            $notValidAfter = isset($certDetails['validTo_time_t']) ? $certDetails['validTo_time_t'] : null;
 
-        if ($notValidAfter < time()) {
-            $logger->warning("Certificate with MLE alias $keyAlias is expired as of " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file.");
-            // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");    
-        } else {
-            $timeToExpire = $notValidAfter - time();
-            $warningPeriod = GlobalLabelParameters::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
-
-            if ($timeToExpire < $warningPeriod) {
-                $logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");
+            if ($notValidAfter === null) {
+                $logger->warning("Certificate with MLE alias $keyAlias does not have a valid expiry date.");
+                throw new MLEException("Certificate with MLE alias $keyAlias does not have a valid expiry date.");
             }
-        }
-    } catch (Exception $e) {
+
+            if ($notValidAfter < time()) {
+                $logger->warning("Certificate with MLE alias $keyAlias is expired as of " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file.");
+                // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");    
+            } else {
+                $timeToExpire = $notValidAfter - time();
+                $warningPeriod = GlobalLabelParameters::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
+
+                if ($timeToExpire < $warningPeriod) {
+                    $logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");
+                }
+            }
+        } catch (\Exception $e) {
             $logger->error("Error while checking certificate expiry: " . $e->getMessage());
-            throw new MLEException("Error while checking certificate expiry: " . $e->getMessage());
-    }
+        }
     }
 }
 ?>
