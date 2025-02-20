@@ -103,5 +103,7 @@ class GlobalParameter
     const LOGFILENAME = "LogFilename ";
     const REQTYPE = "RequestType ";
     const KEYFILEFIELDDIR = "keysDirectory ";
+    const DEFAULT_MLE_ALIAS_FOR_CERT = "CyberSource_SJC_US";
+    const MLE_AUTH_ERROR = "MLE is only supported in JWT auth type";
 }
 ?>
