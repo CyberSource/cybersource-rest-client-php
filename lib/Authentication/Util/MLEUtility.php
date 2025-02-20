@@ -15,6 +15,7 @@ use Jose\Component\Encryption\Algorithm\KeyEncryption\RSAOAEP256;
 use Jose\Component\Encryption\Algorithm\ContentEncryption\A256GCM;
 use Jose\Component\Encryption\Compression\CompressionMethodManager;
 use Jose\Component\Encryption\Compression\Deflate;
+use CyberSource\Authentication\Util\MLEException;
 
 /*
 Purpose : MLE encryption for request body

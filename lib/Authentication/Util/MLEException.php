@@ -1,6 +1,6 @@
 <?php
 
-namespace CyberSource\Exception;
+namespace CyberSource\Authentication\Util;
 
 use \Exception;
 
