@@ -22,16 +22,8 @@ Purpose : MLE encrption for request body
 
 class MLEUtility
 {
-    private static $logger = null;
+    private $logger = null;
     private static $cache = null;
-
-    private static function initializeLogger(LogConfiguration $logConfig)
-    {
-        if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $logConfig);
-        }
-
-    }
 
     public static function checkIsMLEForAPI($merchantConfig, $isMLESupportedByCybsForApi, $operationIds) {
         $isMLEForAPI = false;
@@ -54,11 +46,10 @@ class MLEUtility
     }
 
     public static function encryptRequestPayload($merchantConfig, $requestBody) {
-        if (self::$logger === null) {
-            self::initializeLogger($merchantConfig->getLogConfiguration());
-        }
 
-        $cert = self::getMLECert($merchantConfig);
+        $logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
+
+        $cert = self::getMLECert($merchantConfig, $logger);
 
         if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
             $printRequestBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($requestBody);
@@ -66,20 +57,20 @@ class MLEUtility
             $printRequestBody = $requestBody;
         }
 
-        self::$logger->debug("Request before MLE:\n" . print_r($printRequestBody, true));
+        $logger->debug("Request before MLE:\n" . print_r($printRequestBody, true));
 
-        $jweToken = self::generateToken($cert, $requestBody);
+        $jweToken = self::generateToken($cert, $requestBody, $logger);
         $mleRequest = json_encode(['encryptedRequest' => $jweToken]);
 
-        self::$logger->debug("Request after MLE:\n" . print_r($mleRequest, true));
+        $logger->debug("Request after MLE:\n" . print_r($mleRequest, true));
         // self::$logger->close();
         return $mleRequest;
     }
 
 
-    private static function generateToken($cert, $requestBody) {
+    private static function generateToken($cert, $requestBody, $logger) {
         try {
-            $serialNumber = self::extractSerialNumber($cert);
+            $serialNumber = self::extractSerialNumber($cert, $logger);
 
             $publicKey = openssl_pkey_get_details(openssl_pkey_get_public($cert))['key'];
 
@@ -120,12 +111,12 @@ class MLEUtility
             $serializer = new CompactSerializer();
             return $serializer->serialize($jwe);
         } catch (\Exception $e) {
-            self::$logger->error("Error encrypting request payload: " . $e->getMessage());
+            $logger->error("Error encrypting request payload: " . $e->getMessage());
             throw new MLEException("Error encrypting request payload: " . $e->getMessage());
         }
     }
 
-    public static function getMLECert($merchantConfig)
+    public static function getMLECert($merchantConfig, $logger)
     {
         try {
             if (!isset(self::$cache)) {
@@ -147,18 +138,18 @@ class MLEUtility
             }
 
             if ($x509Cert) {
-                self::validateCertificateExpiry($x509Cert, $merchantConfig->getMleKeyAlias());
+                self::validateCertificateExpiry($x509Cert, $merchantConfig->getMleKeyAlias(), $logger);
                 return $x509Cert;
             } else {
                 throw new MLEException("Certificate with alias $mleKeyAlias not found.");
             }
         } catch (\Exception $e) {
-            self::$logger->error("Error fetching MLE certificate: " . $e->getMessage());
+            $logger->error("Error fetching MLE certificate: " . $e->getMessage());
             throw new MLEException("Error fetching MLE certificate: " . $e->getMessage());
         }
     }
 
-    public static function extractSerialNumber($cert)
+    public static function extractSerialNumber($cert, $logger)
     {
         try {
             $certDetails = openssl_x509_parse($cert);
@@ -169,35 +160,35 @@ class MLEUtility
             }
 
             if ($serialNumber === null) {
-                self::$logger->warning("Serial number not found in MLE certificate for alias.");
+                $logger->warning("Serial number not found in MLE certificate for alias.");
                 // this will be in hexdec is it fine?
                 $serialNumber = $certDetails['serialNumber'];
             }
             return $serialNumber;
         } catch (\Exception $e) {
-            self::$logger->error("Error extracting serial number from certificate: " . $e->getMessage());
+            $logger->error("Error extracting serial number from certificate: " . $e->getMessage());
             throw new MLEException("Error extracting serial number from certificate: " . $e->getMessage());
         }
     }
 
-    public static function validateCertificateExpiry($certificate, $keyAlias) {
+    public static function validateCertificateExpiry($certificate, $keyAlias, $logger) {
     try {
         $certDetails = openssl_x509_parse($certificate);
         $notValidAfter = $certDetails['validTo_time_t'];
 
         if ($notValidAfter < time()) {
-            self::$logger->warning("Certificate with MLE alias $keyAlias is expired as of " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file.");
+            $logger->warning("Certificate with MLE alias $keyAlias is expired as of " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file.");
             // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");    
         } else {
             $timeToExpire = $notValidAfter - time();
             $warningPeriod = GlobalLabelParameters::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
 
             if ($timeToExpire < $warningPeriod) {
-                self::$logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");
+                $logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");
             }
         }
     } catch (Exception $e) {
-            self::$logger->error("Error while checking certificate expiry: " . $e->getMessage());
+            $logger->error("Error while checking certificate expiry: " . $e->getMessage());
             throw new MLEException("Error while checking certificate expiry: " . $e->getMessage());
     }
     }
