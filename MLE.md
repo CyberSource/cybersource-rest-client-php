@@ -20,7 +20,7 @@ In the `merchantConfig` object, set the `useMLEGlobally` variable to enable or d
 Optionally, you can control the MLE feature at the API level using the `mapToControlMLEonAPI` variable in the `merchantConfig` object.
 
 - **Variable**: `mapToControlMLEonAPI`
-- **Type**: `array(string, boolean)`
+- **Type**: `map = [string, boolean]`
 - **Description**: Overrides the global MLE setting for specific APIs. The key is the function name of the API in the SDK, and the value is a boolean indicating whether MLE should be enabled (`true`) or disabled (`false`) for that specific API call.
 
 ### MLE Key Alias
