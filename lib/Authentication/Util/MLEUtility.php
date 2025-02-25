@@ -24,6 +24,7 @@ Purpose : MLE encryption for request body
 class MLEUtility
 {
     private $logger = null;
+
     private static $cache = null;
 
     public static function checkIsMLEForAPI($merchantConfig, $isMLESupportedByCybsForApi, $operationIds)
@@ -36,7 +37,7 @@ class MLEUtility
 
         $operationArray = array_map('trim', explode(',', $operationIds));
 
-        if (!empty($merchantConfig->getMapToControlMLEonAPI()) && is_array($merchantConfig->getMapToControlMLEonAPI())) {
+        if (!empty($merchantConfig->getMapToControlMLEonAPI())) {
             foreach ($operationArray as $operationId) {
                 if (array_key_exists($operationId, $merchantConfig->getMapToControlMLEonAPI())) {
                     $isMLEForAPI = $merchantConfig->getMapToControlMLEonAPI()[$operationId];
@@ -125,19 +126,9 @@ class MLEUtility
                 self::$cache = new Cache();
             }
 
-            $keyPass = $merchantConfig->getKeyPassword();
-            if (empty($keyPass)) {
-                $keyPass = $merchantID;
-            }
-            $mleKeyAlias = $merchantConfig->getMleKeyAlias();
+            $fileCache = self::$cache->grabFileFromP12($merchantConfig);
 
-            $cacheCertStore = Utility::fetchCertFromCache(self::$cache, $merchantConfig);
-
-            $certs = [];
-            $x509Cert = null;
-            if (openssl_pkcs12_read($cacheCertStore, $certs, $keyPass)) {
-                $x509Cert = Utility::findCertByAlias($certs, $mleKeyAlias);
-            }
+            $x509Cert = $fileCache['mle_cert'];
 
             if ($x509Cert) {
                 self::validateCertificateExpiry($x509Cert, $merchantConfig->getMleKeyAlias(), $logger);
