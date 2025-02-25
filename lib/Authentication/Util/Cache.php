@@ -7,7 +7,7 @@ use CyberSource\Authentication\Core\AuthException as AuthException;
 
 class Cache
 {
-    private $file_cache = array();
+    private static $file_cache = array();
 
     public function __construct()
     {
@@ -16,7 +16,6 @@ class Cache
 
     public function updateCache($filePath, $merchantConfig)
     {
-        echo "update call";
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
         $keyPass = $merchantConfig->getKeyPassword();
@@ -38,7 +37,7 @@ class Cache
             $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());
         }
 
-        $this->file_cache[$fileName] = [
+        self::$file_cache[$fileName] = [
             'private_key' => $privateKey,
             'publicKey' => $publicKey,
             'file_mod_time' => $fileModTime,
@@ -53,10 +52,9 @@ class Cache
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
 
-        if (!isset($this->file_cache[$fileName]) || $this->file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
+        if (!isset(self::$file_cache[$fileName]) || self::$file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
             $this->updateCache($filePath, $merchantConfig);
         }
-        echo "just returning";
         return $this->file_cache[$fileName];
     }
 
@@ -90,15 +88,15 @@ class Cache
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
 
-        if (!isset($this->file_cache[$fileName]) || $this->file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
+        if (!isset(self::$file_cache[$fileName]) || self::$file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
             $privateKeyFromPEMFile = self::loadKeyFromPEMFile($filePath);
-            $this->file_cache[$fileName] = [
+            self::$file_cache[$fileName] = [
                 'private_key' => $privateKeyFromPEMFile,
                 'file_mod_time' => $fileModTime,
             ];
         }
 
-        return $this->file_cache[$fileName]['private_key'];
+        return self::$file_cache[$fileName]['private_key'];
     }
 
     private function PemToDer($Pem)
