@@ -14,42 +14,9 @@ class Cache
 
     }
 
-    public function fetchFromCache($key)
-    {
-        if ($this->checkIfExistInCache($key))
-        {
-            return $this->file_cache[$key];
-        }
-
-        return false;
-    }
-
-    public function storeInCache($key, $value)
-    {
-        if (!$this->checkIfExistInCache($key))
-        {
-            $this->file_cache[$key] = $value;
-            return true;
-        }
-
-        return false;
-    }
-
-    public function checkIfExistInCache($key)
-    {
-        foreach ($this->file_cache as $cache_key => $cache_value)
-        {
-            if (isset($cache_value))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public function updateCache($filePath, $merchantConfig)
     {
+        echo "update call";
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
         $keyPass = $merchantConfig->getKeyPassword();
@@ -89,8 +56,8 @@ class Cache
         if (!isset($this->file_cache[$fileName]) || $this->file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
             $this->updateCache($filePath, $merchantConfig);
         }
-
-        return $this->fetchFromCache($fileName);
+        echo "just returning";
+        return $this->file_cache[$fileName];
     }
 
     private function getFilePath($merchantConfig)
