@@ -60,7 +60,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'string',
         'locale' => 'string',
         'captureMandate' => '\CyberSource\Model\Upv1capturecontextsCaptureMandate',
-        'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation'
+        'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation',
+        'transientTokenResponseOptions' => '\CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions'
     ];
 
     /**
@@ -75,7 +76,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => null,
         'locale' => null,
         'captureMandate' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'transientTokenResponseOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +102,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'country',
         'locale' => 'locale',
         'captureMandate' => 'captureMandate',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'transientTokenResponseOptions' => 'transientTokenResponseOptions'
     ];
 
 
@@ -116,7 +119,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'setCountry',
         'locale' => 'setLocale',
         'captureMandate' => 'setCaptureMandate',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'transientTokenResponseOptions' => 'setTransientTokenResponseOptions'
     ];
 
 
@@ -132,7 +136,8 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'getCountry',
         'locale' => 'getLocale',
         'captureMandate' => 'getCaptureMandate',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'transientTokenResponseOptions' => 'getTransientTokenResponseOptions'
     ];
 
     public static function attributeMap()
@@ -174,6 +179,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
         $this->container['captureMandate'] = isset($data['captureMandate']) ? $data['captureMandate'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['transientTokenResponseOptions'] = isset($data['transientTokenResponseOptions']) ? $data['transientTokenResponseOptions'] : null;
     }
 
     /**
@@ -365,6 +371,27 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets transientTokenResponseOptions
+     * @return \CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions
+     */
+    public function getTransientTokenResponseOptions()
+    {
+        return $this->container['transientTokenResponseOptions'];
+    }
+
+    /**
+     * Sets transientTokenResponseOptions
+     * @param \CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions $transientTokenResponseOptions
+     * @return $this
+     */
+    public function setTransientTokenResponseOptions($transientTokenResponseOptions)
+    {
+        $this->container['transientTokenResponseOptions'] = $transientTokenResponseOptions;
 
         return $this;
     }

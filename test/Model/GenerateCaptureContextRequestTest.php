@@ -103,4 +103,11 @@ class GenerateCaptureContextRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAllowedPaymentTypes()
     {
     }
+
+    /**
+     * Test attribute "transientTokenResponseOptions"
+     */
+    public function testPropertyTransientTokenResponseOptions()
+    {
+    }
 }

@@ -54,7 +54,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
       */
     protected static $swaggerTypes = [
         'parentProfileId' => 'string',
-        'vault' => '\CyberSource\Model\CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault'
+        'vault' => '\CyberSource\Model\CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurationsVault',
+        'networkTokenEnrollment' => '\CyberSource\Model\NetworkTokenEnrollment'
     ];
 
     /**
@@ -63,7 +64,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
       */
     protected static $swaggerFormats = [
         'parentProfileId' => null,
-        'vault' => null
+        'vault' => null,
+        'networkTokenEnrollment' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
      */
     protected static $attributeMap = [
         'parentProfileId' => 'parentProfileId',
-        'vault' => 'vault'
+        'vault' => 'vault',
+        'networkTokenEnrollment' => 'networkTokenEnrollment'
     ];
 
 
@@ -92,7 +95,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
      */
     protected static $setters = [
         'parentProfileId' => 'setParentProfileId',
-        'vault' => 'setVault'
+        'vault' => 'setVault',
+        'networkTokenEnrollment' => 'setNetworkTokenEnrollment'
     ];
 
 
@@ -102,7 +106,8 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
      */
     protected static $getters = [
         'parentProfileId' => 'getParentProfileId',
-        'vault' => 'getVault'
+        'vault' => 'getVault',
+        'networkTokenEnrollment' => 'getNetworkTokenEnrollment'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
     {
         $this->container['parentProfileId'] = isset($data['parentProfileId']) ? $data['parentProfileId'] : null;
         $this->container['vault'] = isset($data['vault']) ? $data['vault'] : null;
+        $this->container['networkTokenEnrollment'] = isset($data['networkTokenEnrollment']) ? $data['networkTokenEnrollment'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
     public function setVault($vault)
     {
         $this->container['vault'] = $vault;
+
+        return $this;
+    }
+
+    /**
+     * Gets networkTokenEnrollment
+     * @return \CyberSource\Model\NetworkTokenEnrollment
+     */
+    public function getNetworkTokenEnrollment()
+    {
+        return $this->container['networkTokenEnrollment'];
+    }
+
+    /**
+     * Sets networkTokenEnrollment
+     * @param \CyberSource\Model\NetworkTokenEnrollment $networkTokenEnrollment
+     * @return $this
+     */
+    public function setNetworkTokenEnrollment($networkTokenEnrollment)
+    {
+        $this->container['networkTokenEnrollment'] = $networkTokenEnrollment;
 
         return $this;
     }
