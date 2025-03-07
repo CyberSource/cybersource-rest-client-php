@@ -28,11 +28,11 @@ class Cache
 
         if (openssl_pkcs12_read($certStore, $certs, $keyPass)) {
             $privateKey = $certs['pkey'];
-            if (!empty($merchantConfig->getKeyAlias())) {
-            $publicKey = Utility::findCertByAlias($certs, $merchantConfig->getKeyAlias());
-            } else {
-            $publicKey = $certs['cert'];
+            $keyAlias = $merchantConfig->getKeyAlias();
+            if (empty($keyAlias)) {
+                $keyAlias = $merchantConfig->getMerchantID();
             }
+            $publicKey = Utility::findCertByAlias($certs, $keyAlias);
             $publicKey = $this->PemToDer($publicKey);
         }
 
