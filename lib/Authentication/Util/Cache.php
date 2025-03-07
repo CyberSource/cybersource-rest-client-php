@@ -4,14 +4,19 @@ namespace CyberSource\Authentication\Util;
 use Jose\Component\KeyManagement\JWKFactory;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\Core\AuthException as AuthException;
+use CyberSource\Logging\LogFactory as LogFactory;
 
 class Cache
 {
     private static $file_cache = array();
+    private static $logger = null;
+
 
     public function __construct()
     {
-
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), new \CyberSource\Logging\LogConfiguration());
+        }
     }
 
     public function updateCache($filePath, $merchantConfig)
@@ -20,8 +25,15 @@ class Cache
         $fileModTime = filemtime($filePath);
         $keyPass = $merchantConfig->getKeyPassword();
         $cacheKey = $fileName . '_' . "jwt";
+        $certStore = null;
+        if (file_exists($filePath)) {
+            $certStore = file_get_contents($filePath);
+        } else {
+            $exception = new AuthException(GlobalParameter::KEY_FILE_INCORRECT, 0);
+            self::$logger->error("AuthException : " . GlobalParameter::KEY_FILE_INCORRECT);
+            throw $exception;
+        }
 
-        $certStore = file_get_contents($filePath);
         $privateKey = null;
         $publicKey = null;
         $mleCert = null;
@@ -34,6 +46,10 @@ class Cache
             }
             $publicKey = Utility::findCertByAlias($certs, $keyAlias);
             $publicKey = $this->PemToDer($publicKey);
+        } else {
+            $exception = new AuthException(GlobalParameter::INCORRECT_KEY_PASSWORD, 0);
+            self::$logger->error("AuthException : " . GlobalParameter::INCORRECT_KEY_PASSWORD);
+            throw $exception;
         }
 
         $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());

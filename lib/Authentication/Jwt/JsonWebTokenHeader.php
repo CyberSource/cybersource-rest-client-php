@@ -48,17 +48,19 @@ class JsonWebTokenHeader
             self::$logger->warning($warning_msg);
         }
 
-        $cacheData = self::$cache->grabFileFromP12($merchantConfig);
+        try {
+            $cacheData = self::$cache->grabFileFromP12($merchantConfig);
+        } catch (AuthException $e) {
+            self::$logger->error("Failed to grab file from P12: " . $e->getMessage());
+            throw $e;
+        }
 
         if (!empty($cacheData['private_key']) && !empty($cacheData['publicKey'])) {
             $privateKey = $cacheData['private_key'];
             $publicKey = $cacheData['publicKey'];
         } else {
-            //which exception would be best to be thrown here?
-            $exception = new AuthException(GlobalParameter::INCORRECT_KEY_PASSWORD, 0);
-            self::$logger->error("AuthException : " . GlobalParameter::INCORRECT_KEY_PASSWORD);
-            self::$logger->close();
-            throw $exception;
+            self::$logger->error("AuthException: " . GlobalParameter::EMPTY_PRIVATE_OR_PUBLIC_KEY_ERROR);
+            throw new AuthException("AuthException: " . GlobalParameter::EMPTY_PRIVATE_OR_PUBLIC_KEY_ERROR);
         }
 
         $x5cArray = array($publicKey);
