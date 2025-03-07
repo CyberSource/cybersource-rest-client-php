@@ -1225,7 +1225,7 @@ class MerchantConfiguration
         }
 
         if(empty($this->getKeyPassword()) && $this->getAuthenticationType() == GlobalParameter::JWT){
-            $warning_message .= GlobalParameter::KEY_PASSWORD_EMPTY . PHP_EOL;
+            $error_message .= GlobalParameter::KEY_PASSWORD_EMPTY . PHP_EOL;
         }
         
         if(empty($this->getKeysDirectory()) && $this->getAuthenticationType() == GlobalParameter::JWT){
