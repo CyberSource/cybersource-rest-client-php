@@ -19,9 +19,7 @@ class Cache
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
         $keyPass = $merchantConfig->getKeyPassword();
-        if (empty($keyPass)) {
-            $keyPass = $merchantConfig->getMerchantID();
-        }
+        $cacheKey = $fileName . '_' . "jwt";
 
         $certStore = file_get_contents($filePath);
         $privateKey = null;
@@ -30,14 +28,17 @@ class Cache
 
         if (openssl_pkcs12_read($certStore, $certs, $keyPass)) {
             $privateKey = $certs['pkey'];
-            $publicKey = $this->PemToDer($certs['cert']);
+            if (!empty($merchantConfig->getKeyAlias())) {
+            $publicKey = Utility::findCertByAlias($certs, $merchantConfig->getKeyAlias());
+            } else {
+            $publicKey = $certs['cert'];
+            }
+            $publicKey = $this->PemToDer($publicKey);
         }
 
-        if (!empty($merchantConfig->getMleKeyAlias())) {
-            $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());
-        }
+        $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());
 
-        self::$file_cache[$fileName] = [
+        self::$file_cache[$cacheKey] = [
             'private_key' => $privateKey,
             'publicKey' => $publicKey,
             'file_mod_time' => $fileModTime,
@@ -51,11 +52,13 @@ class Cache
 
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
+        $cacheKey = $fileName . '_' . "jwt";
 
-        if (!isset(self::$file_cache[$fileName]) || self::$file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
+        if (!isset(self::$file_cache[$cacheKey]) || self::$file_cache[$cacheKey]['file_mod_time'] !== $fileModTime) {
             $this->updateCache($filePath, $merchantConfig);
         }
-        return $this->file_cache[$fileName];
+
+        return self::$file_cache[$cacheKey];
     }
 
     private function getFilePath($merchantConfig)
@@ -87,16 +90,17 @@ class Cache
     {
         $fileName = basename($filePath);
         $fileModTime = filemtime($filePath);
+        $cacheKey = $fileName . '_' . "jwe";
 
-        if (!isset(self::$file_cache[$fileName]) || self::$file_cache[$fileName]['file_mod_time'] !== $fileModTime) {
+        if (!isset(self::$file_cache[$cacheKey]) || self::$file_cache[$cacheKey]['file_mod_time'] !== $fileModTime) {
             $privateKeyFromPEMFile = self::loadKeyFromPEMFile($filePath);
-            self::$file_cache[$fileName] = [
+            self::$file_cache[$cacheKey] = [
                 'private_key' => $privateKeyFromPEMFile,
                 'file_mod_time' => $fileModTime,
             ];
         }
 
-        return self::$file_cache[$fileName]['private_key'];
+        return self::$file_cache[$cacheKey]['private_key'];
     }
 
     private function PemToDer($Pem)
