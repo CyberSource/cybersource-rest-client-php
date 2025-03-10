@@ -83,7 +83,7 @@ In the above examples:
 - `mleKeyAlias` is set to `Custom_Key_Alias`, overriding the default value.
 
 Please refer given link for sample codes with MLE:
-<!-- https://github.com/CyberSource/cybersource-rest-samples-node/tree/master/Samples/MLEFeature -->
+https://github.com/CyberSource/cybersource-rest-samples-php/tree/master/Samples/MLEFeature
 
 ## Additional Information
 
