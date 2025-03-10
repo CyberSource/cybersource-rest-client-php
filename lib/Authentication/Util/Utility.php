@@ -7,6 +7,7 @@ class Utility
 
     public static function findCertByAlias($certs, $keyAlias)
     {
+        $keyAlias = trim($keyAlias); 
         if (isset($certs['cert'])) {
             $certData = openssl_x509_parse($certs['cert'], 1);
             if (isset($certData['subject']['CN']) && $certData['subject']['CN'] === $keyAlias) {

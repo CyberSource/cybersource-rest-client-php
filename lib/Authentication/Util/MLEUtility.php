@@ -50,6 +50,9 @@ class MLEUtility
 
     public static function encryptRequestPayload($merchantConfig, $requestBody)
     {
+        if ($requestBody === null || $requestBody === '') {
+            return $requestBody;
+        }
         if (self::$logger === null) {
             self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
         }
@@ -132,7 +135,6 @@ class MLEUtility
 
             if ($x509Cert) {
                 self::validateCertificateExpiry($x509Cert, $merchantConfig->getMleKeyAlias());
-                // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");
                 return $x509Cert;
             } else {
                 throw new MLEException("Certificate with alias " . $merchantConfig->getMleKeyAlias() . " not found");
