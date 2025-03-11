@@ -152,7 +152,7 @@ class InvoiceSettingsApi
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
-                throw new ApiException("Failed to encrypt request body : " + $e->getMessage());
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
             }
         }
 
@@ -277,7 +277,7 @@ class InvoiceSettingsApi
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
-                throw new ApiException("Failed to encrypt request body : " + $e->getMessage());
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
             }
         }
 

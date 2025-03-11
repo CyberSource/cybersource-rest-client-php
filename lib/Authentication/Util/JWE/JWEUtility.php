@@ -38,13 +38,9 @@ class JWEUtility {
         if (!file_exists($filePath)) {
             return null;
         }
-        $cacheKey = 'privateKeyFromPEMFile' . '_' . strtotime(date("F d Y H:i:s", filemtime($filePath)));
-        $cached_key = self::$cache->checkIfExistInCache($cacheKey); // apcu_exists($cacheKey);
-        if (!$cached_key) {
-            $privateKeyFromPEMFile = self::loadKeyFromPEMFile($merchantConfig->getJwePEMFileDirectory());
-            self::$cache->storeInCache($cacheKey, $privateKeyFromPEMFile); // apcu_store($cacheKey, $privateKeyFromPEMFile);
-        }
-        $jweKey = self::$cache->fetchFromCache($cacheKey); // apcu_fetch($cacheKey);
+
+        $jweKey = self::$cache->grabKeyFromPEM($filePath);
+
         $serializerManager = new JWESerializerManager([
             new CompactSerializer(),
         ]);
