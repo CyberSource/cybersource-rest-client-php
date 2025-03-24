@@ -197,7 +197,7 @@ class Ptsv2payoutsSenderInformationAccount implements ArrayAccess
 
     /**
      * Sets number
-     * @param string $number The account number of the entity funding the transaction. It is the sender's account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (<= 19) * Paymentech (<= 16)
+     * @param string $number The account number of the entity funding the transaction. It is the sender's account number. It can be a debit/credit card account number or bank account number.  **Funds disbursements and OCT transactions**  This field is optional.  **All other transactions**  This field is required when the sender funds the transaction with a financial instrument, for example debit card. Length: * FDCCompass (<= 19) * Paymentech (<= 16)
      * @return $this
      */
     public function setNumber($number)

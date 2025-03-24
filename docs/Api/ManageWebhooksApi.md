@@ -4,63 +4,16 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v1/webhooks/{webhookId} | Delete a Webhook Subscription
-[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v1/webhooks/{webhookId} | Get Details On a Single Webhook
-[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v1/webhooks | Get Details On All Created Webhooks
+[**notificationSubscriptionsV1WebhooksWebhookIdPost**](ManageWebhooksApi.md#notificationSubscriptionsV1WebhooksWebhookIdPost) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
-[**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v1/webhooks/{webhookId} | Update a Webhook Subscription
 
 
-# **deleteWebhookSubscription**
-> deleteWebhookSubscription($webhookId)
+# **notificationSubscriptionsV1WebhooksWebhookIdPost**
+> \CyberSource\Model\InlineResponse2014 notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
 
-Delete a Webhook Subscription
+Test a Webhook Configuration
 
-Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The webhook identifier.
-
-try {
-    $api_instance->deleteWebhookSubscription($webhookId);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->deleteWebhookSubscription: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The webhook identifier. |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getWebhookSubscriptionById**
-> \CyberSource\Model\InlineResponse2004 getWebhookSubscriptionById($webhookId)
-
-Get Details On a Single Webhook
-
-Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly.
 
 ### Example
 ```php
@@ -68,13 +21,13 @@ Retrieve the details of a specific webhook by supplying the webhook ID in the pa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The webhook Identifier
+$webhookId = "webhookId_example"; // string | The Webhook Identifier.
 
 try {
-    $result = $api_instance->getWebhookSubscriptionById($webhookId);
+    $result = $api_instance->notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->getWebhookSubscriptionById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ManageWebhooksApi->notificationSubscriptionsV1WebhooksWebhookIdPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -83,11 +36,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The webhook Identifier |
+ **webhookId** | **string**| The Webhook Identifier. |
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
 
 ### Authorization
 
@@ -96,56 +49,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getWebhookSubscriptionsByOrg**
-> \CyberSource\Model\InlineResponse2003[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
-
-Get Details On All Created Webhooks
-
-Retrieve a list of all previously created webhooks.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$organizationId = "organizationId_example"; // string | The Organization Identifier.
-$productId = "productId_example"; // string | The Product Identifier.
-$eventType = "eventType_example"; // string | The Event Type.
-
-try {
-    $result = $api_instance->getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->getWebhookSubscriptionsByOrg: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The Organization Identifier. |
- **productId** | **string**| The Product Identifier. |
- **eventType** | **string**| The Event Type. |
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -196,53 +100,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateWebhookSubscription**
-> updateWebhookSubscription($webhookId, $updateWebhookRequest)
-
-Update a Webhook Subscription
-
-Update the webhook subscription using PATCH.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The Webhook Identifier.
-$updateWebhookRequest = new \CyberSource\Model\UpdateWebhookRequest(); // \CyberSource\Model\UpdateWebhookRequest | The webhook payload or changes to apply.
-
-try {
-    $api_instance->updateWebhookSubscription($webhookId, $updateWebhookRequest);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->updateWebhookSubscription: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The Webhook Identifier. |
- **updateWebhookRequest** | [**\CyberSource\Model\UpdateWebhookRequest**](../Model/UpdateWebhookRequest.md)| The webhook payload or changes to apply. | [optional]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

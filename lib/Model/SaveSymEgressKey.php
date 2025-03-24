@@ -155,12 +155,6 @@ class SaveSymEgressKey implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['clientRequestAction'] === null) {
-            $invalid_properties[] = "'clientRequestAction' can't be null";
-        }
-        if ($this->container['keyInformation'] === null) {
-            $invalid_properties[] = "'keyInformation' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -173,12 +167,6 @@ class SaveSymEgressKey implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['clientRequestAction'] === null) {
-            return false;
-        }
-        if ($this->container['keyInformation'] === null) {
-            return false;
-        }
         return true;
     }
 

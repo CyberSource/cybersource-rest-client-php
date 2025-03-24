@@ -103,4 +103,11 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformationTest ext
     public function testPropertyPhoneNumber()
     {
     }
+
+    /**
+     * Test attribute "transactionInformation"
+     */
+    public function testPropertyTransactionInformation()
+    {
+    }
 }

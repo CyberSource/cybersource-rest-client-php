@@ -54,6 +54,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'paymentType' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationPaymentType',
+        'eWallet' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet',
         'customer' => '\CyberSource\Model\Ptsv2refreshpaymentstatusidPaymentInformationCustomer',
         'bank' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationBank'
     ];
@@ -64,6 +65,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'paymentType' => null,
+        'eWallet' => null,
         'customer' => null,
         'bank' => null
     ];
@@ -84,6 +86,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'paymentType' => 'paymentType',
+        'eWallet' => 'eWallet',
         'customer' => 'customer',
         'bank' => 'bank'
     ];
@@ -95,6 +98,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'paymentType' => 'setPaymentType',
+        'eWallet' => 'setEWallet',
         'customer' => 'setCustomer',
         'bank' => 'setBank'
     ];
@@ -106,6 +110,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'paymentType' => 'getPaymentType',
+        'eWallet' => 'getEWallet',
         'customer' => 'getCustomer',
         'bank' => 'getBank'
     ];
@@ -142,6 +147,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
     }
@@ -188,6 +194,27 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
     public function setPaymentType($paymentType)
     {
         $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets eWallet
+     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet
+     */
+    public function getEWallet()
+    {
+        return $this->container['eWallet'];
+    }
+
+    /**
+     * Sets eWallet
+     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet $eWallet
+     * @return $this
+     */
+    public function setEWallet($eWallet)
+    {
+        $this->container['eWallet'] = $eWallet;
 
         return $this;
     }

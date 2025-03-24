@@ -350,7 +350,7 @@ class Ptsv2payoutsProcessingInformation implements ArrayAccess
 
     /**
      * Sets purposeOfPayment
-     * @param string $purposeOfPayment This will send purpose of funds code for original credit transactions (OCTs).
+     * @param string $purposeOfPayment This field is applicable for AFT and OCT transactions. For list of supported values, please refer to Developer Guide.
      * @return $this
      */
     public function setPurposeOfPayment($purposeOfPayment)

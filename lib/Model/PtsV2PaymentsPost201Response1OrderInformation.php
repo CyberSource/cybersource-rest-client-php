@@ -54,7 +54,8 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'billTo' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationBillTo',
-        'shipTo' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationShipTo'
+        'shipTo' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationShipTo',
+        'amountDetails' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationAmountDetails'
     ];
 
     /**
@@ -63,7 +64,8 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'billTo' => null,
-        'shipTo' => null
+        'shipTo' => null,
+        'amountDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'billTo' => 'billTo',
-        'shipTo' => 'shipTo'
+        'shipTo' => 'shipTo',
+        'amountDetails' => 'amountDetails'
     ];
 
 
@@ -92,7 +95,8 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      */
     protected static $setters = [
         'billTo' => 'setBillTo',
-        'shipTo' => 'setShipTo'
+        'shipTo' => 'setShipTo',
+        'amountDetails' => 'setAmountDetails'
     ];
 
 
@@ -102,7 +106,8 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      */
     protected static $getters = [
         'billTo' => 'getBillTo',
-        'shipTo' => 'getShipTo'
+        'shipTo' => 'getShipTo',
+        'amountDetails' => 'getAmountDetails'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
     {
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
+        $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
     public function setShipTo($shipTo)
     {
         $this->container['shipTo'] = $shipTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets amountDetails
+     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationAmountDetails
+     */
+    public function getAmountDetails()
+    {
+        return $this->container['amountDetails'];
+    }
+
+    /**
+     * Sets amountDetails
+     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationAmountDetails $amountDetails
+     * @return $this
+     */
+    public function setAmountDetails($amountDetails)
+    {
+        $this->container['amountDetails'] = $amountDetails;
 
         return $this;
     }

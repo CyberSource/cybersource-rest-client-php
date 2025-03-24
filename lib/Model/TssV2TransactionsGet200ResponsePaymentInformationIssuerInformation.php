@@ -56,7 +56,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
         'name' => 'string',
         'country' => 'string',
         'binLength' => 'string',
-        'phoneNumber' => 'string'
+        'phoneNumber' => 'string',
+        'transactionInformation' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
         'name' => null,
         'country' => null,
         'binLength' => null,
-        'phoneNumber' => null
+        'phoneNumber' => null,
+        'transactionInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
         'name' => 'name',
         'country' => 'country',
         'binLength' => 'binLength',
-        'phoneNumber' => 'phoneNumber'
+        'phoneNumber' => 'phoneNumber',
+        'transactionInformation' => 'transactionInformation'
     ];
 
 
@@ -100,7 +103,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
         'name' => 'setName',
         'country' => 'setCountry',
         'binLength' => 'setBinLength',
-        'phoneNumber' => 'setPhoneNumber'
+        'phoneNumber' => 'setPhoneNumber',
+        'transactionInformation' => 'setTransactionInformation'
     ];
 
 
@@ -112,7 +116,8 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
         'name' => 'getName',
         'country' => 'getCountry',
         'binLength' => 'getBinLength',
-        'phoneNumber' => 'getPhoneNumber'
+        'phoneNumber' => 'getPhoneNumber',
+        'transactionInformation' => 'getTransactionInformation'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['binLength'] = isset($data['binLength']) ? $data['binLength'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['transactionInformation'] = isset($data['transactionInformation']) ? $data['transactionInformation'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class TssV2TransactionsGet200ResponsePaymentInformationIssuerInformation impleme
     public function setPhoneNumber($phoneNumber)
     {
         $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionInformation
+     * @return string
+     */
+    public function getTransactionInformation()
+    {
+        return $this->container['transactionInformation'];
+    }
+
+    /**
+     * Sets transactionInformation
+     * @param string $transactionInformation In a Mastercard Transaction, this field contains the unique identifier (Transaction Link ID) for the first transaction in a transaction life cycle.  This ID is crucial for maintaining continuity and linking subsequent operations to the original transaction.
+     * @return $this
+     */
+    public function setTransactionInformation($transactionInformation)
+    {
+        $this->container['transactionInformation'] = $transactionInformation;
 
         return $this;
     }

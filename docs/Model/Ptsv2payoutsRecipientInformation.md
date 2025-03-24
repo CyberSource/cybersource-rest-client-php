@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**firstName** | **string** | First name of recipient. characters. * CTV (14) * Paymentech (30) | [optional] 
-**middleName** | **string** | Recipient&#39;s middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor. | [optional] 
-**lastName** | **string** | Last name of recipient. characters. * CTV (14) * Paymentech (30) | [optional] 
-**address1** | **string** | Recipient address information. Required only for FDCCompass. | [optional] 
-**locality** | **string** | Recipient city. Required only for FDCCompass. | [optional] 
-**administrativeArea** | **string** | Recipient State. Required only for FDCCompass. | [optional] 
-**country** | **string** | Recipient country code. Required only for FDCCompass. | [optional] 
+**firstName** | **string** | First name of the recipient.    This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. | [optional] 
+**middleName** | **string** | Middle name of the recipient.    This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. | [optional] 
+**lastName** | **string** | Last name of the recipient.  This field is applicable for AFT &amp; OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor. | [optional] 
+**address1** | **string** | The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. | [optional] 
+**locality** | **string** | The city of the recipient. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor. | [optional] 
+**administrativeArea** | **string** | The state or province of the recipient. This field is applicable for AFT and OCT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value | [optional] 
+**country** | **string** | The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html) | [optional] 
 **postalCode** | **string** | Recipient postal code. Required only for FDCCompass. | [optional] 
 **phoneNumber** | **string** | Recipient phone number. Required only for FDCCompass. | [optional] 
 **aliasName** | **string** | Account owner alias name. | [optional] 

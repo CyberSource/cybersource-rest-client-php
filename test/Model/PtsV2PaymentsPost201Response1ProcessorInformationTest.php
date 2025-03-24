@@ -98,6 +98,20 @@ class PtsV2PaymentsPost201Response1ProcessorInformationTest extends \PHPUnit_Fra
     }
 
     /**
+     * Test attribute "rawResponseLocal"
+     */
+    public function testPropertyRawResponseLocal()
+    {
+    }
+
+    /**
+     * Test attribute "responseDetails"
+     */
+    public function testPropertyResponseDetails()
+    {
+    }
+
+    /**
      * Test attribute "responseCode"
      */
     public function testPropertyResponseCode()

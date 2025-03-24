@@ -72,32 +72,12 @@ class ManageWebhooksApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for deleteWebhookSubscription
+     * Test case for notificationSubscriptionsV1WebhooksWebhookIdPost
      *
-     * Delete a Webhook Subscription.
-     *
-     */
-    public function testDeleteWebhookSubscription()
-    {
-    }
-
-    /**
-     * Test case for getWebhookSubscriptionById
-     *
-     * Get Details On a Single Webhook.
+     * Test a Webhook Configuration.
      *
      */
-    public function testGetWebhookSubscriptionById()
-    {
-    }
-
-    /**
-     * Test case for getWebhookSubscriptionsByOrg
-     *
-     * Get Details On All Created Webhooks.
-     *
-     */
-    public function testGetWebhookSubscriptionsByOrg()
+    public function testNotificationSubscriptionsV1WebhooksWebhookIdPost()
     {
     }
 
@@ -108,16 +88,6 @@ class ManageWebhooksApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSaveAsymEgressKey()
-    {
-    }
-
-    /**
-     * Test case for updateWebhookSubscription
-     *
-     * Update a Webhook Subscription.
-     *
-     */
-    public function testUpdateWebhookSubscription()
     {
     }
 }

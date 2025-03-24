@@ -89,4 +89,11 @@ class PtsV2PaymentsPost201Response1OrderInformationTest extends \PHPUnit_Framewo
     public function testPropertyShipTo()
     {
     }
+
+    /**
+     * Test attribute "amountDetails"
+     */
+    public function testPropertyAmountDetails()
+    {
+    }
 }

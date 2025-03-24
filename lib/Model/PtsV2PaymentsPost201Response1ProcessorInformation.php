@@ -56,6 +56,8 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'transactionId' => 'string',
         'tradeNumber' => 'string',
         'rawResponse' => 'string',
+        'rawResponseLocal' => 'string',
+        'responseDetails' => 'string',
         'responseCode' => 'string',
         'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201Response1ProcessorInformationAvs'
@@ -69,6 +71,8 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'transactionId' => null,
         'tradeNumber' => null,
         'rawResponse' => null,
+        'rawResponseLocal' => null,
+        'responseDetails' => null,
         'responseCode' => null,
         'sellerProtection' => null,
         'avs' => null
@@ -92,6 +96,8 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'transactionId' => 'transactionId',
         'tradeNumber' => 'tradeNumber',
         'rawResponse' => 'rawResponse',
+        'rawResponseLocal' => 'rawResponseLocal',
+        'responseDetails' => 'responseDetails',
         'responseCode' => 'responseCode',
         'sellerProtection' => 'sellerProtection',
         'avs' => 'avs'
@@ -106,6 +112,8 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'transactionId' => 'setTransactionId',
         'tradeNumber' => 'setTradeNumber',
         'rawResponse' => 'setRawResponse',
+        'rawResponseLocal' => 'setRawResponseLocal',
+        'responseDetails' => 'setResponseDetails',
         'responseCode' => 'setResponseCode',
         'sellerProtection' => 'setSellerProtection',
         'avs' => 'setAvs'
@@ -120,6 +128,8 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'transactionId' => 'getTransactionId',
         'tradeNumber' => 'getTradeNumber',
         'rawResponse' => 'getRawResponse',
+        'rawResponseLocal' => 'getRawResponseLocal',
+        'responseDetails' => 'getResponseDetails',
         'responseCode' => 'getResponseCode',
         'sellerProtection' => 'getSellerProtection',
         'avs' => 'getAvs'
@@ -159,6 +169,8 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['tradeNumber'] = isset($data['tradeNumber']) ? $data['tradeNumber'] : null;
         $this->container['rawResponse'] = isset($data['rawResponse']) ? $data['rawResponse'] : null;
+        $this->container['rawResponseLocal'] = isset($data['rawResponseLocal']) ? $data['rawResponseLocal'] : null;
+        $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
@@ -248,6 +260,48 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
     public function setRawResponse($rawResponse)
     {
         $this->container['rawResponse'] = $rawResponse;
+
+        return $this;
+    }
+
+    /**
+     * Gets rawResponseLocal
+     * @return string
+     */
+    public function getRawResponseLocal()
+    {
+        return $this->container['rawResponseLocal'];
+    }
+
+    /**
+     * Sets rawResponseLocal
+     * @param string $rawResponseLocal This field is set to the value of failure reason returned by the processor in the local language of the processor.
+     * @return $this
+     */
+    public function setRawResponseLocal($rawResponseLocal)
+    {
+        $this->container['rawResponseLocal'] = $rawResponseLocal;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseDetails
+     * @return string
+     */
+    public function getResponseDetails()
+    {
+        return $this->container['responseDetails'];
+    }
+
+    /**
+     * Sets responseDetails
+     * @param string $responseDetails This field might contain information about a decline.
+     * @return $this
+     */
+    public function setResponseDetails($responseDetails)
+    {
+        $this->container['responseDetails'] = $responseDetails;
 
         return $this;
     }

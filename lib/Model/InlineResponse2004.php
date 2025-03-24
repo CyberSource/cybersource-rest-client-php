@@ -53,20 +53,16 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'webhookId' => 'string',
-        'organizationId' => 'string',
-        'products' => '\CyberSource\Model\Notificationsubscriptionsv1webhooksProducts[]',
-        'webhookUrl' => 'string',
-        'healthCheckUrl' => 'string',
-        'notificationScope' => '\CyberSource\Model\Notificationsubscriptionsv1webhooksNotificationScope',
-        'status' => 'string',
-        'name' => 'string',
-        'description' => 'string',
-        'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv1webhooksRetryPolicy',
-        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv1webhooksSecurityPolicy',
-        'createdOn' => 'string',
-        'updatedOn' => 'string',
-        'additionalAttributes' => 'map[string,string][]'
+        'version' => 'string',
+        'reportCreatedDate' => 'string',
+        'batchId' => 'string',
+        'batchSource' => 'string',
+        'batchCaEndpoints' => 'string',
+        'batchCreatedDate' => 'string',
+        'merchantReference' => 'string',
+        'totals' => '\CyberSource\Model\InlineResponse2002EmbeddedTotals',
+        'billing' => '\CyberSource\Model\InlineResponse2003Billing',
+        'records' => '\CyberSource\Model\InlineResponse2004Records[]'
     ];
 
     /**
@@ -74,20 +70,16 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'webhookId' => null,
-        'organizationId' => null,
-        'products' => null,
-        'webhookUrl' => null,
-        'healthCheckUrl' => null,
-        'notificationScope' => null,
-        'status' => null,
-        'name' => null,
-        'description' => null,
-        'retryPolicy' => null,
-        'securityPolicy' => null,
-        'createdOn' => null,
-        'updatedOn' => null,
-        'additionalAttributes' => null
+        'version' => null,
+        'reportCreatedDate' => null,
+        'batchId' => null,
+        'batchSource' => null,
+        'batchCaEndpoints' => null,
+        'batchCreatedDate' => null,
+        'merchantReference' => null,
+        'totals' => null,
+        'billing' => null,
+        'records' => null
     ];
 
     public static function swaggerTypes()
@@ -105,20 +97,16 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'webhookId' => 'webhookId',
-        'organizationId' => 'organizationId',
-        'products' => 'products',
-        'webhookUrl' => 'webhookUrl',
-        'healthCheckUrl' => 'healthCheckUrl',
-        'notificationScope' => 'notificationScope',
-        'status' => 'status',
-        'name' => 'name',
-        'description' => 'description',
-        'retryPolicy' => 'retryPolicy',
-        'securityPolicy' => 'securityPolicy',
-        'createdOn' => 'createdOn',
-        'updatedOn' => 'updatedOn',
-        'additionalAttributes' => 'additionalAttributes'
+        'version' => 'version',
+        'reportCreatedDate' => 'reportCreatedDate',
+        'batchId' => 'batchId',
+        'batchSource' => 'batchSource',
+        'batchCaEndpoints' => 'batchCaEndpoints',
+        'batchCreatedDate' => 'batchCreatedDate',
+        'merchantReference' => 'merchantReference',
+        'totals' => 'totals',
+        'billing' => 'billing',
+        'records' => 'records'
     ];
 
 
@@ -127,20 +115,16 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'webhookId' => 'setWebhookId',
-        'organizationId' => 'setOrganizationId',
-        'products' => 'setProducts',
-        'webhookUrl' => 'setWebhookUrl',
-        'healthCheckUrl' => 'setHealthCheckUrl',
-        'notificationScope' => 'setNotificationScope',
-        'status' => 'setStatus',
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'retryPolicy' => 'setRetryPolicy',
-        'securityPolicy' => 'setSecurityPolicy',
-        'createdOn' => 'setCreatedOn',
-        'updatedOn' => 'setUpdatedOn',
-        'additionalAttributes' => 'setAdditionalAttributes'
+        'version' => 'setVersion',
+        'reportCreatedDate' => 'setReportCreatedDate',
+        'batchId' => 'setBatchId',
+        'batchSource' => 'setBatchSource',
+        'batchCaEndpoints' => 'setBatchCaEndpoints',
+        'batchCreatedDate' => 'setBatchCreatedDate',
+        'merchantReference' => 'setMerchantReference',
+        'totals' => 'setTotals',
+        'billing' => 'setBilling',
+        'records' => 'setRecords'
     ];
 
 
@@ -149,20 +133,16 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'webhookId' => 'getWebhookId',
-        'organizationId' => 'getOrganizationId',
-        'products' => 'getProducts',
-        'webhookUrl' => 'getWebhookUrl',
-        'healthCheckUrl' => 'getHealthCheckUrl',
-        'notificationScope' => 'getNotificationScope',
-        'status' => 'getStatus',
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'retryPolicy' => 'getRetryPolicy',
-        'securityPolicy' => 'getSecurityPolicy',
-        'createdOn' => 'getCreatedOn',
-        'updatedOn' => 'getUpdatedOn',
-        'additionalAttributes' => 'getAdditionalAttributes'
+        'version' => 'getVersion',
+        'reportCreatedDate' => 'getReportCreatedDate',
+        'batchId' => 'getBatchId',
+        'batchSource' => 'getBatchSource',
+        'batchCaEndpoints' => 'getBatchCaEndpoints',
+        'batchCreatedDate' => 'getBatchCreatedDate',
+        'merchantReference' => 'getMerchantReference',
+        'totals' => 'getTotals',
+        'billing' => 'getBilling',
+        'records' => 'getRecords'
     ];
 
     public static function attributeMap()
@@ -196,20 +176,16 @@ class InlineResponse2004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['webhookId'] = isset($data['webhookId']) ? $data['webhookId'] : null;
-        $this->container['organizationId'] = isset($data['organizationId']) ? $data['organizationId'] : null;
-        $this->container['products'] = isset($data['products']) ? $data['products'] : null;
-        $this->container['webhookUrl'] = isset($data['webhookUrl']) ? $data['webhookUrl'] : null;
-        $this->container['healthCheckUrl'] = isset($data['healthCheckUrl']) ? $data['healthCheckUrl'] : null;
-        $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : 'INACTIVE';
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['retryPolicy'] = isset($data['retryPolicy']) ? $data['retryPolicy'] : null;
-        $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
-        $this->container['createdOn'] = isset($data['createdOn']) ? $data['createdOn'] : null;
-        $this->container['updatedOn'] = isset($data['updatedOn']) ? $data['updatedOn'] : null;
-        $this->container['additionalAttributes'] = isset($data['additionalAttributes']) ? $data['additionalAttributes'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
+        $this->container['reportCreatedDate'] = isset($data['reportCreatedDate']) ? $data['reportCreatedDate'] : null;
+        $this->container['batchId'] = isset($data['batchId']) ? $data['batchId'] : null;
+        $this->container['batchSource'] = isset($data['batchSource']) ? $data['batchSource'] : null;
+        $this->container['batchCaEndpoints'] = isset($data['batchCaEndpoints']) ? $data['batchCaEndpoints'] : null;
+        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
+        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
+        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
+        $this->container['records'] = isset($data['records']) ? $data['records'] : null;
     }
 
     /**
@@ -238,295 +214,211 @@ class InlineResponse2004 implements ArrayAccess
 
 
     /**
-     * Gets webhookId
+     * Gets version
      * @return string
      */
-    public function getWebhookId()
+    public function getVersion()
     {
-        return $this->container['webhookId'];
+        return $this->container['version'];
     }
 
     /**
-     * Sets webhookId
-     * @param string $webhookId Webhook Id. This is generated by the server.
+     * Sets version
+     * @param string $version
      * @return $this
      */
-    public function setWebhookId($webhookId)
+    public function setVersion($version)
     {
-        $this->container['webhookId'] = $webhookId;
+        $this->container['version'] = $version;
 
         return $this;
     }
 
     /**
-     * Gets organizationId
+     * Gets reportCreatedDate
      * @return string
      */
-    public function getOrganizationId()
+    public function getReportCreatedDate()
     {
-        return $this->container['organizationId'];
+        return $this->container['reportCreatedDate'];
     }
 
     /**
-     * Sets organizationId
-     * @param string $organizationId Organization ID.
+     * Sets reportCreatedDate
+     * @param string $reportCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
      * @return $this
      */
-    public function setOrganizationId($organizationId)
+    public function setReportCreatedDate($reportCreatedDate)
     {
-        $this->container['organizationId'] = $organizationId;
+        $this->container['reportCreatedDate'] = $reportCreatedDate;
 
         return $this;
     }
 
     /**
-     * Gets products
-     * @return \CyberSource\Model\Notificationsubscriptionsv1webhooksProducts[]
-     */
-    public function getProducts()
-    {
-        return $this->container['products'];
-    }
-
-    /**
-     * Sets products
-     * @param \CyberSource\Model\Notificationsubscriptionsv1webhooksProducts[] $products
-     * @return $this
-     */
-    public function setProducts($products)
-    {
-        $this->container['products'] = $products;
-
-        return $this;
-    }
-
-    /**
-     * Gets webhookUrl
+     * Gets batchId
      * @return string
      */
-    public function getWebhookUrl()
+    public function getBatchId()
     {
-        return $this->container['webhookUrl'];
+        return $this->container['batchId'];
     }
 
     /**
-     * Sets webhookUrl
-     * @param string $webhookUrl The client's endpoint (URL) to receive webhooks.
+     * Sets batchId
+     * @param string $batchId Unique identification number assigned to the submitted request.
      * @return $this
      */
-    public function setWebhookUrl($webhookUrl)
+    public function setBatchId($batchId)
     {
-        $this->container['webhookUrl'] = $webhookUrl;
+        $this->container['batchId'] = $batchId;
 
         return $this;
     }
 
     /**
-     * Gets healthCheckUrl
+     * Gets batchSource
      * @return string
      */
-    public function getHealthCheckUrl()
+    public function getBatchSource()
     {
-        return $this->container['healthCheckUrl'];
+        return $this->container['batchSource'];
     }
 
     /**
-     * Sets healthCheckUrl
-     * @param string $healthCheckUrl The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+     * Sets batchSource
+     * @param string $batchSource Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE
      * @return $this
      */
-    public function setHealthCheckUrl($healthCheckUrl)
+    public function setBatchSource($batchSource)
     {
-        $this->container['healthCheckUrl'] = $healthCheckUrl;
+        $this->container['batchSource'] = $batchSource;
 
         return $this;
     }
 
     /**
-     * Gets notificationScope
-     * @return \CyberSource\Model\Notificationsubscriptionsv1webhooksNotificationScope
-     */
-    public function getNotificationScope()
-    {
-        return $this->container['notificationScope'];
-    }
-
-    /**
-     * Sets notificationScope
-     * @param \CyberSource\Model\Notificationsubscriptionsv1webhooksNotificationScope $notificationScope
-     * @return $this
-     */
-    public function setNotificationScope($notificationScope)
-    {
-        $this->container['notificationScope'] = $notificationScope;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
+     * Gets batchCaEndpoints
      * @return string
      */
-    public function getStatus()
+    public function getBatchCaEndpoints()
     {
-        return $this->container['status'];
+        return $this->container['batchCaEndpoints'];
     }
 
     /**
-     * Sets status
-     * @param string $status Webhook status.
+     * Sets batchCaEndpoints
+     * @param string $batchCaEndpoints
      * @return $this
      */
-    public function setStatus($status)
+    public function setBatchCaEndpoints($batchCaEndpoints)
     {
-        $this->container['status'] = $status;
+        $this->container['batchCaEndpoints'] = $batchCaEndpoints;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets batchCreatedDate
      * @return string
      */
-    public function getName()
+    public function getBatchCreatedDate()
     {
-        return $this->container['name'];
+        return $this->container['batchCreatedDate'];
     }
 
     /**
-     * Sets name
-     * @param string $name Client friendly webhook name.
+     * Sets batchCreatedDate
+     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
      * @return $this
      */
-    public function setName($name)
+    public function setBatchCreatedDate($batchCreatedDate)
     {
-        $this->container['name'] = $name;
+        $this->container['batchCreatedDate'] = $batchCreatedDate;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets merchantReference
      * @return string
      */
-    public function getDescription()
+    public function getMerchantReference()
     {
-        return $this->container['description'];
+        return $this->container['merchantReference'];
     }
 
     /**
-     * Sets description
-     * @param string $description Client friendly webhook description.
+     * Sets merchantReference
+     * @param string $merchantReference Reference used by merchant to identify batch.
      * @return $this
      */
-    public function setDescription($description)
+    public function setMerchantReference($merchantReference)
     {
-        $this->container['description'] = $description;
+        $this->container['merchantReference'] = $merchantReference;
 
         return $this;
     }
 
     /**
-     * Gets retryPolicy
-     * @return \CyberSource\Model\Notificationsubscriptionsv1webhooksRetryPolicy
+     * Gets totals
+     * @return \CyberSource\Model\InlineResponse2002EmbeddedTotals
      */
-    public function getRetryPolicy()
+    public function getTotals()
     {
-        return $this->container['retryPolicy'];
+        return $this->container['totals'];
     }
 
     /**
-     * Sets retryPolicy
-     * @param \CyberSource\Model\Notificationsubscriptionsv1webhooksRetryPolicy $retryPolicy
+     * Sets totals
+     * @param \CyberSource\Model\InlineResponse2002EmbeddedTotals $totals
      * @return $this
      */
-    public function setRetryPolicy($retryPolicy)
+    public function setTotals($totals)
     {
-        $this->container['retryPolicy'] = $retryPolicy;
+        $this->container['totals'] = $totals;
 
         return $this;
     }
 
     /**
-     * Gets securityPolicy
-     * @return \CyberSource\Model\Notificationsubscriptionsv1webhooksSecurityPolicy
+     * Gets billing
+     * @return \CyberSource\Model\InlineResponse2003Billing
      */
-    public function getSecurityPolicy()
+    public function getBilling()
     {
-        return $this->container['securityPolicy'];
+        return $this->container['billing'];
     }
 
     /**
-     * Sets securityPolicy
-     * @param \CyberSource\Model\Notificationsubscriptionsv1webhooksSecurityPolicy $securityPolicy
+     * Sets billing
+     * @param \CyberSource\Model\InlineResponse2003Billing $billing
      * @return $this
      */
-    public function setSecurityPolicy($securityPolicy)
+    public function setBilling($billing)
     {
-        $this->container['securityPolicy'] = $securityPolicy;
+        $this->container['billing'] = $billing;
 
         return $this;
     }
 
     /**
-     * Gets createdOn
-     * @return string
+     * Gets records
+     * @return \CyberSource\Model\InlineResponse2004Records[]
      */
-    public function getCreatedOn()
+    public function getRecords()
     {
-        return $this->container['createdOn'];
+        return $this->container['records'];
     }
 
     /**
-     * Sets createdOn
-     * @param string $createdOn Date on which webhook was created/registered.
+     * Sets records
+     * @param \CyberSource\Model\InlineResponse2004Records[] $records
      * @return $this
      */
-    public function setCreatedOn($createdOn)
+    public function setRecords($records)
     {
-        $this->container['createdOn'] = $createdOn;
-
-        return $this;
-    }
-
-    /**
-     * Gets updatedOn
-     * @return string
-     */
-    public function getUpdatedOn()
-    {
-        return $this->container['updatedOn'];
-    }
-
-    /**
-     * Sets updatedOn
-     * @param string $updatedOn Date on which webhook was most recently updated.
-     * @return $this
-     */
-    public function setUpdatedOn($updatedOn)
-    {
-        $this->container['updatedOn'] = $updatedOn;
-
-        return $this;
-    }
-
-    /**
-     * Gets additionalAttributes
-     * @return map[string,string][]
-     */
-    public function getAdditionalAttributes()
-    {
-        return $this->container['additionalAttributes'];
-    }
-
-    /**
-     * Sets additionalAttributes
-     * @param map[string,string][] $additionalAttributes Additional, free form configuration data.
-     * @return $this
-     */
-    public function setAdditionalAttributes($additionalAttributes)
-    {
-        $this->container['additionalAttributes'] = $additionalAttributes;
+        $this->container['records'] = $records;
 
         return $this;
     }
