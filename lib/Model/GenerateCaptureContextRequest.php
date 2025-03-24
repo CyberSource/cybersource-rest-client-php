@@ -57,7 +57,8 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'string',
         'targetOrigins' => 'string[]',
         'allowedCardNetworks' => 'string[]',
-        'allowedPaymentTypes' => 'string[]'
+        'allowedPaymentTypes' => 'string[]',
+        'transientTokenResponseOptions' => '\CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions'
     ];
 
     /**
@@ -68,7 +69,8 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => null,
         'targetOrigins' => null,
         'allowedCardNetworks' => null,
-        'allowedPaymentTypes' => null
+        'allowedPaymentTypes' => null,
+        'transientTokenResponseOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'clientVersion',
         'targetOrigins' => 'targetOrigins',
         'allowedCardNetworks' => 'allowedCardNetworks',
-        'allowedPaymentTypes' => 'allowedPaymentTypes'
+        'allowedPaymentTypes' => 'allowedPaymentTypes',
+        'transientTokenResponseOptions' => 'transientTokenResponseOptions'
     ];
 
 
@@ -101,7 +104,8 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'setClientVersion',
         'targetOrigins' => 'setTargetOrigins',
         'allowedCardNetworks' => 'setAllowedCardNetworks',
-        'allowedPaymentTypes' => 'setAllowedPaymentTypes'
+        'allowedPaymentTypes' => 'setAllowedPaymentTypes',
+        'transientTokenResponseOptions' => 'setTransientTokenResponseOptions'
     ];
 
 
@@ -113,7 +117,8 @@ class GenerateCaptureContextRequest implements ArrayAccess
         'clientVersion' => 'getClientVersion',
         'targetOrigins' => 'getTargetOrigins',
         'allowedCardNetworks' => 'getAllowedCardNetworks',
-        'allowedPaymentTypes' => 'getAllowedPaymentTypes'
+        'allowedPaymentTypes' => 'getAllowedPaymentTypes',
+        'transientTokenResponseOptions' => 'getTransientTokenResponseOptions'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
         $this->container['targetOrigins'] = isset($data['targetOrigins']) ? $data['targetOrigins'] : null;
         $this->container['allowedCardNetworks'] = isset($data['allowedCardNetworks']) ? $data['allowedCardNetworks'] : null;
         $this->container['allowedPaymentTypes'] = isset($data['allowedPaymentTypes']) ? $data['allowedPaymentTypes'] : null;
+        $this->container['transientTokenResponseOptions'] = isset($data['transientTokenResponseOptions']) ? $data['transientTokenResponseOptions'] : null;
     }
 
     /**
@@ -231,7 +237,7 @@ class GenerateCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedCardNetworks
-     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Accept Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (Accept Check) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Accept Card) and Microform (Accept Check) at least one card network should be specified in the allowedCardNetworks field in the capture context request.
+     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Microform transaction.  Microform currently supports the following card networks: - VISA - MASTERCARD - AMEX - CARNET - CARTESBANCAIRES - CUP - DINERSCLUB - DISCOVER - EFTPOS - ELO - JCB - JCREW - MADA - MAESTRO - MEEZA  **Important:**    - When integrating Microform (Card) at least one card network should be specified in the allowedCardNetworks field in the capture context request.   - When integrating Microform (ACH/Echeck) the allowedCardNetworks field is not required in the capture context request.   - When integrating both Microform (Card) and Microform (ACH/Echeck) at least one card network should be specified in the allowedCardNetworks field in the capture context request.
      * @return $this
      */
     public function setAllowedCardNetworks($allowedCardNetworks)
@@ -258,6 +264,27 @@ class GenerateCaptureContextRequest implements ArrayAccess
     public function setAllowedPaymentTypes($allowedPaymentTypes)
     {
         $this->container['allowedPaymentTypes'] = $allowedPaymentTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets transientTokenResponseOptions
+     * @return \CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions
+     */
+    public function getTransientTokenResponseOptions()
+    {
+        return $this->container['transientTokenResponseOptions'];
+    }
+
+    /**
+     * Sets transientTokenResponseOptions
+     * @param \CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions $transientTokenResponseOptions
+     * @return $this
+     */
+    public function setTransientTokenResponseOptions($transientTokenResponseOptions)
+    {
+        $this->container['transientTokenResponseOptions'] = $transientTokenResponseOptions;
 
         return $this;
     }

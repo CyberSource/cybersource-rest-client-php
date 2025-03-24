@@ -58,7 +58,9 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestPhone' => 'bool',
         'requestShipping' => 'bool',
         'shipToCountries' => 'string[]',
-        'showAcceptedNetworkIcons' => 'bool'
+        'showAcceptedNetworkIcons' => 'bool',
+        'requestSaveCard' => 'bool',
+        'comboCard' => 'bool'
     ];
 
     /**
@@ -71,7 +73,9 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestPhone' => null,
         'requestShipping' => null,
         'shipToCountries' => null,
-        'showAcceptedNetworkIcons' => null
+        'showAcceptedNetworkIcons' => null,
+        'requestSaveCard' => null,
+        'comboCard' => null
     ];
 
     public static function swaggerTypes()
@@ -94,7 +98,9 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestPhone' => 'requestPhone',
         'requestShipping' => 'requestShipping',
         'shipToCountries' => 'shipToCountries',
-        'showAcceptedNetworkIcons' => 'showAcceptedNetworkIcons'
+        'showAcceptedNetworkIcons' => 'showAcceptedNetworkIcons',
+        'requestSaveCard' => 'requestSaveCard',
+        'comboCard' => 'comboCard'
     ];
 
 
@@ -108,7 +114,9 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestPhone' => 'setRequestPhone',
         'requestShipping' => 'setRequestShipping',
         'shipToCountries' => 'setShipToCountries',
-        'showAcceptedNetworkIcons' => 'setShowAcceptedNetworkIcons'
+        'showAcceptedNetworkIcons' => 'setShowAcceptedNetworkIcons',
+        'requestSaveCard' => 'setRequestSaveCard',
+        'comboCard' => 'setComboCard'
     ];
 
 
@@ -122,7 +130,9 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestPhone' => 'getRequestPhone',
         'requestShipping' => 'getRequestShipping',
         'shipToCountries' => 'getShipToCountries',
-        'showAcceptedNetworkIcons' => 'getShowAcceptedNetworkIcons'
+        'showAcceptedNetworkIcons' => 'getShowAcceptedNetworkIcons',
+        'requestSaveCard' => 'getRequestSaveCard',
+        'comboCard' => 'getComboCard'
     ];
 
     public static function attributeMap()
@@ -162,6 +172,8 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         $this->container['requestShipping'] = isset($data['requestShipping']) ? $data['requestShipping'] : null;
         $this->container['shipToCountries'] = isset($data['shipToCountries']) ? $data['shipToCountries'] : null;
         $this->container['showAcceptedNetworkIcons'] = isset($data['showAcceptedNetworkIcons']) ? $data['showAcceptedNetworkIcons'] : null;
+        $this->container['requestSaveCard'] = isset($data['requestSaveCard']) ? $data['requestSaveCard'] : null;
+        $this->container['comboCard'] = isset($data['comboCard']) ? $data['comboCard'] : null;
     }
 
     /**
@@ -311,6 +323,48 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
     public function setShowAcceptedNetworkIcons($showAcceptedNetworkIcons)
     {
         $this->container['showAcceptedNetworkIcons'] = $showAcceptedNetworkIcons;
+
+        return $this;
+    }
+
+    /**
+     * Gets requestSaveCard
+     * @return bool
+     */
+    public function getRequestSaveCard()
+    {
+        return $this->container['requestSaveCard'];
+    }
+
+    /**
+     * Sets requestSaveCard
+     * @param bool $requestSaveCard Configure Unified Checkout to display the \"Save card for future use\" checkbox.<br>  Configurable check box that will show in a Manual card entry flow to allow a Cardholder to give consent to store their manually entered credential with the Merchant that they are paying.<br>  Applicable when manually entering the details and not enrolling in Click to Pay.  Possible values:  - True   - False<br><br>  **Use Cases:**  **Offer consumers option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to true. - When set to true, this will show a checkbox with the message 'Save card for future use' in Unified Checkout. - When selected this provides a response in both the Transient Token and Get Credentials API response.<br><br>  **Do not offer consumers the option to save their card in Unified Checkout:**  - Include the captureMandate.requestSaveCard field in the capture context request and set it to false OR omit the field from the capture context request. - When set to false, the save card option is not shown to consumers when manually entering card details.
+     * @return $this
+     */
+    public function setRequestSaveCard($requestSaveCard)
+    {
+        $this->container['requestSaveCard'] = $requestSaveCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets comboCard
+     * @return bool
+     */
+    public function getComboCard()
+    {
+        return $this->container['comboCard'];
+    }
+
+    /**
+     * Sets comboCard
+     * @param bool $comboCard Configure Unified Checkout to display combo card at checkout.<br>  A combo debit/credit card is a single card that functions both as a Debit/Credit card.  Unified Checkout / Click to Pay Drop-in UI allows the Cardholder to choose whether they would like the transaction to be paid for using either debit or credit card. **Important:** This is applicable to Visa cards only.  Possible values: - True  - False<br><br>  **Use Cases:**  **Offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to true. - When set to true, Combo Card selection is shown at checkout <br><br>  **Do not offer Combo Card at Checkout:**  - Include the captureMandate.comboCard field in the capture context request and set it to false OR omit the field from the capture context request. - The Combo Card selection is not shown at checkout.
+     * @return $this
+     */
+    public function setComboCard($comboCard)
+    {
+        $this->container['comboCard'] = $comboCard;
 
         return $this;
     }

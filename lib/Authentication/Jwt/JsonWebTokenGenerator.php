@@ -28,7 +28,7 @@ class JsonWebTokenGenerator implements TokenGenerator
     //calling Signature
     public function generateToken($resourcePath, $payloadData, $method, $merchantConfig)
     {
-        $date = date("D, d M Y G:i:s ").GlobalParameter::GMT;
+        $date = gmdate("D, d M Y G:i:s ").GlobalParameter::GMT;
         if($method==GlobalParameter::GET || $method==GlobalParameter::DELETE)
         {
             $jwtBody = array("iat"=>$date);

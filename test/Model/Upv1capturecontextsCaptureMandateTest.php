@@ -117,4 +117,18 @@ class Upv1capturecontextsCaptureMandateTest extends \PHPUnit_Framework_TestCase
     public function testPropertyShowAcceptedNetworkIcons()
     {
     }
+
+    /**
+     * Test attribute "requestSaveCard"
+     */
+    public function testPropertyRequestSaveCard()
+    {
+    }
+
+    /**
+     * Test attribute "comboCard"
+     */
+    public function testPropertyComboCard()
+    {
+    }
 }
