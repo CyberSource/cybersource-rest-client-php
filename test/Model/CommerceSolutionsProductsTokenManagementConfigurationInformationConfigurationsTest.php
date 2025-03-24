@@ -89,4 +89,11 @@ class CommerceSolutionsProductsTokenManagementConfigurationInformationConfigurat
     public function testPropertyVault()
     {
     }
+
+    /**
+     * Test attribute "networkTokenEnrollment"
+     */
+    public function testPropertyNetworkTokenEnrollment()
+    {
+    }
 }
