@@ -77,9 +77,16 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "eventDate"
      */
-    public function testPropertyWebhookId()
+    public function testPropertyEventDate()
+    {
+    }
+
+    /**
+     * Test attribute "eventType"
+     */
+    public function testPropertyEventType()
     {
     }
 
@@ -91,6 +98,13 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "payloads"
+     */
+    public function testPropertyPayloads()
+    {
+    }
+
+    /**
      * Test attribute "productId"
      */
     public function testPropertyProductId()
@@ -98,86 +112,30 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "eventTypes"
+     * Test attribute "requestType"
      */
-    public function testPropertyEventTypes()
+    public function testPropertyRequestType()
     {
     }
 
     /**
-     * Test attribute "webhookUrl"
+     * Test attribute "retryNumber"
      */
-    public function testPropertyWebhookUrl()
+    public function testPropertyRetryNumber()
     {
     }
 
     /**
-     * Test attribute "healthCheckUrl"
+     * Test attribute "transactionTraceId"
      */
-    public function testPropertyHealthCheckUrl()
+    public function testPropertyTransactionTraceId()
     {
     }
 
     /**
-     * Test attribute "notificationScope"
+     * Test attribute "webhookId"
      */
-    public function testPropertyNotificationScope()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "retryPolicy"
-     */
-    public function testPropertyRetryPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "securityPolicy"
-     */
-    public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "createdOn"
-     */
-    public function testPropertyCreatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "updatedOn"
-     */
-    public function testPropertyUpdatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "additionalAttributes"
-     */
-    public function testPropertyAdditionalAttributes()
+    public function testPropertyWebhookId()
     {
     }
 }

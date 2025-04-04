@@ -4,107 +4,15 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks | Create a Webhook
-[**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v1/products/{organizationId} | Find Products You Can Subscribe To
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
-
-# **createWebhookSubscription**
-> \CyberSource\Model\InlineResponse2014 createWebhookSubscription($createWebhookRequest)
-
-Create a Webhook
-
-Create a new webhook subscription. Before creating a webhook, ensure that a security key has been created at the top of this developer center section. You will not need to pass us back the key during the creation of the webhook, but you will receive an error if you did not already create a key or store one on file.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\CreateNewWebhooksApi();
-$createWebhookRequest = new \CyberSource\Model\CreateWebhookRequest(); // \CyberSource\Model\CreateWebhookRequest | The webhook payload
-
-try {
-    $result = $api_instance->createWebhookSubscription($createWebhookRequest);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CreateNewWebhooksApi->createWebhookSubscription: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createWebhookRequest** | [**\CyberSource\Model\CreateWebhookRequest**](../Model/CreateWebhookRequest.md)| The webhook payload | [optional]
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **findProductsToSubscribe**
-> \CyberSource\Model\InlineResponse2002[] findProductsToSubscribe($organizationId)
-
-Find Products You Can Subscribe To
-
-Retrieve a list of products and event types that your account is eligible for. These products and events are the ones that you may subscribe to in the next step of creating webhooks.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\CreateNewWebhooksApi();
-$organizationId = "organizationId_example"; // string | The Organization Identifier.
-
-try {
-    $result = $api_instance->findProductsToSubscribe($organizationId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CreateNewWebhooksApi->findProductsToSubscribe: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The Organization Identifier. |
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2002[]**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **saveSymEgressKey**
 > \CyberSource\Model\InlineResponse2013 saveSymEgressKey($vCSenderOrganizationId, $vCPermissions, $vCCorrelationId, $saveSymEgressKey)
 
 Create Webhook Security Keys
 
-Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remeber to save the key in the API response, so that you can use it to validate messages later.
+Create security keys that CyberSource will use internally to connect to your servers and validate messages using a digital signature.  Select the CREATE example for CyberSource to generate the key on our server and maintain it for you as well. Remember to save the key in the API response, so that you can use it to validate messages later.
 
 ### Example
 ```php
@@ -146,7 +54,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

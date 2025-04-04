@@ -131,4 +131,18 @@ class PtsV2PaymentsPost201Response1Test extends \PHPUnit_Framework_TestCase
     public function testPropertyClientReferenceInformation()
     {
     }
+
+    /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
+    {
+    }
+
+    /**
+     * Test attribute "errorInformation"
+     */
+    public function testPropertyErrorInformation()
+    {
+    }
 }

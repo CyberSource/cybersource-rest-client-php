@@ -53,9 +53,13 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'productId' => 'string',
-        'productName' => 'string',
-        'eventTypes' => '\CyberSource\Model\Notificationsubscriptionsv1productsorganizationIdEventTypes[]'
+        'links' => '\CyberSource\Model\InlineResponse2002Links[]',
+        'object' => 'string',
+        'offset' => 'int',
+        'limit' => 'int',
+        'count' => 'int',
+        'total' => 'int',
+        'embedded' => '\CyberSource\Model\InlineResponse2002Embedded'
     ];
 
     /**
@@ -63,9 +67,13 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'productId' => null,
-        'productName' => null,
-        'eventTypes' => null
+        'links' => null,
+        'object' => null,
+        'offset' => null,
+        'limit' => null,
+        'count' => null,
+        'total' => null,
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -83,9 +91,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'productId' => 'productId',
-        'productName' => 'productName',
-        'eventTypes' => 'eventTypes'
+        'links' => '_links',
+        'object' => 'object',
+        'offset' => 'offset',
+        'limit' => 'limit',
+        'count' => 'count',
+        'total' => 'total',
+        'embedded' => '_embedded'
     ];
 
 
@@ -94,9 +106,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'productId' => 'setProductId',
-        'productName' => 'setProductName',
-        'eventTypes' => 'setEventTypes'
+        'links' => 'setLinks',
+        'object' => 'setObject',
+        'offset' => 'setOffset',
+        'limit' => 'setLimit',
+        'count' => 'setCount',
+        'total' => 'setTotal',
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -105,9 +121,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'productId' => 'getProductId',
-        'productName' => 'getProductName',
-        'eventTypes' => 'getEventTypes'
+        'links' => 'getLinks',
+        'object' => 'getObject',
+        'offset' => 'getOffset',
+        'limit' => 'getLimit',
+        'count' => 'getCount',
+        'total' => 'getTotal',
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -141,9 +161,13 @@ class InlineResponse2002 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
-        $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
-        $this->container['eventTypes'] = isset($data['eventTypes']) ? $data['eventTypes'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -172,64 +196,148 @@ class InlineResponse2002 implements ArrayAccess
 
 
     /**
-     * Gets productId
-     * @return string
+     * Gets links
+     * @return \CyberSource\Model\InlineResponse2002Links[]
      */
-    public function getProductId()
+    public function getLinks()
     {
-        return $this->container['productId'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets productId
-     * @param string $productId Product ID.
+     * Sets links
+     * @param \CyberSource\Model\InlineResponse2002Links[] $links
      * @return $this
      */
-    public function setProductId($productId)
+    public function setLinks($links)
     {
-        $this->container['productId'] = $productId;
+        $this->container['links'] = $links;
 
         return $this;
     }
 
     /**
-     * Gets productName
+     * Gets object
      * @return string
      */
-    public function getProductName()
+    public function getObject()
     {
-        return $this->container['productName'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets productName
-     * @param string $productName Product Name.
+     * Sets object
+     * @param string $object
      * @return $this
      */
-    public function setProductName($productName)
+    public function setObject($object)
     {
-        $this->container['productName'] = $productName;
+        $this->container['object'] = $object;
 
         return $this;
     }
 
     /**
-     * Gets eventTypes
-     * @return \CyberSource\Model\Notificationsubscriptionsv1productsorganizationIdEventTypes[]
+     * Gets offset
+     * @return int
      */
-    public function getEventTypes()
+    public function getOffset()
     {
-        return $this->container['eventTypes'];
+        return $this->container['offset'];
     }
 
     /**
-     * Sets eventTypes
-     * @param \CyberSource\Model\Notificationsubscriptionsv1productsorganizationIdEventTypes[] $eventTypes
+     * Sets offset
+     * @param int $offset
      * @return $this
      */
-    public function setEventTypes($eventTypes)
+    public function setOffset($offset)
     {
-        $this->container['eventTypes'] = $eventTypes;
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     * @param int $limit
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     * @param int $count
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     * @param int $total
+     * @return $this
+     */
+    public function setTotal($total)
+    {
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets embedded
+     * @return \CyberSource\Model\InlineResponse2002Embedded
+     */
+    public function getEmbedded()
+    {
+        return $this->container['embedded'];
+    }
+
+    /**
+     * Sets embedded
+     * @param \CyberSource\Model\InlineResponse2002Embedded $embedded
+     * @return $this
+     */
+    public function setEmbedded($embedded)
+    {
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }

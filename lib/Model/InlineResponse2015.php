@@ -55,9 +55,7 @@ class InlineResponse2015 implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'clientReferenceInformation' => '\CyberSource\Model\Kmsegressv2keyssymClientReferenceInformation',
-        'keyInformation' => '\CyberSource\Model\Kmsegressv2keysasymKeyInformation'
+        'status' => 'string'
     ];
 
     /**
@@ -66,9 +64,7 @@ class InlineResponse2015 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'submitTimeUtc' => null,
-        'status' => null,
-        'clientReferenceInformation' => null,
-        'keyInformation' => null
+        'status' => null
     ];
 
     public static function swaggerTypes()
@@ -87,9 +83,7 @@ class InlineResponse2015 implements ArrayAccess
      */
     protected static $attributeMap = [
         'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'clientReferenceInformation' => 'clientReferenceInformation',
-        'keyInformation' => 'keyInformation'
+        'status' => 'status'
     ];
 
 
@@ -99,9 +93,7 @@ class InlineResponse2015 implements ArrayAccess
      */
     protected static $setters = [
         'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'clientReferenceInformation' => 'setClientReferenceInformation',
-        'keyInformation' => 'setKeyInformation'
+        'status' => 'setStatus'
     ];
 
 
@@ -111,9 +103,7 @@ class InlineResponse2015 implements ArrayAccess
      */
     protected static $getters = [
         'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'clientReferenceInformation' => 'getClientReferenceInformation',
-        'keyInformation' => 'getKeyInformation'
+        'status' => 'getStatus'
     ];
 
     public static function attributeMap()
@@ -149,8 +139,6 @@ class InlineResponse2015 implements ArrayAccess
     {
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
-        $this->container['keyInformation'] = isset($data['keyInformation']) ? $data['keyInformation'] : null;
     }
 
     /**
@@ -216,48 +204,6 @@ class InlineResponse2015 implements ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Kmsegressv2keyssymClientReferenceInformation
-     */
-    public function getClientReferenceInformation()
-    {
-        return $this->container['clientReferenceInformation'];
-    }
-
-    /**
-     * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Kmsegressv2keyssymClientReferenceInformation $clientReferenceInformation
-     * @return $this
-     */
-    public function setClientReferenceInformation($clientReferenceInformation)
-    {
-        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets keyInformation
-     * @return \CyberSource\Model\Kmsegressv2keysasymKeyInformation
-     */
-    public function getKeyInformation()
-    {
-        return $this->container['keyInformation'];
-    }
-
-    /**
-     * Sets keyInformation
-     * @param \CyberSource\Model\Kmsegressv2keysasymKeyInformation $keyInformation
-     * @return $this
-     */
-    public function setKeyInformation($keyInformation)
-    {
-        $this->container['keyInformation'] = $keyInformation;
 
         return $this;
     }

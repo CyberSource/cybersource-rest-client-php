@@ -32,6 +32,8 @@ use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
 use \CyberSource\Logging\LogFactory as LogFactory;
+use \CyberSource\Authentication\Util\MLEUtility;
+use \Exception;
 
 /**
  * EMVTagDetailsApi Class Doc Comment
@@ -142,6 +144,18 @@ class EMVTagDetailsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getEmvTags,getEmvTagsWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -247,6 +261,18 @@ class EMVTagDetailsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "parseEmvTags,parseEmvTagsWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");

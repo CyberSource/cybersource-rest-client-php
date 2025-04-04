@@ -320,7 +320,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName First name of sender (Optional). * CTV (14) * Paymentech (30)
+     * @param string $firstName First name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported.Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to the processor.
      * @return $this
      */
     public function setFirstName($firstName)
@@ -362,7 +362,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Sender's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
+     * @param string $middleName Middle name of the sender. This field is applicable for AFT and OCT transactions.   Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setMiddleName($middleName)
@@ -383,7 +383,7 @@ class Ptsv2payoutsSenderInformation implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName Recipient last name (Optional). * CTV (14) * Paymentech (30)
+     * @param string $lastName Last name of the sender. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setLastName($lastName)

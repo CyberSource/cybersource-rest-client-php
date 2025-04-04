@@ -110,4 +110,11 @@ class PaymentsStrongAuthIssuerInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyTransactionRiskAnalysisExemptionResult()
     {
     }
+
+    /**
+     * Test attribute "delegatedAuthenticationResult"
+     */
+    public function testPropertyDelegatedAuthenticationResult()
+    {
+    }
 }

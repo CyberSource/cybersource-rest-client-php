@@ -29,7 +29,7 @@ override the new secure-http default setting)*.
 {
   "require": {
     "php": ">=8.0.0", 
-    "cybersource/rest-client-php": "0.0.59"
+    "cybersource/rest-client-php": "0.0.60"
   }
 }
 ```
@@ -99,6 +99,13 @@ More information about this new logging framework can be found in this file : [L
 [packagist]: https://packagist.org/packages/cybersource/rest-client-php
 
 ## Features
+
+### Message Level Encryption (MLE) Feature
+[![Generic badge](https://img.shields.io/badge/MLE-NEW-GREEN.svg)](https://shields.io/)
+
+This feature provides an implementation of Message Level Encryption (MLE) for APIs provided by CyberSource, integrated within our SDK. This feature ensures secure communication by encrypting messages at the application level before they are sent over the network.
+
+More information about this new MLE feature can be found in this file : [MLE.md](MLE.md)
 
 ### MetaKey Support
 

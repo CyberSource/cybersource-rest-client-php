@@ -32,6 +32,8 @@ use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
 use \CyberSource\Logging\LogFactory as LogFactory;
+use \CyberSource\Authentication\Util\MLEUtility;
+use \Exception;
 
 /**
  * PlansApi Class Doc Comment
@@ -157,6 +159,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "activatePlan,activatePlanWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
@@ -274,6 +288,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "createPlan,createPlanWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
@@ -388,6 +414,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "deactivatePlan,deactivatePlanWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
@@ -506,6 +544,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "deletePlan,deletePlanWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : DELETE $resourcePath");
@@ -624,6 +674,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getPlan,getPlanWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -727,6 +789,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getPlanCode,getPlanCodeWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -856,6 +930,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getPlans,getPlansWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -989,6 +1075,18 @@ class PlansApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "updatePlan,updatePlanWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : PATCH $resourcePath");

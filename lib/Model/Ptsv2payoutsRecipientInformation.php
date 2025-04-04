@@ -248,7 +248,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets firstName
-     * @param string $firstName First name of recipient. characters. * CTV (14) * Paymentech (30)
+     * @param string $firstName First name of the recipient.    This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setFirstName($firstName)
@@ -269,7 +269,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets middleName
-     * @param string $middleName Recipient's middle name. This field is a _passthrough_, which means that CyberSource does not verify the value or modify it in any way before sending it to the processor. If the field is not required for the transaction, CyberSource does not forward it to the processor.
+     * @param string $middleName Middle name of the recipient.    This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setMiddleName($middleName)
@@ -290,7 +290,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets lastName
-     * @param string $lastName Last name of recipient. characters. * CTV (14) * Paymentech (30)
+     * @param string $lastName Last name of the recipient.  This field is applicable for AFT & OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set, are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setLastName($lastName)
@@ -311,7 +311,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets address1
-     * @param string $address1 Recipient address information. Required only for FDCCompass.
+     * @param string $address1 The street address of the recipient This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setAddress1($address1)
@@ -332,7 +332,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets locality
-     * @param string $locality Recipient city. Required only for FDCCompass.
+     * @param string $locality The city of the recipient. This field is applicable for AFT and OCT transactions.  Only alpha numeric values are supported. Special characters not in the standard ASCII character set are not supported and will be stripped before being sent to sent to the processor.
      * @return $this
      */
     public function setLocality($locality)
@@ -353,7 +353,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets administrativeArea
-     * @param string $administrativeArea Recipient State. Required only for FDCCompass.
+     * @param string $administrativeArea The state or province of the recipient. This field is applicable for AFT and OCT transactions when the recipient country is US or CA. Else it is optional.  Must be a two character value
      * @return $this
      */
     public function setAdministrativeArea($administrativeArea)
@@ -374,7 +374,7 @@ class Ptsv2payoutsRecipientInformation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Recipient country code. Required only for FDCCompass.
+     * @param string $country The country associated with the address of the recipient. This field is applicable for AFT and OCT transactions.  Must be a two character ISO country code.  For example, see [ISO Country Code](https://developer.cybersource.com/docs/cybs/en-us/country-codes/reference/all/na/country-codes/country-codes.html)
      * @return $this
      */
     public function setCountry($country)

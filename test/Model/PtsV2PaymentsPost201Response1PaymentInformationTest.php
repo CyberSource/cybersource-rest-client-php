@@ -84,6 +84,13 @@ class PtsV2PaymentsPost201Response1PaymentInformationTest extends \PHPUnit_Frame
     }
 
     /**
+     * Test attribute "eWallet"
+     */
+    public function testPropertyEWallet()
+    {
+    }
+
+    /**
      * Test attribute "customer"
      */
     public function testPropertyCustomer()

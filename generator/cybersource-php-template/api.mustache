@@ -23,6 +23,8 @@ use \{{invokerPackage}}\ApiException;
 use \{{invokerPackage}}\Configuration;
 use \{{invokerPackage}}\ObjectSerializer;
 use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
+use \{{invokerPackage}}\Authentication\Util\MLEUtility;
+use \Exception;
 
 /**
  * {{classname}} Class Doc Comment
@@ -233,6 +235,18 @@ use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = {{#vendorExtensions.x-devcenter-metaData.isMLEsupported}}true;{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}{{^vendorExtensions.x-devcenter-metaData.isMLEsupported}}false;{{/vendorExtensions.x-devcenter-metaData.isMLEsupported}}
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "{{operationId}},{{operationId}}WithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         {{#authMethods}}
         {{#isApiKey}}
         // this endpoint requires API key authentication

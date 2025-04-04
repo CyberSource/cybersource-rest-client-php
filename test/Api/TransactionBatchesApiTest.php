@@ -100,4 +100,14 @@ class TransactionBatchesApiTest extends \PHPUnit_Framework_TestCase
     public function testGetTransactionBatches()
     {
     }
+
+    /**
+     * Test case for uploadTransactionBatch
+     *
+     * Upload a Batch File.
+     *
+     */
+    public function testUploadTransactionBatch()
+    {
+    }
 }

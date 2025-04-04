@@ -32,6 +32,8 @@ use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
 use \CyberSource\Logging\LogFactory as LogFactory;
+use \CyberSource\Authentication\Util\MLEUtility;
+use \Exception;
 
 /**
  * ReportDefinitionsApi Class Doc Comment
@@ -175,6 +177,18 @@ class ReportDefinitionsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getResourceInfoByReportDefinition,getResourceInfoByReportDefinitionWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -285,6 +299,18 @@ class ReportDefinitionsApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getResourceV2Info,getResourceV2InfoWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");

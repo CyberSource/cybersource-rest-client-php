@@ -89,18 +89,4 @@ class InlineResponse2015Test extends \PHPUnit_Framework_TestCase
     public function testPropertyStatus()
     {
     }
-
-    /**
-     * Test attribute "clientReferenceInformation"
-     */
-    public function testPropertyClientReferenceInformation()
-    {
-    }
-
-    /**
-     * Test attribute "keyInformation"
-     */
-    public function testPropertyKeyInformation()
-    {
-    }
 }

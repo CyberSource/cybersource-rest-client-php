@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getTransactionBatchDetails**](TransactionBatchesApi.md#getTransactionBatchDetails) | **GET** /pts/v1/transaction-batch-details/{id} | Get Transaction Details for a given Batch Id
 [**getTransactionBatchId**](TransactionBatchesApi.md#getTransactionBatchId) | **GET** /pts/v1/transaction-batches/{id} | Get Individual Batch File
 [**getTransactionBatches**](TransactionBatchesApi.md#getTransactionBatches) | **GET** /pts/v1/transaction-batches | Get a List of Batch Files
+[**uploadTransactionBatch**](TransactionBatchesApi.md#uploadTransactionBatch) | **POST** /pts/v1/transaction-batch-upload | Upload a Batch File
 
 
 # **getTransactionBatchDetails**
@@ -146,6 +147,50 @@ No authorization required
 
  - **Content-Type**: application/json;charset=utf-8
  - **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **uploadTransactionBatch**
+> uploadTransactionBatch($file)
+
+Upload a Batch File
+
+This endpoint enables the upload of a batch file containing transactions for processing.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\TransactionBatchesApi();
+$file = "/path/to/file.txt"; // \SplFileObject | The file to upload.
+
+try {
+    $api_instance->uploadTransactionBatch($file);
+} catch (Exception $e) {
+    echo 'Exception when calling TransactionBatchesApi->uploadTransactionBatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **\SplFileObject**| The file to upload. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

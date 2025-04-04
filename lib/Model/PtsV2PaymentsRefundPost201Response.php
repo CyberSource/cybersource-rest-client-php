@@ -60,6 +60,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'reconciliationId' => 'string',
         'clientReferenceInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseClientReferenceInformation',
         'refundAmountDetails' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseRefundAmountDetails',
+        'processingInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseOrderInformation',
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation'
@@ -77,6 +78,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'reconciliationId' => null,
         'clientReferenceInformation' => null,
         'refundAmountDetails' => null,
+        'processingInformation' => null,
         'processorInformation' => null,
         'orderInformation' => null,
         'pointOfSaleInformation' => null
@@ -104,6 +106,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'refundAmountDetails' => 'refundAmountDetails',
+        'processingInformation' => 'processingInformation',
         'processorInformation' => 'processorInformation',
         'orderInformation' => 'orderInformation',
         'pointOfSaleInformation' => 'pointOfSaleInformation'
@@ -122,6 +125,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'refundAmountDetails' => 'setRefundAmountDetails',
+        'processingInformation' => 'setProcessingInformation',
         'processorInformation' => 'setProcessorInformation',
         'orderInformation' => 'setOrderInformation',
         'pointOfSaleInformation' => 'setPointOfSaleInformation'
@@ -140,6 +144,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'refundAmountDetails' => 'getRefundAmountDetails',
+        'processingInformation' => 'getProcessingInformation',
         'processorInformation' => 'getProcessorInformation',
         'orderInformation' => 'getOrderInformation',
         'pointOfSaleInformation' => 'getPointOfSaleInformation'
@@ -183,6 +188,7 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['refundAmountDetails'] = isset($data['refundAmountDetails']) ? $data['refundAmountDetails'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
@@ -356,6 +362,27 @@ class PtsV2PaymentsRefundPost201Response implements ArrayAccess
     public function setRefundAmountDetails($refundAmountDetails)
     {
         $this->container['refundAmountDetails'] = $refundAmountDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\PtsV2PaymentsCapturesPost201ResponseProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

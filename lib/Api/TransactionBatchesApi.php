@@ -32,6 +32,8 @@ use \CyberSource\ApiException;
 use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
 use \CyberSource\Logging\LogFactory as LogFactory;
+use \CyberSource\Authentication\Util\MLEUtility;
+use \Exception;
 
 /**
  * TransactionBatchesApi Class Doc Comment
@@ -169,6 +171,18 @@ class TransactionBatchesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getTransactionBatchDetails,getTransactionBatchDetailsWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -293,6 +307,18 @@ class TransactionBatchesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getTransactionBatchId,getTransactionBatchIdWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -426,6 +452,18 @@ class TransactionBatchesApi
         } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getTransactionBatches,getTransactionBatchesWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
@@ -481,6 +519,134 @@ class TransactionBatchesApi
                     break;
                 case 500:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\PtsV1TransactionBatchesGet500Response', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation uploadTransactionBatch
+     *
+     * Upload a Batch File
+     *
+     * @param \SplFileObject $file The file to upload. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function uploadTransactionBatch($file)
+    {
+        self::$logger->info('CALL TO METHOD uploadTransactionBatch STARTED');
+        list($response, $statusCode, $httpHeader) = $this->uploadTransactionBatchWithHttpInfo($file);
+        self::$logger->info('CALL TO METHOD uploadTransactionBatch ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation uploadTransactionBatchWithHttpInfo
+     *
+     * Upload a Batch File
+     *
+     * @param \SplFileObject $file The file to upload. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function uploadTransactionBatchWithHttpInfo($file)
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $file when calling uploadTransactionBatch");
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling uploadTransactionBatch');
+        }
+        // parse inputs
+        $resourcePath = "/pts/v1/transaction-batch-upload";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data']);
+
+        // form params
+        if ($file !== null) {
+            // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
+            // See: https://wiki.php.net/rfc/curl-file-upload
+            if (function_exists('curl_file_create')) {
+                $formParams['file'] = curl_file_create($this->apiClient->getSerializer()->toFormValue($file));
+            } else {
+                $formParams['file'] = '@' . $this->apiClient->getSerializer()->toFormValue($file);
+            }
+        }
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "uploadTransactionBatch,uploadTransactionBatchWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/pts/v1/transaction-batch-upload'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$response, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Model400UploadBatchFileResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Model400UploadBatchFileResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\Model400UploadBatchFileResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

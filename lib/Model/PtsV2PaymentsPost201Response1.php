@@ -60,7 +60,9 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'reconciliationId' => 'string',
         'paymentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformation',
         'orderInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformation',
-        'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation'
+        'clientReferenceInformation' => '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201ResponseClientReferenceInformation',
+        'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation',
+        'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1ErrorInformation'
     ];
 
     /**
@@ -75,7 +77,9 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'reconciliationId' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
-        'clientReferenceInformation' => null
+        'clientReferenceInformation' => null,
+        'issuerInformation' => null,
+        'errorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +104,9 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'reconciliationId' => 'reconciliationId',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
-        'clientReferenceInformation' => 'clientReferenceInformation'
+        'clientReferenceInformation' => 'clientReferenceInformation',
+        'issuerInformation' => 'issuerInformation',
+        'errorInformation' => 'errorInformation'
     ];
 
 
@@ -116,7 +122,9 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'reconciliationId' => 'setReconciliationId',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
-        'clientReferenceInformation' => 'setClientReferenceInformation'
+        'clientReferenceInformation' => 'setClientReferenceInformation',
+        'issuerInformation' => 'setIssuerInformation',
+        'errorInformation' => 'setErrorInformation'
     ];
 
 
@@ -132,7 +140,9 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'reconciliationId' => 'getReconciliationId',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
-        'clientReferenceInformation' => 'getClientReferenceInformation'
+        'clientReferenceInformation' => 'getClientReferenceInformation',
+        'issuerInformation' => 'getIssuerInformation',
+        'errorInformation' => 'getErrorInformation'
     ];
 
     public static function attributeMap()
@@ -174,6 +184,8 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
+        $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
     }
 
     /**
@@ -365,6 +377,48 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
     public function setClientReferenceInformation($clientReferenceInformation)
     {
         $this->container['clientReferenceInformation'] = $clientReferenceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets issuerInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation
+     */
+    public function getIssuerInformation()
+    {
+        return $this->container['issuerInformation'];
+    }
+
+    /**
+     * Sets issuerInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1IssuerInformation $issuerInformation
+     * @return $this
+     */
+    public function setIssuerInformation($issuerInformation)
+    {
+        $this->container['issuerInformation'] = $issuerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1ErrorInformation
+     */
+    public function getErrorInformation()
+    {
+        return $this->container['errorInformation'];
+    }
+
+    /**
+     * Sets errorInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1ErrorInformation $errorInformation
+     * @return $this
+     */
+    public function setErrorInformation($errorInformation)
+    {
+        $this->container['errorInformation'] = $errorInformation;
 
         return $this;
     }

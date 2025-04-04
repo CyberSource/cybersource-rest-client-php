@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentType** | [**\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationPaymentType**](PtsV2PaymentsPost201Response1PaymentInformationPaymentType.md) |  | [optional] 
+**eWallet** | [**\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet**](PtsV2PaymentsPost201Response1PaymentInformationEWallet.md) |  | [optional] 
 **customer** | [**\CyberSource\Model\Ptsv2refreshpaymentstatusidPaymentInformationCustomer**](Ptsv2refreshpaymentstatusidPaymentInformationCustomer.md) |  | [optional] 
 **bank** | [**\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationBank**](PtsV2PaymentsPost201Response1PaymentInformationBank.md) |  | [optional] 
 

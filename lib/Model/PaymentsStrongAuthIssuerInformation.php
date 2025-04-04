@@ -57,7 +57,8 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
         'trustedMerchantExemptionResult' => 'string',
         'lowValueExemptionResult' => 'string',
         'secureCorporatePaymentResult' => 'string',
-        'transactionRiskAnalysisExemptionResult' => 'string'
+        'transactionRiskAnalysisExemptionResult' => 'string',
+        'delegatedAuthenticationResult' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
         'trustedMerchantExemptionResult' => null,
         'lowValueExemptionResult' => null,
         'secureCorporatePaymentResult' => null,
-        'transactionRiskAnalysisExemptionResult' => null
+        'transactionRiskAnalysisExemptionResult' => null,
+        'delegatedAuthenticationResult' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
         'trustedMerchantExemptionResult' => 'trustedMerchantExemptionResult',
         'lowValueExemptionResult' => 'lowValueExemptionResult',
         'secureCorporatePaymentResult' => 'secureCorporatePaymentResult',
-        'transactionRiskAnalysisExemptionResult' => 'transactionRiskAnalysisExemptionResult'
+        'transactionRiskAnalysisExemptionResult' => 'transactionRiskAnalysisExemptionResult',
+        'delegatedAuthenticationResult' => 'delegatedAuthenticationResult'
     ];
 
 
@@ -104,7 +107,8 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
         'trustedMerchantExemptionResult' => 'setTrustedMerchantExemptionResult',
         'lowValueExemptionResult' => 'setLowValueExemptionResult',
         'secureCorporatePaymentResult' => 'setSecureCorporatePaymentResult',
-        'transactionRiskAnalysisExemptionResult' => 'setTransactionRiskAnalysisExemptionResult'
+        'transactionRiskAnalysisExemptionResult' => 'setTransactionRiskAnalysisExemptionResult',
+        'delegatedAuthenticationResult' => 'setDelegatedAuthenticationResult'
     ];
 
 
@@ -117,7 +121,8 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
         'trustedMerchantExemptionResult' => 'getTrustedMerchantExemptionResult',
         'lowValueExemptionResult' => 'getLowValueExemptionResult',
         'secureCorporatePaymentResult' => 'getSecureCorporatePaymentResult',
-        'transactionRiskAnalysisExemptionResult' => 'getTransactionRiskAnalysisExemptionResult'
+        'transactionRiskAnalysisExemptionResult' => 'getTransactionRiskAnalysisExemptionResult',
+        'delegatedAuthenticationResult' => 'getDelegatedAuthenticationResult'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
         $this->container['lowValueExemptionResult'] = isset($data['lowValueExemptionResult']) ? $data['lowValueExemptionResult'] : null;
         $this->container['secureCorporatePaymentResult'] = isset($data['secureCorporatePaymentResult']) ? $data['secureCorporatePaymentResult'] : null;
         $this->container['transactionRiskAnalysisExemptionResult'] = isset($data['transactionRiskAnalysisExemptionResult']) ? $data['transactionRiskAnalysisExemptionResult'] : null;
+        $this->container['delegatedAuthenticationResult'] = isset($data['delegatedAuthenticationResult']) ? $data['delegatedAuthenticationResult'] : null;
     }
 
     /**
@@ -284,6 +290,27 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
     public function setTransactionRiskAnalysisExemptionResult($transactionRiskAnalysisExemptionResult)
     {
         $this->container['transactionRiskAnalysisExemptionResult'] = $transactionRiskAnalysisExemptionResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets delegatedAuthenticationResult
+     * @return string
+     */
+    public function getDelegatedAuthenticationResult()
+    {
+        return $this->container['delegatedAuthenticationResult'];
+    }
+
+    /**
+     * Sets delegatedAuthenticationResult
+     * @param string $delegatedAuthenticationResult This will be the value returned by Visanet when delegated authentication has been requested.
+     * @return $this
+     */
+    public function setDelegatedAuthenticationResult($delegatedAuthenticationResult)
+    {
+        $this->container['delegatedAuthenticationResult'] = $delegatedAuthenticationResult;
 
         return $this;
     }

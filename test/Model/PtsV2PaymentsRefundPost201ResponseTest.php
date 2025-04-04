@@ -126,6 +126,13 @@ class PtsV2PaymentsRefundPost201ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
+
+    /**
      * Test attribute "processorInformation"
      */
     public function testPropertyProcessorInformation()

@@ -8,6 +8,7 @@ use CyberSource\Authentication\Core\AuthException as AuthException;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Logging\LogFactory as LogFactory;
 use CyberSource\Logging\LogConfiguration as LogConfiguration;
+use \InvalidArgumentException;
 
 class MerchantConfiguration
 {
@@ -197,6 +198,27 @@ class MerchantConfiguration
      * @var string
      */
     protected $IntermediateHost="";
+
+    /**
+     * Curl useMLEGlobally
+     *
+     * @var bool
+     */
+    protected $useMLEGlobally=false;
+
+    /**
+     * Curl mapToControlMLEonAPI
+     *
+     * @var array<string, bool>
+     */
+    protected $mapToControlMLEonAPI = [];
+
+    /**
+     * Curl mleKeyAlias
+     *
+     * @var string
+     */
+    protected $mleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
 
     /**
      * Curl DefaultDeveloperId
@@ -932,6 +954,85 @@ class MerchantConfiguration
     }
 
     /**
+     * Get the value of useMLEGlobally
+     *
+     * @return bool
+     */
+    public function getUseMLEGlobally()
+    {
+        return $this->useMLEGlobally;
+    }
+
+    /**
+     * Set the value of useMLEGlobally
+     *
+     * @param bool $useMLEGlobally
+     */
+    public function setUseMLEGlobally($useMLEGlobally)
+    {
+        $this->useMLEGlobally = $useMLEGlobally;
+    }
+
+    /**
+     * Get the value of mapToControlMLEonAPI
+     *
+     * @return array<string, bool>
+     */
+    public function getMapToControlMLEonAPI()
+    {
+        return $this->mapToControlMLEonAPI;
+    }
+
+    /**
+     * Set the value of mapToControlMLEonAPI
+     *
+     * @param array<string, bool> $mapToControlMLEonAPI
+     */
+    public function setMapToControlMLEonAPI($mapToControlMLEonAPI)
+    {
+        if ($mapToControlMLEonAPI !== null) {
+            if (is_array($mapToControlMLEonAPI) && $this->isAssocArrayOfStringBool($mapToControlMLEonAPI)) {
+                $this->mapToControlMLEonAPI = $mapToControlMLEonAPI;
+            } else {
+                throw new InvalidArgumentException("mapToControlMLEonAPI in merchantConfig must be an array<string, bool> type.");
+            }
+        }
+    }
+
+    private function isAssocArrayOfStringBool($array) {
+        foreach ($array as $key => $value) {
+            if (!is_string($key) || !is_bool($value)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Get the value of mleKeyAlias
+     *
+     * @return string
+     */
+    public function getMleKeyAlias()
+    {
+        return $this->mleKeyAlias;
+    }
+
+    /**
+     * Set the value of mleKeyAlias
+     *
+     * @param string $mleKeyAlias
+     */
+    public function setMleKeyAlias($mleKeyAlias)
+    {
+        if (!is_null($mleKeyAlias) & !empty(trim($mleKeyAlias)) ) {
+                $this->mleKeyAlias = $mleKeyAlias;
+        }else{
+            $this->mleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
+        }
+    }
+
+    /**
      * Gets the essential information for debugging
      *
      * @return string The report for debugging
@@ -1037,7 +1138,19 @@ class MerchantConfiguration
         if (isset($connectionDet->jwePEMFileDirectory)) {
             $config = $config->setJwePEMFileDirectory($connectionDet->jwePEMFileDirectory);
         }
-       
+        
+        if (isset($connectionDet->useMLEGlobally)) {
+            $config = $config->setUseMLEGlobally($connectionDet->useMLEGlobally);
+        }
+
+        if (isset($connectionDet->mapToControlMLEonAPI)) {
+            $config = $config->setMapToControlMLEonAPI($connectionDet->mapToControlMLEonAPI);
+        }
+
+        if (isset($connectionDet->mleKeyAlias)) {
+            $config = $config->setMleKeyAlias($connectionDet->mleKeyAlias);
+        }
+
         $config->validateMerchantData();
         if($error_message != null){
             $error_message = GlobalParameter::NOT_ENTERED. $error_message;
@@ -1112,7 +1225,7 @@ class MerchantConfiguration
         }
 
         if(empty($this->getKeyPassword()) && $this->getAuthenticationType() == GlobalParameter::JWT){
-            $warning_message .= GlobalParameter::KEY_PASSWORD_EMPTY . PHP_EOL;
+            $error_message .= GlobalParameter::KEY_PASSWORD_EMPTY . PHP_EOL;
         }
         
         if(empty($this->getKeysDirectory()) && $this->getAuthenticationType() == GlobalParameter::JWT){
@@ -1196,11 +1309,33 @@ class MerchantConfiguration
             throw $exception;
         }
 
+        $this->validateMLEConfiguration();
+
         if(!empty($warning_message)){
             self::$logger->warning($warning_message); 
         }
 
         self::$logger->close();
     }
+
+    private function validateMLEConfiguration(){
+        $mleConfigured = $this->useMLEGlobally;
+        if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
+            foreach ($this->mapToControlMLEonAPI as $value) {
+                if ($value) {
+                    $mleConfigured = true;
+                    break;
+                }
+            }
+        }
+        // if MLE=true then check for auth Type
+        if ($mleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
+            $error_message = GlobalParameter::MLE_AUTH_ERROR;
+            $exception = new AuthException($error_message, 0);
+            self::$logger->error($error_message);
+            throw $exception;
+        }
+    }
+
 }
 ?>
