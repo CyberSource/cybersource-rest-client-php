@@ -2,7 +2,7 @@
 
 namespace CyberSource\Authentication\Util;
 
-use Cybersource\GlobalParameter;
+use CyberSource\Authentication\Util\GlobalParameter;
 use CyberSource\Authentication\Util\Cache as Cache;
 use \CyberSource\Logging\LogFactory as LogFactory;
 use CyberSource\Logging\LogConfiguration;
@@ -181,7 +181,7 @@ class MLEUtility
                 // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");
             } else {
                 $timeToExpire = $notValidAfter - time();
-                $warningPeriod = GlobalLabelParameters::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
+                $warningPeriod = GlobalLabelParameter::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
 
                 if ($timeToExpire < $warningPeriod) {
                     self::$logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");
