@@ -13,6 +13,13 @@
             "homepage": "https://github.com/CyberSource/cybersource-rest-client-php"
         }
     ],
+    "archive": {
+        "exclude": [
+            "docs",
+            "generator",
+            "test"
+        ]
+    },
     "require": {
         "php": ">=8.0.0",
         "ext-curl": "*",
