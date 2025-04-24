@@ -24,6 +24,7 @@ use \{{invokerPackage}}\Configuration;
 use \{{invokerPackage}}\ObjectSerializer;
 use \{{invokerPackage}}\Logging\LogFactory as LogFactory;
 use \{{invokerPackage}}\Authentication\Util\MLEUtility;
+use \{{invokerPackage}}\Utilities\MultipartHelpers\MultipartHelper;
 use \Exception;
 
 /**
@@ -151,11 +152,14 @@ use \Exception;
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        {{#formParams}}$boundary = uniqid();
+        $delimiter = '-------------' . $boundary;{{/formParams}}
         $_header_accept = $this->apiClient->selectHeaderAccept([{{#produces}}'{{{mediaType}}}'{{#hasMore}}, {{/hasMore}}{{/produces}}]);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([{{#consumes}}'{{{mediaType}}}'{{#hasMore}}, {{/hasMore}}{{/consumes}}]);
+        {{#formParams}}$headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['multipart/form-data; boundary=' . $delimiter]);{{/formParams}}
+        {{^formParams}}$headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([{{#consumes}}'{{{mediaType}}}'{{#hasMore}}, {{/hasMore}}{{/consumes}}]);{{/formParams}}
 
         {{#queryParams}}
         // query params
@@ -197,18 +201,7 @@ use \Exception;
         {{#formParams}}
         // form params
         if (${{paramName}} !== null) {
-            {{#isFile}}
-            // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax
-            // See: https://wiki.php.net/rfc/curl-file-upload
-            if (function_exists('curl_file_create')) {
-                $formParams['{{baseName}}'] = curl_file_create($this->apiClient->getSerializer()->toFormValue(${{paramName}}));
-            } else {
-                $formParams['{{baseName}}'] = '@' . $this->apiClient->getSerializer()->toFormValue(${{paramName}});
-            }
-            {{/isFile}}
-            {{^isFile}}
-            $formParams['{{baseName}}'] = $this->apiClient->getSerializer()->toFormValue(${{paramName}});
-            {{/isFile}}
+            $formParams[basename(${{paramName}})] = file_get_contents(${{paramName}});
         }
         {{/formParams}}
         {{#bodyParams}}
@@ -230,10 +223,10 @@ use \Exception;
         {{/bodyParams}}
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -274,7 +267,7 @@ use \Exception;
         {{#queryParams}}
         self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         {{/queryParams}}
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
