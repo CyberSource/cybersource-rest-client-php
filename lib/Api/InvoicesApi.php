@@ -33,6 +33,7 @@ use \CyberSource\Configuration;
 use \CyberSource\ObjectSerializer;
 use \CyberSource\Logging\LogFactory as LogFactory;
 use \CyberSource\Authentication\Util\MLEUtility;
+use \CyberSource\Utilities\MultipartHelpers\MultipartHelper;
 use \Exception;
 
 /**
@@ -135,10 +136,12 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
+        
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // body params
@@ -153,10 +156,10 @@ class InvoicesApi
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -173,7 +176,7 @@ class InvoicesApi
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
@@ -277,10 +280,12 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
+        
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // query params
@@ -300,10 +305,10 @@ class InvoicesApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -323,7 +328,7 @@ class InvoicesApi
         self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
@@ -414,10 +419,12 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
+        
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
@@ -433,10 +440,10 @@ class InvoicesApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -453,7 +460,7 @@ class InvoicesApi
         
         // Logging
         self::$logger->debug("Resource : GET $resourcePath");
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
@@ -544,10 +551,12 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
+        
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
@@ -563,10 +572,10 @@ class InvoicesApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -583,7 +592,7 @@ class InvoicesApi
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
@@ -674,10 +683,12 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
+        
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
@@ -693,10 +704,10 @@ class InvoicesApi
         }
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -713,7 +724,7 @@ class InvoicesApi
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
@@ -811,10 +822,12 @@ class InvoicesApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/hal+json', 'application/json;charset=utf-8', 'application/hal+json;charset=utf-8']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
+        
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // path params
@@ -837,10 +850,10 @@ class InvoicesApi
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
-        if (isset($_tempBody)) {
+        if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
 
         //MLE check and mle encryption for req body
@@ -857,7 +870,7 @@ class InvoicesApi
         
         // Logging
         self::$logger->debug("Resource : PUT $resourcePath");
-        if (isset($httpBody)) {
+        if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
             } else {
