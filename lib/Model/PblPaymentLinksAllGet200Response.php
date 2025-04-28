@@ -88,7 +88,7 @@ class PblPaymentLinksAllGet200Response implements ArrayAccess
         'links' => '_links',
         'submitTimeUtc' => 'submitTimeUtc',
         'totalLinks' => 'totalLinks',
-        'sdkLinks' => 'sdkLinks'
+        'sdkLinks' => 'links'
     ];
 
 
