@@ -217,7 +217,7 @@ class InvoicesApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet404Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
-                default:
+                case 502:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -235,7 +235,7 @@ class InvoicesApi
      *
      * @param int $offset Page offset number. (required)
      * @param int $limit Maximum number of items you would like returned. (required)
-     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING (optional)
+     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InvoicingV2InvoicesAllGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -255,7 +255,7 @@ class InvoicesApi
      *
      * @param int $offset Page offset number. (required)
      * @param int $limit Maximum number of items you would like returned. (required)
-     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING (optional)
+     * @param string $status The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InvoicingV2InvoicesAllGet200Response, HTTP status code, HTTP response headers (array of strings)
      */
@@ -363,7 +363,7 @@ class InvoicesApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet404Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
-                default:
+                case 502:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -493,7 +493,7 @@ class InvoicesApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet404Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
-                default:
+                case 502:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -511,7 +511,7 @@ class InvoicesApi
      *
      * @param string $id The invoice number. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InvoicingV2InvoicesPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InvoicingV2InvoicesCancel200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function performCancelAction($id)
     {
@@ -529,7 +529,7 @@ class InvoicesApi
      *
      * @param string $id The invoice number. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InvoicingV2InvoicesPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InvoicingV2InvoicesCancel200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function performCancelActionWithHttpInfo($id)
     {
@@ -593,7 +593,7 @@ class InvoicesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPost201Response");
+        self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesCancel200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -602,17 +602,17 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InvoicingV2InvoicesPost201Response',
+                '\CyberSource\Model\InvoicingV2InvoicesCancel200Response',
                 '/invoicing/v2/invoices/{id}/cancelation'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InvoicingV2InvoicesPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InvoicingV2InvoicesCancel200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesPost201Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesCancel200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -623,7 +623,7 @@ class InvoicesApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet404Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
-                default:
+                case 502:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -641,7 +641,7 @@ class InvoicesApi
      *
      * @param string $id The invoice number. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InvoicingV2InvoicesPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InvoicingV2InvoicesSend200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function performSendAction($id)
     {
@@ -659,7 +659,7 @@ class InvoicesApi
      *
      * @param string $id The invoice number. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InvoicingV2InvoicesPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InvoicingV2InvoicesSend200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function performSendActionWithHttpInfo($id)
     {
@@ -723,7 +723,7 @@ class InvoicesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPost201Response");
+        self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesSend200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -732,17 +732,17 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InvoicingV2InvoicesPost201Response',
+                '\CyberSource\Model\InvoicingV2InvoicesSend200Response',
                 '/invoicing/v2/invoices/{id}/delivery'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InvoicingV2InvoicesPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InvoicingV2InvoicesSend200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesPost201Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesSend200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -753,7 +753,7 @@ class InvoicesApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet404Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
-                default:
+                case 502:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
@@ -772,7 +772,7 @@ class InvoicesApi
      * @param string $id The invoice number. (required)
      * @param \CyberSource\Model\UpdateInvoiceRequest $updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InvoicingV2InvoicesPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InvoicingV2InvoicesPut200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInvoice($id, $updateInvoiceRequest)
     {
@@ -791,7 +791,7 @@ class InvoicesApi
      * @param string $id The invoice number. (required)
      * @param \CyberSource\Model\UpdateInvoiceRequest $updateInvoiceRequest Updating the invoice does not resend the invoice automatically. You must resend the invoice separately. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InvoicingV2InvoicesPost201Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InvoicingV2InvoicesPut200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInvoiceWithHttpInfo($id, $updateInvoiceRequest)
     {
@@ -867,7 +867,7 @@ class InvoicesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPost201Response");
+        self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPut200Response");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -876,17 +876,17 @@ class InvoicesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InvoicingV2InvoicesPost201Response',
+                '\CyberSource\Model\InvoicingV2InvoicesPut200Response',
                 '/invoicing/v2/invoices/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InvoicingV2InvoicesPost201Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InvoicingV2InvoicesPut200Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesPost201Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesPut200Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -897,7 +897,7 @@ class InvoicesApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet404Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
-                default:
+                case 502:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InvoicingV2InvoicesAllGet502Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;

@@ -77,9 +77,23 @@ class CreateInvoiceRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
+
+    /**
      * Test attribute "customerInformation"
      */
     public function testPropertyCustomerInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
     {
     }
 

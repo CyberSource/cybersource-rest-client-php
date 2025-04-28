@@ -77,51 +77,30 @@ class InlineResponse2001Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "registrationInformation"
+     * Test attribute "id"
      */
-    public function testPropertyRegistrationInformation()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "integrationInformation"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyIntegrationInformation()
+    public function testPropertySubmitTimeUtc()
     {
     }
 
     /**
-     * Test attribute "organizationInformation"
+     * Test attribute "status"
      */
-    public function testPropertyOrganizationInformation()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "productInformation"
+     * Test attribute "embedded"
      */
-    public function testPropertyProductInformation()
-    {
-    }
-
-    /**
-     * Test attribute "productInformationSetups"
-     */
-    public function testPropertyProductInformationSetups()
-    {
-    }
-
-    /**
-     * Test attribute "documentInformation"
-     */
-    public function testPropertyDocumentInformation()
-    {
-    }
-
-    /**
-     * Test attribute "details"
-     */
-    public function testPropertyDetails()
+    public function testPropertyEmbedded()
     {
     }
 }

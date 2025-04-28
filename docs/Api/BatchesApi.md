@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getBatchReport**
-> \CyberSource\Model\InlineResponse2004 getBatchReport($batchId)
+> \CyberSource\Model\InlineResponse2007 getBatchReport($batchId)
 
 Retrieve a Batch Report
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\CyberSource\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchStatus**
-> \CyberSource\Model\InlineResponse2003 getBatchStatus($batchId)
+> \CyberSource\Model\InlineResponse2006 getBatchStatus($batchId)
 
 Retrieve a Batch Status
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\CyberSource\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchesList**
-> \CyberSource\Model\InlineResponse2002 getBatchesList($offset, $limit, $fromDate, $toDate)
+> \CyberSource\Model\InlineResponse2005 getBatchesList($offset, $limit, $fromDate, $toDate)
 
 List Batches
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ No authorization required
 
 Create a Batch
 
-**Create a Batch**<br>This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. <br> The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.<br>The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report.
+**Create a Batch**<br>This resource accepts TMS tokens ids of a Customer, Payment Instrument or Instrument Identifier. <br> The card numbers for the supplied tokens ids are then sent to the relevant card associations to check for updates.<br>The following type of batches can be submitted: -  **oneOff** batch containing tokens id for Visa or MasterCard card numbers. - **amexRegistration** batch containing tokens id for Amex card numbers.  A batch id will be returned on a successful response which can be used to get the batch status and the batch report. The availability of API features for a merchant may depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
 
 ### Example
 ```php

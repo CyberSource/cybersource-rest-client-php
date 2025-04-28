@@ -58,6 +58,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'submitTimeUtc' => 'string',
         'status' => 'string',
         'customerInformation' => '\CyberSource\Model\Invoicingv2invoicesCustomerInformation',
+        'processingInformation' => '\CyberSource\Model\Invoicingv2invoicesProcessingInformation',
         'invoiceInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformation',
         'orderInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseOrderInformation',
         'invoiceHistory' => '\CyberSource\Model\InvoicingV2InvoicesGet200ResponseInvoiceHistory[]'
@@ -73,6 +74,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'submitTimeUtc' => null,
         'status' => null,
         'customerInformation' => null,
+        'processingInformation' => null,
         'invoiceInformation' => null,
         'orderInformation' => null,
         'invoiceHistory' => null
@@ -98,6 +100,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
         'customerInformation' => 'customerInformation',
+        'processingInformation' => 'processingInformation',
         'invoiceInformation' => 'invoiceInformation',
         'orderInformation' => 'orderInformation',
         'invoiceHistory' => 'invoiceHistory'
@@ -114,6 +117,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
         'customerInformation' => 'setCustomerInformation',
+        'processingInformation' => 'setProcessingInformation',
         'invoiceInformation' => 'setInvoiceInformation',
         'orderInformation' => 'setOrderInformation',
         'invoiceHistory' => 'setInvoiceHistory'
@@ -130,6 +134,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
         'customerInformation' => 'getCustomerInformation',
+        'processingInformation' => 'getProcessingInformation',
         'invoiceInformation' => 'getInvoiceInformation',
         'orderInformation' => 'getOrderInformation',
         'invoiceHistory' => 'getInvoiceHistory'
@@ -171,6 +176,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['customerInformation'] = isset($data['customerInformation']) ? $data['customerInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['invoiceHistory'] = isset($data['invoiceHistory']) ? $data['invoiceHistory'] : null;
@@ -302,6 +308,27 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
     public function setCustomerInformation($customerInformation)
     {
         $this->container['customerInformation'] = $customerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\Invoicingv2invoicesProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\Invoicingv2invoicesProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

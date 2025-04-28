@@ -182,7 +182,7 @@ class InvoicingV2InvoicesGet200ResponseInvoiceHistory implements ArrayAccess
 
     /**
      * Sets event
-     * @param string $event The event triggered for the invoice.  Possible values:  - `CREATE`  - `UPDATE`  - `SEND`  - `RESEND`  - `REMINDER`  - `PAYMENT`  - `CANCEL`
+     * @param string $event The event triggered for the invoice.  Possible values:  - `UNKNOWN`  - `DRAFT`  - `CREATE`  - `UPDATE`  - `SEND`  - `RESEND`  - `REMINDER`  - `PAYMENT`  - `CANCEL`  - `PENDING`  - `REJECTED`
      * @return $this
      */
     public function setEvent($event)

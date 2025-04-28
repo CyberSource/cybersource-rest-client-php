@@ -62,7 +62,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'defaultCurrencyCode' => 'string',
         'payerAuthentication3DSVersion' => 'bool',
         'showVatNumber' => 'bool',
-        'vatRegistrationNumber' => 'string'
+        'vatRegistrationNumber' => 'string',
+        'shipTo' => 'bool',
+        'phoneNumber' => 'bool',
+        'email' => 'bool',
+        'enableMerchantEmailNotifications' => 'bool'
     ];
 
     /**
@@ -79,7 +83,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'defaultCurrencyCode' => null,
         'payerAuthentication3DSVersion' => null,
         'showVatNumber' => null,
-        'vatRegistrationNumber' => null
+        'vatRegistrationNumber' => null,
+        'shipTo' => null,
+        'phoneNumber' => null,
+        'email' => null,
+        'enableMerchantEmailNotifications' => null
     ];
 
     public static function swaggerTypes()
@@ -106,7 +114,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'defaultCurrencyCode' => 'defaultCurrencyCode',
         'payerAuthentication3DSVersion' => 'payerAuthentication3DSVersion',
         'showVatNumber' => 'showVatNumber',
-        'vatRegistrationNumber' => 'vatRegistrationNumber'
+        'vatRegistrationNumber' => 'vatRegistrationNumber',
+        'shipTo' => 'shipTo',
+        'phoneNumber' => 'phoneNumber',
+        'email' => 'email',
+        'enableMerchantEmailNotifications' => 'enableMerchantEmailNotifications'
     ];
 
 
@@ -124,7 +136,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'defaultCurrencyCode' => 'setDefaultCurrencyCode',
         'payerAuthentication3DSVersion' => 'setPayerAuthentication3DSVersion',
         'showVatNumber' => 'setShowVatNumber',
-        'vatRegistrationNumber' => 'setVatRegistrationNumber'
+        'vatRegistrationNumber' => 'setVatRegistrationNumber',
+        'shipTo' => 'setShipTo',
+        'phoneNumber' => 'setPhoneNumber',
+        'email' => 'setEmail',
+        'enableMerchantEmailNotifications' => 'setEnableMerchantEmailNotifications'
     ];
 
 
@@ -142,7 +158,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'defaultCurrencyCode' => 'getDefaultCurrencyCode',
         'payerAuthentication3DSVersion' => 'getPayerAuthentication3DSVersion',
         'showVatNumber' => 'getShowVatNumber',
-        'vatRegistrationNumber' => 'getVatRegistrationNumber'
+        'vatRegistrationNumber' => 'getVatRegistrationNumber',
+        'shipTo' => 'getShipTo',
+        'phoneNumber' => 'getPhoneNumber',
+        'email' => 'getEmail',
+        'enableMerchantEmailNotifications' => 'getEnableMerchantEmailNotifications'
     ];
 
     public static function attributeMap()
@@ -186,6 +206,10 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         $this->container['payerAuthentication3DSVersion'] = isset($data['payerAuthentication3DSVersion']) ? $data['payerAuthentication3DSVersion'] : false;
         $this->container['showVatNumber'] = isset($data['showVatNumber']) ? $data['showVatNumber'] : false;
         $this->container['vatRegistrationNumber'] = isset($data['vatRegistrationNumber']) ? $data['vatRegistrationNumber'] : null;
+        $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : false;
+        $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : false;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : false;
+        $this->container['enableMerchantEmailNotifications'] = isset($data['enableMerchantEmailNotifications']) ? $data['enableMerchantEmailNotifications'] : false;
     }
 
     /**
@@ -419,6 +443,90 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
     public function setVatRegistrationNumber($vatRegistrationNumber)
     {
         $this->container['vatRegistrationNumber'] = $vatRegistrationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipTo
+     * @return bool
+     */
+    public function getShipTo()
+    {
+        return $this->container['shipTo'];
+    }
+
+    /**
+     * Sets shipTo
+     * @param bool $shipTo Collect the payers shipping address.
+     * @return $this
+     */
+    public function setShipTo($shipTo)
+    {
+        $this->container['shipTo'] = $shipTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets phoneNumber
+     * @return bool
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phoneNumber'];
+    }
+
+    /**
+     * Sets phoneNumber
+     * @param bool $phoneNumber Collect the payers phone number.
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return bool
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param bool $email Collect the payers email address when the email address is not known or confirm it if it is known at the time of invoice creation.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets enableMerchantEmailNotifications
+     * @return bool
+     */
+    public function getEnableMerchantEmailNotifications()
+    {
+        return $this->container['enableMerchantEmailNotifications'];
+    }
+
+    /**
+     * Sets enableMerchantEmailNotifications
+     * @param bool $enableMerchantEmailNotifications Whether you would like to receive payment notification for successful transaction
+     * @return $this
+     */
+    public function setEnableMerchantEmailNotifications($enableMerchantEmailNotifications)
+    {
+        $this->container['enableMerchantEmailNotifications'] = $enableMerchantEmailNotifications;
 
         return $this;
     }

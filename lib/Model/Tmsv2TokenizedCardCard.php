@@ -258,7 +258,7 @@ class Tmsv2TokenizedCardCard implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The type of card(Card network). Possible Values: 001: visa
+     * @param string $type The type of card (Card Network). Possible Values: - 001: visa
      * @return $this
      */
     public function setType($type)

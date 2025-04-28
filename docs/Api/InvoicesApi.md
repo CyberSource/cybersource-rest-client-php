@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create a New Invoice
 
-The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments.
+The invoicing product enables you to bill any customer with an email address and accept digital payments securely from any connected device. You can either use the system generated email or use the invoice payment link in your own communication. You can add discounts and taxes for the entire invoice or for each line item. To customize the invoice to match your brand see [Invoice Settings](https://developer.cybersource.com/api-reference-assets/index.html#invoicing_invoice-settings_update-invoice-settings). The invoice payment page uses Unified Checkout to process the payments. The availability of API features for a merchant can depend on the portfolio configuration and may need to be enabled at the portfolio level before they can be added to merchant accounts.
 
 ### Example
 ```php
@@ -72,7 +72,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\InvoicesApi();
 $offset = 56; // int | Page offset number.
 $limit = 56; // int | Maximum number of items you would like returned.
-$status = "status_example"; // string | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING
+$status = "status_example"; // string | The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED
 
 try {
     $result = $api_instance->getAllInvoices($offset, $limit, $status);
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| Page offset number. |
  **limit** | **int**| Maximum number of items you would like returned. |
- **status** | **string**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED   - PENDING | [optional]
+ **status** | **string**| The status of the invoice.  Possible values:   - DRAFT   - CREATED   - SENT   - PARTIAL   - PAID   - CANCELED | [optional]
 
 ### Return type
 
@@ -152,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **performCancelAction**
-> \CyberSource\Model\InvoicingV2InvoicesPost201Response performCancelAction($id)
+> \CyberSource\Model\InvoicingV2InvoicesCancel200Response performCancelAction($id)
 
 Cancel an Invoice
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InvoicingV2InvoicesPost201Response**](../Model/InvoicingV2InvoicesPost201Response.md)
+[**\CyberSource\Model\InvoicingV2InvoicesCancel200Response**](../Model/InvoicingV2InvoicesCancel200Response.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **performSendAction**
-> \CyberSource\Model\InvoicingV2InvoicesPost201Response performSendAction($id)
+> \CyberSource\Model\InvoicingV2InvoicesSend200Response performSendAction($id)
 
 Send an Invoice
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InvoicingV2InvoicesPost201Response**](../Model/InvoicingV2InvoicesPost201Response.md)
+[**\CyberSource\Model\InvoicingV2InvoicesSend200Response**](../Model/InvoicingV2InvoicesSend200Response.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateInvoice**
-> \CyberSource\Model\InvoicingV2InvoicesPost201Response updateInvoice($id, $updateInvoiceRequest)
+> \CyberSource\Model\InvoicingV2InvoicesPut200Response updateInvoice($id, $updateInvoiceRequest)
 
 Update an Invoice
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InvoicingV2InvoicesPost201Response**](../Model/InvoicingV2InvoicesPost201Response.md)
+[**\CyberSource\Model\InvoicingV2InvoicesPut200Response**](../Model/InvoicingV2InvoicesPut200Response.md)
 
 ### Authorization
 

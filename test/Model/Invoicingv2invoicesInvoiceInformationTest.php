@@ -98,6 +98,13 @@ class Invoicingv2invoicesInvoiceInformationTest extends \PHPUnit_Framework_TestC
     }
 
     /**
+     * Test attribute "expirationDate"
+     */
+    public function testPropertyExpirationDate()
+    {
+    }
+
+    /**
      * Test attribute "sendImmediately"
      */
     public function testPropertySendImmediately()

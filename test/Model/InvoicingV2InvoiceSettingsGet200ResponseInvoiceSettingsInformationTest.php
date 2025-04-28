@@ -145,4 +145,32 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationTest ext
     public function testPropertyVatRegistrationNumber()
     {
     }
+
+    /**
+     * Test attribute "shipTo"
+     */
+    public function testPropertyShipTo()
+    {
+    }
+
+    /**
+     * Test attribute "phoneNumber"
+     */
+    public function testPropertyPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "enableMerchantEmailNotifications"
+     */
+    public function testPropertyEnableMerchantEmailNotifications()
+    {
+    }
 }

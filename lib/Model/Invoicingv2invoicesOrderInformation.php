@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Invoicingv2invoicesOrderInformation Class Doc Comment
  *
  * @category    Class
- * @description Contains all of the order-related fields for the invoice, such as the amount and line item details.
+ * @description Contains all of the order-related fields, such as the amount and line item details.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -150,6 +150,9 @@ class Invoicingv2invoicesOrderInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['amountDetails'] === null) {
+            $invalid_properties[] = "'amountDetails' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,6 +165,9 @@ class Invoicingv2invoicesOrderInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['amountDetails'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -198,7 +204,7 @@ class Invoicingv2invoicesOrderInformation implements ArrayAccess
 
     /**
      * Sets lineItems
-     * @param \CyberSource\Model\Invoicingv2invoicesOrderInformationLineItems[] $lineItems
+     * @param \CyberSource\Model\Invoicingv2invoicesOrderInformationLineItems[] $lineItems List of the line items from the order.
      * @return $this
      */
     public function setLineItems($lineItems)

@@ -53,7 +53,8 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'dueDate' => '\DateTime'
+        'dueDate' => '\DateTime',
+        'expirationDate' => '\DateTime'
     ];
 
     /**
@@ -61,7 +62,8 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'dueDate' => 'date'
+        'dueDate' => 'date',
+        'expirationDate' => 'date'
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'dueDate' => 'dueDate'
+        'dueDate' => 'dueDate',
+        'expirationDate' => 'expirationDate'
     ];
 
 
@@ -88,7 +91,8 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'dueDate' => 'setDueDate'
+        'dueDate' => 'setDueDate',
+        'expirationDate' => 'setExpirationDate'
     ];
 
 
@@ -97,7 +101,8 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'dueDate' => 'getDueDate'
+        'dueDate' => 'getDueDate',
+        'expirationDate' => 'getExpirationDate'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
     public function __construct(array $data = null)
     {
         $this->container['dueDate'] = isset($data['dueDate']) ? $data['dueDate'] : null;
+        $this->container['expirationDate'] = isset($data['expirationDate']) ? $data['expirationDate'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
     public function setDueDate($dueDate)
     {
         $this->container['dueDate'] = $dueDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationDate
+     * @return \DateTime
+     */
+    public function getExpirationDate()
+    {
+        return $this->container['expirationDate'];
+    }
+
+    /**
+     * Sets expirationDate
+     * @param \DateTime $expirationDate Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day
+     * @return $this
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->container['expirationDate'] = $expirationDate;
 
         return $this;
     }

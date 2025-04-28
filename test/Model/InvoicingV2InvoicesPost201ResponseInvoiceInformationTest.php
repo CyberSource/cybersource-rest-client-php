@@ -98,6 +98,13 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformationTest extends \PHPUnit_
     }
 
     /**
+     * Test attribute "expirationDate"
+     */
+    public function testPropertyExpirationDate()
+    {
+    }
+
+    /**
      * Test attribute "allowPartialPayments"
      */
     public function testPropertyAllowPartialPayments()
