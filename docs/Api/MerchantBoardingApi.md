@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getRegistration**
-> \CyberSource\Model\InlineResponse2001 getRegistration($registrationId)
+> \CyberSource\Model\InlineResponse2002 getRegistration($registrationId)
 
 Gets all the information on a boarding registration
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ No authorization required
 
 Create a boarding registration
 
-Create a registration to board merchant  If you have  Card Processing product enabled in your boarding request, select payment processor from Configuration -> Sample Request. You may unselect attributes from the Request Builder tree which you do not need in the request. For VPC, CUP and EFTPOS processors, replace the processor name from VPC or CUP or EFTPOS to the actual processor name in the sample request. e.g. replace VPC with &lt;your vpc processor&gt;
+Boarding Product is specifically for resellers who onboard merchants to resell their services to merchants and help integrate REST API into their systems.  The Boarding API is designed to simplify and streamline the onboarding process of merchants by enabling administrators and developers to: 1. Enable and Configure Products: The API helps in adding new products to an existing organization and configuring them to suit specific needs. 2. Update Merchant Information: The API allows for updating an organization's information efficiently. 3. Manage Payment Integration: It provides templates for secure payment integration and management.
 
 ### Example
 ```php

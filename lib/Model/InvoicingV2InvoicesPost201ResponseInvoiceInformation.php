@@ -57,6 +57,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'invoiceNumber' => 'string',
         'description' => 'string',
         'dueDate' => '\DateTime',
+        'expirationDate' => '\DateTime',
         'allowPartialPayments' => 'bool',
         'paymentLink' => 'string',
         'deliveryMode' => 'string'
@@ -70,6 +71,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'invoiceNumber' => null,
         'description' => null,
         'dueDate' => 'date',
+        'expirationDate' => 'date',
         'allowPartialPayments' => null,
         'paymentLink' => null,
         'deliveryMode' => null
@@ -93,6 +95,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'invoiceNumber' => 'invoiceNumber',
         'description' => 'description',
         'dueDate' => 'dueDate',
+        'expirationDate' => 'expirationDate',
         'allowPartialPayments' => 'allowPartialPayments',
         'paymentLink' => 'paymentLink',
         'deliveryMode' => 'deliveryMode'
@@ -107,6 +110,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'invoiceNumber' => 'setInvoiceNumber',
         'description' => 'setDescription',
         'dueDate' => 'setDueDate',
+        'expirationDate' => 'setExpirationDate',
         'allowPartialPayments' => 'setAllowPartialPayments',
         'paymentLink' => 'setPaymentLink',
         'deliveryMode' => 'setDeliveryMode'
@@ -121,6 +125,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'invoiceNumber' => 'getInvoiceNumber',
         'description' => 'getDescription',
         'dueDate' => 'getDueDate',
+        'expirationDate' => 'getExpirationDate',
         'allowPartialPayments' => 'getAllowPartialPayments',
         'paymentLink' => 'getPaymentLink',
         'deliveryMode' => 'getDeliveryMode'
@@ -160,7 +165,8 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         $this->container['invoiceNumber'] = isset($data['invoiceNumber']) ? $data['invoiceNumber'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['dueDate'] = isset($data['dueDate']) ? $data['dueDate'] : null;
-        $this->container['allowPartialPayments'] = isset($data['allowPartialPayments']) ? $data['allowPartialPayments'] : null;
+        $this->container['expirationDate'] = isset($data['expirationDate']) ? $data['expirationDate'] : null;
+        $this->container['allowPartialPayments'] = isset($data['allowPartialPayments']) ? $data['allowPartialPayments'] : false;
         $this->container['paymentLink'] = isset($data['paymentLink']) ? $data['paymentLink'] : null;
         $this->container['deliveryMode'] = isset($data['deliveryMode']) ? $data['deliveryMode'] : null;
     }
@@ -254,6 +260,27 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
     }
 
     /**
+     * Gets expirationDate
+     * @return \DateTime
+     */
+    public function getExpirationDate()
+    {
+        return $this->container['expirationDate'];
+    }
+
+    /**
+     * Sets expirationDate
+     * @param \DateTime $expirationDate Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day
+     * @return $this
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->container['expirationDate'] = $expirationDate;
+
+        return $this;
+    }
+
+    /**
      * Gets allowPartialPayments
      * @return bool
      */
@@ -306,7 +333,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
 
     /**
      * Sets deliveryMode
-     * @param string $deliveryMode If set to `None`, the invoice is created, and its status is set to 'CREATED', but no email is sent.    Possible values:        - `None`   - `Email`
+     * @param string $deliveryMode If this field is set to 'None', an invoice will be generated with the status 'CREATED', but no email will be dispatched.    Possible values:        - `None`   - `Email`
      * @return $this
      */
     public function setDeliveryMode($deliveryMode)

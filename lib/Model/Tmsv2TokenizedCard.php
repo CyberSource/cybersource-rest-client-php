@@ -63,6 +63,9 @@ class Tmsv2TokenizedCard implements ArrayAccess
         'state' => 'string',
         'reason' => 'string',
         'number' => 'string',
+        'expirationMonth' => 'string',
+        'expirationYear' => 'string',
+        'type' => 'string',
         'cryptogram' => 'string',
         'securityCode' => 'string',
         'eci' => 'string',
@@ -90,6 +93,9 @@ class Tmsv2TokenizedCard implements ArrayAccess
         'state' => null,
         'reason' => null,
         'number' => null,
+        'expirationMonth' => null,
+        'expirationYear' => null,
+        'type' => null,
         'cryptogram' => null,
         'securityCode' => null,
         'eci' => null,
@@ -127,6 +133,9 @@ class Tmsv2TokenizedCard implements ArrayAccess
         'state' => 'state',
         'reason' => 'reason',
         'number' => 'number',
+        'expirationMonth' => 'expirationMonth',
+        'expirationYear' => 'expirationYear',
+        'type' => 'type',
         'cryptogram' => 'cryptogram',
         'securityCode' => 'securityCode',
         'eci' => 'eci',
@@ -155,6 +164,9 @@ class Tmsv2TokenizedCard implements ArrayAccess
         'state' => 'setState',
         'reason' => 'setReason',
         'number' => 'setNumber',
+        'expirationMonth' => 'setExpirationMonth',
+        'expirationYear' => 'setExpirationYear',
+        'type' => 'setType',
         'cryptogram' => 'setCryptogram',
         'securityCode' => 'setSecurityCode',
         'eci' => 'setEci',
@@ -183,6 +195,9 @@ class Tmsv2TokenizedCard implements ArrayAccess
         'state' => 'getState',
         'reason' => 'getReason',
         'number' => 'getNumber',
+        'expirationMonth' => 'getExpirationMonth',
+        'expirationYear' => 'getExpirationYear',
+        'type' => 'getType',
         'cryptogram' => 'getCryptogram',
         'securityCode' => 'getSecurityCode',
         'eci' => 'getEci',
@@ -236,6 +251,9 @@ class Tmsv2TokenizedCard implements ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;
+        $this->container['expirationYear'] = isset($data['expirationYear']) ? $data['expirationYear'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['cryptogram'] = isset($data['cryptogram']) ? $data['cryptogram'] : null;
         $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
         $this->container['eci'] = isset($data['eci']) ? $data['eci'] : null;
@@ -479,6 +497,69 @@ class Tmsv2TokenizedCard implements ArrayAccess
     public function setNumber($number)
     {
         $this->container['number'] = $number;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationMonth
+     * @return string
+     */
+    public function getExpirationMonth()
+    {
+        return $this->container['expirationMonth'];
+    }
+
+    /**
+     * Sets expirationMonth
+     * @param string $expirationMonth Two-digit month in which the network token expires. Format: `MM`. Possible Values: `01` through `12`.
+     * @return $this
+     */
+    public function setExpirationMonth($expirationMonth)
+    {
+        $this->container['expirationMonth'] = $expirationMonth;
+
+        return $this;
+    }
+
+    /**
+     * Gets expirationYear
+     * @return string
+     */
+    public function getExpirationYear()
+    {
+        return $this->container['expirationYear'];
+    }
+
+    /**
+     * Sets expirationYear
+     * @param string $expirationYear Four-digit year in which the network token expires. Format: `YYYY`.
+     * @return $this
+     */
+    public function setExpirationYear($expirationYear)
+    {
+        $this->container['expirationYear'] = $expirationYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type The type of card (Card Network). Possible Values: - visa - mastercard - americanexpress
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

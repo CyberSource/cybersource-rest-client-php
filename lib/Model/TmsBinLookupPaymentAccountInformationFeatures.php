@@ -61,7 +61,17 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'cardPlatform' => 'string',
         'comboCard' => 'string',
         'corporatePurchase' => 'bool',
-        'healthCard' => 'bool'
+        'healthCard' => 'bool',
+        'sharedBIN' => 'bool',
+        'posDomesticOnly' => 'bool',
+        'gamblingAllowed' => 'bool',
+        'commercialCardLevel2' => 'bool',
+        'commercialCardLevel3' => 'bool',
+        'exemptBIN' => 'bool',
+        'accountLevelManagement' => 'bool',
+        'onlineGamblingBlock' => 'bool',
+        'autoSubstantiation' => 'bool',
+        'flexCredential' => 'bool'
     ];
 
     /**
@@ -77,7 +87,17 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'cardPlatform' => null,
         'comboCard' => null,
         'corporatePurchase' => null,
-        'healthCard' => null
+        'healthCard' => null,
+        'sharedBIN' => null,
+        'posDomesticOnly' => null,
+        'gamblingAllowed' => null,
+        'commercialCardLevel2' => null,
+        'commercialCardLevel3' => null,
+        'exemptBIN' => null,
+        'accountLevelManagement' => null,
+        'onlineGamblingBlock' => null,
+        'autoSubstantiation' => null,
+        'flexCredential' => null
     ];
 
     public static function swaggerTypes()
@@ -103,7 +123,17 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'cardPlatform' => 'cardPlatform',
         'comboCard' => 'comboCard',
         'corporatePurchase' => 'corporatePurchase',
-        'healthCard' => 'healthCard'
+        'healthCard' => 'healthCard',
+        'sharedBIN' => 'sharedBIN',
+        'posDomesticOnly' => 'posDomesticOnly',
+        'gamblingAllowed' => 'gamblingAllowed',
+        'commercialCardLevel2' => 'commercialCardLevel2',
+        'commercialCardLevel3' => 'commercialCardLevel3',
+        'exemptBIN' => 'exemptBIN',
+        'accountLevelManagement' => 'accountLevelManagement',
+        'onlineGamblingBlock' => 'onlineGamblingBlock',
+        'autoSubstantiation' => 'autoSubstantiation',
+        'flexCredential' => 'flexCredential'
     ];
 
 
@@ -120,7 +150,17 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'cardPlatform' => 'setCardPlatform',
         'comboCard' => 'setComboCard',
         'corporatePurchase' => 'setCorporatePurchase',
-        'healthCard' => 'setHealthCard'
+        'healthCard' => 'setHealthCard',
+        'sharedBIN' => 'setSharedBIN',
+        'posDomesticOnly' => 'setPosDomesticOnly',
+        'gamblingAllowed' => 'setGamblingAllowed',
+        'commercialCardLevel2' => 'setCommercialCardLevel2',
+        'commercialCardLevel3' => 'setCommercialCardLevel3',
+        'exemptBIN' => 'setExemptBIN',
+        'accountLevelManagement' => 'setAccountLevelManagement',
+        'onlineGamblingBlock' => 'setOnlineGamblingBlock',
+        'autoSubstantiation' => 'setAutoSubstantiation',
+        'flexCredential' => 'setFlexCredential'
     ];
 
 
@@ -137,7 +177,17 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'cardPlatform' => 'getCardPlatform',
         'comboCard' => 'getComboCard',
         'corporatePurchase' => 'getCorporatePurchase',
-        'healthCard' => 'getHealthCard'
+        'healthCard' => 'getHealthCard',
+        'sharedBIN' => 'getSharedBIN',
+        'posDomesticOnly' => 'getPosDomesticOnly',
+        'gamblingAllowed' => 'getGamblingAllowed',
+        'commercialCardLevel2' => 'getCommercialCardLevel2',
+        'commercialCardLevel3' => 'getCommercialCardLevel3',
+        'exemptBIN' => 'getExemptBIN',
+        'accountLevelManagement' => 'getAccountLevelManagement',
+        'onlineGamblingBlock' => 'getOnlineGamblingBlock',
+        'autoSubstantiation' => 'getAutoSubstantiation',
+        'flexCredential' => 'getFlexCredential'
     ];
 
     public static function attributeMap()
@@ -180,6 +230,16 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         $this->container['comboCard'] = isset($data['comboCard']) ? $data['comboCard'] : null;
         $this->container['corporatePurchase'] = isset($data['corporatePurchase']) ? $data['corporatePurchase'] : null;
         $this->container['healthCard'] = isset($data['healthCard']) ? $data['healthCard'] : null;
+        $this->container['sharedBIN'] = isset($data['sharedBIN']) ? $data['sharedBIN'] : null;
+        $this->container['posDomesticOnly'] = isset($data['posDomesticOnly']) ? $data['posDomesticOnly'] : null;
+        $this->container['gamblingAllowed'] = isset($data['gamblingAllowed']) ? $data['gamblingAllowed'] : null;
+        $this->container['commercialCardLevel2'] = isset($data['commercialCardLevel2']) ? $data['commercialCardLevel2'] : null;
+        $this->container['commercialCardLevel3'] = isset($data['commercialCardLevel3']) ? $data['commercialCardLevel3'] : null;
+        $this->container['exemptBIN'] = isset($data['exemptBIN']) ? $data['exemptBIN'] : null;
+        $this->container['accountLevelManagement'] = isset($data['accountLevelManagement']) ? $data['accountLevelManagement'] : null;
+        $this->container['onlineGamblingBlock'] = isset($data['onlineGamblingBlock']) ? $data['onlineGamblingBlock'] : null;
+        $this->container['autoSubstantiation'] = isset($data['autoSubstantiation']) ? $data['autoSubstantiation'] : null;
+        $this->container['flexCredential'] = isset($data['flexCredential']) ? $data['flexCredential'] : null;
     }
 
     /**
@@ -323,7 +383,7 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
 
     /**
      * Sets cardPlatform
-     * @param string $cardPlatform This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `COMMERCIAL`   - `GOVERNMENT`
+     * @param string $cardPlatform This field contains the type of card platform. Possible values:   - `BUSINESS`   - `CONSUMER`   - `CORPORATE`   - `COMMERCIAL`   - `GOVERNMENT`
      * @return $this
      */
     public function setCardPlatform($cardPlatform)
@@ -365,7 +425,7 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
 
     /**
      * Sets corporatePurchase
-     * @param bool $corporatePurchase This field indicates whether the card can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false`
+     * @param bool $corporatePurchase This field indicates if the instrument can be used for corporate purchasing. This field is only applicable for American Express cards. Possible values:   - `true`   - `false`
      * @return $this
      */
     public function setCorporatePurchase($corporatePurchase)
@@ -386,12 +446,222 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
 
     /**
      * Sets healthCard
-     * @param bool $healthCard This field indicates if the entered card is a healthcare BIN. Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false`
+     * @param bool $healthCard This field indicates if the BIN is for healthcare (HSA/FSA). Currently, this field is only supported for Visa BINs. Possible values:     - `true`     - `false`
      * @return $this
      */
     public function setHealthCard($healthCard)
     {
         $this->container['healthCard'] = $healthCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets sharedBIN
+     * @return bool
+     */
+    public function getSharedBIN()
+    {
+        return $this->container['sharedBIN'];
+    }
+
+    /**
+     * Sets sharedBIN
+     * @param bool $sharedBIN This field indicates if the BIN is shared by multiple issuers Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setSharedBIN($sharedBIN)
+    {
+        $this->container['sharedBIN'] = $sharedBIN;
+
+        return $this;
+    }
+
+    /**
+     * Gets posDomesticOnly
+     * @return bool
+     */
+    public function getPosDomesticOnly()
+    {
+        return $this->container['posDomesticOnly'];
+    }
+
+    /**
+     * Sets posDomesticOnly
+     * @param bool $posDomesticOnly This field indicates if the BIN is valid only for POS domestic usage. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setPosDomesticOnly($posDomesticOnly)
+    {
+        $this->container['posDomesticOnly'] = $posDomesticOnly;
+
+        return $this;
+    }
+
+    /**
+     * Gets gamblingAllowed
+     * @return bool
+     */
+    public function getGamblingAllowed()
+    {
+        return $this->container['gamblingAllowed'];
+    }
+
+    /**
+     * Sets gamblingAllowed
+     * @param bool $gamblingAllowed This field indicates if gambling transactions are allowed on the BIN. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setGamblingAllowed($gamblingAllowed)
+    {
+        $this->container['gamblingAllowed'] = $gamblingAllowed;
+
+        return $this;
+    }
+
+    /**
+     * Gets commercialCardLevel2
+     * @return bool
+     */
+    public function getCommercialCardLevel2()
+    {
+        return $this->container['commercialCardLevel2'];
+    }
+
+    /**
+     * Sets commercialCardLevel2
+     * @param bool $commercialCardLevel2 This field indicates if a transaction on the instrument qualifies for level 2 interchange rates. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setCommercialCardLevel2($commercialCardLevel2)
+    {
+        $this->container['commercialCardLevel2'] = $commercialCardLevel2;
+
+        return $this;
+    }
+
+    /**
+     * Gets commercialCardLevel3
+     * @return bool
+     */
+    public function getCommercialCardLevel3()
+    {
+        return $this->container['commercialCardLevel3'];
+    }
+
+    /**
+     * Sets commercialCardLevel3
+     * @param bool $commercialCardLevel3 This field indicates if a transaction on the instrument qualifies for level 3 interchange rates. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setCommercialCardLevel3($commercialCardLevel3)
+    {
+        $this->container['commercialCardLevel3'] = $commercialCardLevel3;
+
+        return $this;
+    }
+
+    /**
+     * Gets exemptBIN
+     * @return bool
+     */
+    public function getExemptBIN()
+    {
+        return $this->container['exemptBIN'];
+    }
+
+    /**
+     * Sets exemptBIN
+     * @param bool $exemptBIN This field indicates if a transaction on the instrument qualifies for government exempt interchange fee. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setExemptBIN($exemptBIN)
+    {
+        $this->container['exemptBIN'] = $exemptBIN;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountLevelManagement
+     * @return bool
+     */
+    public function getAccountLevelManagement()
+    {
+        return $this->container['accountLevelManagement'];
+    }
+
+    /**
+     * Sets accountLevelManagement
+     * @param bool $accountLevelManagement This field indicates if the BIN participates in Account Level Management (ALM). Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setAccountLevelManagement($accountLevelManagement)
+    {
+        $this->container['accountLevelManagement'] = $accountLevelManagement;
+
+        return $this;
+    }
+
+    /**
+     * Gets onlineGamblingBlock
+     * @return bool
+     */
+    public function getOnlineGamblingBlock()
+    {
+        return $this->container['onlineGamblingBlock'];
+    }
+
+    /**
+     * Sets onlineGamblingBlock
+     * @param bool $onlineGamblingBlock This field indicates if online gambling is blocked on the BIN. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setOnlineGamblingBlock($onlineGamblingBlock)
+    {
+        $this->container['onlineGamblingBlock'] = $onlineGamblingBlock;
+
+        return $this;
+    }
+
+    /**
+     * Gets autoSubstantiation
+     * @return bool
+     */
+    public function getAutoSubstantiation()
+    {
+        return $this->container['autoSubstantiation'];
+    }
+
+    /**
+     * Sets autoSubstantiation
+     * @param bool $autoSubstantiation This field indicates if auto-substantiation is enabled on the BIN. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setAutoSubstantiation($autoSubstantiation)
+    {
+        $this->container['autoSubstantiation'] = $autoSubstantiation;
+
+        return $this;
+    }
+
+    /**
+     * Gets flexCredential
+     * @return bool
+     */
+    public function getFlexCredential()
+    {
+        return $this->container['flexCredential'];
+    }
+
+    /**
+     * Sets flexCredential
+     * @param bool $flexCredential This field indicates if the instrument is a flex credential. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setFlexCredential($flexCredential)
+    {
+        $this->container['flexCredential'] = $flexCredential;
 
         return $this;
     }

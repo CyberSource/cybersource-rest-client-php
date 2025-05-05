@@ -32,7 +32,7 @@ namespace CyberSource;
  * Invoicingv2invoicesOrderInformationAmountDetailsFreightTest Class Doc Comment
  *
  * @category    Class */
-// * @description Contains all of the shipping-related fields for the invoice.
+// * @description Contains all of the shipping-related fields for the order.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

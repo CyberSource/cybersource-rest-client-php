@@ -34,7 +34,7 @@ use \ArrayAccess;
  * InvoicingV2InvoicesPost201ResponseOrderInformation Class Doc Comment
  *
  * @category    Class
- * @description Contains all of the order-related fields for the invoice.
+ * @description Contains all of the order-related fields, such as the amount and line item details.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -198,7 +198,7 @@ class InvoicingV2InvoicesPost201ResponseOrderInformation implements ArrayAccess
 
     /**
      * Sets lineItems
-     * @param \CyberSource\Model\Invoicingv2invoicesOrderInformationLineItems[] $lineItems
+     * @param \CyberSource\Model\Invoicingv2invoicesOrderInformationLineItems[] $lineItems List of the line items from the order.
      * @return $this
      */
     public function setLineItems($lineItems)

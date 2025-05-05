@@ -34,6 +34,7 @@ use \ArrayAccess;
  * InlineResponse200 Class Doc Comment
  *
  * @category    Class
+ * @description Represents the Card Art Asset associated to the Network Token.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,9 +55,9 @@ class InlineResponse200 implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'embedded' => '\CyberSource\Model\InlineResponse200Embedded'
+        'type' => 'string',
+        'provider' => 'string',
+        'content' => '\CyberSource\Model\InlineResponse200Content[]'
     ];
 
     /**
@@ -65,9 +66,9 @@ class InlineResponse200 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'submitTimeUtc' => null,
-        'status' => null,
-        'embedded' => null
+        'type' => null,
+        'provider' => null,
+        'content' => null
     ];
 
     public static function swaggerTypes()
@@ -86,9 +87,9 @@ class InlineResponse200 implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'embedded' => '_embedded'
+        'type' => 'type',
+        'provider' => 'provider',
+        'content' => 'content'
     ];
 
 
@@ -98,9 +99,9 @@ class InlineResponse200 implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'embedded' => 'setEmbedded'
+        'type' => 'setType',
+        'provider' => 'setProvider',
+        'content' => 'setContent'
     ];
 
 
@@ -110,9 +111,9 @@ class InlineResponse200 implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'embedded' => 'getEmbedded'
+        'type' => 'getType',
+        'provider' => 'getProvider',
+        'content' => 'getContent'
     ];
 
     public static function attributeMap()
@@ -147,9 +148,9 @@ class InlineResponse200 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
     }
 
     /**
@@ -188,7 +189,7 @@ class InlineResponse200 implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id UUID uniquely generated for this comments.
+     * @param string $id Unique identifier for the Card Art Asset.
      * @return $this
      */
     public function setId($id)
@@ -199,64 +200,64 @@ class InlineResponse200 implements ArrayAccess
     }
 
     /**
-     * Gets submitTimeUtc
+     * Gets type
      * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getType()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * Sets type
+     * @param string $type The type of Card Art Asset.
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setType($type)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets provider
      * @return string
      */
-    public function getStatus()
+    public function getProvider()
     {
-        return $this->container['status'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets status
-     * @param string $status The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED`
+     * Sets provider
+     * @param string $provider The provider of the Card Art Asset.
      * @return $this
      */
-    public function setStatus($status)
+    public function setProvider($provider)
     {
-        $this->container['status'] = $status;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
 
     /**
-     * Gets embedded
-     * @return \CyberSource\Model\InlineResponse200Embedded
+     * Gets content
+     * @return \CyberSource\Model\InlineResponse200Content[]
      */
-    public function getEmbedded()
+    public function getContent()
     {
-        return $this->container['embedded'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets embedded
-     * @param \CyberSource\Model\InlineResponse200Embedded $embedded
+     * Sets content
+     * @param \CyberSource\Model\InlineResponse200Content[] $content Array of content objects representing the Card Art Asset.
      * @return $this
      */
-    public function setEmbedded($embedded)
+    public function setContent($content)
     {
-        $this->container['embedded'] = $embedded;
+        $this->container['content'] = $content;
 
         return $this;
     }

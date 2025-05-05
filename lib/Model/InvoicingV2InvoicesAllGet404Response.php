@@ -236,7 +236,7 @@ class InvoicingV2InvoicesAllGet404Response implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE
+     * @param string $reason The reason of the status.  Possible values: - NOTFOUND
      * @return $this
      */
     public function setReason($reason)

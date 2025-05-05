@@ -96,6 +96,154 @@ class TokenApi
     }
 
     /**
+     * Operation getCardArtAsset
+     *
+     * Retrieve Card Art
+     *
+     * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
+     * @param string $tokenProvider The token provider. (required)
+     * @param string $assetType The type of asset. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCardArtAsset($instrumentIdentifierId, $tokenProvider, $assetType)
+    {
+        self::$logger->info('CALL TO METHOD getCardArtAsset STARTED');
+        list($response, $statusCode, $httpHeader) = $this->getCardArtAssetWithHttpInfo($instrumentIdentifierId, $tokenProvider, $assetType);
+        self::$logger->info('CALL TO METHOD getCardArtAsset ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation getCardArtAssetWithHttpInfo
+     *
+     * Retrieve Card Art
+     *
+     * @param string $instrumentIdentifierId The Id of an Instrument Identifier. (required)
+     * @param string $tokenProvider The token provider. (required)
+     * @param string $assetType The type of asset. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCardArtAssetWithHttpInfo($instrumentIdentifierId, $tokenProvider, $assetType)
+    {
+        // verify the required parameter 'instrumentIdentifierId' is set
+        if ($instrumentIdentifierId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $instrumentIdentifierId when calling getCardArtAsset");
+            throw new \InvalidArgumentException('Missing the required parameter $instrumentIdentifierId when calling getCardArtAsset');
+        }
+        // verify the required parameter 'tokenProvider' is set
+        if ($tokenProvider === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $tokenProvider when calling getCardArtAsset");
+            throw new \InvalidArgumentException('Missing the required parameter $tokenProvider when calling getCardArtAsset');
+        }
+        // verify the required parameter 'assetType' is set
+        if ($assetType === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $assetType when calling getCardArtAsset");
+            throw new \InvalidArgumentException('Missing the required parameter $assetType when calling getCardArtAsset');
+        }
+        // parse inputs
+        $resourcePath = "/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($instrumentIdentifierId !== null) {
+            $resourcePath = str_replace(
+                "{" . "instrumentIdentifierId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($instrumentIdentifierId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($tokenProvider !== null) {
+            $resourcePath = str_replace(
+                "{" . "tokenProvider" . "}",
+                $this->apiClient->getSerializer()->toPathValue($tokenProvider),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($assetType !== null) {
+            $resourcePath = str_replace(
+                "{" . "assetType" . "}",
+                $this->apiClient->getSerializer()->toPathValue($assetType),
+                $resourcePath
+            );
+        }
+        if ('GET' == 'POST') {
+            $_tempBody = '{}';
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+
+        //MLE check and mle encryption for req body
+        $isMLESupportedByCybsForApi = false;
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getCardArtAsset,getCardArtAssetWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
+        
+        // Logging
+        self::$logger->debug("Resource : GET $resourcePath");
+        if (isset($httpBody)) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse200");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\InlineResponse200',
+                '/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
      * Operation postTokenPaymentCredentials
      *
      * Generate Payment Credentials for a TMS Token

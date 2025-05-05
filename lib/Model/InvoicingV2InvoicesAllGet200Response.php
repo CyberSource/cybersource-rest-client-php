@@ -53,7 +53,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\GetAllPlansResponseLinks',
+        'links' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks',
         'submitTimeUtc' => 'string',
         'totalInvoices' => 'int',
         'invoices' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseInvoices[]'
@@ -179,7 +179,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\GetAllPlansResponseLinks
+     * @return \CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks
      */
     public function getLinks()
     {
@@ -188,7 +188,7 @@ class InvoicingV2InvoicesAllGet200Response implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\GetAllPlansResponseLinks $links
+     * @param \CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks $links
      * @return $this
      */
     public function setLinks($links)

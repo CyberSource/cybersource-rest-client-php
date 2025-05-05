@@ -60,7 +60,8 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'shipToCountries' => 'string[]',
         'showAcceptedNetworkIcons' => 'bool',
         'requestSaveCard' => 'bool',
-        'comboCard' => 'bool'
+        'comboCard' => 'bool',
+        'cPF' => 'bool'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'shipToCountries' => null,
         'showAcceptedNetworkIcons' => null,
         'requestSaveCard' => null,
-        'comboCard' => null
+        'comboCard' => null,
+        'cPF' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +102,8 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'shipToCountries' => 'shipToCountries',
         'showAcceptedNetworkIcons' => 'showAcceptedNetworkIcons',
         'requestSaveCard' => 'requestSaveCard',
-        'comboCard' => 'comboCard'
+        'comboCard' => 'comboCard',
+        'cPF' => 'CPF'
     ];
 
 
@@ -116,7 +119,8 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'shipToCountries' => 'setShipToCountries',
         'showAcceptedNetworkIcons' => 'setShowAcceptedNetworkIcons',
         'requestSaveCard' => 'setRequestSaveCard',
-        'comboCard' => 'setComboCard'
+        'comboCard' => 'setComboCard',
+        'cPF' => 'setCPF'
     ];
 
 
@@ -132,7 +136,8 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'shipToCountries' => 'getShipToCountries',
         'showAcceptedNetworkIcons' => 'getShowAcceptedNetworkIcons',
         'requestSaveCard' => 'getRequestSaveCard',
-        'comboCard' => 'getComboCard'
+        'comboCard' => 'getComboCard',
+        'cPF' => 'getCPF'
     ];
 
     public static function attributeMap()
@@ -174,6 +179,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         $this->container['showAcceptedNetworkIcons'] = isset($data['showAcceptedNetworkIcons']) ? $data['showAcceptedNetworkIcons'] : null;
         $this->container['requestSaveCard'] = isset($data['requestSaveCard']) ? $data['requestSaveCard'] : null;
         $this->container['comboCard'] = isset($data['comboCard']) ? $data['comboCard'] : null;
+        $this->container['cPF'] = isset($data['cPF']) ? $data['cPF'] : null;
     }
 
     /**
@@ -365,6 +371,27 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
     public function setComboCard($comboCard)
     {
         $this->container['comboCard'] = $comboCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets cPF
+     * @return bool
+     */
+    public function getCPF()
+    {
+        return $this->container['cPF'];
+    }
+
+    /**
+     * Sets cPF
+     * @param bool $cPF Configure Unified Checkout to display and capture the CPF number (Cadastro de Pessoas Físicas).  The CPF number is a unique 11-digit identifier issued to Brazilian citizens and residents for tax purposes.  Possible values: - True - False<br><br>  This field is optional.   If set to true the field is required. If set to false the field is optional. If the field is not included in the capture context then it is not captured.<br><br>  **Important:**  - If PANENTRY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout regardless of what card number is entered.  - If CLICKTOPAY is specified in the allowedPaymentTypes field, the CPF number will be displayed in Unified Checkout only when a Visa Click To Pay card is entered.
+     * @return $this
+     */
+    public function setCPF($cPF)
+    {
+        $this->container['cPF'] = $cPF;
 
         return $this;
     }

@@ -53,7 +53,9 @@ class CreateInvoiceRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'clientReferenceInformation' => '\CyberSource\Model\Invoicingv2invoicesClientReferenceInformation',
         'customerInformation' => '\CyberSource\Model\Invoicingv2invoicesCustomerInformation',
+        'processingInformation' => '\CyberSource\Model\Invoicingv2invoicesProcessingInformation',
         'invoiceInformation' => '\CyberSource\Model\Invoicingv2invoicesInvoiceInformation',
         'orderInformation' => '\CyberSource\Model\Invoicingv2invoicesOrderInformation'
     ];
@@ -63,7 +65,9 @@ class CreateInvoiceRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'clientReferenceInformation' => null,
         'customerInformation' => null,
+        'processingInformation' => null,
         'invoiceInformation' => null,
         'orderInformation' => null
     ];
@@ -83,7 +87,9 @@ class CreateInvoiceRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'clientReferenceInformation' => 'clientReferenceInformation',
         'customerInformation' => 'customerInformation',
+        'processingInformation' => 'processingInformation',
         'invoiceInformation' => 'invoiceInformation',
         'orderInformation' => 'orderInformation'
     ];
@@ -94,7 +100,9 @@ class CreateInvoiceRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'clientReferenceInformation' => 'setClientReferenceInformation',
         'customerInformation' => 'setCustomerInformation',
+        'processingInformation' => 'setProcessingInformation',
         'invoiceInformation' => 'setInvoiceInformation',
         'orderInformation' => 'setOrderInformation'
     ];
@@ -105,7 +113,9 @@ class CreateInvoiceRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'clientReferenceInformation' => 'getClientReferenceInformation',
         'customerInformation' => 'getCustomerInformation',
+        'processingInformation' => 'getProcessingInformation',
         'invoiceInformation' => 'getInvoiceInformation',
         'orderInformation' => 'getOrderInformation'
     ];
@@ -141,7 +151,9 @@ class CreateInvoiceRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['customerInformation'] = isset($data['customerInformation']) ? $data['customerInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
     }
@@ -155,6 +167,12 @@ class CreateInvoiceRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['invoiceInformation'] === null) {
+            $invalid_properties[] = "'invoiceInformation' can't be null";
+        }
+        if ($this->container['orderInformation'] === null) {
+            $invalid_properties[] = "'orderInformation' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -167,9 +185,36 @@ class CreateInvoiceRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['invoiceInformation'] === null) {
+            return false;
+        }
+        if ($this->container['orderInformation'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\Invoicingv2invoicesClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\Invoicingv2invoicesClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
+
+        return $this;
+    }
 
     /**
      * Gets customerInformation
@@ -188,6 +233,27 @@ class CreateInvoiceRequest implements ArrayAccess
     public function setCustomerInformation($customerInformation)
     {
         $this->container['customerInformation'] = $customerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\Invoicingv2invoicesProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\Invoicingv2invoicesProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

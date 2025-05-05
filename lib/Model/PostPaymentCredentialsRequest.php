@@ -53,7 +53,8 @@ class PostPaymentCredentialsRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentCredentialType' => 'string'
+        'paymentCredentialType' => 'string',
+        'transactionType' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class PostPaymentCredentialsRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'paymentCredentialType' => null
+        'paymentCredentialType' => null,
+        'transactionType' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class PostPaymentCredentialsRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentCredentialType' => 'paymentCredentialType'
+        'paymentCredentialType' => 'paymentCredentialType',
+        'transactionType' => 'transactionType'
     ];
 
 
@@ -88,7 +91,8 @@ class PostPaymentCredentialsRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'paymentCredentialType' => 'setPaymentCredentialType'
+        'paymentCredentialType' => 'setPaymentCredentialType',
+        'transactionType' => 'setTransactionType'
     ];
 
 
@@ -97,7 +101,8 @@ class PostPaymentCredentialsRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'paymentCredentialType' => 'getPaymentCredentialType'
+        'paymentCredentialType' => 'getPaymentCredentialType',
+        'transactionType' => 'getTransactionType'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class PostPaymentCredentialsRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['paymentCredentialType'] = isset($data['paymentCredentialType']) ? $data['paymentCredentialType'] : null;
+        $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class PostPaymentCredentialsRequest implements ArrayAccess
     public function setPaymentCredentialType($paymentCredentialType)
     {
         $this->container['paymentCredentialType'] = $paymentCredentialType;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionType
+     * @return string
+     */
+    public function getTransactionType()
+    {
+        return $this->container['transactionType'];
+    }
+
+    /**
+     * Sets transactionType
+     * @param string $transactionType Specifies the type of transaction for which the network token credentials are required. Possible Values:   - ECOM: Ecommerce transaction. If transactionType is not provided, ECOM is set as the default.   - AFT: Account Funding Transaction. This is only supported for VISA and paymentCredentialType of CRYPTOGRAM.
+     * @return $this
+     */
+    public function setTransactionType($transactionType)
+    {
+        $this->container['transactionType'] = $transactionType;
 
         return $this;
     }

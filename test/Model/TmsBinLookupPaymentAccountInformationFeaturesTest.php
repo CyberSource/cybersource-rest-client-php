@@ -138,4 +138,74 @@ class TmsBinLookupPaymentAccountInformationFeaturesTest extends \PHPUnit_Framewo
     public function testPropertyHealthCard()
     {
     }
+
+    /**
+     * Test attribute "sharedBIN"
+     */
+    public function testPropertySharedBIN()
+    {
+    }
+
+    /**
+     * Test attribute "posDomesticOnly"
+     */
+    public function testPropertyPosDomesticOnly()
+    {
+    }
+
+    /**
+     * Test attribute "gamblingAllowed"
+     */
+    public function testPropertyGamblingAllowed()
+    {
+    }
+
+    /**
+     * Test attribute "commercialCardLevel2"
+     */
+    public function testPropertyCommercialCardLevel2()
+    {
+    }
+
+    /**
+     * Test attribute "commercialCardLevel3"
+     */
+    public function testPropertyCommercialCardLevel3()
+    {
+    }
+
+    /**
+     * Test attribute "exemptBIN"
+     */
+    public function testPropertyExemptBIN()
+    {
+    }
+
+    /**
+     * Test attribute "accountLevelManagement"
+     */
+    public function testPropertyAccountLevelManagement()
+    {
+    }
+
+    /**
+     * Test attribute "onlineGamblingBlock"
+     */
+    public function testPropertyOnlineGamblingBlock()
+    {
+    }
+
+    /**
+     * Test attribute "autoSubstantiation"
+     */
+    public function testPropertyAutoSubstantiation()
+    {
+    }
+
+    /**
+     * Test attribute "flexCredential"
+     */
+    public function testPropertyFlexCredential()
+    {
+    }
 }

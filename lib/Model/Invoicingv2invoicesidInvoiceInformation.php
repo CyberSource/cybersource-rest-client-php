@@ -56,6 +56,8 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'description' => 'string',
         'dueDate' => '\DateTime',
+        'expirationDate' => '\DateTime',
+        'sendImmediately' => 'bool',
         'allowPartialPayments' => 'bool',
         'deliveryMode' => 'string'
     ];
@@ -67,6 +69,8 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'description' => null,
         'dueDate' => 'date',
+        'expirationDate' => 'date',
+        'sendImmediately' => null,
         'allowPartialPayments' => null,
         'deliveryMode' => null
     ];
@@ -88,6 +92,8 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     protected static $attributeMap = [
         'description' => 'description',
         'dueDate' => 'dueDate',
+        'expirationDate' => 'expirationDate',
+        'sendImmediately' => 'sendImmediately',
         'allowPartialPayments' => 'allowPartialPayments',
         'deliveryMode' => 'deliveryMode'
     ];
@@ -100,6 +106,8 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     protected static $setters = [
         'description' => 'setDescription',
         'dueDate' => 'setDueDate',
+        'expirationDate' => 'setExpirationDate',
+        'sendImmediately' => 'setSendImmediately',
         'allowPartialPayments' => 'setAllowPartialPayments',
         'deliveryMode' => 'setDeliveryMode'
     ];
@@ -112,6 +120,8 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     protected static $getters = [
         'description' => 'getDescription',
         'dueDate' => 'getDueDate',
+        'expirationDate' => 'getExpirationDate',
+        'sendImmediately' => 'getSendImmediately',
         'allowPartialPayments' => 'getAllowPartialPayments',
         'deliveryMode' => 'getDeliveryMode'
     ];
@@ -149,7 +159,9 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     {
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['dueDate'] = isset($data['dueDate']) ? $data['dueDate'] : null;
-        $this->container['allowPartialPayments'] = isset($data['allowPartialPayments']) ? $data['allowPartialPayments'] : null;
+        $this->container['expirationDate'] = isset($data['expirationDate']) ? $data['expirationDate'] : null;
+        $this->container['sendImmediately'] = isset($data['sendImmediately']) ? $data['sendImmediately'] : false;
+        $this->container['allowPartialPayments'] = isset($data['allowPartialPayments']) ? $data['allowPartialPayments'] : false;
         $this->container['deliveryMode'] = isset($data['deliveryMode']) ? $data['deliveryMode'] : null;
     }
 
@@ -162,6 +174,12 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['description'] === null) {
+            $invalid_properties[] = "'description' can't be null";
+        }
+        if ($this->container['dueDate'] === null) {
+            $invalid_properties[] = "'dueDate' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -174,6 +192,12 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['description'] === null) {
+            return false;
+        }
+        if ($this->container['dueDate'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -221,6 +245,48 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
     }
 
     /**
+     * Gets expirationDate
+     * @return \DateTime
+     */
+    public function getExpirationDate()
+    {
+        return $this->container['expirationDate'];
+    }
+
+    /**
+     * Sets expirationDate
+     * @param \DateTime $expirationDate Define an expiration date for the link.  Format: `YYYY-MM-DD`, where `YYYY` = year, `MM` = month, and `DD` = day
+     * @return $this
+     */
+    public function setExpirationDate($expirationDate)
+    {
+        $this->container['expirationDate'] = $expirationDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets sendImmediately
+     * @return bool
+     */
+    public function getSendImmediately()
+    {
+        return $this->container['sendImmediately'];
+    }
+
+    /**
+     * Sets sendImmediately
+     * @param bool $sendImmediately If set to `true`, we send the invoice immediately. If set to `false`, the invoice remains in draft mode.
+     * @return $this
+     */
+    public function setSendImmediately($sendImmediately)
+    {
+        $this->container['sendImmediately'] = $sendImmediately;
+
+        return $this;
+    }
+
+    /**
      * Gets allowPartialPayments
      * @return bool
      */
@@ -252,7 +318,7 @@ class Invoicingv2invoicesidInvoiceInformation implements ArrayAccess
 
     /**
      * Sets deliveryMode
-     * @param string $deliveryMode If set to `None`, the invoice is created, and its status is set to 'CREATED', but no email is sent.    Possible values:        - `None`   - `Email`
+     * @param string $deliveryMode If this field is set to 'None', an invoice will be generated with the status 'CREATED', but no email will be dispatched.    Possible values:        - `None`   - `Email`
      * @return $this
      */
     public function setDeliveryMode($deliveryMode)

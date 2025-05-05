@@ -4,12 +4,155 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v2/webhooks/{webhookId} | Delete a Webhook Subscription
+[**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v2/webhooks/{webhookId} | Get Details On a Single Webhook
+[**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v2/webhooks | Get Details On All Created Webhooks
 [**notificationSubscriptionsV1WebhooksWebhookIdPost**](ManageWebhooksApi.md#notificationSubscriptionsV1WebhooksWebhookIdPost) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
+[**notificationSubscriptionsV2WebhooksWebhookIdPatch**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdPatch) | **PATCH** /notification-subscriptions/v2/webhooks/{webhookId} | Update a Webhook Subscription
+[**notificationSubscriptionsV2WebhooksWebhookIdStatusPut**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdStatusPut) | **PUT** /notification-subscriptions/v2/webhooks/{webhookId}/status | Update a Webhook Status
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
 
 
+# **deleteWebhookSubscription**
+> deleteWebhookSubscription($webhookId)
+
+Delete a Webhook Subscription
+
+Delete the webhook. Please note that deleting a particular webhook does not delete the history of the webhook notifications.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The webhook identifier.
+
+try {
+    $api_instance->deleteWebhookSubscription($webhookId);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->deleteWebhookSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The webhook identifier. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getWebhookSubscriptionById**
+> \CyberSource\Model\InlineResponse2014 getWebhookSubscriptionById($webhookId)
+
+Get Details On a Single Webhook
+
+Retrieve the details of a specific webhook by supplying the webhook ID in the path.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The webhook Identifier
+
+try {
+    $result = $api_instance->getWebhookSubscriptionById($webhookId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->getWebhookSubscriptionById: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The webhook Identifier |
+
+### Return type
+
+[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getWebhookSubscriptionsByOrg**
+> \CyberSource\Model\InlineResponse2004[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
+
+Get Details On All Created Webhooks
+
+Retrieve a list of all previously created webhooks.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$organizationId = "organizationId_example"; // string | The Organization Identifier.
+$productId = "productId_example"; // string | The Product Identifier.
+$eventType = "eventType_example"; // string | The Event Type.
+
+try {
+    $result = $api_instance->getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->getWebhookSubscriptionsByOrg: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The Organization Identifier. |
+ **productId** | **string**| The Product Identifier. | [optional]
+ **eventType** | **string**| The Event Type. | [optional]
+
+### Return type
+
+[**\CyberSource\Model\InlineResponse2004[]**](../Model/InlineResponse2004.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> \CyberSource\Model\InlineResponse2014 notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
+> \CyberSource\Model\InlineResponse2015 notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
 
 Test a Webhook Configuration
 
@@ -40,7 +183,99 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **notificationSubscriptionsV2WebhooksWebhookIdPatch**
+> notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook)
+
+Update a Webhook Subscription
+
+Update a Webhook Subscription.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The Webhook Identifier.
+$updateWebhook = new \CyberSource\Model\UpdateWebhook(); // \CyberSource\Model\UpdateWebhook | The webhook payload or changes to apply.
+
+try {
+    $api_instance->notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->notificationSubscriptionsV2WebhooksWebhookIdPatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The Webhook Identifier. |
+ **updateWebhook** | [**\CyberSource\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **notificationSubscriptionsV2WebhooksWebhookIdStatusPut**
+> notificationSubscriptionsV2WebhooksWebhookIdStatusPut($webhookId, $updateStatus)
+
+Update a Webhook Status
+
+Users can update the status of a webhook subscription by calling this endpoint.   The webhookId parameter in the URL path identifies the specific webhook subscription to be updated. The request body accepts the values ACTIVE or INACTIVE. If the subscription is set to INACTIVE, webhooks will not be delivered until the subscription is activated again.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The Webhook Identifier.
+$updateStatus = new \CyberSource\Model\UpdateStatus(); // \CyberSource\Model\UpdateStatus | The status that the subscription should be updated to.
+
+try {
+    $api_instance->notificationSubscriptionsV2WebhooksWebhookIdStatusPut($webhookId, $updateStatus);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->notificationSubscriptionsV2WebhooksWebhookIdStatusPut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The Webhook Identifier. |
+ **updateStatus** | [**\CyberSource\Model\UpdateStatus**](../Model/UpdateStatus.md)| The status that the subscription should be updated to. | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -54,7 +289,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **saveAsymEgressKey**
-> \CyberSource\Model\InlineResponse2015 saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId)
+> \CyberSource\Model\InlineResponse2016 saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId)
 
 Message Level Encryption
 
@@ -91,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
+[**\CyberSource\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
 
 ### Authorization
 

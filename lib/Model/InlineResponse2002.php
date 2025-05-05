@@ -53,13 +53,13 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse2002Links[]',
-        'object' => 'string',
-        'offset' => 'int',
-        'limit' => 'int',
-        'count' => 'int',
-        'total' => 'int',
-        'embedded' => '\CyberSource\Model\InlineResponse2002Embedded'
+        'registrationInformation' => '\CyberSource\Model\Boardingv1registrationsRegistrationInformation',
+        'integrationInformation' => '\CyberSource\Model\InlineResponse2002IntegrationInformation',
+        'organizationInformation' => '\CyberSource\Model\Boardingv1registrationsOrganizationInformation',
+        'productInformation' => '\CyberSource\Model\Boardingv1registrationsProductInformation',
+        'productInformationSetups' => '\CyberSource\Model\InlineResponse2012ProductInformationSetups[]',
+        'documentInformation' => '\CyberSource\Model\Boardingv1registrationsDocumentInformation',
+        'details' => 'map[string,object[]]'
     ];
 
     /**
@@ -67,13 +67,13 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'object' => null,
-        'offset' => null,
-        'limit' => null,
-        'count' => null,
-        'total' => null,
-        'embedded' => null
+        'registrationInformation' => null,
+        'integrationInformation' => null,
+        'organizationInformation' => null,
+        'productInformation' => null,
+        'productInformationSetups' => null,
+        'documentInformation' => null,
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -91,13 +91,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
-        'object' => 'object',
-        'offset' => 'offset',
-        'limit' => 'limit',
-        'count' => 'count',
-        'total' => 'total',
-        'embedded' => '_embedded'
+        'registrationInformation' => 'registrationInformation',
+        'integrationInformation' => 'integrationInformation',
+        'organizationInformation' => 'organizationInformation',
+        'productInformation' => 'productInformation',
+        'productInformationSetups' => 'productInformationSetups',
+        'documentInformation' => 'documentInformation',
+        'details' => 'details'
     ];
 
 
@@ -106,13 +106,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'object' => 'setObject',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit',
-        'count' => 'setCount',
-        'total' => 'setTotal',
-        'embedded' => 'setEmbedded'
+        'registrationInformation' => 'setRegistrationInformation',
+        'integrationInformation' => 'setIntegrationInformation',
+        'organizationInformation' => 'setOrganizationInformation',
+        'productInformation' => 'setProductInformation',
+        'productInformationSetups' => 'setProductInformationSetups',
+        'documentInformation' => 'setDocumentInformation',
+        'details' => 'setDetails'
     ];
 
 
@@ -121,13 +121,13 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'object' => 'getObject',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit',
-        'count' => 'getCount',
-        'total' => 'getTotal',
-        'embedded' => 'getEmbedded'
+        'registrationInformation' => 'getRegistrationInformation',
+        'integrationInformation' => 'getIntegrationInformation',
+        'organizationInformation' => 'getOrganizationInformation',
+        'productInformation' => 'getProductInformation',
+        'productInformationSetups' => 'getProductInformationSetups',
+        'documentInformation' => 'getDocumentInformation',
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -161,13 +161,13 @@ class InlineResponse2002 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
+        $this->container['registrationInformation'] = isset($data['registrationInformation']) ? $data['registrationInformation'] : null;
+        $this->container['integrationInformation'] = isset($data['integrationInformation']) ? $data['integrationInformation'] : null;
+        $this->container['organizationInformation'] = isset($data['organizationInformation']) ? $data['organizationInformation'] : null;
+        $this->container['productInformation'] = isset($data['productInformation']) ? $data['productInformation'] : null;
+        $this->container['productInformationSetups'] = isset($data['productInformationSetups']) ? $data['productInformationSetups'] : null;
+        $this->container['documentInformation'] = isset($data['documentInformation']) ? $data['documentInformation'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -196,148 +196,148 @@ class InlineResponse2002 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse2002Links[]
+     * Gets registrationInformation
+     * @return \CyberSource\Model\Boardingv1registrationsRegistrationInformation
      */
-    public function getLinks()
+    public function getRegistrationInformation()
     {
-        return $this->container['links'];
+        return $this->container['registrationInformation'];
     }
 
     /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse2002Links[] $links
+     * Sets registrationInformation
+     * @param \CyberSource\Model\Boardingv1registrationsRegistrationInformation $registrationInformation
      * @return $this
      */
-    public function setLinks($links)
+    public function setRegistrationInformation($registrationInformation)
     {
-        $this->container['links'] = $links;
+        $this->container['registrationInformation'] = $registrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets object
-     * @return string
+     * Gets integrationInformation
+     * @return \CyberSource\Model\InlineResponse2002IntegrationInformation
      */
-    public function getObject()
+    public function getIntegrationInformation()
     {
-        return $this->container['object'];
+        return $this->container['integrationInformation'];
     }
 
     /**
-     * Sets object
-     * @param string $object
+     * Sets integrationInformation
+     * @param \CyberSource\Model\InlineResponse2002IntegrationInformation $integrationInformation
      * @return $this
      */
-    public function setObject($object)
+    public function setIntegrationInformation($integrationInformation)
     {
-        $this->container['object'] = $object;
+        $this->container['integrationInformation'] = $integrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets offset
-     * @return int
+     * Gets organizationInformation
+     * @return \CyberSource\Model\Boardingv1registrationsOrganizationInformation
      */
-    public function getOffset()
+    public function getOrganizationInformation()
     {
-        return $this->container['offset'];
+        return $this->container['organizationInformation'];
     }
 
     /**
-     * Sets offset
-     * @param int $offset
+     * Sets organizationInformation
+     * @param \CyberSource\Model\Boardingv1registrationsOrganizationInformation $organizationInformation
      * @return $this
      */
-    public function setOffset($offset)
+    public function setOrganizationInformation($organizationInformation)
     {
-        $this->container['offset'] = $offset;
+        $this->container['organizationInformation'] = $organizationInformation;
 
         return $this;
     }
 
     /**
-     * Gets limit
-     * @return int
+     * Gets productInformation
+     * @return \CyberSource\Model\Boardingv1registrationsProductInformation
      */
-    public function getLimit()
+    public function getProductInformation()
     {
-        return $this->container['limit'];
+        return $this->container['productInformation'];
     }
 
     /**
-     * Sets limit
-     * @param int $limit
+     * Sets productInformation
+     * @param \CyberSource\Model\Boardingv1registrationsProductInformation $productInformation
      * @return $this
      */
-    public function setLimit($limit)
+    public function setProductInformation($productInformation)
     {
-        $this->container['limit'] = $limit;
+        $this->container['productInformation'] = $productInformation;
 
         return $this;
     }
 
     /**
-     * Gets count
-     * @return int
+     * Gets productInformationSetups
+     * @return \CyberSource\Model\InlineResponse2012ProductInformationSetups[]
      */
-    public function getCount()
+    public function getProductInformationSetups()
     {
-        return $this->container['count'];
+        return $this->container['productInformationSetups'];
     }
 
     /**
-     * Sets count
-     * @param int $count
+     * Sets productInformationSetups
+     * @param \CyberSource\Model\InlineResponse2012ProductInformationSetups[] $productInformationSetups
      * @return $this
      */
-    public function setCount($count)
+    public function setProductInformationSetups($productInformationSetups)
     {
-        $this->container['count'] = $count;
+        $this->container['productInformationSetups'] = $productInformationSetups;
 
         return $this;
     }
 
     /**
-     * Gets total
-     * @return int
+     * Gets documentInformation
+     * @return \CyberSource\Model\Boardingv1registrationsDocumentInformation
      */
-    public function getTotal()
+    public function getDocumentInformation()
     {
-        return $this->container['total'];
+        return $this->container['documentInformation'];
     }
 
     /**
-     * Sets total
-     * @param int $total
+     * Sets documentInformation
+     * @param \CyberSource\Model\Boardingv1registrationsDocumentInformation $documentInformation
      * @return $this
      */
-    public function setTotal($total)
+    public function setDocumentInformation($documentInformation)
     {
-        $this->container['total'] = $total;
+        $this->container['documentInformation'] = $documentInformation;
 
         return $this;
     }
 
     /**
-     * Gets embedded
-     * @return \CyberSource\Model\InlineResponse2002Embedded
+     * Gets details
+     * @return map[string,object[]]
      */
-    public function getEmbedded()
+    public function getDetails()
     {
-        return $this->container['embedded'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets embedded
-     * @param \CyberSource\Model\InlineResponse2002Embedded $embedded
+     * Sets details
+     * @param map[string,object[]] $details
      * @return $this
      */
-    public function setEmbedded($embedded)
+    public function setDetails($details)
     {
-        $this->container['embedded'] = $embedded;
+        $this->container['details'] = $details;
 
         return $this;
     }

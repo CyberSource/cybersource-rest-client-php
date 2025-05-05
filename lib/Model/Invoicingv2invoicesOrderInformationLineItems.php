@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Invoicingv2invoicesOrderInformationLineItems Class Doc Comment
  *
  * @category    Class
- * @description List of the line items from the order, which are included in an invoice.
+ * @description Line item from the order.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -59,7 +59,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'quantity' => 'int',
         'unitPrice' => 'string',
         'discountAmount' => 'string',
-        'discountRate' => 'string',
+        'discountPercent' => 'string',
         'taxAmount' => 'string',
         'taxRate' => 'string',
         'totalAmount' => 'string'
@@ -75,7 +75,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'quantity' => null,
         'unitPrice' => null,
         'discountAmount' => null,
-        'discountRate' => null,
+        'discountPercent' => null,
         'taxAmount' => null,
         'taxRate' => null,
         'totalAmount' => null
@@ -101,7 +101,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'quantity' => 'quantity',
         'unitPrice' => 'unitPrice',
         'discountAmount' => 'discountAmount',
-        'discountRate' => 'discountRate',
+        'discountPercent' => 'discountPercent',
         'taxAmount' => 'taxAmount',
         'taxRate' => 'taxRate',
         'totalAmount' => 'totalAmount'
@@ -118,7 +118,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'quantity' => 'setQuantity',
         'unitPrice' => 'setUnitPrice',
         'discountAmount' => 'setDiscountAmount',
-        'discountRate' => 'setDiscountRate',
+        'discountPercent' => 'setDiscountPercent',
         'taxAmount' => 'setTaxAmount',
         'taxRate' => 'setTaxRate',
         'totalAmount' => 'setTotalAmount'
@@ -135,7 +135,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         'quantity' => 'getQuantity',
         'unitPrice' => 'getUnitPrice',
         'discountAmount' => 'getDiscountAmount',
-        'discountRate' => 'getDiscountRate',
+        'discountPercent' => 'getDiscountPercent',
         'taxAmount' => 'getTaxAmount',
         'taxRate' => 'getTaxRate',
         'totalAmount' => 'getTotalAmount'
@@ -177,7 +177,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
         $this->container['discountAmount'] = isset($data['discountAmount']) ? $data['discountAmount'] : null;
-        $this->container['discountRate'] = isset($data['discountRate']) ? $data['discountRate'] : null;
+        $this->container['discountPercent'] = isset($data['discountPercent']) ? $data['discountPercent'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
         $this->container['taxRate'] = isset($data['taxRate']) ? $data['taxRate'] : null;
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
@@ -314,22 +314,22 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
     }
 
     /**
-     * Gets discountRate
+     * Gets discountPercent
      * @return string
      */
-    public function getDiscountRate()
+    public function getDiscountPercent()
     {
-        return $this->container['discountRate'];
+        return $this->container['discountPercent'];
     }
 
     /**
-     * Sets discountRate
-     * @param string $discountRate Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%)
+     * Sets discountPercent
+     * @param string $discountPercent Rate the item is discounted. Maximum of 2 decimal places.  Example 5.25 (=5.25%)
      * @return $this
      */
-    public function setDiscountRate($discountRate)
+    public function setDiscountPercent($discountPercent)
     {
-        $this->container['discountRate'] = $discountRate;
+        $this->container['discountPercent'] = $discountPercent;
 
         return $this;
     }
@@ -366,7 +366,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxRate
-     * @param string $taxRate Tax rate applied to the item.  **Visa**: Valid range is 0.01 to 0.99 (1% to 99%, with only whole percentage values accepted; values with additional decimal places will be truncated).  **Mastercard**: Valid range is 0.00001 to 0.99999 (0.001% to 99.999%).
+     * @param string $taxRate Valid range: 1% to 99%, with only whole percentage values accepted; values with additional  decimal places will be truncated  For processor-specific details, see the alternate_tax_amount, vat_rate, vat_tax_rate, local_tax, national_tax, vat_tax_amount or other_tax#_rate field descriptions in the Level II and Level III Processing Using the SCMP API Guide.
      * @return $this
      */
     public function setTaxRate($taxRate)

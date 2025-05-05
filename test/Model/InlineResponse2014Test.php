@@ -77,16 +77,9 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "eventDate"
+     * Test attribute "webhookId"
      */
-    public function testPropertyEventDate()
-    {
-    }
-
-    /**
-     * Test attribute "eventType"
-     */
-    public function testPropertyEventType()
+    public function testPropertyWebhookId()
     {
     }
 
@@ -98,44 +91,72 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "payloads"
+     * Test attribute "products"
      */
-    public function testPropertyPayloads()
+    public function testPropertyProducts()
     {
     }
 
     /**
-     * Test attribute "productId"
+     * Test attribute "webhookUrl"
      */
-    public function testPropertyProductId()
+    public function testPropertyWebhookUrl()
     {
     }
 
     /**
-     * Test attribute "requestType"
+     * Test attribute "healthCheckUrl"
      */
-    public function testPropertyRequestType()
+    public function testPropertyHealthCheckUrl()
     {
     }
 
     /**
-     * Test attribute "retryNumber"
+     * Test attribute "status"
      */
-    public function testPropertyRetryNumber()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "transactionTraceId"
+     * Test attribute "name"
      */
-    public function testPropertyTransactionTraceId()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "description"
      */
-    public function testPropertyWebhookId()
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "retryPolicy"
+     */
+    public function testPropertyRetryPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "securityPolicy"
+     */
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "updatedOn"
+     */
+    public function testPropertyUpdatedOn()
     {
     }
 }

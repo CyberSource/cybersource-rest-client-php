@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails Class Doc Comment
  *
  * @category    Class
- * @description Contains all of the tax-related fields for the invoice.
+ * @description Contains all of the tax-related fields for the order.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

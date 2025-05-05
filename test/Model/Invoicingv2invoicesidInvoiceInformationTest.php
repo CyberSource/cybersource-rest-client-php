@@ -91,6 +91,20 @@ class Invoicingv2invoicesidInvoiceInformationTest extends \PHPUnit_Framework_Tes
     }
 
     /**
+     * Test attribute "expirationDate"
+     */
+    public function testPropertyExpirationDate()
+    {
+    }
+
+    /**
+     * Test attribute "sendImmediately"
+     */
+    public function testPropertySendImmediately()
+    {
+    }
+
+    /**
      * Test attribute "allowPartialPayments"
      */
     public function testPropertyAllowPartialPayments()

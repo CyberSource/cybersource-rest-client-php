@@ -126,6 +126,13 @@ class GenerateUnifiedCheckoutCaptureContextRequestTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "completeMandate"
+     */
+    public function testPropertyCompleteMandate()
+    {
+    }
+
+    /**
      * Test attribute "orderInformation"
      */
     public function testPropertyOrderInformation()

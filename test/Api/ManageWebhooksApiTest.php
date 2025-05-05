@@ -72,12 +72,62 @@ class ManageWebhooksApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for deleteWebhookSubscription
+     *
+     * Delete a Webhook Subscription.
+     *
+     */
+    public function testDeleteWebhookSubscription()
+    {
+    }
+
+    /**
+     * Test case for getWebhookSubscriptionById
+     *
+     * Get Details On a Single Webhook.
+     *
+     */
+    public function testGetWebhookSubscriptionById()
+    {
+    }
+
+    /**
+     * Test case for getWebhookSubscriptionsByOrg
+     *
+     * Get Details On All Created Webhooks.
+     *
+     */
+    public function testGetWebhookSubscriptionsByOrg()
+    {
+    }
+
+    /**
      * Test case for notificationSubscriptionsV1WebhooksWebhookIdPost
      *
      * Test a Webhook Configuration.
      *
      */
     public function testNotificationSubscriptionsV1WebhooksWebhookIdPost()
+    {
+    }
+
+    /**
+     * Test case for notificationSubscriptionsV2WebhooksWebhookIdPatch
+     *
+     * Update a Webhook Subscription.
+     *
+     */
+    public function testNotificationSubscriptionsV2WebhooksWebhookIdPatch()
+    {
+    }
+
+    /**
+     * Test case for notificationSubscriptionsV2WebhooksWebhookIdStatusPut
+     *
+     * Update a Webhook Status.
+     *
+     */
+    public function testNotificationSubscriptionsV2WebhooksWebhookIdStatusPut()
     {
     }
 

@@ -82,4 +82,11 @@ class PostPaymentCredentialsRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPaymentCredentialType()
     {
     }
+
+    /**
+     * Test attribute "transactionType"
+     */
+    public function testPropertyTransactionType()
+    {
+    }
 }

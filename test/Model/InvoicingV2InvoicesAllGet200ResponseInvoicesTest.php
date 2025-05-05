@@ -98,6 +98,13 @@ class InvoicingV2InvoicesAllGet200ResponseInvoicesTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "createdDate"
+     */
+    public function testPropertyCreatedDate()
+    {
+    }
+
+    /**
      * Test attribute "customerInformation"
      */
     public function testPropertyCustomerInformation()
