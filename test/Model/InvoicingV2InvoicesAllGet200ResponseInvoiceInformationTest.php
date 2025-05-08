@@ -82,4 +82,11 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformationTest extends \PHPUni
     public function testPropertyDueDate()
     {
     }
+
+    /**
+     * Test attribute "expirationDate"
+     */
+    public function testPropertyExpirationDate()
+    {
+    }
 }

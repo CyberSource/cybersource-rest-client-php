@@ -57,6 +57,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
         'links' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseLinks',
         'id' => 'string',
         'status' => 'string',
+        'createdDate' => 'string',
         'customerInformation' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseCustomerInformation',
         'invoiceInformation' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseInvoiceInformation',
         'orderInformation' => '\CyberSource\Model\InvoicingV2InvoicesAllGet200ResponseOrderInformation'
@@ -70,6 +71,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
         'links' => null,
         'id' => null,
         'status' => null,
+        'createdDate' => null,
         'customerInformation' => null,
         'invoiceInformation' => null,
         'orderInformation' => null
@@ -93,6 +95,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
         'links' => '_links',
         'id' => 'id',
         'status' => 'status',
+        'createdDate' => 'createdDate',
         'customerInformation' => 'customerInformation',
         'invoiceInformation' => 'invoiceInformation',
         'orderInformation' => 'orderInformation'
@@ -107,6 +110,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
         'links' => 'setLinks',
         'id' => 'setId',
         'status' => 'setStatus',
+        'createdDate' => 'setCreatedDate',
         'customerInformation' => 'setCustomerInformation',
         'invoiceInformation' => 'setInvoiceInformation',
         'orderInformation' => 'setOrderInformation'
@@ -121,6 +125,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
         'links' => 'getLinks',
         'id' => 'getId',
         'status' => 'getStatus',
+        'createdDate' => 'getCreatedDate',
         'customerInformation' => 'getCustomerInformation',
         'invoiceInformation' => 'getInvoiceInformation',
         'orderInformation' => 'getOrderInformation'
@@ -160,6 +165,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['createdDate'] = isset($data['createdDate']) ? $data['createdDate'] : null;
         $this->container['customerInformation'] = isset($data['customerInformation']) ? $data['customerInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
@@ -249,6 +255,27 @@ class InvoicingV2InvoicesAllGet200ResponseInvoices implements ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdDate
+     * @return string
+     */
+    public function getCreatedDate()
+    {
+        return $this->container['createdDate'];
+    }
+
+    /**
+     * Sets createdDate
+     * @param string $createdDate Date and time (UTC) the invoice was created.  Format: YYYY-MM-DDThh:mm:ssZ Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setCreatedDate($createdDate)
+    {
+        $this->container['createdDate'] = $createdDate;
 
         return $this;
     }

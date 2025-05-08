@@ -131,4 +131,11 @@ class Upv1capturecontextsCaptureMandateTest extends \PHPUnit_Framework_TestCase
     public function testPropertyComboCard()
     {
     }
+
+    /**
+     * Test attribute "cPF"
+     */
+    public function testPropertyCPF()
+    {
+    }
 }

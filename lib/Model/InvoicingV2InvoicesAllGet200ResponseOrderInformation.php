@@ -34,6 +34,7 @@ use \ArrayAccess;
  * InvoicingV2InvoicesAllGet200ResponseOrderInformation Class Doc Comment
  *
  * @category    Class
+ * @description Contains all of the order-related fields, such as the amount and line item details.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

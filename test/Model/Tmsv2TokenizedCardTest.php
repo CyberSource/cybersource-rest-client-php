@@ -147,6 +147,27 @@ class Tmsv2TokenizedCardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "expirationMonth"
+     */
+    public function testPropertyExpirationMonth()
+    {
+    }
+
+    /**
+     * Test attribute "expirationYear"
+     */
+    public function testPropertyExpirationYear()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
      * Test attribute "cryptogram"
      */
     public function testPropertyCryptogram()

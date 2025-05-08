@@ -84,6 +84,13 @@ class UpdateInvoiceRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
+    {
+    }
+
+    /**
      * Test attribute "invoiceInformation"
      */
     public function testPropertyInvoiceInformation()

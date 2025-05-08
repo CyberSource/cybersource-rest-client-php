@@ -32,7 +32,7 @@ namespace CyberSource;
  * Invoicingv2invoicesOrderInformationAmountDetailsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Contains all of the amount-related fields in the invoice.
+// * @description Contains all of the amount-related fields.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

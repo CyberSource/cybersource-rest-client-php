@@ -32,7 +32,7 @@ namespace CyberSource;
  * Invoicingv2invoicesOrderInformationLineItemsTest Class Doc Comment
  *
  * @category    Class */
-// * @description List of the line items from the order, which are included in an invoice.
+// * @description Line item from the order.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -112,9 +112,9 @@ class Invoicingv2invoicesOrderInformationLineItemsTest extends \PHPUnit_Framewor
     }
 
     /**
-     * Test attribute "discountRate"
+     * Test attribute "discountPercent"
      */
-    public function testPropertyDiscountRate()
+    public function testPropertyDiscountPercent()
     {
     }
 

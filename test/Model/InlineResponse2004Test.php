@@ -77,72 +77,86 @@ class InlineResponse2004Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "version"
+     * Test attribute "webhookId"
      */
-    public function testPropertyVersion()
+    public function testPropertyWebhookId()
     {
     }
 
     /**
-     * Test attribute "reportCreatedDate"
+     * Test attribute "organizationId"
      */
-    public function testPropertyReportCreatedDate()
+    public function testPropertyOrganizationId()
     {
     }
 
     /**
-     * Test attribute "batchId"
+     * Test attribute "products"
      */
-    public function testPropertyBatchId()
+    public function testPropertyProducts()
     {
     }
 
     /**
-     * Test attribute "batchSource"
+     * Test attribute "webhookUrl"
      */
-    public function testPropertyBatchSource()
+    public function testPropertyWebhookUrl()
     {
     }
 
     /**
-     * Test attribute "batchCaEndpoints"
+     * Test attribute "healthCheckUrl"
      */
-    public function testPropertyBatchCaEndpoints()
+    public function testPropertyHealthCheckUrl()
     {
     }
 
     /**
-     * Test attribute "batchCreatedDate"
+     * Test attribute "status"
      */
-    public function testPropertyBatchCreatedDate()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "merchantReference"
+     * Test attribute "name"
      */
-    public function testPropertyMerchantReference()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "totals"
+     * Test attribute "description"
      */
-    public function testPropertyTotals()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "billing"
+     * Test attribute "retryPolicy"
      */
-    public function testPropertyBilling()
+    public function testPropertyRetryPolicy()
     {
     }
 
     /**
-     * Test attribute "records"
+     * Test attribute "securityPolicy"
      */
-    public function testPropertyRecords()
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "updatedOn"
+     */
+    public function testPropertyUpdatedOn()
     {
     }
 }

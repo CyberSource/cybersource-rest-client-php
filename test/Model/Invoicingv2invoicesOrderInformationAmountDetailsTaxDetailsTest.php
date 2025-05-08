@@ -32,7 +32,7 @@ namespace CyberSource;
  * Invoicingv2invoicesOrderInformationAmountDetailsTaxDetailsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Contains all of the tax-related fields for the invoice.
+// * @description Contains all of the tax-related fields for the order.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

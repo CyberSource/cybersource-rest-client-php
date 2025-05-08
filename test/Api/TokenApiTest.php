@@ -72,6 +72,16 @@ class TokenApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getCardArtAsset
+     *
+     * Retrieve Card Art.
+     *
+     */
+    public function testGetCardArtAsset()
+    {
+    }
+
+    /**
      * Test case for postTokenPaymentCredentials
      *
      * Generate Payment Credentials for a TMS Token.

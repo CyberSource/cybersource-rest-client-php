@@ -60,6 +60,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'string',
         'locale' => 'string',
         'captureMandate' => '\CyberSource\Model\Upv1capturecontextsCaptureMandate',
+        'completeMandate' => '\CyberSource\Model\Upv1capturecontextsCompleteMandate',
         'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation',
         'transientTokenResponseOptions' => '\CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions'
     ];
@@ -76,6 +77,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => null,
         'locale' => null,
         'captureMandate' => null,
+        'completeMandate' => null,
         'orderInformation' => null,
         'transientTokenResponseOptions' => null
     ];
@@ -102,6 +104,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'country',
         'locale' => 'locale',
         'captureMandate' => 'captureMandate',
+        'completeMandate' => 'completeMandate',
         'orderInformation' => 'orderInformation',
         'transientTokenResponseOptions' => 'transientTokenResponseOptions'
     ];
@@ -119,6 +122,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'setCountry',
         'locale' => 'setLocale',
         'captureMandate' => 'setCaptureMandate',
+        'completeMandate' => 'setCompleteMandate',
         'orderInformation' => 'setOrderInformation',
         'transientTokenResponseOptions' => 'setTransientTokenResponseOptions'
     ];
@@ -136,6 +140,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'country' => 'getCountry',
         'locale' => 'getLocale',
         'captureMandate' => 'getCaptureMandate',
+        'completeMandate' => 'getCompleteMandate',
         'orderInformation' => 'getOrderInformation',
         'transientTokenResponseOptions' => 'getTransientTokenResponseOptions'
     ];
@@ -178,6 +183,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
         $this->container['captureMandate'] = isset($data['captureMandate']) ? $data['captureMandate'] : null;
+        $this->container['completeMandate'] = isset($data['completeMandate']) ? $data['completeMandate'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['transientTokenResponseOptions'] = isset($data['transientTokenResponseOptions']) ? $data['transientTokenResponseOptions'] : null;
     }
@@ -350,6 +356,27 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     public function setCaptureMandate($captureMandate)
     {
         $this->container['captureMandate'] = $captureMandate;
+
+        return $this;
+    }
+
+    /**
+     * Gets completeMandate
+     * @return \CyberSource\Model\Upv1capturecontextsCompleteMandate
+     */
+    public function getCompleteMandate()
+    {
+        return $this->container['completeMandate'];
+    }
+
+    /**
+     * Sets completeMandate
+     * @param \CyberSource\Model\Upv1capturecontextsCompleteMandate $completeMandate
+     * @return $this
+     */
+    public function setCompleteMandate($completeMandate)
+    {
+        $this->container['completeMandate'] = $completeMandate;
 
         return $this;
     }

@@ -77,51 +77,51 @@ class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "registrationInformation"
      */
-    public function testPropertyLinks()
+    public function testPropertyRegistrationInformation()
     {
     }
 
     /**
-     * Test attribute "object"
+     * Test attribute "integrationInformation"
      */
-    public function testPropertyObject()
+    public function testPropertyIntegrationInformation()
     {
     }
 
     /**
-     * Test attribute "offset"
+     * Test attribute "organizationInformation"
      */
-    public function testPropertyOffset()
+    public function testPropertyOrganizationInformation()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "productInformation"
      */
-    public function testPropertyLimit()
+    public function testPropertyProductInformation()
     {
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "productInformationSetups"
      */
-    public function testPropertyCount()
+    public function testPropertyProductInformationSetups()
     {
     }
 
     /**
-     * Test attribute "total"
+     * Test attribute "documentInformation"
      */
-    public function testPropertyTotal()
+    public function testPropertyDocumentInformation()
     {
     }
 
     /**
-     * Test attribute "embedded"
+     * Test attribute "details"
      */
-    public function testPropertyEmbedded()
+    public function testPropertyDetails()
     {
     }
 }

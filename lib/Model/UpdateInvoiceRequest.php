@@ -54,6 +54,7 @@ class UpdateInvoiceRequest implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'customerInformation' => '\CyberSource\Model\Invoicingv2invoicesCustomerInformation',
+        'processingInformation' => '\CyberSource\Model\Invoicingv2invoicesProcessingInformation',
         'invoiceInformation' => '\CyberSource\Model\Invoicingv2invoicesidInvoiceInformation',
         'orderInformation' => '\CyberSource\Model\Invoicingv2invoicesOrderInformation'
     ];
@@ -64,6 +65,7 @@ class UpdateInvoiceRequest implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'customerInformation' => null,
+        'processingInformation' => null,
         'invoiceInformation' => null,
         'orderInformation' => null
     ];
@@ -84,6 +86,7 @@ class UpdateInvoiceRequest implements ArrayAccess
      */
     protected static $attributeMap = [
         'customerInformation' => 'customerInformation',
+        'processingInformation' => 'processingInformation',
         'invoiceInformation' => 'invoiceInformation',
         'orderInformation' => 'orderInformation'
     ];
@@ -95,6 +98,7 @@ class UpdateInvoiceRequest implements ArrayAccess
      */
     protected static $setters = [
         'customerInformation' => 'setCustomerInformation',
+        'processingInformation' => 'setProcessingInformation',
         'invoiceInformation' => 'setInvoiceInformation',
         'orderInformation' => 'setOrderInformation'
     ];
@@ -106,6 +110,7 @@ class UpdateInvoiceRequest implements ArrayAccess
      */
     protected static $getters = [
         'customerInformation' => 'getCustomerInformation',
+        'processingInformation' => 'getProcessingInformation',
         'invoiceInformation' => 'getInvoiceInformation',
         'orderInformation' => 'getOrderInformation'
     ];
@@ -142,6 +147,7 @@ class UpdateInvoiceRequest implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['customerInformation'] = isset($data['customerInformation']) ? $data['customerInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
     }
@@ -155,6 +161,12 @@ class UpdateInvoiceRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['invoiceInformation'] === null) {
+            $invalid_properties[] = "'invoiceInformation' can't be null";
+        }
+        if ($this->container['orderInformation'] === null) {
+            $invalid_properties[] = "'orderInformation' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -167,6 +179,12 @@ class UpdateInvoiceRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['invoiceInformation'] === null) {
+            return false;
+        }
+        if ($this->container['orderInformation'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -188,6 +206,27 @@ class UpdateInvoiceRequest implements ArrayAccess
     public function setCustomerInformation($customerInformation)
     {
         $this->container['customerInformation'] = $customerInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\Invoicingv2invoicesProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\Invoicingv2invoicesProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }
