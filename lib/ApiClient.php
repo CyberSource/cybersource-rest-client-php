@@ -130,12 +130,22 @@ class ApiClient
     public function getClientId()
     {
         $versionInfo = "";
-        $packages = json_decode(file_get_contents(__DIR__ . "/../../../../vendor/composer/installed.json"), true);
 
-        foreach ($packages as $package) {
-            if (isset($package['name']) && strcmp($package['name'], "cybersource/rest-client-php") == 0)
-            {
-                $versionInfo = "cybs-rest-sdk-php-" . $package['version'];
+        if (class_exists('\\Composer\\InstalledVersions')) {
+            $version = \Composer\InstalledVersions::getPrettyVersion('cybersource/rest-client-php');
+            if ($version) {
+                return "cybs-rest-sdk-php-" . $version;
+            }
+        } else {
+            $filePath = __DIR__ . "/../../../../vendor/composer/installed.json";
+            $packagesData = json_decode(file_get_contents($filePath), true);
+            $packages = isset($packagesData['packages']) ? $packagesData['packages'] : $packagesData;
+            foreach ($packages as $package) {
+                if (isset($package['name'])) {
+                    if (strcmp($package['name'], "cybersource/rest-client-php") == 0) {
+                        $versionInfo = "cybs-rest-sdk-php-" . $package['version'];
+                    }
+                }
             }
         }
 
