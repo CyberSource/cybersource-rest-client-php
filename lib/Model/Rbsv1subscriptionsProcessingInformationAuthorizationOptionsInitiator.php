@@ -170,7 +170,7 @@ class Rbsv1subscriptionsProcessingInformationAuthorizationOptionsInitiator imple
 
     /**
      * Sets type
-     * @param string $type This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant**
+     * @param string $type > This field is ignored when you provide the `subscriptionInformation.originalTransactionId` or update the subscription.  This field indicates whether the transaction is a merchant-initiated transaction or customer-initiated transaction.  Valid values: - **customer** - **merchant**
      * @return $this
      */
     public function setType($type)

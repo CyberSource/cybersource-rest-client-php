@@ -89,4 +89,11 @@ class RiskProductsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDecisionManager()
     {
     }
+
+    /**
+     * Test attribute "portfolioRiskControls"
+     */
+    public function testPropertyPortfolioRiskControls()
+    {
+    }
 }

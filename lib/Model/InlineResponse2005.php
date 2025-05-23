@@ -53,13 +53,8 @@ class InlineResponse2005 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse2005Links[]',
-        'object' => 'string',
-        'offset' => 'int',
-        'limit' => 'int',
-        'count' => 'int',
-        'total' => 'int',
-        'embedded' => '\CyberSource\Model\InlineResponse2005Embedded'
+        'status' => 'string',
+        'devices' => '\CyberSource\Model\Dmsv3devicesdeassociateDevices[]'
     ];
 
     /**
@@ -67,13 +62,8 @@ class InlineResponse2005 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'object' => null,
-        'offset' => null,
-        'limit' => null,
-        'count' => null,
-        'total' => null,
-        'embedded' => null
+        'status' => null,
+        'devices' => null
     ];
 
     public static function swaggerTypes()
@@ -91,13 +81,8 @@ class InlineResponse2005 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
-        'object' => 'object',
-        'offset' => 'offset',
-        'limit' => 'limit',
-        'count' => 'count',
-        'total' => 'total',
-        'embedded' => '_embedded'
+        'status' => 'status',
+        'devices' => 'devices'
     ];
 
 
@@ -106,13 +91,8 @@ class InlineResponse2005 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'object' => 'setObject',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit',
-        'count' => 'setCount',
-        'total' => 'setTotal',
-        'embedded' => 'setEmbedded'
+        'status' => 'setStatus',
+        'devices' => 'setDevices'
     ];
 
 
@@ -121,13 +101,8 @@ class InlineResponse2005 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'object' => 'getObject',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit',
-        'count' => 'getCount',
-        'total' => 'getTotal',
-        'embedded' => 'getEmbedded'
+        'status' => 'getStatus',
+        'devices' => 'getDevices'
     ];
 
     public static function attributeMap()
@@ -161,13 +136,8 @@ class InlineResponse2005 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
     }
 
     /**
@@ -196,148 +166,43 @@ class InlineResponse2005 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse2005Links[]
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse2005Links[] $links
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
+     * Gets status
      * @return string
      */
-    public function getObject()
+    public function getStatus()
     {
-        return $this->container['object'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets object
-     * @param string $object
+     * Sets status
+     * @param string $status Possible values: - OK
      * @return $this
      */
-    public function setObject($object)
+    public function setStatus($status)
     {
-        $this->container['object'] = $object;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets offset
-     * @return int
+     * Gets devices
+     * @return \CyberSource\Model\Dmsv3devicesdeassociateDevices[]
      */
-    public function getOffset()
+    public function getDevices()
     {
-        return $this->container['offset'];
+        return $this->container['devices'];
     }
 
     /**
-     * Sets offset
-     * @param int $offset
+     * Sets devices
+     * @param \CyberSource\Model\Dmsv3devicesdeassociateDevices[] $devices
      * @return $this
      */
-    public function setOffset($offset)
+    public function setDevices($devices)
     {
-        $this->container['offset'] = $offset;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     * @param int $limit
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     * @param int $count
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     * @return int
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     * @param int $total
-     * @return $this
-     */
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets embedded
-     * @return \CyberSource\Model\InlineResponse2005Embedded
-     */
-    public function getEmbedded()
-    {
-        return $this->container['embedded'];
-    }
-
-    /**
-     * Sets embedded
-     * @param \CyberSource\Model\InlineResponse2005Embedded $embedded
-     * @return $this
-     */
-    public function setEmbedded($embedded)
-    {
-        $this->container['embedded'] = $embedded;
+        $this->container['devices'] = $devices;
 
         return $this;
     }

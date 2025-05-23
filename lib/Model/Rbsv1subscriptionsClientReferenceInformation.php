@@ -55,7 +55,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'code' => 'string',
         'comments' => 'string',
-        'partner' => '\CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner',
+        'partner' => '\CyberSource\Model\Rbsv1subscriptionsClientReferenceInformationPartner',
         'applicationName' => 'string',
         'applicationVersion' => 'string',
         'applicationUser' => 'string'
@@ -200,7 +200,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets code
-     * @param string $code Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
+     * @param string $code > Deprecated: This field is ignored.  Merchant-generated order reference or tracking number. It is recommended that you send a unique value for each transaction so that you can perform meaningful searches for the transaction.  #### Used by **Authorization** Required field.  #### PIN Debit Requests for PIN debit reversals need to use the same merchant reference number that was used in the transaction that is being reversed.  Required field for all PIN Debit requests (purchase, credit, and reversal).  #### FDC Nashville Global Certain circumstances can cause the processor to truncate this value to 15 or 17 characters for Level II and Level III processing, which can cause a discrepancy between the value you submit and the value included in some processor reports.
      * @return $this
      */
     public function setCode($code)
@@ -221,7 +221,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets comments
-     * @param string $comments Brief description of the order or any comment you wish to add to the order.
+     * @param string $comments > Deprecated: This field is ignored.  Brief description of the order or any comment you wish to add to the order.
      * @return $this
      */
     public function setComments($comments)
@@ -233,7 +233,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Gets partner
-     * @return \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner
+     * @return \CyberSource\Model\Rbsv1subscriptionsClientReferenceInformationPartner
      */
     public function getPartner()
     {
@@ -242,7 +242,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets partner
-     * @param \CyberSource\Model\Riskv1decisionsClientReferenceInformationPartner $partner
+     * @param \CyberSource\Model\Rbsv1subscriptionsClientReferenceInformationPartner $partner
      * @return $this
      */
     public function setPartner($partner)
@@ -263,7 +263,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets applicationName
-     * @param string $applicationName The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource.
+     * @param string $applicationName > Deprecated: This field is ignored.  The name of the Connection Method client (such as Virtual Terminal or SOAP Toolkit API) that the merchant uses to send a transaction request to CyberSource.
      * @return $this
      */
     public function setApplicationName($applicationName)
@@ -284,7 +284,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets applicationVersion
-     * @param string $applicationVersion Version of the CyberSource application or integration used for a transaction.
+     * @param string $applicationVersion > Deprecated: This field is ignored.  Version of the CyberSource application or integration used for a transaction.
      * @return $this
      */
     public function setApplicationVersion($applicationVersion)
@@ -305,7 +305,7 @@ class Rbsv1subscriptionsClientReferenceInformation implements ArrayAccess
 
     /**
      * Sets applicationUser
-     * @param string $applicationUser The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method.
+     * @param string $applicationUser > Deprecated: This field is ignored.  The entity that is responsible for running the transaction and submitting the processing request to CyberSource. This could be a person, a system, or a connection method.
      * @return $this
      */
     public function setApplicationUser($applicationUser)

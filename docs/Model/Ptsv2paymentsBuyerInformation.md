@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **personalIdentification** | [**\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]**](Ptsv2paymentsBuyerInformationPersonalIdentification.md) |  | [optional] 
 **hashedPassword** | **string** | The merchant&#39;s password that CyberSource hashes and stores as a hashed password. | [optional] 
 **gender** | **string** | Customer&#39;s gender. Possible values are F (female), M (male),O (other). | [optional] 
-**language** | **string** | language setting of the user | [optional] 
+**language** | **string** | language setting of the user.  Supports 2-character language codes (e.g., en, fr) and 5-character locale values (e.g., en-US, fr-CA). | [optional] 
 **noteToSeller** | **string** | Note to the recipient of the funds in this transaction | [optional] 
 **mobilePhone** | **int** | Cardholder&#39;s mobile phone number. **Important** Required for Visa Secure transactions in Brazil. Do not use this request field for any other types of transactions. | [optional] 
 **walletId** | **string** | The one-time identification code of the Alipay wallet user.  It is scanned from the barcode that is shown by the mobile application. | [optional] 

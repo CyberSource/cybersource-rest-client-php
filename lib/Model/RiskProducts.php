@@ -54,7 +54,8 @@ class RiskProducts implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'fraudManagementEssentials' => '\CyberSource\Model\RiskProductsFraudManagementEssentials',
-        'decisionManager' => '\CyberSource\Model\RiskProductsDecisionManager'
+        'decisionManager' => '\CyberSource\Model\RiskProductsDecisionManager',
+        'portfolioRiskControls' => '\CyberSource\Model\RiskProductsPortfolioRiskControls'
     ];
 
     /**
@@ -63,7 +64,8 @@ class RiskProducts implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'fraudManagementEssentials' => null,
-        'decisionManager' => null
+        'decisionManager' => null,
+        'portfolioRiskControls' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class RiskProducts implements ArrayAccess
      */
     protected static $attributeMap = [
         'fraudManagementEssentials' => 'fraudManagementEssentials',
-        'decisionManager' => 'decisionManager'
+        'decisionManager' => 'decisionManager',
+        'portfolioRiskControls' => 'portfolioRiskControls'
     ];
 
 
@@ -92,7 +95,8 @@ class RiskProducts implements ArrayAccess
      */
     protected static $setters = [
         'fraudManagementEssentials' => 'setFraudManagementEssentials',
-        'decisionManager' => 'setDecisionManager'
+        'decisionManager' => 'setDecisionManager',
+        'portfolioRiskControls' => 'setPortfolioRiskControls'
     ];
 
 
@@ -102,7 +106,8 @@ class RiskProducts implements ArrayAccess
      */
     protected static $getters = [
         'fraudManagementEssentials' => 'getFraudManagementEssentials',
-        'decisionManager' => 'getDecisionManager'
+        'decisionManager' => 'getDecisionManager',
+        'portfolioRiskControls' => 'getPortfolioRiskControls'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class RiskProducts implements ArrayAccess
     {
         $this->container['fraudManagementEssentials'] = isset($data['fraudManagementEssentials']) ? $data['fraudManagementEssentials'] : null;
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;
+        $this->container['portfolioRiskControls'] = isset($data['portfolioRiskControls']) ? $data['portfolioRiskControls'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class RiskProducts implements ArrayAccess
     public function setDecisionManager($decisionManager)
     {
         $this->container['decisionManager'] = $decisionManager;
+
+        return $this;
+    }
+
+    /**
+     * Gets portfolioRiskControls
+     * @return \CyberSource\Model\RiskProductsPortfolioRiskControls
+     */
+    public function getPortfolioRiskControls()
+    {
+        return $this->container['portfolioRiskControls'];
+    }
+
+    /**
+     * Sets portfolioRiskControls
+     * @param \CyberSource\Model\RiskProductsPortfolioRiskControls $portfolioRiskControls
+     * @return $this
+     */
+    public function setPortfolioRiskControls($portfolioRiskControls)
+    {
+        $this->container['portfolioRiskControls'] = $portfolioRiskControls;
 
         return $this;
     }

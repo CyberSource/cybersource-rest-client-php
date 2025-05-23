@@ -54,6 +54,7 @@ class PaymentsProducts implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'cardProcessing' => '\CyberSource\Model\PaymentsProductsCardProcessing',
+        'alternativePaymentMethods' => '\CyberSource\Model\PaymentsProductsAlternativePaymentMethods',
         'cardPresentConnect' => '\CyberSource\Model\PaymentsProductsCardPresentConnect',
         'cybsReadyTerminal' => '\CyberSource\Model\PaymentsProductsCybsReadyTerminal',
         'eCheck' => '\CyberSource\Model\PaymentsProductsECheck',
@@ -80,6 +81,7 @@ class PaymentsProducts implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'cardProcessing' => null,
+        'alternativePaymentMethods' => null,
         'cardPresentConnect' => null,
         'cybsReadyTerminal' => null,
         'eCheck' => null,
@@ -116,6 +118,7 @@ class PaymentsProducts implements ArrayAccess
      */
     protected static $attributeMap = [
         'cardProcessing' => 'cardProcessing',
+        'alternativePaymentMethods' => 'alternativePaymentMethods',
         'cardPresentConnect' => 'cardPresentConnect',
         'cybsReadyTerminal' => 'cybsReadyTerminal',
         'eCheck' => 'eCheck',
@@ -143,6 +146,7 @@ class PaymentsProducts implements ArrayAccess
      */
     protected static $setters = [
         'cardProcessing' => 'setCardProcessing',
+        'alternativePaymentMethods' => 'setAlternativePaymentMethods',
         'cardPresentConnect' => 'setCardPresentConnect',
         'cybsReadyTerminal' => 'setCybsReadyTerminal',
         'eCheck' => 'setECheck',
@@ -170,6 +174,7 @@ class PaymentsProducts implements ArrayAccess
      */
     protected static $getters = [
         'cardProcessing' => 'getCardProcessing',
+        'alternativePaymentMethods' => 'getAlternativePaymentMethods',
         'cardPresentConnect' => 'getCardPresentConnect',
         'cybsReadyTerminal' => 'getCybsReadyTerminal',
         'eCheck' => 'getECheck',
@@ -222,6 +227,7 @@ class PaymentsProducts implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['cardProcessing'] = isset($data['cardProcessing']) ? $data['cardProcessing'] : null;
+        $this->container['alternativePaymentMethods'] = isset($data['alternativePaymentMethods']) ? $data['alternativePaymentMethods'] : null;
         $this->container['cardPresentConnect'] = isset($data['cardPresentConnect']) ? $data['cardPresentConnect'] : null;
         $this->container['cybsReadyTerminal'] = isset($data['cybsReadyTerminal']) ? $data['cybsReadyTerminal'] : null;
         $this->container['eCheck'] = isset($data['eCheck']) ? $data['eCheck'] : null;
@@ -284,6 +290,27 @@ class PaymentsProducts implements ArrayAccess
     public function setCardProcessing($cardProcessing)
     {
         $this->container['cardProcessing'] = $cardProcessing;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternativePaymentMethods
+     * @return \CyberSource\Model\PaymentsProductsAlternativePaymentMethods
+     */
+    public function getAlternativePaymentMethods()
+    {
+        return $this->container['alternativePaymentMethods'];
+    }
+
+    /**
+     * Sets alternativePaymentMethods
+     * @param \CyberSource\Model\PaymentsProductsAlternativePaymentMethods $alternativePaymentMethods
+     * @return $this
+     */
+    public function setAlternativePaymentMethods($alternativePaymentMethods)
+    {
+        $this->container['alternativePaymentMethods'] = $alternativePaymentMethods;
 
         return $this;
     }

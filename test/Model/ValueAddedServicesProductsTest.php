@@ -89,4 +89,11 @@ class ValueAddedServicesProductsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTransactionSearch()
     {
     }
+
+    /**
+     * Test attribute "bankAccountValidation"
+     */
+    public function testPropertyBankAccountValidation()
+    {
+    }
 }

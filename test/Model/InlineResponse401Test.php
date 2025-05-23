@@ -77,9 +77,16 @@ class InlineResponse401Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "status"
      */
-    public function testPropertyLinks()
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
     {
     }
 
@@ -91,37 +98,9 @@ class InlineResponse401Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "correlationId"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyCorrelationId()
-    {
-    }
-
-    /**
-     * Test attribute "detail"
-     */
-    public function testPropertyDetail()
-    {
-    }
-
-    /**
-     * Test attribute "fields"
-     */
-    public function testPropertyFields()
-    {
-    }
-
-    /**
-     * Test attribute "localizationKey"
-     */
-    public function testPropertyLocalizationKey()
-    {
-    }
-
-    /**
-     * Test attribute "message"
-     */
-    public function testPropertyMessage()
+    public function testPropertySubmitTimeUtc()
     {
     }
 }

@@ -136,6 +136,7 @@ class TransientTokenDataApi
         $queryParams = [];
         $headerParams = [];
         $formParams = [];
+        
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/jwt']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;

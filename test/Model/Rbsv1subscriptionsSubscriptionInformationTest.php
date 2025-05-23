@@ -103,4 +103,18 @@ class Rbsv1subscriptionsSubscriptionInformationTest extends \PHPUnit_Framework_T
     public function testPropertyStartDate()
     {
     }
+
+    /**
+     * Test attribute "originalTransactionId"
+     */
+    public function testPropertyOriginalTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "originalTransactionAuthorizedAmount"
+     */
+    public function testPropertyOriginalTransactionAuthorizedAmount()
+    {
+    }
 }
