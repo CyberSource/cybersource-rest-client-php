@@ -56,7 +56,9 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
         'code' => 'string',
         'planId' => 'string',
         'name' => 'string',
-        'startDate' => 'string'
+        'startDate' => 'string',
+        'originalTransactionId' => 'string',
+        'originalTransactionAuthorizedAmount' => 'string'
     ];
 
     /**
@@ -67,7 +69,9 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
         'code' => null,
         'planId' => null,
         'name' => null,
-        'startDate' => null
+        'startDate' => null,
+        'originalTransactionId' => null,
+        'originalTransactionAuthorizedAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +92,9 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
         'code' => 'code',
         'planId' => 'planId',
         'name' => 'name',
-        'startDate' => 'startDate'
+        'startDate' => 'startDate',
+        'originalTransactionId' => 'originalTransactionId',
+        'originalTransactionAuthorizedAmount' => 'originalTransactionAuthorizedAmount'
     ];
 
 
@@ -100,7 +106,9 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
         'code' => 'setCode',
         'planId' => 'setPlanId',
         'name' => 'setName',
-        'startDate' => 'setStartDate'
+        'startDate' => 'setStartDate',
+        'originalTransactionId' => 'setOriginalTransactionId',
+        'originalTransactionAuthorizedAmount' => 'setOriginalTransactionAuthorizedAmount'
     ];
 
 
@@ -112,7 +120,9 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
         'code' => 'getCode',
         'planId' => 'getPlanId',
         'name' => 'getName',
-        'startDate' => 'getStartDate'
+        'startDate' => 'getStartDate',
+        'originalTransactionId' => 'getOriginalTransactionId',
+        'originalTransactionAuthorizedAmount' => 'getOriginalTransactionAuthorizedAmount'
     ];
 
     public static function attributeMap()
@@ -150,6 +160,8 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
         $this->container['planId'] = isset($data['planId']) ? $data['planId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
+        $this->container['originalTransactionId'] = isset($data['originalTransactionId']) ? $data['originalTransactionId'] : null;
+        $this->container['originalTransactionAuthorizedAmount'] = isset($data['originalTransactionAuthorizedAmount']) ? $data['originalTransactionAuthorizedAmount'] : null;
     }
 
     /**
@@ -269,6 +281,48 @@ class Rbsv1subscriptionsSubscriptionInformation implements ArrayAccess
     public function setStartDate($startDate)
     {
         $this->container['startDate'] = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets originalTransactionId
+     * @return string
+     */
+    public function getOriginalTransactionId()
+    {
+        return $this->container['originalTransactionId'];
+    }
+
+    /**
+     * Sets originalTransactionId
+     * @param string $originalTransactionId Network transaction identifier that was returned in the payment response field _processorInformation.transactionId_ in the reply message for the original subscription-initializing payment.
+     * @return $this
+     */
+    public function setOriginalTransactionId($originalTransactionId)
+    {
+        $this->container['originalTransactionId'] = $originalTransactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets originalTransactionAuthorizedAmount
+     * @return string
+     */
+    public function getOriginalTransactionAuthorizedAmount()
+    {
+        return $this->container['originalTransactionAuthorizedAmount'];
+    }
+
+    /**
+     * Sets originalTransactionAuthorizedAmount
+     * @param string $originalTransactionAuthorizedAmount Amount of the original subscription-initializing payment.  *Required when using a Diners or Discover card*.
+     * @return $this
+     */
+    public function setOriginalTransactionAuthorizedAmount($originalTransactionAuthorizedAmount)
+    {
+        $this->container['originalTransactionAuthorizedAmount'] = $originalTransactionAuthorizedAmount;
 
         return $this;
     }

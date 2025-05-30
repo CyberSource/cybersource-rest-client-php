@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cardProcessing** | [**\CyberSource\Model\PaymentsProductsCardProcessing**](PaymentsProductsCardProcessing.md) |  | [optional] 
+**alternativePaymentMethods** | [**\CyberSource\Model\PaymentsProductsAlternativePaymentMethods**](PaymentsProductsAlternativePaymentMethods.md) |  | [optional] 
 **cardPresentConnect** | [**\CyberSource\Model\PaymentsProductsCardPresentConnect**](PaymentsProductsCardPresentConnect.md) |  | [optional] 
 **cybsReadyTerminal** | [**\CyberSource\Model\PaymentsProductsCybsReadyTerminal**](PaymentsProductsCybsReadyTerminal.md) |  | [optional] 
 **eCheck** | [**\CyberSource\Model\PaymentsProductsECheck**](PaymentsProductsECheck.md) |  | [optional] 

@@ -84,6 +84,13 @@ class InlineResponse2012SetupsPaymentsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "alternativePaymentMethods"
+     */
+    public function testPropertyAlternativePaymentMethods()
+    {
+    }
+
+    /**
      * Test attribute "cardPresentConnect"
      */
     public function testPropertyCardPresentConnect()

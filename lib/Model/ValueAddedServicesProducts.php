@@ -54,7 +54,8 @@ class ValueAddedServicesProducts implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'reporting' => '\CyberSource\Model\PaymentsProductsTax',
-        'transactionSearch' => '\CyberSource\Model\PaymentsProductsTax'
+        'transactionSearch' => '\CyberSource\Model\PaymentsProductsTax',
+        'bankAccountValidation' => '\CyberSource\Model\PaymentsProductsTax'
     ];
 
     /**
@@ -63,7 +64,8 @@ class ValueAddedServicesProducts implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'reporting' => null,
-        'transactionSearch' => null
+        'transactionSearch' => null,
+        'bankAccountValidation' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class ValueAddedServicesProducts implements ArrayAccess
      */
     protected static $attributeMap = [
         'reporting' => 'reporting',
-        'transactionSearch' => 'transactionSearch'
+        'transactionSearch' => 'transactionSearch',
+        'bankAccountValidation' => 'bankAccountValidation'
     ];
 
 
@@ -92,7 +95,8 @@ class ValueAddedServicesProducts implements ArrayAccess
      */
     protected static $setters = [
         'reporting' => 'setReporting',
-        'transactionSearch' => 'setTransactionSearch'
+        'transactionSearch' => 'setTransactionSearch',
+        'bankAccountValidation' => 'setBankAccountValidation'
     ];
 
 
@@ -102,7 +106,8 @@ class ValueAddedServicesProducts implements ArrayAccess
      */
     protected static $getters = [
         'reporting' => 'getReporting',
-        'transactionSearch' => 'getTransactionSearch'
+        'transactionSearch' => 'getTransactionSearch',
+        'bankAccountValidation' => 'getBankAccountValidation'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class ValueAddedServicesProducts implements ArrayAccess
     {
         $this->container['reporting'] = isset($data['reporting']) ? $data['reporting'] : null;
         $this->container['transactionSearch'] = isset($data['transactionSearch']) ? $data['transactionSearch'] : null;
+        $this->container['bankAccountValidation'] = isset($data['bankAccountValidation']) ? $data['bankAccountValidation'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class ValueAddedServicesProducts implements ArrayAccess
     public function setTransactionSearch($transactionSearch)
     {
         $this->container['transactionSearch'] = $transactionSearch;
+
+        return $this;
+    }
+
+    /**
+     * Gets bankAccountValidation
+     * @return \CyberSource\Model\PaymentsProductsTax
+     */
+    public function getBankAccountValidation()
+    {
+        return $this->container['bankAccountValidation'];
+    }
+
+    /**
+     * Sets bankAccountValidation
+     * @param \CyberSource\Model\PaymentsProductsTax $bankAccountValidation
+     * @return $this
+     */
+    public function setBankAccountValidation($bankAccountValidation)
+    {
+        $this->container['bankAccountValidation'] = $bankAccountValidation;
 
         return $this;
     }

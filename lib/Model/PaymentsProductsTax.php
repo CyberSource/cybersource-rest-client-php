@@ -53,7 +53,7 @@ class PaymentsProductsTax implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subscriptionInformation' => '\CyberSource\Model\PaymentsProductsPayerAuthenticationSubscriptionInformation'
+        'subscriptionInformation' => '\CyberSource\Model\PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'
     ];
 
     /**
@@ -161,7 +161,7 @@ class PaymentsProductsTax implements ArrayAccess
 
     /**
      * Gets subscriptionInformation
-     * @return \CyberSource\Model\PaymentsProductsPayerAuthenticationSubscriptionInformation
+     * @return \CyberSource\Model\PaymentsProductsAlternativePaymentMethodsSubscriptionInformation
      */
     public function getSubscriptionInformation()
     {
@@ -170,7 +170,7 @@ class PaymentsProductsTax implements ArrayAccess
 
     /**
      * Sets subscriptionInformation
-     * @param \CyberSource\Model\PaymentsProductsPayerAuthenticationSubscriptionInformation $subscriptionInformation
+     * @param \CyberSource\Model\PaymentsProductsAlternativePaymentMethodsSubscriptionInformation $subscriptionInformation
      * @return $this
      */
     public function setSubscriptionInformation($subscriptionInformation)

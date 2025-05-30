@@ -53,13 +53,10 @@ class InlineResponse401 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse401Links',
+        'status' => 'string',
+        'message' => 'string',
         'code' => 'string',
-        'correlationId' => 'string',
-        'detail' => 'string',
-        'fields' => '\CyberSource\Model\InlineResponse401Fields[]',
-        'localizationKey' => 'string',
-        'message' => 'string'
+        'submitTimeUtc' => 'string'
     ];
 
     /**
@@ -67,13 +64,10 @@ class InlineResponse401 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
+        'status' => null,
+        'message' => null,
         'code' => null,
-        'correlationId' => null,
-        'detail' => null,
-        'fields' => null,
-        'localizationKey' => null,
-        'message' => null
+        'submitTimeUtc' => null
     ];
 
     public static function swaggerTypes()
@@ -91,13 +85,10 @@ class InlineResponse401 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
+        'status' => 'status',
+        'message' => 'message',
         'code' => 'code',
-        'correlationId' => 'correlationId',
-        'detail' => 'detail',
-        'fields' => 'fields',
-        'localizationKey' => 'localizationKey',
-        'message' => 'message'
+        'submitTimeUtc' => 'submitTimeUtc'
     ];
 
 
@@ -106,13 +97,10 @@ class InlineResponse401 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
+        'status' => 'setStatus',
+        'message' => 'setMessage',
         'code' => 'setCode',
-        'correlationId' => 'setCorrelationId',
-        'detail' => 'setDetail',
-        'fields' => 'setFields',
-        'localizationKey' => 'setLocalizationKey',
-        'message' => 'setMessage'
+        'submitTimeUtc' => 'setSubmitTimeUtc'
     ];
 
 
@@ -121,13 +109,10 @@ class InlineResponse401 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
+        'status' => 'getStatus',
+        'message' => 'getMessage',
         'code' => 'getCode',
-        'correlationId' => 'getCorrelationId',
-        'detail' => 'getDetail',
-        'fields' => 'getFields',
-        'localizationKey' => 'getLocalizationKey',
-        'message' => 'getMessage'
+        'submitTimeUtc' => 'getSubmitTimeUtc'
     ];
 
     public static function attributeMap()
@@ -161,13 +146,10 @@ class InlineResponse401 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
-        $this->container['detail'] = isset($data['detail']) ? $data['detail'] : null;
-        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
-        $this->container['localizationKey'] = isset($data['localizationKey']) ? $data['localizationKey'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
     }
 
     /**
@@ -196,127 +178,22 @@ class InlineResponse401 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse401Links
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse401Links $links
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets code
+     * Gets status
      * @return string
      */
-    public function getCode()
+    public function getStatus()
     {
-        return $this->container['code'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets code
-     * @param string $code Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR
+     * Sets status
+     * @param string $status The status of the submitted request.   Possible values: - UNAUTHORIZED
      * @return $this
      */
-    public function setCode($code)
+    public function setStatus($status)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets correlationId
-     * @return string
-     */
-    public function getCorrelationId()
-    {
-        return $this->container['correlationId'];
-    }
-
-    /**
-     * Sets correlationId
-     * @param string $correlationId
-     * @return $this
-     */
-    public function setCorrelationId($correlationId)
-    {
-        $this->container['correlationId'] = $correlationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets detail
-     * @return string
-     */
-    public function getDetail()
-    {
-        return $this->container['detail'];
-    }
-
-    /**
-     * Sets detail
-     * @param string $detail
-     * @return $this
-     */
-    public function setDetail($detail)
-    {
-        $this->container['detail'] = $detail;
-
-        return $this;
-    }
-
-    /**
-     * Gets fields
-     * @return \CyberSource\Model\InlineResponse401Fields[]
-     */
-    public function getFields()
-    {
-        return $this->container['fields'];
-    }
-
-    /**
-     * Sets fields
-     * @param \CyberSource\Model\InlineResponse401Fields[] $fields
-     * @return $this
-     */
-    public function setFields($fields)
-    {
-        $this->container['fields'] = $fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets localizationKey
-     * @return string
-     */
-    public function getLocalizationKey()
-    {
-        return $this->container['localizationKey'];
-    }
-
-    /**
-     * Sets localizationKey
-     * @param string $localizationKey Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported
-     * @return $this
-     */
-    public function setLocalizationKey($localizationKey)
-    {
-        $this->container['localizationKey'] = $localizationKey;
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -332,12 +209,54 @@ class InlineResponse401 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message
+     * @param string $message The detail message related to the status and reason listed above.
      * @return $this
      */
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code An optional short string which identifies the exact error.
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return string
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }

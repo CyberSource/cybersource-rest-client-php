@@ -89,4 +89,11 @@ class InlineResponse2012SetupsValueAddedServicesTest extends \PHPUnit_Framework_
     public function testPropertyTransactionSearch()
     {
     }
+
+    /**
+     * Test attribute "bankAccountValidation"
+     */
+    public function testPropertyBankAccountValidation()
+    {
+    }
 }

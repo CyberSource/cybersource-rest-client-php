@@ -77,51 +77,16 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "status"
      */
-    public function testPropertyLinks()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "object"
+     * Test attribute "devices"
      */
-    public function testPropertyObject()
-    {
-    }
-
-    /**
-     * Test attribute "offset"
-     */
-    public function testPropertyOffset()
-    {
-    }
-
-    /**
-     * Test attribute "limit"
-     */
-    public function testPropertyLimit()
-    {
-    }
-
-    /**
-     * Test attribute "count"
-     */
-    public function testPropertyCount()
-    {
-    }
-
-    /**
-     * Test attribute "total"
-     */
-    public function testPropertyTotal()
-    {
-    }
-
-    /**
-     * Test attribute "embedded"
-     */
-    public function testPropertyEmbedded()
+    public function testPropertyDevices()
     {
     }
 }
