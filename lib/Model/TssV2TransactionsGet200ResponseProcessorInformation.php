@@ -65,6 +65,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => '\CyberSource\Model\Riskv1decisionsProcessorInformationCardVerification',
         'achVerification' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationAchVerification',
         'electronicVerificationResults' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults',
+        'eventStatus' => 'string',
         'systemTraceAuditNumber' => 'string',
         'responseCodeSource' => 'string',
         'paymentAccountReferenceNumber' => 'string'
@@ -87,6 +88,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => null,
         'achVerification' => null,
         'electronicVerificationResults' => null,
+        'eventStatus' => null,
         'systemTraceAuditNumber' => null,
         'responseCodeSource' => null,
         'paymentAccountReferenceNumber' => null
@@ -119,6 +121,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => 'cardVerification',
         'achVerification' => 'achVerification',
         'electronicVerificationResults' => 'electronicVerificationResults',
+        'eventStatus' => 'eventStatus',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
         'responseCodeSource' => 'responseCodeSource',
         'paymentAccountReferenceNumber' => 'paymentAccountReferenceNumber'
@@ -142,6 +145,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => 'setCardVerification',
         'achVerification' => 'setAchVerification',
         'electronicVerificationResults' => 'setElectronicVerificationResults',
+        'eventStatus' => 'setEventStatus',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
         'responseCodeSource' => 'setResponseCodeSource',
         'paymentAccountReferenceNumber' => 'setPaymentAccountReferenceNumber'
@@ -165,6 +169,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'cardVerification' => 'getCardVerification',
         'achVerification' => 'getAchVerification',
         'electronicVerificationResults' => 'getElectronicVerificationResults',
+        'eventStatus' => 'getEventStatus',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
         'responseCodeSource' => 'getResponseCodeSource',
         'paymentAccountReferenceNumber' => 'getPaymentAccountReferenceNumber'
@@ -213,6 +218,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
         $this->container['achVerification'] = isset($data['achVerification']) ? $data['achVerification'] : null;
         $this->container['electronicVerificationResults'] = isset($data['electronicVerificationResults']) ? $data['electronicVerificationResults'] : null;
+        $this->container['eventStatus'] = isset($data['eventStatus']) ? $data['eventStatus'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
         $this->container['paymentAccountReferenceNumber'] = isset($data['paymentAccountReferenceNumber']) ? $data['paymentAccountReferenceNumber'] : null;
@@ -491,6 +497,27 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     public function setElectronicVerificationResults($electronicVerificationResults)
     {
         $this->container['electronicVerificationResults'] = $electronicVerificationResults;
+
+        return $this;
+    }
+
+    /**
+     * Gets eventStatus
+     * @return string
+     */
+    public function getEventStatus()
+    {
+        return $this->container['eventStatus'];
+    }
+
+    /**
+     * Sets eventStatus
+     * @param string $eventStatus The event status.
+     * @return $this
+     */
+    public function setEventStatus($eventStatus)
+    {
+        $this->container['eventStatus'] = $eventStatus;
 
         return $this;
     }

@@ -54,7 +54,7 @@ class MLEUtility
             return $requestBody;
         }
         if (self::$logger === null) {
-            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $merchantConfig->getLogConfiguration());
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
         }
         $mleCert = self::getMLECert($merchantConfig);
 
@@ -181,7 +181,7 @@ class MLEUtility
                 // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");
             } else {
                 $timeToExpire = $notValidAfter - time();
-                $warningPeriod = GlobalLabelParameter::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
+                $warningPeriod = GlobalParameter::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
 
                 if ($timeToExpire < $warningPeriod) {
                     self::$logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");

@@ -14,7 +14,7 @@ class TokenVerification
     public function __construct(\CyberSource\Logging\LogConfiguration $logConfig=null)
     {
         if (self::$MyLogger === null) {
-            self::$MyLogger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), $logConfig);
+            self::$MyLogger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $logConfig);
         }
     }
     

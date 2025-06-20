@@ -59,6 +59,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestShipping' => 'bool',
         'shipToCountries' => 'string[]',
         'showAcceptedNetworkIcons' => 'bool',
+        'showConfirmationStep' => 'bool',
         'requestSaveCard' => 'bool',
         'comboCard' => 'bool',
         'cPF' => 'bool'
@@ -75,6 +76,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestShipping' => null,
         'shipToCountries' => null,
         'showAcceptedNetworkIcons' => null,
+        'showConfirmationStep' => null,
         'requestSaveCard' => null,
         'comboCard' => null,
         'cPF' => null
@@ -101,6 +103,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestShipping' => 'requestShipping',
         'shipToCountries' => 'shipToCountries',
         'showAcceptedNetworkIcons' => 'showAcceptedNetworkIcons',
+        'showConfirmationStep' => 'showConfirmationStep',
         'requestSaveCard' => 'requestSaveCard',
         'comboCard' => 'comboCard',
         'cPF' => 'CPF'
@@ -118,6 +121,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestShipping' => 'setRequestShipping',
         'shipToCountries' => 'setShipToCountries',
         'showAcceptedNetworkIcons' => 'setShowAcceptedNetworkIcons',
+        'showConfirmationStep' => 'setShowConfirmationStep',
         'requestSaveCard' => 'setRequestSaveCard',
         'comboCard' => 'setComboCard',
         'cPF' => 'setCPF'
@@ -135,6 +139,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         'requestShipping' => 'getRequestShipping',
         'shipToCountries' => 'getShipToCountries',
         'showAcceptedNetworkIcons' => 'getShowAcceptedNetworkIcons',
+        'showConfirmationStep' => 'getShowConfirmationStep',
         'requestSaveCard' => 'getRequestSaveCard',
         'comboCard' => 'getComboCard',
         'cPF' => 'getCPF'
@@ -177,6 +182,7 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
         $this->container['requestShipping'] = isset($data['requestShipping']) ? $data['requestShipping'] : null;
         $this->container['shipToCountries'] = isset($data['shipToCountries']) ? $data['shipToCountries'] : null;
         $this->container['showAcceptedNetworkIcons'] = isset($data['showAcceptedNetworkIcons']) ? $data['showAcceptedNetworkIcons'] : null;
+        $this->container['showConfirmationStep'] = isset($data['showConfirmationStep']) ? $data['showConfirmationStep'] : null;
         $this->container['requestSaveCard'] = isset($data['requestSaveCard']) ? $data['requestSaveCard'] : null;
         $this->container['comboCard'] = isset($data['comboCard']) ? $data['comboCard'] : null;
         $this->container['cPF'] = isset($data['cPF']) ? $data['cPF'] : null;
@@ -329,6 +335,27 @@ class Upv1capturecontextsCaptureMandate implements ArrayAccess
     public function setShowAcceptedNetworkIcons($showAcceptedNetworkIcons)
     {
         $this->container['showAcceptedNetworkIcons'] = $showAcceptedNetworkIcons;
+
+        return $this;
+    }
+
+    /**
+     * Gets showConfirmationStep
+     * @return bool
+     */
+    public function getShowConfirmationStep()
+    {
+        return $this->container['showConfirmationStep'];
+    }
+
+    /**
+     * Sets showConfirmationStep
+     * @param bool $showConfirmationStep Configure Unified Checkout to display the final confirmation screen when using Click to Pay.<br> Where 'BillingType'= NONE and 'requestShipping'= FALSE and the customer is using an existing Click to Pay card as their chosen payment method, a final confirmation screen can be removed allowing the customer to check out as soon as they have selected their payment method from within their Click to Pay card tray.  Possible values: - True - False
+     * @return $this
+     */
+    public function setShowConfirmationStep($showConfirmationStep)
+    {
+        $this->container['showConfirmationStep'] = $showConfirmationStep;
 
         return $this;
     }

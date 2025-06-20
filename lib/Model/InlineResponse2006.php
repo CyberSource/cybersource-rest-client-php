@@ -53,12 +53,8 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'totalCount' => 'int',
-        'offset' => 'int',
-        'limit' => 'int',
-        'sort' => 'string',
-        'count' => 'int',
-        'devices' => '\CyberSource\Model\InlineResponse2006Devices[]'
+        'status' => 'string',
+        'devices' => '\CyberSource\Model\Dmsv3devicesdeassociateDevices[]'
     ];
 
     /**
@@ -66,11 +62,7 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'totalCount' => null,
-        'offset' => null,
-        'limit' => null,
-        'sort' => null,
-        'count' => null,
+        'status' => null,
         'devices' => null
     ];
 
@@ -89,11 +81,7 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalCount' => 'totalCount',
-        'offset' => 'offset',
-        'limit' => 'limit',
-        'sort' => 'sort',
-        'count' => 'count',
+        'status' => 'status',
         'devices' => 'devices'
     ];
 
@@ -103,11 +91,7 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'totalCount' => 'setTotalCount',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit',
-        'sort' => 'setSort',
-        'count' => 'setCount',
+        'status' => 'setStatus',
         'devices' => 'setDevices'
     ];
 
@@ -117,11 +101,7 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'totalCount' => 'getTotalCount',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit',
-        'sort' => 'getSort',
-        'count' => 'getCount',
+        'status' => 'getStatus',
         'devices' => 'getDevices'
     ];
 
@@ -156,11 +136,7 @@ class InlineResponse2006 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
     }
 
@@ -190,113 +166,29 @@ class InlineResponse2006 implements ArrayAccess
 
 
     /**
-     * Gets totalCount
-     * @return int
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     * @param int $totalCount Total number of results.
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets offset
-     * @return int
-     */
-    public function getOffset()
-    {
-        return $this->container['offset'];
-    }
-
-    /**
-     * Sets offset
-     * @param int $offset Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned.
-     * @return $this
-     */
-    public function setOffset($offset)
-    {
-        $this->container['offset'] = $offset;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     * @param int $limit Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500.
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort
+     * Gets status
      * @return string
      */
-    public function getSort()
+    public function getStatus()
     {
-        return $this->container['sort'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets sort
-     * @param string $sort A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate`
+     * Sets status
+     * @param string $status Possible values: - OK
      * @return $this
      */
-    public function setSort($sort)
+    public function setStatus($status)
     {
-        $this->container['sort'] = $sort;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     * @param int $count Results for this page, this could be below the limit.
-     * @return $this
-     */
-    public function setCount($count)
-    {
-        $this->container['count'] = $count;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
      * Gets devices
-     * @return \CyberSource\Model\InlineResponse2006Devices[]
+     * @return \CyberSource\Model\Dmsv3devicesdeassociateDevices[]
      */
     public function getDevices()
     {
@@ -305,7 +197,7 @@ class InlineResponse2006 implements ArrayAccess
 
     /**
      * Sets devices
-     * @param \CyberSource\Model\InlineResponse2006Devices[] $devices A collection of devices
+     * @param \CyberSource\Model\Dmsv3devicesdeassociateDevices[] $devices
      * @return $this
      */
     public function setDevices($devices)

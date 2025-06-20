@@ -56,7 +56,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         'origination' => 'string',
         'destination' => 'string',
         'carrierCode' => 'string',
-        'departureDate' => 'string'
+        'departureDate' => 'string',
+        'departureTime' => 'int'
     ];
 
     /**
@@ -67,7 +68,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         'origination' => null,
         'destination' => null,
         'carrierCode' => null,
-        'departureDate' => null
+        'departureDate' => null,
+        'departureTime' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         'origination' => 'origination',
         'destination' => 'destination',
         'carrierCode' => 'carrierCode',
-        'departureDate' => 'departureDate'
+        'departureDate' => 'departureDate',
+        'departureTime' => 'departureTime'
     ];
 
 
@@ -100,7 +103,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         'origination' => 'setOrigination',
         'destination' => 'setDestination',
         'carrierCode' => 'setCarrierCode',
-        'departureDate' => 'setDepartureDate'
+        'departureDate' => 'setDepartureDate',
+        'departureTime' => 'setDepartureTime'
     ];
 
 
@@ -112,7 +116,8 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         'origination' => 'getOrigination',
         'destination' => 'getDestination',
         'carrierCode' => 'getCarrierCode',
-        'departureDate' => 'getDepartureDate'
+        'departureDate' => 'getDepartureDate',
+        'departureTime' => 'getDepartureTime'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
         $this->container['destination'] = isset($data['destination']) ? $data['destination'] : null;
         $this->container['carrierCode'] = isset($data['carrierCode']) ? $data['carrierCode'] : null;
         $this->container['departureDate'] = isset($data['departureDate']) ? $data['departureDate'] : null;
+        $this->container['departureTime'] = isset($data['departureTime']) ? $data['departureTime'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class Riskv1decisionsTravelInformationLegs implements ArrayAccess
     public function setDepartureDate($departureDate)
     {
         $this->container['departureDate'] = $departureDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets departureTime
+     * @return int
+     */
+    public function getDepartureTime()
+    {
+        return $this->container['departureTime'];
+    }
+
+    /**
+     * Sets departureTime
+     * @param int $departureTime Time of departure for this leg of the trip. The format is military time and HHMM: If not all zeros, then the hours must be `00-23` and the minutes must be `00-59`. Format: English characters only. Optional request field for travel legs.
+     * @return $this
+     */
+    public function setDepartureTime($departureTime)
+    {
+        $this->container['departureTime'] = $departureTime;
 
         return $this;
     }

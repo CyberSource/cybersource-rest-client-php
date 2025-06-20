@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **subscriptionInformation** | [**\CyberSource\Model\GetAllSubscriptionsResponseSubscriptionInformation**](GetAllSubscriptionsResponseSubscriptionInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\GetAllSubscriptionsResponsePaymentInformation**](GetAllSubscriptionsResponsePaymentInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\GetAllSubscriptionsResponseOrderInformation**](GetAllSubscriptionsResponseOrderInformation.md) |  | [optional] 
+**reactivationInformation** | [**\CyberSource\Model\GetSubscriptionResponseReactivationInformation**](GetSubscriptionResponseReactivationInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

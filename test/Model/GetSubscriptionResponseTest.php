@@ -124,4 +124,11 @@ class GetSubscriptionResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "reactivationInformation"
+     */
+    public function testPropertyReactivationInformation()
+    {
+    }
 }

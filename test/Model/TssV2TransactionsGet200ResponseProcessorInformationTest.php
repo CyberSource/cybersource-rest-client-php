@@ -161,6 +161,13 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     }
 
     /**
+     * Test attribute "eventStatus"
+     */
+    public function testPropertyEventStatus()
+    {
+    }
+
+    /**
      * Test attribute "systemTraceAuditNumber"
      */
     public function testPropertySystemTraceAuditNumber()

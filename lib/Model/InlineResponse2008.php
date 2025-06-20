@@ -53,16 +53,13 @@ class InlineResponse2008 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse2008Links',
-        'batchId' => 'string',
-        'batchCreatedDate' => 'string',
-        'batchSource' => 'string',
-        'merchantReference' => 'string',
-        'batchCaEndpoints' => 'string',
-        'status' => 'string',
-        'totals' => '\CyberSource\Model\InlineResponse2007EmbeddedTotals',
-        'billing' => '\CyberSource\Model\InlineResponse2008Billing',
-        'description' => 'string'
+        'links' => '\CyberSource\Model\InlineResponse2008Links[]',
+        'object' => 'string',
+        'offset' => 'int',
+        'limit' => 'int',
+        'count' => 'int',
+        'total' => 'int',
+        'embedded' => '\CyberSource\Model\InlineResponse2008Embedded'
     ];
 
     /**
@@ -71,15 +68,12 @@ class InlineResponse2008 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'links' => null,
-        'batchId' => null,
-        'batchCreatedDate' => null,
-        'batchSource' => null,
-        'merchantReference' => null,
-        'batchCaEndpoints' => null,
-        'status' => null,
-        'totals' => null,
-        'billing' => null,
-        'description' => null
+        'object' => null,
+        'offset' => null,
+        'limit' => null,
+        'count' => null,
+        'total' => null,
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -98,15 +92,12 @@ class InlineResponse2008 implements ArrayAccess
      */
     protected static $attributeMap = [
         'links' => '_links',
-        'batchId' => 'batchId',
-        'batchCreatedDate' => 'batchCreatedDate',
-        'batchSource' => 'batchSource',
-        'merchantReference' => 'merchantReference',
-        'batchCaEndpoints' => 'batchCaEndpoints',
-        'status' => 'status',
-        'totals' => 'totals',
-        'billing' => 'billing',
-        'description' => 'description'
+        'object' => 'object',
+        'offset' => 'offset',
+        'limit' => 'limit',
+        'count' => 'count',
+        'total' => 'total',
+        'embedded' => '_embedded'
     ];
 
 
@@ -116,15 +107,12 @@ class InlineResponse2008 implements ArrayAccess
      */
     protected static $setters = [
         'links' => 'setLinks',
-        'batchId' => 'setBatchId',
-        'batchCreatedDate' => 'setBatchCreatedDate',
-        'batchSource' => 'setBatchSource',
-        'merchantReference' => 'setMerchantReference',
-        'batchCaEndpoints' => 'setBatchCaEndpoints',
-        'status' => 'setStatus',
-        'totals' => 'setTotals',
-        'billing' => 'setBilling',
-        'description' => 'setDescription'
+        'object' => 'setObject',
+        'offset' => 'setOffset',
+        'limit' => 'setLimit',
+        'count' => 'setCount',
+        'total' => 'setTotal',
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -134,15 +122,12 @@ class InlineResponse2008 implements ArrayAccess
      */
     protected static $getters = [
         'links' => 'getLinks',
-        'batchId' => 'getBatchId',
-        'batchCreatedDate' => 'getBatchCreatedDate',
-        'batchSource' => 'getBatchSource',
-        'merchantReference' => 'getMerchantReference',
-        'batchCaEndpoints' => 'getBatchCaEndpoints',
-        'status' => 'getStatus',
-        'totals' => 'getTotals',
-        'billing' => 'getBilling',
-        'description' => 'getDescription'
+        'object' => 'getObject',
+        'offset' => 'getOffset',
+        'limit' => 'getLimit',
+        'count' => 'getCount',
+        'total' => 'getTotal',
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -177,15 +162,12 @@ class InlineResponse2008 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['batchId'] = isset($data['batchId']) ? $data['batchId'] : null;
-        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
-        $this->container['batchSource'] = isset($data['batchSource']) ? $data['batchSource'] : null;
-        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
-        $this->container['batchCaEndpoints'] = isset($data['batchCaEndpoints']) ? $data['batchCaEndpoints'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
-        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -215,7 +197,7 @@ class InlineResponse2008 implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\InlineResponse2008Links
+     * @return \CyberSource\Model\InlineResponse2008Links[]
      */
     public function getLinks()
     {
@@ -224,7 +206,7 @@ class InlineResponse2008 implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\InlineResponse2008Links $links
+     * @param \CyberSource\Model\InlineResponse2008Links[] $links
      * @return $this
      */
     public function setLinks($links)
@@ -235,190 +217,127 @@ class InlineResponse2008 implements ArrayAccess
     }
 
     /**
-     * Gets batchId
+     * Gets object
      * @return string
      */
-    public function getBatchId()
+    public function getObject()
     {
-        return $this->container['batchId'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets batchId
-     * @param string $batchId Unique identification number assigned to the submitted request.
+     * Sets object
+     * @param string $object
      * @return $this
      */
-    public function setBatchId($batchId)
+    public function setObject($object)
     {
-        $this->container['batchId'] = $batchId;
+        $this->container['object'] = $object;
 
         return $this;
     }
 
     /**
-     * Gets batchCreatedDate
-     * @return string
+     * Gets offset
+     * @return int
      */
-    public function getBatchCreatedDate()
+    public function getOffset()
     {
-        return $this->container['batchCreatedDate'];
+        return $this->container['offset'];
     }
 
     /**
-     * Sets batchCreatedDate
-     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+     * Sets offset
+     * @param int $offset
      * @return $this
      */
-    public function setBatchCreatedDate($batchCreatedDate)
+    public function setOffset($offset)
     {
-        $this->container['batchCreatedDate'] = $batchCreatedDate;
+        $this->container['offset'] = $offset;
 
         return $this;
     }
 
     /**
-     * Gets batchSource
-     * @return string
+     * Gets limit
+     * @return int
      */
-    public function getBatchSource()
+    public function getLimit()
     {
-        return $this->container['batchSource'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets batchSource
-     * @param string $batchSource Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE
+     * Sets limit
+     * @param int $limit
      * @return $this
      */
-    public function setBatchSource($batchSource)
+    public function setLimit($limit)
     {
-        $this->container['batchSource'] = $batchSource;
+        $this->container['limit'] = $limit;
 
         return $this;
     }
 
     /**
-     * Gets merchantReference
-     * @return string
+     * Gets count
+     * @return int
      */
-    public function getMerchantReference()
+    public function getCount()
     {
-        return $this->container['merchantReference'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets merchantReference
-     * @param string $merchantReference Reference used by merchant to identify batch.
+     * Sets count
+     * @param int $count
      * @return $this
      */
-    public function setMerchantReference($merchantReference)
+    public function setCount($count)
     {
-        $this->container['merchantReference'] = $merchantReference;
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets batchCaEndpoints
-     * @return string
+     * Gets total
+     * @return int
      */
-    public function getBatchCaEndpoints()
+    public function getTotal()
     {
-        return $this->container['batchCaEndpoints'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets batchCaEndpoints
-     * @param string $batchCaEndpoints
+     * Sets total
+     * @param int $total
      * @return $this
      */
-    public function setBatchCaEndpoints($batchCaEndpoints)
+    public function setTotal($total)
     {
-        $this->container['batchCaEndpoints'] = $batchCaEndpoints;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets status
-     * @return string
+     * Gets embedded
+     * @return \CyberSource\Model\InlineResponse2008Embedded
      */
-    public function getStatus()
+    public function getEmbedded()
     {
-        return $this->container['status'];
+        return $this->container['embedded'];
     }
 
     /**
-     * Sets status
-     * @param string $status Valid Values:   * REJECTED   * RECEIVED   * VALIDATED   * DECLINED   * PROCESSING   * COMPLETED
+     * Sets embedded
+     * @param \CyberSource\Model\InlineResponse2008Embedded $embedded
      * @return $this
      */
-    public function setStatus($status)
+    public function setEmbedded($embedded)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets totals
-     * @return \CyberSource\Model\InlineResponse2007EmbeddedTotals
-     */
-    public function getTotals()
-    {
-        return $this->container['totals'];
-    }
-
-    /**
-     * Sets totals
-     * @param \CyberSource\Model\InlineResponse2007EmbeddedTotals $totals
-     * @return $this
-     */
-    public function setTotals($totals)
-    {
-        $this->container['totals'] = $totals;
-
-        return $this;
-    }
-
-    /**
-     * Gets billing
-     * @return \CyberSource\Model\InlineResponse2008Billing
-     */
-    public function getBilling()
-    {
-        return $this->container['billing'];
-    }
-
-    /**
-     * Sets billing
-     * @param \CyberSource\Model\InlineResponse2008Billing $billing
-     * @return $this
-     */
-    public function setBilling($billing)
-    {
-        $this->container['billing'] = $billing;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }
