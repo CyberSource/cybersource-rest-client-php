@@ -11,7 +11,7 @@ class PgpEncryptionUtility
      *
      * @param string $inputFile Path to the file to encrypt
      * @param string $publicKeyFile Path to the ASCII-armored public key file
-     * @return string Encrypted file bytes (ASCII-armored)
+     * @return string Encrypted file bytes
      * @throws Exception on failure
      */
     public static function encryptFileToBytes($inputFile, $publicKeyFile)
@@ -26,7 +26,6 @@ class PgpEncryptionUtility
         $data = file_get_contents($inputFile);
         $pubKeyData = file_get_contents($publicKeyFile);
     
-        // Parse the public key
         $keyMsg = \OpenPGP_Message::parse(\OpenPGP::unarmor($pubKeyData, 'PGP PUBLIC KEY BLOCK'));
         $pubKeyPacket = null;
         foreach ($keyMsg as $packet) {
@@ -39,13 +38,10 @@ class PgpEncryptionUtility
             throw new Exception("No public key found in $publicKeyFile");
         }
     
-        // Wrap data in a literal packet
         $literal = new \OpenPGP_LiteralDataPacket($data, ['format' => 'b', 'filename' => basename($inputFile)]);
     
-        // Encrypt using the public key
         $encrypted = \OpenPGP_Crypt_Symmetric::encrypt([$pubKeyPacket], new \OpenPGP_Message([$literal]));
     
-        // Return ASCII-armored encrypted data as bytes (string)
-        return \OpenPGP::enarmor($encrypted->to_bytes(), 'PGP MESSAGE');
+        return $encrypted->to_bytes();
     }
 }
