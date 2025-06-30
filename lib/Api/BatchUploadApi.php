@@ -6,7 +6,7 @@ use Exception;
 use CyberSource\Utilities\PGP\BatchUpload\PgpEncryptionUtility;
 use CyberSource\Utilities\PGP\BatchUpload\MutualAuthUploadUtility;
 use CyberSource\Logging\LogFactory;
-
+use CyberSource\Logging\LogConfiguration;
 
 class BatchUploadApi
 {
@@ -51,7 +51,9 @@ class BatchUploadApi
         $serverTrustCertPath = null,
         $verify_ssl = true
     ) {
-        $this->logInfo("Starting batch upload with P12/PFX for file: $inputFile");
+        if (self::$logger) {
+            self::$logger->info("Starting batch upload with P12/PFX for file: $inputFile");
+        }
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
         $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
@@ -64,7 +66,7 @@ class BatchUploadApi
             $clientCertP12Password,
             $serverTrustCertPath,
             $verify_ssl,
-            $logger = null
+            self::$logger
         );
     }
 
@@ -91,7 +93,9 @@ class BatchUploadApi
         $clientKeyPassword = null,
         $verify_ssl = true
     ) {
-        $this->logInfo("Starting batch upload with client key/cert for file: $inputFile");
+        if (self::$logger) {
+            self::$logger->info("Starting batch upload with client key/cert for file: $inputFile");
+        }        
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
         $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
@@ -105,32 +109,17 @@ class BatchUploadApi
             $serverTrustCertPath,
             $clientKeyPassword,
             $verify_ssl,
-            $logger = null
+            self::$logger
         );
     }
 
     private function getEndpointUrl($hostname, $endpoint)
     {
         $url = rtrim($hostname, "/") . $endpoint;
-        $this->logDebug("Resolved endpoint URL: $url");
+        if (self::$logger) {
+            self::$logger->debug("Resolved endpoint URL: $url");
+        }        
         return $url;
     }
 
-    private function logInfo($msg)
-    {
-        if (self::$logger) {
-            self::$logger->info($msg);
-        } else {
-            error_log("[INFO] $msg");
-        }
-    }
-
-    private function logDebug($msg)
-    {
-        if (self::$logger) {
-            self::$logger->debug($msg);
-        } else {
-            error_log("[DEBUG] $msg");
-        }
-    }
 }
