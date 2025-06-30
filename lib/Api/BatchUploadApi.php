@@ -53,15 +53,24 @@ class BatchUploadApi
     ) {
         if (self::$logger) {
             self::$logger->info("Starting batch upload with P12/PFX for file: $inputFile");
+            if ($verify_ssl === false) {
+                self::$logger->warning("SSL verification is DISABLED for this batch upload. This is insecure and should not be used in production.");
+            }
         }
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
         $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
 
+        $pgpFileName = basename($inputFile);
+        if (empty($pgpFileName) || $pgpFileName === '.' || $pgpFileName === '..') {
+            $pgpFileName = 'file';
+        }
+        $pgpFileName .= '.pgp';
+
         return MutualAuthUploadUtility::uploadWithP12(
             $encryptedPgpBytes,
             $endpointUrl,
-            basename($inputFile) . ".pgp",
+            $pgpFileName,
             $clientCertP12FilePath,
             $clientCertP12Password,
             $serverTrustCertPath,
@@ -95,15 +104,24 @@ class BatchUploadApi
     ) {
         if (self::$logger) {
             self::$logger->info("Starting batch upload with client key/cert for file: $inputFile");
+            if ($verify_ssl === false) {
+                self::$logger->warning("SSL verification is DISABLED for this batch upload. This is insecure and should not be used in production.");
+            }
         }        
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
         $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
 
+        $pgpFileName = basename($inputFile);
+        if (empty($pgpFileName) || $pgpFileName === '.' || $pgpFileName === '..') {
+            $pgpFileName = 'file';
+        }
+        $pgpFileName .= '.pgp';
+
         return MutualAuthUploadUtility::uploadWithKeyAndCert(
             $encryptedPgpBytes,
             $endpointUrl,
-            basename($inputFile) . ".pgp",
+            $pgpFileName,
             $clientCertPath,
             $clientKeyPath,
             $serverTrustCertPath,
