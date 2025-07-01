@@ -2,7 +2,7 @@
 
 namespace CyberSource\Api;
 
-use Exception;
+use CyberSource\ApiException;
 use CyberSource\Utilities\PGP\BatchUpload\PgpEncryptionUtility;
 use CyberSource\Utilities\PGP\BatchUpload\MutualAuthUploadUtility;
 use CyberSource\Logging\LogFactory;
@@ -40,7 +40,7 @@ class BatchUploadApi
      * @param string $clientCertP12Password Password for the PKCS#12 client certificate.
      * @param string|null $serverTrustCertPath Path to the server trust certificate(s) in PEM format. Optional.
      * @return array [responseBody, statusCode, headers]
-     * @throws Exception
+     * @throws ApiException
      */
     public function uploadBatchWithP12(
         $inputFile,
@@ -90,7 +90,7 @@ class BatchUploadApi
      * @param string|null $serverTrustCertPath Path to the server trust certificate(s) in PEM format. Optional.
      * @param string|null $clientKeyPassword Password for the client private key. Optional.
      * @return array [responseBody, statusCode, headers]
-     * @throws Exception
+     * @throws ApiException
      */
     public function uploadBatchWithKeyAndCert(
         $inputFile,

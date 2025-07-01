@@ -2,7 +2,7 @@
 
 namespace CyberSource\Utilities\PGP\BatchUpload;
 
-use Exception;
+use CyberSource\ApiException;
 
 class MutualAuthUploadUtility
 {
@@ -16,7 +16,7 @@ class MutualAuthUploadUtility
      * @param string $p12Password Password for the PKCS#12 file.
      * @param string|null $caCertPath Path to the CA cert(s) in PEM format. Optional.
      * @return array [responseBody, statusCode, headers]
-     * @throws Exception
+     * @throws ApiException
      */
     public static function uploadWithP12(
         $encryptedPgpBytes,
@@ -54,29 +54,49 @@ class MutualAuthUploadUtility
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $verify_ssl ? 2 : 0);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, true);
-
+        
         // Optional: Add correlation ID for logging/tracing
         $correlationId = self::generateCorrelationId();
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "v-c-correlation-id: $correlationId"
         ]);
 
-        $response = curl_exec($ch);
+        // Use CURLOPT_HEADERFUNCTION to parse headers
+        $responseHeaders = [];
+        curl_setopt($ch, CURLOPT_HEADERFUNCTION, function($curl, $header_line) use (&$responseHeaders) {
+            $len = strlen($header_line);
+            $header_line = trim($header_line);
+            if (empty($header_line) || strpos($header_line, ':') === false) {
+                return $len;
+            }
+            
+            list($key, $value) = explode(':', $header_line, 2);
+            $key = trim($key);
+            $value = trim($value);
+            
+            if (isset($responseHeaders[$key])) {
+                if (is_array($responseHeaders[$key])) {
+                    $responseHeaders[$key][] = $value;
+                } else {
+                    $responseHeaders[$key] = [$responseHeaders[$key], $value];
+                }
+            } else {
+                $responseHeaders[$key] = $value;
+            }
+            
+            return $len;
+        });
 
-        // $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-        // $header_string = substr($response, 0, $header_size);
-        $body = substr($response, $header_size);
-        $headers = curl_getinfo($ch);
+        $body = curl_exec($ch);
 
-       // Parse headers into an array
-        // $headers = [];
-        // foreach (explode("\r\n", $header_string) as $line) {
-        //     if (strpos($line, ':') !== false) {
-        //     list($k, $v) = explode(':', $line, 2);
-        //     $headers[trim($k)] = trim($v);
-        //     }
-        // }
+        if ($body === false) {
+            $err = curl_error($ch);
+            curl_close($ch);
+            unlink($tmpFile);
+            $error_message = "cURL error: $err";
+            if ($logger) $logger->error($error_message);
+            throw new ApiException($error_message, 500);
+        }
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
@@ -87,14 +107,17 @@ class MutualAuthUploadUtility
         if ($err || $httpCode === 0) {
             $error_message = $err ? "cURL error: $err" : "API call failed, but for an unknown reason. This could happen if you are disconnected from the network.";
             if ($logger) $logger->error($error_message);
-            throw new Exception($error_message);
+            throw new ApiException($error_message, 500);
         } elseif ($httpCode >= 200 && $httpCode < 300) {
             if ($logger) $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
-            return [$body, $httpCode, $headers];
+            // Check if response is JSON and return decoded JSON if it is, otherwise return as string
+            $jsonResponse = json_decode($body, true);
+            $processedBody = (json_last_error() === JSON_ERROR_NONE) ? $jsonResponse : $body;
+            return [$processedBody, $httpCode, $responseHeaders];
         } else {
             $msg = "File upload failed. Status code: $httpCode, body: $body";
             if ($logger) $logger->error($msg);
-            throw new Exception($msg);
+            throw new ApiException($msg, $httpCode, $responseHeaders, $body);
         }
     }
 
@@ -109,7 +132,7 @@ class MutualAuthUploadUtility
      * @param string|null $caCertPath Path to the CA cert(s) in PEM format. Optional.
      * @param string|null $clientKeyPassword Password for the client private key. Optional.
      * @return array [responseBody, statusCode, headers]
-     * @throws Exception
+     * @throws ApiException
      */
     public static function uploadWithKeyAndCert(
         $encryptedPgpBytes,
@@ -151,28 +174,48 @@ class MutualAuthUploadUtility
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         
-        curl_setopt($ch, CURLOPT_HEADER, true);
-
         // Optional: Add correlation ID for logging/tracing
         $correlationId = self::generateCorrelationId();
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "v-c-correlation-id: $correlationId"
         ]);
 
-        $response = curl_exec($ch);
-        // $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-        // $header_string = substr($response, 0, $header_size);
-        $body = substr($response, $header_size);
-        $headers = curl_getinfo($ch);
+        // Use CURLOPT_HEADERFUNCTION to parse headers
+        $responseHeaders = [];
+        curl_setopt($ch, CURLOPT_HEADERFUNCTION, function($curl, $header_line) use (&$responseHeaders) {
+            $len = strlen($header_line);
+            $header_line = trim($header_line);
+            if (empty($header_line) || strpos($header_line, ':') === false) {
+                return $len;
+            }
+            
+            list($key, $value) = explode(':', $header_line, 2);
+            $key = trim($key);
+            $value = trim($value);
+            
+            if (isset($responseHeaders[$key])) {
+                if (is_array($responseHeaders[$key])) {
+                    $responseHeaders[$key][] = $value;
+                } else {
+                    $responseHeaders[$key] = [$responseHeaders[$key], $value];
+                }
+            } else {
+                $responseHeaders[$key] = $value;
+            }
+            
+            return $len;
+        });
 
-       // Parse headers into an array
-        // $headers = [];
-        // foreach (explode("\r\n", $header_string) as $line) {
-        //     if (strpos($line, ':') !== false) {
-        //     list($k, $v) = explode(':', $line, 2);
-        //     $headers[trim($k)] = trim($v);
-        //     }
-        // }
+        $body = curl_exec($ch);
+
+        if ($body === false) {
+            $err = curl_error($ch);
+            curl_close($ch);
+            unlink($tmpFile);
+            $error_message = "cURL error: $err";
+            if ($logger) $logger->error($error_message);
+            throw new ApiException($error_message, 500);
+        }
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
@@ -181,16 +224,25 @@ class MutualAuthUploadUtility
         unlink($tmpFile);
 
         if ($err || $httpCode === 0) {
-            $error_message = $err ? "cURL error: $err" : "API call failed, but for an unknown reason. This could happen if you are disconnected from the network.";
+            if ($err) {
+                $error_message = "cURL error: $err";
+            } elseif ($httpCode === 0) {
+                $error_message = "API call failed: No HTTP response received. This may indicate a network issue, DNS resolution failure, or SSL/TLS handshake problem.";
+            } else {
+                $error_message = "API call failed for an unknown reason.";
+            }
             if ($logger) $logger->error($error_message);
-            throw new Exception($error_message);
+            throw new ApiException($error_message, 500);
         } elseif ($httpCode >= 200 && $httpCode < 300) {
             if ($logger) $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
-            return [$body, $httpCode, $headers];
+            // Check if response is JSON and return decoded JSON if it is, otherwise return as string
+            $jsonResponse = json_decode($body, true);
+            $processedBody = (json_last_error() === JSON_ERROR_NONE) ? $jsonResponse : $body;
+            return [$processedBody, $httpCode, $responseHeaders];
         } else {
             $msg = "File upload failed. Status code: $httpCode, body: $body";
             if ($logger) $logger->error($msg);
-            throw new Exception($msg);
+            throw new ApiException($msg, $httpCode, $responseHeaders, $body);
         }
     }
 
@@ -198,5 +250,4 @@ class MutualAuthUploadUtility
     {
         return bin2hex(random_bytes(16));
     }
-
 }
