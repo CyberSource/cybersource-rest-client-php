@@ -219,7 +219,8 @@ class MutualAuthUploadUtility
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
-
+        $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+        $http_body = substr($body, $http_header_size);
         curl_close($ch);
         unlink($tmpFile);
 
@@ -235,14 +236,13 @@ class MutualAuthUploadUtility
             throw new ApiException($error_message, 500);
         } elseif ($httpCode >= 200 && $httpCode < 300) {
             if ($logger) $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
-            // Check if response is JSON and return decoded JSON if it is, otherwise return as string
-            $jsonResponse = json_decode($body, true);
+            $jsonResponse = json_decode($http_body);
             $processedBody = (json_last_error() === JSON_ERROR_NONE) ? $jsonResponse : $body;
             return [$processedBody, $httpCode, $responseHeaders];
         } else {
-            $msg = "File upload failed. Status code: $httpCode, body: $body";
+            $msg = "File upload failed. Status code: $httpCode, body: $http_body";
             if ($logger) $logger->error($msg);
-            throw new ApiException($msg, $httpCode, $responseHeaders, $body);
+            throw new ApiException($msg, $httpCode, $responseHeaders, $http_body);
         }
     }
 
