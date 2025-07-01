@@ -219,7 +219,7 @@ class MutualAuthUploadUtility
 
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
-        $http_header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
+        $http_header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
         $http_body = substr($body, $http_header_size);
         curl_close($ch);
         unlink($tmpFile);
