@@ -3,7 +3,7 @@
 namespace CyberSource\Utilities\PGP\BatchUpload;
 
 use Exception;
-//to do: check ssl verify flag and how to append server cert
+
 class MutualAuthUploadUtility
 {
     /**
@@ -63,30 +63,37 @@ class MutualAuthUploadUtility
         ]);
 
         $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        // $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        // $header_string = substr($response, 0, $header_size);
+        $body = substr($response, $header_size);
         $headers = curl_getinfo($ch);
+
+       // Parse headers into an array
+        // $headers = [];
+        // foreach (explode("\r\n", $header_string) as $line) {
+        //     if (strpos($line, ':') !== false) {
+        //     list($k, $v) = explode(':', $line, 2);
+        //     $headers[trim($k)] = trim($v);
+        //     }
+        // }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
 
         curl_close($ch);
         unlink($tmpFile);
 
-        if ($err) {
-            if ($logger) {
-                $logger->error("cURL error: $err");
-            }
-            throw new Exception("cURL error: $err");
-        }
-
-        if ($logger) {
-            $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
-        } 
-        if ($httpCode >= 200 && $httpCode < 300) {
-            return [$response, $httpCode, $headers];
+        if ($err || $httpCode === 0) {
+            $error_message = $err ? "cURL error: $err" : "API call failed, but for an unknown reason. This could happen if you are disconnected from the network.";
+            if ($logger) $logger->error($error_message);
+            throw new Exception($error_message);
+        } elseif ($httpCode >= 200 && $httpCode < 300) {
+            if ($logger) $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
+            return [$body, $httpCode, $headers];
         } else {
-            $msg = "File upload failed. Status code: $httpCode, body: $response";
-            if ($logger) {
-                $logger->error($msg);
-            }
+            $msg = "File upload failed. Status code: $httpCode, body: $body";
+            if ($logger) $logger->error($msg);
             throw new Exception($msg);
         }
     }
@@ -153,33 +160,39 @@ class MutualAuthUploadUtility
         ]);
 
         $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        // $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        // $header_string = substr($response, 0, $header_size);
+        $body = substr($response, $header_size);
         $headers = curl_getinfo($ch);
+
+       // Parse headers into an array
+        // $headers = [];
+        // foreach (explode("\r\n", $header_string) as $line) {
+        //     if (strpos($line, ':') !== false) {
+        //     list($k, $v) = explode(':', $line, 2);
+        //     $headers[trim($k)] = trim($v);
+        //     }
+        // }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $err = curl_error($ch);
 
         curl_close($ch);
         unlink($tmpFile);
 
-        if ($err) {
-            if ($logger) {
-            $logger->error("cURL error: $err");
-            }
-            throw new Exception("cURL error: $err");
-        }
-
-        if ($logger) {
-            $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
-        }
-        if ($httpCode >= 200 && $httpCode < 300) {
-            return [$response, $httpCode, $headers];
+        if ($err || $httpCode === 0) {
+            $error_message = $err ? "cURL error: $err" : "API call failed, but for an unknown reason. This could happen if you are disconnected from the network.";
+            if ($logger) $logger->error($error_message);
+            throw new Exception($error_message);
+        } elseif ($httpCode >= 200 && $httpCode < 300) {
+            if ($logger) $logger->info("Upload completed for correlationId: $correlationId. Status: $httpCode");
+            return [$body, $httpCode, $headers];
         } else {
-            $msg = "File upload failed. Status code: $httpCode, body: $response";
-            if ($logger) {
-            $logger->error($msg);
-            }
+            $msg = "File upload failed. Status code: $httpCode, body: $body";
+            if ($logger) $logger->error($msg);
             throw new Exception($msg);
         }
-        }
+    }
 
     private static function generateCorrelationId()
     {
