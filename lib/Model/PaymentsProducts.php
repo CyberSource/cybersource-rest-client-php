@@ -70,7 +70,7 @@ class PaymentsProducts implements ArrayAccess
         'payouts' => '\CyberSource\Model\PaymentsProductsPayouts',
         'differentialFee' => '\CyberSource\Model\PaymentsProductsDifferentialFee',
         'payByLink' => '\CyberSource\Model\PaymentsProductsTax',
-        'unifiedCheckout' => '\CyberSource\Model\PaymentsProductsTax',
+        'unifiedCheckout' => '\CyberSource\Model\PaymentsProductsUnifiedCheckout',
         'receivablesManager' => '\CyberSource\Model\PaymentsProductsTax',
         'serviceFee' => '\CyberSource\Model\PaymentsProductsServiceFee'
     ];
@@ -632,7 +632,7 @@ class PaymentsProducts implements ArrayAccess
 
     /**
      * Gets unifiedCheckout
-     * @return \CyberSource\Model\PaymentsProductsTax
+     * @return \CyberSource\Model\PaymentsProductsUnifiedCheckout
      */
     public function getUnifiedCheckout()
     {
@@ -641,7 +641,7 @@ class PaymentsProducts implements ArrayAccess
 
     /**
      * Sets unifiedCheckout
-     * @param \CyberSource\Model\PaymentsProductsTax $unifiedCheckout
+     * @param \CyberSource\Model\PaymentsProductsUnifiedCheckout $unifiedCheckout
      * @return $this
      */
     public function setUnifiedCheckout($unifiedCheckout)

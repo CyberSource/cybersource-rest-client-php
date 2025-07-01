@@ -72,9 +72,19 @@ class DeviceSearchApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for postSearchQuery
+     *
+     * Retrieve List of Devices for a given search query V2.
+     *
+     */
+    public function testPostSearchQuery()
+    {
+    }
+
+    /**
      * Test case for postSearchQueryV3
      *
-     * Retrieve List of Devices for a given search query V3.
+     * Retrieve List of Devices for a given search query.
      *
      */
     public function testPostSearchQueryV3()

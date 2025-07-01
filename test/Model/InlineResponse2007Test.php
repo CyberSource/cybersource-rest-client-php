@@ -77,16 +77,9 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "totalCount"
      */
-    public function testPropertyLinks()
-    {
-    }
-
-    /**
-     * Test attribute "object"
-     */
-    public function testPropertyObject()
+    public function testPropertyTotalCount()
     {
     }
 
@@ -105,6 +98,13 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "sort"
+     */
+    public function testPropertySort()
+    {
+    }
+
+    /**
      * Test attribute "count"
      */
     public function testPropertyCount()
@@ -112,16 +112,9 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "total"
+     * Test attribute "devices"
      */
-    public function testPropertyTotal()
-    {
-    }
-
-    /**
-     * Test attribute "embedded"
-     */
-    public function testPropertyEmbedded()
+    public function testPropertyDevices()
     {
     }
 }

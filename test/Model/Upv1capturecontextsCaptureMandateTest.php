@@ -119,6 +119,13 @@ class Upv1capturecontextsCaptureMandateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "showConfirmationStep"
+     */
+    public function testPropertyShowConfirmationStep()
+    {
+    }
+
+    /**
      * Test attribute "requestSaveCard"
      */
     public function testPropertyRequestSaveCard()

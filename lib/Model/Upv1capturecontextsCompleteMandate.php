@@ -55,7 +55,8 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'decisionManager' => 'bool'
+        'decisionManager' => 'bool',
+        'consumerAuthentication' => 'bool'
     ];
 
     /**
@@ -64,7 +65,8 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'type' => null,
-        'decisionManager' => null
+        'decisionManager' => null,
+        'consumerAuthentication' => null
     ];
 
     public static function swaggerTypes()
@@ -83,7 +85,8 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'decisionManager' => 'decisionManager'
+        'decisionManager' => 'decisionManager',
+        'consumerAuthentication' => 'consumerAuthentication'
     ];
 
 
@@ -93,7 +96,8 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
-        'decisionManager' => 'setDecisionManager'
+        'decisionManager' => 'setDecisionManager',
+        'consumerAuthentication' => 'setConsumerAuthentication'
     ];
 
 
@@ -103,7 +107,8 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
-        'decisionManager' => 'getDecisionManager'
+        'decisionManager' => 'getDecisionManager',
+        'consumerAuthentication' => 'getConsumerAuthentication'
     ];
 
     public static function attributeMap()
@@ -139,6 +144,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;
+        $this->container['consumerAuthentication'] = isset($data['consumerAuthentication']) ? $data['consumerAuthentication'] : null;
     }
 
     /**
@@ -177,7 +183,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type This field is used to indicate how a payment should be processed.  Possible values: - AUTH: Use this value when you want to authorize a payment without capturing it immediately.  Payment types that initiate an immediate transfer of funds are not allowed.  If a capture context request includes a payment type incompatible with this mode, a 400 error will be returned.<br><br>   - CAPTURE: Use this value when you want to capture the payment immediately during the transaction.  Note: Some payment types may return a PENDING status, requiring an additional status check call to determine the final outcome of the payment.<br><br> - PREFER_AUTH: Use this value to offer multiple alternative payment options during the Unified Checkout experience. This option authorizes the payment without immediate capture, where available. Payment types like account-to-account transfers that initiate an immediate transfer of funds are allowed and presented to the customer. If selected, an immediate transfer of funds occurs; otherwise, a final backend call is needed to capture the payment. Transactions can be AUTHORIZED, CAPTURED, or PENDING.
+     * @param string $type This field is used to indicate how a payment should be processed.  Possible values: - AUTH: Use this value when you want to authorize a payment within Unified Checkout without capturing it immediately.  Payment types that initiate an immediate transfer of funds are NOT allowed.  If a capture context request includes a payment type incompatible with this mode, a 400 error will be returned.  A merchant would need to perform their own capture via API where applicable.<br><br>   - CAPTURE: Use this value when you want to perform a sale within Unified Checkout and capture the payment immediately during the transaction.  Note: Some payment types may return a PENDING status, requiring an additional status check call to determine the final outcome of the payment.<br><br> - PREFER_AUTH: Use this value to offer multiple alternative payment options during the Unified Checkout experience. This option authorizes the payment without immediate capture, where available.  It will perform a \"CAPTURE\" where an \"AUTH\" is not allowed by the payment type.  Transactions can be AUTHORIZED, CAPTURED, or PENDING.  If an \"AUTH\" is performed, a merchant would need to perform their own capture via API where applicable.
      * @return $this
      */
     public function setType($type)
@@ -198,12 +204,33 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
 
     /**
      * Sets decisionManager
-     * @param bool $decisionManager Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False indicates that you do not wish to run device fingerprinting and skip decision manager services.
+     * @param bool $decisionManager Configure Unified Checkout to determine whether Decision Manager is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True indicates that device fingerprinting will be executed to add additional information for risk service Setting this value to False (or not provided) indicates that you do not wish to run device fingerprinting and skip decision manager services.
      * @return $this
      */
     public function setDecisionManager($decisionManager)
     {
         $this->container['decisionManager'] = $decisionManager;
+
+        return $this;
+    }
+
+    /**
+     * Gets consumerAuthentication
+     * @return bool
+     */
+    public function getConsumerAuthentication()
+    {
+        return $this->container['consumerAuthentication'];
+    }
+
+    /**
+     * Sets consumerAuthentication
+     * @param bool $consumerAuthentication Configure Unified Checkout to determine whether Consumer Authentication is invoked during service orchestration.  Possible values:  - True  - False<br><br>  Setting this value to True will attempt to perform authentication using the Payer Authentication Service. Setting this value to False (or not provided) indicates that you do not wish to perform authentication using the Payer Authentication Service.
+     * @return $this
+     */
+    public function setConsumerAuthentication($consumerAuthentication)
+    {
+        $this->container['consumerAuthentication'] = $consumerAuthentication;
 
         return $this;
     }

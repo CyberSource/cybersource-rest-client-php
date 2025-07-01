@@ -275,7 +275,7 @@ class ObjectSerializer
             $deserialized = new \SplFileObject($filename, "w");
             $byte_written = $deserialized->fwrite($data);
             if (Configuration::getDefaultConfiguration()->getLogConfiguration()->isLoggingEnabled()) {
-                $tempLogger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class()), Configuration::getDefaultConfiguration()->getLogConfiguration());
+                $tempLogger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), Configuration::getDefaultConfiguration()->getLogConfiguration());
                 $tempLogger->debug("Written $byte_written byte to $filename. Please move the file to a proper folder or delete the temp file after processing.");
                 $tempLogger->close();
             }

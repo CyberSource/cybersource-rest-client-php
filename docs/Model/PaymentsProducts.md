@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **payouts** | [**\CyberSource\Model\PaymentsProductsPayouts**](PaymentsProductsPayouts.md) |  | [optional] 
 **differentialFee** | [**\CyberSource\Model\PaymentsProductsDifferentialFee**](PaymentsProductsDifferentialFee.md) |  | [optional] 
 **payByLink** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
-**unifiedCheckout** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
+**unifiedCheckout** | [**\CyberSource\Model\PaymentsProductsUnifiedCheckout**](PaymentsProductsUnifiedCheckout.md) |  | [optional] 
 **receivablesManager** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **serviceFee** | [**\CyberSource\Model\PaymentsProductsServiceFee**](PaymentsProductsServiceFee.md) |  | [optional] 
 

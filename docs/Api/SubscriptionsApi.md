@@ -15,11 +15,11 @@ Method | HTTP request | Description
 
 
 # **activateSubscription**
-> \CyberSource\Model\ActivateSubscriptionResponse activateSubscription($id)
+> \CyberSource\Model\ActivateSubscriptionResponse activateSubscription($id, $processSkippedPayments)
 
 Activate a Subscription
 
-Activate a `CANCELLED` Or `SUSPENDED` Subscription
+Activate a `SUSPENDED` Subscription
 
 ### Example
 ```php
@@ -28,9 +28,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\SubscriptionsApi();
 $id = "id_example"; // string | Subscription Id
+$processSkippedPayments = true; // bool | Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true.
 
 try {
-    $result = $api_instance->activateSubscription($id);
+    $result = $api_instance->activateSubscription($id, $processSkippedPayments);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionsApi->activateSubscription: ', $e->getMessage(), PHP_EOL;
@@ -43,6 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription Id |
+ **processSkippedPayments** | **bool**| Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. | [optional] [default to true]
 
 ### Return type
 

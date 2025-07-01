@@ -59,7 +59,8 @@ class GetSubscriptionResponse implements ArrayAccess
         'planInformation' => '\CyberSource\Model\GetAllSubscriptionsResponsePlanInformation',
         'subscriptionInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseSubscriptionInformation',
         'paymentInformation' => '\CyberSource\Model\GetAllSubscriptionsResponsePaymentInformation',
-        'orderInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseOrderInformation'
+        'orderInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseOrderInformation',
+        'reactivationInformation' => '\CyberSource\Model\GetSubscriptionResponseReactivationInformation'
     ];
 
     /**
@@ -73,7 +74,8 @@ class GetSubscriptionResponse implements ArrayAccess
         'planInformation' => null,
         'subscriptionInformation' => null,
         'paymentInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'reactivationInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +99,8 @@ class GetSubscriptionResponse implements ArrayAccess
         'planInformation' => 'planInformation',
         'subscriptionInformation' => 'subscriptionInformation',
         'paymentInformation' => 'paymentInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'reactivationInformation' => 'reactivationInformation'
     ];
 
 
@@ -112,7 +115,8 @@ class GetSubscriptionResponse implements ArrayAccess
         'planInformation' => 'setPlanInformation',
         'subscriptionInformation' => 'setSubscriptionInformation',
         'paymentInformation' => 'setPaymentInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'reactivationInformation' => 'setReactivationInformation'
     ];
 
 
@@ -127,7 +131,8 @@ class GetSubscriptionResponse implements ArrayAccess
         'planInformation' => 'getPlanInformation',
         'subscriptionInformation' => 'getSubscriptionInformation',
         'paymentInformation' => 'getPaymentInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'reactivationInformation' => 'getReactivationInformation'
     ];
 
     public static function attributeMap()
@@ -168,6 +173,7 @@ class GetSubscriptionResponse implements ArrayAccess
         $this->container['subscriptionInformation'] = isset($data['subscriptionInformation']) ? $data['subscriptionInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['reactivationInformation'] = isset($data['reactivationInformation']) ? $data['reactivationInformation'] : null;
     }
 
     /**
@@ -338,6 +344,27 @@ class GetSubscriptionResponse implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets reactivationInformation
+     * @return \CyberSource\Model\GetSubscriptionResponseReactivationInformation
+     */
+    public function getReactivationInformation()
+    {
+        return $this->container['reactivationInformation'];
+    }
+
+    /**
+     * Sets reactivationInformation
+     * @param \CyberSource\Model\GetSubscriptionResponseReactivationInformation $reactivationInformation
+     * @return $this
+     */
+    public function setReactivationInformation($reactivationInformation)
+    {
+        $this->container['reactivationInformation'] = $reactivationInformation;
 
         return $this;
     }

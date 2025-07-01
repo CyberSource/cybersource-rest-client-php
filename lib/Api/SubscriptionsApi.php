@@ -102,13 +102,14 @@ class SubscriptionsApi
      * Activate a Subscription
      *
      * @param string $id Subscription Id (required)
+     * @param bool $processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ActivateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activateSubscription($id)
+    public function activateSubscription($id, $processSkippedPayments = 'true')
     {
         self::$logger->info('CALL TO METHOD activateSubscription STARTED');
-        list($response, $statusCode, $httpHeader) = $this->activateSubscriptionWithHttpInfo($id);
+        list($response, $statusCode, $httpHeader) = $this->activateSubscriptionWithHttpInfo($id, $processSkippedPayments);
         self::$logger->info('CALL TO METHOD activateSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -120,10 +121,11 @@ class SubscriptionsApi
      * Activate a Subscription
      *
      * @param string $id Subscription Id (required)
+     * @param bool $processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ActivateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activateSubscriptionWithHttpInfo($id)
+    public function activateSubscriptionWithHttpInfo($id, $processSkippedPayments = 'true')
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -144,6 +146,10 @@ class SubscriptionsApi
         
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
+        // query params
+        if ($processSkippedPayments !== null) {
+            $queryParams['processSkippedPayments'] = $this->apiClient->getSerializer()->toQueryValue($processSkippedPayments);
+        }
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
@@ -177,6 +183,7 @@ class SubscriptionsApi
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
+        self::$logger->debug("Query Parameters :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($queryParams));
         if (isset($httpBody) and count($formParams) <= 0) {
             if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
                 $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);

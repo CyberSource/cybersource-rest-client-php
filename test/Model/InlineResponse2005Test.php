@@ -77,9 +77,37 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "totalCount"
      */
-    public function testPropertyStatus()
+    public function testPropertyTotalCount()
+    {
+    }
+
+    /**
+     * Test attribute "offset"
+     */
+    public function testPropertyOffset()
+    {
+    }
+
+    /**
+     * Test attribute "limit"
+     */
+    public function testPropertyLimit()
+    {
+    }
+
+    /**
+     * Test attribute "sort"
+     */
+    public function testPropertySort()
+    {
+    }
+
+    /**
+     * Test attribute "count"
+     */
+    public function testPropertyCount()
     {
     }
 

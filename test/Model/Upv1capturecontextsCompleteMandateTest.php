@@ -89,4 +89,11 @@ class Upv1capturecontextsCompleteMandateTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDecisionManager()
     {
     }
+
+    /**
+     * Test attribute "consumerAuthentication"
+     */
+    public function testPropertyConsumerAuthentication()
+    {
+    }
 }
