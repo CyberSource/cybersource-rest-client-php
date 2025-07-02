@@ -41,7 +41,7 @@ class PgpEncryptionUtility
         $literal = new \OpenPGP_LiteralDataPacket($data, ['format' => 'b', 'filename' => basename($inputFile)]);
     
         $encrypted = \OpenPGP_Crypt_Symmetric::encrypt([$pubKeyPacket], new \OpenPGP_Message([$literal]));
-    
-        return $encrypted->to_bytes();
+    //also works without converting to string
+        return (string)$encrypted->to_bytes();
     }
 }
