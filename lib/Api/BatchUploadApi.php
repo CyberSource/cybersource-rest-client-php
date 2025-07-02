@@ -5,6 +5,7 @@ namespace CyberSource\Api;
 use CyberSource\ApiException;
 use CyberSource\Utilities\PGP\BatchUpload\PgpEncryptionUtility;
 use CyberSource\Utilities\PGP\BatchUpload\MutualAuthUploadUtility;
+use CyberSource\Utilities\PGP\BatchUpload\BatchuploadUtility;
 use CyberSource\Logging\LogFactory;
 use CyberSource\Logging\LogConfiguration;
 
@@ -39,6 +40,7 @@ class BatchUploadApi
      * @param string $clientCertP12FilePath Path to the PKCS#12 client certificate file (.p12 or .pfx).
      * @param string $clientCertP12Password Password for the PKCS#12 client certificate.
      * @param string|null $serverTrustCertPath Path to the server trust certificate(s) in PEM format. Optional.
+     * @param bool $verify_ssl Whether to verify the server's SSL certificate. Optional. Set to false to disable verification (not recommended). Default is true.
      * @return array [responseBody, statusCode, headers]
      * @throws ApiException
      */
@@ -57,15 +59,20 @@ class BatchUploadApi
                 self::$logger->warning("SSL verification is DISABLED for this batch upload. This is insecure and should not be used in production.");
             }
         }
+        BatchuploadUtility::validateBatchApiP12Inputs(
+            $inputFile, $environmentHostname, $pgpEncryptionCertPath, $clientCertP12FilePath, $serverTrustCertPath
+        );
+
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
         $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
 
         $pgpFileName = basename($inputFile);
         if (empty($pgpFileName) || $pgpFileName === '.' || $pgpFileName === '..') {
-            $pgpFileName = 'file';
+            $pgpFileName = 'file.pgp';
+        } else {
+            $pgpFileName = pathinfo($pgpFileName, PATHINFO_FILENAME) . '.pgp';
         }
-        $pgpFileName .= '.pgp';
 
         return MutualAuthUploadUtility::uploadWithP12(
             $encryptedPgpBytes,
@@ -89,6 +96,7 @@ class BatchUploadApi
      * @param string $clientKeyPath Path to the client private key (PEM).
      * @param string|null $serverTrustCertPath Path to the server trust certificate(s) in PEM format. Optional.
      * @param string|null $clientKeyPassword Password for the client private key. Optional.
+     * @param bool $verify_ssl Whether to verify the server's SSL certificate. Optional. Set to false to disable verification (not recommended). Default is true.
      * @return array [responseBody, statusCode, headers]
      * @throws ApiException
      */
@@ -107,16 +115,20 @@ class BatchUploadApi
             if ($verify_ssl === false) {
                 self::$logger->warning("SSL verification is DISABLED for this batch upload. This is insecure and should not be used in production.");
             }
-        }        
+        }
+        
+        BatchuploadUtility::validateBatchApiKeysInputs($inputFile, $environmentHostname, $pgpEncryptionCertPath, $clientKeyPath, $clientCertPath, $serverTrustCertPath);
+        
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
         $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
 
         $pgpFileName = basename($inputFile);
         if (empty($pgpFileName) || $pgpFileName === '.' || $pgpFileName === '..') {
-            $pgpFileName = 'file';
+            $pgpFileName = 'file.pgp';
+        } else {
+            $pgpFileName = pathinfo($pgpFileName, PATHINFO_FILENAME) . '.pgp';
         }
-        $pgpFileName .= '.pgp';
 
         return MutualAuthUploadUtility::uploadWithKeyAndCert(
             $encryptedPgpBytes,
@@ -131,13 +143,20 @@ class BatchUploadApi
         );
     }
 
-    private function getEndpointUrl($hostname, $endpoint)
+    /**
+     * Constructs the full endpoint URL for the given environment hostname and endpoint path.
+     *
+     * @param string $environmentHostname The environment hostname (with or without protocol prefix).
+     * @param string $endpoint The endpoint path to append.
+     * @return string The full endpoint URL.
+     */
+    private function getEndpointUrl($environmentHostname, $endpoint)
     {
-        $url = rtrim($hostname, "/") . $endpoint;
-        if (self::$logger) {
-            self::$logger->debug("Resolved endpoint URL: $url");
-        }        
-        return $url;
+        $URL_PREFIX = 'https://';
+        $baseUrl = (stripos(trim($environmentHostname), $URL_PREFIX) === 0)
+            ? trim($environmentHostname)
+            : $URL_PREFIX . trim($environmentHostname);
+        return $baseUrl . $endpoint;
     }
 
 }
