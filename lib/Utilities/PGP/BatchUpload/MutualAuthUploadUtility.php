@@ -3,6 +3,7 @@
 namespace CyberSource\Utilities\PGP\BatchUpload;
 
 use CyberSource\ApiException;
+use CyberSource\Utilities\MultipartHelpers\MultipartHelper;
 
 class MutualAuthUploadUtility
 {
@@ -95,17 +96,12 @@ class MutualAuthUploadUtility
         $verify_ssl,
         $logger
     ){
-        $boundary = '--------------------------' . microtime(true);
-        $eol = "\r\n";
-        // works without this header too: Content-Transfer-Encoding
-        $multipartBody =
-            "--$boundary$eol" .
-            "Content-Disposition: form-data; name=\"file\"; filename=\"$fileName\"$eol" .
-            "Content-Type: application/octet-stream$eol" .
-            "Content-Transfer-Encoding: binary$eol$eol" .
-            $encryptedPgpBytes . $eol .
-            "--$boundary--$eol";
-        
+
+        $boundary = uniqid();
+        $formParams = [
+            $fileName => $encryptedPgpBytes
+        ];
+        $multipartBody = MultipartHelper::build_data_files($boundary, $formParams);
         $correlationId = self::generateCorrelationId();
         
         $ch = curl_init();
@@ -113,11 +109,11 @@ class MutualAuthUploadUtility
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $multipartBody);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            "Content-Type: multipart/form-data; boundary=$boundary",
+            "Content-Type: multipart/form-data; boundary=-------------$boundary",
             "v-c-correlation-id: $correlationId"
         ]);
 
-        // mTLS: handle both PKCS#12 and cert and key
+        //mTLS: handle both PKCS#12 and cert and key
         if ($tlsConfig['type'] === 'p12') {
             curl_setopt($ch, CURLOPT_SSLCERT, $tlsConfig['cert']);
             curl_setopt($ch, CURLOPT_SSLCERTTYPE, 'P12');
@@ -132,7 +128,16 @@ class MutualAuthUploadUtility
 
         // CA cert for server validation
         if ($caCertPath) {
-            curl_setopt($ch, CURLOPT_CAINFO, $caCertPath);
+            print_r("Using custom CA cert path: $caCertPath\n");
+            $defaultCaCertPath = __DIR__ . '/../../../ssl/cacert.pem';
+            $defaultCa = file_exists($defaultCaCertPath) ? file_get_contents($defaultCaCertPath) : '';
+            $userCa = file_get_contents($caCertPath);
+            $combinedCa = rtrim($defaultCa, "\r\n") . "\n" . ltrim($userCa, "\r\n");
+            curl_setopt($ch, CURLOPT_CAINFO_BLOB, $combinedCa);
+        }else{
+            $defaultCaCertPath = __DIR__ . '/../../../ssl/cacert.pem';
+            $defaultCa = file_exists($defaultCaCertPath) ? file_get_contents($defaultCaCertPath) : '';
+            curl_setopt($ch, CURLOPT_CAINFO_BLOB, $defaultCa);
         }
 
         // SSL verification
