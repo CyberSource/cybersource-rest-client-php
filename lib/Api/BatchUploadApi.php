@@ -15,6 +15,21 @@ class BatchUploadApi
 
     /**
      * BatchUploadApi constructor.
+     *
+     * Example usage with custom log configuration:
+     * ```php
+     * $logConfig = new \CyberSource\Logging\LogConfiguration();
+     * $logConfig->enableLogging(true);
+     * $logConfig->setDebugLogFile(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Log" . DIRECTORY_SEPARATOR . "debugTest.log");
+     * $logConfig->setErrorLogFile(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Log" . DIRECTORY_SEPARATOR . "errorTest.log");
+     * $logConfig->setLogDateFormat("Y-m-d\TH:i:s");
+     * $logConfig->setLogFormat("[%datetime%] [%level_name%] [%channel%] : %message%\n");
+     * $logConfig->setLogMaxFiles(3);
+     * $logConfig->setLogLevel("debug");
+     * $logConfig->enableMasking(true);
+     * $api = new \CyberSource\Api\BatchUploadApi($logConfig);
+     * ```
+     *
      * @param LogConfiguration|null $logConfig
      */
     public function __construct($logConfig = null)
