@@ -10,9 +10,9 @@ class MultipartHelper
 
         $delimiter = '-------------' . $boundary;
 
-        foreach ($formParams as $name => $content) {
+        foreach ($formParams as $filename => $content) {
             $data .= "--" . $delimiter . $eol
-                . 'Content-Disposition: form-data; name="' . $name . '"; filename="' . $name . '"' . $eol
+                . 'Content-Disposition: form-data; name="' . $filename . '"; filename="' . $filename . '"' . $eol
                 . 'Content-Transfer-Encoding: binary'.$eol
                 ;
 
