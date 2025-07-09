@@ -49,7 +49,7 @@ class BatchUploadApi
     /**
      * Uploads a batch file using mutual TLS authentication with a PKCS#12 (.p12/.pfx) client certificate file.
      *
-     * @param string $inputFile Path to the file to be uploaded.
+     * @param string $inputFilePath Path to the file to be uploaded.
      * @param string $environmentHostname The environment hostname.
      * @param string $pgpEncryptionCertPath Path to the PGP encryption certificate.
      * @param string $clientCertP12FilePath Path to the PKCS#12 client certificate file (.p12 or .pfx).
@@ -60,7 +60,7 @@ class BatchUploadApi
      * @throws ApiException
      */
     public function uploadBatchWithP12(
-        $inputFile,
+        $inputFilePath,
         $environmentHostname,
         $pgpEncryptionCertPath,
         $clientCertP12FilePath,
@@ -69,20 +69,20 @@ class BatchUploadApi
         $verify_ssl = true
     ) {
         if (self::$logger) {
-            self::$logger->info("Starting batch upload with P12/PFX for file: $inputFile");
+            self::$logger->info("Starting batch upload with P12/PFX for file: $inputFilePath");
             if ($verify_ssl === false) {
                 self::$logger->warning("SSL verification is DISABLED for this batch upload. This is insecure and should not be used in production.");
             }
         }
         BatchuploadUtility::validateBatchApiP12Inputs(
-            $inputFile, $environmentHostname, $pgpEncryptionCertPath, $clientCertP12FilePath, $serverTrustCertPath
+            $inputFilePath, $environmentHostname, $pgpEncryptionCertPath, $clientCertP12FilePath, $serverTrustCertPath
         );
 
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
-        $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
+        $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFilePath, $pgpEncryptionCertPath);
 
-        $pgpFileName = basename($inputFile);
+        $pgpFileName = basename($inputFilePath);
         if (empty($pgpFileName) || $pgpFileName === '.' || $pgpFileName === '..') {
             $pgpFileName = 'file.pgp';
         } else {
@@ -104,7 +104,7 @@ class BatchUploadApi
     /**
      * Uploads a batch file using mutual TLS authentication with client private key and certificate.
      *
-     * @param string $inputFile Path to the file to be uploaded.
+     * @param string $inputFilePath Path to the file to be uploaded.
      * @param string $environmentHostname The environment hostname (e.g., api.cybersource.com).
      * @param string $pgpEncryptionCertPath Path to the PGP encryption certificate.
      * @param string $clientCertPath Path to the client certificate (PEM).
@@ -116,7 +116,7 @@ class BatchUploadApi
      * @throws ApiException
      */
     public function uploadBatchWithKeyAndCert(
-        $inputFile,
+        $inputFilePath,
         $environmentHostname,
         $pgpEncryptionCertPath,
         $clientCertPath,
@@ -126,19 +126,19 @@ class BatchUploadApi
         $verify_ssl = true
     ) {
         if (self::$logger) {
-            self::$logger->info("Starting batch upload with client key/cert for file: $inputFile");
+            self::$logger->info("Starting batch upload with client key/cert for file: $inputFilePath");
             if ($verify_ssl === false) {
                 self::$logger->warning("SSL verification is DISABLED for this batch upload. This is insecure and should not be used in production.");
             }
         }
         
-        BatchuploadUtility::validateBatchApiKeysInputs($inputFile, $environmentHostname, $pgpEncryptionCertPath, $clientKeyPath, $clientCertPath, $serverTrustCertPath);
+        BatchuploadUtility::validateBatchApiKeysInputs($inputFilePath, $environmentHostname, $pgpEncryptionCertPath, $clientKeyPath, $clientCertPath, $serverTrustCertPath);
         
         $endpointUrl = $this->getEndpointUrl($environmentHostname, "/pts/v1/transaction-batch-upload");
 
-        $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFile, $pgpEncryptionCertPath);
+        $encryptedPgpBytes = PgpEncryptionUtility::encryptFileToBytes($inputFilePath, $pgpEncryptionCertPath);
 
-        $pgpFileName = basename($inputFile);
+        $pgpFileName = basename($inputFilePath);
         if (empty($pgpFileName) || $pgpFileName === '.' || $pgpFileName === '..') {
             $pgpFileName = 'file.pgp';
         } else {

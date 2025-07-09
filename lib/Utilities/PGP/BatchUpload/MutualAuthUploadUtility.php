@@ -127,17 +127,17 @@ class MutualAuthUploadUtility
         }
 
         // CA cert for server validation
+        $defaultCaCertPath = __DIR__ . '/../../../ssl/cacert.pem';
+        $useBlob = defined('CURLOPT_CAINFO_BLOB');
         if ($caCertPath) {
-            print_r("Using custom CA cert path: $caCertPath\n");
-            $defaultCaCertPath = __DIR__ . '/../../../ssl/cacert.pem';
-            $defaultCa = file_exists($defaultCaCertPath) ? file_get_contents($defaultCaCertPath) : '';
-            $userCa = file_get_contents($caCertPath);
-            $combinedCa = rtrim($defaultCa, "\r\n") . "\n" . ltrim($userCa, "\r\n");
-            curl_setopt($ch, CURLOPT_CAINFO_BLOB, $combinedCa);
-        }else{
-            $defaultCaCertPath = __DIR__ . '/../../../ssl/cacert.pem';
-            $defaultCa = file_exists($defaultCaCertPath) ? file_get_contents($defaultCaCertPath) : '';
-            curl_setopt($ch, CURLOPT_CAINFO_BLOB, $defaultCa);
+            if ($useBlob) {
+                $defaultCa = file_exists($defaultCaCertPath) ? file_get_contents($defaultCaCertPath) : '';
+                $userCa = file_get_contents($caCertPath);
+                $combinedCa = rtrim($defaultCa, "\r\n") . "\n" . ltrim($userCa, "\r\n");
+                curl_setopt($ch, CURLOPT_CAINFO_BLOB, $combinedCa);
+            } else {
+                curl_setopt($ch, CURLOPT_CAINFO, $caCertPath);
+            }
         }
 
         // SSL verification
