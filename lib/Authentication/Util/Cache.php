@@ -138,7 +138,7 @@ class Cache
         }
         
         // 3. Then use default
-        $defaultPath = GlobalParameter::DEFAULT_MLE_CERT;
+        $defaultPath = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Resource" . DIRECTORY_SEPARATOR . GlobalParameter::DEFAULT_MLE_CERT;
         $cacheEntry = $this->tryGetMLECertFromPath($defaultPath, $merchantConfig);
         if ($cacheEntry !== null) {
             self::$logger->debug("MLE certificate found in default path: " . $defaultPath);
