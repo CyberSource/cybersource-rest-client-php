@@ -257,6 +257,12 @@ class MerchantConfiguration
     protected $tempFolderPath;
 
     /**
+     * MLE Cert file path
+     * @var string
+     */
+    protected $mleForRequestPublicCertPath;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -999,6 +1005,25 @@ class MerchantConfiguration
         }
     }
 
+    /**
+     * Set the value of mleForRequestPublicCertPath
+     *
+     * @param string $mleForRequestPublicCertPath
+     */
+    public function setMleForRequestPublicCertPath($mleForRequestPublicCertPath)
+    {
+        $this->mleForRequestPublicCertPath = $mleForRequestPublicCertPath;
+    }
+    /**
+     * Get the value of mleForRequestPublicCertPath
+     *
+     * @return string
+     */
+    public function getMleForRequestPublicCertPath()
+    {
+        return $this->mleForRequestPublicCertPath;
+    }
+    
     private function isAssocArrayOfStringBool($array) {
         foreach ($array as $key => $value) {
             if (!is_string($key) || !is_bool($value)) {
@@ -1149,6 +1174,10 @@ class MerchantConfiguration
 
         if (isset($connectionDet->mleKeyAlias)) {
             $config = $config->setMleKeyAlias($connectionDet->mleKeyAlias);
+        }
+
+        if (isset($connectionDet->mleForRequestPublicCertPath)) {
+            $config = $config->setMleForRequestPublicCertPath($connectionDet->mleForRequestPublicCertPath);
         }
 
         $config->validateMerchantData();
@@ -1319,21 +1348,33 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-        $mleConfigured = $this->useMLEGlobally;
-        if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
-            foreach ($this->mapToControlMLEonAPI as $value) {
-                if ($value) {
-                    $mleConfigured = true;
-                    break;
-                }
-            }
-        }
+        // $mleConfigured = $this->useMLEGlobally;
+        // if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
+        //     foreach ($this->mapToControlMLEonAPI as $value) {
+        //         if ($value) {
+        //             $mleConfigured = true;
+        //             break;
+        //         }
+        //     }
+        // }
         // if MLE=true then check for auth Type
-        if ($mleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
-            $error_message = GlobalParameter::MLE_AUTH_ERROR;
-            $exception = new AuthException($error_message, 0);
-            self::$logger->error($error_message);
-            throw $exception;
+        // if ($mleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
+        //     $error_message = GlobalParameter::MLE_AUTH_ERROR;
+        //     $exception = new AuthException($error_message, 0);
+        //     self::$logger->error($error_message);
+        //     throw $exception;
+        // }
+
+        if (isset($this->mleForRequestPublicCertPath)) {
+            $certPath = $this->mleForRequestPublicCertPath;
+            
+            // Validate the MLE certificate path
+            if (!file_exists($certPath) || !is_readable($certPath) || !is_file($certPath)) {
+                $error_message = "MLE request public certificate file not found or not readable at " . $certPath;
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
+            }
         }
     }
 
