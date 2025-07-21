@@ -37,6 +37,7 @@ git checkout ..\composer.json
 git checkout ..\lib\Api\OAuthApi.php
 git checkout ..\lib\Model\AccessTokenResponse.php
 git checkout ..\lib\Model\CreateAccessTokenRequest.php
+git checkout ..\lib\Api\BatchUploadApi.php
 
 pause
 
