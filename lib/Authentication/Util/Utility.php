@@ -26,5 +26,28 @@ class Utility
 
         throw new \Exception("Certificate with alias $keyAlias not found.");
     }
+
+    public static function extractAllCertificates($certContent)
+    {
+        $certs = [];
+
+        $pattern = '/-----BEGIN CERTIFICATE-----[\r\n]+.*?[\r\n]+-----END CERTIFICATE-----/s';
+
+        if (preg_match_all($pattern, $certContent, $matches)) {
+            foreach ($matches[0] as $certPem) {
+                $cert = openssl_x509_read($certPem);
+                if ($cert !== false) {
+                    $certs[] = $cert;
+                }
+            }
+        } else {
+            // Try reading as a single certificate if no PEM format matches found
+            $cert = openssl_x509_read($certContent);
+            if ($cert !== false) {
+                $certs[] = $cert;
+            }
+        }
+        return $certs;
+    }
 }
 ?>
