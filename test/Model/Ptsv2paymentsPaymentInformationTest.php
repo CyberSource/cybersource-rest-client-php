@@ -91,6 +91,13 @@ class Ptsv2paymentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "tokenizedPaymentMethod"
+     */
+    public function testPropertyTokenizedPaymentMethod()
+    {
+    }
+
+    /**
      * Test attribute "directDebit"
      */
     public function testPropertyDirectDebit()

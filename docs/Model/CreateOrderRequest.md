@@ -8,6 +8,10 @@ Name | Type | Description | Notes
 **merchantInformation** | [**\CyberSource\Model\Ptsv2intentsMerchantInformation**](Ptsv2intentsMerchantInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\Ptsv2intentsPaymentInformation**](Ptsv2intentsPaymentInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Ptsv2intentsOrderInformation**](Ptsv2intentsOrderInformation.md) |  | [optional] 
+**senderInformation** | [**\CyberSource\Model\Ptsv2intentsSenderInformation**](Ptsv2intentsSenderInformation.md) |  | [optional] 
+**eventInformation** | [**\CyberSource\Model\Ptsv2intentsEventInformation**](Ptsv2intentsEventInformation.md) |  | [optional] 
+**travelInformation** | [**\CyberSource\Model\Ptsv2intentsTravelInformation**](Ptsv2intentsTravelInformation.md) |  | [optional] 
+**recipientInformation** | [**\CyberSource\Model\Ptsv2intentsRecipientInformation**](Ptsv2intentsRecipientInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

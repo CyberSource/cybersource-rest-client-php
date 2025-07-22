@@ -80,6 +80,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'referenceDataCode' => 'string',
         'referenceDataNumber' => 'string',
         'unitTaxAmount' => 'string',
+        'measurement' => 'string',
         'productDescription' => 'string',
         'giftCardCurrency' => 'int',
         'shippingDestinationTypes' => 'string',
@@ -121,6 +122,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'referenceDataCode' => null,
         'referenceDataNumber' => null,
         'unitTaxAmount' => null,
+        'measurement' => null,
         'productDescription' => null,
         'giftCardCurrency' => null,
         'shippingDestinationTypes' => null,
@@ -172,6 +174,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'referenceDataCode' => 'referenceDataCode',
         'referenceDataNumber' => 'referenceDataNumber',
         'unitTaxAmount' => 'unitTaxAmount',
+        'measurement' => 'measurement',
         'productDescription' => 'productDescription',
         'giftCardCurrency' => 'giftCardCurrency',
         'shippingDestinationTypes' => 'shippingDestinationTypes',
@@ -214,6 +217,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'referenceDataCode' => 'setReferenceDataCode',
         'referenceDataNumber' => 'setReferenceDataNumber',
         'unitTaxAmount' => 'setUnitTaxAmount',
+        'measurement' => 'setMeasurement',
         'productDescription' => 'setProductDescription',
         'giftCardCurrency' => 'setGiftCardCurrency',
         'shippingDestinationTypes' => 'setShippingDestinationTypes',
@@ -256,6 +260,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         'referenceDataCode' => 'getReferenceDataCode',
         'referenceDataNumber' => 'getReferenceDataNumber',
         'unitTaxAmount' => 'getUnitTaxAmount',
+        'measurement' => 'getMeasurement',
         'productDescription' => 'getProductDescription',
         'giftCardCurrency' => 'getGiftCardCurrency',
         'shippingDestinationTypes' => 'getShippingDestinationTypes',
@@ -323,6 +328,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
         $this->container['referenceDataCode'] = isset($data['referenceDataCode']) ? $data['referenceDataCode'] : null;
         $this->container['referenceDataNumber'] = isset($data['referenceDataNumber']) ? $data['referenceDataNumber'] : null;
         $this->container['unitTaxAmount'] = isset($data['unitTaxAmount']) ? $data['unitTaxAmount'] : null;
+        $this->container['measurement'] = isset($data['measurement']) ? $data['measurement'] : null;
         $this->container['productDescription'] = isset($data['productDescription']) ? $data['productDescription'] : null;
         $this->container['giftCardCurrency'] = isset($data['giftCardCurrency']) ? $data['giftCardCurrency'] : null;
         $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
@@ -920,6 +926,27 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
     public function setUnitTaxAmount($unitTaxAmount)
     {
         $this->container['unitTaxAmount'] = $unitTaxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets measurement
+     * @return string
+     */
+    public function getMeasurement()
+    {
+        return $this->container['measurement'];
+    }
+
+    /**
+     * Sets measurement
+     * @param string $measurement This field would contain measurement of a line item.
+     * @return $this
+     */
+    public function setMeasurement($measurement)
+    {
+        $this->container['measurement'] = $measurement;
 
         return $this;
     }

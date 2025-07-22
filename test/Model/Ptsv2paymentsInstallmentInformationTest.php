@@ -180,4 +180,11 @@ class Ptsv2paymentsInstallmentInformationTest extends \PHPUnit_Framework_TestCas
     public function testPropertyIdentifier()
     {
     }
+
+    /**
+     * Test attribute "annualInterestRate"
+     */
+    public function testPropertyAnnualInterestRate()
+    {
+    }
 }

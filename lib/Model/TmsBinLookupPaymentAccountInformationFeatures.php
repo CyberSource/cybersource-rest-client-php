@@ -404,7 +404,7 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
 
     /**
      * Sets comboCard
-     * @param string $comboCard This field indicates the type of combo card. Possible values:   - 0 (Not a combo card)   - 1 (Credit and Prepaid Combo card)   - 2 (Credit and Debit Combo card)
+     * @param string $comboCard This field indicates the type of combo card. Possible values:   - 0 (Not a combo card)   - 1 (Credit and Prepaid Combo card)   - 2 (Credit and Debit Combo card)   - 3 (Prepaid Credit and Prepaid Debit combo card)
      * @return $this
      */
     public function setComboCard($comboCard)

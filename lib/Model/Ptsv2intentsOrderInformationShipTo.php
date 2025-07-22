@@ -61,7 +61,9 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'string',
         'postalCode' => 'string',
         'country' => 'string',
-        'method' => 'string'
+        'method' => 'string',
+        'email' => 'string',
+        'phoneNumber' => 'string'
     ];
 
     /**
@@ -77,7 +79,9 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => null,
         'postalCode' => null,
         'country' => null,
-        'method' => null
+        'method' => null,
+        'email' => null,
+        'phoneNumber' => null
     ];
 
     public static function swaggerTypes()
@@ -103,7 +107,9 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
         'country' => 'country',
-        'method' => 'method'
+        'method' => 'method',
+        'email' => 'email',
+        'phoneNumber' => 'phoneNumber'
     ];
 
 
@@ -120,7 +126,9 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
         'country' => 'setCountry',
-        'method' => 'setMethod'
+        'method' => 'setMethod',
+        'email' => 'setEmail',
+        'phoneNumber' => 'setPhoneNumber'
     ];
 
 
@@ -137,7 +145,9 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry',
-        'method' => 'getMethod'
+        'method' => 'getMethod',
+        'email' => 'getEmail',
+        'phoneNumber' => 'getPhoneNumber'
     ];
 
     public static function attributeMap()
@@ -180,6 +190,8 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
     }
 
     /**
@@ -392,6 +404,48 @@ class Ptsv2intentsOrderInformationShipTo implements ArrayAccess
     public function setMethod($method)
     {
         $this->container['method'] = $method;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Customer's email address, including the full domain name.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phoneNumber
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phoneNumber'];
+    }
+
+    /**
+     * Sets phoneNumber
+     * @param string $phoneNumber Phone number associated with the shipping address.
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->container['phoneNumber'] = $phoneNumber;
 
         return $this;
     }

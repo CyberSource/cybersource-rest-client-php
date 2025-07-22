@@ -56,6 +56,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
         'processor' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessorInformationProcessor',
         'providerTransactionId' => 'string',
         'approvalCode' => 'string',
+        'eventStatus' => 'string',
         'retrievalReferenceNumber' => 'string'
     ];
 
@@ -67,6 +68,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
         'processor' => null,
         'providerTransactionId' => null,
         'approvalCode' => null,
+        'eventStatus' => null,
         'retrievalReferenceNumber' => null
     ];
 
@@ -88,6 +90,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
         'processor' => 'processor',
         'providerTransactionId' => 'providerTransactionId',
         'approvalCode' => 'approvalCode',
+        'eventStatus' => 'eventStatus',
         'retrievalReferenceNumber' => 'retrievalReferenceNumber'
     ];
 
@@ -100,6 +103,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
         'processor' => 'setProcessor',
         'providerTransactionId' => 'setProviderTransactionId',
         'approvalCode' => 'setApprovalCode',
+        'eventStatus' => 'setEventStatus',
         'retrievalReferenceNumber' => 'setRetrievalReferenceNumber'
     ];
 
@@ -112,6 +116,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
         'processor' => 'getProcessor',
         'providerTransactionId' => 'getProviderTransactionId',
         'approvalCode' => 'getApprovalCode',
+        'eventStatus' => 'getEventStatus',
         'retrievalReferenceNumber' => 'getRetrievalReferenceNumber'
     ];
 
@@ -149,6 +154,7 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
         $this->container['processor'] = isset($data['processor']) ? $data['processor'] : null;
         $this->container['providerTransactionId'] = isset($data['providerTransactionId']) ? $data['providerTransactionId'] : null;
         $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
+        $this->container['eventStatus'] = isset($data['eventStatus']) ? $data['eventStatus'] : null;
         $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
     }
 
@@ -236,6 +242,27 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformation implements Ar
     public function setApprovalCode($approvalCode)
     {
         $this->container['approvalCode'] = $approvalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets eventStatus
+     * @return string
+     */
+    public function getEventStatus()
+    {
+        return $this->container['eventStatus'];
+    }
+
+    /**
+     * Sets eventStatus
+     * @param string $eventStatus The event status.
+     * @return $this
+     */
+    public function setEventStatus($eventStatus)
+    {
+        $this->container['eventStatus'] = $eventStatus;
 
         return $this;
     }
