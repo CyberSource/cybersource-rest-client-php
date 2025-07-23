@@ -110,4 +110,32 @@ class CreateOrderRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "senderInformation"
+     */
+    public function testPropertySenderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "eventInformation"
+     */
+    public function testPropertyEventInformation()
+    {
+    }
+
+    /**
+     * Test attribute "travelInformation"
+     */
+    public function testPropertyTravelInformation()
+    {
+    }
+
+    /**
+     * Test attribute "recipientInformation"
+     */
+    public function testPropertyRecipientInformation()
+    {
+    }
 }

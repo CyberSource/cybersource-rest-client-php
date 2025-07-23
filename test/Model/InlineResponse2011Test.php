@@ -96,25 +96,4 @@ class InlineResponse2011Test extends \PHPUnit_Framework_TestCase
     public function testPropertyStatus()
     {
     }
-
-    /**
-     * Test attribute "paymentAccountInformation"
-     */
-    public function testPropertyPaymentAccountInformation()
-    {
-    }
-
-    /**
-     * Test attribute "issuerInformation"
-     */
-    public function testPropertyIssuerInformation()
-    {
-    }
-
-    /**
-     * Test attribute "payoutInformation"
-     */
-    public function testPropertyPayoutInformation()
-    {
-    }
 }

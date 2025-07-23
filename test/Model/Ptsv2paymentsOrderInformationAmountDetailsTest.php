@@ -84,6 +84,13 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     }
 
     /**
+     * Test attribute "invoiceAmount"
+     */
+    public function testPropertyInvoiceAmount()
+    {
+    }
+
+    /**
      * Test attribute "totalAmount"
      */
     public function testPropertyTotalAmount()

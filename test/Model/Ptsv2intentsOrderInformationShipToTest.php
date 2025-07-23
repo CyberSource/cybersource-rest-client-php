@@ -138,4 +138,18 @@ class Ptsv2intentsOrderInformationShipToTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMethod()
     {
     }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "phoneNumber"
+     */
+    public function testPropertyPhoneNumber()
+    {
+    }
 }

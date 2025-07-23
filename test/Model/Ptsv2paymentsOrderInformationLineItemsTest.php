@@ -266,6 +266,13 @@ class Ptsv2paymentsOrderInformationLineItemsTest extends \PHPUnit_Framework_Test
     }
 
     /**
+     * Test attribute "measurement"
+     */
+    public function testPropertyMeasurement()
+    {
+    }
+
+    /**
      * Test attribute "productDescription"
      */
     public function testPropertyProductDescription()

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **integrationInformation** | [**\CyberSource\Model\InlineResponse2002IntegrationInformation**](InlineResponse2002IntegrationInformation.md) |  | [optional] 
 **organizationInformation** | [**\CyberSource\Model\Boardingv1registrationsOrganizationInformation**](Boardingv1registrationsOrganizationInformation.md) |  | [optional] 
 **productInformation** | [**\CyberSource\Model\Boardingv1registrationsProductInformation**](Boardingv1registrationsProductInformation.md) |  | [optional] 
-**productInformationSetups** | [**\CyberSource\Model\InlineResponse2012ProductInformationSetups[]**](InlineResponse2012ProductInformationSetups.md) |  | [optional] 
+**productInformationSetups** | [**\CyberSource\Model\InlineResponse2013ProductInformationSetups[]**](InlineResponse2013ProductInformationSetups.md) |  | [optional] 
 **documentInformation** | [**\CyberSource\Model\Boardingv1registrationsDocumentInformation**](Boardingv1registrationsDocumentInformation.md) |  | [optional] 
 **details** | [**map[string,object[]]**](array.md) |  | [optional] 
 

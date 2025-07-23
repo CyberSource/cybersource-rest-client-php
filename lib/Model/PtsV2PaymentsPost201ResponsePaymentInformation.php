@@ -55,6 +55,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'card' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformationCard',
         'tokenizedCard' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard',
+        'tokenizedPaymentMethod' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod',
         'accountFeatures' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures',
         'bank' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
@@ -76,6 +77,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'card' => null,
         'tokenizedCard' => null,
+        'tokenizedPaymentMethod' => null,
         'accountFeatures' => null,
         'bank' => null,
         'customer' => null,
@@ -107,6 +109,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $attributeMap = [
         'card' => 'card',
         'tokenizedCard' => 'tokenizedCard',
+        'tokenizedPaymentMethod' => 'tokenizedPaymentMethod',
         'accountFeatures' => 'accountFeatures',
         'bank' => 'bank',
         'customer' => 'customer',
@@ -129,6 +132,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $setters = [
         'card' => 'setCard',
         'tokenizedCard' => 'setTokenizedCard',
+        'tokenizedPaymentMethod' => 'setTokenizedPaymentMethod',
         'accountFeatures' => 'setAccountFeatures',
         'bank' => 'setBank',
         'customer' => 'setCustomer',
@@ -151,6 +155,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     protected static $getters = [
         'card' => 'getCard',
         'tokenizedCard' => 'getTokenizedCard',
+        'tokenizedPaymentMethod' => 'getTokenizedPaymentMethod',
         'accountFeatures' => 'getAccountFeatures',
         'bank' => 'getBank',
         'customer' => 'getCustomer',
@@ -198,6 +203,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     {
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
+        $this->container['tokenizedPaymentMethod'] = isset($data['tokenizedPaymentMethod']) ? $data['tokenizedPaymentMethod'] : null;
         $this->container['accountFeatures'] = isset($data['accountFeatures']) ? $data['accountFeatures'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
@@ -275,6 +281,27 @@ class PtsV2PaymentsPost201ResponsePaymentInformation implements ArrayAccess
     public function setTokenizedCard($tokenizedCard)
     {
         $this->container['tokenizedCard'] = $tokenizedCard;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenizedPaymentMethod
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod
+     */
+    public function getTokenizedPaymentMethod()
+    {
+        return $this->container['tokenizedPaymentMethod'];
+    }
+
+    /**
+     * Sets tokenizedPaymentMethod
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod $tokenizedPaymentMethod
+     * @return $this
+     */
+    public function setTokenizedPaymentMethod($tokenizedPaymentMethod)
+    {
+        $this->container['tokenizedPaymentMethod'] = $tokenizedPaymentMethod;
 
         return $this;
     }

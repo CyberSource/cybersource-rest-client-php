@@ -96,4 +96,88 @@ class Ptsv2intentsProcessingInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyActionList()
     {
     }
+
+    /**
+     * Test attribute "highRiskTransactionFlag"
+     */
+    public function testPropertyHighRiskTransactionFlag()
+    {
+    }
+
+    /**
+     * Test attribute "transactionRetry"
+     */
+    public function testPropertyTransactionRetry()
+    {
+    }
+
+    /**
+     * Test attribute "lastOneHrTransactionCount"
+     */
+    public function testPropertyLastOneHrTransactionCount()
+    {
+    }
+
+    /**
+     * Test attribute "lastOneDayTransactionCount"
+     */
+    public function testPropertyLastOneDayTransactionCount()
+    {
+    }
+
+    /**
+     * Test attribute "lastThreeMonthsTxnCount"
+     */
+    public function testPropertyLastThreeMonthsTxnCount()
+    {
+    }
+
+    /**
+     * Test attribute "totalTransactionCount"
+     */
+    public function testPropertyTotalTransactionCount()
+    {
+    }
+
+    /**
+     * Test attribute "pinVerification"
+     */
+    public function testPropertyPinVerification()
+    {
+    }
+
+    /**
+     * Test attribute "faceIdVerification"
+     */
+    public function testPropertyFaceIdVerification()
+    {
+    }
+
+    /**
+     * Test attribute "userPassedVerification"
+     */
+    public function testPropertyUserPassedVerification()
+    {
+    }
+
+    /**
+     * Test attribute "ipAddress"
+     */
+    public function testPropertyIpAddress()
+    {
+    }
+
+    /**
+     * Test attribute "transactionDate"
+     */
+    public function testPropertyTransactionDate()
+    {
+    }
+
+    /**
+     * Test attribute "tangible"
+     */
+    public function testPropertyTangible()
+    {
+    }
 }

@@ -219,7 +219,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The webhook Identifier (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionById($webhookId)
     {
@@ -237,7 +237,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The webhook Identifier (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionByIdWithHttpInfo($webhookId)
     {
@@ -303,7 +303,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2014");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2015");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -312,17 +312,17 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2014',
+                '\CyberSource\Model\InlineResponse2015',
                 '/notification-subscriptions/v2/webhooks/{webhookId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -470,7 +470,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The Webhook Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2016, HTTP status code, HTTP response headers (array of strings)
      */
     public function notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
     {
@@ -488,7 +488,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The Webhook Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2016, HTTP status code, HTTP response headers (array of strings)
      */
     public function notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo($webhookId)
     {
@@ -554,7 +554,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2015");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2016");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -563,17 +563,17 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
+                '\CyberSource\Model\InlineResponse2016',
                 '/notification-subscriptions/v1/webhooks/{webhookId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -851,7 +851,7 @@ class ManageWebhooksApi
      * @param \CyberSource\Model\SaveAsymEgressKey $saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param string $vCCorrelationId A globally unique id associated with your request (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2016, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2017, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId = null)
     {
@@ -872,7 +872,7 @@ class ManageWebhooksApi
      * @param \CyberSource\Model\SaveAsymEgressKey $saveAsymEgressKey Provide egress Asymmetric key information to save (create or store) (required)
      * @param string $vCCorrelationId A globally unique id associated with your request (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2016, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2017, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveAsymEgressKeyWithHttpInfo($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId = null)
     {
@@ -959,7 +959,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2016");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2017");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -968,17 +968,17 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2016',
+                '\CyberSource\Model\InlineResponse2017',
                 '/kms/egress/v2/keys-asym'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2016', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2017', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2017', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

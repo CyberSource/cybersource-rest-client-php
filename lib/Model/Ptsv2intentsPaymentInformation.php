@@ -53,7 +53,10 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentType' => '\CyberSource\Model\Ptsv2intentsPaymentInformationPaymentType'
+        'paymentType' => '\CyberSource\Model\Ptsv2intentsPaymentInformationPaymentType',
+        'tokenizedPaymentMethod' => '\CyberSource\Model\Ptsv2intentsPaymentInformationTokenizedPaymentMethod',
+        'industryType' => 'string',
+        'eWallet' => '\CyberSource\Model\Ptsv2intentsPaymentInformationEWallet'
     ];
 
     /**
@@ -61,7 +64,10 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'paymentType' => null
+        'paymentType' => null,
+        'tokenizedPaymentMethod' => null,
+        'industryType' => null,
+        'eWallet' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +85,10 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'paymentType' => 'paymentType'
+        'paymentType' => 'paymentType',
+        'tokenizedPaymentMethod' => 'tokenizedPaymentMethod',
+        'industryType' => 'industryType',
+        'eWallet' => 'eWallet'
     ];
 
 
@@ -88,7 +97,10 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'paymentType' => 'setPaymentType'
+        'paymentType' => 'setPaymentType',
+        'tokenizedPaymentMethod' => 'setTokenizedPaymentMethod',
+        'industryType' => 'setIndustryType',
+        'eWallet' => 'setEWallet'
     ];
 
 
@@ -97,7 +109,10 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'paymentType' => 'getPaymentType'
+        'paymentType' => 'getPaymentType',
+        'tokenizedPaymentMethod' => 'getTokenizedPaymentMethod',
+        'industryType' => 'getIndustryType',
+        'eWallet' => 'getEWallet'
     ];
 
     public static function attributeMap()
@@ -132,6 +147,9 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['tokenizedPaymentMethod'] = isset($data['tokenizedPaymentMethod']) ? $data['tokenizedPaymentMethod'] : null;
+        $this->container['industryType'] = isset($data['industryType']) ? $data['industryType'] : null;
+        $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
     }
 
     /**
@@ -176,6 +194,69 @@ class Ptsv2intentsPaymentInformation implements ArrayAccess
     public function setPaymentType($paymentType)
     {
         $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets tokenizedPaymentMethod
+     * @return \CyberSource\Model\Ptsv2intentsPaymentInformationTokenizedPaymentMethod
+     */
+    public function getTokenizedPaymentMethod()
+    {
+        return $this->container['tokenizedPaymentMethod'];
+    }
+
+    /**
+     * Sets tokenizedPaymentMethod
+     * @param \CyberSource\Model\Ptsv2intentsPaymentInformationTokenizedPaymentMethod $tokenizedPaymentMethod
+     * @return $this
+     */
+    public function setTokenizedPaymentMethod($tokenizedPaymentMethod)
+    {
+        $this->container['tokenizedPaymentMethod'] = $tokenizedPaymentMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets industryType
+     * @return string
+     */
+    public function getIndustryType()
+    {
+        return $this->container['industryType'];
+    }
+
+    /**
+     * Sets industryType
+     * @param string $industryType Indicates the industry type. Possible Values: - \"Events\" - \"Ticketing\" - \"Fuel\" - \"GAMING\" - \"DIGITAL GOODS\" - \"TELCO\" - \"Token Service Providers\" - \"Gambling\" - \"CFDs\" - \"car rental\" - \"hotel\" - \"transportation\" - \"travel package\" - \"Cruise Line\" - \"P2P\" - \"Retail\" - \"Food\" - \"Groceries\" - \"Ride Sharing\" - \"Taxi\" - \"Remittance\" - \"Crypto\" - \"Marketplaces\"
+     * @return $this
+     */
+    public function setIndustryType($industryType)
+    {
+        $this->container['industryType'] = $industryType;
+
+        return $this;
+    }
+
+    /**
+     * Gets eWallet
+     * @return \CyberSource\Model\Ptsv2intentsPaymentInformationEWallet
+     */
+    public function getEWallet()
+    {
+        return $this->container['eWallet'];
+    }
+
+    /**
+     * Sets eWallet
+     * @param \CyberSource\Model\Ptsv2intentsPaymentInformationEWallet $eWallet
+     * @return $this
+     */
+    public function setEWallet($eWallet)
+    {
+        $this->container['eWallet'] = $eWallet;
 
         return $this;
     }

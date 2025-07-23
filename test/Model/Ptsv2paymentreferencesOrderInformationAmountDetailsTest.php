@@ -133,6 +133,13 @@ class Ptsv2paymentreferencesOrderInformationAmountDetailsTest extends \PHPUnit_F
     }
 
     /**
+     * Test attribute "invoiceAmount"
+     */
+    public function testPropertyInvoiceAmount()
+    {
+    }
+
+    /**
      * Test attribute "giftwrapAmount"
      */
     public function testPropertyGiftwrapAmount()

@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **notificationSubscriptionsV2WebhooksPost**
-> \CyberSource\Model\InlineResponse2014 notificationSubscriptionsV2WebhooksPost($createWebhook)
+> \CyberSource\Model\InlineResponse2015 notificationSubscriptionsV2WebhooksPost($createWebhook)
 
 Create a New Webhook Subscription
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **saveSymEgressKey**
-> \CyberSource\Model\InlineResponse2013 saveSymEgressKey($vCSenderOrganizationId, $vCPermissions, $vCCorrelationId, $saveSymEgressKey)
+> \CyberSource\Model\InlineResponse2014 saveSymEgressKey($vCSenderOrganizationId, $vCPermissions, $vCCorrelationId, $saveSymEgressKey)
 
 Create Webhook Security Keys
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
 
 ### Authorization
 

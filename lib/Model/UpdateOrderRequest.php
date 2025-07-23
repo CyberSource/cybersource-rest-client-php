@@ -56,7 +56,7 @@ class UpdateOrderRequest implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\Ptsv2intentsClientReferenceInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2intentsidOrderInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2intentsidMerchantInformation',
-        'paymentInformation' => '\CyberSource\Model\Ptsv2intentsPaymentInformation',
+        'paymentInformation' => '\CyberSource\Model\Ptsv2intentsidPaymentInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2intentsidProcessingInformation'
     ];
 
@@ -248,7 +248,7 @@ class UpdateOrderRequest implements ArrayAccess
 
     /**
      * Gets paymentInformation
-     * @return \CyberSource\Model\Ptsv2intentsPaymentInformation
+     * @return \CyberSource\Model\Ptsv2intentsidPaymentInformation
      */
     public function getPaymentInformation()
     {
@@ -257,7 +257,7 @@ class UpdateOrderRequest implements ArrayAccess
 
     /**
      * Sets paymentInformation
-     * @param \CyberSource\Model\Ptsv2intentsPaymentInformation $paymentInformation
+     * @param \CyberSource\Model\Ptsv2intentsidPaymentInformation $paymentInformation
      * @return $this
      */
     public function setPaymentInformation($paymentInformation)

@@ -34,7 +34,6 @@ use \ArrayAccess;
  * InlineResponse2013 Class Doc Comment
  *
  * @category    Class
- * @description Egress Key Information Response
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,10 +53,15 @@ class InlineResponse2013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
+        'id' => 'string',
+        'submitTimeUtc' => '\DateTime',
         'status' => 'string',
-        'clientReferenceInformation' => '\CyberSource\Model\Kmsegressv2keyssymClientReferenceInformation',
-        'keyInformation' => '\CyberSource\Model\InlineResponse2013KeyInformation'
+        'registrationInformation' => '\CyberSource\Model\InlineResponse2013RegistrationInformation',
+        'integrationInformation' => '\CyberSource\Model\InlineResponse2013IntegrationInformation',
+        'organizationInformation' => '\CyberSource\Model\InlineResponse2013OrganizationInformation',
+        'productInformationSetups' => '\CyberSource\Model\InlineResponse2013ProductInformationSetups[]',
+        'message' => 'string',
+        'details' => 'map[string,object[]]'
     ];
 
     /**
@@ -65,10 +69,15 @@ class InlineResponse2013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
+        'id' => null,
+        'submitTimeUtc' => 'date-time',
         'status' => null,
-        'clientReferenceInformation' => null,
-        'keyInformation' => null
+        'registrationInformation' => null,
+        'integrationInformation' => null,
+        'organizationInformation' => null,
+        'productInformationSetups' => null,
+        'message' => null,
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -86,10 +95,15 @@ class InlineResponse2013 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
-        'clientReferenceInformation' => 'clientReferenceInformation',
-        'keyInformation' => 'keyInformation'
+        'registrationInformation' => 'registrationInformation',
+        'integrationInformation' => 'integrationInformation',
+        'organizationInformation' => 'organizationInformation',
+        'productInformationSetups' => 'productInformationSetups',
+        'message' => 'message',
+        'details' => 'details'
     ];
 
 
@@ -98,10 +112,15 @@ class InlineResponse2013 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
-        'clientReferenceInformation' => 'setClientReferenceInformation',
-        'keyInformation' => 'setKeyInformation'
+        'registrationInformation' => 'setRegistrationInformation',
+        'integrationInformation' => 'setIntegrationInformation',
+        'organizationInformation' => 'setOrganizationInformation',
+        'productInformationSetups' => 'setProductInformationSetups',
+        'message' => 'setMessage',
+        'details' => 'setDetails'
     ];
 
 
@@ -110,10 +129,15 @@ class InlineResponse2013 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
-        'clientReferenceInformation' => 'getClientReferenceInformation',
-        'keyInformation' => 'getKeyInformation'
+        'registrationInformation' => 'getRegistrationInformation',
+        'integrationInformation' => 'getIntegrationInformation',
+        'organizationInformation' => 'getOrganizationInformation',
+        'productInformationSetups' => 'getProductInformationSetups',
+        'message' => 'getMessage',
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -147,10 +171,15 @@ class InlineResponse2013 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
-        $this->container['keyInformation'] = isset($data['keyInformation']) ? $data['keyInformation'] : null;
+        $this->container['registrationInformation'] = isset($data['registrationInformation']) ? $data['registrationInformation'] : null;
+        $this->container['integrationInformation'] = isset($data['integrationInformation']) ? $data['integrationInformation'] : null;
+        $this->container['organizationInformation'] = isset($data['organizationInformation']) ? $data['organizationInformation'] : null;
+        $this->container['productInformationSetups'] = isset($data['productInformationSetups']) ? $data['productInformationSetups'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -179,8 +208,29 @@ class InlineResponse2013 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
+     * Gets id
      * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return \DateTime
      */
     public function getSubmitTimeUtc()
     {
@@ -189,7 +239,7 @@ class InlineResponse2013 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -210,7 +260,7 @@ class InlineResponse2013 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction. Possible values:  - ACCEPTED
+     * @param string $status The status of Registration request Possible Values:   - 'INITIALIZED'   - 'RECEIVED'   - 'PROCESSING'   - 'SUCCESS'   - 'FAILURE'   - 'PARTIAL'
      * @return $this
      */
     public function setStatus($status)
@@ -221,43 +271,127 @@ class InlineResponse2013 implements ArrayAccess
     }
 
     /**
-     * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Kmsegressv2keyssymClientReferenceInformation
+     * Gets registrationInformation
+     * @return \CyberSource\Model\InlineResponse2013RegistrationInformation
      */
-    public function getClientReferenceInformation()
+    public function getRegistrationInformation()
     {
-        return $this->container['clientReferenceInformation'];
+        return $this->container['registrationInformation'];
     }
 
     /**
-     * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Kmsegressv2keyssymClientReferenceInformation $clientReferenceInformation
+     * Sets registrationInformation
+     * @param \CyberSource\Model\InlineResponse2013RegistrationInformation $registrationInformation
      * @return $this
      */
-    public function setClientReferenceInformation($clientReferenceInformation)
+    public function setRegistrationInformation($registrationInformation)
     {
-        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
+        $this->container['registrationInformation'] = $registrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets keyInformation
-     * @return \CyberSource\Model\InlineResponse2013KeyInformation
+     * Gets integrationInformation
+     * @return \CyberSource\Model\InlineResponse2013IntegrationInformation
      */
-    public function getKeyInformation()
+    public function getIntegrationInformation()
     {
-        return $this->container['keyInformation'];
+        return $this->container['integrationInformation'];
     }
 
     /**
-     * Sets keyInformation
-     * @param \CyberSource\Model\InlineResponse2013KeyInformation $keyInformation
+     * Sets integrationInformation
+     * @param \CyberSource\Model\InlineResponse2013IntegrationInformation $integrationInformation
      * @return $this
      */
-    public function setKeyInformation($keyInformation)
+    public function setIntegrationInformation($integrationInformation)
     {
-        $this->container['keyInformation'] = $keyInformation;
+        $this->container['integrationInformation'] = $integrationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets organizationInformation
+     * @return \CyberSource\Model\InlineResponse2013OrganizationInformation
+     */
+    public function getOrganizationInformation()
+    {
+        return $this->container['organizationInformation'];
+    }
+
+    /**
+     * Sets organizationInformation
+     * @param \CyberSource\Model\InlineResponse2013OrganizationInformation $organizationInformation
+     * @return $this
+     */
+    public function setOrganizationInformation($organizationInformation)
+    {
+        $this->container['organizationInformation'] = $organizationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInformationSetups
+     * @return \CyberSource\Model\InlineResponse2013ProductInformationSetups[]
+     */
+    public function getProductInformationSetups()
+    {
+        return $this->container['productInformationSetups'];
+    }
+
+    /**
+     * Sets productInformationSetups
+     * @param \CyberSource\Model\InlineResponse2013ProductInformationSetups[] $productInformationSetups
+     * @return $this
+     */
+    public function setProductInformationSetups($productInformationSetups)
+    {
+        $this->container['productInformationSetups'] = $productInformationSetups;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     * @param string $message
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     * @return map[string,object[]]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     * @param map[string,object[]] $details
+     * @return $this
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

@@ -84,16 +84,23 @@ class InlineResponse201Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "status"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "paymentInformation"
      */
-    public function testPropertyStatus()
+    public function testPropertyPaymentInformation()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
     {
     }
 }

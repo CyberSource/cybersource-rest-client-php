@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2014Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2014
+// * @description Egress Key Information Response
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,37 +77,9 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyWebhookId()
-    {
-    }
-
-    /**
-     * Test attribute "organizationId"
-     */
-    public function testPropertyOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "products"
-     */
-    public function testPropertyProducts()
-    {
-    }
-
-    /**
-     * Test attribute "webhookUrl"
-     */
-    public function testPropertyWebhookUrl()
-    {
-    }
-
-    /**
-     * Test attribute "healthCheckUrl"
-     */
-    public function testPropertyHealthCheckUrl()
+    public function testPropertySubmitTimeUtc()
     {
     }
 
@@ -119,44 +91,16 @@ class InlineResponse2014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "clientReferenceInformation"
      */
-    public function testPropertyName()
+    public function testPropertyClientReferenceInformation()
     {
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "keyInformation"
      */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "retryPolicy"
-     */
-    public function testPropertyRetryPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "securityPolicy"
-     */
-    public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "createdOn"
-     */
-    public function testPropertyCreatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "updatedOn"
-     */
-    public function testPropertyUpdatedOn()
+    public function testPropertyKeyInformation()
     {
     }
 }

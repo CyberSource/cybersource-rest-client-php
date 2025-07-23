@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **card** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentAccountInformationCard**](PtsV2PaymentsPost201ResponsePaymentAccountInformationCard.md) |  | [optional] 
 **tokenizedCard** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard**](PtsV2PaymentsPost201ResponsePaymentInformationTokenizedCard.md) |  | [optional] 
+**tokenizedPaymentMethod** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod**](PtsV2PaymentsPost201ResponsePaymentInformationTokenizedPaymentMethod.md) |  | [optional] 
 **accountFeatures** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures**](PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures.md) |  | [optional] 
 **bank** | [**\CyberSource\Model\PtsV2PaymentsPost201ResponsePaymentInformationBank**](PtsV2PaymentsPost201ResponsePaymentInformationBank.md) |  | [optional] 
 **customer** | [**\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer**](Ptsv2paymentsPaymentInformationCustomer.md) |  | [optional] 
