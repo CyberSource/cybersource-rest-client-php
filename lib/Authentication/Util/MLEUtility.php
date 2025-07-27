@@ -27,12 +27,23 @@ class MLEUtility
 
     private static $cache = null;
 
-    public static function checkIsMLEForAPI($merchantConfig, $isMLESupportedByCybsForApi, $operationIds)
+    public static function checkIsMLEForAPI($merchantConfig, $inboundMLEStatus, $operationIds)
     {
         $isMLEForAPI = false;
 
-        if ($isMLESupportedByCybsForApi && $merchantConfig->getUseMLEGlobally()) {
+        if (
+            isset($inboundMLEStatus) &&
+            strtolower($inboundMLEStatus) === 'optional' &&
+            $merchantConfig->getEnableRequestMLEForOptionalApisGlobally()
+        ) {
             $isMLEForAPI = true;
+        }
+
+        if (
+            isset($inboundMLEStatus) &&
+            strtolower($inboundMLEStatus) === 'mandatory'
+        ) {
+            $isMLEForAPI = !$merchantConfig->getDisableRequestMLEForMandatoryApisGlobally();
         }
 
         $operationArray = array_map('trim', explode(',', $operationIds));
