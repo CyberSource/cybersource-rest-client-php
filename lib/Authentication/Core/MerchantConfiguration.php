@@ -204,14 +204,14 @@ class MerchantConfiguration
      *
      * @var bool
      */
-    protected $useMLEGlobally=false;
+    protected $useMLEGlobally=null;
 
         /**
      * Enable MLE for optional APIs globally (alias for useMLEGlobally)
      *
      * @var bool
      */
-    protected $enableRequestMLEForOptionalApisGlobally = false;
+    protected $enableRequestMLEForOptionalApisGlobally = null;
 
     /**
      * Disable MLE for mandatory APIs globally
@@ -986,6 +986,15 @@ class MerchantConfiguration
     {   
         $this->useMLEGlobally = (bool)$useMLEGlobally;
         // If useMLEGlobally is true, enableRequestMLEForOptionalApisGlobally should also be true
+        if (
+            isset($this->useMLEGlobally) && isset($this->enableRequestMLEForOptionalApisGlobally)
+            && ($this->useMLEGlobally !== $this->enableRequestMLEForOptionalApisGlobally)
+        ) {
+            $error_message = "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set.";
+            $exception = new AuthException($error_message, 0);
+            self::$logger->error($error_message);
+            throw $exception;
+        }
         if ($this->useMLEGlobally) {
             $this->enableRequestMLEForOptionalApisGlobally = true;
         }
@@ -1374,15 +1383,6 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-        if (
-            isset($this->useMLEGlobally) && isset($this->enableRequestMLEForOptionalApisGlobally)
-            && ($this->useMLEGlobally !== $this->enableRequestMLEForOptionalApisGlobally)
-        ) {
-            $error_message = "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set.";
-            $exception = new AuthException($error_message, 0);
-            self::$logger->error($error_message);
-            throw $exception;
-        }
         $mleConfigured = $this->enableRequestMLEForOptionalApisGlobally;
         if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
             foreach ($this->mapToControlMLEonAPI as $value) {
