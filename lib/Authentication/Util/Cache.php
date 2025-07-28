@@ -290,7 +290,7 @@ class Cache
 
                 if ($timeToExpire < $warningPeriod) {
                     $expiryDate = date('Y-m-d H:i:s', $notValidAfter);
-                    $message = sprintf($warnMessageForExpiredCert, $keyAlias, $expiryDate);
+                    $message = sprintf($warnMessageForBeingExpiredCert, $keyAlias, $expiryDate);
                     self::$logger->warning($message);
                 }
             }
