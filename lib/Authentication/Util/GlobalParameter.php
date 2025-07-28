@@ -73,6 +73,8 @@ class GlobalParameter
     const INVALID_PROXY_PORT = "Proxy URL is Invalid! Assigining default proxy port: ";
     const DEFAULT_PROXY_URL = "userproxy.visa.com";
     const DEFAULT_PROXY_PORT = 443;
+    const MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT = "_mleCertFromMerchantConfig";
+    const MLE_CACHE_IDENTIFIER_FOR_P12_CERT = "_mleCertFromP12";
     
     const MERCHANT_SECRET_KEY_REQ = " MerchantSecretKey is Mandatory\n";
     const KEY_PASSWORD_EMPTY = "KeyPassword Empty/Null. Assigining merchantID value\n";
