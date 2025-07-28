@@ -1182,25 +1182,20 @@ class MerchantConfiguration
             $config = $config->setJwePEMFileDirectory($connectionDet->jwePEMFileDirectory);
         }
         
-        if (isset($connectionDet->useMLEGlobally)) {
-            // Only assign if enableRequestMLEForOptionalApisGlobally is not already set
-            if (!isset($connectionDet->enableRequestMLEForOptionalApisGlobally)) {
-                $config = $config->setEnableRequestMLEForOptionalApisGlobally($connectionDet->useMLEGlobally);
-            } else {
-                // If both are set, they must be equal, else throw error
-                if (
-                    ($connectionDet->enableRequestMLEForOptionalApisGlobally === true && $connectionDet->useMLEGlobally !== true) ||
-                    ($connectionDet->enableRequestMLEForOptionalApisGlobally !== true && $connectionDet->useMLEGlobally === true)
-                ) {
-                    throw new \InvalidArgumentException(
-                        "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set."
-                    );
-                }
-                // Otherwise, prefer enableRequestMLEForOptionalApisGlobally
-                $config = $config->setEnableRequestMLEForOptionalApisGlobally($connectionDet->enableRequestMLEForOptionalApisGlobally);
+        if (isset($connectionDet->useMLEGlobally) || isset($connectionDet->enableRequestMLEForOptionalApisGlobally)) {
+            $useMLE = isset($connectionDet->useMLEGlobally) ? $connectionDet->useMLEGlobally : null;
+            $enableMLE = isset($connectionDet->enableRequestMLEForOptionalApisGlobally) ? $connectionDet->enableRequestMLEForOptionalApisGlobally : null;
+        
+            // If both are set, they must be equal
+            if ($useMLE !== null && $enableMLE !== null && $useMLE !== $enableMLE) {
+                throw new \InvalidArgumentException(
+                    "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set."
+                );
             }
-        } elseif (isset($connectionDet->enableRequestMLEForOptionalApisGlobally)) {
-            $config = $config->setEnableRequestMLEForOptionalApisGlobally($connectionDet->enableRequestMLEForOptionalApisGlobally);
+        
+            $finalMLE = $enableMLE || $useMLE;
+            $config = $config->setEnableRequestMLEForOptionalApisGlobally($finalMLE);
+            $config = $config->setUseMLEGlobally($finalMLE);
         }
 
         if (isset($connectionDet->mapToControlMLEonAPI)) {
