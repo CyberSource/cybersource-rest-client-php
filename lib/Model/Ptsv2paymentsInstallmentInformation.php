@@ -67,7 +67,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'gracePeriodDurationType' => 'string',
         'firstInstallmentAmount' => 'string',
         'validationIndicator' => 'string',
-        'identifier' => 'string'
+        'identifier' => 'string',
+        'annualInterestRate' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'gracePeriodDurationType' => null,
         'firstInstallmentAmount' => null,
         'validationIndicator' => null,
-        'identifier' => null
+        'identifier' => null,
+        'annualInterestRate' => null
     ];
 
     public static function swaggerTypes()
@@ -121,7 +123,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'gracePeriodDurationType' => 'gracePeriodDurationType',
         'firstInstallmentAmount' => 'firstInstallmentAmount',
         'validationIndicator' => 'validationIndicator',
-        'identifier' => 'identifier'
+        'identifier' => 'identifier',
+        'annualInterestRate' => 'annualInterestRate'
     ];
 
 
@@ -144,7 +147,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'gracePeriodDurationType' => 'setGracePeriodDurationType',
         'firstInstallmentAmount' => 'setFirstInstallmentAmount',
         'validationIndicator' => 'setValidationIndicator',
-        'identifier' => 'setIdentifier'
+        'identifier' => 'setIdentifier',
+        'annualInterestRate' => 'setAnnualInterestRate'
     ];
 
 
@@ -167,7 +171,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'gracePeriodDurationType' => 'getGracePeriodDurationType',
         'firstInstallmentAmount' => 'getFirstInstallmentAmount',
         'validationIndicator' => 'getValidationIndicator',
-        'identifier' => 'getIdentifier'
+        'identifier' => 'getIdentifier',
+        'annualInterestRate' => 'getAnnualInterestRate'
     ];
 
     public static function attributeMap()
@@ -216,6 +221,7 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         $this->container['firstInstallmentAmount'] = isset($data['firstInstallmentAmount']) ? $data['firstInstallmentAmount'] : null;
         $this->container['validationIndicator'] = isset($data['validationIndicator']) ? $data['validationIndicator'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['annualInterestRate'] = isset($data['annualInterestRate']) ? $data['annualInterestRate'] : null;
     }
 
     /**
@@ -554,6 +560,27 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets annualInterestRate
+     * @return string
+     */
+    public function getAnnualInterestRate()
+    {
+        return $this->container['annualInterestRate'];
+    }
+
+    /**
+     * Sets annualInterestRate
+     * @param string $annualInterestRate Annual interest rate.  This field is returned only for two kinds of installment payments on Visa Platform Connect: - Crediario with Visa in Brazil: this field is included in the authorization response for the Crediario eligibility request when the issuer approves the customer's request for Crediario installment payments. - Mastercard in all countries except Brazil, Croatia, Georgia, and Greece.   Example: A value of 1.0 specifies 1%.  Example: A value of 4.0 specifies 4%.  #### Brazil The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR9 - Position: 151-157 - Field: Annual Interest Rate   #### Other Countries The value for this field corresponds to the following data in the TC 33 capture file: - Record: CP01 TCR5 - Position: 58-62 SCMP API Fields| 216 - Field: Mastercard Annual Percentage Rate
+     * @return $this
+     */
+    public function setAnnualInterestRate($annualInterestRate)
+    {
+        $this->container['annualInterestRate'] = $annualInterestRate;
 
         return $this;
     }

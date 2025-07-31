@@ -236,7 +236,7 @@ class TmsBinLookupIssuerInformation implements ArrayAccess
 
     /**
      * Sets binLength
-     * @param string $binLength This field contains the length of the BIN.
+     * @param string $binLength This field contains the length of the BIN. In some cases, this field may be absent if we do not receive accurate information from the network source.
      * @return $this
      */
     public function setBinLength($binLength)
@@ -257,7 +257,7 @@ class TmsBinLookupIssuerInformation implements ArrayAccess
 
     /**
      * Sets accountPrefix
-     * @param string $accountPrefix This field contains the first 6 to 8 digits of a primary account number (PAN). The length of the field is determined by [PCI-DSS standards for truncation](https://pcissc.secure.force.com/faq/articles/Frequently_Asked_Question/What-are-acceptable-formats-for-truncation-of-primary-account-numbers).
+     * @param string $accountPrefix This field contains the first 6 to 8 digits of a primary account number (PAN). The length of the field is determined by [PCI-DSS standards for truncation](https://pcissc.secure.force.com/faq/articles/Frequently_Asked_Question/What-are-acceptable-formats-for-truncation-of-primary-account-numbers).In case the input is not the full intrument (PAN or TOKEN), this field may be truncated.
      * @return $this
      */
     public function setAccountPrefix($accountPrefix)

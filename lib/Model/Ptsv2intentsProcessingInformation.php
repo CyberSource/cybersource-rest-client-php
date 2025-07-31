@@ -55,7 +55,19 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'processingInstruction' => 'string',
         'authorizationOptions' => '\CyberSource\Model\Ptsv2intentsProcessingInformationAuthorizationOptions',
-        'actionList' => 'string[]'
+        'actionList' => 'string[]',
+        'highRiskTransactionFlag' => 'string',
+        'transactionRetry' => 'string',
+        'lastOneHrTransactionCount' => 'string',
+        'lastOneDayTransactionCount' => 'string',
+        'lastThreeMonthsTxnCount' => 'string',
+        'totalTransactionCount' => 'string',
+        'pinVerification' => 'string',
+        'faceIdVerification' => 'string',
+        'userPassedVerification' => 'string',
+        'ipAddress' => 'string',
+        'transactionDate' => 'string',
+        'tangible' => 'string'
     ];
 
     /**
@@ -65,7 +77,19 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'processingInstruction' => null,
         'authorizationOptions' => null,
-        'actionList' => null
+        'actionList' => null,
+        'highRiskTransactionFlag' => null,
+        'transactionRetry' => null,
+        'lastOneHrTransactionCount' => null,
+        'lastOneDayTransactionCount' => null,
+        'lastThreeMonthsTxnCount' => null,
+        'totalTransactionCount' => null,
+        'pinVerification' => null,
+        'faceIdVerification' => null,
+        'userPassedVerification' => null,
+        'ipAddress' => null,
+        'transactionDate' => null,
+        'tangible' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +109,19 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
     protected static $attributeMap = [
         'processingInstruction' => 'processingInstruction',
         'authorizationOptions' => 'authorizationOptions',
-        'actionList' => 'actionList'
+        'actionList' => 'actionList',
+        'highRiskTransactionFlag' => 'highRiskTransactionFlag',
+        'transactionRetry' => 'transactionRetry',
+        'lastOneHrTransactionCount' => 'lastOneHrTransactionCount',
+        'lastOneDayTransactionCount' => 'lastOneDayTransactionCount',
+        'lastThreeMonthsTxnCount' => 'lastThreeMonthsTxnCount',
+        'totalTransactionCount' => 'totalTransactionCount',
+        'pinVerification' => 'pinVerification',
+        'faceIdVerification' => 'faceIdVerification',
+        'userPassedVerification' => 'userPassedVerification',
+        'ipAddress' => 'ipAddress',
+        'transactionDate' => 'transactionDate',
+        'tangible' => 'tangible'
     ];
 
 
@@ -96,7 +132,19 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
     protected static $setters = [
         'processingInstruction' => 'setProcessingInstruction',
         'authorizationOptions' => 'setAuthorizationOptions',
-        'actionList' => 'setActionList'
+        'actionList' => 'setActionList',
+        'highRiskTransactionFlag' => 'setHighRiskTransactionFlag',
+        'transactionRetry' => 'setTransactionRetry',
+        'lastOneHrTransactionCount' => 'setLastOneHrTransactionCount',
+        'lastOneDayTransactionCount' => 'setLastOneDayTransactionCount',
+        'lastThreeMonthsTxnCount' => 'setLastThreeMonthsTxnCount',
+        'totalTransactionCount' => 'setTotalTransactionCount',
+        'pinVerification' => 'setPinVerification',
+        'faceIdVerification' => 'setFaceIdVerification',
+        'userPassedVerification' => 'setUserPassedVerification',
+        'ipAddress' => 'setIpAddress',
+        'transactionDate' => 'setTransactionDate',
+        'tangible' => 'setTangible'
     ];
 
 
@@ -107,7 +155,19 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
     protected static $getters = [
         'processingInstruction' => 'getProcessingInstruction',
         'authorizationOptions' => 'getAuthorizationOptions',
-        'actionList' => 'getActionList'
+        'actionList' => 'getActionList',
+        'highRiskTransactionFlag' => 'getHighRiskTransactionFlag',
+        'transactionRetry' => 'getTransactionRetry',
+        'lastOneHrTransactionCount' => 'getLastOneHrTransactionCount',
+        'lastOneDayTransactionCount' => 'getLastOneDayTransactionCount',
+        'lastThreeMonthsTxnCount' => 'getLastThreeMonthsTxnCount',
+        'totalTransactionCount' => 'getTotalTransactionCount',
+        'pinVerification' => 'getPinVerification',
+        'faceIdVerification' => 'getFaceIdVerification',
+        'userPassedVerification' => 'getUserPassedVerification',
+        'ipAddress' => 'getIpAddress',
+        'transactionDate' => 'getTransactionDate',
+        'tangible' => 'getTangible'
     ];
 
     public static function attributeMap()
@@ -144,6 +204,18 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
         $this->container['processingInstruction'] = isset($data['processingInstruction']) ? $data['processingInstruction'] : null;
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
         $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
+        $this->container['highRiskTransactionFlag'] = isset($data['highRiskTransactionFlag']) ? $data['highRiskTransactionFlag'] : null;
+        $this->container['transactionRetry'] = isset($data['transactionRetry']) ? $data['transactionRetry'] : null;
+        $this->container['lastOneHrTransactionCount'] = isset($data['lastOneHrTransactionCount']) ? $data['lastOneHrTransactionCount'] : null;
+        $this->container['lastOneDayTransactionCount'] = isset($data['lastOneDayTransactionCount']) ? $data['lastOneDayTransactionCount'] : null;
+        $this->container['lastThreeMonthsTxnCount'] = isset($data['lastThreeMonthsTxnCount']) ? $data['lastThreeMonthsTxnCount'] : null;
+        $this->container['totalTransactionCount'] = isset($data['totalTransactionCount']) ? $data['totalTransactionCount'] : null;
+        $this->container['pinVerification'] = isset($data['pinVerification']) ? $data['pinVerification'] : null;
+        $this->container['faceIdVerification'] = isset($data['faceIdVerification']) ? $data['faceIdVerification'] : null;
+        $this->container['userPassedVerification'] = isset($data['userPassedVerification']) ? $data['userPassedVerification'] : null;
+        $this->container['ipAddress'] = isset($data['ipAddress']) ? $data['ipAddress'] : null;
+        $this->container['transactionDate'] = isset($data['transactionDate']) ? $data['transactionDate'] : null;
+        $this->container['tangible'] = isset($data['tangible']) ? $data['tangible'] : null;
     }
 
     /**
@@ -230,6 +302,258 @@ class Ptsv2intentsProcessingInformation implements ArrayAccess
     public function setActionList($actionList)
     {
         $this->container['actionList'] = $actionList;
+
+        return $this;
+    }
+
+    /**
+     * Gets highRiskTransactionFlag
+     * @return string
+     */
+    public function getHighRiskTransactionFlag()
+    {
+        return $this->container['highRiskTransactionFlag'];
+    }
+
+    /**
+     * Sets highRiskTransactionFlag
+     * @param string $highRiskTransactionFlag Indicates if the transaction is flagged as high risk.
+     * @return $this
+     */
+    public function setHighRiskTransactionFlag($highRiskTransactionFlag)
+    {
+        $this->container['highRiskTransactionFlag'] = $highRiskTransactionFlag;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionRetry
+     * @return string
+     */
+    public function getTransactionRetry()
+    {
+        return $this->container['transactionRetry'];
+    }
+
+    /**
+     * Sets transactionRetry
+     * @param string $transactionRetry Indicates if the transaction is a retry.
+     * @return $this
+     */
+    public function setTransactionRetry($transactionRetry)
+    {
+        $this->container['transactionRetry'] = $transactionRetry;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastOneHrTransactionCount
+     * @return string
+     */
+    public function getLastOneHrTransactionCount()
+    {
+        return $this->container['lastOneHrTransactionCount'];
+    }
+
+    /**
+     * Sets lastOneHrTransactionCount
+     * @param string $lastOneHrTransactionCount The number of transactions in the last one hour.
+     * @return $this
+     */
+    public function setLastOneHrTransactionCount($lastOneHrTransactionCount)
+    {
+        $this->container['lastOneHrTransactionCount'] = $lastOneHrTransactionCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastOneDayTransactionCount
+     * @return string
+     */
+    public function getLastOneDayTransactionCount()
+    {
+        return $this->container['lastOneDayTransactionCount'];
+    }
+
+    /**
+     * Sets lastOneDayTransactionCount
+     * @param string $lastOneDayTransactionCount The number of transactions in the last one day.
+     * @return $this
+     */
+    public function setLastOneDayTransactionCount($lastOneDayTransactionCount)
+    {
+        $this->container['lastOneDayTransactionCount'] = $lastOneDayTransactionCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastThreeMonthsTxnCount
+     * @return string
+     */
+    public function getLastThreeMonthsTxnCount()
+    {
+        return $this->container['lastThreeMonthsTxnCount'];
+    }
+
+    /**
+     * Sets lastThreeMonthsTxnCount
+     * @param string $lastThreeMonthsTxnCount The number of transactions in the last three months.
+     * @return $this
+     */
+    public function setLastThreeMonthsTxnCount($lastThreeMonthsTxnCount)
+    {
+        $this->container['lastThreeMonthsTxnCount'] = $lastThreeMonthsTxnCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalTransactionCount
+     * @return string
+     */
+    public function getTotalTransactionCount()
+    {
+        return $this->container['totalTransactionCount'];
+    }
+
+    /**
+     * Sets totalTransactionCount
+     * @param string $totalTransactionCount The total number of transactions.
+     * @return $this
+     */
+    public function setTotalTransactionCount($totalTransactionCount)
+    {
+        $this->container['totalTransactionCount'] = $totalTransactionCount;
+
+        return $this;
+    }
+
+    /**
+     * Gets pinVerification
+     * @return string
+     */
+    public function getPinVerification()
+    {
+        return $this->container['pinVerification'];
+    }
+
+    /**
+     * Sets pinVerification
+     * @param string $pinVerification Indicates if PIN verification is required.
+     * @return $this
+     */
+    public function setPinVerification($pinVerification)
+    {
+        $this->container['pinVerification'] = $pinVerification;
+
+        return $this;
+    }
+
+    /**
+     * Gets faceIdVerification
+     * @return string
+     */
+    public function getFaceIdVerification()
+    {
+        return $this->container['faceIdVerification'];
+    }
+
+    /**
+     * Sets faceIdVerification
+     * @param string $faceIdVerification Indicates if face ID verification is required.
+     * @return $this
+     */
+    public function setFaceIdVerification($faceIdVerification)
+    {
+        $this->container['faceIdVerification'] = $faceIdVerification;
+
+        return $this;
+    }
+
+    /**
+     * Gets userPassedVerification
+     * @return string
+     */
+    public function getUserPassedVerification()
+    {
+        return $this->container['userPassedVerification'];
+    }
+
+    /**
+     * Sets userPassedVerification
+     * @param string $userPassedVerification Indicates if the user passed verification.
+     * @return $this
+     */
+    public function setUserPassedVerification($userPassedVerification)
+    {
+        $this->container['userPassedVerification'] = $userPassedVerification;
+
+        return $this;
+    }
+
+    /**
+     * Gets ipAddress
+     * @return string
+     */
+    public function getIpAddress()
+    {
+        return $this->container['ipAddress'];
+    }
+
+    /**
+     * Sets ipAddress
+     * @param string $ipAddress The IP address of the user.
+     * @return $this
+     */
+    public function setIpAddress($ipAddress)
+    {
+        $this->container['ipAddress'] = $ipAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionDate
+     * @return string
+     */
+    public function getTransactionDate()
+    {
+        return $this->container['transactionDate'];
+    }
+
+    /**
+     * Sets transactionDate
+     * @param string $transactionDate The date of the transaction.
+     * @return $this
+     */
+    public function setTransactionDate($transactionDate)
+    {
+        $this->container['transactionDate'] = $transactionDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets tangible
+     * @return string
+     */
+    public function getTangible()
+    {
+        return $this->container['tangible'];
+    }
+
+    /**
+     * Sets tangible
+     * @param string $tangible Indicates if the transaction involves tangible goods.
+     * @return $this
+     */
+    public function setTangible($tangible)
+    {
+        $this->container['tangible'] = $tangible;
 
         return $this;
     }

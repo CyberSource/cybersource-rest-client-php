@@ -91,6 +91,13 @@ class PtsV2PaymentsPost201ResponsePaymentInformationTest extends \PHPUnit_Framew
     }
 
     /**
+     * Test attribute "tokenizedPaymentMethod"
+     */
+    public function testPropertyTokenizedPaymentMethod()
+    {
+    }
+
+    /**
      * Test attribute "accountFeatures"
      */
     public function testPropertyAccountFeatures()
