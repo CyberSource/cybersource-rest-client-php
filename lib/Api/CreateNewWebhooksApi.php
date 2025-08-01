@@ -164,8 +164,8 @@ class CreateNewWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "findProductsToSubscribe,findProductsToSubscribeWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "findProductsToSubscribe,findProductsToSubscribeWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -278,8 +278,8 @@ class CreateNewWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "notificationSubscriptionsV2WebhooksPost,notificationSubscriptionsV2WebhooksPostWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV2WebhooksPost,notificationSubscriptionsV2WebhooksPostWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -420,8 +420,8 @@ class CreateNewWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "saveSymEgressKey,saveSymEgressKeyWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "saveSymEgressKey,saveSymEgressKeyWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

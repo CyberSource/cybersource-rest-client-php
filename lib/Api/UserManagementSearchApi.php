@@ -163,8 +163,8 @@ class UserManagementSearchApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "searchUsers,searchUsersWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "searchUsers,searchUsersWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

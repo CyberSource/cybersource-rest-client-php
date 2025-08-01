@@ -177,8 +177,8 @@ class InterchangeClearingLevelDetailsApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getInterchangeClearingLevelDetails,getInterchangeClearingLevelDetailsWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getInterchangeClearingLevelDetails,getInterchangeClearingLevelDetailsWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

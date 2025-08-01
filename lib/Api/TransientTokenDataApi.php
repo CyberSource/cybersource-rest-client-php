@@ -164,8 +164,8 @@ class TransientTokenDataApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -284,8 +284,8 @@ class TransientTokenDataApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getTransactionForTransientToken,getTransactionForTransientTokenWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getTransactionForTransientToken,getTransactionForTransientTokenWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

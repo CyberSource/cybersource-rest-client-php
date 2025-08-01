@@ -163,8 +163,8 @@ class DeviceDeAssociationApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "deleteTerminalAssociation,deleteTerminalAssociationWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deleteTerminalAssociation,deleteTerminalAssociationWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -298,8 +298,8 @@ class DeviceDeAssociationApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "postDeAssociateV3Terminal,postDeAssociateV3TerminalWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "postDeAssociateV3Terminal,postDeAssociateV3TerminalWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

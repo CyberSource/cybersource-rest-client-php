@@ -163,8 +163,8 @@ class PayerAuthenticationApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "checkPayerAuthEnrollment,checkPayerAuthEnrollmentWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "checkPayerAuthEnrollment,checkPayerAuthEnrollmentWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -290,8 +290,8 @@ class PayerAuthenticationApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "payerAuthSetup,payerAuthSetupWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "payerAuthSetup,payerAuthSetupWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -417,8 +417,8 @@ class PayerAuthenticationApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "validateAuthenticationResults,validateAuthenticationResultsWithHttpInfo")) {
+        $inboundMLEStatus = 'mandatory';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "validateAuthenticationResults,validateAuthenticationResultsWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

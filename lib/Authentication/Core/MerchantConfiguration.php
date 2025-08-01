@@ -204,7 +204,21 @@ class MerchantConfiguration
      *
      * @var bool
      */
-    protected $useMLEGlobally=false;
+    protected $useMLEGlobally=null;
+
+        /**
+     * Enable MLE for optional APIs globally (alias for useMLEGlobally)
+     *
+     * @var bool
+     */
+    protected $enableRequestMLEForOptionalApisGlobally = null;
+
+    /**
+     * Disable MLE for mandatory APIs globally
+     *
+     * @var bool
+     */
+    protected $disableRequestMLEForMandatoryApisGlobally = false;
 
     /**
      * Curl mapToControlMLEonAPI
@@ -958,9 +972,9 @@ class MerchantConfiguration
      *
      * @return bool
      */
-    public function getUseMLEGlobally()
+    public function getEnableRequestMLEForOptionalApisGlobally()
     {
-        return $this->useMLEGlobally;
+        return $this->enableRequestMLEForOptionalApisGlobally;
     }
 
     /**
@@ -969,8 +983,46 @@ class MerchantConfiguration
      * @param bool $useMLEGlobally
      */
     public function setUseMLEGlobally($useMLEGlobally)
+    {   
+        $this->useMLEGlobally = (bool)$useMLEGlobally;
+        // If useMLEGlobally is true, enableRequestMLEForOptionalApisGlobally should also be true
+        if (
+            isset($this->useMLEGlobally) && isset($this->enableRequestMLEForOptionalApisGlobally)
+            && ($this->useMLEGlobally !== $this->enableRequestMLEForOptionalApisGlobally)
+        ) {
+            $error_message = "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set.";
+            $exception = new AuthException($error_message, 0);
+            self::$logger->error($error_message);
+            throw $exception;
+        }
+        if ($this->useMLEGlobally) {
+            $this->enableRequestMLEForOptionalApisGlobally = true;
+        }
+    }
+
+    public function setEnableRequestMLEForOptionalApisGlobally($enableRequestMLEForOptionalApisGlobally)
     {
-        $this->useMLEGlobally = $useMLEGlobally;
+        $this->enableRequestMLEForOptionalApisGlobally = (bool)$enableRequestMLEForOptionalApisGlobally || (bool)$this->useMLEGlobally;
+    }
+
+        /**
+     * Get the value of disableRequestMLEForMandatoryApisGlobally
+     *
+     * @return bool
+     */
+    public function getDisableRequestMLEForMandatoryApisGlobally()
+    {
+        return $this->disableRequestMLEForMandatoryApisGlobally;
+    }
+
+    /**
+     * Set the value of disableRequestMLEForMandatoryApisGlobally
+     *
+     * @param bool $value
+     */
+    public function setDisableRequestMLEForMandatoryApisGlobally($disableRequestMLEForMandatoryApisGlobally)
+    {
+        $this->disableRequestMLEForMandatoryApisGlobally = (bool)$disableRequestMLEForMandatoryApisGlobally;
     }
 
     /**
@@ -1139,8 +1191,20 @@ class MerchantConfiguration
             $config = $config->setJwePEMFileDirectory($connectionDet->jwePEMFileDirectory);
         }
         
-        if (isset($connectionDet->useMLEGlobally)) {
-            $config = $config->setUseMLEGlobally($connectionDet->useMLEGlobally);
+        if (isset($connectionDet->useMLEGlobally) || isset($connectionDet->enableRequestMLEForOptionalApisGlobally)) {
+            $useMLE = isset($connectionDet->useMLEGlobally) ? $connectionDet->useMLEGlobally : null;
+            $enableMLE = isset($connectionDet->enableRequestMLEForOptionalApisGlobally) ? $connectionDet->enableRequestMLEForOptionalApisGlobally : null;
+        
+            // If both are set, they must be equal
+            if ($useMLE !== null && $enableMLE !== null && $useMLE !== $enableMLE) {
+                throw new \InvalidArgumentException(
+                    "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set."
+                );
+            }
+        
+            $finalMLE = $enableMLE || $useMLE;
+            $config = $config->setEnableRequestMLEForOptionalApisGlobally($finalMLE);
+            $config = $config->setUseMLEGlobally($finalMLE);
         }
 
         if (isset($connectionDet->mapToControlMLEonAPI)) {
@@ -1319,7 +1383,7 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-        $mleConfigured = $this->useMLEGlobally;
+        $mleConfigured = $this->enableRequestMLEForOptionalApisGlobally;
         if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
             foreach ($this->mapToControlMLEonAPI as $value) {
                 if ($value) {

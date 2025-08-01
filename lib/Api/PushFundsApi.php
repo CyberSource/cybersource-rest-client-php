@@ -229,8 +229,8 @@ class PushFundsApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "createPushFundsTransfer,createPushFundsTransferWithHttpInfo")) {
+        $inboundMLEStatus = '';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createPushFundsTransfer,createPushFundsTransferWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
