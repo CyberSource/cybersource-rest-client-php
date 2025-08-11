@@ -174,6 +174,20 @@ class Configuration
     protected $allowEncoding = false;
 
     /**
+     * TLS version to use for HTTPS requests
+     *
+     * @var string
+     */
+    protected $tlsVersion;
+
+    /**
+     * TLS cipher list to use for HTTPS requests
+     *
+     * @var string
+     */
+    protected $tlsCipherList;
+
+    /**
      * Logging configuration
      *
      * @var LogConfiguration
@@ -570,6 +584,53 @@ class Configuration
     public function getLogConfiguration()
     {
         return $this->logConfig;
+    }
+
+
+    /**
+     * Sets the TLS version to use for HTTPS requests
+     *
+     * @param string $tlsVersion TLS version (e.g. CURL_SSLVERSION_TLSv1_2)
+     *
+     * @return $this
+     */
+    public function setTlsVersion($tlsVersion)
+    {
+        $this->tlsVersion = $tlsVersion;
+        return $this;
+    }
+
+    /**
+     * Gets the TLS version to use for HTTPS requests
+     *
+     * @return string TLS version
+     */
+    public function getTlsVersion()
+    {
+        return $this->tlsVersion;
+    }
+
+    /**
+     * Sets the TLS cipher list to use for HTTPS requests
+     *
+     * @param string $tlsCipherList TLS cipher list
+     *
+     * @return $this
+     */
+    public function setTlsCipherList($tlsCipherList)
+    {
+        $this->tlsCipherList = $tlsCipherList;
+        return $this;
+    }
+
+    /**
+     * Gets the TLS cipher list to use for HTTPS requests
+     *
+     * @return string TLS cipher list
+     */
+    public function getTlsCipherList()
+    {
+        return $this->tlsCipherList;
     }
 
     /**
