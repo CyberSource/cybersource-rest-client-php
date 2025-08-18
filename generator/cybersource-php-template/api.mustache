@@ -230,7 +230,7 @@ use \Exception;
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = '{{#vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}{{vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}{{/vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}{{^vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}false{{/vendorExtensions.x-devcenter-metaData.inboundMLEStatus}}';
+        $inboundMLEStatus = '{{#vendorExtensions.x-devcenter-metaData.mleForRequest}}{{vendorExtensions.x-devcenter-metaData.mleForRequest}}{{/vendorExtensions.x-devcenter-metaData.mleForRequest}}{{^vendorExtensions.x-devcenter-metaData.mleForRequest}}false{{/vendorExtensions.x-devcenter-metaData.mleForRequest}}';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "{{operationId}},{{operationId}}WithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
