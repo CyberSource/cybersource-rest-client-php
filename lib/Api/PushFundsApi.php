@@ -229,7 +229,7 @@ class PushFundsApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = '';
+        $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createPushFundsTransfer,createPushFundsTransferWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);

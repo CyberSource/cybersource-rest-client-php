@@ -417,7 +417,7 @@ class PayerAuthenticationApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'mandatory';
+        $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "validateAuthenticationResults,validateAuthenticationResultsWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
