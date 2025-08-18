@@ -5,6 +5,7 @@ use Jose\Component\KeyManagement\JWKFactory;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Authentication\Core\AuthException as AuthException;
 use CyberSource\Logging\LogFactory as LogFactory;
+use CyberSource\Authentication\Util\MLEException as MLEException;
 
 class Cache
 {
@@ -36,7 +37,6 @@ class Cache
 
         $privateKey = null;
         $publicKey = null;
-        $mleCert = null;
 
         if (openssl_pkcs12_read($certStore, $certs, $keyPass)) {
             $privateKey = $certs['pkey'];
@@ -52,13 +52,10 @@ class Cache
             throw $exception;
         }
 
-        $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());
-
         self::$file_cache[$cacheKey] = [
             'private_key' => $privateKey,
             'publicKey' => $publicKey,
             'file_mod_time' => $fileModTime,
-            'mle_cert' => $mleCert,
         ];
     }
 
@@ -125,5 +122,181 @@ class Cache
         unset($lines[count($lines) - 1]);
         unset($lines[0]);
         return implode("\n", $lines);
+    }
+
+
+    /**
+     * Retrieves MLE certificate from cache or loads it if not cached
+     * 
+     * @param MerchantConfiguration $merchantConfig The merchant configuration
+     * @return string|null The MLE certificate or null if not available
+     */
+    public function getRequestMLECertFromCache($merchantConfig) {
+        $merchantId = $merchantConfig->getMerchantID();
+        $mleCertPath = null;
+        $cacheKey = null;
+        if (!empty($merchantConfig->getMleForRequestPublicCertPath())) {
+            $mleCertPath = $merchantConfig->getMleForRequestPublicCertPath();
+            $cacheKey = $merchantId . GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT;
+        } elseif (GlobalParameter::JWT == $merchantConfig->getAuthenticationType()) {
+            $mleCertPath = self::getFilePath($merchantConfig);
+            if (!file_exists($mleCertPath) || !is_readable($mleCertPath)) {
+                self::$logger->warn("MLE certificate file not found or not readable: ". $mleCertPath);
+                return null;
+            }
+            $cacheKey = $merchantId . GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_P12_CERT;
+        } else {
+            self::$logger->debug("The certificate to use for MLE for requests is not provided in the merchant configuration. Please ensure that the certificate path is provided.");
+            return null;
+        }
+        return self::getMLECertBasedOnCacheKey($merchantConfig, $cacheKey, $mleCertPath);
+    }
+
+
+    private function getMLECertBasedOnCacheKey($merchantConfig, $cacheKey, $mleCertPath) {
+        if (!isset(self::$file_cache[$cacheKey]) || self::$file_cache[$cacheKey]['file_mod_time'] !== filemtime($mleCertPath)) {
+            self::setupMLECache($merchantConfig, $cacheKey, $mleCertPath);
+        } else {
+            self::$logger->debug("MLE Certificate found in cache for key: " . $cacheKey);
+        }
+        return self::$file_cache[$cacheKey]['mle_cert'];
+    }
+
+    private function setupMLECache($merchantConfig, $cacheKey, $mleCertPath) {
+        
+        $fileModTime = filemtime($mleCertPath);
+        $mleCert = null;
+        
+        $lowercaseCacheKey = strtolower($cacheKey);
+        $configCertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT);
+        $p12CertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_P12_CERT);
+        
+        if (str_ends_with($lowercaseCacheKey, $configCertIdentifier)) {
+            $mleCert = $this->loadCertificateFromPEM($mleCertPath, $merchantConfig);
+        } elseif (str_ends_with($lowercaseCacheKey, $p12CertIdentifier)) {
+            $mleCert = $this->loadCertificateFromP12($mleCertPath, $merchantConfig);
+        }
+
+        self::validateCertificateExpiry($mleCert, $merchantConfig->getMleKeyAlias(), $cacheKey);
+        
+        self::$file_cache[$cacheKey] = [
+            'mle_cert' => $mleCert,
+            'file_mod_time' => $fileModTime,
+        ];
+    }
+
+    /**
+     * Loads a certificate from a PEM file
+     * 
+     * @param string $filePath Path to the PEM file
+     * @param MerchantConfiguration $merchantConfig The merchant configuration
+     * @return string The certificate
+     * @throws MLEException If no certificates are found or an error occurs
+     */
+    private function loadCertificateFromPEM($filePath, $merchantConfig) {
+        try {
+            $certs = Utility::extractAllCertificates(file_get_contents($filePath));
+            if (empty($certs)) {
+                $exception = new MLEException("No certs found in " . $filePath, 0);
+                self::$logger->error("No certs found in " . $filePath);
+                throw $exception;
+            }
+            
+            try {
+                $mleCert = Utility::findCertByAlias(array("extracerts" => $certs), $merchantConfig->getMleKeyAlias());
+            } catch (\Exception $e) {
+                self::$logger->warning("No certificate found for the specified mleKeyAlias '{$merchantConfig->getMleKeyAlias()}'. Using the first certificate from file {$filePath} as the MLE request certificate.");
+                $mleCert = $certs[0];
+            }
+            
+            return $mleCert;
+        } catch (\Exception $e) {
+            throw new MLEException("Error occurred while loading MLE certificate from PEM file: " . $e->getMessage(), 0, $e);
+        }
+    }
+
+
+    /**
+     * Loads a certificate from a P12 file
+     * 
+     * @param string $filePath Path to the P12 file
+     * @param MerchantConfiguration $merchantConfig The merchant configuration
+     * @return string The certificate
+     * @throws MLEException If no certificates are found or an error occurs
+     * @throws AuthException If the key password is incorrect
+     */
+    private function loadCertificateFromP12($filePath, $merchantConfig) {
+        try {
+            $certStore = file_get_contents($filePath);
+            $certs = array();
+            $keyPass = $merchantConfig->getKeyPassword();
+            
+            if (!openssl_pkcs12_read($certStore, $certs, $keyPass)) {
+                $exception = new AuthException(GlobalParameter::INCORRECT_KEY_PASSWORD, 0);
+                self::$logger->error("AuthException : " . GlobalParameter::INCORRECT_KEY_PASSWORD);
+                throw $exception;
+            }
+            
+            $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());
+            
+            if ($mleCert == null) {
+                throw new MLEException("No certificate found with alias " . $merchantConfig->getMleKeyAlias() . " in " . $filePath);
+            }
+            
+            return $mleCert;
+        } catch (AuthException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            throw new MLEException("Error occurred while loading MLE certificate from P12 file: " . $e->getMessage(), 0, $e);
+        }
+    }
+
+
+    public static function validateCertificateExpiry($certificate, $keyAlias, $cacheKey)
+    {
+        // Default warning messages
+        $warnMessageForNotHaveExpiryDate = "Certificate don't have expiry date.";
+        $warnMessageForBeingExpiredCert = "Certificate with alias %s is going to expired on %s . Please update cert before that.";
+        $warnMessageForExpiredCert = "Certificate with alias %s is expired as of %s . Please update cert before that.";
+        
+        // Override log error message based on MLE identifier
+        if (strpos($cacheKey, GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT) !== false) {
+            $warnMessageForNotHaveExpiryDate = "Certificate for Request MLE don't have expiry date from mleForRequestPublicCertPath in merchant config.";
+            $warnMessageForBeingExpiredCert = "Certificate for Request MLE with alias %s is going to expired on %s . Please update cert file in mleForRequestPublicCertPath in merchant config before that.";
+            $warnMessageForExpiredCert = "Certificate for Request MLE with alias %s is expired as of %s . Please update cert file in mleForRequestPublicCertPath in merchant config.";
+        }
+        if (strpos($cacheKey, GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_P12_CERT) !== false) {
+            $warnMessageForNotHaveExpiryDate = "Certificate for Request MLE don't have expiry date in p12 file.";
+            $warnMessageForBeingExpiredCert = "Certificate for Request MLE with alias %s is going to expired on %s . Please update p12 file before that.";
+            $warnMessageForExpiredCert = "Certificate for Request MLE with alias %s is expired as of %s . Please update p12 file.";
+        }
+        
+        try {
+            $certDetails = openssl_x509_parse($certificate);
+            $notValidAfter = isset($certDetails['validTo_time_t']) ? $certDetails['validTo_time_t'] : null;
+
+            if ($notValidAfter === null) {
+                self::$logger->warning(str_replace("{}", $keyAlias, $warnMessageForNotHaveExpiryDate));
+            }
+
+            if ($notValidAfter < time()) {
+                $expiryDate = date('Y-m-d H:i:s', $notValidAfter);
+                $message = sprintf($warnMessageForExpiredCert, $keyAlias, $expiryDate);
+                self::$logger->warning($message);
+                // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");
+            } else {
+                $timeToExpire = $notValidAfter - time();
+                $warningPeriod = GlobalParameter::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
+
+                if ($timeToExpire < $warningPeriod) {
+                    $expiryDate = date('Y-m-d H:i:s', $notValidAfter);
+                    $message = sprintf($warnMessageForBeingExpiredCert, $keyAlias, $expiryDate);
+                    self::$logger->warning($message);
+                }
+            }
+        } catch (\Exception $e) {
+            self::$logger->error("Error validating certificate expiry: " . $e->getMessage());
+            // throw new MLEException("Error validating certificate expiry: " . $e->getMessage());
+        } 
     }
 }

@@ -67,7 +67,14 @@ class MLEUtility
         if (self::$logger === null) {
             self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
         }
+        
         $mleCert = self::getMLECert($merchantConfig);
+
+        if ($mleCert == false && GlobalParameter::HTTP_SIGNATURE == $merchantConfig->getAuthenticationType()) {
+            self::$logger->debug("The certificate to use for MLE for requests is not provided in the merchant configuration. Please ensure that the certificate path is provided.");
+            self::$logger->debug("Currently, MLE for requests using HTTP Signature as authentication is not supported by Cybersource. By default, the SDK will fall back to non-encrypted requests.");
+            return $requestBody;
+        }
 
         if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
             $printRequestBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($requestBody);
@@ -139,17 +146,8 @@ class MLEUtility
             if (!isset(self::$cache)) {
                 self::$cache = new Cache();
             }
+            return self::$cache->getRequestMLECertFromCache($merchantConfig);
 
-            $fileCache = self::$cache->grabFileFromP12($merchantConfig);
-
-            $x509Cert = $fileCache['mle_cert'];
-
-            if ($x509Cert) {
-                self::validateCertificateExpiry($x509Cert, $merchantConfig->getMleKeyAlias());
-                return $x509Cert;
-            } else {
-                throw new MLEException("Certificate with alias " . $merchantConfig->getMleKeyAlias() . " not found");
-            }
         } catch (\Exception $e) {
             self::$logger->error("Error fetching MLE certificate: " . $e->getMessage());
             throw new MLEException("Error fetching MLE certificate: " . $e->getMessage());
@@ -177,31 +175,6 @@ class MLEUtility
         }
     }
 
-    public static function validateCertificateExpiry($certificate, $keyAlias)
-    {
-        try {
-            $certDetails = openssl_x509_parse($certificate);
-            $notValidAfter = isset($certDetails['validTo_time_t']) ? $certDetails['validTo_time_t'] : null;
-
-            if ($notValidAfter === null) {
-                self::$logger->warning("Certificate with MLE alias $keyAlias does not have a valid expiry date.");
-            }
-
-            if ($notValidAfter < time()) {
-                self::$logger->warning("Certificate with MLE alias $keyAlias is expired as of " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file.");
-                // throw new MLEException("Certificate with MLE alias $keyAlias is expired.");
-            } else {
-                $timeToExpire = $notValidAfter - time();
-                $warningPeriod = GlobalParameter::CERTIFICATE_EXPIRY_DATE_WARNING_DAYS * 24 * 60 * 60;
-
-                if ($timeToExpire < $warningPeriod) {
-                    self::$logger->warning("Certificate for MLE with alias $keyAlias is going to expire on " . date('Y-m-d H:i:s', $notValidAfter) . ". Please update p12 file before that.");
-                }
-            }
-        } catch (\Exception $e) {
-            self::$logger->error("Error validating certificate expiry: " . $e->getMessage());
-            // throw new MLEException("Error validating certificate expiry: " . $e->getMessage());
-        } 
-    }
+    
 }
 ?>
