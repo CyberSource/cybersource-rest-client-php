@@ -61,6 +61,7 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
         'exchangeRate' => 'string',
         'exchangeRateTimeStamp' => 'string',
         'settlementCurrency' => 'string',
+        'invoiceAmount' => 'string',
         'giftwrapAmount' => 'string',
         'handlingAmount' => 'string',
         'shippingAmount' => 'string',
@@ -81,6 +82,7 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
         'exchangeRate' => null,
         'exchangeRateTimeStamp' => null,
         'settlementCurrency' => null,
+        'invoiceAmount' => null,
         'giftwrapAmount' => null,
         'handlingAmount' => null,
         'shippingAmount' => null,
@@ -111,6 +113,7 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
         'exchangeRate' => 'exchangeRate',
         'exchangeRateTimeStamp' => 'exchangeRateTimeStamp',
         'settlementCurrency' => 'settlementCurrency',
+        'invoiceAmount' => 'invoiceAmount',
         'giftwrapAmount' => 'giftwrapAmount',
         'handlingAmount' => 'handlingAmount',
         'shippingAmount' => 'shippingAmount',
@@ -132,6 +135,7 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
         'exchangeRate' => 'setExchangeRate',
         'exchangeRateTimeStamp' => 'setExchangeRateTimeStamp',
         'settlementCurrency' => 'setSettlementCurrency',
+        'invoiceAmount' => 'setInvoiceAmount',
         'giftwrapAmount' => 'setGiftwrapAmount',
         'handlingAmount' => 'setHandlingAmount',
         'shippingAmount' => 'setShippingAmount',
@@ -153,6 +157,7 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
         'exchangeRate' => 'getExchangeRate',
         'exchangeRateTimeStamp' => 'getExchangeRateTimeStamp',
         'settlementCurrency' => 'getSettlementCurrency',
+        'invoiceAmount' => 'getInvoiceAmount',
         'giftwrapAmount' => 'getGiftwrapAmount',
         'handlingAmount' => 'getHandlingAmount',
         'shippingAmount' => 'getShippingAmount',
@@ -199,6 +204,7 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
         $this->container['exchangeRate'] = isset($data['exchangeRate']) ? $data['exchangeRate'] : null;
         $this->container['exchangeRateTimeStamp'] = isset($data['exchangeRateTimeStamp']) ? $data['exchangeRateTimeStamp'] : null;
         $this->container['settlementCurrency'] = isset($data['settlementCurrency']) ? $data['settlementCurrency'] : null;
+        $this->container['invoiceAmount'] = isset($data['invoiceAmount']) ? $data['invoiceAmount'] : null;
         $this->container['giftwrapAmount'] = isset($data['giftwrapAmount']) ? $data['giftwrapAmount'] : null;
         $this->container['handlingAmount'] = isset($data['handlingAmount']) ? $data['handlingAmount'] : null;
         $this->container['shippingAmount'] = isset($data['shippingAmount']) ? $data['shippingAmount'] : null;
@@ -395,6 +401,27 @@ class Ptsv2paymentreferencesOrderInformationAmountDetails implements ArrayAccess
     public function setSettlementCurrency($settlementCurrency)
     {
         $this->container['settlementCurrency'] = $settlementCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceAmount
+     * @return string
+     */
+    public function getInvoiceAmount()
+    {
+        return $this->container['invoiceAmount'];
+    }
+
+    /**
+     * Sets invoiceAmount
+     * @param string $invoiceAmount Invoice amount.  The invoice amount issued by the Merchant to the Cardholder, which includes VAT (excluding items such as TIPS or CASHBACK). For transactions that do not have applicable Benefit Laws, the field may be entered as zeros.  This field is only applicable for Uruguay market.  Example: 100.00  Uruguay  The value for this field corresponds to the following data in the TC 33 capture file:  - Record: CP01 TCR9 - Position: 7-18 - Field: Invoice Amount
+     * @return $this
+     */
+    public function setInvoiceAmount($invoiceAmount)
+    {
+        $this->container['invoiceAmount'] = $invoiceAmount;
 
         return $this;
     }

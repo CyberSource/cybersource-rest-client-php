@@ -57,7 +57,11 @@ class CreateOrderRequest implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\Ptsv2intentsProcessingInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2intentsMerchantInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2intentsPaymentInformation',
-        'orderInformation' => '\CyberSource\Model\Ptsv2intentsOrderInformation'
+        'orderInformation' => '\CyberSource\Model\Ptsv2intentsOrderInformation',
+        'senderInformation' => '\CyberSource\Model\Ptsv2intentsSenderInformation',
+        'eventInformation' => '\CyberSource\Model\Ptsv2intentsEventInformation',
+        'travelInformation' => '\CyberSource\Model\Ptsv2intentsTravelInformation',
+        'recipientInformation' => '\CyberSource\Model\Ptsv2intentsRecipientInformation'
     ];
 
     /**
@@ -69,7 +73,11 @@ class CreateOrderRequest implements ArrayAccess
         'processingInformation' => null,
         'merchantInformation' => null,
         'paymentInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'senderInformation' => null,
+        'eventInformation' => null,
+        'travelInformation' => null,
+        'recipientInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +99,11 @@ class CreateOrderRequest implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'merchantInformation' => 'merchantInformation',
         'paymentInformation' => 'paymentInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'senderInformation' => 'senderInformation',
+        'eventInformation' => 'eventInformation',
+        'travelInformation' => 'travelInformation',
+        'recipientInformation' => 'recipientInformation'
     ];
 
 
@@ -104,7 +116,11 @@ class CreateOrderRequest implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'merchantInformation' => 'setMerchantInformation',
         'paymentInformation' => 'setPaymentInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'senderInformation' => 'setSenderInformation',
+        'eventInformation' => 'setEventInformation',
+        'travelInformation' => 'setTravelInformation',
+        'recipientInformation' => 'setRecipientInformation'
     ];
 
 
@@ -117,7 +133,11 @@ class CreateOrderRequest implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'merchantInformation' => 'getMerchantInformation',
         'paymentInformation' => 'getPaymentInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'senderInformation' => 'getSenderInformation',
+        'eventInformation' => 'getEventInformation',
+        'travelInformation' => 'getTravelInformation',
+        'recipientInformation' => 'getRecipientInformation'
     ];
 
     public static function attributeMap()
@@ -156,6 +176,10 @@ class CreateOrderRequest implements ArrayAccess
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
+        $this->container['eventInformation'] = isset($data['eventInformation']) ? $data['eventInformation'] : null;
+        $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
+        $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
     }
 
     /**
@@ -284,6 +308,90 @@ class CreateOrderRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets senderInformation
+     * @return \CyberSource\Model\Ptsv2intentsSenderInformation
+     */
+    public function getSenderInformation()
+    {
+        return $this->container['senderInformation'];
+    }
+
+    /**
+     * Sets senderInformation
+     * @param \CyberSource\Model\Ptsv2intentsSenderInformation $senderInformation
+     * @return $this
+     */
+    public function setSenderInformation($senderInformation)
+    {
+        $this->container['senderInformation'] = $senderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets eventInformation
+     * @return \CyberSource\Model\Ptsv2intentsEventInformation
+     */
+    public function getEventInformation()
+    {
+        return $this->container['eventInformation'];
+    }
+
+    /**
+     * Sets eventInformation
+     * @param \CyberSource\Model\Ptsv2intentsEventInformation $eventInformation
+     * @return $this
+     */
+    public function setEventInformation($eventInformation)
+    {
+        $this->container['eventInformation'] = $eventInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets travelInformation
+     * @return \CyberSource\Model\Ptsv2intentsTravelInformation
+     */
+    public function getTravelInformation()
+    {
+        return $this->container['travelInformation'];
+    }
+
+    /**
+     * Sets travelInformation
+     * @param \CyberSource\Model\Ptsv2intentsTravelInformation $travelInformation
+     * @return $this
+     */
+    public function setTravelInformation($travelInformation)
+    {
+        $this->container['travelInformation'] = $travelInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipientInformation
+     * @return \CyberSource\Model\Ptsv2intentsRecipientInformation
+     */
+    public function getRecipientInformation()
+    {
+        return $this->container['recipientInformation'];
+    }
+
+    /**
+     * Sets recipientInformation
+     * @param \CyberSource\Model\Ptsv2intentsRecipientInformation $recipientInformation
+     * @return $this
+     */
+    public function setRecipientInformation($recipientInformation)
+    {
+        $this->container['recipientInformation'] = $recipientInformation;
 
         return $this;
     }

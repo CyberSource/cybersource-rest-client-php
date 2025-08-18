@@ -98,6 +98,13 @@ class TssV2TransactionsPost201ResponseEmbeddedProcessorInformationTest extends \
     }
 
     /**
+     * Test attribute "eventStatus"
+     */
+    public function testPropertyEventStatus()
+    {
+    }
+
+    /**
      * Test attribute "retrievalReferenceNumber"
      */
     public function testPropertyRetrievalReferenceNumber()

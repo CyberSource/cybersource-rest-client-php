@@ -82,4 +82,25 @@ class Ptsv2intentsPaymentInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPaymentType()
     {
     }
+
+    /**
+     * Test attribute "tokenizedPaymentMethod"
+     */
+    public function testPropertyTokenizedPaymentMethod()
+    {
+    }
+
+    /**
+     * Test attribute "industryType"
+     */
+    public function testPropertyIndustryType()
+    {
+    }
+
+    /**
+     * Test attribute "eWallet"
+     */
+    public function testPropertyEWallet()
+    {
+    }
 }

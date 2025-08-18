@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionById**
-> \CyberSource\Model\InlineResponse2014 getWebhookSubscriptionById($webhookId)
+> \CyberSource\Model\InlineResponse2015 getWebhookSubscriptionById($webhookId)
 
 Get Details On a Single Webhook
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> \CyberSource\Model\InlineResponse2015 notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
+> \CyberSource\Model\InlineResponse2016 notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
 
 Test a Webhook Configuration
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
+[**\CyberSource\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **saveAsymEgressKey**
-> \CyberSource\Model\InlineResponse2016 saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId)
+> \CyberSource\Model\InlineResponse2017 saveAsymEgressKey($vCSenderOrganizationId, $vCPermissions, $saveAsymEgressKey, $vCCorrelationId)
 
 Message Level Encryption
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
+[**\CyberSource\Model\InlineResponse2017**](../Model/InlineResponse2017.md)
 
 ### Authorization
 
