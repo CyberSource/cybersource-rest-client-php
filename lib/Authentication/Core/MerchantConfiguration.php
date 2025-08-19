@@ -204,7 +204,21 @@ class MerchantConfiguration
      *
      * @var bool
      */
-    protected $useMLEGlobally=false;
+    protected $useMLEGlobally=null;
+
+        /**
+     * Enable MLE for optional APIs globally (alias for useMLEGlobally)
+     *
+     * @var bool
+     */
+    protected $enableRequestMLEForOptionalApisGlobally = null;
+
+    /**
+     * Disable MLE for mandatory APIs globally
+     *
+     * @var bool
+     */
+    protected $disableRequestMLEForMandatoryApisGlobally = false;
 
     /**
      * Curl mapToControlMLEonAPI
@@ -255,6 +269,12 @@ class MerchantConfiguration
      * @var string
      */
     protected $tempFolderPath;
+
+    /**
+     * MLE Cert file path
+     * @var string
+     */
+    protected $mleForRequestPublicCertPath;
 
     /**
      * Constructor
@@ -954,14 +974,15 @@ class MerchantConfiguration
     }
 
     /**
-     * Get the value of useMLEGlobally
+     * Get the value of enableRequestMLEForOptionalApisGlobally
      *
      * @return bool
      */
-    public function getUseMLEGlobally()
+    public function getEnableRequestMLEForOptionalApisGlobally()
     {
-        return $this->useMLEGlobally;
+        return $this->enableRequestMLEForOptionalApisGlobally;
     }
+
 
     /**
      * Set the value of useMLEGlobally
@@ -969,8 +990,46 @@ class MerchantConfiguration
      * @param bool $useMLEGlobally
      */
     public function setUseMLEGlobally($useMLEGlobally)
+    {   
+        $this->useMLEGlobally = (bool)$useMLEGlobally;
+        // If useMLEGlobally is true, enableRequestMLEForOptionalApisGlobally should also be true
+        if (
+            isset($this->useMLEGlobally) && isset($this->enableRequestMLEForOptionalApisGlobally)
+            && ($this->useMLEGlobally !== $this->enableRequestMLEForOptionalApisGlobally)
+        ) {
+            $error_message = "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set.";
+            $exception = new AuthException($error_message, 0);
+            self::$logger->error($error_message);
+            throw $exception;
+        }
+        if ($this->useMLEGlobally) {
+            $this->enableRequestMLEForOptionalApisGlobally = true;
+        }
+    }
+
+    public function setEnableRequestMLEForOptionalApisGlobally($enableRequestMLEForOptionalApisGlobally)
     {
-        $this->useMLEGlobally = $useMLEGlobally;
+        $this->enableRequestMLEForOptionalApisGlobally = (bool)$enableRequestMLEForOptionalApisGlobally || (bool)$this->useMLEGlobally;
+    }
+
+        /**
+     * Get the value of disableRequestMLEForMandatoryApisGlobally
+     *
+     * @return bool
+     */
+    public function getDisableRequestMLEForMandatoryApisGlobally()
+    {
+        return $this->disableRequestMLEForMandatoryApisGlobally;
+    }
+
+    /**
+     * Set the value of disableRequestMLEForMandatoryApisGlobally
+     *
+     * @param bool $value
+     */
+    public function setDisableRequestMLEForMandatoryApisGlobally($disableRequestMLEForMandatoryApisGlobally)
+    {
+        $this->disableRequestMLEForMandatoryApisGlobally = (bool)$disableRequestMLEForMandatoryApisGlobally;
     }
 
     /**
@@ -999,6 +1058,25 @@ class MerchantConfiguration
         }
     }
 
+    /**
+     * Set the value of mleForRequestPublicCertPath
+     *
+     * @param string $mleForRequestPublicCertPath
+     */
+    public function setMleForRequestPublicCertPath($mleForRequestPublicCertPath)
+    {
+        $this->mleForRequestPublicCertPath = $mleForRequestPublicCertPath;
+    }
+    /**
+     * Get the value of mleForRequestPublicCertPath
+     *
+     * @return string
+     */
+    public function getMleForRequestPublicCertPath()
+    {
+        return $this->mleForRequestPublicCertPath;
+    }
+    
     private function isAssocArrayOfStringBool($array) {
         foreach ($array as $key => $value) {
             if (!is_string($key) || !is_bool($value)) {
@@ -1139,8 +1217,20 @@ class MerchantConfiguration
             $config = $config->setJwePEMFileDirectory($connectionDet->jwePEMFileDirectory);
         }
         
-        if (isset($connectionDet->useMLEGlobally)) {
-            $config = $config->setUseMLEGlobally($connectionDet->useMLEGlobally);
+        if (isset($connectionDet->useMLEGlobally) || isset($connectionDet->enableRequestMLEForOptionalApisGlobally)) {
+            $useMLE = isset($connectionDet->useMLEGlobally) ? $connectionDet->useMLEGlobally : null;
+            $enableMLE = isset($connectionDet->enableRequestMLEForOptionalApisGlobally) ? $connectionDet->enableRequestMLEForOptionalApisGlobally : null;
+        
+            // If both are set, they must be equal
+            if ($useMLE !== null && $enableMLE !== null && $useMLE !== $enableMLE) {
+                throw new \InvalidArgumentException(
+                    "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set."
+                );
+            }
+        
+            $finalMLE = $enableMLE || $useMLE;
+            $config = $config->setEnableRequestMLEForOptionalApisGlobally($finalMLE);
+            $config = $config->setUseMLEGlobally($finalMLE);
         }
 
         if (isset($connectionDet->mapToControlMLEonAPI)) {
@@ -1149,6 +1239,10 @@ class MerchantConfiguration
 
         if (isset($connectionDet->mleKeyAlias)) {
             $config = $config->setMleKeyAlias($connectionDet->mleKeyAlias);
+        }
+
+        if (isset($connectionDet->mleForRequestPublicCertPath)) {
+            $config = $config->setMleForRequestPublicCertPath($connectionDet->mleForRequestPublicCertPath);
         }
 
         $config->validateMerchantData();
@@ -1319,21 +1413,33 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-        $mleConfigured = $this->useMLEGlobally;
-        if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
-            foreach ($this->mapToControlMLEonAPI as $value) {
-                if ($value) {
-                    $mleConfigured = true;
-                    break;
-                }
-            }
-        }
+        // $mleConfigured = $this->enableRequestMLEForOptionalApisGlobally;
+        // if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
+        //     foreach ($this->mapToControlMLEonAPI as $value) {
+        //         if ($value) {
+        //             $mleConfigured = true;
+        //             break;
+        //         }
+        //     }
+        // }
         // if MLE=true then check for auth Type
-        if ($mleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
-            $error_message = GlobalParameter::MLE_AUTH_ERROR;
-            $exception = new AuthException($error_message, 0);
-            self::$logger->error($error_message);
-            throw $exception;
+        // if ($mleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
+        //     $error_message = GlobalParameter::MLE_AUTH_ERROR;
+        //     $exception = new AuthException($error_message, 0);
+        //     self::$logger->error($error_message);
+        //     throw $exception;
+        // }
+
+        if (isset($this->mleForRequestPublicCertPath)) {
+            $certPath = $this->mleForRequestPublicCertPath;
+            
+            // Validate the MLE certificate path
+            if (!file_exists($certPath) || !is_readable($certPath) || !is_file($certPath)) {
+                $error_message = "MLE request public certificate file not found or not readable at " . $certPath;
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
+            }
         }
     }
 
