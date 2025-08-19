@@ -974,13 +974,23 @@ class MerchantConfiguration
     }
 
     /**
-     * Get the value of useMLEGlobally
+     * Get the value of enableRequestMLEForOptionalApisGlobally
      *
      * @return bool
      */
     public function getEnableRequestMLEForOptionalApisGlobally()
     {
         return $this->enableRequestMLEForOptionalApisGlobally;
+    }
+
+    /**
+     * Get the value of useMLEGlobally
+     *
+     * @return bool
+     */
+    public function getUseMLEGlobally()
+    {
+        return $this->useMLEGlobally;
     }
 
     /**
