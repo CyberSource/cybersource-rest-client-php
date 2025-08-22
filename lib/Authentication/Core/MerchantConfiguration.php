@@ -1413,22 +1413,22 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-        // $mleConfigured = $this->enableRequestMLEForOptionalApisGlobally;
-        // if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
-        //     foreach ($this->mapToControlMLEonAPI as $value) {
-        //         if ($value) {
-        //             $mleConfigured = true;
-        //             break;
-        //         }
-        //     }
-        // }
+        $requestMleConfigured = $this->enableRequestMLEForOptionalApisGlobally;
+        if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
+            foreach ($this->mapToControlMLEonAPI as $value) {
+                if ($value) {
+                    $requestMleConfigured = true;
+                    break;
+                }
+            }
+        }
         // if MLE=true then check for auth Type
-        // if ($mleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
-        //     $error_message = GlobalParameter::MLE_AUTH_ERROR;
-        //     $exception = new AuthException($error_message, 0);
-        //     self::$logger->error($error_message);
-        //     throw $exception;
-        // }
+        if ($requestMleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
+            $error_message = GlobalParameter::REQUEST_MLE_AUTH_ERROR;
+            $exception = new AuthException($error_message, 0);
+            self::$logger->error($error_message);
+            throw $exception;
+        }
 
         if (isset($this->mleForRequestPublicCertPath)) {
             $certPath = $this->mleForRequestPublicCertPath;
