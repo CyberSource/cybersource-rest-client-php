@@ -60,7 +60,8 @@ class CreateWebhook implements ArrayAccess
         'webhookUrl' => 'string',
         'healthCheckUrl' => 'string',
         'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy',
-        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy1'
+        'notificationScope' => 'string',
+        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy'
     ];
 
     /**
@@ -75,6 +76,7 @@ class CreateWebhook implements ArrayAccess
         'webhookUrl' => null,
         'healthCheckUrl' => null,
         'retryPolicy' => null,
+        'notificationScope' => null,
         'securityPolicy' => null
     ];
 
@@ -100,6 +102,7 @@ class CreateWebhook implements ArrayAccess
         'webhookUrl' => 'webhookUrl',
         'healthCheckUrl' => 'healthCheckUrl',
         'retryPolicy' => 'retryPolicy',
+        'notificationScope' => 'notificationScope',
         'securityPolicy' => 'securityPolicy'
     ];
 
@@ -116,6 +119,7 @@ class CreateWebhook implements ArrayAccess
         'webhookUrl' => 'setWebhookUrl',
         'healthCheckUrl' => 'setHealthCheckUrl',
         'retryPolicy' => 'setRetryPolicy',
+        'notificationScope' => 'setNotificationScope',
         'securityPolicy' => 'setSecurityPolicy'
     ];
 
@@ -132,6 +136,7 @@ class CreateWebhook implements ArrayAccess
         'webhookUrl' => 'getWebhookUrl',
         'healthCheckUrl' => 'getHealthCheckUrl',
         'retryPolicy' => 'getRetryPolicy',
+        'notificationScope' => 'getNotificationScope',
         'securityPolicy' => 'getSecurityPolicy'
     ];
 
@@ -173,6 +178,7 @@ class CreateWebhook implements ArrayAccess
         $this->container['webhookUrl'] = isset($data['webhookUrl']) ? $data['webhookUrl'] : null;
         $this->container['healthCheckUrl'] = isset($data['healthCheckUrl']) ? $data['healthCheckUrl'] : null;
         $this->container['retryPolicy'] = isset($data['retryPolicy']) ? $data['retryPolicy'] : null;
+        $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : 'DESCENDANTS';
         $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
     }
 
@@ -317,7 +323,7 @@ class CreateWebhook implements ArrayAccess
 
     /**
      * Sets healthCheckUrl
-     * @param string $healthCheckUrl The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl. If the user does not provide the health check URL, it is the user's responsibility to re-activate the webhook if it is deactivated by calling the test endpoint.
+     * @param string $healthCheckUrl The client's health check endpoint (URL). If the user does not provide the health check URL, it is the user's responsibility to re-activate the webhook if it is deactivated by calling the test endpoint.
      * @return $this
      */
     public function setHealthCheckUrl($healthCheckUrl)
@@ -349,8 +355,29 @@ class CreateWebhook implements ArrayAccess
     }
 
     /**
+     * Gets notificationScope
+     * @return string
+     */
+    public function getNotificationScope()
+    {
+        return $this->container['notificationScope'];
+    }
+
+    /**
+     * Sets notificationScope
+     * @param string $notificationScope The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+     * @return $this
+     */
+    public function setNotificationScope($notificationScope)
+    {
+        $this->container['notificationScope'] = $notificationScope;
+
+        return $this;
+    }
+
+    /**
      * Gets securityPolicy
-     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy1
+     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy
      */
     public function getSecurityPolicy()
     {
@@ -359,7 +386,7 @@ class CreateWebhook implements ArrayAccess
 
     /**
      * Sets securityPolicy
-     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy1 $securityPolicy
+     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy $securityPolicy
      * @return $this
      */
     public function setSecurityPolicy($securityPolicy)

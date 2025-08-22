@@ -68,7 +68,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'firstInstallmentAmount' => 'string',
         'validationIndicator' => 'string',
         'identifier' => 'string',
-        'annualInterestRate' => 'string'
+        'annualInterestRate' => 'string',
+        'interestIndicator' => 'string',
+        'isGovernmentPlan' => 'bool'
     ];
 
     /**
@@ -91,7 +93,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'firstInstallmentAmount' => null,
         'validationIndicator' => null,
         'identifier' => null,
-        'annualInterestRate' => null
+        'annualInterestRate' => null,
+        'interestIndicator' => null,
+        'isGovernmentPlan' => null
     ];
 
     public static function swaggerTypes()
@@ -124,7 +128,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'firstInstallmentAmount' => 'firstInstallmentAmount',
         'validationIndicator' => 'validationIndicator',
         'identifier' => 'identifier',
-        'annualInterestRate' => 'annualInterestRate'
+        'annualInterestRate' => 'annualInterestRate',
+        'interestIndicator' => 'interestIndicator',
+        'isGovernmentPlan' => 'isGovernmentPlan'
     ];
 
 
@@ -148,7 +154,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'firstInstallmentAmount' => 'setFirstInstallmentAmount',
         'validationIndicator' => 'setValidationIndicator',
         'identifier' => 'setIdentifier',
-        'annualInterestRate' => 'setAnnualInterestRate'
+        'annualInterestRate' => 'setAnnualInterestRate',
+        'interestIndicator' => 'setInterestIndicator',
+        'isGovernmentPlan' => 'setIsGovernmentPlan'
     ];
 
 
@@ -172,7 +180,9 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         'firstInstallmentAmount' => 'getFirstInstallmentAmount',
         'validationIndicator' => 'getValidationIndicator',
         'identifier' => 'getIdentifier',
-        'annualInterestRate' => 'getAnnualInterestRate'
+        'annualInterestRate' => 'getAnnualInterestRate',
+        'interestIndicator' => 'getInterestIndicator',
+        'isGovernmentPlan' => 'getIsGovernmentPlan'
     ];
 
     public static function attributeMap()
@@ -222,6 +232,8 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
         $this->container['validationIndicator'] = isset($data['validationIndicator']) ? $data['validationIndicator'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['annualInterestRate'] = isset($data['annualInterestRate']) ? $data['annualInterestRate'] : null;
+        $this->container['interestIndicator'] = isset($data['interestIndicator']) ? $data['interestIndicator'] : null;
+        $this->container['isGovernmentPlan'] = isset($data['isGovernmentPlan']) ? $data['isGovernmentPlan'] : null;
     }
 
     /**
@@ -581,6 +593,48 @@ class Ptsv2paymentsInstallmentInformation implements ArrayAccess
     public function setAnnualInterestRate($annualInterestRate)
     {
         $this->container['annualInterestRate'] = $annualInterestRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets interestIndicator
+     * @return string
+     */
+    public function getInterestIndicator()
+    {
+        return $this->container['interestIndicator'];
+    }
+
+    /**
+     * Sets interestIndicator
+     * @param string $interestIndicator Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available
+     * @return $this
+     */
+    public function setInterestIndicator($interestIndicator)
+    {
+        $this->container['interestIndicator'] = $interestIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets isGovernmentPlan
+     * @return bool
+     */
+    public function getIsGovernmentPlan()
+    {
+        return $this->container['isGovernmentPlan'];
+    }
+
+    /**
+     * Sets isGovernmentPlan
+     * @param bool $isGovernmentPlan Indicates if an installment plan is a government sponsored or part of a government program.  Possible values:  -true -false  This field defaults to false when no value is provided.
+     * @return $this
+     */
+    public function setIsGovernmentPlan($isGovernmentPlan)
+    {
+        $this->container['isGovernmentPlan'] = $isGovernmentPlan;
 
         return $this;
     }

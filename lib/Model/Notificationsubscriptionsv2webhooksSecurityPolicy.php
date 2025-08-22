@@ -177,7 +177,7 @@ class Notificationsubscriptionsv2webhooksSecurityPolicy implements ArrayAccess
 
     /**
      * Sets securityType
-     * @param string $securityType Security Policy of the client server.
+     * @param string $securityType Security Policy of the client server.  Possible values: - key - oAuth - oAuth_JWT
      * @return $this
      */
     public function setSecurityType($securityType)

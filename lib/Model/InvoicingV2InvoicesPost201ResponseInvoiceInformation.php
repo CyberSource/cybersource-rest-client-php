@@ -60,7 +60,8 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'expirationDate' => '\DateTime',
         'allowPartialPayments' => 'bool',
         'paymentLink' => 'string',
-        'deliveryMode' => 'string'
+        'deliveryMode' => 'string',
+        'customLabels' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels[]'
     ];
 
     /**
@@ -74,7 +75,8 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'expirationDate' => 'date',
         'allowPartialPayments' => null,
         'paymentLink' => null,
-        'deliveryMode' => null
+        'deliveryMode' => null,
+        'customLabels' => null
     ];
 
     public static function swaggerTypes()
@@ -98,7 +100,8 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'expirationDate' => 'expirationDate',
         'allowPartialPayments' => 'allowPartialPayments',
         'paymentLink' => 'paymentLink',
-        'deliveryMode' => 'deliveryMode'
+        'deliveryMode' => 'deliveryMode',
+        'customLabels' => 'customLabels'
     ];
 
 
@@ -113,7 +116,8 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'expirationDate' => 'setExpirationDate',
         'allowPartialPayments' => 'setAllowPartialPayments',
         'paymentLink' => 'setPaymentLink',
-        'deliveryMode' => 'setDeliveryMode'
+        'deliveryMode' => 'setDeliveryMode',
+        'customLabels' => 'setCustomLabels'
     ];
 
 
@@ -128,7 +132,8 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         'expirationDate' => 'getExpirationDate',
         'allowPartialPayments' => 'getAllowPartialPayments',
         'paymentLink' => 'getPaymentLink',
-        'deliveryMode' => 'getDeliveryMode'
+        'deliveryMode' => 'getDeliveryMode',
+        'customLabels' => 'getCustomLabels'
     ];
 
     public static function attributeMap()
@@ -169,6 +174,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
         $this->container['allowPartialPayments'] = isset($data['allowPartialPayments']) ? $data['allowPartialPayments'] : false;
         $this->container['paymentLink'] = isset($data['paymentLink']) ? $data['paymentLink'] : null;
         $this->container['deliveryMode'] = isset($data['deliveryMode']) ? $data['deliveryMode'] : null;
+        $this->container['customLabels'] = isset($data['customLabels']) ? $data['customLabels'] : null;
     }
 
     /**
@@ -339,6 +345,27 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
     public function setDeliveryMode($deliveryMode)
     {
         $this->container['deliveryMode'] = $deliveryMode;
+
+        return $this;
+    }
+
+    /**
+     * Gets customLabels
+     * @return \CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels[]
+     */
+    public function getCustomLabels()
+    {
+        return $this->container['customLabels'];
+    }
+
+    /**
+     * Sets customLabels
+     * @param \CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels[] $customLabels A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten.
+     * @return $this
+     */
+    public function setCustomLabels($customLabels)
+    {
+        $this->container['customLabels'] = $customLabels;
 
         return $this;
     }

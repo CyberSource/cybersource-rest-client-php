@@ -112,6 +112,13 @@ class UpdateWebhookTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "notificationScope"
+     */
+    public function testPropertyNotificationScope()
+    {
+    }
+
+    /**
      * Test attribute "healthCheckUrl"
      */
     public function testPropertyHealthCheckUrl()
@@ -122,13 +129,6 @@ class UpdateWebhookTest extends \PHPUnit_Framework_TestCase
      * Test attribute "securityPolicy"
      */
     public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "additionalAttributes"
-     */
-    public function testPropertyAdditionalAttributes()
     {
     }
 }

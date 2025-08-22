@@ -66,7 +66,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'shipTo' => 'bool',
         'phoneNumber' => 'bool',
         'email' => 'bool',
-        'enableMerchantEmailNotifications' => 'bool'
+        'enableMerchantEmailNotifications' => 'bool',
+        'customLabels' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels[]'
     ];
 
     /**
@@ -87,7 +88,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'shipTo' => null,
         'phoneNumber' => null,
         'email' => null,
-        'enableMerchantEmailNotifications' => null
+        'enableMerchantEmailNotifications' => null,
+        'customLabels' => null
     ];
 
     public static function swaggerTypes()
@@ -118,7 +120,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'shipTo' => 'shipTo',
         'phoneNumber' => 'phoneNumber',
         'email' => 'email',
-        'enableMerchantEmailNotifications' => 'enableMerchantEmailNotifications'
+        'enableMerchantEmailNotifications' => 'enableMerchantEmailNotifications',
+        'customLabels' => 'customLabels'
     ];
 
 
@@ -140,7 +143,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'shipTo' => 'setShipTo',
         'phoneNumber' => 'setPhoneNumber',
         'email' => 'setEmail',
-        'enableMerchantEmailNotifications' => 'setEnableMerchantEmailNotifications'
+        'enableMerchantEmailNotifications' => 'setEnableMerchantEmailNotifications',
+        'customLabels' => 'setCustomLabels'
     ];
 
 
@@ -162,7 +166,8 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         'shipTo' => 'getShipTo',
         'phoneNumber' => 'getPhoneNumber',
         'email' => 'getEmail',
-        'enableMerchantEmailNotifications' => 'getEnableMerchantEmailNotifications'
+        'enableMerchantEmailNotifications' => 'getEnableMerchantEmailNotifications',
+        'customLabels' => 'getCustomLabels'
     ];
 
     public static function attributeMap()
@@ -210,6 +215,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : false;
         $this->container['email'] = isset($data['email']) ? $data['email'] : false;
         $this->container['enableMerchantEmailNotifications'] = isset($data['enableMerchantEmailNotifications']) ? $data['enableMerchantEmailNotifications'] : false;
+        $this->container['customLabels'] = isset($data['customLabels']) ? $data['customLabels'] : null;
     }
 
     /**
@@ -527,6 +533,27 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation impleme
     public function setEnableMerchantEmailNotifications($enableMerchantEmailNotifications)
     {
         $this->container['enableMerchantEmailNotifications'] = $enableMerchantEmailNotifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets customLabels
+     * @return \CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels[]
+     */
+    public function getCustomLabels()
+    {
+        return $this->container['customLabels'];
+    }
+
+    /**
+     * Sets customLabels
+     * @param \CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformationCustomLabels[] $customLabels A list of custom labels that allows you to override (rename) default field names and control the visibility of specific fields on invoices and items. If the list is empty, the labels will not be overwritten.
+     * @return $this
+     */
+    public function setCustomLabels($customLabels)
+    {
+        $this->container['customLabels'] = $customLabels;
 
         return $this;
     }

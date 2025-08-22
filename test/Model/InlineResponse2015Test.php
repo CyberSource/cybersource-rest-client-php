@@ -154,9 +154,9 @@ class InlineResponse2015Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "updatedOn"
+     * Test attribute "notificationScope"
      */
-    public function testPropertyUpdatedOn()
+    public function testPropertyNotificationScope()
     {
     }
 }

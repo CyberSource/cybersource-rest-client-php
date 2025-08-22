@@ -54,9 +54,9 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'oAuthTokenExpiry' => 'string',
         'oAuthURL' => 'string',
-        'oAuthTokenType' => 'string'
+        'oAuthTokenType' => 'string',
+        'additionalConfig' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig'
     ];
 
     /**
@@ -64,9 +64,9 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'oAuthTokenExpiry' => null,
         'oAuthURL' => null,
-        'oAuthTokenType' => null
+        'oAuthTokenType' => null,
+        'additionalConfig' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +84,9 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'oAuthTokenExpiry' => 'oAuthTokenExpiry',
         'oAuthURL' => 'oAuthURL',
-        'oAuthTokenType' => 'oAuthTokenType'
+        'oAuthTokenType' => 'oAuthTokenType',
+        'additionalConfig' => 'additionalConfig'
     ];
 
 
@@ -95,9 +95,9 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'oAuthTokenExpiry' => 'setOAuthTokenExpiry',
         'oAuthURL' => 'setOAuthURL',
-        'oAuthTokenType' => 'setOAuthTokenType'
+        'oAuthTokenType' => 'setOAuthTokenType',
+        'additionalConfig' => 'setAdditionalConfig'
     ];
 
 
@@ -106,9 +106,9 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'oAuthTokenExpiry' => 'getOAuthTokenExpiry',
         'oAuthURL' => 'getOAuthURL',
-        'oAuthTokenType' => 'getOAuthTokenType'
+        'oAuthTokenType' => 'getOAuthTokenType',
+        'additionalConfig' => 'getAdditionalConfig'
     ];
 
     public static function attributeMap()
@@ -142,9 +142,9 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['oAuthTokenExpiry'] = isset($data['oAuthTokenExpiry']) ? $data['oAuthTokenExpiry'] : null;
         $this->container['oAuthURL'] = isset($data['oAuthURL']) ? $data['oAuthURL'] : null;
         $this->container['oAuthTokenType'] = isset($data['oAuthTokenType']) ? $data['oAuthTokenType'] : null;
+        $this->container['additionalConfig'] = isset($data['additionalConfig']) ? $data['additionalConfig'] : null;
     }
 
     /**
@@ -171,27 +171,6 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
         return true;
     }
 
-
-    /**
-     * Gets oAuthTokenExpiry
-     * @return string
-     */
-    public function getOAuthTokenExpiry()
-    {
-        return $this->container['oAuthTokenExpiry'];
-    }
-
-    /**
-     * Sets oAuthTokenExpiry
-     * @param string $oAuthTokenExpiry Token expiration for the oAuth server.
-     * @return $this
-     */
-    public function setOAuthTokenExpiry($oAuthTokenExpiry)
-    {
-        $this->container['oAuthTokenExpiry'] = $oAuthTokenExpiry;
-
-        return $this;
-    }
 
     /**
      * Gets oAuthURL
@@ -225,12 +204,33 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
 
     /**
      * Sets oAuthTokenType
-     * @param string $oAuthTokenType Token type for the oAuth config.
+     * @param string $oAuthTokenType Token type for the oAuth config.  Possible values: - Bearer
      * @return $this
      */
     public function setOAuthTokenType($oAuthTokenType)
     {
         $this->container['oAuthTokenType'] = $oAuthTokenType;
+
+        return $this;
+    }
+
+    /**
+     * Gets additionalConfig
+     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig
+     */
+    public function getAdditionalConfig()
+    {
+        return $this->container['additionalConfig'];
+    }
+
+    /**
+     * Sets additionalConfig
+     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig $additionalConfig
+     * @return $this
+     */
+    public function setAdditionalConfig($additionalConfig)
+    {
+        $this->container['additionalConfig'] = $additionalConfig;
 
         return $this;
     }

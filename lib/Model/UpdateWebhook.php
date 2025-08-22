@@ -58,9 +58,9 @@ class UpdateWebhook implements ArrayAccess
         'description' => 'string',
         'products' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[]',
         'webhookUrl' => 'string',
+        'notificationScope' => 'string',
         'healthCheckUrl' => 'string',
-        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy',
-        'additionalAttributes' => 'map[string,string][]'
+        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy'
     ];
 
     /**
@@ -73,9 +73,9 @@ class UpdateWebhook implements ArrayAccess
         'description' => null,
         'products' => null,
         'webhookUrl' => null,
+        'notificationScope' => null,
         'healthCheckUrl' => null,
-        'securityPolicy' => null,
-        'additionalAttributes' => null
+        'securityPolicy' => null
     ];
 
     public static function swaggerTypes()
@@ -98,9 +98,9 @@ class UpdateWebhook implements ArrayAccess
         'description' => 'description',
         'products' => 'products',
         'webhookUrl' => 'webhookUrl',
+        'notificationScope' => 'notificationScope',
         'healthCheckUrl' => 'healthCheckUrl',
-        'securityPolicy' => 'securityPolicy',
-        'additionalAttributes' => 'additionalAttributes'
+        'securityPolicy' => 'securityPolicy'
     ];
 
 
@@ -114,9 +114,9 @@ class UpdateWebhook implements ArrayAccess
         'description' => 'setDescription',
         'products' => 'setProducts',
         'webhookUrl' => 'setWebhookUrl',
+        'notificationScope' => 'setNotificationScope',
         'healthCheckUrl' => 'setHealthCheckUrl',
-        'securityPolicy' => 'setSecurityPolicy',
-        'additionalAttributes' => 'setAdditionalAttributes'
+        'securityPolicy' => 'setSecurityPolicy'
     ];
 
 
@@ -130,9 +130,9 @@ class UpdateWebhook implements ArrayAccess
         'description' => 'getDescription',
         'products' => 'getProducts',
         'webhookUrl' => 'getWebhookUrl',
+        'notificationScope' => 'getNotificationScope',
         'healthCheckUrl' => 'getHealthCheckUrl',
-        'securityPolicy' => 'getSecurityPolicy',
-        'additionalAttributes' => 'getAdditionalAttributes'
+        'securityPolicy' => 'getSecurityPolicy'
     ];
 
     public static function attributeMap()
@@ -171,9 +171,9 @@ class UpdateWebhook implements ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['webhookUrl'] = isset($data['webhookUrl']) ? $data['webhookUrl'] : null;
+        $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : 'DESCENDANTS';
         $this->container['healthCheckUrl'] = isset($data['healthCheckUrl']) ? $data['healthCheckUrl'] : null;
         $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
-        $this->container['additionalAttributes'] = isset($data['additionalAttributes']) ? $data['additionalAttributes'] : null;
     }
 
     /**
@@ -307,6 +307,27 @@ class UpdateWebhook implements ArrayAccess
     }
 
     /**
+     * Gets notificationScope
+     * @return string
+     */
+    public function getNotificationScope()
+    {
+        return $this->container['notificationScope'];
+    }
+
+    /**
+     * Sets notificationScope
+     * @param string $notificationScope The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+     * @return $this
+     */
+    public function setNotificationScope($notificationScope)
+    {
+        $this->container['notificationScope'] = $notificationScope;
+
+        return $this;
+    }
+
+    /**
      * Gets healthCheckUrl
      * @return string
      */
@@ -317,7 +338,7 @@ class UpdateWebhook implements ArrayAccess
 
     /**
      * Sets healthCheckUrl
-     * @param string $healthCheckUrl The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+     * @param string $healthCheckUrl The client's health check endpoint (URL).
      * @return $this
      */
     public function setHealthCheckUrl($healthCheckUrl)
@@ -344,27 +365,6 @@ class UpdateWebhook implements ArrayAccess
     public function setSecurityPolicy($securityPolicy)
     {
         $this->container['securityPolicy'] = $securityPolicy;
-
-        return $this;
-    }
-
-    /**
-     * Gets additionalAttributes
-     * @return map[string,string][]
-     */
-    public function getAdditionalAttributes()
-    {
-        return $this->container['additionalAttributes'];
-    }
-
-    /**
-     * Sets additionalAttributes
-     * @param map[string,string][] $additionalAttributes Additional, free form configuration data.
-     * @return $this
-     */
-    public function setAdditionalAttributes($additionalAttributes)
-    {
-        $this->container['additionalAttributes'] = $additionalAttributes;
 
         return $this;
     }

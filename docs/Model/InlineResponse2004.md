@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **organizationId** | **string** | Organization ID. | [optional] 
 **products** | [**\CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[]**](Notificationsubscriptionsv2webhooksProducts.md) |  | [optional] 
 **webhookUrl** | **string** | The client&#39;s endpoint (URL) to receive webhooks. | [optional] 
-**healthCheckUrl** | **string** | The client&#39;s health check endpoint (URL). This should be as close as possible to the actual webhookUrl. | [optional] 
+**healthCheckUrl** | **string** | The client&#39;s health check endpoint (URL). | [optional] 
 **status** | **string** | Webhook status. | [optional] [default to 'INACTIVE']
 **name** | **string** | Client friendly webhook name. | [optional] 
 **description** | **string** | Client friendly webhook description. | [optional] 
 **retryPolicy** | [**\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy**](Notificationsubscriptionsv2webhooksRetryPolicy.md) |  | [optional] 
 **securityPolicy** | [**\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy**](Notificationsubscriptionsv2webhooksSecurityPolicy.md) |  | [optional] 
 **createdOn** | **string** | Date on which webhook was created/registered. | [optional] 
-**updatedOn** | **string** | Date on which webhook was most recently updated. | [optional] 
+**notificationScope** | **string** | The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS | [optional] [default to 'DESCENDANTS']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

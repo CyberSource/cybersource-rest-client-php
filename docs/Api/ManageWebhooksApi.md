@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook)
+> \CyberSource\Model\InlineResponse2005 notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook)
 
 Update a Webhook Subscription
 
@@ -213,7 +213,8 @@ $webhookId = "webhookId_example"; // string | The Webhook Identifier.
 $updateWebhook = new \CyberSource\Model\UpdateWebhook(); // \CyberSource\Model\UpdateWebhook | The webhook payload or changes to apply.
 
 try {
-    $api_instance->notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook);
+    $result = $api_instance->notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ManageWebhooksApi->notificationSubscriptionsV2WebhooksWebhookIdPatch: ', $e->getMessage(), PHP_EOL;
 }
@@ -229,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 

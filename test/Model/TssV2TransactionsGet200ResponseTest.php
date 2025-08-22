@@ -126,6 +126,13 @@ class TssV2TransactionsGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "bankAccountValidation"
+     */
+    public function testPropertyBankAccountValidation()
+    {
+    }
+
+    /**
      * Test attribute "buyerInformation"
      */
     public function testPropertyBuyerInformation()

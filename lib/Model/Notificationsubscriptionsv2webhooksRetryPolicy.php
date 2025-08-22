@@ -167,7 +167,7 @@ class Notificationsubscriptionsv2webhooksRetryPolicy implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['algorithm'] = isset($data['algorithm']) ? $data['algorithm'] : null;
+        $this->container['algorithm'] = isset($data['algorithm']) ? $data['algorithm'] : 'ARITHMETIC';
         $this->container['firstRetry'] = isset($data['firstRetry']) ? $data['firstRetry'] : null;
         $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
         $this->container['numberOfRetries'] = isset($data['numberOfRetries']) ? $data['numberOfRetries'] : null;

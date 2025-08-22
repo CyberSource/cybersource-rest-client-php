@@ -64,7 +64,7 @@ class InlineResponse2004 implements ArrayAccess
         'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy',
         'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy',
         'createdOn' => 'string',
-        'updatedOn' => 'string'
+        'notificationScope' => 'string'
     ];
 
     /**
@@ -83,7 +83,7 @@ class InlineResponse2004 implements ArrayAccess
         'retryPolicy' => null,
         'securityPolicy' => null,
         'createdOn' => null,
-        'updatedOn' => null
+        'notificationScope' => null
     ];
 
     public static function swaggerTypes()
@@ -112,7 +112,7 @@ class InlineResponse2004 implements ArrayAccess
         'retryPolicy' => 'retryPolicy',
         'securityPolicy' => 'securityPolicy',
         'createdOn' => 'createdOn',
-        'updatedOn' => 'updatedOn'
+        'notificationScope' => 'notificationScope'
     ];
 
 
@@ -132,7 +132,7 @@ class InlineResponse2004 implements ArrayAccess
         'retryPolicy' => 'setRetryPolicy',
         'securityPolicy' => 'setSecurityPolicy',
         'createdOn' => 'setCreatedOn',
-        'updatedOn' => 'setUpdatedOn'
+        'notificationScope' => 'setNotificationScope'
     ];
 
 
@@ -152,7 +152,7 @@ class InlineResponse2004 implements ArrayAccess
         'retryPolicy' => 'getRetryPolicy',
         'securityPolicy' => 'getSecurityPolicy',
         'createdOn' => 'getCreatedOn',
-        'updatedOn' => 'getUpdatedOn'
+        'notificationScope' => 'getNotificationScope'
     ];
 
     public static function attributeMap()
@@ -197,7 +197,7 @@ class InlineResponse2004 implements ArrayAccess
         $this->container['retryPolicy'] = isset($data['retryPolicy']) ? $data['retryPolicy'] : null;
         $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
         $this->container['createdOn'] = isset($data['createdOn']) ? $data['createdOn'] : null;
-        $this->container['updatedOn'] = isset($data['updatedOn']) ? $data['updatedOn'] : null;
+        $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : 'DESCENDANTS';
     }
 
     /**
@@ -320,7 +320,7 @@ class InlineResponse2004 implements ArrayAccess
 
     /**
      * Sets healthCheckUrl
-     * @param string $healthCheckUrl The client's health check endpoint (URL). This should be as close as possible to the actual webhookUrl.
+     * @param string $healthCheckUrl The client's health check endpoint (URL).
      * @return $this
      */
     public function setHealthCheckUrl($healthCheckUrl)
@@ -457,22 +457,22 @@ class InlineResponse2004 implements ArrayAccess
     }
 
     /**
-     * Gets updatedOn
+     * Gets notificationScope
      * @return string
      */
-    public function getUpdatedOn()
+    public function getNotificationScope()
     {
-        return $this->container['updatedOn'];
+        return $this->container['notificationScope'];
     }
 
     /**
-     * Sets updatedOn
-     * @param string $updatedOn Date on which webhook was most recently updated.
+     * Sets notificationScope
+     * @param string $notificationScope The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
      * @return $this
      */
-    public function setUpdatedOn($updatedOn)
+    public function setNotificationScope($notificationScope)
     {
-        $this->container['updatedOn'] = $updatedOn;
+        $this->container['notificationScope'] = $notificationScope;
 
         return $this;
     }
