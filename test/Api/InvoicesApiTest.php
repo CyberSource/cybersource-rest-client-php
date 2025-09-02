@@ -112,6 +112,16 @@ class InvoicesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for performPublishAction
+     *
+     * Publish an Invoice.
+     *
+     */
+    public function testPerformPublishAction()
+    {
+    }
+
+    /**
      * Test case for performSendAction
      *
      * Send an Invoice.

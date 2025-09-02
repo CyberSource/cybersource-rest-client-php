@@ -163,8 +163,8 @@ class CreditApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "createCredit,createCreditWithHttpInfo")) {
+        $inboundMLEStatus = 'optional';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createCredit,createCreditWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

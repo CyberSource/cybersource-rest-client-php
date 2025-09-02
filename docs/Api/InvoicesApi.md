@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getAllInvoices**](InvoicesApi.md#getAllInvoices) | **GET** /invoicing/v2/invoices | Get a List of Invoices
 [**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /invoicing/v2/invoices/{id} | Get Invoice Details
 [**performCancelAction**](InvoicesApi.md#performCancelAction) | **POST** /invoicing/v2/invoices/{id}/cancelation | Cancel an Invoice
+[**performPublishAction**](InvoicesApi.md#performPublishAction) | **POST** /invoicing/v2/invoices/{id}/publication | Publish an Invoice
 [**performSendAction**](InvoicesApi.md#performSendAction) | **POST** /invoicing/v2/invoices/{id}/delivery | Send an Invoice
 [**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** /invoicing/v2/invoices/{id} | Update an Invoice
 
@@ -184,6 +185,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\CyberSource\Model\InvoicingV2InvoicesCancel200Response**](../Model/InvoicingV2InvoicesCancel200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json, application/hal+json, application/json;charset=utf-8, application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **performPublishAction**
+> \CyberSource\Model\InvoicingV2InvoicesPublish200Response performPublishAction($id)
+
+Publish an Invoice
+
+You can publish an invoice in DRAFT status. After invoking this method, the invoice status is changed to CREATED.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\InvoicesApi();
+$id = "id_example"; // string | The invoice number.
+
+try {
+    $result = $api_instance->performPublishAction($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InvoicesApi->performPublishAction: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The invoice number. |
+
+### Return type
+
+[**\CyberSource\Model\InvoicingV2InvoicesPublish200Response**](../Model/InvoicingV2InvoicesPublish200Response.md)
 
 ### Authorization
 

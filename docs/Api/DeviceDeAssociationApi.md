@@ -53,7 +53,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postDeAssociateV3Terminal**
-> \CyberSource\Model\InlineResponse2006[] postDeAssociateV3Terminal($deviceDeAssociateV3Request)
+> \CyberSource\Model\InlineResponse2007[] postDeAssociateV3Terminal($deviceDeAssociateV3Request)
 
 De-associate a device from merchant to account or reseller and from account to reseller
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2006[]**](../Model/InlineResponse2006.md)
+[**\CyberSource\Model\InlineResponse2007[]**](../Model/InlineResponse2007.md)
 
 ### Authorization
 

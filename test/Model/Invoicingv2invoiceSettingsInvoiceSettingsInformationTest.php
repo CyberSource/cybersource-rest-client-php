@@ -173,4 +173,11 @@ class Invoicingv2invoiceSettingsInvoiceSettingsInformationTest extends \PHPUnit_
     public function testPropertyEnableMerchantEmailNotifications()
     {
     }
+
+    /**
+     * Test attribute "customLabels"
+     */
+    public function testPropertyCustomLabels()
+    {
+    }
 }

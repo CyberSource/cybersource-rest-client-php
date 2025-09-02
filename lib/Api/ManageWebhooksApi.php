@@ -164,8 +164,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "deleteWebhookSubscription,deleteWebhookSubscriptionWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deleteWebhookSubscription,deleteWebhookSubscriptionWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -280,8 +280,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getWebhookSubscriptionById,getWebhookSubscriptionByIdWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getWebhookSubscriptionById,getWebhookSubscriptionByIdWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -408,8 +408,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "getWebhookSubscriptionsByOrg,getWebhookSubscriptionsByOrgWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getWebhookSubscriptionsByOrg,getWebhookSubscriptionsByOrgWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -531,8 +531,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -591,7 +591,7 @@ class ManageWebhooksApi
      * @param string $webhookId The Webhook Identifier. (required)
      * @param \CyberSource\Model\UpdateWebhook $updateWebhook The webhook payload or changes to apply. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
      */
     public function notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook = null)
     {
@@ -610,7 +610,7 @@ class ManageWebhooksApi
      * @param string $webhookId The Webhook Identifier. (required)
      * @param \CyberSource\Model\UpdateWebhook $updateWebhook The webhook payload or changes to apply. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
      */
     public function notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo($webhookId, $updateWebhook = null)
     {
@@ -660,8 +660,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "notificationSubscriptionsV2WebhooksWebhookIdPatch,notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV2WebhooksWebhookIdPatch,notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -683,7 +683,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : null");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2005");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -692,15 +692,19 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                null,
+                '\CyberSource\Model\InlineResponse2005',
                 '/notification-subscriptions/v2/webhooks/{webhookId}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$response, $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
                 case 404:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4042', $e->getResponseHeaders());
                     $e->setResponseObject($data);
@@ -789,8 +793,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "notificationSubscriptionsV2WebhooksWebhookIdStatusPut,notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV2WebhooksWebhookIdStatusPut,notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -936,8 +940,8 @@ class ManageWebhooksApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = false;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "saveAsymEgressKey,saveAsymEgressKeyWithHttpInfo")) {
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "saveAsymEgressKey,saveAsymEgressKeyWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

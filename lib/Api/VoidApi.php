@@ -163,8 +163,8 @@ class VoidApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "mitVoid,mitVoidWithHttpInfo")) {
+        $inboundMLEStatus = 'optional';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "mitVoid,mitVoidWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -305,8 +305,8 @@ class VoidApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "voidCapture,voidCaptureWithHttpInfo")) {
+        $inboundMLEStatus = 'optional';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "voidCapture,voidCaptureWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -447,8 +447,8 @@ class VoidApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "voidCredit,voidCreditWithHttpInfo")) {
+        $inboundMLEStatus = 'optional';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "voidCredit,voidCreditWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -589,8 +589,8 @@ class VoidApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "voidPayment,voidPaymentWithHttpInfo")) {
+        $inboundMLEStatus = 'optional';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "voidPayment,voidPaymentWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {
@@ -731,8 +731,8 @@ class VoidApi
         }
 
         //MLE check and mle encryption for req body
-        $isMLESupportedByCybsForApi = true;
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $isMLESupportedByCybsForApi, "voidRefund,voidRefundWithHttpInfo")) {
+        $inboundMLEStatus = 'optional';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "voidRefund,voidRefundWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

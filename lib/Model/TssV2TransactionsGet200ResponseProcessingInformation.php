@@ -63,7 +63,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'bankTransferOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationBankTransferOptions',
         'captureOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions',
         'reconciliationId' => 'string',
-        'japanPaymentOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions'
+        'japanPaymentOptions' => '\CyberSource\Model\TssV2TransactionsGet200ResponseProcessingInformationJapanPaymentOptions',
+        'validationLevel' => 'int'
     ];
 
     /**
@@ -81,7 +82,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'bankTransferOptions' => null,
         'captureOptions' => null,
         'reconciliationId' => null,
-        'japanPaymentOptions' => null
+        'japanPaymentOptions' => null,
+        'validationLevel' => null
     ];
 
     public static function swaggerTypes()
@@ -109,7 +111,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'bankTransferOptions' => 'bankTransferOptions',
         'captureOptions' => 'captureOptions',
         'reconciliationId' => 'reconciliationId',
-        'japanPaymentOptions' => 'japanPaymentOptions'
+        'japanPaymentOptions' => 'japanPaymentOptions',
+        'validationLevel' => 'validationLevel'
     ];
 
 
@@ -128,7 +131,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'bankTransferOptions' => 'setBankTransferOptions',
         'captureOptions' => 'setCaptureOptions',
         'reconciliationId' => 'setReconciliationId',
-        'japanPaymentOptions' => 'setJapanPaymentOptions'
+        'japanPaymentOptions' => 'setJapanPaymentOptions',
+        'validationLevel' => 'setValidationLevel'
     ];
 
 
@@ -147,7 +151,8 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         'bankTransferOptions' => 'getBankTransferOptions',
         'captureOptions' => 'getCaptureOptions',
         'reconciliationId' => 'getReconciliationId',
-        'japanPaymentOptions' => 'getJapanPaymentOptions'
+        'japanPaymentOptions' => 'getJapanPaymentOptions',
+        'validationLevel' => 'getValidationLevel'
     ];
 
     public static function attributeMap()
@@ -192,6 +197,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
         $this->container['captureOptions'] = isset($data['captureOptions']) ? $data['captureOptions'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['japanPaymentOptions'] = isset($data['japanPaymentOptions']) ? $data['japanPaymentOptions'] : null;
+        $this->container['validationLevel'] = isset($data['validationLevel']) ? $data['validationLevel'] : null;
     }
 
     /**
@@ -446,6 +452,27 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
     public function setJapanPaymentOptions($japanPaymentOptions)
     {
         $this->container['japanPaymentOptions'] = $japanPaymentOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets validationLevel
+     * @return int
+     */
+    public function getValidationLevel()
+    {
+        return $this->container['validationLevel'];
+    }
+
+    /**
+     * Sets validationLevel
+     * @param int $validationLevel Enter 1 for routing and account number validation.
+     * @return $this
+     */
+    public function setValidationLevel($validationLevel)
+    {
+        $this->container['validationLevel'] = $validationLevel;
 
         return $this;
     }

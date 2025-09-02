@@ -173,4 +173,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationTest ext
     public function testPropertyEnableMerchantEmailNotifications()
     {
     }
+
+    /**
+     * Test attribute "customLabels"
+     */
+    public function testPropertyCustomLabels()
+    {
+    }
 }

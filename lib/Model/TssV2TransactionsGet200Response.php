@@ -60,6 +60,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'submitTimeUTC' => 'string',
         'status' => 'string',
         'applicationInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseApplicationInformation',
+        'bankAccountValidation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation',
         'buyerInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseClientReferenceInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseConsumerAuthenticationInformation',
@@ -97,6 +98,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'submitTimeUTC' => null,
         'status' => null,
         'applicationInformation' => null,
+        'bankAccountValidation' => null,
         'buyerInformation' => null,
         'clientReferenceInformation' => null,
         'consumerAuthenticationInformation' => null,
@@ -144,6 +146,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'submitTimeUTC' => 'submitTimeUTC',
         'status' => 'status',
         'applicationInformation' => 'applicationInformation',
+        'bankAccountValidation' => 'bankAccountValidation',
         'buyerInformation' => 'buyerInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
         'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
@@ -182,6 +185,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'submitTimeUTC' => 'setSubmitTimeUTC',
         'status' => 'setStatus',
         'applicationInformation' => 'setApplicationInformation',
+        'bankAccountValidation' => 'setBankAccountValidation',
         'buyerInformation' => 'setBuyerInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
@@ -220,6 +224,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         'submitTimeUTC' => 'getSubmitTimeUTC',
         'status' => 'getStatus',
         'applicationInformation' => 'getApplicationInformation',
+        'bankAccountValidation' => 'getBankAccountValidation',
         'buyerInformation' => 'getBuyerInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
@@ -283,6 +288,7 @@ class TssV2TransactionsGet200Response implements ArrayAccess
         $this->container['submitTimeUTC'] = isset($data['submitTimeUTC']) ? $data['submitTimeUTC'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['applicationInformation'] = isset($data['applicationInformation']) ? $data['applicationInformation'] : null;
+        $this->container['bankAccountValidation'] = isset($data['bankAccountValidation']) ? $data['bankAccountValidation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
@@ -476,6 +482,27 @@ class TssV2TransactionsGet200Response implements ArrayAccess
     public function setApplicationInformation($applicationInformation)
     {
         $this->container['applicationInformation'] = $applicationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets bankAccountValidation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation
+     */
+    public function getBankAccountValidation()
+    {
+        return $this->container['bankAccountValidation'];
+    }
+
+    /**
+     * Sets bankAccountValidation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation $bankAccountValidation
+     * @return $this
+     */
+    public function setBankAccountValidation($bankAccountValidation)
+    {
+        $this->container['bankAccountValidation'] = $bankAccountValidation;
 
         return $this;
     }

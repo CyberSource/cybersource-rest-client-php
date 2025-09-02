@@ -124,4 +124,11 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformationTest extends \PHPUnit_
     public function testPropertyDeliveryMode()
     {
     }
+
+    /**
+     * Test attribute "customLabels"
+     */
+    public function testPropertyCustomLabels()
+    {
+    }
 }

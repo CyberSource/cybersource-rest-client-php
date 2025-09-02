@@ -77,13 +77,6 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfigTest extends \PHPUn
     }
 
     /**
-     * Test attribute "oAuthTokenExpiry"
-     */
-    public function testPropertyOAuthTokenExpiry()
-    {
-    }
-
-    /**
      * Test attribute "oAuthURL"
      */
     public function testPropertyOAuthURL()
@@ -94,6 +87,13 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfigTest extends \PHPUn
      * Test attribute "oAuthTokenType"
      */
     public function testPropertyOAuthTokenType()
+    {
+    }
+
+    /**
+     * Test attribute "additionalConfig"
+     */
+    public function testPropertyAdditionalConfig()
     {
     }
 }

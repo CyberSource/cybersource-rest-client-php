@@ -152,4 +152,11 @@ class TssV2TransactionsGet200ResponseProcessingInformationTest extends \PHPUnit_
     public function testPropertyJapanPaymentOptions()
     {
     }
+
+    /**
+     * Test attribute "validationLevel"
+     */
+    public function testPropertyValidationLevel()
+    {
+    }
 }

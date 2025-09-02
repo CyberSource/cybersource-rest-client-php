@@ -68,7 +68,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'eventStatus' => 'string',
         'systemTraceAuditNumber' => 'string',
         'responseCodeSource' => 'string',
-        'paymentAccountReferenceNumber' => 'string'
+        'paymentAccountReferenceNumber' => 'string',
+        'routing' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting'
     ];
 
     /**
@@ -91,7 +92,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'eventStatus' => null,
         'systemTraceAuditNumber' => null,
         'responseCodeSource' => null,
-        'paymentAccountReferenceNumber' => null
+        'paymentAccountReferenceNumber' => null,
+        'routing' => null
     ];
 
     public static function swaggerTypes()
@@ -124,7 +126,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'eventStatus' => 'eventStatus',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
         'responseCodeSource' => 'responseCodeSource',
-        'paymentAccountReferenceNumber' => 'paymentAccountReferenceNumber'
+        'paymentAccountReferenceNumber' => 'paymentAccountReferenceNumber',
+        'routing' => 'routing'
     ];
 
 
@@ -148,7 +151,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'eventStatus' => 'setEventStatus',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
         'responseCodeSource' => 'setResponseCodeSource',
-        'paymentAccountReferenceNumber' => 'setPaymentAccountReferenceNumber'
+        'paymentAccountReferenceNumber' => 'setPaymentAccountReferenceNumber',
+        'routing' => 'setRouting'
     ];
 
 
@@ -172,7 +176,8 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         'eventStatus' => 'getEventStatus',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
         'responseCodeSource' => 'getResponseCodeSource',
-        'paymentAccountReferenceNumber' => 'getPaymentAccountReferenceNumber'
+        'paymentAccountReferenceNumber' => 'getPaymentAccountReferenceNumber',
+        'routing' => 'getRouting'
     ];
 
     public static function attributeMap()
@@ -222,6 +227,7 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
         $this->container['paymentAccountReferenceNumber'] = isset($data['paymentAccountReferenceNumber']) ? $data['paymentAccountReferenceNumber'] : null;
+        $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
     }
 
     /**
@@ -581,6 +587,27 @@ class TssV2TransactionsGet200ResponseProcessorInformation implements ArrayAccess
     public function setPaymentAccountReferenceNumber($paymentAccountReferenceNumber)
     {
         $this->container['paymentAccountReferenceNumber'] = $paymentAccountReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets routing
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting
+     */
+    public function getRouting()
+    {
+        return $this->container['routing'];
+    }
+
+    /**
+     * Sets routing
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationRouting $routing
+     * @return $this
+     */
+    public function setRouting($routing)
+    {
+        $this->container['routing'] = $routing;
 
         return $this;
     }

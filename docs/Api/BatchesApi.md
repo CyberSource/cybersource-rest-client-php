@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getBatchReport**
-> \CyberSource\Model\InlineResponse20010 getBatchReport($batchId)
+> \CyberSource\Model\InlineResponse20011 getBatchReport($batchId)
 
 Retrieve a Batch Report
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\CyberSource\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchStatus**
-> \CyberSource\Model\InlineResponse2009 getBatchStatus($batchId)
+> \CyberSource\Model\InlineResponse20010 getBatchStatus($batchId)
 
 Retrieve a Batch Status
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\CyberSource\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchesList**
-> \CyberSource\Model\InlineResponse2008 getBatchesList($offset, $limit, $fromDate, $toDate)
+> \CyberSource\Model\InlineResponse2009 getBatchesList($offset, $limit, $fromDate, $toDate)
 
 List Batches
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\CyberSource\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 

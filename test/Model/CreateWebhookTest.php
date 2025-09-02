@@ -126,6 +126,13 @@ class CreateWebhookTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "notificationScope"
+     */
+    public function testPropertyNotificationScope()
+    {
+    }
+
+    /**
      * Test attribute "securityPolicy"
      */
     public function testPropertySecurityPolicy()
