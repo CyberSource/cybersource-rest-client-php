@@ -349,6 +349,19 @@ class ApiClient
             curl_setopt($curl, CURLOPT_PROXYUSERPWD, $this->config->getCurlProxyUser() . ':' .$this->config->getCurlProxyPassword());
         }
 
+        if ($this->config->getTlsVersion()) {
+            curl_setopt($curl, CURLOPT_SSLVERSION, $this->config->getTlsVersion());
+        }
+
+        if ($this->config->getTlsCipherList()) {
+            // use TLS 1.3 ciphers for TLS 1.3, otherwise use general SSL cipher list
+            if ($this->config->getTlsVersion() && $this->config->getTlsVersion() === CURL_SSLVERSION_TLSv1_3) {
+                curl_setopt($curl, CURLOPT_TLS13_CIPHERS, $this->config->getTlsCipherList());
+            } else {
+                curl_setopt($curl, CURLOPT_SSL_CIPHER_LIST, $this->config->getTlsCipherList());
+            }
+        }
+
         if (!empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
         }
