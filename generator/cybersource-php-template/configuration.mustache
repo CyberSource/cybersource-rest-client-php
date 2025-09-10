@@ -683,6 +683,16 @@ class Configuration
     }
 
     /**
+     * Gets the HTTP Proxy Password
+     *
+     * @return string
+     */
+    public function getCurlProxyPassword()
+    {
+        return $this->proxyPassword;
+    }
+
+    /**
      * Gets the TLS version to use for HTTPS requests
      *
      * @return string
@@ -727,17 +737,30 @@ class Configuration
         $this->tlsCipherList = $tlsCipherList;
         return $this;
     }
-    
+
     /**
-     * Gets the HTTP Proxy Password
+     * Gets free socket time allowed for reusing a connection
      *
-     * @return string
+     * @return int
      */
-    public function getCurlProxyPassword()
+    public function getFreeSocketTimeOut()
     {
-        return $this->proxyPassword;
+        return $this->freeSocketTimeOut;
     }
 
+    /**
+     * Sets free socket time allowed for reusing a connection
+     *
+     * @param int $freeSocketTimeOut
+     *
+     * @return $this
+     */
+    public function setFreeSocketTimeOut($freeSocketTimeOut)
+    {
+        $this->freeSocketTimeOut = $freeSocketTimeOut;
+        return $this;
+    }
+    
     /**
      * Sets if SSL verification should be enabled or disabled
      *

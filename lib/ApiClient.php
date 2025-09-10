@@ -362,13 +362,22 @@ class ApiClient
 
         if ($this->config->getTlsCipherList()) {
             if (
-                $this->config->getTlsVersion() === CURL_SSLVERSION_TLSv1_3 &&
                 defined('CURL_SSLVERSION_TLSv1_3') &&
-                defined('CURLOPT_TLS13_CIPHERS')
+                defined('CURLOPT_TLS13_CIPHERS') && 
+                $this->config->getTlsVersion() === CURL_SSLVERSION_TLSv1_3
             ) {
                 curl_setopt($curl, CURLOPT_TLS13_CIPHERS, $this->config->getTlsCipherList());
             } else {
                 curl_setopt($curl, CURLOPT_SSL_CIPHER_LIST, $this->config->getTlsCipherList());
+            }
+        }
+
+        // Set maximum age for connection reuse in the connection pool
+        if ($this->config->getFreeSocketTimeOut()) {
+            if (defined('CURLOPT_MAXAGE_CONN')) {
+                curl_setopt($curl, CURLOPT_MAXAGE_CONN, $this->config->getFreeSocketTimeOut());
+            } else {
+                self::$logger->warning("CURLOPT_MAXAGE_CONN is not supported in your cURL version. Free socket timeout setting will be ignored.");
             }
         }
         

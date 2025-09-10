@@ -181,6 +181,13 @@ class Configuration
     protected $tlsCipherList;
 
     /**
+     * Free socket time allowed for reusing a connection
+     *
+     * @var int
+     */
+    protected $freeSocketTimeOut;
+
+    /**
      * Allow Curl encoding header
      *
      * @var bool
@@ -747,6 +754,34 @@ class Configuration
         return $this;
     }
 
+    /**
+     * Gets free socket time allowed for reusing a connection
+     *
+     * @return int
+     */
+    public function getFreeSocketTimeOut()
+    {
+        return $this->freeSocketTimeOut;
+    }
+
+    /**
+     * Sets free socket time allowed for reusing a connection
+     *
+     * @param int $freeSocketTimeOut
+     *
+     * @return $this
+     */
+    public function setFreeSocketTimeOut($freeSocketTimeOut)
+    {
+        if (!is_numeric($freeSocketTimeOut) || $freeSocketTimeOut < 0) {
+            self::$logger->error("InvalidArgumentException : Free socket timeout value must be numeric and a non-negative number.");
+            self::$logger->close();
+            throw new \InvalidArgumentException('Free socket timeout value must be numeric and a non-negative number.');
+        }
+        $this->freeSocketTimeOut = $freeSocketTimeOut;
+        return $this;
+    }
+    
     /**
      * Sets if SSL verification should be enabled or disabled
      *
