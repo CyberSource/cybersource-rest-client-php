@@ -158,6 +158,20 @@ class Configuration
     protected $proxyPassword;
 
     /**
+     * TLS version to use for HTTPS requests
+     *
+     * @var string
+     */
+    protected $tlsVersion;
+
+    /**
+     * TLS cipher list to use for HTTPS requests
+     *
+     * @var string
+     */
+    protected $tlsCipherList;
+
+    /**
      * Allow Curl encoding header
      *
      * @var bool
@@ -668,6 +682,52 @@ class Configuration
         return $this;
     }
 
+    /**
+     * Gets the TLS version to use for HTTPS requests
+     *
+     * @return string
+     */
+    public function getTlsVersion()
+    {
+        return $this->tlsVersion;
+    }
+
+    /**
+     * Sets the TLS version to use for HTTPS requests
+     *
+     * @param string $tlsVersion
+     *
+     * @return $this
+     */
+    public function setTlsVersion($tlsVersion)
+    {
+        $this->tlsVersion = $tlsVersion;
+        return $this;
+    }
+
+    /**
+     * Gets the TLS cipher list to use for HTTPS requests
+     *
+     * @return string
+     */
+    public function getTlsCipherList()
+    {
+        return $this->tlsCipherList;
+    }
+
+    /**
+     * Sets the TLS cipher list to use for HTTPS requests
+     *
+     * @param string $tlsCipherList
+     *
+     * @return $this
+     */
+    public function setTlsCipherList($tlsCipherList)
+    {
+        $this->tlsCipherList = $tlsCipherList;
+        return $this;
+    }
+    
     /**
      * Gets the HTTP Proxy Password
      *
