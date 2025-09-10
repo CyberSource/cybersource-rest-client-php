@@ -185,7 +185,7 @@ class Configuration
      *
      * @var int
      */
-    protected $freeSocketTimeOut;
+    protected $keepAliveTime;
 
     /**
      * Allow Curl encoding header
@@ -759,29 +759,29 @@ class Configuration
      *
      * @return int
      */
-    public function getFreeSocketTimeOut()
+    public function getKeepAliveTime()
     {
-        return $this->freeSocketTimeOut;
+        return $this->keepAliveTime;
     }
 
     /**
-     * Sets free socket time allowed for reusing a connection
+     * Sets keep-alive time allowed for reusing a connection
      *
-     * @param int $freeSocketTimeOut
+     * @param int $keepAliveTime
      *
      * @return $this
      */
-    public function setFreeSocketTimeOut($freeSocketTimeOut)
+    public function setKeepAliveTime($keepAliveTime)
     {
-        if (!is_numeric($freeSocketTimeOut) || $freeSocketTimeOut < 0) {
-            self::$logger->error("InvalidArgumentException : Free socket timeout value must be numeric and a non-negative number.");
+        if (!is_numeric($keepAliveTime) || $keepAliveTime < 0) {
+            self::$logger->error("InvalidArgumentException : Keep-alive time value must be numeric and a non-negative number.");
             self::$logger->close();
-            throw new \InvalidArgumentException('Free socket timeout value must be numeric and a non-negative number.');
+            throw new \InvalidArgumentException('Keep-alive time value must be numeric and a non-negative number.');
         }
-        $this->freeSocketTimeOut = $freeSocketTimeOut;
+        $this->keepAliveTime = $keepAliveTime;
         return $this;
     }
-    
+
     /**
      * Sets if SSL verification should be enabled or disabled
      *

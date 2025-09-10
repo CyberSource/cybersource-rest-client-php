@@ -373,11 +373,11 @@ class ApiClient
         }
 
         // Set maximum age for connection reuse in the connection pool
-        if ($this->config->getFreeSocketTimeOut()) {
+        if ($this->config->getKeepAliveTime()) {
             if (defined('CURLOPT_MAXAGE_CONN')) {
-                curl_setopt($curl, CURLOPT_MAXAGE_CONN, $this->config->getFreeSocketTimeOut());
+                curl_setopt($curl, CURLOPT_MAXAGE_CONN, $this->config->getKeepAliveTime());
             } else {
-                self::$logger->warning("CURLOPT_MAXAGE_CONN is not supported in your cURL version. Free socket timeout setting will be ignored.");
+                self::$logger->warning("CURLOPT_MAXAGE_CONN is not supported in your cURL version. Keep-alive time setting will be ignored.");
             }
         }
         
