@@ -757,10 +757,15 @@ class Configuration
      */
     public function setFreeSocketTimeOut($freeSocketTimeOut)
     {
+        if (!is_numeric($freeSocketTimeOut) || $freeSocketTimeOut < 0) {
+            self::$logger->error("InvalidArgumentException : Free socket timeout value must be numeric and a non-negative number.");
+            self::$logger->close();
+            throw new \InvalidArgumentException('Free socket timeout value must be numeric and a non-negative number.');
+        }
         $this->freeSocketTimeOut = $freeSocketTimeOut;
         return $this;
     }
-    
+
     /**
      * Sets if SSL verification should be enabled or disabled
      *
