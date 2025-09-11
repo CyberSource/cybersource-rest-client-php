@@ -172,6 +172,13 @@ class Configuration
     protected $tlsCipherList;
 
     /**
+     * Free socket time allowed for reusing a connection
+     *
+     * @var int
+     */
+    protected $keepAliveTime;
+
+    /**
      * Allow Curl encoding header
      *
      * @var bool
