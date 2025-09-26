@@ -206,7 +206,7 @@ class MerchantConfiguration
      */
     protected $useMLEGlobally=null;
 
-        /**
+    /**
      * Enable MLE for optional APIs globally (alias for useMLEGlobally)
      *
      * @var bool
@@ -223,16 +223,47 @@ class MerchantConfiguration
     /**
      * Curl mapToControlMLEonAPI
      *
-     * @var array<string, bool>
-     */
+     * Expected values (strings or booleans):
+     *  "apiFunctionName1" => "true::true"
+     *  "apiFunctionName2" => "false::false"
+     *  "apiFunctionName3" => "true::false"
+     *  "apiFunctionName4" => "false::true"
+     *  "apiFunctionName5" => "true"      (request only; response uses global flag)
+     *  "apiFunctionName6" => "false"     (request only; response uses global flag)
+     *  "apiFunctionName7" => "::true"    (response only; request uses global flag)
+     *  "apiFunctionName8" => "true::"    (request true; response uses global flag)
+     *
+     * A bare boolean (true/false) acts like "true"/"false" string (request only).
+     *
+     * @var array<string, string|bool>
+     */ 
     protected $mapToControlMLEonAPI = [];
 
     /**
-     * Curl mleKeyAlias
+     * Internal parsed per-API Request MLE flags.
+     * @var array<string,bool>
+     */
+    protected $internalMapToControlRequestMLEonAPI = [];
+
+    /**
+     * Internal parsed per-API Response MLE flags.
+     * @var array<string,bool>
+     */
+    protected $internalMapToControlResponseMLEonAPI = [];
+
+    /**
+     * @deprecated Use requestMleKeyAlias instead. Retained for backward compatibility.
      *
      * @var string
      */
     protected $mleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
+
+    /**
+     * Optional parameter. User can pass a custom requestMleKeyAlias to fetch from the certificate.
+     *
+     * @var string
+     */
+    protected $requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
 
     /**
      * Curl DefaultDeveloperId
@@ -275,6 +306,43 @@ class MerchantConfiguration
      * @var string
      */
     protected $mleForRequestPublicCertPath;
+
+    /**
+     * Enable Response (Outbound) MLE globally (encrypted responses if API supports it)
+     *
+     * @var bool
+     */
+    protected $enableResponseMleGlobally = false;
+
+    /**
+     * KID value for the Response MLE public certificate (returned by CyberSource portal)
+     *
+     * @var string
+     */
+    protected $responseMleKID = '';
+
+    /**
+     * Private key file path used to decrypt Response MLE payloads (e.g. .p12 / .pem)
+     *
+     * @var string
+     */
+    protected $responseMlePrivateKeyFilePath = '';
+
+    /**
+     * Private key (in‑memory) used to decrypt Response MLE payloads.
+     * Provide the raw private key string (e.g. PEM / PKCS#8). Mutually exclusive with responseMlePrivateKeyFilePath.
+     *
+     * @var string
+     */
+    protected $responseMlePrivateKey = '';
+
+    /**
+     * Password for the private key file (e.g. .p12 or encrypted .pem) used for Response MLE decryption.
+     * Optional. Required only when the key file is password-protected.
+     *
+     * @var string
+     */
+    protected $responseMlePrivateKeyFilePassword = '';
 
     /**
      * Constructor
@@ -1012,7 +1080,7 @@ class MerchantConfiguration
         $this->enableRequestMLEForOptionalApisGlobally = (bool)$enableRequestMLEForOptionalApisGlobally || (bool)$this->useMLEGlobally;
     }
 
-        /**
+    /**
      * Get the value of disableRequestMLEForMandatoryApisGlobally
      *
      * @return bool
@@ -1033,9 +1101,9 @@ class MerchantConfiguration
     }
 
     /**
-     * Get the value of mapToControlMLEonAPI
+     * Get the value of mapToControlMLEonAPI (raw user-supplied)
      *
-     * @return array<string, bool>
+     * @return array<string,string|bool>
      */
     public function getMapToControlMLEonAPI()
     {
@@ -1043,19 +1111,155 @@ class MerchantConfiguration
     }
 
     /**
-     * Set the value of mapToControlMLEonAPI
+     * Set the value of mapToControlMLEonAPI.
+     * Accepts associative array or stdClass whose values are string|bool.
      *
-     * @param array<string, bool> $mapToControlMLEonAPI
+     * Parsing to internal request/response maps happens immediately.
+     *
+     * @param array<string,string|bool>|object $mapToControlMLEonAPI
+     * @return void
      */
     public function setMapToControlMLEonAPI($mapToControlMLEonAPI)
     {
-        if ($mapToControlMLEonAPI !== null) {
-            if (is_array($mapToControlMLEonAPI) && $this->isAssocArrayOfStringBool($mapToControlMLEonAPI)) {
-                $this->mapToControlMLEonAPI = $mapToControlMLEonAPI;
-            } else {
-                throw new InvalidArgumentException("mapToControlMLEonAPI in merchantConfig must be an array<string, bool> type.");
+        if ($mapToControlMLEonAPI === null) {
+            return;
+        }
+
+        // Allow stdClass (from json_decode without assoc)
+        if (is_object($mapToControlMLEonAPI)) { ////
+            $mapToControlMLEonAPI = get_object_vars($mapToControlMLEonAPI);
+        }
+
+        if (!is_array($mapToControlMLEonAPI)) {
+            throw new InvalidArgumentException("mapToControlMLEonAPI must be an associative array or object.");
+        }
+
+        foreach ($mapToControlMLEonAPI as $k => $v) {///
+            if (!is_string($k)) {
+                throw new InvalidArgumentException("mapToControlMLEonAPI keys must be strings.");
+            }
+            if (!is_string($v) && !is_bool($v)) {
+                throw new InvalidArgumentException("mapToControlMLEonAPI values must be string or bool.");
             }
         }
+
+        $this->mapToControlMLEonAPI = $mapToControlMLEonAPI;
+        $this->parseMapToControlMLEonAPI(); // build internal maps
+    }
+
+    /**
+     * Internal helper: canonical boolean token?
+     * @param string $v
+     * @return bool
+     */
+    private function isBooleanToken($v)///
+    {
+        return $v === 'true' || $v === 'false';
+    }
+
+    /**
+     * Parse one raw entry into request/response booleans.
+     *
+     * @param string|bool $raw
+     * @param bool $defaultRequest
+     * @param bool $defaultResponse
+     * @return array{0:bool,1:bool}
+     */
+    private function parseMleEntry($raw, $defaultRequest, $defaultResponse) ////
+    {
+        // Direct boolean -> request only
+        if (is_bool($raw)) {
+            return [$raw, $defaultResponse];
+        }
+
+        $raw = trim((string)$raw);
+
+        // Plain string true/false (request only)
+        if ($this->isBooleanToken($raw)) {
+            return [$raw === 'true', $defaultResponse];
+        }
+
+        // Pattern with '::'
+        if (strpos($raw, '::') !== false) {
+            $parts = explode('::', $raw);
+            if (count($parts) !== 2) {
+                // Invalid pattern -> defaults
+                if (self::$logger) {
+                    self::$logger->warning("Invalid MLE map value '$raw' (too many separators). Using defaults.");
+                }
+                return [$defaultRequest, $defaultResponse];
+            }
+            $reqPart = trim($parts[0]);
+            $respPart = trim($parts[1]);
+
+            $reqFlag = $defaultRequest;
+            $respFlag = $defaultResponse;
+
+            if ($reqPart !== '') {
+                if ($this->isBooleanToken($reqPart)) {
+                    $reqFlag = ($reqPart === 'true');
+                } else {
+                    if (self::$logger) {
+                        self::$logger->warning("Invalid request MLE token '$reqPart' in '$raw'. Using default.");
+                    }
+                }
+            }
+            if ($respPart !== '') {
+                if ($this->isBooleanToken($respPart)) {
+                    $respFlag = ($respPart === 'true');
+                } else {
+                    if (self::$logger) {
+                        self::$logger->warning("Invalid response MLE token '$respPart' in '$raw'. Using default.");
+                    }
+                }
+            }
+
+            return [$reqFlag, $respFlag];
+        }
+
+        // Unrecognized format -> defaults
+        if (self::$logger) {
+            self::$logger->warning("Unrecognized MLE map value '$raw'. Using defaults.");
+        }
+        return [$defaultRequest, $defaultResponse];
+    }
+
+    /**
+     * Build internal request/response MLE control maps from raw map.
+     *
+     * @return void
+     */
+    private function parseMapToControlMLEonAPI() /////////
+    {
+        $this->internalMapToControlRequestMLEonAPI = [];
+        $this->internalMapToControlResponseMLEonAPI = [];
+
+        $defaultRequest = (bool)$this->enableRequestMLEForOptionalApisGlobally;
+        $defaultResponse = (bool)$this->enableResponseMleGlobally;
+
+        foreach ($this->mapToControlMLEonAPI as $apiFunc => $rawVal) {
+            list($reqFlag, $respFlag) = $this->parseMleEntry($rawVal, $defaultRequest, $defaultResponse);
+            $this->internalMapToControlRequestMLEonAPI[$apiFunc] = $reqFlag;
+            $this->internalMapToControlResponseMLEonAPI[$apiFunc] = $respFlag;
+        }
+    }
+
+    /**
+     * (Optional) expose parsed request MLE map.
+     * @return array<string,bool>
+     */
+    public function getInternalMapToControlRequestMLEonAPI()
+    {
+        return $this->internalMapToControlRequestMLEonAPI;
+    }
+
+    /**
+     * (Optional) expose parsed response MLE map.
+     * @return array<string,bool>
+     */
+    public function getInternalMapToControlResponseMLEonAPI()
+    {
+        return $this->internalMapToControlResponseMLEonAPI;
     }
 
     /**
@@ -1075,6 +1279,90 @@ class MerchantConfiguration
     public function getMleForRequestPublicCertPath()
     {
         return $this->mleForRequestPublicCertPath;
+    }
+
+    /**
+     * Set enableResponseMleGlobally
+     *
+     * @param bool $enableResponseMleGlobally
+     * @return void
+     */
+    public function setEnableResponseMleGlobally($enableResponseMleGlobally)
+    {
+        $this->enableResponseMleGlobally = (bool)$enableResponseMleGlobally;
+    }
+
+    /**
+     * Get enableResponseMleGlobally
+     *
+     * @return bool
+     */
+    public function getEnableResponseMleGlobally()
+    {
+        return $this->enableResponseMleGlobally;
+    }
+
+    /**
+     * Set responseMleKID
+     *
+     * @param string $responseMleKID
+     * @return void
+     */
+    public function setResponseMleKID($responseMleKID)
+    {
+        $this->responseMleKID = is_string($responseMleKID) ? trim($responseMleKID) : '';
+    }
+
+    /**
+     * Get responseMleKID
+     *
+     * @return string
+     */
+    public function getResponseMleKID()
+    {
+        return $this->responseMleKID;
+    }
+
+    /**
+     * Set responseMlePrivateKeyFilePath
+     *
+     * @param string $responseMlePrivateKeyFilePath
+     * @return void
+     */
+    public function setResponseMlePrivateKeyFilePath($responseMlePrivateKeyFilePath)
+    {
+        $this->responseMlePrivateKeyFilePath = is_string($responseMlePrivateKeyFilePath) ? trim($responseMlePrivateKeyFilePath) : '';
+    }
+
+    /**
+     * Get responseMlePrivateKeyFilePath
+     *
+     * @return string
+     */
+    public function getResponseMlePrivateKeyFilePath()
+    {
+        return $this->responseMlePrivateKeyFilePath;
+    }
+
+    public function setResponseMlePrivateKey($responseMlePrivateKey)
+    {
+        // Accept only string; trim. If resource/object passed, ignore for now (simplify).
+        $this->responseMlePrivateKey = is_string($responseMlePrivateKey) ? trim($responseMlePrivateKey) : '';
+    }
+
+    public function getResponseMlePrivateKey()
+    {
+        return $this->responseMlePrivateKey;
+    }
+
+    public function setResponseMlePrivateKeyFilePassword($responseMlePrivateKeyFilePassword)
+    {
+        $this->responseMlePrivateKeyFilePassword = is_string($responseMlePrivateKeyFilePassword) ? $responseMlePrivateKeyFilePassword : '';
+    }
+
+    public function getResponseMlePrivateKeyFilePassword()
+    {
+        return $this->responseMlePrivateKeyFilePassword;
     }
     
     private function isAssocArrayOfStringBool($array) {
@@ -1097,17 +1385,34 @@ class MerchantConfiguration
     }
 
     /**
-     * Set the value of mleKeyAlias
+     * Get requestMleKeyAlias (replacement for mleKeyAlias)
      *
-     * @param string $mleKeyAlias
+     * @return string
      */
-    public function setMleKeyAlias($mleKeyAlias)
+    public function getRequestMleKeyAlias()
     {
-        if (!is_null($mleKeyAlias) & !empty(trim($mleKeyAlias)) ) {
-                $this->mleKeyAlias = $mleKeyAlias;
-        }else{
-            $this->mleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
+        if (!isset($this->requestMleKeyAlias) || empty(trim($this->requestMleKeyAlias))) {
+            $this->requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
         }
+        return $this->requestMleKeyAlias;
+    }
+
+    /**
+     * Set requestMleKeyAlias (preferred new field)
+     *
+     * @param string $requestMleKeyAlias
+     * @return $this
+     */
+    public function setRequestMleKeyAlias($requestMleKeyAlias)
+    {
+        if (!is_null($requestMleKeyAlias) && strlen(trim($requestMleKeyAlias)) > 0) {
+            $this->requestMleKeyAlias = trim($requestMleKeyAlias);
+        } else {
+            $this->requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
+        }
+        // Keep legacy field synchronized for any older code paths.
+        $this->mleKeyAlias = $this->requestMleKeyAlias;
+        return $this;
     }
 
     /**
@@ -1243,6 +1548,30 @@ class MerchantConfiguration
 
         if (isset($connectionDet->mleForRequestPublicCertPath)) {
             $config = $config->setMleForRequestPublicCertPath($connectionDet->mleForRequestPublicCertPath);
+        }
+
+        // Prefer new requestMleKeyAlias; fallback to deprecated mleKeyAlias
+        if (isset($connectionDet->requestMleKeyAlias)) {
+            $config = $config->setRequestMleKeyAlias($connectionDet->requestMleKeyAlias);
+        } elseif (isset($connectionDet->mleKeyAlias)) {
+            $config = $config->setMleKeyAlias($connectionDet->mleKeyAlias);
+        }
+
+        // Response MLE (outbound) new fields
+        if (isset($connectionDet->enableResponseMleGlobally)) {
+            $config = $config->setEnableResponseMleGlobally($connectionDet->enableResponseMleGlobally);
+        }
+        if (isset($connectionDet->responseMleKID)) {
+            $config = $config->setResponseMleKID($connectionDet->responseMleKID);
+        }
+        if (isset($connectionDet->responseMlePrivateKeyFilePath)) {
+            $config = $config->setResponseMlePrivateKeyFilePath($connectionDet->responseMlePrivateKeyFilePath);
+        }
+        if (isset($connectionDet->responseMlePrivateKeyFilePassword)) {
+            $config = $config->setResponseMlePrivateKeyFilePassword($connectionDet->responseMlePrivateKeyFilePassword);
+        }
+        if (isset($connectionDet->responseMlePrivateKey)) {
+            $config = $config->setResponseMlePrivateKey($connectionDet->responseMlePrivateKey);
         }
 
         $config->validateMerchantData();
@@ -1413,16 +1742,17 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-        $requestMleConfigured = $this->enableRequestMLEForOptionalApisGlobally;
-        if ($this->mapToControlMLEonAPI !== null && !empty($this->mapToControlMLEonAPI)) {
-            foreach ($this->mapToControlMLEonAPI as $value) {
-                if ($value) {
-                    $requestMleConfigured = true;
-                    break;
-                }
-            }
+        // Re-parse in case global flags changed since last parse
+        $this->parseMapToControlMLEonAPI();////
+
+        /*
+         * REQUEST MLE VALIDATION
+         */
+        $requestMleConfigured = (bool)$this->enableRequestMLEForOptionalApisGlobally;
+        foreach ($this->internalMapToControlRequestMLEonAPI as $flag) {
+            if ($flag) { $requestMleConfigured = true; break; }
         }
-        // if MLE=true then check for auth Type
+
         if ($requestMleConfigured && strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
             $error_message = GlobalParameter::REQUEST_MLE_AUTH_ERROR;
             $exception = new AuthException($error_message, 0);
@@ -1436,6 +1766,68 @@ class MerchantConfiguration
             // Validate the MLE certificate path
             if (!file_exists($certPath) || !is_readable($certPath) || !is_file($certPath)) {
                 $error_message = "MLE request public certificate file not found or not readable at " . $certPath;
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
+            }
+        }
+
+        /*
+         * RESPONSE (OUTBOUND) MLE VALIDATION
+         * Trigger if global flag OR any per-API response flag is true.
+         */
+        $responseMleConfigured = (bool)$this->enableResponseMleGlobally; ////
+        foreach ($this->internalMapToControlResponseMLEonAPI as $flag) {
+            if ($flag) { $responseMleConfigured = true; break; }
+        }
+
+        if ($responseMleConfigured) {
+            if (strcasecmp($this->authenticationType, GlobalParameter::JWT) !== 0) {
+                $error_message = "Response MLE is only supported for JWT authentication type.";
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
+            }
+
+            $hasFilePath = !empty($this->responseMlePrivateKeyFilePath);
+            $hasInMemoryKey = !empty($this->responseMlePrivateKey);
+
+            if (!$hasFilePath && !$hasInMemoryKey) {
+                $error_message = "Response MLE enabled but neither responseMlePrivateKeyFilePath nor responseMlePrivateKey provided. Provide exactly one.";
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
+            }
+
+            if ($hasFilePath && $hasInMemoryKey) {
+                $error_message = "Both responseMlePrivateKeyFilePath and responseMlePrivateKey supplied. Provide only one.";
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
+            }
+
+            if ($hasFilePath) {
+                if (!file_exists($this->responseMlePrivateKeyFilePath) ||
+                    !is_readable($this->responseMlePrivateKeyFilePath) ||
+                    !is_file($this->responseMlePrivateKeyFilePath)) {
+                    $error_message = "Response MLE private key file not found or not readable at " . $this->responseMlePrivateKeyFilePath;
+                    $exception = new AuthException($error_message, 0);
+                    self::$logger->error($error_message);
+                    throw $exception;
+                }
+                // Password (if any) is optional; no strict validation here.
+            } else {
+                // Basic sanity check for in-memory key: must contain typical PEM header or be non-trivial length.
+                if (strlen($this->responseMlePrivateKey) < 32) {
+                    $error_message = "responseMlePrivateKey appears invalid (too short).";
+                    $exception = new AuthException($error_message, 0);
+                    self::$logger->error($error_message);
+                    throw $exception;
+                }
+            }
+
+            if (empty($this->responseMleKID)) {
+                $error_message = "Response MLE enabled but responseMleKID not provided.";
                 $exception = new AuthException($error_message, 0);
                 self::$logger->error($error_message);
                 throw $exception;
