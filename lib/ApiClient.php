@@ -46,7 +46,7 @@ $stream_headers = array();
 class ApiClient
 {
     private static $logger = null;
-    
+    private static $shareHandle;
     public static $PATCH = "PATCH";
     public static $POST = "POST";
     public static $GET = "GET";
@@ -109,6 +109,11 @@ class ApiClient
         
         if ($merchantConfig === null) {
             echo "Merchant Configuration cannot be null.";
+        }
+
+        if (self::$shareHandle === null) {
+            self::$shareHandle = curl_share_init();
+            curl_share_setopt(self::$shareHandle, CURLSHOPT_SHARE, CURL_LOCK_DATA_CONNECT);
         }
 
         $this->config = $config;
@@ -311,6 +316,8 @@ class ApiClient
         self::$logger->debug("Request Headers :\n" . \CyberSource\Utilities\Helpers\DataMasker::maskAuthenticationData(\CyberSource\Utilities\Helpers\ListHelper::toString($reqHeaders)));
 
         $curl = curl_init();
+
+        curl_setopt($curl, CURLOPT_SHARE, self::$shareHandle);
         // set timeout, if needed
         if ($this->config->getCurlTimeout() !== 0) {
             curl_setopt($curl, CURLOPT_TIMEOUT, $this->config->getCurlTimeout());
@@ -348,6 +355,32 @@ class ApiClient
         if ($this->config->getCurlProxyUser()) {
             curl_setopt($curl, CURLOPT_PROXYUSERPWD, $this->config->getCurlProxyUser() . ':' .$this->config->getCurlProxyPassword());
         }
+
+        if ($this->config->getTlsVersion()) {
+            curl_setopt($curl, CURLOPT_SSLVERSION, $this->config->getTlsVersion());
+        }
+
+        if ($this->config->getTlsCipherList()) {
+            if (
+                defined('CURL_SSLVERSION_TLSv1_3') &&
+                defined('CURLOPT_TLS13_CIPHERS') && 
+                $this->config->getTlsVersion() === CURL_SSLVERSION_TLSv1_3
+            ) {
+                curl_setopt($curl, CURLOPT_TLS13_CIPHERS, $this->config->getTlsCipherList());
+            } else {
+                curl_setopt($curl, CURLOPT_SSL_CIPHER_LIST, $this->config->getTlsCipherList());
+            }
+        }
+
+        // Set maximum age for connection reuse in the connection pool
+        if ($this->config->getKeepAliveTime()) {
+            if (defined('CURLOPT_MAXAGE_CONN')) {
+                curl_setopt($curl, CURLOPT_MAXAGE_CONN, $this->config->getKeepAliveTime());
+            } else {
+                self::$logger->warning("CURLOPT_MAXAGE_CONN is not supported in your cURL version. Keep-alive time setting will be ignored.");
+            }
+        }
+        
 
         if (!empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
