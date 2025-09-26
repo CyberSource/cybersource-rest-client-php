@@ -221,7 +221,7 @@ class ApiClient
      * @throws \CyberSource\ApiException on a non 2xx response
      * @return mixed
      */
-    public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
+    public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null, $isResponseMLEForAPI=false)
     {
         self::$logger->info("CALLING API \"$resourcePath\" STARTED");
         $headers = [];
@@ -258,7 +258,7 @@ class ApiClient
 
         if($this->merchantConfig->getAuthenticationType() != GlobalParameter::MUTUAL_AUTH)
         {
-            $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath);
+            $authHeader = $this->callAuthenticationHeader($method, $postData, $resourcePath, $isResponseMLEForAPI);
         }
 
         $requestHeaders=[];
@@ -487,6 +487,18 @@ class ApiClient
                     $data
                 );
             }
+
+            // Response MLE decryption (if flagged and JWT auth)
+            if ($isResponseMLEForAPI
+                && $this->merchantConfig->getAuthenticationType() === GlobalParameter::JWT
+                && \CyberSource\Authentication\Util\MLEUtility::checkIsMleEncryptedResponse($data)) {
+                try {
+                    $data = \CyberSource\Authentication\Util\MLEUtility::decryptMleResponsePayload($this->merchantConfig, $data);
+                } catch (\Exception $e) {
+                    self::$logger->warning("Response MLE decryption failed: " . $e->getMessage() . " (falling back to raw response)");
+                }
+            }
+
             self::$logger->close();
             return [$data, $response_info['http_code'], $http_header];
         } else {
@@ -623,11 +635,11 @@ class ApiClient
     * Purpose : This function calling the Authentication and making an Auth Header
     *
     */
-    public function callAuthenticationHeader($method, $postData, $resourcePath)
+    public function callAuthenticationHeader($method, $postData, $resourcePath, $isResponseMLEForAPI)
     {
         $merchantConfig = $this->merchantConfig;
         $authentication = new Authentication($merchantConfig->getLogConfiguration());
-        $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig); 
+        $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig, $isResponseMLEForAPI); 
         if($merchantConfig->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE){
             $host = "Host:".$merchantConfig->getHost();
             $vcMerchant = "v-c-merchant-id:".$merchantConfig->getMerchantID();

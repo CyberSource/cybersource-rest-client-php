@@ -59,6 +59,36 @@ class MLEUtility
         return $isMLEForAPI;
     }
 
+    public static function checkIsResponseMLEForAPI($merchantConfig, $operationIds)
+    {
+        // default false
+        $isResponseMLEForAPI = false;
+
+        // Global flag
+        if (method_exists($merchantConfig, 'getEnableResponseMleGlobally') &&
+            $merchantConfig->getEnableResponseMleGlobally()) {
+            $isResponseMLEForAPI = true;
+        }
+
+        // Multiple operation ids (e.g., apiCall, apiCallAsync)
+        $operationArray = array_map('trim', explode(',', (string)$operationIds));
+
+        // Per-operation override map (internal response map)
+        if (method_exists($merchantConfig, 'getInternalMapToControlResponseMLEonAPI')) {
+            $map = $merchantConfig->getInternalMapToControlResponseMLEonAPI();
+            if (is_array($map) && !empty($map)) {
+                foreach ($operationArray as $operationId) {
+                    if (array_key_exists($operationId, $map)) {
+                        $isResponseMLEForAPI = (bool)$map[$operationId]; //check
+                        break;
+                    }
+                }
+            }
+        }
+
+        return $isResponseMLEForAPI;
+    }
+
     public static function encryptRequestPayload($merchantConfig, $requestBody)
     {
         if ($requestBody === null || $requestBody === '') {
@@ -89,6 +119,45 @@ class MLEUtility
 
         self::$logger->debug("Request after MLE:\n" . print_r($mleRequest, true));
         return $mleRequest;
+    }
+
+    public static function checkIsMleEncryptedResponse($responseBody)
+    {
+        if ($responseBody === null) { return false; }
+        $trim = trim($responseBody);
+        if ($trim === '' || $trim[0] !== '{') { return false; }
+        try {
+            $decoded = json_decode($responseBody, true);
+            if (!is_array($decoded)) { return false; }
+            if (count($decoded) !== 1) { return false; }
+            return array_key_exists('encryptedResponse', $decoded) && is_string($decoded['encryptedResponse']);
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
+    {
+        if (!self::checkIsMleEncryptedResponse($mleResponseBody)) {
+            throw new MLEException("Response body is not MLE encrypted.");
+        }
+        $jweToken = self::getResponseMleToken($mleResponseBody);
+        if (empty($jweToken)) {
+            return $mleResponseBody;
+        }
+        $privateKey = self::getMleResponsePrivateKey($merchantConfig);
+        if (empty($privateKey)) {
+            throw new MLEException("Response MLE private key not available for decryption.");
+        }
+        try {
+            $decrypted = \CyberSource\Authentication\Util\JWE\JWEUtility::decryptJWEUsingPrivateKey($privateKey, $jweToken);
+            if ($decrypted === null) {
+                throw new MLEException("Failed to decrypt MLE response payload.");
+            }
+            return $decrypted;
+        } catch (\Exception $e) {
+            throw new MLEException("MLE Response decryption error: " . $e->getMessage());
+        }
     }
 
     private static function generateToken($cert, $requestBody)
@@ -138,6 +207,24 @@ class MLEUtility
             self::$logger->error("Error encrypting request payload: " . $e->getMessage());
             throw new MLEException("Error encrypting request payload: " . $e->getMessage());
         }
+    }
+
+    private static function getResponseMleToken($mleResponseBody)
+    {
+        try {
+            $decoded = json_decode($mleResponseBody, true);
+            return $decoded['encryptedResponse'] ?? null;
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    private static function getMleResponsePrivateKey($merchantConfig)
+    {
+        if (!isset(self::$cache)) {
+            self::$cache = new Cache();
+        }
+        return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
     }
 
     public static function getMLECert($merchantConfig)

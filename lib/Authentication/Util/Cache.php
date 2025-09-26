@@ -299,4 +299,47 @@ class Cache
             // throw new MLEException("Error validating certificate expiry: " . $e->getMessage());
         } 
     }
+
+    public function getMleResponsePrivateKeyFromFilePath($merchantConfig) ///check
+    {
+        $merchantId = $merchantConfig->getMerchantID();
+        $filePath   = $merchantConfig->getResponseMlePrivateKeyFilePath();
+        if (empty($filePath) || !file_exists($filePath)) {
+            self::$logger->debug("Response MLE private key file not found: " . $filePath);
+            return null;
+        }
+        $cacheKey = $merchantId . GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY;
+        $modTime  = filemtime($filePath);
+
+        if (!isset(self::$file_cache[$cacheKey]) || self::$file_cache[$cacheKey]['file_mod_time'] !== $modTime) {
+            $privateKey = null;
+            $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+            try {
+                if (in_array($ext, ['p12','pfx'])) {
+                    $pkcs12 = file_get_contents($filePath);
+                    $certs = [];
+                    $pwd = $merchantConfig->getResponseMlePrivateKeyFilePassword();
+                    if (!openssl_pkcs12_read($pkcs12, $certs, $pwd)) {
+                        throw new \Exception("Unable to read p12/pfx private key (bad password or corrupt file).");
+                    }
+                    $privateKey = $certs['pkey'] ?? null;
+                } else {
+                    // pem / key / p8 assumed to contain a private key block
+                    $privateKey = file_get_contents($filePath);
+                }
+            } catch (\Exception $e) {
+                self::$logger->error("Failed loading Response MLE private key: " . $e->getMessage());
+                return null;
+            }
+            if (empty($privateKey)) {
+                self::$logger->error("Empty Response MLE private key after loading: " . $filePath);
+                return null;
+            }
+            self::$file_cache[$cacheKey] = [
+                'response_mle_private_key' => $privateKey,
+                'file_mod_time' => $modTime
+            ];
+        }
+        return self::$file_cache[$cacheKey]['response_mle_private_key'];
+    }
 }

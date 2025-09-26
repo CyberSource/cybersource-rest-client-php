@@ -314,7 +314,7 @@ class PaymentsApi
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
             }
         }
-
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createPayment,createPaymentWithHttpInfo");
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
@@ -338,7 +338,8 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsPost201Response',
-                '/pts/v2/payments'
+                '/pts/v2/payments',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
