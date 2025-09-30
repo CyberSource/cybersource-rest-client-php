@@ -1,5 +1,41 @@
 #!/bin/bash
 
+# Check for required dependencies
+MISSING_DEPS=()
+
+if ! command -v python &> /dev/null; then
+    MISSING_DEPS+=("python")
+fi
+
+if ! command -v pwsh &> /dev/null; then
+    MISSING_DEPS+=("powershell")
+fi
+
+if ! command -v java &> /dev/null; then
+    MISSING_DEPS+=("java")
+fi
+
+# If any dependencies are missing, report and exit
+if [ ${#MISSING_DEPS[@]} -gt 0 ]; then
+    echo "Error: Missing required dependencies: ${MISSING_DEPS[*]}"
+    echo ""
+    echo "Please install the missing dependencies using Homebrew or your package manager of choice:"
+    for dep in "${MISSING_DEPS[@]}"; do
+        case $dep in
+            python)
+                echo "  brew install python"
+                ;;
+            powershell)
+                echo "  brew install --cask powershell"
+                ;;
+            java)
+                echo "  brew install openjdk"
+                ;;
+        esac
+    done
+    exit 1
+fi
+
 # Remove directories
 rm -rf ../lib/Api
 rm -rf ../lib/Model
