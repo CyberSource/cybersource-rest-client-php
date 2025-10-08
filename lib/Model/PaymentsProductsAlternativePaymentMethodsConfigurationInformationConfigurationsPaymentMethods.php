@@ -59,6 +59,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
         'redirectSuccessUrl' => 'string',
         'redirectCancelUrl' => 'string',
         'redirectFailureUrl' => 'string',
+        'underwriting' => '\CyberSource\Model\UnderwritingConfiguration',
         'additionalConfigurations' => '\CyberSource\Model\PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigurationsAdditionalConfigurations[]'
     ];
 
@@ -72,6 +73,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
         'redirectSuccessUrl' => null,
         'redirectCancelUrl' => null,
         'redirectFailureUrl' => null,
+        'underwriting' => null,
         'additionalConfigurations' => null
     ];
 
@@ -95,6 +97,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
         'redirectSuccessUrl' => 'redirectSuccessUrl',
         'redirectCancelUrl' => 'redirectCancelUrl',
         'redirectFailureUrl' => 'redirectFailureUrl',
+        'underwriting' => 'underwriting',
         'additionalConfigurations' => 'additionalConfigurations'
     ];
 
@@ -109,6 +112,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
         'redirectSuccessUrl' => 'setRedirectSuccessUrl',
         'redirectCancelUrl' => 'setRedirectCancelUrl',
         'redirectFailureUrl' => 'setRedirectFailureUrl',
+        'underwriting' => 'setUnderwriting',
         'additionalConfigurations' => 'setAdditionalConfigurations'
     ];
 
@@ -123,6 +127,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
         'redirectSuccessUrl' => 'getRedirectSuccessUrl',
         'redirectCancelUrl' => 'getRedirectCancelUrl',
         'redirectFailureUrl' => 'getRedirectFailureUrl',
+        'underwriting' => 'getUnderwriting',
         'additionalConfigurations' => 'getAdditionalConfigurations'
     ];
 
@@ -162,6 +167,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
         $this->container['redirectSuccessUrl'] = isset($data['redirectSuccessUrl']) ? $data['redirectSuccessUrl'] : null;
         $this->container['redirectCancelUrl'] = isset($data['redirectCancelUrl']) ? $data['redirectCancelUrl'] : null;
         $this->container['redirectFailureUrl'] = isset($data['redirectFailureUrl']) ? $data['redirectFailureUrl'] : null;
+        $this->container['underwriting'] = isset($data['underwriting']) ? $data['underwriting'] : null;
         $this->container['additionalConfigurations'] = isset($data['additionalConfigurations']) ? $data['additionalConfigurations'] : null;
     }
 
@@ -291,6 +297,27 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
     public function setRedirectFailureUrl($redirectFailureUrl)
     {
         $this->container['redirectFailureUrl'] = $redirectFailureUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets underwriting
+     * @return \CyberSource\Model\UnderwritingConfiguration
+     */
+    public function getUnderwriting()
+    {
+        return $this->container['underwriting'];
+    }
+
+    /**
+     * Sets underwriting
+     * @param \CyberSource\Model\UnderwritingConfiguration $underwriting
+     * @return $this
+     */
+    public function setUnderwriting($underwriting)
+    {
+        $this->container['underwriting'] = $underwriting;
 
         return $this;
     }

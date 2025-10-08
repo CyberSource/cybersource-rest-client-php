@@ -62,7 +62,7 @@ class PaymentsProductsCurrencyConversionConfigurationInformation implements Arra
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'templateId' => 'uuid',
+        'templateId' => null,
         'configurations' => null
     ];
 

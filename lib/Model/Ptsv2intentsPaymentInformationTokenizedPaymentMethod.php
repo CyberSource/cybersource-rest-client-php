@@ -56,7 +56,7 @@ class Ptsv2intentsPaymentInformationTokenizedPaymentMethod implements ArrayAcces
         'description' => 'string',
         'usagePattern' => 'string',
         'usageType' => 'string',
-        'allowMultipleTokens' => 'bool'
+        'allowMultipleTokens' => 'string'
     ];
 
     /**
@@ -242,7 +242,7 @@ class Ptsv2intentsPaymentInformationTokenizedPaymentMethod implements ArrayAcces
 
     /**
      * Gets allowMultipleTokens
-     * @return bool
+     * @return string
      */
     public function getAllowMultipleTokens()
     {
@@ -251,7 +251,7 @@ class Ptsv2intentsPaymentInformationTokenizedPaymentMethod implements ArrayAcces
 
     /**
      * Sets allowMultipleTokens
-     * @param bool $allowMultipleTokens Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account.
+     * @param string $allowMultipleTokens Create multiple payment tokens for the same payer, merchant/platform combination. This helps to identify customers distinctly even though they may share the same PayPal account.
      * @return $this
      */
     public function setAllowMultipleTokens($allowMultipleTokens)

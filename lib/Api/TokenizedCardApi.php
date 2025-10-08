@@ -389,6 +389,163 @@ class TokenizedCardApi
     }
 
     /**
+     * Operation postIssuerLifeCycleSimulation
+     *
+     * Simulate Issuer Life Cycle Management Events
+     *
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (required)
+     * @param string $tokenizedCardId The Id of a tokenized card. (required)
+     * @param \CyberSource\Model\PostIssuerLifeCycleSimulationRequest $postIssuerLifeCycleSimulationRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postIssuerLifeCycleSimulation($profileId, $tokenizedCardId, $postIssuerLifeCycleSimulationRequest)
+    {
+        self::$logger->info('CALL TO METHOD postIssuerLifeCycleSimulation STARTED');
+        list($response, $statusCode, $httpHeader) = $this->postIssuerLifeCycleSimulationWithHttpInfo($profileId, $tokenizedCardId, $postIssuerLifeCycleSimulationRequest);
+        self::$logger->info('CALL TO METHOD postIssuerLifeCycleSimulation ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation postIssuerLifeCycleSimulationWithHttpInfo
+     *
+     * Simulate Issuer Life Cycle Management Events
+     *
+     * @param string $profileId The Id of a profile containing user specific TMS configuration. (required)
+     * @param string $tokenizedCardId The Id of a tokenized card. (required)
+     * @param \CyberSource\Model\PostIssuerLifeCycleSimulationRequest $postIssuerLifeCycleSimulationRequest  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postIssuerLifeCycleSimulationWithHttpInfo($profileId, $tokenizedCardId, $postIssuerLifeCycleSimulationRequest)
+    {
+        // verify the required parameter 'profileId' is set
+        if ($profileId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $profileId when calling postIssuerLifeCycleSimulation");
+            throw new \InvalidArgumentException('Missing the required parameter $profileId when calling postIssuerLifeCycleSimulation');
+        }
+        // verify the required parameter 'tokenizedCardId' is set
+        if ($tokenizedCardId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $tokenizedCardId when calling postIssuerLifeCycleSimulation");
+            throw new \InvalidArgumentException('Missing the required parameter $tokenizedCardId when calling postIssuerLifeCycleSimulation');
+        }
+        // verify the required parameter 'postIssuerLifeCycleSimulationRequest' is set
+        if ($postIssuerLifeCycleSimulationRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $postIssuerLifeCycleSimulationRequest when calling postIssuerLifeCycleSimulation");
+            throw new \InvalidArgumentException('Missing the required parameter $postIssuerLifeCycleSimulationRequest when calling postIssuerLifeCycleSimulation');
+        }
+        // parse inputs
+        $resourcePath = "/tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // header params
+        if ($profileId !== null) {
+            $headerParams['profile-id'] = $this->apiClient->getSerializer()->toHeaderValue($profileId);
+        }
+        // path params
+        if ($tokenizedCardId !== null) {
+            $resourcePath = str_replace(
+                "{" . "tokenizedCardId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($tokenizedCardId),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($postIssuerLifeCycleSimulationRequest)) {
+            $_tempBody = $postIssuerLifeCycleSimulationRequest;
+        }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $modelClassLocation = explode('\\', '\CyberSource\Model\PostIssuerLifeCycleSimulationRequest');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
+
+        // for model (json/xml)
+        if (isset($_tempBody) and count($formParams) <= 0) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
+        }
+
+        //MLE check and mle encryption for req body
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "postIssuerLifeCycleSimulation,postIssuerLifeCycleSimulationWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody) and count($formParams) <= 0) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/tms/v2/tokenized-cards/{tokenizedCardId}/issuer-life-cycle-event-simulations'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$response, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse403', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse424', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse500', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
      * Operation postTokenizedCard
      *
      * Create a Tokenized Card

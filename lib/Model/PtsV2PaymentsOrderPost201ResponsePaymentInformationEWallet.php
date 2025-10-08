@@ -251,7 +251,7 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformationEWallet implements Arra
 
     /**
      * Sets userName
-     * @param string $userName The Venmo user name chosen by the user, also know as a Venmo handle.
+     * @param string $userName The Venmo user name chosen by the user, also known as a Venmo handle.
      * @return $this
      */
     public function setUserName($userName)

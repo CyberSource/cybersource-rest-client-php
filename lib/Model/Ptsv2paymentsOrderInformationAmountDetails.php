@@ -53,6 +53,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'refundBalance' => 'string',
         'giftWrapAmount' => 'string',
         'invoiceAmount' => 'string',
         'totalAmount' => 'string',
@@ -91,6 +92,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'refundBalance' => null,
         'giftWrapAmount' => null,
         'invoiceAmount' => null,
         'totalAmount' => null,
@@ -139,6 +141,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'refundBalance' => 'refundBalance',
         'giftWrapAmount' => 'giftWrapAmount',
         'invoiceAmount' => 'invoiceAmount',
         'totalAmount' => 'totalAmount',
@@ -178,6 +181,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'refundBalance' => 'setRefundBalance',
         'giftWrapAmount' => 'setGiftWrapAmount',
         'invoiceAmount' => 'setInvoiceAmount',
         'totalAmount' => 'setTotalAmount',
@@ -217,6 +221,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'refundBalance' => 'getRefundBalance',
         'giftWrapAmount' => 'getGiftWrapAmount',
         'invoiceAmount' => 'getInvoiceAmount',
         'totalAmount' => 'getTotalAmount',
@@ -281,6 +286,7 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['refundBalance'] = isset($data['refundBalance']) ? $data['refundBalance'] : null;
         $this->container['giftWrapAmount'] = isset($data['giftWrapAmount']) ? $data['giftWrapAmount'] : null;
         $this->container['invoiceAmount'] = isset($data['invoiceAmount']) ? $data['invoiceAmount'] : null;
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
@@ -338,6 +344,27 @@ class Ptsv2paymentsOrderInformationAmountDetails implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets refundBalance
+     * @return string
+     */
+    public function getRefundBalance()
+    {
+        return $this->container['refundBalance'];
+    }
+
+    /**
+     * Sets refundBalance
+     * @param string $refundBalance The remaining amount which can be refunded.
+     * @return $this
+     */
+    public function setRefundBalance($refundBalance)
+    {
+        $this->container['refundBalance'] = $refundBalance;
+
+        return $this;
+    }
 
     /**
      * Gets giftWrapAmount

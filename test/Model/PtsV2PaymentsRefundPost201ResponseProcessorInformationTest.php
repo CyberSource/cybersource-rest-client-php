@@ -138,4 +138,11 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationTest extends \PHPUni
     public function testPropertyUpdateTimeUtc()
     {
     }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
 }

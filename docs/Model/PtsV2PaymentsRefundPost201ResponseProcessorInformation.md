@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **networkTransactionId** | **string** | Same value as &#x60;processorInformation.transactionId&#x60; | [optional] 
 **settlementDate** | **string** | Field contains a settlement date. The date is in mmdd format, where: mm &#x3D; month and dd &#x3D; day. | [optional] 
 **updateTimeUtc** | **string** | The date and time when the transaction was last updated, in Internet date and time format. | [optional] 
+**network** | [**\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork**](Ptsv2paymentsProcessorInformationReversalNetwork.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

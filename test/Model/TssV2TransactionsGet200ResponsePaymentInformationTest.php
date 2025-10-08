@@ -84,6 +84,13 @@ class TssV2TransactionsGet200ResponsePaymentInformationTest extends \PHPUnit_Fra
     }
 
     /**
+     * Test attribute "eWallet"
+     */
+    public function testPropertyEWallet()
+    {
+    }
+
+    /**
      * Test attribute "customer"
      */
     public function testPropertyCustomer()

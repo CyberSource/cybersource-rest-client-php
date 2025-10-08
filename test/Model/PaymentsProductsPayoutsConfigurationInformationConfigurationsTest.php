@@ -77,16 +77,16 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurationsTest extends 
     }
 
     /**
-     * Test attribute "pullfunds"
+     * Test attribute "common"
      */
-    public function testPropertyPullfunds()
+    public function testPropertyCommon()
     {
     }
 
     /**
-     * Test attribute "pushfunds"
+     * Test attribute "processors"
      */
-    public function testPropertyPushfunds()
+    public function testPropertyProcessors()
     {
     }
 }

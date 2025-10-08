@@ -82,4 +82,11 @@ class Ptsv2paymentsidProcessingInformationTest extends \PHPUnit_Framework_TestCa
     public function testPropertyAuthorizationOptions()
     {
     }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
 }

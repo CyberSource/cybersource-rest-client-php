@@ -62,7 +62,7 @@ class PaymentsProductsECheckConfigurationInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'templateId' => 'uuid',
+        'templateId' => null,
         'configurations' => null
     ];
 

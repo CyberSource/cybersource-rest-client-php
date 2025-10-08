@@ -53,7 +53,7 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails impleme
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'level3TransmissionStatus' => 'bool'
+        'level3TransmissionStatus' => 'string'
     ];
 
     /**
@@ -161,7 +161,7 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails impleme
 
     /**
      * Gets level3TransmissionStatus
-     * @return bool
+     * @return string
      */
     public function getLevel3TransmissionStatus()
     {
@@ -170,7 +170,7 @@ class PtsV2PaymentsCapturesPost201ResponseOrderInformationInvoiceDetails impleme
 
     /**
      * Sets level3TransmissionStatus
-     * @param bool $level3TransmissionStatus Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **true** - **false**
+     * @param string $level3TransmissionStatus Indicates whether CyberSource sent the Level III information to the processor. The possible values are:  If your account is not enabled for Level III data or if you did not include the purchasing level field in your request, CyberSource does not include the Level III data in the request sent to the processor.  Possible values: - **Y** for true - **N** for false
      * @return $this
      */
     public function setLevel3TransmissionStatus($level3TransmissionStatus)

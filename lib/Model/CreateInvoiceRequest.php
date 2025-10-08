@@ -57,7 +57,8 @@ class CreateInvoiceRequest implements ArrayAccess
         'customerInformation' => '\CyberSource\Model\Invoicingv2invoicesCustomerInformation',
         'processingInformation' => '\CyberSource\Model\Invoicingv2invoicesProcessingInformation',
         'invoiceInformation' => '\CyberSource\Model\Invoicingv2invoicesInvoiceInformation',
-        'orderInformation' => '\CyberSource\Model\Invoicingv2invoicesOrderInformation'
+        'orderInformation' => '\CyberSource\Model\Invoicingv2invoicesOrderInformation',
+        'merchantDefinedFieldValues' => '\CyberSource\Model\Invoicingv2invoicesMerchantDefinedFieldValues[]'
     ];
 
     /**
@@ -69,7 +70,8 @@ class CreateInvoiceRequest implements ArrayAccess
         'customerInformation' => null,
         'processingInformation' => null,
         'invoiceInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'merchantDefinedFieldValues' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class CreateInvoiceRequest implements ArrayAccess
         'customerInformation' => 'customerInformation',
         'processingInformation' => 'processingInformation',
         'invoiceInformation' => 'invoiceInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'merchantDefinedFieldValues' => 'merchantDefinedFieldValues'
     ];
 
 
@@ -104,7 +107,8 @@ class CreateInvoiceRequest implements ArrayAccess
         'customerInformation' => 'setCustomerInformation',
         'processingInformation' => 'setProcessingInformation',
         'invoiceInformation' => 'setInvoiceInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'merchantDefinedFieldValues' => 'setMerchantDefinedFieldValues'
     ];
 
 
@@ -117,7 +121,8 @@ class CreateInvoiceRequest implements ArrayAccess
         'customerInformation' => 'getCustomerInformation',
         'processingInformation' => 'getProcessingInformation',
         'invoiceInformation' => 'getInvoiceInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'merchantDefinedFieldValues' => 'getMerchantDefinedFieldValues'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class CreateInvoiceRequest implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['merchantDefinedFieldValues'] = isset($data['merchantDefinedFieldValues']) ? $data['merchantDefinedFieldValues'] : null;
     }
 
     /**
@@ -296,6 +302,27 @@ class CreateInvoiceRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDefinedFieldValues
+     * @return \CyberSource\Model\Invoicingv2invoicesMerchantDefinedFieldValues[]
+     */
+    public function getMerchantDefinedFieldValues()
+    {
+        return $this->container['merchantDefinedFieldValues'];
+    }
+
+    /**
+     * Sets merchantDefinedFieldValues
+     * @param \CyberSource\Model\Invoicingv2invoicesMerchantDefinedFieldValues[] $merchantDefinedFieldValues
+     * @return $this
+     */
+    public function setMerchantDefinedFieldValues($merchantDefinedFieldValues)
+    {
+        $this->container['merchantDefinedFieldValues'] = $merchantDefinedFieldValues;
 
         return $this;
     }

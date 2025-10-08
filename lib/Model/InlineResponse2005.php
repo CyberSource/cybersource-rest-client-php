@@ -64,7 +64,6 @@ class InlineResponse2005 implements ArrayAccess
         'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy',
         'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy',
         'createdOn' => 'string',
-        'updatedOn' => 'string',
         'notificationScope' => 'string'
     ];
 
@@ -84,7 +83,6 @@ class InlineResponse2005 implements ArrayAccess
         'retryPolicy' => null,
         'securityPolicy' => null,
         'createdOn' => null,
-        'updatedOn' => null,
         'notificationScope' => null
     ];
 
@@ -114,7 +112,6 @@ class InlineResponse2005 implements ArrayAccess
         'retryPolicy' => 'retryPolicy',
         'securityPolicy' => 'securityPolicy',
         'createdOn' => 'createdOn',
-        'updatedOn' => 'updatedOn',
         'notificationScope' => 'notificationScope'
     ];
 
@@ -135,7 +132,6 @@ class InlineResponse2005 implements ArrayAccess
         'retryPolicy' => 'setRetryPolicy',
         'securityPolicy' => 'setSecurityPolicy',
         'createdOn' => 'setCreatedOn',
-        'updatedOn' => 'setUpdatedOn',
         'notificationScope' => 'setNotificationScope'
     ];
 
@@ -156,7 +152,6 @@ class InlineResponse2005 implements ArrayAccess
         'retryPolicy' => 'getRetryPolicy',
         'securityPolicy' => 'getSecurityPolicy',
         'createdOn' => 'getCreatedOn',
-        'updatedOn' => 'getUpdatedOn',
         'notificationScope' => 'getNotificationScope'
     ];
 
@@ -202,7 +197,6 @@ class InlineResponse2005 implements ArrayAccess
         $this->container['retryPolicy'] = isset($data['retryPolicy']) ? $data['retryPolicy'] : null;
         $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
         $this->container['createdOn'] = isset($data['createdOn']) ? $data['createdOn'] : null;
-        $this->container['updatedOn'] = isset($data['updatedOn']) ? $data['updatedOn'] : null;
         $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : 'DESCENDANTS';
     }
 
@@ -458,27 +452,6 @@ class InlineResponse2005 implements ArrayAccess
     public function setCreatedOn($createdOn)
     {
         $this->container['createdOn'] = $createdOn;
-
-        return $this;
-    }
-
-    /**
-     * Gets updatedOn
-     * @return string
-     */
-    public function getUpdatedOn()
-    {
-        return $this->container['updatedOn'];
-    }
-
-    /**
-     * Sets updatedOn
-     * @param string $updatedOn Date on which webhook was most recently updated.
-     * @return $this
-     */
-    public function setUpdatedOn($updatedOn)
-    {
-        $this->container['updatedOn'] = $updatedOn;
 
         return $this;
     }

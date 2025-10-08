@@ -500,7 +500,7 @@ class InlineResponse2012PayoutInformationPushFunds implements ArrayAccess
 
     /**
      * Sets domesticParticipant
-     * @param string $domesticParticipant This field indicates if domestic OCTs (push funds) are allowed. Note: Supported only in US for domestic transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false`
+     * @param string $domesticParticipant This field indicates if domestic OCTs (push funds) are allowed. Possible values:   - `true`   - `false`
      * @return $this
      */
     public function setDomesticParticipant($domesticParticipant)
@@ -521,7 +521,7 @@ class InlineResponse2012PayoutInformationPushFunds implements ArrayAccess
 
     /**
      * Sets crossBorderParticipant
-     * @param string $crossBorderParticipant This field indicates if cross-border OCTs (push funds) are allowed. Note: Supported only in US for cross-border transactions involving Push Payments Gateway Service(PPGS). Possible values:   - `true`   - `false`
+     * @param string $crossBorderParticipant This field indicates if cross-border OCTs (push funds) are allowed. Possible values:   - `true`   - `false`
      * @return $this
      */
     public function setCrossBorderParticipant($crossBorderParticipant)

@@ -53,7 +53,8 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsidProcessingInformationAuthorizationOptions'
+        'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsidProcessingInformationAuthorizationOptions',
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
     ];
 
     /**
@@ -61,7 +62,8 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'authorizationOptions' => null
+        'authorizationOptions' => null,
+        'network' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'authorizationOptions' => 'authorizationOptions'
+        'authorizationOptions' => 'authorizationOptions',
+        'network' => 'network'
     ];
 
 
@@ -88,7 +91,8 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'authorizationOptions' => 'setAuthorizationOptions'
+        'authorizationOptions' => 'setAuthorizationOptions',
+        'network' => 'setNetwork'
     ];
 
 
@@ -97,7 +101,8 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'authorizationOptions' => 'getAuthorizationOptions'
+        'authorizationOptions' => 'getAuthorizationOptions',
+        'network' => 'getNetwork'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class Ptsv2paymentsidProcessingInformation implements ArrayAccess
     public function setAuthorizationOptions($authorizationOptions)
     {
         $this->container['authorizationOptions'] = $authorizationOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork $network
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
 
         return $this;
     }

@@ -103,7 +103,7 @@ class DeviceSearchApi
      *
      * @param \CyberSource\Model\PostDeviceSearchRequest $postDeviceSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function postSearchQuery($postDeviceSearchRequest)
     {
@@ -121,7 +121,7 @@ class DeviceSearchApi
      *
      * @param \CyberSource\Model\PostDeviceSearchRequest $postDeviceSearchRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function postSearchQueryWithHttpInfo($postDeviceSearchRequest)
     {
@@ -186,7 +186,7 @@ class DeviceSearchApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2006");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2007");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -195,17 +195,17 @@ class DeviceSearchApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2006',
+                '\CyberSource\Model\InlineResponse2007',
                 '/dms/v2/devices/search'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2007', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -221,7 +221,7 @@ class DeviceSearchApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4043', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4044', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
@@ -242,7 +242,7 @@ class DeviceSearchApi
      *
      * @param \CyberSource\Model\PostDeviceSearchRequestV3 $postDeviceSearchRequestV3  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
      */
     public function postSearchQueryV3($postDeviceSearchRequestV3)
     {
@@ -260,7 +260,7 @@ class DeviceSearchApi
      *
      * @param \CyberSource\Model\PostDeviceSearchRequestV3 $postDeviceSearchRequestV3  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
      */
     public function postSearchQueryV3WithHttpInfo($postDeviceSearchRequestV3)
     {
@@ -325,7 +325,7 @@ class DeviceSearchApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2008");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2009");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -334,17 +334,17 @@ class DeviceSearchApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2008',
+                '\CyberSource\Model\InlineResponse2009',
                 '/dms/v3/devices/search'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2009', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2008', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2009', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -360,7 +360,7 @@ class DeviceSearchApi
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4043', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4044', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
