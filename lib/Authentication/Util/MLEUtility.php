@@ -16,6 +16,7 @@ use Jose\Component\Encryption\Algorithm\ContentEncryption\A256GCM;
 use Jose\Component\Encryption\Compression\CompressionMethodManager;
 use Jose\Component\Encryption\Compression\Deflate;
 use CyberSource\Authentication\Util\MLEException;
+use \CyberSource\Authentication\Util\JWE\JWEUtility;
 
 /*
 Purpose : MLE encryption for request body
@@ -85,6 +86,7 @@ class MLEUtility
                 }
             }
         }
+        echo "[MLE] Response MLE decision for operations [" . implode(',', $operationArray) . "]: " . ($isResponseMLEForAPI ? "true" : "false") . "\n";
 
         return $isResponseMLEForAPI;
     }
@@ -123,6 +125,7 @@ class MLEUtility
 
     public static function checkIsMleEncryptedResponse($responseBody)
     {
+        echo " m here 2.\n";
         if ($responseBody === null) { return false; }
         $trim = trim($responseBody);
         if ($trim === '' || $trim[0] !== '{') { return false; }
@@ -134,26 +137,31 @@ class MLEUtility
         } catch (\Exception $e) {
             return false;
         }
-    }
-
-    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
+    }    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
     {
+        echo "[MLE][Decrypt] Enter decryptMleResponsePayload()\n";
+
         if (!self::checkIsMleEncryptedResponse($mleResponseBody)) {
             throw new MLEException("Response body is not MLE encrypted.");
         }
         $jweToken = self::getResponseMleToken($mleResponseBody);
         if (empty($jweToken)) {
+            echo "[MLE][Decrypt] JWE token missing in encryptedResponse wrapper.\n";
             return $mleResponseBody;
         }
         $privateKey = self::getMleResponsePrivateKey($merchantConfig);
         if (empty($privateKey)) {
+            echo "[MLE][Decrypt] Private key unavailable for decryption.\n";
             throw new MLEException("Response MLE private key not available for decryption.");
         }
+        echo "[MLE][Decrypt] Loaded private key (" . strlen($privateKey) . " bytes).\n";        // Cache already handles password decryption and returns unencrypted PEM
+        // No password needed for JWE decryption since key is already decrypted
         try {
-            $decrypted = \CyberSource\Authentication\Util\JWE\JWEUtility::decryptJWEUsingPrivateKey($privateKey, $jweToken);
+            $decrypted = JWEUtility::decryptJWEUsingPrivateKey($privateKey, $jweToken);
             if ($decrypted === null) {
                 throw new MLEException("Failed to decrypt MLE response payload.");
             }
+            echo "[MLE][Decrypt] Decryption successful. Decrypted payload length: " . strlen($decrypted) . "\n";
             return $decrypted;
         } catch (\Exception $e) {
             throw new MLEException("MLE Response decryption error: " . $e->getMessage());
@@ -211,6 +219,7 @@ class MLEUtility
 
     private static function getResponseMleToken($mleResponseBody)
     {
+        echo " m here 1.\n";
         try {
             $decoded = json_decode($mleResponseBody, true);
             return $decoded['encryptedResponse'] ?? null;
@@ -221,10 +230,28 @@ class MLEUtility
 
     private static function getMleResponsePrivateKey($merchantConfig)
     {
-        if (!isset(self::$cache)) {
+        // if (null != $merchantConfig->getResponseMlePrivateKey()) {
+        //     echo "[MLE] Using inline response private key.\n";
+        //     return $merchantConfig->getResponseMlePrivateKey();
+        // }
+
+        if (!isset(self::$cache)) { //check static n multithreading
+            echo "[MLE] Creating Cache instance for response private key.\n";
+
             self::$cache = new Cache();
         }
-        return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
+        // self::$cache::clearAllFileCache();
+        // echo "[MLE] Cleared all file cache.\n";
+        $key = self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
+
+        if ($key) {
+            echo "[MLE] Loaded response private key from file/cache.\n";
+        } else {
+            echo "[MLE] Failed to load response private key from file/cache.\n";
+        }
+
+        return $key;
+        // return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
     }
 
     public static function getMLECert($merchantConfig)

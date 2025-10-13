@@ -328,13 +328,13 @@ class MerchantConfiguration
      */
     protected $responseMlePrivateKeyFilePath = '';
 
-    /**
-     * Private key (in‑memory) used to decrypt Response MLE payloads.
-     * Provide the raw private key string (e.g. PEM / PKCS#8). Mutually exclusive with responseMlePrivateKeyFilePath.
-     *
-     * @var string
-     */
-    protected $responseMlePrivateKey = '';
+    // /**
+    //  * Private key (in‑memory) used to decrypt Response MLE payloads.
+    //  * Provide the raw private key string (e.g. PEM / PKCS#8). Mutually exclusive with responseMlePrivateKeyFilePath.
+    //  *
+    //  * @var string
+    //  */
+    // protected $responseMlePrivateKey = '';
 
     /**
      * Password for the private key file (e.g. .p12 or encrypted .pem) used for Response MLE decryption.
@@ -1344,16 +1344,16 @@ class MerchantConfiguration
         return $this->responseMlePrivateKeyFilePath;
     }
 
-    public function setResponseMlePrivateKey($responseMlePrivateKey)
-    {
-        // Accept only string; trim. If resource/object passed, ignore for now (simplify).
-        $this->responseMlePrivateKey = is_string($responseMlePrivateKey) ? trim($responseMlePrivateKey) : '';
-    }
+    // public function setResponseMlePrivateKey($responseMlePrivateKey)
+    // {
+    //     // Accept only string; trim. If resource/object passed, ignore for now (simplify).
+    //     $this->responseMlePrivateKey = is_string($responseMlePrivateKey) ? trim($responseMlePrivateKey) : '';
+    // }
 
-    public function getResponseMlePrivateKey()
-    {
-        return $this->responseMlePrivateKey;
-    }
+    // public function getResponseMlePrivateKey()
+    // {
+    //     return $this->responseMlePrivateKey;
+    // }
 
     public function setResponseMlePrivateKeyFilePassword($responseMlePrivateKeyFilePassword)
     {
@@ -1375,8 +1375,8 @@ class MerchantConfiguration
     }
 
     /**
-     * Get the value of mleKeyAlias
-     *
+     * Get the value of mleKeyAlias (legacy)
+     * @deprecated Use getRequestMleKeyAlias()
      * @return string
      */
     public function getMleKeyAlias()
@@ -1385,33 +1385,108 @@ class MerchantConfiguration
     }
 
     /**
-     * Get requestMleKeyAlias (replacement for mleKeyAlias)
+     * Get requestMleKeyAlias (authoritative in codebase).
+     * Fallback order:
+     *   1. requestMleKeyAlias if non-empty
+     *   2. mleKeyAlias (legacy) if non-empty
+     *   3. assign default to requestMleKeyAlias and return it
      *
      * @return string
      */
     public function getRequestMleKeyAlias()
     {
-        if (!isset($this->requestMleKeyAlias) || empty(trim($this->requestMleKeyAlias))) {
-            $this->requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
-        }
+        // if (isset($this->requestMleKeyAlias) && trim($this->requestMleKeyAlias) !== '') {
+        //     return $this->requestMleKeyAlias;
+        // }
+        // if (isset($this->mleKeyAlias) && trim($this->mleKeyAlias) !== '') {
+        //     return $this->mleKeyAlias;
+        // }
+        // Neither provided; set default only for requestMleKeyAlias
         return $this->requestMleKeyAlias;
     }
 
     /**
-     * Set requestMleKeyAlias (preferred new field)
+     * Set requestMleKeyAlias.
+     * If legacy mleKeyAlias already set with a different value -> error. //to do
+     *
+     * Empty/blank input is treated as "not set" (kept empty for fallback/default logic).
      *
      * @param string $requestMleKeyAlias
      * @return $this
      */
     public function setRequestMleKeyAlias($requestMleKeyAlias)
     {
-        if (!is_null($requestMleKeyAlias) && strlen(trim($requestMleKeyAlias)) > 0) {
-            $this->requestMleKeyAlias = trim($requestMleKeyAlias);
-        } else {
-            $this->requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
+        // $alias = trim((string)$requestMleKeyAlias);
+
+        // if ($alias === '') {
+        //     // Leave empty; fallback will occur in getter
+        //     $this->requestMleKeyAlias = '';
+        //     return $this;
+        // }
+
+        // if (isset($this->mleKeyAlias) && trim($this->mleKeyAlias) !== '' && $this->mleKeyAlias !== $alias) {
+        //     $msg = "mleKeyAlias and requestMleKeyAlias must be the same value when both are set.";
+        //     if (self::$logger) { self::$logger->error($msg); }
+        //     throw new \InvalidArgumentException($msg);
+        // }
+        $alias = trim((string) $requestMleKeyAlias);
+
+        if ($alias !== '') {
+            $this->requestMleKeyAlias = $alias;
         }
-        // Keep legacy field synchronized for any older code paths.
-        $this->mleKeyAlias = $this->requestMleKeyAlias;
+        return $this;
+
+        // // 2. Else if legacy mleKeyAlias set, promote it to requestMleKeyAlias
+        // if (isset($this->mleKeyAlias) && trim($this->mleKeyAlias) !== '') {
+        //     $this->requestMleKeyAlias = trim($this->mleKeyAlias);
+        //     return $this;
+        // }
+
+        // // 3. Else assign default constant
+        // $this->requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
+        // return $this;
+    }
+
+    /**
+     * Legacy setter for mleKeyAlias.
+     * If requestMleKeyAlias already set with a different value -> error. //to do
+     *
+     * Empty/blank input is treated as "not set".
+     *
+     * @param string $mleKeyAlias
+     * @return $this
+     */
+    public function setMleKeyAlias($mleKeyAlias)
+    {
+        $alias = trim((string)$mleKeyAlias);
+        if ($alias === '') {
+            return $this;
+        }
+
+        // if ($alias === '') {
+        //     $this->mleKeyAlias = '';
+        //     return $this;
+        // }
+
+        // if (isset($this->requestMleKeyAlias) && trim($this->requestMleKeyAlias) !== '' && $this->requestMleKeyAlias !== $alias) {
+        //     $msg = "mleKeyAlias and requestMleKeyAlias must be the same value when both are set.";
+        //     if (self::$logger) { self::$logger->error($msg); }
+        //     throw new \InvalidArgumentException($msg);
+        // }
+        if (
+            $this->mleKeyAlias === GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT
+            || $this->mleKeyAlias === ''
+            || $this->mleKeyAlias === null
+        ) {
+            $this->mleKeyAlias = $alias;
+        }
+        if (
+            $this->requestMleKeyAlias === GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT
+            || $this->requestMleKeyAlias === ''
+            || $this->requestMleKeyAlias === null
+        ) {
+            $this->requestMleKeyAlias = $alias;
+        }
         return $this;
     }
 
@@ -1528,7 +1603,7 @@ class MerchantConfiguration
         
             // If both are set, they must be equal
             if ($useMLE !== null && $enableMLE !== null && $useMLE !== $enableMLE) {
-                throw new \InvalidArgumentException(
+                throw new InvalidArgumentException(
                     "useMLEGlobally and enableRequestMLEForOptionalApisGlobally must have the same value if both are set."
                 );
             }
@@ -1542,19 +1617,20 @@ class MerchantConfiguration
             $config = $config->setMapToControlMLEonAPI($connectionDet->mapToControlMLEonAPI);
         }
 
-        if (isset($connectionDet->mleKeyAlias)) {
-            $config = $config->setMleKeyAlias($connectionDet->mleKeyAlias);
-        }
-
         if (isset($connectionDet->mleForRequestPublicCertPath)) {
             $config = $config->setMleForRequestPublicCertPath($connectionDet->mleForRequestPublicCertPath);
         }
 
-        // Prefer new requestMleKeyAlias; fallback to deprecated mleKeyAlias
-        if (isset($connectionDet->requestMleKeyAlias)) {
-            $config = $config->setRequestMleKeyAlias($connectionDet->requestMleKeyAlias);
-        } elseif (isset($connectionDet->mleKeyAlias)) {
-            $config = $config->setMleKeyAlias($connectionDet->mleKeyAlias);
+        // Prefer new field; fall back to legacy mleKeyAlias for backward compatibility.
+        $rawAlias = null;
+        if (isset($connectionDet->requestMleKeyAlias) && trim((string) $connectionDet->requestMleKeyAlias) !== '') {
+            $rawAlias = $connectionDet->requestMleKeyAlias;
+        } elseif (isset($connectionDet->mleKeyAlias) && trim((string) $connectionDet->mleKeyAlias) !== '') {
+            $rawAlias = $connectionDet->mleKeyAlias;
+            $config = $config->setMleKeyAlias($rawAlias); // keep legacy field in sync
+        }
+        if ($rawAlias !== null) {
+            $config=$config->setRequestMleKeyAlias($rawAlias);
         }
 
         // Response MLE (outbound) new fields
@@ -1570,9 +1646,9 @@ class MerchantConfiguration
         if (isset($connectionDet->responseMlePrivateKeyFilePassword)) {
             $config = $config->setResponseMlePrivateKeyFilePassword($connectionDet->responseMlePrivateKeyFilePassword);
         }
-        if (isset($connectionDet->responseMlePrivateKey)) {
-            $config = $config->setResponseMlePrivateKey($connectionDet->responseMlePrivateKey);
-        }
+        // if (isset($connectionDet->responseMlePrivateKey)) {
+        //     $config = $config->setResponseMlePrivateKey($connectionDet->responseMlePrivateKey);
+        // }
 
         $config->validateMerchantData();
         if($error_message != null){
@@ -1790,41 +1866,44 @@ class MerchantConfiguration
             }
 
             $hasFilePath = !empty($this->responseMlePrivateKeyFilePath);
-            $hasInMemoryKey = !empty($this->responseMlePrivateKey);
+            // $hasInMemoryKey = !empty($this->responseMlePrivateKey);
 
-            if (!$hasFilePath && !$hasInMemoryKey) {
-                $error_message = "Response MLE enabled but neither responseMlePrivateKeyFilePath nor responseMlePrivateKey provided. Provide exactly one.";
-                $exception = new AuthException($error_message, 0);
-                self::$logger->error($error_message);
-                throw $exception;
-            }
+            // if (!$hasFilePath && !$hasInMemoryKey) {
+            //     $error_message = "Response MLE enabled but neither responseMlePrivateKeyFilePath nor responseMlePrivateKey provided. Provide exactly one.";
+            //     $exception = new AuthException($error_message, 0);
+            //     self::$logger->error($error_message);
+            //     throw $exception;
+            // }
 
-            if ($hasFilePath && $hasInMemoryKey) {
-                $error_message = "Both responseMlePrivateKeyFilePath and responseMlePrivateKey supplied. Provide only one.";
-                $exception = new AuthException($error_message, 0);
-                self::$logger->error($error_message);
-                throw $exception;
-            }
+            // if ($hasFilePath && $hasInMemoryKey) {
+            //     $error_message = "Both responseMlePrivateKeyFilePath and responseMlePrivateKey supplied. Provide only one.";
+            //     $exception = new AuthException($error_message, 0);
+            //     self::$logger->error($error_message);
+            //     throw $exception;
+            // }
 
             if ($hasFilePath) {
-                if (!file_exists($this->responseMlePrivateKeyFilePath) ||
+                if (
+                    !file_exists($this->responseMlePrivateKeyFilePath) ||
                     !is_readable($this->responseMlePrivateKeyFilePath) ||
-                    !is_file($this->responseMlePrivateKeyFilePath)) {
+                    !is_file($this->responseMlePrivateKeyFilePath)
+                ) {
                     $error_message = "Response MLE private key file not found or not readable at " . $this->responseMlePrivateKeyFilePath;
                     $exception = new AuthException($error_message, 0);
                     self::$logger->error($error_message);
                     throw $exception;
                 }
-                // Password (if any) is optional; no strict validation here.
-            } else {
-                // Basic sanity check for in-memory key: must contain typical PEM header or be non-trivial length.
-                if (strlen($this->responseMlePrivateKey) < 32) {
-                    $error_message = "responseMlePrivateKey appears invalid (too short).";
-                    $exception = new AuthException($error_message, 0);
-                    self::$logger->error($error_message);
-                    throw $exception;
-                }
             }
+                // Password (if any) is optional; no strict validation here.
+            // } else {
+            //     // Basic sanity check for in-memory key: must contain typical PEM header or be non-trivial length.
+            //     if (strlen($this->responseMlePrivateKey) < 32) {
+            //         $error_message = "responseMlePrivateKey appears invalid (too short).";
+            //         $exception = new AuthException($error_message, 0);
+            //         self::$logger->error($error_message);
+            //         throw $exception;
+            //     }
+            // }
 
             if (empty($this->responseMleKID)) {
                 $error_message = "Response MLE enabled but responseMleKID not provided.";

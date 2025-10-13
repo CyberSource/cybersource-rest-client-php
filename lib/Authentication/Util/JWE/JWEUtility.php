@@ -84,6 +84,7 @@ class JWEUtility {
 
     public static function decryptJWEUsingPrivateKey(string $privateKey, string $encodedResponse) {
         $jwk = JWKFactory::createFromKey($privateKey);
+        echo "jwk: " . json_encode($jwk->all());
         // The key encryption algorithm manager with the A256KW algorithm.
         $keyEncryptionAlgorithmManager = new AlgorithmManager([
             new RSAOAEP256()
@@ -107,8 +108,10 @@ class JWEUtility {
 
         $jwe = $serializerManager->unserialize($encodedResponse);
         if($jweDecrypter -> decryptUsingKey($jwe, $jwk, 0)) {
+            echo "here 101 .\n";
             return $jwe ->getPayload();
         } else {
+            echo "here 100 .\n";
             return null;
         }
     }
