@@ -158,6 +158,27 @@ class Configuration
     protected $proxyPassword;
 
     /**
+     * TLS version to use for HTTPS requests
+     *
+     * @var string
+     */
+    protected $tlsVersion;
+
+    /**
+     * TLS cipher list to use for HTTPS requests
+     *
+     * @var string
+     */
+    protected $tlsCipherList;
+
+    /**
+     * Free socket time allowed for reusing a connection
+     *
+     * @var int
+     */
+    protected $keepAliveTime;
+
+    /**
      * Allow Curl encoding header
      *
      * @var bool
@@ -676,6 +697,80 @@ class Configuration
     public function getCurlProxyPassword()
     {
         return $this->proxyPassword;
+    }
+
+    /**
+     * Gets the TLS version to use for HTTPS requests
+     *
+     * @return string
+     */
+    public function getTlsVersion()
+    {
+        return $this->tlsVersion;
+    }
+
+    /**
+     * Sets the TLS version to use for HTTPS requests
+     *
+     * @param string $tlsVersion
+     *
+     * @return $this
+     */
+    public function setTlsVersion($tlsVersion)
+    {
+        $this->tlsVersion = $tlsVersion;
+        return $this;
+    }
+
+    /**
+     * Gets the TLS cipher list to use for HTTPS requests
+     *
+     * @return string
+     */
+    public function getTlsCipherList()
+    {
+        return $this->tlsCipherList;
+    }
+
+    /**
+     * Sets the TLS cipher list to use for HTTPS requests
+     *
+     * @param string $tlsCipherList
+     *
+     * @return $this
+     */
+    public function setTlsCipherList($tlsCipherList)
+    {
+        $this->tlsCipherList = $tlsCipherList;
+        return $this;
+    }
+
+    /**
+     * Gets free socket time allowed for reusing a connection
+     *
+     * @return int
+     */
+    public function getKeepAliveTime()
+    {
+        return $this->keepAliveTime;
+    }
+
+    /**
+     * Sets keep-alive time allowed for reusing a connection
+     *
+     * @param int $keepAliveTime
+     *
+     * @return $this
+     */
+    public function setKeepAliveTime($keepAliveTime)
+    {
+        if (!is_numeric($keepAliveTime) || $keepAliveTime < 0) {
+            self::$logger->error("InvalidArgumentException : Keep-alive time value must be numeric and a non-negative number.");
+            self::$logger->close();
+            throw new \InvalidArgumentException('Keep-alive time value must be numeric and a non-negative number.');
+        }
+        $this->keepAliveTime = $keepAliveTime;
+        return $this;
     }
 
     /**
