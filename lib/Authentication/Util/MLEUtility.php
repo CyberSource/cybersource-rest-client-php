@@ -139,6 +139,9 @@ class MLEUtility
         }
     }    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
     {
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
+        }
         echo "[MLE][Decrypt] Enter decryptMleResponsePayload()\n";
 
         if (!self::checkIsMleEncryptedResponse($mleResponseBody)) {
@@ -146,6 +149,7 @@ class MLEUtility
         }
         $jweToken = self::getResponseMleToken($mleResponseBody);
         if (empty($jweToken)) {
+            // when mle token is empty or null then fall back to non mle encrypted response
             echo "[MLE][Decrypt] JWE token missing in encryptedResponse wrapper.\n";
             return $mleResponseBody;
         }
@@ -154,12 +158,24 @@ class MLEUtility
             echo "[MLE][Decrypt] Private key unavailable for decryption.\n";
             throw new MLEException("Response MLE private key not available for decryption.");
         }
-        echo "[MLE][Decrypt] Loaded private key (" . strlen($privateKey) . " bytes).\n";        // Cache already handles password decryption and returns unencrypted PEM
-        // No password needed for JWE decryption since key is already decrypted
+        echo "[MLE][Decrypt] Loaded private key (" . strlen($privateKey) . " bytes).\n";        
+        // Cache already handles password decryption and returns unencrypted PEM
+        if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+            $maskedResponseBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($mleResponseBody);
+            self::$logger->debug("LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: " . $maskedResponseBody);
+        } else {
+            self::$logger->debug("LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: " . $mleResponseBody);
+        }
         try {
             $decrypted = JWEUtility::decryptJWEUsingPrivateKey($privateKey, $jweToken);
             if ($decrypted === null) {
                 throw new MLEException("Failed to decrypt MLE response payload.");
+            }
+            if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $maskedDecrypted = \CyberSource\Utilities\Helpers\DataMasker::maskData($decrypted);
+                self::$logger->debug("LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: " . $maskedDecrypted);
+            } else {
+                self::$logger->debug("LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: " . $decrypted);
             }
             echo "[MLE][Decrypt] Decryption successful. Decrypted payload length: " . strlen($decrypted) . "\n";
             return $decrypted;
@@ -219,11 +235,11 @@ class MLEUtility
 
     private static function getResponseMleToken($mleResponseBody)
     {
-        echo " m here 1.\n";
         try {
             $decoded = json_decode($mleResponseBody, true);
             return $decoded['encryptedResponse'] ?? null;
         } catch (\Exception $e) {
+            self::$logger->error("Failed to extract Response MLE token: " + $e->getMessage());
             return null;
         }
     }

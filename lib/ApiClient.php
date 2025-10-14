@@ -469,22 +469,16 @@ class ApiClient
                     return [$http_body, $response_info['http_code'], $http_header];
                 }
 
-                // Decrypt BEFORE json_decode //chck
+                // Decrypt BEFORE json_decode
                 if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {
-                    echo "[MLE][ApiClient] isResponseMLEForAPI=" . ($isResponseMLEForAPI ? "true" : "false") .
-                        " authType=" . $this->merchantConfig->getAuthenticationType() . "\n";
 
                     try {
                         $http_body = MLEUtility::decryptMleResponsePayload($this->merchantConfig, $http_body);
-                        self::$logger->debug("HTTP Response Body after MLE decryption:\n" . print_r(
-                            $this->merchantConfig->getLogConfiguration()->isMaskingEnabled()
-                                ? \CyberSource\Utilities\Helpers\DataMasker::maskData($http_body)
-                                : $http_body,
-                            true
-                        ));
-                    echo "m here 11.\n";
                     } catch (\Exception $e) {
-                        self::$logger->warning("Response MLE decryption failed: " . $e->getMessage() . " (using encrypted body)");
+                        $error_message = "Response MLE decryption failed: " . $e->getMessage();
+                        self::$logger->error("ApiException : " . $error_message);
+                        self::$logger->close();
+                        throw new ApiException($error_message);
                     }
                 }
 
@@ -493,16 +487,14 @@ class ApiClient
                     $data = $http_body;
                 }
             } else {
-                // Error path: still attempt decryption so error payload can be read //chck
+                // Error path: still attempt decryption so error payload can be read
                 if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {
                     echo "[MLE][ApiClient] isResponseMLEForAPI=" . ($isResponseMLEForAPI ? "true" : "false") .
                         " authType=" . $this->merchantConfig->getAuthenticationType() . "\n";
-
                     try {
-                        echo "m here 10.\n";
                         $http_body = MLEUtility::decryptMleResponsePayload($this->merchantConfig, $http_body);
                     } catch (\Exception $e) {
-                        // Ignore; proceed with encrypted body
+                        // Ignore; proceeding with encrypted body
                     }
                 }
 
@@ -553,16 +545,15 @@ class ApiClient
                 $exception->setResponseObject($response_info);
                 self::$logger->close();
                 throw $exception;
-            } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
-                // Check if response needs MLE decryption for file downloads
-                if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {
-                    self::$logger->debug("[MLE][ApiClient][FileDownload] Encrypted response detected for file download");
-                    
+            } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {                // Check if response needs MLE decryption for file downloads
+                if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {                    
                     try {
                         $http_body = MLEUtility::decryptMleResponsePayload($this->merchantConfig, $http_body);
-                        self::$logger->debug("File download response decrypted successfully");
                     } catch (\Exception $e) {
-                        self::$logger->warning("File download MLE decryption failed: " . $e->getMessage() . " (using encrypted content)");
+                        $error_message = "File download MLE decryption failed: " . $e->getMessage();
+                        self::$logger->error("ApiException : " . $error_message);
+                        self::$logger->close();
+                        throw new ApiException($error_message);
                     }
                 }
 
@@ -572,13 +563,11 @@ class ApiClient
                 return [$http_body, $stream_headers['http_code'], $stream_headers];
             } else {
                 // Error path: attempt decryption for file downloads too
-                if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {
-                    self::$logger->debug("[MLE][ApiClient][FileDownload] Encrypted error response detected");
-                    
+                if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {                    
                     try {
                         $http_body = MLEUtility::decryptMleResponsePayload($this->merchantConfig, $http_body);
                     } catch (\Exception $e) {
-                        // Ignore; proceed with encrypted body for error case
+                        // Ignore; proceeding with encrypted body for error case
                     }
                 }
                 self::$logger->error("ApiException : [".$response_info['http_code']."] Error connecting to the API ($url)");
