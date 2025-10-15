@@ -125,7 +125,6 @@ class MLEUtility
 
     public static function checkIsMleEncryptedResponse($responseBody)
     {
-        echo " m here 2.\n";
         if ($responseBody === null) { return false; }
         $trim = trim($responseBody);
         if ($trim === '' || $trim[0] !== '{') { return false; }
@@ -142,7 +141,6 @@ class MLEUtility
         if (self::$logger === null) {
             self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
         }
-        echo "[MLE][Decrypt] Enter decryptMleResponsePayload()\n";
 
         if (!self::checkIsMleEncryptedResponse($mleResponseBody)) {
             throw new MLEException("Response body is not MLE encrypted.");
@@ -150,15 +148,12 @@ class MLEUtility
         $jweToken = self::getResponseMleToken($mleResponseBody);
         if (empty($jweToken)) {
             // when mle token is empty or null then fall back to non mle encrypted response
-            echo "[MLE][Decrypt] JWE token missing in encryptedResponse wrapper.\n";
             return $mleResponseBody;
         }
         $privateKey = self::getMleResponsePrivateKey($merchantConfig);
         if (empty($privateKey)) {
-            echo "[MLE][Decrypt] Private key unavailable for decryption.\n";
             throw new MLEException("Response MLE private key not available for decryption.");
         }
-        echo "[MLE][Decrypt] Loaded private key (" . strlen($privateKey) . " bytes).\n";        
         // Cache already handles password decryption and returns unencrypted PEM
         if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
             $maskedResponseBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($mleResponseBody);
@@ -177,7 +172,6 @@ class MLEUtility
             } else {
                 self::$logger->debug("LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: " . $decrypted);
             }
-            echo "[MLE][Decrypt] Decryption successful. Decrypted payload length: " . strlen($decrypted) . "\n";
             return $decrypted;
         } catch (\Exception $e) {
             throw new MLEException("MLE Response decryption error: " . $e->getMessage());
@@ -251,8 +245,7 @@ class MLEUtility
         //     return $merchantConfig->getResponseMlePrivateKey();
         // }
 
-        if (!isset(self::$cache)) { //check static n multithreading
-            echo "[MLE] Creating Cache instance for response private key.\n";
+        if (!isset(self::$cache)) { //check static
 
             self::$cache = new Cache();
         }
@@ -260,14 +253,7 @@ class MLEUtility
         // echo "[MLE] Cleared all file cache.\n";
         $key = self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
 
-        if ($key) {
-            echo "[MLE] Loaded response private key from file/cache.\n";
-        } else {
-            echo "[MLE] Failed to load response private key from file/cache.\n";
-        }
-
-        return $key;
-        // return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
+        return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
     }
 
     public static function getMLECert($merchantConfig)

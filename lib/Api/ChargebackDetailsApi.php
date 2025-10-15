@@ -204,6 +204,10 @@ class ChargebackDetailsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3ChargebackDetailsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getChargebackDetails,getChargebackDetailsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -213,7 +217,8 @@ class ChargebackDetailsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ReportingV3ChargebackDetailsGet200Response',
-                '/reporting/v3/chargeback-details'
+                '/reporting/v3/chargeback-details',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

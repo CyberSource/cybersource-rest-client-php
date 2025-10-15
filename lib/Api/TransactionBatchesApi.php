@@ -202,6 +202,10 @@ class TransactionBatchesApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getTransactionBatchDetails,getTransactionBatchDetailsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -211,7 +215,8 @@ class TransactionBatchesApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/pts/v1/transaction-batch-details/{id}'
+                '/pts/v1/transaction-batch-details/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -338,6 +343,10 @@ class TransactionBatchesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV1TransactionBatchesIdGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getTransactionBatchId,getTransactionBatchIdWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -347,7 +356,8 @@ class TransactionBatchesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV1TransactionBatchesIdGet200Response',
-                '/pts/v1/transaction-batches/{id}'
+                '/pts/v1/transaction-batches/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -487,6 +497,10 @@ class TransactionBatchesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV1TransactionBatchesGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getTransactionBatches,getTransactionBatchesWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -496,7 +510,8 @@ class TransactionBatchesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV1TransactionBatchesGet200Response',
-                '/pts/v1/transaction-batches'
+                '/pts/v1/transaction-batches',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -624,6 +639,10 @@ class TransactionBatchesApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "uploadTransactionBatch,uploadTransactionBatchWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -633,7 +652,8 @@ class TransactionBatchesApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/pts/v1/transaction-batch-upload'
+                '/pts/v1/transaction-batch-upload',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

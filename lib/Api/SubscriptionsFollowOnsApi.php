@@ -202,6 +202,10 @@ class SubscriptionsFollowOnsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\CreateSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createFollowOnSubscription,createFollowOnSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -211,7 +215,8 @@ class SubscriptionsFollowOnsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\CreateSubscriptionResponse',
-                '/rbs/v1/subscriptions/follow-ons/{requestId}'
+                '/rbs/v1/subscriptions/follow-ons/{requestId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -330,6 +335,10 @@ class SubscriptionsFollowOnsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\GetSubscriptionResponse1");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getFollowOnSubscription,getFollowOnSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -339,7 +348,8 @@ class SubscriptionsFollowOnsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\GetSubscriptionResponse1',
-                '/rbs/v1/subscriptions/follow-ons/{requestId}'
+                '/rbs/v1/subscriptions/follow-ons/{requestId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

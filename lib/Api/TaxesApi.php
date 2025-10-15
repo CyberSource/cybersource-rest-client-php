@@ -187,6 +187,10 @@ class TaxesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\VasV2PaymentsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "calculateTax,calculateTaxWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class TaxesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\VasV2PaymentsPost201Response',
-                '/vas/v2/tax'
+                '/vas/v2/tax',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -329,6 +334,10 @@ class TaxesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\VasV2TaxVoid200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "voidTax,voidTaxWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -338,7 +347,8 @@ class TaxesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\VasV2TaxVoid200Response',
-                '/vas/v2/tax/{id}'
+                '/vas/v2/tax/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

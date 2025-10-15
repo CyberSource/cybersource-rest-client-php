@@ -202,6 +202,10 @@ class BillingAgreementsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "billingAgreementsDeRegistration,billingAgreementsDeRegistrationWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -211,7 +215,8 @@ class BillingAgreementsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2ModifyBillingAgreementPost201Response',
-                '/pts/v2/billing-agreements/{id}'
+                '/pts/v2/billing-agreements/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -344,6 +349,10 @@ class BillingAgreementsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2CreditsPost201Response1");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "billingAgreementsIntimation,billingAgreementsIntimationWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -353,7 +362,8 @@ class BillingAgreementsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2CreditsPost201Response1',
-                '/pts/v2/billing-agreements/{id}/intimations'
+                '/pts/v2/billing-agreements/{id}/intimations',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -471,6 +481,10 @@ class BillingAgreementsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2CreateBillingAgreementPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "billingAgreementsRegistration,billingAgreementsRegistrationWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -480,7 +494,8 @@ class BillingAgreementsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2CreateBillingAgreementPost201Response',
-                '/pts/v2/billing-agreements'
+                '/pts/v2/billing-agreements',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

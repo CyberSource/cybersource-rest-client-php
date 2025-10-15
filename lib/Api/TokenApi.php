@@ -218,6 +218,10 @@ class TokenApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse200");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getCardArtAsset,getCardArtAssetWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -227,7 +231,8 @@ class TokenApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse200',
-                '/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}'
+                '/tms/v2/tokens/{instrumentIdentifierId}/{tokenProvider}/assets/{assetType}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -358,6 +363,10 @@ class TokenApi
         }
 
         self::$logger->debug("Return Type : string");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postTokenPaymentCredentials,postTokenPaymentCredentialsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -367,7 +376,8 @@ class TokenApi
                 $httpBody,
                 $headerParams,
                 'string',
-                '/tms/v2/tokens/{tokenId}/payment-credentials'
+                '/tms/v2/tokens/{tokenId}/payment-credentials',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

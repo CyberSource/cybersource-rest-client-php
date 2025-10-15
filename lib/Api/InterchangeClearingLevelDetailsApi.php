@@ -204,6 +204,10 @@ class InterchangeClearingLevelDetailsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3InterchangeClearingLevelDetailsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getInterchangeClearingLevelDetails,getInterchangeClearingLevelDetailsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -213,7 +217,8 @@ class InterchangeClearingLevelDetailsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ReportingV3InterchangeClearingLevelDetailsGet200Response',
-                '/reporting/v3/interchange-clearing-level-details'
+                '/reporting/v3/interchange-clearing-level-details',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

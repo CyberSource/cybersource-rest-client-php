@@ -194,6 +194,10 @@ class ReportsApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createReport,createReportWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -203,7 +207,8 @@ class ReportsApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reporting/v3/reports'
+                '/reporting/v3/reports',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -321,6 +326,10 @@ class ReportsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3ReportsIdGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getReportByReportId,getReportByReportIdWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -330,7 +339,8 @@ class ReportsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ReportingV3ReportsIdGet200Response',
-                '/reporting/v3/reports/{reportId}'
+                '/reporting/v3/reports/{reportId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -508,6 +518,10 @@ class ReportsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3ReportsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "searchReports,searchReportsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -517,7 +531,8 @@ class ReportsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ReportingV3ReportsGet200Response',
-                '/reporting/v3/reports'
+                '/reporting/v3/reports',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

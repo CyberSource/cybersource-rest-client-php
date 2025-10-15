@@ -187,6 +187,10 @@ class MicroformIntegrationApi
         }
 
         self::$logger->debug("Return Type : string");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "generateCaptureContext,generateCaptureContextWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class MicroformIntegrationApi
                 $httpBody,
                 $headerParams,
                 'string',
-                '/microform/v2/sessions'
+                '/microform/v2/sessions',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

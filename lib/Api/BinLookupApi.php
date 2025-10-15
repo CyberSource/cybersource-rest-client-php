@@ -189,6 +189,10 @@ class BinLookupApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2012");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getAccountInfo,getAccountInfoWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -198,7 +202,8 @@ class BinLookupApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2012',
-                '/bin/v1/binlookup'
+                '/bin/v1/binlookup',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

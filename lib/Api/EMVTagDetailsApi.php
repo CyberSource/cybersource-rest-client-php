@@ -173,6 +173,10 @@ class EMVTagDetailsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TssV2GetEmvTags200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getEmvTags,getEmvTagsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -182,7 +186,8 @@ class EMVTagDetailsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TssV2GetEmvTags200Response',
-                '/tss/v2/transactions/emvTagDetails'
+                '/tss/v2/transactions/emvTagDetails',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -292,6 +297,10 @@ class EMVTagDetailsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TssV2PostEmvTags200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "parseEmvTags,parseEmvTagsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -301,7 +310,8 @@ class EMVTagDetailsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TssV2PostEmvTags200Response',
-                '/tss/v2/transactions/emvTagDetails'
+                '/tss/v2/transactions/emvTagDetails',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

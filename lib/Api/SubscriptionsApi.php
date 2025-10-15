@@ -195,6 +195,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ActivateSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "activateSubscription,activateSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -204,7 +208,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ActivateSubscriptionResponse',
-                '/rbs/v1/subscriptions/{id}/activate'
+                '/rbs/v1/subscriptions/{id}/activate',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -327,6 +332,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\CancelSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "cancelSubscription,cancelSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -336,7 +345,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\CancelSubscriptionResponse',
-                '/rbs/v1/subscriptions/{id}/cancel'
+                '/rbs/v1/subscriptions/{id}/cancel',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -458,6 +468,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\CreateSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createSubscription,createSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -467,7 +481,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\CreateSubscriptionResponse',
-                '/rbs/v1/subscriptions'
+                '/rbs/v1/subscriptions',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -599,6 +614,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\GetAllSubscriptionsResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getAllSubscriptions,getAllSubscriptionsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -608,7 +627,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\GetAllSubscriptionsResponse',
-                '/rbs/v1/subscriptions'
+                '/rbs/v1/subscriptions',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -727,6 +747,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\GetSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getSubscription,getSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -736,7 +760,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\GetSubscriptionResponse',
-                '/rbs/v1/subscriptions/{id}'
+                '/rbs/v1/subscriptions/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -844,6 +869,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\GetSubscriptionCodeResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getSubscriptionCode,getSubscriptionCodeWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -853,7 +882,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\GetSubscriptionCodeResponse',
-                '/rbs/v1/subscriptions/code'
+                '/rbs/v1/subscriptions/code',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -972,6 +1002,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\SuspendSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "suspendSubscription,suspendSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -981,7 +1015,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\SuspendSubscriptionResponse',
-                '/rbs/v1/subscriptions/{id}/suspend'
+                '/rbs/v1/subscriptions/{id}/suspend',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -1118,6 +1153,10 @@ class SubscriptionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\UpdateSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateSubscription,updateSubscriptionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -1127,7 +1166,8 @@ class SubscriptionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\UpdateSubscriptionResponse',
-                '/rbs/v1/subscriptions/{id}'
+                '/rbs/v1/subscriptions/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

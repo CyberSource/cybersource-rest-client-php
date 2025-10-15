@@ -201,6 +201,10 @@ class UserManagementApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\UmsV1UsersGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getUsers,getUsersWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -210,7 +214,8 @@ class UserManagementApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\UmsV1UsersGet200Response',
-                '/ums/v1/users'
+                '/ums/v1/users',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

@@ -578,7 +578,7 @@ class ApiClient
                 $exception->setResponseObject($response_info);
                 self::$logger->close();
                 throw $exception;
-            } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {                // Check if response needs MLE decryption for file downloads
+            } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {                
                 if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {                    
                     try {
                         $http_body = MLEUtility::decryptMleResponsePayload($this->merchantConfig, $http_body);

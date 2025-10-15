@@ -194,6 +194,10 @@ class InstrumentIdentifierApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "deleteInstrumentIdentifier,deleteInstrumentIdentifierWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -203,7 +207,8 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}'
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -347,6 +352,10 @@ class InstrumentIdentifierApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PostInstrumentIdentifierRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getInstrumentIdentifier,getInstrumentIdentifierWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -356,7 +365,8 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PostInstrumentIdentifierRequest',
-                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}'
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -518,6 +528,10 @@ class InstrumentIdentifierApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PaymentInstrumentList1");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getInstrumentIdentifierPaymentInstrumentsList,getInstrumentIdentifierPaymentInstrumentsListWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -527,7 +541,8 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PaymentInstrumentList1',
-                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments'
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/paymentinstruments',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -695,6 +710,10 @@ class InstrumentIdentifierApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PatchInstrumentIdentifierRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "patchInstrumentIdentifier,patchInstrumentIdentifierWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -704,7 +723,8 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PatchInstrumentIdentifierRequest',
-                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}'
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -855,6 +875,10 @@ class InstrumentIdentifierApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PostInstrumentIdentifierRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postInstrumentIdentifier,postInstrumentIdentifierWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -864,7 +888,8 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PostInstrumentIdentifierRequest',
-                '/tms/v1/instrumentidentifiers'
+                '/tms/v1/instrumentidentifiers',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -1019,6 +1044,10 @@ class InstrumentIdentifierApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postInstrumentIdentifierEnrollment,postInstrumentIdentifierEnrollmentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -1028,7 +1057,8 @@ class InstrumentIdentifierApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment'
+                '/tms/v1/instrumentidentifiers/{instrumentIdentifierId}/enrollment',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

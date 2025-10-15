@@ -188,6 +188,10 @@ class MerchantBoardingApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getRegistration,getRegistrationWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,7 +201,8 @@ class MerchantBoardingApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2002',
-                '/boarding/v1/registrations/{registrationId}'
+                '/boarding/v1/registrations/{registrationId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -325,6 +330,10 @@ class MerchantBoardingApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2013");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postRegistration,postRegistrationWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -334,7 +343,8 @@ class MerchantBoardingApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2013',
-                '/boarding/v1/registrations'
+                '/boarding/v1/registrations',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

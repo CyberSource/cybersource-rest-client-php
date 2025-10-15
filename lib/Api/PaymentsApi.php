@@ -202,6 +202,10 @@ class PaymentsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsOrderPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createOrderRequest,createOrderRequestWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -211,7 +215,8 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsOrderPost201Response',
-                '/pts/v2/payment-references/{id}/intents'
+                '/pts/v2/payment-references/{id}/intents',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -314,7 +319,7 @@ class PaymentsApi
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
             }
         }
-        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createPayment,createPaymentWithHttpInfo");
+
         
         // Logging
         self::$logger->debug("Resource : POST $resourcePath");
@@ -329,6 +334,10 @@ class PaymentsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createPayment,createPaymentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -457,6 +466,10 @@ class PaymentsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsPost201Response2");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createSessionRequest,createSessionRequestWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -466,7 +479,8 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsPost201Response2',
-                '/pts/v2/payment-references'
+                '/pts/v2/payment-references',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -599,6 +613,10 @@ class PaymentsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "incrementAuth,incrementAuthWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -608,7 +626,8 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2IncrementalAuthorizationPatch201Response',
-                '/pts/v2/payments/{id}'
+                '/pts/v2/payments/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -741,6 +760,10 @@ class PaymentsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsPost201Response1");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "refreshPaymentStatus,refreshPaymentStatusWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -750,7 +773,8 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsPost201Response1',
-                '/pts/v2/refresh-payment-status/{id}'
+                '/pts/v2/refresh-payment-status/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -883,6 +907,10 @@ class PaymentsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsPost201Response2");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateSessionReq,updateSessionReqWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -892,7 +920,8 @@ class PaymentsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsPost201Response2',
-                '/pts/v2/payment-references/{id}'
+                '/pts/v2/payment-references/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

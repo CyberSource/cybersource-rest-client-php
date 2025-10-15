@@ -188,6 +188,10 @@ class DownloadDTDApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getDTDV2,getDTDV2WithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,7 +201,8 @@ class DownloadDTDApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reporting/v3/dtds/{reportDefinitionNameVersion}'
+                '/reporting/v3/dtds/{reportDefinitionNameVersion}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

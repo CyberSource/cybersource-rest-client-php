@@ -173,6 +173,10 @@ class InvoiceSettingsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoiceSettingsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getInvoiceSettings,getInvoiceSettingsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -182,7 +186,8 @@ class InvoiceSettingsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200Response',
-                '/invoicing/v2/invoiceSettings'
+                '/invoicing/v2/invoiceSettings',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -300,6 +305,10 @@ class InvoiceSettingsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoiceSettingsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateInvoiceSettings,updateInvoiceSettingsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -309,7 +318,8 @@ class InvoiceSettingsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200Response',
-                '/invoicing/v2/invoiceSettings'
+                '/invoicing/v2/invoiceSettings',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
