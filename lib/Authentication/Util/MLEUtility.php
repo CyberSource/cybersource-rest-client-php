@@ -240,10 +240,18 @@ class MLEUtility
 
     private static function getMleResponsePrivateKey($merchantConfig)
     {
-        // if (null != $merchantConfig->getResponseMlePrivateKey()) {
-        //     echo "[MLE] Using inline response private key.\n";
-        //     return $merchantConfig->getResponseMlePrivateKey();
-        // }
+        if (null != $merchantConfig->getResponseMlePrivateKey()) {
+            $privateKey = $merchantConfig->getResponseMlePrivateKey();
+            if ($privateKey !== null && !is_string($privateKey)) {
+                try {
+                    $privateKey = Utility::convertKeyObjectToPem($privateKey);
+                } catch (\Exception $e) {
+                    self::$logger->error("Failed to convert key object to PEM: " . $e->getMessage());
+                    throw new MLEException("Failed to convert key object to PEM: " . $e->getMessage());
+                }
+                return $privateKey;
+            }
+        }
 
         if (!isset(self::$cache)) { //check static
 

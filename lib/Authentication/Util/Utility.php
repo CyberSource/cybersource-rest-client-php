@@ -295,4 +295,39 @@ class Utility
             throw new \Exception("OpenSSL extension not loaded; cannot read private key.");
         }
     }
+
+    /**
+     * Convert OpenSSL key object to PEM string
+     * 
+     * @param \OpenSSLAsymmetricKey|resource $key OpenSSL key object or resource
+     * @return string PEM string
+     * @throws \Exception If conversion fails
+     */
+    public static function convertKeyObjectToPem($key): string
+    {
+        if (is_string($key)) {
+            // Already a PEM string
+            return $key;
+        }
+
+        self::clearOpenSslErrors();
+
+        $pemString = '';
+        
+        // Try export without config first
+        $success = @openssl_pkey_export($key, $pemString, null);
+        
+        // Fallback: try with Windows config
+        if (!$success || trim($pemString) === '') {
+            $configArgs = ['config' => 'NUL'];
+            $success = @openssl_pkey_export($key, $pemString, null, $configArgs);
+        }
+
+        if (!$success || trim($pemString) === '') {
+            $errors = self::collectOpenSslErrors();
+            throw new \Exception('Failed to convert OpenSSL key object to PEM string. OpenSSL: ' . ($errors ?: 'Unknown error'));
+        }
+
+        return $pemString;
+    }
 }

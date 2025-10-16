@@ -328,13 +328,14 @@ class MerchantConfiguration
      */
     protected $responseMlePrivateKeyFilePath = '';
 
-    // /**
-    //  * Private key (in‑memory) used to decrypt Response MLE payloads.
-    //  * Provide the raw private key string (e.g. PEM / PKCS#8). Mutually exclusive with responseMlePrivateKeyFilePath.
-    //  *
-    //  * @var string
-    //  */
-    // protected $responseMlePrivateKey = '';
+    /**
+     * Private key (OpenSSL resource/object) used to decrypt Response MLE payloads.
+     * Provide the OpenSSLAsymmetricKey object (PHP 8+) or OpenSSL key resource (PHP 7).
+     * Mutually exclusive with responseMlePrivateKeyFilePath.
+     *
+     * @var \OpenSSLAsymmetricKey|resource|null
+     */
+    protected $responseMlePrivateKey = null;
 
     /**
      * Password for the private key file (e.g. .p12 or encrypted .pem) used for Response MLE decryption.
@@ -1344,16 +1345,19 @@ class MerchantConfiguration
         return $this->responseMlePrivateKeyFilePath;
     }
 
-    // public function setResponseMlePrivateKey($responseMlePrivateKey)
-    // {
-    //     // Accept only string; trim. If resource/object passed, ignore for now (simplify).
-    //     $this->responseMlePrivateKey = is_string($responseMlePrivateKey) ? trim($responseMlePrivateKey) : '';
-    // }
+    public function setResponseMlePrivateKey($responseMlePrivateKey)
+    {
+        if (is_object($responseMlePrivateKey) && get_class($responseMlePrivateKey) === 'OpenSSLAsymmetricKey') {
+            $this->responseMlePrivateKey = $responseMlePrivateKey;
+        } else {
+            throw new \InvalidArgumentException("responseMlePrivateKey must be OpenSSLAsymmetricKey");
+        } 
+    }
 
-    // public function getResponseMlePrivateKey()
-    // {
-    //     return $this->responseMlePrivateKey;
-    // }
+    public function getResponseMlePrivateKey()
+    {
+        return $this->responseMlePrivateKey;
+    }
 
     public function setResponseMlePrivateKeyFilePassword($responseMlePrivateKeyFilePassword)
     {
