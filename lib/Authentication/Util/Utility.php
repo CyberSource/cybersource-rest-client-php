@@ -57,13 +57,13 @@ class Utility
      * 
      * @param string $filePath Path to the private key file
      * @param string|null $password Password for encrypted keys
-     * @return array ['pem' => unencrypted PEM string, 'resource' => OpenSSL key resource]
-     * @throws MLEException If key cannot be loaded or decrypted
+     * @return string unencrypted PEM string
+     * @throws \Exception If key cannot be loaded or decrypted
      */
-    public static function loadResponseMlePrivateKey(string $filePath, ?string $password): array
+    public static function loadResponseMlePrivateKey(string $filePath, ?string $password): string
     {
         if (!extension_loaded('openssl')) {
-            throw new MLEException("OpenSSL extension not loaded; cannot read private key.");
+            throw new \Exception("OpenSSL extension not loaded; cannot read private key.");
         }
 
         $ext = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
@@ -72,74 +72,60 @@ class Utility
         if (in_array($ext, ['p12','pfx'], true)) {
             $pkcs12 = file_get_contents($filePath);
             if ($pkcs12 === false) {
-                throw new MLEException("Unable to read PKCS#12 file: {$filePath}");
+                throw new \Exception("Unable to read PKCS#12 file: {$filePath}");
             }
             $certs = [];
             if (!openssl_pkcs12_read($pkcs12, $certs, (string)$password)) {
                 $err = openssl_error_string();
-                throw new MLEException("Unable to parse PKCS#12: {$filePath}. OpenSSL: {$err}");
+                throw new \Exception("Unable to parse PKCS#12: {$filePath}. OpenSSL: {$err}");
             }
             if (empty($certs['pkey'])) {
-                throw new MLEException("No private key found in PKCS#12: {$filePath}");
+                throw new \Exception("No private key found in PKCS#12: {$filePath}");
             }
 
             $exported = '';
+            
+            // Clear OpenSSL error queue
+            while (openssl_error_string() !== false);
+            
+            // Try export without config first
             $exportOk = @openssl_pkey_export($certs['pkey'], $exported, null);
+            
+            // If that fails, try with Windows config
+            if (!$exportOk || trim($exported) === '') {
+                $configArgs = ['config' => 'NUL'];
+                $exportOk = @openssl_pkey_export($certs['pkey'], $exported, null, $configArgs);
+            }
+
+            if (!$exportOk || trim($exported) === '') {
+                $err = '';
+                while ($msg = openssl_error_string()) {
+                    $err .= ($err ? ' | ' : '') . $msg;
+                }
+                throw new \Exception("Failed exporting private key from PKCS#12. OpenSSL: " . ($err ?: 'Unknown error'));
+            }
+
             if (!$exportOk || trim($exported) === '') {
                 // Broader fallback: accept any BEGIN .. PRIVATE KEY block
                 if (is_string($certs['pkey']) && preg_match('/BEGIN\\s.+PRIVATE KEY/', $certs['pkey'])) {
                     $exported = $certs['pkey'];
-                } else {
-                    // Try again via handle
-                    $handle = @openssl_pkey_get_private($certs['pkey'], (string)$password);
-                    if ($handle && @openssl_pkey_export($handle, $exported, null) && trim($exported) !== '') {
-                        // success
-                    } else {
-                        $err = openssl_error_string();
-                        throw new MLEException("Failed exporting private key from PKCS#12 (OpenSSL 3 legacy issue). OpenSSL: {$err}");
-                    }
                 }
             }
-
-            $resource = @openssl_pkey_get_private($exported, (string)$password) ?: @openssl_pkey_get_private($exported);
-            if ($resource === false) {
-                throw new MLEException("Re-validation of PKCS#12 private key failed after fallback.");
-            }
-            return ['pem' => $exported, 'resource' => $resource];
+            return $exported;
         }
 
         // Handle PEM-based formats (.pem, .key, .p8)
         if (in_array($ext, ['pem','key','p8'], true)) {
             try {
                 $unencryptedPem = self::decryptPrivateKeyPem($filePath, $password);
-                $resource = @openssl_pkey_get_private($unencryptedPem);
-                if ($resource === false) {
-                    throw new MLEException("Failed to create resource from decrypted PEM");
-                }
-                return ['pem' => $unencryptedPem, 'resource' => $resource];
+                return  $unencryptedPem;
             } catch (\Exception $e) {
-                // If decryption fails, try the original approach for unencrypted keys
-                $raw = file_get_contents($filePath);
-                if ($raw === false || trim($raw) === '') {
-                    throw new MLEException("Unable to read key file: {$filePath}");
-                }
+                throw new \Exception("Failed to load PEM/KEY/P8 private key: " . $e->getMessage());
 
-                $priv = @openssl_pkey_get_private($raw);
-                if ($priv === false) {
-                    throw new MLEException("Unable to load private key: {$filePath}. " . $e->getMessage());
-                }
-
-                // Normalize unencrypted keys
-                $norm = '';
-                if (@openssl_pkey_export($priv, $norm, null) && trim($norm) !== '') {
-                    $raw = $norm;
-                }
-
-                return ['pem' => $raw, 'resource' => $priv];
             }
         }
 
-        throw new MLEException("Unsupported Response MLE Private Key file format: {$ext}. Supported: .p12, .pfx, .pem, .key, .p8");
+        throw new \Exception("Unsupported Response MLE Private Key file format: {$ext}. Supported: .p12, .pfx, .pem, .key, .p8");
     }
 
     /**
@@ -148,20 +134,20 @@ class Utility
      * @param string $pemPath Path to the PEM file
      * @param string|null $passphrase Password for encrypted keys
      * @return string Unencrypted PEM string
-     * @throws MLEException If decryption fails
+     * @throws \Exception If decryption fails
      */
     public static function decryptPrivateKeyPem(string $pemPath, ?string $passphrase): string
     {
         if (!extension_loaded('openssl')) {
-            throw new MLEException('The OpenSSL extension is required.');
+            throw new \Exception('The OpenSSL extension is required.');
         }
         if (!is_file($pemPath) || !is_readable($pemPath)) {
-            throw new MLEException("PEM file not found or not readable: {$pemPath}");
+            throw new \Exception("PEM file not found or not readable: {$pemPath}");
         }
 
         $pem = file_get_contents($pemPath);
         if ($pem === false || $pem === '') {
-            throw new MLEException('Failed to read PEM file contents.');
+            throw new \Exception('Failed to read PEM file contents.');
         }
 
         // Only attempt decryption if password provided and key appears encrypted
@@ -169,35 +155,64 @@ class Utility
                       strpos($pem, 'Proc-Type: 4,ENCRYPTED') !== false;
         
         if (!$isEncrypted) {
-            // Return as-is for unencrypted keys
-            return $pem;
+            $priv = @openssl_pkey_get_private(private_key: $pem);
+            if ($priv === false) {
+                $err = '';
+                while ($msg = openssl_error_string()) {
+                    $err .= ($err ? ' | ' : '') . $msg;
+                }
+                throw new \Exception("Unable to load unencrypted private key from {$pemPath}. OpenSSL errors: " . ($err ?: 'No specific error'));
+            }
+
+            // ALWAYS normalize to standard PKCS#8 PEM format for JWE compatibility
+            $normalized = '';
+            // Clear error queue before export
+            while (openssl_error_string() !== false)
+                ;
+
+            // Try export without config first
+            $success = @openssl_pkey_export($priv, $normalized, null);
+
+            // If that fails, try with Windows config
+            if (!$success) {
+                $configArgs = ['config' => 'NUL'];
+                $success = @openssl_pkey_export($priv, $normalized, null, $configArgs);
+            }
+
+            if (!$success) {
+                $err = '';
+                while ($msg = openssl_error_string()) {
+                    $err .= ($err ? ' | ' : '') . $msg;
+                }
+                throw new \Exception("Failed to normalize unencrypted key. OpenSSL errors: " . ($err ?: 'Unknown error'));
+            }
+
+            return $normalized;
         }
 
         if ($passphrase === null || $passphrase === '') {
-            throw new MLEException('Private key is encrypted but no passphrase provided');
+            throw new \Exception('Private key is encrypted but no passphrase provided');
         }
 
         // Obtain an OpenSSL private key handle using the passphrase
         $key = openssl_pkey_get_private($pem, $passphrase);
         if ($key === false) {
-            // Collect the last OpenSSL error to help with debugging
             $err = '';
             while ($msg = openssl_error_string()) {
                 $err .= ($err ? ' | ' : '') . $msg;
             }
-            throw new MLEException('Unable to decrypt private key. ' . ($err ?: 'Check passphrase and key format.'));
+            throw new \Exception('Unable to decrypt private key. ' . ($err ?: 'Check passphrase and key format.'));
         }
         
         // Export the key without a passphrase (i.e., decrypted)
         $unencryptedPem = '';
         
-        // Universal config - works for RSA, EC, DSA keys
-        // May specify what's needed for Windows compatibility
+        // Windows compatibility
         $configArgs = [
             'config' => 'NUL', // Pass config file search on Windows
         ];
         
-        // First attempt with minimal config (Windows-friendly)
+        //(Windows-friendly)
         $success = @openssl_pkey_export($key, $unencryptedPem, null, $configArgs);
         
         // If that fails, try without any config args (best for Mac/Linux)
@@ -211,17 +226,8 @@ class Utility
             while ($msg = openssl_error_string()) {
                 $err .= ($err ? ' | ' : '') . $msg;
             }
-            throw new MLEException('Failed to export unencrypted private key. ' . ($err ?: 'Unknown error'));        }
-
-        // Free the key handle explicitly for PHP 7 compatibility
-        // Note: Static analyzers may flag this for PHP 8+ where signature changed
-        // The is_resource() guard ensures this only runs on PHP 7
-        if (is_resource($key)) {
-            @openssl_free_key($key);
+            throw new \Exception('Failed to export unencrypted private key. ' . ($err ?: 'Unknown error'));        
         }
-        // PHP 8+ uses OpenSSLAsymmetricKey object and handles cleanup automatically
-        
         return $unencryptedPem;
     }
 }
-?>

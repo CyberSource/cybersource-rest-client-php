@@ -251,7 +251,6 @@ class MLEUtility
         }
         // self::$cache::clearAllFileCache();
         // echo "[MLE] Cleared all file cache.\n";
-        $key = self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
 
         return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
     }

@@ -184,17 +184,21 @@ class Cache
             try {
                 $loaded = Utility::loadResponseMlePrivateKey($mleCertPath, $password);
                 self::$file_cache[$cacheKey] = [
-                    'response_mle_private_key' => $loaded['pem'],
+                    'response_mle_private_key' => $loaded,
                     'file_mod_time'            => $fileModTime
                 ];
                 self::$responseMleKeyLoadFailed = false; // reset on success
-            } catch (MLEException $e) {
+            } catch (\Exception $e) {
                 if (!self::$responseMleKeyLoadFailed) {
                     self::$responseMleKeyLoadFailed = true;
                     if (self::$logger) { self::$logger->error("Response MLE private key load failed: ".$e->getMessage()); }
                 } else {
                     if (self::$logger) { self::$logger->debug("Response MLE private key load failed again; suppressing repeated error log."); }
                 }
+                self::$file_cache[$cacheKey] = [
+                    'response_mle_private_key' => null,
+                    'file_mod_time' => $fileModTime
+                ];
             }
             return;
         }
