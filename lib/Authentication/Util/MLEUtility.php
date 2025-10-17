@@ -80,7 +80,7 @@ class MLEUtility
             if (is_array($map) && !empty($map)) {
                 foreach ($operationArray as $operationId) {
                     if (array_key_exists($operationId, $map)) {
-                        $isResponseMLEForAPI = (bool)$map[$operationId]; //check
+                        $isResponseMLEForAPI = (bool)$map[$operationId];
                         break;
                     }
                 }
@@ -253,13 +253,10 @@ class MLEUtility
             }
         }
 
-        if (!isset(self::$cache)) { //check static
+        if (!isset(self::$cache)) {
 
             self::$cache = new Cache();
         }
-        // self::$cache::clearAllFileCache();
-        // echo "[MLE] Cleared all file cache.\n";
-
         return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
     }
 
