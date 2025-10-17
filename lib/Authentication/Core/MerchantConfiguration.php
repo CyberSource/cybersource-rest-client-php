@@ -1127,7 +1127,6 @@ class MerchantConfiguration
             return;
         }
 
-        // Allow stdClass (from json_decode without assoc)
         if (is_object($mapToControlMLEonAPI)) {
             $mapToControlMLEonAPI = get_object_vars($mapToControlMLEonAPI);
         }
@@ -1349,13 +1348,6 @@ class MerchantConfiguration
      */
     public function getRequestMleKeyAlias()
     {
-        // if (isset($this->requestMleKeyAlias) && trim($this->requestMleKeyAlias) !== '') {
-        //     return $this->requestMleKeyAlias;
-        // }
-        // if (isset($this->mleKeyAlias) && trim($this->mleKeyAlias) !== '') {
-        //     return $this->mleKeyAlias;
-        // }
-        // Neither provided; set default only for requestMleKeyAlias
         return $this->requestMleKeyAlias;
     }
 
@@ -1370,35 +1362,12 @@ class MerchantConfiguration
      */
     public function setRequestMleKeyAlias($requestMleKeyAlias)
     {
-        // $alias = trim((string)$requestMleKeyAlias);
-
-        // if ($alias === '') {
-        //     // Leave empty; fallback will occur in getter
-        //     $this->requestMleKeyAlias = '';
-        //     return $this;
-        // }
-
-        // if (isset($this->mleKeyAlias) && trim($this->mleKeyAlias) !== '' && $this->mleKeyAlias !== $alias) {
-        //     $msg = "mleKeyAlias and requestMleKeyAlias must be the same value when both are set.";
-        //     if (self::$logger) { self::$logger->error($msg); }
-        //     throw new \InvalidArgumentException($msg);
-        // }
         $alias = trim((string) $requestMleKeyAlias);
 
         if ($alias !== '') {
             $this->requestMleKeyAlias = $alias;
         }
         return $this;
-
-        // // 2. Else if legacy mleKeyAlias set, promote it to requestMleKeyAlias
-        // if (isset($this->mleKeyAlias) && trim($this->mleKeyAlias) !== '') {
-        //     $this->requestMleKeyAlias = trim($this->mleKeyAlias);
-        //     return $this;
-        // }
-
-        // // 3. Else assign default constant
-        // $this->requestMleKeyAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
-        // return $this;
     }
 
     /**
@@ -1417,16 +1386,6 @@ class MerchantConfiguration
             return $this;
         }
 
-        // if ($alias === '') {
-        //     $this->mleKeyAlias = '';
-        //     return $this;
-        // }
-
-        // if (isset($this->requestMleKeyAlias) && trim($this->requestMleKeyAlias) !== '' && $this->requestMleKeyAlias !== $alias) {
-        //     $msg = "mleKeyAlias and requestMleKeyAlias must be the same value when both are set.";
-        //     if (self::$logger) { self::$logger->error($msg); }
-        //     throw new \InvalidArgumentException($msg);
-        // }
         if (
             $this->mleKeyAlias === GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT
             || $this->mleKeyAlias === ''
