@@ -1338,11 +1338,7 @@ class MerchantConfiguration
     }
 
     /**
-     * Get requestMleKeyAlias (authoritative in codebase).
-     * Fallback order:
-     *   1. requestMleKeyAlias if non-empty
-     *   2. mleKeyAlias (legacy) if non-empty
-     *   3. assign default to requestMleKeyAlias and return it
+     * Get requestMleKeyAlias
      *
      * @return string
      */
@@ -1353,9 +1349,6 @@ class MerchantConfiguration
 
     /**
      * Set requestMleKeyAlias.
-     * If legacy mleKeyAlias already set with a different value -> error. //to do
-     *
-     * Empty/blank input is treated as "not set" (kept empty for fallback/default logic).
      *
      * @param string $requestMleKeyAlias
      * @return $this
@@ -1372,9 +1365,6 @@ class MerchantConfiguration
 
     /**
      * Legacy setter for mleKeyAlias.
-     * If requestMleKeyAlias already set with a different value -> error. //to do
-     *
-     * Empty/blank input is treated as "not set".
      *
      * @param string $mleKeyAlias
      * @return $this
