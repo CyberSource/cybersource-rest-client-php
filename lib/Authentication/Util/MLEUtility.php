@@ -86,7 +86,6 @@ class MLEUtility
                 }
             }
         }
-        echo "[MLE] Response MLE decision for operations [" . implode(',', $operationArray) . "]: " . ($isResponseMLEForAPI ? "true" : "false") . "\n";
 
         return $isResponseMLEForAPI;
     }
@@ -154,7 +153,6 @@ class MLEUtility
         if (empty($privateKey)) {
             throw new MLEException("Response MLE private key not available for decryption.");
         }
-        // Cache already handles password decryption and returns unencrypted PEM
         if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
             $maskedResponseBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($mleResponseBody);
             self::$logger->debug("LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: " . $maskedResponseBody);
