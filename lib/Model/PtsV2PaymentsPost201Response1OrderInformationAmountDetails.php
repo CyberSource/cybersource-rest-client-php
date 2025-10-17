@@ -170,7 +170,7 @@ class PtsV2PaymentsPost201Response1OrderInformationAmountDetails implements Arra
 
     /**
      * Sets refundBalance
-     * @param string $refundBalance This field will carry the remaning amount which can be refunded.
+     * @param string $refundBalance The remaining amount which can be refunded.
      * @return $this
      */
     public function setRefundBalance($refundBalance)

@@ -187,4 +187,11 @@ class CreateCreditRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPromotionInformation()
     {
     }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
+    {
+    }
 }

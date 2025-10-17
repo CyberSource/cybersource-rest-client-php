@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **findProductsToSubscribe**
-> \CyberSource\Model\InlineResponse2003[] findProductsToSubscribe($organizationId)
+> \CyberSource\Model\InlineResponse2004[] findProductsToSubscribe($organizationId)
 
 Find Products You Can Subscribe To
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
+[**\CyberSource\Model\InlineResponse2004[]**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

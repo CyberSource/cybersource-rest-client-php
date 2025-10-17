@@ -53,7 +53,7 @@ class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures implements 
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'surcharge' => '\CyberSource\Model\PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge'
+        'surcharge' => '\CyberSource\Model\PaymentsProductsAlternativePaymentMethodsSubscriptionInformation'
     ];
 
     /**
@@ -161,7 +161,7 @@ class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures implements 
 
     /**
      * Gets surcharge
-     * @return \CyberSource\Model\PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge
+     * @return \CyberSource\Model\PaymentsProductsAlternativePaymentMethodsSubscriptionInformation
      */
     public function getSurcharge()
     {
@@ -170,7 +170,7 @@ class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures implements 
 
     /**
      * Sets surcharge
-     * @param \CyberSource\Model\PaymentsProductsDifferentialFeeSubscriptionInformationFeaturesSurcharge $surcharge
+     * @param \CyberSource\Model\PaymentsProductsAlternativePaymentMethodsSubscriptionInformation $surcharge
      * @return $this
      */
     public function setSurcharge($surcharge)

@@ -61,7 +61,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceCode' => 'string',
         'masterCardServiceReplyCode' => 'string',
         'responseDetails' => 'string',
-        'providerResponse' => 'string'
+        'providerResponse' => 'string',
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceCode' => null,
         'masterCardServiceReplyCode' => null,
         'responseDetails' => null,
-        'providerResponse' => null
+        'providerResponse' => null,
+        'network' => null
     ];
 
     public static function swaggerTypes()
@@ -103,7 +105,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceCode' => 'masterCardServiceCode',
         'masterCardServiceReplyCode' => 'masterCardServiceReplyCode',
         'responseDetails' => 'responseDetails',
-        'providerResponse' => 'providerResponse'
+        'providerResponse' => 'providerResponse',
+        'network' => 'network'
     ];
 
 
@@ -120,7 +123,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceCode' => 'setMasterCardServiceCode',
         'masterCardServiceReplyCode' => 'setMasterCardServiceReplyCode',
         'responseDetails' => 'setResponseDetails',
-        'providerResponse' => 'setProviderResponse'
+        'providerResponse' => 'setProviderResponse',
+        'network' => 'setNetwork'
     ];
 
 
@@ -137,7 +141,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceCode' => 'getMasterCardServiceCode',
         'masterCardServiceReplyCode' => 'getMasterCardServiceReplyCode',
         'responseDetails' => 'getResponseDetails',
-        'providerResponse' => 'getProviderResponse'
+        'providerResponse' => 'getProviderResponse',
+        'network' => 'getNetwork'
     ];
 
     public static function attributeMap()
@@ -180,6 +185,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         $this->container['masterCardServiceReplyCode'] = isset($data['masterCardServiceReplyCode']) ? $data['masterCardServiceReplyCode'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['providerResponse'] = isset($data['providerResponse']) ? $data['providerResponse'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
     }
 
     /**
@@ -365,7 +371,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
 
     /**
      * Sets responseDetails
-     * @param string $responseDetails This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**.
+     * @param string $responseDetails This field might contain information about a decline.
      * @return $this
      */
     public function setResponseDetails($responseDetails)
@@ -392,6 +398,27 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     public function setProviderResponse($providerResponse)
     {
         $this->container['providerResponse'] = $providerResponse;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork $network
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
 
         return $this;
     }

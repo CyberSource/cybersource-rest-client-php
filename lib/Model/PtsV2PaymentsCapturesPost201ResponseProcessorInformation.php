@@ -58,7 +58,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
         'responseDetails' => 'string',
         'responseCode' => 'string',
         'providerResponse' => 'string',
-        'updateTimeUtc' => 'string'
+        'updateTimeUtc' => 'string',
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
     ];
 
     /**
@@ -71,7 +72,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
         'responseDetails' => null,
         'responseCode' => null,
         'providerResponse' => null,
-        'updateTimeUtc' => null
+        'updateTimeUtc' => null,
+        'network' => null
     ];
 
     public static function swaggerTypes()
@@ -94,7 +96,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
         'responseDetails' => 'responseDetails',
         'responseCode' => 'responseCode',
         'providerResponse' => 'providerResponse',
-        'updateTimeUtc' => 'updateTimeUtc'
+        'updateTimeUtc' => 'updateTimeUtc',
+        'network' => 'network'
     ];
 
 
@@ -108,7 +111,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
         'responseDetails' => 'setResponseDetails',
         'responseCode' => 'setResponseCode',
         'providerResponse' => 'setProviderResponse',
-        'updateTimeUtc' => 'setUpdateTimeUtc'
+        'updateTimeUtc' => 'setUpdateTimeUtc',
+        'network' => 'setNetwork'
     ];
 
 
@@ -122,7 +126,8 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
         'responseDetails' => 'getResponseDetails',
         'responseCode' => 'getResponseCode',
         'providerResponse' => 'getProviderResponse',
-        'updateTimeUtc' => 'getUpdateTimeUtc'
+        'updateTimeUtc' => 'getUpdateTimeUtc',
+        'network' => 'getNetwork'
     ];
 
     public static function attributeMap()
@@ -162,6 +167,7 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['providerResponse'] = isset($data['providerResponse']) ? $data['providerResponse'] : null;
         $this->container['updateTimeUtc'] = isset($data['updateTimeUtc']) ? $data['updateTimeUtc'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
     }
 
     /**
@@ -311,6 +317,27 @@ class PtsV2PaymentsCapturesPost201ResponseProcessorInformation implements ArrayA
     public function setUpdateTimeUtc($updateTimeUtc)
     {
         $this->container['updateTimeUtc'] = $updateTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork $network
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
 
         return $this;
     }

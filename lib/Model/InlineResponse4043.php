@@ -53,10 +53,9 @@ class InlineResponse4043 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'status' => 'string',
+        'reason' => 'string',
         'message' => 'string',
-        'code' => 'string',
-        'submitTimeUtc' => 'string'
+        'details' => '\CyberSource\Model\InlineResponse4043Details[]'
     ];
 
     /**
@@ -64,10 +63,9 @@ class InlineResponse4043 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'status' => null,
+        'reason' => null,
         'message' => null,
-        'code' => null,
-        'submitTimeUtc' => null
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -85,10 +83,9 @@ class InlineResponse4043 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
+        'reason' => 'reason',
         'message' => 'message',
-        'code' => 'code',
-        'submitTimeUtc' => 'submitTimeUtc'
+        'details' => 'details'
     ];
 
 
@@ -97,10 +94,9 @@ class InlineResponse4043 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
+        'reason' => 'setReason',
         'message' => 'setMessage',
-        'code' => 'setCode',
-        'submitTimeUtc' => 'setSubmitTimeUtc'
+        'details' => 'setDetails'
     ];
 
 
@@ -109,10 +105,9 @@ class InlineResponse4043 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
+        'reason' => 'getReason',
         'message' => 'getMessage',
-        'code' => 'getCode',
-        'submitTimeUtc' => 'getSubmitTimeUtc'
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -146,10 +141,9 @@ class InlineResponse4043 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -178,22 +172,22 @@ class InlineResponse4043 implements ArrayAccess
 
 
     /**
-     * Gets status
+     * Gets reason
      * @return string
      */
-    public function getStatus()
+    public function getReason()
     {
-        return $this->container['status'];
+        return $this->container['reason'];
     }
 
     /**
-     * Sets status
-     * @param string $status The status of the submitted request.   Possible values: - NOT_FOUND
+     * Sets reason
+     * @param string $reason
      * @return $this
      */
-    public function setStatus($status)
+    public function setReason($reason)
     {
-        $this->container['status'] = $status;
+        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -209,7 +203,7 @@ class InlineResponse4043 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message
      * @return $this
      */
     public function setMessage($message)
@@ -220,43 +214,22 @@ class InlineResponse4043 implements ArrayAccess
     }
 
     /**
-     * Gets code
-     * @return string
+     * Gets details
+     * @return \CyberSource\Model\InlineResponse4043Details[]
      */
-    public function getCode()
+    public function getDetails()
     {
-        return $this->container['code'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets code
-     * @param string $code An optional short string which identifies the exact error.
+     * Sets details
+     * @param \CyberSource\Model\InlineResponse4043Details[] $details
      * @return $this
      */
-    public function setCode($code)
+    public function setDetails($details)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets submitTimeUtc
-     * @return string
-     */
-    public function getSubmitTimeUtc()
-    {
-        return $this->container['submitTimeUtc'];
-    }
-
-    /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
-     * @return $this
-     */
-    public function setSubmitTimeUtc($submitTimeUtc)
-    {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['details'] = $details;
 
         return $this;
     }

@@ -138,4 +138,11 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformationTest exte
     public function testPropertySellerProtection()
     {
     }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
 }

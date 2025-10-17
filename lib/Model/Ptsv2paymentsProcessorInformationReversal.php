@@ -53,7 +53,8 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'preApprovalToken' => 'string'
+        'preApprovalToken' => 'string',
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
     ];
 
     /**
@@ -61,7 +62,8 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'preApprovalToken' => null
+        'preApprovalToken' => null,
+        'network' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'preApprovalToken' => 'preApprovalToken'
+        'preApprovalToken' => 'preApprovalToken',
+        'network' => 'network'
     ];
 
 
@@ -88,7 +91,8 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'preApprovalToken' => 'setPreApprovalToken'
+        'preApprovalToken' => 'setPreApprovalToken',
+        'network' => 'setNetwork'
     ];
 
 
@@ -97,7 +101,8 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'preApprovalToken' => 'getPreApprovalToken'
+        'preApprovalToken' => 'getPreApprovalToken',
+        'network' => 'getNetwork'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['preApprovalToken'] = isset($data['preApprovalToken']) ? $data['preApprovalToken'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class Ptsv2paymentsProcessorInformationReversal implements ArrayAccess
     public function setPreApprovalToken($preApprovalToken)
     {
         $this->container['preApprovalToken'] = $preApprovalToken;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork $network
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
 
         return $this;
     }

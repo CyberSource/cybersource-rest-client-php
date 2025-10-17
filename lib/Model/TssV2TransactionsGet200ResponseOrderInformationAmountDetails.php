@@ -59,6 +59,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'authorizedAmount' => 'string',
         'settlementAmount' => 'string',
         'settlementCurrency' => 'string',
+        'refundBalance' => 'string',
         'surcharge' => '\CyberSource\Model\Ptsv2payoutsOrderInformationAmountDetailsSurcharge'
     ];
 
@@ -73,6 +74,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'authorizedAmount' => null,
         'settlementAmount' => null,
         'settlementCurrency' => null,
+        'refundBalance' => null,
         'surcharge' => null
     ];
 
@@ -97,6 +99,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'authorizedAmount' => 'authorizedAmount',
         'settlementAmount' => 'settlementAmount',
         'settlementCurrency' => 'settlementCurrency',
+        'refundBalance' => 'refundBalance',
         'surcharge' => 'surcharge'
     ];
 
@@ -112,6 +115,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'authorizedAmount' => 'setAuthorizedAmount',
         'settlementAmount' => 'setSettlementAmount',
         'settlementCurrency' => 'setSettlementCurrency',
+        'refundBalance' => 'setRefundBalance',
         'surcharge' => 'setSurcharge'
     ];
 
@@ -127,6 +131,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         'authorizedAmount' => 'getAuthorizedAmount',
         'settlementAmount' => 'getSettlementAmount',
         'settlementCurrency' => 'getSettlementCurrency',
+        'refundBalance' => 'getRefundBalance',
         'surcharge' => 'getSurcharge'
     ];
 
@@ -167,6 +172,7 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
         $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
         $this->container['settlementAmount'] = isset($data['settlementAmount']) ? $data['settlementAmount'] : null;
         $this->container['settlementCurrency'] = isset($data['settlementCurrency']) ? $data['settlementCurrency'] : null;
+        $this->container['refundBalance'] = isset($data['refundBalance']) ? $data['refundBalance'] : null;
         $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
     }
 
@@ -317,6 +323,27 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetails implements Ar
     public function setSettlementCurrency($settlementCurrency)
     {
         $this->container['settlementCurrency'] = $settlementCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets refundBalance
+     * @return string
+     */
+    public function getRefundBalance()
+    {
+        return $this->container['refundBalance'];
+    }
+
+    /**
+     * Sets refundBalance
+     * @param string $refundBalance The remaining amount which can be refunded.
+     * @return $this
+     */
+    public function setRefundBalance($refundBalance)
+    {
+        $this->container['refundBalance'] = $refundBalance;
 
         return $this;
     }

@@ -103,4 +103,11 @@ class UpdateInvoiceRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "merchantDefinedFieldValues"
+     */
+    public function testPropertyMerchantDefinedFieldValues()
+    {
+    }
 }

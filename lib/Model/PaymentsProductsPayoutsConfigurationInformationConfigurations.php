@@ -53,8 +53,8 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'pullfunds' => 'map[string,\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds]',
-        'pushfunds' => 'map[string,\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds]'
+        'common' => '\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon',
+        'processors' => 'map[string,object]'
     ];
 
     /**
@@ -62,8 +62,8 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'pullfunds' => null,
-        'pushfunds' => null
+        'common' => null,
+        'processors' => null
     ];
 
     public static function swaggerTypes()
@@ -81,8 +81,8 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
      * @var string[]
      */
     protected static $attributeMap = [
-        'pullfunds' => 'pullfunds',
-        'pushfunds' => 'pushfunds'
+        'common' => 'common',
+        'processors' => 'processors'
     ];
 
 
@@ -91,8 +91,8 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
      * @var string[]
      */
     protected static $setters = [
-        'pullfunds' => 'setPullfunds',
-        'pushfunds' => 'setPushfunds'
+        'common' => 'setCommon',
+        'processors' => 'setProcessors'
     ];
 
 
@@ -101,8 +101,8 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
      * @var string[]
      */
     protected static $getters = [
-        'pullfunds' => 'getPullfunds',
-        'pushfunds' => 'getPushfunds'
+        'common' => 'getCommon',
+        'processors' => 'getProcessors'
     ];
 
     public static function attributeMap()
@@ -136,8 +136,8 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
      */
     public function __construct(array $data = null)
     {
-        $this->container['pullfunds'] = isset($data['pullfunds']) ? $data['pullfunds'] : null;
-        $this->container['pushfunds'] = isset($data['pushfunds']) ? $data['pushfunds'] : null;
+        $this->container['common'] = isset($data['common']) ? $data['common'] : null;
+        $this->container['processors'] = isset($data['processors']) ? $data['processors'] : null;
     }
 
     /**
@@ -166,43 +166,43 @@ class PaymentsProductsPayoutsConfigurationInformationConfigurations implements A
 
 
     /**
-     * Gets pullfunds
-     * @return map[string,\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds]
+     * Gets common
+     * @return \CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon
      */
-    public function getPullfunds()
+    public function getCommon()
     {
-        return $this->container['pullfunds'];
+        return $this->container['common'];
     }
 
     /**
-     * Sets pullfunds
-     * @param map[string,\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsPullfunds] $pullfunds
+     * Sets common
+     * @param \CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsCommon $common
      * @return $this
      */
-    public function setPullfunds($pullfunds)
+    public function setCommon($common)
     {
-        $this->container['pullfunds'] = $pullfunds;
+        $this->container['common'] = $common;
 
         return $this;
     }
 
     /**
-     * Gets pushfunds
-     * @return map[string,\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds]
+     * Gets processors
+     * @return map[string,object]
      */
-    public function getPushfunds()
+    public function getProcessors()
     {
-        return $this->container['pushfunds'];
+        return $this->container['processors'];
     }
 
     /**
-     * Sets pushfunds
-     * @param map[string,\CyberSource\Model\PaymentsProductsPayoutsConfigurationInformationConfigurationsPushfunds] $pushfunds
+     * Sets processors
+     * @param map[string,object] $processors
      * @return $this
      */
-    public function setPushfunds($pushfunds)
+    public function setProcessors($processors)
     {
-        $this->container['pushfunds'] = $pushfunds;
+        $this->container['processors'] = $processors;
 
         return $this;
     }

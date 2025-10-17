@@ -60,7 +60,8 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
         'customerInformation' => '\CyberSource\Model\Invoicingv2invoicesCustomerInformation',
         'processingInformation' => '\CyberSource\Model\Invoicingv2invoicesProcessingInformation',
         'invoiceInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformation',
-        'orderInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseOrderInformation'
+        'orderInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseOrderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition[]'
     ];
 
     /**
@@ -75,7 +76,8 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
         'customerInformation' => null,
         'processingInformation' => null,
         'invoiceInformation' => null,
-        'orderInformation' => null
+        'orderInformation' => null,
+        'merchantDefinedFieldValuesWithDefinition' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +102,8 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
         'customerInformation' => 'customerInformation',
         'processingInformation' => 'processingInformation',
         'invoiceInformation' => 'invoiceInformation',
-        'orderInformation' => 'orderInformation'
+        'orderInformation' => 'orderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => 'merchantDefinedFieldValuesWithDefinition'
     ];
 
 
@@ -116,7 +119,8 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
         'customerInformation' => 'setCustomerInformation',
         'processingInformation' => 'setProcessingInformation',
         'invoiceInformation' => 'setInvoiceInformation',
-        'orderInformation' => 'setOrderInformation'
+        'orderInformation' => 'setOrderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => 'setMerchantDefinedFieldValuesWithDefinition'
     ];
 
 
@@ -132,7 +136,8 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
         'customerInformation' => 'getCustomerInformation',
         'processingInformation' => 'getProcessingInformation',
         'invoiceInformation' => 'getInvoiceInformation',
-        'orderInformation' => 'getOrderInformation'
+        'orderInformation' => 'getOrderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => 'getMerchantDefinedFieldValuesWithDefinition'
     ];
 
     public static function attributeMap()
@@ -174,6 +179,7 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['merchantDefinedFieldValuesWithDefinition'] = isset($data['merchantDefinedFieldValuesWithDefinition']) ? $data['merchantDefinedFieldValuesWithDefinition'] : null;
     }
 
     /**
@@ -365,6 +371,27 @@ class InvoicingV2InvoicesPost201Response implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDefinedFieldValuesWithDefinition
+     * @return \CyberSource\Model\InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition[]
+     */
+    public function getMerchantDefinedFieldValuesWithDefinition()
+    {
+        return $this->container['merchantDefinedFieldValuesWithDefinition'];
+    }
+
+    /**
+     * Sets merchantDefinedFieldValuesWithDefinition
+     * @param \CyberSource\Model\InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition[] $merchantDefinedFieldValuesWithDefinition
+     * @return $this
+     */
+    public function setMerchantDefinedFieldValuesWithDefinition($merchantDefinedFieldValuesWithDefinition)
+    {
+        $this->container['merchantDefinedFieldValuesWithDefinition'] = $merchantDefinedFieldValuesWithDefinition;
 
         return $this;
     }

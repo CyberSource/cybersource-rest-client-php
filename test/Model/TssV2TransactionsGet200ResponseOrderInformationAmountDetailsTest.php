@@ -119,6 +119,13 @@ class TssV2TransactionsGet200ResponseOrderInformationAmountDetailsTest extends \
     }
 
     /**
+     * Test attribute "refundBalance"
+     */
+    public function testPropertyRefundBalance()
+    {
+    }
+
+    /**
      * Test attribute "surcharge"
      */
     public function testPropertySurcharge()

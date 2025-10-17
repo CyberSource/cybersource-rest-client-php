@@ -138,4 +138,11 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformationTest extends \PHP
     public function testPropertyProviderResponse()
     {
     }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
 }

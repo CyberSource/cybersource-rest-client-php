@@ -68,7 +68,8 @@ class CreateCreditRequest implements ArrayAccess
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
         'recipientInformation' => '\CyberSource\Model\Ptsv2creditsRecipientInformation',
         'senderInformation' => '\CyberSource\Model\Ptsv2creditsSenderInformation',
-        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
+        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
+        'processorInformation' => '\CyberSource\Model\Ptsv2reversalsProcessorInformation'
     ];
 
     /**
@@ -91,7 +92,8 @@ class CreateCreditRequest implements ArrayAccess
         'travelInformation' => null,
         'recipientInformation' => null,
         'senderInformation' => null,
-        'promotionInformation' => null
+        'promotionInformation' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -124,7 +126,8 @@ class CreateCreditRequest implements ArrayAccess
         'travelInformation' => 'travelInformation',
         'recipientInformation' => 'recipientInformation',
         'senderInformation' => 'senderInformation',
-        'promotionInformation' => 'promotionInformation'
+        'promotionInformation' => 'promotionInformation',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -148,7 +151,8 @@ class CreateCreditRequest implements ArrayAccess
         'travelInformation' => 'setTravelInformation',
         'recipientInformation' => 'setRecipientInformation',
         'senderInformation' => 'setSenderInformation',
-        'promotionInformation' => 'setPromotionInformation'
+        'promotionInformation' => 'setPromotionInformation',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -172,7 +176,8 @@ class CreateCreditRequest implements ArrayAccess
         'travelInformation' => 'getTravelInformation',
         'recipientInformation' => 'getRecipientInformation',
         'senderInformation' => 'getSenderInformation',
-        'promotionInformation' => 'getPromotionInformation'
+        'promotionInformation' => 'getPromotionInformation',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -222,6 +227,7 @@ class CreateCreditRequest implements ArrayAccess
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -581,6 +587,27 @@ class CreateCreditRequest implements ArrayAccess
     public function setPromotionInformation($promotionInformation)
     {
         $this->container['promotionInformation'] = $promotionInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\Ptsv2reversalsProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\Ptsv2reversalsProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

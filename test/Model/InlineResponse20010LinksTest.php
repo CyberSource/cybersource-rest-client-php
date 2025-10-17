@@ -77,16 +77,16 @@ class InlineResponse20010LinksTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "self"
+     * Test attribute "rel"
      */
-    public function testPropertySelf()
+    public function testPropertyRel()
     {
     }
 
     /**
-     * Test attribute "report"
+     * Test attribute "href"
      */
-    public function testPropertyReport()
+    public function testPropertyHref()
     {
     }
 }

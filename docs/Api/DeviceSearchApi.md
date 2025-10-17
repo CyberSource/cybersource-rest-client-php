@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **postSearchQuery**
-> \CyberSource\Model\InlineResponse2006 postSearchQuery($postDeviceSearchRequest)
+> \CyberSource\Model\InlineResponse2007 postSearchQuery($postDeviceSearchRequest)
 
 Retrieve List of Devices for a given search query V2
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\CyberSource\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -54,7 +54,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postSearchQueryV3**
-> \CyberSource\Model\InlineResponse2008 postSearchQueryV3($postDeviceSearchRequestV3)
+> \CyberSource\Model\InlineResponse2009 postSearchQueryV3($postDeviceSearchRequestV3)
 
 Retrieve List of Devices for a given search query
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\CyberSource\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 

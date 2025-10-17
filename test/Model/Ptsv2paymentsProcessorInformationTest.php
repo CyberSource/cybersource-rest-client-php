@@ -96,4 +96,11 @@ class Ptsv2paymentsProcessorInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyReversal()
     {
     }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
 }

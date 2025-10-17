@@ -61,7 +61,7 @@ class RiskProductsFraudManagementEssentialsConfigurationInformation implements A
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'templateId' => 'uuid'
+        'templateId' => null
     ];
 
     public static function swaggerTypes()
