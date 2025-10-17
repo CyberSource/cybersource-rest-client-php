@@ -195,6 +195,10 @@ class SecureFileShareApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getFile,getFileWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -204,7 +208,8 @@ class SecureFileShareApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/sfs/v1/files/{fileId}'
+                '/sfs/v1/files/{fileId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -338,6 +343,10 @@ class SecureFileShareApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\V1FileDetailsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getFileDetail,getFileDetailWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -347,7 +356,8 @@ class SecureFileShareApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\V1FileDetailsGet200Response',
-                '/sfs/v1/file-details'
+                '/sfs/v1/file-details',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

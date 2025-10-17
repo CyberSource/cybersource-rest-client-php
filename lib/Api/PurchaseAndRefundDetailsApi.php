@@ -239,6 +239,10 @@ class PurchaseAndRefundDetailsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getPurchaseAndRefundDetails,getPurchaseAndRefundDetailsWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -248,7 +252,8 @@ class PurchaseAndRefundDetailsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ReportingV3PurchaseRefundDetailsGet200Response',
-                '/reporting/v3/purchase-refund-details'
+                '/reporting/v3/purchase-refund-details',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

@@ -188,6 +188,10 @@ class TransactionDetailsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TssV2TransactionsGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getTransaction,getTransactionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,7 +201,8 @@ class TransactionDetailsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TssV2TransactionsGet200Response',
-                '/tss/v2/transactions/{id}'
+                '/tss/v2/transactions/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

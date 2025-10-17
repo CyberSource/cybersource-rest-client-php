@@ -188,6 +188,10 @@ class BatchesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20011");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getBatchReport,getBatchReportWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,7 +201,8 @@ class BatchesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse20011',
-                '/accountupdater/v1/batches/{batchId}/report'
+                '/accountupdater/v1/batches/{batchId}/report',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -312,6 +317,10 @@ class BatchesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20010");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getBatchStatus,getBatchStatusWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -321,7 +330,8 @@ class BatchesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse20010',
-                '/accountupdater/v1/batches/{batchId}/status'
+                '/accountupdater/v1/batches/{batchId}/status',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -449,6 +459,10 @@ class BatchesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2009");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getBatchesList,getBatchesListWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -458,7 +472,8 @@ class BatchesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2009',
-                '/accountupdater/v1/batches'
+                '/accountupdater/v1/batches',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -576,6 +591,10 @@ class BatchesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse202");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postBatch,postBatchWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -585,7 +604,8 @@ class BatchesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse202',
-                '/accountupdater/v1/batches'
+                '/accountupdater/v1/batches',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

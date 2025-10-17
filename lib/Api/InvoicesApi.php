@@ -187,6 +187,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createInvoice,createInvoiceWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesPost201Response',
-                '/invoicing/v2/invoices'
+                '/invoicing/v2/invoices',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -339,6 +344,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesAllGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getAllInvoices,getAllInvoicesWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -348,7 +357,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesAllGet200Response',
-                '/invoicing/v2/invoices'
+                '/invoicing/v2/invoices',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -471,6 +481,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getInvoice,getInvoiceWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -480,7 +494,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesGet200Response',
-                '/invoicing/v2/invoices/{id}'
+                '/invoicing/v2/invoices/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -603,6 +618,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesCancel200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "performCancelAction,performCancelActionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -612,7 +631,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesCancel200Response',
-                '/invoicing/v2/invoices/{id}/cancelation'
+                '/invoicing/v2/invoices/{id}/cancelation',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -735,6 +755,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPublish200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "performPublishAction,performPublishActionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -744,7 +768,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesPublish200Response',
-                '/invoicing/v2/invoices/{id}/publication'
+                '/invoicing/v2/invoices/{id}/publication',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -867,6 +892,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesSend200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "performSendAction,performSendActionWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -876,7 +905,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesSend200Response',
-                '/invoicing/v2/invoices/{id}/delivery'
+                '/invoicing/v2/invoices/{id}/delivery',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -1013,6 +1043,10 @@ class InvoicesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InvoicingV2InvoicesPut200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateInvoice,updateInvoiceWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -1022,7 +1056,8 @@ class InvoicesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InvoicingV2InvoicesPut200Response',
-                '/invoicing/v2/invoices/{id}'
+                '/invoicing/v2/invoices/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

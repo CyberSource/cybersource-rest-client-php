@@ -209,6 +209,10 @@ class CustomerPaymentInstrumentApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "deleteCustomerPaymentInstrument,deleteCustomerPaymentInstrumentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -218,7 +222,8 @@ class CustomerPaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}'
+                '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -374,6 +379,10 @@ class CustomerPaymentInstrumentApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PostCustomerPaymentInstrumentRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getCustomerPaymentInstrument,getCustomerPaymentInstrumentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -383,7 +392,8 @@ class CustomerPaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PostCustomerPaymentInstrumentRequest',
-                '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}'
+                '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -538,6 +548,10 @@ class CustomerPaymentInstrumentApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PaymentInstrumentList");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getCustomerPaymentInstrumentsList,getCustomerPaymentInstrumentsListWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -547,7 +561,8 @@ class CustomerPaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PaymentInstrumentList',
-                '/tms/v2/customers/{customerId}/payment-instruments'
+                '/tms/v2/customers/{customerId}/payment-instruments',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -723,6 +738,10 @@ class CustomerPaymentInstrumentApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PatchCustomerPaymentInstrumentRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "patchCustomersPaymentInstrument,patchCustomersPaymentInstrumentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -732,7 +751,8 @@ class CustomerPaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PatchCustomerPaymentInstrumentRequest',
-                '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}'
+                '/tms/v2/customers/{customerId}/payment-instruments/{paymentInstrumentId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -891,6 +911,10 @@ class CustomerPaymentInstrumentApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PostCustomerPaymentInstrumentRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postCustomerPaymentInstrument,postCustomerPaymentInstrumentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -900,7 +924,8 @@ class CustomerPaymentInstrumentApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PostCustomerPaymentInstrumentRequest',
-                '/tms/v2/customers/{customerId}/payment-instruments'
+                '/tms/v2/customers/{customerId}/payment-instruments',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

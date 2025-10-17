@@ -202,6 +202,10 @@ class DecisionManagerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2001");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "actionDecisionManagerCase,actionDecisionManagerCaseWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -211,7 +215,8 @@ class DecisionManagerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2001',
-                '/risk/v1/decisions/{id}/actions'
+                '/risk/v1/decisions/{id}/actions',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -360,6 +365,10 @@ class DecisionManagerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\RiskV1UpdatePost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "addNegative,addNegativeWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -369,7 +378,8 @@ class DecisionManagerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\RiskV1UpdatePost201Response',
-                '/risk/v1/lists/{type}/entries'
+                '/risk/v1/lists/{type}/entries',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -498,6 +508,10 @@ class DecisionManagerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2011");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "commentDecisionManagerCase,commentDecisionManagerCaseWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -507,7 +521,8 @@ class DecisionManagerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2011',
-                '/risk/v1/decisions/{id}/comments'
+                '/risk/v1/decisions/{id}/comments',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -641,6 +656,10 @@ class DecisionManagerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\RiskV1DecisionsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createBundledDecisionManagerCase,createBundledDecisionManagerCaseWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -650,7 +669,8 @@ class DecisionManagerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\RiskV1DecisionsPost201Response',
-                '/risk/v1/decisions'
+                '/risk/v1/decisions',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -783,6 +803,10 @@ class DecisionManagerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\RiskV1UpdatePost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "fraudUpdate,fraudUpdateWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -792,7 +816,8 @@ class DecisionManagerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\RiskV1UpdatePost201Response',
-                '/risk/v1/decisions/{id}/marking'
+                '/risk/v1/decisions/{id}/marking',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

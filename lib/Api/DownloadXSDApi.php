@@ -188,6 +188,10 @@ class DownloadXSDApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getXSDV2,getXSDV2WithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,7 +201,8 @@ class DownloadXSDApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/reporting/v3/xsds/{reportDefinitionNameVersion}'
+                '/reporting/v3/xsds/{reportDefinitionNameVersion}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

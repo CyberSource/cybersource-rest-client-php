@@ -187,6 +187,10 @@ class PaymentTokensApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse201");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "retrieveOrDeletePaymentToken,retrieveOrDeletePaymentTokenWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class PaymentTokensApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse201',
-                '/pts/v2/payment-tokens'
+                '/pts/v2/payment-tokens',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

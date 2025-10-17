@@ -187,6 +187,10 @@ class DeviceDeAssociationApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "deleteTerminalAssociation,deleteTerminalAssociationWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class DeviceDeAssociationApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/dms/v2/devices/deassociate'
+                '/dms/v2/devices/deassociate',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -322,6 +327,10 @@ class DeviceDeAssociationApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2007[]");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postDeAssociateV3Terminal,postDeAssociateV3TerminalWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -331,7 +340,8 @@ class DeviceDeAssociationApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2007[]',
-                '/dms/v3/devices/deassociate'
+                '/dms/v3/devices/deassociate',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

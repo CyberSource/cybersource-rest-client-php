@@ -75,6 +75,7 @@ class GlobalParameter
     const DEFAULT_PROXY_PORT = 443;
     const MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT = "_mleCertFromMerchantConfig";
     const MLE_CACHE_IDENTIFIER_FOR_P12_CERT = "_mleCertFromP12";
+    const MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY = "_mleResponsePrivateKey";
     
     const MERCHANT_SECRET_KEY_REQ = " MerchantSecretKey is Mandatory\n";
     const KEY_PASSWORD_EMPTY = "KeyPassword Empty/Null. Assigining merchantID value\n";

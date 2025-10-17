@@ -187,6 +187,10 @@ class SearchTransactionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TssV2TransactionsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createSearch,createSearchWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class SearchTransactionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TssV2TransactionsPost201Response',
-                '/tss/v2/searches'
+                '/tss/v2/searches',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -315,6 +320,10 @@ class SearchTransactionsApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TssV2TransactionsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getSearch,getSearchWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -324,7 +333,8 @@ class SearchTransactionsApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TssV2TransactionsPost201Response',
-                '/tss/v2/searches/{searchId}'
+                '/tss/v2/searches/{searchId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

@@ -187,6 +187,10 @@ class DeviceSearchApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2006");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postSearchQuery,postSearchQueryWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class DeviceSearchApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2006',
-                '/dms/v2/devices/search'
+                '/dms/v2/devices/search',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -326,6 +331,10 @@ class DeviceSearchApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2008");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postSearchQueryV3,postSearchQueryV3WithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -335,7 +344,8 @@ class DeviceSearchApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\InlineResponse2008',
-                '/dms/v3/devices/search'
+                '/dms/v3/devices/search',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

@@ -194,6 +194,10 @@ class CustomerApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "deleteCustomer,deleteCustomerWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -203,7 +207,8 @@ class CustomerApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v2/customers/{customerId}'
+                '/tms/v2/customers/{customerId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -340,6 +345,10 @@ class CustomerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PostCustomerRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getCustomer,getCustomerWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -349,7 +358,8 @@ class CustomerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PostCustomerRequest',
-                '/tms/v2/customers/{customerId}'
+                '/tms/v2/customers/{customerId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -510,6 +520,10 @@ class CustomerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PatchCustomerRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "patchCustomer,patchCustomerWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -519,7 +533,8 @@ class CustomerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PatchCustomerRequest',
-                '/tms/v2/customers/{customerId}'
+                '/tms/v2/customers/{customerId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -663,6 +678,10 @@ class CustomerApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PostCustomerRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postCustomer,postCustomerWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -672,7 +691,8 @@ class CustomerApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PostCustomerRequest',
-                '/tms/v2/customers'
+                '/tms/v2/customers',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
