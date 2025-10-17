@@ -179,6 +179,8 @@ class Cache
         $p12CertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_P12_CERT);
         
         $respPrivKeyIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY);        // --- Response MLE Private Key handling with early return ---
+        $respPrivKeyIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY);        
+        // --- Response MLE Private Key handling with early return ---
         if (substr($lowercaseCacheKey, -strlen($respPrivKeyIdentifier)) === $respPrivKeyIdentifier) {
             $password = $merchantConfig->getResponseMlePrivateKeyFilePassword();
             try {

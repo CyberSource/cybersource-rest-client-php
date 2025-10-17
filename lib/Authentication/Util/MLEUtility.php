@@ -49,10 +49,10 @@ class MLEUtility
 
         $operationArray = array_map('trim', explode(',', $operationIds));
 
-        if (!empty($merchantConfig->getMapToControlMLEonAPI())) {
+        if (!empty($merchantConfig->getInternalMapToControlRequestMLEonAPI())) {
             foreach ($operationArray as $operationId) {
-                if (array_key_exists($operationId, $merchantConfig->getMapToControlMLEonAPI())) {
-                    $isMLEForAPI = $merchantConfig->getMapToControlMLEonAPI()[$operationId];
+                if (array_key_exists($operationId, $merchantConfig->getInternalMapToControlRequestMLEonAPI())) {
+                    $isMLEForAPI = $merchantConfig->getInternalMapToControlRequestMLEonAPI()[$operationId];
                     break;
                 }
             }
