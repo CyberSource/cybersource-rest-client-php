@@ -19,13 +19,6 @@ class Cache
             self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), new \CyberSource\Logging\LogConfiguration());
         }
     }
-    public static function clearAllFileCache(): void
-    {
-        self::$file_cache = [];
-        if (self::$logger) {
-            self::$logger->debug("Cache: cleared all entries.");
-        }
-    }
 
     public function updateCache($filePath, $merchantConfig)
     {
@@ -178,7 +171,6 @@ class Cache
         $configCertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT);
         $p12CertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_P12_CERT);
         
-        $respPrivKeyIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY);        // --- Response MLE Private Key handling with early return ---
         $respPrivKeyIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY);        
         // --- Response MLE Private Key handling with early return ---
         if (substr($lowercaseCacheKey, -strlen($respPrivKeyIdentifier)) === $respPrivKeyIdentifier) {
