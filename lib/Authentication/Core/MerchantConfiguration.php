@@ -329,11 +329,11 @@ class MerchantConfiguration
     protected $responseMlePrivateKeyFilePath = '';
 
     /**
-     * Private key (OpenSSL resource/object) used to decrypt Response MLE payloads.
-     * Provide the OpenSSLAsymmetricKey object (PHP 8+) or OpenSSL key resource (PHP 7).
+     * Private key object used to decrypt Response MLE payloads.
+     * Provide an OpenSSLAsymmetricKey object (PHP 8.0+).
      * Mutually exclusive with responseMlePrivateKeyFilePath.
      *
-     * @var \OpenSSLAsymmetricKey|resource|null
+     * @var \OpenSSLAsymmetricKey|null
      */
     protected $responseMlePrivateKey = null;
 
@@ -1127,14 +1127,12 @@ class MerchantConfiguration
             return;
         }
 
-        if (is_object($mapToControlMLEonAPI)) {
-            $mapToControlMLEonAPI = get_object_vars($mapToControlMLEonAPI);
-        }
-
         if (!is_array($mapToControlMLEonAPI)) {
-            $error_message = "mapToControlMLEonAPI must be an associative array or object.";
+            $error_message = "mapToControlMLEonAPI must be an associative array.";
             $exception = new AuthException($error_message, 0);
-            if (self::$logger) { self::$logger->error($error_message); }
+            if (self::$logger) {
+                self::$logger->error($error_message);
+            }
             throw $exception;
         }
 
@@ -1154,14 +1152,11 @@ class MerchantConfiguration
         }
 
         // Validate the map value format - allowed values are true::true, false::false, ::true, true::, ::false, false::, true, false
-        if ($mapToControlMLEonAPI !== null) {
-            $this->validateMapToControlMLEonAPIValues($mapToControlMLEonAPI);
-        }
+        $this->validateMapToControlMLEonAPIValues($mapToControlMLEonAPI);
         
         $this->mapToControlMLEonAPI = $mapToControlMLEonAPI;
         
         // Populate internal maps from the main map
-        if ($mapToControlMLEonAPI !== null) {
             // Initialize internal maps
             $this->internalMapToControlRequestMLEonAPI = [];
             $this->internalMapToControlResponseMLEonAPI = [];
@@ -1192,7 +1187,6 @@ class MerchantConfiguration
                     $this->internalMapToControlRequestMLEonAPI[$apiName] = ($value === 'true');
                 }
             }
-        }
     }
 
     /**
@@ -1316,15 +1310,6 @@ class MerchantConfiguration
     public function getResponseMlePrivateKeyFilePassword()
     {
         return $this->responseMlePrivateKeyFilePassword;
-    }
-    
-    private function isAssocArrayOfStringBool($array) {
-        foreach ($array as $key => $value) {
-            if (!is_string($key) || !is_bool($value)) {
-                return false;
-            }
-        }
-        return true;
     }
 
     /**
@@ -1531,6 +1516,8 @@ class MerchantConfiguration
         } elseif (isset($connectionDet->mleKeyAlias) && trim((string) $connectionDet->mleKeyAlias) !== '') {
             $rawAlias = $connectionDet->mleKeyAlias;
             $config = $config->setMleKeyAlias($rawAlias); // keep legacy field in sync
+        }else{
+            $rawAlias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
         }
         if ($rawAlias !== null) {
             $config=$config->setRequestMleKeyAlias($rawAlias);
@@ -1549,9 +1536,9 @@ class MerchantConfiguration
         if (isset($connectionDet->responseMlePrivateKeyFilePassword)) {
             $config = $config->setResponseMlePrivateKeyFilePassword($connectionDet->responseMlePrivateKeyFilePassword);
         }
-        // if (isset($connectionDet->responseMlePrivateKey)) {
-        //     $config = $config->setResponseMlePrivateKey($connectionDet->responseMlePrivateKey);
-        // }
+        if (isset($connectionDet->responseMlePrivateKey)) {
+            $config = $config->setResponseMlePrivateKey($connectionDet->responseMlePrivateKey);
+        }
 
         $config->validateMerchantData();
         if($error_message != null){
@@ -1721,14 +1708,10 @@ class MerchantConfiguration
     }
 
     private function validateMLEConfiguration(){
-
-        // Validate mapToControlMLEonAPI format
-        $this->validateMapToControlMLEonAPIValues($this->mapToControlMLEonAPI);
-
         /*
          * REQUEST MLE VALIDATION
          */
-        $requestMleConfigured = (bool)$this->enableRequestMLEForOptionalApisGlobally;
+        $requestMleConfigured = $this->enableRequestMLEForOptionalApisGlobally===true;
         foreach ($this->internalMapToControlRequestMLEonAPI as $flag) {
             if ($flag) { $requestMleConfigured = true; break; }
         }
@@ -1806,9 +1789,8 @@ class MerchantConfiguration
                     throw $exception;
                 }
             } else {
-                // Basic sanity check for in-memory key
-                if (!is_object($this->responseMlePrivateKey)) {
-                    $error_message = "Response MLE private key object is invalid. Must be OpenSSLAsymmetricKey";
+                if (!is_object($this->responseMlePrivateKey) || get_class($this->responseMlePrivateKey) !== 'OpenSSLAsymmetricKey') {
+                    $error_message = "Response MLE private key object is invalid. Expected OpenSSLAsymmetricKey";
                     $exception = new AuthException($error_message, 0);
                     self::$logger->error($error_message);
                     throw $exception;
@@ -1825,9 +1807,6 @@ class MerchantConfiguration
      * @throws AuthException if any value in the map has invalid format
      */
     private function validateMapToControlMLEonAPIValues($mapToControlMLEonAPI) {
-        if (empty($mapToControlMLEonAPI) || !is_array($mapToControlMLEonAPI)) {
-            return; // Nothing to validate
-        }
 
         foreach ($mapToControlMLEonAPI as $apiName => $value) {
             if (is_bool($value)) {

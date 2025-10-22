@@ -498,7 +498,7 @@ class ApiClient
             } elseif ($response_info['http_code'] >= 200 && $response_info['http_code'] <= 299) {
                 // return raw body if response is a file
                 if ($responseType === '\SplFileObject' || $responseType === 'string') {
-                    self::$logger->close();                
+                    self::$logger->close();
                     return [$http_body, $response_info['http_code'], $http_header];
                 }
 
@@ -522,8 +522,6 @@ class ApiClient
             } else {
                 // Error path: still attempt decryption so error payload can be read
                 if (MLEUtility::checkIsMleEncryptedResponse($http_body)) {
-                    echo "[MLE][ApiClient] isResponseMLEForAPI=" . ($isResponseMLEForAPI ? "true" : "false") .
-                        " authType=" . $this->merchantConfig->getAuthenticationType() . "\n";
                     try {
                         $http_body = MLEUtility::decryptMleResponsePayload($this->merchantConfig, $http_body);
                     } catch (\Exception $e) {

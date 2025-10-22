@@ -203,7 +203,9 @@ class Cache
         } elseif (str_ends_with($lowercaseCacheKey, $p12CertIdentifier)) {
             $mleCert = $this->loadCertificateFromP12($mleCertPath, $merchantConfig);
         } else {
-            self::$logger->warning("Unrecognized MLE cache key pattern: " . $cacheKey);
+            if (self::$logger) {
+                self::$logger->warning("Unrecognized MLE cache key pattern: " . $cacheKey);
+            }
             return;
         }
 

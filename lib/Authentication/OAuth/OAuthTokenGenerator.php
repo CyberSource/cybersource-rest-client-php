@@ -22,7 +22,7 @@ class OAuthTokenGenerator implements TokenGenerator
     }
 
 	//Generate OAuth Token Function
-	public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $isResponseMLEForAPI = false) //add 
+	public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $isResponseMLEForAPI = false)
 	{		
         $accessToken = $merchantConfig->getAccessToken();
         if(isset($accessToken))

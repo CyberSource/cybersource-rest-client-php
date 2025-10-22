@@ -66,7 +66,7 @@ class MLEUtility
         $isResponseMLEForAPI = false;
 
         // Global flag
-        if (method_exists($merchantConfig, 'getEnableResponseMleGlobally') &&
+        if (/*method_exists($merchantConfig, 'getEnableResponseMleGlobally') &&*/
             $merchantConfig->getEnableResponseMleGlobally()) {
             $isResponseMLEForAPI = true;
         }
@@ -75,7 +75,7 @@ class MLEUtility
         $operationArray = array_map('trim', explode(',', (string)$operationIds));
 
         // Per-operation override map (internal response map)
-        if (method_exists($merchantConfig, 'getInternalMapToControlResponseMLEonAPI')) {
+        // if (method_exists($merchantConfig, 'getInternalMapToControlResponseMLEonAPI')) {
             $map = $merchantConfig->getInternalMapToControlResponseMLEonAPI();
             if (is_array($map) && !empty($map)) {
                 foreach ($operationArray as $operationId) {
@@ -85,7 +85,7 @@ class MLEUtility
                     }
                 }
             }
-        }
+        //}
 
         return $isResponseMLEForAPI;
     }
@@ -135,7 +135,9 @@ class MLEUtility
         } catch (\Exception $e) {
             return false;
         }
-    }    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
+    }
+
+    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
     {
         if (self::$logger === null) {
             self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
@@ -231,7 +233,7 @@ class MLEUtility
             $decoded = json_decode($mleResponseBody, true);
             return $decoded['encryptedResponse'] ?? null;
         } catch (\Exception $e) {
-            self::$logger->error("Failed to extract Response MLE token: " + $e->getMessage());
+            self::$logger->error("Failed to extract Response MLE token: " . $e->getMessage());
             return null;
         }
     }
