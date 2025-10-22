@@ -1153,13 +1153,11 @@ class MerchantConfiguration
 
         // Validate the map value format - allowed values are true::true, false::false, ::true, true::, ::false, false::, true, false
         $this->validateMapToControlMLEonAPIValues($mapToControlMLEonAPI);
-        
-        $this->mapToControlMLEonAPI = $mapToControlMLEonAPI;
-        
+                
         // Populate internal maps from the main map
             // Initialize internal maps
-            $this->internalMapToControlRequestMLEonAPI = [];
-            $this->internalMapToControlResponseMLEonAPI = [];
+        $this->internalMapToControlRequestMLEonAPI = [];
+        $this->internalMapToControlResponseMLEonAPI = [];
             
             foreach ($mapToControlMLEonAPI as $apiName => $value) {
                 // Convert boolean to string for processing
@@ -1187,6 +1185,7 @@ class MerchantConfiguration
                     $this->internalMapToControlRequestMLEonAPI[$apiName] = ($value === 'true');
                 }
             }
+        $this->mapToControlMLEonAPI = $mapToControlMLEonAPI;
     }
 
     /**
