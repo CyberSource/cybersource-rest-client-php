@@ -1332,7 +1332,8 @@ class MerchantConfiguration
     }
 
     /**
-     * Set requestMleKeyAlias.
+     * Set requestMleKeyAlias (canonical). Empty or whitespace -> default constant.
+     * Keeps legacy mleKeyAlias in sync every time.
      *
      * @param string $requestMleKeyAlias
      * @return $this
@@ -1340,41 +1341,23 @@ class MerchantConfiguration
     public function setRequestMleKeyAlias($requestMleKeyAlias)
     {
         $alias = trim((string) $requestMleKeyAlias);
-
-        if ($alias !== '') {
-            $this->requestMleKeyAlias = $alias;
+        if ($alias === '') {
+            $alias = GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT;
         }
+        $this->requestMleKeyAlias = $alias;
+        $this->mleKeyAlias = $alias; // keep legacy field synchronized
         return $this;
     }
 
     /**
      * Legacy setter for mleKeyAlias.
-     *
+     * Delegates to setRequestMleKeyAlias to ensure synchronization     *
      * @param string $mleKeyAlias
      * @return $this
      */
     public function setMleKeyAlias($mleKeyAlias)
     {
-        $alias = trim((string)$mleKeyAlias);
-        if ($alias === '') {
-            return $this;
-        }
-
-        if (
-            $this->mleKeyAlias === GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT
-            || $this->mleKeyAlias === ''
-            || $this->mleKeyAlias === null
-        ) {
-            $this->mleKeyAlias = $alias;
-        }
-        if (
-            $this->requestMleKeyAlias === GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT
-            || $this->requestMleKeyAlias === ''
-            || $this->requestMleKeyAlias === null
-        ) {
-            $this->requestMleKeyAlias = $alias;
-        }
-        return $this;
+        return $this->setRequestMleKeyAlias($mleKeyAlias);
     }
 
     /**
