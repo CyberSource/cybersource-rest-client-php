@@ -53,11 +53,11 @@ class InlineResponse4041 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => '\DateTime',
-        'status' => 'string',
+        'submitTimeUtc' => 'string',
+        'status' => 'int',
         'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse4007Details[]'
+        'details' => '\CyberSource\Model\InlineResponse4041Details[]'
     ];
 
     /**
@@ -65,8 +65,8 @@ class InlineResponse4041 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => 'date-time',
-        'status' => null,
+        'submitTimeUtc' => null,
+        'status' => 'int32',
         'reason' => null,
         'message' => null,
         'details' => null
@@ -185,7 +185,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Gets submitTimeUtc
-     * @return \DateTime
+     * @return string
      */
     public function getSubmitTimeUtc()
     {
@@ -194,7 +194,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @param string $submitTimeUtc The time the response was submitted
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -206,7 +206,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Gets status
-     * @return string
+     * @return int
      */
     public function getStatus()
     {
@@ -215,7 +215,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The http status description of the submitted request.
+     * @param int $status The status code of the response
      * @return $this
      */
     public function setStatus($status)
@@ -236,7 +236,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'RESOURCE_NOT_FOUND'
+     * @param string $reason The reason for the response
      * @return $this
      */
     public function setReason($reason)
@@ -257,7 +257,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message Descriptive message for the error.
+     * @param string $message The message of the response
      * @return $this
      */
     public function setMessage($message)
@@ -269,7 +269,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\InlineResponse4007Details[]
+     * @return \CyberSource\Model\InlineResponse4041Details[]
      */
     public function getDetails()
     {
@@ -278,7 +278,7 @@ class InlineResponse4041 implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\InlineResponse4007Details[] $details
+     * @param \CyberSource\Model\InlineResponse4041Details[] $details The details of the validation error
      * @return $this
      */
     public function setDetails($details)

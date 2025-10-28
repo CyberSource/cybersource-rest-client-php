@@ -61,7 +61,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseDetails' => 'string',
         'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationMerchantAdvice',
         'merchantRiskPrediction' => 'string',
-        'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection'
+        'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseProcessorInformationSellerProtection',
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseDetails' => null,
         'merchantAdvice' => null,
         'merchantRiskPrediction' => null,
-        'sellerProtection' => null
+        'sellerProtection' => null,
+        'network' => null
     ];
 
     public static function swaggerTypes()
@@ -103,7 +105,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseDetails' => 'responseDetails',
         'merchantAdvice' => 'merchantAdvice',
         'merchantRiskPrediction' => 'merchantRiskPrediction',
-        'sellerProtection' => 'sellerProtection'
+        'sellerProtection' => 'sellerProtection',
+        'network' => 'network'
     ];
 
 
@@ -120,7 +123,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseDetails' => 'setResponseDetails',
         'merchantAdvice' => 'setMerchantAdvice',
         'merchantRiskPrediction' => 'setMerchantRiskPrediction',
-        'sellerProtection' => 'setSellerProtection'
+        'sellerProtection' => 'setSellerProtection',
+        'network' => 'setNetwork'
     ];
 
 
@@ -137,7 +141,8 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         'responseDetails' => 'getResponseDetails',
         'merchantAdvice' => 'getMerchantAdvice',
         'merchantRiskPrediction' => 'getMerchantRiskPrediction',
-        'sellerProtection' => 'getSellerProtection'
+        'sellerProtection' => 'getSellerProtection',
+        'network' => 'getNetwork'
     ];
 
     public static function attributeMap()
@@ -180,6 +185,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
         $this->container['merchantRiskPrediction'] = isset($data['merchantRiskPrediction']) ? $data['merchantRiskPrediction'] : null;
         $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
     }
 
     /**
@@ -323,7 +329,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
 
     /**
      * Sets responseDetails
-     * @param string $responseDetails This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**.
+     * @param string $responseDetails This field might contain information about a decline.
      * @return $this
      */
     public function setResponseDetails($responseDetails)
@@ -392,6 +398,27 @@ class PtsV2IncrementalAuthorizationPatch201ResponseProcessorInformation implemen
     public function setSellerProtection($sellerProtection)
     {
         $this->container['sellerProtection'] = $sellerProtection;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param \CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork $network
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
 
         return $this;
     }

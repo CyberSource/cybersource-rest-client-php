@@ -112,6 +112,13 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
     }
 
     /**
+     * Test attribute "underwriting"
+     */
+    public function testPropertyUnderwriting()
+    {
+    }
+
+    /**
      * Test attribute "additionalConfigurations"
      */
     public function testPropertyAdditionalConfigurations()

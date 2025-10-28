@@ -236,7 +236,7 @@ class PtsV2PaymentsPost201Response2ProcessorInformation implements ArrayAccess
 
     /**
      * Sets responseDetails
-     * @param string $responseDetails This field might contain information about a decline. This field is supported only for **CyberSource through VisaNet**.
+     * @param string $responseDetails This field might contain information about a decline.
      * @return $this
      */
     public function setResponseDetails($responseDetails)

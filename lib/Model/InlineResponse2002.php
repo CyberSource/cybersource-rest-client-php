@@ -53,13 +53,18 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'registrationInformation' => '\CyberSource\Model\Boardingv1registrationsRegistrationInformation',
-        'integrationInformation' => '\CyberSource\Model\InlineResponse2002IntegrationInformation',
-        'organizationInformation' => '\CyberSource\Model\Boardingv1registrationsOrganizationInformation',
-        'productInformation' => '\CyberSource\Model\Boardingv1registrationsProductInformation',
-        'productInformationSetups' => '\CyberSource\Model\InlineResponse2013ProductInformationSetups[]',
-        'documentInformation' => '\CyberSource\Model\Boardingv1registrationsDocumentInformation',
-        'details' => 'map[string,object[]]'
+        'id' => 'int',
+        'fieldType' => 'string',
+        'label' => 'string',
+        'customerVisible' => 'bool',
+        'textMinLength' => 'int',
+        'textMaxLength' => 'int',
+        'possibleValues' => 'string',
+        'textDefaultValue' => 'string',
+        'merchantId' => 'string',
+        'referenceType' => 'string',
+        'readOnly' => 'bool',
+        'merchantDefinedDataIndex' => 'int'
     ];
 
     /**
@@ -67,13 +72,18 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'registrationInformation' => null,
-        'integrationInformation' => null,
-        'organizationInformation' => null,
-        'productInformation' => null,
-        'productInformationSetups' => null,
-        'documentInformation' => null,
-        'details' => null
+        'id' => 'int64',
+        'fieldType' => null,
+        'label' => null,
+        'customerVisible' => null,
+        'textMinLength' => 'int32',
+        'textMaxLength' => 'int32',
+        'possibleValues' => null,
+        'textDefaultValue' => null,
+        'merchantId' => null,
+        'referenceType' => null,
+        'readOnly' => null,
+        'merchantDefinedDataIndex' => 'int32'
     ];
 
     public static function swaggerTypes()
@@ -91,13 +101,18 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'registrationInformation' => 'registrationInformation',
-        'integrationInformation' => 'integrationInformation',
-        'organizationInformation' => 'organizationInformation',
-        'productInformation' => 'productInformation',
-        'productInformationSetups' => 'productInformationSetups',
-        'documentInformation' => 'documentInformation',
-        'details' => 'details'
+        'id' => 'id',
+        'fieldType' => 'fieldType',
+        'label' => 'label',
+        'customerVisible' => 'customerVisible',
+        'textMinLength' => 'textMinLength',
+        'textMaxLength' => 'textMaxLength',
+        'possibleValues' => 'possibleValues',
+        'textDefaultValue' => 'textDefaultValue',
+        'merchantId' => 'merchantId',
+        'referenceType' => 'referenceType',
+        'readOnly' => 'readOnly',
+        'merchantDefinedDataIndex' => 'merchantDefinedDataIndex'
     ];
 
 
@@ -106,13 +121,18 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'registrationInformation' => 'setRegistrationInformation',
-        'integrationInformation' => 'setIntegrationInformation',
-        'organizationInformation' => 'setOrganizationInformation',
-        'productInformation' => 'setProductInformation',
-        'productInformationSetups' => 'setProductInformationSetups',
-        'documentInformation' => 'setDocumentInformation',
-        'details' => 'setDetails'
+        'id' => 'setId',
+        'fieldType' => 'setFieldType',
+        'label' => 'setLabel',
+        'customerVisible' => 'setCustomerVisible',
+        'textMinLength' => 'setTextMinLength',
+        'textMaxLength' => 'setTextMaxLength',
+        'possibleValues' => 'setPossibleValues',
+        'textDefaultValue' => 'setTextDefaultValue',
+        'merchantId' => 'setMerchantId',
+        'referenceType' => 'setReferenceType',
+        'readOnly' => 'setReadOnly',
+        'merchantDefinedDataIndex' => 'setMerchantDefinedDataIndex'
     ];
 
 
@@ -121,13 +141,18 @@ class InlineResponse2002 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'registrationInformation' => 'getRegistrationInformation',
-        'integrationInformation' => 'getIntegrationInformation',
-        'organizationInformation' => 'getOrganizationInformation',
-        'productInformation' => 'getProductInformation',
-        'productInformationSetups' => 'getProductInformationSetups',
-        'documentInformation' => 'getDocumentInformation',
-        'details' => 'getDetails'
+        'id' => 'getId',
+        'fieldType' => 'getFieldType',
+        'label' => 'getLabel',
+        'customerVisible' => 'getCustomerVisible',
+        'textMinLength' => 'getTextMinLength',
+        'textMaxLength' => 'getTextMaxLength',
+        'possibleValues' => 'getPossibleValues',
+        'textDefaultValue' => 'getTextDefaultValue',
+        'merchantId' => 'getMerchantId',
+        'referenceType' => 'getReferenceType',
+        'readOnly' => 'getReadOnly',
+        'merchantDefinedDataIndex' => 'getMerchantDefinedDataIndex'
     ];
 
     public static function attributeMap()
@@ -161,13 +186,18 @@ class InlineResponse2002 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['registrationInformation'] = isset($data['registrationInformation']) ? $data['registrationInformation'] : null;
-        $this->container['integrationInformation'] = isset($data['integrationInformation']) ? $data['integrationInformation'] : null;
-        $this->container['organizationInformation'] = isset($data['organizationInformation']) ? $data['organizationInformation'] : null;
-        $this->container['productInformation'] = isset($data['productInformation']) ? $data['productInformation'] : null;
-        $this->container['productInformationSetups'] = isset($data['productInformationSetups']) ? $data['productInformationSetups'] : null;
-        $this->container['documentInformation'] = isset($data['documentInformation']) ? $data['documentInformation'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['fieldType'] = isset($data['fieldType']) ? $data['fieldType'] : null;
+        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
+        $this->container['customerVisible'] = isset($data['customerVisible']) ? $data['customerVisible'] : null;
+        $this->container['textMinLength'] = isset($data['textMinLength']) ? $data['textMinLength'] : null;
+        $this->container['textMaxLength'] = isset($data['textMaxLength']) ? $data['textMaxLength'] : null;
+        $this->container['possibleValues'] = isset($data['possibleValues']) ? $data['possibleValues'] : null;
+        $this->container['textDefaultValue'] = isset($data['textDefaultValue']) ? $data['textDefaultValue'] : null;
+        $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
+        $this->container['referenceType'] = isset($data['referenceType']) ? $data['referenceType'] : null;
+        $this->container['readOnly'] = isset($data['readOnly']) ? $data['readOnly'] : null;
+        $this->container['merchantDefinedDataIndex'] = isset($data['merchantDefinedDataIndex']) ? $data['merchantDefinedDataIndex'] : null;
     }
 
     /**
@@ -196,148 +226,253 @@ class InlineResponse2002 implements ArrayAccess
 
 
     /**
-     * Gets registrationInformation
-     * @return \CyberSource\Model\Boardingv1registrationsRegistrationInformation
+     * Gets id
+     * @return int
      */
-    public function getRegistrationInformation()
+    public function getId()
     {
-        return $this->container['registrationInformation'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets registrationInformation
-     * @param \CyberSource\Model\Boardingv1registrationsRegistrationInformation $registrationInformation
+     * Sets id
+     * @param int $id
      * @return $this
      */
-    public function setRegistrationInformation($registrationInformation)
+    public function setId($id)
     {
-        $this->container['registrationInformation'] = $registrationInformation;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets integrationInformation
-     * @return \CyberSource\Model\InlineResponse2002IntegrationInformation
+     * Gets fieldType
+     * @return string
      */
-    public function getIntegrationInformation()
+    public function getFieldType()
     {
-        return $this->container['integrationInformation'];
+        return $this->container['fieldType'];
     }
 
     /**
-     * Sets integrationInformation
-     * @param \CyberSource\Model\InlineResponse2002IntegrationInformation $integrationInformation
+     * Sets fieldType
+     * @param string $fieldType
      * @return $this
      */
-    public function setIntegrationInformation($integrationInformation)
+    public function setFieldType($fieldType)
     {
-        $this->container['integrationInformation'] = $integrationInformation;
+        $this->container['fieldType'] = $fieldType;
 
         return $this;
     }
 
     /**
-     * Gets organizationInformation
-     * @return \CyberSource\Model\Boardingv1registrationsOrganizationInformation
+     * Gets label
+     * @return string
      */
-    public function getOrganizationInformation()
+    public function getLabel()
     {
-        return $this->container['organizationInformation'];
+        return $this->container['label'];
     }
 
     /**
-     * Sets organizationInformation
-     * @param \CyberSource\Model\Boardingv1registrationsOrganizationInformation $organizationInformation
+     * Sets label
+     * @param string $label
      * @return $this
      */
-    public function setOrganizationInformation($organizationInformation)
+    public function setLabel($label)
     {
-        $this->container['organizationInformation'] = $organizationInformation;
+        $this->container['label'] = $label;
 
         return $this;
     }
 
     /**
-     * Gets productInformation
-     * @return \CyberSource\Model\Boardingv1registrationsProductInformation
+     * Gets customerVisible
+     * @return bool
      */
-    public function getProductInformation()
+    public function getCustomerVisible()
     {
-        return $this->container['productInformation'];
+        return $this->container['customerVisible'];
     }
 
     /**
-     * Sets productInformation
-     * @param \CyberSource\Model\Boardingv1registrationsProductInformation $productInformation
+     * Sets customerVisible
+     * @param bool $customerVisible
      * @return $this
      */
-    public function setProductInformation($productInformation)
+    public function setCustomerVisible($customerVisible)
     {
-        $this->container['productInformation'] = $productInformation;
+        $this->container['customerVisible'] = $customerVisible;
 
         return $this;
     }
 
     /**
-     * Gets productInformationSetups
-     * @return \CyberSource\Model\InlineResponse2013ProductInformationSetups[]
+     * Gets textMinLength
+     * @return int
      */
-    public function getProductInformationSetups()
+    public function getTextMinLength()
     {
-        return $this->container['productInformationSetups'];
+        return $this->container['textMinLength'];
     }
 
     /**
-     * Sets productInformationSetups
-     * @param \CyberSource\Model\InlineResponse2013ProductInformationSetups[] $productInformationSetups
+     * Sets textMinLength
+     * @param int $textMinLength
      * @return $this
      */
-    public function setProductInformationSetups($productInformationSetups)
+    public function setTextMinLength($textMinLength)
     {
-        $this->container['productInformationSetups'] = $productInformationSetups;
+        $this->container['textMinLength'] = $textMinLength;
 
         return $this;
     }
 
     /**
-     * Gets documentInformation
-     * @return \CyberSource\Model\Boardingv1registrationsDocumentInformation
+     * Gets textMaxLength
+     * @return int
      */
-    public function getDocumentInformation()
+    public function getTextMaxLength()
     {
-        return $this->container['documentInformation'];
+        return $this->container['textMaxLength'];
     }
 
     /**
-     * Sets documentInformation
-     * @param \CyberSource\Model\Boardingv1registrationsDocumentInformation $documentInformation
+     * Sets textMaxLength
+     * @param int $textMaxLength
      * @return $this
      */
-    public function setDocumentInformation($documentInformation)
+    public function setTextMaxLength($textMaxLength)
     {
-        $this->container['documentInformation'] = $documentInformation;
+        $this->container['textMaxLength'] = $textMaxLength;
 
         return $this;
     }
 
     /**
-     * Gets details
-     * @return map[string,object[]]
+     * Gets possibleValues
+     * @return string
      */
-    public function getDetails()
+    public function getPossibleValues()
     {
-        return $this->container['details'];
+        return $this->container['possibleValues'];
     }
 
     /**
-     * Sets details
-     * @param map[string,object[]] $details
+     * Sets possibleValues
+     * @param string $possibleValues
      * @return $this
      */
-    public function setDetails($details)
+    public function setPossibleValues($possibleValues)
     {
-        $this->container['details'] = $details;
+        $this->container['possibleValues'] = $possibleValues;
+
+        return $this;
+    }
+
+    /**
+     * Gets textDefaultValue
+     * @return string
+     */
+    public function getTextDefaultValue()
+    {
+        return $this->container['textDefaultValue'];
+    }
+
+    /**
+     * Sets textDefaultValue
+     * @param string $textDefaultValue
+     * @return $this
+     */
+    public function setTextDefaultValue($textDefaultValue)
+    {
+        $this->container['textDefaultValue'] = $textDefaultValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantId
+     * @return string
+     */
+    public function getMerchantId()
+    {
+        return $this->container['merchantId'];
+    }
+
+    /**
+     * Sets merchantId
+     * @param string $merchantId
+     * @return $this
+     */
+    public function setMerchantId($merchantId)
+    {
+        $this->container['merchantId'] = $merchantId;
+
+        return $this;
+    }
+
+    /**
+     * Gets referenceType
+     * @return string
+     */
+    public function getReferenceType()
+    {
+        return $this->container['referenceType'];
+    }
+
+    /**
+     * Sets referenceType
+     * @param string $referenceType
+     * @return $this
+     */
+    public function setReferenceType($referenceType)
+    {
+        $this->container['referenceType'] = $referenceType;
+
+        return $this;
+    }
+
+    /**
+     * Gets readOnly
+     * @return bool
+     */
+    public function getReadOnly()
+    {
+        return $this->container['readOnly'];
+    }
+
+    /**
+     * Sets readOnly
+     * @param bool $readOnly
+     * @return $this
+     */
+    public function setReadOnly($readOnly)
+    {
+        $this->container['readOnly'] = $readOnly;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDefinedDataIndex
+     * @return int
+     */
+    public function getMerchantDefinedDataIndex()
+    {
+        return $this->container['merchantDefinedDataIndex'];
+    }
+
+    /**
+     * Sets merchantDefinedDataIndex
+     * @param int $merchantDefinedDataIndex
+     * @return $this
+     */
+    public function setMerchantDefinedDataIndex($merchantDefinedDataIndex)
+    {
+        $this->container['merchantDefinedDataIndex'] = $merchantDefinedDataIndex;
 
         return $this;
     }

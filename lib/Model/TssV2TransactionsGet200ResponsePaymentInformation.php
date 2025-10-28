@@ -54,6 +54,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'paymentType' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentType',
+        'eWallet' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet',
         'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCard',
         'brands' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBrands[]',
@@ -75,6 +76,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'paymentType' => null,
+        'eWallet' => null,
         'customer' => null,
         'card' => null,
         'brands' => null,
@@ -106,6 +108,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'paymentType' => 'paymentType',
+        'eWallet' => 'eWallet',
         'customer' => 'customer',
         'card' => 'card',
         'brands' => 'brands',
@@ -128,6 +131,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
      */
     protected static $setters = [
         'paymentType' => 'setPaymentType',
+        'eWallet' => 'setEWallet',
         'customer' => 'setCustomer',
         'card' => 'setCard',
         'brands' => 'setBrands',
@@ -150,6 +154,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
      */
     protected static $getters = [
         'paymentType' => 'getPaymentType',
+        'eWallet' => 'getEWallet',
         'customer' => 'getCustomer',
         'card' => 'getCard',
         'brands' => 'getBrands',
@@ -197,6 +202,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
         $this->container['brands'] = isset($data['brands']) ? $data['brands'] : null;
@@ -254,6 +260,27 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
     public function setPaymentType($paymentType)
     {
         $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets eWallet
+     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet
+     */
+    public function getEWallet()
+    {
+        return $this->container['eWallet'];
+    }
+
+    /**
+     * Sets eWallet
+     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet $eWallet
+     * @return $this
+     */
+    public function setEWallet($eWallet)
+    {
+        $this->container['eWallet'] = $eWallet;
 
         return $this;
     }

@@ -58,6 +58,7 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'merchantVerificationValue' => 'string',
         'abaNumber' => 'string',
         'acquirer' => '\CyberSource\Model\CardProcessingConfigCommonAcquirer',
+        'acquirers' => 'map[string,\CyberSource\Model\CardProcessingConfigCommonAcquirers]',
         'merchantId' => 'string',
         'terminalId' => 'string',
         'paymentTypes' => 'map[string,\CyberSource\Model\CardProcessingConfigCommonPaymentTypes]',
@@ -112,6 +113,7 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'merchantVerificationValue' => null,
         'abaNumber' => null,
         'acquirer' => null,
+        'acquirers' => null,
         'merchantId' => null,
         'terminalId' => null,
         'paymentTypes' => null,
@@ -176,6 +178,7 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'merchantVerificationValue' => 'merchantVerificationValue',
         'abaNumber' => 'abaNumber',
         'acquirer' => 'acquirer',
+        'acquirers' => 'acquirers',
         'merchantId' => 'merchantId',
         'terminalId' => 'terminalId',
         'paymentTypes' => 'paymentTypes',
@@ -231,6 +234,7 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'merchantVerificationValue' => 'setMerchantVerificationValue',
         'abaNumber' => 'setAbaNumber',
         'acquirer' => 'setAcquirer',
+        'acquirers' => 'setAcquirers',
         'merchantId' => 'setMerchantId',
         'terminalId' => 'setTerminalId',
         'paymentTypes' => 'setPaymentTypes',
@@ -286,6 +290,7 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         'merchantVerificationValue' => 'getMerchantVerificationValue',
         'abaNumber' => 'getAbaNumber',
         'acquirer' => 'getAcquirer',
+        'acquirers' => 'getAcquirers',
         'merchantId' => 'getMerchantId',
         'terminalId' => 'getTerminalId',
         'paymentTypes' => 'getPaymentTypes',
@@ -366,6 +371,7 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
         $this->container['merchantVerificationValue'] = isset($data['merchantVerificationValue']) ? $data['merchantVerificationValue'] : null;
         $this->container['abaNumber'] = isset($data['abaNumber']) ? $data['abaNumber'] : null;
         $this->container['acquirer'] = isset($data['acquirer']) ? $data['acquirer'] : null;
+        $this->container['acquirers'] = isset($data['acquirers']) ? $data['acquirers'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['paymentTypes'] = isset($data['paymentTypes']) ? $data['paymentTypes'] : null;
@@ -542,6 +548,27 @@ class CardProcessingConfigCommonProcessors implements ArrayAccess
     public function setAcquirer($acquirer)
     {
         $this->container['acquirer'] = $acquirer;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirers
+     * @return map[string,\CyberSource\Model\CardProcessingConfigCommonAcquirers]
+     */
+    public function getAcquirers()
+    {
+        return $this->container['acquirers'];
+    }
+
+    /**
+     * Sets acquirers
+     * @param map[string,\CyberSource\Model\CardProcessingConfigCommonAcquirers] $acquirers Identifies the financial institution acting as the acquirer of this customer transaction. The acquirer is the member or system user that signed the merchant.
+     * @return $this
+     */
+    public function setAcquirers($acquirers)
+    {
+        $this->container['acquirers'] = $acquirers;
 
         return $this;
     }

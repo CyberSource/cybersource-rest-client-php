@@ -208,4 +208,39 @@ class TmsBinLookupPaymentAccountInformationFeaturesTest extends \PHPUnit_Framewo
     public function testPropertyFlexCredential()
     {
     }
+
+    /**
+     * Test attribute "productId"
+     */
+    public function testPropertyProductId()
+    {
+    }
+
+    /**
+     * Test attribute "productIdSubtype"
+     */
+    public function testPropertyProductIdSubtype()
+    {
+    }
+
+    /**
+     * Test attribute "threeDSSupport"
+     */
+    public function testPropertyThreeDSSupport()
+    {
+    }
+
+    /**
+     * Test attribute "siEligible"
+     */
+    public function testPropertySiEligible()
+    {
+    }
+
+    /**
+     * Test attribute "emiEligible"
+     */
+    public function testPropertyEmiEligible()
+    {
+    }
 }

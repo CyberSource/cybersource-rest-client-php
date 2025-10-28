@@ -390,4 +390,11 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit_Fram
     public function testPropertyMerchantRiskPrediction()
     {
     }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
 }

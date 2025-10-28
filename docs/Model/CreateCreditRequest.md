@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **recipientInformation** | [**\CyberSource\Model\Ptsv2creditsRecipientInformation**](Ptsv2creditsRecipientInformation.md) |  | [optional] 
 **senderInformation** | [**\CyberSource\Model\Ptsv2creditsSenderInformation**](Ptsv2creditsSenderInformation.md) |  | [optional] 
 **promotionInformation** | [**\CyberSource\Model\Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
+**processorInformation** | [**\CyberSource\Model\Ptsv2reversalsProcessorInformation**](Ptsv2reversalsProcessorInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

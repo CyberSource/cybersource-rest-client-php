@@ -82,11 +82,4 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformationTest exten
     public function testPropertyEnabled()
     {
     }
-
-    /**
-     * Test attribute "selfServiceability"
-     */
-    public function testPropertySelfServiceability()
-    {
-    }
 }

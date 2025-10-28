@@ -67,7 +67,7 @@ class InlineResponse2013SetupsPaymentsCardProcessingConfigurationStatus implemen
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'configurationId' => 'uuid',
+        'configurationId' => null,
         'version' => null,
         'submitTimeUtc' => null,
         'status' => null,

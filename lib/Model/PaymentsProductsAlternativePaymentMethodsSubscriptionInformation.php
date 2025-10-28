@@ -53,8 +53,7 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'enabled' => 'bool',
-        'selfServiceability' => 'string'
+        'enabled' => 'bool'
     ];
 
     /**
@@ -62,8 +61,7 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'enabled' => null,
-        'selfServiceability' => null
+        'enabled' => null
     ];
 
     public static function swaggerTypes()
@@ -81,8 +79,7 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
      * @var string[]
      */
     protected static $attributeMap = [
-        'enabled' => 'enabled',
-        'selfServiceability' => 'selfServiceability'
+        'enabled' => 'enabled'
     ];
 
 
@@ -91,8 +88,7 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
      * @var string[]
      */
     protected static $setters = [
-        'enabled' => 'setEnabled',
-        'selfServiceability' => 'setSelfServiceability'
+        'enabled' => 'setEnabled'
     ];
 
 
@@ -101,8 +97,7 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
      * @var string[]
      */
     protected static $getters = [
-        'enabled' => 'getEnabled',
-        'selfServiceability' => 'getSelfServiceability'
+        'enabled' => 'getEnabled'
     ];
 
     public static function attributeMap()
@@ -137,7 +132,6 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
     public function __construct(array $data = null)
     {
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
-        $this->container['selfServiceability'] = isset($data['selfServiceability']) ? $data['selfServiceability'] : 'NOT_SELF_SERVICEABLE';
     }
 
     /**
@@ -182,27 +176,6 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
     public function setEnabled($enabled)
     {
         $this->container['enabled'] = $enabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets selfServiceability
-     * @return string
-     */
-    public function getSelfServiceability()
-    {
-        return $this->container['selfServiceability'];
-    }
-
-    /**
-     * Sets selfServiceability
-     * @param string $selfServiceability Indicates if the organization can enable this product using self service.  Possible values: - SELF_SERVICEABLE - NOT_SELF_SERVICEABLE - SELF_SERVICE_ONLY
-     * @return $this
-     */
-    public function setSelfServiceability($selfServiceability)
-    {
-        $this->container['selfServiceability'] = $selfServiceability;
 
         return $this;
     }

@@ -54,7 +54,8 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'submitTimeUtc' => 'string',
-        'invoiceSettingsInformation' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation'
+        'invoiceSettingsInformation' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformation',
+        'merchantInformation' => '\CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation'
     ];
 
     /**
@@ -63,7 +64,8 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'submitTimeUtc' => null,
-        'invoiceSettingsInformation' => null
+        'invoiceSettingsInformation' => null,
+        'merchantInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
      */
     protected static $attributeMap = [
         'submitTimeUtc' => 'submitTimeUtc',
-        'invoiceSettingsInformation' => 'invoiceSettingsInformation'
+        'invoiceSettingsInformation' => 'invoiceSettingsInformation',
+        'merchantInformation' => 'merchantInformation'
     ];
 
 
@@ -92,7 +95,8 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
      */
     protected static $setters = [
         'submitTimeUtc' => 'setSubmitTimeUtc',
-        'invoiceSettingsInformation' => 'setInvoiceSettingsInformation'
+        'invoiceSettingsInformation' => 'setInvoiceSettingsInformation',
+        'merchantInformation' => 'setMerchantInformation'
     ];
 
 
@@ -102,7 +106,8 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
      */
     protected static $getters = [
         'submitTimeUtc' => 'getSubmitTimeUtc',
-        'invoiceSettingsInformation' => 'getInvoiceSettingsInformation'
+        'invoiceSettingsInformation' => 'getInvoiceSettingsInformation',
+        'merchantInformation' => 'getMerchantInformation'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
     {
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['invoiceSettingsInformation'] = isset($data['invoiceSettingsInformation']) ? $data['invoiceSettingsInformation'] : null;
+        $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
     }
 
     /**
@@ -203,6 +209,27 @@ class InvoicingV2InvoiceSettingsGet200Response implements ArrayAccess
     public function setInvoiceSettingsInformation($invoiceSettingsInformation)
     {
         $this->container['invoiceSettingsInformation'] = $invoiceSettingsInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantInformation
+     * @return \CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation
+     */
+    public function getMerchantInformation()
+    {
+        return $this->container['merchantInformation'];
+    }
+
+    /**
+     * Sets merchantInformation
+     * @param \CyberSource\Model\InvoicingV2InvoiceSettingsGet200ResponseMerchantInformation $merchantInformation
+     * @return $this
+     */
+    public function setMerchantInformation($merchantInformation)
+    {
+        $this->container['merchantInformation'] = $merchantInformation;
 
         return $this;
     }

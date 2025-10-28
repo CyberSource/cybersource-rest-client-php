@@ -254,7 +254,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
 
     /**
      * Sets rawResponse
-     * @param string $rawResponse This field is set to the value of failure reason returned by the processor.
+     * @param string $rawResponse Failure reason returned by the processor.
      * @return $this
      */
     public function setRawResponse($rawResponse)
@@ -275,7 +275,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
 
     /**
      * Sets rawResponseLocal
-     * @param string $rawResponseLocal This field is set to the value of failure reason returned by the processor in the local language of the processor.
+     * @param string $rawResponseLocal Failure reason returned by the processor in the local language of the processor.
      * @return $this
      */
     public function setRawResponseLocal($rawResponseLocal)

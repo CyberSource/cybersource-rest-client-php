@@ -61,6 +61,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\Invoicingv2invoicesProcessingInformation',
         'invoiceInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseInvoiceInformation',
         'orderInformation' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseOrderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => '\CyberSource\Model\InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition[]',
         'invoiceHistory' => '\CyberSource\Model\InvoicingV2InvoicesGet200ResponseInvoiceHistory[]'
     ];
 
@@ -77,6 +78,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'processingInformation' => null,
         'invoiceInformation' => null,
         'orderInformation' => null,
+        'merchantDefinedFieldValuesWithDefinition' => null,
         'invoiceHistory' => null
     ];
 
@@ -103,6 +105,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'invoiceInformation' => 'invoiceInformation',
         'orderInformation' => 'orderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => 'merchantDefinedFieldValuesWithDefinition',
         'invoiceHistory' => 'invoiceHistory'
     ];
 
@@ -120,6 +123,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'invoiceInformation' => 'setInvoiceInformation',
         'orderInformation' => 'setOrderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => 'setMerchantDefinedFieldValuesWithDefinition',
         'invoiceHistory' => 'setInvoiceHistory'
     ];
 
@@ -137,6 +141,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'invoiceInformation' => 'getInvoiceInformation',
         'orderInformation' => 'getOrderInformation',
+        'merchantDefinedFieldValuesWithDefinition' => 'getMerchantDefinedFieldValuesWithDefinition',
         'invoiceHistory' => 'getInvoiceHistory'
     ];
 
@@ -179,6 +184,7 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['invoiceInformation'] = isset($data['invoiceInformation']) ? $data['invoiceInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['merchantDefinedFieldValuesWithDefinition'] = isset($data['merchantDefinedFieldValuesWithDefinition']) ? $data['merchantDefinedFieldValuesWithDefinition'] : null;
         $this->container['invoiceHistory'] = isset($data['invoiceHistory']) ? $data['invoiceHistory'] : null;
     }
 
@@ -371,6 +377,27 @@ class InvoicingV2InvoicesGet200Response implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDefinedFieldValuesWithDefinition
+     * @return \CyberSource\Model\InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition[]
+     */
+    public function getMerchantDefinedFieldValuesWithDefinition()
+    {
+        return $this->container['merchantDefinedFieldValuesWithDefinition'];
+    }
+
+    /**
+     * Sets merchantDefinedFieldValuesWithDefinition
+     * @param \CyberSource\Model\InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition[] $merchantDefinedFieldValuesWithDefinition
+     * @return $this
+     */
+    public function setMerchantDefinedFieldValuesWithDefinition($merchantDefinedFieldValuesWithDefinition)
+    {
+        $this->container['merchantDefinedFieldValuesWithDefinition'] = $merchantDefinedFieldValuesWithDefinition;
 
         return $this;
     }

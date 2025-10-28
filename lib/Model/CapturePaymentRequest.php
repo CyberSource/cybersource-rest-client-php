@@ -66,7 +66,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation',
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
-        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
+        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
+        'processorInformation' => '\CyberSource\Model\Ptsv2reversalsProcessorInformation'
     ];
 
     /**
@@ -87,7 +88,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => null,
         'installmentInformation' => null,
         'travelInformation' => null,
-        'promotionInformation' => null
+        'promotionInformation' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -118,7 +120,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => 'merchantDefinedSecureInformation',
         'installmentInformation' => 'installmentInformation',
         'travelInformation' => 'travelInformation',
-        'promotionInformation' => 'promotionInformation'
+        'promotionInformation' => 'promotionInformation',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -140,7 +143,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => 'setMerchantDefinedSecureInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'travelInformation' => 'setTravelInformation',
-        'promotionInformation' => 'setPromotionInformation'
+        'promotionInformation' => 'setPromotionInformation',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -162,7 +166,8 @@ class CapturePaymentRequest implements ArrayAccess
         'merchantDefinedSecureInformation' => 'getMerchantDefinedSecureInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'travelInformation' => 'getTravelInformation',
-        'promotionInformation' => 'getPromotionInformation'
+        'promotionInformation' => 'getPromotionInformation',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -210,6 +215,7 @@ class CapturePaymentRequest implements ArrayAccess
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -527,6 +533,27 @@ class CapturePaymentRequest implements ArrayAccess
     public function setPromotionInformation($promotionInformation)
     {
         $this->container['promotionInformation'] = $promotionInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\Ptsv2reversalsProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\Ptsv2reversalsProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

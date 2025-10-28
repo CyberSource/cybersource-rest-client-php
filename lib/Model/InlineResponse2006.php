@@ -53,12 +53,19 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'totalCount' => 'int',
-        'offset' => 'int',
-        'limit' => 'int',
-        'sort' => 'string',
-        'count' => 'int',
-        'devices' => '\CyberSource\Model\InlineResponse2006Devices[]'
+        'webhookId' => 'string',
+        'organizationId' => 'string',
+        'products' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[]',
+        'webhookUrl' => 'string',
+        'healthCheckUrl' => 'string',
+        'status' => 'string',
+        'name' => 'string',
+        'description' => 'string',
+        'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy',
+        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy',
+        'createdOn' => 'string',
+        'updatedOn' => 'string',
+        'notificationScope' => 'string'
     ];
 
     /**
@@ -66,12 +73,19 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'totalCount' => null,
-        'offset' => null,
-        'limit' => null,
-        'sort' => null,
-        'count' => null,
-        'devices' => null
+        'webhookId' => null,
+        'organizationId' => null,
+        'products' => null,
+        'webhookUrl' => null,
+        'healthCheckUrl' => null,
+        'status' => null,
+        'name' => null,
+        'description' => null,
+        'retryPolicy' => null,
+        'securityPolicy' => null,
+        'createdOn' => null,
+        'updatedOn' => null,
+        'notificationScope' => null
     ];
 
     public static function swaggerTypes()
@@ -89,12 +103,19 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalCount' => 'totalCount',
-        'offset' => 'offset',
-        'limit' => 'limit',
-        'sort' => 'sort',
-        'count' => 'count',
-        'devices' => 'devices'
+        'webhookId' => 'webhookId',
+        'organizationId' => 'organizationId',
+        'products' => 'products',
+        'webhookUrl' => 'webhookUrl',
+        'healthCheckUrl' => 'healthCheckUrl',
+        'status' => 'status',
+        'name' => 'name',
+        'description' => 'description',
+        'retryPolicy' => 'retryPolicy',
+        'securityPolicy' => 'securityPolicy',
+        'createdOn' => 'createdOn',
+        'updatedOn' => 'updatedOn',
+        'notificationScope' => 'notificationScope'
     ];
 
 
@@ -103,12 +124,19 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'totalCount' => 'setTotalCount',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit',
-        'sort' => 'setSort',
-        'count' => 'setCount',
-        'devices' => 'setDevices'
+        'webhookId' => 'setWebhookId',
+        'organizationId' => 'setOrganizationId',
+        'products' => 'setProducts',
+        'webhookUrl' => 'setWebhookUrl',
+        'healthCheckUrl' => 'setHealthCheckUrl',
+        'status' => 'setStatus',
+        'name' => 'setName',
+        'description' => 'setDescription',
+        'retryPolicy' => 'setRetryPolicy',
+        'securityPolicy' => 'setSecurityPolicy',
+        'createdOn' => 'setCreatedOn',
+        'updatedOn' => 'setUpdatedOn',
+        'notificationScope' => 'setNotificationScope'
     ];
 
 
@@ -117,12 +145,19 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'totalCount' => 'getTotalCount',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit',
-        'sort' => 'getSort',
-        'count' => 'getCount',
-        'devices' => 'getDevices'
+        'webhookId' => 'getWebhookId',
+        'organizationId' => 'getOrganizationId',
+        'products' => 'getProducts',
+        'webhookUrl' => 'getWebhookUrl',
+        'healthCheckUrl' => 'getHealthCheckUrl',
+        'status' => 'getStatus',
+        'name' => 'getName',
+        'description' => 'getDescription',
+        'retryPolicy' => 'getRetryPolicy',
+        'securityPolicy' => 'getSecurityPolicy',
+        'createdOn' => 'getCreatedOn',
+        'updatedOn' => 'getUpdatedOn',
+        'notificationScope' => 'getNotificationScope'
     ];
 
     public static function attributeMap()
@@ -156,12 +191,19 @@ class InlineResponse2006 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
-        $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
-        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
-        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
+        $this->container['webhookId'] = isset($data['webhookId']) ? $data['webhookId'] : null;
+        $this->container['organizationId'] = isset($data['organizationId']) ? $data['organizationId'] : null;
+        $this->container['products'] = isset($data['products']) ? $data['products'] : null;
+        $this->container['webhookUrl'] = isset($data['webhookUrl']) ? $data['webhookUrl'] : null;
+        $this->container['healthCheckUrl'] = isset($data['healthCheckUrl']) ? $data['healthCheckUrl'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : 'INACTIVE';
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['retryPolicy'] = isset($data['retryPolicy']) ? $data['retryPolicy'] : null;
+        $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
+        $this->container['createdOn'] = isset($data['createdOn']) ? $data['createdOn'] : null;
+        $this->container['updatedOn'] = isset($data['updatedOn']) ? $data['updatedOn'] : null;
+        $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : 'DESCENDANTS';
     }
 
     /**
@@ -190,127 +232,274 @@ class InlineResponse2006 implements ArrayAccess
 
 
     /**
-     * Gets totalCount
-     * @return int
-     */
-    public function getTotalCount()
-    {
-        return $this->container['totalCount'];
-    }
-
-    /**
-     * Sets totalCount
-     * @param int $totalCount Total number of results.
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->container['totalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets offset
-     * @return int
-     */
-    public function getOffset()
-    {
-        return $this->container['offset'];
-    }
-
-    /**
-     * Sets offset
-     * @param int $offset Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned.
-     * @return $this
-     */
-    public function setOffset($offset)
-    {
-        $this->container['offset'] = $offset;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     * @param int $limit Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500.
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets sort
+     * Gets webhookId
      * @return string
      */
-    public function getSort()
+    public function getWebhookId()
     {
-        return $this->container['sort'];
+        return $this->container['webhookId'];
     }
 
     /**
-     * Sets sort
-     * @param string $sort A comma separated list of the following form:  `submitTimeUtc:desc`
+     * Sets webhookId
+     * @param string $webhookId Webhook Id. This is generated by the server.
      * @return $this
      */
-    public function setSort($sort)
+    public function setWebhookId($webhookId)
     {
-        $this->container['sort'] = $sort;
+        $this->container['webhookId'] = $webhookId;
 
         return $this;
     }
 
     /**
-     * Gets count
-     * @return int
+     * Gets organizationId
+     * @return string
      */
-    public function getCount()
+    public function getOrganizationId()
     {
-        return $this->container['count'];
+        return $this->container['organizationId'];
     }
 
     /**
-     * Sets count
-     * @param int $count Results for this page, this could be below the limit.
+     * Sets organizationId
+     * @param string $organizationId Organization ID.
      * @return $this
      */
-    public function setCount($count)
+    public function setOrganizationId($organizationId)
     {
-        $this->container['count'] = $count;
+        $this->container['organizationId'] = $organizationId;
 
         return $this;
     }
 
     /**
-     * Gets devices
-     * @return \CyberSource\Model\InlineResponse2006Devices[]
+     * Gets products
+     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[]
      */
-    public function getDevices()
+    public function getProducts()
     {
-        return $this->container['devices'];
+        return $this->container['products'];
     }
 
     /**
-     * Sets devices
-     * @param \CyberSource\Model\InlineResponse2006Devices[] $devices A collection of devices
+     * Sets products
+     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[] $products
      * @return $this
      */
-    public function setDevices($devices)
+    public function setProducts($products)
     {
-        $this->container['devices'] = $devices;
+        $this->container['products'] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Gets webhookUrl
+     * @return string
+     */
+    public function getWebhookUrl()
+    {
+        return $this->container['webhookUrl'];
+    }
+
+    /**
+     * Sets webhookUrl
+     * @param string $webhookUrl The client's endpoint (URL) to receive webhooks.
+     * @return $this
+     */
+    public function setWebhookUrl($webhookUrl)
+    {
+        $this->container['webhookUrl'] = $webhookUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets healthCheckUrl
+     * @return string
+     */
+    public function getHealthCheckUrl()
+    {
+        return $this->container['healthCheckUrl'];
+    }
+
+    /**
+     * Sets healthCheckUrl
+     * @param string $healthCheckUrl The client's health check endpoint (URL).
+     * @return $this
+     */
+    public function setHealthCheckUrl($healthCheckUrl)
+    {
+        $this->container['healthCheckUrl'] = $healthCheckUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status Webhook status.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name Client friendly webhook name.
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     * @param string $description Client friendly webhook description.
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets retryPolicy
+     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy
+     */
+    public function getRetryPolicy()
+    {
+        return $this->container['retryPolicy'];
+    }
+
+    /**
+     * Sets retryPolicy
+     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy $retryPolicy
+     * @return $this
+     */
+    public function setRetryPolicy($retryPolicy)
+    {
+        $this->container['retryPolicy'] = $retryPolicy;
+
+        return $this;
+    }
+
+    /**
+     * Gets securityPolicy
+     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy
+     */
+    public function getSecurityPolicy()
+    {
+        return $this->container['securityPolicy'];
+    }
+
+    /**
+     * Sets securityPolicy
+     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy $securityPolicy
+     * @return $this
+     */
+    public function setSecurityPolicy($securityPolicy)
+    {
+        $this->container['securityPolicy'] = $securityPolicy;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdOn
+     * @return string
+     */
+    public function getCreatedOn()
+    {
+        return $this->container['createdOn'];
+    }
+
+    /**
+     * Sets createdOn
+     * @param string $createdOn Date on which webhook was created/registered.
+     * @return $this
+     */
+    public function setCreatedOn($createdOn)
+    {
+        $this->container['createdOn'] = $createdOn;
+
+        return $this;
+    }
+
+    /**
+     * Gets updatedOn
+     * @return string
+     */
+    public function getUpdatedOn()
+    {
+        return $this->container['updatedOn'];
+    }
+
+    /**
+     * Sets updatedOn
+     * @param string $updatedOn Date on which webhook was most recently updated.
+     * @return $this
+     */
+    public function setUpdatedOn($updatedOn)
+    {
+        $this->container['updatedOn'] = $updatedOn;
+
+        return $this;
+    }
+
+    /**
+     * Gets notificationScope
+     * @return string
+     */
+    public function getNotificationScope()
+    {
+        return $this->container['notificationScope'];
+    }
+
+    /**
+     * Sets notificationScope
+     * @param string $notificationScope The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
+     * @return $this
+     */
+    public function setNotificationScope($notificationScope)
+    {
+        $this->container['notificationScope'] = $notificationScope;
 
         return $this;
     }

@@ -77,9 +77,9 @@ class InlineResponse4043Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "reason"
      */
-    public function testPropertyStatus()
+    public function testPropertyReason()
     {
     }
 
@@ -91,16 +91,9 @@ class InlineResponse4043Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "details"
      */
-    public function testPropertyCode()
-    {
-    }
-
-    /**
-     * Test attribute "submitTimeUtc"
-     */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyDetails()
     {
     }
 }

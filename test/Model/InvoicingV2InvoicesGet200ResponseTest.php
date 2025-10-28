@@ -133,6 +133,13 @@ class InvoicingV2InvoicesGet200ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "merchantDefinedFieldValuesWithDefinition"
+     */
+    public function testPropertyMerchantDefinedFieldValuesWithDefinition()
+    {
+    }
+
+    /**
      * Test attribute "invoiceHistory"
      */
     public function testPropertyInvoiceHistory()

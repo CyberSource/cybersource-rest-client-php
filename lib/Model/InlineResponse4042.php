@@ -53,9 +53,11 @@ class InlineResponse4042 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'submitTimeUtc' => '\DateTime',
+        'status' => 'string',
         'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse4042Details[]'
+        'details' => '\CyberSource\Model\InlineResponse4007Details[]'
     ];
 
     /**
@@ -63,6 +65,8 @@ class InlineResponse4042 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'submitTimeUtc' => 'date-time',
+        'status' => null,
         'reason' => null,
         'message' => null,
         'details' => null
@@ -83,6 +87,8 @@ class InlineResponse4042 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'submitTimeUtc' => 'submitTimeUtc',
+        'status' => 'status',
         'reason' => 'reason',
         'message' => 'message',
         'details' => 'details'
@@ -94,6 +100,8 @@ class InlineResponse4042 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'status' => 'setStatus',
         'reason' => 'setReason',
         'message' => 'setMessage',
         'details' => 'setDetails'
@@ -105,6 +113,8 @@ class InlineResponse4042 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'status' => 'getStatus',
         'reason' => 'getReason',
         'message' => 'getMessage',
         'details' => 'getDetails'
@@ -141,6 +151,8 @@ class InlineResponse4042 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
@@ -172,6 +184,48 @@ class InlineResponse4042 implements ArrayAccess
 
 
     /**
+     * Gets submitTimeUtc
+     * @return \DateTime
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status The http status description of the submitted request.
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
      * Gets reason
      * @return string
      */
@@ -182,7 +236,7 @@ class InlineResponse4042 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason
+     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'RESOURCE_NOT_FOUND'
      * @return $this
      */
     public function setReason($reason)
@@ -203,7 +257,7 @@ class InlineResponse4042 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message
+     * @param string $message Descriptive message for the error.
      * @return $this
      */
     public function setMessage($message)
@@ -215,7 +269,7 @@ class InlineResponse4042 implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\InlineResponse4042Details[]
+     * @return \CyberSource\Model\InlineResponse4007Details[]
      */
     public function getDetails()
     {
@@ -224,7 +278,7 @@ class InlineResponse4042 implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\InlineResponse4042Details[] $details
+     * @param \CyberSource\Model\InlineResponse4007Details[] $details
      * @return $this
      */
     public function setDetails($details)

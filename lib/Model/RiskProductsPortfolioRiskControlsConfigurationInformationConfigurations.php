@@ -61,7 +61,7 @@ class RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations im
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'profileId' => 'uuid'
+        'profileId' => null
     ];
 
     public static function swaggerTypes()
