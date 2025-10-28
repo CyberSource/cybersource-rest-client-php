@@ -11,7 +11,6 @@ class Cache
 {
     private static $file_cache = array();
     private static $logger = null;
-    private static $responseMleKeyLoadFailed = false;
 
     public function __construct()
     {
@@ -181,13 +180,9 @@ class Cache
                     'response_mle_private_key' => $loaded,
                     'file_mod_time'            => $fileModTime
                 ];
-                self::$responseMleKeyLoadFailed = false; // reset on success
             } catch (\Exception $e) {
-                if (!self::$responseMleKeyLoadFailed) {
-                    self::$responseMleKeyLoadFailed = true;
-                    if (self::$logger) { self::$logger->error("Response MLE private key load failed: ".$e->getMessage()); }
-                } else {
-                    if (self::$logger) { self::$logger->debug("Response MLE private key load failed again; suppressing repeated error log."); }
+                if (self::$logger) { 
+                    self::$logger->error("Response MLE private key load failed: ".$e->getMessage()); 
                 }
                 self::$file_cache[$cacheKey] = [
                     'response_mle_private_key' => null,
@@ -352,7 +347,6 @@ class Cache
 
         if (!isset(self::$file_cache[$cacheKey]) ||
             self::$file_cache[$cacheKey]['file_mod_time'] !== $modTime) {
-
             $this->setupMLECache($merchantConfig, $cacheKey, $filePath);
         } else {
             self::$logger->debug("Response MLE private key retrieved from cache.");
