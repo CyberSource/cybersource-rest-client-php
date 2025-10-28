@@ -112,6 +112,13 @@ class CardProcessingConfigCommonProcessorsTest extends \PHPUnit_Framework_TestCa
     }
 
     /**
+     * Test attribute "acquirers"
+     */
+    public function testPropertyAcquirers()
+    {
+    }
+
+    /**
      * Test attribute "merchantId"
      */
     public function testPropertyMerchantId()

@@ -71,7 +71,12 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'accountLevelManagement' => 'bool',
         'onlineGamblingBlock' => 'bool',
         'autoSubstantiation' => 'bool',
-        'flexCredential' => 'bool'
+        'flexCredential' => 'bool',
+        'productId' => 'string',
+        'productIdSubtype' => 'string',
+        'threeDSSupport' => 'bool',
+        'siEligible' => 'bool',
+        'emiEligible' => 'bool'
     ];
 
     /**
@@ -97,7 +102,12 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'accountLevelManagement' => null,
         'onlineGamblingBlock' => null,
         'autoSubstantiation' => null,
-        'flexCredential' => null
+        'flexCredential' => null,
+        'productId' => null,
+        'productIdSubtype' => null,
+        'threeDSSupport' => null,
+        'siEligible' => null,
+        'emiEligible' => null
     ];
 
     public static function swaggerTypes()
@@ -133,7 +143,12 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'accountLevelManagement' => 'accountLevelManagement',
         'onlineGamblingBlock' => 'onlineGamblingBlock',
         'autoSubstantiation' => 'autoSubstantiation',
-        'flexCredential' => 'flexCredential'
+        'flexCredential' => 'flexCredential',
+        'productId' => 'productId',
+        'productIdSubtype' => 'productIdSubtype',
+        'threeDSSupport' => 'threeDSSupport',
+        'siEligible' => 'siEligible',
+        'emiEligible' => 'emiEligible'
     ];
 
 
@@ -160,7 +175,12 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'accountLevelManagement' => 'setAccountLevelManagement',
         'onlineGamblingBlock' => 'setOnlineGamblingBlock',
         'autoSubstantiation' => 'setAutoSubstantiation',
-        'flexCredential' => 'setFlexCredential'
+        'flexCredential' => 'setFlexCredential',
+        'productId' => 'setProductId',
+        'productIdSubtype' => 'setProductIdSubtype',
+        'threeDSSupport' => 'setThreeDSSupport',
+        'siEligible' => 'setSiEligible',
+        'emiEligible' => 'setEmiEligible'
     ];
 
 
@@ -187,7 +207,12 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         'accountLevelManagement' => 'getAccountLevelManagement',
         'onlineGamblingBlock' => 'getOnlineGamblingBlock',
         'autoSubstantiation' => 'getAutoSubstantiation',
-        'flexCredential' => 'getFlexCredential'
+        'flexCredential' => 'getFlexCredential',
+        'productId' => 'getProductId',
+        'productIdSubtype' => 'getProductIdSubtype',
+        'threeDSSupport' => 'getThreeDSSupport',
+        'siEligible' => 'getSiEligible',
+        'emiEligible' => 'getEmiEligible'
     ];
 
     public static function attributeMap()
@@ -240,6 +265,11 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
         $this->container['onlineGamblingBlock'] = isset($data['onlineGamblingBlock']) ? $data['onlineGamblingBlock'] : null;
         $this->container['autoSubstantiation'] = isset($data['autoSubstantiation']) ? $data['autoSubstantiation'] : null;
         $this->container['flexCredential'] = isset($data['flexCredential']) ? $data['flexCredential'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['productIdSubtype'] = isset($data['productIdSubtype']) ? $data['productIdSubtype'] : null;
+        $this->container['threeDSSupport'] = isset($data['threeDSSupport']) ? $data['threeDSSupport'] : null;
+        $this->container['siEligible'] = isset($data['siEligible']) ? $data['siEligible'] : null;
+        $this->container['emiEligible'] = isset($data['emiEligible']) ? $data['emiEligible'] : null;
     }
 
     /**
@@ -662,6 +692,111 @@ class TmsBinLookupPaymentAccountInformationFeatures implements ArrayAccess
     public function setFlexCredential($flexCredential)
     {
         $this->container['flexCredential'] = $flexCredential;
+
+        return $this;
+    }
+
+    /**
+     * Gets productId
+     * @return string
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     * @param string $productId This field contains the Visa-assigned product identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - Q4   - P   - AX
+     * @return $this
+     */
+    public function setProductId($productId)
+    {
+        $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Gets productIdSubtype
+     * @return string
+     */
+    public function getProductIdSubtype()
+    {
+        return $this->container['productIdSubtype'];
+    }
+
+    /**
+     * Sets productIdSubtype
+     * @param string $productIdSubtype This field contains the Visa-assigned product subtype identifier associated with the BIN. This field is only supported for Visa BINs. Example values:   - BB   - EX   - L2   - C2
+     * @return $this
+     */
+    public function setProductIdSubtype($productIdSubtype)
+    {
+        $this->container['productIdSubtype'] = $productIdSubtype;
+
+        return $this;
+    }
+
+    /**
+     * Gets threeDSSupport
+     * @return bool
+     */
+    public function getThreeDSSupport()
+    {
+        return $this->container['threeDSSupport'];
+    }
+
+    /**
+     * Sets threeDSSupport
+     * @param bool $threeDSSupport This field indicates if the payment instrument supports 3D Secure authentication. Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setThreeDSSupport($threeDSSupport)
+    {
+        $this->container['threeDSSupport'] = $threeDSSupport;
+
+        return $this;
+    }
+
+    /**
+     * Gets siEligible
+     * @return bool
+     */
+    public function getSiEligible()
+    {
+        return $this->container['siEligible'];
+    }
+
+    /**
+     * Sets siEligible
+     * @param bool $siEligible This field indicates if the payment instrument is eligible for Standing Instructions (recurring payments). Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setSiEligible($siEligible)
+    {
+        $this->container['siEligible'] = $siEligible;
+
+        return $this;
+    }
+
+    /**
+     * Gets emiEligible
+     * @return bool
+     */
+    public function getEmiEligible()
+    {
+        return $this->container['emiEligible'];
+    }
+
+    /**
+     * Sets emiEligible
+     * @param bool $emiEligible This field indicates if the card is eligible for Equated Monthly Installments (EMI). Possible values:     - `true`     - `false`
+     * @return $this
+     */
+    public function setEmiEligible($emiEligible)
+    {
+        $this->container['emiEligible'] = $emiEligible;
 
         return $this;
     }

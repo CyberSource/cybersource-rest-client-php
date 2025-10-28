@@ -131,4 +131,11 @@ class InvoicingV2InvoicesPost201ResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderInformation()
     {
     }
+
+    /**
+     * Test attribute "merchantDefinedFieldValuesWithDefinition"
+     */
+    public function testPropertyMerchantDefinedFieldValuesWithDefinition()
+    {
+    }
 }

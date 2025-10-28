@@ -161,6 +161,13 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
     }
 
     /**
+     * Test attribute "issuerInformation"
+     */
+    public function testPropertyIssuerInformation()
+    {
+    }
+
+    /**
      * Test attribute "eventStatus"
      */
     public function testPropertyEventStatus()
@@ -185,6 +192,27 @@ class TssV2TransactionsGet200ResponseProcessorInformationTest extends \PHPUnit_F
      * Test attribute "paymentAccountReferenceNumber"
      */
     public function testPropertyPaymentAccountReferenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "responseDetails"
+     */
+    public function testPropertyResponseDetails()
+    {
+    }
+
+    /**
+     * Test attribute "rawResponseLocal"
+     */
+    public function testPropertyRawResponseLocal()
+    {
+    }
+
+    /**
+     * Test attribute "rawResponse"
+     */
+    public function testPropertyRawResponse()
     {
     }
 

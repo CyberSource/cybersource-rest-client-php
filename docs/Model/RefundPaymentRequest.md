@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines. | [optional] 
 **travelInformation** | [**\CyberSource\Model\Ptsv2paymentsTravelInformation**](Ptsv2paymentsTravelInformation.md) |  | [optional] 
 **promotionInformation** | [**\CyberSource\Model\Ptsv2paymentsPromotionInformation**](Ptsv2paymentsPromotionInformation.md) |  | [optional] 
+**processorInformation** | [**\CyberSource\Model\Ptsv2reversalsProcessorInformation**](Ptsv2reversalsProcessorInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

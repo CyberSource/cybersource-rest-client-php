@@ -62,7 +62,7 @@ class PaymentsProductsPayerAuthenticationConfigurationInformation implements Arr
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'templateId' => 'uuid',
+        'templateId' => null,
         'configurations' => null
     ];
 

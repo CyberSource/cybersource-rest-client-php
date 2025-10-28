@@ -77,6 +77,13 @@ class Ptsv2paymentsOrderInformationAmountDetailsTest extends \PHPUnit_Framework_
     }
 
     /**
+     * Test attribute "refundBalance"
+     */
+    public function testPropertyRefundBalance()
+    {
+    }
+
+    /**
      * Test attribute "giftWrapAmount"
      */
     public function testPropertyGiftWrapAmount()

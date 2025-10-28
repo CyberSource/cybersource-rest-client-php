@@ -57,7 +57,8 @@ class MitReversalRequest implements ArrayAccess
         'reversalInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsReversalInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsProcessingInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsOrderInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation'
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation',
+        'processorInformation' => '\CyberSource\Model\Ptsv2reversalsProcessorInformation'
     ];
 
     /**
@@ -69,7 +70,8 @@ class MitReversalRequest implements ArrayAccess
         'reversalInformation' => null,
         'processingInformation' => null,
         'orderInformation' => null,
-        'pointOfSaleInformation' => null
+        'pointOfSaleInformation' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class MitReversalRequest implements ArrayAccess
         'reversalInformation' => 'reversalInformation',
         'processingInformation' => 'processingInformation',
         'orderInformation' => 'orderInformation',
-        'pointOfSaleInformation' => 'pointOfSaleInformation'
+        'pointOfSaleInformation' => 'pointOfSaleInformation',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -104,7 +107,8 @@ class MitReversalRequest implements ArrayAccess
         'reversalInformation' => 'setReversalInformation',
         'processingInformation' => 'setProcessingInformation',
         'orderInformation' => 'setOrderInformation',
-        'pointOfSaleInformation' => 'setPointOfSaleInformation'
+        'pointOfSaleInformation' => 'setPointOfSaleInformation',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -117,7 +121,8 @@ class MitReversalRequest implements ArrayAccess
         'reversalInformation' => 'getReversalInformation',
         'processingInformation' => 'getProcessingInformation',
         'orderInformation' => 'getOrderInformation',
-        'pointOfSaleInformation' => 'getPointOfSaleInformation'
+        'pointOfSaleInformation' => 'getPointOfSaleInformation',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class MitReversalRequest implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -284,6 +290,27 @@ class MitReversalRequest implements ArrayAccess
     public function setPointOfSaleInformation($pointOfSaleInformation)
     {
         $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\Ptsv2reversalsProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\Ptsv2reversalsProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

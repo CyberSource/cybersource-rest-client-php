@@ -89,4 +89,11 @@ class InvoicingV2InvoiceSettingsGet200ResponseTest extends \PHPUnit_Framework_Te
     public function testPropertyInvoiceSettingsInformation()
     {
     }
+
+    /**
+     * Test attribute "merchantInformation"
+     */
+    public function testPropertyMerchantInformation()
+    {
+    }
 }

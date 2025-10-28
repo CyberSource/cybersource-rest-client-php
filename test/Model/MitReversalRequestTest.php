@@ -110,4 +110,11 @@ class MitReversalRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPointOfSaleInformation()
     {
     }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
+    {
+    }
 }

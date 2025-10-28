@@ -64,7 +64,8 @@ class RefundPaymentRequest implements ArrayAccess
         'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsPointOfSaleInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
-        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation'
+        'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
+        'processorInformation' => '\CyberSource\Model\Ptsv2reversalsProcessorInformation'
     ];
 
     /**
@@ -83,7 +84,8 @@ class RefundPaymentRequest implements ArrayAccess
         'pointOfSaleInformation' => null,
         'merchantDefinedInformation' => null,
         'travelInformation' => null,
-        'promotionInformation' => null
+        'promotionInformation' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -112,7 +114,8 @@ class RefundPaymentRequest implements ArrayAccess
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
         'travelInformation' => 'travelInformation',
-        'promotionInformation' => 'promotionInformation'
+        'promotionInformation' => 'promotionInformation',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -132,7 +135,8 @@ class RefundPaymentRequest implements ArrayAccess
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
         'travelInformation' => 'setTravelInformation',
-        'promotionInformation' => 'setPromotionInformation'
+        'promotionInformation' => 'setPromotionInformation',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -152,7 +156,8 @@ class RefundPaymentRequest implements ArrayAccess
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
         'travelInformation' => 'getTravelInformation',
-        'promotionInformation' => 'getPromotionInformation'
+        'promotionInformation' => 'getPromotionInformation',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -198,6 +203,7 @@ class RefundPaymentRequest implements ArrayAccess
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
         $this->container['promotionInformation'] = isset($data['promotionInformation']) ? $data['promotionInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -473,6 +479,27 @@ class RefundPaymentRequest implements ArrayAccess
     public function setPromotionInformation($promotionInformation)
     {
         $this->container['promotionInformation'] = $promotionInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\Ptsv2reversalsProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\Ptsv2reversalsProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }
