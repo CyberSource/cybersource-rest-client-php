@@ -66,8 +66,7 @@ class MLEUtility
         $isResponseMLEForAPI = false;
 
         // Global flag
-        if (/*method_exists($merchantConfig, 'getEnableResponseMleGlobally') &&*/
-            $merchantConfig->getEnableResponseMleGlobally()) {
+        if ($merchantConfig->getEnableResponseMleGlobally()) {
             $isResponseMLEForAPI = true;
         }
 
@@ -75,17 +74,15 @@ class MLEUtility
         $operationArray = array_map('trim', explode(',', (string)$operationIds));
 
         // Per-operation override map (internal response map)
-        // if (method_exists($merchantConfig, 'getInternalMapToControlResponseMLEonAPI')) {
-            $map = $merchantConfig->getInternalMapToControlResponseMLEonAPI();
-            if (is_array($map) && !empty($map)) {
-                foreach ($operationArray as $operationId) {
-                    if (array_key_exists($operationId, $map)) {
-                        $isResponseMLEForAPI = (bool)$map[$operationId];
-                        break;
-                    }
+        $map = $merchantConfig->getInternalMapToControlResponseMLEonAPI();
+        if (is_array($map) && !empty($map)) {
+            foreach ($operationArray as $operationId) {
+                if (array_key_exists($operationId, $map)) {
+                    $isResponseMLEForAPI = (bool)$map[$operationId];
+                    break;
                 }
             }
-        //}
+        }
 
         return $isResponseMLEForAPI;
     }
