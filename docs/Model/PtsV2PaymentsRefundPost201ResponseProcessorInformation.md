@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **settlementDate** | **string** | Field contains a settlement date. The date is in mmdd format, where: mm &#x3D; month and dd &#x3D; day. | [optional] 
 **updateTimeUtc** | **string** | The date and time when the transaction was last updated, in Internet date and time format. | [optional] 
 **network** | [**\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork**](Ptsv2paymentsProcessorInformationReversalNetwork.md) |  | [optional] 
+**merchantAdvice** | [**\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice**](PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

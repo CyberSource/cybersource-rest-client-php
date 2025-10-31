@@ -65,7 +65,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'captureOptions' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationCaptureOptions',
         'loanOptions' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationLoanOptions',
         'payByPointsIndicator' => 'bool',
-        'actionList' => 'string[]'
+        'actionList' => 'string[]',
+        'japanPaymentOptions' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions'
     ];
 
     /**
@@ -85,7 +86,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'captureOptions' => null,
         'loanOptions' => null,
         'payByPointsIndicator' => null,
-        'actionList' => null
+        'actionList' => null,
+        'japanPaymentOptions' => null
     ];
 
     public static function swaggerTypes()
@@ -115,7 +117,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'captureOptions' => 'captureOptions',
         'loanOptions' => 'loanOptions',
         'payByPointsIndicator' => 'payByPointsIndicator',
-        'actionList' => 'actionList'
+        'actionList' => 'actionList',
+        'japanPaymentOptions' => 'japanPaymentOptions'
     ];
 
 
@@ -136,7 +139,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'captureOptions' => 'setCaptureOptions',
         'loanOptions' => 'setLoanOptions',
         'payByPointsIndicator' => 'setPayByPointsIndicator',
-        'actionList' => 'setActionList'
+        'actionList' => 'setActionList',
+        'japanPaymentOptions' => 'setJapanPaymentOptions'
     ];
 
 
@@ -157,7 +161,8 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         'captureOptions' => 'getCaptureOptions',
         'loanOptions' => 'getLoanOptions',
         'payByPointsIndicator' => 'getPayByPointsIndicator',
-        'actionList' => 'getActionList'
+        'actionList' => 'getActionList',
+        'japanPaymentOptions' => 'getJapanPaymentOptions'
     ];
 
     public static function attributeMap()
@@ -204,6 +209,7 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
         $this->container['loanOptions'] = isset($data['loanOptions']) ? $data['loanOptions'] : null;
         $this->container['payByPointsIndicator'] = isset($data['payByPointsIndicator']) ? $data['payByPointsIndicator'] : null;
         $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
+        $this->container['japanPaymentOptions'] = isset($data['japanPaymentOptions']) ? $data['japanPaymentOptions'] : null;
     }
 
     /**
@@ -500,6 +506,27 @@ class Ptsv2paymentsidcapturesProcessingInformation implements ArrayAccess
     public function setActionList($actionList)
     {
         $this->container['actionList'] = $actionList;
+
+        return $this;
+    }
+
+    /**
+     * Gets japanPaymentOptions
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions
+     */
+    public function getJapanPaymentOptions()
+    {
+        return $this->container['japanPaymentOptions'];
+    }
+
+    /**
+     * Sets japanPaymentOptions
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesProcessingInformationJapanPaymentOptions $japanPaymentOptions
+     * @return $this
+     */
+    public function setJapanPaymentOptions($japanPaymentOptions)
+    {
+        $this->container['japanPaymentOptions'] = $japanPaymentOptions;
 
         return $this;
     }

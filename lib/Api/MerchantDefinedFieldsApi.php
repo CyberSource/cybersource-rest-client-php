@@ -243,6 +243,137 @@ class MerchantDefinedFieldsApi
     }
 
     /**
+     * Operation deleteMerchantDefinedFieldsDefinitions
+     *
+     * Delete a MerchantDefinedField by ID
+     *
+     * @param string $referenceType  (required)
+     * @param int $id  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of void, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteMerchantDefinedFieldsDefinitions($referenceType, $id)
+    {
+        self::$logger->info('CALL TO METHOD deleteMerchantDefinedFieldsDefinitions STARTED');
+        list($response, $statusCode, $httpHeader) = $this->deleteMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id);
+        self::$logger->info('CALL TO METHOD deleteMerchantDefinedFieldsDefinitions ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation deleteMerchantDefinedFieldsDefinitionsWithHttpInfo
+     *
+     * Delete a MerchantDefinedField by ID
+     *
+     * @param string $referenceType  (required)
+     * @param int $id  (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id)
+    {
+        // verify the required parameter 'referenceType' is set
+        if ($referenceType === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $referenceType when calling deleteMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $referenceType when calling deleteMerchantDefinedFieldsDefinitions');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling deleteMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling deleteMerchantDefinedFieldsDefinitions');
+        }
+        // parse inputs
+        $resourcePath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+
+        // path params
+        if ($referenceType !== null) {
+            $resourcePath = str_replace(
+                "{" . "referenceType" . "}",
+                $this->apiClient->getSerializer()->toPathValue($referenceType),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        if ('DELETE' == 'POST') {
+            $_tempBody = '{}';
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody) and count($formParams) <= 0) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
+        }
+
+        //MLE check and mle encryption for req body
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deleteMerchantDefinedFieldsDefinitions,deleteMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
+        
+        // Logging
+        self::$logger->debug("Resource : DELETE $resourcePath");
+        if (isset($httpBody) and count($formParams) <= 0) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : null");
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}'
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$response, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getMerchantDefinedFieldsDefinitions
      *
      * Get all merchant defined fields for a given reference type
@@ -367,138 +498,7 @@ class MerchantDefinedFieldsApi
     }
 
     /**
-     * Operation invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete
-     *
-     * Delete a MerchantDefinedField by ID
-     *
-     * @param string $referenceType  (required)
-     * @param int $id  (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of void, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete($referenceType, $id)
-    {
-        self::$logger->info('CALL TO METHOD invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete STARTED');
-        list($response, $statusCode, $httpHeader) = $this->invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo($referenceType, $id);
-        self::$logger->info('CALL TO METHOD invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete ENDED');
-        self::$logger->close();
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo
-     *
-     * Delete a MerchantDefinedField by ID
-     *
-     * @param string $referenceType  (required)
-     * @param int $id  (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo($referenceType, $id)
-    {
-        // verify the required parameter 'referenceType' is set
-        if ($referenceType === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $referenceType when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete");
-            throw new \InvalidArgumentException('Missing the required parameter $referenceType when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete');
-        }
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete");
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete');
-        }
-        // parse inputs
-        $resourcePath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/hal+json;charset=utf-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
-
-        // path params
-        if ($referenceType !== null) {
-            $resourcePath = str_replace(
-                "{" . "referenceType" . "}",
-                $this->apiClient->getSerializer()->toPathValue($referenceType),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        if ('DELETE' == 'POST') {
-            $_tempBody = '{}';
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody) and count($formParams) <= 0) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
-        }
-
-        //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete,invoicingV2ReferenceTypeMerchantDefinedFieldsIdDeleteWithHttpInfo")) {
-            try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
-            } catch (Exception $e) {
-                self::$logger->error("Failed to encrypt request body:  $e");
-                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
-            }
-        }
-
-        
-        // Logging
-        self::$logger->debug("Resource : DELETE $resourcePath");
-        if (isset($httpBody) and count($formParams) <= 0) {
-            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
-                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
-            } else {
-                $printHttpBody = $httpBody;
-            }
-            
-            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
-        }
-
-        self::$logger->debug("Return Type : null");
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}'
-            );
-            
-            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
-
-            return [$response, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            self::$logger->error("ApiException : $e");
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut
+     * Operation putMerchantDefinedFieldsDefinitions
      *
      * Update a MerchantDefinedField by ID
      *
@@ -508,17 +508,17 @@ class MerchantDefinedFieldsApi
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut($referenceType, $id, $merchantDefinedFieldCore)
+    public function putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
     {
-        self::$logger->info('CALL TO METHOD invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut STARTED');
-        list($response, $statusCode, $httpHeader) = $this->invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore);
-        self::$logger->info('CALL TO METHOD invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut ENDED');
+        self::$logger->info('CALL TO METHOD putMerchantDefinedFieldsDefinitions STARTED');
+        list($response, $statusCode, $httpHeader) = $this->putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore);
+        self::$logger->info('CALL TO METHOD putMerchantDefinedFieldsDefinitions ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
     }
 
     /**
-     * Operation invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo
+     * Operation putMerchantDefinedFieldsDefinitionsWithHttpInfo
      *
      * Update a MerchantDefinedField by ID
      *
@@ -528,22 +528,22 @@ class MerchantDefinedFieldsApi
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore)
+    public function putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore)
     {
         // verify the required parameter 'referenceType' is set
         if ($referenceType === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $referenceType when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut");
-            throw new \InvalidArgumentException('Missing the required parameter $referenceType when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut');
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $referenceType when calling putMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $referenceType when calling putMerchantDefinedFieldsDefinitions');
         }
         // verify the required parameter 'id' is set
         if ($id === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut");
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut');
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $id when calling putMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling putMerchantDefinedFieldsDefinitions');
         }
         // verify the required parameter 'merchantDefinedFieldCore' is set
         if ($merchantDefinedFieldCore === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $merchantDefinedFieldCore when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut");
-            throw new \InvalidArgumentException('Missing the required parameter $merchantDefinedFieldCore when calling invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut');
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $merchantDefinedFieldCore when calling putMerchantDefinedFieldsDefinitions");
+            throw new \InvalidArgumentException('Missing the required parameter $merchantDefinedFieldCore when calling putMerchantDefinedFieldsDefinitions');
         }
         // parse inputs
         $resourcePath = "/invoicing/v2/{referenceType}/merchantDefinedFields/{id}";
@@ -595,7 +595,7 @@ class MerchantDefinedFieldsApi
 
         //MLE check and mle encryption for req body
         $inboundMLEStatus = 'false';
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut,invoicingV2ReferenceTypeMerchantDefinedFieldsIdPutWithHttpInfo")) {
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "putMerchantDefinedFieldsDefinitions,putMerchantDefinedFieldsDefinitionsWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
             } catch (Exception $e) {

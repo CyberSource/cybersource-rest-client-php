@@ -166,4 +166,11 @@ class Ptsv2paymentsidcapturesProcessingInformationTest extends \PHPUnit_Framewor
     public function testPropertyActionList()
     {
     }
+
+    /**
+     * Test attribute "japanPaymentOptions"
+     */
+    public function testPropertyJapanPaymentOptions()
+    {
+    }
 }

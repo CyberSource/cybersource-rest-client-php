@@ -5,9 +5,9 @@ All URIs are relative to *https://apitest.cybersource.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createMerchantDefinedFieldDefinition**](MerchantDefinedFieldsApi.md#createMerchantDefinedFieldDefinition) | **POST** /invoicing/v2/{referenceType}/merchantDefinedFields | Create merchant defined field for a given reference type
+[**deleteMerchantDefinedFieldsDefinitions**](MerchantDefinedFieldsApi.md#deleteMerchantDefinedFieldsDefinitions) | **DELETE** /invoicing/v2/{referenceType}/merchantDefinedFields/{id} | Delete a MerchantDefinedField by ID
 [**getMerchantDefinedFieldsDefinitions**](MerchantDefinedFieldsApi.md#getMerchantDefinedFieldsDefinitions) | **GET** /invoicing/v2/{referenceType}/merchantDefinedFields | Get all merchant defined fields for a given reference type
-[**invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete**](MerchantDefinedFieldsApi.md#invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete) | **DELETE** /invoicing/v2/{referenceType}/merchantDefinedFields/{id} | Delete a MerchantDefinedField by ID
-[**invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut**](MerchantDefinedFieldsApi.md#invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut) | **PUT** /invoicing/v2/{referenceType}/merchantDefinedFields/{id} | Update a MerchantDefinedField by ID
+[**putMerchantDefinedFieldsDefinitions**](MerchantDefinedFieldsApi.md#putMerchantDefinedFieldsDefinitions) | **PUT** /invoicing/v2/{referenceType}/merchantDefinedFields/{id} | Update a MerchantDefinedField by ID
 
 
 # **createMerchantDefinedFieldDefinition**
@@ -55,6 +55,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **deleteMerchantDefinedFieldsDefinitions**
+> deleteMerchantDefinedFieldsDefinitions($referenceType, $id)
+
+Delete a MerchantDefinedField by ID
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\MerchantDefinedFieldsApi();
+$referenceType = "referenceType_example"; // string | 
+$id = 789; // int | 
+
+try {
+    $api_instance->deleteMerchantDefinedFieldsDefinitions($referenceType, $id);
+} catch (Exception $e) {
+    echo 'Exception when calling MerchantDefinedFieldsApi->deleteMerchantDefinedFieldsDefinitions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **referenceType** | **string**|  |
+ **id** | **int**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/hal+json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getMerchantDefinedFieldsDefinitions**
 > \CyberSource\Model\InlineResponse2002[] getMerchantDefinedFieldsDefinitions($referenceType)
 
@@ -98,52 +142,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete**
-> invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete($referenceType, $id)
-
-Delete a MerchantDefinedField by ID
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\MerchantDefinedFieldsApi();
-$referenceType = "referenceType_example"; // string | 
-$id = 789; // int | 
-
-try {
-    $api_instance->invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete($referenceType, $id);
-} catch (Exception $e) {
-    echo 'Exception when calling MerchantDefinedFieldsApi->invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **referenceType** | **string**|  |
- **id** | **int**|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/hal+json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut**
-> \CyberSource\Model\InlineResponse2002[] invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut($referenceType, $id, $merchantDefinedFieldCore)
+# **putMerchantDefinedFieldsDefinitions**
+> \CyberSource\Model\InlineResponse2002[] putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
 
 Update a MerchantDefinedField by ID
 
@@ -158,10 +158,10 @@ $id = 789; // int |
 $merchantDefinedFieldCore = new \CyberSource\Model\MerchantDefinedFieldCore(); // \CyberSource\Model\MerchantDefinedFieldCore | 
 
 try {
-    $result = $api_instance->invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut($referenceType, $id, $merchantDefinedFieldCore);
+    $result = $api_instance->putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MerchantDefinedFieldsApi->invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MerchantDefinedFieldsApi->putMerchantDefinedFieldsDefinitions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

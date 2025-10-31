@@ -92,16 +92,6 @@ class TokenizedCardApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for postIssuerLifeCycleSimulation
-     *
-     * Simulate Issuer Life Cycle Management Events.
-     *
-     */
-    public function testPostIssuerLifeCycleSimulation()
-    {
-    }
-
-    /**
      * Test case for postTokenizedCard
      *
      * Create a Tokenized Card.

@@ -82,6 +82,16 @@ class MerchantDefinedFieldsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for deleteMerchantDefinedFieldsDefinitions
+     *
+     * Delete a MerchantDefinedField by ID.
+     *
+     */
+    public function testDeleteMerchantDefinedFieldsDefinitions()
+    {
+    }
+
+    /**
      * Test case for getMerchantDefinedFieldsDefinitions
      *
      * Get all merchant defined fields for a given reference type.
@@ -92,22 +102,12 @@ class MerchantDefinedFieldsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for invoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete
-     *
-     * Delete a MerchantDefinedField by ID.
-     *
-     */
-    public function testInvoicingV2ReferenceTypeMerchantDefinedFieldsIdDelete()
-    {
-    }
-
-    /**
-     * Test case for invoicingV2ReferenceTypeMerchantDefinedFieldsIdPut
+     * Test case for putMerchantDefinedFieldsDefinitions
      *
      * Update a MerchantDefinedField by ID.
      *
      */
-    public function testInvoicingV2ReferenceTypeMerchantDefinedFieldsIdPut()
+    public function testPutMerchantDefinedFieldsDefinitions()
     {
     }
 }

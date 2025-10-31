@@ -110,4 +110,11 @@ class PtsV2PayoutsPost201ResponseProcessorInformationTest extends \PHPUnit_Frame
     public function testPropertyResponseCodeSource()
     {
     }
+
+    /**
+     * Test attribute "merchantAdvice"
+     */
+    public function testPropertyMerchantAdvice()
+    {
+    }
 }
