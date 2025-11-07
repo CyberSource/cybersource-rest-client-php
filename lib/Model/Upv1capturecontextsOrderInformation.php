@@ -54,8 +54,8 @@ class Upv1capturecontextsOrderInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'amountDetails' => '\CyberSource\Model\Upv1capturecontextsOrderInformationAmountDetails',
-        'billTo' => '\CyberSource\Model\Upv1capturecontextsOrderInformationBillTo',
-        'shipTo' => '\CyberSource\Model\Upv1capturecontextsOrderInformationShipTo'
+        'billTo' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationBillTo',
+        'shipTo' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationShipTo'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Upv1capturecontextsOrderInformation implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\Upv1capturecontextsOrderInformationBillTo
+     * @return \CyberSource\Model\Upv1capturecontextsDataOrderInformationBillTo
      */
     public function getBillTo()
     {
@@ -203,7 +203,7 @@ class Upv1capturecontextsOrderInformation implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\Upv1capturecontextsOrderInformationBillTo $billTo
+     * @param \CyberSource\Model\Upv1capturecontextsDataOrderInformationBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)
@@ -215,7 +215,7 @@ class Upv1capturecontextsOrderInformation implements ArrayAccess
 
     /**
      * Gets shipTo
-     * @return \CyberSource\Model\Upv1capturecontextsOrderInformationShipTo
+     * @return \CyberSource\Model\Upv1capturecontextsDataOrderInformationShipTo
      */
     public function getShipTo()
     {
@@ -224,7 +224,7 @@ class Upv1capturecontextsOrderInformation implements ArrayAccess
 
     /**
      * Sets shipTo
-     * @param \CyberSource\Model\Upv1capturecontextsOrderInformationShipTo $shipTo
+     * @param \CyberSource\Model\Upv1capturecontextsDataOrderInformationShipTo $shipTo
      * @return $this
      */
     public function setShipTo($shipTo)

@@ -84,6 +84,13 @@ class Upv1capturecontextsCompleteMandateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "tms"
+     */
+    public function testPropertyTms()
+    {
+    }
+
+    /**
      * Test attribute "decisionManager"
      */
     public function testPropertyDecisionManager()

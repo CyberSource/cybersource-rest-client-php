@@ -54,7 +54,12 @@ class PostPaymentCredentialsRequest implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'paymentCredentialType' => 'string',
-        'transactionType' => 'string'
+        'transactionType' => 'string',
+        'clientCorrelationId' => 'string',
+        'orderInformation' => '\CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsOrderInformation',
+        'merchantInformation' => '\CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation',
+        'deviceInformation' => '\CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation',
+        'authenticatedIdentities' => '\CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities[]'
     ];
 
     /**
@@ -63,7 +68,12 @@ class PostPaymentCredentialsRequest implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'paymentCredentialType' => null,
-        'transactionType' => null
+        'transactionType' => null,
+        'clientCorrelationId' => null,
+        'orderInformation' => null,
+        'merchantInformation' => null,
+        'deviceInformation' => null,
+        'authenticatedIdentities' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +92,12 @@ class PostPaymentCredentialsRequest implements ArrayAccess
      */
     protected static $attributeMap = [
         'paymentCredentialType' => 'paymentCredentialType',
-        'transactionType' => 'transactionType'
+        'transactionType' => 'transactionType',
+        'clientCorrelationId' => 'clientCorrelationId',
+        'orderInformation' => 'orderInformation',
+        'merchantInformation' => 'merchantInformation',
+        'deviceInformation' => 'deviceInformation',
+        'authenticatedIdentities' => 'authenticatedIdentities'
     ];
 
 
@@ -92,7 +107,12 @@ class PostPaymentCredentialsRequest implements ArrayAccess
      */
     protected static $setters = [
         'paymentCredentialType' => 'setPaymentCredentialType',
-        'transactionType' => 'setTransactionType'
+        'transactionType' => 'setTransactionType',
+        'clientCorrelationId' => 'setClientCorrelationId',
+        'orderInformation' => 'setOrderInformation',
+        'merchantInformation' => 'setMerchantInformation',
+        'deviceInformation' => 'setDeviceInformation',
+        'authenticatedIdentities' => 'setAuthenticatedIdentities'
     ];
 
 
@@ -102,7 +122,12 @@ class PostPaymentCredentialsRequest implements ArrayAccess
      */
     protected static $getters = [
         'paymentCredentialType' => 'getPaymentCredentialType',
-        'transactionType' => 'getTransactionType'
+        'transactionType' => 'getTransactionType',
+        'clientCorrelationId' => 'getClientCorrelationId',
+        'orderInformation' => 'getOrderInformation',
+        'merchantInformation' => 'getMerchantInformation',
+        'deviceInformation' => 'getDeviceInformation',
+        'authenticatedIdentities' => 'getAuthenticatedIdentities'
     ];
 
     public static function attributeMap()
@@ -138,6 +163,11 @@ class PostPaymentCredentialsRequest implements ArrayAccess
     {
         $this->container['paymentCredentialType'] = isset($data['paymentCredentialType']) ? $data['paymentCredentialType'] : null;
         $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
+        $this->container['clientCorrelationId'] = isset($data['clientCorrelationId']) ? $data['clientCorrelationId'] : null;
+        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
+        $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
+        $this->container['authenticatedIdentities'] = isset($data['authenticatedIdentities']) ? $data['authenticatedIdentities'] : null;
     }
 
     /**
@@ -203,6 +233,111 @@ class PostPaymentCredentialsRequest implements ArrayAccess
     public function setTransactionType($transactionType)
     {
         $this->container['transactionType'] = $transactionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientCorrelationId
+     * @return string
+     */
+    public function getClientCorrelationId()
+    {
+        return $this->container['clientCorrelationId'];
+    }
+
+    /**
+     * Sets clientCorrelationId
+     * @param string $clientCorrelationId Used to correlate authentication and payment credential requests.
+     * @return $this
+     */
+    public function setClientCorrelationId($clientCorrelationId)
+    {
+        $this->container['clientCorrelationId'] = $clientCorrelationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderInformation
+     * @return \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsOrderInformation
+     */
+    public function getOrderInformation()
+    {
+        return $this->container['orderInformation'];
+    }
+
+    /**
+     * Sets orderInformation
+     * @param \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsOrderInformation $orderInformation
+     * @return $this
+     */
+    public function setOrderInformation($orderInformation)
+    {
+        $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantInformation
+     * @return \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation
+     */
+    public function getMerchantInformation()
+    {
+        return $this->container['merchantInformation'];
+    }
+
+    /**
+     * Sets merchantInformation
+     * @param \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsMerchantInformation $merchantInformation
+     * @return $this
+     */
+    public function setMerchantInformation($merchantInformation)
+    {
+        $this->container['merchantInformation'] = $merchantInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceInformation
+     * @return \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation
+     */
+    public function getDeviceInformation()
+    {
+        return $this->container['deviceInformation'];
+    }
+
+    /**
+     * Sets deviceInformation
+     * @param \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsDeviceInformation $deviceInformation
+     * @return $this
+     */
+    public function setDeviceInformation($deviceInformation)
+    {
+        $this->container['deviceInformation'] = $deviceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticatedIdentities
+     * @return \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities[]
+     */
+    public function getAuthenticatedIdentities()
+    {
+        return $this->container['authenticatedIdentities'];
+    }
+
+    /**
+     * Sets authenticatedIdentities
+     * @param \CyberSource\Model\Tmsv2tokenstokenIdpaymentcredentialsAuthenticatedIdentities[] $authenticatedIdentities
+     * @return $this
+     */
+    public function setAuthenticatedIdentities($authenticatedIdentities)
+    {
+        $this->container['authenticatedIdentities'] = $authenticatedIdentities;
 
         return $this;
     }

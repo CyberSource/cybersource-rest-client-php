@@ -133,16 +133,23 @@ class GenerateUnifiedCheckoutCaptureContextRequestTest extends \PHPUnit_Framewor
     }
 
     /**
-     * Test attribute "orderInformation"
+     * Test attribute "transientTokenResponseOptions"
      */
-    public function testPropertyOrderInformation()
+    public function testPropertyTransientTokenResponseOptions()
     {
     }
 
     /**
-     * Test attribute "transientTokenResponseOptions"
+     * Test attribute "data"
      */
-    public function testPropertyTransientTokenResponseOptions()
+    public function testPropertyData()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
     {
     }
 }

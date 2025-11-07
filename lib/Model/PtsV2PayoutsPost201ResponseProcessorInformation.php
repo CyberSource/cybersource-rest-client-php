@@ -57,7 +57,8 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCode' => 'string',
         'transactionId' => 'string',
         'systemTraceAuditNumber' => 'string',
-        'responseCodeSource' => 'string'
+        'responseCodeSource' => 'string',
+        'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCode' => null,
         'transactionId' => null,
         'systemTraceAuditNumber' => null,
-        'responseCodeSource' => null
+        'responseCodeSource' => null,
+        'merchantAdvice' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCode' => 'responseCode',
         'transactionId' => 'transactionId',
         'systemTraceAuditNumber' => 'systemTraceAuditNumber',
-        'responseCodeSource' => 'responseCodeSource'
+        'responseCodeSource' => 'responseCodeSource',
+        'merchantAdvice' => 'merchantAdvice'
     ];
 
 
@@ -104,7 +107,8 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCode' => 'setResponseCode',
         'transactionId' => 'setTransactionId',
         'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
-        'responseCodeSource' => 'setResponseCodeSource'
+        'responseCodeSource' => 'setResponseCodeSource',
+        'merchantAdvice' => 'setMerchantAdvice'
     ];
 
 
@@ -117,7 +121,8 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
         'responseCode' => 'getResponseCode',
         'transactionId' => 'getTransactionId',
         'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
-        'responseCodeSource' => 'getResponseCodeSource'
+        'responseCodeSource' => 'getResponseCodeSource',
+        'merchantAdvice' => 'getMerchantAdvice'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
         $this->container['responseCodeSource'] = isset($data['responseCodeSource']) ? $data['responseCodeSource'] : null;
+        $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
     }
 
     /**
@@ -284,6 +290,27 @@ class PtsV2PayoutsPost201ResponseProcessorInformation implements ArrayAccess
     public function setResponseCodeSource($responseCodeSource)
     {
         $this->container['responseCodeSource'] = $responseCodeSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantAdvice
+     * @return \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice
+     */
+    public function getMerchantAdvice()
+    {
+        return $this->container['merchantAdvice'];
+    }
+
+    /**
+     * Sets merchantAdvice
+     * @param \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice $merchantAdvice
+     * @return $this
+     */
+    public function setMerchantAdvice($merchantAdvice)
+    {
+        $this->container['merchantAdvice'] = $merchantAdvice;
 
         return $this;
     }

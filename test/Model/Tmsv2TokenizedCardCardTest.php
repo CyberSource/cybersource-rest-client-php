@@ -110,4 +110,39 @@ class Tmsv2TokenizedCardCardTest extends \PHPUnit_Framework_TestCase
     public function testPropertySuffix()
     {
     }
+
+    /**
+     * Test attribute "issueDate"
+     */
+    public function testPropertyIssueDate()
+    {
+    }
+
+    /**
+     * Test attribute "activationDate"
+     */
+    public function testPropertyActivationDate()
+    {
+    }
+
+    /**
+     * Test attribute "expirationPrinted"
+     */
+    public function testPropertyExpirationPrinted()
+    {
+    }
+
+    /**
+     * Test attribute "securityCodePrinted"
+     */
+    public function testPropertySecurityCodePrinted()
+    {
+    }
+
+    /**
+     * Test attribute "termsAndConditions"
+     */
+    public function testPropertyTermsAndConditions()
+    {
+    }
 }

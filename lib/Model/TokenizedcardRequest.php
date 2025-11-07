@@ -428,7 +428,7 @@ class TokenizedcardRequest implements ArrayAccess
 
     /**
      * Sets source
-     * @param string $source Source of the payment instrument. Possible Values: - ONFILE - TOKEN - ISSUER
+     * @param string $source Source of the card details. Possible Values: - ONFILE - TOKEN - ISSUER
      * @return $this
      */
     public function setSource($source)

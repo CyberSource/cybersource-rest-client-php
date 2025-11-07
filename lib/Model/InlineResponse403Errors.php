@@ -176,7 +176,7 @@ class InlineResponse403Errors implements ArrayAccess
 
     /**
      * Sets type
-     * @param string $type The type of error.  Possible Values:   - forbidden
+     * @param string $type The type of error.  Possible Values:   - forbidden   - declined
      * @return $this
      */
     public function setType($type)

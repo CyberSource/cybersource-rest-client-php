@@ -67,7 +67,7 @@ class CapturePaymentRequest implements ArrayAccess
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformation',
         'promotionInformation' => '\CyberSource\Model\Ptsv2paymentsPromotionInformation',
-        'processorInformation' => '\CyberSource\Model\Ptsv2reversalsProcessorInformation'
+        'processorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesProcessorInformation'
     ];
 
     /**
@@ -539,7 +539,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets processorInformation
-     * @return \CyberSource\Model\Ptsv2reversalsProcessorInformation
+     * @return \CyberSource\Model\Ptsv2paymentsidcapturesProcessorInformation
      */
     public function getProcessorInformation()
     {
@@ -548,7 +548,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets processorInformation
-     * @param \CyberSource\Model\Ptsv2reversalsProcessorInformation $processorInformation
+     * @param \CyberSource\Model\Ptsv2paymentsidcapturesProcessorInformation $processorInformation
      * @return $this
      */
     public function setProcessorInformation($processorInformation)

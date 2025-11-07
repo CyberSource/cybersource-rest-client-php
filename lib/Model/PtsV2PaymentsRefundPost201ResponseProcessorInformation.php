@@ -62,7 +62,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'networkTransactionId' => 'string',
         'settlementDate' => 'string',
         'updateTimeUtc' => 'string',
-        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork',
+        'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'
     ];
 
     /**
@@ -79,7 +80,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'networkTransactionId' => null,
         'settlementDate' => null,
         'updateTimeUtc' => null,
-        'network' => null
+        'network' => null,
+        'merchantAdvice' => null
     ];
 
     public static function swaggerTypes()
@@ -106,7 +108,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'networkTransactionId' => 'networkTransactionId',
         'settlementDate' => 'settlementDate',
         'updateTimeUtc' => 'updateTimeUtc',
-        'network' => 'network'
+        'network' => 'network',
+        'merchantAdvice' => 'merchantAdvice'
     ];
 
 
@@ -124,7 +127,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'networkTransactionId' => 'setNetworkTransactionId',
         'settlementDate' => 'setSettlementDate',
         'updateTimeUtc' => 'setUpdateTimeUtc',
-        'network' => 'setNetwork'
+        'network' => 'setNetwork',
+        'merchantAdvice' => 'setMerchantAdvice'
     ];
 
 
@@ -142,7 +146,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'networkTransactionId' => 'getNetworkTransactionId',
         'settlementDate' => 'getSettlementDate',
         'updateTimeUtc' => 'getUpdateTimeUtc',
-        'network' => 'getNetwork'
+        'network' => 'getNetwork',
+        'merchantAdvice' => 'getMerchantAdvice'
     ];
 
     public static function attributeMap()
@@ -186,6 +191,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         $this->container['settlementDate'] = isset($data['settlementDate']) ? $data['settlementDate'] : null;
         $this->container['updateTimeUtc'] = isset($data['updateTimeUtc']) ? $data['updateTimeUtc'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
     }
 
     /**
@@ -419,6 +425,27 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     public function setNetwork($network)
     {
         $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantAdvice
+     * @return \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice
+     */
+    public function getMerchantAdvice()
+    {
+        return $this->container['merchantAdvice'];
+    }
+
+    /**
+     * Sets merchantAdvice
+     * @param \CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice $merchantAdvice
+     * @return $this
+     */
+    public function setMerchantAdvice($merchantAdvice)
+    {
+        $this->container['merchantAdvice'] = $merchantAdvice;
 
         return $this;
     }

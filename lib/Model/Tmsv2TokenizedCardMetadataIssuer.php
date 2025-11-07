@@ -56,7 +56,10 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
     protected static $swaggerTypes = [
         'name' => 'string',
         'shortDescription' => 'string',
-        'longDescription' => 'string'
+        'longDescription' => 'string',
+        'email' => 'string',
+        'phoneNumber' => 'string',
+        'url' => 'string'
     ];
 
     /**
@@ -66,7 +69,10 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
     protected static $swaggerFormats = [
         'name' => null,
         'shortDescription' => null,
-        'longDescription' => null
+        'longDescription' => null,
+        'email' => null,
+        'phoneNumber' => null,
+        'url' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +92,10 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'shortDescription' => 'shortDescription',
-        'longDescription' => 'longDescription'
+        'longDescription' => 'longDescription',
+        'email' => 'email',
+        'phoneNumber' => 'phoneNumber',
+        'url' => 'url'
     ];
 
 
@@ -97,7 +106,10 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'shortDescription' => 'setShortDescription',
-        'longDescription' => 'setLongDescription'
+        'longDescription' => 'setLongDescription',
+        'email' => 'setEmail',
+        'phoneNumber' => 'setPhoneNumber',
+        'url' => 'setUrl'
     ];
 
 
@@ -108,7 +120,10 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'shortDescription' => 'getShortDescription',
-        'longDescription' => 'getLongDescription'
+        'longDescription' => 'getLongDescription',
+        'email' => 'getEmail',
+        'phoneNumber' => 'getPhoneNumber',
+        'url' => 'getUrl'
     ];
 
     public static function attributeMap()
@@ -145,6 +160,9 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['shortDescription'] = isset($data['shortDescription']) ? $data['shortDescription'] : null;
         $this->container['longDescription'] = isset($data['longDescription']) ? $data['longDescription'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -183,7 +201,7 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name issuer name.
+     * @param string $name Issuer name.
      * @return $this
      */
     public function setName($name)
@@ -204,7 +222,7 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
 
     /**
      * Sets shortDescription
-     * @param string $shortDescription issuer short description.
+     * @param string $shortDescription Short description of the card.
      * @return $this
      */
     public function setShortDescription($shortDescription)
@@ -225,12 +243,75 @@ class Tmsv2TokenizedCardMetadataIssuer implements ArrayAccess
 
     /**
      * Sets longDescription
-     * @param string $longDescription issuer long  description.
+     * @param string $longDescription Long description of the card.
      * @return $this
      */
     public function setLongDescription($longDescription)
     {
         $this->container['longDescription'] = $longDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Issuer customer service email address.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phoneNumber
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phoneNumber'];
+    }
+
+    /**
+     * Sets phoneNumber
+     * @param string $phoneNumber Issuer customer service phone number.
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->container['phoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     * @param string $url Issuer customer service url.
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }
