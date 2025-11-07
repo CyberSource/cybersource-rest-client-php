@@ -109,5 +109,6 @@ class GlobalParameter
     const CERTIFICATE_EXPIRY_DATE_WARNING_DAYS = 90;
     const REQUEST_MLE_AUTH_ERROR = "Request MLE is only supported in JWT auth type";
     const EMPTY_PRIVATE_OR_PUBLIC_KEY_ERROR = "Private key or public key is empty";
+    const PUBLIC_KEY_CACHE_IDENTIFIER = "FlexV2PublicKeys";
 }
 ?>
