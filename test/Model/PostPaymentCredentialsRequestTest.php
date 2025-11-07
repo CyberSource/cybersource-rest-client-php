@@ -89,4 +89,39 @@ class PostPaymentCredentialsRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTransactionType()
     {
     }
+
+    /**
+     * Test attribute "clientCorrelationId"
+     */
+    public function testPropertyClientCorrelationId()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "merchantInformation"
+     */
+    public function testPropertyMerchantInformation()
+    {
+    }
+
+    /**
+     * Test attribute "deviceInformation"
+     */
+    public function testPropertyDeviceInformation()
+    {
+    }
+
+    /**
+     * Test attribute "authenticatedIdentities"
+     */
+    public function testPropertyAuthenticatedIdentities()
+    {
+    }
 }

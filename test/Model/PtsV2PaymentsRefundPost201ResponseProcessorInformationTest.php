@@ -145,4 +145,11 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformationTest extends \PHPUni
     public function testPropertyNetwork()
     {
     }
+
+    /**
+     * Test attribute "merchantAdvice"
+     */
+    public function testPropertyMerchantAdvice()
+    {
+    }
 }

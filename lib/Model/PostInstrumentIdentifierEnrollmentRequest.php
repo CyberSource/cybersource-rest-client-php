@@ -58,8 +58,10 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'object' => 'string',
         'state' => 'string',
         'type' => 'string',
+        'source' => 'string',
         'tokenProvisioningInformation' => '\CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation',
         'card' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierCard',
+        'pointOfSaleInformation' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierPointOfSaleInformation',
         'bankAccount' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierBankAccount',
         'tokenizedCard' => '\CyberSource\Model\Tmsv2TokenizedCard',
         'issuer' => '\CyberSource\Model\TmsEmbeddedInstrumentIdentifierIssuer',
@@ -79,8 +81,10 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'object' => null,
         'state' => null,
         'type' => null,
+        'source' => null,
         'tokenProvisioningInformation' => null,
         'card' => null,
+        'pointOfSaleInformation' => null,
         'bankAccount' => null,
         'tokenizedCard' => null,
         'issuer' => null,
@@ -110,8 +114,10 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'object' => 'object',
         'state' => 'state',
         'type' => 'type',
+        'source' => 'source',
         'tokenProvisioningInformation' => 'tokenProvisioningInformation',
         'card' => 'card',
+        'pointOfSaleInformation' => 'pointOfSaleInformation',
         'bankAccount' => 'bankAccount',
         'tokenizedCard' => 'tokenizedCard',
         'issuer' => 'issuer',
@@ -132,8 +138,10 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'object' => 'setObject',
         'state' => 'setState',
         'type' => 'setType',
+        'source' => 'setSource',
         'tokenProvisioningInformation' => 'setTokenProvisioningInformation',
         'card' => 'setCard',
+        'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'bankAccount' => 'setBankAccount',
         'tokenizedCard' => 'setTokenizedCard',
         'issuer' => 'setIssuer',
@@ -154,8 +162,10 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         'object' => 'getObject',
         'state' => 'getState',
         'type' => 'getType',
+        'source' => 'getSource',
         'tokenProvisioningInformation' => 'getTokenProvisioningInformation',
         'card' => 'getCard',
+        'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'bankAccount' => 'getBankAccount',
         'tokenizedCard' => 'getTokenizedCard',
         'issuer' => 'getIssuer',
@@ -201,8 +211,10 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['tokenProvisioningInformation'] = isset($data['tokenProvisioningInformation']) ? $data['tokenProvisioningInformation'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
         $this->container['bankAccount'] = isset($data['bankAccount']) ? $data['bankAccount'] : null;
         $this->container['tokenizedCard'] = isset($data['tokenizedCard']) ? $data['tokenizedCard'] : null;
         $this->container['issuer'] = isset($data['issuer']) ? $data['issuer'] : null;
@@ -343,6 +355,27 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
     }
 
     /**
+     * Gets source
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     * @param string $source Source of the card details. Possible Values: - CONTACTLESS_TAP
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
      * Gets tokenProvisioningInformation
      * @return \CyberSource\Model\Ptsv2paymentsTokenInformationTokenProvisioningInformation
      */
@@ -380,6 +413,27 @@ class PostInstrumentIdentifierEnrollmentRequest implements ArrayAccess
     public function setCard($card)
     {
         $this->container['card'] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointOfSaleInformation
+     * @return \CyberSource\Model\TmsEmbeddedInstrumentIdentifierPointOfSaleInformation
+     */
+    public function getPointOfSaleInformation()
+    {
+        return $this->container['pointOfSaleInformation'];
+    }
+
+    /**
+     * Sets pointOfSaleInformation
+     * @param \CyberSource\Model\TmsEmbeddedInstrumentIdentifierPointOfSaleInformation $pointOfSaleInformation
+     * @return $this
+     */
+    public function setPointOfSaleInformation($pointOfSaleInformation)
+    {
+        $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
 
         return $this;
     }

@@ -61,8 +61,9 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'locale' => 'string',
         'captureMandate' => '\CyberSource\Model\Upv1capturecontextsCaptureMandate',
         'completeMandate' => '\CyberSource\Model\Upv1capturecontextsCompleteMandate',
-        'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation',
-        'transientTokenResponseOptions' => '\CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions'
+        'transientTokenResponseOptions' => '\CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions',
+        'data' => '\CyberSource\Model\Upv1capturecontextsData',
+        'orderInformation' => '\CyberSource\Model\Upv1capturecontextsOrderInformation'
     ];
 
     /**
@@ -78,8 +79,9 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'locale' => null,
         'captureMandate' => null,
         'completeMandate' => null,
-        'orderInformation' => null,
-        'transientTokenResponseOptions' => null
+        'transientTokenResponseOptions' => null,
+        'data' => null,
+        'orderInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -105,8 +107,9 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'locale' => 'locale',
         'captureMandate' => 'captureMandate',
         'completeMandate' => 'completeMandate',
-        'orderInformation' => 'orderInformation',
-        'transientTokenResponseOptions' => 'transientTokenResponseOptions'
+        'transientTokenResponseOptions' => 'transientTokenResponseOptions',
+        'data' => 'data',
+        'orderInformation' => 'orderInformation'
     ];
 
 
@@ -123,8 +126,9 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'locale' => 'setLocale',
         'captureMandate' => 'setCaptureMandate',
         'completeMandate' => 'setCompleteMandate',
-        'orderInformation' => 'setOrderInformation',
-        'transientTokenResponseOptions' => 'setTransientTokenResponseOptions'
+        'transientTokenResponseOptions' => 'setTransientTokenResponseOptions',
+        'data' => 'setData',
+        'orderInformation' => 'setOrderInformation'
     ];
 
 
@@ -141,8 +145,9 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'locale' => 'getLocale',
         'captureMandate' => 'getCaptureMandate',
         'completeMandate' => 'getCompleteMandate',
-        'orderInformation' => 'getOrderInformation',
-        'transientTokenResponseOptions' => 'getTransientTokenResponseOptions'
+        'transientTokenResponseOptions' => 'getTransientTokenResponseOptions',
+        'data' => 'getData',
+        'orderInformation' => 'getOrderInformation'
     ];
 
     public static function attributeMap()
@@ -184,8 +189,9 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
         $this->container['captureMandate'] = isset($data['captureMandate']) ? $data['captureMandate'] : null;
         $this->container['completeMandate'] = isset($data['completeMandate']) ? $data['completeMandate'] : null;
-        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['transientTokenResponseOptions'] = isset($data['transientTokenResponseOptions']) ? $data['transientTokenResponseOptions'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
     }
 
     /**
@@ -266,7 +272,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedCardNetworks
-     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JCB     - JCREW     - MADA     - MAESTRO     - MEEZA     - PAYPAK
+     * @param string[] $allowedCardNetworks The list of card networks you want to use for this Unified Checkout transaction.  Unified Checkout currently supports the following card networks:     - VISA     - MASTERCARD     - AMEX     - CARNET     - CARTESBANCAIRES     - CUP     - DINERSCLUB     - DISCOVER     - EFTPOS     - ELO     - JAYWAN     - JCB     - JCREW     - KCP     - MADA     - MAESTRO     - MEEZA     - PAYPAK     - UATP
      * @return $this
      */
     public function setAllowedCardNetworks($allowedCardNetworks)
@@ -287,7 +293,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedPaymentTypes
-     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout also supports the following Alternative Payments:   - AFTERPAY<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.
+     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.
      * @return $this
      */
     public function setAllowedPaymentTypes($allowedPaymentTypes)
@@ -382,27 +388,6 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     }
 
     /**
-     * Gets orderInformation
-     * @return \CyberSource\Model\Upv1capturecontextsOrderInformation
-     */
-    public function getOrderInformation()
-    {
-        return $this->container['orderInformation'];
-    }
-
-    /**
-     * Sets orderInformation
-     * @param \CyberSource\Model\Upv1capturecontextsOrderInformation $orderInformation
-     * @return $this
-     */
-    public function setOrderInformation($orderInformation)
-    {
-        $this->container['orderInformation'] = $orderInformation;
-
-        return $this;
-    }
-
-    /**
      * Gets transientTokenResponseOptions
      * @return \CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions
      */
@@ -419,6 +404,48 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     public function setTransientTokenResponseOptions($transientTokenResponseOptions)
     {
         $this->container['transientTokenResponseOptions'] = $transientTokenResponseOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     * @return \CyberSource\Model\Upv1capturecontextsData
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     * @param \CyberSource\Model\Upv1capturecontextsData $data
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderInformation
+     * @return \CyberSource\Model\Upv1capturecontextsOrderInformation
+     */
+    public function getOrderInformation()
+    {
+        return $this->container['orderInformation'];
+    }
+
+    /**
+     * Sets orderInformation
+     * @param \CyberSource\Model\Upv1capturecontextsOrderInformation $orderInformation
+     * @return $this
+     */
+    public function setOrderInformation($orderInformation)
+    {
+        $this->container['orderInformation'] = $orderInformation;
 
         return $this;
     }

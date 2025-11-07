@@ -55,6 +55,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'type' => 'string',
+        'tms' => '\CyberSource\Model\Upv1capturecontextsCompleteMandateTms',
         'decisionManager' => 'bool',
         'consumerAuthentication' => 'bool'
     ];
@@ -65,6 +66,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'type' => null,
+        'tms' => null,
         'decisionManager' => null,
         'consumerAuthentication' => null
     ];
@@ -85,6 +87,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
+        'tms' => 'tms',
         'decisionManager' => 'decisionManager',
         'consumerAuthentication' => 'consumerAuthentication'
     ];
@@ -96,6 +99,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
+        'tms' => 'setTms',
         'decisionManager' => 'setDecisionManager',
         'consumerAuthentication' => 'setConsumerAuthentication'
     ];
@@ -107,6 +111,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
+        'tms' => 'getTms',
         'decisionManager' => 'getDecisionManager',
         'consumerAuthentication' => 'getConsumerAuthentication'
     ];
@@ -143,6 +148,7 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['tms'] = isset($data['tms']) ? $data['tms'] : null;
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;
         $this->container['consumerAuthentication'] = isset($data['consumerAuthentication']) ? $data['consumerAuthentication'] : null;
     }
@@ -189,6 +195,27 @@ class Upv1capturecontextsCompleteMandate implements ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets tms
+     * @return \CyberSource\Model\Upv1capturecontextsCompleteMandateTms
+     */
+    public function getTms()
+    {
+        return $this->container['tms'];
+    }
+
+    /**
+     * Sets tms
+     * @param \CyberSource\Model\Upv1capturecontextsCompleteMandateTms $tms
+     * @return $this
+     */
+    public function setTms($tms)
+    {
+        $this->container['tms'] = $tms;
 
         return $this;
     }

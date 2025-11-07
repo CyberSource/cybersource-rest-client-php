@@ -57,7 +57,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
         'preApprovalToken' => 'string',
         'authorizationOptions' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationAuthorizationOptions',
         'reversal' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversal',
-        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork',
+        'responseSourceCode' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
         'preApprovalToken' => null,
         'authorizationOptions' => null,
         'reversal' => null,
-        'network' => null
+        'network' => null,
+        'responseSourceCode' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
         'preApprovalToken' => 'preApprovalToken',
         'authorizationOptions' => 'authorizationOptions',
         'reversal' => 'reversal',
-        'network' => 'network'
+        'network' => 'network',
+        'responseSourceCode' => 'responseSourceCode'
     ];
 
 
@@ -101,7 +104,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
         'preApprovalToken' => 'setPreApprovalToken',
         'authorizationOptions' => 'setAuthorizationOptions',
         'reversal' => 'setReversal',
-        'network' => 'setNetwork'
+        'network' => 'setNetwork',
+        'responseSourceCode' => 'setResponseSourceCode'
     ];
 
 
@@ -113,7 +117,8 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
         'preApprovalToken' => 'getPreApprovalToken',
         'authorizationOptions' => 'getAuthorizationOptions',
         'reversal' => 'getReversal',
-        'network' => 'getNetwork'
+        'network' => 'getNetwork',
+        'responseSourceCode' => 'getResponseSourceCode'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;
         $this->container['reversal'] = isset($data['reversal']) ? $data['reversal'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['responseSourceCode'] = isset($data['responseSourceCode']) ? $data['responseSourceCode'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
     public function setNetwork($network)
     {
         $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseSourceCode
+     * @return string
+     */
+    public function getResponseSourceCode()
+    {
+        return $this->container['responseSourceCode'];
+    }
+
+    /**
+     * Sets responseSourceCode
+     * @param string $responseSourceCode Field contains the response source code that identifies the source.
+     * @return $this
+     */
+    public function setResponseSourceCode($responseSourceCode)
+    {
+        $this->container['responseSourceCode'] = $responseSourceCode;
 
         return $this;
     }

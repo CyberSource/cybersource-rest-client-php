@@ -112,6 +112,13 @@ class PostInstrumentIdentifierEnrollmentRequestTest extends \PHPUnit_Framework_T
     }
 
     /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
+    {
+    }
+
+    /**
      * Test attribute "tokenProvisioningInformation"
      */
     public function testPropertyTokenProvisioningInformation()
@@ -122,6 +129,13 @@ class PostInstrumentIdentifierEnrollmentRequestTest extends \PHPUnit_Framework_T
      * Test attribute "card"
      */
     public function testPropertyCard()
+    {
+    }
+
+    /**
+     * Test attribute "pointOfSaleInformation"
+     */
+    public function testPropertyPointOfSaleInformation()
     {
     }
 

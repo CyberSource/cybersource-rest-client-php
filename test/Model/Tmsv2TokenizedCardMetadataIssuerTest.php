@@ -96,4 +96,25 @@ class Tmsv2TokenizedCardMetadataIssuerTest extends \PHPUnit_Framework_TestCase
     public function testPropertyLongDescription()
     {
     }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "phoneNumber"
+     */
+    public function testPropertyPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
+    {
+    }
 }

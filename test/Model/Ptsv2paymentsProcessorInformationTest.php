@@ -103,4 +103,11 @@ class Ptsv2paymentsProcessorInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyNetwork()
     {
     }
+
+    /**
+     * Test attribute "responseSourceCode"
+     */
+    public function testPropertyResponseSourceCode()
+    {
+    }
 }
