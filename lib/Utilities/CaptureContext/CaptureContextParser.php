@@ -81,9 +81,6 @@ class CaptureContextParser
         
         // Get run environment
         $runEnvironment = $merchantConfig->getRunEnvironment();
-        if (empty($runEnvironment)) {
-            throw new Exception('Run environment not found in merchant config');
-        }
         
         // Try to get public key from cache
         $publicKey = null;

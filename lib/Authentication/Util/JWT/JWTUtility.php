@@ -39,18 +39,6 @@ class JWTUtility
     private const JSON_DECODE_DEPTH = 512;
 
     /**
-     * Error messages constants
-     */
-    private const ERROR_MESSAGES = [
-        'UNSUPPORTED_ALGORITHM' => 'Unsupported JWT algorithm: %s. Supported algorithms: %s',
-        'MISSING_ALGORITHM' => 'JWT header missing algorithm (alg) field',
-        'NO_PUBLIC_KEY' => 'No public key found',
-        'INVALID_PUBLIC_KEY_FORMAT' => 'Invalid public key format. Expected JWK object or JSON string.',
-        'INVALID_RSA_KEY' => 'Public key must be an RSA key (kty: RSA)',
-        'MISSING_RSA_PARAMS' => 'Invalid RSA JWK: missing required parameters (n, e)'
-    ];
-
-    /**
      * Validates and parses a JWK public key
      *
      * @param string|array $publicKey The RSA public key (JWK array or JSON string)
@@ -70,15 +58,15 @@ class JWTUtility
         } elseif (is_array($publicKey) && isset($publicKey['kty'])) {
             $jwkKey = $publicKey;
         } else {
-            throw new InvalidJwkException(self::ERROR_MESSAGES['INVALID_PUBLIC_KEY_FORMAT']);
+            throw new InvalidJwkException('Invalid public key format. Expected JWK object or JSON string.');
         }
 
         if (!isset($jwkKey['kty']) || $jwkKey['kty'] !== 'RSA') {
-            throw new InvalidJwkException(self::ERROR_MESSAGES['INVALID_RSA_KEY']);
+            throw new InvalidJwkException('Public key must be an RSA key (kty: RSA)');
         }
 
         if (!isset($jwkKey['n']) || !isset($jwkKey['e'])) {
-            throw new InvalidJwkException(self::ERROR_MESSAGES['MISSING_RSA_PARAMS']);
+            throw new InvalidJwkException('Invalid RSA JWK: missing required parameters (n, e)');
         }
 
         return $jwkKey;
@@ -105,7 +93,7 @@ class JWTUtility
 
         // Validate that all parts are non-empty
         if (empty($tokenParts[0]) || empty($tokenParts[1]) || empty($tokenParts[2])) {
-            throw new InvalidJwtException('Invalid JWT token: one or more parts are empty');
+            throw new InvalidJwtException('Malformed JWT : JWT provided does not conform to the proper structure for JWT');
         }
 
         try {
@@ -143,7 +131,7 @@ class JWTUtility
     {
         // Validate inputs
         if (empty($publicKey)) {
-            throw new JwtSignatureValidationException(self::ERROR_MESSAGES['NO_PUBLIC_KEY']);
+            throw new JwtSignatureValidationException('No public key found');
         }
 
         if (empty($jwtToken)) {
@@ -156,14 +144,14 @@ class JWTUtility
 
         // Validate algorithm
         if (!isset($header['alg'])) {
-            throw new JwtSignatureValidationException(self::ERROR_MESSAGES['MISSING_ALGORITHM']);
+            throw new JwtSignatureValidationException('JWT header missing algorithm (alg) field');
         }
 
         $algorithm = $header['alg'];
         if (!in_array($algorithm, self::SUPPORTED_ALGORITHMS)) {
             $supportedAlgs = implode(', ', self::SUPPORTED_ALGORITHMS);
             throw new JwtSignatureValidationException(
-                sprintf(self::ERROR_MESSAGES['UNSUPPORTED_ALGORITHM'], $algorithm, $supportedAlgs)
+                sprintf('Unsupported JWT algorithm: %s. Supported algorithms: %s', $algorithm, $supportedAlgs)
             );
         }
 
