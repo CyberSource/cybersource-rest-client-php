@@ -188,6 +188,10 @@ class TransientTokenDataApi
         }
 
         self::$logger->debug("Return Type : string");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getPaymentCredentialsForTransientToken,getPaymentCredentialsForTransientTokenWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,7 +201,8 @@ class TransientTokenDataApi
                 $httpBody,
                 $headerParams,
                 'string',
-                '/flex/v2/payment-credentials/{paymentCredentialsReference}'
+                '/flex/v2/payment-credentials/{paymentCredentialsReference}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -308,6 +313,10 @@ class TransientTokenDataApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getTransactionForTransientToken,getTransactionForTransientTokenWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -317,7 +326,8 @@ class TransientTokenDataApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/up/v1/payment-details/{transientToken}'
+                '/up/v1/payment-details/{transientToken}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

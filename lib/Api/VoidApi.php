@@ -187,6 +187,10 @@ class VoidApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsVoidsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "mitVoid,mitVoidWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class VoidApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
-                '/pts/v2/voids'
+                '/pts/v2/voids',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -329,6 +334,10 @@ class VoidApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsVoidsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "voidCapture,voidCaptureWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -338,7 +347,8 @@ class VoidApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
-                '/pts/v2/captures/{id}/voids'
+                '/pts/v2/captures/{id}/voids',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -471,6 +481,10 @@ class VoidApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsVoidsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "voidCredit,voidCreditWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -480,7 +494,8 @@ class VoidApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
-                '/pts/v2/credits/{id}/voids'
+                '/pts/v2/credits/{id}/voids',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -613,6 +628,10 @@ class VoidApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsVoidsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "voidPayment,voidPaymentWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -622,7 +641,8 @@ class VoidApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
-                '/pts/v2/payments/{id}/voids'
+                '/pts/v2/payments/{id}/voids',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -755,6 +775,10 @@ class VoidApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2PaymentsVoidsPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "voidRefund,voidRefundWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -764,7 +788,8 @@ class VoidApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2PaymentsVoidsPost201Response',
-                '/pts/v2/refunds/{id}/voids'
+                '/pts/v2/refunds/{id}/voids',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

@@ -16,6 +16,7 @@ use Jose\Component\Encryption\Algorithm\ContentEncryption\A256GCM;
 use Jose\Component\Encryption\Compression\CompressionMethodManager;
 use Jose\Component\Encryption\Compression\Deflate;
 use CyberSource\Authentication\Util\MLEException;
+use \CyberSource\Authentication\Util\JWE\JWEUtility;
 
 /*
 Purpose : MLE encryption for request body
@@ -48,15 +49,42 @@ class MLEUtility
 
         $operationArray = array_map('trim', explode(',', $operationIds));
 
-        if (!empty($merchantConfig->getMapToControlMLEonAPI())) {
+        if (!empty($merchantConfig->getInternalMapToControlRequestMLEonAPI())) {
             foreach ($operationArray as $operationId) {
-                if (array_key_exists($operationId, $merchantConfig->getMapToControlMLEonAPI())) {
-                    $isMLEForAPI = $merchantConfig->getMapToControlMLEonAPI()[$operationId];
+                if (array_key_exists($operationId, $merchantConfig->getInternalMapToControlRequestMLEonAPI())) {
+                    $isMLEForAPI = $merchantConfig->getInternalMapToControlRequestMLEonAPI()[$operationId];
                     break;
                 }
             }
         }
         return $isMLEForAPI;
+    }
+
+    public static function checkIsResponseMLEForAPI($merchantConfig, $operationIds)
+    {
+        // default false
+        $isResponseMLEForAPI = false;
+
+        // Global flag
+        if ($merchantConfig->getEnableResponseMleGlobally()) {
+            $isResponseMLEForAPI = true;
+        }
+
+        // Multiple operation ids (e.g., apiCall, apiCallAsync)
+        $operationArray = array_map('trim', explode(',', (string)$operationIds));
+
+        // Per-operation override map (internal response map)
+        $map = $merchantConfig->getInternalMapToControlResponseMLEonAPI();
+        if (is_array($map) && !empty($map)) {
+            foreach ($operationArray as $operationId) {
+                if (array_key_exists($operationId, $map)) {
+                    $isResponseMLEForAPI = (bool)$map[$operationId];
+                    break;
+                }
+            }
+        }
+
+        return $isResponseMLEForAPI;
     }
 
     public static function encryptRequestPayload($merchantConfig, $requestBody)
@@ -89,6 +117,62 @@ class MLEUtility
 
         self::$logger->debug("Request after MLE:\n" . print_r($mleRequest, true));
         return $mleRequest;
+    }
+
+    public static function checkIsMleEncryptedResponse($responseBody)
+    {
+        if ($responseBody === null) { return false; }
+        $trim = trim($responseBody);
+        if ($trim === '' || $trim[0] !== '{') { return false; }
+        try {
+            $decoded = json_decode($responseBody, true);
+            if (!is_array($decoded)) { return false; }
+            if (count($decoded) !== 1) { return false; }
+            return array_key_exists('encryptedResponse', $decoded) && is_string($decoded['encryptedResponse']);
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    public static function decryptMleResponsePayload($merchantConfig, $mleResponseBody)
+    {
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
+        }
+
+        if (!self::checkIsMleEncryptedResponse($mleResponseBody)) {
+            throw new MLEException("Response body is not MLE encrypted.");
+        }
+        $jweToken = self::getResponseMleToken($mleResponseBody);
+        if (empty($jweToken)) {
+            // when mle token is empty or null then fall back to non mle encrypted response
+            return $mleResponseBody;
+        }
+        $privateKey = self::getMleResponsePrivateKey($merchantConfig);
+        if (empty($privateKey)) {
+            throw new MLEException("Response MLE private key not available for decryption.");
+        }
+        if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+            $maskedResponseBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($mleResponseBody);
+            self::$logger->debug("LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: " . $maskedResponseBody);
+        } else {
+            self::$logger->debug("LOG_NETWORK_RESPONSE_BEFORE_MLE_DECRYPTION: " . $mleResponseBody);
+        }
+        try {
+            $decrypted = JWEUtility::decryptJWEUsingPrivateKey($privateKey, $jweToken);
+            if ($decrypted === null) {
+                throw new MLEException("Failed to decrypt MLE response payload.");
+            }
+            if ($merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $maskedDecrypted = \CyberSource\Utilities\Helpers\DataMasker::maskData($decrypted);
+                self::$logger->debug("LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: " . $maskedDecrypted);
+            } else {
+                self::$logger->debug("LOG_NETWORK_RESPONSE_AFTER_MLE_DECRYPTION: " . $decrypted);
+            }
+            return $decrypted;
+        } catch (\Exception $e) {
+            throw new MLEException("MLE Response decryption error: " . $e->getMessage());
+        }
     }
 
     private static function generateToken($cert, $requestBody)
@@ -138,6 +222,39 @@ class MLEUtility
             self::$logger->error("Error encrypting request payload: " . $e->getMessage());
             throw new MLEException("Error encrypting request payload: " . $e->getMessage());
         }
+    }
+
+    private static function getResponseMleToken($mleResponseBody)
+    {
+        try {
+            $decoded = json_decode($mleResponseBody, true);
+            return $decoded['encryptedResponse'] ?? null;
+        } catch (\Exception $e) {
+            self::$logger->error("Failed to extract Response MLE token: " . $e->getMessage());
+            return null;
+        }
+    }
+
+    private static function getMleResponsePrivateKey($merchantConfig)
+    {
+        if (null != $merchantConfig->getResponseMlePrivateKey()) {
+            $privateKey = $merchantConfig->getResponseMlePrivateKey();
+            if ($privateKey !== null && !is_string($privateKey)) {
+                try {
+                    $privateKey = Utility::convertKeyObjectToPem($privateKey);
+                } catch (\Exception $e) {
+                    self::$logger->error("Failed to convert key object to PEM: " . $e->getMessage());
+                    throw new MLEException("Failed to convert key object to PEM: " . $e->getMessage());
+                }
+                return $privateKey;
+            }
+        }
+
+        if (!isset(self::$cache)) {
+
+            self::$cache = new Cache();
+        }
+        return self::$cache->getMleResponsePrivateKeyFromFilePath($merchantConfig);
     }
 
     public static function getMLECert($merchantConfig)

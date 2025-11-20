@@ -187,6 +187,10 @@ class OrdersApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2CreateOrderPost201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createOrder,createOrderWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class OrdersApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2CreateOrderPost201Response',
-                '/pts/v2/intents'
+                '/pts/v2/intents',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -329,6 +334,10 @@ class OrdersApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\PtsV2UpdateOrderPatch201Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateOrder,updateOrderWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -338,7 +347,8 @@ class OrdersApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\PtsV2UpdateOrderPatch201Response',
-                '/pts/v2/intents/{id}'
+                '/pts/v2/intents/{id}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

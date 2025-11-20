@@ -187,6 +187,10 @@ class UnifiedCheckoutCaptureContextApi
         }
 
         self::$logger->debug("Return Type : string");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "generateUnifiedCheckoutCaptureContext,generateUnifiedCheckoutCaptureContextWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class UnifiedCheckoutCaptureContextApi
                 $httpBody,
                 $headerParams,
                 'string',
-                '/up/v1/capture-contexts'
+                '/up/v1/capture-contexts',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

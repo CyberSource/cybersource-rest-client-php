@@ -12,7 +12,6 @@ class Cache
     private static $file_cache = array();
     private static $logger = null;
 
-
     public function __construct()
     {
         if (self::$logger === null) {
@@ -171,13 +170,41 @@ class Cache
         $configCertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_CONFIG_CERT);
         $p12CertIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_P12_CERT);
         
+        $respPrivKeyIdentifier = strtolower(GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY);        
+        // --- Response MLE Private Key handling with early return ---
+        if (substr($lowercaseCacheKey, -strlen($respPrivKeyIdentifier)) === $respPrivKeyIdentifier) {
+            $password = $merchantConfig->getResponseMlePrivateKeyFilePassword();
+            try {
+                $loaded = Utility::loadResponseMlePrivateKey($mleCertPath, $password);
+                self::$file_cache[$cacheKey] = [
+                    'response_mle_private_key' => $loaded,
+                    'file_mod_time'            => $fileModTime
+                ];
+            } catch (\Exception $e) {
+                if (self::$logger) { 
+                    self::$logger->error("Response MLE private key load failed: ".$e->getMessage()); 
+                }
+                self::$file_cache[$cacheKey] = [
+                    'response_mle_private_key' => null,
+                    'file_mod_time' => $fileModTime
+                ];
+            }
+            return;
+        }
+        // --- End Response MLE block ---
+
         if (str_ends_with($lowercaseCacheKey, $configCertIdentifier)) {
             $mleCert = $this->loadCertificateFromPEM($mleCertPath, $merchantConfig);
         } elseif (str_ends_with($lowercaseCacheKey, $p12CertIdentifier)) {
             $mleCert = $this->loadCertificateFromP12($mleCertPath, $merchantConfig);
+        } else {
+            if (self::$logger) {
+                self::$logger->warning("Unrecognized MLE cache key pattern: " . $cacheKey);
+            }
+            return;
         }
 
-        self::validateCertificateExpiry($mleCert, $merchantConfig->getMleKeyAlias(), $cacheKey);
+        self::validateCertificateExpiry($mleCert, $merchantConfig->getRequestMleKeyAlias(), $cacheKey);
         
         self::$file_cache[$cacheKey] = [
             'mle_cert' => $mleCert,
@@ -203,9 +230,9 @@ class Cache
             }
             
             try {
-                $mleCert = Utility::findCertByAlias(array("extracerts" => $certs), $merchantConfig->getMleKeyAlias());
+                $mleCert = Utility::findCertByAlias(array("extracerts" => $certs), $merchantConfig->getRequestMleKeyAlias());
             } catch (\Exception $e) {
-                self::$logger->warning("No certificate found for the specified mleKeyAlias '{$merchantConfig->getMleKeyAlias()}'. Using the first certificate from file {$filePath} as the MLE request certificate.");
+                self::$logger->warning("No certificate found for the specified RequestMleKeyAlias '{$merchantConfig->getRequestMleKeyAlias()}'. Using the first certificate from file {$filePath} as the MLE request certificate.");
                 $mleCert = $certs[0];
             }
             
@@ -237,10 +264,10 @@ class Cache
                 throw $exception;
             }
             
-            $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getMleKeyAlias());
+            $mleCert = Utility::findCertByAlias($certs, $merchantConfig->getRequestMleKeyAlias());
             
             if ($mleCert == null) {
-                throw new MLEException("No certificate found with alias " . $merchantConfig->getMleKeyAlias() . " in " . $filePath);
+                throw new MLEException("No certificate found with alias " . $merchantConfig->getRequestMleKeyAlias() . " in " . $filePath);
             }
             
             return $mleCert;
@@ -298,5 +325,34 @@ class Cache
             self::$logger->error("Error validating certificate expiry: " . $e->getMessage());
             // throw new MLEException("Error validating certificate expiry: " . $e->getMessage());
         } 
+    }
+
+    public function getMleResponsePrivateKeyFromFilePath($merchantConfig)
+    {
+        $merchantId = $merchantConfig->getMerchantID();
+        $filePath   = $merchantConfig->getResponseMlePrivateKeyFilePath();
+
+        if (empty($filePath) || !file_exists($filePath)) {
+            self::$logger->debug("Response MLE private key file not found: " . $filePath);
+            return null;
+        }
+
+        $cacheKey = $merchantId . GlobalParameter::MLE_CACHE_IDENTIFIER_FOR_RESPONSE_PRIVATE_KEY;
+        $modTime  = filemtime($filePath);
+
+        if ($modTime === false) {
+            self::$logger->error("Unable to obtain modification time for response MLE private key file: " . $filePath);
+            return null;
+        }
+
+        if (!isset(self::$file_cache[$cacheKey]) ||
+            self::$file_cache[$cacheKey]['file_mod_time'] !== $modTime) {
+            $this->setupMLECache($merchantConfig, $cacheKey, $filePath);
+        } else {
+            self::$logger->debug("Response MLE private key retrieved from cache.");
+        }
+
+        return self::$file_cache[$cacheKey]['response_mle_private_key'] ?? null;
+
     }
 }

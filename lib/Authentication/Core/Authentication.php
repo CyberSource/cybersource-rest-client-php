@@ -26,7 +26,7 @@ class Authentication
     }
 
     //call http signature and jwt
-    function generateToken($resourcePath, $inputData, $method, $merchantConfig)
+    function generateToken($resourcePath, $inputData, $method, $merchantConfig, $isResponseMLEForAPI)
     {  
         if(is_null($merchantConfig))
         {
@@ -37,7 +37,7 @@ class Authentication
     
         $tokenGenerator = $this->getTokenGenerator($merchantConfig);
         if (null !== self::$logger) { self::$logger->close(); }
-        return $tokenGenerator->generateToken($resourcePath, $inputData, $method, $merchantConfig);
+        return $tokenGenerator->generateToken($resourcePath, $inputData, $method, $merchantConfig, $isResponseMLEForAPI);
     }
 
     function getTokenGenerator($merchantConfig) {

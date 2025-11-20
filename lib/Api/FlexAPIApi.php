@@ -187,6 +187,10 @@ class FlexAPIApi
         }
 
         self::$logger->debug("Return Type : string");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "generateFlexAPICaptureContext,generateFlexAPICaptureContextWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -196,7 +200,8 @@ class FlexAPIApi
                 $httpBody,
                 $headerParams,
                 'string',
-                '/flex/v2/sessions'
+                '/flex/v2/sessions',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

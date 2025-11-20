@@ -194,6 +194,10 @@ class TokenizedCardApi
         }
 
         self::$logger->debug("Return Type : null");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "deleteTokenizedCard,deleteTokenizedCardWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -203,7 +207,8 @@ class TokenizedCardApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/tms/v2/tokenized-cards/{tokenizedCardId}'
+                '/tms/v2/tokenized-cards/{tokenizedCardId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -340,6 +345,10 @@ class TokenizedCardApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TokenizedcardRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getTokenizedCard,getTokenizedCardWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -349,7 +358,8 @@ class TokenizedCardApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TokenizedcardRequest',
-                '/tms/v2/tokenized-cards/{tokenizedCardId}'
+                '/tms/v2/tokenized-cards/{tokenizedCardId}',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
@@ -485,6 +495,10 @@ class TokenizedCardApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\TokenizedcardRequest");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "postTokenizedCard,postTokenizedCardWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -494,7 +508,8 @@ class TokenizedCardApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\TokenizedcardRequest',
-                '/tms/v2/tokenized-cards'
+                '/tms/v2/tokenized-cards',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));

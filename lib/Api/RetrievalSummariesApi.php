@@ -204,6 +204,10 @@ class RetrievalSummariesApi
         }
 
         self::$logger->debug("Return Type : \CyberSource\Model\ReportingV3RetrievalSummariesGet200Response");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getRetrievalSummary,getRetrievalSummaryWithHttpInfo");
+        
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -213,7 +217,8 @@ class RetrievalSummariesApi
                 $httpBody,
                 $headerParams,
                 '\CyberSource\Model\ReportingV3RetrievalSummariesGet200Response',
-                '/reporting/v3/retrieval-summaries'
+                '/reporting/v3/retrieval-summaries',
+                $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
