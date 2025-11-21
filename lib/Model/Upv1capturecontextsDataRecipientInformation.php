@@ -59,7 +59,9 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
         'country' => 'string',
         'accountId' => 'string',
         'administrativeArea' => 'string',
-        'accountType' => 'string'
+        'accountType' => 'string',
+        'dateOfBirth' => 'string',
+        'postalCode' => 'string'
     ];
 
     /**
@@ -73,7 +75,9 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
         'country' => null,
         'accountId' => null,
         'administrativeArea' => null,
-        'accountType' => null
+        'accountType' => null,
+        'dateOfBirth' => null,
+        'postalCode' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +101,9 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
         'country' => 'country',
         'accountId' => 'accountId',
         'administrativeArea' => 'administrativeArea',
-        'accountType' => 'accountType'
+        'accountType' => 'accountType',
+        'dateOfBirth' => 'dateOfBirth',
+        'postalCode' => 'postalCode'
     ];
 
 
@@ -112,7 +118,9 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
         'country' => 'setCountry',
         'accountId' => 'setAccountId',
         'administrativeArea' => 'setAdministrativeArea',
-        'accountType' => 'setAccountType'
+        'accountType' => 'setAccountType',
+        'dateOfBirth' => 'setDateOfBirth',
+        'postalCode' => 'setPostalCode'
     ];
 
 
@@ -127,7 +135,9 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
         'country' => 'getCountry',
         'accountId' => 'getAccountId',
         'administrativeArea' => 'getAdministrativeArea',
-        'accountType' => 'getAccountType'
+        'accountType' => 'getAccountType',
+        'dateOfBirth' => 'getDateOfBirth',
+        'postalCode' => 'getPostalCode'
     ];
 
     public static function attributeMap()
@@ -168,6 +178,8 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
         $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
     }
 
     /**
@@ -338,6 +350,48 @@ class Upv1capturecontextsDataRecipientInformation implements ArrayAccess
     public function setAccountType($accountType)
     {
         $this->container['accountType'] = $accountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateOfBirth
+     * @return string
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['dateOfBirth'];
+    }
+
+    /**
+     * Sets dateOfBirth
+     * @param string $dateOfBirth The date of birth of the recipient
+     * @return $this
+     */
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->container['dateOfBirth'] = $dateOfBirth;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode The postal code of the recipient
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
 
         return $this;
     }

@@ -53,18 +53,10 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'fieldType' => 'string',
-        'label' => 'string',
-        'customerVisible' => 'bool',
-        'textMinLength' => 'int',
-        'textMaxLength' => 'int',
-        'possibleValues' => 'string',
-        'textDefaultValue' => 'string',
-        'merchantId' => 'string',
-        'referenceType' => 'string',
-        'readOnly' => 'bool',
-        'merchantDefinedDataIndex' => 'int'
+        'id' => 'string',
+        'submitTimeUtc' => 'string',
+        'status' => 'string',
+        'embedded' => '\CyberSource\Model\InlineResponse2002Embedded'
     ];
 
     /**
@@ -72,18 +64,10 @@ class InlineResponse2002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'fieldType' => null,
-        'label' => null,
-        'customerVisible' => null,
-        'textMinLength' => 'int32',
-        'textMaxLength' => 'int32',
-        'possibleValues' => null,
-        'textDefaultValue' => null,
-        'merchantId' => null,
-        'referenceType' => null,
-        'readOnly' => null,
-        'merchantDefinedDataIndex' => 'int32'
+        'id' => null,
+        'submitTimeUtc' => null,
+        'status' => null,
+        'embedded' => null
     ];
 
     public static function swaggerTypes()
@@ -102,17 +86,9 @@ class InlineResponse2002 implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'fieldType' => 'fieldType',
-        'label' => 'label',
-        'customerVisible' => 'customerVisible',
-        'textMinLength' => 'textMinLength',
-        'textMaxLength' => 'textMaxLength',
-        'possibleValues' => 'possibleValues',
-        'textDefaultValue' => 'textDefaultValue',
-        'merchantId' => 'merchantId',
-        'referenceType' => 'referenceType',
-        'readOnly' => 'readOnly',
-        'merchantDefinedDataIndex' => 'merchantDefinedDataIndex'
+        'submitTimeUtc' => 'submitTimeUtc',
+        'status' => 'status',
+        'embedded' => '_embedded'
     ];
 
 
@@ -122,17 +98,9 @@ class InlineResponse2002 implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'fieldType' => 'setFieldType',
-        'label' => 'setLabel',
-        'customerVisible' => 'setCustomerVisible',
-        'textMinLength' => 'setTextMinLength',
-        'textMaxLength' => 'setTextMaxLength',
-        'possibleValues' => 'setPossibleValues',
-        'textDefaultValue' => 'setTextDefaultValue',
-        'merchantId' => 'setMerchantId',
-        'referenceType' => 'setReferenceType',
-        'readOnly' => 'setReadOnly',
-        'merchantDefinedDataIndex' => 'setMerchantDefinedDataIndex'
+        'submitTimeUtc' => 'setSubmitTimeUtc',
+        'status' => 'setStatus',
+        'embedded' => 'setEmbedded'
     ];
 
 
@@ -142,17 +110,9 @@ class InlineResponse2002 implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'fieldType' => 'getFieldType',
-        'label' => 'getLabel',
-        'customerVisible' => 'getCustomerVisible',
-        'textMinLength' => 'getTextMinLength',
-        'textMaxLength' => 'getTextMaxLength',
-        'possibleValues' => 'getPossibleValues',
-        'textDefaultValue' => 'getTextDefaultValue',
-        'merchantId' => 'getMerchantId',
-        'referenceType' => 'getReferenceType',
-        'readOnly' => 'getReadOnly',
-        'merchantDefinedDataIndex' => 'getMerchantDefinedDataIndex'
+        'submitTimeUtc' => 'getSubmitTimeUtc',
+        'status' => 'getStatus',
+        'embedded' => 'getEmbedded'
     ];
 
     public static function attributeMap()
@@ -187,17 +147,9 @@ class InlineResponse2002 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['fieldType'] = isset($data['fieldType']) ? $data['fieldType'] : null;
-        $this->container['label'] = isset($data['label']) ? $data['label'] : null;
-        $this->container['customerVisible'] = isset($data['customerVisible']) ? $data['customerVisible'] : null;
-        $this->container['textMinLength'] = isset($data['textMinLength']) ? $data['textMinLength'] : null;
-        $this->container['textMaxLength'] = isset($data['textMaxLength']) ? $data['textMaxLength'] : null;
-        $this->container['possibleValues'] = isset($data['possibleValues']) ? $data['possibleValues'] : null;
-        $this->container['textDefaultValue'] = isset($data['textDefaultValue']) ? $data['textDefaultValue'] : null;
-        $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
-        $this->container['referenceType'] = isset($data['referenceType']) ? $data['referenceType'] : null;
-        $this->container['readOnly'] = isset($data['readOnly']) ? $data['readOnly'] : null;
-        $this->container['merchantDefinedDataIndex'] = isset($data['merchantDefinedDataIndex']) ? $data['merchantDefinedDataIndex'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
     }
 
     /**
@@ -227,7 +179,7 @@ class InlineResponse2002 implements ArrayAccess
 
     /**
      * Gets id
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -236,7 +188,7 @@ class InlineResponse2002 implements ArrayAccess
 
     /**
      * Sets id
-     * @param int $id
+     * @param string $id UUID uniquely generated for this comments.
      * @return $this
      */
     public function setId($id)
@@ -247,232 +199,64 @@ class InlineResponse2002 implements ArrayAccess
     }
 
     /**
-     * Gets fieldType
+     * Gets submitTimeUtc
      * @return string
      */
-    public function getFieldType()
+    public function getSubmitTimeUtc()
     {
-        return $this->container['fieldType'];
+        return $this->container['submitTimeUtc'];
     }
 
     /**
-     * Sets fieldType
-     * @param string $fieldType
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
      * @return $this
      */
-    public function setFieldType($fieldType)
+    public function setSubmitTimeUtc($submitTimeUtc)
     {
-        $this->container['fieldType'] = $fieldType;
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }
 
     /**
-     * Gets label
+     * Gets status
      * @return string
      */
-    public function getLabel()
+    public function getStatus()
     {
-        return $this->container['label'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets label
-     * @param string $label
+     * Sets status
+     * @param string $status The status of the submitted transaction. Possible values are: - `ACCEPTED` - `REJECTED`
      * @return $this
      */
-    public function setLabel($label)
+    public function setStatus($status)
     {
-        $this->container['label'] = $label;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets customerVisible
-     * @return bool
+     * Gets embedded
+     * @return \CyberSource\Model\InlineResponse2002Embedded
      */
-    public function getCustomerVisible()
+    public function getEmbedded()
     {
-        return $this->container['customerVisible'];
+        return $this->container['embedded'];
     }
 
     /**
-     * Sets customerVisible
-     * @param bool $customerVisible
+     * Sets embedded
+     * @param \CyberSource\Model\InlineResponse2002Embedded $embedded
      * @return $this
      */
-    public function setCustomerVisible($customerVisible)
+    public function setEmbedded($embedded)
     {
-        $this->container['customerVisible'] = $customerVisible;
-
-        return $this;
-    }
-
-    /**
-     * Gets textMinLength
-     * @return int
-     */
-    public function getTextMinLength()
-    {
-        return $this->container['textMinLength'];
-    }
-
-    /**
-     * Sets textMinLength
-     * @param int $textMinLength
-     * @return $this
-     */
-    public function setTextMinLength($textMinLength)
-    {
-        $this->container['textMinLength'] = $textMinLength;
-
-        return $this;
-    }
-
-    /**
-     * Gets textMaxLength
-     * @return int
-     */
-    public function getTextMaxLength()
-    {
-        return $this->container['textMaxLength'];
-    }
-
-    /**
-     * Sets textMaxLength
-     * @param int $textMaxLength
-     * @return $this
-     */
-    public function setTextMaxLength($textMaxLength)
-    {
-        $this->container['textMaxLength'] = $textMaxLength;
-
-        return $this;
-    }
-
-    /**
-     * Gets possibleValues
-     * @return string
-     */
-    public function getPossibleValues()
-    {
-        return $this->container['possibleValues'];
-    }
-
-    /**
-     * Sets possibleValues
-     * @param string $possibleValues
-     * @return $this
-     */
-    public function setPossibleValues($possibleValues)
-    {
-        $this->container['possibleValues'] = $possibleValues;
-
-        return $this;
-    }
-
-    /**
-     * Gets textDefaultValue
-     * @return string
-     */
-    public function getTextDefaultValue()
-    {
-        return $this->container['textDefaultValue'];
-    }
-
-    /**
-     * Sets textDefaultValue
-     * @param string $textDefaultValue
-     * @return $this
-     */
-    public function setTextDefaultValue($textDefaultValue)
-    {
-        $this->container['textDefaultValue'] = $textDefaultValue;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantId
-     * @return string
-     */
-    public function getMerchantId()
-    {
-        return $this->container['merchantId'];
-    }
-
-    /**
-     * Sets merchantId
-     * @param string $merchantId
-     * @return $this
-     */
-    public function setMerchantId($merchantId)
-    {
-        $this->container['merchantId'] = $merchantId;
-
-        return $this;
-    }
-
-    /**
-     * Gets referenceType
-     * @return string
-     */
-    public function getReferenceType()
-    {
-        return $this->container['referenceType'];
-    }
-
-    /**
-     * Sets referenceType
-     * @param string $referenceType
-     * @return $this
-     */
-    public function setReferenceType($referenceType)
-    {
-        $this->container['referenceType'] = $referenceType;
-
-        return $this;
-    }
-
-    /**
-     * Gets readOnly
-     * @return bool
-     */
-    public function getReadOnly()
-    {
-        return $this->container['readOnly'];
-    }
-
-    /**
-     * Sets readOnly
-     * @param bool $readOnly
-     * @return $this
-     */
-    public function setReadOnly($readOnly)
-    {
-        $this->container['readOnly'] = $readOnly;
-
-        return $this;
-    }
-
-    /**
-     * Gets merchantDefinedDataIndex
-     * @return int
-     */
-    public function getMerchantDefinedDataIndex()
-    {
-        return $this->container['merchantDefinedDataIndex'];
-    }
-
-    /**
-     * Sets merchantDefinedDataIndex
-     * @param int $merchantDefinedDataIndex
-     * @return $this
-     */
-    public function setMerchantDefinedDataIndex($merchantDefinedDataIndex)
-    {
-        $this->container['merchantDefinedDataIndex'] = $merchantDefinedDataIndex;
+        $this->container['embedded'] = $embedded;
 
         return $this;
     }

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **bankAccountValidationRequest**
-> \CyberSource\Model\InlineResponse20013 bankAccountValidationRequest($accountValidationsRequest)
+> \CyberSource\Model\InlineResponse20014 bankAccountValidationRequest($accountValidationsRequest)
 
 Visa Bank Account Validation Service
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\CyberSource\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 

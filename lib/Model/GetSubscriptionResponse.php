@@ -60,6 +60,7 @@ class GetSubscriptionResponse implements ArrayAccess
         'subscriptionInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseSubscriptionInformation',
         'paymentInformation' => '\CyberSource\Model\GetAllSubscriptionsResponsePaymentInformation',
         'orderInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseOrderInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation',
         'reactivationInformation' => '\CyberSource\Model\GetSubscriptionResponseReactivationInformation'
     ];
 
@@ -75,6 +76,7 @@ class GetSubscriptionResponse implements ArrayAccess
         'subscriptionInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
+        'clientReferenceInformation' => null,
         'reactivationInformation' => null
     ];
 
@@ -100,6 +102,7 @@ class GetSubscriptionResponse implements ArrayAccess
         'subscriptionInformation' => 'subscriptionInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
+        'clientReferenceInformation' => 'clientReferenceInformation',
         'reactivationInformation' => 'reactivationInformation'
     ];
 
@@ -116,6 +119,7 @@ class GetSubscriptionResponse implements ArrayAccess
         'subscriptionInformation' => 'setSubscriptionInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
+        'clientReferenceInformation' => 'setClientReferenceInformation',
         'reactivationInformation' => 'setReactivationInformation'
     ];
 
@@ -132,6 +136,7 @@ class GetSubscriptionResponse implements ArrayAccess
         'subscriptionInformation' => 'getSubscriptionInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
+        'clientReferenceInformation' => 'getClientReferenceInformation',
         'reactivationInformation' => 'getReactivationInformation'
     ];
 
@@ -173,6 +178,7 @@ class GetSubscriptionResponse implements ArrayAccess
         $this->container['subscriptionInformation'] = isset($data['subscriptionInformation']) ? $data['subscriptionInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['reactivationInformation'] = isset($data['reactivationInformation']) ? $data['reactivationInformation'] : null;
     }
 
@@ -344,6 +350,27 @@ class GetSubscriptionResponse implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
 
         return $this;
     }

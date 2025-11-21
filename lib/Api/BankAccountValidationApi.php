@@ -105,7 +105,7 @@ class BankAccountValidationApi
      *
      * @param \CyberSource\Model\AccountValidationsRequest $accountValidationsRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
      */
     public function bankAccountValidationRequest($accountValidationsRequest)
     {
@@ -123,7 +123,7 @@ class BankAccountValidationApi
      *
      * @param \CyberSource\Model\AccountValidationsRequest $accountValidationsRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
      */
     public function bankAccountValidationRequestWithHttpInfo($accountValidationsRequest)
     {
@@ -188,7 +188,7 @@ class BankAccountValidationApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20013");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20014");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -197,17 +197,17 @@ class BankAccountValidationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20013',
+                '\CyberSource\Model\InlineResponse20014',
                 '/bavs/v1/account-validations'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20013', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20013', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20014', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

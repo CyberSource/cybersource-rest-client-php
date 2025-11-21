@@ -74,7 +74,7 @@ class SubscriptionsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for activateSubscription
      *
-     * Activate a Subscription.
+     * Reactivating a Suspended Subscription.
      *
      */
     public function testActivateSubscription()

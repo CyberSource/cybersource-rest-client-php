@@ -82,4 +82,53 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptorTest extends \
     public function testPropertyName()
     {
     }
+
+    /**
+     * Test attribute "alternateName"
+     */
+    public function testPropertyAlternateName()
+    {
+    }
+
+    /**
+     * Test attribute "locality"
+     */
+    public function testPropertyLocality()
+    {
+    }
+
+    /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "administrativeArea"
+     */
+    public function testPropertyAdministrativeArea()
+    {
+    }
+
+    /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
 }

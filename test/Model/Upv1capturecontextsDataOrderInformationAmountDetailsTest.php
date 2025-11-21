@@ -124,4 +124,11 @@ class Upv1capturecontextsDataOrderInformationAmountDetailsTest extends \PHPUnit_
     public function testPropertyTaxAmount()
     {
     }
+
+    /**
+     * Test attribute "taxDetails"
+     */
+    public function testPropertyTaxDetails()
+    {
+    }
 }

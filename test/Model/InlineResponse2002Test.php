@@ -84,79 +84,23 @@ class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "fieldType"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyFieldType()
+    public function testPropertySubmitTimeUtc()
     {
     }
 
     /**
-     * Test attribute "label"
+     * Test attribute "status"
      */
-    public function testPropertyLabel()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "customerVisible"
+     * Test attribute "embedded"
      */
-    public function testPropertyCustomerVisible()
-    {
-    }
-
-    /**
-     * Test attribute "textMinLength"
-     */
-    public function testPropertyTextMinLength()
-    {
-    }
-
-    /**
-     * Test attribute "textMaxLength"
-     */
-    public function testPropertyTextMaxLength()
-    {
-    }
-
-    /**
-     * Test attribute "possibleValues"
-     */
-    public function testPropertyPossibleValues()
-    {
-    }
-
-    /**
-     * Test attribute "textDefaultValue"
-     */
-    public function testPropertyTextDefaultValue()
-    {
-    }
-
-    /**
-     * Test attribute "merchantId"
-     */
-    public function testPropertyMerchantId()
-    {
-    }
-
-    /**
-     * Test attribute "referenceType"
-     */
-    public function testPropertyReferenceType()
-    {
-    }
-
-    /**
-     * Test attribute "readOnly"
-     */
-    public function testPropertyReadOnly()
-    {
-    }
-
-    /**
-     * Test attribute "merchantDefinedDataIndex"
-     */
-    public function testPropertyMerchantDefinedDataIndex()
+    public function testPropertyEmbedded()
     {
     }
 }

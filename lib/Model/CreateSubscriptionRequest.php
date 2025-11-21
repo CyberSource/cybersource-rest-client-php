@@ -53,7 +53,7 @@ class CreateSubscriptionRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Rbsv1subscriptionsClientReferenceInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation',
         'processingInformation' => '\CyberSource\Model\Rbsv1subscriptionsProcessingInformation',
         'planInformation' => '\CyberSource\Model\Rbsv1subscriptionsPlanInformation',
         'subscriptionInformation' => '\CyberSource\Model\Rbsv1subscriptionsSubscriptionInformation',
@@ -191,7 +191,7 @@ class CreateSubscriptionRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Rbsv1subscriptionsClientReferenceInformation
+     * @return \CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -200,7 +200,7 @@ class CreateSubscriptionRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Rbsv1subscriptionsClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)

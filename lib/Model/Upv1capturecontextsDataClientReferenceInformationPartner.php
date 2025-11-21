@@ -82,7 +82,7 @@ class Upv1capturecontextsDataClientReferenceInformationPartner implements ArrayA
      */
     protected static $attributeMap = [
         'developerId' => 'developerId',
-        'solutionId' => 'SolutionId'
+        'solutionId' => 'solutionId'
     ];
 
 

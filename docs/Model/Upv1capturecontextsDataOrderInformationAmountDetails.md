@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **subTotalAmount** | **string** | This field defines the sub total amount applicable to the order. | [optional] 
 **serviceFeeAmount** | **string** | This field defines the service fee amount applicable to the order. | [optional] 
 **taxAmount** | **string** | This field defines the tax amount applicable to the order. | [optional] 
+**taxDetails** | [**\CyberSource\Model\Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails**](Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

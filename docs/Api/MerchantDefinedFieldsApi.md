@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createMerchantDefinedFieldDefinition**
-> \CyberSource\Model\InlineResponse2002[] createMerchantDefinedFieldDefinition($referenceType, $merchantDefinedFieldDefinitionRequest)
+> \CyberSource\Model\InlineResponse2003[] createMerchantDefinedFieldDefinition($referenceType, $merchantDefinedFieldDefinitionRequest)
 
 Create merchant defined field for a given reference type
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002[]**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMerchantDefinedFieldsDefinitions**
-> \CyberSource\Model\InlineResponse2002[] getMerchantDefinedFieldsDefinitions($referenceType)
+> \CyberSource\Model\InlineResponse2003[] getMerchantDefinedFieldsDefinitions($referenceType)
 
 Get all merchant defined fields for a given reference type
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002[]**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putMerchantDefinedFieldsDefinitions**
-> \CyberSource\Model\InlineResponse2002[] putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
+> \CyberSource\Model\InlineResponse2003[] putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
 
 Update a MerchantDefinedField by ID
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2002[]**](../Model/InlineResponse2002.md)
+[**\CyberSource\Model\InlineResponse2003[]**](../Model/InlineResponse2003.md)
 
 ### Authorization
 

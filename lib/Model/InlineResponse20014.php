@@ -53,12 +53,10 @@ class InlineResponse20014 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\InlineResponse20014ClientReferenceInformation',
-        'id' => 'string',
+        'clientReferenceInformation' => '\CyberSource\Model\Bavsv1accountvalidationsClientReferenceInformation',
+        'requestId' => 'string',
         'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'errorInformation' => '\CyberSource\Model\InlineResponse2018ErrorInformation',
-        'orderInformation' => '\CyberSource\Model\InlineResponse2018OrderInformation'
+        'bankAccountValidation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation'
     ];
 
     /**
@@ -67,11 +65,9 @@ class InlineResponse20014 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'clientReferenceInformation' => null,
-        'id' => null,
+        'requestId' => null,
         'submitTimeUtc' => null,
-        'status' => null,
-        'errorInformation' => null,
-        'orderInformation' => null
+        'bankAccountValidation' => null
     ];
 
     public static function swaggerTypes()
@@ -90,11 +86,9 @@ class InlineResponse20014 implements ArrayAccess
      */
     protected static $attributeMap = [
         'clientReferenceInformation' => 'clientReferenceInformation',
-        'id' => 'id',
+        'requestId' => 'requestId',
         'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'errorInformation' => 'errorInformation',
-        'orderInformation' => 'orderInformation'
+        'bankAccountValidation' => 'bankAccountValidation'
     ];
 
 
@@ -104,11 +98,9 @@ class InlineResponse20014 implements ArrayAccess
      */
     protected static $setters = [
         'clientReferenceInformation' => 'setClientReferenceInformation',
-        'id' => 'setId',
+        'requestId' => 'setRequestId',
         'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'errorInformation' => 'setErrorInformation',
-        'orderInformation' => 'setOrderInformation'
+        'bankAccountValidation' => 'setBankAccountValidation'
     ];
 
 
@@ -118,11 +110,9 @@ class InlineResponse20014 implements ArrayAccess
      */
     protected static $getters = [
         'clientReferenceInformation' => 'getClientReferenceInformation',
-        'id' => 'getId',
+        'requestId' => 'getRequestId',
         'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'errorInformation' => 'getErrorInformation',
-        'orderInformation' => 'getOrderInformation'
+        'bankAccountValidation' => 'getBankAccountValidation'
     ];
 
     public static function attributeMap()
@@ -157,11 +147,9 @@ class InlineResponse20014 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
-        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['bankAccountValidation'] = isset($data['bankAccountValidation']) ? $data['bankAccountValidation'] : null;
     }
 
     /**
@@ -173,15 +161,6 @@ class InlineResponse20014 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['submitTimeUtc'] === null) {
-            $invalid_properties[] = "'submitTimeUtc' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalid_properties[] = "'status' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -194,22 +173,13 @@ class InlineResponse20014 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
-        if ($this->container['submitTimeUtc'] === null) {
-            return false;
-        }
-        if ($this->container['status'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\InlineResponse20014ClientReferenceInformation
+     * @return \CyberSource\Model\Bavsv1accountvalidationsClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -218,7 +188,7 @@ class InlineResponse20014 implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\InlineResponse20014ClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Bavsv1accountvalidationsClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -229,22 +199,22 @@ class InlineResponse20014 implements ArrayAccess
     }
 
     /**
-     * Gets id
+     * Gets requestId
      * @return string
      */
-    public function getId()
+    public function getRequestId()
     {
-        return $this->container['id'];
+        return $this->container['requestId'];
     }
 
     /**
-     * Sets id
-     * @param string $id Request ID generated by Cybersource. This was sent in the header on the request. Echo value from x-requestid
+     * Sets requestId
+     * @param string $requestId Request Id sent as part of the request.
      * @return $this
      */
-    public function setId($id)
+    public function setRequestId($requestId)
     {
-        $this->container['id'] = $id;
+        $this->container['requestId'] = $requestId;
 
         return $this;
     }
@@ -260,7 +230,7 @@ class InlineResponse20014 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ`  **Example** `2023-05-17T22:47:57Z` equals May 17, 2023, at 22:47:57 (10:47:57 PM). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC.  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.)
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -271,64 +241,22 @@ class InlineResponse20014 implements ArrayAccess
     }
 
     /**
-     * Gets status
-     * @return string
+     * Gets bankAccountValidation
+     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation
      */
-    public function getStatus()
+    public function getBankAccountValidation()
     {
-        return $this->container['status'];
+        return $this->container['bankAccountValidation'];
     }
 
     /**
-     * Sets status
-     * @param string $status Message describing the status of the currency conversion request.  Values: - `PENDING` - `DECLINED` - `INVALID_REQUEST` - `SERVER_ERROR` - `OFFER_DECLINED` - `AUTHORIZED` - `AUTHORIZATION_DECLINED` - `AUTHORIZATION_FAILURE` - `REVERSED` - `CAPTURED` - `REFUNDED` - `CANCELLED`
+     * Sets bankAccountValidation
+     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation $bankAccountValidation
      * @return $this
      */
-    public function setStatus($status)
+    public function setBankAccountValidation($bankAccountValidation)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorInformation
-     * @return \CyberSource\Model\InlineResponse2018ErrorInformation
-     */
-    public function getErrorInformation()
-    {
-        return $this->container['errorInformation'];
-    }
-
-    /**
-     * Sets errorInformation
-     * @param \CyberSource\Model\InlineResponse2018ErrorInformation $errorInformation
-     * @return $this
-     */
-    public function setErrorInformation($errorInformation)
-    {
-        $this->container['errorInformation'] = $errorInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets orderInformation
-     * @return \CyberSource\Model\InlineResponse2018OrderInformation
-     */
-    public function getOrderInformation()
-    {
-        return $this->container['orderInformation'];
-    }
-
-    /**
-     * Sets orderInformation
-     * @param \CyberSource\Model\InlineResponse2018OrderInformation $orderInformation
-     * @return $this
-     */
-    public function setOrderInformation($orderInformation)
-    {
-        $this->container['orderInformation'] = $orderInformation;
+        $this->container['bankAccountValidation'] = $bankAccountValidation;
 
         return $this;
     }

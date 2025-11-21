@@ -356,7 +356,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productCode
-     * @param string $productCode
+     * @param string $productCode Code identifying the product.
      * @return $this
      */
     public function setProductCode($productCode)
@@ -377,7 +377,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productName
-     * @param string $productName
+     * @param string $productName Name of the product.
      * @return $this
      */
     public function setProductName($productName)
@@ -398,7 +398,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productSku
-     * @param string $productSku
+     * @param string $productSku Stock Keeping Unit identifier
      * @return $this
      */
     public function setProductSku($productSku)
@@ -419,7 +419,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param int $quantity
+     * @param int $quantity Quantity of the product
      * @return $this
      */
     public function setQuantity($quantity)
@@ -440,7 +440,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitPrice
-     * @param string $unitPrice
+     * @param string $unitPrice Price per unit
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -461,7 +461,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitOfMeasure
-     * @param string $unitOfMeasure
+     * @param string $unitOfMeasure Unit of measure (e.g. EA, KG, LB)
      * @return $this
      */
     public function setUnitOfMeasure($unitOfMeasure)
@@ -482,7 +482,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets totalAmount
-     * @param string $totalAmount
+     * @param string $totalAmount Total amount for the line item
      * @return $this
      */
     public function setTotalAmount($totalAmount)
@@ -503,7 +503,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxAmount
-     * @param string $taxAmount
+     * @param string $taxAmount Tax amount applied
      * @return $this
      */
     public function setTaxAmount($taxAmount)
@@ -524,7 +524,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxRate
-     * @param string $taxRate
+     * @param string $taxRate Tax rate applied
      * @return $this
      */
     public function setTaxRate($taxRate)
@@ -545,7 +545,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxAppliedAfterDiscount
-     * @param string $taxAppliedAfterDiscount
+     * @param string $taxAppliedAfterDiscount Indicates if tax applied after discount
      * @return $this
      */
     public function setTaxAppliedAfterDiscount($taxAppliedAfterDiscount)
@@ -566,7 +566,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxStatusIndicator
-     * @param string $taxStatusIndicator
+     * @param string $taxStatusIndicator Tax status indicator
      * @return $this
      */
     public function setTaxStatusIndicator($taxStatusIndicator)
@@ -587,7 +587,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets taxTypeCode
-     * @param string $taxTypeCode
+     * @param string $taxTypeCode Tax type code
      * @return $this
      */
     public function setTaxTypeCode($taxTypeCode)
@@ -608,7 +608,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets amountIncludesTax
-     * @param bool $amountIncludesTax
+     * @param bool $amountIncludesTax Indicates if amount includes tax
      * @return $this
      */
     public function setAmountIncludesTax($amountIncludesTax)
@@ -629,7 +629,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets typeOfSupply
-     * @param string $typeOfSupply
+     * @param string $typeOfSupply Type of supply
      * @return $this
      */
     public function setTypeOfSupply($typeOfSupply)
@@ -650,7 +650,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets commodityCode
-     * @param string $commodityCode
+     * @param string $commodityCode Commodity code
      * @return $this
      */
     public function setCommodityCode($commodityCode)
@@ -671,7 +671,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets discountAmount
-     * @param string $discountAmount
+     * @param string $discountAmount Discount amount applied
      * @return $this
      */
     public function setDiscountAmount($discountAmount)
@@ -692,7 +692,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets discountApplied
-     * @param bool $discountApplied
+     * @param bool $discountApplied Indicates if discount applied
      * @return $this
      */
     public function setDiscountApplied($discountApplied)
@@ -713,7 +713,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets discountRate
-     * @param string $discountRate
+     * @param string $discountRate Discount rate applied
      * @return $this
      */
     public function setDiscountRate($discountRate)
@@ -734,7 +734,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets invoiceNumber
-     * @param string $invoiceNumber
+     * @param string $invoiceNumber Invoice number for the line item
      * @return $this
      */
     public function setInvoiceNumber($invoiceNumber)
@@ -776,7 +776,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets fulfillmentType
-     * @param string $fulfillmentType
+     * @param string $fulfillmentType Fulfillment type
      * @return $this
      */
     public function setFulfillmentType($fulfillmentType)
@@ -797,7 +797,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets weight
-     * @param string $weight
+     * @param string $weight Weight of the product
      * @return $this
      */
     public function setWeight($weight)
@@ -818,7 +818,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets weightIdentifier
-     * @param string $weightIdentifier
+     * @param string $weightIdentifier Weight identifier
      * @return $this
      */
     public function setWeightIdentifier($weightIdentifier)
@@ -839,7 +839,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets weightUnit
-     * @param string $weightUnit
+     * @param string $weightUnit Unit of weight of the product
      * @return $this
      */
     public function setWeightUnit($weightUnit)
@@ -860,7 +860,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets referenceDataCode
-     * @param string $referenceDataCode
+     * @param string $referenceDataCode Reference data code
      * @return $this
      */
     public function setReferenceDataCode($referenceDataCode)
@@ -881,7 +881,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets referenceDataNumber
-     * @param string $referenceDataNumber
+     * @param string $referenceDataNumber Reference data number
      * @return $this
      */
     public function setReferenceDataNumber($referenceDataNumber)
@@ -902,7 +902,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets unitTaxAmount
-     * @param string $unitTaxAmount
+     * @param string $unitTaxAmount Unit tax amount
      * @return $this
      */
     public function setUnitTaxAmount($unitTaxAmount)
@@ -923,7 +923,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets productDescription
-     * @param string $productDescription
+     * @param string $productDescription Description of the product
      * @return $this
      */
     public function setProductDescription($productDescription)
@@ -944,7 +944,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets giftCardCurrency
-     * @param string $giftCardCurrency
+     * @param string $giftCardCurrency Gift card currency
      * @return $this
      */
     public function setGiftCardCurrency($giftCardCurrency)
@@ -965,7 +965,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets shippingDestinationTypes
-     * @param string $shippingDestinationTypes
+     * @param string $shippingDestinationTypes Shipping destination types
      * @return $this
      */
     public function setShippingDestinationTypes($shippingDestinationTypes)
@@ -986,7 +986,7 @@ class Upv1capturecontextsDataOrderInformationLineItems implements ArrayAccess
 
     /**
      * Sets gift
-     * @param bool $gift
+     * @param bool $gift Indicates if item is a gift
      * @return $this
      */
     public function setGift($gift)

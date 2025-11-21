@@ -54,7 +54,8 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
       */
     protected static $swaggerTypes = [
         'challengeCode' => 'string',
-        'messageCategory' => 'string'
+        'messageCategory' => 'string',
+        'acsWindowSize' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
       */
     protected static $swaggerFormats = [
         'challengeCode' => null,
-        'messageCategory' => null
+        'messageCategory' => null,
+        'acsWindowSize' => null
     ];
 
     public static function swaggerTypes()
@@ -82,7 +84,8 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
      */
     protected static $attributeMap = [
         'challengeCode' => 'challengeCode',
-        'messageCategory' => 'messageCategory'
+        'messageCategory' => 'messageCategory',
+        'acsWindowSize' => 'acsWindowSize'
     ];
 
 
@@ -92,7 +95,8 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
      */
     protected static $setters = [
         'challengeCode' => 'setChallengeCode',
-        'messageCategory' => 'setMessageCategory'
+        'messageCategory' => 'setMessageCategory',
+        'acsWindowSize' => 'setAcsWindowSize'
     ];
 
 
@@ -102,7 +106,8 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
      */
     protected static $getters = [
         'challengeCode' => 'getChallengeCode',
-        'messageCategory' => 'getMessageCategory'
+        'messageCategory' => 'getMessageCategory',
+        'acsWindowSize' => 'getAcsWindowSize'
     ];
 
     public static function attributeMap()
@@ -138,6 +143,7 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
     {
         $this->container['challengeCode'] = isset($data['challengeCode']) ? $data['challengeCode'] : null;
         $this->container['messageCategory'] = isset($data['messageCategory']) ? $data['messageCategory'] : null;
+        $this->container['acsWindowSize'] = isset($data['acsWindowSize']) ? $data['acsWindowSize'] : null;
     }
 
     /**
@@ -176,7 +182,7 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
 
     /**
      * Sets challengeCode
-     * @param string $challengeCode
+     * @param string $challengeCode The challenge code
      * @return $this
      */
     public function setChallengeCode($challengeCode)
@@ -197,12 +203,33 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
 
     /**
      * Sets messageCategory
-     * @param string $messageCategory
+     * @param string $messageCategory The message category
      * @return $this
      */
     public function setMessageCategory($messageCategory)
     {
         $this->container['messageCategory'] = $messageCategory;
+
+        return $this;
+    }
+
+    /**
+     * Gets acsWindowSize
+     * @return string
+     */
+    public function getAcsWindowSize()
+    {
+        return $this->container['acsWindowSize'];
+    }
+
+    /**
+     * Sets acsWindowSize
+     * @param string $acsWindowSize The acs window size
+     * @return $this
+     */
+    public function setAcsWindowSize($acsWindowSize)
+    {
+        $this->container['acsWindowSize'] = $acsWindowSize;
 
         return $this;
     }

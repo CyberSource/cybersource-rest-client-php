@@ -104,7 +104,7 @@ class MerchantDefinedFieldsApi
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param \CyberSource\Model\MerchantDefinedFieldDefinitionRequest $merchantDefinedFieldDefinitionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createMerchantDefinedFieldDefinition($referenceType, $merchantDefinedFieldDefinitionRequest)
     {
@@ -123,7 +123,7 @@ class MerchantDefinedFieldsApi
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @param \CyberSource\Model\MerchantDefinedFieldDefinitionRequest $merchantDefinedFieldDefinitionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
     public function createMerchantDefinedFieldDefinitionWithHttpInfo($referenceType, $merchantDefinedFieldDefinitionRequest)
     {
@@ -201,7 +201,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2003[]");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -210,17 +210,17 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2002[]',
+                '\CyberSource\Model\InlineResponse2003[]',
                 '/invoicing/v2/{referenceType}/merchantDefinedFields'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2002[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2002[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -380,7 +380,7 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMerchantDefinedFieldsDefinitions($referenceType)
     {
@@ -398,7 +398,7 @@ class MerchantDefinedFieldsApi
      *
      * @param string $referenceType The reference type for which merchant defined fields are to be fetched. Available values are Invoice, Purchase, Donation (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType)
     {
@@ -464,7 +464,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2003[]");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -473,17 +473,17 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2002[]',
+                '\CyberSource\Model\InlineResponse2003[]',
                 '/invoicing/v2/{referenceType}/merchantDefinedFields'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2002[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2002[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -506,7 +506,7 @@ class MerchantDefinedFieldsApi
      * @param int $id  (required)
      * @param \CyberSource\Model\MerchantDefinedFieldCore $merchantDefinedFieldCore  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
     public function putMerchantDefinedFieldsDefinitions($referenceType, $id, $merchantDefinedFieldCore)
     {
@@ -526,7 +526,7 @@ class MerchantDefinedFieldsApi
      * @param int $id  (required)
      * @param \CyberSource\Model\MerchantDefinedFieldCore $merchantDefinedFieldCore  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2002[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2003[], HTTP status code, HTTP response headers (array of strings)
      */
     public function putMerchantDefinedFieldsDefinitionsWithHttpInfo($referenceType, $id, $merchantDefinedFieldCore)
     {
@@ -617,7 +617,7 @@ class MerchantDefinedFieldsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2002[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2003[]");
         // make the API Call
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
@@ -626,17 +626,17 @@ class MerchantDefinedFieldsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2002[]',
+                '\CyberSource\Model\InlineResponse2003[]',
                 '/invoicing/v2/{referenceType}/merchantDefinedFields/{id}'
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2002[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2003[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2002[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2003[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

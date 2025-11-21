@@ -299,4 +299,17 @@ class Cache
             // throw new MLEException("Error validating certificate expiry: " . $e->getMessage());
         } 
     }
+
+    public static function addPublicKeyToCache($runEnvironment, $keyId, $publicKey) {
+        $cacheKey = GlobalParameter::PUBLIC_KEY_CACHE_IDENTIFIER . "_" . $runEnvironment . "_" . $keyId;
+        self::$file_cache[$cacheKey] = $publicKey;
+    }
+
+    public static function getPublicKeyFromCache($runEnvironment, $keyId) {
+        $cacheKey = GlobalParameter::PUBLIC_KEY_CACHE_IDENTIFIER . "_" . $runEnvironment . "_" . $keyId;
+        if (isset(self::$file_cache[$cacheKey])) {
+            return self::$file_cache[$cacheKey];
+        }
+        throw new \Exception("Public key not found in cache for [RunEnvironment: $runEnvironment, KeyId: $keyId]");
+    }
 }

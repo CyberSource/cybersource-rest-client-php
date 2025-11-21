@@ -59,7 +59,8 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
         'discountAmount' => 'string',
         'subTotalAmount' => 'string',
         'serviceFeeAmount' => 'string',
-        'taxAmount' => 'string'
+        'taxAmount' => 'string',
+        'taxDetails' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails'
     ];
 
     /**
@@ -73,7 +74,8 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
         'discountAmount' => null,
         'subTotalAmount' => null,
         'serviceFeeAmount' => null,
-        'taxAmount' => null
+        'taxAmount' => null,
+        'taxDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +99,8 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
         'discountAmount' => 'discountAmount',
         'subTotalAmount' => 'subTotalAmount',
         'serviceFeeAmount' => 'serviceFeeAmount',
-        'taxAmount' => 'taxAmount'
+        'taxAmount' => 'taxAmount',
+        'taxDetails' => 'taxDetails'
     ];
 
 
@@ -112,7 +115,8 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
         'discountAmount' => 'setDiscountAmount',
         'subTotalAmount' => 'setSubTotalAmount',
         'serviceFeeAmount' => 'setServiceFeeAmount',
-        'taxAmount' => 'setTaxAmount'
+        'taxAmount' => 'setTaxAmount',
+        'taxDetails' => 'setTaxDetails'
     ];
 
 
@@ -127,7 +131,8 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
         'discountAmount' => 'getDiscountAmount',
         'subTotalAmount' => 'getSubTotalAmount',
         'serviceFeeAmount' => 'getServiceFeeAmount',
-        'taxAmount' => 'getTaxAmount'
+        'taxAmount' => 'getTaxAmount',
+        'taxDetails' => 'getTaxDetails'
     ];
 
     public static function attributeMap()
@@ -168,6 +173,7 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
         $this->container['subTotalAmount'] = isset($data['subTotalAmount']) ? $data['subTotalAmount'] : null;
         $this->container['serviceFeeAmount'] = isset($data['serviceFeeAmount']) ? $data['serviceFeeAmount'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
+        $this->container['taxDetails'] = isset($data['taxDetails']) ? $data['taxDetails'] : null;
     }
 
     /**
@@ -338,6 +344,27 @@ class Upv1capturecontextsDataOrderInformationAmountDetails implements ArrayAcces
     public function setTaxAmount($taxAmount)
     {
         $this->container['taxAmount'] = $taxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxDetails
+     * @return \CyberSource\Model\Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails
+     */
+    public function getTaxDetails()
+    {
+        return $this->container['taxDetails'];
+    }
+
+    /**
+     * Sets taxDetails
+     * @param \CyberSource\Model\Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails $taxDetails
+     * @return $this
+     */
+    public function setTaxDetails($taxDetails)
+    {
+        $this->container['taxDetails'] = $taxDetails;
 
         return $this;
     }

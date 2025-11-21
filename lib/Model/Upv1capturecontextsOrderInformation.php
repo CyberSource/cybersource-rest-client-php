@@ -34,6 +34,7 @@ use \ArrayAccess;
  * Upv1capturecontextsOrderInformation Class Doc Comment
  *
  * @category    Class
+ * @description If you need to include any fields within the data object, you must use the orderInformation object that is nested inside the data object. This ensures proper structure and compliance with the Unified Checkout schema. This top-level orderInformation field is not intended for use when working with the data object.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

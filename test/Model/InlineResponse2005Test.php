@@ -77,86 +77,23 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "productId"
      */
-    public function testPropertyWebhookId()
+    public function testPropertyProductId()
     {
     }
 
     /**
-     * Test attribute "organizationId"
+     * Test attribute "productName"
      */
-    public function testPropertyOrganizationId()
+    public function testPropertyProductName()
     {
     }
 
     /**
-     * Test attribute "products"
+     * Test attribute "eventTypes"
      */
-    public function testPropertyProducts()
-    {
-    }
-
-    /**
-     * Test attribute "webhookUrl"
-     */
-    public function testPropertyWebhookUrl()
-    {
-    }
-
-    /**
-     * Test attribute "healthCheckUrl"
-     */
-    public function testPropertyHealthCheckUrl()
-    {
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "retryPolicy"
-     */
-    public function testPropertyRetryPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "securityPolicy"
-     */
-    public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "createdOn"
-     */
-    public function testPropertyCreatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "notificationScope"
-     */
-    public function testPropertyNotificationScope()
+    public function testPropertyEventTypes()
     {
     }
 }

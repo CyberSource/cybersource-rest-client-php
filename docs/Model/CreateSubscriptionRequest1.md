@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\Rbsv1subscriptionsClientReferenceInformation**](Rbsv1subscriptionsClientReferenceInformation.md) |  | [optional] 
+**clientReferenceInformation** | [**\CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation**](GetAllSubscriptionsResponseClientReferenceInformation.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\Rbsv1subscriptionsProcessingInformation**](Rbsv1subscriptionsProcessingInformation.md) |  | [optional] 
 **planInformation** | [**\CyberSource\Model\Rbsv1subscriptionsPlanInformation**](Rbsv1subscriptionsPlanInformation.md) |  | [optional] 
 **subscriptionInformation** | [**\CyberSource\Model\Rbsv1subscriptionsSubscriptionInformation**](Rbsv1subscriptionsSubscriptionInformation.md) |  | [optional] 

@@ -53,10 +53,16 @@ class InlineResponse20013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Bavsv1accountvalidationsClientReferenceInformation',
-        'requestId' => 'string',
-        'submitTimeUtc' => 'string',
-        'bankAccountValidation' => '\CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation'
+        'version' => 'string',
+        'reportCreatedDate' => 'string',
+        'batchId' => 'string',
+        'batchSource' => 'string',
+        'batchCaEndpoints' => 'string',
+        'batchCreatedDate' => 'string',
+        'merchantReference' => 'string',
+        'totals' => '\CyberSource\Model\InlineResponse20011EmbeddedTotals',
+        'billing' => '\CyberSource\Model\InlineResponse20012Billing',
+        'records' => '\CyberSource\Model\InlineResponse20013Records[]'
     ];
 
     /**
@@ -64,10 +70,16 @@ class InlineResponse20013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'clientReferenceInformation' => null,
-        'requestId' => null,
-        'submitTimeUtc' => null,
-        'bankAccountValidation' => null
+        'version' => null,
+        'reportCreatedDate' => null,
+        'batchId' => null,
+        'batchSource' => null,
+        'batchCaEndpoints' => null,
+        'batchCreatedDate' => null,
+        'merchantReference' => null,
+        'totals' => null,
+        'billing' => null,
+        'records' => null
     ];
 
     public static function swaggerTypes()
@@ -85,10 +97,16 @@ class InlineResponse20013 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'clientReferenceInformation' => 'clientReferenceInformation',
-        'requestId' => 'requestId',
-        'submitTimeUtc' => 'submitTimeUtc',
-        'bankAccountValidation' => 'bankAccountValidation'
+        'version' => 'version',
+        'reportCreatedDate' => 'reportCreatedDate',
+        'batchId' => 'batchId',
+        'batchSource' => 'batchSource',
+        'batchCaEndpoints' => 'batchCaEndpoints',
+        'batchCreatedDate' => 'batchCreatedDate',
+        'merchantReference' => 'merchantReference',
+        'totals' => 'totals',
+        'billing' => 'billing',
+        'records' => 'records'
     ];
 
 
@@ -97,10 +115,16 @@ class InlineResponse20013 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'clientReferenceInformation' => 'setClientReferenceInformation',
-        'requestId' => 'setRequestId',
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'bankAccountValidation' => 'setBankAccountValidation'
+        'version' => 'setVersion',
+        'reportCreatedDate' => 'setReportCreatedDate',
+        'batchId' => 'setBatchId',
+        'batchSource' => 'setBatchSource',
+        'batchCaEndpoints' => 'setBatchCaEndpoints',
+        'batchCreatedDate' => 'setBatchCreatedDate',
+        'merchantReference' => 'setMerchantReference',
+        'totals' => 'setTotals',
+        'billing' => 'setBilling',
+        'records' => 'setRecords'
     ];
 
 
@@ -109,10 +133,16 @@ class InlineResponse20013 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'clientReferenceInformation' => 'getClientReferenceInformation',
-        'requestId' => 'getRequestId',
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'bankAccountValidation' => 'getBankAccountValidation'
+        'version' => 'getVersion',
+        'reportCreatedDate' => 'getReportCreatedDate',
+        'batchId' => 'getBatchId',
+        'batchSource' => 'getBatchSource',
+        'batchCaEndpoints' => 'getBatchCaEndpoints',
+        'batchCreatedDate' => 'getBatchCreatedDate',
+        'merchantReference' => 'getMerchantReference',
+        'totals' => 'getTotals',
+        'billing' => 'getBilling',
+        'records' => 'getRecords'
     ];
 
     public static function attributeMap()
@@ -146,10 +176,16 @@ class InlineResponse20013 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
-        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['bankAccountValidation'] = isset($data['bankAccountValidation']) ? $data['bankAccountValidation'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
+        $this->container['reportCreatedDate'] = isset($data['reportCreatedDate']) ? $data['reportCreatedDate'] : null;
+        $this->container['batchId'] = isset($data['batchId']) ? $data['batchId'] : null;
+        $this->container['batchSource'] = isset($data['batchSource']) ? $data['batchSource'] : null;
+        $this->container['batchCaEndpoints'] = isset($data['batchCaEndpoints']) ? $data['batchCaEndpoints'] : null;
+        $this->container['batchCreatedDate'] = isset($data['batchCreatedDate']) ? $data['batchCreatedDate'] : null;
+        $this->container['merchantReference'] = isset($data['merchantReference']) ? $data['merchantReference'] : null;
+        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
+        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
+        $this->container['records'] = isset($data['records']) ? $data['records'] : null;
     }
 
     /**
@@ -178,85 +214,211 @@ class InlineResponse20013 implements ArrayAccess
 
 
     /**
-     * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Bavsv1accountvalidationsClientReferenceInformation
-     */
-    public function getClientReferenceInformation()
-    {
-        return $this->container['clientReferenceInformation'];
-    }
-
-    /**
-     * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Bavsv1accountvalidationsClientReferenceInformation $clientReferenceInformation
-     * @return $this
-     */
-    public function setClientReferenceInformation($clientReferenceInformation)
-    {
-        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets requestId
+     * Gets version
      * @return string
      */
-    public function getRequestId()
+    public function getVersion()
     {
-        return $this->container['requestId'];
+        return $this->container['version'];
     }
 
     /**
-     * Sets requestId
-     * @param string $requestId Request Id sent as part of the request.
+     * Sets version
+     * @param string $version
      * @return $this
      */
-    public function setRequestId($requestId)
+    public function setVersion($version)
     {
-        $this->container['requestId'] = $requestId;
+        $this->container['version'] = $version;
 
         return $this;
     }
 
     /**
-     * Gets submitTimeUtc
+     * Gets reportCreatedDate
      * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getReportCreatedDate()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['reportCreatedDate'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC.  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.)
+     * Sets reportCreatedDate
+     * @param string $reportCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setReportCreatedDate($reportCreatedDate)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['reportCreatedDate'] = $reportCreatedDate;
 
         return $this;
     }
 
     /**
-     * Gets bankAccountValidation
-     * @return \CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation
+     * Gets batchId
+     * @return string
      */
-    public function getBankAccountValidation()
+    public function getBatchId()
     {
-        return $this->container['bankAccountValidation'];
+        return $this->container['batchId'];
     }
 
     /**
-     * Sets bankAccountValidation
-     * @param \CyberSource\Model\TssV2TransactionsGet200ResponseBankAccountValidation $bankAccountValidation
+     * Sets batchId
+     * @param string $batchId Unique identification number assigned to the submitted request.
      * @return $this
      */
-    public function setBankAccountValidation($bankAccountValidation)
+    public function setBatchId($batchId)
     {
-        $this->container['bankAccountValidation'] = $bankAccountValidation;
+        $this->container['batchId'] = $batchId;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchSource
+     * @return string
+     */
+    public function getBatchSource()
+    {
+        return $this->container['batchSource'];
+    }
+
+    /**
+     * Sets batchSource
+     * @param string $batchSource Valid Values:   * SCHEDULER   * TOKEN_API   * CREDIT_CARD_FILE_UPLOAD   * AMEX_REGSITRY   * AMEX_REGISTRY_API   * AMEX_MAINTENANCE
+     * @return $this
+     */
+    public function setBatchSource($batchSource)
+    {
+        $this->container['batchSource'] = $batchSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchCaEndpoints
+     * @return string
+     */
+    public function getBatchCaEndpoints()
+    {
+        return $this->container['batchCaEndpoints'];
+    }
+
+    /**
+     * Sets batchCaEndpoints
+     * @param string $batchCaEndpoints
+     * @return $this
+     */
+    public function setBatchCaEndpoints($batchCaEndpoints)
+    {
+        $this->container['batchCaEndpoints'] = $batchCaEndpoints;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchCreatedDate
+     * @return string
+     */
+    public function getBatchCreatedDate()
+    {
+        return $this->container['batchCreatedDate'];
+    }
+
+    /**
+     * Sets batchCreatedDate
+     * @param string $batchCreatedDate ISO-8601 format: yyyy-MM-ddTHH:mm:ssZ
+     * @return $this
+     */
+    public function setBatchCreatedDate($batchCreatedDate)
+    {
+        $this->container['batchCreatedDate'] = $batchCreatedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantReference
+     * @return string
+     */
+    public function getMerchantReference()
+    {
+        return $this->container['merchantReference'];
+    }
+
+    /**
+     * Sets merchantReference
+     * @param string $merchantReference Reference used by merchant to identify batch.
+     * @return $this
+     */
+    public function setMerchantReference($merchantReference)
+    {
+        $this->container['merchantReference'] = $merchantReference;
+
+        return $this;
+    }
+
+    /**
+     * Gets totals
+     * @return \CyberSource\Model\InlineResponse20011EmbeddedTotals
+     */
+    public function getTotals()
+    {
+        return $this->container['totals'];
+    }
+
+    /**
+     * Sets totals
+     * @param \CyberSource\Model\InlineResponse20011EmbeddedTotals $totals
+     * @return $this
+     */
+    public function setTotals($totals)
+    {
+        $this->container['totals'] = $totals;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing
+     * @return \CyberSource\Model\InlineResponse20012Billing
+     */
+    public function getBilling()
+    {
+        return $this->container['billing'];
+    }
+
+    /**
+     * Sets billing
+     * @param \CyberSource\Model\InlineResponse20012Billing $billing
+     * @return $this
+     */
+    public function setBilling($billing)
+    {
+        $this->container['billing'] = $billing;
+
+        return $this;
+    }
+
+    /**
+     * Gets records
+     * @return \CyberSource\Model\InlineResponse20013Records[]
+     */
+    public function getRecords()
+    {
+        return $this->container['records'];
+    }
+
+    /**
+     * Sets records
+     * @param \CyberSource\Model\InlineResponse20013Records[] $records
+     * @return $this
+     */
+    public function setRecords($records)
+    {
+        $this->container['records'] = $records;
 
         return $this;
     }

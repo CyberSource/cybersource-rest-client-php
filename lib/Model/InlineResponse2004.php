@@ -53,9 +53,13 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'productId' => 'string',
-        'productName' => 'string',
-        'eventTypes' => '\CyberSource\Model\Notificationsubscriptionsv2productsorganizationIdEventTypes[]'
+        'registrationInformation' => '\CyberSource\Model\Boardingv1registrationsRegistrationInformation',
+        'integrationInformation' => '\CyberSource\Model\InlineResponse2004IntegrationInformation',
+        'organizationInformation' => '\CyberSource\Model\Boardingv1registrationsOrganizationInformation',
+        'productInformation' => '\CyberSource\Model\Boardingv1registrationsProductInformation',
+        'productInformationSetups' => '\CyberSource\Model\InlineResponse2013ProductInformationSetups[]',
+        'documentInformation' => '\CyberSource\Model\Boardingv1registrationsDocumentInformation',
+        'details' => 'map[string,object[]]'
     ];
 
     /**
@@ -63,9 +67,13 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'productId' => null,
-        'productName' => null,
-        'eventTypes' => null
+        'registrationInformation' => null,
+        'integrationInformation' => null,
+        'organizationInformation' => null,
+        'productInformation' => null,
+        'productInformationSetups' => null,
+        'documentInformation' => null,
+        'details' => null
     ];
 
     public static function swaggerTypes()
@@ -83,9 +91,13 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'productId' => 'productId',
-        'productName' => 'productName',
-        'eventTypes' => 'eventTypes'
+        'registrationInformation' => 'registrationInformation',
+        'integrationInformation' => 'integrationInformation',
+        'organizationInformation' => 'organizationInformation',
+        'productInformation' => 'productInformation',
+        'productInformationSetups' => 'productInformationSetups',
+        'documentInformation' => 'documentInformation',
+        'details' => 'details'
     ];
 
 
@@ -94,9 +106,13 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'productId' => 'setProductId',
-        'productName' => 'setProductName',
-        'eventTypes' => 'setEventTypes'
+        'registrationInformation' => 'setRegistrationInformation',
+        'integrationInformation' => 'setIntegrationInformation',
+        'organizationInformation' => 'setOrganizationInformation',
+        'productInformation' => 'setProductInformation',
+        'productInformationSetups' => 'setProductInformationSetups',
+        'documentInformation' => 'setDocumentInformation',
+        'details' => 'setDetails'
     ];
 
 
@@ -105,9 +121,13 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'productId' => 'getProductId',
-        'productName' => 'getProductName',
-        'eventTypes' => 'getEventTypes'
+        'registrationInformation' => 'getRegistrationInformation',
+        'integrationInformation' => 'getIntegrationInformation',
+        'organizationInformation' => 'getOrganizationInformation',
+        'productInformation' => 'getProductInformation',
+        'productInformationSetups' => 'getProductInformationSetups',
+        'documentInformation' => 'getDocumentInformation',
+        'details' => 'getDetails'
     ];
 
     public static function attributeMap()
@@ -141,9 +161,13 @@ class InlineResponse2004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
-        $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
-        $this->container['eventTypes'] = isset($data['eventTypes']) ? $data['eventTypes'] : null;
+        $this->container['registrationInformation'] = isset($data['registrationInformation']) ? $data['registrationInformation'] : null;
+        $this->container['integrationInformation'] = isset($data['integrationInformation']) ? $data['integrationInformation'] : null;
+        $this->container['organizationInformation'] = isset($data['organizationInformation']) ? $data['organizationInformation'] : null;
+        $this->container['productInformation'] = isset($data['productInformation']) ? $data['productInformation'] : null;
+        $this->container['productInformationSetups'] = isset($data['productInformationSetups']) ? $data['productInformationSetups'] : null;
+        $this->container['documentInformation'] = isset($data['documentInformation']) ? $data['documentInformation'] : null;
+        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
     }
 
     /**
@@ -172,64 +196,148 @@ class InlineResponse2004 implements ArrayAccess
 
 
     /**
-     * Gets productId
-     * @return string
+     * Gets registrationInformation
+     * @return \CyberSource\Model\Boardingv1registrationsRegistrationInformation
      */
-    public function getProductId()
+    public function getRegistrationInformation()
     {
-        return $this->container['productId'];
+        return $this->container['registrationInformation'];
     }
 
     /**
-     * Sets productId
-     * @param string $productId Product ID.
+     * Sets registrationInformation
+     * @param \CyberSource\Model\Boardingv1registrationsRegistrationInformation $registrationInformation
      * @return $this
      */
-    public function setProductId($productId)
+    public function setRegistrationInformation($registrationInformation)
     {
-        $this->container['productId'] = $productId;
+        $this->container['registrationInformation'] = $registrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets productName
-     * @return string
+     * Gets integrationInformation
+     * @return \CyberSource\Model\InlineResponse2004IntegrationInformation
      */
-    public function getProductName()
+    public function getIntegrationInformation()
     {
-        return $this->container['productName'];
+        return $this->container['integrationInformation'];
     }
 
     /**
-     * Sets productName
-     * @param string $productName Product Name.
+     * Sets integrationInformation
+     * @param \CyberSource\Model\InlineResponse2004IntegrationInformation $integrationInformation
      * @return $this
      */
-    public function setProductName($productName)
+    public function setIntegrationInformation($integrationInformation)
     {
-        $this->container['productName'] = $productName;
+        $this->container['integrationInformation'] = $integrationInformation;
 
         return $this;
     }
 
     /**
-     * Gets eventTypes
-     * @return \CyberSource\Model\Notificationsubscriptionsv2productsorganizationIdEventTypes[]
+     * Gets organizationInformation
+     * @return \CyberSource\Model\Boardingv1registrationsOrganizationInformation
      */
-    public function getEventTypes()
+    public function getOrganizationInformation()
     {
-        return $this->container['eventTypes'];
+        return $this->container['organizationInformation'];
     }
 
     /**
-     * Sets eventTypes
-     * @param \CyberSource\Model\Notificationsubscriptionsv2productsorganizationIdEventTypes[] $eventTypes
+     * Sets organizationInformation
+     * @param \CyberSource\Model\Boardingv1registrationsOrganizationInformation $organizationInformation
      * @return $this
      */
-    public function setEventTypes($eventTypes)
+    public function setOrganizationInformation($organizationInformation)
     {
-        $this->container['eventTypes'] = $eventTypes;
+        $this->container['organizationInformation'] = $organizationInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInformation
+     * @return \CyberSource\Model\Boardingv1registrationsProductInformation
+     */
+    public function getProductInformation()
+    {
+        return $this->container['productInformation'];
+    }
+
+    /**
+     * Sets productInformation
+     * @param \CyberSource\Model\Boardingv1registrationsProductInformation $productInformation
+     * @return $this
+     */
+    public function setProductInformation($productInformation)
+    {
+        $this->container['productInformation'] = $productInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets productInformationSetups
+     * @return \CyberSource\Model\InlineResponse2013ProductInformationSetups[]
+     */
+    public function getProductInformationSetups()
+    {
+        return $this->container['productInformationSetups'];
+    }
+
+    /**
+     * Sets productInformationSetups
+     * @param \CyberSource\Model\InlineResponse2013ProductInformationSetups[] $productInformationSetups
+     * @return $this
+     */
+    public function setProductInformationSetups($productInformationSetups)
+    {
+        $this->container['productInformationSetups'] = $productInformationSetups;
+
+        return $this;
+    }
+
+    /**
+     * Gets documentInformation
+     * @return \CyberSource\Model\Boardingv1registrationsDocumentInformation
+     */
+    public function getDocumentInformation()
+    {
+        return $this->container['documentInformation'];
+    }
+
+    /**
+     * Sets documentInformation
+     * @param \CyberSource\Model\Boardingv1registrationsDocumentInformation $documentInformation
+     * @return $this
+     */
+    public function setDocumentInformation($documentInformation)
+    {
+        $this->container['documentInformation'] = $documentInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets details
+     * @return map[string,object[]]
+     */
+    public function getDetails()
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details
+     * @param map[string,object[]] $details
+     * @return $this
+     */
+    public function setDetails($details)
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

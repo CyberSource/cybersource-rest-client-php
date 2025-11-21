@@ -54,8 +54,13 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
       */
     protected static $swaggerTypes = [
         'aftIndicator' => 'bool',
+        'authIndicator' => 'string',
+        'ignoreCvResult' => 'bool',
+        'ignoreAvsResult' => 'bool',
         'initiator' => '\CyberSource\Model\Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator',
-        'businessApplicationId' => 'string'
+        'businessApplicationId' => 'string',
+        'commerceIndicator' => 'string',
+        'processingInstruction' => 'string'
     ];
 
     /**
@@ -64,8 +69,13 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
       */
     protected static $swaggerFormats = [
         'aftIndicator' => null,
+        'authIndicator' => null,
+        'ignoreCvResult' => null,
+        'ignoreAvsResult' => null,
         'initiator' => null,
-        'businessApplicationId' => null
+        'businessApplicationId' => null,
+        'commerceIndicator' => null,
+        'processingInstruction' => null
     ];
 
     public static function swaggerTypes()
@@ -84,8 +94,13 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
      */
     protected static $attributeMap = [
         'aftIndicator' => 'aftIndicator',
+        'authIndicator' => 'authIndicator',
+        'ignoreCvResult' => 'ignoreCvResult',
+        'ignoreAvsResult' => 'ignoreAvsResult',
         'initiator' => 'initiator',
-        'businessApplicationId' => 'businessApplicationId'
+        'businessApplicationId' => 'businessApplicationId',
+        'commerceIndicator' => 'commerceIndicator',
+        'processingInstruction' => 'processingInstruction'
     ];
 
 
@@ -95,8 +110,13 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
      */
     protected static $setters = [
         'aftIndicator' => 'setAftIndicator',
+        'authIndicator' => 'setAuthIndicator',
+        'ignoreCvResult' => 'setIgnoreCvResult',
+        'ignoreAvsResult' => 'setIgnoreAvsResult',
         'initiator' => 'setInitiator',
-        'businessApplicationId' => 'setBusinessApplicationId'
+        'businessApplicationId' => 'setBusinessApplicationId',
+        'commerceIndicator' => 'setCommerceIndicator',
+        'processingInstruction' => 'setProcessingInstruction'
     ];
 
 
@@ -106,8 +126,13 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
      */
     protected static $getters = [
         'aftIndicator' => 'getAftIndicator',
+        'authIndicator' => 'getAuthIndicator',
+        'ignoreCvResult' => 'getIgnoreCvResult',
+        'ignoreAvsResult' => 'getIgnoreAvsResult',
         'initiator' => 'getInitiator',
-        'businessApplicationId' => 'getBusinessApplicationId'
+        'businessApplicationId' => 'getBusinessApplicationId',
+        'commerceIndicator' => 'getCommerceIndicator',
+        'processingInstruction' => 'getProcessingInstruction'
     ];
 
     public static function attributeMap()
@@ -142,8 +167,13 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
     public function __construct(array $data = null)
     {
         $this->container['aftIndicator'] = isset($data['aftIndicator']) ? $data['aftIndicator'] : null;
+        $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;
+        $this->container['ignoreCvResult'] = isset($data['ignoreCvResult']) ? $data['ignoreCvResult'] : null;
+        $this->container['ignoreAvsResult'] = isset($data['ignoreAvsResult']) ? $data['ignoreAvsResult'] : null;
         $this->container['initiator'] = isset($data['initiator']) ? $data['initiator'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
+        $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
+        $this->container['processingInstruction'] = isset($data['processingInstruction']) ? $data['processingInstruction'] : null;
     }
 
     /**
@@ -182,12 +212,75 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
 
     /**
      * Sets aftIndicator
-     * @param bool $aftIndicator
+     * @param bool $aftIndicator The AFT indicator
      * @return $this
      */
     public function setAftIndicator($aftIndicator)
     {
         $this->container['aftIndicator'] = $aftIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets authIndicator
+     * @return string
+     */
+    public function getAuthIndicator()
+    {
+        return $this->container['authIndicator'];
+    }
+
+    /**
+     * Sets authIndicator
+     * @param string $authIndicator The authorization indicator
+     * @return $this
+     */
+    public function setAuthIndicator($authIndicator)
+    {
+        $this->container['authIndicator'] = $authIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets ignoreCvResult
+     * @return bool
+     */
+    public function getIgnoreCvResult()
+    {
+        return $this->container['ignoreCvResult'];
+    }
+
+    /**
+     * Sets ignoreCvResult
+     * @param bool $ignoreCvResult Ignore the CV result
+     * @return $this
+     */
+    public function setIgnoreCvResult($ignoreCvResult)
+    {
+        $this->container['ignoreCvResult'] = $ignoreCvResult;
+
+        return $this;
+    }
+
+    /**
+     * Gets ignoreAvsResult
+     * @return bool
+     */
+    public function getIgnoreAvsResult()
+    {
+        return $this->container['ignoreAvsResult'];
+    }
+
+    /**
+     * Sets ignoreAvsResult
+     * @param bool $ignoreAvsResult Ignore the AVS result
+     * @return $this
+     */
+    public function setIgnoreAvsResult($ignoreAvsResult)
+    {
+        $this->container['ignoreAvsResult'] = $ignoreAvsResult;
 
         return $this;
     }
@@ -224,12 +317,54 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
 
     /**
      * Sets businessApplicationId
-     * @param string $businessApplicationId
+     * @param string $businessApplicationId The business application Id
      * @return $this
      */
     public function setBusinessApplicationId($businessApplicationId)
     {
         $this->container['businessApplicationId'] = $businessApplicationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets commerceIndicator
+     * @return string
+     */
+    public function getCommerceIndicator()
+    {
+        return $this->container['commerceIndicator'];
+    }
+
+    /**
+     * Sets commerceIndicator
+     * @param string $commerceIndicator The commerce indicator
+     * @return $this
+     */
+    public function setCommerceIndicator($commerceIndicator)
+    {
+        $this->container['commerceIndicator'] = $commerceIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInstruction
+     * @return string
+     */
+    public function getProcessingInstruction()
+    {
+        return $this->container['processingInstruction'];
+    }
+
+    /**
+     * Sets processingInstruction
+     * @param string $processingInstruction The processing instruction
+     * @return $this
+     */
+    public function setProcessingInstruction($processingInstruction)
+    {
+        $this->container['processingInstruction'] = $processingInstruction;
 
         return $this;
     }

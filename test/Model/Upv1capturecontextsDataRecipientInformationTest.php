@@ -124,4 +124,18 @@ class Upv1capturecontextsDataRecipientInformationTest extends \PHPUnit_Framework
     public function testPropertyAccountType()
     {
     }
+
+    /**
+     * Test attribute "dateOfBirth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
 }

@@ -96,4 +96,18 @@ class Upv1capturecontextsDataBuyerInformationTest extends \PHPUnit_Framework_Tes
     public function testPropertyCompanyTaxId()
     {
     }
+
+    /**
+     * Test attribute "dateOfBirth"
+     */
+    public function testPropertyDateOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "language"
+     */
+    public function testPropertyLanguage()
+    {
+    }
 }

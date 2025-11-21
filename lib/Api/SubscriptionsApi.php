@@ -99,17 +99,17 @@ class SubscriptionsApi
     /**
      * Operation activateSubscription
      *
-     * Activate a Subscription
+     * Reactivating a Suspended Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param bool $processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
+     * @param bool $processMissedPayments Indicates if missed payments should be processed from the period when the subscription was suspended. By default, this is set to true. When any option other than \&quot;Ask each time before reactivating\&quot; is selected in the reactivation settings, the value that you enter will be ignored. (optional, default to true)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ActivateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activateSubscription($id, $processSkippedPayments = 'true')
+    public function activateSubscription($id, $processMissedPayments = 'true')
     {
         self::$logger->info('CALL TO METHOD activateSubscription STARTED');
-        list($response, $statusCode, $httpHeader) = $this->activateSubscriptionWithHttpInfo($id, $processSkippedPayments);
+        list($response, $statusCode, $httpHeader) = $this->activateSubscriptionWithHttpInfo($id, $processMissedPayments);
         self::$logger->info('CALL TO METHOD activateSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -118,14 +118,14 @@ class SubscriptionsApi
     /**
      * Operation activateSubscriptionWithHttpInfo
      *
-     * Activate a Subscription
+     * Reactivating a Suspended Subscription
      *
      * @param string $id Subscription Id (required)
-     * @param bool $processSkippedPayments Indicates if skipped payments should be processed from the period when the subscription was suspended. By default, this is set to true. (optional, default to true)
+     * @param bool $processMissedPayments Indicates if missed payments should be processed from the period when the subscription was suspended. By default, this is set to true. When any option other than \&quot;Ask each time before reactivating\&quot; is selected in the reactivation settings, the value that you enter will be ignored. (optional, default to true)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\ActivateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function activateSubscriptionWithHttpInfo($id, $processSkippedPayments = 'true')
+    public function activateSubscriptionWithHttpInfo($id, $processMissedPayments = 'true')
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -147,8 +147,8 @@ class SubscriptionsApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
 
         // query params
-        if ($processSkippedPayments !== null) {
-            $queryParams['processSkippedPayments'] = $this->apiClient->getSerializer()->toQueryValue($processSkippedPayments);
+        if ($processMissedPayments !== null) {
+            $queryParams['processMissedPayments'] = $this->apiClient->getSerializer()->toQueryValue($processMissedPayments);
         }
         // path params
         if ($id !== null) {

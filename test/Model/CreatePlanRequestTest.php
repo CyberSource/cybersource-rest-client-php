@@ -77,13 +77,6 @@ class CreatePlanRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientReferenceInformation"
-     */
-    public function testPropertyClientReferenceInformation()
-    {
-    }
-
-    /**
      * Test attribute "planInformation"
      */
     public function testPropertyPlanInformation()

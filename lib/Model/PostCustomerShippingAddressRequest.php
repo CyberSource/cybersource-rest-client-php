@@ -53,11 +53,11 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressLinks',
+        'links' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks',
         'id' => 'string',
         'default' => 'bool',
-        'shipTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo',
-        'metadata' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressMetadata'
+        'shipTo' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo',
+        'metadata' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata'
     ];
 
     /**
@@ -185,7 +185,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressLinks
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks
      */
     public function getLinks()
     {
@@ -194,7 +194,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressLinks $links
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -248,7 +248,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Gets shipTo
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo
      */
     public function getShipTo()
     {
@@ -257,7 +257,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Sets shipTo
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo $shipTo
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo $shipTo
      * @return $this
      */
     public function setShipTo($shipTo)
@@ -269,7 +269,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressMetadata
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata
      */
     public function getMetadata()
     {
@@ -278,7 +278,7 @@ class PostCustomerShippingAddressRequest implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressMetadata $metadata
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressMetadata $metadata
      * @return $this
      */
     public function setMetadata($metadata)

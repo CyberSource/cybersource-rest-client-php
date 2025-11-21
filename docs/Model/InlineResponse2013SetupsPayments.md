@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **unifiedCheckout** | [**\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments**](InlineResponse2013SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **receivablesManager** | [**\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments**](InlineResponse2013SetupsPaymentsDigitalPayments.md) |  | [optional] 
 **serviceFee** | [**\CyberSource\Model\InlineResponse2013SetupsPaymentsCardProcessing**](InlineResponse2013SetupsPaymentsCardProcessing.md) |  | [optional] 
+**batchUpload** | [**\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments**](InlineResponse2013SetupsPaymentsDigitalPayments.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

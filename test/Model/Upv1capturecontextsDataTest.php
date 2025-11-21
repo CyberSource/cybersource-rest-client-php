@@ -131,4 +131,18 @@ class Upv1capturecontextsDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMerchantDefinedInformation()
     {
     }
+
+    /**
+     * Test attribute "deviceInformation"
+     */
+    public function testPropertyDeviceInformation()
+    {
+    }
+
+    /**
+     * Test attribute "paymentInformation"
+     */
+    public function testPropertyPaymentInformation()
+    {
+    }
 }

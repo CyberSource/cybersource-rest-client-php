@@ -53,21 +53,21 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks',
+        'links' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks',
         'id' => 'string',
         'object' => 'string',
         'default' => 'bool',
         'state' => 'string',
         'type' => 'string',
-        'bankAccount' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount',
-        'card' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard',
-        'buyerInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation',
-        'billTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo',
+        'bankAccount' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount',
+        'card' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard',
+        'buyerInformation' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation',
+        'billTo' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo',
         'processingInformation' => '\CyberSource\Model\TmsPaymentInstrumentProcessingInfo',
-        'merchantInformation' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation',
-        'instrumentIdentifier' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier',
-        'metadata' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata',
-        'embedded' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded'
+        'merchantInformation' => '\CyberSource\Model\TmsMerchantInformation',
+        'instrumentIdentifier' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier',
+        'metadata' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata',
+        'embedded' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded'
     ];
 
     /**
@@ -245,7 +245,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks
      */
     public function getLinks()
     {
@@ -254,7 +254,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentLinks $links
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -371,7 +371,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets bankAccount
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount
      */
     public function getBankAccount()
     {
@@ -380,7 +380,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets bankAccount
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBankAccount $bankAccount
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBankAccount $bankAccount
      * @return $this
      */
     public function setBankAccount($bankAccount)
@@ -392,7 +392,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets card
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard
      */
     public function getCard()
     {
@@ -401,7 +401,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets card
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentCard $card
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentCard $card
      * @return $this
      */
     public function setCard($card)
@@ -413,7 +413,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -422,7 +422,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -434,7 +434,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo
      */
     public function getBillTo()
     {
@@ -443,7 +443,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo $billTo
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)
@@ -476,7 +476,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation
+     * @return \CyberSource\Model\TmsMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -485,7 +485,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\TmsMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)
@@ -497,7 +497,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier
      */
     public function getInstrumentIdentifier()
     {
@@ -506,7 +506,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentInstrumentIdentifier $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)
@@ -518,7 +518,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata
      */
     public function getMetadata()
     {
@@ -527,7 +527,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentMetadata $metadata
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentMetadata $metadata
      * @return $this
      */
     public function setMetadata($metadata)
@@ -539,7 +539,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded
      */
     public function getEmbedded()
     {
@@ -548,7 +548,7 @@ class PatchPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentEmbedded $embedded
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentEmbedded $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

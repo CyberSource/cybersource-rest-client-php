@@ -105,6 +105,13 @@ class GetAllSubscriptionsResponseSubscriptionsTest extends \PHPUnit_Framework_Te
     }
 
     /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
+
+    /**
      * Test attribute "paymentInformation"
      */
     public function testPropertyPaymentInformation()

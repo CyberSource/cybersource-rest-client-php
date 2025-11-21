@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getCardArtAsset**
-> \CyberSource\Model\InlineResponse200 getCardArtAsset($instrumentIdentifierId, $tokenProvider, $assetType)
+> \CyberSource\Model\InlineResponse2001 getCardArtAsset($instrumentIdentifierId, $tokenProvider, $assetType)
 
 Retrieve Card Art
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 

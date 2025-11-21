@@ -77,16 +77,16 @@ class GetSubscriptionResponseReactivationInformationTest extends \PHPUnit_Framew
     }
 
     /**
-     * Test attribute "skippedPaymentsCount"
+     * Test attribute "missedPaymentsCount"
      */
-    public function testPropertySkippedPaymentsCount()
+    public function testPropertyMissedPaymentsCount()
     {
     }
 
     /**
-     * Test attribute "skippedPaymentsTotalAmount"
+     * Test attribute "missedPaymentsTotalAmount"
      */
-    public function testPropertySkippedPaymentsTotalAmount()
+    public function testPropertyMissedPaymentsTotalAmount()
     {
     }
 }

@@ -72,7 +72,8 @@ class PaymentsProducts implements ArrayAccess
         'payByLink' => '\CyberSource\Model\PaymentsProductsTax',
         'unifiedCheckout' => '\CyberSource\Model\PaymentsProductsUnifiedCheckout',
         'receivablesManager' => '\CyberSource\Model\PaymentsProductsTax',
-        'serviceFee' => '\CyberSource\Model\PaymentsProductsServiceFee'
+        'serviceFee' => '\CyberSource\Model\PaymentsProductsServiceFee',
+        'batchUpload' => '\CyberSource\Model\PaymentsProductsTax'
     ];
 
     /**
@@ -99,7 +100,8 @@ class PaymentsProducts implements ArrayAccess
         'payByLink' => null,
         'unifiedCheckout' => null,
         'receivablesManager' => null,
-        'serviceFee' => null
+        'serviceFee' => null,
+        'batchUpload' => null
     ];
 
     public static function swaggerTypes()
@@ -136,7 +138,8 @@ class PaymentsProducts implements ArrayAccess
         'payByLink' => 'payByLink',
         'unifiedCheckout' => 'unifiedCheckout',
         'receivablesManager' => 'receivablesManager',
-        'serviceFee' => 'serviceFee'
+        'serviceFee' => 'serviceFee',
+        'batchUpload' => 'batchUpload'
     ];
 
 
@@ -164,7 +167,8 @@ class PaymentsProducts implements ArrayAccess
         'payByLink' => 'setPayByLink',
         'unifiedCheckout' => 'setUnifiedCheckout',
         'receivablesManager' => 'setReceivablesManager',
-        'serviceFee' => 'setServiceFee'
+        'serviceFee' => 'setServiceFee',
+        'batchUpload' => 'setBatchUpload'
     ];
 
 
@@ -192,7 +196,8 @@ class PaymentsProducts implements ArrayAccess
         'payByLink' => 'getPayByLink',
         'unifiedCheckout' => 'getUnifiedCheckout',
         'receivablesManager' => 'getReceivablesManager',
-        'serviceFee' => 'getServiceFee'
+        'serviceFee' => 'getServiceFee',
+        'batchUpload' => 'getBatchUpload'
     ];
 
     public static function attributeMap()
@@ -246,6 +251,7 @@ class PaymentsProducts implements ArrayAccess
         $this->container['unifiedCheckout'] = isset($data['unifiedCheckout']) ? $data['unifiedCheckout'] : null;
         $this->container['receivablesManager'] = isset($data['receivablesManager']) ? $data['receivablesManager'] : null;
         $this->container['serviceFee'] = isset($data['serviceFee']) ? $data['serviceFee'] : null;
+        $this->container['batchUpload'] = isset($data['batchUpload']) ? $data['batchUpload'] : null;
     }
 
     /**
@@ -689,6 +695,27 @@ class PaymentsProducts implements ArrayAccess
     public function setServiceFee($serviceFee)
     {
         $this->container['serviceFee'] = $serviceFee;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchUpload
+     * @return \CyberSource\Model\PaymentsProductsTax
+     */
+    public function getBatchUpload()
+    {
+        return $this->container['batchUpload'];
+    }
+
+    /**
+     * Sets batchUpload
+     * @param \CyberSource\Model\PaymentsProductsTax $batchUpload
+     * @return $this
+     */
+    public function setBatchUpload($batchUpload)
+    {
+        $this->container['batchUpload'] = $batchUpload;
 
         return $this;
     }

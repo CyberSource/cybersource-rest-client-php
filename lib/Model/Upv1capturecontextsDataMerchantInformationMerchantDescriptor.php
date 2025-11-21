@@ -53,7 +53,14 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string'
+        'name' => 'string',
+        'alternateName' => 'string',
+        'locality' => 'string',
+        'phone' => 'string',
+        'country' => 'string',
+        'postalCode' => 'string',
+        'administrativeArea' => 'string',
+        'address1' => 'string'
     ];
 
     /**
@@ -61,7 +68,14 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null
+        'name' => null,
+        'alternateName' => null,
+        'locality' => null,
+        'phone' => null,
+        'country' => null,
+        'postalCode' => null,
+        'administrativeArea' => null,
+        'address1' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +93,14 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'name' => 'name',
+        'alternateName' => 'alternateName',
+        'locality' => 'locality',
+        'phone' => 'phone',
+        'country' => 'country',
+        'postalCode' => 'postalCode',
+        'administrativeArea' => 'administrativeArea',
+        'address1' => 'address1'
     ];
 
 
@@ -88,7 +109,14 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'name' => 'setName',
+        'alternateName' => 'setAlternateName',
+        'locality' => 'setLocality',
+        'phone' => 'setPhone',
+        'country' => 'setCountry',
+        'postalCode' => 'setPostalCode',
+        'administrativeArea' => 'setAdministrativeArea',
+        'address1' => 'setAddress1'
     ];
 
 
@@ -97,7 +125,14 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'name' => 'getName',
+        'alternateName' => 'getAlternateName',
+        'locality' => 'getLocality',
+        'phone' => 'getPhone',
+        'country' => 'getCountry',
+        'postalCode' => 'getPostalCode',
+        'administrativeArea' => 'getAdministrativeArea',
+        'address1' => 'getAddress1'
     ];
 
     public static function attributeMap()
@@ -132,6 +167,13 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['alternateName'] = isset($data['alternateName']) ? $data['alternateName'] : null;
+        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
+        $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
+        $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
     }
 
     /**
@@ -176,6 +218,153 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets alternateName
+     * @return string
+     */
+    public function getAlternateName()
+    {
+        return $this->container['alternateName'];
+    }
+
+    /**
+     * Sets alternateName
+     * @param string $alternateName The alternate name of the merchant
+     * @return $this
+     */
+    public function setAlternateName($alternateName)
+    {
+        $this->container['alternateName'] = $alternateName;
+
+        return $this;
+    }
+
+    /**
+     * Gets locality
+     * @return string
+     */
+    public function getLocality()
+    {
+        return $this->container['locality'];
+    }
+
+    /**
+     * Sets locality
+     * @param string $locality The locality of the merchant
+     * @return $this
+     */
+    public function setLocality($locality)
+    {
+        $this->container['locality'] = $locality;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     * @param string $phone The phone number of the merchant
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     * @param string $country The country code of the merchant
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets postalCode
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postalCode'];
+    }
+
+    /**
+     * Sets postalCode
+     * @param string $postalCode The postal code of the merchant
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->container['postalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets administrativeArea
+     * @return string
+     */
+    public function getAdministrativeArea()
+    {
+        return $this->container['administrativeArea'];
+    }
+
+    /**
+     * Sets administrativeArea
+     * @param string $administrativeArea The administrative area of the merchant
+     * @return $this
+     */
+    public function setAdministrativeArea($administrativeArea)
+    {
+        $this->container['administrativeArea'] = $administrativeArea;
+
+        return $this;
+    }
+
+    /**
+     * Gets address1
+     * @return string
+     */
+    public function getAddress1()
+    {
+        return $this->container['address1'];
+    }
+
+    /**
+     * Sets address1
+     * @param string $address1 The first line of the merchant's address
+     * @return $this
+     */
+    public function setAddress1($address1)
+    {
+        $this->container['address1'] = $address1;
 
         return $this;
     }

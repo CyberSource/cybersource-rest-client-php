@@ -57,7 +57,8 @@ class CreateSubscriptionResponse implements ArrayAccess
         'id' => 'string',
         'submitTimeUtc' => 'string',
         'status' => 'string',
-        'subscriptionInformation' => '\CyberSource\Model\CreateSubscriptionResponseSubscriptionInformation'
+        'subscriptionInformation' => '\CyberSource\Model\CreateSubscriptionResponseSubscriptionInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation'
     ];
 
     /**
@@ -69,7 +70,8 @@ class CreateSubscriptionResponse implements ArrayAccess
         'id' => null,
         'submitTimeUtc' => null,
         'status' => null,
-        'subscriptionInformation' => null
+        'subscriptionInformation' => null,
+        'clientReferenceInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class CreateSubscriptionResponse implements ArrayAccess
         'id' => 'id',
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
-        'subscriptionInformation' => 'subscriptionInformation'
+        'subscriptionInformation' => 'subscriptionInformation',
+        'clientReferenceInformation' => 'clientReferenceInformation'
     ];
 
 
@@ -104,7 +107,8 @@ class CreateSubscriptionResponse implements ArrayAccess
         'id' => 'setId',
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
-        'subscriptionInformation' => 'setSubscriptionInformation'
+        'subscriptionInformation' => 'setSubscriptionInformation',
+        'clientReferenceInformation' => 'setClientReferenceInformation'
     ];
 
 
@@ -117,7 +121,8 @@ class CreateSubscriptionResponse implements ArrayAccess
         'id' => 'getId',
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
-        'subscriptionInformation' => 'getSubscriptionInformation'
+        'subscriptionInformation' => 'getSubscriptionInformation',
+        'clientReferenceInformation' => 'getClientReferenceInformation'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class CreateSubscriptionResponse implements ArrayAccess
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['subscriptionInformation'] = isset($data['subscriptionInformation']) ? $data['subscriptionInformation'] : null;
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
     }
 
     /**
@@ -284,6 +290,27 @@ class CreateSubscriptionResponse implements ArrayAccess
     public function setSubscriptionInformation($subscriptionInformation)
     {
         $this->container['subscriptionInformation'] = $subscriptionInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\GetAllSubscriptionsResponseClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
 
         return $this;
     }

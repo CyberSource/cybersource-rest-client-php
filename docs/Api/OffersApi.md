@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOffer**
-> \CyberSource\Model\InlineResponse20014 getOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $id)
+> \CyberSource\Model\InlineResponse20015 getOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $id)
 
 Retrieve an Offer
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\CyberSource\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 

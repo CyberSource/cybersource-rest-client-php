@@ -103,4 +103,11 @@ class Upv1capturecontextsDataOrderInformationTest extends \PHPUnit_Framework_Tes
     public function testPropertyLineItems()
     {
     }
+
+    /**
+     * Test attribute "invoiceDetails"
+     */
+    public function testPropertyInvoiceDetails()
+    {
+    }
 }
