@@ -110,4 +110,11 @@ class CreateSubscriptionResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertySubscriptionInformation()
     {
     }
+
+    /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
 }

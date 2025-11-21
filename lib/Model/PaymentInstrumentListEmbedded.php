@@ -54,7 +54,7 @@ class PaymentInstrumentListEmbedded implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'paymentInstruments' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[]'
+        'paymentInstruments' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class PaymentInstrumentListEmbedded implements ArrayAccess
 
     /**
      * Gets paymentInstruments
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[]
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument[]
      */
     public function getPaymentInstruments()
     {
@@ -171,7 +171,7 @@ class PaymentInstrumentListEmbedded implements ArrayAccess
 
     /**
      * Sets paymentInstruments
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrument[] $paymentInstruments
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrument[] $paymentInstruments
      * @return $this
      */
     public function setPaymentInstruments($paymentInstruments)

@@ -60,7 +60,9 @@ class Upv1capturecontextsData implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\Upv1capturecontextsDataMerchantInformation',
         'processingInformation' => '\CyberSource\Model\Upv1capturecontextsDataProcessingInformation',
         'recipientInformation' => '\CyberSource\Model\Upv1capturecontextsDataRecipientInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\Upv1capturecontextsDataMerchantDefinedInformation'
+        'merchantDefinedInformation' => '\CyberSource\Model\Upv1capturecontextsDataMerchantDefinedInformation',
+        'deviceInformation' => '\CyberSource\Model\Upv1capturecontextsDataDeviceInformation',
+        'paymentInformation' => '\CyberSource\Model\Upv1capturecontextsDataPaymentInformation'
     ];
 
     /**
@@ -75,7 +77,9 @@ class Upv1capturecontextsData implements ArrayAccess
         'merchantInformation' => null,
         'processingInformation' => null,
         'recipientInformation' => null,
-        'merchantDefinedInformation' => null
+        'merchantDefinedInformation' => null,
+        'deviceInformation' => null,
+        'paymentInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +104,9 @@ class Upv1capturecontextsData implements ArrayAccess
         'merchantInformation' => 'merchantInformation',
         'processingInformation' => 'processingInformation',
         'recipientInformation' => 'recipientInformation',
-        'merchantDefinedInformation' => 'merchantDefinedInformation'
+        'merchantDefinedInformation' => 'merchantDefinedInformation',
+        'deviceInformation' => 'deviceInformation',
+        'paymentInformation' => 'paymentInformation'
     ];
 
 
@@ -116,7 +122,9 @@ class Upv1capturecontextsData implements ArrayAccess
         'merchantInformation' => 'setMerchantInformation',
         'processingInformation' => 'setProcessingInformation',
         'recipientInformation' => 'setRecipientInformation',
-        'merchantDefinedInformation' => 'setMerchantDefinedInformation'
+        'merchantDefinedInformation' => 'setMerchantDefinedInformation',
+        'deviceInformation' => 'setDeviceInformation',
+        'paymentInformation' => 'setPaymentInformation'
     ];
 
 
@@ -132,7 +140,9 @@ class Upv1capturecontextsData implements ArrayAccess
         'merchantInformation' => 'getMerchantInformation',
         'processingInformation' => 'getProcessingInformation',
         'recipientInformation' => 'getRecipientInformation',
-        'merchantDefinedInformation' => 'getMerchantDefinedInformation'
+        'merchantDefinedInformation' => 'getMerchantDefinedInformation',
+        'deviceInformation' => 'getDeviceInformation',
+        'paymentInformation' => 'getPaymentInformation'
     ];
 
     public static function attributeMap()
@@ -174,6 +184,8 @@ class Upv1capturecontextsData implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
+        $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
+        $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
     }
 
     /**
@@ -365,6 +377,48 @@ class Upv1capturecontextsData implements ArrayAccess
     public function setMerchantDefinedInformation($merchantDefinedInformation)
     {
         $this->container['merchantDefinedInformation'] = $merchantDefinedInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets deviceInformation
+     * @return \CyberSource\Model\Upv1capturecontextsDataDeviceInformation
+     */
+    public function getDeviceInformation()
+    {
+        return $this->container['deviceInformation'];
+    }
+
+    /**
+     * Sets deviceInformation
+     * @param \CyberSource\Model\Upv1capturecontextsDataDeviceInformation $deviceInformation
+     * @return $this
+     */
+    public function setDeviceInformation($deviceInformation)
+    {
+        $this->container['deviceInformation'] = $deviceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     * @return \CyberSource\Model\Upv1capturecontextsDataPaymentInformation
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     * @param \CyberSource\Model\Upv1capturecontextsDataPaymentInformation $paymentInformation
+     * @return $this
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }

@@ -60,7 +60,8 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         'city' => 'string',
         'state' => 'string',
         'postalCode' => 'string',
-        'country' => 'string'
+        'country' => 'string',
+        'serviceProvidername' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         'city' => null,
         'state' => null,
         'postalCode' => null,
-        'country' => null
+        'country' => null,
+        'serviceProvidername' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +102,8 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         'city' => 'city',
         'state' => 'state',
         'postalCode' => 'postalCode',
-        'country' => 'country'
+        'country' => 'country',
+        'serviceProvidername' => 'serviceProvidername'
     ];
 
 
@@ -116,7 +119,8 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         'city' => 'setCity',
         'state' => 'setState',
         'postalCode' => 'setPostalCode',
-        'country' => 'setCountry'
+        'country' => 'setCountry',
+        'serviceProvidername' => 'setServiceProvidername'
     ];
 
 
@@ -132,7 +136,8 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         'city' => 'getCity',
         'state' => 'getState',
         'postalCode' => 'getPostalCode',
-        'country' => 'getCountry'
+        'country' => 'getCountry',
+        'serviceProvidername' => 'getServiceProvidername'
     ];
 
     public static function attributeMap()
@@ -174,6 +179,7 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['serviceProvidername'] = isset($data['serviceProvidername']) ? $data['serviceProvidername'] : null;
     }
 
     /**
@@ -365,6 +371,27 @@ class Ptsv2paymentsAggregatorInformation implements ArrayAccess
     public function setCountry($country)
     {
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets serviceProvidername
+     * @return string
+     */
+    public function getServiceProvidername()
+    {
+        return $this->container['serviceProvidername'];
+    }
+
+    /**
+     * Sets serviceProvidername
+     * @param string $serviceProvidername Contains transfer service provider name.
+     * @return $this
+     */
+    public function setServiceProvidername($serviceProvidername)
+    {
+        $this->container['serviceProvidername'] = $serviceProvidername;
 
         return $this;
     }

@@ -56,7 +56,7 @@ class GetSubscriptionResponse1PaymentInstrumentBuyerInformation implements Array
         'companyTaxID' => 'string',
         'currency' => 'string',
         'dateOfBirth' => '\DateTime',
-        'personalIdentification' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification[]'
+        'personalIdentification' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification[]'
     ];
 
     /**
@@ -242,7 +242,7 @@ class GetSubscriptionResponse1PaymentInstrumentBuyerInformation implements Array
 
     /**
      * Gets personalIdentification
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification[]
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification[]
      */
     public function getPersonalIdentification()
     {
@@ -251,7 +251,7 @@ class GetSubscriptionResponse1PaymentInstrumentBuyerInformation implements Array
 
     /**
      * Sets personalIdentification
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification[] $personalIdentification
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBuyerInformationPersonalIdentification[] $personalIdentification
      * @return $this
      */
     public function setPersonalIdentification($personalIdentification)

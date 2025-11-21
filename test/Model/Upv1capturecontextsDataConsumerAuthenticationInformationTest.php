@@ -89,4 +89,11 @@ class Upv1capturecontextsDataConsumerAuthenticationInformationTest extends \PHPU
     public function testPropertyMessageCategory()
     {
     }
+
+    /**
+     * Test attribute "acsWindowSize"
+     */
+    public function testPropertyAcsWindowSize()
+    {
+    }
 }

@@ -84,9 +84,9 @@ class InlineResponse20014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "requestId"
      */
-    public function testPropertyId()
+    public function testPropertyRequestId()
     {
     }
 
@@ -98,23 +98,9 @@ class InlineResponse20014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "bankAccountValidation"
      */
-    public function testPropertyStatus()
-    {
-    }
-
-    /**
-     * Test attribute "errorInformation"
-     */
-    public function testPropertyErrorInformation()
-    {
-    }
-
-    /**
-     * Test attribute "orderInformation"
-     */
-    public function testPropertyOrderInformation()
+    public function testPropertyBankAccountValidation()
     {
     }
 }

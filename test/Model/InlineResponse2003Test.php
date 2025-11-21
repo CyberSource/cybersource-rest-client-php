@@ -77,51 +77,86 @@ class InlineResponse2003Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "registrationInformation"
+     * Test attribute "id"
      */
-    public function testPropertyRegistrationInformation()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "integrationInformation"
+     * Test attribute "fieldType"
      */
-    public function testPropertyIntegrationInformation()
+    public function testPropertyFieldType()
     {
     }
 
     /**
-     * Test attribute "organizationInformation"
+     * Test attribute "label"
      */
-    public function testPropertyOrganizationInformation()
+    public function testPropertyLabel()
     {
     }
 
     /**
-     * Test attribute "productInformation"
+     * Test attribute "customerVisible"
      */
-    public function testPropertyProductInformation()
+    public function testPropertyCustomerVisible()
     {
     }
 
     /**
-     * Test attribute "productInformationSetups"
+     * Test attribute "textMinLength"
      */
-    public function testPropertyProductInformationSetups()
+    public function testPropertyTextMinLength()
     {
     }
 
     /**
-     * Test attribute "documentInformation"
+     * Test attribute "textMaxLength"
      */
-    public function testPropertyDocumentInformation()
+    public function testPropertyTextMaxLength()
     {
     }
 
     /**
-     * Test attribute "details"
+     * Test attribute "possibleValues"
      */
-    public function testPropertyDetails()
+    public function testPropertyPossibleValues()
+    {
+    }
+
+    /**
+     * Test attribute "textDefaultValue"
+     */
+    public function testPropertyTextDefaultValue()
+    {
+    }
+
+    /**
+     * Test attribute "merchantId"
+     */
+    public function testPropertyMerchantId()
+    {
+    }
+
+    /**
+     * Test attribute "referenceType"
+     */
+    public function testPropertyReferenceType()
+    {
+    }
+
+    /**
+     * Test attribute "readOnly"
+     */
+    public function testPropertyReadOnly()
+    {
+    }
+
+    /**
+     * Test attribute "merchantDefinedDataIndex"
+     */
+    public function testPropertyMerchantDefinedDataIndex()
     {
     }
 }

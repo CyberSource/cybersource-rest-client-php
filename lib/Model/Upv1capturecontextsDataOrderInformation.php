@@ -56,7 +56,8 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
         'amountDetails' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationAmountDetails',
         'billTo' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationBillTo',
         'shipTo' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationShipTo',
-        'lineItems' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationLineItems'
+        'lineItems' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationLineItems',
+        'invoiceDetails' => '\CyberSource\Model\Upv1capturecontextsDataOrderInformationInvoiceDetails'
     ];
 
     /**
@@ -67,7 +68,8 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
         'amountDetails' => null,
         'billTo' => null,
         'shipTo' => null,
-        'lineItems' => null
+        'lineItems' => null,
+        'invoiceDetails' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
         'amountDetails' => 'amountDetails',
         'billTo' => 'billTo',
         'shipTo' => 'shipTo',
-        'lineItems' => 'lineItems'
+        'lineItems' => 'lineItems',
+        'invoiceDetails' => 'invoiceDetails'
     ];
 
 
@@ -100,7 +103,8 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
         'amountDetails' => 'setAmountDetails',
         'billTo' => 'setBillTo',
         'shipTo' => 'setShipTo',
-        'lineItems' => 'setLineItems'
+        'lineItems' => 'setLineItems',
+        'invoiceDetails' => 'setInvoiceDetails'
     ];
 
 
@@ -112,7 +116,8 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
         'amountDetails' => 'getAmountDetails',
         'billTo' => 'getBillTo',
         'shipTo' => 'getShipTo',
-        'lineItems' => 'getLineItems'
+        'lineItems' => 'getLineItems',
+        'invoiceDetails' => 'getInvoiceDetails'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
+        $this->container['invoiceDetails'] = isset($data['invoiceDetails']) ? $data['invoiceDetails'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class Upv1capturecontextsDataOrderInformation implements ArrayAccess
     public function setLineItems($lineItems)
     {
         $this->container['lineItems'] = $lineItems;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoiceDetails
+     * @return \CyberSource\Model\Upv1capturecontextsDataOrderInformationInvoiceDetails
+     */
+    public function getInvoiceDetails()
+    {
+        return $this->container['invoiceDetails'];
+    }
+
+    /**
+     * Sets invoiceDetails
+     * @param \CyberSource\Model\Upv1capturecontextsDataOrderInformationInvoiceDetails $invoiceDetails
+     * @return $this
+     */
+    public function setInvoiceDetails($invoiceDetails)
+    {
+        $this->container['invoiceDetails'] = $invoiceDetails;
 
         return $this;
     }

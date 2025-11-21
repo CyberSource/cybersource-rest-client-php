@@ -71,7 +71,8 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
         'payByLink' => '\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments',
         'unifiedCheckout' => '\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments',
         'receivablesManager' => '\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments',
-        'serviceFee' => '\CyberSource\Model\InlineResponse2013SetupsPaymentsCardProcessing'
+        'serviceFee' => '\CyberSource\Model\InlineResponse2013SetupsPaymentsCardProcessing',
+        'batchUpload' => '\CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments'
     ];
 
     /**
@@ -97,7 +98,8 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
         'payByLink' => null,
         'unifiedCheckout' => null,
         'receivablesManager' => null,
-        'serviceFee' => null
+        'serviceFee' => null,
+        'batchUpload' => null
     ];
 
     public static function swaggerTypes()
@@ -133,7 +135,8 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
         'payByLink' => 'payByLink',
         'unifiedCheckout' => 'unifiedCheckout',
         'receivablesManager' => 'receivablesManager',
-        'serviceFee' => 'serviceFee'
+        'serviceFee' => 'serviceFee',
+        'batchUpload' => 'batchUpload'
     ];
 
 
@@ -160,7 +163,8 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
         'payByLink' => 'setPayByLink',
         'unifiedCheckout' => 'setUnifiedCheckout',
         'receivablesManager' => 'setReceivablesManager',
-        'serviceFee' => 'setServiceFee'
+        'serviceFee' => 'setServiceFee',
+        'batchUpload' => 'setBatchUpload'
     ];
 
 
@@ -187,7 +191,8 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
         'payByLink' => 'getPayByLink',
         'unifiedCheckout' => 'getUnifiedCheckout',
         'receivablesManager' => 'getReceivablesManager',
-        'serviceFee' => 'getServiceFee'
+        'serviceFee' => 'getServiceFee',
+        'batchUpload' => 'getBatchUpload'
     ];
 
     public static function attributeMap()
@@ -240,6 +245,7 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
         $this->container['unifiedCheckout'] = isset($data['unifiedCheckout']) ? $data['unifiedCheckout'] : null;
         $this->container['receivablesManager'] = isset($data['receivablesManager']) ? $data['receivablesManager'] : null;
         $this->container['serviceFee'] = isset($data['serviceFee']) ? $data['serviceFee'] : null;
+        $this->container['batchUpload'] = isset($data['batchUpload']) ? $data['batchUpload'] : null;
     }
 
     /**
@@ -662,6 +668,27 @@ class InlineResponse2013SetupsPayments implements ArrayAccess
     public function setServiceFee($serviceFee)
     {
         $this->container['serviceFee'] = $serviceFee;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchUpload
+     * @return \CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments
+     */
+    public function getBatchUpload()
+    {
+        return $this->container['batchUpload'];
+    }
+
+    /**
+     * Sets batchUpload
+     * @param \CyberSource\Model\InlineResponse2013SetupsPaymentsDigitalPayments $batchUpload
+     * @return $this
+     */
+    public function setBatchUpload($batchUpload)
+    {
+        $this->container['batchUpload'] = $batchUpload;
 
         return $this;
     }

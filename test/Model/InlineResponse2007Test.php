@@ -77,44 +77,93 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "totalCount"
+     * Test attribute "webhookId"
      */
-    public function testPropertyTotalCount()
+    public function testPropertyWebhookId()
     {
     }
 
     /**
-     * Test attribute "offset"
+     * Test attribute "organizationId"
      */
-    public function testPropertyOffset()
+    public function testPropertyOrganizationId()
     {
     }
 
     /**
-     * Test attribute "limit"
+     * Test attribute "products"
      */
-    public function testPropertyLimit()
+    public function testPropertyProducts()
     {
     }
 
     /**
-     * Test attribute "sort"
+     * Test attribute "webhookUrl"
      */
-    public function testPropertySort()
+    public function testPropertyWebhookUrl()
     {
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "healthCheckUrl"
      */
-    public function testPropertyCount()
+    public function testPropertyHealthCheckUrl()
     {
     }
 
     /**
-     * Test attribute "devices"
+     * Test attribute "status"
      */
-    public function testPropertyDevices()
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "retryPolicy"
+     */
+    public function testPropertyRetryPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "securityPolicy"
+     */
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "updatedOn"
+     */
+    public function testPropertyUpdatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "notificationScope"
+     */
+    public function testPropertyNotificationScope()
     {
     }
 }

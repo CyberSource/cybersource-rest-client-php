@@ -55,7 +55,9 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'personalIdentification' => '\CyberSource\Model\Upv1capturecontextsDataBuyerInformationPersonalIdentification',
         'merchantCustomerId' => 'string',
-        'companyTaxId' => 'string'
+        'companyTaxId' => 'string',
+        'dateOfBirth' => 'string',
+        'language' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'personalIdentification' => null,
         'merchantCustomerId' => null,
-        'companyTaxId' => null
+        'companyTaxId' => null,
+        'dateOfBirth' => null,
+        'language' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +89,9 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
     protected static $attributeMap = [
         'personalIdentification' => 'personalIdentification',
         'merchantCustomerId' => 'merchantCustomerId',
-        'companyTaxId' => 'companyTaxId'
+        'companyTaxId' => 'companyTaxId',
+        'dateOfBirth' => 'dateOfBirth',
+        'language' => 'language'
     ];
 
 
@@ -96,7 +102,9 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
     protected static $setters = [
         'personalIdentification' => 'setPersonalIdentification',
         'merchantCustomerId' => 'setMerchantCustomerId',
-        'companyTaxId' => 'setCompanyTaxId'
+        'companyTaxId' => 'setCompanyTaxId',
+        'dateOfBirth' => 'setDateOfBirth',
+        'language' => 'setLanguage'
     ];
 
 
@@ -107,7 +115,9 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
     protected static $getters = [
         'personalIdentification' => 'getPersonalIdentification',
         'merchantCustomerId' => 'getMerchantCustomerId',
-        'companyTaxId' => 'getCompanyTaxId'
+        'companyTaxId' => 'getCompanyTaxId',
+        'dateOfBirth' => 'getDateOfBirth',
+        'language' => 'getLanguage'
     ];
 
     public static function attributeMap()
@@ -144,6 +154,8 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
         $this->container['merchantCustomerId'] = isset($data['merchantCustomerId']) ? $data['merchantCustomerId'] : null;
         $this->container['companyTaxId'] = isset($data['companyTaxId']) ? $data['companyTaxId'] : null;
+        $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
+        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
     }
 
     /**
@@ -203,7 +215,7 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
 
     /**
      * Sets merchantCustomerId
-     * @param string $merchantCustomerId
+     * @param string $merchantCustomerId The Merchant Customer ID
      * @return $this
      */
     public function setMerchantCustomerId($merchantCustomerId)
@@ -224,12 +236,54 @@ class Upv1capturecontextsDataBuyerInformation implements ArrayAccess
 
     /**
      * Sets companyTaxId
-     * @param string $companyTaxId
+     * @param string $companyTaxId The Company Tax ID
      * @return $this
      */
     public function setCompanyTaxId($companyTaxId)
     {
         $this->container['companyTaxId'] = $companyTaxId;
+
+        return $this;
+    }
+
+    /**
+     * Gets dateOfBirth
+     * @return string
+     */
+    public function getDateOfBirth()
+    {
+        return $this->container['dateOfBirth'];
+    }
+
+    /**
+     * Sets dateOfBirth
+     * @param string $dateOfBirth The date of birth
+     * @return $this
+     */
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->container['dateOfBirth'] = $dateOfBirth;
+
+        return $this;
+    }
+
+    /**
+     * Gets language
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->container['language'];
+    }
+
+    /**
+     * Sets language
+     * @param string $language The preferred language
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->container['language'] = $language;
 
         return $this;
     }

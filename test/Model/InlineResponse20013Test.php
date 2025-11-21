@@ -77,30 +77,72 @@ class InlineResponse20013Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientReferenceInformation"
+     * Test attribute "version"
      */
-    public function testPropertyClientReferenceInformation()
+    public function testPropertyVersion()
     {
     }
 
     /**
-     * Test attribute "requestId"
+     * Test attribute "reportCreatedDate"
      */
-    public function testPropertyRequestId()
+    public function testPropertyReportCreatedDate()
     {
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "batchId"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyBatchId()
     {
     }
 
     /**
-     * Test attribute "bankAccountValidation"
+     * Test attribute "batchSource"
      */
-    public function testPropertyBankAccountValidation()
+    public function testPropertyBatchSource()
+    {
+    }
+
+    /**
+     * Test attribute "batchCaEndpoints"
+     */
+    public function testPropertyBatchCaEndpoints()
+    {
+    }
+
+    /**
+     * Test attribute "batchCreatedDate"
+     */
+    public function testPropertyBatchCreatedDate()
+    {
+    }
+
+    /**
+     * Test attribute "merchantReference"
+     */
+    public function testPropertyMerchantReference()
+    {
+    }
+
+    /**
+     * Test attribute "totals"
+     */
+    public function testPropertyTotals()
+    {
+    }
+
+    /**
+     * Test attribute "billing"
+     */
+    public function testPropertyBilling()
+    {
+    }
+
+    /**
+     * Test attribute "records"
+     */
+    public function testPropertyRecords()
     {
     }
 }

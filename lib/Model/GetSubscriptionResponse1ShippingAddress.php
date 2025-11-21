@@ -55,7 +55,7 @@ class GetSubscriptionResponse1ShippingAddress implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'shipTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo'
+        'shipTo' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo'
     ];
 
     /**
@@ -189,7 +189,7 @@ class GetSubscriptionResponse1ShippingAddress implements ArrayAccess
 
     /**
      * Gets shipTo
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo
      */
     public function getShipTo()
     {
@@ -198,7 +198,7 @@ class GetSubscriptionResponse1ShippingAddress implements ArrayAccess
 
     /**
      * Sets shipTo
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddressShipTo $shipTo
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddressShipTo $shipTo
      * @return $this
      */
     public function setShipTo($shipTo)

@@ -131,4 +131,11 @@ class Ptsv2paymentsAggregatorInformationTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCountry()
     {
     }
+
+    /**
+     * Test attribute "serviceProvidername"
+     */
+    public function testPropertyServiceProvidername()
+    {
+    }
 }

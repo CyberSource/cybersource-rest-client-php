@@ -670,7 +670,7 @@ class InstrumentIdentifierApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
+        $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "patchInstrumentIdentifier,patchInstrumentIdentifierWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
@@ -830,7 +830,7 @@ class InstrumentIdentifierApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
+        $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "postInstrumentIdentifier,postInstrumentIdentifierWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
@@ -995,7 +995,7 @@ class InstrumentIdentifierApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
+        $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "postInstrumentIdentifierEnrollment,postInstrumentIdentifierEnrollmentWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);

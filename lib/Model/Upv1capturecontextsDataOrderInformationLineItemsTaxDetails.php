@@ -206,7 +206,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets type
-     * @param string $type
+     * @param string $type Type of tax
      * @return $this
      */
     public function setType($type)
@@ -227,7 +227,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets amount
-     * @param string $amount
+     * @param string $amount Tax amount
      * @return $this
      */
     public function setAmount($amount)
@@ -248,7 +248,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets rate
-     * @param string $rate
+     * @param string $rate Tax rate
      * @return $this
      */
     public function setRate($rate)
@@ -269,7 +269,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets code
-     * @param string $code
+     * @param string $code Tax code
      * @return $this
      */
     public function setCode($code)
@@ -290,7 +290,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets taxId
-     * @param string $taxId
+     * @param string $taxId Tax Identifier
      * @return $this
      */
     public function setTaxId($taxId)
@@ -311,7 +311,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets applied
-     * @param bool $applied
+     * @param bool $applied Indicates if tax applied
      * @return $this
      */
     public function setApplied($applied)
@@ -332,7 +332,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsTaxDetails implements Arra
 
     /**
      * Sets exemptionCode
-     * @param string $exemptionCode
+     * @param string $exemptionCode Tax exemption code
      * @return $this
      */
     public function setExemptionCode($exemptionCode)
