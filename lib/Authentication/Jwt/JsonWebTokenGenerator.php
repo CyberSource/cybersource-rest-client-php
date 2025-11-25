@@ -9,6 +9,7 @@ use CyberSource\Authentication\Core\AuthException as AuthException;
 use CyberSource\Authentication\Jwt\JsonWebTokenHeader as JsonWebTokenHeader;
 use CyberSource\Authentication\Util\GlobalParameter as GlobalParameter;
 use CyberSource\Logging\LogFactory as LogFactory;
+use CyberSource\Authentication\Util\MLEUtility as MLEUtility;
 
 //calling the interface
 class JsonWebTokenGenerator implements TokenGenerator
@@ -33,7 +34,7 @@ class JsonWebTokenGenerator implements TokenGenerator
         {
             $jwtBody = array("iat"=>$date);
             if (!empty($isResponseMLEForAPI)) {
-                $jwtBody['v-c-response-mle-kid'] = $merchantConfig->getResponseMleKID();
+                $jwtBody['v-c-response-mle-kid'] = MLEUtility::validateAndAutoExtractResponseMleKid($merchantConfig);
             }
         }
         else if($method==GlobalParameter::POST || $method==GlobalParameter::PUT || $method==GlobalParameter::PATCH)
@@ -42,7 +43,7 @@ class JsonWebTokenGenerator implements TokenGenerator
             $digest = $digestObj->generateDigest($payloadData);
             $jwtBody = array("digest"=>$digest,"digestAlgorithm"=>"SHA-256","iat"=>$date);
             if (!empty($isResponseMLEForAPI)) {
-                $jwtBody['v-c-response-mle-kid'] = $merchantConfig ->getResponseMleKID();
+                $jwtBody['v-c-response-mle-kid'] = MLEUtility::validateAndAutoExtractResponseMleKid($merchantConfig);
             }
         }
         else

@@ -178,7 +178,10 @@ class MLEUtility
     private static function generateToken($cert, $requestBody)
     {
         try {
-            $serialNumber = self::extractSerialNumber($cert);
+            $serialNumber = self::extractSerialNumber(
+                $cert, 
+                "Serial number not found in certificate subject field for Request MLE encryption"
+            );
 
             $publicKey = openssl_pkey_get_details(openssl_pkey_get_public($cert))['key'];
 
@@ -271,27 +274,88 @@ class MLEUtility
         }
     }
 
-    public static function extractSerialNumber($cert)
+    public static function extractSerialNumber($cert, $errorMessage = null)
     {
         try {
             $certDetails = openssl_x509_parse($cert);
 
-            $serialNumber = null;
             if (isset($certDetails['subject']['serialNumber'])) {
-                $serialNumber = $certDetails['subject']['serialNumber'];
+                return $certDetails['subject']['serialNumber'];
             }
 
-            if ($serialNumber === null) {
-                self::$logger->warning("Serial number not found in MLE certificate for alias.");
-                $serialNumber = $certDetails['serialNumber'];
-            }
-            return $serialNumber;
+            $errorMsg = $errorMessage ?? "Serial number not found in certificate subject field.";
+            self::$logger->error($errorMsg);
+            throw new MLEException($errorMsg);
+            
+        } catch (MLEException $e) {
+            throw $e;
         } catch (\Exception $e) {
             self::$logger->error("Error extracting serial number from certificate: " . $e->getMessage());
             throw new MLEException("Error extracting serial number from certificate: " . $e->getMessage());
         }
     }
 
-    
+    /**
+     * Validates and auto-extracts the Response MLE KID from merchant configuration
+     * 
+     * This function checks if the Response MLE KID is already configured. If not,
+     * it attempts to extract it from the Response MLE private key file (P12/PFX).
+     * 
+     * @param \CyberSource\Authentication\Core\MerchantConfiguration $merchantConfig The merchant configuration
+     * @return string The validated or extracted Response MLE KID
+     * @throws MLEException If KID cannot be determined or extraction fails
+     */
+    public static function validateAndAutoExtractResponseMleKid($merchantConfig)
+    {
+        if (self::$logger === null) {
+            self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(static::class), $merchantConfig->getLogConfiguration());
+        }
+
+        // If responseMlePrivateKey is provided directly (in-memory), use the configured responseMleKID
+        if ($merchantConfig->getResponseMlePrivateKey() !== null) {
+            self::$logger->debug("responseMlePrivateKey is provided directly, using configured responseMleKID");
+            return $merchantConfig->getResponseMleKID();
+        }
+
+        // Attempt to auto-extract KID from Response MLE private key file (CyberSource P12)
+        $cybsKid = null;
+        try {
+            if (!isset(self::$cache)) {
+                self::$cache = new Cache();
+            }
+
+            $kidData = self::$cache->getMLEKIdDataFromCache($merchantConfig);
+
+            if ($kidData !== null && isset($kidData['kid']) && !empty($kidData['kid'])) {
+                $cybsKid = $kidData['kid'];
+                self::$logger->debug("Successfully auto-extracted responseMleKID from CyberSource P12 certificate");
+            }
+        } catch (\Exception $e) {
+            self::$logger->debug("Could not auto-extract responseMleKID from certificate: " . $e->getMessage());
+        }
+
+        // Get manually configured KID
+        $configuredKID = $merchantConfig->getResponseMleKID();
+        $configuredKID = (is_string($configuredKID) && trim($configuredKID) !== '') ? trim($configuredKID) : null;
+
+        // Validate and determine which KID to use
+        if ($cybsKid === null && $configuredKID === null) {
+            throw new MLEException(
+                "responseMleKID is required when response MLE is enabled. " .
+                "Could not auto-extract from certificate and no manual configuration provided. " .
+                "Please provide responseMleKID explicitly in your configuration."
+            );
+        } else if ($cybsKid === null) {
+            self::$logger->debug("Using manually configured responseMleKID");
+            return $configuredKID;
+        } else if ($configuredKID === null) {
+            self::$logger->debug("Using auto-extracted responseMleKID from CyberSource certificate");
+            return $cybsKid;
+        } else if ($cybsKid !== $configuredKID) {
+            self::$logger->warning("Auto-extracted responseMleKID does not match manually configured responseMleKID. Using configured value as preference");
+        }
+
+        return $configuredKID;
+    }
 }
 ?>
