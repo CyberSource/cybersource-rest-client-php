@@ -388,50 +388,12 @@ class Utility
             if (!openssl_pkcs12_read($pkcs12, $certs, $password)) {
                 return false;
             }
-
-            // Check if main certificate exists
-            if (!isset($certs['cert'])) {
+            try {
+                $cert = self::findCertByAlias($certs, GlobalParameter::DEFAULT_MLE_ALIAS_FOR_CERT);
+                return $cert !== null;
+            } catch (\Exception $e) {
                 return false;
             }
-
-            $certData = openssl_x509_parse($certs['cert']);
-            if ($certData === false) {
-                return false;
-            }
-
-            // Check for CyberSource-specific indicators in the certificate
-            // CyberSource certificates typically have specific issuer or subject patterns
-            if (isset($certData['issuer'])) {
-                $issuer = $certData['issuer'];
-                
-                // Check for CyberSource in O (Organization) or CN (Common Name)
-                if (isset($issuer['O']) && stripos($issuer['O'], 'CyberSource') !== false) {
-                    return true;
-                }
-                if (isset($issuer['CN']) && stripos($issuer['CN'], 'CyberSource') !== false) {
-                    return true;
-                }
-            }
-
-            if (isset($certData['subject'])) {
-                $subject = $certData['subject'];
-                
-                // Check for CyberSource in subject
-                if (isset($subject['O']) && stripos($subject['O'], 'CyberSource') !== false) {
-                    return true;
-                }
-            }
-
-            // Check extensions for CyberSource-specific OIDs or patterns
-            if (isset($certData['extensions'])) {
-                foreach ($certData['extensions'] as $key => $value) {
-                    if (stripos($value, 'CyberSource') !== false) {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
         } catch (\Exception $e) {
             return false;
         }
