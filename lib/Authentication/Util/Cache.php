@@ -355,4 +355,108 @@ class Cache
         return self::$file_cache[$cacheKey]['response_mle_private_key'] ?? null;
 
     }
+
+    /**
+     * Get MLE KID data from cache
+     * 
+     * @param MerchantConfiguration $merchantConfig The merchant configuration
+     * @return array|null Array with 'kid' and 'file_mod_time' keys, or null if not available
+     */
+    public function getMLEKIdDataFromCache($merchantConfig)
+    {
+        $filePath = $merchantConfig->getResponseMlePrivateKeyFilePath();
+        $cacheKey = $filePath . GlobalParameter::RESPONSE_MLE_P12_PFX_CACHE_IDENTIFIER;
+
+        if (!isset(self::$file_cache[$cacheKey])) {
+            $this->setUpMLEKIdCache($merchantConfig);
+        } else {
+            $cachedMLEKId = self::$file_cache[$cacheKey];
+            $currentModTime = file_exists($filePath) ? filemtime($filePath) : 0;
+            
+            if ($cachedMLEKId === null || 
+                !isset($cachedMLEKId['file_mod_time']) || 
+                $cachedMLEKId['file_mod_time'] !== $currentModTime) {
+                self::$logger->info("MLE KID cache outdated or file modified. Refreshing cache for: {$filePath}");
+                $this->setUpMLEKIdCache($merchantConfig);
+            }
+        }
+
+        return self::$file_cache[$cacheKey] ?? null;
+    }
+
+    /**
+     * Set up MLE KID cache
+     * 
+     * @param MerchantConfiguration $merchantConfig The merchant configuration
+     * @return void
+     */
+    private function setUpMLEKIdCache($merchantConfig)
+    {
+        $filePath = null;
+        $cacheKey = null;
+        
+        try {
+            $filePath = $merchantConfig->getResponseMlePrivateKeyFilePath();
+            $cacheKey = $filePath . GlobalParameter::RESPONSE_MLE_P12_PFX_CACHE_IDENTIFIER;
+            
+            // Get certificate from P12 file using merchant ID as alias
+            $merchantCert = Utility::getCertificateByAliasFromPKCS(
+                $filePath, 
+                $merchantConfig->getResponseMlePrivateKeyFilePassword(), 
+                $merchantConfig->getMerchantID()
+            );
+            
+            if ($merchantCert === null) {
+                throw new MLEException(
+                    "No certificate found for Response MLE Private Key file with merchant ID alias " . 
+                    $merchantConfig->getMerchantID()
+                );
+            }
+            
+            // Check if this is a CyberSource-generated P12 file
+            $isCyberSourceP12 = Utility::isP12GeneratedByCyberSource(
+                $filePath, 
+                $merchantConfig->getResponseMlePrivateKeyFilePassword()
+            );
+            
+            $cachedMLEKId = [
+                'kid' => null,
+                'file_mod_time' => file_exists($filePath) ? filemtime($filePath) : 0
+            ];
+            
+            if ($isCyberSourceP12) {
+                try {
+                    $mleKID = MLEUtility::extractSerialNumber(
+                        $merchantCert, 
+                        "Serial number not found in certificate subject field for Response MLE Private Key with merchant ID alias " . 
+                        $merchantConfig->getMerchantID()
+                    );
+                    $cachedMLEKId['kid'] = $mleKID;
+                } catch (\Exception $e) {
+                    throw new MLEException(
+                        "Failed to extract serial number from certificate for Response MLE: " . $e->getMessage(), 
+                        0, 
+                        $e
+                    );
+                }
+            }
+            
+            self::$file_cache[$cacheKey] = $cachedMLEKId;
+            
+        } catch (\Exception $e) {
+            self::$logger->error(
+                "Failed to load MLE KID from Response MLE Private Key file: {$filePath}. Error: " . 
+                $e->getMessage()
+            );
+            
+            // Store failure marker in cache
+            if ($cacheKey !== null) {
+                $failureMarker = [
+                    'kid' => null,
+                    'file_mod_time' => 0
+                ];
+                self::$file_cache[$cacheKey] = $failureMarker;
+            }
+        }
+    }
 }

@@ -1734,14 +1734,6 @@ class MerchantConfiguration
                 throw $exception;
             }
 
-            // Validate responseMleKID
-            if (empty(trim($this->responseMleKID))) {
-                $error_message = "Response MLE enabled but responseMleKID is not set.";
-                $exception = new AuthException($error_message, 0);
-                self::$logger->error($error_message);
-                throw $exception;
-            }
-
             $hasFilePath = !empty($this->responseMlePrivateKeyFilePath);
             $hasInMemoryKey = !empty($this->responseMlePrivateKey);
 
@@ -1758,7 +1750,7 @@ class MerchantConfiguration
                 self::$logger->error($error_message);
                 throw $exception;
             }
-
+            $isP12File = false;
             if ($hasFilePath) {
                 if (
                     !file_exists($this->responseMlePrivateKeyFilePath) ||
@@ -1770,6 +1762,10 @@ class MerchantConfiguration
                     self::$logger->error($error_message);
                     throw $exception;
                 }
+                $ext = pathinfo($this->responseMlePrivateKeyFilePath, PATHINFO_EXTENSION);
+                if (strcasecmp($ext, 'p12') === 0 || strcasecmp($ext, 'pfx') === 0) {
+                    $isP12File = true;
+                }
             } else {
                 if (!is_object($this->responseMlePrivateKey) || get_class($this->responseMlePrivateKey) !== 'OpenSSLAsymmetricKey') {
                     $error_message = "Response MLE private key object is invalid. Expected OpenSSLAsymmetricKey";
@@ -1777,6 +1773,14 @@ class MerchantConfiguration
                     self::$logger->error($error_message);
                     throw $exception;
                 }
+            }
+
+            // Validate responseMleKID
+            if (!$isP12File && empty(trim($this->responseMleKID))) {
+                $error_message = "Response MLE enabled but responseMleKID is not set.";
+                $exception = new AuthException($error_message, 0);
+                self::$logger->error($error_message);
+                throw $exception;
             }
         }
     }
