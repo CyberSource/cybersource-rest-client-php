@@ -34,21 +34,21 @@ class CaptureContextParser
     /**
      * Parses a capture context JWT response and optionally verifies its signature
      *
-     * This function parses a JWT token from a capture context response and can optionally
+     * This function parses a JWT token from a capture context response and will mandatorily
      * verify the JWT signature using a public key fetched from the Flex API. It implements
      * caching to avoid repeated API calls for the same public key.
      *
      * @param string                $jwtValue      The JWT token to parse
      * @param MerchantConfiguration $merchantConfig The merchant configuration object
-     * @param bool                  $verifyJwt     Whether to verify the JWT signature (default: true)
      *
      * @return array The parsed JWT payload
      * @throws InvalidJwtException                If the JWT is invalid or cannot be parsed
      * @throws JwtSignatureValidationException    If JWT signature verification fails
      * @throws Exception                          If merchant config or run environment is missing
      */
-    public static function parseCaptureContextResponse($jwtValue, $merchantConfig, $verifyJwt = true)
+    public static function parseCaptureContextResponse($jwtValue, $merchantConfig)
     {
+        $verifyJwt = true;
         // Validate JWT value
         if (empty($jwtValue)) {
             throw new InvalidJwtException('JWT value is null or undefined');
