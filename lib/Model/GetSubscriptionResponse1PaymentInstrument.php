@@ -57,7 +57,7 @@ class GetSubscriptionResponse1PaymentInstrument implements ArrayAccess
         'id' => 'string',
         'bankAccount' => '\CyberSource\Model\GetSubscriptionResponse1PaymentInstrumentBankAccount',
         'card' => '\CyberSource\Model\GetSubscriptionResponse1PaymentInstrumentCard',
-        'billTo' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo',
+        'billTo' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo',
         'buyerInformation' => '\CyberSource\Model\GetSubscriptionResponse1PaymentInstrumentBuyerInformation'
     ];
 
@@ -249,7 +249,7 @@ class GetSubscriptionResponse1PaymentInstrument implements ArrayAccess
 
     /**
      * Gets billTo
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo
      */
     public function getBillTo()
     {
@@ -258,7 +258,7 @@ class GetSubscriptionResponse1PaymentInstrument implements ArrayAccess
 
     /**
      * Sets billTo
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultPaymentInstrumentBillTo $billTo
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultPaymentInstrumentBillTo $billTo
      * @return $this
      */
     public function setBillTo($billTo)

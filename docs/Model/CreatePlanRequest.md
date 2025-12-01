@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientReferenceInformation** | [**\CyberSource\Model\Rbsv1plansClientReferenceInformation**](Rbsv1plansClientReferenceInformation.md) |  | [optional] 
 **planInformation** | [**\CyberSource\Model\Rbsv1plansPlanInformation**](Rbsv1plansPlanInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Rbsv1plansOrderInformation**](Rbsv1plansOrderInformation.md) |  | [optional] 
 

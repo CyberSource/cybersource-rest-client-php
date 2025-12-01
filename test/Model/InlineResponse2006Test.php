@@ -154,13 +154,6 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "updatedOn"
-     */
-    public function testPropertyUpdatedOn()
-    {
-    }
-
-    /**
      * Test attribute "notificationScope"
      */
     public function testPropertyNotificationScope()

@@ -53,7 +53,6 @@ class CreatePlanRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'clientReferenceInformation' => '\CyberSource\Model\Rbsv1plansClientReferenceInformation',
         'planInformation' => '\CyberSource\Model\Rbsv1plansPlanInformation',
         'orderInformation' => '\CyberSource\Model\Rbsv1plansOrderInformation'
     ];
@@ -63,7 +62,6 @@ class CreatePlanRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'clientReferenceInformation' => null,
         'planInformation' => null,
         'orderInformation' => null
     ];
@@ -83,7 +81,6 @@ class CreatePlanRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'clientReferenceInformation' => 'clientReferenceInformation',
         'planInformation' => 'planInformation',
         'orderInformation' => 'orderInformation'
     ];
@@ -94,7 +91,6 @@ class CreatePlanRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'clientReferenceInformation' => 'setClientReferenceInformation',
         'planInformation' => 'setPlanInformation',
         'orderInformation' => 'setOrderInformation'
     ];
@@ -105,7 +101,6 @@ class CreatePlanRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'clientReferenceInformation' => 'getClientReferenceInformation',
         'planInformation' => 'getPlanInformation',
         'orderInformation' => 'getOrderInformation'
     ];
@@ -141,7 +136,6 @@ class CreatePlanRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['planInformation'] = isset($data['planInformation']) ? $data['planInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
     }
@@ -170,27 +164,6 @@ class CreatePlanRequest implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Rbsv1plansClientReferenceInformation
-     */
-    public function getClientReferenceInformation()
-    {
-        return $this->container['clientReferenceInformation'];
-    }
-
-    /**
-     * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Rbsv1plansClientReferenceInformation $clientReferenceInformation
-     * @return $this
-     */
-    public function setClientReferenceInformation($clientReferenceInformation)
-    {
-        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
-
-        return $this;
-    }
 
     /**
      * Gets planInformation

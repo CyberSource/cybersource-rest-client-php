@@ -54,7 +54,7 @@ class ShippingAddressListForCustomerEmbedded implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'shippingAddresses' => '\CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress[]'
+        'shippingAddresses' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class ShippingAddressListForCustomerEmbedded implements ArrayAccess
 
     /**
      * Gets shippingAddresses
-     * @return \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress[]
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress[]
      */
     public function getShippingAddresses()
     {
@@ -171,7 +171,7 @@ class ShippingAddressListForCustomerEmbedded implements ArrayAccess
 
     /**
      * Sets shippingAddresses
-     * @param \CyberSource\Model\Tmsv2customersEmbeddedDefaultShippingAddress[] $shippingAddresses
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbeddedDefaultShippingAddress[] $shippingAddresses
      * @return $this
      */
     public function setShippingAddresses($shippingAddresses)

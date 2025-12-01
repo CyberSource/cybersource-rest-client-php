@@ -495,7 +495,7 @@ class PaymentInstrumentApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
+        $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "patchPaymentInstrument,patchPaymentInstrumentWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
@@ -655,7 +655,7 @@ class PaymentInstrumentApi
         }
 
         //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
+        $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "postPaymentInstrument,postPaymentInstrumentWithHttpInfo")) {
             try {
                 $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);

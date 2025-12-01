@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **state** | **string** | Acquirer state. | [optional] 
 **postalCode** | **string** | Acquirer postal code. | [optional] 
 **country** | **string** | Acquirer country. | [optional] 
+**serviceProvidername** | **string** | Contains transfer service provider name. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

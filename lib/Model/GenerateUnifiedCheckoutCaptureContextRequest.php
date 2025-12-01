@@ -59,6 +59,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'allowedPaymentTypes' => 'string[]',
         'country' => 'string',
         'locale' => 'string',
+        'buttonType' => 'string',
         'captureMandate' => '\CyberSource\Model\Upv1capturecontextsCaptureMandate',
         'completeMandate' => '\CyberSource\Model\Upv1capturecontextsCompleteMandate',
         'transientTokenResponseOptions' => '\CyberSource\Model\Microformv2sessionsTransientTokenResponseOptions',
@@ -77,6 +78,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'allowedPaymentTypes' => null,
         'country' => null,
         'locale' => null,
+        'buttonType' => null,
         'captureMandate' => null,
         'completeMandate' => null,
         'transientTokenResponseOptions' => null,
@@ -105,6 +107,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'allowedPaymentTypes' => 'allowedPaymentTypes',
         'country' => 'country',
         'locale' => 'locale',
+        'buttonType' => 'buttonType',
         'captureMandate' => 'captureMandate',
         'completeMandate' => 'completeMandate',
         'transientTokenResponseOptions' => 'transientTokenResponseOptions',
@@ -124,6 +127,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'allowedPaymentTypes' => 'setAllowedPaymentTypes',
         'country' => 'setCountry',
         'locale' => 'setLocale',
+        'buttonType' => 'setButtonType',
         'captureMandate' => 'setCaptureMandate',
         'completeMandate' => 'setCompleteMandate',
         'transientTokenResponseOptions' => 'setTransientTokenResponseOptions',
@@ -143,6 +147,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         'allowedPaymentTypes' => 'getAllowedPaymentTypes',
         'country' => 'getCountry',
         'locale' => 'getLocale',
+        'buttonType' => 'getButtonType',
         'captureMandate' => 'getCaptureMandate',
         'completeMandate' => 'getCompleteMandate',
         'transientTokenResponseOptions' => 'getTransientTokenResponseOptions',
@@ -187,6 +192,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
         $this->container['allowedPaymentTypes'] = isset($data['allowedPaymentTypes']) ? $data['allowedPaymentTypes'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
+        $this->container['buttonType'] = isset($data['buttonType']) ? $data['buttonType'] : null;
         $this->container['captureMandate'] = isset($data['captureMandate']) ? $data['captureMandate'] : null;
         $this->container['completeMandate'] = isset($data['completeMandate']) ? $data['completeMandate'] : null;
         $this->container['transientTokenResponseOptions'] = isset($data['transientTokenResponseOptions']) ? $data['transientTokenResponseOptions'] : null;
@@ -293,7 +299,7 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
 
     /**
      * Sets allowedPaymentTypes
-     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.
+     * @param string[] $allowedPaymentTypes The payment types that are allowed for the merchant.    Possible values when launching Unified Checkout:   - APPLEPAY   - CHECK   - CLICKTOPAY   - GOOGLEPAY   - PANENTRY                 - PAZE <br><br>  Unified Checkout supports the following Buy Now, Pay Later (BNPL) payment methods:   - AFTERPAY<br><br>  Unified Checkout supports the following Online Bank Transfer payment methods:   - Bancontact (BE)   - DragonPay (PH)   - iDEAL (NL)   - Multibanco (PT)   - MyBank (IT, BE, PT, ES)   - Przelewy24|P24 (PL)   - Tink Pay By Bank (GB)<br><br>    Unified Checkout supports the following Post-Pay Reference payment methods:   - Konbini (JP)<br><br>  Possible values when launching Click To Pay Drop-In UI: - CLICKTOPAY <br><br>  **Important:**    - CLICKTOPAY only available for Visa, Mastercard and AMEX for saved cards.   - Visa and Mastercard will look to tokenize using network tokenization for all Click to Pay requests.  Click to Pay uses Click to Pay token requester IDs and not the merchant's existing token requester.   - Apple Pay, Google Pay, Check, and Paze can be used independently without requiring PAN entry in the allowedPaymentTypes field.<br><br>  **Managing Google Pay Authentication Types** When you enable Google Pay on Unified Checkout you can specify optional parameters that define the types of card authentication you receive from Google Pay.<br><br>  **Managing Google Pay Authentication Types** Where Click to Pay is the payment type selected by the customer and the customer manually enters their card, the option to enroll their card in Click to Pay will be auto-checked if this field is set to \"true\".   This is only available where the merchant and cardholder are based in the following countries and the billing type is set to \"FULL\" or \"PARTIAL\".   - UAE   - Argentina   - Brazil   - Chile   - Colombia   - Kuwait   - Mexico   - Peru   - Qatar   - Saudi Arabia   - Ukraine   - South Africa<br><br>  If false, this is not present or not supported in the market.  Enrollment in Click to Pay is not checked for the customer when completing manual card entry.
      * @return $this
      */
     public function setAllowedPaymentTypes($allowedPaymentTypes)
@@ -341,6 +347,27 @@ class GenerateUnifiedCheckoutCaptureContextRequest implements ArrayAccess
     public function setLocale($locale)
     {
         $this->container['locale'] = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets buttonType
+     * @return string
+     */
+    public function getButtonType()
+    {
+        return $this->container['buttonType'];
+    }
+
+    /**
+     * Sets buttonType
+     * @param string $buttonType Changes the label on the payment button within Unified Checkout .<br><br>  Possible values: - ADD_CARD - CARD_PAYMENT - CHECKOUT - CHECKOUT_AND_CONTINUE - DEBIT_CREDIT - DONATE - PAY - PAY_WITH_CARD - SAVE_CARD - SUBSCRIBE_WITH_CARD<br><br>  This is an optional field,
+     * @return $this
+     */
+    public function setButtonType($buttonType)
+    {
+        $this->container['buttonType'] = $buttonType;
 
         return $this;
     }

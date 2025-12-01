@@ -53,8 +53,8 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'skippedPaymentsCount' => 'string',
-        'skippedPaymentsTotalAmount' => 'string'
+        'missedPaymentsCount' => 'string',
+        'missedPaymentsTotalAmount' => 'string'
     ];
 
     /**
@@ -62,8 +62,8 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'skippedPaymentsCount' => null,
-        'skippedPaymentsTotalAmount' => null
+        'missedPaymentsCount' => null,
+        'missedPaymentsTotalAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -81,8 +81,8 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'skippedPaymentsCount' => 'skippedPaymentsCount',
-        'skippedPaymentsTotalAmount' => 'skippedPaymentsTotalAmount'
+        'missedPaymentsCount' => 'missedPaymentsCount',
+        'missedPaymentsTotalAmount' => 'missedPaymentsTotalAmount'
     ];
 
 
@@ -91,8 +91,8 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'skippedPaymentsCount' => 'setSkippedPaymentsCount',
-        'skippedPaymentsTotalAmount' => 'setSkippedPaymentsTotalAmount'
+        'missedPaymentsCount' => 'setMissedPaymentsCount',
+        'missedPaymentsTotalAmount' => 'setMissedPaymentsTotalAmount'
     ];
 
 
@@ -101,8 +101,8 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'skippedPaymentsCount' => 'getSkippedPaymentsCount',
-        'skippedPaymentsTotalAmount' => 'getSkippedPaymentsTotalAmount'
+        'missedPaymentsCount' => 'getMissedPaymentsCount',
+        'missedPaymentsTotalAmount' => 'getMissedPaymentsTotalAmount'
     ];
 
     public static function attributeMap()
@@ -136,8 +136,8 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['skippedPaymentsCount'] = isset($data['skippedPaymentsCount']) ? $data['skippedPaymentsCount'] : null;
-        $this->container['skippedPaymentsTotalAmount'] = isset($data['skippedPaymentsTotalAmount']) ? $data['skippedPaymentsTotalAmount'] : null;
+        $this->container['missedPaymentsCount'] = isset($data['missedPaymentsCount']) ? $data['missedPaymentsCount'] : null;
+        $this->container['missedPaymentsTotalAmount'] = isset($data['missedPaymentsTotalAmount']) ? $data['missedPaymentsTotalAmount'] : null;
     }
 
     /**
@@ -166,43 +166,43 @@ class GetSubscriptionResponseReactivationInformation implements ArrayAccess
 
 
     /**
-     * Gets skippedPaymentsCount
+     * Gets missedPaymentsCount
      * @return string
      */
-    public function getSkippedPaymentsCount()
+    public function getMissedPaymentsCount()
     {
-        return $this->container['skippedPaymentsCount'];
+        return $this->container['missedPaymentsCount'];
     }
 
     /**
-     * Sets skippedPaymentsCount
-     * @param string $skippedPaymentsCount Number of payments that should have occurred while the subscription was in a suspended status.
+     * Sets missedPaymentsCount
+     * @param string $missedPaymentsCount Number of payments that should have occurred while the subscription was in a suspended status.
      * @return $this
      */
-    public function setSkippedPaymentsCount($skippedPaymentsCount)
+    public function setMissedPaymentsCount($missedPaymentsCount)
     {
-        $this->container['skippedPaymentsCount'] = $skippedPaymentsCount;
+        $this->container['missedPaymentsCount'] = $missedPaymentsCount;
 
         return $this;
     }
 
     /**
-     * Gets skippedPaymentsTotalAmount
+     * Gets missedPaymentsTotalAmount
      * @return string
      */
-    public function getSkippedPaymentsTotalAmount()
+    public function getMissedPaymentsTotalAmount()
     {
-        return $this->container['skippedPaymentsTotalAmount'];
+        return $this->container['missedPaymentsTotalAmount'];
     }
 
     /**
-     * Sets skippedPaymentsTotalAmount
-     * @param string $skippedPaymentsTotalAmount Total amount that will be charged upon reactivation if `processSkippedPayments` is set to `true`.
+     * Sets missedPaymentsTotalAmount
+     * @param string $missedPaymentsTotalAmount Total amount that will be charged upon reactivation if `processMissedPayments` is set to `true`.
      * @return $this
      */
-    public function setSkippedPaymentsTotalAmount($skippedPaymentsTotalAmount)
+    public function setMissedPaymentsTotalAmount($missedPaymentsTotalAmount)
     {
-        $this->container['skippedPaymentsTotalAmount'] = $skippedPaymentsTotalAmount;
+        $this->container['missedPaymentsTotalAmount'] = $missedPaymentsTotalAmount;
 
         return $this;
     }

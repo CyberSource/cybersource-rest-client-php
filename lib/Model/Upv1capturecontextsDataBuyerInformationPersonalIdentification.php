@@ -170,7 +170,7 @@ class Upv1capturecontextsDataBuyerInformationPersonalIdentification implements A
 
     /**
      * Sets cpf
-     * @param string $cpf
+     * @param string $cpf CPF Number (Brazil).  Must be 11 digits in length.
      * @return $this
      */
     public function setCpf($cpf)

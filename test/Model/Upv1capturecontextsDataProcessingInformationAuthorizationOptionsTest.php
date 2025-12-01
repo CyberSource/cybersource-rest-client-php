@@ -84,6 +84,27 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptionsTest exten
     }
 
     /**
+     * Test attribute "authIndicator"
+     */
+    public function testPropertyAuthIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "ignoreCvResult"
+     */
+    public function testPropertyIgnoreCvResult()
+    {
+    }
+
+    /**
+     * Test attribute "ignoreAvsResult"
+     */
+    public function testPropertyIgnoreAvsResult()
+    {
+    }
+
+    /**
      * Test attribute "initiator"
      */
     public function testPropertyInitiator()
@@ -94,6 +115,20 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptionsTest exten
      * Test attribute "businessApplicationId"
      */
     public function testPropertyBusinessApplicationId()
+    {
+    }
+
+    /**
+     * Test attribute "commerceIndicator"
+     */
+    public function testPropertyCommerceIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "processingInstruction"
+     */
+    public function testPropertyProcessingInstruction()
     {
     }
 }

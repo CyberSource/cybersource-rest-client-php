@@ -53,13 +53,12 @@ class InlineResponse20010 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\InlineResponse20010Links[]',
-        'object' => 'string',
+        'totalCount' => 'int',
         'offset' => 'int',
         'limit' => 'int',
+        'sort' => 'string',
         'count' => 'int',
-        'total' => 'int',
-        'embedded' => '\CyberSource\Model\InlineResponse20010Embedded'
+        'devices' => '\CyberSource\Model\InlineResponse20010Devices[]'
     ];
 
     /**
@@ -67,13 +66,12 @@ class InlineResponse20010 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'object' => null,
+        'totalCount' => null,
         'offset' => null,
         'limit' => null,
+        'sort' => null,
         'count' => null,
-        'total' => null,
-        'embedded' => null
+        'devices' => null
     ];
 
     public static function swaggerTypes()
@@ -91,13 +89,12 @@ class InlineResponse20010 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => '_links',
-        'object' => 'object',
+        'totalCount' => 'totalCount',
         'offset' => 'offset',
         'limit' => 'limit',
+        'sort' => 'sort',
         'count' => 'count',
-        'total' => 'total',
-        'embedded' => '_embedded'
+        'devices' => 'devices'
     ];
 
 
@@ -106,13 +103,12 @@ class InlineResponse20010 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'object' => 'setObject',
+        'totalCount' => 'setTotalCount',
         'offset' => 'setOffset',
         'limit' => 'setLimit',
+        'sort' => 'setSort',
         'count' => 'setCount',
-        'total' => 'setTotal',
-        'embedded' => 'setEmbedded'
+        'devices' => 'setDevices'
     ];
 
 
@@ -121,13 +117,12 @@ class InlineResponse20010 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'object' => 'getObject',
+        'totalCount' => 'getTotalCount',
         'offset' => 'getOffset',
         'limit' => 'getLimit',
+        'sort' => 'getSort',
         'count' => 'getCount',
-        'total' => 'getTotal',
-        'embedded' => 'getEmbedded'
+        'devices' => 'getDevices'
     ];
 
     public static function attributeMap()
@@ -161,13 +156,12 @@ class InlineResponse20010 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
         $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;
         $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
-        $this->container['embedded'] = isset($data['embedded']) ? $data['embedded'] : null;
+        $this->container['devices'] = isset($data['devices']) ? $data['devices'] : null;
     }
 
     /**
@@ -196,43 +190,22 @@ class InlineResponse20010 implements ArrayAccess
 
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse20010Links[]
+     * Gets totalCount
+     * @return int
      */
-    public function getLinks()
+    public function getTotalCount()
     {
-        return $this->container['links'];
+        return $this->container['totalCount'];
     }
 
     /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse20010Links[] $links
+     * Sets totalCount
+     * @param int $totalCount Total number of results.
      * @return $this
      */
-    public function setLinks($links)
+    public function setTotalCount($totalCount)
     {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     * @return string
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     * @param string $object
-     * @return $this
-     */
-    public function setObject($object)
-    {
-        $this->container['object'] = $object;
+        $this->container['totalCount'] = $totalCount;
 
         return $this;
     }
@@ -248,7 +221,7 @@ class InlineResponse20010 implements ArrayAccess
 
     /**
      * Sets offset
-     * @param int $offset
+     * @param int $offset Controls the starting point within the collection of results, which defaults to 0. The first item in the collection is retrieved by setting a zero offset.  For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value like this:  `offset=0` `offset=5` `offset=10`  **Note:** If an offset larger than the number of results is provided, this will result in no embedded object being returned.
      * @return $this
      */
     public function setOffset($offset)
@@ -269,12 +242,33 @@ class InlineResponse20010 implements ArrayAccess
 
     /**
      * Sets limit
-     * @param int $limit
+     * @param int $limit Controls the maximum number of items that may be returned for a single request. The default is 20, the maximum is 2500.
      * @return $this
      */
     public function setLimit($limit)
     {
         $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     * @param string $sort A comma separated list of the following form:  `terminalCreationDate:desc or serialNumber or terminalUpdationDate`
+     * @return $this
+     */
+    public function setSort($sort)
+    {
+        $this->container['sort'] = $sort;
 
         return $this;
     }
@@ -290,7 +284,7 @@ class InlineResponse20010 implements ArrayAccess
 
     /**
      * Sets count
-     * @param int $count
+     * @param int $count Results for this page, this could be below the limit.
      * @return $this
      */
     public function setCount($count)
@@ -301,43 +295,22 @@ class InlineResponse20010 implements ArrayAccess
     }
 
     /**
-     * Gets total
-     * @return int
+     * Gets devices
+     * @return \CyberSource\Model\InlineResponse20010Devices[]
      */
-    public function getTotal()
+    public function getDevices()
     {
-        return $this->container['total'];
+        return $this->container['devices'];
     }
 
     /**
-     * Sets total
-     * @param int $total
+     * Sets devices
+     * @param \CyberSource\Model\InlineResponse20010Devices[] $devices A collection of devices
      * @return $this
      */
-    public function setTotal($total)
+    public function setDevices($devices)
     {
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
-     * Gets embedded
-     * @return \CyberSource\Model\InlineResponse20010Embedded
-     */
-    public function getEmbedded()
-    {
-        return $this->container['embedded'];
-    }
-
-    /**
-     * Sets embedded
-     * @param \CyberSource\Model\InlineResponse20010Embedded $embedded
-     * @return $this
-     */
-    public function setEmbedded($embedded)
-    {
-        $this->container['embedded'] = $embedded;
+        $this->container['devices'] = $devices;
 
         return $this;
     }

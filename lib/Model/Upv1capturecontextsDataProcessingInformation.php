@@ -176,7 +176,7 @@ class Upv1capturecontextsDataProcessingInformation implements ArrayAccess
 
     /**
      * Sets reconciliationId
-     * @param string $reconciliationId
+     * @param string $reconciliationId The reconciliation ID
      * @return $this
      */
     public function setReconciliationId($reconciliationId)

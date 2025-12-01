@@ -176,7 +176,7 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator 
 
     /**
      * Sets credentialStoredOnFile
-     * @param bool $credentialStoredOnFile
+     * @param bool $credentialStoredOnFile Store the credential on file
      * @return $this
      */
     public function setCredentialStoredOnFile($credentialStoredOnFile)

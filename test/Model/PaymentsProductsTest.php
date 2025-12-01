@@ -215,4 +215,11 @@ class PaymentsProductsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyServiceFee()
     {
     }
+
+    /**
+     * Test attribute "batchUpload"
+     */
+    public function testPropertyBatchUpload()
+    {
+    }
 }

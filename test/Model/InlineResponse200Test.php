@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse200Test Class Doc Comment
  *
  * @category    Class */
-// * @description Represents the Card Art Asset associated to the Network Token.
+// * @description InlineResponse200
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,30 +77,9 @@ class InlineResponse200Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "responses"
      */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-    }
-
-    /**
-     * Test attribute "provider"
-     */
-    public function testPropertyProvider()
-    {
-    }
-
-    /**
-     * Test attribute "content"
-     */
-    public function testPropertyContent()
+    public function testPropertyResponses()
     {
     }
 }

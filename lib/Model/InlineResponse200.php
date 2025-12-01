@@ -34,7 +34,6 @@ use \ArrayAccess;
  * InlineResponse200 Class Doc Comment
  *
  * @category    Class
- * @description Represents the Card Art Asset associated to the Network Token.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,10 +53,7 @@ class InlineResponse200 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'type' => 'string',
-        'provider' => 'string',
-        'content' => '\CyberSource\Model\InlineResponse200Content[]'
+        'responses' => '\CyberSource\Model\InlineResponse200Responses[]'
     ];
 
     /**
@@ -65,10 +61,7 @@ class InlineResponse200 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'type' => null,
-        'provider' => null,
-        'content' => null
+        'responses' => null
     ];
 
     public static function swaggerTypes()
@@ -86,10 +79,7 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'type' => 'type',
-        'provider' => 'provider',
-        'content' => 'content'
+        'responses' => 'responses'
     ];
 
 
@@ -98,10 +88,7 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'type' => 'setType',
-        'provider' => 'setProvider',
-        'content' => 'setContent'
+        'responses' => 'setResponses'
     ];
 
 
@@ -110,10 +97,7 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'type' => 'getType',
-        'provider' => 'getProvider',
-        'content' => 'getContent'
+        'responses' => 'getResponses'
     ];
 
     public static function attributeMap()
@@ -147,10 +131,7 @@ class InlineResponse200 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['responses'] = isset($data['responses']) ? $data['responses'] : null;
     }
 
     /**
@@ -179,85 +160,22 @@ class InlineResponse200 implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets responses
+     * @return \CyberSource\Model\InlineResponse200Responses[]
      */
-    public function getId()
+    public function getResponses()
     {
-        return $this->container['id'];
+        return $this->container['responses'];
     }
 
     /**
-     * Sets id
-     * @param string $id Unique identifier for the Card Art Asset.
+     * Sets responses
+     * @param \CyberSource\Model\InlineResponse200Responses[] $responses
      * @return $this
      */
-    public function setId($id)
+    public function setResponses($responses)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     * @param string $type The type of Card Art Asset.
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets provider
-     * @return string
-     */
-    public function getProvider()
-    {
-        return $this->container['provider'];
-    }
-
-    /**
-     * Sets provider
-     * @param string $provider The provider of the Card Art Asset.
-     * @return $this
-     */
-    public function setProvider($provider)
-    {
-        $this->container['provider'] = $provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     * @return \CyberSource\Model\InlineResponse200Content[]
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     * @param \CyberSource\Model\InlineResponse200Content[] $content Array of content objects representing the Card Art Asset.
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
+        $this->container['responses'] = $responses;
 
         return $this;
     }

@@ -119,6 +119,13 @@ class GenerateUnifiedCheckoutCaptureContextRequestTest extends \PHPUnit_Framewor
     }
 
     /**
+     * Test attribute "buttonType"
+     */
+    public function testPropertyButtonType()
+    {
+    }
+
+    /**
      * Test attribute "captureMandate"
      */
     public function testPropertyCaptureMandate()

@@ -103,7 +103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionsByOrg**
-> \CyberSource\Model\InlineResponse2005[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
+> \CyberSource\Model\InlineResponse2006[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
 
 Get Details On All Created Webhooks
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2005[]**](../Model/InlineResponse2005.md)
+[**\CyberSource\Model\InlineResponse2006[]**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> \CyberSource\Model\InlineResponse2006 notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook)
+> \CyberSource\Model\InlineResponse2007 notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook)
 
 Update a Webhook Subscription
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\CyberSource\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 

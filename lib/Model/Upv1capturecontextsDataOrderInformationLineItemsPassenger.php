@@ -212,7 +212,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets type
-     * @param string $type
+     * @param string $type Passenger type
      * @return $this
      */
     public function setType($type)
@@ -233,7 +233,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets status
-     * @param string $status
+     * @param string $status Passenger status
      * @return $this
      */
     public function setStatus($status)
@@ -254,7 +254,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets phone
-     * @param string $phone
+     * @param string $phone Passenger phone number
      * @return $this
      */
     public function setPhone($phone)
@@ -275,7 +275,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets firstName
-     * @param string $firstName
+     * @param string $firstName Passenger first name
      * @return $this
      */
     public function setFirstName($firstName)
@@ -296,7 +296,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets lastName
-     * @param string $lastName
+     * @param string $lastName Passenger last name
      * @return $this
      */
     public function setLastName($lastName)
@@ -317,7 +317,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets id
-     * @param string $id
+     * @param string $id Passenger ID
      * @return $this
      */
     public function setId($id)
@@ -338,7 +338,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets email
-     * @param string $email
+     * @param string $email Passenger email
      * @return $this
      */
     public function setEmail($email)
@@ -359,7 +359,7 @@ class Upv1capturecontextsDataOrderInformationLineItemsPassenger implements Array
 
     /**
      * Sets nationality
-     * @param string $nationality
+     * @param string $nationality Passenger nationality
      * @return $this
      */
     public function setNationality($nationality)

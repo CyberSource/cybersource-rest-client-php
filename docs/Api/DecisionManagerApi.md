@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **actionDecisionManagerCase**
-> \CyberSource\Model\InlineResponse2001 actionDecisionManagerCase($id, $caseManagementActionsRequest)
+> \CyberSource\Model\InlineResponse2002 actionDecisionManagerCase($id, $caseManagementActionsRequest)
 
 Take action on a DM post-transactional case
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\CyberSource\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

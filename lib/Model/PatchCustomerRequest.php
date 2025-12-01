@@ -53,16 +53,16 @@ class PatchCustomerRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\Tmsv2customersLinks',
+        'links' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerLinks',
         'id' => 'string',
-        'objectInformation' => '\CyberSource\Model\Tmsv2customersObjectInformation',
-        'buyerInformation' => '\CyberSource\Model\Tmsv2customersBuyerInformation',
-        'clientReferenceInformation' => '\CyberSource\Model\Tmsv2customersClientReferenceInformation',
-        'merchantDefinedInformation' => '\CyberSource\Model\Tmsv2customersMerchantDefinedInformation[]',
-        'defaultPaymentInstrument' => '\CyberSource\Model\Tmsv2customersDefaultPaymentInstrument',
-        'defaultShippingAddress' => '\CyberSource\Model\Tmsv2customersDefaultShippingAddress',
-        'metadata' => '\CyberSource\Model\Tmsv2customersMetadata',
-        'embedded' => '\CyberSource\Model\Tmsv2customersEmbedded'
+        'objectInformation' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerObjectInformation',
+        'buyerInformation' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerBuyerInformation',
+        'clientReferenceInformation' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation',
+        'merchantDefinedInformation' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation[]',
+        'defaultPaymentInstrument' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument',
+        'defaultShippingAddress' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress',
+        'metadata' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMetadata',
+        'embedded' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded'
     ];
 
     /**
@@ -215,7 +215,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\Tmsv2customersLinks
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerLinks
      */
     public function getLinks()
     {
@@ -224,7 +224,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\Tmsv2customersLinks $links
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -257,7 +257,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets objectInformation
-     * @return \CyberSource\Model\Tmsv2customersObjectInformation
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerObjectInformation
      */
     public function getObjectInformation()
     {
@@ -266,7 +266,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets objectInformation
-     * @param \CyberSource\Model\Tmsv2customersObjectInformation $objectInformation
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerObjectInformation $objectInformation
      * @return $this
      */
     public function setObjectInformation($objectInformation)
@@ -278,7 +278,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets buyerInformation
-     * @return \CyberSource\Model\Tmsv2customersBuyerInformation
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerBuyerInformation
      */
     public function getBuyerInformation()
     {
@@ -287,7 +287,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets buyerInformation
-     * @param \CyberSource\Model\Tmsv2customersBuyerInformation $buyerInformation
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerBuyerInformation $buyerInformation
      * @return $this
      */
     public function setBuyerInformation($buyerInformation)
@@ -299,7 +299,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets clientReferenceInformation
-     * @return \CyberSource\Model\Tmsv2customersClientReferenceInformation
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation
      */
     public function getClientReferenceInformation()
     {
@@ -308,7 +308,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets clientReferenceInformation
-     * @param \CyberSource\Model\Tmsv2customersClientReferenceInformation $clientReferenceInformation
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation $clientReferenceInformation
      * @return $this
      */
     public function setClientReferenceInformation($clientReferenceInformation)
@@ -320,7 +320,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets merchantDefinedInformation
-     * @return \CyberSource\Model\Tmsv2customersMerchantDefinedInformation[]
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation[]
      */
     public function getMerchantDefinedInformation()
     {
@@ -329,7 +329,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets merchantDefinedInformation
-     * @param \CyberSource\Model\Tmsv2customersMerchantDefinedInformation[] $merchantDefinedInformation Object containing the custom data that the merchant defines.
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMerchantDefinedInformation[] $merchantDefinedInformation Object containing the custom data that the merchant defines.
      * @return $this
      */
     public function setMerchantDefinedInformation($merchantDefinedInformation)
@@ -341,7 +341,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets defaultPaymentInstrument
-     * @return \CyberSource\Model\Tmsv2customersDefaultPaymentInstrument
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument
      */
     public function getDefaultPaymentInstrument()
     {
@@ -350,7 +350,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets defaultPaymentInstrument
-     * @param \CyberSource\Model\Tmsv2customersDefaultPaymentInstrument $defaultPaymentInstrument
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument $defaultPaymentInstrument
      * @return $this
      */
     public function setDefaultPaymentInstrument($defaultPaymentInstrument)
@@ -362,7 +362,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets defaultShippingAddress
-     * @return \CyberSource\Model\Tmsv2customersDefaultShippingAddress
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress
      */
     public function getDefaultShippingAddress()
     {
@@ -371,7 +371,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets defaultShippingAddress
-     * @param \CyberSource\Model\Tmsv2customersDefaultShippingAddress $defaultShippingAddress
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress $defaultShippingAddress
      * @return $this
      */
     public function setDefaultShippingAddress($defaultShippingAddress)
@@ -383,7 +383,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return \CyberSource\Model\Tmsv2customersMetadata
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMetadata
      */
     public function getMetadata()
     {
@@ -392,7 +392,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param \CyberSource\Model\Tmsv2customersMetadata $metadata
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMetadata $metadata
      * @return $this
      */
     public function setMetadata($metadata)
@@ -404,7 +404,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\Tmsv2customersEmbedded
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded
      */
     public function getEmbedded()
     {
@@ -413,7 +413,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\Tmsv2customersEmbedded $embedded
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded $embedded
      * @return $this
      */
     public function setEmbedded($embedded)
