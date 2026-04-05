@@ -14,8 +14,6 @@ use Jose\Component\KeyManagement\JWKFactory;
 use Jose\Component\Encryption\Algorithm\KeyEncryption\RSAOAEP;
 use Jose\Component\Encryption\Algorithm\KeyEncryption\RSAOAEP256;
 use Jose\Component\Encryption\Algorithm\ContentEncryption\A256GCM;
-use Jose\Component\Encryption\Compression\CompressionMethodManager;
-use Jose\Component\Encryption\Compression\Deflate;
 use CyberSource\Authentication\Util\MLEException;
 use \CyberSource\Authentication\Util\JWE\JWEUtility;
 
@@ -204,15 +202,7 @@ class MLEUtility
                 new A256GCM()
             ]);
 
-            $compressionManager = new CompressionMethodManager([
-                new Deflate()
-            ]);
-
-            $jweBuilder = new JWEBuilder(
-                $algorithmManager,
-                $algorithmManager,
-                $compressionManager
-            );
+            $jweBuilder = new JWEBuilder($algorithmManager);
 
             $jwe = $jweBuilder
                 ->create()

@@ -20,7 +20,7 @@
         "ext-mbstring": "*",
         "firebase/php-jwt": "^7.0.0",
         "monolog/monolog": ">=1.25.0",
-        "web-token/jwt-framework": "^2.2.11|^3.3.5",
+        "web-token/jwt-framework": "^2.2.11|^3.3.5|^4.0",
         "singpolyma/openpgp-php": "0.7.0",
         "ramsey/uuid": "^4.0"
     },

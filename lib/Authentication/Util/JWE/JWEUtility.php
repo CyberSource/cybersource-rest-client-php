@@ -9,8 +9,6 @@ use Jose\Component\Core\AlgorithmManager;
 use Jose\Component\Encryption\Algorithm\ContentEncryption\A256GCM;
 use Jose\Component\Encryption\Algorithm\KeyEncryption\RSAOAEP;
 use Jose\Component\Encryption\Algorithm\KeyEncryption\RSAOAEP256;
-use Jose\Component\Encryption\Compression\CompressionMethodManager;
-use Jose\Component\Encryption\Compression\Deflate;
 use Jose\Component\Encryption\JWEDecrypter;
 use Jose\Component\Encryption\Serializer\CompactSerializer;
 use Jose\Component\Encryption\Serializer\JWESerializerManager;
@@ -54,27 +52,13 @@ class JWEUtility {
             new CompactSerializer(),
         ]);
 
-        // The key encryption algorithm manager with RSA-OAEP and RSA-OAEP-256 algorithms.
-        $keyEncryptionAlgorithmManager = new AlgorithmManager([
+        $algorithmManager = new AlgorithmManager([
             new RSAOAEP(),
-            new RSAOAEP256()
-        ]);
-
-        // The content encryption algorithm manager with the A256GCM algorithm.
-        $contentEncryptionAlgorithmManager = new AlgorithmManager([
+            new RSAOAEP256(),
             new A256GCM(),
         ]);
 
-        // The compression method manager with the DEF (Deflate) method.
-        $compressionMethodManager = new CompressionMethodManager([
-            new Deflate()
-        ]);
-
-        $jweDecrypter = new JWEDecrypter(
-            $keyEncryptionAlgorithmManager,
-            $contentEncryptionAlgorithmManager,
-            $compressionMethodManager
-        );
+        $jweDecrypter = new JWEDecrypter($algorithmManager);
 
         $jwe = $serializerManager->unserialize($jweBase64Data);
         if($jweDecrypter -> decryptUsingKey($jwe, $jweKey, 0)) {
@@ -86,14 +70,9 @@ class JWEUtility {
 
     public static function decryptJWEUsingPrivateKey(string $privateKey, string $encodedResponse) {
         $jwk = JWKFactory::createFromKey($privateKey);
-        // The key encryption algorithm manager with RSA-OAEP and RSA-OAEP-256 algorithms.
-        $keyEncryptionAlgorithmManager = new AlgorithmManager([
+        $algorithmManager = new AlgorithmManager([
             new RSAOAEP(),
-            new RSAOAEP256()
-        ]);
-
-        // The content encryption algorithm manager with the A256CBC-HS256 algorithm.
-        $contentEncryptionAlgorithmManager = new AlgorithmManager([
+            new RSAOAEP256(),
             new A256GCM(),
         ]);
 
@@ -102,11 +81,7 @@ class JWEUtility {
             new CompactSerializer(),
         ]);
 
-        $jweDecrypter = new JWEDecrypter(
-            $keyEncryptionAlgorithmManager,
-            $contentEncryptionAlgorithmManager,
-            new CompressionMethodManager([new Deflate()])
-        );
+        $jweDecrypter = new JWEDecrypter($algorithmManager);
 
         $jwe = $serializerManager->unserialize($encodedResponse);
         if($jweDecrypter -> decryptUsingKey($jwe, $jwk, 0)) {
