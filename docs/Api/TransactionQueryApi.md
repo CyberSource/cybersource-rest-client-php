@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createQueryApi**
-> \CyberSource\Model\InlineResponse2015 createQueryApi($id, $body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit, $offset)
+> \CyberSource\Model\InlineResponse2014 createQueryApi($id, $body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit, $offset)
 
 Query Transaction Details
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
+[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
 
 ### Authorization
 

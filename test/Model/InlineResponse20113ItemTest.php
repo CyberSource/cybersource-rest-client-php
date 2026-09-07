@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20113ItemTest Class Doc Comment
  *
  * @category    Class */
-// * @description Item detail within an ACP line item response.
+// * @description Product details for this line item.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -84,16 +84,16 @@ class InlineResponse20113ItemTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "title"
      */
-    public function testPropertyName()
+    public function testPropertyTitle()
     {
     }
 
     /**
-     * Test attribute "quantity"
+     * Test attribute "price"
      */
-    public function testPropertyQuantity()
+    public function testPropertyPrice()
     {
     }
 }

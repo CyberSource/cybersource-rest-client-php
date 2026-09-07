@@ -56,7 +56,8 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
         'challengeCode' => 'string',
         'messageCategory' => 'string',
         'acsWindowSize' => 'string',
-        'productCode' => 'string'
+        'productCode' => 'string',
+        'languagePreference' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
         'challengeCode' => null,
         'messageCategory' => null,
         'acsWindowSize' => null,
-        'productCode' => null
+        'productCode' => null,
+        'languagePreference' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
         'challengeCode' => 'challengeCode',
         'messageCategory' => 'messageCategory',
         'acsWindowSize' => 'acsWindowSize',
-        'productCode' => 'productCode'
+        'productCode' => 'productCode',
+        'languagePreference' => 'languagePreference'
     ];
 
 
@@ -100,7 +103,8 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
         'challengeCode' => 'setChallengeCode',
         'messageCategory' => 'setMessageCategory',
         'acsWindowSize' => 'setAcsWindowSize',
-        'productCode' => 'setProductCode'
+        'productCode' => 'setProductCode',
+        'languagePreference' => 'setLanguagePreference'
     ];
 
 
@@ -112,7 +116,8 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
         'challengeCode' => 'getChallengeCode',
         'messageCategory' => 'getMessageCategory',
         'acsWindowSize' => 'getAcsWindowSize',
-        'productCode' => 'getProductCode'
+        'productCode' => 'getProductCode',
+        'languagePreference' => 'getLanguagePreference'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
         $this->container['messageCategory'] = isset($data['messageCategory']) ? $data['messageCategory'] : null;
         $this->container['acsWindowSize'] = isset($data['acsWindowSize']) ? $data['acsWindowSize'] : null;
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
+        $this->container['languagePreference'] = isset($data['languagePreference']) ? $data['languagePreference'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class Ucv1sessionsDataConsumerAuthenticationInformation implements ArrayAccess
     public function setProductCode($productCode)
     {
         $this->container['productCode'] = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets languagePreference
+     * @return string
+     */
+    public function getLanguagePreference()
+    {
+        return $this->container['languagePreference'];
+    }
+
+    /**
+     * Sets languagePreference
+     * @param string $languagePreference Preferred language to be used for cardholder authentication and challenge experiences (subject to issuer/ACS support).
+     * @return $this
+     */
+    public function setLanguagePreference($languagePreference)
+    {
+        $this->container['languagePreference'] = $languagePreference;
 
         return $this;
     }

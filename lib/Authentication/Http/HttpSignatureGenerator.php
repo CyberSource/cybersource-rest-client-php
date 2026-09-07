@@ -24,10 +24,9 @@ class HttpSignatureGenerator implements TokenGenerator
     }
 
     //Signature Creation function
-    public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $isResponseMLEForAPI = false)
+    public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $date, $isResponseMLEForAPI = false)
     {
         $host = $merchantConfig->getHost();
-        $date = date("D, d M Y G:i:s ").GlobalParameter::GMT;
         $methodHeader = strtolower($method);
         $signatureString ="";
         if($method==GlobalParameter::GET || $method==GlobalParameter::DELETE){

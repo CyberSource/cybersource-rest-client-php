@@ -4,7 +4,7 @@ namespace CyberSource\Authentication\Core;
 
 interface TokenGenerator
 {
-    public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $isResponseMLEForAPI=false);
+    public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $date, $isResponseMLEForAPI = false);
 }
 
 ?>

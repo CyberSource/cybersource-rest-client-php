@@ -77,9 +77,16 @@ class InlineResponse2014OrderInformationAmountDetailsTest extends \PHPUnit\Frame
     }
 
     /**
-     * Test attribute "markupRate"
+     * Test attribute "authorizedAmount"
      */
-    public function testPropertyMarkupRate()
+    public function testPropertyAuthorizedAmount()
+    {
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
     {
     }
 
@@ -91,23 +98,9 @@ class InlineResponse2014OrderInformationAmountDetailsTest extends \PHPUnit\Frame
     }
 
     /**
-     * Test attribute "originalAmount"
+     * Test attribute "totalAmount"
      */
-    public function testPropertyOriginalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "destinationAmount"
-     */
-    public function testPropertyDestinationAmount()
-    {
-    }
-
-    /**
-     * Test attribute "originalAmountWithoutMarkup"
-     */
-    public function testPropertyOriginalAmountWithoutMarkup()
+    public function testPropertyTotalAmount()
     {
     }
 
@@ -115,20 +108,6 @@ class InlineResponse2014OrderInformationAmountDetailsTest extends \PHPUnit\Frame
      * Test attribute "settlementAmount"
      */
     public function testPropertySettlementAmount()
-    {
-    }
-
-    /**
-     * Test attribute "settlementCurrency"
-     */
-    public function testPropertySettlementCurrency()
-    {
-    }
-
-    /**
-     * Test attribute "settlementExchangeRate"
-     */
-    public function testPropertySettlementExchangeRate()
     {
     }
 }

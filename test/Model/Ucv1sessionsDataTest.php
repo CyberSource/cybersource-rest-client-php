@@ -84,6 +84,13 @@ class Ucv1sessionsDataTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "acquirerInformation"
+     */
+    public function testPropertyAcquirerInformation()
+    {
+    }
+
+    /**
      * Test attribute "orderInformation"
      */
     public function testPropertyOrderInformation()

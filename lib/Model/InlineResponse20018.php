@@ -57,13 +57,13 @@ class InlineResponse20018 implements ArrayAccess
         'status' => 'string',
         'currency' => 'string',
         'buyer' => '\CyberSource\Model\AcpCheckoutSessionResponseBuyer',
-        'lineItems' => '\CyberSource\Model\InlineResponse20113LineItems[]',
+        'lineItems' => '\CyberSource\Model\InlineResponse20112LineItems[]',
         'fulfillmentAddress' => '\CyberSource\Model\InlineResponse20017FulfillmentAddress',
-        'fulfillmentOptions' => '\CyberSource\Model\InlineResponse20113FulfillmentOptions[]',
+        'fulfillmentOptions' => '\CyberSource\Model\InlineResponse20112FulfillmentOptions[]',
         'fulfillmentOptionId' => 'string',
-        'totals' => '\CyberSource\Model\InlineResponse20113Totals[]',
-        'messages' => '\CyberSource\Model\InlineResponse20113Messages[]',
-        'links' => '\CyberSource\Model\InlineResponse20113Links[]'
+        'totals' => '\CyberSource\Model\InlineResponse20112Totals[]',
+        'messages' => '\CyberSource\Model\InlineResponse20112Messages[]',
+        'links' => '\CyberSource\Model\InlineResponse20112Links[]'
     ];
 
     /**
@@ -305,7 +305,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Gets lineItems
-     * @return \CyberSource\Model\InlineResponse20113LineItems[]
+     * @return \CyberSource\Model\InlineResponse20112LineItems[]
      */
     public function getLineItems()
     {
@@ -314,7 +314,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Sets lineItems
-     * @param \CyberSource\Model\InlineResponse20113LineItems[] $lineItems Line items with merchant-confirmed pricing.
+     * @param \CyberSource\Model\InlineResponse20112LineItems[] $lineItems Line items with merchant-confirmed pricing.
      * @return $this
      */
     public function setLineItems($lineItems)
@@ -347,7 +347,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Gets fulfillmentOptions
-     * @return \CyberSource\Model\InlineResponse20113FulfillmentOptions[]
+     * @return \CyberSource\Model\InlineResponse20112FulfillmentOptions[]
      */
     public function getFulfillmentOptions()
     {
@@ -356,7 +356,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Sets fulfillmentOptions
-     * @param \CyberSource\Model\InlineResponse20113FulfillmentOptions[] $fulfillmentOptions Available fulfillment methods with pricing.
+     * @param \CyberSource\Model\InlineResponse20112FulfillmentOptions[] $fulfillmentOptions Available fulfillment methods with pricing.
      * @return $this
      */
     public function setFulfillmentOptions($fulfillmentOptions)
@@ -389,7 +389,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Gets totals
-     * @return \CyberSource\Model\InlineResponse20113Totals[]
+     * @return \CyberSource\Model\InlineResponse20112Totals[]
      */
     public function getTotals()
     {
@@ -398,7 +398,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Sets totals
-     * @param \CyberSource\Model\InlineResponse20113Totals[] $totals Order cost breakdown as typed total lines. All amounts in minor units (cents).
+     * @param \CyberSource\Model\InlineResponse20112Totals[] $totals Order cost breakdown as typed total lines. All amounts in minor units (cents).
      * @return $this
      */
     public function setTotals($totals)
@@ -410,7 +410,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Gets messages
-     * @return \CyberSource\Model\InlineResponse20113Messages[]
+     * @return \CyberSource\Model\InlineResponse20112Messages[]
      */
     public function getMessages()
     {
@@ -419,7 +419,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Sets messages
-     * @param \CyberSource\Model\InlineResponse20113Messages[] $messages Informational or error messages from the merchant backend.
+     * @param \CyberSource\Model\InlineResponse20112Messages[] $messages Informational or error messages from the merchant backend.
      * @return $this
      */
     public function setMessages($messages)
@@ -431,7 +431,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\InlineResponse20113Links[]
+     * @return \CyberSource\Model\InlineResponse20112Links[]
      */
     public function getLinks()
     {
@@ -440,7 +440,7 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\InlineResponse20113Links[] $links Related resource links from the merchant (e.g. terms of use, privacy policy).
+     * @param \CyberSource\Model\InlineResponse20112Links[] $links Related resource links from the merchant (e.g. terms of use, privacy policy).
      * @return $this
      */
     public function setLinks($links)

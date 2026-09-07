@@ -77,6 +77,90 @@ class InlineResponse2014ProcessorInformationTest extends \PHPUnit\Framework\Test
     }
 
     /**
+     * Test attribute "rejectReasonCode"
+     */
+    public function testPropertyRejectReasonCode()
+    {
+    }
+
+    /**
+     * Test attribute "rejectReasonText"
+     */
+    public function testPropertyRejectReasonText()
+    {
+    }
+
+    /**
+     * Test attribute "approvalCode"
+     */
+    public function testPropertyApprovalCode()
+    {
+    }
+
+    /**
+     * Test attribute "cardVerification"
+     */
+    public function testPropertyCardVerification()
+    {
+    }
+
+    /**
+     * Test attribute "consumerAuthenticationResponse"
+     */
+    public function testPropertyConsumerAuthenticationResponse()
+    {
+    }
+
+    /**
+     * Test attribute "feeProgramDescription"
+     */
+    public function testPropertyFeeProgramDescription()
+    {
+    }
+
+    /**
+     * Test attribute "feeProgramId"
+     */
+    public function testPropertyFeeProgramId()
+    {
+    }
+
+    /**
+     * Test attribute "network"
+     */
+    public function testPropertyNetwork()
+    {
+    }
+
+    /**
+     * Test attribute "processingDate"
+     */
+    public function testPropertyProcessingDate()
+    {
+    }
+
+    /**
+     * Test attribute "processor"
+     */
+    public function testPropertyProcessor()
+    {
+    }
+
+    /**
+     * Test attribute "reasonCodeDetails"
+     */
+    public function testPropertyReasonCodeDetails()
+    {
+    }
+
+    /**
+     * Test attribute "reasonCodeValue"
+     */
+    public function testPropertyReasonCodeValue()
+    {
+    }
+
+    /**
      * Test attribute "responseCode"
      */
     public function testPropertyResponseCode()
@@ -87,6 +171,62 @@ class InlineResponse2014ProcessorInformationTest extends \PHPUnit\Framework\Test
      * Test attribute "responseDetails"
      */
     public function testPropertyResponseDetails()
+    {
+    }
+
+    /**
+     * Test attribute "responseDetailsOriginal"
+     */
+    public function testPropertyResponseDetailsOriginal()
+    {
+    }
+
+    /**
+     * Test attribute "retrievalReferenceNumber"
+     */
+    public function testPropertyRetrievalReferenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "settlementDateTime"
+     */
+    public function testPropertySettlementDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "statusCode"
+     */
+    public function testPropertyStatusCode()
+    {
+    }
+
+    /**
+     * Test attribute "systemTraceAuditNumber"
+     */
+    public function testPropertySystemTraceAuditNumber()
+    {
+    }
+
+    /**
+     * Test attribute "transactionDateTime"
+     */
+    public function testPropertyTransactionDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "transactionId"
+     */
+    public function testPropertyTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "transactionType"
+     */
+    public function testPropertyTransactionType()
     {
     }
 }

@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2018Test Class Doc Comment
  *
  * @category    Class */
-// * @description Egress Key Information Response
+// * @description InlineResponse2018
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,9 +77,37 @@ class InlineResponse2018Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "webhookId"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyWebhookId()
+    {
+    }
+
+    /**
+     * Test attribute "organizationId"
+     */
+    public function testPropertyOrganizationId()
+    {
+    }
+
+    /**
+     * Test attribute "products"
+     */
+    public function testPropertyProducts()
+    {
+    }
+
+    /**
+     * Test attribute "webhookUrl"
+     */
+    public function testPropertyWebhookUrl()
+    {
+    }
+
+    /**
+     * Test attribute "healthCheckUrl"
+     */
+    public function testPropertyHealthCheckUrl()
     {
     }
 
@@ -91,16 +119,44 @@ class InlineResponse2018Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "clientReferenceInformation"
+     * Test attribute "name"
      */
-    public function testPropertyClientReferenceInformation()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "keyInformation"
+     * Test attribute "description"
      */
-    public function testPropertyKeyInformation()
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "retryPolicy"
+     */
+    public function testPropertyRetryPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "securityPolicy"
+     */
+    public function testPropertySecurityPolicy()
+    {
+    }
+
+    /**
+     * Test attribute "createdOn"
+     */
+    public function testPropertyCreatedOn()
+    {
+    }
+
+    /**
+     * Test attribute "notificationScope"
+     */
+    public function testPropertyNotificationScope()
     {
     }
 }

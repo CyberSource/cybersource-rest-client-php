@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20113LineItemsTest Class Doc Comment
  *
  * @category    Class */
-// * @description A single line item in an ACP session response. All amounts in minor units (cents).
+// * @description A single product line item in a UCP session response.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -91,37 +91,16 @@ class InlineResponse20113LineItemsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "baseAmount"
+     * Test attribute "quantity"
      */
-    public function testPropertyBaseAmount()
+    public function testPropertyQuantity()
     {
     }
 
     /**
-     * Test attribute "discount"
+     * Test attribute "totals"
      */
-    public function testPropertyDiscount()
-    {
-    }
-
-    /**
-     * Test attribute "subtotal"
-     */
-    public function testPropertySubtotal()
-    {
-    }
-
-    /**
-     * Test attribute "tax"
-     */
-    public function testPropertyTax()
-    {
-    }
-
-    /**
-     * Test attribute "total"
-     */
-    public function testPropertyTotal()
+    public function testPropertyTotals()
     {
     }
 }

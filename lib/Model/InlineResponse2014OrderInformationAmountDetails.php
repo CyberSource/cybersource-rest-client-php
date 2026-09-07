@@ -53,14 +53,11 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'markupRate' => 'string',
+        'authorizedAmount' => 'string',
+        'currency' => 'string',
         'exchangeRate' => 'string',
-        'originalAmount' => 'string',
-        'destinationAmount' => 'string',
-        'originalAmountWithoutMarkup' => 'string',
-        'settlementAmount' => 'string',
-        'settlementCurrency' => 'string',
-        'settlementExchangeRate' => 'string'
+        'totalAmount' => 'string',
+        'settlementAmount' => 'string'
     ];
 
     /**
@@ -68,14 +65,11 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'markupRate' => null,
+        'authorizedAmount' => null,
+        'currency' => null,
         'exchangeRate' => null,
-        'originalAmount' => null,
-        'destinationAmount' => null,
-        'originalAmountWithoutMarkup' => null,
-        'settlementAmount' => null,
-        'settlementCurrency' => null,
-        'settlementExchangeRate' => null
+        'totalAmount' => null,
+        'settlementAmount' => null
     ];
 
     public static function swaggerTypes()
@@ -93,14 +87,11 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'markupRate' => 'markupRate',
+        'authorizedAmount' => 'authorizedAmount',
+        'currency' => 'currency',
         'exchangeRate' => 'exchangeRate',
-        'originalAmount' => 'originalAmount',
-        'destinationAmount' => 'destinationAmount',
-        'originalAmountWithoutMarkup' => 'originalAmountWithoutMarkup',
-        'settlementAmount' => 'settlementAmount',
-        'settlementCurrency' => 'settlementCurrency',
-        'settlementExchangeRate' => 'settlementExchangeRate'
+        'totalAmount' => 'totalAmount',
+        'settlementAmount' => 'settlementAmount'
     ];
 
 
@@ -109,14 +100,11 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'markupRate' => 'setMarkupRate',
+        'authorizedAmount' => 'setAuthorizedAmount',
+        'currency' => 'setCurrency',
         'exchangeRate' => 'setExchangeRate',
-        'originalAmount' => 'setOriginalAmount',
-        'destinationAmount' => 'setDestinationAmount',
-        'originalAmountWithoutMarkup' => 'setOriginalAmountWithoutMarkup',
-        'settlementAmount' => 'setSettlementAmount',
-        'settlementCurrency' => 'setSettlementCurrency',
-        'settlementExchangeRate' => 'setSettlementExchangeRate'
+        'totalAmount' => 'setTotalAmount',
+        'settlementAmount' => 'setSettlementAmount'
     ];
 
 
@@ -125,14 +113,11 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'markupRate' => 'getMarkupRate',
+        'authorizedAmount' => 'getAuthorizedAmount',
+        'currency' => 'getCurrency',
         'exchangeRate' => 'getExchangeRate',
-        'originalAmount' => 'getOriginalAmount',
-        'destinationAmount' => 'getDestinationAmount',
-        'originalAmountWithoutMarkup' => 'getOriginalAmountWithoutMarkup',
-        'settlementAmount' => 'getSettlementAmount',
-        'settlementCurrency' => 'getSettlementCurrency',
-        'settlementExchangeRate' => 'getSettlementExchangeRate'
+        'totalAmount' => 'getTotalAmount',
+        'settlementAmount' => 'getSettlementAmount'
     ];
 
     public static function attributeMap()
@@ -166,14 +151,11 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['markupRate'] = isset($data['markupRate']) ? $data['markupRate'] : null;
+        $this->container['authorizedAmount'] = isset($data['authorizedAmount']) ? $data['authorizedAmount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['exchangeRate'] = isset($data['exchangeRate']) ? $data['exchangeRate'] : null;
-        $this->container['originalAmount'] = isset($data['originalAmount']) ? $data['originalAmount'] : null;
-        $this->container['destinationAmount'] = isset($data['destinationAmount']) ? $data['destinationAmount'] : null;
-        $this->container['originalAmountWithoutMarkup'] = isset($data['originalAmountWithoutMarkup']) ? $data['originalAmountWithoutMarkup'] : null;
+        $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['settlementAmount'] = isset($data['settlementAmount']) ? $data['settlementAmount'] : null;
-        $this->container['settlementCurrency'] = isset($data['settlementCurrency']) ? $data['settlementCurrency'] : null;
-        $this->container['settlementExchangeRate'] = isset($data['settlementExchangeRate']) ? $data['settlementExchangeRate'] : null;
     }
 
     /**
@@ -202,22 +184,43 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
 
 
     /**
-     * Gets markupRate
+     * Gets authorizedAmount
      * @return string
      */
-    public function getMarkupRate()
+    public function getAuthorizedAmount()
     {
-        return $this->container['markupRate'];
+        return $this->container['authorizedAmount'];
     }
 
     /**
-     * Sets markupRate
-     * @param string $markupRate The markup between the offer exchange rate and wholesale rates, i.e. the mark up. Expressed as a percentage of 100, e.g. 3.75.  If the markup value is not supplied in the API, and the Acquiring BIN is provided, the markup configured during onboarding will be picked up and applied to the transaction. To override any markup defaults set up on the account, always send a markup value of 0.00 to indicate 0% markup.   Supported by Visa Direct.
+     * Sets authorizedAmount
+     * @param string $authorizedAmount Amount that was authorized.
      * @return $this
      */
-    public function setMarkupRate($markupRate)
+    public function setAuthorizedAmount($authorizedAmount)
     {
-        $this->container['markupRate'] = $markupRate;
+        $this->container['authorizedAmount'] = $authorizedAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     * @param string $currency Currency used for the order. Use the three-character ISO Standard Currency Codes.
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
 
         return $this;
     }
@@ -233,7 +236,7 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets exchangeRate
-     * @param string $exchangeRate Exchange rate returned by the card network.
+     * @param string $exchangeRate The rate of conversion of the currency given in the request.
      * @return $this
      */
     public function setExchangeRate($exchangeRate)
@@ -244,64 +247,22 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
     }
 
     /**
-     * Gets originalAmount
+     * Gets totalAmount
      * @return string
      */
-    public function getOriginalAmount()
+    public function getTotalAmount()
     {
-        return $this->container['originalAmount'];
+        return $this->container['totalAmount'];
     }
 
     /**
-     * Sets originalAmount
-     * @param string $originalAmount Amount in your original local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places.
+     * Sets totalAmount
+     * @param string $totalAmount Grand total for the order. This value cannot be negative. You can include a decimal point (.), but no other special characters. CyberSource truncates the amount to the correct number of decimal places.
      * @return $this
      */
-    public function setOriginalAmount($originalAmount)
+    public function setTotalAmount($totalAmount)
     {
-        $this->container['originalAmount'] = $originalAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets destinationAmount
-     * @return string
-     */
-    public function getDestinationAmount()
-    {
-        return $this->container['destinationAmount'];
-    }
-
-    /**
-     * Sets destinationAmount
-     * @param string $destinationAmount Amount in your destination's local pricing currency.  This value cannot be negative. You can include a decimal point (.) in this field to denote the currency exponent, but you cannot include any other special characters.  If needed, CyberSource truncates the amount to the correct number of decimal places.
-     * @return $this
-     */
-    public function setDestinationAmount($destinationAmount)
-    {
-        $this->container['destinationAmount'] = $destinationAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets originalAmountWithoutMarkup
-     * @return string
-     */
-    public function getOriginalAmountWithoutMarkup()
-    {
-        return $this->container['originalAmountWithoutMarkup'];
-    }
-
-    /**
-     * Sets originalAmountWithoutMarkup
-     * @param string $originalAmountWithoutMarkup Original Transaction Amount excluding markup in source currency. This field will be returned in a source-to-destination inquiry response when markup is applicable.  Supported by Visa Direct
-     * @return $this
-     */
-    public function setOriginalAmountWithoutMarkup($originalAmountWithoutMarkup)
-    {
-        $this->container['originalAmountWithoutMarkup'] = $originalAmountWithoutMarkup;
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }
@@ -317,54 +278,12 @@ class InlineResponse2014OrderInformationAmountDetails implements ArrayAccess
 
     /**
      * Sets settlementAmount
-     * @param string $settlementAmount The transaction amount in settlement currency.
+     * @param string $settlementAmount This is a multicurrency field. It contains the transaction amount, converted to the currency used to bill the cardholder's account.
      * @return $this
      */
     public function setSettlementAmount($settlementAmount)
     {
         $this->container['settlementAmount'] = $settlementAmount;
-
-        return $this;
-    }
-
-    /**
-     * Gets settlementCurrency
-     * @return string
-     */
-    public function getSettlementCurrency()
-    {
-        return $this->container['settlementCurrency'];
-    }
-
-    /**
-     * Sets settlementCurrency
-     * @param string $settlementCurrency The currency in which Visa or Mastercard settles with the acquirer/acquirer.  Use [ISO 4217 3-Alpha Currency Codes](https://developer.cybersource.com/content/dam/docs/cybs/en-us/currency-codes/reference/all/na/currency-codes.pdf).
-     * @return $this
-     */
-    public function setSettlementCurrency($settlementCurrency)
-    {
-        $this->container['settlementCurrency'] = $settlementCurrency;
-
-        return $this;
-    }
-
-    /**
-     * Gets settlementExchangeRate
-     * @return string
-     */
-    public function getSettlementExchangeRate()
-    {
-        return $this->container['settlementExchangeRate'];
-    }
-
-    /**
-     * Sets settlementExchangeRate
-     * @param string $settlementExchangeRate Exchange rate returned by the card network for settlement.
-     * @return $this
-     */
-    public function setSettlementExchangeRate($settlementExchangeRate)
-    {
-        $this->container['settlementExchangeRate'] = $settlementExchangeRate;
 
         return $this;
     }

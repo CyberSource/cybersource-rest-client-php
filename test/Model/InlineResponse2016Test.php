@@ -98,23 +98,44 @@ class InlineResponse2016Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "paymentAccountInformation"
+     * Test attribute "registrationInformation"
      */
-    public function testPropertyPaymentAccountInformation()
+    public function testPropertyRegistrationInformation()
     {
     }
 
     /**
-     * Test attribute "issuerInformation"
+     * Test attribute "integrationInformation"
      */
-    public function testPropertyIssuerInformation()
+    public function testPropertyIntegrationInformation()
     {
     }
 
     /**
-     * Test attribute "payoutInformation"
+     * Test attribute "organizationInformation"
      */
-    public function testPropertyPayoutInformation()
+    public function testPropertyOrganizationInformation()
+    {
+    }
+
+    /**
+     * Test attribute "productInformationSetups"
+     */
+    public function testPropertyProductInformationSetups()
+    {
+    }
+
+    /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
+    {
+    }
+
+    /**
+     * Test attribute "details"
+     */
+    public function testPropertyDetails()
     {
     }
 }

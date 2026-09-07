@@ -77,9 +77,30 @@ class InlineResponse2014ProcessingInformationTest extends \PHPUnit\Framework\Tes
     }
 
     /**
-     * Test attribute "routing"
+     * Test attribute "businessApplicationId"
      */
-    public function testPropertyRouting()
+    public function testPropertyBusinessApplicationId()
+    {
+    }
+
+    /**
+     * Test attribute "commerceIndicator"
+     */
+    public function testPropertyCommerceIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "payoutsOptions"
+     */
+    public function testPropertyPayoutsOptions()
+    {
+    }
+
+    /**
+     * Test attribute "reconciliationId"
+     */
+    public function testPropertyReconciliationId()
     {
     }
 }

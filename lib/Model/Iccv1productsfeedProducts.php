@@ -412,7 +412,7 @@ class Iccv1productsfeedProducts implements ArrayAccess
         'targetCountries' => 'setTargetCountries',
         'storeCountry' => 'setStoreCountry',
         'qAndA' => 'setQAndA',
-        'qandA' => 'setQandA',
+        'qandA' => 'setQ_and_A',
         'reviews' => 'setReviews'
     ];
 
@@ -502,7 +502,7 @@ class Iccv1productsfeedProducts implements ArrayAccess
         'targetCountries' => 'getTargetCountries',
         'storeCountry' => 'getStoreCountry',
         'qAndA' => 'getQAndA',
-        'qandA' => 'getQandA',
+        'qandA' => 'getQ_and_A',
         'reviews' => 'getReviews'
     ];
 
@@ -2438,7 +2438,7 @@ class Iccv1productsfeedProducts implements ArrayAccess
      * Gets qandA
      * @return map[string,object][]
      */
-    public function getQandA()
+    public function getQ_and_A()
     {
         return $this->container['qandA'];
     }
@@ -2448,7 +2448,7 @@ class Iccv1productsfeedProducts implements ArrayAccess
      * @param map[string,object][] $qandA Optional. Alias for `q_and_a`. Included for compatibility with alternate field naming conventions.
      * @return $this
      */
-    public function setQandA($qandA)
+    public function setQ_and_A($qandA)
     {
         $this->container['qandA'] = $qandA;
 

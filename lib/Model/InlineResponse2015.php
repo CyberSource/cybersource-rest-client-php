@@ -54,12 +54,11 @@ class InlineResponse2015 implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
+        'submitTimeUtc' => 'string',
         'status' => 'string',
-        'submitTimeStampUtc' => 'string',
-        'links' => '\CyberSource\Model\InlineResponse2015Links',
-        'transactions' => '\CyberSource\Model\InlineResponse2015Transactions[]',
-        'clientReferenceInformation' => '\CyberSource\Model\InlineResponse2015ClientReferenceInformation',
-        'errorInformation' => '\CyberSource\Model\InlineResponse2015ErrorInformation'
+        'paymentAccountInformation' => '\CyberSource\Model\TmsBinLookupPaymentAccountInformation',
+        'issuerInformation' => '\CyberSource\Model\TmsBinLookupIssuerInformation',
+        'payoutInformation' => '\CyberSource\Model\InlineResponse2015PayoutInformation'
     ];
 
     /**
@@ -68,12 +67,11 @@ class InlineResponse2015 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
+        'submitTimeUtc' => null,
         'status' => null,
-        'submitTimeStampUtc' => null,
-        'links' => null,
-        'transactions' => null,
-        'clientReferenceInformation' => null,
-        'errorInformation' => null
+        'paymentAccountInformation' => null,
+        'issuerInformation' => null,
+        'payoutInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -92,12 +90,11 @@ class InlineResponse2015 implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
-        'submitTimeStampUtc' => 'submitTimeStampUtc',
-        'links' => '_links',
-        'transactions' => 'transactions',
-        'clientReferenceInformation' => 'clientReferenceInformation',
-        'errorInformation' => 'errorInformation'
+        'paymentAccountInformation' => 'paymentAccountInformation',
+        'issuerInformation' => 'issuerInformation',
+        'payoutInformation' => 'payoutInformation'
     ];
 
 
@@ -107,12 +104,11 @@ class InlineResponse2015 implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
+        'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
-        'submitTimeStampUtc' => 'setSubmitTimeStampUtc',
-        'links' => 'setLinks',
-        'transactions' => 'setTransactions',
-        'clientReferenceInformation' => 'setClientReferenceInformation',
-        'errorInformation' => 'setErrorInformation'
+        'paymentAccountInformation' => 'setPaymentAccountInformation',
+        'issuerInformation' => 'setIssuerInformation',
+        'payoutInformation' => 'setPayoutInformation'
     ];
 
 
@@ -122,12 +118,11 @@ class InlineResponse2015 implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
+        'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
-        'submitTimeStampUtc' => 'getSubmitTimeStampUtc',
-        'links' => 'getLinks',
-        'transactions' => 'getTransactions',
-        'clientReferenceInformation' => 'getClientReferenceInformation',
-        'errorInformation' => 'getErrorInformation'
+        'paymentAccountInformation' => 'getPaymentAccountInformation',
+        'issuerInformation' => 'getIssuerInformation',
+        'payoutInformation' => 'getPayoutInformation'
     ];
 
     public static function attributeMap()
@@ -162,12 +157,11 @@ class InlineResponse2015 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['submitTimeStampUtc'] = isset($data['submitTimeStampUtc']) ? $data['submitTimeStampUtc'] : null;
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
-        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
-        $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
+        $this->container['paymentAccountInformation'] = isset($data['paymentAccountInformation']) ? $data['paymentAccountInformation'] : null;
+        $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
+        $this->container['payoutInformation'] = isset($data['payoutInformation']) ? $data['payoutInformation'] : null;
     }
 
     /**
@@ -179,9 +173,6 @@ class InlineResponse2015 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['status'] === null) {
-            $invalid_properties[] = "'status' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -194,9 +185,6 @@ class InlineResponse2015 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['status'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -212,12 +200,33 @@ class InlineResponse2015 implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.
+     * @param string $id An unique identification number generated by Cybersource to identify the submitted request. Returned by all services. It is also appended to the endpoint of the resource. On incremental authorizations, this value with be the same as the identification number returned in the original authorization response.
      * @return $this
      */
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return string
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }
@@ -233,7 +242,7 @@ class InlineResponse2015 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED`
+     * @param string $status The status of the submitted transaction.  Possible values:  - COMPLETED  - MULTIPLE  - NO MATCH
      * @return $this
      */
     public function setStatus($status)
@@ -244,106 +253,64 @@ class InlineResponse2015 implements ArrayAccess
     }
 
     /**
-     * Gets submitTimeStampUtc
-     * @return string
+     * Gets paymentAccountInformation
+     * @return \CyberSource\Model\TmsBinLookupPaymentAccountInformation
      */
-    public function getSubmitTimeStampUtc()
+    public function getPaymentAccountInformation()
     {
-        return $this->container['submitTimeStampUtc'];
+        return $this->container['paymentAccountInformation'];
     }
 
     /**
-     * Sets submitTimeStampUtc
-     * @param string $submitTimeStampUtc Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * Sets paymentAccountInformation
+     * @param \CyberSource\Model\TmsBinLookupPaymentAccountInformation $paymentAccountInformation
      * @return $this
      */
-    public function setSubmitTimeStampUtc($submitTimeStampUtc)
+    public function setPaymentAccountInformation($paymentAccountInformation)
     {
-        $this->container['submitTimeStampUtc'] = $submitTimeStampUtc;
+        $this->container['paymentAccountInformation'] = $paymentAccountInformation;
 
         return $this;
     }
 
     /**
-     * Gets links
-     * @return \CyberSource\Model\InlineResponse2015Links
+     * Gets issuerInformation
+     * @return \CyberSource\Model\TmsBinLookupIssuerInformation
      */
-    public function getLinks()
+    public function getIssuerInformation()
     {
-        return $this->container['links'];
+        return $this->container['issuerInformation'];
     }
 
     /**
-     * Sets links
-     * @param \CyberSource\Model\InlineResponse2015Links $links
+     * Sets issuerInformation
+     * @param \CyberSource\Model\TmsBinLookupIssuerInformation $issuerInformation
      * @return $this
      */
-    public function setLinks($links)
+    public function setIssuerInformation($issuerInformation)
     {
-        $this->container['links'] = $links;
+        $this->container['issuerInformation'] = $issuerInformation;
 
         return $this;
     }
 
     /**
-     * Gets transactions
-     * @return \CyberSource\Model\InlineResponse2015Transactions[]
+     * Gets payoutInformation
+     * @return \CyberSource\Model\InlineResponse2015PayoutInformation
      */
-    public function getTransactions()
+    public function getPayoutInformation()
     {
-        return $this->container['transactions'];
+        return $this->container['payoutInformation'];
     }
 
     /**
-     * Sets transactions
-     * @param \CyberSource\Model\InlineResponse2015Transactions[] $transactions
+     * Sets payoutInformation
+     * @param \CyberSource\Model\InlineResponse2015PayoutInformation $payoutInformation
      * @return $this
      */
-    public function setTransactions($transactions)
+    public function setPayoutInformation($payoutInformation)
     {
-        $this->container['transactions'] = $transactions;
-
-        return $this;
-    }
-
-    /**
-     * Gets clientReferenceInformation
-     * @return \CyberSource\Model\InlineResponse2015ClientReferenceInformation
-     */
-    public function getClientReferenceInformation()
-    {
-        return $this->container['clientReferenceInformation'];
-    }
-
-    /**
-     * Sets clientReferenceInformation
-     * @param \CyberSource\Model\InlineResponse2015ClientReferenceInformation $clientReferenceInformation
-     * @return $this
-     */
-    public function setClientReferenceInformation($clientReferenceInformation)
-    {
-        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorInformation
-     * @return \CyberSource\Model\InlineResponse2015ErrorInformation
-     */
-    public function getErrorInformation()
-    {
-        return $this->container['errorInformation'];
-    }
-
-    /**
-     * Sets errorInformation
-     * @param \CyberSource\Model\InlineResponse2015ErrorInformation $errorInformation
-     * @return $this
-     */
-    public function setErrorInformation($errorInformation)
-    {
-        $this->container['errorInformation'] = $errorInformation;
+        $this->container['payoutInformation'] = $payoutInformation;
 
         return $this;
     }

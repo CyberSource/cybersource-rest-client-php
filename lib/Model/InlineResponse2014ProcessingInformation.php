@@ -53,7 +53,10 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'routing' => '\CyberSource\Model\InlineResponse2014ProcessingInformationRouting'
+        'businessApplicationId' => 'string',
+        'commerceIndicator' => 'string',
+        'payoutsOptions' => '\CyberSource\Model\InlineResponse2014ProcessingInformationPayoutsOptions',
+        'reconciliationId' => 'string'
     ];
 
     /**
@@ -61,7 +64,10 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'routing' => null
+        'businessApplicationId' => null,
+        'commerceIndicator' => null,
+        'payoutsOptions' => null,
+        'reconciliationId' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +85,10 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'routing' => 'routing'
+        'businessApplicationId' => 'businessApplicationId',
+        'commerceIndicator' => 'commerceIndicator',
+        'payoutsOptions' => 'payoutsOptions',
+        'reconciliationId' => 'reconciliationId'
     ];
 
 
@@ -88,7 +97,10 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'routing' => 'setRouting'
+        'businessApplicationId' => 'setBusinessApplicationId',
+        'commerceIndicator' => 'setCommerceIndicator',
+        'payoutsOptions' => 'setPayoutsOptions',
+        'reconciliationId' => 'setReconciliationId'
     ];
 
 
@@ -97,7 +109,10 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'routing' => 'getRouting'
+        'businessApplicationId' => 'getBusinessApplicationId',
+        'commerceIndicator' => 'getCommerceIndicator',
+        'payoutsOptions' => 'getPayoutsOptions',
+        'reconciliationId' => 'getReconciliationId'
     ];
 
     public static function attributeMap()
@@ -131,7 +146,10 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['routing'] = isset($data['routing']) ? $data['routing'] : null;
+        $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
+        $this->container['commerceIndicator'] = isset($data['commerceIndicator']) ? $data['commerceIndicator'] : null;
+        $this->container['payoutsOptions'] = isset($data['payoutsOptions']) ? $data['payoutsOptions'] : null;
+        $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
     }
 
     /**
@@ -160,22 +178,85 @@ class InlineResponse2014ProcessingInformation implements ArrayAccess
 
 
     /**
-     * Gets routing
-     * @return \CyberSource\Model\InlineResponse2014ProcessingInformationRouting
+     * Gets businessApplicationId
+     * @return string
      */
-    public function getRouting()
+    public function getBusinessApplicationId()
     {
-        return $this->container['routing'];
+        return $this->container['businessApplicationId'];
     }
 
     /**
-     * Sets routing
-     * @param \CyberSource\Model\InlineResponse2014ProcessingInformationRouting $routing
+     * Sets businessApplicationId
+     * @param string $businessApplicationId Payouts transaction type.  Possible Values: - `AA` - Account to account - `AB` - Business to Business - `PP` - Person to person - `TU` - Top-up for enhanced prepaid loads - `WT` - Wallet transfer - `BI` - Bank Initiated - `FT` - Funds Transfer - `FD` - Funds Disbursement - `GD` - Government Disbursement - `PD` - Payroll Disbursement - `LA` - Liquid Assets - `CP` - Card Bill Payment - `MP` - Non-card Bill Payment - `CD` - Cash Deposit - `CI` - Cash in - `CO` - Cash out - `GP` - Gambling Payment - `LO` - Loyalty and Offers - `MD` - Merchant Disbursement - `MI` - Merchant Initiated OCT for Faster Refund - `OG` - Online Gambling - `OT` - Own Account Transfer - `PS` - Payment for goods and services - `RP` - Request-To-Pay Service
      * @return $this
      */
-    public function setRouting($routing)
+    public function setBusinessApplicationId($businessApplicationId)
     {
-        $this->container['routing'] = $routing;
+        $this->container['businessApplicationId'] = $businessApplicationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets commerceIndicator
+     * @return string
+     */
+    public function getCommerceIndicator()
+    {
+        return $this->container['commerceIndicator'];
+    }
+
+    /**
+     * Sets commerceIndicator
+     * @param string $commerceIndicator Type of transaction.
+     * @return $this
+     */
+    public function setCommerceIndicator($commerceIndicator)
+    {
+        $this->container['commerceIndicator'] = $commerceIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets payoutsOptions
+     * @return \CyberSource\Model\InlineResponse2014ProcessingInformationPayoutsOptions
+     */
+    public function getPayoutsOptions()
+    {
+        return $this->container['payoutsOptions'];
+    }
+
+    /**
+     * Sets payoutsOptions
+     * @param \CyberSource\Model\InlineResponse2014ProcessingInformationPayoutsOptions $payoutsOptions
+     * @return $this
+     */
+    public function setPayoutsOptions($payoutsOptions)
+    {
+        $this->container['payoutsOptions'] = $payoutsOptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets reconciliationId
+     * @return string
+     */
+    public function getReconciliationId()
+    {
+        return $this->container['reconciliationId'];
+    }
+
+    /**
+     * Sets reconciliationId
+     * @param string $reconciliationId CyberSource or merchant generated transaction reference number. This is sent to the processor and is echoed back in the response to the merchant. This is This value is used for reconciliation purposes.
+     * @return $this
+     */
+    public function setReconciliationId($reconciliationId)
+    {
+        $this->container['reconciliationId'] = $reconciliationId;
 
         return $this;
     }

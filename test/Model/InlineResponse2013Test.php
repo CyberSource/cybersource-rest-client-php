@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse2013Test Class Doc Comment
  *
  * @category    Class */
-// * @description Successful label submission response envelope returned for HTTP 201
+// * @description InlineResponse2013
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,23 +77,51 @@ class InlineResponse2013Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "requestId"
+     * Test attribute "id"
      */
-    public function testPropertyRequestId()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "submitTimeUtc"
+     * Test attribute "status"
      */
-    public function testPropertySubmitTimeUtc()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "results"
+     * Test attribute "submitTimeStampUtc"
      */
-    public function testPropertyResults()
+    public function testPropertySubmitTimeStampUtc()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "errorInformation"
+     */
+    public function testPropertyErrorInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processingInformation"
+     */
+    public function testPropertyProcessingInformation()
     {
     }
 }

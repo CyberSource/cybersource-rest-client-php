@@ -340,7 +340,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCheckoutSession**
-> \CyberSource\Model\InlineResponse20113 createCheckoutSession($acpCreateCheckoutSessionRequest, $idempotencyKey, $acceptLanguage, $userAgent, $requestId, $signature, $timestamp, $aPIVersion)
+> \CyberSource\Model\InlineResponse20112 createCheckoutSession($acpCreateCheckoutSessionRequest, $idempotencyKey, $acceptLanguage, $userAgent, $requestId, $signature, $timestamp, $aPIVersion)
 
 Create Checkout Session ACP
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\InlineResponse20112**](../Model/InlineResponse20112.md)
 
 ### Authorization
 
@@ -582,7 +582,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCheckoutSession**
-> \CyberSource\Model\InlineResponse20113 getCheckoutSession($sessionId, $acpGetCheckoutSessionRequest, $idempotencyKey, $acceptLanguage, $userAgent, $requestId, $signature, $timestamp, $aPIVersion)
+> \CyberSource\Model\InlineResponse20112 getCheckoutSession($sessionId, $acpGetCheckoutSessionRequest, $idempotencyKey, $acceptLanguage, $userAgent, $requestId, $signature, $timestamp, $aPIVersion)
 
 Get Checkout Session ACP
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\InlineResponse20112**](../Model/InlineResponse20112.md)
 
 ### Authorization
 
@@ -829,7 +829,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpCancelCheckout**
-> \CyberSource\Model\InlineResponse20114 ucpCancelCheckout($sessionId)
+> \CyberSource\Model\InlineResponse20113 ucpCancelCheckout($sessionId)
 
 Cancel Checkout UCP
 
@@ -860,7 +860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20114**](../Model/InlineResponse20114.md)
+[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
 
 ### Authorization
 
@@ -874,7 +874,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpCompleteCheckout**
-> \CyberSource\Model\InlineResponse20114 ucpCompleteCheckout($sessionId, $idempotencyKey, $ucpCompleteCheckoutRequest)
+> \CyberSource\Model\InlineResponse20113 ucpCompleteCheckout($sessionId, $idempotencyKey, $ucpCompleteCheckoutRequest)
 
 Complete Checkout UCP
 
@@ -909,7 +909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20114**](../Model/InlineResponse20114.md)
+[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
 
 ### Authorization
 
@@ -923,7 +923,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpCreateCheckoutSession**
-> \CyberSource\Model\InlineResponse20114 ucpCreateCheckoutSession($ucpCreateCheckoutSessionRequest, $idempotencyKey)
+> \CyberSource\Model\InlineResponse20113 ucpCreateCheckoutSession($ucpCreateCheckoutSessionRequest, $idempotencyKey)
 
 Create Checkout Session UCP
 
@@ -956,7 +956,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20114**](../Model/InlineResponse20114.md)
+[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
 
 ### Authorization
 
@@ -970,7 +970,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpGetCheckoutSession**
-> \CyberSource\Model\InlineResponse20114 ucpGetCheckoutSession($sessionId, $ucpGetCheckoutSessionRequest)
+> \CyberSource\Model\InlineResponse20113 ucpGetCheckoutSession($sessionId, $ucpGetCheckoutSessionRequest)
 
 Get Checkout Session UCP
 
@@ -1003,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20114**](../Model/InlineResponse20114.md)
+[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
 
 ### Authorization
 
@@ -1017,7 +1017,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **ucpUpdateCheckoutSession**
-> \CyberSource\Model\InlineResponse20114 ucpUpdateCheckoutSession($sessionId, $ucpUpdateCheckoutSessionRequest, $idempotencyKey)
+> \CyberSource\Model\InlineResponse20113 ucpUpdateCheckoutSession($sessionId, $ucpUpdateCheckoutSessionRequest, $idempotencyKey)
 
 Update Checkout Session UCP
 
@@ -1052,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20114**](../Model/InlineResponse20114.md)
+[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
 
 ### Authorization
 
@@ -1162,7 +1162,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCheckoutSession**
-> \CyberSource\Model\InlineResponse20113 updateCheckoutSession($sessionId, $acpUpdateCheckoutSessionRequest, $idempotencyKey, $acceptLanguage, $userAgent, $requestId, $signature, $timestamp, $aPIVersion)
+> \CyberSource\Model\InlineResponse20112 updateCheckoutSession($sessionId, $acpUpdateCheckoutSessionRequest, $idempotencyKey, $acceptLanguage, $userAgent, $requestId, $signature, $timestamp, $aPIVersion)
 
 Update Checkout Session ACP
 
@@ -1209,7 +1209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20113**](../Model/InlineResponse20113.md)
+[**\CyberSource\Model\InlineResponse20112**](../Model/InlineResponse20112.md)
 
 ### Authorization
 

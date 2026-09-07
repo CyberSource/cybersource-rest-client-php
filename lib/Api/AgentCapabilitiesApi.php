@@ -1107,7 +1107,7 @@ class AgentCapabilitiesApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCheckoutSession($acpCreateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -1132,7 +1132,7 @@ class AgentCapabilitiesApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCheckoutSessionWithHttpInfo($acpCreateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -1225,7 +1225,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20112");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createCheckoutSession,createCheckoutSessionWithHttpInfo");
@@ -1238,18 +1238,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20113',
+                '\CyberSource\Model\InlineResponse20112',
                 '/icc/v1/checkout_sessions',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20112', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20112', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1847,7 +1847,7 @@ class AgentCapabilitiesApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCheckoutSession($sessionId, $acpGetCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -1873,7 +1873,7 @@ class AgentCapabilitiesApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCheckoutSessionWithHttpInfo($sessionId, $acpGetCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -1979,7 +1979,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20112");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getCheckoutSession,getCheckoutSessionWithHttpInfo");
@@ -1992,18 +1992,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20113',
+                '\CyberSource\Model\InlineResponse20112',
                 '/icc/v1/checkout_sessions/{session_id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20112', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20112', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -2618,7 +2618,7 @@ class AgentCapabilitiesApi
      *
      * @param string $sessionId The unique identifier of the UCP checkout session to cancel. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpCancelCheckout($sessionId)
     {
@@ -2636,7 +2636,7 @@ class AgentCapabilitiesApi
      *
      * @param string $sessionId The unique identifier of the UCP checkout session to cancel. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpCancelCheckoutWithHttpInfo($sessionId)
     {
@@ -2702,7 +2702,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20114");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "ucpCancelCheckout,ucpCancelCheckoutWithHttpInfo");
@@ -2715,18 +2715,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20114',
+                '\CyberSource\Model\InlineResponse20113',
                 '/icc/v1/checkout-sessions/{session_id}/cancel',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20114', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20114', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -2749,7 +2749,7 @@ class AgentCapabilitiesApi
      * @param string $idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec. (optional)
      * @param \CyberSource\Model\UcpCompleteCheckoutRequest $ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpCompleteCheckout($sessionId, $idempotencyKey = null, $ucpCompleteCheckoutRequest = null)
     {
@@ -2769,7 +2769,7 @@ class AgentCapabilitiesApi
      * @param string $idempotencyKey **Strongly recommended.** A unique key that ensures this order is placed exactly once on retries. Lowercase per UCP spec. (optional)
      * @param \CyberSource\Model\UcpCompleteCheckoutRequest $ucpCompleteCheckoutRequest UCP completion payload containing payment instrument and optional risk signals. If payment context was already provided in the Create or Update call, the body can be omitted. Risk signals are logged for fraud analysis and are not forwarded to the merchant. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpCompleteCheckoutWithHttpInfo($sessionId, $idempotencyKey = null, $ucpCompleteCheckoutRequest = null)
     {
@@ -2846,7 +2846,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20114");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "ucpCompleteCheckout,ucpCompleteCheckoutWithHttpInfo");
@@ -2859,18 +2859,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20114',
+                '\CyberSource\Model\InlineResponse20113',
                 '/icc/v1/checkout-sessions/{session_id}/complete',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20114', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20114', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2900,7 +2900,7 @@ class AgentCapabilitiesApi
      * @param \CyberSource\Model\UcpCreateCheckoutSessionRequest $ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information. (required)
      * @param string $idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpCreateCheckoutSession($ucpCreateCheckoutSessionRequest, $idempotencyKey = null)
     {
@@ -2919,7 +2919,7 @@ class AgentCapabilitiesApi
      * @param \CyberSource\Model\UcpCreateCheckoutSessionRequest $ucpCreateCheckoutSessionRequest UCP checkout session creation payload containing line items, buyer details, currency, and optional payment, fulfillment, and discount information. (required)
      * @param string $idempotencyKey Client-generated unique key (UUID recommended) to ensure this request is processed exactly once. Lowercase per UCP specification. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpCreateCheckoutSessionWithHttpInfo($ucpCreateCheckoutSessionRequest, $idempotencyKey = null)
     {
@@ -2988,7 +2988,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20114");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "ucpCreateCheckoutSession,ucpCreateCheckoutSessionWithHttpInfo");
@@ -3001,18 +3001,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20114',
+                '\CyberSource\Model\InlineResponse20113',
                 '/icc/v1/checkout-sessions',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20114', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20114', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -3038,7 +3038,7 @@ class AgentCapabilitiesApi
      * @param string $sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response. (required)
      * @param object $ucpGetCheckoutSessionRequest Empty request body. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpGetCheckoutSession($sessionId, $ucpGetCheckoutSessionRequest)
     {
@@ -3057,7 +3057,7 @@ class AgentCapabilitiesApi
      * @param string $sessionId The unique identifier of the UCP checkout session to retrieve. Obtained from the &#x60;id&#x60; field in the Create Session response. (required)
      * @param object $ucpGetCheckoutSessionRequest Empty request body. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpGetCheckoutSessionWithHttpInfo($sessionId, $ucpGetCheckoutSessionRequest)
     {
@@ -3135,7 +3135,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20114");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "ucpGetCheckoutSession,ucpGetCheckoutSessionWithHttpInfo");
@@ -3148,18 +3148,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20114',
+                '\CyberSource\Model\InlineResponse20113',
                 '/icc/v1/checkout-sessions/{session_id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20114', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20114', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
@@ -3182,7 +3182,7 @@ class AgentCapabilitiesApi
      * @param \CyberSource\Model\UcpUpdateCheckoutSessionRequest $ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied. (required)
      * @param string $idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpUpdateCheckoutSession($sessionId, $ucpUpdateCheckoutSessionRequest, $idempotencyKey = null)
     {
@@ -3202,7 +3202,7 @@ class AgentCapabilitiesApi
      * @param \CyberSource\Model\UcpUpdateCheckoutSessionRequest $ucpUpdateCheckoutSessionRequest UCP session update payload. All fields are optional — only fields you include will be applied. (required)
      * @param string $idempotencyKey Client-generated unique key for idempotency. Lowercase per UCP spec. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20114, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
      */
     public function ucpUpdateCheckoutSessionWithHttpInfo($sessionId, $ucpUpdateCheckoutSessionRequest, $idempotencyKey = null)
     {
@@ -3284,7 +3284,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20114");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "ucpUpdateCheckoutSession,ucpUpdateCheckoutSessionWithHttpInfo");
@@ -3297,18 +3297,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20114',
+                '\CyberSource\Model\InlineResponse20113',
                 '/icc/v1/checkout-sessions/{session_id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20114', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20114', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -3666,7 +3666,7 @@ class AgentCapabilitiesApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCheckoutSession($sessionId, $acpUpdateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -3692,7 +3692,7 @@ class AgentCapabilitiesApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20113, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCheckoutSessionWithHttpInfo($sessionId, $acpUpdateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -3798,7 +3798,7 @@ class AgentCapabilitiesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20113");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20112");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateCheckoutSession,updateCheckoutSessionWithHttpInfo");
@@ -3811,18 +3811,18 @@ class AgentCapabilitiesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20113',
+                '\CyberSource\Model\InlineResponse20112',
                 '/icc/v1/checkout_sessions/{session_id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20113', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20112', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20113', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20112', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

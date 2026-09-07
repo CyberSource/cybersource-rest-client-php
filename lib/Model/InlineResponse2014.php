@@ -56,10 +56,10 @@ class InlineResponse2014 implements ArrayAccess
         'id' => 'string',
         'status' => 'string',
         'submitTimeStampUtc' => 'string',
-        'orderInformation' => '\CyberSource\Model\InlineResponse2014OrderInformation',
-        'errorInformation' => '\CyberSource\Model\InlineResponse2014ErrorInformation',
-        'processorInformation' => '\CyberSource\Model\InlineResponse2014ProcessorInformation',
-        'processingInformation' => '\CyberSource\Model\InlineResponse2014ProcessingInformation'
+        'links' => '\CyberSource\Model\InlineResponse2014Links',
+        'transactions' => '\CyberSource\Model\InlineResponse2014Transactions[]',
+        'clientReferenceInformation' => '\CyberSource\Model\InlineResponse2014ClientReferenceInformation',
+        'errorInformation' => '\CyberSource\Model\InlineResponse2014ErrorInformation'
     ];
 
     /**
@@ -70,10 +70,10 @@ class InlineResponse2014 implements ArrayAccess
         'id' => null,
         'status' => null,
         'submitTimeStampUtc' => null,
-        'orderInformation' => null,
-        'errorInformation' => null,
-        'processorInformation' => null,
-        'processingInformation' => null
+        'links' => null,
+        'transactions' => null,
+        'clientReferenceInformation' => null,
+        'errorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -94,10 +94,10 @@ class InlineResponse2014 implements ArrayAccess
         'id' => 'id',
         'status' => 'status',
         'submitTimeStampUtc' => 'submitTimeStampUtc',
-        'orderInformation' => 'orderInformation',
-        'errorInformation' => 'errorInformation',
-        'processorInformation' => 'processorInformation',
-        'processingInformation' => 'processingInformation'
+        'links' => '_links',
+        'transactions' => 'transactions',
+        'clientReferenceInformation' => 'clientReferenceInformation',
+        'errorInformation' => 'errorInformation'
     ];
 
 
@@ -109,10 +109,10 @@ class InlineResponse2014 implements ArrayAccess
         'id' => 'setId',
         'status' => 'setStatus',
         'submitTimeStampUtc' => 'setSubmitTimeStampUtc',
-        'orderInformation' => 'setOrderInformation',
-        'errorInformation' => 'setErrorInformation',
-        'processorInformation' => 'setProcessorInformation',
-        'processingInformation' => 'setProcessingInformation'
+        'links' => 'setLinks',
+        'transactions' => 'setTransactions',
+        'clientReferenceInformation' => 'setClientReferenceInformation',
+        'errorInformation' => 'setErrorInformation'
     ];
 
 
@@ -124,10 +124,10 @@ class InlineResponse2014 implements ArrayAccess
         'id' => 'getId',
         'status' => 'getStatus',
         'submitTimeStampUtc' => 'getSubmitTimeStampUtc',
-        'orderInformation' => 'getOrderInformation',
-        'errorInformation' => 'getErrorInformation',
-        'processorInformation' => 'getProcessorInformation',
-        'processingInformation' => 'getProcessingInformation'
+        'links' => 'getLinks',
+        'transactions' => 'getTransactions',
+        'clientReferenceInformation' => 'getClientReferenceInformation',
+        'errorInformation' => 'getErrorInformation'
     ];
 
     public static function attributeMap()
@@ -164,10 +164,10 @@ class InlineResponse2014 implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['submitTimeStampUtc'] = isset($data['submitTimeStampUtc']) ? $data['submitTimeStampUtc'] : null;
-        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
-        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
-        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
     }
 
     /**
@@ -179,6 +179,9 @@ class InlineResponse2014 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['status'] === null) {
+            $invalid_properties[] = "'status' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -191,6 +194,9 @@ class InlineResponse2014 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['status'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -227,7 +233,7 @@ class InlineResponse2014 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values: - `COMPLETED` - `INVALID_REQUEST` - `SERVER_ERROR`
+     * @param string $status The status of the submitted transaction.  Possible values: - `COMPLETED` - `SERVER_ERROR` - `INVALID_REQUEST` - `DECLINED`
      * @return $this
      */
     public function setStatus($status)
@@ -259,22 +265,64 @@ class InlineResponse2014 implements ArrayAccess
     }
 
     /**
-     * Gets orderInformation
-     * @return \CyberSource\Model\InlineResponse2014OrderInformation
+     * Gets links
+     * @return \CyberSource\Model\InlineResponse2014Links
      */
-    public function getOrderInformation()
+    public function getLinks()
     {
-        return $this->container['orderInformation'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets orderInformation
-     * @param \CyberSource\Model\InlineResponse2014OrderInformation $orderInformation
+     * Sets links
+     * @param \CyberSource\Model\InlineResponse2014Links $links
      * @return $this
      */
-    public function setOrderInformation($orderInformation)
+    public function setLinks($links)
     {
-        $this->container['orderInformation'] = $orderInformation;
+        $this->container['links'] = $links;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactions
+     * @return \CyberSource\Model\InlineResponse2014Transactions[]
+     */
+    public function getTransactions()
+    {
+        return $this->container['transactions'];
+    }
+
+    /**
+     * Sets transactions
+     * @param \CyberSource\Model\InlineResponse2014Transactions[] $transactions
+     * @return $this
+     */
+    public function setTransactions($transactions)
+    {
+        $this->container['transactions'] = $transactions;
+
+        return $this;
+    }
+
+    /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\InlineResponse2014ClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\InlineResponse2014ClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
 
         return $this;
     }
@@ -296,48 +344,6 @@ class InlineResponse2014 implements ArrayAccess
     public function setErrorInformation($errorInformation)
     {
         $this->container['errorInformation'] = $errorInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets processorInformation
-     * @return \CyberSource\Model\InlineResponse2014ProcessorInformation
-     */
-    public function getProcessorInformation()
-    {
-        return $this->container['processorInformation'];
-    }
-
-    /**
-     * Sets processorInformation
-     * @param \CyberSource\Model\InlineResponse2014ProcessorInformation $processorInformation
-     * @return $this
-     */
-    public function setProcessorInformation($processorInformation)
-    {
-        $this->container['processorInformation'] = $processorInformation;
-
-        return $this;
-    }
-
-    /**
-     * Gets processingInformation
-     * @return \CyberSource\Model\InlineResponse2014ProcessingInformation
-     */
-    public function getProcessingInformation()
-    {
-        return $this->container['processingInformation'];
-    }
-
-    /**
-     * Sets processingInformation
-     * @param \CyberSource\Model\InlineResponse2014ProcessingInformation $processingInformation
-     * @return $this
-     */
-    public function setProcessingInformation($processingInformation)
-    {
-        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

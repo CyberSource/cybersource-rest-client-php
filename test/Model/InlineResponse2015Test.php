@@ -84,6 +84,13 @@ class InlineResponse2015Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "submitTimeUtc"
+     */
+    public function testPropertySubmitTimeUtc()
+    {
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
@@ -91,37 +98,23 @@ class InlineResponse2015Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "submitTimeStampUtc"
+     * Test attribute "paymentAccountInformation"
      */
-    public function testPropertySubmitTimeStampUtc()
+    public function testPropertyPaymentAccountInformation()
     {
     }
 
     /**
-     * Test attribute "links"
+     * Test attribute "issuerInformation"
      */
-    public function testPropertyLinks()
+    public function testPropertyIssuerInformation()
     {
     }
 
     /**
-     * Test attribute "transactions"
+     * Test attribute "payoutInformation"
      */
-    public function testPropertyTransactions()
-    {
-    }
-
-    /**
-     * Test attribute "clientReferenceInformation"
-     */
-    public function testPropertyClientReferenceInformation()
-    {
-    }
-
-    /**
-     * Test attribute "errorInformation"
-     */
-    public function testPropertyErrorInformation()
+    public function testPropertyPayoutInformation()
     {
     }
 }

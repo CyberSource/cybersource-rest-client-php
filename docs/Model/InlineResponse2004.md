@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **string** |  | [optional] 
 **fieldType** | **string** |  | [optional] 
 **label** | **string** |  | [optional] 
 **customerVisible** | **bool** |  | [optional] 

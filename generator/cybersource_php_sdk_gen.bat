@@ -32,6 +32,11 @@ echo "starting of replacing the links keyword in PblPaymentLinksAllGet200Respons
 powershell -Command "Set-Content ..\lib\Model\PblPaymentLinksAllGet200Response.php ((Get-Content ..\lib\Model\PblPaymentLinksAllGet200Response.php -Raw) -replace '''sdkLinks'' => ''sdkLinks''', '''sdkLinks'' => ''links''')"
 echo "completed the task of replacing the links keyword in PblPaymentLinksAllGet200Response.php model"
 
+@REM PHP method names are case-insensitive, so the qandA alias accessors (getQandA/setQandA) collide with the qAndA ones (getQAndA/setQAndA); rename the exact alias accessor/test-method identifiers only (wire keys and property keys are lowercase 'qandA' and stay unchanged). -creplace keeps it case-sensitive so the qAndA methods are left alone
+echo "starting of renaming qandA alias accessor methods in product models"
+powershell -Command "@('..\lib\Model\Iccv1productsfeedProducts.php','..\lib\Model\InlineResponse20020Products.php','..\test\Model\Iccv1productsfeedProductsTest.php','..\test\Model\InlineResponse20020ProductsTest.php') | ForEach-Object { [IO.File]::WriteAllText($_, ([IO.File]::ReadAllText($_) -creplace 'getQandA','getQ_and_A' -creplace 'setQandA','setQ_and_A' -creplace 'testPropertyQandA','testPropertyQ_and_A'), (New-Object Text.UTF8Encoding($false))) }"
+echo "completed the task of renaming qandA alias accessor methods in product models"
+
 
 git checkout ..\README.md
 

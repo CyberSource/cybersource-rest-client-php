@@ -103,4 +103,11 @@ class Ucv1sessionsDataConsumerAuthenticationInformationTest extends \PHPUnit\Fra
     public function testPropertyProductCode()
     {
     }
+
+    /**
+     * Test attribute "languagePreference"
+     */
+    public function testPropertyLanguagePreference()
+    {
+    }
 }

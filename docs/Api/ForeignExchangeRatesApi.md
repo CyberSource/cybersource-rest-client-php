@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createFxRates**
-> \CyberSource\Model\InlineResponse2014 createFxRates($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
+> \CyberSource\Model\InlineResponse2013 createFxRates($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
 
 Retrieve Foreign Exchange Rates
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\CyberSource\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
 
 ### Authorization
 

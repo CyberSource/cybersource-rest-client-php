@@ -21,6 +21,7 @@ class JsonWebTokenGeneratorTest extends TestCase
     private MerchantConfiguration $merchantConfig;
     private string $testSecret;
     private string $testKeyId;
+    private string $date = 'Thu, 14 Aug 2026 00:00:00 GMT';
 
     protected function setUp(): void
     {
@@ -46,14 +47,14 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testGenerateTokenWithSharedSecretReturnsBearerPrefix(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments', '{"amount":"100"}', 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '{"amount":"100"}', 'POST', $this->merchantConfig, $this->date);
 
         $this->assertStringStartsWith('Bearer ', $token);
     }
 
     public function testGenerateTokenWithSharedSecretProducesValidJwt(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments', '{"amount":"100"}', 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '{"amount":"100"}', 'POST', $this->merchantConfig, $this->date);
 
         $jwtString = substr($token, 7); // strip "Bearer "
         $secretKeyBytes = base64_decode($this->testSecret);
@@ -68,7 +69,7 @@ class JsonWebTokenGeneratorTest extends TestCase
     {
         $resourcePath = '/pts/v2/payments';
         $payload = '{"amount":"100"}';
-        $token = $this->generator->generateToken($resourcePath, $payload, 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken($resourcePath, $payload, 'POST', $this->merchantConfig, $this->date);
 
         $jwtString = substr($token, 7);
         $decoded = JWT::decode($jwtString, new Key(base64_decode($this->testSecret), 'HS256'));
@@ -86,7 +87,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testSharedSecretTokenContainsDigestForPostRequest(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments', '{"amount":"100"}', 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '{"amount":"100"}', 'POST', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertObjectHasProperty('digest', $decoded);
@@ -95,7 +96,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testSharedSecretTokenOmitsDigestForGetRequest(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments/123', '', 'GET', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments/123', '', 'GET', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertObjectNotHasProperty('digest', $decoded);
@@ -104,7 +105,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testSharedSecretTokenKidMatchesApiKeyId(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig, $this->date);
         $jwtString = substr($token, 7);
 
         // Decode header to check kid
@@ -117,7 +118,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testSharedSecretTokenExpClaim2MinutesAfterIat(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertSame($decoded->iat + 120, $decoded->exp);
@@ -132,7 +133,7 @@ class JsonWebTokenGeneratorTest extends TestCase
         $this->merchantConfig->setUseMetaKey(true);
         $this->merchantConfig->setPortfolioID('portfolio_123');
 
-        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertSame('portfolio_123', $decoded->iss);
@@ -146,7 +147,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testSharedSecretTokenContainsDigestForPutRequest(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments/123', '{"status":"ok"}', 'PUT', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments/123', '{"status":"ok"}', 'PUT', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertObjectHasProperty('digest', $decoded);
@@ -155,7 +156,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testSharedSecretTokenContainsDigestForPatchRequest(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments/123', '{"status":"ok"}', 'PATCH', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments/123', '{"status":"ok"}', 'PATCH', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertObjectHasProperty('digest', $decoded);
@@ -167,7 +168,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testResourcePathStripsQueryParameters(): void
     {
-        $token = $this->generator->generateToken('/reporting/v3/reports?startDate=2024-01-01&endDate=2024-01-31', '', 'GET', $this->merchantConfig);
+        $token = $this->generator->generateToken('/reporting/v3/reports?startDate=2024-01-01&endDate=2024-01-31', '', 'GET', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertSame('/reporting/v3/reports?startDate=2024-01-01&endDate=2024-01-31', $decoded->{'request-resource-path'});
@@ -175,7 +176,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testResourcePathWithoutQueryParamsRemainsUnchanged(): void
     {
-        $token = $this->generator->generateToken('/pts/v2/payments', '', 'GET', $this->merchantConfig);
+        $token = $this->generator->generateToken('/pts/v2/payments', '', 'GET', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertSame('/pts/v2/payments', $decoded->{'request-resource-path'});
@@ -183,7 +184,7 @@ class JsonWebTokenGeneratorTest extends TestCase
 
     public function testEmptyResourcePath(): void
     {
-        $token = $this->generator->generateToken('', '', 'GET', $this->merchantConfig);
+        $token = $this->generator->generateToken('', '', 'GET', $this->merchantConfig, $this->date);
         $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
 
         $this->assertSame('', $decoded->{'request-resource-path'});
@@ -211,7 +212,7 @@ class JsonWebTokenGeneratorTest extends TestCase
             $p12Config->setKeysDirectory($tempDir);
 
             $this->expectException(AuthException::class);
-            $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $p12Config);
+            $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $p12Config, $this->date);
         } finally {
             @unlink($fakeP12);
         }

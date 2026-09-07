@@ -103,4 +103,11 @@ class Ucv1sessionsCompleteMandateTest extends \PHPUnit\Framework\TestCase
     public function testPropertyConsumerAuthentication()
     {
     }
+
+    /**
+     * Test attribute "suppress"
+     */
+    public function testPropertySuppress()
+    {
+    }
 }

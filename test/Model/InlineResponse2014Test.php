@@ -98,9 +98,23 @@ class InlineResponse2014Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "orderInformation"
+     * Test attribute "links"
      */
-    public function testPropertyOrderInformation()
+    public function testPropertyLinks()
+    {
+    }
+
+    /**
+     * Test attribute "transactions"
+     */
+    public function testPropertyTransactions()
+    {
+    }
+
+    /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
     {
     }
 
@@ -108,20 +122,6 @@ class InlineResponse2014Test extends \PHPUnit\Framework\TestCase
      * Test attribute "errorInformation"
      */
     public function testPropertyErrorInformation()
-    {
-    }
-
-    /**
-     * Test attribute "processorInformation"
-     */
-    public function testPropertyProcessorInformation()
-    {
-    }
-
-    /**
-     * Test attribute "processingInformation"
-     */
-    public function testPropertyProcessingInformation()
     {
     }
 }

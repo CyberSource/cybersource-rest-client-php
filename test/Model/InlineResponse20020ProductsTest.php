@@ -646,7 +646,7 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     /**
      * Test attribute "qandA"
      */
-    public function testPropertyQandA()
+    public function testPropertyQ_and_A()
     {
     }
 

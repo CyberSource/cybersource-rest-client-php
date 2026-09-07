@@ -224,7 +224,7 @@ class InlineResponse2014ErrorInformation implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status.  Possible values: - `INVALID_DATA` - `INVALID_MERCHANT_CONFIGURATION` - `SYSTEM_ERROR`
+     * @param string $reason Possible reasons for the error.  Possible values: - `INVALID_DATA` - `SYSTEM_ERROR` - `NOT_FOUND` - `UNAUTHORIZED` - `SYSTEM_TIMEOUT` - `PROCESSOR_ERROR`
      * @return $this
      */
     public function setReason($reason)

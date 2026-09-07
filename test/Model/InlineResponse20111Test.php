@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20111Test Class Doc Comment
  *
  * @category    Class */
-// * @description Egress Asymmetric Key Information Response.
+// * @description InlineResponse20111
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,6 +77,20 @@ class InlineResponse20111Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "clientReferenceInformation"
+     */
+    public function testPropertyClientReferenceInformation()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
      * Test attribute "submitTimeUtc"
      */
     public function testPropertySubmitTimeUtc()
@@ -87,6 +101,27 @@ class InlineResponse20111Test extends \PHPUnit\Framework\TestCase
      * Test attribute "status"
      */
     public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "errorInformation"
+     */
+    public function testPropertyErrorInformation()
+    {
+    }
+
+    /**
+     * Test attribute "orderInformation"
+     */
+    public function testPropertyOrderInformation()
+    {
+    }
+
+    /**
+     * Test attribute "processorInformation"
+     */
+    public function testPropertyProcessorInformation()
     {
     }
 }
