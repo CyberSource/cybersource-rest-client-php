@@ -224,7 +224,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The webhook Identifier (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2019, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2018, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionById($webhookId)
     {
@@ -242,7 +242,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The webhook Identifier (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2019, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2018, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionByIdWithHttpInfo($webhookId)
     {
@@ -308,7 +308,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2019");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2018");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getWebhookSubscriptionById,getWebhookSubscriptionByIdWithHttpInfo");
@@ -321,18 +321,18 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2019',
+                '\CyberSource\Model\InlineResponse2018',
                 '/notification-subscriptions/v2/webhooks/{webhookId}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2019', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2018', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2019', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2018', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -485,7 +485,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The Webhook Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20110, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2019, HTTP status code, HTTP response headers (array of strings)
      */
     public function notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
     {
@@ -503,7 +503,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The Webhook Identifier. (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20110, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2019, HTTP status code, HTTP response headers (array of strings)
      */
     public function notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo($webhookId)
     {
@@ -569,7 +569,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20110");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2019");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo");
@@ -582,18 +582,18 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20110',
+                '\CyberSource\Model\InlineResponse2019',
                 '/notification-subscriptions/v1/webhooks/{webhookId}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20110', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2019', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20110', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2019', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -885,7 +885,7 @@ class ManageWebhooksApi
      * @param string $vCSenderOrganizationId Sender organization id (optional)
      * @param string $vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20111, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20110, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveAsymEgressKey($saveAsymEgressKey, $vCCorrelationId = null, $vCSenderOrganizationId = null, $vCPermissions = null)
     {
@@ -906,7 +906,7 @@ class ManageWebhooksApi
      * @param string $vCSenderOrganizationId Sender organization id (optional)
      * @param string $vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20111, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse20110, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveAsymEgressKeyWithHttpInfo($saveAsymEgressKey, $vCCorrelationId = null, $vCSenderOrganizationId = null, $vCPermissions = null)
     {
@@ -983,7 +983,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20111");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20110");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "saveAsymEgressKey,saveAsymEgressKeyWithHttpInfo");
@@ -996,18 +996,18 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20111',
+                '\CyberSource\Model\InlineResponse20110',
                 '/kms/egress/v2/keys-asym',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20111', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20110', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20111', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20110', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

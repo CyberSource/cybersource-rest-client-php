@@ -422,7 +422,7 @@ class InlineResponse20020Products implements ArrayAccess
         'targetCountries' => 'setTargetCountries',
         'storeCountry' => 'setStoreCountry',
         'qAndA' => 'setQAndA',
-        'qandA' => 'setQandA',
+        'qandA' => 'setQ_and_A',
         'reviews' => 'setReviews',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt'
@@ -515,7 +515,7 @@ class InlineResponse20020Products implements ArrayAccess
         'targetCountries' => 'getTargetCountries',
         'storeCountry' => 'getStoreCountry',
         'qAndA' => 'getQAndA',
-        'qandA' => 'getQandA',
+        'qandA' => 'getQ_and_A',
         'reviews' => 'getReviews',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt'
@@ -2369,7 +2369,7 @@ class InlineResponse20020Products implements ArrayAccess
      * Gets qandA
      * @return map[string,object][]
      */
-    public function getQandA()
+    public function getQ_and_A()
     {
         return $this->container['qandA'];
     }
@@ -2379,7 +2379,7 @@ class InlineResponse20020Products implements ArrayAccess
      * @param map[string,object][] $qandA
      * @return $this
      */
-    public function setQandA($qandA)
+    public function setQ_and_A($qandA)
     {
         $this->container['qandA'] = $qandA;
 

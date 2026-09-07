@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**mdfValueId** | **string** |  | [optional] 
 **referenceType** | **string** |  | [optional] 
 **label** | **string** |  | [optional] 
 **fieldType** | **string** |  | [optional] 

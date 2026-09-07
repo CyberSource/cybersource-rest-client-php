@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregatorInformation** | [**\CyberSource\Model\Ucv1sessionsDataAggregatorInformation**](Ucv1sessionsDataAggregatorInformation.md) |  | [optional] 
+**acquirerInformation** | [**\CyberSource\Model\Ucv1sessionsDataAcquirerInformation**](Ucv1sessionsDataAcquirerInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Ucv1sessionsDataOrderInformation**](Ucv1sessionsDataOrderInformation.md) |  | [optional] 
 **buyerInformation** | [**\CyberSource\Model\Ucv1sessionsDataBuyerInformation**](Ucv1sessionsDataBuyerInformation.md) |  | [optional] 
 **clientReferenceInformation** | [**\CyberSource\Model\Ucv1sessionsDataClientReferenceInformation**](Ucv1sessionsDataClientReferenceInformation.md) |  | [optional] 

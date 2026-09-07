@@ -34,7 +34,7 @@ use \ArrayAccess;
  * InlineResponse20113Item Class Doc Comment
  *
  * @category    Class
- * @description Item detail within an ACP line item response.
+ * @description Product details for this line item.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -55,8 +55,8 @@ class InlineResponse20113Item implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'name' => 'string',
-        'quantity' => 'int'
+        'title' => 'string',
+        'price' => 'int'
     ];
 
     /**
@@ -65,8 +65,8 @@ class InlineResponse20113Item implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'name' => null,
-        'quantity' => null
+        'title' => null,
+        'price' => null
     ];
 
     public static function swaggerTypes()
@@ -85,8 +85,8 @@ class InlineResponse20113Item implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'name' => 'name',
-        'quantity' => 'quantity'
+        'title' => 'title',
+        'price' => 'price'
     ];
 
 
@@ -96,8 +96,8 @@ class InlineResponse20113Item implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'name' => 'setName',
-        'quantity' => 'setQuantity'
+        'title' => 'setTitle',
+        'price' => 'setPrice'
     ];
 
 
@@ -107,8 +107,8 @@ class InlineResponse20113Item implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'name' => 'getName',
-        'quantity' => 'getQuantity'
+        'title' => 'getTitle',
+        'price' => 'getPrice'
     ];
 
     public static function attributeMap()
@@ -143,8 +143,8 @@ class InlineResponse20113Item implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
     }
 
     /**
@@ -183,7 +183,7 @@ class InlineResponse20113Item implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id Product identifier.
+     * @param string $id The merchant's product ID or SKU.
      * @return $this
      */
     public function setId($id)
@@ -194,43 +194,43 @@ class InlineResponse20113Item implements ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets title
      * @return string
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->container['name'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets name
-     * @param string $name Product display name.
+     * Sets title
+     * @param string $title Human-readable product name.
      * @return $this
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->container['name'] = $name;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets quantity
+     * Gets price
      * @return int
      */
-    public function getQuantity()
+    public function getPrice()
     {
-        return $this->container['quantity'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets quantity
-     * @param int $quantity Number of units.
+     * Sets price
+     * @param int $price Unit price in cents. Example: 2999 = $29.99 USD.
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setPrice($price)
     {
-        $this->container['quantity'] = $quantity;
+        $this->container['price'] = $price;
 
         return $this;
     }

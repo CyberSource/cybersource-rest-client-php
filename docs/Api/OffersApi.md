@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createOffer**
-> \CyberSource\Model\InlineResponse20112 createOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $offerRequest)
+> \CyberSource\Model\InlineResponse20111 createOffer($contentType, $xRequestid, $vCMerchantId, $vCCorrelationId, $vCOrganizationId, $offerRequest)
 
 Create an Offer
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20112**](../Model/InlineResponse20112.md)
+[**\CyberSource\Model\InlineResponse20111**](../Model/InlineResponse20111.md)
 
 ### Authorization
 

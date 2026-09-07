@@ -1,0 +1,53 @@
+# UnifiedriskDevice
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ipAddress** | **string** | IPv4 or IPv6 address observed for the customer&#39;s device during the session. | [optional] 
+**hostName** | **string** | DNS resolved hostname from &#x60;ipAddress&#x60;. | [optional] 
+**anonymizerInUseFlag** | **bool** | A flag indicating if the anonymizer was in use during the session. true if the anonymiser was in use, false otherwise. | [optional] 
+**areaCode** | **string** | The device area code captured during the customer session | [optional] 
+**browserType** | **string** | The device browser type captured during the customer session | [optional] 
+**browserVersion** | **string** | The device browser version captured during the customer session | [optional] 
+**city** | **string** | The device city name captured during the customer session | [optional] 
+**clientTimezone** | **string** | The clientTimeZone captured during the customer session | [optional] 
+**continentCode** | **string** | The device continent code captured during the customer session | [optional] 
+**cookieId** | **string** | The cookie ID used during the customer session | [optional] 
+**countryCode** | **string** | The device country code captured during the customer session | [optional] 
+**countryName** | **string** | The device country name captured during the customer session | [optional] 
+**deviceFingerprint** | **string** | The device fingerprint captured during the customer session by a third party. A device fingerprint is information collected about the software and hardware for the purpose of identification | [optional] 
+**deviceIMEI** | **string** | The IMEI of the device used during the customer session. An IMEI identifies most types of mobile phone (GSM, WCDMA, iDEN), as well as some satellite phones. | [optional] 
+**deviceName** | **string** | The device name given at point of registration | [optional] 
+**flashPlugin** | **string** | The Flash Plugin captured during the customer session, if available. | [optional] 
+**httpHeader** | **string** | The HTTPHeader captured during the customer session | [optional] 
+**metroCode** | **string** | The device metropolitan code captured during the customer session | [optional] 
+**mfaSession** | **bool** | Whether multifactor authentication was used during the session | [optional] 
+**mimeTypesPresent** | **string** | The Mime-Type(s) captured during the customer session | [optional] 
+**mobileNumberDeviceLink** | **string** | A concatenated string of the mobile number and device ID to establish the link | [optional] 
+**networkCarrier** | **string** | The Network/carrier captured during the customer session | [optional] 
+**operatingSystem** | **string** | The device Operating System captured during the customer session | [optional] 
+**postalCode** | **string** | The postal code the device is registered to as captured during the customer session. | [optional] 
+**proxyDescription** | **string** | The Proxy type description captured during the customer session | [optional] 
+**proxyType** | **string** | The Proxy type captured during the customer session | [optional] 
+**region** | **string** | The device region code captured during the customer session | [optional] 
+**screenResolution** | **string** | The screen resolution captured during the customer session | [optional] 
+**sessionLatitude** | **float** | Thelatitude captured during the customer session | [optional] 
+**sessionLongitude** | **float** | The longitude captured during the customer session | [optional] 
+**timestamp** | [**\DateTime**](\DateTime.md) | The timestamp captured during the customer session | [optional] 
+**type** | **string** | The Device Type captured during the customer session | [optional] 
+**userAgentString** | **string** | The UserAgentString captured during the customer session | [optional] 
+**deviceId** | **string** | A unique identifier of the device performing the event, such as the laptop/mobile phone used to log into the online banking. | A unique identifier of the device performing the event, such as the mobil | [optional] 
+**deviceFingerprintProvider** | **string** | Vendor or provider providing device identification/fingerprinting services | [optional] 
+**pointOfSale** | [**\CyberSource\Model\UnifiedriskDevicePointOfSale**](UnifiedriskDevicePointOfSale.md) |  | [optional] 
+**ipAddressV4** | **string** | IPv4 address of the customer&#39;s device captured during the session (e.g., 192.0.2.1). Used for geolocation, anonymizer detection, and IP-based risk signals | [optional] 
+**ipAddressV6** | **string** | IPv6 address of the customer&#39;s device captured during the session (e.g., 2001:db8::1). Used for geolocation and risk analysis in IPv6-enabled environments | [optional] 
+**deviceFingerprintVendor** | **string** | Name of the third-party vendor providing device fingerprinting services for this transaction (e.g., ThreatMetrix, InAuth, Kount) | [optional] 
+**deviceEntityId** | **string** | Unique entity identifier assigned to the device by the fingerprinting system, used to track device history and link sessions across transactions | [optional] 
+**referenceId** | **string** | Session reference ID used to correlate the device fingerprinting session with the transaction. Must match the session ID submitted to the device fingerprinting script | [optional] 
+**encryptedDeviceData** | **string** | Encrypted payload containing device data collected by a 3DS SDK or device intelligence provider. The encryption protects sensitive device attributes during transmission | [optional] 
+**deviceBindingStatus** | **string** | Indicates whether the device is bound to a specific account or cardholder identity. Values such as BOUND, UNBOUND, or UNKNOWN reflect the trust level of the device association | [optional] 
+**deviceBindingStatusSource** | **string** | The source system or process that determined the device binding status (e.g., 3DS_SDK, ISSUER, DEVICE_INTELLIGENCE_PROVIDER) | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

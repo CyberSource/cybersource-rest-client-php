@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **status** | **string** | Possible values: - INVALID_REQUEST | 
 **reason** | **string** | The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD | [optional] 
 **message** | **string** | The detail message related to the status and reason listed above. | [optional] 
-**details** | [**\CyberSource\Model\InlineResponse2014ErrorInformationDetails[]**](InlineResponse2014ErrorInformationDetails.md) |  | [optional] 
+**details** | [**\CyberSource\Model\InlineResponse2013ErrorInformationDetails[]**](InlineResponse2013ErrorInformationDetails.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

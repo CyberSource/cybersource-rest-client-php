@@ -34,6 +34,7 @@ use \ArrayAccess;
  * InlineResponse20113 Class Doc Comment
  *
  * @category    Class
+ * @description UCP checkout session state. Total amounts are expressed in cents (not micros).
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -53,18 +54,18 @@ class InlineResponse20113 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'ucp' => '\CyberSource\Model\InlineResponse20113Ucp',
         'id' => 'string',
         'status' => 'string',
         'currency' => 'string',
+        'buyer' => '\CyberSource\Model\UcpCheckoutSessionResponseBuyer',
         'lineItems' => '\CyberSource\Model\InlineResponse20113LineItems[]',
-        'fulfillmentAddress' => '\CyberSource\Model\InlineResponse20113FulfillmentAddress',
-        'fulfillmentOptions' => '\CyberSource\Model\InlineResponse20113FulfillmentOptions[]',
-        'fulfillmentOptionId' => 'string',
-        'totals' => '\CyberSource\Model\InlineResponse20113Totals[]',
-        'buyer' => '\CyberSource\Model\AcpCheckoutSessionResponseBuyer',
-        'paymentProvider' => '\CyberSource\Model\InlineResponse20113PaymentProvider',
-        'messages' => '\CyberSource\Model\InlineResponse20113Messages[]',
-        'links' => '\CyberSource\Model\InlineResponse20113Links[]'
+        'totals' => '\CyberSource\Model\Iccv1checkoutsessionsFulfillmentTotals[]',
+        'fulfillment' => '\CyberSource\Model\InlineResponse20113Fulfillment',
+        'payment' => '\CyberSource\Model\InlineResponse20113Payment',
+        'discounts' => '\CyberSource\Model\InlineResponse20113Discounts',
+        'order' => '\CyberSource\Model\InlineResponse20113Order',
+        'links' => '\CyberSource\Model\InlineResponse20112Links[]'
     ];
 
     /**
@@ -72,17 +73,17 @@ class InlineResponse20113 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'ucp' => null,
         'id' => null,
         'status' => null,
         'currency' => null,
-        'lineItems' => null,
-        'fulfillmentAddress' => null,
-        'fulfillmentOptions' => null,
-        'fulfillmentOptionId' => null,
-        'totals' => null,
         'buyer' => null,
-        'paymentProvider' => null,
-        'messages' => null,
+        'lineItems' => null,
+        'totals' => null,
+        'fulfillment' => null,
+        'payment' => null,
+        'discounts' => null,
+        'order' => null,
         'links' => null
     ];
 
@@ -101,17 +102,17 @@ class InlineResponse20113 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'ucp' => 'ucp',
         'id' => 'id',
         'status' => 'status',
         'currency' => 'currency',
-        'lineItems' => 'line_items',
-        'fulfillmentAddress' => 'fulfillment_address',
-        'fulfillmentOptions' => 'fulfillment_options',
-        'fulfillmentOptionId' => 'fulfillment_option_id',
-        'totals' => 'totals',
         'buyer' => 'buyer',
-        'paymentProvider' => 'payment_provider',
-        'messages' => 'messages',
+        'lineItems' => 'line_items',
+        'totals' => 'totals',
+        'fulfillment' => 'fulfillment',
+        'payment' => 'payment',
+        'discounts' => 'discounts',
+        'order' => 'order',
         'links' => 'links'
     ];
 
@@ -121,17 +122,17 @@ class InlineResponse20113 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'ucp' => 'setUcp',
         'id' => 'setId',
         'status' => 'setStatus',
         'currency' => 'setCurrency',
-        'lineItems' => 'setLineItems',
-        'fulfillmentAddress' => 'setFulfillmentAddress',
-        'fulfillmentOptions' => 'setFulfillmentOptions',
-        'fulfillmentOptionId' => 'setFulfillmentOptionId',
-        'totals' => 'setTotals',
         'buyer' => 'setBuyer',
-        'paymentProvider' => 'setPaymentProvider',
-        'messages' => 'setMessages',
+        'lineItems' => 'setLineItems',
+        'totals' => 'setTotals',
+        'fulfillment' => 'setFulfillment',
+        'payment' => 'setPayment',
+        'discounts' => 'setDiscounts',
+        'order' => 'setOrder',
         'links' => 'setLinks'
     ];
 
@@ -141,17 +142,17 @@ class InlineResponse20113 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'ucp' => 'getUcp',
         'id' => 'getId',
         'status' => 'getStatus',
         'currency' => 'getCurrency',
-        'lineItems' => 'getLineItems',
-        'fulfillmentAddress' => 'getFulfillmentAddress',
-        'fulfillmentOptions' => 'getFulfillmentOptions',
-        'fulfillmentOptionId' => 'getFulfillmentOptionId',
-        'totals' => 'getTotals',
         'buyer' => 'getBuyer',
-        'paymentProvider' => 'getPaymentProvider',
-        'messages' => 'getMessages',
+        'lineItems' => 'getLineItems',
+        'totals' => 'getTotals',
+        'fulfillment' => 'getFulfillment',
+        'payment' => 'getPayment',
+        'discounts' => 'getDiscounts',
+        'order' => 'getOrder',
         'links' => 'getLinks'
     ];
 
@@ -186,17 +187,17 @@ class InlineResponse20113 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['ucp'] = isset($data['ucp']) ? $data['ucp'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
-        $this->container['fulfillmentAddress'] = isset($data['fulfillmentAddress']) ? $data['fulfillmentAddress'] : null;
-        $this->container['fulfillmentOptions'] = isset($data['fulfillmentOptions']) ? $data['fulfillmentOptions'] : null;
-        $this->container['fulfillmentOptionId'] = isset($data['fulfillmentOptionId']) ? $data['fulfillmentOptionId'] : null;
-        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
         $this->container['buyer'] = isset($data['buyer']) ? $data['buyer'] : null;
-        $this->container['paymentProvider'] = isset($data['paymentProvider']) ? $data['paymentProvider'] : null;
-        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
+        $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
+        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
+        $this->container['fulfillment'] = isset($data['fulfillment']) ? $data['fulfillment'] : null;
+        $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
+        $this->container['discounts'] = isset($data['discounts']) ? $data['discounts'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
     }
 
@@ -226,6 +227,27 @@ class InlineResponse20113 implements ArrayAccess
 
 
     /**
+     * Gets ucp
+     * @return \CyberSource\Model\InlineResponse20113Ucp
+     */
+    public function getUcp()
+    {
+        return $this->container['ucp'];
+    }
+
+    /**
+     * Sets ucp
+     * @param \CyberSource\Model\InlineResponse20113Ucp $ucp
+     * @return $this
+     */
+    public function setUcp($ucp)
+    {
+        $this->container['ucp'] = $ucp;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      * @return string
      */
@@ -236,7 +258,7 @@ class InlineResponse20113 implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id Unique identifier for this checkout session. Required for all subsequent calls (update, complete, cancel).
+     * @param string $id Unique UCP session identifier. Required for all subsequent UCP calls (update, complete, cancel).
      * @return $this
      */
     public function setId($id)
@@ -257,7 +279,7 @@ class InlineResponse20113 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status Current lifecycle state of the session per ACP spec: - `not_ready_for_payment` — session is open but not yet ready - `ready_for_payment` — session is ready to be completed - `completed` — order has been placed; session is immutable - `canceled` — session was abandoned; no charge was made   Possible values: - not_ready_for_payment - ready_for_payment - completed - canceled
+     * @param string $status Current lifecycle state of the session. - `active` — open and modifiable - `completed` — order placed, immutable - `cancelled` — abandoned, no charge made   Possible values: - active - completed - cancelled
      * @return $this
      */
     public function setStatus($status)
@@ -278,12 +300,33 @@ class InlineResponse20113 implements ArrayAccess
 
     /**
      * Sets currency
-     * @param string $currency ISO 4217 lowercase currency code for this session.
+     * @param string $currency ISO 4217 currency code for this session (e.g. `USD`, `EUR`).
      * @return $this
      */
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer
+     * @return \CyberSource\Model\UcpCheckoutSessionResponseBuyer
+     */
+    public function getBuyer()
+    {
+        return $this->container['buyer'];
+    }
+
+    /**
+     * Sets buyer
+     * @param \CyberSource\Model\UcpCheckoutSessionResponseBuyer $buyer
+     * @return $this
+     */
+    public function setBuyer($buyer)
+    {
+        $this->container['buyer'] = $buyer;
 
         return $this;
     }
@@ -299,7 +342,7 @@ class InlineResponse20113 implements ArrayAccess
 
     /**
      * Sets lineItems
-     * @param \CyberSource\Model\InlineResponse20113LineItems[] $lineItems Line items with merchant-confirmed pricing.
+     * @param \CyberSource\Model\InlineResponse20113LineItems[] $lineItems Cart line items with merchant-confirmed pricing.
      * @return $this
      */
     public function setLineItems($lineItems)
@@ -310,71 +353,8 @@ class InlineResponse20113 implements ArrayAccess
     }
 
     /**
-     * Gets fulfillmentAddress
-     * @return \CyberSource\Model\InlineResponse20113FulfillmentAddress
-     */
-    public function getFulfillmentAddress()
-    {
-        return $this->container['fulfillmentAddress'];
-    }
-
-    /**
-     * Sets fulfillmentAddress
-     * @param \CyberSource\Model\InlineResponse20113FulfillmentAddress $fulfillmentAddress
-     * @return $this
-     */
-    public function setFulfillmentAddress($fulfillmentAddress)
-    {
-        $this->container['fulfillmentAddress'] = $fulfillmentAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets fulfillmentOptions
-     * @return \CyberSource\Model\InlineResponse20113FulfillmentOptions[]
-     */
-    public function getFulfillmentOptions()
-    {
-        return $this->container['fulfillmentOptions'];
-    }
-
-    /**
-     * Sets fulfillmentOptions
-     * @param \CyberSource\Model\InlineResponse20113FulfillmentOptions[] $fulfillmentOptions Available fulfillment methods with pricing.
-     * @return $this
-     */
-    public function setFulfillmentOptions($fulfillmentOptions)
-    {
-        $this->container['fulfillmentOptions'] = $fulfillmentOptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets fulfillmentOptionId
-     * @return string
-     */
-    public function getFulfillmentOptionId()
-    {
-        return $this->container['fulfillmentOptionId'];
-    }
-
-    /**
-     * Sets fulfillmentOptionId
-     * @param string $fulfillmentOptionId ID of the currently selected fulfillment option.
-     * @return $this
-     */
-    public function setFulfillmentOptionId($fulfillmentOptionId)
-    {
-        $this->container['fulfillmentOptionId'] = $fulfillmentOptionId;
-
-        return $this;
-    }
-
-    /**
      * Gets totals
-     * @return \CyberSource\Model\InlineResponse20113Totals[]
+     * @return \CyberSource\Model\Iccv1checkoutsessionsFulfillmentTotals[]
      */
     public function getTotals()
     {
@@ -383,7 +363,7 @@ class InlineResponse20113 implements ArrayAccess
 
     /**
      * Sets totals
-     * @param \CyberSource\Model\InlineResponse20113Totals[] $totals Order cost breakdown as an array of typed total lines. All amounts in minor units (cents).
+     * @param \CyberSource\Model\Iccv1checkoutsessionsFulfillmentTotals[] $totals Order cost breakdown. Each entry represents one total type (subtotal, tax, shipping, discount, or grand total). Amounts are in **cents** (not micros).
      * @return $this
      */
     public function setTotals($totals)
@@ -394,71 +374,92 @@ class InlineResponse20113 implements ArrayAccess
     }
 
     /**
-     * Gets buyer
-     * @return \CyberSource\Model\AcpCheckoutSessionResponseBuyer
+     * Gets fulfillment
+     * @return \CyberSource\Model\InlineResponse20113Fulfillment
      */
-    public function getBuyer()
+    public function getFulfillment()
     {
-        return $this->container['buyer'];
+        return $this->container['fulfillment'];
     }
 
     /**
-     * Sets buyer
-     * @param \CyberSource\Model\AcpCheckoutSessionResponseBuyer $buyer
+     * Sets fulfillment
+     * @param \CyberSource\Model\InlineResponse20113Fulfillment $fulfillment
      * @return $this
      */
-    public function setBuyer($buyer)
+    public function setFulfillment($fulfillment)
     {
-        $this->container['buyer'] = $buyer;
+        $this->container['fulfillment'] = $fulfillment;
 
         return $this;
     }
 
     /**
-     * Gets paymentProvider
-     * @return \CyberSource\Model\InlineResponse20113PaymentProvider
+     * Gets payment
+     * @return \CyberSource\Model\InlineResponse20113Payment
      */
-    public function getPaymentProvider()
+    public function getPayment()
     {
-        return $this->container['paymentProvider'];
+        return $this->container['payment'];
     }
 
     /**
-     * Sets paymentProvider
-     * @param \CyberSource\Model\InlineResponse20113PaymentProvider $paymentProvider
+     * Sets payment
+     * @param \CyberSource\Model\InlineResponse20113Payment $payment
      * @return $this
      */
-    public function setPaymentProvider($paymentProvider)
+    public function setPayment($payment)
     {
-        $this->container['paymentProvider'] = $paymentProvider;
+        $this->container['payment'] = $payment;
 
         return $this;
     }
 
     /**
-     * Gets messages
-     * @return \CyberSource\Model\InlineResponse20113Messages[]
+     * Gets discounts
+     * @return \CyberSource\Model\InlineResponse20113Discounts
      */
-    public function getMessages()
+    public function getDiscounts()
     {
-        return $this->container['messages'];
+        return $this->container['discounts'];
     }
 
     /**
-     * Sets messages
-     * @param \CyberSource\Model\InlineResponse20113Messages[] $messages Informational or error messages from the merchant backend.
+     * Sets discounts
+     * @param \CyberSource\Model\InlineResponse20113Discounts $discounts
      * @return $this
      */
-    public function setMessages($messages)
+    public function setDiscounts($discounts)
     {
-        $this->container['messages'] = $messages;
+        $this->container['discounts'] = $discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     * @return \CyberSource\Model\InlineResponse20113Order
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     * @param \CyberSource\Model\InlineResponse20113Order $order
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
 
         return $this;
     }
 
     /**
      * Gets links
-     * @return \CyberSource\Model\InlineResponse20113Links[]
+     * @return \CyberSource\Model\InlineResponse20112Links[]
      */
     public function getLinks()
     {
@@ -467,7 +468,7 @@ class InlineResponse20113 implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\InlineResponse20113Links[] $links Related resource links from the merchant (e.g. terms of use, privacy policy, seller shop policies).
+     * @param \CyberSource\Model\InlineResponse20112Links[] $links Related resource links (e.g. terms of use, privacy policy).
      * @return $this
      */
     public function setLinks($links)

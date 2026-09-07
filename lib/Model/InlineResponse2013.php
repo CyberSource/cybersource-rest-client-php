@@ -34,7 +34,6 @@ use \ArrayAccess;
  * InlineResponse2013 Class Doc Comment
  *
  * @category    Class
- * @description Successful label submission response envelope returned for HTTP 201
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,9 +53,13 @@ class InlineResponse2013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'requestId' => 'string',
-        'submitTimeUtc' => '\DateTime',
-        'results' => '\CyberSource\Model\InlineResponse2013Results'
+        'id' => 'string',
+        'status' => 'string',
+        'submitTimeStampUtc' => 'string',
+        'orderInformation' => '\CyberSource\Model\InlineResponse2013OrderInformation',
+        'errorInformation' => '\CyberSource\Model\InlineResponse2013ErrorInformation',
+        'processorInformation' => '\CyberSource\Model\InlineResponse2013ProcessorInformation',
+        'processingInformation' => '\CyberSource\Model\InlineResponse2013ProcessingInformation'
     ];
 
     /**
@@ -64,9 +67,13 @@ class InlineResponse2013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'requestId' => null,
-        'submitTimeUtc' => 'date-time',
-        'results' => null
+        'id' => null,
+        'status' => null,
+        'submitTimeStampUtc' => null,
+        'orderInformation' => null,
+        'errorInformation' => null,
+        'processorInformation' => null,
+        'processingInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +91,13 @@ class InlineResponse2013 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'requestId' => 'requestId',
-        'submitTimeUtc' => 'submitTimeUtc',
-        'results' => 'results'
+        'id' => 'id',
+        'status' => 'status',
+        'submitTimeStampUtc' => 'submitTimeStampUtc',
+        'orderInformation' => 'orderInformation',
+        'errorInformation' => 'errorInformation',
+        'processorInformation' => 'processorInformation',
+        'processingInformation' => 'processingInformation'
     ];
 
 
@@ -95,9 +106,13 @@ class InlineResponse2013 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'requestId' => 'setRequestId',
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'results' => 'setResults'
+        'id' => 'setId',
+        'status' => 'setStatus',
+        'submitTimeStampUtc' => 'setSubmitTimeStampUtc',
+        'orderInformation' => 'setOrderInformation',
+        'errorInformation' => 'setErrorInformation',
+        'processorInformation' => 'setProcessorInformation',
+        'processingInformation' => 'setProcessingInformation'
     ];
 
 
@@ -106,9 +121,13 @@ class InlineResponse2013 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'requestId' => 'getRequestId',
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'results' => 'getResults'
+        'id' => 'getId',
+        'status' => 'getStatus',
+        'submitTimeStampUtc' => 'getSubmitTimeStampUtc',
+        'orderInformation' => 'getOrderInformation',
+        'errorInformation' => 'getErrorInformation',
+        'processorInformation' => 'getProcessorInformation',
+        'processingInformation' => 'getProcessingInformation'
     ];
 
     public static function attributeMap()
@@ -142,9 +161,13 @@ class InlineResponse2013 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['submitTimeStampUtc'] = isset($data['submitTimeStampUtc']) ? $data['submitTimeStampUtc'] : null;
+        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
+        $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
     }
 
     /**
@@ -156,15 +179,6 @@ class InlineResponse2013 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['requestId'] === null) {
-            $invalid_properties[] = "'requestId' can't be null";
-        }
-        if ($this->container['submitTimeUtc'] === null) {
-            $invalid_properties[] = "'submitTimeUtc' can't be null";
-        }
-        if ($this->container['results'] === null) {
-            $invalid_properties[] = "'results' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -177,78 +191,153 @@ class InlineResponse2013 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['requestId'] === null) {
-            return false;
-        }
-        if ($this->container['submitTimeUtc'] === null) {
-            return false;
-        }
-        if ($this->container['results'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets requestId
+     * Gets id
      * @return string
      */
-    public function getRequestId()
+    public function getId()
     {
-        return $this->container['requestId'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets requestId
-     * @param string $requestId Echoes the unique request identifier submitted in the original label request, enabling end-to-end correlation between request and response.
+     * Sets id
+     * @param string $id A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.
      * @return $this
      */
-    public function setRequestId($requestId)
+    public function setId($id)
     {
-        $this->container['requestId'] = $requestId;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets submitTimeUtc
-     * @return \DateTime
+     * Gets status
+     * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getStatus()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param \DateTime $submitTimeUtc UTC timestamp indicating when the label submission request was received and processed.
+     * Sets status
+     * @param string $status The status of the submitted transaction.  Possible values: - `COMPLETED` - `INVALID_REQUEST` - `SERVER_ERROR`
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setStatus($status)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets results
-     * @return \CyberSource\Model\InlineResponse2013Results
+     * Gets submitTimeStampUtc
+     * @return string
      */
-    public function getResults()
+    public function getSubmitTimeStampUtc()
     {
-        return $this->container['results'];
+        return $this->container['submitTimeStampUtc'];
     }
 
     /**
-     * Sets results
-     * @param \CyberSource\Model\InlineResponse2013Results $results
+     * Sets submitTimeStampUtc
+     * @param string $submitTimeStampUtc Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
      * @return $this
      */
-    public function setResults($results)
+    public function setSubmitTimeStampUtc($submitTimeStampUtc)
     {
-        $this->container['results'] = $results;
+        $this->container['submitTimeStampUtc'] = $submitTimeStampUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderInformation
+     * @return \CyberSource\Model\InlineResponse2013OrderInformation
+     */
+    public function getOrderInformation()
+    {
+        return $this->container['orderInformation'];
+    }
+
+    /**
+     * Sets orderInformation
+     * @param \CyberSource\Model\InlineResponse2013OrderInformation $orderInformation
+     * @return $this
+     */
+    public function setOrderInformation($orderInformation)
+    {
+        $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorInformation
+     * @return \CyberSource\Model\InlineResponse2013ErrorInformation
+     */
+    public function getErrorInformation()
+    {
+        return $this->container['errorInformation'];
+    }
+
+    /**
+     * Sets errorInformation
+     * @param \CyberSource\Model\InlineResponse2013ErrorInformation $errorInformation
+     * @return $this
+     */
+    public function setErrorInformation($errorInformation)
+    {
+        $this->container['errorInformation'] = $errorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\InlineResponse2013ProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\InlineResponse2013ProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingInformation
+     * @return \CyberSource\Model\InlineResponse2013ProcessingInformation
+     */
+    public function getProcessingInformation()
+    {
+        return $this->container['processingInformation'];
+    }
+
+    /**
+     * Sets processingInformation
+     * @param \CyberSource\Model\InlineResponse2013ProcessingInformation $processingInformation
+     * @return $this
+     */
+    public function setProcessingInformation($processingInformation)
+    {
+        $this->container['processingInformation'] = $processingInformation;
 
         return $this;
     }

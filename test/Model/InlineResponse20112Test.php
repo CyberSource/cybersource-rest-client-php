@@ -77,23 +77,9 @@ class InlineResponse20112Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "clientReferenceInformation"
-     */
-    public function testPropertyClientReferenceInformation()
-    {
-    }
-
-    /**
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "submitTimeUtc"
-     */
-    public function testPropertySubmitTimeUtc()
     {
     }
 
@@ -105,23 +91,72 @@ class InlineResponse20112Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "errorInformation"
+     * Test attribute "currency"
      */
-    public function testPropertyErrorInformation()
+    public function testPropertyCurrency()
     {
     }
 
     /**
-     * Test attribute "orderInformation"
+     * Test attribute "lineItems"
      */
-    public function testPropertyOrderInformation()
+    public function testPropertyLineItems()
     {
     }
 
     /**
-     * Test attribute "processorInformation"
+     * Test attribute "fulfillmentAddress"
      */
-    public function testPropertyProcessorInformation()
+    public function testPropertyFulfillmentAddress()
+    {
+    }
+
+    /**
+     * Test attribute "fulfillmentOptions"
+     */
+    public function testPropertyFulfillmentOptions()
+    {
+    }
+
+    /**
+     * Test attribute "fulfillmentOptionId"
+     */
+    public function testPropertyFulfillmentOptionId()
+    {
+    }
+
+    /**
+     * Test attribute "totals"
+     */
+    public function testPropertyTotals()
+    {
+    }
+
+    /**
+     * Test attribute "buyer"
+     */
+    public function testPropertyBuyer()
+    {
+    }
+
+    /**
+     * Test attribute "paymentProvider"
+     */
+    public function testPropertyPaymentProvider()
+    {
+    }
+
+    /**
+     * Test attribute "messages"
+     */
+    public function testPropertyMessages()
+    {
+    }
+
+    /**
+     * Test attribute "links"
+     */
+    public function testPropertyLinks()
     {
     }
 }

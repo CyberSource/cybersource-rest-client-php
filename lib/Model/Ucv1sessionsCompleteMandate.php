@@ -57,7 +57,8 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
         'type' => 'string',
         'tms' => '\CyberSource\Model\Ucv1sessionsCompleteMandateTms',
         'decisionManager' => 'bool',
-        'consumerAuthentication' => 'string'
+        'consumerAuthentication' => 'string',
+        'suppress' => 'bool'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
         'type' => null,
         'tms' => null,
         'decisionManager' => null,
-        'consumerAuthentication' => null
+        'consumerAuthentication' => null,
+        'suppress' => null
     ];
 
     public static function swaggerTypes()
@@ -89,7 +91,8 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
         'type' => 'type',
         'tms' => 'tms',
         'decisionManager' => 'decisionManager',
-        'consumerAuthentication' => 'consumerAuthentication'
+        'consumerAuthentication' => 'consumerAuthentication',
+        'suppress' => 'suppress'
     ];
 
 
@@ -101,7 +104,8 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
         'type' => 'setType',
         'tms' => 'setTms',
         'decisionManager' => 'setDecisionManager',
-        'consumerAuthentication' => 'setConsumerAuthentication'
+        'consumerAuthentication' => 'setConsumerAuthentication',
+        'suppress' => 'setSuppress'
     ];
 
 
@@ -113,7 +117,8 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
         'type' => 'getType',
         'tms' => 'getTms',
         'decisionManager' => 'getDecisionManager',
-        'consumerAuthentication' => 'getConsumerAuthentication'
+        'consumerAuthentication' => 'getConsumerAuthentication',
+        'suppress' => 'getSuppress'
     ];
 
     public static function attributeMap()
@@ -151,6 +156,7 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
         $this->container['tms'] = isset($data['tms']) ? $data['tms'] : null;
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;
         $this->container['consumerAuthentication'] = isset($data['consumerAuthentication']) ? $data['consumerAuthentication'] : null;
+        $this->container['suppress'] = isset($data['suppress']) ? $data['suppress'] : null;
     }
 
     /**
@@ -258,6 +264,27 @@ class Ucv1sessionsCompleteMandate implements ArrayAccess
     public function setConsumerAuthentication($consumerAuthentication)
     {
         $this->container['consumerAuthentication'] = $consumerAuthentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets suppress
+     * @return bool
+     */
+    public function getSuppress()
+    {
+        return $this->container['suppress'];
+    }
+
+    /**
+     * Sets suppress
+     * @param bool $suppress Controls whether the Complete Mandate experience or related processing is suppressed.
+     * @return $this
+     */
+    public function setSuppress($suppress)
+    {
+        $this->container['suppress'] = $suppress;
 
         return $this;
     }

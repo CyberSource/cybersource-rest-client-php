@@ -53,7 +53,7 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'id' => 'string',
         'fieldType' => 'string',
         'label' => 'string',
         'customerVisible' => 'bool',
@@ -72,7 +72,7 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
+        'id' => null,
         'fieldType' => null,
         'label' => null,
         'customerVisible' => null,
@@ -227,7 +227,7 @@ class InlineResponse2004 implements ArrayAccess
 
     /**
      * Gets id
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -236,7 +236,7 @@ class InlineResponse2004 implements ArrayAccess
 
     /**
      * Sets id
-     * @param int $id
+     * @param string $id
      * @return $this
      */
     public function setId($id)

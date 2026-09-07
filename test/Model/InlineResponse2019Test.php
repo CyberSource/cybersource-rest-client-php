@@ -77,9 +77,16 @@ class InlineResponse2019Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "webhookId"
+     * Test attribute "eventDate"
      */
-    public function testPropertyWebhookId()
+    public function testPropertyEventDate()
+    {
+    }
+
+    /**
+     * Test attribute "eventType"
+     */
+    public function testPropertyEventType()
     {
     }
 
@@ -91,72 +98,44 @@ class InlineResponse2019Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "products"
+     * Test attribute "payloads"
      */
-    public function testPropertyProducts()
+    public function testPropertyPayloads()
     {
     }
 
     /**
-     * Test attribute "webhookUrl"
+     * Test attribute "productId"
      */
-    public function testPropertyWebhookUrl()
+    public function testPropertyProductId()
     {
     }
 
     /**
-     * Test attribute "healthCheckUrl"
+     * Test attribute "requestType"
      */
-    public function testPropertyHealthCheckUrl()
+    public function testPropertyRequestType()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "retryNumber"
      */
-    public function testPropertyStatus()
+    public function testPropertyRetryNumber()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "transactionTraceId"
      */
-    public function testPropertyName()
+    public function testPropertyTransactionTraceId()
     {
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "webhookId"
      */
-    public function testPropertyDescription()
-    {
-    }
-
-    /**
-     * Test attribute "retryPolicy"
-     */
-    public function testPropertyRetryPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "securityPolicy"
-     */
-    public function testPropertySecurityPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "createdOn"
-     */
-    public function testPropertyCreatedOn()
-    {
-    }
-
-    /**
-     * Test attribute "notificationScope"
-     */
-    public function testPropertyNotificationScope()
+    public function testPropertyWebhookId()
     {
     }
 }

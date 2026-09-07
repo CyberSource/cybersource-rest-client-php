@@ -639,7 +639,7 @@ class Iccv1productsfeedProductsTest extends \PHPUnit\Framework\TestCase
     /**
      * Test attribute "qandA"
      */
-    public function testPropertyQandA()
+    public function testPropertyQ_and_A()
     {
     }
 

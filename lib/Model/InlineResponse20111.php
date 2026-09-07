@@ -34,7 +34,6 @@ use \ArrayAccess;
  * InlineResponse20111 Class Doc Comment
  *
  * @category    Class
- * @description Egress Asymmetric Key Information Response.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,8 +53,13 @@ class InlineResponse20111 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'clientReferenceInformation' => '\CyberSource\Model\InlineResponse20111ClientReferenceInformation',
+        'id' => 'string',
         'submitTimeUtc' => 'string',
-        'status' => 'string'
+        'status' => 'string',
+        'errorInformation' => '\CyberSource\Model\InlineResponse20111ErrorInformation',
+        'orderInformation' => '\CyberSource\Model\InlineResponse20111OrderInformation',
+        'processorInformation' => '\CyberSource\Model\InlineResponse20111ProcessorInformation'
     ];
 
     /**
@@ -63,8 +67,13 @@ class InlineResponse20111 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'clientReferenceInformation' => null,
+        'id' => null,
         'submitTimeUtc' => null,
-        'status' => null
+        'status' => null,
+        'errorInformation' => null,
+        'orderInformation' => null,
+        'processorInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +91,13 @@ class InlineResponse20111 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'clientReferenceInformation' => 'clientReferenceInformation',
+        'id' => 'id',
         'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status'
+        'status' => 'status',
+        'errorInformation' => 'errorInformation',
+        'orderInformation' => 'orderInformation',
+        'processorInformation' => 'processorInformation'
     ];
 
 
@@ -92,8 +106,13 @@ class InlineResponse20111 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'clientReferenceInformation' => 'setClientReferenceInformation',
+        'id' => 'setId',
         'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'errorInformation' => 'setErrorInformation',
+        'orderInformation' => 'setOrderInformation',
+        'processorInformation' => 'setProcessorInformation'
     ];
 
 
@@ -102,8 +121,13 @@ class InlineResponse20111 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'clientReferenceInformation' => 'getClientReferenceInformation',
+        'id' => 'getId',
         'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'errorInformation' => 'getErrorInformation',
+        'orderInformation' => 'getOrderInformation',
+        'processorInformation' => 'getProcessorInformation'
     ];
 
     public static function attributeMap()
@@ -137,8 +161,13 @@ class InlineResponse20111 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
+        $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
     }
 
     /**
@@ -150,6 +179,15 @@ class InlineResponse20111 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
+        if ($this->container['submitTimeUtc'] === null) {
+            $invalid_properties[] = "'submitTimeUtc' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalid_properties[] = "'status' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,9 +200,60 @@ class InlineResponse20111 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['submitTimeUtc'] === null) {
+            return false;
+        }
+        if ($this->container['status'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets clientReferenceInformation
+     * @return \CyberSource\Model\InlineResponse20111ClientReferenceInformation
+     */
+    public function getClientReferenceInformation()
+    {
+        return $this->container['clientReferenceInformation'];
+    }
+
+    /**
+     * Sets clientReferenceInformation
+     * @param \CyberSource\Model\InlineResponse20111ClientReferenceInformation $clientReferenceInformation
+     * @return $this
+     */
+    public function setClientReferenceInformation($clientReferenceInformation)
+    {
+        $this->container['clientReferenceInformation'] = $clientReferenceInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id Request ID generated by Cybersource. This was sent in the header on the request. Echo value from x-requestid
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets submitTimeUtc
@@ -177,7 +266,7 @@ class InlineResponse20111 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` Example `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.
+     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ`  **Example** `2023-05-17T22:47:57Z` equals May 17, 2023, at 22:47:57 (10:47:57 PM). The `T` separates the date and the time. The `Z` indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -198,12 +287,75 @@ class InlineResponse20111 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction. Possible values:  - ACCEPTED
+     * @param string $status Message describing the status of the currency conversion request.   Possible values: - PENDING - DECLINED - SERVER_ERROR
      * @return $this
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets errorInformation
+     * @return \CyberSource\Model\InlineResponse20111ErrorInformation
+     */
+    public function getErrorInformation()
+    {
+        return $this->container['errorInformation'];
+    }
+
+    /**
+     * Sets errorInformation
+     * @param \CyberSource\Model\InlineResponse20111ErrorInformation $errorInformation
+     * @return $this
+     */
+    public function setErrorInformation($errorInformation)
+    {
+        $this->container['errorInformation'] = $errorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderInformation
+     * @return \CyberSource\Model\InlineResponse20111OrderInformation
+     */
+    public function getOrderInformation()
+    {
+        return $this->container['orderInformation'];
+    }
+
+    /**
+     * Sets orderInformation
+     * @param \CyberSource\Model\InlineResponse20111OrderInformation $orderInformation
+     * @return $this
+     */
+    public function setOrderInformation($orderInformation)
+    {
+        $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets processorInformation
+     * @return \CyberSource\Model\InlineResponse20111ProcessorInformation
+     */
+    public function getProcessorInformation()
+    {
+        return $this->container['processorInformation'];
+    }
+
+    /**
+     * Sets processorInformation
+     * @param \CyberSource\Model\InlineResponse20111ProcessorInformation $processorInformation
+     * @return $this
+     */
+    public function setProcessorInformation($processorInformation)
+    {
+        $this->container['processorInformation'] = $processorInformation;
 
         return $this;
     }

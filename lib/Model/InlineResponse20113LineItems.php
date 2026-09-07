@@ -34,7 +34,7 @@ use \ArrayAccess;
  * InlineResponse20113LineItems Class Doc Comment
  *
  * @category    Class
- * @description A single line item in an ACP session response. All amounts in minor units (cents).
+ * @description A single product line item in a UCP session response.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -56,11 +56,8 @@ class InlineResponse20113LineItems implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'item' => '\CyberSource\Model\InlineResponse20113Item',
-        'baseAmount' => 'int',
-        'discount' => 'int',
-        'subtotal' => 'int',
-        'tax' => 'int',
-        'total' => 'int'
+        'quantity' => 'int',
+        'totals' => '\CyberSource\Model\Iccv1checkoutsessionsFulfillmentTotals[]'
     ];
 
     /**
@@ -70,11 +67,8 @@ class InlineResponse20113LineItems implements ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
         'item' => null,
-        'baseAmount' => null,
-        'discount' => null,
-        'subtotal' => null,
-        'tax' => null,
-        'total' => null
+        'quantity' => null,
+        'totals' => null
     ];
 
     public static function swaggerTypes()
@@ -94,11 +88,8 @@ class InlineResponse20113LineItems implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'item' => 'item',
-        'baseAmount' => 'base_amount',
-        'discount' => 'discount',
-        'subtotal' => 'subtotal',
-        'tax' => 'tax',
-        'total' => 'total'
+        'quantity' => 'quantity',
+        'totals' => 'totals'
     ];
 
 
@@ -109,11 +100,8 @@ class InlineResponse20113LineItems implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'item' => 'setItem',
-        'baseAmount' => 'setBaseAmount',
-        'discount' => 'setDiscount',
-        'subtotal' => 'setSubtotal',
-        'tax' => 'setTax',
-        'total' => 'setTotal'
+        'quantity' => 'setQuantity',
+        'totals' => 'setTotals'
     ];
 
 
@@ -124,11 +112,8 @@ class InlineResponse20113LineItems implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'item' => 'getItem',
-        'baseAmount' => 'getBaseAmount',
-        'discount' => 'getDiscount',
-        'subtotal' => 'getSubtotal',
-        'tax' => 'getTax',
-        'total' => 'getTotal'
+        'quantity' => 'getQuantity',
+        'totals' => 'getTotals'
     ];
 
     public static function attributeMap()
@@ -164,11 +149,8 @@ class InlineResponse20113LineItems implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['item'] = isset($data['item']) ? $data['item'] : null;
-        $this->container['baseAmount'] = isset($data['baseAmount']) ? $data['baseAmount'] : null;
-        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
-        $this->container['subtotal'] = isset($data['subtotal']) ? $data['subtotal'] : null;
-        $this->container['tax'] = isset($data['tax']) ? $data['tax'] : null;
-        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['totals'] = isset($data['totals']) ? $data['totals'] : null;
     }
 
     /**
@@ -239,106 +221,43 @@ class InlineResponse20113LineItems implements ArrayAccess
     }
 
     /**
-     * Gets baseAmount
+     * Gets quantity
      * @return int
      */
-    public function getBaseAmount()
+    public function getQuantity()
     {
-        return $this->container['baseAmount'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets baseAmount
-     * @param int $baseAmount Unit price × quantity before discounts, in minor units.
+     * Sets quantity
+     * @param int $quantity Number of units in this line item. Minimum 1.
      * @return $this
      */
-    public function setBaseAmount($baseAmount)
+    public function setQuantity($quantity)
     {
-        $this->container['baseAmount'] = $baseAmount;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
 
     /**
-     * Gets discount
-     * @return int
+     * Gets totals
+     * @return \CyberSource\Model\Iccv1checkoutsessionsFulfillmentTotals[]
      */
-    public function getDiscount()
+    public function getTotals()
     {
-        return $this->container['discount'];
+        return $this->container['totals'];
     }
 
     /**
-     * Sets discount
-     * @param int $discount Discount amount for this line item, in minor units.
+     * Sets totals
+     * @param \CyberSource\Model\Iccv1checkoutsessionsFulfillmentTotals[] $totals Per-line-item cost breakdown (subtotal, tax, etc.). Amounts in cents.
      * @return $this
      */
-    public function setDiscount($discount)
+    public function setTotals($totals)
     {
-        $this->container['discount'] = $discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets subtotal
-     * @return int
-     */
-    public function getSubtotal()
-    {
-        return $this->container['subtotal'];
-    }
-
-    /**
-     * Sets subtotal
-     * @param int $subtotal base_amount minus discount, in minor units.
-     * @return $this
-     */
-    public function setSubtotal($subtotal)
-    {
-        $this->container['subtotal'] = $subtotal;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax
-     * @return int
-     */
-    public function getTax()
-    {
-        return $this->container['tax'];
-    }
-
-    /**
-     * Sets tax
-     * @param int $tax Tax on this line item, in minor units.
-     * @return $this
-     */
-    public function setTax($tax)
-    {
-        $this->container['tax'] = $tax;
-
-        return $this;
-    }
-
-    /**
-     * Gets total
-     * @return int
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     * @param int $total subtotal plus tax, in minor units.
-     * @return $this
-     */
-    public function setTotal($total)
-    {
-        $this->container['total'] = $total;
+        $this->container['totals'] = $totals;
 
         return $this;
     }

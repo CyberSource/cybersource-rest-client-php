@@ -365,7 +365,7 @@ class Ucv1sessionsDataAggregatorInformation implements ArrayAccess
 
     /**
      * Sets country
-     * @param string $country Acquirer country.
+     * @param string $country Acquirer country used for Payment Facilitator scenarios.
      * @return $this
      */
     public function setCountry($country)

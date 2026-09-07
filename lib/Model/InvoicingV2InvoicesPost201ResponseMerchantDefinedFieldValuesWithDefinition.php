@@ -53,6 +53,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'mdfValueId' => 'string',
         'referenceType' => 'string',
         'label' => 'string',
         'fieldType' => 'string',
@@ -73,6 +74,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'mdfValueId' => null,
         'referenceType' => null,
         'label' => null,
         'fieldType' => null,
@@ -103,6 +105,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
      * @var string[]
      */
     protected static $attributeMap = [
+        'mdfValueId' => 'mdfValueId',
         'referenceType' => 'referenceType',
         'label' => 'label',
         'fieldType' => 'fieldType',
@@ -124,6 +127,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
      * @var string[]
      */
     protected static $setters = [
+        'mdfValueId' => 'setMdfValueId',
         'referenceType' => 'setReferenceType',
         'label' => 'setLabel',
         'fieldType' => 'setFieldType',
@@ -145,6 +149,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
      * @var string[]
      */
     protected static $getters = [
+        'mdfValueId' => 'getMdfValueId',
         'referenceType' => 'getReferenceType',
         'label' => 'getLabel',
         'fieldType' => 'getFieldType',
@@ -191,6 +196,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
      */
     public function __construct(array $data = null)
     {
+        $this->container['mdfValueId'] = isset($data['mdfValueId']) ? $data['mdfValueId'] : null;
         $this->container['referenceType'] = isset($data['referenceType']) ? $data['referenceType'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['fieldType'] = isset($data['fieldType']) ? $data['fieldType'] : null;
@@ -230,6 +236,27 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
         return true;
     }
 
+
+    /**
+     * Gets mdfValueId
+     * @return string
+     */
+    public function getMdfValueId()
+    {
+        return $this->container['mdfValueId'];
+    }
+
+    /**
+     * Sets mdfValueId
+     * @param string $mdfValueId
+     * @return $this
+     */
+    public function setMdfValueId($mdfValueId)
+    {
+        $this->container['mdfValueId'] = $mdfValueId;
+
+        return $this;
+    }
 
     /**
      * Gets referenceType

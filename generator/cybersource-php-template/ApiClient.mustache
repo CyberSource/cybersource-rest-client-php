@@ -713,11 +713,11 @@ class ApiClient
     {
         $merchantConfig = $this->merchantConfig;
         $authentication = new Authentication($merchantConfig->getLogConfiguration());
-        $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig, $isResponseMLEForAPI);
+        $date = gmdate("D, d M Y H:i:s ").GlobalParameter::GMT;
+        $getToken = $authentication->generateToken($resourcePath, $postData, $method, $merchantConfig, $date, $isResponseMLEForAPI);
         if($merchantConfig->getAuthenticationType() == GlobalParameter::HTTP_SIGNATURE){
             $host = "Host:".$merchantConfig->getHost();
             $vcMerchant = "v-c-merchant-id:".$merchantConfig->getMerchantID();
-            $date = date("D, d M Y G:i:s ").GlobalParameter::GMT;
             $headers = array(
                 $vcMerchant,
                 $getToken,

@@ -112,7 +112,7 @@ class TransactionQueryApi
      * @param int $limit The maximum number of options to be retrieved from the processor and displayed to the consumer. (optional)
      * @param int $offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
      */
     public function createQueryApi($id, $body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit = null, $offset = null)
     {
@@ -139,7 +139,7 @@ class TransactionQueryApi
      * @param int $limit The maximum number of options to be retrieved from the processor and displayed to the consumer. (optional)
      * @param int $offset Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
      */
     public function createQueryApiWithHttpInfo($id, $body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit = null, $offset = null)
     {
@@ -281,7 +281,7 @@ class TransactionQueryApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2015");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2014");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createQueryApi,createQueryApiWithHttpInfo");
@@ -294,18 +294,18 @@ class TransactionQueryApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2015',
+                '\CyberSource\Model\InlineResponse2014',
                 '/pts/v2/payouts/transaction-query/{id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2014', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2014', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

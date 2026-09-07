@@ -54,6 +54,7 @@ class Ucv1sessionsData implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'aggregatorInformation' => '\CyberSource\Model\Ucv1sessionsDataAggregatorInformation',
+        'acquirerInformation' => '\CyberSource\Model\Ucv1sessionsDataAcquirerInformation',
         'orderInformation' => '\CyberSource\Model\Ucv1sessionsDataOrderInformation',
         'buyerInformation' => '\CyberSource\Model\Ucv1sessionsDataBuyerInformation',
         'clientReferenceInformation' => '\CyberSource\Model\Ucv1sessionsDataClientReferenceInformation',
@@ -74,6 +75,7 @@ class Ucv1sessionsData implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'aggregatorInformation' => null,
+        'acquirerInformation' => null,
         'orderInformation' => null,
         'buyerInformation' => null,
         'clientReferenceInformation' => null,
@@ -104,6 +106,7 @@ class Ucv1sessionsData implements ArrayAccess
      */
     protected static $attributeMap = [
         'aggregatorInformation' => 'aggregatorInformation',
+        'acquirerInformation' => 'acquirerInformation',
         'orderInformation' => 'orderInformation',
         'buyerInformation' => 'buyerInformation',
         'clientReferenceInformation' => 'clientReferenceInformation',
@@ -125,6 +128,7 @@ class Ucv1sessionsData implements ArrayAccess
      */
     protected static $setters = [
         'aggregatorInformation' => 'setAggregatorInformation',
+        'acquirerInformation' => 'setAcquirerInformation',
         'orderInformation' => 'setOrderInformation',
         'buyerInformation' => 'setBuyerInformation',
         'clientReferenceInformation' => 'setClientReferenceInformation',
@@ -146,6 +150,7 @@ class Ucv1sessionsData implements ArrayAccess
      */
     protected static $getters = [
         'aggregatorInformation' => 'getAggregatorInformation',
+        'acquirerInformation' => 'getAcquirerInformation',
         'orderInformation' => 'getOrderInformation',
         'buyerInformation' => 'getBuyerInformation',
         'clientReferenceInformation' => 'getClientReferenceInformation',
@@ -192,6 +197,7 @@ class Ucv1sessionsData implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
+        $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['clientReferenceInformation'] = isset($data['clientReferenceInformation']) ? $data['clientReferenceInformation'] : null;
@@ -248,6 +254,27 @@ class Ucv1sessionsData implements ArrayAccess
     public function setAggregatorInformation($aggregatorInformation)
     {
         $this->container['aggregatorInformation'] = $aggregatorInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerInformation
+     * @return \CyberSource\Model\Ucv1sessionsDataAcquirerInformation
+     */
+    public function getAcquirerInformation()
+    {
+        return $this->container['acquirerInformation'];
+    }
+
+    /**
+     * Sets acquirerInformation
+     * @param \CyberSource\Model\Ucv1sessionsDataAcquirerInformation $acquirerInformation
+     * @return $this
+     */
+    public function setAcquirerInformation($acquirerInformation)
+    {
+        $this->container['acquirerInformation'] = $acquirerInformation;
 
         return $this;
     }

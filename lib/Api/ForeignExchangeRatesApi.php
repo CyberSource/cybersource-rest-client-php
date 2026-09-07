@@ -109,7 +109,7 @@ class ForeignExchangeRatesApi
      * @param string $vCCorrelationId  (required)
      * @param string $vCOrganizationId  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFxRates($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
     {
@@ -133,7 +133,7 @@ class ForeignExchangeRatesApi
      * @param string $vCCorrelationId  (required)
      * @param string $vCOrganizationId  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFxRatesWithHttpInfo($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
     {
@@ -252,7 +252,7 @@ class ForeignExchangeRatesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2014");
+        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2013");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createFxRates,createFxRatesWithHttpInfo");
@@ -265,18 +265,18 @@ class ForeignExchangeRatesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2014',
+                '\CyberSource\Model\InlineResponse2013',
                 '/pts/v2/payouts/fx-rates',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2013', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2013', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20113Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse20113
+// * @description UCP checkout session state. Total amounts are expressed in cents (not micros).
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,6 +77,13 @@ class InlineResponse20113Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "ucp"
+     */
+    public function testPropertyUcp()
+    {
+    }
+
+    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -98,30 +105,16 @@ class InlineResponse20113Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "buyer"
+     */
+    public function testPropertyBuyer()
+    {
+    }
+
+    /**
      * Test attribute "lineItems"
      */
     public function testPropertyLineItems()
-    {
-    }
-
-    /**
-     * Test attribute "fulfillmentAddress"
-     */
-    public function testPropertyFulfillmentAddress()
-    {
-    }
-
-    /**
-     * Test attribute "fulfillmentOptions"
-     */
-    public function testPropertyFulfillmentOptions()
-    {
-    }
-
-    /**
-     * Test attribute "fulfillmentOptionId"
-     */
-    public function testPropertyFulfillmentOptionId()
     {
     }
 
@@ -133,23 +126,30 @@ class InlineResponse20113Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "buyer"
+     * Test attribute "fulfillment"
      */
-    public function testPropertyBuyer()
+    public function testPropertyFulfillment()
     {
     }
 
     /**
-     * Test attribute "paymentProvider"
+     * Test attribute "payment"
      */
-    public function testPropertyPaymentProvider()
+    public function testPropertyPayment()
     {
     }
 
     /**
-     * Test attribute "messages"
+     * Test attribute "discounts"
      */
-    public function testPropertyMessages()
+    public function testPropertyDiscounts()
+    {
+    }
+
+    /**
+     * Test attribute "order"
+     */
+    public function testPropertyOrder()
     {
     }
 

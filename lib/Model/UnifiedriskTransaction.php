@@ -34,7 +34,7 @@ use \ArrayAccess;
  * UnifiedriskTransaction Class Doc Comment
  *
  * @category    Class
- * @description Transaction reference identifying which previously assessed transaction this label applies to
+ * @description Financial transaction metadata including amounts, status, type, channel, and recurring payment details
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,7 +54,34 @@ class UnifiedriskTransaction implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'transactionId' => 'string'
+        'transactionId' => 'string',
+        'status' => 'string',
+        'statusReason' => 'string',
+        'messageType' => 'string',
+        'type' => 'string',
+        'attribute' => 'string',
+        'initiator' => 'string',
+        'channel' => 'string',
+        'timestamp' => '\DateTime',
+        'cutoffDateTime' => '\DateTime',
+        'isRecurring' => 'bool',
+        'preOrder' => 'bool',
+        'preOrderDate' => '\DateTime',
+        'reordered' => 'bool',
+        'destinationCountry' => 'string',
+        'declinePhase' => 'string',
+        'trustedMerchant' => 'bool',
+        'additionalFees' => '\CyberSource\Model\UnifiedriskTransactionAdditionalFees',
+        'amount' => '\CyberSource\Model\UnifiedriskTransactionAmount',
+        'recurringDetails' => '\CyberSource\Model\UnifiedriskTransactionRecurringDetails',
+        'direction' => 'string',
+        'isChargeback' => 'bool',
+        'fraudLiability' => 'string',
+        'onUsFlag' => 'bool',
+        'numberOfTransactions' => 'int',
+        'batchDetails' => '\CyberSource\Model\UnifiedriskTransactionBatchDetails',
+        'checkDetails' => '\CyberSource\Model\UnifiedriskTransactionCheckDetails',
+        'purpose' => 'string'
     ];
 
     /**
@@ -62,7 +89,34 @@ class UnifiedriskTransaction implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'transactionId' => null
+        'transactionId' => null,
+        'status' => null,
+        'statusReason' => null,
+        'messageType' => null,
+        'type' => null,
+        'attribute' => null,
+        'initiator' => null,
+        'channel' => null,
+        'timestamp' => 'date-time',
+        'cutoffDateTime' => 'date-time',
+        'isRecurring' => null,
+        'preOrder' => null,
+        'preOrderDate' => 'date',
+        'reordered' => null,
+        'destinationCountry' => null,
+        'declinePhase' => null,
+        'trustedMerchant' => null,
+        'additionalFees' => null,
+        'amount' => null,
+        'recurringDetails' => null,
+        'direction' => null,
+        'isChargeback' => null,
+        'fraudLiability' => null,
+        'onUsFlag' => null,
+        'numberOfTransactions' => null,
+        'batchDetails' => null,
+        'checkDetails' => null,
+        'purpose' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +134,34 @@ class UnifiedriskTransaction implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transactionId' => 'transactionId'
+        'transactionId' => 'transactionId',
+        'status' => 'status',
+        'statusReason' => 'statusReason',
+        'messageType' => 'messageType',
+        'type' => 'type',
+        'attribute' => 'attribute',
+        'initiator' => 'initiator',
+        'channel' => 'channel',
+        'timestamp' => 'timestamp',
+        'cutoffDateTime' => 'cutoffDateTime',
+        'isRecurring' => 'isRecurring',
+        'preOrder' => 'preOrder',
+        'preOrderDate' => 'preOrderDate',
+        'reordered' => 'reordered',
+        'destinationCountry' => 'destinationCountry',
+        'declinePhase' => 'declinePhase',
+        'trustedMerchant' => 'trustedMerchant',
+        'additionalFees' => 'additionalFees',
+        'amount' => 'amount',
+        'recurringDetails' => 'recurringDetails',
+        'direction' => 'direction',
+        'isChargeback' => 'isChargeback',
+        'fraudLiability' => 'fraudLiability',
+        'onUsFlag' => 'onUsFlag',
+        'numberOfTransactions' => 'numberOfTransactions',
+        'batchDetails' => 'batchDetails',
+        'checkDetails' => 'checkDetails',
+        'purpose' => 'purpose'
     ];
 
 
@@ -89,7 +170,34 @@ class UnifiedriskTransaction implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transactionId' => 'setTransactionId'
+        'transactionId' => 'setTransactionId',
+        'status' => 'setStatus',
+        'statusReason' => 'setStatusReason',
+        'messageType' => 'setMessageType',
+        'type' => 'setType',
+        'attribute' => 'setAttribute',
+        'initiator' => 'setInitiator',
+        'channel' => 'setChannel',
+        'timestamp' => 'setTimestamp',
+        'cutoffDateTime' => 'setCutoffDateTime',
+        'isRecurring' => 'setIsRecurring',
+        'preOrder' => 'setPreOrder',
+        'preOrderDate' => 'setPreOrderDate',
+        'reordered' => 'setReordered',
+        'destinationCountry' => 'setDestinationCountry',
+        'declinePhase' => 'setDeclinePhase',
+        'trustedMerchant' => 'setTrustedMerchant',
+        'additionalFees' => 'setAdditionalFees',
+        'amount' => 'setAmount',
+        'recurringDetails' => 'setRecurringDetails',
+        'direction' => 'setDirection',
+        'isChargeback' => 'setIsChargeback',
+        'fraudLiability' => 'setFraudLiability',
+        'onUsFlag' => 'setOnUsFlag',
+        'numberOfTransactions' => 'setNumberOfTransactions',
+        'batchDetails' => 'setBatchDetails',
+        'checkDetails' => 'setCheckDetails',
+        'purpose' => 'setPurpose'
     ];
 
 
@@ -98,7 +206,34 @@ class UnifiedriskTransaction implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transactionId' => 'getTransactionId'
+        'transactionId' => 'getTransactionId',
+        'status' => 'getStatus',
+        'statusReason' => 'getStatusReason',
+        'messageType' => 'getMessageType',
+        'type' => 'getType',
+        'attribute' => 'getAttribute',
+        'initiator' => 'getInitiator',
+        'channel' => 'getChannel',
+        'timestamp' => 'getTimestamp',
+        'cutoffDateTime' => 'getCutoffDateTime',
+        'isRecurring' => 'getIsRecurring',
+        'preOrder' => 'getPreOrder',
+        'preOrderDate' => 'getPreOrderDate',
+        'reordered' => 'getReordered',
+        'destinationCountry' => 'getDestinationCountry',
+        'declinePhase' => 'getDeclinePhase',
+        'trustedMerchant' => 'getTrustedMerchant',
+        'additionalFees' => 'getAdditionalFees',
+        'amount' => 'getAmount',
+        'recurringDetails' => 'getRecurringDetails',
+        'direction' => 'getDirection',
+        'isChargeback' => 'getIsChargeback',
+        'fraudLiability' => 'getFraudLiability',
+        'onUsFlag' => 'getOnUsFlag',
+        'numberOfTransactions' => 'getNumberOfTransactions',
+        'batchDetails' => 'getBatchDetails',
+        'checkDetails' => 'getCheckDetails',
+        'purpose' => 'getPurpose'
     ];
 
     public static function attributeMap()
@@ -133,6 +268,33 @@ class UnifiedriskTransaction implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['statusReason'] = isset($data['statusReason']) ? $data['statusReason'] : null;
+        $this->container['messageType'] = isset($data['messageType']) ? $data['messageType'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['attribute'] = isset($data['attribute']) ? $data['attribute'] : null;
+        $this->container['initiator'] = isset($data['initiator']) ? $data['initiator'] : null;
+        $this->container['channel'] = isset($data['channel']) ? $data['channel'] : null;
+        $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
+        $this->container['cutoffDateTime'] = isset($data['cutoffDateTime']) ? $data['cutoffDateTime'] : null;
+        $this->container['isRecurring'] = isset($data['isRecurring']) ? $data['isRecurring'] : null;
+        $this->container['preOrder'] = isset($data['preOrder']) ? $data['preOrder'] : null;
+        $this->container['preOrderDate'] = isset($data['preOrderDate']) ? $data['preOrderDate'] : null;
+        $this->container['reordered'] = isset($data['reordered']) ? $data['reordered'] : null;
+        $this->container['destinationCountry'] = isset($data['destinationCountry']) ? $data['destinationCountry'] : null;
+        $this->container['declinePhase'] = isset($data['declinePhase']) ? $data['declinePhase'] : null;
+        $this->container['trustedMerchant'] = isset($data['trustedMerchant']) ? $data['trustedMerchant'] : null;
+        $this->container['additionalFees'] = isset($data['additionalFees']) ? $data['additionalFees'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['recurringDetails'] = isset($data['recurringDetails']) ? $data['recurringDetails'] : null;
+        $this->container['direction'] = isset($data['direction']) ? $data['direction'] : null;
+        $this->container['isChargeback'] = isset($data['isChargeback']) ? $data['isChargeback'] : null;
+        $this->container['fraudLiability'] = isset($data['fraudLiability']) ? $data['fraudLiability'] : null;
+        $this->container['onUsFlag'] = isset($data['onUsFlag']) ? $data['onUsFlag'] : null;
+        $this->container['numberOfTransactions'] = isset($data['numberOfTransactions']) ? $data['numberOfTransactions'] : null;
+        $this->container['batchDetails'] = isset($data['batchDetails']) ? $data['batchDetails'] : null;
+        $this->container['checkDetails'] = isset($data['checkDetails']) ? $data['checkDetails'] : null;
+        $this->container['purpose'] = isset($data['purpose']) ? $data['purpose'] : null;
     }
 
     /**
@@ -144,9 +306,6 @@ class UnifiedriskTransaction implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['transactionId'] === null) {
-            $invalid_properties[] = "'transactionId' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -159,9 +318,6 @@ class UnifiedriskTransaction implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['transactionId'] === null) {
-            return false;
-        }
         return true;
     }
 
@@ -177,12 +333,579 @@ class UnifiedriskTransaction implements ArrayAccess
 
     /**
      * Sets transactionId
-     * @param string $transactionId The transaction identifier correlating this label to the original risk assessment request
+     * @param string $transactionId Unique identifier for the transaction being assessed
      * @return $this
      */
     public function setTransactionId($transactionId)
     {
         $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status Transaction status: NEW, APPROVED, DECLINED, REVERSED, FRAUD
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusReason
+     * @return string
+     */
+    public function getStatusReason()
+    {
+        return $this->container['statusReason'];
+    }
+
+    /**
+     * Sets statusReason
+     * @param string $statusReason Reason code for the transaction status
+     * @return $this
+     */
+    public function setStatusReason($statusReason)
+    {
+        $this->container['statusReason'] = $statusReason;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageType
+     * @return string
+     */
+    public function getMessageType()
+    {
+        return $this->container['messageType'];
+    }
+
+    /**
+     * Sets messageType
+     * @param string $messageType Message type: AUTHORIZATION, INQUIRY, ADVICE, REVERSAL
+     * @return $this
+     */
+    public function setMessageType($messageType)
+    {
+        $this->container['messageType'] = $messageType;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type The type of transaction being processed
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets attribute
+     * @return string
+     */
+    public function getAttribute()
+    {
+        return $this->container['attribute'];
+    }
+
+    /**
+     * Sets attribute
+     * @param string $attribute Transaction attribute: AGGREGATION, CARDLESS_ATM, etc
+     * @return $this
+     */
+    public function setAttribute($attribute)
+    {
+        $this->container['attribute'] = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * Gets initiator
+     * @return string
+     */
+    public function getInitiator()
+    {
+        return $this->container['initiator'];
+    }
+
+    /**
+     * Sets initiator
+     * @param string $initiator Who initiated transaction: MERCHANT, CUSTOMER
+     * @return $this
+     */
+    public function setInitiator($initiator)
+    {
+        $this->container['initiator'] = $initiator;
+
+        return $this;
+    }
+
+    /**
+     * Gets channel
+     * @return string
+     */
+    public function getChannel()
+    {
+        return $this->container['channel'];
+    }
+
+    /**
+     * Sets channel
+     * @param string $channel Channel used: ONLINE, MOBILE, ATM, BRANCH, etc
+     * @return $this
+     */
+    public function setChannel($channel)
+    {
+        $this->container['channel'] = $channel;
+
+        return $this;
+    }
+
+    /**
+     * Gets timestamp
+     * @return \DateTime
+     */
+    public function getTimestamp()
+    {
+        return $this->container['timestamp'];
+    }
+
+    /**
+     * Sets timestamp
+     * @param \DateTime $timestamp Local transaction timestamp without timezone
+     * @return $this
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->container['timestamp'] = $timestamp;
+
+        return $this;
+    }
+
+    /**
+     * Gets cutoffDateTime
+     * @return \DateTime
+     */
+    public function getCutoffDateTime()
+    {
+        return $this->container['cutoffDateTime'];
+    }
+
+    /**
+     * Sets cutoffDateTime
+     * @param \DateTime $cutoffDateTime Cutoff date/time for event or journey
+     * @return $this
+     */
+    public function setCutoffDateTime($cutoffDateTime)
+    {
+        $this->container['cutoffDateTime'] = $cutoffDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets isRecurring
+     * @return bool
+     */
+    public function getIsRecurring()
+    {
+        return $this->container['isRecurring'];
+    }
+
+    /**
+     * Sets isRecurring
+     * @param bool $isRecurring Indicates if this is a recurring transaction
+     * @return $this
+     */
+    public function setIsRecurring($isRecurring)
+    {
+        $this->container['isRecurring'] = $isRecurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets preOrder
+     * @return bool
+     */
+    public function getPreOrder()
+    {
+        return $this->container['preOrder'];
+    }
+
+    /**
+     * Sets preOrder
+     * @param bool $preOrder Indicates if this is a pre-order
+     * @return $this
+     */
+    public function setPreOrder($preOrder)
+    {
+        $this->container['preOrder'] = $preOrder;
+
+        return $this;
+    }
+
+    /**
+     * Gets preOrderDate
+     * @return \DateTime
+     */
+    public function getPreOrderDate()
+    {
+        return $this->container['preOrderDate'];
+    }
+
+    /**
+     * Sets preOrderDate
+     * @param \DateTime $preOrderDate Expected availability date for pre-order
+     * @return $this
+     */
+    public function setPreOrderDate($preOrderDate)
+    {
+        $this->container['preOrderDate'] = $preOrderDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets reordered
+     * @return bool
+     */
+    public function getReordered()
+    {
+        return $this->container['reordered'];
+    }
+
+    /**
+     * Sets reordered
+     * @param bool $reordered Indicates if customer is reordering
+     * @return $this
+     */
+    public function setReordered($reordered)
+    {
+        $this->container['reordered'] = $reordered;
+
+        return $this;
+    }
+
+    /**
+     * Gets destinationCountry
+     * @return string
+     */
+    public function getDestinationCountry()
+    {
+        return $this->container['destinationCountry'];
+    }
+
+    /**
+     * Sets destinationCountry
+     * @param string $destinationCountry Destination country for funds
+     * @return $this
+     */
+    public function setDestinationCountry($destinationCountry)
+    {
+        $this->container['destinationCountry'] = $destinationCountry;
+
+        return $this;
+    }
+
+    /**
+     * Gets declinePhase
+     * @return string
+     */
+    public function getDeclinePhase()
+    {
+        return $this->container['declinePhase'];
+    }
+
+    /**
+     * Sets declinePhase
+     * @param string $declinePhase Phase where transaction was declined
+     * @return $this
+     */
+    public function setDeclinePhase($declinePhase)
+    {
+        $this->container['declinePhase'] = $declinePhase;
+
+        return $this;
+    }
+
+    /**
+     * Gets trustedMerchant
+     * @return bool
+     */
+    public function getTrustedMerchant()
+    {
+        return $this->container['trustedMerchant'];
+    }
+
+    /**
+     * Sets trustedMerchant
+     * @param bool $trustedMerchant Indicates if merchant is on trusted list
+     * @return $this
+     */
+    public function setTrustedMerchant($trustedMerchant)
+    {
+        $this->container['trustedMerchant'] = $trustedMerchant;
+
+        return $this;
+    }
+
+    /**
+     * Gets additionalFees
+     * @return \CyberSource\Model\UnifiedriskTransactionAdditionalFees
+     */
+    public function getAdditionalFees()
+    {
+        return $this->container['additionalFees'];
+    }
+
+    /**
+     * Sets additionalFees
+     * @param \CyberSource\Model\UnifiedriskTransactionAdditionalFees $additionalFees
+     * @return $this
+     */
+    public function setAdditionalFees($additionalFees)
+    {
+        $this->container['additionalFees'] = $additionalFees;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return \CyberSource\Model\UnifiedriskTransactionAmount
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param \CyberSource\Model\UnifiedriskTransactionAmount $amount
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurringDetails
+     * @return \CyberSource\Model\UnifiedriskTransactionRecurringDetails
+     */
+    public function getRecurringDetails()
+    {
+        return $this->container['recurringDetails'];
+    }
+
+    /**
+     * Sets recurringDetails
+     * @param \CyberSource\Model\UnifiedriskTransactionRecurringDetails $recurringDetails
+     * @return $this
+     */
+    public function setRecurringDetails($recurringDetails)
+    {
+        $this->container['recurringDetails'] = $recurringDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets direction
+     * @return string
+     */
+    public function getDirection()
+    {
+        return $this->container['direction'];
+    }
+
+    /**
+     * Sets direction
+     * @param string $direction Direction of the transaction flow relative to the customer's account (e.g., CREDIT for incoming funds, DEBIT for outgoing funds). Determines risk model orientation and velocity tracking
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->container['direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * Gets isChargeback
+     * @return bool
+     */
+    public function getIsChargeback()
+    {
+        return $this->container['isChargeback'];
+    }
+
+    /**
+     * Sets isChargeback
+     * @param bool $isChargeback Indicates whether this transaction represents a chargeback or dispute reversal. True signals a disputed transaction requiring fraud investigation and issuer liability assessment
+     * @return $this
+     */
+    public function setIsChargeback($isChargeback)
+    {
+        $this->container['isChargeback'] = $isChargeback;
+
+        return $this;
+    }
+
+    /**
+     * Gets fraudLiability
+     * @return string
+     */
+    public function getFraudLiability()
+    {
+        return $this->container['fraudLiability'];
+    }
+
+    /**
+     * Sets fraudLiability
+     * @param string $fraudLiability Indicates which party bears fraud liability for this transaction (e.g., ISSUER, MERCHANT, ACQUIRER). Liability shifts apply in 3DS-authenticated or EMV chip transactions
+     * @return $this
+     */
+    public function setFraudLiability($fraudLiability)
+    {
+        $this->container['fraudLiability'] = $fraudLiability;
+
+        return $this;
+    }
+
+    /**
+     * Gets onUsFlag
+     * @return bool
+     */
+    public function getOnUsFlag()
+    {
+        return $this->container['onUsFlag'];
+    }
+
+    /**
+     * Sets onUsFlag
+     * @param bool $onUsFlag Indicates whether the transaction is an on-us transaction where the issuing and acquiring institutions are the same entity. On-us transactions may follow different risk rules and processing paths
+     * @return $this
+     */
+    public function setOnUsFlag($onUsFlag)
+    {
+        $this->container['onUsFlag'] = $onUsFlag;
+
+        return $this;
+    }
+
+    /**
+     * Gets numberOfTransactions
+     * @return int
+     */
+    public function getNumberOfTransactions()
+    {
+        return $this->container['numberOfTransactions'];
+    }
+
+    /**
+     * Sets numberOfTransactions
+     * @param int $numberOfTransactions Total count of transactions associated with this batch, order, or session. Used for velocity-based risk rules and aggregated fraud monitoring
+     * @return $this
+     */
+    public function setNumberOfTransactions($numberOfTransactions)
+    {
+        $this->container['numberOfTransactions'] = $numberOfTransactions;
+
+        return $this;
+    }
+
+    /**
+     * Gets batchDetails
+     * @return \CyberSource\Model\UnifiedriskTransactionBatchDetails
+     */
+    public function getBatchDetails()
+    {
+        return $this->container['batchDetails'];
+    }
+
+    /**
+     * Sets batchDetails
+     * @param \CyberSource\Model\UnifiedriskTransactionBatchDetails $batchDetails
+     * @return $this
+     */
+    public function setBatchDetails($batchDetails)
+    {
+        $this->container['batchDetails'] = $batchDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets checkDetails
+     * @return \CyberSource\Model\UnifiedriskTransactionCheckDetails
+     */
+    public function getCheckDetails()
+    {
+        return $this->container['checkDetails'];
+    }
+
+    /**
+     * Sets checkDetails
+     * @param \CyberSource\Model\UnifiedriskTransactionCheckDetails $checkDetails
+     * @return $this
+     */
+    public function setCheckDetails($checkDetails)
+    {
+        $this->container['checkDetails'] = $checkDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets purpose
+     * @return string
+     */
+    public function getPurpose()
+    {
+        return $this->container['purpose'];
+    }
+
+    /**
+     * Sets purpose
+     * @param string $purpose Business purpose or reason code for this transaction (e.g., PURCH for purchase, SALA for salary, REFND for refund). Used for transaction classification and AML monitoring
+     * @return $this
+     */
+    public function setPurpose($purpose)
+    {
+        $this->container['purpose'] = $purpose;
 
         return $this;
     }

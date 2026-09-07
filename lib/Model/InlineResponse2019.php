@@ -53,18 +53,15 @@ class InlineResponse2019 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'webhookId' => 'string',
+        'eventDate' => 'string',
+        'eventType' => 'string',
         'organizationId' => 'string',
-        'products' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[]',
-        'webhookUrl' => 'string',
-        'healthCheckUrl' => 'string',
-        'status' => 'string',
-        'name' => 'string',
-        'description' => 'string',
-        'retryPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy',
-        'securityPolicy' => '\CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy',
-        'createdOn' => 'string',
-        'notificationScope' => 'string'
+        'payloads' => '\CyberSource\Model\InlineResponse2019Payloads',
+        'productId' => 'string',
+        'requestType' => 'string',
+        'retryNumber' => 'int',
+        'transactionTraceId' => 'string',
+        'webhookId' => 'string'
     ];
 
     /**
@@ -72,18 +69,15 @@ class InlineResponse2019 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'webhookId' => null,
+        'eventDate' => null,
+        'eventType' => null,
         'organizationId' => null,
-        'products' => null,
-        'webhookUrl' => null,
-        'healthCheckUrl' => null,
-        'status' => null,
-        'name' => null,
-        'description' => null,
-        'retryPolicy' => null,
-        'securityPolicy' => null,
-        'createdOn' => null,
-        'notificationScope' => null
+        'payloads' => null,
+        'productId' => null,
+        'requestType' => null,
+        'retryNumber' => null,
+        'transactionTraceId' => null,
+        'webhookId' => null
     ];
 
     public static function swaggerTypes()
@@ -101,18 +95,15 @@ class InlineResponse2019 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'webhookId' => 'webhookId',
+        'eventDate' => 'eventDate',
+        'eventType' => 'eventType',
         'organizationId' => 'organizationId',
-        'products' => 'products',
-        'webhookUrl' => 'webhookUrl',
-        'healthCheckUrl' => 'healthCheckUrl',
-        'status' => 'status',
-        'name' => 'name',
-        'description' => 'description',
-        'retryPolicy' => 'retryPolicy',
-        'securityPolicy' => 'securityPolicy',
-        'createdOn' => 'createdOn',
-        'notificationScope' => 'notificationScope'
+        'payloads' => 'payloads',
+        'productId' => 'productId',
+        'requestType' => 'requestType',
+        'retryNumber' => 'retryNumber',
+        'transactionTraceId' => 'transactionTraceId',
+        'webhookId' => 'webhookId'
     ];
 
 
@@ -121,18 +112,15 @@ class InlineResponse2019 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'webhookId' => 'setWebhookId',
+        'eventDate' => 'setEventDate',
+        'eventType' => 'setEventType',
         'organizationId' => 'setOrganizationId',
-        'products' => 'setProducts',
-        'webhookUrl' => 'setWebhookUrl',
-        'healthCheckUrl' => 'setHealthCheckUrl',
-        'status' => 'setStatus',
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'retryPolicy' => 'setRetryPolicy',
-        'securityPolicy' => 'setSecurityPolicy',
-        'createdOn' => 'setCreatedOn',
-        'notificationScope' => 'setNotificationScope'
+        'payloads' => 'setPayloads',
+        'productId' => 'setProductId',
+        'requestType' => 'setRequestType',
+        'retryNumber' => 'setRetryNumber',
+        'transactionTraceId' => 'setTransactionTraceId',
+        'webhookId' => 'setWebhookId'
     ];
 
 
@@ -141,18 +129,15 @@ class InlineResponse2019 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'webhookId' => 'getWebhookId',
+        'eventDate' => 'getEventDate',
+        'eventType' => 'getEventType',
         'organizationId' => 'getOrganizationId',
-        'products' => 'getProducts',
-        'webhookUrl' => 'getWebhookUrl',
-        'healthCheckUrl' => 'getHealthCheckUrl',
-        'status' => 'getStatus',
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'retryPolicy' => 'getRetryPolicy',
-        'securityPolicy' => 'getSecurityPolicy',
-        'createdOn' => 'getCreatedOn',
-        'notificationScope' => 'getNotificationScope'
+        'payloads' => 'getPayloads',
+        'productId' => 'getProductId',
+        'requestType' => 'getRequestType',
+        'retryNumber' => 'getRetryNumber',
+        'transactionTraceId' => 'getTransactionTraceId',
+        'webhookId' => 'getWebhookId'
     ];
 
     public static function attributeMap()
@@ -186,18 +171,15 @@ class InlineResponse2019 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['webhookId'] = isset($data['webhookId']) ? $data['webhookId'] : null;
+        $this->container['eventDate'] = isset($data['eventDate']) ? $data['eventDate'] : null;
+        $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
         $this->container['organizationId'] = isset($data['organizationId']) ? $data['organizationId'] : null;
-        $this->container['products'] = isset($data['products']) ? $data['products'] : null;
-        $this->container['webhookUrl'] = isset($data['webhookUrl']) ? $data['webhookUrl'] : null;
-        $this->container['healthCheckUrl'] = isset($data['healthCheckUrl']) ? $data['healthCheckUrl'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : 'INACTIVE';
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['retryPolicy'] = isset($data['retryPolicy']) ? $data['retryPolicy'] : null;
-        $this->container['securityPolicy'] = isset($data['securityPolicy']) ? $data['securityPolicy'] : null;
-        $this->container['createdOn'] = isset($data['createdOn']) ? $data['createdOn'] : null;
-        $this->container['notificationScope'] = isset($data['notificationScope']) ? $data['notificationScope'] : 'DESCENDANTS';
+        $this->container['payloads'] = isset($data['payloads']) ? $data['payloads'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['requestType'] = isset($data['requestType']) ? $data['requestType'] : null;
+        $this->container['retryNumber'] = isset($data['retryNumber']) ? $data['retryNumber'] : null;
+        $this->container['transactionTraceId'] = isset($data['transactionTraceId']) ? $data['transactionTraceId'] : null;
+        $this->container['webhookId'] = isset($data['webhookId']) ? $data['webhookId'] : null;
     }
 
     /**
@@ -226,22 +208,43 @@ class InlineResponse2019 implements ArrayAccess
 
 
     /**
-     * Gets webhookId
+     * Gets eventDate
      * @return string
      */
-    public function getWebhookId()
+    public function getEventDate()
     {
-        return $this->container['webhookId'];
+        return $this->container['eventDate'];
     }
 
     /**
-     * Sets webhookId
-     * @param string $webhookId Webhook Id. This is generated by the server.
+     * Sets eventDate
+     * @param string $eventDate Date that the webhook was delivered
      * @return $this
      */
-    public function setWebhookId($webhookId)
+    public function setEventDate($eventDate)
     {
-        $this->container['webhookId'] = $webhookId;
+        $this->container['eventDate'] = $eventDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets eventType
+     * @return string
+     */
+    public function getEventType()
+    {
+        return $this->container['eventType'];
+    }
+
+    /**
+     * Sets eventType
+     * @param string $eventType The event name the webhook was delivered for
+     * @return $this
+     */
+    public function setEventType($eventType)
+    {
+        $this->container['eventType'] = $eventType;
 
         return $this;
     }
@@ -257,7 +260,7 @@ class InlineResponse2019 implements ArrayAccess
 
     /**
      * Sets organizationId
-     * @param string $organizationId Organization ID.
+     * @param string $organizationId The Organization Identifier.
      * @return $this
      */
     public function setOrganizationId($organizationId)
@@ -268,211 +271,127 @@ class InlineResponse2019 implements ArrayAccess
     }
 
     /**
-     * Gets products
-     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[]
+     * Gets payloads
+     * @return \CyberSource\Model\InlineResponse2019Payloads
      */
-    public function getProducts()
+    public function getPayloads()
     {
-        return $this->container['products'];
+        return $this->container['payloads'];
     }
 
     /**
-     * Sets products
-     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksProducts[] $products
+     * Sets payloads
+     * @param \CyberSource\Model\InlineResponse2019Payloads $payloads
      * @return $this
      */
-    public function setProducts($products)
+    public function setPayloads($payloads)
     {
-        $this->container['products'] = $products;
+        $this->container['payloads'] = $payloads;
 
         return $this;
     }
 
     /**
-     * Gets webhookUrl
+     * Gets productId
      * @return string
      */
-    public function getWebhookUrl()
+    public function getProductId()
     {
-        return $this->container['webhookUrl'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets webhookUrl
-     * @param string $webhookUrl The client's endpoint (URL) to receive webhooks.
+     * Sets productId
+     * @param string $productId The product the webhook was delivered for
      * @return $this
      */
-    public function setWebhookUrl($webhookUrl)
+    public function setProductId($productId)
     {
-        $this->container['webhookUrl'] = $webhookUrl;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets healthCheckUrl
+     * Gets requestType
      * @return string
      */
-    public function getHealthCheckUrl()
+    public function getRequestType()
     {
-        return $this->container['healthCheckUrl'];
+        return $this->container['requestType'];
     }
 
     /**
-     * Sets healthCheckUrl
-     * @param string $healthCheckUrl The client's health check endpoint (URL).
+     * Sets requestType
+     * @param string $requestType Identifies the the type of request
      * @return $this
      */
-    public function setHealthCheckUrl($healthCheckUrl)
+    public function setRequestType($requestType)
     {
-        $this->container['healthCheckUrl'] = $healthCheckUrl;
+        $this->container['requestType'] = $requestType;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets retryNumber
+     * @return int
+     */
+    public function getRetryNumber()
+    {
+        return $this->container['retryNumber'];
+    }
+
+    /**
+     * Sets retryNumber
+     * @param int $retryNumber The number of retry attempts for a given webhook
+     * @return $this
+     */
+    public function setRetryNumber($retryNumber)
+    {
+        $this->container['retryNumber'] = $retryNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionTraceId
      * @return string
      */
-    public function getStatus()
+    public function getTransactionTraceId()
     {
-        return $this->container['status'];
+        return $this->container['transactionTraceId'];
     }
 
     /**
-     * Sets status
-     * @param string $status Webhook status.
+     * Sets transactionTraceId
+     * @param string $transactionTraceId The identifier for the webhook
      * @return $this
      */
-    public function setStatus($status)
+    public function setTransactionTraceId($transactionTraceId)
     {
-        $this->container['status'] = $status;
+        $this->container['transactionTraceId'] = $transactionTraceId;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets webhookId
      * @return string
      */
-    public function getName()
+    public function getWebhookId()
     {
-        return $this->container['name'];
+        return $this->container['webhookId'];
     }
 
     /**
-     * Sets name
-     * @param string $name Client friendly webhook name.
+     * Sets webhookId
+     * @param string $webhookId The identifier of the subscription
      * @return $this
      */
-    public function setName($name)
+    public function setWebhookId($webhookId)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description Client friendly webhook description.
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets retryPolicy
-     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy
-     */
-    public function getRetryPolicy()
-    {
-        return $this->container['retryPolicy'];
-    }
-
-    /**
-     * Sets retryPolicy
-     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksRetryPolicy $retryPolicy
-     * @return $this
-     */
-    public function setRetryPolicy($retryPolicy)
-    {
-        $this->container['retryPolicy'] = $retryPolicy;
-
-        return $this;
-    }
-
-    /**
-     * Gets securityPolicy
-     * @return \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy
-     */
-    public function getSecurityPolicy()
-    {
-        return $this->container['securityPolicy'];
-    }
-
-    /**
-     * Sets securityPolicy
-     * @param \CyberSource\Model\Notificationsubscriptionsv2webhooksSecurityPolicy $securityPolicy
-     * @return $this
-     */
-    public function setSecurityPolicy($securityPolicy)
-    {
-        $this->container['securityPolicy'] = $securityPolicy;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdOn
-     * @return string
-     */
-    public function getCreatedOn()
-    {
-        return $this->container['createdOn'];
-    }
-
-    /**
-     * Sets createdOn
-     * @param string $createdOn Date on which webhook was created/registered.
-     * @return $this
-     */
-    public function setCreatedOn($createdOn)
-    {
-        $this->container['createdOn'] = $createdOn;
-
-        return $this;
-    }
-
-    /**
-     * Gets notificationScope
-     * @return string
-     */
-    public function getNotificationScope()
-    {
-        return $this->container['notificationScope'];
-    }
-
-    /**
-     * Sets notificationScope
-     * @param string $notificationScope The webhook scope. 1. SELF The Webhook is used to deliver webhooks for only this Organization (or Merchant). 2. DESCENDANTS The Webhook is used to deliver webhooks for this Organization and its children. This field is optional.    Possible values: - SELF - DESCENDANTS
-     * @return $this
-     */
-    public function setNotificationScope($notificationScope)
-    {
-        $this->container['notificationScope'] = $notificationScope;
+        $this->container['webhookId'] = $webhookId;
 
         return $this;
     }

@@ -32,7 +32,7 @@ class JsonWebTokenGenerator implements TokenGenerator
     }
 
     //calling Signature
-    public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $isResponseMLEForAPI=false)
+    public function generateToken($resourcePath, $payloadData, $method, $merchantConfig, $date, $isResponseMLEForAPI = false)
     {
         $jwtPayload = $this->getPayloadClaimSet($resourcePath, $payloadData, $method, $merchantConfig, $isResponseMLEForAPI);
         $headerClaimSet = $this->getHeaderClaimSet();

@@ -197,7 +197,7 @@ class InlineResponse2014ErrorInformationDetails implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason Possible reasons for the error.  Possible values: - `MISSING_FIELD` - `INVALID_DATA`
+     * @param string $reason Possible reasons for the error.  Possible values: - `INVALID_DATA` - `SYSTEM_ERROR` - `NOT_FOUND` - `UNAUTHORIZED` - `SYSTEM_TIMEOUT` - `PROCESSOR_ERROR`
      * @return $this
      */
     public function setReason($reason)

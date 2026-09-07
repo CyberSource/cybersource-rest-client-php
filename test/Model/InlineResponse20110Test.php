@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20110Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse20110
+// * @description Egress Asymmetric Key Information Response.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,65 +77,16 @@ class InlineResponse20110Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "eventDate"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyEventDate()
+    public function testPropertySubmitTimeUtc()
     {
     }
 
     /**
-     * Test attribute "eventType"
+     * Test attribute "status"
      */
-    public function testPropertyEventType()
-    {
-    }
-
-    /**
-     * Test attribute "organizationId"
-     */
-    public function testPropertyOrganizationId()
-    {
-    }
-
-    /**
-     * Test attribute "payloads"
-     */
-    public function testPropertyPayloads()
-    {
-    }
-
-    /**
-     * Test attribute "productId"
-     */
-    public function testPropertyProductId()
-    {
-    }
-
-    /**
-     * Test attribute "requestType"
-     */
-    public function testPropertyRequestType()
-    {
-    }
-
-    /**
-     * Test attribute "retryNumber"
-     */
-    public function testPropertyRetryNumber()
-    {
-    }
-
-    /**
-     * Test attribute "transactionTraceId"
-     */
-    public function testPropertyTransactionTraceId()
-    {
-    }
-
-    /**
-     * Test attribute "webhookId"
-     */
-    public function testPropertyWebhookId()
+    public function testPropertyStatus()
     {
     }
 }

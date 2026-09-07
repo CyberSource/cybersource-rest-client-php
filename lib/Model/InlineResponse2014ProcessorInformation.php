@@ -53,8 +53,28 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'rejectReasonCode' => 'string',
+        'rejectReasonText' => 'string',
+        'approvalCode' => 'string',
+        'cardVerification' => '\CyberSource\Model\InlineResponse2014ProcessorInformationCardVerification',
+        'consumerAuthenticationResponse' => '\CyberSource\Model\ConsumerAuthenticationResponse',
+        'feeProgramDescription' => 'string',
+        'feeProgramId' => 'string',
+        'network' => 'string',
+        'processingDate' => 'string',
+        'processor' => 'string',
+        'reasonCodeDetails' => 'string',
+        'reasonCodeValue' => 'string',
         'responseCode' => 'string',
-        'responseDetails' => 'string'
+        'responseDetails' => 'string',
+        'responseDetailsOriginal' => 'string',
+        'retrievalReferenceNumber' => 'string',
+        'settlementDateTime' => 'string',
+        'statusCode' => 'string',
+        'systemTraceAuditNumber' => 'string',
+        'transactionDateTime' => 'string',
+        'transactionId' => 'string',
+        'transactionType' => 'string'
     ];
 
     /**
@@ -62,8 +82,28 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'rejectReasonCode' => null,
+        'rejectReasonText' => null,
+        'approvalCode' => null,
+        'cardVerification' => null,
+        'consumerAuthenticationResponse' => null,
+        'feeProgramDescription' => null,
+        'feeProgramId' => null,
+        'network' => null,
+        'processingDate' => null,
+        'processor' => null,
+        'reasonCodeDetails' => null,
+        'reasonCodeValue' => null,
         'responseCode' => null,
-        'responseDetails' => null
+        'responseDetails' => null,
+        'responseDetailsOriginal' => null,
+        'retrievalReferenceNumber' => null,
+        'settlementDateTime' => null,
+        'statusCode' => null,
+        'systemTraceAuditNumber' => null,
+        'transactionDateTime' => null,
+        'transactionId' => null,
+        'transactionType' => null
     ];
 
     public static function swaggerTypes()
@@ -81,8 +121,28 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'rejectReasonCode' => 'rejectReasonCode',
+        'rejectReasonText' => 'rejectReasonText',
+        'approvalCode' => 'approvalCode',
+        'cardVerification' => 'cardVerification',
+        'consumerAuthenticationResponse' => 'consumerAuthenticationResponse',
+        'feeProgramDescription' => 'feeProgramDescription',
+        'feeProgramId' => 'feeProgramId',
+        'network' => 'network',
+        'processingDate' => 'processingDate',
+        'processor' => 'processor',
+        'reasonCodeDetails' => 'reasonCodeDetails',
+        'reasonCodeValue' => 'reasonCodeValue',
         'responseCode' => 'responseCode',
-        'responseDetails' => 'responseDetails'
+        'responseDetails' => 'responseDetails',
+        'responseDetailsOriginal' => 'responseDetailsOriginal',
+        'retrievalReferenceNumber' => 'retrievalReferenceNumber',
+        'settlementDateTime' => 'settlementDateTime',
+        'statusCode' => 'statusCode',
+        'systemTraceAuditNumber' => 'systemTraceAuditNumber',
+        'transactionDateTime' => 'transactionDateTime',
+        'transactionId' => 'transactionId',
+        'transactionType' => 'transactionType'
     ];
 
 
@@ -91,8 +151,28 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'rejectReasonCode' => 'setRejectReasonCode',
+        'rejectReasonText' => 'setRejectReasonText',
+        'approvalCode' => 'setApprovalCode',
+        'cardVerification' => 'setCardVerification',
+        'consumerAuthenticationResponse' => 'setConsumerAuthenticationResponse',
+        'feeProgramDescription' => 'setFeeProgramDescription',
+        'feeProgramId' => 'setFeeProgramId',
+        'network' => 'setNetwork',
+        'processingDate' => 'setProcessingDate',
+        'processor' => 'setProcessor',
+        'reasonCodeDetails' => 'setReasonCodeDetails',
+        'reasonCodeValue' => 'setReasonCodeValue',
         'responseCode' => 'setResponseCode',
-        'responseDetails' => 'setResponseDetails'
+        'responseDetails' => 'setResponseDetails',
+        'responseDetailsOriginal' => 'setResponseDetailsOriginal',
+        'retrievalReferenceNumber' => 'setRetrievalReferenceNumber',
+        'settlementDateTime' => 'setSettlementDateTime',
+        'statusCode' => 'setStatusCode',
+        'systemTraceAuditNumber' => 'setSystemTraceAuditNumber',
+        'transactionDateTime' => 'setTransactionDateTime',
+        'transactionId' => 'setTransactionId',
+        'transactionType' => 'setTransactionType'
     ];
 
 
@@ -101,8 +181,28 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'rejectReasonCode' => 'getRejectReasonCode',
+        'rejectReasonText' => 'getRejectReasonText',
+        'approvalCode' => 'getApprovalCode',
+        'cardVerification' => 'getCardVerification',
+        'consumerAuthenticationResponse' => 'getConsumerAuthenticationResponse',
+        'feeProgramDescription' => 'getFeeProgramDescription',
+        'feeProgramId' => 'getFeeProgramId',
+        'network' => 'getNetwork',
+        'processingDate' => 'getProcessingDate',
+        'processor' => 'getProcessor',
+        'reasonCodeDetails' => 'getReasonCodeDetails',
+        'reasonCodeValue' => 'getReasonCodeValue',
         'responseCode' => 'getResponseCode',
-        'responseDetails' => 'getResponseDetails'
+        'responseDetails' => 'getResponseDetails',
+        'responseDetailsOriginal' => 'getResponseDetailsOriginal',
+        'retrievalReferenceNumber' => 'getRetrievalReferenceNumber',
+        'settlementDateTime' => 'getSettlementDateTime',
+        'statusCode' => 'getStatusCode',
+        'systemTraceAuditNumber' => 'getSystemTraceAuditNumber',
+        'transactionDateTime' => 'getTransactionDateTime',
+        'transactionId' => 'getTransactionId',
+        'transactionType' => 'getTransactionType'
     ];
 
     public static function attributeMap()
@@ -136,8 +236,28 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['rejectReasonCode'] = isset($data['rejectReasonCode']) ? $data['rejectReasonCode'] : null;
+        $this->container['rejectReasonText'] = isset($data['rejectReasonText']) ? $data['rejectReasonText'] : null;
+        $this->container['approvalCode'] = isset($data['approvalCode']) ? $data['approvalCode'] : null;
+        $this->container['cardVerification'] = isset($data['cardVerification']) ? $data['cardVerification'] : null;
+        $this->container['consumerAuthenticationResponse'] = isset($data['consumerAuthenticationResponse']) ? $data['consumerAuthenticationResponse'] : null;
+        $this->container['feeProgramDescription'] = isset($data['feeProgramDescription']) ? $data['feeProgramDescription'] : null;
+        $this->container['feeProgramId'] = isset($data['feeProgramId']) ? $data['feeProgramId'] : null;
+        $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['processingDate'] = isset($data['processingDate']) ? $data['processingDate'] : null;
+        $this->container['processor'] = isset($data['processor']) ? $data['processor'] : null;
+        $this->container['reasonCodeDetails'] = isset($data['reasonCodeDetails']) ? $data['reasonCodeDetails'] : null;
+        $this->container['reasonCodeValue'] = isset($data['reasonCodeValue']) ? $data['reasonCodeValue'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
+        $this->container['responseDetailsOriginal'] = isset($data['responseDetailsOriginal']) ? $data['responseDetailsOriginal'] : null;
+        $this->container['retrievalReferenceNumber'] = isset($data['retrievalReferenceNumber']) ? $data['retrievalReferenceNumber'] : null;
+        $this->container['settlementDateTime'] = isset($data['settlementDateTime']) ? $data['settlementDateTime'] : null;
+        $this->container['statusCode'] = isset($data['statusCode']) ? $data['statusCode'] : null;
+        $this->container['systemTraceAuditNumber'] = isset($data['systemTraceAuditNumber']) ? $data['systemTraceAuditNumber'] : null;
+        $this->container['transactionDateTime'] = isset($data['transactionDateTime']) ? $data['transactionDateTime'] : null;
+        $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
     }
 
     /**
@@ -149,6 +269,9 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['transactionId'] === null) {
+            $invalid_properties[] = "'transactionId' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -161,9 +284,264 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['transactionId'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets rejectReasonCode
+     * @return string
+     */
+    public function getRejectReasonCode()
+    {
+        return $this->container['rejectReasonCode'];
+    }
+
+    /**
+     * Sets rejectReasonCode
+     * @param string $rejectReasonCode Reject reason code if the transaction was rejected by VisaNet.
+     * @return $this
+     */
+    public function setRejectReasonCode($rejectReasonCode)
+    {
+        $this->container['rejectReasonCode'] = $rejectReasonCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets rejectReasonText
+     * @return string
+     */
+    public function getRejectReasonText()
+    {
+        return $this->container['rejectReasonText'];
+    }
+
+    /**
+     * Sets rejectReasonText
+     * @param string $rejectReasonText This field contains reject reason text if the transaction was rejected by VisaNet and generic MasterCard Status reason.
+     * @return $this
+     */
+    public function setRejectReasonText($rejectReasonText)
+    {
+        $this->container['rejectReasonText'] = $rejectReasonText;
+
+        return $this;
+    }
+
+    /**
+     * Gets approvalCode
+     * @return string
+     */
+    public function getApprovalCode()
+    {
+        return $this->container['approvalCode'];
+    }
+
+    /**
+     * Sets approvalCode
+     * @param string $approvalCode Authorization code. Returned only when the processor returns this value.
+     * @return $this
+     */
+    public function setApprovalCode($approvalCode)
+    {
+        $this->container['approvalCode'] = $approvalCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardVerification
+     * @return \CyberSource\Model\InlineResponse2014ProcessorInformationCardVerification
+     */
+    public function getCardVerification()
+    {
+        return $this->container['cardVerification'];
+    }
+
+    /**
+     * Sets cardVerification
+     * @param \CyberSource\Model\InlineResponse2014ProcessorInformationCardVerification $cardVerification
+     * @return $this
+     */
+    public function setCardVerification($cardVerification)
+    {
+        $this->container['cardVerification'] = $cardVerification;
+
+        return $this;
+    }
+
+    /**
+     * Gets consumerAuthenticationResponse
+     * @return \CyberSource\Model\ConsumerAuthenticationResponse
+     */
+    public function getConsumerAuthenticationResponse()
+    {
+        return $this->container['consumerAuthenticationResponse'];
+    }
+
+    /**
+     * Sets consumerAuthenticationResponse
+     * @param \CyberSource\Model\ConsumerAuthenticationResponse $consumerAuthenticationResponse
+     * @return $this
+     */
+    public function setConsumerAuthenticationResponse($consumerAuthenticationResponse)
+    {
+        $this->container['consumerAuthenticationResponse'] = $consumerAuthenticationResponse;
+
+        return $this;
+    }
+
+    /**
+     * Gets feeProgramDescription
+     * @return string
+     */
+    public function getFeeProgramDescription()
+    {
+        return $this->container['feeProgramDescription'];
+    }
+
+    /**
+     * Sets feeProgramDescription
+     * @param string $feeProgramDescription Short text description of the Acquirer IRF (Interchange Reimbursement Fee) indicator.
+     * @return $this
+     */
+    public function setFeeProgramDescription($feeProgramDescription)
+    {
+        $this->container['feeProgramDescription'] = $feeProgramDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets feeProgramId
+     * @return string
+     */
+    public function getFeeProgramId()
+    {
+        return $this->container['feeProgramId'];
+    }
+
+    /**
+     * Sets feeProgramId
+     * @param string $feeProgramId This field identifies the interchange fee program applicable to each financial transaction. Fee-program indicator (FPI) values correspond to the fee descriptor and rate for each existing fee program.  This field can be regarded as informational only in all authorization messages.
+     * @return $this
+     */
+    public function setFeeProgramId($feeProgramId)
+    {
+        $this->container['feeProgramId'] = $feeProgramId;
+
+        return $this;
+    }
+
+    /**
+     * Gets network
+     * @return string
+     */
+    public function getNetwork()
+    {
+        return $this->container['network'];
+    }
+
+    /**
+     * Sets network
+     * @param string $network Network ID on which the transaction was performed. Takes the format of 000x where x is a number.
+     * @return $this
+     */
+    public function setNetwork($network)
+    {
+        $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingDate
+     * @return string
+     */
+    public function getProcessingDate()
+    {
+        return $this->container['processingDate'];
+    }
+
+    /**
+     * Sets processingDate
+     * @param string $processingDate The date that transaction was processed.
+     * @return $this
+     */
+    public function setProcessingDate($processingDate)
+    {
+        $this->container['processingDate'] = $processingDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets processor
+     * @return string
+     */
+    public function getProcessor()
+    {
+        return $this->container['processor'];
+    }
+
+    /**
+     * Sets processor
+     * @param string $processor The name of the processor that was used to complete the transaction.
+     * @return $this
+     */
+    public function setProcessor($processor)
+    {
+        $this->container['processor'] = $processor;
+
+        return $this;
+    }
+
+    /**
+     * Gets reasonCodeDetails
+     * @return string
+     */
+    public function getReasonCodeDetails()
+    {
+        return $this->container['reasonCodeDetails'];
+    }
+
+    /**
+     * Sets reasonCodeDetails
+     * @param string $reasonCodeDetails The reason code description contains the reason explaining:  - An acquirer-generated advice, reversal, cancellation, adjustment, chargeback (validation request or advice). - An chargeback reversal, representment (validation request or advice).
+     * @return $this
+     */
+    public function setReasonCodeDetails($reasonCodeDetails)
+    {
+        $this->container['reasonCodeDetails'] = $reasonCodeDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets reasonCodeValue
+     * @return string
+     */
+    public function getReasonCodeValue()
+    {
+        return $this->container['reasonCodeValue'];
+    }
+
+    /**
+     * Sets reasonCodeValue
+     * @param string $reasonCodeValue A four digit number that correlates to reasonCodeDetails.
+     * @return $this
+     */
+    public function setReasonCodeValue($reasonCodeValue)
+    {
+        $this->container['reasonCodeValue'] = $reasonCodeValue;
+
+        return $this;
+    }
 
     /**
      * Gets responseCode
@@ -176,7 +554,7 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
 
     /**
      * Sets responseCode
-     * @param string $responseCode For most processors, this is the error message sent directly from the bank. Returned only when the processor returns this value.
+     * @param string $responseCode Transaction status from the processor.
      * @return $this
      */
     public function setResponseCode($responseCode)
@@ -203,6 +581,174 @@ class InlineResponse2014ProcessorInformation implements ArrayAccess
     public function setResponseDetails($responseDetails)
     {
         $this->container['responseDetails'] = $responseDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets responseDetailsOriginal
+     * @return string
+     */
+    public function getResponseDetailsOriginal()
+    {
+        return $this->container['responseDetailsOriginal'];
+    }
+
+    /**
+     * Sets responseDetailsOriginal
+     * @param string $responseDetailsOriginal This field might contain the original information about a decline.
+     * @return $this
+     */
+    public function setResponseDetailsOriginal($responseDetailsOriginal)
+    {
+        $this->container['responseDetailsOriginal'] = $responseDetailsOriginal;
+
+        return $this;
+    }
+
+    /**
+     * Gets retrievalReferenceNumber
+     * @return string
+     */
+    public function getRetrievalReferenceNumber()
+    {
+        return $this->container['retrievalReferenceNumber'];
+    }
+
+    /**
+     * Sets retrievalReferenceNumber
+     * @param string $retrievalReferenceNumber This field contains a number that is used with other data elements as a key to identify and track all messages related to a given cardholder transaction; that is, to a given transaction set.  Recommended format: ydddhhnnnnnn  Positions 1-4: The yddd equivalent of the date, where y = 0-9 and ddd = 001 – 366. Positions 5-12: A unique identification number generated by the merchant or assigned by CyberSource.
+     * @return $this
+     */
+    public function setRetrievalReferenceNumber($retrievalReferenceNumber)
+    {
+        $this->container['retrievalReferenceNumber'] = $retrievalReferenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets settlementDateTime
+     * @return string
+     */
+    public function getSettlementDateTime()
+    {
+        return $this->container['settlementDateTime'];
+    }
+
+    /**
+     * Sets settlementDateTime
+     * @param string $settlementDateTime The date and time that transaction was settled.
+     * @return $this
+     */
+    public function setSettlementDateTime($settlementDateTime)
+    {
+        $this->container['settlementDateTime'] = $settlementDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusCode
+     * @return string
+     */
+    public function getStatusCode()
+    {
+        return $this->container['statusCode'];
+    }
+
+    /**
+     * Sets statusCode
+     * @param string $statusCode Specifies status of the transaction processing.
+     * @return $this
+     */
+    public function setStatusCode($statusCode)
+    {
+        $this->container['statusCode'] = $statusCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets systemTraceAuditNumber
+     * @return string
+     */
+    public function getSystemTraceAuditNumber()
+    {
+        return $this->container['systemTraceAuditNumber'];
+    }
+
+    /**
+     * Sets systemTraceAuditNumber
+     * @param string $systemTraceAuditNumber This field is returned by authorization and incremental authorization services. System trace number that must be printed on the customer's receipt.
+     * @return $this
+     */
+    public function setSystemTraceAuditNumber($systemTraceAuditNumber)
+    {
+        $this->container['systemTraceAuditNumber'] = $systemTraceAuditNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionDateTime
+     * @return string
+     */
+    public function getTransactionDateTime()
+    {
+        return $this->container['transactionDateTime'];
+    }
+
+    /**
+     * Sets transactionDateTime
+     * @param string $transactionDateTime The date and time that transaction was processed.
+     * @return $this
+     */
+    public function setTransactionDateTime($transactionDateTime)
+    {
+        $this->container['transactionDateTime'] = $transactionDateTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionId
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->container['transactionId'];
+    }
+
+    /**
+     * Sets transactionId
+     * @param string $transactionId Network transaction identifier (TID). This value can be used to identify a specific transaction when you are discussing the transaction with your processor.
+     * @return $this
+     */
+    public function setTransactionId($transactionId)
+    {
+        $this->container['transactionId'] = $transactionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionType
+     * @return string
+     */
+    public function getTransactionType()
+    {
+        return $this->container['transactionType'];
+    }
+
+    /**
+     * Sets transactionType
+     * @param string $transactionType Identifies the type of transaction originally sent.
+     * @return $this
+     */
+    public function setTransactionType($transactionType)
+    {
+        $this->container['transactionType'] = $transactionType;
 
         return $this;
     }

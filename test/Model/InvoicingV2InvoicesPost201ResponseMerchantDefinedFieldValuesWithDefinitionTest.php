@@ -77,6 +77,13 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
     }
 
     /**
+     * Test attribute "mdfValueId"
+     */
+    public function testPropertyMdfValueId()
+    {
+    }
+
+    /**
      * Test attribute "referenceType"
      */
     public function testPropertyReferenceType()

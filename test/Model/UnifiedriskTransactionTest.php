@@ -32,7 +32,7 @@ namespace CyberSource;
  * UnifiedriskTransactionTest Class Doc Comment
  *
  * @category    Class */
-// * @description Transaction reference identifying which previously assessed transaction this label applies to
+// * @description Financial transaction metadata including amounts, status, type, channel, and recurring payment details
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -80,6 +80,195 @@ class UnifiedriskTransactionTest extends \PHPUnit\Framework\TestCase
      * Test attribute "transactionId"
      */
     public function testPropertyTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "statusReason"
+     */
+    public function testPropertyStatusReason()
+    {
+    }
+
+    /**
+     * Test attribute "messageType"
+     */
+    public function testPropertyMessageType()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "attribute"
+     */
+    public function testPropertyAttribute()
+    {
+    }
+
+    /**
+     * Test attribute "initiator"
+     */
+    public function testPropertyInitiator()
+    {
+    }
+
+    /**
+     * Test attribute "channel"
+     */
+    public function testPropertyChannel()
+    {
+    }
+
+    /**
+     * Test attribute "timestamp"
+     */
+    public function testPropertyTimestamp()
+    {
+    }
+
+    /**
+     * Test attribute "cutoffDateTime"
+     */
+    public function testPropertyCutoffDateTime()
+    {
+    }
+
+    /**
+     * Test attribute "isRecurring"
+     */
+    public function testPropertyIsRecurring()
+    {
+    }
+
+    /**
+     * Test attribute "preOrder"
+     */
+    public function testPropertyPreOrder()
+    {
+    }
+
+    /**
+     * Test attribute "preOrderDate"
+     */
+    public function testPropertyPreOrderDate()
+    {
+    }
+
+    /**
+     * Test attribute "reordered"
+     */
+    public function testPropertyReordered()
+    {
+    }
+
+    /**
+     * Test attribute "destinationCountry"
+     */
+    public function testPropertyDestinationCountry()
+    {
+    }
+
+    /**
+     * Test attribute "declinePhase"
+     */
+    public function testPropertyDeclinePhase()
+    {
+    }
+
+    /**
+     * Test attribute "trustedMerchant"
+     */
+    public function testPropertyTrustedMerchant()
+    {
+    }
+
+    /**
+     * Test attribute "additionalFees"
+     */
+    public function testPropertyAdditionalFees()
+    {
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+    }
+
+    /**
+     * Test attribute "recurringDetails"
+     */
+    public function testPropertyRecurringDetails()
+    {
+    }
+
+    /**
+     * Test attribute "direction"
+     */
+    public function testPropertyDirection()
+    {
+    }
+
+    /**
+     * Test attribute "isChargeback"
+     */
+    public function testPropertyIsChargeback()
+    {
+    }
+
+    /**
+     * Test attribute "fraudLiability"
+     */
+    public function testPropertyFraudLiability()
+    {
+    }
+
+    /**
+     * Test attribute "onUsFlag"
+     */
+    public function testPropertyOnUsFlag()
+    {
+    }
+
+    /**
+     * Test attribute "numberOfTransactions"
+     */
+    public function testPropertyNumberOfTransactions()
+    {
+    }
+
+    /**
+     * Test attribute "batchDetails"
+     */
+    public function testPropertyBatchDetails()
+    {
+    }
+
+    /**
+     * Test attribute "checkDetails"
+     */
+    public function testPropertyCheckDetails()
+    {
+    }
+
+    /**
+     * Test attribute "purpose"
+     */
+    public function testPropertyPurpose()
     {
     }
 }
