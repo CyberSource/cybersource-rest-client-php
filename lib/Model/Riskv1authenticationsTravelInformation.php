@@ -139,7 +139,7 @@ class Riskv1authenticationsTravelInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['legs'] = isset($data['legs']) ? $data['legs'] : null;
         $this->container['numberOfPassengers'] = isset($data['numberOfPassengers']) ? $data['numberOfPassengers'] : null;

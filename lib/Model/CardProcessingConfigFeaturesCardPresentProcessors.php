@@ -159,7 +159,7 @@ class CardProcessingConfigFeaturesCardPresentProcessors implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['defaultPointOfSaleTerminalId'] = isset($data['defaultPointOfSaleTerminalId']) ? $data['defaultPointOfSaleTerminalId'] : null;
         $this->container['pointOfSaleTerminalIds'] = isset($data['pointOfSaleTerminalIds']) ? $data['pointOfSaleTerminalIds'] : null;

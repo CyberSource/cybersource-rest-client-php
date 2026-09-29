@@ -134,7 +134,7 @@ class DmConfigPortfolioControls implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['hideRiskMenus'] = isset($data['hideRiskMenus']) ? $data['hideRiskMenus'] : null;
         $this->container['hideRiskTransactionData'] = isset($data['hideRiskTransactionData']) ? $data['hideRiskTransactionData'] : null;

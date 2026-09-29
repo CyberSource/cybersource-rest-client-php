@@ -159,7 +159,7 @@ class Ptsv2paymentsidcapturesOrderInformationInvoiceDetails implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['purchaseOrderNumber'] = isset($data['purchaseOrderNumber']) ? $data['purchaseOrderNumber'] : null;
         $this->container['purchaseOrderDate'] = isset($data['purchaseOrderDate']) ? $data['purchaseOrderDate'] : null;

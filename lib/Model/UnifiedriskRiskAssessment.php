@@ -185,7 +185,7 @@ class UnifiedriskRiskAssessment implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['thirdPartyIndicators'] = isset($data['thirdPartyIndicators']) ? $data['thirdPartyIndicators'] : null;
         $this->container['thirdPartyScore'] = isset($data['thirdPartyScore']) ? $data['thirdPartyScore'] : null;

@@ -164,7 +164,7 @@ class ReportDefinitionDefaultSettings implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['reportMimeType'] = isset($data['reportMimeType']) ? $data['reportMimeType'] : null;
         $this->container['reportFrequency'] = isset($data['reportFrequency']) ? $data['reportFrequency'] : null;

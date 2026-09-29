@@ -164,7 +164,7 @@ class Upv1capturecontextsDataMerchantInformationMerchantDescriptor implements Ar
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['alternateName'] = isset($data['alternateName']) ? $data['alternateName'] : null;

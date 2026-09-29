@@ -140,7 +140,7 @@ class InlineResponse20113Payment implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['instruments'] = isset($data['instruments']) ? $data['instruments'] : null;
         $this->container['handlers'] = isset($data['handlers']) ? $data['handlers'] : null;

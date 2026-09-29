@@ -135,7 +135,7 @@ class Ucv1sessionsAppearance implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['theme'] = isset($data['theme']) ? $data['theme'] : null;
         $this->container['variables'] = isset($data['variables']) ? $data['variables'] : null;

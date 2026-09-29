@@ -135,7 +135,7 @@ class UnifiedriskPartner implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['developerId'] = isset($data['developerId']) ? $data['developerId'] : null;
         $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;

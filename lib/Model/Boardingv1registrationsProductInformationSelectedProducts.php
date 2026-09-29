@@ -144,7 +144,7 @@ class Boardingv1registrationsProductInformationSelectedProducts implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['payments'] = isset($data['payments']) ? $data['payments'] : null;
         $this->container['risk'] = isset($data['risk']) ? $data['risk'] : null;

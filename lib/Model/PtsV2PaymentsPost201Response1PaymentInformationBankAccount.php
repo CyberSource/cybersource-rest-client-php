@@ -129,7 +129,7 @@ class PtsV2PaymentsPost201Response1PaymentInformationBankAccount implements Arra
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['ibanSuffix'] = isset($data['ibanSuffix']) ? $data['ibanSuffix'] : null;
     }

@@ -170,7 +170,7 @@ class Ptsv2paymentsProcessorInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['preApprovalToken'] = isset($data['preApprovalToken']) ? $data['preApprovalToken'] : null;
         $this->container['authorizationOptions'] = isset($data['authorizationOptions']) ? $data['authorizationOptions'] : null;

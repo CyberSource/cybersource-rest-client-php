@@ -174,7 +174,7 @@ class Ptsv1pullfundstransferMerchantInformationMerchantDescriptor implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;

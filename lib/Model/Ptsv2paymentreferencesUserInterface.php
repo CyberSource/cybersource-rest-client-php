@@ -139,7 +139,7 @@ class Ptsv2paymentreferencesUserInterface implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['borderRadius'] = isset($data['borderRadius']) ? $data['borderRadius'] : null;
         $this->container['theme'] = isset($data['theme']) ? $data['theme'] : null;

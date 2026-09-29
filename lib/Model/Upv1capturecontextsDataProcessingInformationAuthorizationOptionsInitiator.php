@@ -134,7 +134,7 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptionsInitiator 
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['credentialStoredOnFile'] = isset($data['credentialStoredOnFile']) ? $data['credentialStoredOnFile'] : null;
         $this->container['merchantInitiatedTransaction'] = isset($data['merchantInitiatedTransaction']) ? $data['merchantInitiatedTransaction'] : null;

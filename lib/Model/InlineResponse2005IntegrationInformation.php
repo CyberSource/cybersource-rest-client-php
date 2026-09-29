@@ -139,7 +139,7 @@ class InlineResponse2005IntegrationInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['oauth2'] = isset($data['oauth2']) ? $data['oauth2'] : null;
         $this->container['tenantConfigurations'] = isset($data['tenantConfigurations']) ? $data['tenantConfigurations'] : null;

@@ -165,7 +165,7 @@ class ReportingV3NotificationofChangesGet200ResponseNotificationOfChanges implem
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['merchantReferenceNumber'] = isset($data['merchantReferenceNumber']) ? $data['merchantReferenceNumber'] : null;
         $this->container['transactionReferenceNumber'] = isset($data['transactionReferenceNumber']) ? $data['transactionReferenceNumber'] : null;

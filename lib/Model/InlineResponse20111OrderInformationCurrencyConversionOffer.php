@@ -179,7 +179,7 @@ class InlineResponse20111OrderInformationCurrencyConversionOffer implements Arra
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['originalAmount'] = isset($data['originalAmount']) ? $data['originalAmount'] : null;
         $this->container['originalCurrency'] = isset($data['originalCurrency']) ? $data['originalCurrency'] : null;

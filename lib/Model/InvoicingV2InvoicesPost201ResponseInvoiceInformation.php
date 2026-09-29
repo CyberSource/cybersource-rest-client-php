@@ -170,7 +170,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['invoiceNumber'] = isset($data['invoiceNumber']) ? $data['invoiceNumber'] : null;
         $this->container['transactionReferenceNumber'] = isset($data['transactionReferenceNumber']) ? $data['transactionReferenceNumber'] : null;

@@ -149,7 +149,7 @@ class Notificationsubscriptionsv2productsorganizationIdEventTypes implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['eventName'] = isset($data['eventName']) ? $data['eventName'] : null;
         $this->container['displayName'] = isset($data['displayName']) ? $data['displayName'] : null;

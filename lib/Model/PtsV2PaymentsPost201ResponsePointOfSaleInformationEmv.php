@@ -139,7 +139,7 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['chipValidationType'] = isset($data['chipValidationType']) ? $data['chipValidationType'] : null;

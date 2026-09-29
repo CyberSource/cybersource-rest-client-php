@@ -169,7 +169,7 @@ class Ptsv2billingagreementsInstallmentInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['alertPreference'] = isset($data['alertPreference']) ? $data['alertPreference'] : null;
         $this->container['firstInstallmentDate'] = isset($data['firstInstallmentDate']) ? $data['firstInstallmentDate'] : null;

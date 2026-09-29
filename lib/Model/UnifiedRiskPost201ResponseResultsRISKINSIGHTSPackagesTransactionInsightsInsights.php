@@ -140,7 +140,7 @@ class UnifiedRiskPost201ResponseResultsRISKINSIGHTSPackagesTransactionInsightsIn
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['codes'] = isset($data['codes']) ? $data['codes'] : null;
         $this->container['signals'] = isset($data['signals']) ? $data['signals'] : null;

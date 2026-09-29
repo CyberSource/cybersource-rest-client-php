@@ -139,7 +139,7 @@ class UnderwritingConfigurationMerchantApplicationProducts implements ArrayAcces
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['productShortName'] = isset($data['productShortName']) ? $data['productShortName'] : null;
         $this->container['preferredAcquirer'] = isset($data['preferredAcquirer']) ? $data['preferredAcquirer'] : null;

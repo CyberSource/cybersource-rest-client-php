@@ -134,7 +134,7 @@ class Ptsv2paymentreferencesPaymentInformationBank implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['swiftCode'] = isset($data['swiftCode']) ? $data['swiftCode'] : null;
         $this->container['account'] = isset($data['account']) ? $data['account'] : null;

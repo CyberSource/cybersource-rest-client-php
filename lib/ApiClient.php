@@ -102,7 +102,7 @@ class ApiClient
      *
      * @param Configuration $config config for this ApiClient
      */
-    public function __construct(\CyberSource\Configuration $config = null, \CyberSource\Authentication\Core\MerchantConfiguration $merchantConfig = null)
+    public function __construct(?\CyberSource\Configuration $config = null, ?\CyberSource\Authentication\Core\MerchantConfiguration $merchantConfig = null)
     {
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();

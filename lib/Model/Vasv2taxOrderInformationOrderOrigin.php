@@ -145,7 +145,7 @@ class Vasv2taxOrderInformationOrderOrigin implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;

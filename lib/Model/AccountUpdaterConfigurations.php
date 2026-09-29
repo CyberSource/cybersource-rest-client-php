@@ -149,7 +149,7 @@ class AccountUpdaterConfigurations implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['masterCard'] = isset($data['masterCard']) ? $data['masterCard'] : null;
         $this->container['visa'] = isset($data['visa']) ? $data['visa'] : null;

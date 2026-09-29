@@ -149,7 +149,7 @@ class Ptsv2paymentsidcapturesProcessingInformationCaptureOptions implements Arra
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['captureSequenceNumber'] = isset($data['captureSequenceNumber']) ? $data['captureSequenceNumber'] : null;
         $this->container['totalCaptureCount'] = isset($data['totalCaptureCount']) ? $data['totalCaptureCount'] : null;

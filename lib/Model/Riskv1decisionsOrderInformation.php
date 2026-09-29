@@ -180,7 +180,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
         $this->container['preOrder'] = isset($data['preOrder']) ? $data['preOrder'] : null;

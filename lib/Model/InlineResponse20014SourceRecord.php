@@ -164,7 +164,7 @@ class InlineResponse20014SourceRecord implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
         $this->container['customerId'] = isset($data['customerId']) ? $data['customerId'] : null;

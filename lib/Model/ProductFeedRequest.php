@@ -144,7 +144,7 @@ class ProductFeedRequest implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['products'] = isset($data['products']) ? $data['products'] : null;
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;

@@ -140,7 +140,7 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['oAuthURL'] = isset($data['oAuthURL']) ? $data['oAuthURL'] : null;
         $this->container['oAuthTokenType'] = isset($data['oAuthTokenType']) ? $data['oAuthTokenType'] : null;

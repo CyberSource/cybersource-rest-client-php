@@ -145,7 +145,7 @@ class SAConfigContactInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['companyName'] = isset($data['companyName']) ? $data['companyName'] : null;

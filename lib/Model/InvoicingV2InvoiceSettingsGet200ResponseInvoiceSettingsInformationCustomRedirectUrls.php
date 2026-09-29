@@ -140,7 +140,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRe
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['paymentAccepted'] = isset($data['paymentAccepted']) ? $data['paymentAccepted'] : null;
         $this->container['paymentRejected'] = isset($data['paymentRejected']) ? $data['paymentRejected'] : null;

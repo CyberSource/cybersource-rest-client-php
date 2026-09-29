@@ -154,7 +154,7 @@ class TssV2TransactionsGet200ResponseTokenInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['paymentInstrument'] = isset($data['paymentInstrument']) ? $data['paymentInstrument'] : null;

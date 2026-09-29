@@ -135,7 +135,7 @@ class UcpCompleteCheckoutRequest implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['paymentData'] = isset($data['paymentData']) ? $data['paymentData'] : null;
         $this->container['riskSignals'] = isset($data['riskSignals']) ? $data['riskSignals'] : null;

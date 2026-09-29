@@ -134,7 +134,7 @@ class TmsAuthorizationOptionsInitiatorMerchantInitiatedTransaction implements Ar
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['previousTransactionId'] = isset($data['previousTransactionId']) ? $data['previousTransactionId'] : null;
         $this->container['originalAuthorizedAmount'] = isset($data['originalAuthorizedAmount']) ? $data['originalAuthorizedAmount'] : null;

@@ -139,7 +139,7 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['categoryCode'] = isset($data['categoryCode']) ? $data['categoryCode'] : null;

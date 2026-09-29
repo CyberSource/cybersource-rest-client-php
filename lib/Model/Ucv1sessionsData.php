@@ -194,7 +194,7 @@ class Ucv1sessionsData implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;

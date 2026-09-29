@@ -139,7 +139,7 @@ class PtsV2PaymentsPost201ResponseWatchlistScreeningInformation implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['ipCountryConfidence'] = isset($data['ipCountryConfidence']) ? $data['ipCountryConfidence'] : null;
         $this->container['infoCodes'] = isset($data['infoCodes']) ? $data['infoCodes'] : null;

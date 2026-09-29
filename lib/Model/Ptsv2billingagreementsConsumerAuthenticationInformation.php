@@ -144,7 +144,7 @@ class Ptsv2billingagreementsConsumerAuthenticationInformation implements ArrayAc
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['authenticationTransactionContextId'] = isset($data['authenticationTransactionContextId']) ? $data['authenticationTransactionContextId'] : null;
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;

@@ -135,7 +135,7 @@ class Iccv1tokensEnrollmentReferenceData implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['enrollmentReferenceType'] = isset($data['enrollmentReferenceType']) ? $data['enrollmentReferenceType'] : null;
         $this->container['enrollmentReferenceProvider'] = isset($data['enrollmentReferenceProvider']) ? $data['enrollmentReferenceProvider'] : null;

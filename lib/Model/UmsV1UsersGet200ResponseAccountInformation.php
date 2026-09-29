@@ -164,7 +164,7 @@ class UmsV1UsersGet200ResponseAccountInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['userName'] = isset($data['userName']) ? $data['userName'] : null;
         $this->container['roleId'] = isset($data['roleId']) ? $data['roleId'] : null;

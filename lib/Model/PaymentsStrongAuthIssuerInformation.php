@@ -154,7 +154,7 @@ class PaymentsStrongAuthIssuerInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['riskAnalysisExemptionResult'] = isset($data['riskAnalysisExemptionResult']) ? $data['riskAnalysisExemptionResult'] : null;
         $this->container['trustedMerchantExemptionResult'] = isset($data['trustedMerchantExemptionResult']) ? $data['trustedMerchantExemptionResult'] : null;

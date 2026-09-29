@@ -149,7 +149,7 @@ class TssV2TransactionsPost201ResponseEmbeddedApplicationInformation implements 
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['reasonCode'] = isset($data['reasonCode']) ? $data['reasonCode'] : null;
         $this->container['rCode'] = isset($data['rCode']) ? $data['rCode'] : null;

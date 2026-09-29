@@ -134,7 +134,7 @@ class InlineResponse2014LinksSelf implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
         $this->container['href'] = isset($data['href']) ? $data['href'] : null;

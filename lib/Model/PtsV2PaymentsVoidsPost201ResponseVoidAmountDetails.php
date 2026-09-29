@@ -139,7 +139,7 @@ class PtsV2PaymentsVoidsPost201ResponseVoidAmountDetails implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['voidAmount'] = isset($data['voidAmount']) ? $data['voidAmount'] : null;
         $this->container['originalTransactionAmount'] = isset($data['originalTransactionAmount']) ? $data['originalTransactionAmount'] : null;

@@ -139,7 +139,7 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['challengeCode'] = isset($data['challengeCode']) ? $data['challengeCode'] : null;
         $this->container['messageCategory'] = isset($data['messageCategory']) ? $data['messageCategory'] : null;

@@ -135,7 +135,7 @@ class Reportingv3reportsReportPreferences implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['signedAmounts'] = isset($data['signedAmounts']) ? $data['signedAmounts'] : null;
         $this->container['fieldNameConvention'] = isset($data['fieldNameConvention']) ? $data['fieldNameConvention'] : null;

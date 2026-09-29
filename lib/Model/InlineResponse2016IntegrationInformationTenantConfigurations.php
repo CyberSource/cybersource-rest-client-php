@@ -144,7 +144,7 @@ class InlineResponse2016IntegrationInformationTenantConfigurations implements Ar
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;
         $this->container['tenantConfigurationId'] = isset($data['tenantConfigurationId']) ? $data['tenantConfigurationId'] : null;

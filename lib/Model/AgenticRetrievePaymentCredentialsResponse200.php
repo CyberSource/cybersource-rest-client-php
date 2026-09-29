@@ -135,7 +135,7 @@ class AgenticRetrievePaymentCredentialsResponse200 implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['transactionResponseComplete'] = isset($data['transactionResponseComplete']) ? $data['transactionResponseComplete'] : null;
         $this->container['transactionResponseWithPendingEvents'] = isset($data['transactionResponseWithPendingEvents']) ? $data['transactionResponseWithPendingEvents'] : null;

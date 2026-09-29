@@ -190,7 +190,7 @@ class UnifiedriskPaymentBatch implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['batchNumber'] = isset($data['batchNumber']) ? $data['batchNumber'] : null;
         $this->container['categoryPurposeDescription'] = isset($data['categoryPurposeDescription']) ? $data['categoryPurposeDescription'] : null;

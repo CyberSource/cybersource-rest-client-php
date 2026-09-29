@@ -144,7 +144,7 @@ class RiskProducts implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['fraudManagementEssentials'] = isset($data['fraudManagementEssentials']) ? $data['fraudManagementEssentials'] : null;
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;

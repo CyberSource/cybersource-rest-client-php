@@ -144,7 +144,7 @@ class DefaultPaymentInstrumentBuyerInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['companyTaxID'] = isset($data['companyTaxID']) ? $data['companyTaxID'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;

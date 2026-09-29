@@ -134,7 +134,7 @@ class PtsV2PaymentsCapturesPost201ResponsePointOfSaleInformation implements Arra
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
         $this->container['encryptedKeyId'] = isset($data['encryptedKeyId']) ? $data['encryptedKeyId'] : null;

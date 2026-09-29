@@ -134,7 +134,7 @@ class Ptsv1pullfundstransferSenderInformationConsumerAuthentication implements A
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['cavv'] = isset($data['cavv']) ? $data['cavv'] : null;
         $this->container['strongAuthentication'] = isset($data['strongAuthentication']) ? $data['strongAuthentication'] : null;

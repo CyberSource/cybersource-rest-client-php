@@ -154,7 +154,7 @@ class BoardingBusinessInformationAddress implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['address1'] = isset($data['address1']) ? $data['address1'] : null;

@@ -129,7 +129,7 @@ class TssV2TransactionsGet200ResponseOrderInformationInvoiceDetails implements A
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['salesSlipNumber'] = isset($data['salesSlipNumber']) ? $data['salesSlipNumber'] : null;
     }

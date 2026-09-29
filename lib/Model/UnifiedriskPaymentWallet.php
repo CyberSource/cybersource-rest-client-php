@@ -134,7 +134,7 @@ class UnifiedriskPaymentWallet implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['providerId'] = isset($data['providerId']) ? $data['providerId'] : null;
         $this->container['providerName'] = isset($data['providerName']) ? $data['providerName'] : null;

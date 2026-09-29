@@ -180,7 +180,7 @@ class PtsV2PaymentsPost201ResponseRiskInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
         $this->container['rules'] = isset($data['rules']) ? $data['rules'] : null;

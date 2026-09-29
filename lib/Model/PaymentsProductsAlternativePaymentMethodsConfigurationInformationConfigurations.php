@@ -134,7 +134,7 @@ class PaymentsProductsAlternativePaymentMethodsConfigurationInformationConfigura
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['merchantCategoryCode'] = isset($data['merchantCategoryCode']) ? $data['merchantCategoryCode'] : null;
         $this->container['processors'] = isset($data['processors']) ? $data['processors'] : null;

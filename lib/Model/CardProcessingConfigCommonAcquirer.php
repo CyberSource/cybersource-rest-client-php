@@ -160,7 +160,7 @@ class CardProcessingConfigCommonAcquirer implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['institutionId'] = isset($data['institutionId']) ? $data['institutionId'] : null;
         $this->container['interbankCardAssociationId'] = isset($data['interbankCardAssociationId']) ? $data['interbankCardAssociationId'] : null;

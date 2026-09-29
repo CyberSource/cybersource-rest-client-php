@@ -154,7 +154,7 @@ class InlineResponse2014Transactions implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;

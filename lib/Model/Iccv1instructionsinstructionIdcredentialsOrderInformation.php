@@ -145,7 +145,7 @@ class Iccv1instructionsinstructionIdcredentialsOrderInformation implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['amountDetail'] = isset($data['amountDetail']) ? $data['amountDetail'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;

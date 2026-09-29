@@ -139,7 +139,7 @@ class UnifiedriskPaymentVerificationCardSecurityAvs implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['daysValid'] = isset($data['daysValid']) ? $data['daysValid'] : null;

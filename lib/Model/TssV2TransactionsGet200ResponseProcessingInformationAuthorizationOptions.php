@@ -154,7 +154,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationAuthorizationOptions i
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['authType'] = isset($data['authType']) ? $data['authType'] : null;
         $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;

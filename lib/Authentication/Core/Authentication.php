@@ -16,7 +16,7 @@ class Authentication
     /**
     * Constructor
     */
-    public function __construct(\CyberSource\Logging\LogConfiguration $logConfig = null)
+    public function __construct(?\CyberSource\Logging\LogConfiguration $logConfig = null)
     {
         if (null !== $logConfig) {
             if (self::$logger === null) {

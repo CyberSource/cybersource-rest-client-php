@@ -139,7 +139,7 @@ class Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard impl
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['last4'] = isset($data['last4']) ? $data['last4'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;

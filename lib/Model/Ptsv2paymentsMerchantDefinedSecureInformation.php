@@ -145,7 +145,7 @@ class Ptsv2paymentsMerchantDefinedSecureInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['secure1'] = isset($data['secure1']) ? $data['secure1'] : null;
         $this->container['secure2'] = isset($data['secure2']) ? $data['secure2'] : null;

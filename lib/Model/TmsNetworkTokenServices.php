@@ -154,7 +154,7 @@ class TmsNetworkTokenServices implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['notifications'] = isset($data['notifications']) ? $data['notifications'] : null;
         $this->container['paymentCredentials'] = isset($data['paymentCredentials']) ? $data['paymentCredentials'] : null;

@@ -139,7 +139,7 @@ class ReportingV3InterchangeClearingLevelDetailsGet200Response implements ArrayA
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
         $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;

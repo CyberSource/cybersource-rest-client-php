@@ -92,7 +92,7 @@ class ApiClient
      *
      * @param Configuration $config config for this ApiClient
      */
-    public function __construct(\{{invokerPackage}}\Configuration $config = null, \{{invokerPackage}}\Authentication\Core\MerchantConfiguration $merchantConfig = null)
+    public function __construct(?\{{invokerPackage}}\Configuration $config = null, ?\{{invokerPackage}}\Authentication\Core\MerchantConfiguration $merchantConfig = null)
     {
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();

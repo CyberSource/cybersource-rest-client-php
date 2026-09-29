@@ -139,7 +139,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPaymentInformationCard implements 
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['suffix'] = isset($data['suffix']) ? $data['suffix'] : null;
         $this->container['prefix'] = isset($data['prefix']) ? $data['prefix'] : null;

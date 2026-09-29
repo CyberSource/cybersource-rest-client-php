@@ -374,7 +374,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation implements A
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['accessToken'] = isset($data['accessToken']) ? $data['accessToken'] : null;
         $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;

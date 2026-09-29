@@ -134,7 +134,7 @@ class Ptsv2refreshpaymentstatusidClientReferenceInformation implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;

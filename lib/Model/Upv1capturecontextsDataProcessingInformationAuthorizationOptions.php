@@ -164,7 +164,7 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['aftIndicator'] = isset($data['aftIndicator']) ? $data['aftIndicator'] : null;
         $this->container['authIndicator'] = isset($data['authIndicator']) ? $data['authIndicator'] : null;

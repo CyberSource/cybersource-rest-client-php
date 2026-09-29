@@ -134,7 +134,7 @@ class CommerceSolutionsProductsBinLookupConfigurationInformationConfigurations i
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['isPayoutOptionsEnabled'] = isset($data['isPayoutOptionsEnabled']) ? $data['isPayoutOptionsEnabled'] : null;
         $this->container['isAccountPrefixEnabled'] = isset($data['isAccountPrefixEnabled']) ? $data['isAccountPrefixEnabled'] : null;

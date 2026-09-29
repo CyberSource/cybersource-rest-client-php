@@ -134,7 +134,7 @@ class InlineResponse2013ProcessorInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;

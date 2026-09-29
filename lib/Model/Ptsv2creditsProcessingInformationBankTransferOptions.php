@@ -159,7 +159,7 @@ class Ptsv2creditsProcessingInformationBankTransferOptions implements ArrayAcces
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['customerMemo'] = isset($data['customerMemo']) ? $data['customerMemo'] : null;
         $this->container['secCode'] = isset($data['secCode']) ? $data['secCode'] : null;

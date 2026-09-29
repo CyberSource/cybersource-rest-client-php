@@ -174,7 +174,7 @@ class Iccv1instructionsinstructionIdconfirmationsOrderInformation implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
         $this->container['orderStatus'] = isset($data['orderStatus']) ? $data['orderStatus'] : null;

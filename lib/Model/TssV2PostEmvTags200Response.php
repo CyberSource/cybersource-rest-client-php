@@ -129,7 +129,7 @@ class TssV2PostEmvTags200Response implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['parsedEMVTagsList'] = isset($data['parsedEMVTagsList']) ? $data['parsedEMVTagsList'] : null;
     }
