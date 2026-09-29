@@ -134,7 +134,7 @@ class Ptsv2paymentsidcapturesPointOfSaleInformationEmv implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
         $this->container['fallback'] = isset($data['fallback']) ? $data['fallback'] : null;

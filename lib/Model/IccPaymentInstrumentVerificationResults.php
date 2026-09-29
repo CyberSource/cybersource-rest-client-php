@@ -134,7 +134,7 @@ class IccPaymentInstrumentVerificationResults implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['cvv2VerificationCode'] = isset($data['cvv2VerificationCode']) ? $data['cvv2VerificationCode'] : null;
         $this->container['addressVerificationCode'] = isset($data['addressVerificationCode']) ? $data['addressVerificationCode'] : null;

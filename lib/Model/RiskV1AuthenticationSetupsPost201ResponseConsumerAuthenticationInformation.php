@@ -139,7 +139,7 @@ class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['accessToken'] = isset($data['accessToken']) ? $data['accessToken'] : null;
         $this->container['referenceId'] = isset($data['referenceId']) ? $data['referenceId'] : null;

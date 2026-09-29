@@ -155,7 +155,7 @@ class ListAgentKeysResponse200Pagination implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['totalItems'] = isset($data['totalItems']) ? $data['totalItems'] : null;
         $this->container['totalPages'] = isset($data['totalPages']) ? $data['totalPages'] : null;

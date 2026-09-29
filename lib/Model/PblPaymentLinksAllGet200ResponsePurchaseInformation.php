@@ -135,7 +135,7 @@ class PblPaymentLinksAllGet200ResponsePurchaseInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['purchaseNumber'] = isset($data['purchaseNumber']) ? $data['purchaseNumber'] : null;
         $this->container['paymentLink'] = isset($data['paymentLink']) ? $data['paymentLink'] : null;

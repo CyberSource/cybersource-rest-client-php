@@ -135,7 +135,7 @@ class UnifiedRiskPost201ResponseResultsRISKINSIGHTSClient implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['referenceId'] = isset($data['referenceId']) ? $data['referenceId'] : null;
         $this->container['eventTimestamp'] = isset($data['eventTimestamp']) ? $data['eventTimestamp'] : null;

@@ -60,7 +60,7 @@ class MerchantDefinedFieldsApi
      *
      * @param \CyberSource\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CyberSource\ApiClient $apiClient = null)
+    public function __construct(?\CyberSource\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();

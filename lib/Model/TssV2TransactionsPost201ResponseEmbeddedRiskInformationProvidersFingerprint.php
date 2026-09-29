@@ -139,7 +139,7 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['trueIpaddress'] = isset($data['trueIpaddress']) ? $data['trueIpaddress'] : null;
         $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;

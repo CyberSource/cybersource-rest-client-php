@@ -135,7 +135,7 @@ class Iccv1instructionsinstructionIdcredentialsPaymentOptions implements ArrayAc
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['dpaDynamicDataTtlMinutes'] = isset($data['dpaDynamicDataTtlMinutes']) ? $data['dpaDynamicDataTtlMinutes'] : null;
         $this->container['dynamicDataType'] = isset($data['dynamicDataType']) ? $data['dynamicDataType'] : null;

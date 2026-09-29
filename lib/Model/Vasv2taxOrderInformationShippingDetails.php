@@ -144,7 +144,7 @@ class Vasv2taxOrderInformationShippingDetails implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipFromLocality'] = isset($data['shipFromLocality']) ? $data['shipFromLocality'] : null;
         $this->container['shipFromCountry'] = isset($data['shipFromCountry']) ? $data['shipFromCountry'] : null;

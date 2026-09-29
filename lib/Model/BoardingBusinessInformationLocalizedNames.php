@@ -139,7 +139,7 @@ class BoardingBusinessInformationLocalizedNames implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['romaji'] = isset($data['romaji']) ? $data['romaji'] : null;
         $this->container['katakana'] = isset($data['katakana']) ? $data['katakana'] : null;

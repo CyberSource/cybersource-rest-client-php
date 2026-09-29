@@ -160,7 +160,7 @@ class UnifiedriskOrder implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['totalItemsCount'] = isset($data['totalItemsCount']) ? $data['totalItemsCount'] : null;
         $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;

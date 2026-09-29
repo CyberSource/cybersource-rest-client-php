@@ -140,7 +140,7 @@ class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod implements A
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['usageType'] = isset($data['usageType']) ? $data['usageType'] : null;
         $this->container['usagePattern'] = isset($data['usagePattern']) ? $data['usagePattern'] : null;

@@ -159,7 +159,7 @@ class UnifiedriskPaymentVerificationAdditional implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
         $this->container['accountHolderAuth'] = isset($data['accountHolderAuth']) ? $data['accountHolderAuth'] : null;

@@ -134,7 +134,7 @@ class VasV2PaymentsPost201ResponseTaxInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['commitIndicator'] = isset($data['commitIndicator']) ? $data['commitIndicator'] : null;
         $this->container['refundIndicator'] = isset($data['refundIndicator']) ? $data['refundIndicator'] : null;

@@ -205,7 +205,7 @@ class BoardingAcquirerDetails implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['acquirerAccountId'] = isset($data['acquirerAccountId']) ? $data['acquirerAccountId'] : null;
         $this->container['summerBonusStartDate'] = isset($data['summerBonusStartDate']) ? $data['summerBonusStartDate'] : null;

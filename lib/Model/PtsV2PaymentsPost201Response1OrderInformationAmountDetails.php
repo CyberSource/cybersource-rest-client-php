@@ -129,7 +129,7 @@ class PtsV2PaymentsPost201Response1OrderInformationAmountDetails implements Arra
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['refundBalance'] = isset($data['refundBalance']) ? $data['refundBalance'] : null;
     }

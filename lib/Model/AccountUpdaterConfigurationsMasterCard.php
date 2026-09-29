@@ -139,7 +139,7 @@ class AccountUpdaterConfigurationsMasterCard implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['merchantId'] = isset($data['merchantId']) ? $data['merchantId'] : null;
         $this->container['interbankCardAssociationNumber'] = isset($data['interbankCardAssociationNumber']) ? $data['interbankCardAssociationNumber'] : null;

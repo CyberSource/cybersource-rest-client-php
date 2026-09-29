@@ -135,7 +135,7 @@ class AcpCompleteCheckoutRequest implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['buyer'] = isset($data['buyer']) ? $data['buyer'] : null;
         $this->container['paymentData'] = isset($data['paymentData']) ? $data['paymentData'] : null;

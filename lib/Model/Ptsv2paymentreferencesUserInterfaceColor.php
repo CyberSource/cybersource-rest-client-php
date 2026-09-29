@@ -169,7 +169,7 @@ class Ptsv2paymentreferencesUserInterfaceColor implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['border'] = isset($data['border']) ? $data['border'] : null;
         $this->container['borderSelected'] = isset($data['borderSelected']) ? $data['borderSelected'] : null;

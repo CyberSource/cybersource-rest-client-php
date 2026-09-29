@@ -139,7 +139,7 @@ class Ucv1sessionsPaymentConfigurationsPAYPAL implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['vaultingEnabled'] = isset($data['vaultingEnabled']) ? $data['vaultingEnabled'] : null;
         $this->container['tokenizedPaymentMethod'] = isset($data['tokenizedPaymentMethod']) ? $data['tokenizedPaymentMethod'] : null;

@@ -154,7 +154,7 @@ class Ptsv2billingagreementsPaymentInformationTokenizedCard implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['cryptogram'] = isset($data['cryptogram']) ? $data['cryptogram'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;

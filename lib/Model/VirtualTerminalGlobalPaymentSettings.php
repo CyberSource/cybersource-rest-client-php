@@ -139,7 +139,7 @@ class VirtualTerminalGlobalPaymentSettings implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['basicInformation'] = isset($data['basicInformation']) ? $data['basicInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;

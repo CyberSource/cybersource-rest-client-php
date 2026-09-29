@@ -134,7 +134,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['dueDate'] = isset($data['dueDate']) ? $data['dueDate'] : null;
         $this->container['expirationDate'] = isset($data['expirationDate']) ? $data['expirationDate'] : null;

@@ -154,7 +154,7 @@ class CardProcessingConfigFeaturesCardNotPresentProcessors implements ArrayAcces
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['relaxAddressVerificationSystem'] = isset($data['relaxAddressVerificationSystem']) ? $data['relaxAddressVerificationSystem'] : null;
         $this->container['relaxAddressVerificationSystemAllowZipWithoutCountry'] = isset($data['relaxAddressVerificationSystemAllowZipWithoutCountry']) ? $data['relaxAddressVerificationSystemAllowZipWithoutCountry'] : null;

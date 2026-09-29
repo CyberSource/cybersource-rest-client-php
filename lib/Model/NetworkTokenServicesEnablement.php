@@ -134,7 +134,7 @@ class NetworkTokenServicesEnablement implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['visaTokenService'] = isset($data['visaTokenService']) ? $data['visaTokenService'] : null;
         $this->container['mastercardDigitalEnablementService'] = isset($data['mastercardDigitalEnablementService']) ? $data['mastercardDigitalEnablementService'] : null;

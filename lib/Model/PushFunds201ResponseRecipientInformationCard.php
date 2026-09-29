@@ -134,7 +134,7 @@ class PushFunds201ResponseRecipientInformationCard implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;

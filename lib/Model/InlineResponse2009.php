@@ -154,7 +154,7 @@ class InlineResponse2009 implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['totalCount'] = isset($data['totalCount']) ? $data['totalCount'] : null;
         $this->container['offset'] = isset($data['offset']) ? $data['offset'] : null;

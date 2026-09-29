@@ -195,7 +195,7 @@ class ReportingV3ReportSubscriptionsGet200ResponseSubscriptions implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['organizationId'] = isset($data['organizationId']) ? $data['organizationId'] : null;
         $this->container['reportDefinitionId'] = isset($data['reportDefinitionId']) ? $data['reportDefinitionId'] : null;

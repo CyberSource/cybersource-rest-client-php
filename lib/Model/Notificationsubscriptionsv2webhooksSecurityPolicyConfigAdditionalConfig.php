@@ -145,7 +145,7 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfigAdditionalConfig im
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['aud'] = isset($data['aud']) ? $data['aud'] : null;
         $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;

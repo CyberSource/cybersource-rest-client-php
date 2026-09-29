@@ -194,7 +194,7 @@ class InvoicingV2InvoicesPost201ResponseMerchantDefinedFieldValuesWithDefinition
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['mdfValueId'] = isset($data['mdfValueId']) ? $data['mdfValueId'] : null;
         $this->container['referenceType'] = isset($data['referenceType']) ? $data['referenceType'] : null;

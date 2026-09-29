@@ -174,7 +174,7 @@ class ECheckConfigUnderwriting implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['standardEntryClassCodes'] = isset($data['standardEntryClassCodes']) ? $data['standardEntryClassCodes'] : 'CCD,PPD,TEL,WEB';
         $this->container['enableHold'] = isset($data['enableHold']) ? $data['enableHold'] : true;

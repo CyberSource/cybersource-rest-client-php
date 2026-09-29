@@ -134,7 +134,7 @@ class Ptsv2payoutsSenderInformationAccount implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['fundsSource'] = isset($data['fundsSource']) ? $data['fundsSource'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;

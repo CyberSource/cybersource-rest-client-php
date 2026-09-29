@@ -134,7 +134,7 @@ class Ptsv2paymentsTravelInformationLodgingRoom implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['dailyRate'] = isset($data['dailyRate']) ? $data['dailyRate'] : null;
         $this->container['numberOfNights'] = isset($data['numberOfNights']) ? $data['numberOfNights'] : null;

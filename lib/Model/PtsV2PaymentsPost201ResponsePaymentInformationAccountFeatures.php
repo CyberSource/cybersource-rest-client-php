@@ -219,7 +219,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;
         $this->container['accountStatus'] = isset($data['accountStatus']) ? $data['accountStatus'] : null;

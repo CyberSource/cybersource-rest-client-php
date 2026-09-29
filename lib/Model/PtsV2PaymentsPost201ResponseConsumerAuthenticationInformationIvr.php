@@ -159,7 +159,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationIvr implement
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['enabledMessage'] = isset($data['enabledMessage']) ? $data['enabledMessage'] : null;
         $this->container['encryptionKey'] = isset($data['encryptionKey']) ? $data['encryptionKey'] : null;

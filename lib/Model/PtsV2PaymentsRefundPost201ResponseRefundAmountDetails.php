@@ -139,7 +139,7 @@ class PtsV2PaymentsRefundPost201ResponseRefundAmountDetails implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['refundAmount'] = isset($data['refundAmount']) ? $data['refundAmount'] : null;
         $this->container['creditAmount'] = isset($data['creditAmount']) ? $data['creditAmount'] : null;

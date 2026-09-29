@@ -244,7 +244,7 @@ class UnderwritingConfigurationOrganizationInformationBusinessInformation implem
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['businessIdentifier'] = isset($data['businessIdentifier']) ? $data['businessIdentifier'] : null;
         $this->container['countryRegistration'] = isset($data['countryRegistration']) ? $data['countryRegistration'] : null;

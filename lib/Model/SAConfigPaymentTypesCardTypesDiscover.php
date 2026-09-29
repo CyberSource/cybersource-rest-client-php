@@ -160,7 +160,7 @@ class SAConfigPaymentTypesCardTypesDiscover implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['cardVerificationNumberSupported'] = isset($data['cardVerificationNumberSupported']) ? $data['cardVerificationNumberSupported'] : null;
         $this->container['cardVerificationNumberDisplay'] = isset($data['cardVerificationNumberDisplay']) ? $data['cardVerificationNumberDisplay'] : null;

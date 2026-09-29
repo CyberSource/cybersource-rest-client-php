@@ -150,7 +150,7 @@ class RiskV1DecisionsPost201ResponsePaymentInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['binCountry'] = isset($data['binCountry']) ? $data['binCountry'] : null;
         $this->container['accountType'] = isset($data['accountType']) ? $data['accountType'] : null;

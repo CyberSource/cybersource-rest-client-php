@@ -149,7 +149,7 @@ class VasV2PaymentsPost201ResponseOrderInformationLineItems implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['taxDetails'] = isset($data['taxDetails']) ? $data['taxDetails'] : null;
         $this->container['jurisdiction'] = isset($data['jurisdiction']) ? $data['jurisdiction'] : null;

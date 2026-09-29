@@ -139,7 +139,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBankMandate implements Ar
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['referenceNumber'] = isset($data['referenceNumber']) ? $data['referenceNumber'] : null;
         $this->container['recurringType'] = isset($data['recurringType']) ? $data['recurringType'] : null;

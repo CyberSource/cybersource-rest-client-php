@@ -134,7 +134,7 @@ class TmsBusinessInformationAcquirer implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['acquirerId'] = isset($data['acquirerId']) ? $data['acquirerId'] : null;
         $this->container['acquirerMerchantId'] = isset($data['acquirerMerchantId']) ? $data['acquirerMerchantId'] : null;

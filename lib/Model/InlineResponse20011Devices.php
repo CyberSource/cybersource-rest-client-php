@@ -184,7 +184,7 @@ class InlineResponse20011Devices implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['readerId'] = isset($data['readerId']) ? $data['readerId'] : null;
         $this->container['serialNumber'] = isset($data['serialNumber']) ? $data['serialNumber'] : null;

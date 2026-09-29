@@ -214,7 +214,7 @@ class UnifiedriskAuthentication implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['authenticationId'] = isset($data['authenticationId']) ? $data['authenticationId'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;

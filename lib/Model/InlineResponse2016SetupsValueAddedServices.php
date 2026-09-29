@@ -149,7 +149,7 @@ class InlineResponse2016SetupsValueAddedServices implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['reporting'] = isset($data['reporting']) ? $data['reporting'] : null;
         $this->container['transactionSearch'] = isset($data['transactionSearch']) ? $data['transactionSearch'] : null;

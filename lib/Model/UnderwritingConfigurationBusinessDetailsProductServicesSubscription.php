@@ -134,7 +134,7 @@ class UnderwritingConfigurationBusinessDetailsProductServicesSubscription implem
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['productServiceName'] = isset($data['productServiceName']) ? $data['productServiceName'] : null;
         $this->container['productServicePercentage'] = isset($data['productServicePercentage']) ? $data['productServicePercentage'] : null;

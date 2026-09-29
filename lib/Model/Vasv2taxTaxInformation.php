@@ -159,7 +159,7 @@ class Vasv2taxTaxInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['reportingDate'] = isset($data['reportingDate']) ? $data['reportingDate'] : null;
         $this->container['dateOverrideReason'] = isset($data['dateOverrideReason']) ? $data['dateOverrideReason'] : null;

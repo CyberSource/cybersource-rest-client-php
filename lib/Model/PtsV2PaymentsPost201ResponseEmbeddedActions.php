@@ -160,7 +160,7 @@ class PtsV2PaymentsPost201ResponseEmbeddedActions implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['cAPTURE'] = isset($data['cAPTURE']) ? $data['cAPTURE'] : null;
         $this->container['dECISION'] = isset($data['dECISION']) ? $data['dECISION'] : null;

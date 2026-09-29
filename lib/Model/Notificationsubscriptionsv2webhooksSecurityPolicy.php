@@ -135,7 +135,7 @@ class Notificationsubscriptionsv2webhooksSecurityPolicy implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['securityType'] = isset($data['securityType']) ? $data['securityType'] : null;
         $this->container['config'] = isset($data['config']) ? $data['config'] : null;

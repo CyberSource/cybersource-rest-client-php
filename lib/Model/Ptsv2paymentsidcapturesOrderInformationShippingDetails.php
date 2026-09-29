@@ -155,7 +155,7 @@ class Ptsv2paymentsidcapturesOrderInformationShippingDetails implements ArrayAcc
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipFromPostalCode'] = isset($data['shipFromPostalCode']) ? $data['shipFromPostalCode'] : null;
         $this->container['trackingNumber'] = isset($data['trackingNumber']) ? $data['trackingNumber'] : null;

@@ -174,7 +174,7 @@ class PtsV2PaymentsOrderPost201ResponseOrderInformationShipTo implements ArrayAc
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;

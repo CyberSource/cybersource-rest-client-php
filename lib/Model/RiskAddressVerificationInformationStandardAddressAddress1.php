@@ -134,7 +134,7 @@ class RiskAddressVerificationInformationStandardAddressAddress1 implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['withApartment'] = isset($data['withApartment']) ? $data['withApartment'] : null;
         $this->container['withoutApartment'] = isset($data['withoutApartment']) ? $data['withoutApartment'] : null;

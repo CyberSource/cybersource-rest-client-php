@@ -134,7 +134,7 @@ class PtsV2ModifyBillingAgreementPost201ResponsePaymentInformation implements Ar
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;

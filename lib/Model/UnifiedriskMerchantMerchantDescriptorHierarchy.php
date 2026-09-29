@@ -145,7 +145,7 @@ class UnifiedriskMerchantMerchantDescriptorHierarchy implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['chainId'] = isset($data['chainId']) ? $data['chainId'] : null;
         $this->container['chainName'] = isset($data['chainName']) ? $data['chainName'] : null;

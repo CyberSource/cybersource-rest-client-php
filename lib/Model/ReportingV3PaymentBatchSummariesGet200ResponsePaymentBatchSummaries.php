@@ -184,7 +184,7 @@ class ReportingV3PaymentBatchSummariesGet200ResponsePaymentBatchSummaries implem
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['currencyCode'] = isset($data['currencyCode']) ? $data['currencyCode'] : null;
         $this->container['paymentSubTypeDescription'] = isset($data['paymentSubTypeDescription']) ? $data['paymentSubTypeDescription'] : null;

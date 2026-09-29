@@ -134,7 +134,7 @@ class Ptsv2paymentsTokenInformationTokenProvisioningInformation implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['consumerConsentObtained'] = isset($data['consumerConsentObtained']) ? $data['consumerConsentObtained'] : null;
         $this->container['multiFactorAuthenticated'] = isset($data['multiFactorAuthenticated']) ? $data['multiFactorAuthenticated'] : null;

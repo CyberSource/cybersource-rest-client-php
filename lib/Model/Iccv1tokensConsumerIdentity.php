@@ -145,7 +145,7 @@ class Iccv1tokensConsumerIdentity implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['identityType'] = isset($data['identityType']) ? $data['identityType'] : null;
         $this->container['identityValue'] = isset($data['identityValue']) ? $data['identityValue'] : null;

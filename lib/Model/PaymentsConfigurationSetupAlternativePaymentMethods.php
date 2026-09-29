@@ -144,7 +144,7 @@ class PaymentsConfigurationSetupAlternativePaymentMethods implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['configurationStatus'] = isset($data['configurationStatus']) ? $data['configurationStatus'] : null;
         $this->container['subscriptionStatus'] = isset($data['subscriptionStatus']) ? $data['subscriptionStatus'] : null;

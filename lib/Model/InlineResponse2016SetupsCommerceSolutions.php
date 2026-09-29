@@ -144,7 +144,7 @@ class InlineResponse2016SetupsCommerceSolutions implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['tokenManagement'] = isset($data['tokenManagement']) ? $data['tokenManagement'] : null;
         $this->container['accountUpdater'] = isset($data['accountUpdater']) ? $data['accountUpdater'] : null;

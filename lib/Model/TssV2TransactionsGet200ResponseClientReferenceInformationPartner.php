@@ -134,7 +134,7 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationPartner implement
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['solutionId'] = isset($data['solutionId']) ? $data['solutionId'] : null;
         $this->container['thirdPartyCertificationNumber'] = isset($data['thirdPartyCertificationNumber']) ? $data['thirdPartyCertificationNumber'] : null;

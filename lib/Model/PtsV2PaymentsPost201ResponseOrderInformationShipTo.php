@@ -169,7 +169,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['firstname'] = isset($data['firstname']) ? $data['firstname'] : null;
         $this->container['lastname'] = isset($data['lastname']) ? $data['lastname'] : null;

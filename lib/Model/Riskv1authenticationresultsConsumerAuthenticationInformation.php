@@ -164,7 +164,7 @@ class Riskv1authenticationresultsConsumerAuthenticationInformation implements Ar
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['authenticationTransactionId'] = isset($data['authenticationTransactionId']) ? $data['authenticationTransactionId'] : null;
         $this->container['authenticationTransactionContext'] = isset($data['authenticationTransactionContext']) ? $data['authenticationTransactionContext'] : null;

@@ -160,7 +160,7 @@ class IccLineItemPolicies implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['termsAndConditions'] = isset($data['termsAndConditions']) ? $data['termsAndConditions'] : null;
         $this->container['cancellationPolicy'] = isset($data['cancellationPolicy']) ? $data['cancellationPolicy'] : null;

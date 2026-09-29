@@ -134,7 +134,7 @@ class PtsV2PaymentsPost201ResponseConsumerAuthenticationInformationStrongAuthent
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['outageExemptionIndicator'] = isset($data['outageExemptionIndicator']) ? $data['outageExemptionIndicator'] : null;

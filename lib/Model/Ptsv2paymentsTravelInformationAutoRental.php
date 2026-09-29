@@ -344,7 +344,7 @@ class Ptsv2paymentsTravelInformationAutoRental implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['noShowIndicator'] = isset($data['noShowIndicator']) ? $data['noShowIndicator'] : null;
         $this->container['customerName'] = isset($data['customerName']) ? $data['customerName'] : null;

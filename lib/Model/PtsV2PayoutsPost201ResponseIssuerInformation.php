@@ -204,7 +204,7 @@ class PtsV2PayoutsPost201ResponseIssuerInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['octDomesticParticipantIndicator'] = isset($data['octDomesticParticipantIndicator']) ? $data['octDomesticParticipantIndicator'] : null;
         $this->container['octCrossBorderParticipantIndicator'] = isset($data['octCrossBorderParticipantIndicator']) ? $data['octCrossBorderParticipantIndicator'] : null;

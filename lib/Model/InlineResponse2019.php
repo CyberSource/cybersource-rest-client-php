@@ -169,7 +169,7 @@ class InlineResponse2019 implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['eventDate'] = isset($data['eventDate']) ? $data['eventDate'] : null;
         $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;

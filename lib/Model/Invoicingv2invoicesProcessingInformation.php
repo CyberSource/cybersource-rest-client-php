@@ -135,7 +135,7 @@ class Invoicingv2invoicesProcessingInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['requestPhone'] = isset($data['requestPhone']) ? $data['requestPhone'] : false;
         $this->container['requestShipping'] = isset($data['requestShipping']) ? $data['requestShipping'] : false;

@@ -150,7 +150,7 @@ class Iccv1checkoutsessionsPaymentBillingAddress implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['streetAddress'] = isset($data['streetAddress']) ? $data['streetAddress'] : null;
         $this->container['addressLocality'] = isset($data['addressLocality']) ? $data['addressLocality'] : null;

@@ -15,7 +15,7 @@ class PayloadDigest
     /**
      * Constructor
      */
-    public function __construct(\CyberSource\Logging\LogConfiguration $logConfig = null)
+    public function __construct(?\CyberSource\Logging\LogConfiguration $logConfig = null)
     {
         if (self::$logger === null) {
             self::$logger = (new LogFactory())->getLogger(\CyberSource\Utilities\Helpers\ClassHelper::getClassName(get_class($this)), $logConfig);

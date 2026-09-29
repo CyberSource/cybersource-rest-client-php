@@ -249,7 +249,7 @@ class VirtualTerminalGlobalPaymentSettingsMerchantDefinedDataFields implements A
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['displayMerchantDefinedData1'] = isset($data['displayMerchantDefinedData1']) ? $data['displayMerchantDefinedData1'] : null;
         $this->container['displayMerchantDefinedData2'] = isset($data['displayMerchantDefinedData2']) ? $data['displayMerchantDefinedData2'] : null;

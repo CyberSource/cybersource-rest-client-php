@@ -180,7 +180,7 @@ class VpriTransactionInsightsAdditionalDataCardBinData implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['issuerBin'] = isset($data['issuerBin']) ? $data['issuerBin'] : null;
         $this->container['issuerBinCountry'] = isset($data['issuerBinCountry']) ? $data['issuerBinCountry'] : null;

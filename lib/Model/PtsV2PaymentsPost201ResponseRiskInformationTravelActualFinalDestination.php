@@ -144,7 +144,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelActualFinalDestination im
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;

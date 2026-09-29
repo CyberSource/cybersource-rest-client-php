@@ -159,7 +159,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationFeatures implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['accountFundingSource'] = isset($data['accountFundingSource']) ? $data['accountFundingSource'] : null;
         $this->container['accountFundingSourceSubType'] = isset($data['accountFundingSourceSubType']) ? $data['accountFundingSourceSubType'] : null;

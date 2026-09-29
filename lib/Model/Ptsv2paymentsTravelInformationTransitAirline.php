@@ -349,7 +349,7 @@ class Ptsv2paymentsTravelInformationTransitAirline implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['isDomestic'] = isset($data['isDomestic']) ? $data['isDomestic'] : null;
         $this->container['bookingReferenceNumber'] = isset($data['bookingReferenceNumber']) ? $data['bookingReferenceNumber'] : null;

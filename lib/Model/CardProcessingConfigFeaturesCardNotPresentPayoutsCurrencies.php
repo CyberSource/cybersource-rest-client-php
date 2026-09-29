@@ -159,7 +159,7 @@ class CardProcessingConfigFeaturesCardNotPresentPayoutsCurrencies implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : null;
         $this->container['enabledCardPresent'] = isset($data['enabledCardPresent']) ? $data['enabledCardPresent'] : null;

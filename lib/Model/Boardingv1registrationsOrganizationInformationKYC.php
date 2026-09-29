@@ -184,7 +184,7 @@ class Boardingv1registrationsOrganizationInformationKYC implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['whenIsCustomerCharged'] = isset($data['whenIsCustomerCharged']) ? $data['whenIsCustomerCharged'] : null;
         $this->container['whenIsCustomerChargedDescription'] = isset($data['whenIsCustomerChargedDescription']) ? $data['whenIsCustomerChargedDescription'] : null;

@@ -135,7 +135,7 @@ class Ptsv2paymentsProcessingInformationCardVerification implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['checkAVS'] = isset($data['checkAVS']) ? $data['checkAVS'] : null;
         $this->container['checkANI'] = isset($data['checkANI']) ? $data['checkANI'] : null;

@@ -134,7 +134,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformationSellerProtection impl
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['eligibilty'] = isset($data['eligibilty']) ? $data['eligibilty'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;

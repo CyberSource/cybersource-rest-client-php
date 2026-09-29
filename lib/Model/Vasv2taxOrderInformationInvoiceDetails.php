@@ -129,7 +129,7 @@ class Vasv2taxOrderInformationInvoiceDetails implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['invoiceDate'] = isset($data['invoiceDate']) ? $data['invoiceDate'] : null;
     }

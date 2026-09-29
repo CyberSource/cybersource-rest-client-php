@@ -150,7 +150,7 @@ class UnifiedriskLabels implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['transactionOutcome'] = isset($data['transactionOutcome']) ? $data['transactionOutcome'] : null;
         $this->container['authenticationOutcome'] = isset($data['authenticationOutcome']) ? $data['authenticationOutcome'] : null;

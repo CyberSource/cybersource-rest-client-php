@@ -140,7 +140,7 @@ class UcConfigurationsFeaturesPaze implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['financialInstitution'] = isset($data['financialInstitution']) ? $data['financialInstitution'] : null;
         $this->container['financialInstitutionContract'] = isset($data['financialInstitutionContract']) ? $data['financialInstitutionContract'] : null;

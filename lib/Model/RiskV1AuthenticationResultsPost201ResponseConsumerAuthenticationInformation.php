@@ -279,7 +279,7 @@ class RiskV1AuthenticationResultsPost201ResponseConsumerAuthenticationInformatio
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['acsRenderingType'] = isset($data['acsRenderingType']) ? $data['acsRenderingType'] : null;
         $this->container['acsReferenceNumber'] = isset($data['acsReferenceNumber']) ? $data['acsReferenceNumber'] : null;

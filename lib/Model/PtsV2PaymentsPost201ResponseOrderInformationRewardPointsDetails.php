@@ -154,7 +154,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationRewardPointsDetails implements
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['pointsBeforeRedemption'] = isset($data['pointsBeforeRedemption']) ? $data['pointsBeforeRedemption'] : null;
         $this->container['pointsValueBeforeRedemption'] = isset($data['pointsValueBeforeRedemption']) ? $data['pointsValueBeforeRedemption'] : null;

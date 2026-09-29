@@ -134,7 +134,7 @@ class Invoicingv2invoicesMerchantDefinedFieldValues implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['definitionId'] = isset($data['definitionId']) ? $data['definitionId'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;

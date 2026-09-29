@@ -299,7 +299,7 @@ class Ptsv2paymentsOrderInformationLineItems implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
         $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;

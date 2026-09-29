@@ -135,7 +135,7 @@ class Tmsv2TokenizedCardVerificationResults implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['securityCode'] = isset($data['securityCode']) ? $data['securityCode'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;

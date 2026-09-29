@@ -190,7 +190,7 @@ class ReportingV3PurchaseRefundDetailsGet200ResponseFeeAndFundingDetails impleme
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
         $this->container['interchangePerItemFee'] = isset($data['interchangePerItemFee']) ? $data['interchangePerItemFee'] : null;

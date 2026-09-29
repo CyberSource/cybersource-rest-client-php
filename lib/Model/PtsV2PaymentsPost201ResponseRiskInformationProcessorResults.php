@@ -134,7 +134,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationProcessorResults implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['fraudDecision'] = isset($data['fraudDecision']) ? $data['fraudDecision'] : null;
         $this->container['fraudDecisionReason'] = isset($data['fraudDecisionReason']) ? $data['fraudDecisionReason'] : null;

@@ -149,7 +149,7 @@ class Ptsv1pushfundstransferProcessingInformationPayoutsOptions implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['sourceCurrency'] = isset($data['sourceCurrency']) ? $data['sourceCurrency'] : null;
         $this->container['destinationCurrency'] = isset($data['destinationCurrency']) ? $data['destinationCurrency'] : null;

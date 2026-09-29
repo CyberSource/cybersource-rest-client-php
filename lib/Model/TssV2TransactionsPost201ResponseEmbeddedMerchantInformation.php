@@ -129,7 +129,7 @@ class TssV2TransactionsPost201ResponseEmbeddedMerchantInformation implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['resellerId'] = isset($data['resellerId']) ? $data['resellerId'] : null;
     }

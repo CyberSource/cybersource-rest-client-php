@@ -140,7 +140,7 @@ class Binv1binlookupProcessingInformationPayoutOptions implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['payoutInquiry'] = isset($data['payoutInquiry']) ? $data['payoutInquiry'] : null;
         $this->container['networkId'] = isset($data['networkId']) ? $data['networkId'] : null;

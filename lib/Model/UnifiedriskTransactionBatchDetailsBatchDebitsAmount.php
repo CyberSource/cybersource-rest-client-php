@@ -155,7 +155,7 @@ class UnifiedriskTransactionBatchDetailsBatchDebitsAmount implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['baseCurrency'] = isset($data['baseCurrency']) ? $data['baseCurrency'] : null;
         $this->container['baseValue'] = isset($data['baseValue']) ? $data['baseValue'] : null;

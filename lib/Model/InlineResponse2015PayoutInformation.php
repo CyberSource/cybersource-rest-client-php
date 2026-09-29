@@ -139,7 +139,7 @@ class InlineResponse2015PayoutInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['pushFunds'] = isset($data['pushFunds']) ? $data['pushFunds'] : null;
         $this->container['pullFunds'] = isset($data['pullFunds']) ? $data['pullFunds'] : null;

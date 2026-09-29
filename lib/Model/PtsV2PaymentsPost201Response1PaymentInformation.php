@@ -144,7 +144,7 @@ class PtsV2PaymentsPost201Response1PaymentInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['eWallet'] = isset($data['eWallet']) ? $data['eWallet'] : null;

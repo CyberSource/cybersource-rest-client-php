@@ -145,7 +145,7 @@ class Ucv1sessionsPaymentConfigurations implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['gOOGLEPAY'] = isset($data['gOOGLEPAY']) ? $data['gOOGLEPAY'] : null;
         $this->container['cLICKTOPAY'] = isset($data['cLICKTOPAY']) ? $data['cLICKTOPAY'] : null;

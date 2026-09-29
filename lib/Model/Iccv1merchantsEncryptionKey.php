@@ -150,7 +150,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['keyName'] = isset($data['keyName']) ? $data['keyName'] : null;
         $this->container['encryptionKey'] = isset($data['encryptionKey']) ? $data['encryptionKey'] : null;

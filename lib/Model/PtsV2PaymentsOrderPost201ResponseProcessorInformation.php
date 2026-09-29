@@ -144,7 +144,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformation implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;

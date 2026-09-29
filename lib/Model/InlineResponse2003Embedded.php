@@ -135,7 +135,7 @@ class InlineResponse2003Embedded implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['capture'] = isset($data['capture']) ? $data['capture'] : null;
         $this->container['reversal'] = isset($data['reversal']) ? $data['reversal'] : null;

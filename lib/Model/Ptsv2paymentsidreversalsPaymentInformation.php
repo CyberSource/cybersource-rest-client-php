@@ -134,7 +134,7 @@ class Ptsv2paymentsidreversalsPaymentInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
         $this->container['merchantLimitedAcceptanceIndicator'] = isset($data['merchantLimitedAcceptanceIndicator']) ? $data['merchantLimitedAcceptanceIndicator'] : null;

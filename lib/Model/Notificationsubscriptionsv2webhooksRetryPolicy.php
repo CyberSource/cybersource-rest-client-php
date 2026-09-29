@@ -165,7 +165,7 @@ class Notificationsubscriptionsv2webhooksRetryPolicy implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['algorithm'] = isset($data['algorithm']) ? $data['algorithm'] : 'ARITHMETIC';
         $this->container['firstRetry'] = isset($data['firstRetry']) ? $data['firstRetry'] : null;

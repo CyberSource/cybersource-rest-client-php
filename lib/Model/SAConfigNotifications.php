@@ -134,7 +134,7 @@ class SAConfigNotifications implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['merchantNotifications'] = isset($data['merchantNotifications']) ? $data['merchantNotifications'] : null;
         $this->container['customerNotifications'] = isset($data['customerNotifications']) ? $data['customerNotifications'] : null;

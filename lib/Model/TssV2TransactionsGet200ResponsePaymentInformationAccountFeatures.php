@@ -139,7 +139,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationAccountFeatures implement
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['balanceAmount'] = isset($data['balanceAmount']) ? $data['balanceAmount'] : null;
         $this->container['previousBalanceAmount'] = isset($data['previousBalanceAmount']) ? $data['previousBalanceAmount'] : null;

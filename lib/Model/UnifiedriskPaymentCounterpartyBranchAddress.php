@@ -170,7 +170,7 @@ class UnifiedriskPaymentCounterpartyBranchAddress implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['addressLine1'] = isset($data['addressLine1']) ? $data['addressLine1'] : null;
         $this->container['addressLine2'] = isset($data['addressLine2']) ? $data['addressLine2'] : null;

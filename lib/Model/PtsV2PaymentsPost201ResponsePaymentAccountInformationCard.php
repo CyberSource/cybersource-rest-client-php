@@ -154,7 +154,7 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['suffix'] = isset($data['suffix']) ? $data['suffix'] : null;
         $this->container['expirationMonth'] = isset($data['expirationMonth']) ? $data['expirationMonth'] : null;

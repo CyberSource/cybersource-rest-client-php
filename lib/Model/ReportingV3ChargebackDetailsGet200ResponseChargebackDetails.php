@@ -239,7 +239,7 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['processorMerchantId'] = isset($data['processorMerchantId']) ? $data['processorMerchantId'] : null;
         $this->container['merchantName'] = isset($data['merchantName']) ? $data['merchantName'] : null;

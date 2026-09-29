@@ -144,7 +144,7 @@ class Ptsv2payoutsfxratesProcessingInformation implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
         $this->container['clearingSystem'] = isset($data['clearingSystem']) ? $data['clearingSystem'] : null;

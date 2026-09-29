@@ -134,7 +134,7 @@ class CardProcessingConfigFeaturesCardNotPresentInstallment implements ArrayAcce
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['enableInstallment'] = isset($data['enableInstallment']) ? $data['enableInstallment'] : null;
         $this->container['installmentPlan'] = isset($data['installmentPlan']) ? $data['installmentPlan'] : null;

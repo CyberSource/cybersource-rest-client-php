@@ -169,7 +169,7 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['customerAccount'] = isset($data['customerAccount']) ? $data['customerAccount'] : null;
         $this->container['accountHistory'] = isset($data['accountHistory']) ? $data['accountHistory'] : null;

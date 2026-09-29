@@ -139,7 +139,7 @@ class TmsNetworkTokenServicesMastercardDigitalEnablementService implements Array
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['enableService'] = isset($data['enableService']) ? $data['enableService'] : null;
         $this->container['enableTransactionalTokens'] = isset($data['enableTransactionalTokens']) ? $data['enableTransactionalTokens'] : null;
