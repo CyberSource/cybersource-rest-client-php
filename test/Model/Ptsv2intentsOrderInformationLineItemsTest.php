@@ -131,4 +131,11 @@ class Ptsv2intentsOrderInformationLineItemsTest extends \PHPUnit\Framework\TestC
     public function testPropertyTaxAmount()
     {
     }
+
+    /**
+     * Test attribute "shippingPreference"
+     */
+    public function testPropertyShippingPreference()
+    {
+    }
 }

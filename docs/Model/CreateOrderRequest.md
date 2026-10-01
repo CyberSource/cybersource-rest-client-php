@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **merchantInformation** | [**\CyberSource\Model\Ptsv2intentsMerchantInformation**](Ptsv2intentsMerchantInformation.md) |  | [optional] 
 **paymentInformation** | [**\CyberSource\Model\Ptsv2intentsPaymentInformation**](Ptsv2intentsPaymentInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Ptsv2intentsOrderInformation**](Ptsv2intentsOrderInformation.md) |  | [optional] 
+**buyerInformation** | [**\CyberSource\Model\Ptsv2intentsBuyerInformation**](Ptsv2intentsBuyerInformation.md) |  | [optional] 
 **senderInformation** | [**\CyberSource\Model\Ptsv2intentsSenderInformation**](Ptsv2intentsSenderInformation.md) |  | [optional] 
 **eventInformation** | [**\CyberSource\Model\Ptsv2intentsEventInformation**](Ptsv2intentsEventInformation.md) |  | [optional] 
 **travelInformation** | [**\CyberSource\Model\Ptsv2intentsTravelInformation**](Ptsv2intentsTravelInformation.md) |  | [optional] 

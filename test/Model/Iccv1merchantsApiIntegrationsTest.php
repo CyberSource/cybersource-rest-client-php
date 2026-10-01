@@ -32,7 +32,7 @@ namespace CyberSource;
  * Iccv1merchantsApiIntegrationsTest Class Doc Comment
  *
  * @category    Class */
-// * @description REST/GraphQL API integration configuration for a merchant checkout flow.
+// * @description REST/GraphQL API integration configuration for programmatic agent interactions.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

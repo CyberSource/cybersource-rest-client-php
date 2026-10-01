@@ -64,8 +64,8 @@ class MerchantRegistrationResponse201 implements ArrayAccess
         'merchantMetadata' => 'object',
         'acceptanceRelationships' => 'string[]',
         'protocolInteractions' => '\CyberSource\Model\Iccv1merchantsProtocolInteractions[]',
-        'webIntegrations' => '\CyberSource\Model\Iccv1merchantsWebIntegrations',
-        'apiIntegrations' => '\CyberSource\Model\Iccv1merchantsApiIntegrations',
+        'webIntegrations' => '\CyberSource\Model\MerchantRegistrationResponse201WebIntegrations',
+        'apiIntegrations' => '\CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations',
         'isActive' => 'bool',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
@@ -345,7 +345,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets merchantUrl
-     * @param string $merchantUrl Base merchant URL
+     * @param string $merchantUrl Fully-qualified HTTPS URL of the merchant's domain
      * @return $this
      */
     public function setMerchantUrl($merchantUrl)
@@ -366,7 +366,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets vmid
-     * @param string $vmid Visa Merchant ID
+     * @param string $vmid Visa Merchant ID (VMID) — unique identifier assigned by Visa
      * @return $this
      */
     public function setVmid($vmid)
@@ -387,7 +387,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets cryptogramType
-     * @param string $cryptogramType Authentication cryptogram type  Possible values: - TAVV - DAVV
+     * @param string $cryptogramType Authentication cryptogram type used for payment credential generation: 'TAVV' (Token Authentication Verification Value) or 'DAVV' (Device Authentication Verification Value)  Possible values: - TAVV - DAVV
      * @return $this
      */
     public function setCryptogramType($cryptogramType)
@@ -408,7 +408,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets paymentPayloadType
-     * @param string $paymentPayloadType Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED
+     * @param string $paymentPayloadType Credential delivery format: 'ENCRYPTED' (JWE-wrapped, requires an active encryption key) or 'UNENCRYPTED'  Possible values: - ENCRYPTED - UNENCRYPTED
      * @return $this
      */
     public function setPaymentPayloadType($paymentPayloadType)
@@ -429,7 +429,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets indicator
-     * @param string $indicator Transaction processing type  Possible values: - TAP - ACG - BOTH
+     * @param string $indicator Transaction processing indicator: 'TAP' (Trusted Agent Protocol), 'ACG' (Agentic Checkout Gateway), or 'BOTH'  Possible values: - TAP - ACG - BOTH
      * @return $this
      */
     public function setIndicator($indicator)
@@ -450,7 +450,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets merchantMetadata
-     * @param object $merchantMetadata Additional merchant metadata
+     * @param object $merchantMetadata Free-form metadata object for additional merchant context
      * @return $this
      */
     public function setMerchantMetadata($merchantMetadata)
@@ -471,7 +471,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets acceptanceRelationships
-     * @param string[] $acceptanceRelationships List of acceptance network relationships
+     * @param string[] $acceptanceRelationships List of payment network acceptance relationships (e.g., \"Visa\")
      * @return $this
      */
     public function setAcceptanceRelationships($acceptanceRelationships)
@@ -492,7 +492,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets protocolInteractions
-     * @param \CyberSource\Model\Iccv1merchantsProtocolInteractions[] $protocolInteractions List of protocol interaction configurations (ucp, acp, x402)
+     * @param \CyberSource\Model\Iccv1merchantsProtocolInteractions[] $protocolInteractions List of protocol endpoint configurations defining how agents interact with this merchant (ucp, acp, x402)
      * @return $this
      */
     public function setProtocolInteractions($protocolInteractions)
@@ -504,7 +504,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Gets webIntegrations
-     * @return \CyberSource\Model\Iccv1merchantsWebIntegrations
+     * @return \CyberSource\Model\MerchantRegistrationResponse201WebIntegrations
      */
     public function getWebIntegrations()
     {
@@ -513,7 +513,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets webIntegrations
-     * @param \CyberSource\Model\Iccv1merchantsWebIntegrations $webIntegrations
+     * @param \CyberSource\Model\MerchantRegistrationResponse201WebIntegrations $webIntegrations
      * @return $this
      */
     public function setWebIntegrations($webIntegrations)
@@ -525,7 +525,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Gets apiIntegrations
-     * @return \CyberSource\Model\Iccv1merchantsApiIntegrations
+     * @return \CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations
      */
     public function getApiIntegrations()
     {
@@ -534,7 +534,7 @@ class MerchantRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets apiIntegrations
-     * @param \CyberSource\Model\Iccv1merchantsApiIntegrations $apiIntegrations
+     * @param \CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations $apiIntegrations
      * @return $this
      */
     public function setApiIntegrations($apiIntegrations)

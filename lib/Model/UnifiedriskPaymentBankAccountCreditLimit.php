@@ -53,12 +53,12 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'value' => 'float',
+        'value' => 'string',
         'currency' => 'string',
         'baseCurrency' => 'string',
-        'baseValue' => 'float',
+        'baseValue' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'float'
+        'merchantValue' => 'string'
     ];
 
     /**
@@ -191,7 +191,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
 
     /**
      * Gets value
-     * @return float
+     * @return string
      */
     public function getValue()
     {
@@ -200,7 +200,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
 
     /**
      * Sets value
-     * @param float $value Credit limit on account
+     * @param string $value Credit limit on account
      * @return $this
      */
     public function setValue($value)
@@ -254,7 +254,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
 
     /**
      * Gets baseValue
-     * @return float
+     * @return string
      */
     public function getBaseValue()
     {
@@ -263,7 +263,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
 
     /**
      * Sets baseValue
-     * @param float $baseValue Value of transaction expressed in the currency defined in the baseCurrency field.
+     * @param string $baseValue Value of transaction expressed in the currency defined in the baseCurrency field.
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -296,7 +296,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
 
     /**
      * Gets merchantValue
-     * @return float
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -305,7 +305,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
 
     /**
      * Sets merchantValue
-     * @param float $merchantValue Credit limit amount expressed in the merchant's local currency, used for utilization ratio calculations and cross-currency risk assessment
+     * @param string $merchantValue Credit limit amount expressed in the merchant's local currency, used for utilization ratio calculations and cross-currency risk assessment
      * @return $this
      */
     public function setMerchantValue($merchantValue)

@@ -56,6 +56,7 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'id' => 'string',
         'status' => 'string',
         'submitTimeUtc' => 'string',
+        'updateTimeUtc' => 'string',
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1ProcessorInformation',
         'reconciliationId' => 'string',
         'paymentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformation',
@@ -73,6 +74,7 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'id' => null,
         'status' => null,
         'submitTimeUtc' => null,
+        'updateTimeUtc' => null,
         'processorInformation' => null,
         'reconciliationId' => null,
         'paymentInformation' => null,
@@ -100,6 +102,7 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'id' => 'id',
         'status' => 'status',
         'submitTimeUtc' => 'submitTimeUtc',
+        'updateTimeUtc' => 'updateTimeUtc',
         'processorInformation' => 'processorInformation',
         'reconciliationId' => 'reconciliationId',
         'paymentInformation' => 'paymentInformation',
@@ -118,6 +121,7 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'id' => 'setId',
         'status' => 'setStatus',
         'submitTimeUtc' => 'setSubmitTimeUtc',
+        'updateTimeUtc' => 'setUpdateTimeUtc',
         'processorInformation' => 'setProcessorInformation',
         'reconciliationId' => 'setReconciliationId',
         'paymentInformation' => 'setPaymentInformation',
@@ -136,6 +140,7 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         'id' => 'getId',
         'status' => 'getStatus',
         'submitTimeUtc' => 'getSubmitTimeUtc',
+        'updateTimeUtc' => 'getUpdateTimeUtc',
         'processorInformation' => 'getProcessorInformation',
         'reconciliationId' => 'getReconciliationId',
         'paymentInformation' => 'getPaymentInformation',
@@ -179,6 +184,7 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['updateTimeUtc'] = isset($data['updateTimeUtc']) ? $data['updateTimeUtc'] : null;
         $this->container['processorInformation'] = isset($data['processorInformation']) ? $data['processorInformation'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
@@ -272,6 +278,27 @@ class PtsV2PaymentsPost201Response1 implements ArrayAccess
     public function setSubmitTimeUtc($submitTimeUtc)
     {
         $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets updateTimeUtc
+     * @return string
+     */
+    public function getUpdateTimeUtc()
+    {
+        return $this->container['updateTimeUtc'];
+    }
+
+    /**
+     * Sets updateTimeUtc
+     * @param string $updateTimeUtc The date and time when the request was last updated. **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.).
+     * @return $this
+     */
+    public function setUpdateTimeUtc($updateTimeUtc)
+    {
+        $this->container['updateTimeUtc'] = $updateTimeUtc;
 
         return $this;
     }

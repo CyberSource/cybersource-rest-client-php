@@ -96,4 +96,11 @@ class InlineResponse2016SetupsRiskTest extends \PHPUnit\Framework\TestCase
     public function testPropertyEnhancedAuthentication()
     {
     }
+
+    /**
+     * Test attribute "vpri"
+     */
+    public function testPropertyVpri()
+    {
+    }
 }

@@ -217,6 +217,13 @@ class PaymentsConfigurationSetupTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "paymentEvents"
+     */
+    public function testPropertyPaymentEvents()
+    {
+    }
+
+    /**
      * Test attribute "transactGuard"
      */
     public function testPropertyTransactGuard()

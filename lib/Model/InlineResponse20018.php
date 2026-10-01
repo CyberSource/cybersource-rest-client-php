@@ -203,6 +203,30 @@ class InlineResponse20018 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalid_properties[] = "'status' can't be null";
+        }
+        if ($this->container['currency'] === null) {
+            $invalid_properties[] = "'currency' can't be null";
+        }
+        if ($this->container['lineItems'] === null) {
+            $invalid_properties[] = "'lineItems' can't be null";
+        }
+        if ($this->container['fulfillmentOptions'] === null) {
+            $invalid_properties[] = "'fulfillmentOptions' can't be null";
+        }
+        if ($this->container['totals'] === null) {
+            $invalid_properties[] = "'totals' can't be null";
+        }
+        if ($this->container['messages'] === null) {
+            $invalid_properties[] = "'messages' can't be null";
+        }
+        if ($this->container['links'] === null) {
+            $invalid_properties[] = "'links' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -215,6 +239,30 @@ class InlineResponse20018 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['status'] === null) {
+            return false;
+        }
+        if ($this->container['currency'] === null) {
+            return false;
+        }
+        if ($this->container['lineItems'] === null) {
+            return false;
+        }
+        if ($this->container['fulfillmentOptions'] === null) {
+            return false;
+        }
+        if ($this->container['totals'] === null) {
+            return false;
+        }
+        if ($this->container['messages'] === null) {
+            return false;
+        }
+        if ($this->container['links'] === null) {
+            return false;
+        }
         return true;
     }
 

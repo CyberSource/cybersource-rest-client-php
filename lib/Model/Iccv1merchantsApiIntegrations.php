@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Iccv1merchantsApiIntegrations Class Doc Comment
  *
  * @category    Class
- * @description REST/GraphQL API integration configuration for a merchant checkout flow.
+ * @description REST/GraphQL API integration configuration for programmatic agent interactions.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -56,7 +56,7 @@ class Iccv1merchantsApiIntegrations implements ArrayAccess
     protected static $swaggerTypes = [
         'integrationSpec' => 'string',
         'url' => 'string',
-        'metadata' => 'map[string,string]'
+        'metadata' => 'map[string,object]'
     ];
 
     /**
@@ -228,7 +228,7 @@ class Iccv1merchantsApiIntegrations implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return map[string,string]
+     * @return map[string,object]
      */
     public function getMetadata()
     {
@@ -237,7 +237,7 @@ class Iccv1merchantsApiIntegrations implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param map[string,string] $metadata Optional metadata (max 10KB)
+     * @param map[string,object] $metadata Optional metadata (max 10KB)
      * @return $this
      */
     public function setMetadata($metadata)

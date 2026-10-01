@@ -34,7 +34,7 @@ use \ArrayAccess;
  * InlineResponse20019 Class Doc Comment
  *
  * @category    Class
- * @description Result of a product feed ingestion request.
+ * @description Processing and syndication status of a product feed job.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,17 +54,10 @@ class InlineResponse20019 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'jobId' => 'string',
         'status' => 'string',
-        'feedId' => 'string',
-        'totalSubmitted' => 'int',
-        'successCount' => 'int',
-        'failedCount' => 'int',
-        'errors' => '\CyberSource\Model\InlineResponse20019Errors[]',
-        'ingestedAt' => '\DateTime',
-        'forwardedToAgent' => 'bool',
-        'agentEndpoint' => 'string',
-        'forwardedToUcpAgent' => 'bool',
-        'googleMerchant' => '\CyberSource\Model\InlineResponse20019GoogleMerchant'
+        'processing' => '\CyberSource\Model\InlineResponse20019Processing',
+        'syndication' => 'map[string,\CyberSource\Model\InlineResponse20019Syndication]'
     ];
 
     /**
@@ -72,17 +65,10 @@ class InlineResponse20019 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'jobId' => null,
         'status' => null,
-        'feedId' => null,
-        'totalSubmitted' => null,
-        'successCount' => null,
-        'failedCount' => null,
-        'errors' => null,
-        'ingestedAt' => 'date-time',
-        'forwardedToAgent' => null,
-        'agentEndpoint' => null,
-        'forwardedToUcpAgent' => null,
-        'googleMerchant' => null
+        'processing' => null,
+        'syndication' => null
     ];
 
     public static function swaggerTypes()
@@ -100,17 +86,10 @@ class InlineResponse20019 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'jobId' => 'jobId',
         'status' => 'status',
-        'feedId' => 'feed_id',
-        'totalSubmitted' => 'total_submitted',
-        'successCount' => 'success_count',
-        'failedCount' => 'failed_count',
-        'errors' => 'errors',
-        'ingestedAt' => 'ingested_at',
-        'forwardedToAgent' => 'forwarded_to_agent',
-        'agentEndpoint' => 'agent_endpoint',
-        'forwardedToUcpAgent' => 'forwarded_to_ucp_agent',
-        'googleMerchant' => 'google_merchant'
+        'processing' => 'processing',
+        'syndication' => 'syndication'
     ];
 
 
@@ -119,17 +98,10 @@ class InlineResponse20019 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'jobId' => 'setJobId',
         'status' => 'setStatus',
-        'feedId' => 'setFeedId',
-        'totalSubmitted' => 'setTotalSubmitted',
-        'successCount' => 'setSuccessCount',
-        'failedCount' => 'setFailedCount',
-        'errors' => 'setErrors',
-        'ingestedAt' => 'setIngestedAt',
-        'forwardedToAgent' => 'setForwardedToAgent',
-        'agentEndpoint' => 'setAgentEndpoint',
-        'forwardedToUcpAgent' => 'setForwardedToUcpAgent',
-        'googleMerchant' => 'setGoogleMerchant'
+        'processing' => 'setProcessing',
+        'syndication' => 'setSyndication'
     ];
 
 
@@ -138,17 +110,10 @@ class InlineResponse20019 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'jobId' => 'getJobId',
         'status' => 'getStatus',
-        'feedId' => 'getFeedId',
-        'totalSubmitted' => 'getTotalSubmitted',
-        'successCount' => 'getSuccessCount',
-        'failedCount' => 'getFailedCount',
-        'errors' => 'getErrors',
-        'ingestedAt' => 'getIngestedAt',
-        'forwardedToAgent' => 'getForwardedToAgent',
-        'agentEndpoint' => 'getAgentEndpoint',
-        'forwardedToUcpAgent' => 'getForwardedToUcpAgent',
-        'googleMerchant' => 'getGoogleMerchant'
+        'processing' => 'getProcessing',
+        'syndication' => 'getSyndication'
     ];
 
     public static function attributeMap()
@@ -182,17 +147,10 @@ class InlineResponse20019 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['jobId'] = isset($data['jobId']) ? $data['jobId'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['feedId'] = isset($data['feedId']) ? $data['feedId'] : null;
-        $this->container['totalSubmitted'] = isset($data['totalSubmitted']) ? $data['totalSubmitted'] : null;
-        $this->container['successCount'] = isset($data['successCount']) ? $data['successCount'] : null;
-        $this->container['failedCount'] = isset($data['failedCount']) ? $data['failedCount'] : null;
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
-        $this->container['ingestedAt'] = isset($data['ingestedAt']) ? $data['ingestedAt'] : null;
-        $this->container['forwardedToAgent'] = isset($data['forwardedToAgent']) ? $data['forwardedToAgent'] : null;
-        $this->container['agentEndpoint'] = isset($data['agentEndpoint']) ? $data['agentEndpoint'] : null;
-        $this->container['forwardedToUcpAgent'] = isset($data['forwardedToUcpAgent']) ? $data['forwardedToUcpAgent'] : null;
-        $this->container['googleMerchant'] = isset($data['googleMerchant']) ? $data['googleMerchant'] : null;
+        $this->container['processing'] = isset($data['processing']) ? $data['processing'] : null;
+        $this->container['syndication'] = isset($data['syndication']) ? $data['syndication'] : null;
     }
 
     /**
@@ -221,6 +179,27 @@ class InlineResponse20019 implements ArrayAccess
 
 
     /**
+     * Gets jobId
+     * @return string
+     */
+    public function getJobId()
+    {
+        return $this->container['jobId'];
+    }
+
+    /**
+     * Sets jobId
+     * @param string $jobId Unique identifier of the feed submission job.
+     * @return $this
+     */
+    public function setJobId($jobId)
+    {
+        $this->container['jobId'] = $jobId;
+
+        return $this;
+    }
+
+    /**
      * Gets status
      * @return string
      */
@@ -231,7 +210,7 @@ class InlineResponse20019 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status Overall ingestion result: - `success` — all products were validated and saved - `partial_success` — some products failed validation; `errors` lists the failures - `failed` — no products were saved; check `errors` for details   Possible values: - success - partial_success - failed
+     * @param string $status Overall status of the feed job.  Possible values: - PENDING - PROCESSING - COMPLETED - FAILED
      * @return $this
      */
     public function setStatus($status)
@@ -242,211 +221,43 @@ class InlineResponse20019 implements ArrayAccess
     }
 
     /**
-     * Gets feedId
-     * @return string
+     * Gets processing
+     * @return \CyberSource\Model\InlineResponse20019Processing
      */
-    public function getFeedId()
+    public function getProcessing()
     {
-        return $this->container['feedId'];
+        return $this->container['processing'];
     }
 
     /**
-     * Sets feedId
-     * @param string $feedId Unique identifier for this feed ingestion job. Use this with the Syndication Status endpoint to monitor the asynchronous protocol sync progress (e.g. to Google Merchant Center).
+     * Sets processing
+     * @param \CyberSource\Model\InlineResponse20019Processing $processing
      * @return $this
      */
-    public function setFeedId($feedId)
+    public function setProcessing($processing)
     {
-        $this->container['feedId'] = $feedId;
+        $this->container['processing'] = $processing;
 
         return $this;
     }
 
     /**
-     * Gets totalSubmitted
-     * @return int
+     * Gets syndication
+     * @return map[string,\CyberSource\Model\InlineResponse20019Syndication]
      */
-    public function getTotalSubmitted()
+    public function getSyndication()
     {
-        return $this->container['totalSubmitted'];
+        return $this->container['syndication'];
     }
 
     /**
-     * Sets totalSubmitted
-     * @param int $totalSubmitted Total number of product records in the submitted feed.
+     * Sets syndication
+     * @param map[string,\CyberSource\Model\InlineResponse20019Syndication] $syndication Per-protocol syndication status, keyed by lowercase protocol name (e.g. `acp`, `ucp`).
      * @return $this
      */
-    public function setTotalSubmitted($totalSubmitted)
+    public function setSyndication($syndication)
     {
-        $this->container['totalSubmitted'] = $totalSubmitted;
-
-        return $this;
-    }
-
-    /**
-     * Gets successCount
-     * @return int
-     */
-    public function getSuccessCount()
-    {
-        return $this->container['successCount'];
-    }
-
-    /**
-     * Sets successCount
-     * @param int $successCount Number of products that passed validation and were saved to the catalog.
-     * @return $this
-     */
-    public function setSuccessCount($successCount)
-    {
-        $this->container['successCount'] = $successCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets failedCount
-     * @return int
-     */
-    public function getFailedCount()
-    {
-        return $this->container['failedCount'];
-    }
-
-    /**
-     * Sets failedCount
-     * @param int $failedCount Number of products that failed validation and were not saved.
-     * @return $this
-     */
-    public function setFailedCount($failedCount)
-    {
-        $this->container['failedCount'] = $failedCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     * @return \CyberSource\Model\InlineResponse20019Errors[]
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     * @param \CyberSource\Model\InlineResponse20019Errors[] $errors Per-product validation errors for products that failed ingestion. Each entry identifies the product, the specific field that failed, and the reason. `null` when `failed_count` is zero.
-     * @return $this
-     */
-    public function setErrors($errors)
-    {
-        $this->container['errors'] = $errors;
-
-        return $this;
-    }
-
-    /**
-     * Gets ingestedAt
-     * @return \DateTime
-     */
-    public function getIngestedAt()
-    {
-        return $this->container['ingestedAt'];
-    }
-
-    /**
-     * Sets ingestedAt
-     * @param \DateTime $ingestedAt ISO 8601 timestamp when the ingestion completed.
-     * @return $this
-     */
-    public function setIngestedAt($ingestedAt)
-    {
-        $this->container['ingestedAt'] = $ingestedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets forwardedToAgent
-     * @return bool
-     */
-    public function getForwardedToAgent()
-    {
-        return $this->container['forwardedToAgent'];
-    }
-
-    /**
-     * Sets forwardedToAgent
-     * @param bool $forwardedToAgent Indicates whether the ingested products were scheduled for syndication to the configured AI agent endpoint. Set to `true` when at least one product was successfully saved. Note: syndication is asynchronous — this field confirms the dispatch was initiated, not that the agent received the data.
-     * @return $this
-     */
-    public function setForwardedToAgent($forwardedToAgent)
-    {
-        $this->container['forwardedToAgent'] = $forwardedToAgent;
-
-        return $this;
-    }
-
-    /**
-     * Gets agentEndpoint
-     * @return string
-     */
-    public function getAgentEndpoint()
-    {
-        return $this->container['agentEndpoint'];
-    }
-
-    /**
-     * Sets agentEndpoint
-     * @param string $agentEndpoint The AI agent endpoint URL that the products were forwarded to. Present when `forwarded_to_agent` is `true`.
-     * @return $this
-     */
-    public function setAgentEndpoint($agentEndpoint)
-    {
-        $this->container['agentEndpoint'] = $agentEndpoint;
-
-        return $this;
-    }
-
-    /**
-     * Gets forwardedToUcpAgent
-     * @return bool
-     */
-    public function getForwardedToUcpAgent()
-    {
-        return $this->container['forwardedToUcpAgent'];
-    }
-
-    /**
-     * Sets forwardedToUcpAgent
-     * @param bool $forwardedToUcpAgent Indicates whether the ingested products were scheduled for syndication to the UCP (Unified Commerce Platform) agent. Set to `true` when UCP syndication is enabled and at least one product was successfully saved.
-     * @return $this
-     */
-    public function setForwardedToUcpAgent($forwardedToUcpAgent)
-    {
-        $this->container['forwardedToUcpAgent'] = $forwardedToUcpAgent;
-
-        return $this;
-    }
-
-    /**
-     * Gets googleMerchant
-     * @return \CyberSource\Model\InlineResponse20019GoogleMerchant
-     */
-    public function getGoogleMerchant()
-    {
-        return $this->container['googleMerchant'];
-    }
-
-    /**
-     * Sets googleMerchant
-     * @param \CyberSource\Model\InlineResponse20019GoogleMerchant $googleMerchant
-     * @return $this
-     */
-    public function setGoogleMerchant($googleMerchant)
-    {
-        $this->container['googleMerchant'] = $googleMerchant;
+        $this->container['syndication'] = $syndication;
 
         return $this;
     }

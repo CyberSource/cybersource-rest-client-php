@@ -32,7 +32,7 @@ namespace CyberSource;
  * Iccv1merchantsEncryptionKeyTest Class Doc Comment
  *
  * @category    Class */
-// * @description Request object for adding a new encryption key for a merchant.
+// * @description Public encryption key used to wrap payment credentials when &#x60;paymentPayloadType&#x60; is ***ENCRYPTED***. Not required for UNENCRYPTED delivery.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

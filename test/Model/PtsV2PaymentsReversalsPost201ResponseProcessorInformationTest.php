@@ -145,4 +145,11 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformationTest extends \PHP
     public function testPropertyNetwork()
     {
     }
+
+    /**
+     * Test attribute "transactionLinkIdentifier"
+     */
+    public function testPropertyTransactionLinkIdentifier()
+    {
+    }
 }

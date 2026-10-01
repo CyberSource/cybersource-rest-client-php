@@ -53,6 +53,10 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'referenceId' => 'string',
+        'description' => 'string',
+        'customId' => 'string',
+        'merchantDescriptor' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor',
         'billTo' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationBillTo',
         'shipTo' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationShipTo',
         'amountDetails' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationAmountDetails'
@@ -63,6 +67,10 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'referenceId' => null,
+        'description' => null,
+        'customId' => null,
+        'merchantDescriptor' => null,
         'billTo' => null,
         'shipTo' => null,
         'amountDetails' => null
@@ -83,6 +91,10 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'referenceId' => 'referenceId',
+        'description' => 'description',
+        'customId' => 'customId',
+        'merchantDescriptor' => 'merchantDescriptor',
         'billTo' => 'billTo',
         'shipTo' => 'shipTo',
         'amountDetails' => 'amountDetails'
@@ -94,6 +106,10 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'referenceId' => 'setReferenceId',
+        'description' => 'setDescription',
+        'customId' => 'setCustomId',
+        'merchantDescriptor' => 'setMerchantDescriptor',
         'billTo' => 'setBillTo',
         'shipTo' => 'setShipTo',
         'amountDetails' => 'setAmountDetails'
@@ -105,6 +121,10 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'referenceId' => 'getReferenceId',
+        'description' => 'getDescription',
+        'customId' => 'getCustomId',
+        'merchantDescriptor' => 'getMerchantDescriptor',
         'billTo' => 'getBillTo',
         'shipTo' => 'getShipTo',
         'amountDetails' => 'getAmountDetails'
@@ -141,6 +161,10 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['referenceId'] = isset($data['referenceId']) ? $data['referenceId'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['customId'] = isset($data['customId']) ? $data['customId'] : null;
+        $this->container['merchantDescriptor'] = isset($data['merchantDescriptor']) ? $data['merchantDescriptor'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
         $this->container['shipTo'] = isset($data['shipTo']) ? $data['shipTo'] : null;
         $this->container['amountDetails'] = isset($data['amountDetails']) ? $data['amountDetails'] : null;
@@ -170,6 +194,90 @@ class PtsV2PaymentsPost201Response1OrderInformation implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets referenceId
+     * @return string
+     */
+    public function getReferenceId()
+    {
+        return $this->container['referenceId'];
+    }
+
+    /**
+     * Sets referenceId
+     * @param string $referenceId Merchant-generated order reference or tracking number for the payment.
+     * @return $this
+     */
+    public function setReferenceId($referenceId)
+    {
+        $this->container['referenceId'] = $referenceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     * @param string $description Description of the order, as provided by the merchant in the original request.
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets customId
+     * @return string
+     */
+    public function getCustomId()
+    {
+        return $this->container['customId'];
+    }
+
+    /**
+     * Sets customId
+     * @param string $customId Merchant-defined custom identifier for the order.
+     * @return $this
+     */
+    public function setCustomId($customId)
+    {
+        $this->container['customId'] = $customId;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchantDescriptor
+     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor
+     */
+    public function getMerchantDescriptor()
+    {
+        return $this->container['merchantDescriptor'];
+    }
+
+    /**
+     * Sets merchantDescriptor
+     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor $merchantDescriptor
+     * @return $this
+     */
+    public function setMerchantDescriptor($merchantDescriptor)
+    {
+        $this->container['merchantDescriptor'] = $merchantDescriptor;
+
+        return $this;
+    }
 
     /**
      * Gets billTo

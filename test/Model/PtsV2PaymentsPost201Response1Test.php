@@ -98,6 +98,13 @@ class PtsV2PaymentsPost201Response1Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "updateTimeUtc"
+     */
+    public function testPropertyUpdateTimeUtc()
+    {
+    }
+
+    /**
      * Test attribute "processorInformation"
      */
     public function testPropertyProcessorInformation()

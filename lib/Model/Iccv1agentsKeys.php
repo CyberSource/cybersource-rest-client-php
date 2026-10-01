@@ -207,7 +207,7 @@ class Iccv1agentsKeys implements ArrayAccess
 
     /**
      * Sets keyName
-     * @param string $keyName Unique identifier for the key
+     * @param string $keyName Unique name for this key within the agent. Must be unique per agent.
      * @return $this
      */
     public function setKeyName($keyName)
@@ -228,7 +228,7 @@ class Iccv1agentsKeys implements ArrayAccess
 
     /**
      * Sets publicKey
-     * @param string $publicKey Base64-encoded public key. Supports PEM (PKCS#8, PKCS#1), JWK, DER, and OpenSSH formats. Max 10000 characters.
+     * @param string $publicKey Base64-encoded public key. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK.
      * @return $this
      */
     public function setPublicKey($publicKey)
@@ -249,7 +249,7 @@ class Iccv1agentsKeys implements ArrayAccess
 
     /**
      * Sets algorithm
-     * @param string $algorithm Signing algorithm. Must match the key type (e.g., an RSA key requires RSA-SHA256 or RSA-SHA512).  Possible values: - RSA-SHA256 - RSA-SHA512 - ECDSA-SHA256 - ECDSA-SHA512 - EdDSA
+     * @param string $algorithm HTTP Signature signing algorithm (RFC 9421 §3.3 registry). Must match the key type and curve:  - ***rsa-pss-sha256*** — RSA-PSS with SHA-256  - ***rsa-pss-sha512*** — RSA-PSS with SHA-512  - ***ecdsa-p256-sha256*** — ECDSA on P-256 curve with SHA-256  - ***ecdsa-p384-sha384*** — ECDSA on P-384 curve with SHA-384  - ***ed25519*** — EdDSA on Curve25519   Possible values: - rsa-pss-sha256 - rsa-pss-sha512 - ecdsa-p256-sha256 - ecdsa-p384-sha384 - ed25519
      * @return $this
      */
     public function setAlgorithm($algorithm)
@@ -270,7 +270,7 @@ class Iccv1agentsKeys implements ArrayAccess
 
     /**
      * Sets expirationDate
-     * @param \DateTime $expirationDate Key expiration date in UTC (defaults to 14 days from now if not provided)
+     * @param \DateTime $expirationDate Key expiration date-time in UTC. Defaults to 14 days from registration if omitted.
      * @return $this
      */
     public function setExpirationDate($expirationDate)

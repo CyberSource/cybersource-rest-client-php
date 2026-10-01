@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **paymentInformation** | [**\CyberSource\Model\Ptsv2paymentsidvoidsPaymentInformation**](Ptsv2paymentsidvoidsPaymentInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\Ptsv2paymentsidvoidsOrderInformation**](Ptsv2paymentsidvoidsOrderInformation.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\Ptsv2voidsProcessingInformation**](Ptsv2voidsProcessingInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation**](Ptsv2paymentsPointOfSaleInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

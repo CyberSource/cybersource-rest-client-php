@@ -105,6 +105,13 @@ class CreateSessionRequestTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "orderHistory"
+     */
+    public function testPropertyOrderHistory()
+    {
+    }
+
+    /**
      * Test attribute "buyerInformation"
      */
     public function testPropertyBuyerInformation()

@@ -32,7 +32,7 @@ namespace CyberSource;
  * Iccv1merchantsWebIntegrationsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Web-based integration configuration for a merchant checkout flow.
+// * @description Web-based checkout integration configuration for browser or app-based agent interactions.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

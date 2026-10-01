@@ -96,4 +96,11 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationTest extends \PHPUnit\Fr
     public function testPropertyTerminalId()
     {
     }
+
+    /**
+     * Test attribute "freeText"
+     */
+    public function testPropertyFreeText()
+    {
+    }
 }

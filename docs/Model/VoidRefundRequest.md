@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **agreementInformation** | [**\CyberSource\Model\Ptsv2paymentsidvoidsAgreementInformation**](Ptsv2paymentsidvoidsAgreementInformation.md) |  | [optional] 
 **merchantInformation** | [**\CyberSource\Model\Ptsv2paymentsidvoidsMerchantInformation**](Ptsv2paymentsidvoidsMerchantInformation.md) |  | [optional] 
 **processingInformation** | [**\CyberSource\Model\Ptsv2paymentsidvoidsProcessingInformation**](Ptsv2paymentsidvoidsProcessingInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation**](Ptsv2paymentsPointOfSaleInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

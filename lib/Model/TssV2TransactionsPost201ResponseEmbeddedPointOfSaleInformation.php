@@ -57,7 +57,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
         'terminalSerialNumber' => 'string',
         'deviceId' => 'string',
         'partner' => '\CyberSource\Model\TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformationPartner',
-        'emv' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv'
+        'emv' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv'
     ];
 
     /**
@@ -269,7 +269,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Gets emv
-     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv
+     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv
      */
     public function getEmv()
     {
@@ -278,7 +278,7 @@ class TssV2TransactionsPost201ResponseEmbeddedPointOfSaleInformation implements 
 
     /**
      * Sets emv
-     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformationEmv $emv
+     * @param \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformationEmv $emv
      * @return $this
      */
     public function setEmv($emv)

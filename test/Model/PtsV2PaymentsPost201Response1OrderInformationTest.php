@@ -77,6 +77,34 @@ class PtsV2PaymentsPost201Response1OrderInformationTest extends \PHPUnit\Framewo
     }
 
     /**
+     * Test attribute "referenceId"
+     */
+    public function testPropertyReferenceId()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "customId"
+     */
+    public function testPropertyCustomId()
+    {
+    }
+
+    /**
+     * Test attribute "merchantDescriptor"
+     */
+    public function testPropertyMerchantDescriptor()
+    {
+    }
+
+    /**
      * Test attribute "billTo"
      */
     public function testPropertyBillTo()

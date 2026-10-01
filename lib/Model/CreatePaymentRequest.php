@@ -58,6 +58,7 @@ class CreatePaymentRequest implements ArrayAccess
         'issuerInformation' => '\CyberSource\Model\Ptsv2paymentsIssuerInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsOrderInformation',
+        'orderHistory' => '\CyberSource\Model\Ptsv2paymentsOrderHistory[]',
         'buyerInformation' => '\CyberSource\Model\Ptsv2paymentsBuyerInformation',
         'senderInformation' => '\CyberSource\Model\Ptsv2paymentsSenderInformation',
         'recipientInformation' => '\CyberSource\Model\Ptsv2paymentsRecipientInformation',
@@ -94,6 +95,7 @@ class CreatePaymentRequest implements ArrayAccess
         'issuerInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
+        'orderHistory' => null,
         'buyerInformation' => null,
         'senderInformation' => null,
         'recipientInformation' => null,
@@ -140,6 +142,7 @@ class CreatePaymentRequest implements ArrayAccess
         'issuerInformation' => 'issuerInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
+        'orderHistory' => 'orderHistory',
         'buyerInformation' => 'buyerInformation',
         'senderInformation' => 'senderInformation',
         'recipientInformation' => 'recipientInformation',
@@ -177,6 +180,7 @@ class CreatePaymentRequest implements ArrayAccess
         'issuerInformation' => 'setIssuerInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
+        'orderHistory' => 'setOrderHistory',
         'buyerInformation' => 'setBuyerInformation',
         'senderInformation' => 'setSenderInformation',
         'recipientInformation' => 'setRecipientInformation',
@@ -214,6 +218,7 @@ class CreatePaymentRequest implements ArrayAccess
         'issuerInformation' => 'getIssuerInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
+        'orderHistory' => 'getOrderHistory',
         'buyerInformation' => 'getBuyerInformation',
         'senderInformation' => 'getSenderInformation',
         'recipientInformation' => 'getRecipientInformation',
@@ -276,6 +281,7 @@ class CreatePaymentRequest implements ArrayAccess
         $this->container['issuerInformation'] = isset($data['issuerInformation']) ? $data['issuerInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['orderHistory'] = isset($data['orderHistory']) ? $data['orderHistory'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
         $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
@@ -428,6 +434,27 @@ class CreatePaymentRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderHistory
+     * @return \CyberSource\Model\Ptsv2paymentsOrderHistory[]
+     */
+    public function getOrderHistory()
+    {
+        return $this->container['orderHistory'];
+    }
+
+    /**
+     * Sets orderHistory
+     * @param \CyberSource\Model\Ptsv2paymentsOrderHistory[] $orderHistory Array of the buyer's previous orders.
+     * @return $this
+     */
+    public function setOrderHistory($orderHistory)
+    {
+        $this->container['orderHistory'] = $orderHistory;
 
         return $this;
     }

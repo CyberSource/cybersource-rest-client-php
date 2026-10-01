@@ -126,6 +126,13 @@ class PtsV2PaymentsPost201Response1ProcessorInformationTest extends \PHPUnit\Fra
     }
 
     /**
+     * Test attribute "paymentUrl"
+     */
+    public function testPropertyPaymentUrl()
+    {
+    }
+
+    /**
      * Test attribute "avs"
      */
     public function testPropertyAvs()

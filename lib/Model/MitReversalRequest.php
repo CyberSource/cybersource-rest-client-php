@@ -57,7 +57,7 @@ class MitReversalRequest implements ArrayAccess
         'reversalInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsReversalInformation',
         'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsProcessingInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsOrderInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
         'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsDeviceInformation',
         'processorInformation' => '\CyberSource\Model\Ptsv2reversalsProcessorInformation'
     ];
@@ -281,7 +281,7 @@ class MitReversalRequest implements ArrayAccess
 
     /**
      * Gets pointOfSaleInformation
-     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation
      */
     public function getPointOfSaleInformation()
     {
@@ -290,7 +290,7 @@ class MitReversalRequest implements ArrayAccess
 
     /**
      * Sets pointOfSaleInformation
-     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation $pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation $pointOfSaleInformation
      * @return $this
      */
     public function setPointOfSaleInformation($pointOfSaleInformation)

@@ -56,7 +56,8 @@ class MitVoidRequest implements ArrayAccess
         'clientReferenceInformation' => '\CyberSource\Model\Ptsv2paymentsClientReferenceInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsOrderInformation',
-        'processingInformation' => '\CyberSource\Model\Ptsv2voidsProcessingInformation'
+        'processingInformation' => '\CyberSource\Model\Ptsv2voidsProcessingInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation'
     ];
 
     /**
@@ -67,7 +68,8 @@ class MitVoidRequest implements ArrayAccess
         'clientReferenceInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
-        'processingInformation' => null
+        'processingInformation' => null,
+        'pointOfSaleInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class MitVoidRequest implements ArrayAccess
         'clientReferenceInformation' => 'clientReferenceInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
-        'processingInformation' => 'processingInformation'
+        'processingInformation' => 'processingInformation',
+        'pointOfSaleInformation' => 'pointOfSaleInformation'
     ];
 
 
@@ -100,7 +103,8 @@ class MitVoidRequest implements ArrayAccess
         'clientReferenceInformation' => 'setClientReferenceInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
-        'processingInformation' => 'setProcessingInformation'
+        'processingInformation' => 'setProcessingInformation',
+        'pointOfSaleInformation' => 'setPointOfSaleInformation'
     ];
 
 
@@ -112,7 +116,8 @@ class MitVoidRequest implements ArrayAccess
         'clientReferenceInformation' => 'getClientReferenceInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
-        'processingInformation' => 'getProcessingInformation'
+        'processingInformation' => 'getProcessingInformation',
+        'pointOfSaleInformation' => 'getPointOfSaleInformation'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class MitVoidRequest implements ArrayAccess
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class MitVoidRequest implements ArrayAccess
     public function setProcessingInformation($processingInformation)
     {
         $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation
+     */
+    public function getPointOfSaleInformation()
+    {
+        return $this->container['pointOfSaleInformation'];
+    }
+
+    /**
+     * Sets pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation $pointOfSaleInformation
+     * @return $this
+     */
+    public function setPointOfSaleInformation($pointOfSaleInformation)
+    {
+        $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
 
         return $this;
     }

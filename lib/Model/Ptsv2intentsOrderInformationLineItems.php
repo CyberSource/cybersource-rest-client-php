@@ -60,7 +60,8 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
         'typeOfSupply' => 'string',
         'unitPrice' => 'string',
         'totalAmount' => 'string',
-        'taxAmount' => 'string'
+        'taxAmount' => 'string',
+        'shippingPreference' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
         'typeOfSupply' => null,
         'unitPrice' => null,
         'totalAmount' => null,
-        'taxAmount' => null
+        'taxAmount' => null,
+        'shippingPreference' => null
     ];
 
     public static function swaggerTypes()
@@ -100,7 +102,8 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
         'typeOfSupply' => 'typeOfSupply',
         'unitPrice' => 'unitPrice',
         'totalAmount' => 'totalAmount',
-        'taxAmount' => 'taxAmount'
+        'taxAmount' => 'taxAmount',
+        'shippingPreference' => 'shippingPreference'
     ];
 
 
@@ -116,7 +119,8 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
         'typeOfSupply' => 'setTypeOfSupply',
         'unitPrice' => 'setUnitPrice',
         'totalAmount' => 'setTotalAmount',
-        'taxAmount' => 'setTaxAmount'
+        'taxAmount' => 'setTaxAmount',
+        'shippingPreference' => 'setShippingPreference'
     ];
 
 
@@ -132,7 +136,8 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
         'typeOfSupply' => 'getTypeOfSupply',
         'unitPrice' => 'getUnitPrice',
         'totalAmount' => 'getTotalAmount',
-        'taxAmount' => 'getTaxAmount'
+        'taxAmount' => 'getTaxAmount',
+        'shippingPreference' => 'getShippingPreference'
     ];
 
     public static function attributeMap()
@@ -174,6 +179,7 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
         $this->container['unitPrice'] = isset($data['unitPrice']) ? $data['unitPrice'] : null;
         $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
+        $this->container['shippingPreference'] = isset($data['shippingPreference']) ? $data['shippingPreference'] : null;
     }
 
     /**
@@ -365,6 +371,27 @@ class Ptsv2intentsOrderInformationLineItems implements ArrayAccess
     public function setTaxAmount($taxAmount)
     {
         $this->container['taxAmount'] = $taxAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets shippingPreference
+     * @return string
+     */
+    public function getShippingPreference()
+    {
+        return $this->container['shippingPreference'];
+    }
+
+    /**
+     * Sets shippingPreference
+     * @param string $shippingPreference Controls shipping behavior during checkout. Use `NO_SHIPPING` for digital goods, `SET_PROVIDED_ADDRESS` when `orderInformation.shipTo` is provided, and `GET_FROM_FILE` to use the buyer's saved address.   Possible values: - NO_SHIPPING - SET_PROVIDED_ADDRESS - GET_FROM_FILE
+     * @return $this
+     */
+    public function setShippingPreference($shippingPreference)
+    {
+        $this->container['shippingPreference'] = $shippingPreference;
 
         return $this;
     }

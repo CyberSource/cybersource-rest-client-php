@@ -133,6 +133,13 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipToTest extends \PHPUnit\Fr
     }
 
     /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
      * Test attribute "phoneNumber"
      */
     public function testPropertyPhoneNumber()

@@ -58,7 +58,7 @@ class AgentUpdate implements ArrayAccess
         'domain' => 'string',
         'description' => 'string',
         'contactEmail' => 'string',
-        'agentMetadata' => 'map[string,string]'
+        'agentMetadata' => 'object'
     ];
 
     /**
@@ -195,7 +195,7 @@ class AgentUpdate implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Agent name
+     * @param string $name Display name for the agent
      * @return $this
      */
     public function setName($name)
@@ -216,7 +216,7 @@ class AgentUpdate implements ArrayAccess
 
     /**
      * Sets domain
-     * @param string $domain Agent domain URL
+     * @param string $domain Fully-qualified HTTPS URL of the agent's home domain. Must be unique — raises 409 if already registered.
      * @return $this
      */
     public function setDomain($domain)
@@ -237,7 +237,7 @@ class AgentUpdate implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description Agent description
+     * @param string $description Description of the agent's purpose or capabilities
      * @return $this
      */
     public function setDescription($description)
@@ -258,7 +258,7 @@ class AgentUpdate implements ArrayAccess
 
     /**
      * Sets contactEmail
-     * @param string $contactEmail Contact email
+     * @param string $contactEmail Contact email for the team or individual responsible for this agent
      * @return $this
      */
     public function setContactEmail($contactEmail)
@@ -270,7 +270,7 @@ class AgentUpdate implements ArrayAccess
 
     /**
      * Gets agentMetadata
-     * @return map[string,string]
+     * @return object
      */
     public function getAgentMetadata()
     {
@@ -279,7 +279,7 @@ class AgentUpdate implements ArrayAccess
 
     /**
      * Sets agentMetadata
-     * @param map[string,string] $agentMetadata Optional metadata (e.g., framework, version)
+     * @param object $agentMetadata Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
      * @return $this
      */
     public function setAgentMetadata($agentMetadata)

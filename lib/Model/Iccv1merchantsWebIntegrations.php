@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Iccv1merchantsWebIntegrations Class Doc Comment
  *
  * @category    Class
- * @description Web-based integration configuration for a merchant checkout flow.
+ * @description Web-based checkout integration configuration for browser or app-based agent interactions.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -56,7 +56,7 @@ class Iccv1merchantsWebIntegrations implements ArrayAccess
     protected static $swaggerTypes = [
         'integrationSpec' => 'string',
         'url' => 'string',
-        'metadata' => 'map[string,string]'
+        'metadata' => 'map[string,object]'
     ];
 
     /**
@@ -228,7 +228,7 @@ class Iccv1merchantsWebIntegrations implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return map[string,string]
+     * @return map[string,object]
      */
     public function getMetadata()
     {
@@ -237,7 +237,7 @@ class Iccv1merchantsWebIntegrations implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param map[string,string] $metadata Optional metadata (max 10KB)
+     * @param map[string,object] $metadata Optional metadata (max 10KB)
      * @return $this
      */
     public function setMetadata($metadata)

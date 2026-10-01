@@ -58,6 +58,7 @@ class CreateOrderRequest implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\Ptsv2intentsMerchantInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2intentsPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2intentsOrderInformation',
+        'buyerInformation' => '\CyberSource\Model\Ptsv2intentsBuyerInformation',
         'senderInformation' => '\CyberSource\Model\Ptsv2intentsSenderInformation',
         'eventInformation' => '\CyberSource\Model\Ptsv2intentsEventInformation',
         'travelInformation' => '\CyberSource\Model\Ptsv2intentsTravelInformation',
@@ -74,6 +75,7 @@ class CreateOrderRequest implements ArrayAccess
         'merchantInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
+        'buyerInformation' => null,
         'senderInformation' => null,
         'eventInformation' => null,
         'travelInformation' => null,
@@ -100,6 +102,7 @@ class CreateOrderRequest implements ArrayAccess
         'merchantInformation' => 'merchantInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
+        'buyerInformation' => 'buyerInformation',
         'senderInformation' => 'senderInformation',
         'eventInformation' => 'eventInformation',
         'travelInformation' => 'travelInformation',
@@ -117,6 +120,7 @@ class CreateOrderRequest implements ArrayAccess
         'merchantInformation' => 'setMerchantInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
+        'buyerInformation' => 'setBuyerInformation',
         'senderInformation' => 'setSenderInformation',
         'eventInformation' => 'setEventInformation',
         'travelInformation' => 'setTravelInformation',
@@ -134,6 +138,7 @@ class CreateOrderRequest implements ArrayAccess
         'merchantInformation' => 'getMerchantInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
+        'buyerInformation' => 'getBuyerInformation',
         'senderInformation' => 'getSenderInformation',
         'eventInformation' => 'getEventInformation',
         'travelInformation' => 'getTravelInformation',
@@ -176,6 +181,7 @@ class CreateOrderRequest implements ArrayAccess
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
         $this->container['eventInformation'] = isset($data['eventInformation']) ? $data['eventInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
@@ -308,6 +314,27 @@ class CreateOrderRequest implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerInformation
+     * @return \CyberSource\Model\Ptsv2intentsBuyerInformation
+     */
+    public function getBuyerInformation()
+    {
+        return $this->container['buyerInformation'];
+    }
+
+    /**
+     * Sets buyerInformation
+     * @param \CyberSource\Model\Ptsv2intentsBuyerInformation $buyerInformation
+     * @return $this
+     */
+    public function setBuyerInformation($buyerInformation)
+    {
+        $this->container['buyerInformation'] = $buyerInformation;
 
         return $this;
     }

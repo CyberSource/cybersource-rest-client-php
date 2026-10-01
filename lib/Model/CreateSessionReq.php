@@ -57,6 +57,7 @@ class CreateSessionReq implements ArrayAccess
         'processingInformation' => '\CyberSource\Model\Ptsv2paymentreferencesProcessingInformation',
         'paymentInformation' => '\CyberSource\Model\Ptsv2paymentreferencesPaymentInformation',
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentreferencesOrderInformation',
+        'orderHistory' => '\CyberSource\Model\Ptsv2paymentsOrderHistory[]',
         'buyerInformation' => '\CyberSource\Model\Ptsv2paymentreferencesBuyerInformation',
         'deviceInformation' => '\CyberSource\Model\Ptsv2paymentreferencesDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentreferencesMerchantInformation',
@@ -75,6 +76,7 @@ class CreateSessionReq implements ArrayAccess
         'processingInformation' => null,
         'paymentInformation' => null,
         'orderInformation' => null,
+        'orderHistory' => null,
         'buyerInformation' => null,
         'deviceInformation' => null,
         'merchantInformation' => null,
@@ -103,6 +105,7 @@ class CreateSessionReq implements ArrayAccess
         'processingInformation' => 'processingInformation',
         'paymentInformation' => 'paymentInformation',
         'orderInformation' => 'orderInformation',
+        'orderHistory' => 'orderHistory',
         'buyerInformation' => 'buyerInformation',
         'deviceInformation' => 'deviceInformation',
         'merchantInformation' => 'merchantInformation',
@@ -122,6 +125,7 @@ class CreateSessionReq implements ArrayAccess
         'processingInformation' => 'setProcessingInformation',
         'paymentInformation' => 'setPaymentInformation',
         'orderInformation' => 'setOrderInformation',
+        'orderHistory' => 'setOrderHistory',
         'buyerInformation' => 'setBuyerInformation',
         'deviceInformation' => 'setDeviceInformation',
         'merchantInformation' => 'setMerchantInformation',
@@ -141,6 +145,7 @@ class CreateSessionReq implements ArrayAccess
         'processingInformation' => 'getProcessingInformation',
         'paymentInformation' => 'getPaymentInformation',
         'orderInformation' => 'getOrderInformation',
+        'orderHistory' => 'getOrderHistory',
         'buyerInformation' => 'getBuyerInformation',
         'deviceInformation' => 'getDeviceInformation',
         'merchantInformation' => 'getMerchantInformation',
@@ -185,6 +190,7 @@ class CreateSessionReq implements ArrayAccess
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
         $this->container['paymentInformation'] = isset($data['paymentInformation']) ? $data['paymentInformation'] : null;
         $this->container['orderInformation'] = isset($data['orderInformation']) ? $data['orderInformation'] : null;
+        $this->container['orderHistory'] = isset($data['orderHistory']) ? $data['orderHistory'] : null;
         $this->container['buyerInformation'] = isset($data['buyerInformation']) ? $data['buyerInformation'] : null;
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
@@ -299,6 +305,27 @@ class CreateSessionReq implements ArrayAccess
     public function setOrderInformation($orderInformation)
     {
         $this->container['orderInformation'] = $orderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderHistory
+     * @return \CyberSource\Model\Ptsv2paymentsOrderHistory[]
+     */
+    public function getOrderHistory()
+    {
+        return $this->container['orderHistory'];
+    }
+
+    /**
+     * Sets orderHistory
+     * @param \CyberSource\Model\Ptsv2paymentsOrderHistory[] $orderHistory Array of the buyer's previous orders.
+     * @return $this
+     */
+    public function setOrderHistory($orderHistory)
+    {
+        $this->container['orderHistory'] = $orderHistory;
 
         return $this;
     }

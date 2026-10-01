@@ -60,6 +60,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'responseDetails' => 'string',
         'responseCode' => 'string',
         'sellerProtection' => '\CyberSource\Model\ProcessorInformationSellerProtection',
+        'paymentUrl' => 'string',
         'avs' => '\CyberSource\Model\PtsV2PaymentsPost201Response1ProcessorInformationAvs'
     ];
 
@@ -75,6 +76,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'responseDetails' => null,
         'responseCode' => null,
         'sellerProtection' => null,
+        'paymentUrl' => null,
         'avs' => null
     ];
 
@@ -100,6 +102,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'responseDetails' => 'responseDetails',
         'responseCode' => 'responseCode',
         'sellerProtection' => 'sellerProtection',
+        'paymentUrl' => 'paymentUrl',
         'avs' => 'avs'
     ];
 
@@ -116,6 +119,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'responseDetails' => 'setResponseDetails',
         'responseCode' => 'setResponseCode',
         'sellerProtection' => 'setSellerProtection',
+        'paymentUrl' => 'setPaymentUrl',
         'avs' => 'setAvs'
     ];
 
@@ -132,6 +136,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         'responseDetails' => 'getResponseDetails',
         'responseCode' => 'getResponseCode',
         'sellerProtection' => 'getSellerProtection',
+        'paymentUrl' => 'getPaymentUrl',
         'avs' => 'getAvs'
     ];
 
@@ -173,6 +178,7 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['responseCode'] = isset($data['responseCode']) ? $data['responseCode'] : null;
         $this->container['sellerProtection'] = isset($data['sellerProtection']) ? $data['sellerProtection'] : null;
+        $this->container['paymentUrl'] = isset($data['paymentUrl']) ? $data['paymentUrl'] : null;
         $this->container['avs'] = isset($data['avs']) ? $data['avs'] : null;
     }
 
@@ -344,6 +350,27 @@ class PtsV2PaymentsPost201Response1ProcessorInformation implements ArrayAccess
     public function setSellerProtection($sellerProtection)
     {
         $this->container['sellerProtection'] = $sellerProtection;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentUrl
+     * @return string
+     */
+    public function getPaymentUrl()
+    {
+        return $this->container['paymentUrl'];
+    }
+
+    /**
+     * Sets paymentUrl
+     * @param string $paymentUrl Direct the customer to this URL to complete the payment.
+     * @return $this
+     */
+    public function setPaymentUrl($paymentUrl)
+    {
+        $this->container['paymentUrl'] = $paymentUrl;
 
         return $this;
     }

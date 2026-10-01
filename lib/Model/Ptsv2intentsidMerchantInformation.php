@@ -53,7 +53,7 @@ class Ptsv2intentsidMerchantInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantDescriptor' => '\CyberSource\Model\Ptsv2intentsMerchantInformationMerchantDescriptor'
+        'merchantDescriptor' => '\CyberSource\Model\Ptsv2intentsidMerchantInformationMerchantDescriptor'
     ];
 
     /**
@@ -161,7 +161,7 @@ class Ptsv2intentsidMerchantInformation implements ArrayAccess
 
     /**
      * Gets merchantDescriptor
-     * @return \CyberSource\Model\Ptsv2intentsMerchantInformationMerchantDescriptor
+     * @return \CyberSource\Model\Ptsv2intentsidMerchantInformationMerchantDescriptor
      */
     public function getMerchantDescriptor()
     {
@@ -170,7 +170,7 @@ class Ptsv2intentsidMerchantInformation implements ArrayAccess
 
     /**
      * Sets merchantDescriptor
-     * @param \CyberSource\Model\Ptsv2intentsMerchantInformationMerchantDescriptor $merchantDescriptor
+     * @param \CyberSource\Model\Ptsv2intentsidMerchantInformationMerchantDescriptor $merchantDescriptor
      * @return $this
      */
     public function setMerchantDescriptor($merchantDescriptor)

@@ -53,12 +53,12 @@ class UnifiedriskTransactionAmount implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'value' => 'float',
+        'value' => 'string',
         'currency' => 'string',
         'baseCurrency' => 'string',
-        'baseValue' => 'float',
+        'baseValue' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'float'
+        'merchantValue' => 'string'
     ];
 
     /**
@@ -191,7 +191,7 @@ class UnifiedriskTransactionAmount implements ArrayAccess
 
     /**
      * Gets value
-     * @return float
+     * @return string
      */
     public function getValue()
     {
@@ -200,7 +200,7 @@ class UnifiedriskTransactionAmount implements ArrayAccess
 
     /**
      * Sets value
-     * @param float $value Transaction amount in the specified currency
+     * @param string $value Transaction amount in the specified currency
      * @return $this
      */
     public function setValue($value)
@@ -254,7 +254,7 @@ class UnifiedriskTransactionAmount implements ArrayAccess
 
     /**
      * Gets baseValue
-     * @return float
+     * @return string
      */
     public function getBaseValue()
     {
@@ -263,7 +263,7 @@ class UnifiedriskTransactionAmount implements ArrayAccess
 
     /**
      * Sets baseValue
-     * @param float $baseValue Amount in base currency
+     * @param string $baseValue Amount in base currency
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -296,7 +296,7 @@ class UnifiedriskTransactionAmount implements ArrayAccess
 
     /**
      * Gets merchantValue
-     * @return float
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -305,7 +305,7 @@ class UnifiedriskTransactionAmount implements ArrayAccess
 
     /**
      * Sets merchantValue
-     * @param float $merchantValue Transaction amount expressed in the merchant's local currency, used for cross-currency comparison and risk threshold evaluation against merchant's baseline
+     * @param string $merchantValue Transaction amount expressed in the merchant's local currency, used for cross-currency comparison and risk threshold evaluation against merchant's baseline
      * @return $this
      */
     public function setMerchantValue($merchantValue)

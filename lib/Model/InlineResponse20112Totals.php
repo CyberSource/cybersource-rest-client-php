@@ -156,6 +156,15 @@ class InlineResponse20112Totals implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['type'] === null) {
+            $invalid_properties[] = "'type' can't be null";
+        }
+        if ($this->container['displayText'] === null) {
+            $invalid_properties[] = "'displayText' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -168,6 +177,15 @@ class InlineResponse20112Totals implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['type'] === null) {
+            return false;
+        }
+        if ($this->container['displayText'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
         return true;
     }
 

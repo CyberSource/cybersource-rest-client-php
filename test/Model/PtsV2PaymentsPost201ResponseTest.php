@@ -105,6 +105,13 @@ class PtsV2PaymentsPost201ResponseTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "createTimeUtc"
+     */
+    public function testPropertyCreateTimeUtc()
+    {
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

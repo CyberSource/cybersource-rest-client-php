@@ -423,7 +423,7 @@ class ActivateMerchantKeyResponse200 implements ArrayAccess
 
     /**
      * Sets encryptionType
-     * @param string $encryptionType JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC-HS512 - A128CBC-HS256 - A256CCM - A128CCM
+     * @param string $encryptionType JWE content encryption algorithm  Possible values: - A256GCM - A128GCM - C20P - A256CBC_HS512 - A128CBC_HS256 - A256CCM - A128CCM
      * @return $this
      */
     public function setEncryptionType($encryptionType)

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **deviceInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation**](Ptsv2paymentsidcapturesDeviceInformation.md) |  | [optional] 
 **merchantInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation**](Ptsv2paymentsidcapturesMerchantInformation.md) |  | [optional] 
 **aggregatorInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation**](Ptsv2paymentsidcapturesAggregatorInformation.md) |  | [optional] 
-**pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation**](Ptsv2paymentsidcapturesPointOfSaleInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation**](Ptsv2paymentsPointOfSaleInformation.md) |  | [optional] 
 **merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines. | [optional] 
 **merchantDefinedSecureInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation**](Ptsv2paymentsMerchantDefinedSecureInformation.md) |  | [optional] 
 **installmentInformation** | [**\CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation**](Ptsv2paymentsidcapturesInstallmentInformation.md) |  | [optional] 

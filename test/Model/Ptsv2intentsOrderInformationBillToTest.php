@@ -77,6 +77,69 @@ class Ptsv2intentsOrderInformationBillToTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "firstName"
+     */
+    public function testPropertyFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "lastName"
+     */
+    public function testPropertyLastName()
+    {
+    }
+
+    /**
+     * Test attribute "phoneNumber"
+     */
+    public function testPropertyPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "address1"
+     */
+    public function testPropertyAddress1()
+    {
+    }
+
+    /**
+     * Test attribute "address2"
+     */
+    public function testPropertyAddress2()
+    {
+    }
+
+    /**
+     * Test attribute "locality"
+     */
+    public function testPropertyLocality()
+    {
+    }
+
+    /**
+     * Test attribute "administrativeArea"
+     */
+    public function testPropertyAdministrativeArea()
+    {
+    }
+
+    /**
+     * Test attribute "postalCode"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
+
+    /**
      * Test attribute "email"
      */
     public function testPropertyEmail()
