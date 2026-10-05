@@ -55,7 +55,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     protected static $swaggerTypes = [
         'emv' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv',
         'amexCapnData' => 'string',
-        'terminalId' => 'string'
+        'terminalId' => 'string',
+        'freeText' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     protected static $swaggerFormats = [
         'emv' => null,
         'amexCapnData' => null,
-        'terminalId' => null
+        'terminalId' => null,
+        'freeText' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     protected static $attributeMap = [
         'emv' => 'emv',
         'amexCapnData' => 'amexCapnData',
-        'terminalId' => 'terminalId'
+        'terminalId' => 'terminalId',
+        'freeText' => 'freeText'
     ];
 
 
@@ -96,7 +99,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     protected static $setters = [
         'emv' => 'setEmv',
         'amexCapnData' => 'setAmexCapnData',
-        'terminalId' => 'setTerminalId'
+        'terminalId' => 'setTerminalId',
+        'freeText' => 'setFreeText'
     ];
 
 
@@ -107,7 +111,8 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     protected static $getters = [
         'emv' => 'getEmv',
         'amexCapnData' => 'getAmexCapnData',
-        'terminalId' => 'getTerminalId'
+        'terminalId' => 'getTerminalId',
+        'freeText' => 'getFreeText'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
         $this->container['emv'] = isset($data['emv']) ? $data['emv'] : null;
         $this->container['amexCapnData'] = isset($data['amexCapnData']) ? $data['amexCapnData'] : null;
         $this->container['terminalId'] = isset($data['terminalId']) ? $data['terminalId'] : null;
+        $this->container['freeText'] = isset($data['freeText']) ? $data['freeText'] : null;
     }
 
     /**
@@ -230,6 +236,27 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformation implements ArrayAccess
     public function setTerminalId($terminalId)
     {
         $this->container['terminalId'] = $terminalId;
+
+        return $this;
+    }
+
+    /**
+     * Gets freeText
+     * @return string
+     */
+    public function getFreeText()
+    {
+        return $this->container['freeText'];
+    }
+
+    /**
+     * Sets freeText
+     * @param string $freeText The issuers must use DE 123 (Receipt Free Text) to respond with free-text messages, if the transaction requires this message to be displayed on the POS device. The issuer must request their Customer Implementation Service agent to enable DE 123 for this use, as it is not enabled as a default feature. When enabled, consider the test case on DE 123 for this use (Issuer Mastercard and Debit Mastercard - MSR Product and Services - Receipt Free Text (Peru) - Authorization Requests).
+     * @return $this
+     */
+    public function setFreeText($freeText)
+    {
+        $this->container['freeText'] = $freeText;
 
         return $this;
     }

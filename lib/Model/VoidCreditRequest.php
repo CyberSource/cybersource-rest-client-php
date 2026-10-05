@@ -58,7 +58,8 @@ class VoidCreditRequest implements ArrayAccess
         'orderInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsOrderInformation',
         'agreementInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsAgreementInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsMerchantInformation',
-        'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsProcessingInformation'
+        'processingInformation' => '\CyberSource\Model\Ptsv2paymentsidvoidsProcessingInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation'
     ];
 
     /**
@@ -71,7 +72,8 @@ class VoidCreditRequest implements ArrayAccess
         'orderInformation' => null,
         'agreementInformation' => null,
         'merchantInformation' => null,
-        'processingInformation' => null
+        'processingInformation' => null,
+        'pointOfSaleInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -94,7 +96,8 @@ class VoidCreditRequest implements ArrayAccess
         'orderInformation' => 'orderInformation',
         'agreementInformation' => 'agreementInformation',
         'merchantInformation' => 'merchantInformation',
-        'processingInformation' => 'processingInformation'
+        'processingInformation' => 'processingInformation',
+        'pointOfSaleInformation' => 'pointOfSaleInformation'
     ];
 
 
@@ -108,7 +111,8 @@ class VoidCreditRequest implements ArrayAccess
         'orderInformation' => 'setOrderInformation',
         'agreementInformation' => 'setAgreementInformation',
         'merchantInformation' => 'setMerchantInformation',
-        'processingInformation' => 'setProcessingInformation'
+        'processingInformation' => 'setProcessingInformation',
+        'pointOfSaleInformation' => 'setPointOfSaleInformation'
     ];
 
 
@@ -122,7 +126,8 @@ class VoidCreditRequest implements ArrayAccess
         'orderInformation' => 'getOrderInformation',
         'agreementInformation' => 'getAgreementInformation',
         'merchantInformation' => 'getMerchantInformation',
-        'processingInformation' => 'getProcessingInformation'
+        'processingInformation' => 'getProcessingInformation',
+        'pointOfSaleInformation' => 'getPointOfSaleInformation'
     ];
 
     public static function attributeMap()
@@ -162,6 +167,7 @@ class VoidCreditRequest implements ArrayAccess
         $this->container['agreementInformation'] = isset($data['agreementInformation']) ? $data['agreementInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['processingInformation'] = isset($data['processingInformation']) ? $data['processingInformation'] : null;
+        $this->container['pointOfSaleInformation'] = isset($data['pointOfSaleInformation']) ? $data['pointOfSaleInformation'] : null;
     }
 
     /**
@@ -311,6 +317,27 @@ class VoidCreditRequest implements ArrayAccess
     public function setProcessingInformation($processingInformation)
     {
         $this->container['processingInformation'] = $processingInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets pointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation
+     */
+    public function getPointOfSaleInformation()
+    {
+        return $this->container['pointOfSaleInformation'];
+    }
+
+    /**
+     * Sets pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation $pointOfSaleInformation
+     * @return $this
+     */
+    public function setPointOfSaleInformation($pointOfSaleInformation)
+    {
+        $this->container['pointOfSaleInformation'] = $pointOfSaleInformation;
 
         return $this;
     }

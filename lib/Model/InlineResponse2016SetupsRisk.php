@@ -55,7 +55,8 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
     protected static $swaggerTypes = [
         'fraudManagementEssentials' => '\CyberSource\Model\PaymentsConfigurationSetupCardProcessing',
         'decisionManager' => '\CyberSource\Model\PaymentsConfigurationSetupCardProcessing',
-        'enhancedAuthentication' => '\CyberSource\Model\PaymentsConfigurationSetupCardProcessing'
+        'enhancedAuthentication' => '\CyberSource\Model\PaymentsConfigurationSetupCardProcessing',
+        'vpri' => '\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments'
     ];
 
     /**
@@ -65,7 +66,8 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
     protected static $swaggerFormats = [
         'fraudManagementEssentials' => null,
         'decisionManager' => null,
-        'enhancedAuthentication' => null
+        'enhancedAuthentication' => null,
+        'vpri' => null
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,8 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
     protected static $attributeMap = [
         'fraudManagementEssentials' => 'fraudManagementEssentials',
         'decisionManager' => 'decisionManager',
-        'enhancedAuthentication' => 'enhancedAuthentication'
+        'enhancedAuthentication' => 'enhancedAuthentication',
+        'vpri' => 'vpri'
     ];
 
 
@@ -96,7 +99,8 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
     protected static $setters = [
         'fraudManagementEssentials' => 'setFraudManagementEssentials',
         'decisionManager' => 'setDecisionManager',
-        'enhancedAuthentication' => 'setEnhancedAuthentication'
+        'enhancedAuthentication' => 'setEnhancedAuthentication',
+        'vpri' => 'setVpri'
     ];
 
 
@@ -107,7 +111,8 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
     protected static $getters = [
         'fraudManagementEssentials' => 'getFraudManagementEssentials',
         'decisionManager' => 'getDecisionManager',
-        'enhancedAuthentication' => 'getEnhancedAuthentication'
+        'enhancedAuthentication' => 'getEnhancedAuthentication',
+        'vpri' => 'getVpri'
     ];
 
     public static function attributeMap()
@@ -144,6 +149,7 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
         $this->container['fraudManagementEssentials'] = isset($data['fraudManagementEssentials']) ? $data['fraudManagementEssentials'] : null;
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;
         $this->container['enhancedAuthentication'] = isset($data['enhancedAuthentication']) ? $data['enhancedAuthentication'] : null;
+        $this->container['vpri'] = isset($data['vpri']) ? $data['vpri'] : null;
     }
 
     /**
@@ -230,6 +236,27 @@ class InlineResponse2016SetupsRisk implements ArrayAccess
     public function setEnhancedAuthentication($enhancedAuthentication)
     {
         $this->container['enhancedAuthentication'] = $enhancedAuthentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets vpri
+     * @return \CyberSource\Model\PaymentsConfigurationSetupDigitalPayments
+     */
+    public function getVpri()
+    {
+        return $this->container['vpri'];
+    }
+
+    /**
+     * Sets vpri
+     * @param \CyberSource\Model\PaymentsConfigurationSetupDigitalPayments $vpri
+     * @return $this
+     */
+    public function setVpri($vpri)
+    {
+        $this->container['vpri'] = $vpri;
 
         return $this;
     }

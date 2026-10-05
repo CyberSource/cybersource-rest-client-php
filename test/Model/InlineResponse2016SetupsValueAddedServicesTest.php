@@ -110,4 +110,11 @@ class InlineResponse2016SetupsValueAddedServicesTest extends \PHPUnit\Framework\
     public function testPropertyWebhooks()
     {
     }
+
+    /**
+     * Test attribute "smarterRetry"
+     */
+    public function testPropertySmarterRetry()
+    {
+    }
 }

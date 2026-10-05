@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20019Test Class Doc Comment
  *
  * @category    Class */
-// * @description Result of a product feed ingestion request.
+// * @description Processing and syndication status of a product feed job.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,6 +77,13 @@ class InlineResponse20019Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "jobId"
+     */
+    public function testPropertyJobId()
+    {
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
@@ -84,72 +91,16 @@ class InlineResponse20019Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "feedId"
+     * Test attribute "processing"
      */
-    public function testPropertyFeedId()
+    public function testPropertyProcessing()
     {
     }
 
     /**
-     * Test attribute "totalSubmitted"
+     * Test attribute "syndication"
      */
-    public function testPropertyTotalSubmitted()
-    {
-    }
-
-    /**
-     * Test attribute "successCount"
-     */
-    public function testPropertySuccessCount()
-    {
-    }
-
-    /**
-     * Test attribute "failedCount"
-     */
-    public function testPropertyFailedCount()
-    {
-    }
-
-    /**
-     * Test attribute "errors"
-     */
-    public function testPropertyErrors()
-    {
-    }
-
-    /**
-     * Test attribute "ingestedAt"
-     */
-    public function testPropertyIngestedAt()
-    {
-    }
-
-    /**
-     * Test attribute "forwardedToAgent"
-     */
-    public function testPropertyForwardedToAgent()
-    {
-    }
-
-    /**
-     * Test attribute "agentEndpoint"
-     */
-    public function testPropertyAgentEndpoint()
-    {
-    }
-
-    /**
-     * Test attribute "forwardedToUcpAgent"
-     */
-    public function testPropertyForwardedToUcpAgent()
-    {
-    }
-
-    /**
-     * Test attribute "googleMerchant"
-     */
-    public function testPropertyGoogleMerchant()
+    public function testPropertySyndication()
     {
     }
 }

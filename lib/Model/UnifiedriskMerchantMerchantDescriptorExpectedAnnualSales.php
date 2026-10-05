@@ -56,11 +56,11 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
     protected static $swaggerTypes = [
         'expectedAnnualSales' => 'object',
         'baseCurrency' => 'string',
-        'baseValue' => 'int',
+        'baseValue' => 'string',
         'currency' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'int',
-        'value' => 'int',
+        'merchantValue' => 'string',
+        'value' => 'string',
         'expectedAnnualVolume' => 'int'
     ];
 
@@ -246,7 +246,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
 
     /**
      * Gets baseValue
-     * @return int
+     * @return string
      */
     public function getBaseValue()
     {
@@ -255,7 +255,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
 
     /**
      * Sets baseValue
-     * @param int $baseValue Expected annual sales value in the base currency, in minor units
+     * @param string $baseValue Expected annual sales value in the base currency, in minor units
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -309,7 +309,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
 
     /**
      * Gets merchantValue
-     * @return int
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -318,7 +318,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
 
     /**
      * Sets merchantValue
-     * @param int $merchantValue Expected annual sales in the merchant's local currency, in minor units
+     * @param string $merchantValue Expected annual sales in the merchant's local currency, in minor units
      * @return $this
      */
     public function setMerchantValue($merchantValue)
@@ -330,7 +330,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
 
     /**
      * Gets value
-     * @return int
+     * @return string
      */
     public function getValue()
     {
@@ -339,7 +339,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAnnualSales implements ArrayA
 
     /**
      * Sets value
-     * @param int $value Expected annual sales amount in the specified currency, in minor units
+     * @param string $value Expected annual sales amount in the specified currency, in minor units
      * @return $this
      */
     public function setValue($value)

@@ -57,7 +57,7 @@ class Iccv1merchantsProtocolInteractions implements ArrayAccess
         'protocol' => 'string',
         'url' => 'string',
         'documentationUrl' => 'string',
-        'metadata' => 'map[string,string]'
+        'metadata' => 'map[string,object]'
     ];
 
     /**
@@ -255,7 +255,7 @@ class Iccv1merchantsProtocolInteractions implements ArrayAccess
 
     /**
      * Gets metadata
-     * @return map[string,string]
+     * @return map[string,object]
      */
     public function getMetadata()
     {
@@ -264,7 +264,7 @@ class Iccv1merchantsProtocolInteractions implements ArrayAccess
 
     /**
      * Sets metadata
-     * @param map[string,string] $metadata Optional metadata (max 10KB)
+     * @param map[string,object] $metadata Optional metadata (max 10KB)
      * @return $this
      */
     public function setMetadata($metadata)

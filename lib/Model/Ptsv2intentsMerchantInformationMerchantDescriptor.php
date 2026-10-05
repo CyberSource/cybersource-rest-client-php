@@ -54,6 +54,7 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
+        'value' => 'string',
         'email' => 'string'
     ];
 
@@ -63,6 +64,7 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
+        'value' => null,
         'email' => null
     ];
 
@@ -82,6 +84,7 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'value' => 'value',
         'email' => 'email'
     ];
 
@@ -92,6 +95,7 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'value' => 'setValue',
         'email' => 'setEmail'
     ];
 
@@ -102,6 +106,7 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'value' => 'getValue',
         'email' => 'getEmail'
     ];
 
@@ -137,6 +142,7 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
@@ -182,6 +188,27 @@ class Ptsv2intentsMerchantInformationMerchantDescriptor implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     * @param string $value Value of the merchant descriptor shown to the buyer for this order.
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
 
         return $this;
     }

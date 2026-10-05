@@ -32,7 +32,7 @@ namespace CyberSource;
  * KeyUpdateTest Class Doc Comment
  *
  * @category    Class */
-// * @description Request object for updating an existing agent key. All fields are optional.
+// * @description All fields are optional. publicKey and algorithm must be provided together when either is updated.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team

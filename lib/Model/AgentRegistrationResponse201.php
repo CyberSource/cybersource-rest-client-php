@@ -61,7 +61,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
         'contactEmail' => 'string',
         'tokenRequestorId' => 'string',
         'agentType' => 'string',
-        'agentMetadata' => 'map[string,string]',
+        'agentMetadata' => 'object',
         'isActive' => 'bool',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime',
@@ -306,7 +306,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Agent name
+     * @param string $name Display name for the agent
      * @return $this
      */
     public function setName($name)
@@ -327,7 +327,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets domain
-     * @param string $domain Agent domain URL
+     * @param string $domain Fully-qualified HTTPS URL of the agent's home domain
      * @return $this
      */
     public function setDomain($domain)
@@ -348,7 +348,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description Agent description
+     * @param string $description Description of the agent's purpose or capabilities
      * @return $this
      */
     public function setDescription($description)
@@ -369,7 +369,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets contactEmail
-     * @param string $contactEmail Contact email
+     * @param string $contactEmail Contact email for the team or individual responsible for this agent
      * @return $this
      */
     public function setContactEmail($contactEmail)
@@ -390,7 +390,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets tokenRequestorId
-     * @param string $tokenRequestorId Unique token requestor identifier
+     * @param string $tokenRequestorId Token Requestor ID (TRID) assigned by Visa, shared with the parent trusted agent for OSAs
      * @return $this
      */
     public function setTokenRequestorId($tokenRequestorId)
@@ -411,7 +411,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets agentType
-     * @param string $agentType Agent classification: 'trusted' (commercially onboarded) or 'known' (open-source/unverified)  Possible values: - trusted - known
+     * @param string $agentType Agent classification: 'trusted' (commercially onboarded via Visa) or 'known' (open-source/community agent, unverified)  Possible values: - trusted - known
      * @return $this
      */
     public function setAgentType($agentType)
@@ -423,7 +423,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Gets agentMetadata
-     * @return map[string,string]
+     * @return object
      */
     public function getAgentMetadata()
     {
@@ -432,7 +432,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets agentMetadata
-     * @param map[string,string] $agentMetadata Additional agent metadata
+     * @param object $agentMetadata Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
      * @return $this
      */
     public function setAgentMetadata($agentMetadata)
@@ -453,7 +453,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets isActive
-     * @param bool $isActive Whether the agent is active
+     * @param bool $isActive Whether the agent is currently active. Deactivated agents cannot add or activate keys.
      * @return $this
      */
     public function setIsActive($isActive)
@@ -474,7 +474,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets createdAt
-     * @param \DateTime $createdAt Creation timestamp
+     * @param \DateTime $createdAt ISO 8601 UTC timestamp when the agent was registered
      * @return $this
      */
     public function setCreatedAt($createdAt)
@@ -495,7 +495,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets updatedAt
-     * @param \DateTime $updatedAt Last update timestamp
+     * @param \DateTime $updatedAt ISO 8601 UTC timestamp when the agent was last updated
      * @return $this
      */
     public function setUpdatedAt($updatedAt)
@@ -516,7 +516,7 @@ class AgentRegistrationResponse201 implements ArrayAccess
 
     /**
      * Sets keys
-     * @param \CyberSource\Model\AgentRegistrationResponse201Keys[] $keys List of keys associated with the agent
+     * @param \CyberSource\Model\AgentRegistrationResponse201Keys[] $keys List of public keys associated with the agent (both active and deactivated)
      * @return $this
      */
     public function setKeys($keys)

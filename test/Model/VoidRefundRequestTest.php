@@ -117,4 +117,11 @@ class VoidRefundRequestTest extends \PHPUnit\Framework\TestCase
     public function testPropertyProcessingInformation()
     {
     }
+
+    /**
+     * Test attribute "pointOfSaleInformation"
+     */
+    public function testPropertyPointOfSaleInformation()
+    {
+    }
 }

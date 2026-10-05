@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **receivablesManager** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **serviceFee** | [**\CyberSource\Model\PaymentsProductsServiceFee**](PaymentsProductsServiceFee.md) |  | [optional] 
 **batchUpload** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
+**paymentEvents** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **transactGuard** | [**\CyberSource\Model\PaymentsProductsTax**](PaymentsProductsTax.md) |  | [optional] 
 **microform** | [**\CyberSource\Model\PaymentsProductsMicroform**](PaymentsProductsMicroform.md) |  | [optional] 
 

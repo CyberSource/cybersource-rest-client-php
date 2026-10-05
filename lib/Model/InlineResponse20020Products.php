@@ -34,7 +34,7 @@ use \ArrayAccess;
  * InlineResponse20020Products Class Doc Comment
  *
  * @category    Class
- * @description Full product record as stored in the ACG catalog. Contains all ingest fields plus server-assigned metadata timestamps.
+ * @description Product record as stored in the ACG catalog. Only the fields listed here are persisted — the full ingest payload (&#x60;ProductInput&#x60;) contains additional fields that are validated and forwarded to protocol backends but are not retained in the catalog store.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,89 +54,31 @@ class InlineResponse20020Products implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
         'itemId' => 'string',
+        'isEligibleSearch' => 'bool',
+        'isEligibleCheckout' => 'bool',
         'title' => 'string',
         'description' => 'string',
         'url' => 'string',
         'imageUrl' => 'string',
-        'additionalImageUrls' => 'string',
-        'videoUrl' => 'string',
-        'model3dUrl' => 'string',
         'productCategory' => 'string',
         'brand' => 'string',
-        'gtin' => 'string',
-        'mpn' => 'string',
-        'condition' => 'string',
         'material' => 'string',
         'weight' => 'string',
-        'dimensions' => 'string',
-        'length' => 'string',
-        'width' => 'string',
-        'height' => 'string',
-        'dimensionsUnit' => 'string',
-        'itemWeightUnit' => 'string',
-        'ageGroup' => 'string',
-        'color' => 'string',
-        'size' => 'string',
-        'sizeSystem' => 'string',
-        'gender' => 'string',
-        'groupId' => 'string',
-        'listingHasVariations' => 'bool',
-        'itemGroupTitle' => 'string',
-        'offerId' => 'string',
-        'variantDict' => 'map[string,string]',
-        'customVariant1Category' => 'string',
-        'customVariant1Option' => 'string',
-        'customVariant2Category' => 'string',
-        'customVariant2Option' => 'string',
-        'customVariant3Category' => 'string',
-        'customVariant3Option' => 'string',
         'price' => 'float',
         'currency' => 'string',
-        'salePrice' => 'float',
-        'salePriceStartDate' => '\DateTime',
-        'salePriceEndDate' => '\DateTime',
-        'unitPricingMeasure' => 'string',
-        'baseMeasure' => 'string',
-        'pricingTrend' => 'string',
-        'geoPrice' => 'string',
-        'geoAvailability' => 'string',
         'availability' => 'string',
-        'availabilityDate' => '\DateTime',
-        'expirationDate' => '\DateTime',
+        'color' => 'string',
+        'gender' => 'string',
+        'ageGroup' => 'string',
+        'shippingPrice' => 'string',
+        'groupId' => 'string',
+        'listingHasVariations' => 'bool',
         'sellerName' => 'string',
         'sellerUrl' => 'string',
-        'marketplaceSeller' => 'string',
-        'sellerPrivacyPolicy' => 'string',
-        'sellerTos' => 'string',
-        'shippingPrice' => 'string',
-        'deliveryEstimate' => '\DateTime',
-        'pickupMethod' => 'string',
-        'pickupSla' => 'string',
-        'isDigital' => 'bool',
         'returnPolicy' => 'string',
-        'acceptsReturns' => 'bool',
-        'returnDeadlineInDays' => 'int',
-        'acceptsExchanges' => 'bool',
-        'isEligibleSearch' => 'bool',
-        'isEligibleCheckout' => 'bool',
-        'popularityScore' => 'float',
-        'returnRate' => 'string',
-        'warning' => 'string',
-        'warningUrl' => 'string',
-        'ageRestriction' => 'int',
-        'reviewCount' => 'int',
-        'starRating' => 'string',
-        'storeReviewCount' => 'int',
-        'storeStarRating' => 'string',
-        'relatedProductId' => 'string',
-        'relationshipType' => 'string',
         'targetCountries' => 'string[]',
         'storeCountry' => 'string',
-        'qAndA' => 'map[string,object][]',
-        'qandA' => 'map[string,object][]',
-        'reviews' => 'map[string,object][]',
         'createdAt' => '\DateTime',
         'updatedAt' => '\DateTime'
     ];
@@ -146,89 +88,31 @@ class InlineResponse20020Products implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
         'itemId' => null,
+        'isEligibleSearch' => null,
+        'isEligibleCheckout' => null,
         'title' => null,
         'description' => null,
         'url' => null,
         'imageUrl' => null,
-        'additionalImageUrls' => null,
-        'videoUrl' => null,
-        'model3dUrl' => null,
         'productCategory' => null,
         'brand' => null,
-        'gtin' => null,
-        'mpn' => null,
-        'condition' => null,
         'material' => null,
         'weight' => null,
-        'dimensions' => null,
-        'length' => null,
-        'width' => null,
-        'height' => null,
-        'dimensionsUnit' => null,
-        'itemWeightUnit' => null,
-        'ageGroup' => null,
-        'color' => null,
-        'size' => null,
-        'sizeSystem' => null,
-        'gender' => null,
-        'groupId' => null,
-        'listingHasVariations' => null,
-        'itemGroupTitle' => null,
-        'offerId' => null,
-        'variantDict' => null,
-        'customVariant1Category' => null,
-        'customVariant1Option' => null,
-        'customVariant2Category' => null,
-        'customVariant2Option' => null,
-        'customVariant3Category' => null,
-        'customVariant3Option' => null,
         'price' => null,
         'currency' => null,
-        'salePrice' => null,
-        'salePriceStartDate' => 'date',
-        'salePriceEndDate' => 'date',
-        'unitPricingMeasure' => null,
-        'baseMeasure' => null,
-        'pricingTrend' => null,
-        'geoPrice' => null,
-        'geoAvailability' => null,
         'availability' => null,
-        'availabilityDate' => 'date',
-        'expirationDate' => 'date',
+        'color' => null,
+        'gender' => null,
+        'ageGroup' => null,
+        'shippingPrice' => null,
+        'groupId' => null,
+        'listingHasVariations' => null,
         'sellerName' => null,
         'sellerUrl' => null,
-        'marketplaceSeller' => null,
-        'sellerPrivacyPolicy' => null,
-        'sellerTos' => null,
-        'shippingPrice' => null,
-        'deliveryEstimate' => 'date',
-        'pickupMethod' => null,
-        'pickupSla' => null,
-        'isDigital' => null,
         'returnPolicy' => null,
-        'acceptsReturns' => null,
-        'returnDeadlineInDays' => null,
-        'acceptsExchanges' => null,
-        'isEligibleSearch' => null,
-        'isEligibleCheckout' => null,
-        'popularityScore' => null,
-        'returnRate' => null,
-        'warning' => null,
-        'warningUrl' => null,
-        'ageRestriction' => null,
-        'reviewCount' => null,
-        'starRating' => null,
-        'storeReviewCount' => null,
-        'storeStarRating' => null,
-        'relatedProductId' => null,
-        'relationshipType' => null,
         'targetCountries' => null,
         'storeCountry' => null,
-        'qAndA' => null,
-        'qandA' => null,
-        'reviews' => null,
         'createdAt' => 'date-time',
         'updatedAt' => 'date-time'
     ];
@@ -248,91 +132,33 @@ class InlineResponse20020Products implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'itemId' => 'item_id',
+        'isEligibleSearch' => 'is_eligible_search',
+        'isEligibleCheckout' => 'is_eligible_checkout',
         'title' => 'title',
         'description' => 'description',
         'url' => 'url',
         'imageUrl' => 'image_url',
-        'additionalImageUrls' => 'additional_image_urls',
-        'videoUrl' => 'video_url',
-        'model3dUrl' => 'model_3d_url',
         'productCategory' => 'product_category',
         'brand' => 'brand',
-        'gtin' => 'gtin',
-        'mpn' => 'mpn',
-        'condition' => 'condition',
         'material' => 'material',
         'weight' => 'weight',
-        'dimensions' => 'dimensions',
-        'length' => 'length',
-        'width' => 'width',
-        'height' => 'height',
-        'dimensionsUnit' => 'dimensions_unit',
-        'itemWeightUnit' => 'item_weight_unit',
-        'ageGroup' => 'age_group',
-        'color' => 'color',
-        'size' => 'size',
-        'sizeSystem' => 'size_system',
-        'gender' => 'gender',
-        'groupId' => 'group_id',
-        'listingHasVariations' => 'listing_has_variations',
-        'itemGroupTitle' => 'item_group_title',
-        'offerId' => 'offer_id',
-        'variantDict' => 'variant_dict',
-        'customVariant1Category' => 'custom_variant1_category',
-        'customVariant1Option' => 'custom_variant1_option',
-        'customVariant2Category' => 'custom_variant2_category',
-        'customVariant2Option' => 'custom_variant2_option',
-        'customVariant3Category' => 'custom_variant3_category',
-        'customVariant3Option' => 'custom_variant3_option',
         'price' => 'price',
         'currency' => 'currency',
-        'salePrice' => 'sale_price',
-        'salePriceStartDate' => 'sale_price_start_date',
-        'salePriceEndDate' => 'sale_price_end_date',
-        'unitPricingMeasure' => 'unit_pricing_measure',
-        'baseMeasure' => 'base_measure',
-        'pricingTrend' => 'pricing_trend',
-        'geoPrice' => 'geo_price',
-        'geoAvailability' => 'geo_availability',
         'availability' => 'availability',
-        'availabilityDate' => 'availability_date',
-        'expirationDate' => 'expiration_date',
-        'sellerName' => 'seller_name',
-        'sellerUrl' => 'seller_url',
-        'marketplaceSeller' => 'marketplace_seller',
-        'sellerPrivacyPolicy' => 'seller_privacy_policy',
-        'sellerTos' => 'seller_tos',
+        'color' => 'color',
+        'gender' => 'gender',
+        'ageGroup' => 'age_group',
         'shippingPrice' => 'shipping_price',
-        'deliveryEstimate' => 'delivery_estimate',
-        'pickupMethod' => 'pickup_method',
-        'pickupSla' => 'pickup_sla',
-        'isDigital' => 'is_digital',
+        'groupId' => 'group_id',
+        'listingHasVariations' => 'listing_has_variations',
+        'sellerName' => 'sellerName',
+        'sellerUrl' => 'seller_url',
         'returnPolicy' => 'return_policy',
-        'acceptsReturns' => 'accepts_returns',
-        'returnDeadlineInDays' => 'return_deadline_in_days',
-        'acceptsExchanges' => 'accepts_exchanges',
-        'isEligibleSearch' => 'is_eligible_search',
-        'isEligibleCheckout' => 'is_eligible_checkout',
-        'popularityScore' => 'popularity_score',
-        'returnRate' => 'return_rate',
-        'warning' => 'warning',
-        'warningUrl' => 'warning_url',
-        'ageRestriction' => 'age_restriction',
-        'reviewCount' => 'review_count',
-        'starRating' => 'star_rating',
-        'storeReviewCount' => 'store_review_count',
-        'storeStarRating' => 'store_star_rating',
-        'relatedProductId' => 'related_product_id',
-        'relationshipType' => 'relationship_type',
         'targetCountries' => 'target_countries',
         'storeCountry' => 'store_country',
-        'qAndA' => 'q_and_a',
-        'qandA' => 'qandA',
-        'reviews' => 'reviews',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at'
+        'createdAt' => 'createdAt',
+        'updatedAt' => 'updatedAt'
     ];
 
 
@@ -341,89 +167,31 @@ class InlineResponse20020Products implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'itemId' => 'setItemId',
+        'isEligibleSearch' => 'setIsEligibleSearch',
+        'isEligibleCheckout' => 'setIsEligibleCheckout',
         'title' => 'setTitle',
         'description' => 'setDescription',
         'url' => 'setUrl',
         'imageUrl' => 'setImageUrl',
-        'additionalImageUrls' => 'setAdditionalImageUrls',
-        'videoUrl' => 'setVideoUrl',
-        'model3dUrl' => 'setModel3dUrl',
         'productCategory' => 'setProductCategory',
         'brand' => 'setBrand',
-        'gtin' => 'setGtin',
-        'mpn' => 'setMpn',
-        'condition' => 'setCondition',
         'material' => 'setMaterial',
         'weight' => 'setWeight',
-        'dimensions' => 'setDimensions',
-        'length' => 'setLength',
-        'width' => 'setWidth',
-        'height' => 'setHeight',
-        'dimensionsUnit' => 'setDimensionsUnit',
-        'itemWeightUnit' => 'setItemWeightUnit',
-        'ageGroup' => 'setAgeGroup',
-        'color' => 'setColor',
-        'size' => 'setSize',
-        'sizeSystem' => 'setSizeSystem',
-        'gender' => 'setGender',
-        'groupId' => 'setGroupId',
-        'listingHasVariations' => 'setListingHasVariations',
-        'itemGroupTitle' => 'setItemGroupTitle',
-        'offerId' => 'setOfferId',
-        'variantDict' => 'setVariantDict',
-        'customVariant1Category' => 'setCustomVariant1Category',
-        'customVariant1Option' => 'setCustomVariant1Option',
-        'customVariant2Category' => 'setCustomVariant2Category',
-        'customVariant2Option' => 'setCustomVariant2Option',
-        'customVariant3Category' => 'setCustomVariant3Category',
-        'customVariant3Option' => 'setCustomVariant3Option',
         'price' => 'setPrice',
         'currency' => 'setCurrency',
-        'salePrice' => 'setSalePrice',
-        'salePriceStartDate' => 'setSalePriceStartDate',
-        'salePriceEndDate' => 'setSalePriceEndDate',
-        'unitPricingMeasure' => 'setUnitPricingMeasure',
-        'baseMeasure' => 'setBaseMeasure',
-        'pricingTrend' => 'setPricingTrend',
-        'geoPrice' => 'setGeoPrice',
-        'geoAvailability' => 'setGeoAvailability',
         'availability' => 'setAvailability',
-        'availabilityDate' => 'setAvailabilityDate',
-        'expirationDate' => 'setExpirationDate',
+        'color' => 'setColor',
+        'gender' => 'setGender',
+        'ageGroup' => 'setAgeGroup',
+        'shippingPrice' => 'setShippingPrice',
+        'groupId' => 'setGroupId',
+        'listingHasVariations' => 'setListingHasVariations',
         'sellerName' => 'setSellerName',
         'sellerUrl' => 'setSellerUrl',
-        'marketplaceSeller' => 'setMarketplaceSeller',
-        'sellerPrivacyPolicy' => 'setSellerPrivacyPolicy',
-        'sellerTos' => 'setSellerTos',
-        'shippingPrice' => 'setShippingPrice',
-        'deliveryEstimate' => 'setDeliveryEstimate',
-        'pickupMethod' => 'setPickupMethod',
-        'pickupSla' => 'setPickupSla',
-        'isDigital' => 'setIsDigital',
         'returnPolicy' => 'setReturnPolicy',
-        'acceptsReturns' => 'setAcceptsReturns',
-        'returnDeadlineInDays' => 'setReturnDeadlineInDays',
-        'acceptsExchanges' => 'setAcceptsExchanges',
-        'isEligibleSearch' => 'setIsEligibleSearch',
-        'isEligibleCheckout' => 'setIsEligibleCheckout',
-        'popularityScore' => 'setPopularityScore',
-        'returnRate' => 'setReturnRate',
-        'warning' => 'setWarning',
-        'warningUrl' => 'setWarningUrl',
-        'ageRestriction' => 'setAgeRestriction',
-        'reviewCount' => 'setReviewCount',
-        'starRating' => 'setStarRating',
-        'storeReviewCount' => 'setStoreReviewCount',
-        'storeStarRating' => 'setStoreStarRating',
-        'relatedProductId' => 'setRelatedProductId',
-        'relationshipType' => 'setRelationshipType',
         'targetCountries' => 'setTargetCountries',
         'storeCountry' => 'setStoreCountry',
-        'qAndA' => 'setQAndA',
-        'qandA' => 'setQ_and_A',
-        'reviews' => 'setReviews',
         'createdAt' => 'setCreatedAt',
         'updatedAt' => 'setUpdatedAt'
     ];
@@ -434,89 +202,31 @@ class InlineResponse20020Products implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'itemId' => 'getItemId',
+        'isEligibleSearch' => 'getIsEligibleSearch',
+        'isEligibleCheckout' => 'getIsEligibleCheckout',
         'title' => 'getTitle',
         'description' => 'getDescription',
         'url' => 'getUrl',
         'imageUrl' => 'getImageUrl',
-        'additionalImageUrls' => 'getAdditionalImageUrls',
-        'videoUrl' => 'getVideoUrl',
-        'model3dUrl' => 'getModel3dUrl',
         'productCategory' => 'getProductCategory',
         'brand' => 'getBrand',
-        'gtin' => 'getGtin',
-        'mpn' => 'getMpn',
-        'condition' => 'getCondition',
         'material' => 'getMaterial',
         'weight' => 'getWeight',
-        'dimensions' => 'getDimensions',
-        'length' => 'getLength',
-        'width' => 'getWidth',
-        'height' => 'getHeight',
-        'dimensionsUnit' => 'getDimensionsUnit',
-        'itemWeightUnit' => 'getItemWeightUnit',
-        'ageGroup' => 'getAgeGroup',
-        'color' => 'getColor',
-        'size' => 'getSize',
-        'sizeSystem' => 'getSizeSystem',
-        'gender' => 'getGender',
-        'groupId' => 'getGroupId',
-        'listingHasVariations' => 'getListingHasVariations',
-        'itemGroupTitle' => 'getItemGroupTitle',
-        'offerId' => 'getOfferId',
-        'variantDict' => 'getVariantDict',
-        'customVariant1Category' => 'getCustomVariant1Category',
-        'customVariant1Option' => 'getCustomVariant1Option',
-        'customVariant2Category' => 'getCustomVariant2Category',
-        'customVariant2Option' => 'getCustomVariant2Option',
-        'customVariant3Category' => 'getCustomVariant3Category',
-        'customVariant3Option' => 'getCustomVariant3Option',
         'price' => 'getPrice',
         'currency' => 'getCurrency',
-        'salePrice' => 'getSalePrice',
-        'salePriceStartDate' => 'getSalePriceStartDate',
-        'salePriceEndDate' => 'getSalePriceEndDate',
-        'unitPricingMeasure' => 'getUnitPricingMeasure',
-        'baseMeasure' => 'getBaseMeasure',
-        'pricingTrend' => 'getPricingTrend',
-        'geoPrice' => 'getGeoPrice',
-        'geoAvailability' => 'getGeoAvailability',
         'availability' => 'getAvailability',
-        'availabilityDate' => 'getAvailabilityDate',
-        'expirationDate' => 'getExpirationDate',
+        'color' => 'getColor',
+        'gender' => 'getGender',
+        'ageGroup' => 'getAgeGroup',
+        'shippingPrice' => 'getShippingPrice',
+        'groupId' => 'getGroupId',
+        'listingHasVariations' => 'getListingHasVariations',
         'sellerName' => 'getSellerName',
         'sellerUrl' => 'getSellerUrl',
-        'marketplaceSeller' => 'getMarketplaceSeller',
-        'sellerPrivacyPolicy' => 'getSellerPrivacyPolicy',
-        'sellerTos' => 'getSellerTos',
-        'shippingPrice' => 'getShippingPrice',
-        'deliveryEstimate' => 'getDeliveryEstimate',
-        'pickupMethod' => 'getPickupMethod',
-        'pickupSla' => 'getPickupSla',
-        'isDigital' => 'getIsDigital',
         'returnPolicy' => 'getReturnPolicy',
-        'acceptsReturns' => 'getAcceptsReturns',
-        'returnDeadlineInDays' => 'getReturnDeadlineInDays',
-        'acceptsExchanges' => 'getAcceptsExchanges',
-        'isEligibleSearch' => 'getIsEligibleSearch',
-        'isEligibleCheckout' => 'getIsEligibleCheckout',
-        'popularityScore' => 'getPopularityScore',
-        'returnRate' => 'getReturnRate',
-        'warning' => 'getWarning',
-        'warningUrl' => 'getWarningUrl',
-        'ageRestriction' => 'getAgeRestriction',
-        'reviewCount' => 'getReviewCount',
-        'starRating' => 'getStarRating',
-        'storeReviewCount' => 'getStoreReviewCount',
-        'storeStarRating' => 'getStoreStarRating',
-        'relatedProductId' => 'getRelatedProductId',
-        'relationshipType' => 'getRelationshipType',
         'targetCountries' => 'getTargetCountries',
         'storeCountry' => 'getStoreCountry',
-        'qAndA' => 'getQAndA',
-        'qandA' => 'getQ_and_A',
-        'reviews' => 'getReviews',
         'createdAt' => 'getCreatedAt',
         'updatedAt' => 'getUpdatedAt'
     ];
@@ -552,89 +262,31 @@ class InlineResponse20020Products implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['itemId'] = isset($data['itemId']) ? $data['itemId'] : null;
+        $this->container['isEligibleSearch'] = isset($data['isEligibleSearch']) ? $data['isEligibleSearch'] : null;
+        $this->container['isEligibleCheckout'] = isset($data['isEligibleCheckout']) ? $data['isEligibleCheckout'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['imageUrl'] = isset($data['imageUrl']) ? $data['imageUrl'] : null;
-        $this->container['additionalImageUrls'] = isset($data['additionalImageUrls']) ? $data['additionalImageUrls'] : null;
-        $this->container['videoUrl'] = isset($data['videoUrl']) ? $data['videoUrl'] : null;
-        $this->container['model3dUrl'] = isset($data['model3dUrl']) ? $data['model3dUrl'] : null;
         $this->container['productCategory'] = isset($data['productCategory']) ? $data['productCategory'] : null;
         $this->container['brand'] = isset($data['brand']) ? $data['brand'] : null;
-        $this->container['gtin'] = isset($data['gtin']) ? $data['gtin'] : null;
-        $this->container['mpn'] = isset($data['mpn']) ? $data['mpn'] : null;
-        $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
         $this->container['material'] = isset($data['material']) ? $data['material'] : null;
         $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
-        $this->container['dimensions'] = isset($data['dimensions']) ? $data['dimensions'] : null;
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['dimensionsUnit'] = isset($data['dimensionsUnit']) ? $data['dimensionsUnit'] : null;
-        $this->container['itemWeightUnit'] = isset($data['itemWeightUnit']) ? $data['itemWeightUnit'] : null;
-        $this->container['ageGroup'] = isset($data['ageGroup']) ? $data['ageGroup'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
-        $this->container['sizeSystem'] = isset($data['sizeSystem']) ? $data['sizeSystem'] : null;
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['groupId'] = isset($data['groupId']) ? $data['groupId'] : null;
-        $this->container['listingHasVariations'] = isset($data['listingHasVariations']) ? $data['listingHasVariations'] : null;
-        $this->container['itemGroupTitle'] = isset($data['itemGroupTitle']) ? $data['itemGroupTitle'] : null;
-        $this->container['offerId'] = isset($data['offerId']) ? $data['offerId'] : null;
-        $this->container['variantDict'] = isset($data['variantDict']) ? $data['variantDict'] : null;
-        $this->container['customVariant1Category'] = isset($data['customVariant1Category']) ? $data['customVariant1Category'] : null;
-        $this->container['customVariant1Option'] = isset($data['customVariant1Option']) ? $data['customVariant1Option'] : null;
-        $this->container['customVariant2Category'] = isset($data['customVariant2Category']) ? $data['customVariant2Category'] : null;
-        $this->container['customVariant2Option'] = isset($data['customVariant2Option']) ? $data['customVariant2Option'] : null;
-        $this->container['customVariant3Category'] = isset($data['customVariant3Category']) ? $data['customVariant3Category'] : null;
-        $this->container['customVariant3Option'] = isset($data['customVariant3Option']) ? $data['customVariant3Option'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['salePrice'] = isset($data['salePrice']) ? $data['salePrice'] : null;
-        $this->container['salePriceStartDate'] = isset($data['salePriceStartDate']) ? $data['salePriceStartDate'] : null;
-        $this->container['salePriceEndDate'] = isset($data['salePriceEndDate']) ? $data['salePriceEndDate'] : null;
-        $this->container['unitPricingMeasure'] = isset($data['unitPricingMeasure']) ? $data['unitPricingMeasure'] : null;
-        $this->container['baseMeasure'] = isset($data['baseMeasure']) ? $data['baseMeasure'] : null;
-        $this->container['pricingTrend'] = isset($data['pricingTrend']) ? $data['pricingTrend'] : null;
-        $this->container['geoPrice'] = isset($data['geoPrice']) ? $data['geoPrice'] : null;
-        $this->container['geoAvailability'] = isset($data['geoAvailability']) ? $data['geoAvailability'] : null;
         $this->container['availability'] = isset($data['availability']) ? $data['availability'] : null;
-        $this->container['availabilityDate'] = isset($data['availabilityDate']) ? $data['availabilityDate'] : null;
-        $this->container['expirationDate'] = isset($data['expirationDate']) ? $data['expirationDate'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
+        $this->container['ageGroup'] = isset($data['ageGroup']) ? $data['ageGroup'] : null;
+        $this->container['shippingPrice'] = isset($data['shippingPrice']) ? $data['shippingPrice'] : null;
+        $this->container['groupId'] = isset($data['groupId']) ? $data['groupId'] : null;
+        $this->container['listingHasVariations'] = isset($data['listingHasVariations']) ? $data['listingHasVariations'] : null;
         $this->container['sellerName'] = isset($data['sellerName']) ? $data['sellerName'] : null;
         $this->container['sellerUrl'] = isset($data['sellerUrl']) ? $data['sellerUrl'] : null;
-        $this->container['marketplaceSeller'] = isset($data['marketplaceSeller']) ? $data['marketplaceSeller'] : null;
-        $this->container['sellerPrivacyPolicy'] = isset($data['sellerPrivacyPolicy']) ? $data['sellerPrivacyPolicy'] : null;
-        $this->container['sellerTos'] = isset($data['sellerTos']) ? $data['sellerTos'] : null;
-        $this->container['shippingPrice'] = isset($data['shippingPrice']) ? $data['shippingPrice'] : null;
-        $this->container['deliveryEstimate'] = isset($data['deliveryEstimate']) ? $data['deliveryEstimate'] : null;
-        $this->container['pickupMethod'] = isset($data['pickupMethod']) ? $data['pickupMethod'] : null;
-        $this->container['pickupSla'] = isset($data['pickupSla']) ? $data['pickupSla'] : null;
-        $this->container['isDigital'] = isset($data['isDigital']) ? $data['isDigital'] : null;
         $this->container['returnPolicy'] = isset($data['returnPolicy']) ? $data['returnPolicy'] : null;
-        $this->container['acceptsReturns'] = isset($data['acceptsReturns']) ? $data['acceptsReturns'] : null;
-        $this->container['returnDeadlineInDays'] = isset($data['returnDeadlineInDays']) ? $data['returnDeadlineInDays'] : null;
-        $this->container['acceptsExchanges'] = isset($data['acceptsExchanges']) ? $data['acceptsExchanges'] : null;
-        $this->container['isEligibleSearch'] = isset($data['isEligibleSearch']) ? $data['isEligibleSearch'] : null;
-        $this->container['isEligibleCheckout'] = isset($data['isEligibleCheckout']) ? $data['isEligibleCheckout'] : null;
-        $this->container['popularityScore'] = isset($data['popularityScore']) ? $data['popularityScore'] : null;
-        $this->container['returnRate'] = isset($data['returnRate']) ? $data['returnRate'] : null;
-        $this->container['warning'] = isset($data['warning']) ? $data['warning'] : null;
-        $this->container['warningUrl'] = isset($data['warningUrl']) ? $data['warningUrl'] : null;
-        $this->container['ageRestriction'] = isset($data['ageRestriction']) ? $data['ageRestriction'] : null;
-        $this->container['reviewCount'] = isset($data['reviewCount']) ? $data['reviewCount'] : null;
-        $this->container['starRating'] = isset($data['starRating']) ? $data['starRating'] : null;
-        $this->container['storeReviewCount'] = isset($data['storeReviewCount']) ? $data['storeReviewCount'] : null;
-        $this->container['storeStarRating'] = isset($data['storeStarRating']) ? $data['storeStarRating'] : null;
-        $this->container['relatedProductId'] = isset($data['relatedProductId']) ? $data['relatedProductId'] : null;
-        $this->container['relationshipType'] = isset($data['relationshipType']) ? $data['relationshipType'] : null;
         $this->container['targetCountries'] = isset($data['targetCountries']) ? $data['targetCountries'] : null;
         $this->container['storeCountry'] = isset($data['storeCountry']) ? $data['storeCountry'] : null;
-        $this->container['qAndA'] = isset($data['qAndA']) ? $data['qAndA'] : null;
-        $this->container['qandA'] = isset($data['qandA']) ? $data['qandA'] : null;
-        $this->container['reviews'] = isset($data['reviews']) ? $data['reviews'] : null;
         $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
         $this->container['updatedAt'] = isset($data['updatedAt']) ? $data['updatedAt'] : null;
     }
@@ -665,27 +317,6 @@ class InlineResponse20020Products implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id The merchant SKU / `item_id` as stored in the ACG catalog. Equivalent to the `item_id` field submitted during feed ingestion.
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets itemId
      * @return string
      */
@@ -702,6 +333,48 @@ class InlineResponse20020Products implements ArrayAccess
     public function setItemId($itemId)
     {
         $this->container['itemId'] = $itemId;
+
+        return $this;
+    }
+
+    /**
+     * Gets isEligibleSearch
+     * @return bool
+     */
+    public function getIsEligibleSearch()
+    {
+        return $this->container['isEligibleSearch'];
+    }
+
+    /**
+     * Sets isEligibleSearch
+     * @param bool $isEligibleSearch When `true`, product appears in AI agent discovery results.
+     * @return $this
+     */
+    public function setIsEligibleSearch($isEligibleSearch)
+    {
+        $this->container['isEligibleSearch'] = $isEligibleSearch;
+
+        return $this;
+    }
+
+    /**
+     * Gets isEligibleCheckout
+     * @return bool
+     */
+    public function getIsEligibleCheckout()
+    {
+        return $this->container['isEligibleCheckout'];
+    }
+
+    /**
+     * Sets isEligibleCheckout
+     * @param bool $isEligibleCheckout When `true`, product can be added to a checkout session.
+     * @return $this
+     */
+    public function setIsEligibleCheckout($isEligibleCheckout)
+    {
+        $this->container['isEligibleCheckout'] = $isEligibleCheckout;
 
         return $this;
     }
@@ -791,69 +464,6 @@ class InlineResponse20020Products implements ArrayAccess
     }
 
     /**
-     * Gets additionalImageUrls
-     * @return string
-     */
-    public function getAdditionalImageUrls()
-    {
-        return $this->container['additionalImageUrls'];
-    }
-
-    /**
-     * Sets additionalImageUrls
-     * @param string $additionalImageUrls Additional product image URLs.
-     * @return $this
-     */
-    public function setAdditionalImageUrls($additionalImageUrls)
-    {
-        $this->container['additionalImageUrls'] = $additionalImageUrls;
-
-        return $this;
-    }
-
-    /**
-     * Gets videoUrl
-     * @return string
-     */
-    public function getVideoUrl()
-    {
-        return $this->container['videoUrl'];
-    }
-
-    /**
-     * Sets videoUrl
-     * @param string $videoUrl URL to a product video.
-     * @return $this
-     */
-    public function setVideoUrl($videoUrl)
-    {
-        $this->container['videoUrl'] = $videoUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets model3dUrl
-     * @return string
-     */
-    public function getModel3dUrl()
-    {
-        return $this->container['model3dUrl'];
-    }
-
-    /**
-     * Sets model3dUrl
-     * @param string $model3dUrl URL to a 3D model asset.
-     * @return $this
-     */
-    public function setModel3dUrl($model3dUrl)
-    {
-        $this->container['model3dUrl'] = $model3dUrl;
-
-        return $this;
-    }
-
-    /**
      * Gets productCategory
      * @return string
      */
@@ -891,69 +501,6 @@ class InlineResponse20020Products implements ArrayAccess
     public function setBrand($brand)
     {
         $this->container['brand'] = $brand;
-
-        return $this;
-    }
-
-    /**
-     * Gets gtin
-     * @return string
-     */
-    public function getGtin()
-    {
-        return $this->container['gtin'];
-    }
-
-    /**
-     * Sets gtin
-     * @param string $gtin Global Trade Item Number.
-     * @return $this
-     */
-    public function setGtin($gtin)
-    {
-        $this->container['gtin'] = $gtin;
-
-        return $this;
-    }
-
-    /**
-     * Gets mpn
-     * @return string
-     */
-    public function getMpn()
-    {
-        return $this->container['mpn'];
-    }
-
-    /**
-     * Sets mpn
-     * @param string $mpn Manufacturer Part Number.
-     * @return $this
-     */
-    public function setMpn($mpn)
-    {
-        $this->container['mpn'] = $mpn;
-
-        return $this;
-    }
-
-    /**
-     * Gets condition
-     * @return string
-     */
-    public function getCondition()
-    {
-        return $this->container['condition'];
-    }
-
-    /**
-     * Sets condition
-     * @param string $condition Product condition (e.g. new, used, refurbished).
-     * @return $this
-     */
-    public function setCondition($condition)
-    {
-        $this->container['condition'] = $condition;
 
         return $this;
     }
@@ -1001,127 +548,106 @@ class InlineResponse20020Products implements ArrayAccess
     }
 
     /**
-     * Gets dimensions
-     * @return string
+     * Gets price
+     * @return float
      */
-    public function getDimensions()
+    public function getPrice()
     {
-        return $this->container['dimensions'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets dimensions
-     * @param string $dimensions Combined dimension string (e.g. \"10x5x3 cm\").
+     * Sets price
+     * @param float $price Product price as a decimal number.
      * @return $this
      */
-    public function setDimensions($dimensions)
+    public function setPrice($price)
     {
-        $this->container['dimensions'] = $dimensions;
+        $this->container['price'] = $price;
 
         return $this;
     }
 
     /**
-     * Gets length
+     * Gets currency
      * @return string
      */
-    public function getLength()
+    public function getCurrency()
     {
-        return $this->container['length'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets length
-     * @param string $length Product length. Pair with `dimensions_unit` for unit context.
+     * Sets currency
+     * @param string $currency ISO 4217 currency code.
      * @return $this
      */
-    public function setLength($length)
+    public function setCurrency($currency)
     {
-        $this->container['length'] = $length;
+        $this->container['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * Gets width
+     * Gets availability
      * @return string
      */
-    public function getWidth()
+    public function getAvailability()
     {
-        return $this->container['width'];
+        return $this->container['availability'];
     }
 
     /**
-     * Sets width
-     * @param string $width Product width. Pair with `dimensions_unit` for unit context.
+     * Sets availability
+     * @param string $availability Current stock status.  Possible values: - in_stock - out_of_stock - preorder - pre_order - backorder - unknown
      * @return $this
      */
-    public function setWidth($width)
+    public function setAvailability($availability)
     {
-        $this->container['width'] = $width;
+        $this->container['availability'] = $availability;
 
         return $this;
     }
 
     /**
-     * Gets height
+     * Gets color
      * @return string
      */
-    public function getHeight()
+    public function getColor()
     {
-        return $this->container['height'];
+        return $this->container['color'];
     }
 
     /**
-     * Sets height
-     * @param string $height Product height. Pair with `dimensions_unit` for unit context.
+     * Sets color
+     * @param string $color Primary product color.
      * @return $this
      */
-    public function setHeight($height)
+    public function setColor($color)
     {
-        $this->container['height'] = $height;
+        $this->container['color'] = $color;
 
         return $this;
     }
 
     /**
-     * Gets dimensionsUnit
+     * Gets gender
      * @return string
      */
-    public function getDimensionsUnit()
+    public function getGender()
     {
-        return $this->container['dimensionsUnit'];
+        return $this->container['gender'];
     }
 
     /**
-     * Sets dimensionsUnit
-     * @param string $dimensionsUnit Unit for dimension values (e.g. \"cm\", \"in\", \"mm\").
+     * Sets gender
+     * @param string $gender Target gender (e.g. \"male\", \"female\", \"unisex\").
      * @return $this
      */
-    public function setDimensionsUnit($dimensionsUnit)
+    public function setGender($gender)
     {
-        $this->container['dimensionsUnit'] = $dimensionsUnit;
-
-        return $this;
-    }
-
-    /**
-     * Gets itemWeightUnit
-     * @return string
-     */
-    public function getItemWeightUnit()
-    {
-        return $this->container['itemWeightUnit'];
-    }
-
-    /**
-     * Sets itemWeightUnit
-     * @param string $itemWeightUnit Unit for weight value (e.g. \"kg\", \"lb\", \"oz\").
-     * @return $this
-     */
-    public function setItemWeightUnit($itemWeightUnit)
-    {
-        $this->container['itemWeightUnit'] = $itemWeightUnit;
+        $this->container['gender'] = $gender;
 
         return $this;
     }
@@ -1148,85 +674,22 @@ class InlineResponse20020Products implements ArrayAccess
     }
 
     /**
-     * Gets color
+     * Gets shippingPrice
      * @return string
      */
-    public function getColor()
+    public function getShippingPrice()
     {
-        return $this->container['color'];
+        return $this->container['shippingPrice'];
     }
 
     /**
-     * Sets color
-     * @param string $color Primary product color. Used for variant filtering.
+     * Sets shippingPrice
+     * @param string $shippingPrice Shipping cost string as provided by the merchant.
      * @return $this
      */
-    public function setColor($color)
+    public function setShippingPrice($shippingPrice)
     {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
-
-    /**
-     * Gets size
-     * @return string
-     */
-    public function getSize()
-    {
-        return $this->container['size'];
-    }
-
-    /**
-     * Sets size
-     * @param string $size Product size (e.g. \"M\", \"42\", \"XL\"). Used for variant filtering.
-     * @return $this
-     */
-    public function setSize($size)
-    {
-        $this->container['size'] = $size;
-
-        return $this;
-    }
-
-    /**
-     * Gets sizeSystem
-     * @return string
-     */
-    public function getSizeSystem()
-    {
-        return $this->container['sizeSystem'];
-    }
-
-    /**
-     * Sets sizeSystem
-     * @param string $sizeSystem Size standard used (e.g. \"US\", \"EU\", \"UK\").
-     * @return $this
-     */
-    public function setSizeSystem($sizeSystem)
-    {
-        $this->container['sizeSystem'] = $sizeSystem;
-
-        return $this;
-    }
-
-    /**
-     * Gets gender
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->container['gender'];
-    }
-
-    /**
-     * Sets gender
-     * @param string $gender Target gender (e.g. \"male\", \"female\", \"unisex\").
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $this->container['gender'] = $gender;
+        $this->container['shippingPrice'] = $shippingPrice;
 
         return $this;
     }
@@ -1274,468 +737,6 @@ class InlineResponse20020Products implements ArrayAccess
     }
 
     /**
-     * Gets itemGroupTitle
-     * @return string
-     */
-    public function getItemGroupTitle()
-    {
-        return $this->container['itemGroupTitle'];
-    }
-
-    /**
-     * Sets itemGroupTitle
-     * @param string $itemGroupTitle Display title for the variant group.
-     * @return $this
-     */
-    public function setItemGroupTitle($itemGroupTitle)
-    {
-        $this->container['itemGroupTitle'] = $itemGroupTitle;
-
-        return $this;
-    }
-
-    /**
-     * Gets offerId
-     * @return string
-     */
-    public function getOfferId()
-    {
-        return $this->container['offerId'];
-    }
-
-    /**
-     * Sets offerId
-     * @param string $offerId Merchant-assigned offer identifier.
-     * @return $this
-     */
-    public function setOfferId($offerId)
-    {
-        $this->container['offerId'] = $offerId;
-
-        return $this;
-    }
-
-    /**
-     * Gets variantDict
-     * @return map[string,string]
-     */
-    public function getVariantDict()
-    {
-        return $this->container['variantDict'];
-    }
-
-    /**
-     * Sets variantDict
-     * @param map[string,string] $variantDict
-     * @return $this
-     */
-    public function setVariantDict($variantDict)
-    {
-        $this->container['variantDict'] = $variantDict;
-
-        return $this;
-    }
-
-    /**
-     * Gets customVariant1Category
-     * @return string
-     */
-    public function getCustomVariant1Category()
-    {
-        return $this->container['customVariant1Category'];
-    }
-
-    /**
-     * Sets customVariant1Category
-     * @param string $customVariant1Category
-     * @return $this
-     */
-    public function setCustomVariant1Category($customVariant1Category)
-    {
-        $this->container['customVariant1Category'] = $customVariant1Category;
-
-        return $this;
-    }
-
-    /**
-     * Gets customVariant1Option
-     * @return string
-     */
-    public function getCustomVariant1Option()
-    {
-        return $this->container['customVariant1Option'];
-    }
-
-    /**
-     * Sets customVariant1Option
-     * @param string $customVariant1Option
-     * @return $this
-     */
-    public function setCustomVariant1Option($customVariant1Option)
-    {
-        $this->container['customVariant1Option'] = $customVariant1Option;
-
-        return $this;
-    }
-
-    /**
-     * Gets customVariant2Category
-     * @return string
-     */
-    public function getCustomVariant2Category()
-    {
-        return $this->container['customVariant2Category'];
-    }
-
-    /**
-     * Sets customVariant2Category
-     * @param string $customVariant2Category
-     * @return $this
-     */
-    public function setCustomVariant2Category($customVariant2Category)
-    {
-        $this->container['customVariant2Category'] = $customVariant2Category;
-
-        return $this;
-    }
-
-    /**
-     * Gets customVariant2Option
-     * @return string
-     */
-    public function getCustomVariant2Option()
-    {
-        return $this->container['customVariant2Option'];
-    }
-
-    /**
-     * Sets customVariant2Option
-     * @param string $customVariant2Option
-     * @return $this
-     */
-    public function setCustomVariant2Option($customVariant2Option)
-    {
-        $this->container['customVariant2Option'] = $customVariant2Option;
-
-        return $this;
-    }
-
-    /**
-     * Gets customVariant3Category
-     * @return string
-     */
-    public function getCustomVariant3Category()
-    {
-        return $this->container['customVariant3Category'];
-    }
-
-    /**
-     * Sets customVariant3Category
-     * @param string $customVariant3Category
-     * @return $this
-     */
-    public function setCustomVariant3Category($customVariant3Category)
-    {
-        $this->container['customVariant3Category'] = $customVariant3Category;
-
-        return $this;
-    }
-
-    /**
-     * Gets customVariant3Option
-     * @return string
-     */
-    public function getCustomVariant3Option()
-    {
-        return $this->container['customVariant3Option'];
-    }
-
-    /**
-     * Sets customVariant3Option
-     * @param string $customVariant3Option
-     * @return $this
-     */
-    public function setCustomVariant3Option($customVariant3Option)
-    {
-        $this->container['customVariant3Option'] = $customVariant3Option;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
-     * @return float
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     * @param float $price Product price as a decimal number.
-     * @return $this
-     */
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     * @param string $currency ISO 4217 currency code.
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets salePrice
-     * @return float
-     */
-    public function getSalePrice()
-    {
-        return $this->container['salePrice'];
-    }
-
-    /**
-     * Sets salePrice
-     * @param float $salePrice
-     * @return $this
-     */
-    public function setSalePrice($salePrice)
-    {
-        $this->container['salePrice'] = $salePrice;
-
-        return $this;
-    }
-
-    /**
-     * Gets salePriceStartDate
-     * @return \DateTime
-     */
-    public function getSalePriceStartDate()
-    {
-        return $this->container['salePriceStartDate'];
-    }
-
-    /**
-     * Sets salePriceStartDate
-     * @param \DateTime $salePriceStartDate
-     * @return $this
-     */
-    public function setSalePriceStartDate($salePriceStartDate)
-    {
-        $this->container['salePriceStartDate'] = $salePriceStartDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets salePriceEndDate
-     * @return \DateTime
-     */
-    public function getSalePriceEndDate()
-    {
-        return $this->container['salePriceEndDate'];
-    }
-
-    /**
-     * Sets salePriceEndDate
-     * @param \DateTime $salePriceEndDate
-     * @return $this
-     */
-    public function setSalePriceEndDate($salePriceEndDate)
-    {
-        $this->container['salePriceEndDate'] = $salePriceEndDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets unitPricingMeasure
-     * @return string
-     */
-    public function getUnitPricingMeasure()
-    {
-        return $this->container['unitPricingMeasure'];
-    }
-
-    /**
-     * Sets unitPricingMeasure
-     * @param string $unitPricingMeasure
-     * @return $this
-     */
-    public function setUnitPricingMeasure($unitPricingMeasure)
-    {
-        $this->container['unitPricingMeasure'] = $unitPricingMeasure;
-
-        return $this;
-    }
-
-    /**
-     * Gets baseMeasure
-     * @return string
-     */
-    public function getBaseMeasure()
-    {
-        return $this->container['baseMeasure'];
-    }
-
-    /**
-     * Sets baseMeasure
-     * @param string $baseMeasure
-     * @return $this
-     */
-    public function setBaseMeasure($baseMeasure)
-    {
-        $this->container['baseMeasure'] = $baseMeasure;
-
-        return $this;
-    }
-
-    /**
-     * Gets pricingTrend
-     * @return string
-     */
-    public function getPricingTrend()
-    {
-        return $this->container['pricingTrend'];
-    }
-
-    /**
-     * Sets pricingTrend
-     * @param string $pricingTrend
-     * @return $this
-     */
-    public function setPricingTrend($pricingTrend)
-    {
-        $this->container['pricingTrend'] = $pricingTrend;
-
-        return $this;
-    }
-
-    /**
-     * Gets geoPrice
-     * @return string
-     */
-    public function getGeoPrice()
-    {
-        return $this->container['geoPrice'];
-    }
-
-    /**
-     * Sets geoPrice
-     * @param string $geoPrice
-     * @return $this
-     */
-    public function setGeoPrice($geoPrice)
-    {
-        $this->container['geoPrice'] = $geoPrice;
-
-        return $this;
-    }
-
-    /**
-     * Gets geoAvailability
-     * @return string
-     */
-    public function getGeoAvailability()
-    {
-        return $this->container['geoAvailability'];
-    }
-
-    /**
-     * Sets geoAvailability
-     * @param string $geoAvailability
-     * @return $this
-     */
-    public function setGeoAvailability($geoAvailability)
-    {
-        $this->container['geoAvailability'] = $geoAvailability;
-
-        return $this;
-    }
-
-    /**
-     * Gets availability
-     * @return string
-     */
-    public function getAvailability()
-    {
-        return $this->container['availability'];
-    }
-
-    /**
-     * Sets availability
-     * @param string $availability Current stock status.  Possible values: - in_stock - out_of_stock - preorder - backorder
-     * @return $this
-     */
-    public function setAvailability($availability)
-    {
-        $this->container['availability'] = $availability;
-
-        return $this;
-    }
-
-    /**
-     * Gets availabilityDate
-     * @return \DateTime
-     */
-    public function getAvailabilityDate()
-    {
-        return $this->container['availabilityDate'];
-    }
-
-    /**
-     * Sets availabilityDate
-     * @param \DateTime $availabilityDate
-     * @return $this
-     */
-    public function setAvailabilityDate($availabilityDate)
-    {
-        $this->container['availabilityDate'] = $availabilityDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets expirationDate
-     * @return \DateTime
-     */
-    public function getExpirationDate()
-    {
-        return $this->container['expirationDate'];
-    }
-
-    /**
-     * Sets expirationDate
-     * @param \DateTime $expirationDate
-     * @return $this
-     */
-    public function setExpirationDate($expirationDate)
-    {
-        $this->container['expirationDate'] = $expirationDate;
-
-        return $this;
-    }
-
-    /**
      * Gets sellerName
      * @return string
      */
@@ -1746,7 +747,7 @@ class InlineResponse20020Products implements ArrayAccess
 
     /**
      * Sets sellerName
-     * @param string $sellerName Merchant or seller display name. Max 70 characters.
+     * @param string $sellerName Merchant or seller display name.
      * @return $this
      */
     public function setSellerName($sellerName)
@@ -1767,180 +768,12 @@ class InlineResponse20020Products implements ArrayAccess
 
     /**
      * Sets sellerUrl
-     * @param string $sellerUrl
+     * @param string $sellerUrl URL to the seller's storefront.
      * @return $this
      */
     public function setSellerUrl($sellerUrl)
     {
         $this->container['sellerUrl'] = $sellerUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets marketplaceSeller
-     * @return string
-     */
-    public function getMarketplaceSeller()
-    {
-        return $this->container['marketplaceSeller'];
-    }
-
-    /**
-     * Sets marketplaceSeller
-     * @param string $marketplaceSeller
-     * @return $this
-     */
-    public function setMarketplaceSeller($marketplaceSeller)
-    {
-        $this->container['marketplaceSeller'] = $marketplaceSeller;
-
-        return $this;
-    }
-
-    /**
-     * Gets sellerPrivacyPolicy
-     * @return string
-     */
-    public function getSellerPrivacyPolicy()
-    {
-        return $this->container['sellerPrivacyPolicy'];
-    }
-
-    /**
-     * Sets sellerPrivacyPolicy
-     * @param string $sellerPrivacyPolicy
-     * @return $this
-     */
-    public function setSellerPrivacyPolicy($sellerPrivacyPolicy)
-    {
-        $this->container['sellerPrivacyPolicy'] = $sellerPrivacyPolicy;
-
-        return $this;
-    }
-
-    /**
-     * Gets sellerTos
-     * @return string
-     */
-    public function getSellerTos()
-    {
-        return $this->container['sellerTos'];
-    }
-
-    /**
-     * Sets sellerTos
-     * @param string $sellerTos
-     * @return $this
-     */
-    public function setSellerTos($sellerTos)
-    {
-        $this->container['sellerTos'] = $sellerTos;
-
-        return $this;
-    }
-
-    /**
-     * Gets shippingPrice
-     * @return string
-     */
-    public function getShippingPrice()
-    {
-        return $this->container['shippingPrice'];
-    }
-
-    /**
-     * Sets shippingPrice
-     * @param string $shippingPrice
-     * @return $this
-     */
-    public function setShippingPrice($shippingPrice)
-    {
-        $this->container['shippingPrice'] = $shippingPrice;
-
-        return $this;
-    }
-
-    /**
-     * Gets deliveryEstimate
-     * @return \DateTime
-     */
-    public function getDeliveryEstimate()
-    {
-        return $this->container['deliveryEstimate'];
-    }
-
-    /**
-     * Sets deliveryEstimate
-     * @param \DateTime $deliveryEstimate
-     * @return $this
-     */
-    public function setDeliveryEstimate($deliveryEstimate)
-    {
-        $this->container['deliveryEstimate'] = $deliveryEstimate;
-
-        return $this;
-    }
-
-    /**
-     * Gets pickupMethod
-     * @return string
-     */
-    public function getPickupMethod()
-    {
-        return $this->container['pickupMethod'];
-    }
-
-    /**
-     * Sets pickupMethod
-     * @param string $pickupMethod
-     * @return $this
-     */
-    public function setPickupMethod($pickupMethod)
-    {
-        $this->container['pickupMethod'] = $pickupMethod;
-
-        return $this;
-    }
-
-    /**
-     * Gets pickupSla
-     * @return string
-     */
-    public function getPickupSla()
-    {
-        return $this->container['pickupSla'];
-    }
-
-    /**
-     * Sets pickupSla
-     * @param string $pickupSla
-     * @return $this
-     */
-    public function setPickupSla($pickupSla)
-    {
-        $this->container['pickupSla'] = $pickupSla;
-
-        return $this;
-    }
-
-    /**
-     * Gets isDigital
-     * @return bool
-     */
-    public function getIsDigital()
-    {
-        return $this->container['isDigital'];
-    }
-
-    /**
-     * Sets isDigital
-     * @param bool $isDigital
-     * @return $this
-     */
-    public function setIsDigital($isDigital)
-    {
-        $this->container['isDigital'] = $isDigital;
 
         return $this;
     }
@@ -1956,348 +789,12 @@ class InlineResponse20020Products implements ArrayAccess
 
     /**
      * Sets returnPolicy
-     * @param string $returnPolicy
+     * @param string $returnPolicy Merchant return policy text.
      * @return $this
      */
     public function setReturnPolicy($returnPolicy)
     {
         $this->container['returnPolicy'] = $returnPolicy;
-
-        return $this;
-    }
-
-    /**
-     * Gets acceptsReturns
-     * @return bool
-     */
-    public function getAcceptsReturns()
-    {
-        return $this->container['acceptsReturns'];
-    }
-
-    /**
-     * Sets acceptsReturns
-     * @param bool $acceptsReturns
-     * @return $this
-     */
-    public function setAcceptsReturns($acceptsReturns)
-    {
-        $this->container['acceptsReturns'] = $acceptsReturns;
-
-        return $this;
-    }
-
-    /**
-     * Gets returnDeadlineInDays
-     * @return int
-     */
-    public function getReturnDeadlineInDays()
-    {
-        return $this->container['returnDeadlineInDays'];
-    }
-
-    /**
-     * Sets returnDeadlineInDays
-     * @param int $returnDeadlineInDays
-     * @return $this
-     */
-    public function setReturnDeadlineInDays($returnDeadlineInDays)
-    {
-        $this->container['returnDeadlineInDays'] = $returnDeadlineInDays;
-
-        return $this;
-    }
-
-    /**
-     * Gets acceptsExchanges
-     * @return bool
-     */
-    public function getAcceptsExchanges()
-    {
-        return $this->container['acceptsExchanges'];
-    }
-
-    /**
-     * Sets acceptsExchanges
-     * @param bool $acceptsExchanges
-     * @return $this
-     */
-    public function setAcceptsExchanges($acceptsExchanges)
-    {
-        $this->container['acceptsExchanges'] = $acceptsExchanges;
-
-        return $this;
-    }
-
-    /**
-     * Gets isEligibleSearch
-     * @return bool
-     */
-    public function getIsEligibleSearch()
-    {
-        return $this->container['isEligibleSearch'];
-    }
-
-    /**
-     * Sets isEligibleSearch
-     * @param bool $isEligibleSearch When `true`, product appears in AI agent discovery results.
-     * @return $this
-     */
-    public function setIsEligibleSearch($isEligibleSearch)
-    {
-        $this->container['isEligibleSearch'] = $isEligibleSearch;
-
-        return $this;
-    }
-
-    /**
-     * Gets isEligibleCheckout
-     * @return bool
-     */
-    public function getIsEligibleCheckout()
-    {
-        return $this->container['isEligibleCheckout'];
-    }
-
-    /**
-     * Sets isEligibleCheckout
-     * @param bool $isEligibleCheckout When `true`, product can be added to a checkout session.
-     * @return $this
-     */
-    public function setIsEligibleCheckout($isEligibleCheckout)
-    {
-        $this->container['isEligibleCheckout'] = $isEligibleCheckout;
-
-        return $this;
-    }
-
-    /**
-     * Gets popularityScore
-     * @return float
-     */
-    public function getPopularityScore()
-    {
-        return $this->container['popularityScore'];
-    }
-
-    /**
-     * Sets popularityScore
-     * @param float $popularityScore
-     * @return $this
-     */
-    public function setPopularityScore($popularityScore)
-    {
-        $this->container['popularityScore'] = $popularityScore;
-
-        return $this;
-    }
-
-    /**
-     * Gets returnRate
-     * @return string
-     */
-    public function getReturnRate()
-    {
-        return $this->container['returnRate'];
-    }
-
-    /**
-     * Sets returnRate
-     * @param string $returnRate
-     * @return $this
-     */
-    public function setReturnRate($returnRate)
-    {
-        $this->container['returnRate'] = $returnRate;
-
-        return $this;
-    }
-
-    /**
-     * Gets warning
-     * @return string
-     */
-    public function getWarning()
-    {
-        return $this->container['warning'];
-    }
-
-    /**
-     * Sets warning
-     * @param string $warning
-     * @return $this
-     */
-    public function setWarning($warning)
-    {
-        $this->container['warning'] = $warning;
-
-        return $this;
-    }
-
-    /**
-     * Gets warningUrl
-     * @return string
-     */
-    public function getWarningUrl()
-    {
-        return $this->container['warningUrl'];
-    }
-
-    /**
-     * Sets warningUrl
-     * @param string $warningUrl
-     * @return $this
-     */
-    public function setWarningUrl($warningUrl)
-    {
-        $this->container['warningUrl'] = $warningUrl;
-
-        return $this;
-    }
-
-    /**
-     * Gets ageRestriction
-     * @return int
-     */
-    public function getAgeRestriction()
-    {
-        return $this->container['ageRestriction'];
-    }
-
-    /**
-     * Sets ageRestriction
-     * @param int $ageRestriction
-     * @return $this
-     */
-    public function setAgeRestriction($ageRestriction)
-    {
-        $this->container['ageRestriction'] = $ageRestriction;
-
-        return $this;
-    }
-
-    /**
-     * Gets reviewCount
-     * @return int
-     */
-    public function getReviewCount()
-    {
-        return $this->container['reviewCount'];
-    }
-
-    /**
-     * Sets reviewCount
-     * @param int $reviewCount
-     * @return $this
-     */
-    public function setReviewCount($reviewCount)
-    {
-        $this->container['reviewCount'] = $reviewCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets starRating
-     * @return string
-     */
-    public function getStarRating()
-    {
-        return $this->container['starRating'];
-    }
-
-    /**
-     * Sets starRating
-     * @param string $starRating
-     * @return $this
-     */
-    public function setStarRating($starRating)
-    {
-        $this->container['starRating'] = $starRating;
-
-        return $this;
-    }
-
-    /**
-     * Gets storeReviewCount
-     * @return int
-     */
-    public function getStoreReviewCount()
-    {
-        return $this->container['storeReviewCount'];
-    }
-
-    /**
-     * Sets storeReviewCount
-     * @param int $storeReviewCount
-     * @return $this
-     */
-    public function setStoreReviewCount($storeReviewCount)
-    {
-        $this->container['storeReviewCount'] = $storeReviewCount;
-
-        return $this;
-    }
-
-    /**
-     * Gets storeStarRating
-     * @return string
-     */
-    public function getStoreStarRating()
-    {
-        return $this->container['storeStarRating'];
-    }
-
-    /**
-     * Sets storeStarRating
-     * @param string $storeStarRating
-     * @return $this
-     */
-    public function setStoreStarRating($storeStarRating)
-    {
-        $this->container['storeStarRating'] = $storeStarRating;
-
-        return $this;
-    }
-
-    /**
-     * Gets relatedProductId
-     * @return string
-     */
-    public function getRelatedProductId()
-    {
-        return $this->container['relatedProductId'];
-    }
-
-    /**
-     * Sets relatedProductId
-     * @param string $relatedProductId
-     * @return $this
-     */
-    public function setRelatedProductId($relatedProductId)
-    {
-        $this->container['relatedProductId'] = $relatedProductId;
-
-        return $this;
-    }
-
-    /**
-     * Gets relationshipType
-     * @return string
-     */
-    public function getRelationshipType()
-    {
-        return $this->container['relationshipType'];
-    }
-
-    /**
-     * Sets relationshipType
-     * @param string $relationshipType
-     * @return $this
-     */
-    public function setRelationshipType($relationshipType)
-    {
-        $this->container['relationshipType'] = $relationshipType;
 
         return $this;
     }
@@ -2340,69 +837,6 @@ class InlineResponse20020Products implements ArrayAccess
     public function setStoreCountry($storeCountry)
     {
         $this->container['storeCountry'] = $storeCountry;
-
-        return $this;
-    }
-
-    /**
-     * Gets qAndA
-     * @return map[string,object][]
-     */
-    public function getQAndA()
-    {
-        return $this->container['qAndA'];
-    }
-
-    /**
-     * Sets qAndA
-     * @param map[string,object][] $qAndA
-     * @return $this
-     */
-    public function setQAndA($qAndA)
-    {
-        $this->container['qAndA'] = $qAndA;
-
-        return $this;
-    }
-
-    /**
-     * Gets qandA
-     * @return map[string,object][]
-     */
-    public function getQ_and_A()
-    {
-        return $this->container['qandA'];
-    }
-
-    /**
-     * Sets qandA
-     * @param map[string,object][] $qandA
-     * @return $this
-     */
-    public function setQ_and_A($qandA)
-    {
-        $this->container['qandA'] = $qandA;
-
-        return $this;
-    }
-
-    /**
-     * Gets reviews
-     * @return map[string,object][]
-     */
-    public function getReviews()
-    {
-        return $this->container['reviews'];
-    }
-
-    /**
-     * Sets reviews
-     * @param map[string,object][] $reviews
-     * @return $this
-     */
-    public function setReviews($reviews)
-    {
-        $this->container['reviews'] = $reviews;
 
         return $this;
     }

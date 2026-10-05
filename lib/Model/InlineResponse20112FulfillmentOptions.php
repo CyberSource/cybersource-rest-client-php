@@ -198,6 +198,24 @@ class InlineResponse20112FulfillmentOptions implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalid_properties[] = "'type' can't be null";
+        }
+        if ($this->container['title'] === null) {
+            $invalid_properties[] = "'title' can't be null";
+        }
+        if ($this->container['subtotal'] === null) {
+            $invalid_properties[] = "'subtotal' can't be null";
+        }
+        if ($this->container['tax'] === null) {
+            $invalid_properties[] = "'tax' can't be null";
+        }
+        if ($this->container['total'] === null) {
+            $invalid_properties[] = "'total' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -210,6 +228,24 @@ class InlineResponse20112FulfillmentOptions implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['type'] === null) {
+            return false;
+        }
+        if ($this->container['title'] === null) {
+            return false;
+        }
+        if ($this->container['subtotal'] === null) {
+            return false;
+        }
+        if ($this->container['tax'] === null) {
+            return false;
+        }
+        if ($this->container['total'] === null) {
+            return false;
+        }
         return true;
     }
 

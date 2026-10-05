@@ -63,7 +63,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
         'processorInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseProcessorInformation',
         'issuerInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseIssuerInformation',
         'authorizationInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation'
+        'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation'
     ];
 
     /**
@@ -431,7 +431,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
 
     /**
      * Gets pointOfSaleInformation
-     * @return \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation
+     * @return \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation
      */
     public function getPointOfSaleInformation()
     {
@@ -440,7 +440,7 @@ class PtsV2PaymentsReversalsPost201Response implements ArrayAccess
 
     /**
      * Sets pointOfSaleInformation
-     * @param \CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation $pointOfSaleInformation
+     * @param \CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation $pointOfSaleInformation
      * @return $this
      */
     public function setPointOfSaleInformation($pointOfSaleInformation)

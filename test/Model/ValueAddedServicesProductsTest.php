@@ -110,4 +110,11 @@ class ValueAddedServicesProductsTest extends \PHPUnit\Framework\TestCase
     public function testPropertyWebhooks()
     {
     }
+
+    /**
+     * Test attribute "smarterRetry"
+     */
+    public function testPropertySmarterRetry()
+    {
+    }
 }

@@ -56,11 +56,11 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
     protected static $swaggerTypes = [
         'expectedMonthlySales' => 'object',
         'baseCurrency' => 'string',
-        'baseValue' => 'int',
+        'baseValue' => 'string',
         'currency' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'int',
-        'value' => 'int',
+        'merchantValue' => 'string',
+        'value' => 'string',
         'expectedMonthlyVolume' => 'int'
     ];
 
@@ -246,7 +246,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
 
     /**
      * Gets baseValue
-     * @return int
+     * @return string
      */
     public function getBaseValue()
     {
@@ -255,7 +255,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
 
     /**
      * Sets baseValue
-     * @param int $baseValue Expected monthly sales value in the base currency, in minor units
+     * @param string $baseValue Expected monthly sales value in the base currency, in minor units
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -309,7 +309,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
 
     /**
      * Gets merchantValue
-     * @return int
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -318,7 +318,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
 
     /**
      * Sets merchantValue
-     * @param int $merchantValue Expected monthly sales in the merchant's local currency, in minor units
+     * @param string $merchantValue Expected monthly sales in the merchant's local currency, in minor units
      * @return $this
      */
     public function setMerchantValue($merchantValue)
@@ -330,7 +330,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
 
     /**
      * Gets value
-     * @return int
+     * @return string
      */
     public function getValue()
     {
@@ -339,7 +339,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
 
     /**
      * Sets value
-     * @param int $value Expected monthly sales amount in the specified currency, in minor units
+     * @param string $value Expected monthly sales amount in the specified currency, in minor units
      * @return $this
      */
     public function setValue($value)

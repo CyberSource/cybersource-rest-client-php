@@ -59,7 +59,7 @@ class AgentRequest implements ArrayAccess
         'description' => 'string',
         'contactEmail' => 'string',
         'tokenRequestorId' => 'string',
-        'agentMetadata' => 'map[string,string]',
+        'agentMetadata' => 'object',
         'keys' => '\CyberSource\Model\Iccv1agentsKeys[]'
     ];
 
@@ -237,7 +237,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Agent name
+     * @param string $name Display name for the agent
      * @return $this
      */
     public function setName($name)
@@ -258,7 +258,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets domain
-     * @param string $domain Agent domain URL
+     * @param string $domain Fully-qualified HTTPS URL of the agent's home domain. Must be unique — registration raises 409 if it already exists.
      * @return $this
      */
     public function setDomain($domain)
@@ -279,7 +279,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets description
-     * @param string $description Agent description
+     * @param string $description Description of the agent's purpose or capabilities
      * @return $this
      */
     public function setDescription($description)
@@ -300,7 +300,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets contactEmail
-     * @param string $contactEmail Contact email
+     * @param string $contactEmail Contact email for the team or individual responsible for this agent
      * @return $this
      */
     public function setContactEmail($contactEmail)
@@ -321,7 +321,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets tokenRequestorId
-     * @param string $tokenRequestorId Unique token requestor identifier
+     * @param string $tokenRequestorId Token Requestor ID (TRID) assigned by Visa
      * @return $this
      */
     public function setTokenRequestorId($tokenRequestorId)
@@ -333,7 +333,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Gets agentMetadata
-     * @return map[string,string]
+     * @return object
      */
     public function getAgentMetadata()
     {
@@ -342,7 +342,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets agentMetadata
-     * @param map[string,string] $agentMetadata Optional metadata (e.g., framework, version)
+     * @param object $agentMetadata Free-form metadata object for agent context (e.g., AI framework, language, runtime). Max 10KB.
      * @return $this
      */
     public function setAgentMetadata($agentMetadata)
@@ -363,7 +363,7 @@ class AgentRequest implements ArrayAccess
 
     /**
      * Sets keys
-     * @param \CyberSource\Model\Iccv1agentsKeys[] $keys Optional list of keys to create with the agent
+     * @param \CyberSource\Model\Iccv1agentsKeys[] $keys Optional array of public keys to register alongside the agent. Keys are created in ***deactivated*** state and must be activated separately via POST /agents/{agentId}/keys/{keyId}/activate.
      * @return $this
      */
     public function setKeys($keys)

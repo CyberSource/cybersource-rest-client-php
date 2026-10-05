@@ -411,4 +411,11 @@ class PtsV2PaymentsPost201ResponseProcessorInformationTest extends \PHPUnit\Fram
     public function testPropertyCedpVerifiedIndicator()
     {
     }
+
+    /**
+     * Test attribute "transactionLinkIdentifier"
+     */
+    public function testPropertyTransactionLinkIdentifier()
+    {
+    }
 }

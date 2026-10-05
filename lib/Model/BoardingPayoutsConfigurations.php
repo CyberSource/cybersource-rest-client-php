@@ -54,7 +54,7 @@ class BoardingPayoutsConfigurations implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'common' => '\CyberSource\Model\BoardingPayoutsConfigurationsCommon',
-        'processors' => 'map[string,object]'
+        'processors' => 'map[string,\CyberSource\Model\BoardingPayoutsConfigurationsProcessors]'
     ];
 
     /**
@@ -188,7 +188,7 @@ class BoardingPayoutsConfigurations implements ArrayAccess
 
     /**
      * Gets processors
-     * @return map[string,object]
+     * @return map[string,\CyberSource\Model\BoardingPayoutsConfigurationsProcessors]
      */
     public function getProcessors()
     {
@@ -197,7 +197,7 @@ class BoardingPayoutsConfigurations implements ArrayAccess
 
     /**
      * Sets processors
-     * @param map[string,object] $processors
+     * @param map[string,\CyberSource\Model\BoardingPayoutsConfigurationsProcessors] $processors
      * @return $this
      */
     public function setProcessors($processors)

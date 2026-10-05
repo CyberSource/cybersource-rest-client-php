@@ -55,11 +55,11 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
       */
     protected static $swaggerTypes = [
         'baseCurrency' => 'string',
-        'baseValue' => 'int',
+        'baseValue' => 'string',
         'currency' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'int',
-        'value' => 'int'
+        'merchantValue' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -213,7 +213,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
 
     /**
      * Gets baseValue
-     * @return int
+     * @return string
      */
     public function getBaseValue()
     {
@@ -222,7 +222,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
 
     /**
      * Sets baseValue
-     * @param int $baseValue Expected average transaction value in the base currency, expressed in minor units (e.g., cents)
+     * @param string $baseValue Expected average transaction value in the base currency, expressed in minor units (e.g., cents)
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -276,7 +276,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
 
     /**
      * Gets merchantValue
-     * @return int
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -285,7 +285,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
 
     /**
      * Sets merchantValue
-     * @param int $merchantValue Expected average transaction value expressed in the merchant's local currency, in minor units
+     * @param string $merchantValue Expected average transaction value expressed in the merchant's local currency, in minor units
      * @return $this
      */
     public function setMerchantValue($merchantValue)
@@ -297,7 +297,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
 
     /**
      * Gets value
-     * @return int
+     * @return string
      */
     public function getValue()
     {
@@ -306,7 +306,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
 
     /**
      * Sets value
-     * @param int $value Expected average transaction value in the transaction currency, in minor units (e.g., cents)
+     * @param string $value Expected average transaction value in the transaction currency, in minor units (e.g., cents)
      * @return $this
      */
     public function setValue($value)

@@ -62,7 +62,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceReplyCode' => 'string',
         'responseDetails' => 'string',
         'providerResponse' => 'string',
-        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork'
+        'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork',
+        'transactionLinkIdentifier' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceReplyCode' => null,
         'responseDetails' => null,
         'providerResponse' => null,
-        'network' => null
+        'network' => null,
+        'transactionLinkIdentifier' => null
     ];
 
     public static function swaggerTypes()
@@ -106,7 +108,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceReplyCode' => 'masterCardServiceReplyCode',
         'responseDetails' => 'responseDetails',
         'providerResponse' => 'providerResponse',
-        'network' => 'network'
+        'network' => 'network',
+        'transactionLinkIdentifier' => 'transactionLinkIdentifier'
     ];
 
 
@@ -124,7 +127,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceReplyCode' => 'setMasterCardServiceReplyCode',
         'responseDetails' => 'setResponseDetails',
         'providerResponse' => 'setProviderResponse',
-        'network' => 'setNetwork'
+        'network' => 'setNetwork',
+        'transactionLinkIdentifier' => 'setTransactionLinkIdentifier'
     ];
 
 
@@ -142,7 +146,8 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         'masterCardServiceReplyCode' => 'getMasterCardServiceReplyCode',
         'responseDetails' => 'getResponseDetails',
         'providerResponse' => 'getProviderResponse',
-        'network' => 'getNetwork'
+        'network' => 'getNetwork',
+        'transactionLinkIdentifier' => 'getTransactionLinkIdentifier'
     ];
 
     public static function attributeMap()
@@ -186,6 +191,7 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
         $this->container['responseDetails'] = isset($data['responseDetails']) ? $data['responseDetails'] : null;
         $this->container['providerResponse'] = isset($data['providerResponse']) ? $data['providerResponse'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['transactionLinkIdentifier'] = isset($data['transactionLinkIdentifier']) ? $data['transactionLinkIdentifier'] : null;
     }
 
     /**
@@ -419,6 +425,27 @@ class PtsV2PaymentsReversalsPost201ResponseProcessorInformation implements Array
     public function setNetwork($network)
     {
         $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionLinkIdentifier
+     * @return string
+     */
+    public function getTransactionLinkIdentifier()
+    {
+        return $this->container['transactionLinkIdentifier'];
+    }
+
+    /**
+     * Sets transactionLinkIdentifier
+     * @param string $transactionLinkIdentifier Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0).
+     * @return $this
+     */
+    public function setTransactionLinkIdentifier($transactionLinkIdentifier)
+    {
+        $this->container['transactionLinkIdentifier'] = $transactionLinkIdentifier;
 
         return $this;
     }

@@ -73,6 +73,7 @@ class PaymentsConfigurationSetup implements ArrayAccess
         'receivablesManager' => '\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments',
         'serviceFee' => '\CyberSource\Model\PaymentsConfigurationSetupCardProcessing',
         'batchUpload' => '\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments',
+        'paymentEvents' => '\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments',
         'transactGuard' => '\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments',
         'microform' => '\CyberSource\Model\PaymentsConfigurationSetupCardProcessing'
     ];
@@ -102,6 +103,7 @@ class PaymentsConfigurationSetup implements ArrayAccess
         'receivablesManager' => null,
         'serviceFee' => null,
         'batchUpload' => null,
+        'paymentEvents' => null,
         'transactGuard' => null,
         'microform' => null
     ];
@@ -141,6 +143,7 @@ class PaymentsConfigurationSetup implements ArrayAccess
         'receivablesManager' => 'receivablesManager',
         'serviceFee' => 'serviceFee',
         'batchUpload' => 'batchUpload',
+        'paymentEvents' => 'paymentEvents',
         'transactGuard' => 'transactGuard',
         'microform' => 'microform'
     ];
@@ -171,6 +174,7 @@ class PaymentsConfigurationSetup implements ArrayAccess
         'receivablesManager' => 'setReceivablesManager',
         'serviceFee' => 'setServiceFee',
         'batchUpload' => 'setBatchUpload',
+        'paymentEvents' => 'setPaymentEvents',
         'transactGuard' => 'setTransactGuard',
         'microform' => 'setMicroform'
     ];
@@ -201,6 +205,7 @@ class PaymentsConfigurationSetup implements ArrayAccess
         'receivablesManager' => 'getReceivablesManager',
         'serviceFee' => 'getServiceFee',
         'batchUpload' => 'getBatchUpload',
+        'paymentEvents' => 'getPaymentEvents',
         'transactGuard' => 'getTransactGuard',
         'microform' => 'getMicroform'
     ];
@@ -256,6 +261,7 @@ class PaymentsConfigurationSetup implements ArrayAccess
         $this->container['receivablesManager'] = isset($data['receivablesManager']) ? $data['receivablesManager'] : null;
         $this->container['serviceFee'] = isset($data['serviceFee']) ? $data['serviceFee'] : null;
         $this->container['batchUpload'] = isset($data['batchUpload']) ? $data['batchUpload'] : null;
+        $this->container['paymentEvents'] = isset($data['paymentEvents']) ? $data['paymentEvents'] : null;
         $this->container['transactGuard'] = isset($data['transactGuard']) ? $data['transactGuard'] : null;
         $this->container['microform'] = isset($data['microform']) ? $data['microform'] : null;
     }
@@ -701,6 +707,27 @@ class PaymentsConfigurationSetup implements ArrayAccess
     public function setBatchUpload($batchUpload)
     {
         $this->container['batchUpload'] = $batchUpload;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentEvents
+     * @return \CyberSource\Model\PaymentsConfigurationSetupDigitalPayments
+     */
+    public function getPaymentEvents()
+    {
+        return $this->container['paymentEvents'];
+    }
+
+    /**
+     * Sets paymentEvents
+     * @param \CyberSource\Model\PaymentsConfigurationSetupDigitalPayments $paymentEvents
+     * @return $this
+     */
+    public function setPaymentEvents($paymentEvents)
+    {
+        $this->container['paymentEvents'] = $paymentEvents;
 
         return $this;
     }

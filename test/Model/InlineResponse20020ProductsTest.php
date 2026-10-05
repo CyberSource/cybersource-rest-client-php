@@ -32,7 +32,7 @@ namespace CyberSource;
  * InlineResponse20020ProductsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Full product record as stored in the ACG catalog. Contains all ingest fields plus server-assigned metadata timestamps.
+// * @description Product record as stored in the ACG catalog. Only the fields listed here are persisted — the full ingest payload (&#x60;ProductInput&#x60;) contains additional fields that are validated and forwarded to protocol backends but are not retained in the catalog store.
 /**
  * @package     CyberSource
  * @author      Swagger Codegen team
@@ -77,16 +77,23 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "itemId"
      */
-    public function testPropertyId()
+    public function testPropertyItemId()
     {
     }
 
     /**
-     * Test attribute "itemId"
+     * Test attribute "isEligibleSearch"
      */
-    public function testPropertyItemId()
+    public function testPropertyIsEligibleSearch()
+    {
+    }
+
+    /**
+     * Test attribute "isEligibleCheckout"
+     */
+    public function testPropertyIsEligibleCheckout()
     {
     }
 
@@ -119,27 +126,6 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "additionalImageUrls"
-     */
-    public function testPropertyAdditionalImageUrls()
-    {
-    }
-
-    /**
-     * Test attribute "videoUrl"
-     */
-    public function testPropertyVideoUrl()
-    {
-    }
-
-    /**
-     * Test attribute "model3dUrl"
-     */
-    public function testPropertyModel3dUrl()
-    {
-    }
-
-    /**
      * Test attribute "productCategory"
      */
     public function testPropertyProductCategory()
@@ -150,27 +136,6 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
      * Test attribute "brand"
      */
     public function testPropertyBrand()
-    {
-    }
-
-    /**
-     * Test attribute "gtin"
-     */
-    public function testPropertyGtin()
-    {
-    }
-
-    /**
-     * Test attribute "mpn"
-     */
-    public function testPropertyMpn()
-    {
-    }
-
-    /**
-     * Test attribute "condition"
-     */
-    public function testPropertyCondition()
     {
     }
 
@@ -189,51 +154,23 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "dimensions"
+     * Test attribute "price"
      */
-    public function testPropertyDimensions()
+    public function testPropertyPrice()
     {
     }
 
     /**
-     * Test attribute "length"
+     * Test attribute "currency"
      */
-    public function testPropertyLength()
+    public function testPropertyCurrency()
     {
     }
 
     /**
-     * Test attribute "width"
+     * Test attribute "availability"
      */
-    public function testPropertyWidth()
-    {
-    }
-
-    /**
-     * Test attribute "height"
-     */
-    public function testPropertyHeight()
-    {
-    }
-
-    /**
-     * Test attribute "dimensionsUnit"
-     */
-    public function testPropertyDimensionsUnit()
-    {
-    }
-
-    /**
-     * Test attribute "itemWeightUnit"
-     */
-    public function testPropertyItemWeightUnit()
-    {
-    }
-
-    /**
-     * Test attribute "ageGroup"
-     */
-    public function testPropertyAgeGroup()
+    public function testPropertyAvailability()
     {
     }
 
@@ -245,23 +182,23 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "size"
-     */
-    public function testPropertySize()
-    {
-    }
-
-    /**
-     * Test attribute "sizeSystem"
-     */
-    public function testPropertySizeSystem()
-    {
-    }
-
-    /**
      * Test attribute "gender"
      */
     public function testPropertyGender()
+    {
+    }
+
+    /**
+     * Test attribute "ageGroup"
+     */
+    public function testPropertyAgeGroup()
+    {
+    }
+
+    /**
+     * Test attribute "shippingPrice"
+     */
+    public function testPropertyShippingPrice()
     {
     }
 
@@ -280,160 +217,6 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "itemGroupTitle"
-     */
-    public function testPropertyItemGroupTitle()
-    {
-    }
-
-    /**
-     * Test attribute "offerId"
-     */
-    public function testPropertyOfferId()
-    {
-    }
-
-    /**
-     * Test attribute "variantDict"
-     */
-    public function testPropertyVariantDict()
-    {
-    }
-
-    /**
-     * Test attribute "customVariant1Category"
-     */
-    public function testPropertyCustomVariant1Category()
-    {
-    }
-
-    /**
-     * Test attribute "customVariant1Option"
-     */
-    public function testPropertyCustomVariant1Option()
-    {
-    }
-
-    /**
-     * Test attribute "customVariant2Category"
-     */
-    public function testPropertyCustomVariant2Category()
-    {
-    }
-
-    /**
-     * Test attribute "customVariant2Option"
-     */
-    public function testPropertyCustomVariant2Option()
-    {
-    }
-
-    /**
-     * Test attribute "customVariant3Category"
-     */
-    public function testPropertyCustomVariant3Category()
-    {
-    }
-
-    /**
-     * Test attribute "customVariant3Option"
-     */
-    public function testPropertyCustomVariant3Option()
-    {
-    }
-
-    /**
-     * Test attribute "price"
-     */
-    public function testPropertyPrice()
-    {
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-    }
-
-    /**
-     * Test attribute "salePrice"
-     */
-    public function testPropertySalePrice()
-    {
-    }
-
-    /**
-     * Test attribute "salePriceStartDate"
-     */
-    public function testPropertySalePriceStartDate()
-    {
-    }
-
-    /**
-     * Test attribute "salePriceEndDate"
-     */
-    public function testPropertySalePriceEndDate()
-    {
-    }
-
-    /**
-     * Test attribute "unitPricingMeasure"
-     */
-    public function testPropertyUnitPricingMeasure()
-    {
-    }
-
-    /**
-     * Test attribute "baseMeasure"
-     */
-    public function testPropertyBaseMeasure()
-    {
-    }
-
-    /**
-     * Test attribute "pricingTrend"
-     */
-    public function testPropertyPricingTrend()
-    {
-    }
-
-    /**
-     * Test attribute "geoPrice"
-     */
-    public function testPropertyGeoPrice()
-    {
-    }
-
-    /**
-     * Test attribute "geoAvailability"
-     */
-    public function testPropertyGeoAvailability()
-    {
-    }
-
-    /**
-     * Test attribute "availability"
-     */
-    public function testPropertyAvailability()
-    {
-    }
-
-    /**
-     * Test attribute "availabilityDate"
-     */
-    public function testPropertyAvailabilityDate()
-    {
-    }
-
-    /**
-     * Test attribute "expirationDate"
-     */
-    public function testPropertyExpirationDate()
-    {
-    }
-
-    /**
      * Test attribute "sellerName"
      */
     public function testPropertySellerName()
@@ -448,177 +231,9 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "marketplaceSeller"
-     */
-    public function testPropertyMarketplaceSeller()
-    {
-    }
-
-    /**
-     * Test attribute "sellerPrivacyPolicy"
-     */
-    public function testPropertySellerPrivacyPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "sellerTos"
-     */
-    public function testPropertySellerTos()
-    {
-    }
-
-    /**
-     * Test attribute "shippingPrice"
-     */
-    public function testPropertyShippingPrice()
-    {
-    }
-
-    /**
-     * Test attribute "deliveryEstimate"
-     */
-    public function testPropertyDeliveryEstimate()
-    {
-    }
-
-    /**
-     * Test attribute "pickupMethod"
-     */
-    public function testPropertyPickupMethod()
-    {
-    }
-
-    /**
-     * Test attribute "pickupSla"
-     */
-    public function testPropertyPickupSla()
-    {
-    }
-
-    /**
-     * Test attribute "isDigital"
-     */
-    public function testPropertyIsDigital()
-    {
-    }
-
-    /**
      * Test attribute "returnPolicy"
      */
     public function testPropertyReturnPolicy()
-    {
-    }
-
-    /**
-     * Test attribute "acceptsReturns"
-     */
-    public function testPropertyAcceptsReturns()
-    {
-    }
-
-    /**
-     * Test attribute "returnDeadlineInDays"
-     */
-    public function testPropertyReturnDeadlineInDays()
-    {
-    }
-
-    /**
-     * Test attribute "acceptsExchanges"
-     */
-    public function testPropertyAcceptsExchanges()
-    {
-    }
-
-    /**
-     * Test attribute "isEligibleSearch"
-     */
-    public function testPropertyIsEligibleSearch()
-    {
-    }
-
-    /**
-     * Test attribute "isEligibleCheckout"
-     */
-    public function testPropertyIsEligibleCheckout()
-    {
-    }
-
-    /**
-     * Test attribute "popularityScore"
-     */
-    public function testPropertyPopularityScore()
-    {
-    }
-
-    /**
-     * Test attribute "returnRate"
-     */
-    public function testPropertyReturnRate()
-    {
-    }
-
-    /**
-     * Test attribute "warning"
-     */
-    public function testPropertyWarning()
-    {
-    }
-
-    /**
-     * Test attribute "warningUrl"
-     */
-    public function testPropertyWarningUrl()
-    {
-    }
-
-    /**
-     * Test attribute "ageRestriction"
-     */
-    public function testPropertyAgeRestriction()
-    {
-    }
-
-    /**
-     * Test attribute "reviewCount"
-     */
-    public function testPropertyReviewCount()
-    {
-    }
-
-    /**
-     * Test attribute "starRating"
-     */
-    public function testPropertyStarRating()
-    {
-    }
-
-    /**
-     * Test attribute "storeReviewCount"
-     */
-    public function testPropertyStoreReviewCount()
-    {
-    }
-
-    /**
-     * Test attribute "storeStarRating"
-     */
-    public function testPropertyStoreStarRating()
-    {
-    }
-
-    /**
-     * Test attribute "relatedProductId"
-     */
-    public function testPropertyRelatedProductId()
-    {
-    }
-
-    /**
-     * Test attribute "relationshipType"
-     */
-    public function testPropertyRelationshipType()
     {
     }
 
@@ -633,27 +248,6 @@ class InlineResponse20020ProductsTest extends \PHPUnit\Framework\TestCase
      * Test attribute "storeCountry"
      */
     public function testPropertyStoreCountry()
-    {
-    }
-
-    /**
-     * Test attribute "qAndA"
-     */
-    public function testPropertyQAndA()
-    {
-    }
-
-    /**
-     * Test attribute "qandA"
-     */
-    public function testPropertyQ_and_A()
-    {
-    }
-
-    /**
-     * Test attribute "reviews"
-     */
-    public function testPropertyReviews()
     {
     }
 

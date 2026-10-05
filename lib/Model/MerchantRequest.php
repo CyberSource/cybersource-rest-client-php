@@ -270,7 +270,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets merchantUrl
-     * @param string $merchantUrl Base merchant URL (must use HTTPS)
+     * @param string $merchantUrl Base URL of the merchant's domain. Must use HTTPS and be unique across all registrations.
      * @return $this
      */
     public function setMerchantUrl($merchantUrl)
@@ -291,7 +291,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets vmid
-     * @param string $vmid Visa Merchant ID — unique identifier
+     * @param string $vmid Visa Merchant ID (VMID). Must be unique — raises 409 if already in use.
      * @return $this
      */
     public function setVmid($vmid)
@@ -312,7 +312,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets indicator
-     * @param string $indicator Transaction processing type  Possible values: - TAP - ACG - BOTH
+     * @param string $indicator Transaction processing indicator:  - ***TAP*** — Trusted Agent Protocol  - ***ACG*** — Agentic Checkout Gateway  - ***BOTH*** — supports both TAP and ACG   Possible values: - TAP - ACG - BOTH
      * @return $this
      */
     public function setIndicator($indicator)
@@ -333,7 +333,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets cryptogramType
-     * @param string $cryptogramType Authentication cryptogram type (defaults to DAVV)  Possible values: - TAVV - DAVV
+     * @param string $cryptogramType Authentication cryptogram type used for payment credential generation. Defaults to ***DAVV*** if not provided.  Possible values: - TAVV - DAVV
      * @return $this
      */
     public function setCryptogramType($cryptogramType)
@@ -354,7 +354,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets paymentPayloadType
-     * @param string $paymentPayloadType Credential delivery format (defaults to UNENCRYPTED)  Possible values: - ENCRYPTED - UNENCRYPTED
+     * @param string $paymentPayloadType Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an `encryptionKey`. Defaults to ***UNENCRYPTED***.  Possible values: - ENCRYPTED - UNENCRYPTED
      * @return $this
      */
     public function setPaymentPayloadType($paymentPayloadType)
@@ -396,7 +396,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets acceptanceRelationships
-     * @param string[] $acceptanceRelationships List of acceptance network relationships
+     * @param string[] $acceptanceRelationships List of payment network acceptance relationships (e.g., \"Visa\").
      * @return $this
      */
     public function setAcceptanceRelationships($acceptanceRelationships)
@@ -417,7 +417,7 @@ class MerchantRequest implements ArrayAccess
 
     /**
      * Sets protocolInteractions
-     * @param \CyberSource\Model\Iccv1merchantsProtocolInteractions[] $protocolInteractions List of protocol configurations (ucp, acp, x402) with HTTPS URLs
+     * @param \CyberSource\Model\Iccv1merchantsProtocolInteractions[] $protocolInteractions List of protocol interaction configurations defining the merchant's endpoint for each supported protocol (ucp, acp, x402).
      * @return $this
      */
     public function setProtocolInteractions($protocolInteractions)

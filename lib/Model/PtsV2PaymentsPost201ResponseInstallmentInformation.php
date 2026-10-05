@@ -78,7 +78,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'minimumTotalCount' => 'string',
         'maximumTotalCount' => 'string',
         'firstInstallmentAmount' => 'string',
-        'firstInstallmentDate' => 'string'
+        'firstInstallmentDate' => 'string',
+        'gracePeriodDuration' => 'string',
+        'paymentType' => 'string',
+        'amountType' => 'string',
+        'percentageDiscount' => 'string',
+        'interestIndicator' => 'string',
+        'financingCurrency' => 'string'
     ];
 
     /**
@@ -111,7 +117,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'minimumTotalCount' => null,
         'maximumTotalCount' => null,
         'firstInstallmentAmount' => null,
-        'firstInstallmentDate' => null
+        'firstInstallmentDate' => null,
+        'gracePeriodDuration' => null,
+        'paymentType' => null,
+        'amountType' => null,
+        'percentageDiscount' => null,
+        'interestIndicator' => null,
+        'financingCurrency' => null
     ];
 
     public static function swaggerTypes()
@@ -154,7 +166,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'minimumTotalCount' => 'minimumTotalCount',
         'maximumTotalCount' => 'maximumTotalCount',
         'firstInstallmentAmount' => 'firstInstallmentAmount',
-        'firstInstallmentDate' => 'firstInstallmentDate'
+        'firstInstallmentDate' => 'firstInstallmentDate',
+        'gracePeriodDuration' => 'gracePeriodDuration',
+        'paymentType' => 'paymentType',
+        'amountType' => 'amountType',
+        'percentageDiscount' => 'percentageDiscount',
+        'interestIndicator' => 'interestIndicator',
+        'financingCurrency' => 'financingCurrency'
     ];
 
 
@@ -188,7 +206,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'minimumTotalCount' => 'setMinimumTotalCount',
         'maximumTotalCount' => 'setMaximumTotalCount',
         'firstInstallmentAmount' => 'setFirstInstallmentAmount',
-        'firstInstallmentDate' => 'setFirstInstallmentDate'
+        'firstInstallmentDate' => 'setFirstInstallmentDate',
+        'gracePeriodDuration' => 'setGracePeriodDuration',
+        'paymentType' => 'setPaymentType',
+        'amountType' => 'setAmountType',
+        'percentageDiscount' => 'setPercentageDiscount',
+        'interestIndicator' => 'setInterestIndicator',
+        'financingCurrency' => 'setFinancingCurrency'
     ];
 
 
@@ -222,7 +246,13 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         'minimumTotalCount' => 'getMinimumTotalCount',
         'maximumTotalCount' => 'getMaximumTotalCount',
         'firstInstallmentAmount' => 'getFirstInstallmentAmount',
-        'firstInstallmentDate' => 'getFirstInstallmentDate'
+        'firstInstallmentDate' => 'getFirstInstallmentDate',
+        'gracePeriodDuration' => 'getGracePeriodDuration',
+        'paymentType' => 'getPaymentType',
+        'amountType' => 'getAmountType',
+        'percentageDiscount' => 'getPercentageDiscount',
+        'interestIndicator' => 'getInterestIndicator',
+        'financingCurrency' => 'getFinancingCurrency'
     ];
 
     public static function attributeMap()
@@ -282,6 +312,12 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
         $this->container['maximumTotalCount'] = isset($data['maximumTotalCount']) ? $data['maximumTotalCount'] : null;
         $this->container['firstInstallmentAmount'] = isset($data['firstInstallmentAmount']) ? $data['firstInstallmentAmount'] : null;
         $this->container['firstInstallmentDate'] = isset($data['firstInstallmentDate']) ? $data['firstInstallmentDate'] : null;
+        $this->container['gracePeriodDuration'] = isset($data['gracePeriodDuration']) ? $data['gracePeriodDuration'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['amountType'] = isset($data['amountType']) ? $data['amountType'] : null;
+        $this->container['percentageDiscount'] = isset($data['percentageDiscount']) ? $data['percentageDiscount'] : null;
+        $this->container['interestIndicator'] = isset($data['interestIndicator']) ? $data['interestIndicator'] : null;
+        $this->container['financingCurrency'] = isset($data['financingCurrency']) ? $data['financingCurrency'] : null;
     }
 
     /**
@@ -851,6 +887,132 @@ class PtsV2PaymentsPost201ResponseInstallmentInformation implements ArrayAccess
     public function setFirstInstallmentDate($firstInstallmentDate)
     {
         $this->container['firstInstallmentDate'] = $firstInstallmentDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets gracePeriodDuration
+     * @return string
+     */
+    public function getGracePeriodDuration()
+    {
+        return $this->container['gracePeriodDuration'];
+    }
+
+    /**
+     * Sets gracePeriodDuration
+     * @param string $gracePeriodDuration Grace period requested by the customer before the first installment payment is due.  When you include this field in a request, you must also include the grace period duration type field.  The value for this field corresponds to the following data in the TC 33 capture file3: Record: CP01 TCR5, Position: 100-101, Field: Mastercard Grace Period Details.  This field is supported only for Mastercard installment payments in Brazil and Greece.
+     * @return $this
+     */
+    public function setGracePeriodDuration($gracePeriodDuration)
+    {
+        $this->container['gracePeriodDuration'] = $gracePeriodDuration;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     * @return string
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     * @param string $paymentType Payment plan for the installments. This field is supported only for installment payments on Visa Platform Connect, RuPay and SPG-KSA seamless flow.  Possible values for a standing-instruction (SI) merchant-initiated transaction (MIT) with Diners Club or Mastercard in India or with an India-issued card: - 1: SI with a fixed amount. - 2: SI with a maximum amount. - 3: Other kind of SI.  Possible values for a type of Installment transaction for on-soil transaction in Kingdom of Saudi Arabia - 1: Registration or first transaction. - 2: Subsequent transaction.  Possible values for other kinds of installment payments: - 0 (default): Regular installment. This value is not allowed for airline transactions. - 1: Installment payment with down payment. - 2: Installment payment without down payment. This value is supported only for airline transactions. - 3: Installment payment; down payment and boarding fee will follow. This value is supported only for airline transactions. - 4: Down payment only; regular installment payment will follow. - 5: Boarding fee only. This value is supported only for airline transactions. - 6: SI de-registration on RuPay for the payer authentication seamless flow.
+     * @return $this
+     */
+    public function setPaymentType($paymentType)
+    {
+        $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets amountType
+     * @return string
+     */
+    public function getAmountType()
+    {
+        return $this->container['amountType'];
+    }
+
+    /**
+     * Sets amountType
+     * @param string $amountType Valid Values from Issuer - Percentage = 999v99 Example P123.12 - Amount = 9(10)v99 Example A123.12
+     * @return $this
+     */
+    public function setAmountType($amountType)
+    {
+        $this->container['amountType'] = $amountType;
+
+        return $this;
+    }
+
+    /**
+     * Gets percentageDiscount
+     * @return string
+     */
+    public function getPercentageDiscount()
+    {
+        return $this->container['percentageDiscount'];
+    }
+
+    /**
+     * Sets percentageDiscount
+     * @param string $percentageDiscount Valid Values from Issuer
+     * @return $this
+     */
+    public function setPercentageDiscount($percentageDiscount)
+    {
+        $this->container['percentageDiscount'] = $percentageDiscount;
+
+        return $this;
+    }
+
+    /**
+     * Gets interestIndicator
+     * @return string
+     */
+    public function getInterestIndicator()
+    {
+        return $this->container['interestIndicator'];
+    }
+
+    /**
+     * Sets interestIndicator
+     * @param string $interestIndicator Indicates if the installment plan has interest.  Possible values: -Y - with interest -N - without interest -NULL - Do not send the field if no information available
+     * @return $this
+     */
+    public function setInterestIndicator($interestIndicator)
+    {
+        $this->container['interestIndicator'] = $interestIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets financingCurrency
+     * @return string
+     */
+    public function getFinancingCurrency()
+    {
+        return $this->container['financingCurrency'];
+    }
+
+    /**
+     * Sets financingCurrency
+     * @param string $financingCurrency Valid Values from Issuer
+     * @return $this
+     */
+    public function setFinancingCurrency($financingCurrency)
+    {
+        $this->container['financingCurrency'] = $financingCurrency;
 
         return $this;
     }

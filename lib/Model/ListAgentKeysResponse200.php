@@ -234,7 +234,7 @@ class ListAgentKeysResponse200 implements ArrayAccess
 
     /**
      * Sets agentName
-     * @param string $agentName Agent name
+     * @param string $agentName Display name of the agent
      * @return $this
      */
     public function setAgentName($agentName)
@@ -255,7 +255,7 @@ class ListAgentKeysResponse200 implements ArrayAccess
 
     /**
      * Sets keys
-     * @param \CyberSource\Model\AgentRegistrationResponse201Keys[] $keys List of keys (without agentId/agentName/agentType since they are at parent level)
+     * @param \CyberSource\Model\AgentRegistrationResponse201Keys[] $keys Paginated list of public keys belonging to this agent (agentId/agentName/agentType omitted — available at the parent level)
      * @return $this
      */
     public function setKeys($keys)

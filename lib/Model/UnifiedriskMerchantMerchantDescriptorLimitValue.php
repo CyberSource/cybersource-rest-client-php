@@ -55,11 +55,11 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'baseCurrency' => 'string',
-        'baseValue' => 'int',
+        'baseValue' => 'string',
         'currency' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'int',
-        'value' => 'int',
+        'merchantValue' => 'string',
+        'value' => 'string',
         'expectedMonthlyVolume' => 'int'
     ];
 
@@ -219,7 +219,7 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
 
     /**
      * Gets baseValue
-     * @return int
+     * @return string
      */
     public function getBaseValue()
     {
@@ -228,7 +228,7 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
 
     /**
      * Sets baseValue
-     * @param int $baseValue Financial limit amount in the base currency, in minor units
+     * @param string $baseValue Financial limit amount in the base currency, in minor units
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -282,7 +282,7 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
 
     /**
      * Gets merchantValue
-     * @return int
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -291,7 +291,7 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
 
     /**
      * Sets merchantValue
-     * @param int $merchantValue Financial limit in the merchant's local currency, in minor units
+     * @param string $merchantValue Financial limit in the merchant's local currency, in minor units
      * @return $this
      */
     public function setMerchantValue($merchantValue)
@@ -303,7 +303,7 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
 
     /**
      * Gets value
-     * @return int
+     * @return string
      */
     public function getValue()
     {
@@ -312,7 +312,7 @@ class UnifiedriskMerchantMerchantDescriptorLimitValue implements ArrayAccess
 
     /**
      * Sets value
-     * @param int $value Limit value amount in the specified currency, in minor units
+     * @param string $value Limit value amount in the specified currency, in minor units
      * @return $this
      */
     public function setValue($value)

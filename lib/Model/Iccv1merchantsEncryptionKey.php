@@ -34,7 +34,7 @@ use \ArrayAccess;
  * Iccv1merchantsEncryptionKey Class Doc Comment
  *
  * @category    Class
- * @description Request object for adding a new encryption key for a merchant.
+ * @description Public encryption key used to wrap payment credentials when &#x60;paymentPayloadType&#x60; is ***ENCRYPTED***. Not required for UNENCRYPTED delivery.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -207,7 +207,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
 
     /**
      * Sets keyName
-     * @param string $keyName Unique name for the key
+     * @param string $keyName Unique  name for this encryption key within the merchant.
      * @return $this
      */
     public function setKeyName($keyName)
@@ -228,7 +228,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
 
     /**
      * Sets encryptionKey
-     * @param string $encryptionKey Base64-encoded public key (JWE key wrap public key)
+     * @param string $encryptionKey Base64-encoded public key used for JWE key wrapping. Supported formats are PEM (PKCS#8 or PKCS#1) and JWK.
      * @return $this
      */
     public function setEncryptionKey($encryptionKey)
@@ -249,7 +249,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
 
     /**
      * Sets algorithm
-     * @param string $algorithm JWE key wrap algorithm  Possible values: - RSA-OAEP - RSA-OAEP-256 - RSA-OAEP-384 - RSA-OAEP-512
+     * @param string $algorithm JWE key wrap algorithm used to encrypt the content encryption key:  - ***RSA-OAEP*** — RSA-OAEP with SHA-1  - ***RSA-OAEP-256*** — RSA-OAEP with SHA-256  - ***RSA-OAEP-384*** — RSA-OAEP with SHA-384  - ***RSA-OAEP-512*** — RSA-OAEP with SHA-512   Possible values: - RSA-OAEP - RSA-OAEP-256 - RSA-OAEP-384 - RSA-OAEP-512
      * @return $this
      */
     public function setAlgorithm($algorithm)
@@ -270,7 +270,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
 
     /**
      * Sets encryptionType
-     * @param string $encryptionType JWE content encryption algorithm (defaults to A256GCM)  Possible values: - A256GCM - A128GCM - C20P - A256CBC-HS512 - A128CBC-HS256 - A256CCM - A128CCM
+     * @param string $encryptionType JWE content encryption algorithm used to encrypt the payment payload. Defaults to ***A256GCM*** if not provided.  Possible values: - A256GCM - A128GCM - C20P - A256CBC_HS512 - A128CBC_HS256 - A256CCM - A128CCM
      * @return $this
      */
     public function setEncryptionType($encryptionType)
@@ -291,7 +291,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
 
     /**
      * Sets expirationDate
-     * @param \DateTime $expirationDate Key expiration date in UTC (defaults to 14 days from now if not provided)
+     * @param \DateTime $expirationDate Key expiration date-time in UTC. Defaults to 14 days from registration if omitted.
      * @return $this
      */
     public function setExpirationDate($expirationDate)

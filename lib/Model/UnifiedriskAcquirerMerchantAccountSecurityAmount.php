@@ -55,11 +55,11 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'baseCurrency' => 'string',
-        'baseValue' => 'int',
+        'baseValue' => 'string',
         'currency' => 'string',
         'merchantCurrency' => 'string',
-        'merchantValue' => 'int',
-        'value' => 'int'
+        'merchantValue' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -213,7 +213,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
 
     /**
      * Gets baseValue
-     * @return int
+     * @return string
      */
     public function getBaseValue()
     {
@@ -222,7 +222,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
 
     /**
      * Sets baseValue
-     * @param int $baseValue The monetary value of the security deposit or holdback amount expressed in the base currency, typically in minor units (e.g., cents)
+     * @param string $baseValue The monetary value of the security deposit or holdback amount expressed in the base currency, typically in minor units (e.g., cents)
      * @return $this
      */
     public function setBaseValue($baseValue)
@@ -276,7 +276,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
 
     /**
      * Gets merchantValue
-     * @return int
+     * @return string
      */
     public function getMerchantValue()
     {
@@ -285,7 +285,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
 
     /**
      * Sets merchantValue
-     * @param int $merchantValue The security deposit or holdback amount expressed in the merchant's local currency, in minor units
+     * @param string $merchantValue The security deposit or holdback amount expressed in the merchant's local currency, in minor units
      * @return $this
      */
     public function setMerchantValue($merchantValue)
@@ -297,7 +297,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
 
     /**
      * Gets value
-     * @return int
+     * @return string
      */
     public function getValue()
     {
@@ -306,7 +306,7 @@ class UnifiedriskAcquirerMerchantAccountSecurityAmount implements ArrayAccess
 
     /**
      * Sets value
-     * @param int $value The security deposit or holdback amount in the transaction currency, in minor units (e.g., cents)
+     * @param string $value The security deposit or holdback amount in the transaction currency, in minor units (e.g., cents)
      * @return $this
      */
     public function setValue($value)

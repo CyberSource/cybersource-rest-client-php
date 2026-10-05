@@ -61,7 +61,7 @@ class CapturePaymentRequest implements ArrayAccess
         'deviceInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesDeviceInformation',
         'merchantInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesMerchantInformation',
         'aggregatorInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesAggregatorInformation',
-        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation',
+        'pointOfSaleInformation' => '\CyberSource\Model\Ptsv2paymentsPointOfSaleInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]',
         'merchantDefinedSecureInformation' => '\CyberSource\Model\Ptsv2paymentsMerchantDefinedSecureInformation',
         'installmentInformation' => '\CyberSource\Model\Ptsv2paymentsidcapturesInstallmentInformation',
@@ -413,7 +413,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Gets pointOfSaleInformation
-     * @return \CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation
+     * @return \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation
      */
     public function getPointOfSaleInformation()
     {
@@ -422,7 +422,7 @@ class CapturePaymentRequest implements ArrayAccess
 
     /**
      * Sets pointOfSaleInformation
-     * @param \CyberSource\Model\Ptsv2paymentsidcapturesPointOfSaleInformation $pointOfSaleInformation
+     * @param \CyberSource\Model\Ptsv2paymentsPointOfSaleInformation $pointOfSaleInformation
      * @return $this
      */
     public function setPointOfSaleInformation($pointOfSaleInformation)

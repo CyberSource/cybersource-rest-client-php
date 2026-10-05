@@ -57,7 +57,8 @@ class ValueAddedServicesProducts implements ArrayAccess
         'transactionSearch' => '\CyberSource\Model\PaymentsProductsTax',
         'bankAccountValidation' => '\CyberSource\Model\PaymentsProductsTax',
         'flexapi' => '\CyberSource\Model\PaymentsProductsTax',
-        'webhooks' => '\CyberSource\Model\PaymentsProductsTax'
+        'webhooks' => '\CyberSource\Model\PaymentsProductsTax',
+        'smarterRetry' => '\CyberSource\Model\PaymentsProductsTax'
     ];
 
     /**
@@ -69,7 +70,8 @@ class ValueAddedServicesProducts implements ArrayAccess
         'transactionSearch' => null,
         'bankAccountValidation' => null,
         'flexapi' => null,
-        'webhooks' => null
+        'webhooks' => null,
+        'smarterRetry' => null
     ];
 
     public static function swaggerTypes()
@@ -91,7 +93,8 @@ class ValueAddedServicesProducts implements ArrayAccess
         'transactionSearch' => 'transactionSearch',
         'bankAccountValidation' => 'bankAccountValidation',
         'flexapi' => 'flexapi',
-        'webhooks' => 'webhooks'
+        'webhooks' => 'webhooks',
+        'smarterRetry' => 'smarterRetry'
     ];
 
 
@@ -104,7 +107,8 @@ class ValueAddedServicesProducts implements ArrayAccess
         'transactionSearch' => 'setTransactionSearch',
         'bankAccountValidation' => 'setBankAccountValidation',
         'flexapi' => 'setFlexapi',
-        'webhooks' => 'setWebhooks'
+        'webhooks' => 'setWebhooks',
+        'smarterRetry' => 'setSmarterRetry'
     ];
 
 
@@ -117,7 +121,8 @@ class ValueAddedServicesProducts implements ArrayAccess
         'transactionSearch' => 'getTransactionSearch',
         'bankAccountValidation' => 'getBankAccountValidation',
         'flexapi' => 'getFlexapi',
-        'webhooks' => 'getWebhooks'
+        'webhooks' => 'getWebhooks',
+        'smarterRetry' => 'getSmarterRetry'
     ];
 
     public static function attributeMap()
@@ -156,6 +161,7 @@ class ValueAddedServicesProducts implements ArrayAccess
         $this->container['bankAccountValidation'] = isset($data['bankAccountValidation']) ? $data['bankAccountValidation'] : null;
         $this->container['flexapi'] = isset($data['flexapi']) ? $data['flexapi'] : null;
         $this->container['webhooks'] = isset($data['webhooks']) ? $data['webhooks'] : null;
+        $this->container['smarterRetry'] = isset($data['smarterRetry']) ? $data['smarterRetry'] : null;
     }
 
     /**
@@ -284,6 +290,27 @@ class ValueAddedServicesProducts implements ArrayAccess
     public function setWebhooks($webhooks)
     {
         $this->container['webhooks'] = $webhooks;
+
+        return $this;
+    }
+
+    /**
+     * Gets smarterRetry
+     * @return \CyberSource\Model\PaymentsProductsTax
+     */
+    public function getSmarterRetry()
+    {
+        return $this->container['smarterRetry'];
+    }
+
+    /**
+     * Sets smarterRetry
+     * @param \CyberSource\Model\PaymentsProductsTax $smarterRetry
+     * @return $this
+     */
+    public function setSmarterRetry($smarterRetry)
+    {
+        $this->container['smarterRetry'] = $smarterRetry;
 
         return $this;
     }

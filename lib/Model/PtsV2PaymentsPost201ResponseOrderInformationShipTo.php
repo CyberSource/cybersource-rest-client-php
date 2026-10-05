@@ -61,6 +61,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'string',
         'postalCode' => 'string',
         'country' => 'string',
+        'email' => 'string',
         'phoneNumber' => 'string'
     ];
 
@@ -77,6 +78,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => null,
         'postalCode' => null,
         'country' => null,
+        'email' => null,
         'phoneNumber' => null
     ];
 
@@ -103,6 +105,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'administrativeArea',
         'postalCode' => 'postalCode',
         'country' => 'country',
+        'email' => 'email',
         'phoneNumber' => 'phoneNumber'
     ];
 
@@ -120,6 +123,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'setAdministrativeArea',
         'postalCode' => 'setPostalCode',
         'country' => 'setCountry',
+        'email' => 'setEmail',
         'phoneNumber' => 'setPhoneNumber'
     ];
 
@@ -137,6 +141,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
         'administrativeArea' => 'getAdministrativeArea',
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry',
+        'email' => 'getEmail',
         'phoneNumber' => 'getPhoneNumber'
     ];
 
@@ -179,6 +184,7 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
         $this->container['administrativeArea'] = isset($data['administrativeArea']) ? $data['administrativeArea'] : null;
         $this->container['postalCode'] = isset($data['postalCode']) ? $data['postalCode'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['phoneNumber'] = isset($data['phoneNumber']) ? $data['phoneNumber'] : null;
     }
 
@@ -371,6 +377,27 @@ class PtsV2PaymentsPost201ResponseOrderInformationShipTo implements ArrayAccess
     public function setCountry($country)
     {
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Email address of the shipping recipient.
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

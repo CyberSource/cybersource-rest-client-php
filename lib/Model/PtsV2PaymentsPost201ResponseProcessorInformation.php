@@ -100,7 +100,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'orderStatus' => 'string',
         'merchantRiskPrediction' => 'string',
         'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork',
-        'cedpVerifiedIndicator' => 'string'
+        'cedpVerifiedIndicator' => 'string',
+        'transactionLinkIdentifier' => 'string'
     ];
 
     /**
@@ -155,7 +156,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'orderStatus' => null,
         'merchantRiskPrediction' => null,
         'network' => null,
-        'cedpVerifiedIndicator' => null
+        'cedpVerifiedIndicator' => null,
+        'transactionLinkIdentifier' => null
     ];
 
     public static function swaggerTypes()
@@ -220,7 +222,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'orderStatus' => 'orderStatus',
         'merchantRiskPrediction' => 'merchantRiskPrediction',
         'network' => 'network',
-        'cedpVerifiedIndicator' => 'cedpVerifiedIndicator'
+        'cedpVerifiedIndicator' => 'cedpVerifiedIndicator',
+        'transactionLinkIdentifier' => 'transactionLinkIdentifier'
     ];
 
 
@@ -276,7 +279,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'orderStatus' => 'setOrderStatus',
         'merchantRiskPrediction' => 'setMerchantRiskPrediction',
         'network' => 'setNetwork',
-        'cedpVerifiedIndicator' => 'setCedpVerifiedIndicator'
+        'cedpVerifiedIndicator' => 'setCedpVerifiedIndicator',
+        'transactionLinkIdentifier' => 'setTransactionLinkIdentifier'
     ];
 
 
@@ -332,7 +336,8 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         'orderStatus' => 'getOrderStatus',
         'merchantRiskPrediction' => 'getMerchantRiskPrediction',
         'network' => 'getNetwork',
-        'cedpVerifiedIndicator' => 'getCedpVerifiedIndicator'
+        'cedpVerifiedIndicator' => 'getCedpVerifiedIndicator',
+        'transactionLinkIdentifier' => 'getTransactionLinkIdentifier'
     ];
 
     public static function attributeMap()
@@ -414,6 +419,7 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
         $this->container['merchantRiskPrediction'] = isset($data['merchantRiskPrediction']) ? $data['merchantRiskPrediction'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
         $this->container['cedpVerifiedIndicator'] = isset($data['cedpVerifiedIndicator']) ? $data['cedpVerifiedIndicator'] : null;
+        $this->container['transactionLinkIdentifier'] = isset($data['transactionLinkIdentifier']) ? $data['transactionLinkIdentifier'] : null;
     }
 
     /**
@@ -1445,6 +1451,27 @@ class PtsV2PaymentsPost201ResponseProcessorInformation implements ArrayAccess
     public function setCedpVerifiedIndicator($cedpVerifiedIndicator)
     {
         $this->container['cedpVerifiedIndicator'] = $cedpVerifiedIndicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionLinkIdentifier
+     * @return string
+     */
+    public function getTransactionLinkIdentifier()
+    {
+        return $this->container['transactionLinkIdentifier'];
+    }
+
+    /**
+     * Sets transactionLinkIdentifier
+     * @param string $transactionLinkIdentifier Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0).
+     * @return $this
+     */
+    public function setTransactionLinkIdentifier($transactionLinkIdentifier)
+    {
+        $this->container['transactionLinkIdentifier'] = $transactionLinkIdentifier;
 
         return $this;
     }

@@ -84,6 +84,13 @@ class Ptsv2intentsMerchantInformationMerchantDescriptorTest extends \PHPUnit\Fra
     }
 
     /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
+    {
+    }
+
+    /**
      * Test attribute "email"
      */
     public function testPropertyEmail()

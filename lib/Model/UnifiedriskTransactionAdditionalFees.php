@@ -53,10 +53,10 @@ class UnifiedriskTransactionAdditionalFees implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'value' => 'float',
+        'value' => 'string',
         'currency' => 'string',
         'baseCurrency' => 'string',
-        'baseValue' => 'float',
+        'baseValue' => 'string',
         'merchantCurrency' => 'string',
         'merchantValue' => 'string'
     ];
@@ -191,7 +191,7 @@ class UnifiedriskTransactionAdditionalFees implements ArrayAccess
 
     /**
      * Gets value
-     * @return float
+     * @return string
      */
     public function getValue()
     {
@@ -200,7 +200,7 @@ class UnifiedriskTransactionAdditionalFees implements ArrayAccess
 
     /**
      * Sets value
-     * @param float $value Additional fees amount
+     * @param string $value Additional fees amount
      * @return $this
      */
     public function setValue($value)
@@ -254,7 +254,7 @@ class UnifiedriskTransactionAdditionalFees implements ArrayAccess
 
     /**
      * Gets baseValue
-     * @return float
+     * @return string
      */
     public function getBaseValue()
     {
@@ -263,7 +263,7 @@ class UnifiedriskTransactionAdditionalFees implements ArrayAccess
 
     /**
      * Sets baseValue
-     * @param float $baseValue Additional fees in base currency
+     * @param string $baseValue Additional fees in base currency
      * @return $this
      */
     public function setBaseValue($baseValue)

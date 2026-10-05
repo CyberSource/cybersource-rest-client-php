@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **processorInformation** | [**\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseProcessorInformation**](PtsV2PaymentsReversalsPost201ResponseProcessorInformation.md) |  | [optional] 
 **issuerInformation** | [**\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseIssuerInformation**](PtsV2PaymentsReversalsPost201ResponseIssuerInformation.md) |  | [optional] 
 **authorizationInformation** | [**\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation**](PtsV2PaymentsReversalsPost201ResponseAuthorizationInformation.md) |  | [optional] 
-**pointOfSaleInformation** | [**\CyberSource\Model\Ptsv2paymentsidreversalsPointOfSaleInformation**](Ptsv2paymentsidreversalsPointOfSaleInformation.md) |  | [optional] 
+**pointOfSaleInformation** | [**\CyberSource\Model\PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation**](PtsV2PaymentsReversalsPost201ResponsePointOfSaleInformation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

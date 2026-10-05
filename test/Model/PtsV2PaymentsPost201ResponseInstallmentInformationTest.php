@@ -257,4 +257,46 @@ class PtsV2PaymentsPost201ResponseInstallmentInformationTest extends \PHPUnit\Fr
     public function testPropertyFirstInstallmentDate()
     {
     }
+
+    /**
+     * Test attribute "gracePeriodDuration"
+     */
+    public function testPropertyGracePeriodDuration()
+    {
+    }
+
+    /**
+     * Test attribute "paymentType"
+     */
+    public function testPropertyPaymentType()
+    {
+    }
+
+    /**
+     * Test attribute "amountType"
+     */
+    public function testPropertyAmountType()
+    {
+    }
+
+    /**
+     * Test attribute "percentageDiscount"
+     */
+    public function testPropertyPercentageDiscount()
+    {
+    }
+
+    /**
+     * Test attribute "interestIndicator"
+     */
+    public function testPropertyInterestIndicator()
+    {
+    }
+
+    /**
+     * Test attribute "financingCurrency"
+     */
+    public function testPropertyFinancingCurrency()
+    {
+    }
 }

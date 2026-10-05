@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **receivablesManager** | [**\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
 **serviceFee** | [**\CyberSource\Model\PaymentsConfigurationSetupCardProcessing**](PaymentsConfigurationSetupCardProcessing.md) |  | [optional] 
 **batchUpload** | [**\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
+**paymentEvents** | [**\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
 **transactGuard** | [**\CyberSource\Model\PaymentsConfigurationSetupDigitalPayments**](PaymentsConfigurationSetupDigitalPayments.md) |  | [optional] 
 **microform** | [**\CyberSource\Model\PaymentsConfigurationSetupCardProcessing**](PaymentsConfigurationSetupCardProcessing.md) |  | [optional] 
 

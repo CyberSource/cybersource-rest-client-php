@@ -64,7 +64,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'settlementDate' => 'string',
         'updateTimeUtc' => 'string',
         'network' => '\CyberSource\Model\Ptsv2paymentsProcessorInformationReversalNetwork',
-        'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice'
+        'merchantAdvice' => '\CyberSource\Model\PtsV2PaymentsRefundPost201ResponseProcessorInformationMerchantAdvice',
+        'transactionLinkIdentifier' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'settlementDate' => null,
         'updateTimeUtc' => null,
         'network' => null,
-        'merchantAdvice' => null
+        'merchantAdvice' => null,
+        'transactionLinkIdentifier' => null
     ];
 
     public static function swaggerTypes()
@@ -112,7 +114,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'settlementDate' => 'settlementDate',
         'updateTimeUtc' => 'updateTimeUtc',
         'network' => 'network',
-        'merchantAdvice' => 'merchantAdvice'
+        'merchantAdvice' => 'merchantAdvice',
+        'transactionLinkIdentifier' => 'transactionLinkIdentifier'
     ];
 
 
@@ -132,7 +135,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'settlementDate' => 'setSettlementDate',
         'updateTimeUtc' => 'setUpdateTimeUtc',
         'network' => 'setNetwork',
-        'merchantAdvice' => 'setMerchantAdvice'
+        'merchantAdvice' => 'setMerchantAdvice',
+        'transactionLinkIdentifier' => 'setTransactionLinkIdentifier'
     ];
 
 
@@ -152,7 +156,8 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         'settlementDate' => 'getSettlementDate',
         'updateTimeUtc' => 'getUpdateTimeUtc',
         'network' => 'getNetwork',
-        'merchantAdvice' => 'getMerchantAdvice'
+        'merchantAdvice' => 'getMerchantAdvice',
+        'transactionLinkIdentifier' => 'getTransactionLinkIdentifier'
     ];
 
     public static function attributeMap()
@@ -198,6 +203,7 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
         $this->container['updateTimeUtc'] = isset($data['updateTimeUtc']) ? $data['updateTimeUtc'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
         $this->container['merchantAdvice'] = isset($data['merchantAdvice']) ? $data['merchantAdvice'] : null;
+        $this->container['transactionLinkIdentifier'] = isset($data['transactionLinkIdentifier']) ? $data['transactionLinkIdentifier'] : null;
     }
 
     /**
@@ -473,6 +479,27 @@ class PtsV2PaymentsRefundPost201ResponseProcessorInformation implements ArrayAcc
     public function setMerchantAdvice($merchantAdvice)
     {
         $this->container['merchantAdvice'] = $merchantAdvice;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionLinkIdentifier
+     * @return string
+     */
+    public function getTransactionLinkIdentifier()
+    {
+        return $this->container['transactionLinkIdentifier'];
+    }
+
+    /**
+     * Sets transactionLinkIdentifier
+     * @param string $transactionLinkIdentifier Transaction Link Identifier (TLID). Links all messages within a transaction lifecycle for Mastercard transactions. Received from Mastercard in the authorization response and automatically replayed for lifecycle transactions (reversals, follow-on credits, authorization refresh).  #### PIN Debit Also returned for PIN Debit purchase, credit, and reversal transactions. For PIN Debit (Visa Gateway) flows, this value is mapped to Visa Field 111 (DSI 07, Tag C0).
+     * @return $this
+     */
+    public function setTransactionLinkIdentifier($transactionLinkIdentifier)
+    {
+        $this->container['transactionLinkIdentifier'] = $transactionLinkIdentifier;
 
         return $this;
     }

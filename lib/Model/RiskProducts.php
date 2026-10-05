@@ -56,7 +56,8 @@ class RiskProducts implements ArrayAccess
         'fraudManagementEssentials' => '\CyberSource\Model\RiskProductsFraudManagementEssentials',
         'decisionManager' => '\CyberSource\Model\RiskProductsDecisionManager',
         'portfolioRiskControls' => '\CyberSource\Model\RiskProductsPortfolioRiskControls',
-        'enhancedAuthentication' => '\CyberSource\Model\PaymentsProductsPayerAuthentication'
+        'enhancedAuthentication' => '\CyberSource\Model\PaymentsProductsPayerAuthentication',
+        'vpri' => '\CyberSource\Model\PaymentsProductsTax'
     ];
 
     /**
@@ -67,7 +68,8 @@ class RiskProducts implements ArrayAccess
         'fraudManagementEssentials' => null,
         'decisionManager' => null,
         'portfolioRiskControls' => null,
-        'enhancedAuthentication' => null
+        'enhancedAuthentication' => null,
+        'vpri' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +90,8 @@ class RiskProducts implements ArrayAccess
         'fraudManagementEssentials' => 'fraudManagementEssentials',
         'decisionManager' => 'decisionManager',
         'portfolioRiskControls' => 'portfolioRiskControls',
-        'enhancedAuthentication' => 'enhancedAuthentication'
+        'enhancedAuthentication' => 'enhancedAuthentication',
+        'vpri' => 'vpri'
     ];
 
 
@@ -100,7 +103,8 @@ class RiskProducts implements ArrayAccess
         'fraudManagementEssentials' => 'setFraudManagementEssentials',
         'decisionManager' => 'setDecisionManager',
         'portfolioRiskControls' => 'setPortfolioRiskControls',
-        'enhancedAuthentication' => 'setEnhancedAuthentication'
+        'enhancedAuthentication' => 'setEnhancedAuthentication',
+        'vpri' => 'setVpri'
     ];
 
 
@@ -112,7 +116,8 @@ class RiskProducts implements ArrayAccess
         'fraudManagementEssentials' => 'getFraudManagementEssentials',
         'decisionManager' => 'getDecisionManager',
         'portfolioRiskControls' => 'getPortfolioRiskControls',
-        'enhancedAuthentication' => 'getEnhancedAuthentication'
+        'enhancedAuthentication' => 'getEnhancedAuthentication',
+        'vpri' => 'getVpri'
     ];
 
     public static function attributeMap()
@@ -150,6 +155,7 @@ class RiskProducts implements ArrayAccess
         $this->container['decisionManager'] = isset($data['decisionManager']) ? $data['decisionManager'] : null;
         $this->container['portfolioRiskControls'] = isset($data['portfolioRiskControls']) ? $data['portfolioRiskControls'] : null;
         $this->container['enhancedAuthentication'] = isset($data['enhancedAuthentication']) ? $data['enhancedAuthentication'] : null;
+        $this->container['vpri'] = isset($data['vpri']) ? $data['vpri'] : null;
     }
 
     /**
@@ -257,6 +263,27 @@ class RiskProducts implements ArrayAccess
     public function setEnhancedAuthentication($enhancedAuthentication)
     {
         $this->container['enhancedAuthentication'] = $enhancedAuthentication;
+
+        return $this;
+    }
+
+    /**
+     * Gets vpri
+     * @return \CyberSource\Model\PaymentsProductsTax
+     */
+    public function getVpri()
+    {
+        return $this->container['vpri'];
+    }
+
+    /**
+     * Sets vpri
+     * @param \CyberSource\Model\PaymentsProductsTax $vpri
+     * @return $this
+     */
+    public function setVpri($vpri)
+    {
+        $this->container['vpri'] = $vpri;
 
         return $this;
     }

@@ -57,6 +57,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'id' => 'string',
         'message' => 'string',
         'submitTimeUtc' => 'string',
+        'createTimeUtc' => 'string',
         'status' => 'string',
         'reconciliationId' => 'string',
         'errorInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformation',
@@ -89,6 +90,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'id' => null,
         'message' => null,
         'submitTimeUtc' => null,
+        'createTimeUtc' => null,
         'status' => null,
         'reconciliationId' => null,
         'errorInformation' => null,
@@ -131,6 +133,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'id' => 'id',
         'message' => 'message',
         'submitTimeUtc' => 'submitTimeUtc',
+        'createTimeUtc' => 'createTimeUtc',
         'status' => 'status',
         'reconciliationId' => 'reconciliationId',
         'errorInformation' => 'errorInformation',
@@ -164,6 +167,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'id' => 'setId',
         'message' => 'setMessage',
         'submitTimeUtc' => 'setSubmitTimeUtc',
+        'createTimeUtc' => 'setCreateTimeUtc',
         'status' => 'setStatus',
         'reconciliationId' => 'setReconciliationId',
         'errorInformation' => 'setErrorInformation',
@@ -197,6 +201,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'id' => 'getId',
         'message' => 'getMessage',
         'submitTimeUtc' => 'getSubmitTimeUtc',
+        'createTimeUtc' => 'getCreateTimeUtc',
         'status' => 'getStatus',
         'reconciliationId' => 'getReconciliationId',
         'errorInformation' => 'getErrorInformation',
@@ -255,6 +260,7 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
+        $this->container['createTimeUtc'] = isset($data['createTimeUtc']) ? $data['createTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['reconciliationId'] = isset($data['reconciliationId']) ? $data['reconciliationId'] : null;
         $this->container['errorInformation'] = isset($data['errorInformation']) ? $data['errorInformation'] : null;
@@ -383,6 +389,27 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
     public function setSubmitTimeUtc($submitTimeUtc)
     {
         $this->container['submitTimeUtc'] = $submitTimeUtc;
+
+        return $this;
+    }
+
+    /**
+     * Gets createTimeUtc
+     * @return string
+     */
+    public function getCreateTimeUtc()
+    {
+        return $this->container['createTimeUtc'];
+    }
+
+    /**
+     * Sets createTimeUtc
+     * @param string $createTimeUtc Time when the authorization was created, in UTC.
+     * @return $this
+     */
+    public function setCreateTimeUtc($createTimeUtc)
+    {
+        $this->container['createTimeUtc'] = $createTimeUtc;
 
         return $this;
     }

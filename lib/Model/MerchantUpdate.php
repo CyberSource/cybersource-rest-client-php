@@ -60,8 +60,8 @@ class MerchantUpdate implements ArrayAccess
         'paymentPayloadType' => 'string',
         'acceptanceRelationships' => 'string[]',
         'protocolInteractions' => '\CyberSource\Model\Iccv1merchantsProtocolInteractions[]',
-        'webIntegrations' => '\CyberSource\Model\Iccv1merchantsWebIntegrations',
-        'apiIntegrations' => '\CyberSource\Model\Iccv1merchantsApiIntegrations'
+        'webIntegrations' => '\CyberSource\Model\MerchantRegistrationResponse201WebIntegrations',
+        'apiIntegrations' => '\CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations'
     ];
 
     /**
@@ -234,7 +234,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets merchantUrl
-     * @param string $merchantUrl Base merchant URL (must use HTTPS)
+     * @param string $merchantUrl Base URL of the merchant's domain. Must use HTTPS and be unique — raises 409 if already registered.
      * @return $this
      */
     public function setMerchantUrl($merchantUrl)
@@ -255,7 +255,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets cryptogramType
-     * @param string $cryptogramType Authentication cryptogram type  Possible values: - TAVV - DAVV
+     * @param string $cryptogramType Authentication cryptogram type used for payment credential generation.  Possible values: - TAVV - DAVV
      * @return $this
      */
     public function setCryptogramType($cryptogramType)
@@ -276,7 +276,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets paymentPayloadType
-     * @param string $paymentPayloadType Credential delivery format  Possible values: - ENCRYPTED - UNENCRYPTED
+     * @param string $paymentPayloadType Credential delivery format. Set to ***ENCRYPTED*** to enable JWE-encrypted payload delivery — requires an active encryption key. Returns 400 if no active key exists.  Possible values: - ENCRYPTED - UNENCRYPTED
      * @return $this
      */
     public function setPaymentPayloadType($paymentPayloadType)
@@ -297,7 +297,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets acceptanceRelationships
-     * @param string[] $acceptanceRelationships List of acceptance network relationships
+     * @param string[] $acceptanceRelationships List of payment network acceptance relationships (e.g., \"Visa\").
      * @return $this
      */
     public function setAcceptanceRelationships($acceptanceRelationships)
@@ -318,7 +318,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets protocolInteractions
-     * @param \CyberSource\Model\Iccv1merchantsProtocolInteractions[] $protocolInteractions List of protocol configurations
+     * @param \CyberSource\Model\Iccv1merchantsProtocolInteractions[] $protocolInteractions List of protocol interaction configurations defining the merchant's endpoint for each supported protocol (ucp, acp, x402).
      * @return $this
      */
     public function setProtocolInteractions($protocolInteractions)
@@ -330,7 +330,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Gets webIntegrations
-     * @return \CyberSource\Model\Iccv1merchantsWebIntegrations
+     * @return \CyberSource\Model\MerchantRegistrationResponse201WebIntegrations
      */
     public function getWebIntegrations()
     {
@@ -339,7 +339,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets webIntegrations
-     * @param \CyberSource\Model\Iccv1merchantsWebIntegrations $webIntegrations
+     * @param \CyberSource\Model\MerchantRegistrationResponse201WebIntegrations $webIntegrations
      * @return $this
      */
     public function setWebIntegrations($webIntegrations)
@@ -351,7 +351,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Gets apiIntegrations
-     * @return \CyberSource\Model\Iccv1merchantsApiIntegrations
+     * @return \CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations
      */
     public function getApiIntegrations()
     {
@@ -360,7 +360,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets apiIntegrations
-     * @param \CyberSource\Model\Iccv1merchantsApiIntegrations $apiIntegrations
+     * @param \CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations $apiIntegrations
      * @return $this
      */
     public function setApiIntegrations($apiIntegrations)
