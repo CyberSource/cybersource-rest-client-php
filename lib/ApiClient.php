@@ -112,7 +112,10 @@ class ApiClient
             echo "Merchant Configuration cannot be null.";
         }
 
-        if (self::$shareHandle === null) {
+        // Connection sharing needs PHP built against libcurl >= 7.57.0, where
+        // CURL_LOCK_DATA_CONNECT exists. Older builds simply skip the share
+        // handle instead of failing with an undefined constant.
+        if (self::$shareHandle === null && defined('CURL_LOCK_DATA_CONNECT')) {
             self::$shareHandle = curl_share_init();
             curl_share_setopt(self::$shareHandle, CURLSHOPT_SHARE, CURL_LOCK_DATA_CONNECT);
         }
@@ -318,7 +321,9 @@ class ApiClient
 
         $curl = curl_init();
 
-        curl_setopt($curl, CURLOPT_SHARE, self::$shareHandle);
+        if (self::$shareHandle !== null) {
+            curl_setopt($curl, CURLOPT_SHARE, self::$shareHandle);
+        }
         // set timeout, if needed
         if ($this->config->getCurlTimeout() !== 0) {
             curl_setopt($curl, CURLOPT_TIMEOUT, $this->config->getCurlTimeout());
