@@ -46,7 +46,7 @@ class TmsEmbeddedInstrumentIdentifierProcessingInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsEmbeddedInstrumentIdentifier_processingInformation';
+    protected static $swaggerModelName = 'TmsEmbeddedInstrumentIdentifierProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

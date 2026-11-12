@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **actionDecisionManagerCase**
-> \CyberSource\Model\InlineResponse2003 actionDecisionManagerCase($id, $caseManagementActionsRequest)
+> \CyberSource\Model\CaseManagementActionsResponse actionDecisionManagerCase($id, $caseManagementActionsRequest)
 
 Take action on a DM post-transactional case
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\CyberSource\Model\CaseManagementActionsResponse**](../Model/CaseManagementActionsResponse.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **commentDecisionManagerCase**
-> \CyberSource\Model\InlineResponse2012 commentDecisionManagerCase($id, $caseManagementCommentsRequest)
+> \CyberSource\Model\CommentDecisionManagerCaseResponse commentDecisionManagerCase($id, $caseManagementCommentsRequest)
 
 Add a comment to a DM post-transactional case
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2012**](../Model/InlineResponse2012.md)
+[**\CyberSource\Model\CommentDecisionManagerCaseResponse**](../Model/CommentDecisionManagerCaseResponse.md)
 
 ### Authorization
 

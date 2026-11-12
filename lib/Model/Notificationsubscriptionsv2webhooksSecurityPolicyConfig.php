@@ -47,7 +47,7 @@ class Notificationsubscriptionsv2webhooksSecurityPolicyConfig implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'notificationsubscriptionsv2webhooks_securityPolicy_config';
+    protected static $swaggerModelName = 'Notificationsubscriptionsv2webhooksSecurityPolicyConfig';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

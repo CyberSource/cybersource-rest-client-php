@@ -46,7 +46,7 @@ class Ucv1sessionsDataOrderInformationShippingDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_orderInformation_shippingDetails';
+    protected static $swaggerModelName = 'Ucv1sessionsDataOrderInformationShippingDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

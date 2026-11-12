@@ -46,7 +46,7 @@ class GetAllSubscriptionsResponsePaymentInformationCustomer implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getAllSubscriptionsResponse_paymentInformation_customer';
+    protected static $swaggerModelName = 'GetAllSubscriptionsResponsePaymentInformationCustomer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

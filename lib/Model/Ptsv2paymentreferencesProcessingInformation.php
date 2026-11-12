@@ -46,7 +46,7 @@ class Ptsv2paymentreferencesProcessingInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentreferences_processingInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentreferencesProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -224,7 +224,7 @@ class Ptsv2paymentreferencesProcessingInformation implements ArrayAccess
 
     /**
      * Sets actionList
-     * @param string[] $actionList Possible values are one or more of follows:   - `AP_SESSIONS`: Use this when Alternative Payment Sessions service is requested.
+     * @param string[] $actionList Possible values are one or more of follows:  - `AP_SESSIONS`: Use this when Alternative Payment Sessions service is requested.
      * @return $this
      */
     public function setActionList($actionList)

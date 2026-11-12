@@ -47,7 +47,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_merchant_merchantDescriptor_expectedAverageTicketSize';
+    protected static $swaggerModelName = 'UnifiedriskMerchantMerchantDescriptorExpectedAverageTicketSize';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

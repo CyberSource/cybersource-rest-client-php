@@ -46,7 +46,7 @@ class UnifiedriskTerminalCapabilities implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_terminal_capabilities';
+    protected static $swaggerModelName = 'UnifiedriskTerminalCapabilities';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

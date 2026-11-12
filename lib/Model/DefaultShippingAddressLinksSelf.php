@@ -46,7 +46,7 @@ class DefaultShippingAddressLinksSelf implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultShippingAddress__links_self';
+    protected static $swaggerModelName = 'DefaultShippingAddressLinksSelf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

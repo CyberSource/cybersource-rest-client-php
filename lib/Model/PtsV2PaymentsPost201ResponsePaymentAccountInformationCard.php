@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponsePaymentAccountInformationCard implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_paymentAccountInformation_card';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponsePaymentAccountInformationCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

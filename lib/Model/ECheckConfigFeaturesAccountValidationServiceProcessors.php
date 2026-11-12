@@ -47,7 +47,7 @@ class ECheckConfigFeaturesAccountValidationServiceProcessors implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_features_accountValidationService_processors';
+    protected static $swaggerModelName = 'ECheckConfigFeaturesAccountValidationServiceProcessors';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

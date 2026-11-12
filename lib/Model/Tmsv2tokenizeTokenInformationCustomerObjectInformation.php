@@ -46,7 +46,7 @@ class Tmsv2tokenizeTokenInformationCustomerObjectInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_tokenInformation_customer_objectInformation';
+    protected static $swaggerModelName = 'Tmsv2tokenizeTokenInformationCustomerObjectInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

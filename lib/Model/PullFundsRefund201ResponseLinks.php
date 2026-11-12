@@ -46,14 +46,14 @@ class PullFundsRefund201ResponseLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pullFundsRefund201Response__links';
+    protected static $swaggerModelName = 'PullFundsRefund201ResponseLinks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'self' => '\CyberSource\Model\PullFundsRefund201ResponseLinksSelf'
+        'self' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf12'
     ];
 
     /**
@@ -161,7 +161,7 @@ class PullFundsRefund201ResponseLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \CyberSource\Model\PullFundsRefund201ResponseLinksSelf
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf12
      */
     public function getSelf()
     {
@@ -170,7 +170,7 @@ class PullFundsRefund201ResponseLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \CyberSource\Model\PullFundsRefund201ResponseLinksSelf $self
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf12 $self
      * @return $this
      */
     public function setSelf($self)

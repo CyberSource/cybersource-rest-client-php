@@ -47,7 +47,7 @@ class UnifiedriskLabelsReturn implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_labels_return';
+    protected static $swaggerModelName = 'UnifiedriskLabelsReturn';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

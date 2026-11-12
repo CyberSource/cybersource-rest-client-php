@@ -47,7 +47,7 @@ class RiskV1DecisionsPost201ResponsePaymentInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskV1DecisionsPost201Response_paymentInformation';
+    protected static $swaggerModelName = 'RiskV1DecisionsPost201ResponsePaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

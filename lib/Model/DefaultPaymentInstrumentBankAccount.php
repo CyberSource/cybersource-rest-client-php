@@ -46,7 +46,7 @@ class DefaultPaymentInstrumentBankAccount implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultPaymentInstrument_bankAccount';
+    protected static $swaggerModelName = 'DefaultPaymentInstrumentBankAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

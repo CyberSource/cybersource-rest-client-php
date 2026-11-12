@@ -53,12 +53,11 @@ class InlineResponse4003 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'submitTimeStampUtc' => 'string',
         'status' => 'string',
-        'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse2013ErrorInformationDetails[]'
+        'code' => 'string',
+        'details' => '\CyberSource\Model\InlineResponse4003Details[]',
+        'submitTimeUtc' => 'string'
     ];
 
     /**
@@ -66,12 +65,11 @@ class InlineResponse4003 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'submitTimeStampUtc' => null,
         'status' => null,
-        'reason' => null,
         'message' => null,
-        'details' => null
+        'code' => null,
+        'details' => null,
+        'submitTimeUtc' => null
     ];
 
     public static function swaggerTypes()
@@ -89,12 +87,11 @@ class InlineResponse4003 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'submitTimeStampUtc' => 'submitTimeStampUtc',
         'status' => 'status',
-        'reason' => 'reason',
         'message' => 'message',
-        'details' => 'details'
+        'code' => 'code',
+        'details' => 'details',
+        'submitTimeUtc' => 'submitTimeUtc'
     ];
 
 
@@ -103,12 +100,11 @@ class InlineResponse4003 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'submitTimeStampUtc' => 'setSubmitTimeStampUtc',
         'status' => 'setStatus',
-        'reason' => 'setReason',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'code' => 'setCode',
+        'details' => 'setDetails',
+        'submitTimeUtc' => 'setSubmitTimeUtc'
     ];
 
 
@@ -117,12 +113,11 @@ class InlineResponse4003 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'submitTimeStampUtc' => 'getSubmitTimeStampUtc',
         'status' => 'getStatus',
-        'reason' => 'getReason',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'code' => 'getCode',
+        'details' => 'getDetails',
+        'submitTimeUtc' => 'getSubmitTimeUtc'
     ];
 
     public static function attributeMap()
@@ -156,12 +151,11 @@ class InlineResponse4003 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['submitTimeStampUtc'] = isset($data['submitTimeStampUtc']) ? $data['submitTimeStampUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
     }
 
     /**
@@ -190,48 +184,6 @@ class InlineResponse4003 implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets submitTimeStampUtc
-     * @return string
-     */
-    public function getSubmitTimeStampUtc()
-    {
-        return $this->container['submitTimeStampUtc'];
-    }
-
-    /**
-     * Sets submitTimeStampUtc
-     * @param string $submitTimeStampUtc Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
-     * @return $this
-     */
-    public function setSubmitTimeStampUtc($submitTimeStampUtc)
-    {
-        $this->container['submitTimeStampUtc'] = $submitTimeStampUtc;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      * @return string
      */
@@ -242,33 +194,12 @@ class InlineResponse4003 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status Possible values: - INVALID_REQUEST
+     * @param string $status The status of the submitted request.  Possible values: - BAD_REQUEST
      * @return $this
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status.  Possible values: - INVALID_DATA - MISSING_FIELD
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -295,8 +226,29 @@ class InlineResponse4003 implements ArrayAccess
     }
 
     /**
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code An optional short string which identifies the exact error.
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
      * Gets details
-     * @return \CyberSource\Model\InlineResponse2013ErrorInformationDetails[]
+     * @return \CyberSource\Model\InlineResponse4003Details[]
      */
     public function getDetails()
     {
@@ -305,12 +257,33 @@ class InlineResponse4003 implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\InlineResponse2013ErrorInformationDetails[] $details
+     * @param \CyberSource\Model\InlineResponse4003Details[] $details An optional array which provides more details of the error.
      * @return $this
      */
     public function setDetails($details)
     {
         $this->container['details'] = $details;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return string
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class Invoicingv2invoicesClientReferenceInformationPartner implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingv2invoices_clientReferenceInformation_partner';
+    protected static $swaggerModelName = 'Invoicingv2invoicesClientReferenceInformationPartner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

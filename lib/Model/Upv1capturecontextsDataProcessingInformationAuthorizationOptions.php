@@ -46,7 +46,7 @@ class Upv1capturecontextsDataProcessingInformationAuthorizationOptions implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_processingInformation_authorizationOptions';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataProcessingInformationAuthorizationOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PtsV2PaymentsRefundPost201ResponseClientReferenceInformation implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsRefundPost201Response_clientReferenceInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsRefundPost201ResponseClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class TmsBinLookupIssuerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'TmsBinLookup_issuerInformation';
+    protected static $swaggerModelName = 'TmsBinLookupIssuerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

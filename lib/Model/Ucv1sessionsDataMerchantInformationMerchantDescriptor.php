@@ -46,7 +46,7 @@ class Ucv1sessionsDataMerchantInformationMerchantDescriptor implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_merchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'Ucv1sessionsDataMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

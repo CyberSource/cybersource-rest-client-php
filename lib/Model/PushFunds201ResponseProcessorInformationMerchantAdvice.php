@@ -46,7 +46,7 @@ class PushFunds201ResponseProcessorInformationMerchantAdvice implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response_processorInformation_merchantAdvice';
+    protected static $swaggerModelName = 'PushFunds201ResponseProcessorInformationMerchantAdvice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

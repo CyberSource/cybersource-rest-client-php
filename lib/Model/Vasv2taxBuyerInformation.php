@@ -46,7 +46,7 @@ class Vasv2taxBuyerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasv2tax_buyerInformation';
+    protected static $swaggerModelName = 'Vasv2taxBuyerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

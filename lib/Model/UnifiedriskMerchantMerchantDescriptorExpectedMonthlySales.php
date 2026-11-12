@@ -47,7 +47,7 @@ class UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_merchant_merchantDescriptor_expectedMonthlySales';
+    protected static $swaggerModelName = 'UnifiedriskMerchantMerchantDescriptorExpectedMonthlySales';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

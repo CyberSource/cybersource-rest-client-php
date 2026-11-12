@@ -46,7 +46,7 @@ class Ptsv2payoutstransactionqueryidClientReferenceInformation implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payoutstransactionqueryid_clientReferenceInformation';
+    protected static $swaggerModelName = 'Ptsv2payoutstransactionqueryidClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

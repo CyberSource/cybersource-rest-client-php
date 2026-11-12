@@ -46,7 +46,7 @@ class Dmsv3devicesdeassociateDevices implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'dmsv3devicesdeassociate_devices';
+    protected static $swaggerModelName = 'Dmsv3devicesdeassociateDevices';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

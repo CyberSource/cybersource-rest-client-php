@@ -47,7 +47,7 @@ class CardProcessingConfigCommonMerchantDescriptorInformation implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CardProcessingConfig_common_merchantDescriptorInformation';
+    protected static $swaggerModelName = 'CardProcessingConfigCommonMerchantDescriptorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

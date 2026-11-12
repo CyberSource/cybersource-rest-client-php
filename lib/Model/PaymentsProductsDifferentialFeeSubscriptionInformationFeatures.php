@@ -46,7 +46,7 @@ class PaymentsProductsDifferentialFeeSubscriptionInformationFeatures implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_differentialFee_subscriptionInformation_features';
+    protected static $swaggerModelName = 'PaymentsProductsDifferentialFeeSubscriptionInformationFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

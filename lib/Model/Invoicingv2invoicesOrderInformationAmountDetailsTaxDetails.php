@@ -47,7 +47,7 @@ class Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingv2invoices_orderInformation_amountDetails_taxDetails';
+    protected static $swaggerModelName = 'Invoicingv2invoicesOrderInformationAmountDetailsTaxDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

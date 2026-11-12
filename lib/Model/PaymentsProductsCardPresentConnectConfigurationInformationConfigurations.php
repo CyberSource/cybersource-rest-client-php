@@ -46,7 +46,7 @@ class PaymentsProductsCardPresentConnectConfigurationInformationConfigurations i
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_cardPresentConnect_configurationInformation_configurations';
+    protected static $swaggerModelName = 'PaymentsProductsCardPresentConnectConfigurationInformationConfigurations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

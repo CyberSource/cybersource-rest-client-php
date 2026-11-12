@@ -46,7 +46,7 @@ class Tmsv2tokenizedcardsBillTo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenizedcards_billTo';
+    protected static $swaggerModelName = 'Tmsv2tokenizedcardsBillTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PushFunds201ResponseProcessorInformationSettlement implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response_processorInformation_settlement';
+    protected static $swaggerModelName = 'PushFunds201ResponseProcessorInformationSettlement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

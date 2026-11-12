@@ -105,6 +105,13 @@ class TssV2TransactionsGet200ResponseClientReferenceInformationTest extends \PHP
     }
 
     /**
+     * Test attribute "transactionId"
+     */
+    public function testPropertyTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "partner"
      */
     public function testPropertyPartner()

@@ -98,6 +98,13 @@ class TssV2TransactionsPost201ResponseEmbeddedClientReferenceInformationTest ext
     }
 
     /**
+     * Test attribute "transactionId"
+     */
+    public function testPropertyTransactionId()
+    {
+    }
+
+    /**
      * Test attribute "partner"
      */
     public function testPropertyPartner()

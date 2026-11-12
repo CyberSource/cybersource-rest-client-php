@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationTravelActualFinalDestination im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_riskInformation_travel_actualFinalDestination';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseRiskInformationTravelActualFinalDestination';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

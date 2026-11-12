@@ -47,7 +47,7 @@ class InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRe
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingV2InvoiceSettingsGet200Response_invoiceSettingsInformation_customRedirectUrls';
+    protected static $swaggerModelName = 'InvoicingV2InvoiceSettingsGet200ResponseInvoiceSettingsInformationCustomRedirectUrls';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

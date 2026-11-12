@@ -47,7 +47,7 @@ class UcFeatureSubscriptionTinkPayByBank implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_tinkPayByBank';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionTinkPayByBank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

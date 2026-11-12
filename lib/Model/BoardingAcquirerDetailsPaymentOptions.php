@@ -46,7 +46,7 @@ class BoardingAcquirerDetailsPaymentOptions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingAcquirerDetails_paymentOptions';
+    protected static $swaggerModelName = 'BoardingAcquirerDetailsPaymentOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

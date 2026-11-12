@@ -46,7 +46,7 @@ class Boardingv1registrationsIntegrationInformationMsd implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingv1registrations_integrationInformation_msd';
+    protected static $swaggerModelName = 'Boardingv1registrationsIntegrationInformationMsd';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

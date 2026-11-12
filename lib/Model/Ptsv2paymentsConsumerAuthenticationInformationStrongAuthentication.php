@@ -46,7 +46,7 @@ class Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication impleme
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_consumerAuthenticationInformation_strongAuthentication';
+    protected static $swaggerModelName = 'Ptsv2paymentsConsumerAuthenticationInformationStrongAuthentication';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

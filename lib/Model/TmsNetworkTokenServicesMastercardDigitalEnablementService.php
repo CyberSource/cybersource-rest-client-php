@@ -46,7 +46,7 @@ class TmsNetworkTokenServicesMastercardDigitalEnablementService implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsNetworkTokenServices_mastercardDigitalEnablementService';
+    protected static $swaggerModelName = 'TmsNetworkTokenServicesMastercardDigitalEnablementService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

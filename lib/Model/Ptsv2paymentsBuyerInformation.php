@@ -46,7 +46,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_buyerInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsBuyerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -63,7 +63,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'language' => 'string',
         'noteToSeller' => 'string',
         'mobilePhone' => 'int',
-        'walletId' => 'string'
+        'walletId' => 'string',
+        'loyalty' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationLoyalty'
     ];
 
     /**
@@ -81,7 +82,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'language' => null,
         'noteToSeller' => null,
         'mobilePhone' => null,
-        'walletId' => null
+        'walletId' => null,
+        'loyalty' => null
     ];
 
     public static function swaggerTypes()
@@ -109,7 +111,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'language' => 'language',
         'noteToSeller' => 'noteToSeller',
         'mobilePhone' => 'mobilePhone',
-        'walletId' => 'walletId'
+        'walletId' => 'walletId',
+        'loyalty' => 'loyalty'
     ];
 
 
@@ -128,7 +131,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'language' => 'setLanguage',
         'noteToSeller' => 'setNoteToSeller',
         'mobilePhone' => 'setMobilePhone',
-        'walletId' => 'setWalletId'
+        'walletId' => 'setWalletId',
+        'loyalty' => 'setLoyalty'
     ];
 
 
@@ -147,7 +151,8 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         'language' => 'getLanguage',
         'noteToSeller' => 'getNoteToSeller',
         'mobilePhone' => 'getMobilePhone',
-        'walletId' => 'getWalletId'
+        'walletId' => 'getWalletId',
+        'loyalty' => 'getLoyalty'
     ];
 
     public static function attributeMap()
@@ -192,6 +197,7 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
         $this->container['noteToSeller'] = isset($data['noteToSeller']) ? $data['noteToSeller'] : null;
         $this->container['mobilePhone'] = isset($data['mobilePhone']) ? $data['mobilePhone'] : null;
         $this->container['walletId'] = isset($data['walletId']) ? $data['walletId'] : null;
+        $this->container['loyalty'] = isset($data['loyalty']) ? $data['loyalty'] : null;
     }
 
     /**
@@ -446,6 +452,27 @@ class Ptsv2paymentsBuyerInformation implements ArrayAccess
     public function setWalletId($walletId)
     {
         $this->container['walletId'] = $walletId;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyalty
+     * @return \CyberSource\Model\Ptsv2paymentsBuyerInformationLoyalty
+     */
+    public function getLoyalty()
+    {
+        return $this->container['loyalty'];
+    }
+
+    /**
+     * Sets loyalty
+     * @param \CyberSource\Model\Ptsv2paymentsBuyerInformationLoyalty $loyalty
+     * @return $this
+     */
+    public function setLoyalty($loyalty)
+    {
+        $this->container['loyalty'] = $loyalty;
 
         return $this;
     }

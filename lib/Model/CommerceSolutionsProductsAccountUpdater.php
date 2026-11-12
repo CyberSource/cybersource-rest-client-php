@@ -46,7 +46,7 @@ class CommerceSolutionsProductsAccountUpdater implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'commerceSolutionsProducts_accountUpdater';
+    protected static $swaggerModelName = 'CommerceSolutionsProductsAccountUpdater';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

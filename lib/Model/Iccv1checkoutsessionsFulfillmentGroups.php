@@ -47,7 +47,7 @@ class Iccv1checkoutsessionsFulfillmentGroups implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1checkoutsessions_fulfillment_groups';
+    protected static $swaggerModelName = 'Iccv1checkoutsessionsFulfillmentGroups';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

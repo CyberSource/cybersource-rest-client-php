@@ -46,7 +46,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformationSellerProtection impl
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsOrderPost201Response_processorInformation_sellerProtection';
+    protected static $swaggerModelName = 'PtsV2PaymentsOrderPost201ResponseProcessorInformationSellerProtection';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

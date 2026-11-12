@@ -46,7 +46,7 @@ class UnderwritingConfigurationMerchantApplication implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'underwritingConfiguration_merchantApplication';
+    protected static $swaggerModelName = 'UnderwritingConfigurationMerchantApplication';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

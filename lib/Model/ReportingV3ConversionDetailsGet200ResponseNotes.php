@@ -46,7 +46,7 @@ class ReportingV3ConversionDetailsGet200ResponseNotes implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ConversionDetailsGet200Response_notes';
+    protected static $swaggerModelName = 'ReportingV3ConversionDetailsGet200ResponseNotes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

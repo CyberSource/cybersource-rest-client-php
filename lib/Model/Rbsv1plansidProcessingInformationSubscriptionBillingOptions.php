@@ -46,7 +46,7 @@ class Rbsv1plansidProcessingInformationSubscriptionBillingOptions implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'rbsv1plansid_processingInformation_subscriptionBillingOptions';
+    protected static $swaggerModelName = 'Rbsv1plansidProcessingInformationSubscriptionBillingOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

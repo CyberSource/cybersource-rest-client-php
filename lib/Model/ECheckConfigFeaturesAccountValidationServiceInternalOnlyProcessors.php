@@ -47,7 +47,7 @@ class ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors impleme
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_features_accountValidationService_internalOnly_processors';
+    protected static $swaggerModelName = 'ECheckConfigFeaturesAccountValidationServiceInternalOnlyProcessors';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

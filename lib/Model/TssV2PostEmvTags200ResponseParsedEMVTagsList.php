@@ -46,7 +46,7 @@ class TssV2PostEmvTags200ResponseParsedEMVTagsList implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2PostEmvTags200Response_parsedEMVTagsList';
+    protected static $swaggerModelName = 'TssV2PostEmvTags200ResponseParsedEMVTagsList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Boardingv1registrationsOrganizationInformationKYCDepositBankAccount implem
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingv1registrations_organizationInformation_KYC_depositBankAccount';
+    protected static $swaggerModelName = 'Boardingv1registrationsOrganizationInformationKYCDepositBankAccount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

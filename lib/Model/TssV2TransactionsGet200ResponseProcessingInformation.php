@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseProcessingInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_processingInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

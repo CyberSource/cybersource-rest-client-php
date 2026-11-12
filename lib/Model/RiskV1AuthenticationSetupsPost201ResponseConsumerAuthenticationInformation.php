@@ -46,7 +46,7 @@ class RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskV1AuthenticationSetupsPost201Response_consumerAuthenticationInformation';
+    protected static $swaggerModelName = 'RiskV1AuthenticationSetupsPost201ResponseConsumerAuthenticationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

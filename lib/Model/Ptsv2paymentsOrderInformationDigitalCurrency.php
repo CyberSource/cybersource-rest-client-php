@@ -47,7 +47,7 @@ class Ptsv2paymentsOrderInformationDigitalCurrency implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_orderInformation_digitalCurrency';
+    protected static $swaggerModelName = 'Ptsv2paymentsOrderInformationDigitalCurrency';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

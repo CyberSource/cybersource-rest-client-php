@@ -110,7 +110,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CancelCheckoutResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelCheckout($sessionId, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -135,7 +135,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CancelCheckoutResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelCheckoutWithHttpInfo($sessionId, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -156,7 +156,8 @@ class ACPCheckoutApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($idempotencyKey !== null) {
@@ -201,6 +202,14 @@ class ACPCheckoutApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -209,7 +218,7 @@ class ACPCheckoutApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "cancelCheckout,cancelCheckoutWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -229,7 +238,7 @@ class ACPCheckoutApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20018");
+        self::$logger->debug("Return Type : \CyberSource\Model\CancelCheckoutResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "cancelCheckout,cancelCheckoutWithHttpInfo");
@@ -242,26 +251,26 @@ class ACPCheckoutApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20018',
+                '\CyberSource\Model\CancelCheckoutResponse',
                 '/icc/v1/checkout_sessions/{session_id}/cancel',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20018', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CancelCheckoutResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20018', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CancelCheckoutResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -286,7 +295,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CompleteCheckoutResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function completeCheckout($sessionId, $acpCompleteCheckoutRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -312,7 +321,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CompleteCheckoutResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function completeCheckoutWithHttpInfo($sessionId, $acpCompleteCheckoutRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -338,7 +347,8 @@ class ACPCheckoutApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($idempotencyKey !== null) {
@@ -390,6 +400,14 @@ class ACPCheckoutApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -398,7 +416,7 @@ class ACPCheckoutApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "completeCheckout,completeCheckoutWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -418,7 +436,7 @@ class ACPCheckoutApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20017");
+        self::$logger->debug("Return Type : \CyberSource\Model\CompleteCheckoutResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "completeCheckout,completeCheckoutWithHttpInfo");
@@ -431,30 +449,30 @@ class ACPCheckoutApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20017',
+                '\CyberSource\Model\CompleteCheckoutResponse',
                 '/icc/v1/checkout_sessions/{session_id}/complete',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20017', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CompleteCheckoutResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20017', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CompleteCheckoutResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -478,7 +496,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CheckoutSessionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCheckoutSession($acpCreateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -503,7 +521,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CheckoutSessionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCheckoutSessionWithHttpInfo($acpCreateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -524,7 +542,8 @@ class ACPCheckoutApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($idempotencyKey !== null) {
@@ -568,6 +587,14 @@ class ACPCheckoutApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -576,7 +603,7 @@ class ACPCheckoutApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createCheckoutSession,createCheckoutSessionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -596,7 +623,7 @@ class ACPCheckoutApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20112");
+        self::$logger->debug("Return Type : \CyberSource\Model\CheckoutSessionResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createCheckoutSession,createCheckoutSessionWithHttpInfo");
@@ -609,26 +636,26 @@ class ACPCheckoutApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20112',
+                '\CyberSource\Model\CheckoutSessionResponse',
                 '/icc/v1/checkout_sessions',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20112', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CheckoutSessionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20112', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CheckoutSessionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -653,7 +680,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CheckoutSessionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCheckoutSession($sessionId, $acpGetCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -679,7 +706,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CheckoutSessionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCheckoutSessionWithHttpInfo($sessionId, $acpGetCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -705,7 +732,8 @@ class ACPCheckoutApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($idempotencyKey !== null) {
@@ -757,6 +785,14 @@ class ACPCheckoutApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -765,7 +801,7 @@ class ACPCheckoutApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getCheckoutSession,getCheckoutSessionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -785,7 +821,7 @@ class ACPCheckoutApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20112");
+        self::$logger->debug("Return Type : \CyberSource\Model\CheckoutSessionResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getCheckoutSession,getCheckoutSessionWithHttpInfo");
@@ -798,26 +834,26 @@ class ACPCheckoutApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20112',
+                '\CyberSource\Model\CheckoutSessionResponse',
                 '/icc/v1/checkout_sessions/{session_id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20112', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CheckoutSessionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20112', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CheckoutSessionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -842,7 +878,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CheckoutSessionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCheckoutSession($sessionId, $acpUpdateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -868,7 +904,7 @@ class ACPCheckoutApi
      * @param string $timestamp ISO 8601 timestamp of when the request was generated. Used in conjunction with Signature for replay protection. (optional)
      * @param string $aPIVersion ACP specification version the client is targeting (e.g. &#x60;2024-01-01&#x60;). When omitted, the latest supported version is assumed. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20112, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CheckoutSessionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCheckoutSessionWithHttpInfo($sessionId, $acpUpdateCheckoutSessionRequest, $idempotencyKey = null, $acceptLanguage = null, $userAgent = null, $requestId = null, $signature = null, $timestamp = null, $aPIVersion = null)
     {
@@ -894,7 +930,8 @@ class ACPCheckoutApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($idempotencyKey !== null) {
@@ -946,6 +983,14 @@ class ACPCheckoutApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -954,7 +999,7 @@ class ACPCheckoutApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "updateCheckoutSession,updateCheckoutSessionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -974,7 +1019,7 @@ class ACPCheckoutApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20112");
+        self::$logger->debug("Return Type : \CyberSource\Model\CheckoutSessionResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateCheckoutSession,updateCheckoutSessionWithHttpInfo");
@@ -987,30 +1032,30 @@ class ACPCheckoutApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20112',
+                '\CyberSource\Model\CheckoutSessionResponse',
                 '/icc/v1/checkout_sessions/{session_id}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20112', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CheckoutSessionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20112', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CheckoutSessionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse40016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

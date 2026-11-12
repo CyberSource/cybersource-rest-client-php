@@ -46,7 +46,7 @@ class VirtualTerminalGlobalPaymentSettingsMerchantDefinedDataFields implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'virtualTerminalGlobalPaymentSettings_merchantDefinedDataFields';
+    protected static $swaggerModelName = 'VirtualTerminalGlobalPaymentSettingsMerchantDefinedDataFields';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

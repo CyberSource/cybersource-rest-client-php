@@ -46,7 +46,7 @@ class TmsIssuerLifeCycleEventSimulationMetadataCardArt implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsIssuerLifeCycleEventSimulationMetadata_cardArt';
+    protected static $swaggerModelName = 'TmsIssuerLifeCycleEventSimulationMetadataCardArt';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

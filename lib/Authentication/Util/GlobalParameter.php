@@ -42,6 +42,7 @@ class GlobalParameter
     const POSTALGOHEADER = "host date request-target digest v-c-merchant-id";
     const GETALGOHEADER = "host date request-target v-c-merchant-id";
     const RS256 = "RS256";
+    const RESPONSE_MLE_ALGORITHM = "RSA-OAEP-256";
     const FILE_NOT_FOUND = "[ERROR] : File not found, Re-Enter path/file name, Entered path/file name : ";
     const MISSING_REQUEST = "[ERROR] : Request Not Found.";
     const MERCHANTCONFIGERR = "[ERROR] : Merchant Configuration Object is empty!";

@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationR
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_processorInformation_electronicVerificationResults';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseProcessorInformationElectronicVerificationResults';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

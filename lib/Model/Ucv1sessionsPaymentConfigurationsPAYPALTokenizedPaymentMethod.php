@@ -47,7 +47,7 @@ class Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_paymentConfigurations_PAYPAL_tokenizedPaymentMethod';
+    protected static $swaggerModelName = 'Ucv1sessionsPaymentConfigurationsPAYPALTokenizedPaymentMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

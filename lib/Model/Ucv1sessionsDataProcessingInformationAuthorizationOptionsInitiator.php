@@ -46,7 +46,7 @@ class Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator impleme
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_processingInformation_authorizationOptions_initiator';
+    protected static $swaggerModelName = 'Ucv1sessionsDataProcessingInformationAuthorizationOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Tmsv2TokenizedCardMetadataIssuerBankApplications implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2TokenizedCard_metadata_issuer_bankApplications';
+    protected static $swaggerModelName = 'Tmsv2TokenizedCardMetadataIssuerBankApplications';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

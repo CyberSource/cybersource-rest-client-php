@@ -47,7 +47,7 @@ class Iplv2paymentlinksidPurchaseInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iplv2paymentlinksid_purchaseInformation';
+    protected static $swaggerModelName = 'Iplv2paymentlinksidPurchaseInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

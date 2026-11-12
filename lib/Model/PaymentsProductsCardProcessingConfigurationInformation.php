@@ -46,7 +46,7 @@ class PaymentsProductsCardProcessingConfigurationInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_cardProcessing_configurationInformation';
+    protected static $swaggerModelName = 'PaymentsProductsCardProcessingConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class ECheckConfigFeatures implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_features';
+    protected static $swaggerModelName = 'ECheckConfigFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

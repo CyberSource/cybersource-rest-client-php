@@ -47,7 +47,7 @@ class PblPaymentLinksAllGet200ResponseOrderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pblPaymentLinksAllGet200Response_orderInformation';
+    protected static $swaggerModelName = 'PblPaymentLinksAllGet200ResponseOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -208,4 +208,11 @@ class Ptsv2paymentsOrderInformationShipToTest extends \PHPUnit\Framework\TestCas
     public function testPropertyMethod()
     {
     }
+
+    /**
+     * Test attribute "carrierName"
+     */
+    public function testPropertyCarrierName()
+    {
+    }
 }

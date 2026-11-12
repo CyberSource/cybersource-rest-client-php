@@ -46,7 +46,7 @@ class Ptsv1pushfundstransferOrderInformationAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pushfundstransfer_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Ptsv1pushfundstransferOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Ptsv2paymentreferencesidintentsPaymentInformationEWallet implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentreferencesidintents_paymentInformation_eWallet';
+    protected static $swaggerModelName = 'Ptsv2paymentreferencesidintentsPaymentInformationEWallet';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

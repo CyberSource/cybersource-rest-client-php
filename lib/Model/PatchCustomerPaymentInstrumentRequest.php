@@ -67,7 +67,7 @@ class PatchCustomerPaymentInstrumentRequest implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\TmsMerchantInformation',
         'instrumentIdentifier' => '\CyberSource\Model\DefaultPaymentInstrumentInstrumentIdentifier',
         'metadata' => '\CyberSource\Model\DefaultPaymentInstrumentMetadata',
-        'embedded' => '\CyberSource\Model\Tmsv1paymentinstrumentsEmbedded'
+        'embedded' => '\CyberSource\Model\PaymentInstrumentEmbedded2'
     ];
 
     /**
@@ -539,7 +539,7 @@ class PatchCustomerPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\Tmsv1paymentinstrumentsEmbedded
+     * @return \CyberSource\Model\PaymentInstrumentEmbedded2
      */
     public function getEmbedded()
     {
@@ -548,7 +548,7 @@ class PatchCustomerPaymentInstrumentRequest implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\Tmsv1paymentinstrumentsEmbedded $embedded
+     * @param \CyberSource\Model\PaymentInstrumentEmbedded2 $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

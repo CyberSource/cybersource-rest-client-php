@@ -46,7 +46,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformation implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsOrderPost201Response_processorInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsOrderPost201ResponseProcessorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformation implements ArrayAcce
       */
     protected static $swaggerTypes = [
         'sellerProtection' => '\CyberSource\Model\PtsV2PaymentsOrderPost201ResponseProcessorInformationSellerProtection',
-        'avs' => '\CyberSource\Model\PtsV2PaymentsPost201Response1ProcessorInformationAvs',
+        'avs' => '\CyberSource\Model\RefreshPaymentStatusResponseProcessorInformationAvs',
         'transactionId' => 'string',
         'responseDetails' => 'string'
     ];
@@ -200,7 +200,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformation implements ArrayAcce
 
     /**
      * Gets avs
-     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1ProcessorInformationAvs
+     * @return \CyberSource\Model\RefreshPaymentStatusResponseProcessorInformationAvs
      */
     public function getAvs()
     {
@@ -209,7 +209,7 @@ class PtsV2PaymentsOrderPost201ResponseProcessorInformation implements ArrayAcce
 
     /**
      * Sets avs
-     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1ProcessorInformationAvs $avs
+     * @param \CyberSource\Model\RefreshPaymentStatusResponseProcessorInformationAvs $avs
      * @return $this
      */
     public function setAvs($avs)

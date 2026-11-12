@@ -47,7 +47,7 @@ class Iccv1checkoutsessionsItem implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1checkoutsessions_item';
+    protected static $swaggerModelName = 'Iccv1checkoutsessionsItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

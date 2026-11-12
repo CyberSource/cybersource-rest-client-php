@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_paymentInformation_accountFeatures';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponsePaymentInformationAccountFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

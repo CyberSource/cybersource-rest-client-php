@@ -47,7 +47,7 @@ class Kmsegressv2keyssymClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'kmsegressv2keyssym_clientReferenceInformation';
+    protected static $swaggerModelName = 'Kmsegressv2keyssymClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

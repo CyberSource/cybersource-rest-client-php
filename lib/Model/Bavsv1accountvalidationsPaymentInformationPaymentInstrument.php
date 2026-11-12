@@ -46,7 +46,7 @@ class Bavsv1accountvalidationsPaymentInformationPaymentInstrument implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'bavsv1accountvalidations_paymentInformation_paymentInstrument';
+    protected static $swaggerModelName = 'Bavsv1accountvalidationsPaymentInformationPaymentInstrument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

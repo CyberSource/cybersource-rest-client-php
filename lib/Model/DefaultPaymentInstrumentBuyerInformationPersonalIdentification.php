@@ -46,7 +46,7 @@ class DefaultPaymentInstrumentBuyerInformationPersonalIdentification implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultPaymentInstrument_buyerInformation_personalIdentification';
+    protected static $swaggerModelName = 'DefaultPaymentInstrumentBuyerInformationPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

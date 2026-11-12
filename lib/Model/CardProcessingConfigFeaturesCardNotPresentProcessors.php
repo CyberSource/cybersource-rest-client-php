@@ -46,7 +46,7 @@ class CardProcessingConfigFeaturesCardNotPresentProcessors implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CardProcessingConfig_features_cardNotPresent_processors';
+    protected static $swaggerModelName = 'CardProcessingConfigFeaturesCardNotPresentProcessors';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

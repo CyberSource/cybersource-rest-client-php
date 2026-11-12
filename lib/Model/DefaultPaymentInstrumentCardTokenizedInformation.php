@@ -46,7 +46,7 @@ class DefaultPaymentInstrumentCardTokenizedInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultPaymentInstrument_card_tokenizedInformation';
+    protected static $swaggerModelName = 'DefaultPaymentInstrumentCardTokenizedInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

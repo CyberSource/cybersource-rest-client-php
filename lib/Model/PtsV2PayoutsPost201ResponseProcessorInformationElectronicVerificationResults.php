@@ -46,7 +46,7 @@ class PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResul
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PayoutsPost201Response_processorInformation_electronicVerificationResults';
+    protected static $swaggerModelName = 'PtsV2PayoutsPost201ResponseProcessorInformationElectronicVerificationResults';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

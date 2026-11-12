@@ -46,7 +46,7 @@ class TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprin
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsPost201Response__embedded_riskInformation_providers_fingerprint';
+    protected static $swaggerModelName = 'TssV2TransactionsPost201ResponseEmbeddedRiskInformationProvidersFingerprint';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

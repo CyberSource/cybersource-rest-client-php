@@ -46,7 +46,7 @@ class TmsPointOfSaleInformationEmvTags implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsPointOfSaleInformation_emvTags';
+    protected static $swaggerModelName = 'TmsPointOfSaleInformationEmvTags';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

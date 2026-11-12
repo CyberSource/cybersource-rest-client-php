@@ -46,7 +46,7 @@ class PullFunds201ResponseOrderInformationAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pullFunds201Response_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'PullFunds201ResponseOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

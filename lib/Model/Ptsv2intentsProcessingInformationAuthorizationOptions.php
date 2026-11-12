@@ -46,7 +46,7 @@ class Ptsv2intentsProcessingInformationAuthorizationOptions implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intents_processingInformation_authorizationOptions';
+    protected static $swaggerModelName = 'Ptsv2intentsProcessingInformationAuthorizationOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

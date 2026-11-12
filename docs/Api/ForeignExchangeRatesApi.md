@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createFxRates**
-> \CyberSource\Model\InlineResponse2013 createFxRates($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
+> \CyberSource\Model\CreateFxRatesResponse createFxRates($createFxRatesRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
 
 Retrieve Foreign Exchange Rates
 
@@ -20,7 +20,7 @@ Retrieve current foreign exchange rates for cross-border payouts.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\ForeignExchangeRatesApi();
-$body = new \CyberSource\Model\Body(); // \CyberSource\Model\Body | 
+$createFxRatesRequest = new \CyberSource\Model\CreateFxRatesRequest(); // \CyberSource\Model\CreateFxRatesRequest | 
 $contentType = "contentType_example"; // string | 
 $xRequestid = "xRequestid_example"; // string | 
 $vCMerchantId = "vCMerchantId_example"; // string | 
@@ -29,7 +29,7 @@ $vCCorrelationId = "vCCorrelationId_example"; // string |
 $vCOrganizationId = "vCOrganizationId_example"; // string | 
 
 try {
-    $result = $api_instance->createFxRates($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId);
+    $result = $api_instance->createFxRates($createFxRatesRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ForeignExchangeRatesApi->createFxRates: ', $e->getMessage(), PHP_EOL;
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\CyberSource\Model\Body**](../Model/Body.md)|  |
+ **createFxRatesRequest** | [**\CyberSource\Model\CreateFxRatesRequest**](../Model/CreateFxRatesRequest.md)|  |
  **contentType** | **string**|  |
  **xRequestid** | **string**|  |
  **vCMerchantId** | **string**|  |
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2013**](../Model/InlineResponse2013.md)
+[**\CyberSource\Model\CreateFxRatesResponse**](../Model/CreateFxRatesResponse.md)
 
 ### Authorization
 

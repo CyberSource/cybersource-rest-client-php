@@ -46,7 +46,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_orderInformation_lineItems';
+    protected static $swaggerModelName = 'Riskv1decisionsOrderInformationLineItems';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -64,6 +64,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productCode' => 'string',
         'gift' => 'bool',
         'distributorProductSku' => 'string',
+        'productType' => 'string',
         'passenger' => '\CyberSource\Model\Ptsv2paymentsOrderInformationPassenger',
         'shippingDestinationTypes' => 'string',
         'taxAmount' => 'string',
@@ -87,6 +88,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productCode' => null,
         'gift' => null,
         'distributorProductSku' => null,
+        'productType' => null,
         'passenger' => null,
         'shippingDestinationTypes' => null,
         'taxAmount' => null,
@@ -120,6 +122,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productCode' => 'productCode',
         'gift' => 'gift',
         'distributorProductSku' => 'distributorProductSku',
+        'productType' => 'productType',
         'passenger' => 'passenger',
         'shippingDestinationTypes' => 'shippingDestinationTypes',
         'taxAmount' => 'taxAmount',
@@ -144,6 +147,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productCode' => 'setProductCode',
         'gift' => 'setGift',
         'distributorProductSku' => 'setDistributorProductSku',
+        'productType' => 'setProductType',
         'passenger' => 'setPassenger',
         'shippingDestinationTypes' => 'setShippingDestinationTypes',
         'taxAmount' => 'setTaxAmount',
@@ -168,6 +172,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         'productCode' => 'getProductCode',
         'gift' => 'getGift',
         'distributorProductSku' => 'getDistributorProductSku',
+        'productType' => 'getProductType',
         'passenger' => 'getPassenger',
         'shippingDestinationTypes' => 'getShippingDestinationTypes',
         'taxAmount' => 'getTaxAmount',
@@ -217,6 +222,7 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
         $this->container['productCode'] = isset($data['productCode']) ? $data['productCode'] : null;
         $this->container['gift'] = isset($data['gift']) ? $data['gift'] : null;
         $this->container['distributorProductSku'] = isset($data['distributorProductSku']) ? $data['distributorProductSku'] : null;
+        $this->container['productType'] = isset($data['productType']) ? $data['productType'] : null;
         $this->container['passenger'] = isset($data['passenger']) ? $data['passenger'] : null;
         $this->container['shippingDestinationTypes'] = isset($data['shippingDestinationTypes']) ? $data['shippingDestinationTypes'] : null;
         $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
@@ -476,6 +482,27 @@ class Riskv1decisionsOrderInformationLineItems implements ArrayAccess
     public function setDistributorProductSku($distributorProductSku)
     {
         $this->container['distributorProductSku'] = $distributorProductSku;
+
+        return $this;
+    }
+
+    /**
+     * Gets productType
+     * @return string
+     */
+    public function getProductType()
+    {
+        return $this->container['productType'];
+    }
+
+    /**
+     * Sets productType
+     * @param string $productType Type of product (e.g., Prepaid, Postpaid, Electronic Devices, Flight, Hotel).
+     * @return $this
+     */
+    public function setProductType($productType)
+    {
+        $this->container['productType'] = $productType;
 
         return $this;
     }

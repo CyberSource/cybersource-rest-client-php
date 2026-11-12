@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_embeddedActions_TOKEN_CREATE';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseEmbeddedActionsTOKENCREATE';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

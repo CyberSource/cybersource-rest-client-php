@@ -46,7 +46,7 @@ class DeviceDeAssociateV3Request implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'deviceDeAssociateV3Request';
+    protected static $swaggerModelName = 'DeviceDeAssociateV3Request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

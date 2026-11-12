@@ -46,7 +46,7 @@ class Iccv1instructionsinstructionIdconfirmationsConfirmationData implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdconfirmations_confirmationData';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdconfirmationsConfirmationData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

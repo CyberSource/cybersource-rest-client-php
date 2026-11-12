@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseApplicationInformationApplications implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_applicationInformation_applications';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseApplicationInformationApplications';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -152,4 +152,11 @@ class Ptsv2paymentsBuyerInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyWalletId()
     {
     }
+
+    /**
+     * Test attribute "loyalty"
+     */
+    public function testPropertyLoyalty()
+    {
+    }
 }

@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_paymentInformation';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponsePaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'paymentType' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationPaymentType',
-        'eWallet' => '\CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet',
+        'eWallet' => '\CyberSource\Model\RefreshPaymentStatusResponsePaymentInformationEWallet',
         'customer' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCustomer',
         'card' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationCard',
         'brands' => '\CyberSource\Model\TssV2TransactionsGet200ResponsePaymentInformationBrands[]',
@@ -266,7 +266,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
 
     /**
      * Gets eWallet
-     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet
+     * @return \CyberSource\Model\RefreshPaymentStatusResponsePaymentInformationEWallet
      */
     public function getEWallet()
     {
@@ -275,7 +275,7 @@ class TssV2TransactionsGet200ResponsePaymentInformation implements ArrayAccess
 
     /**
      * Sets eWallet
-     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1PaymentInformationEWallet $eWallet
+     * @param \CyberSource\Model\RefreshPaymentStatusResponsePaymentInformationEWallet $eWallet
      * @return $this
      */
     public function setEWallet($eWallet)

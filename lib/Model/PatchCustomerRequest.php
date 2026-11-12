@@ -62,7 +62,7 @@ class PatchCustomerRequest implements ArrayAccess
         'defaultPaymentInstrument' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument',
         'defaultShippingAddress' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress',
         'metadata' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMetadata',
-        'embedded' => '\CyberSource\Model\Tmsv2customersEmbedded'
+        'embedded' => '\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded1'
     ];
 
     /**
@@ -404,7 +404,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\Tmsv2customersEmbedded
+     * @return \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded1
      */
     public function getEmbedded()
     {
@@ -413,7 +413,7 @@ class PatchCustomerRequest implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\Tmsv2customersEmbedded $embedded
+     * @param \CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded1 $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

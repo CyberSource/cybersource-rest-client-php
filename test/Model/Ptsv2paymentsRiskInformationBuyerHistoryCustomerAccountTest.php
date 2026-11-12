@@ -117,4 +117,46 @@ class Ptsv2paymentsRiskInformationBuyerHistoryCustomerAccountTest extends \PHPUn
     public function testPropertyPasswordChangeDate()
     {
     }
+
+    /**
+     * Test attribute "previousLogin"
+     */
+    public function testPropertyPreviousLogin()
+    {
+    }
+
+    /**
+     * Test attribute "previousOrder"
+     */
+    public function testPropertyPreviousOrder()
+    {
+    }
+
+    /**
+     * Test attribute "paymentMethodsCount"
+     */
+    public function testPropertyPaymentMethodsCount()
+    {
+    }
+
+    /**
+     * Test attribute "totalOrdersCount"
+     */
+    public function testPropertyTotalOrdersCount()
+    {
+    }
+
+    /**
+     * Test attribute "proofOfIdReceived"
+     */
+    public function testPropertyProofOfIdReceived()
+    {
+    }
+
+    /**
+     * Test attribute "lastEmailChangeDate"
+     */
+    public function testPropertyLastEmailChangeDate()
+    {
+    }
 }

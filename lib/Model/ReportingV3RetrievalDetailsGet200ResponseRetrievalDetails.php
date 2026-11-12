@@ -46,7 +46,7 @@ class ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3RetrievalDetailsGet200Response_retrievalDetails';
+    protected static $swaggerModelName = 'ReportingV3RetrievalDetailsGet200ResponseRetrievalDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

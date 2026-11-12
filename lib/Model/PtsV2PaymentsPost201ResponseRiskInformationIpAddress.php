@@ -47,7 +47,7 @@ class PtsV2PaymentsPost201ResponseRiskInformationIpAddress implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_riskInformation_ipAddress';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseRiskInformationIpAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

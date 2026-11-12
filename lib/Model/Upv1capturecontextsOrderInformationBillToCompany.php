@@ -46,7 +46,7 @@ class Upv1capturecontextsOrderInformationBillToCompany implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_orderInformation_billTo_company';
+    protected static $swaggerModelName = 'Upv1capturecontextsOrderInformationBillToCompany';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

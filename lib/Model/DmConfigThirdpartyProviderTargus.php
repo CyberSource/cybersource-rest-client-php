@@ -46,7 +46,7 @@ class DmConfigThirdpartyProviderTargus implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'DmConfig_thirdparty_provider_targus';
+    protected static $swaggerModelName = 'DmConfigThirdpartyProviderTargus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

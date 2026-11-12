@@ -46,7 +46,7 @@ class ReportingV3NetFundingsGet200ResponseNetFundingSummaries implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3NetFundingsGet200Response_netFundingSummaries';
+    protected static $swaggerModelName = 'ReportingV3NetFundingsGet200ResponseNetFundingSummaries';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv3tokenstokenIdpaymentcredentials_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Tmsv3tokenstokenIdpaymentcredentialsOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

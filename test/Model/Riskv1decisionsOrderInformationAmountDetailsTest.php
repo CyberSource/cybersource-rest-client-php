@@ -84,6 +84,13 @@ class Riskv1decisionsOrderInformationAmountDetailsTest extends \PHPUnit\Framewor
     }
 
     /**
+     * Test attribute "discountAmount"
+     */
+    public function testPropertyDiscountAmount()
+    {
+    }
+
+    /**
      * Test attribute "totalAmount"
      */
     public function testPropertyTotalAmount()

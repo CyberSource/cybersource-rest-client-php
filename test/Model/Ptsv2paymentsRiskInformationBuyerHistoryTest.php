@@ -138,4 +138,11 @@ class Ptsv2paymentsRiskInformationBuyerHistoryTest extends \PHPUnit\Framework\Te
     public function testPropertyTransactionCountYear()
     {
     }
+
+    /**
+     * Test attribute "failedPaymentAttemptsCount"
+     */
+    public function testPropertyFailedPaymentAttemptsCount()
+    {
+    }
 }

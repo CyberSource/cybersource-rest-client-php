@@ -46,7 +46,7 @@ class AftFundingOptionsInitiator implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'aftFundingOptions_initiator';
+    protected static $swaggerModelName = 'AftFundingOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

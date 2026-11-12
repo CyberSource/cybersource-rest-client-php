@@ -47,7 +47,7 @@ class Iccv1tokensBuyerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1tokens_buyerInformation';
+    protected static $swaggerModelName = 'Iccv1tokensBuyerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferidreversalReversalInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransferidreversal_reversalInformation';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferidreversalReversalInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

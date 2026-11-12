@@ -46,7 +46,7 @@ class UnifiedriskPaymentVerificationAuthenticationThreeDS implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_payment_verification_authentication_threeDS';
+    protected static $swaggerModelName = 'UnifiedriskPaymentVerificationAuthenticationThreeDS';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

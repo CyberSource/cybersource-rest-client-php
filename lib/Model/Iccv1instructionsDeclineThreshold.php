@@ -47,7 +47,7 @@ class Iccv1instructionsDeclineThreshold implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructions_declineThreshold';
+    protected static $swaggerModelName = 'Iccv1instructionsDeclineThreshold';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

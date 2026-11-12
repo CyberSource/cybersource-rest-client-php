@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **tokenize**
-> \CyberSource\Model\InlineResponse200 tokenize($postTokenizeRequest, $profileId)
+> \CyberSource\Model\PostTokenizeResponse tokenize($postTokenizeRequest, $profileId)
 
 Tokenize
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\CyberSource\Model\PostTokenizeResponse**](../Model/PostTokenizeResponse.md)
 
 ### Authorization
 

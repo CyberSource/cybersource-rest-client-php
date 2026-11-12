@@ -47,7 +47,7 @@ class Tmsv2tokenizedcardstokenizedCardIddeleteReason implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenizedcardstokenizedCardIddelete_reason';
+    protected static $swaggerModelName = 'Tmsv2tokenizedcardstokenizedCardIddeleteReason';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

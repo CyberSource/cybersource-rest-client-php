@@ -46,7 +46,7 @@ class PaymentsProductsCybsReadyTerminal implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_cybsReadyTerminal';
+    protected static $swaggerModelName = 'PaymentsProductsCybsReadyTerminal';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

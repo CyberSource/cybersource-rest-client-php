@@ -46,7 +46,7 @@ class TmsBinLookupPaymentAccountInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'TmsBinLookup_paymentAccountInformation';
+    protected static $swaggerModelName = 'TmsBinLookupPaymentAccountInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

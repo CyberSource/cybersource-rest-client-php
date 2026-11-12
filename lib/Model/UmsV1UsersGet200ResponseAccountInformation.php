@@ -46,7 +46,7 @@ class UmsV1UsersGet200ResponseAccountInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'umsV1UsersGet200Response_accountInformation';
+    protected static $swaggerModelName = 'UmsV1UsersGet200ResponseAccountInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

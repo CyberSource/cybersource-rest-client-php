@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseLinksSelf implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response__links_self';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseLinksSelf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

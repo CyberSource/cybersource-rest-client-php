@@ -46,7 +46,7 @@ class Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_tokenInformation_customer_defaultPaymentInstrument';
+    protected static $swaggerModelName = 'Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

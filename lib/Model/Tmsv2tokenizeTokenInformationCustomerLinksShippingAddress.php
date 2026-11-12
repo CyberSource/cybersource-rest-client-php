@@ -46,7 +46,7 @@ class Tmsv2tokenizeTokenInformationCustomerLinksShippingAddress implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_tokenInformation_customer__links_shippingAddress';
+    protected static $swaggerModelName = 'Tmsv2tokenizeTokenInformationCustomerLinksShippingAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

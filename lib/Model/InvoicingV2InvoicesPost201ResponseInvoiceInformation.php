@@ -47,7 +47,7 @@ class InvoicingV2InvoicesPost201ResponseInvoiceInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingV2InvoicesPost201Response_invoiceInformation';
+    protected static $swaggerModelName = 'InvoicingV2InvoicesPost201ResponseInvoiceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

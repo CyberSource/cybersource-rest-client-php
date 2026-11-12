@@ -46,7 +46,7 @@ class Tmsv2tokenizeProcessingInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_processingInformation';
+    protected static $swaggerModelName = 'Tmsv2tokenizeProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

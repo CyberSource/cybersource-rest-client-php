@@ -34,6 +34,7 @@ use \ArrayAccess;
  * InlineResponse4001 Class Doc Comment
  *
  * @category    Class
+ * @description Error Bean
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -53,11 +54,12 @@ class InlineResponse4001 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'correlationId' => 'string',
-        'details' => '\CyberSource\Model\InlineResponse4001Details[]',
-        'informationLink' => 'string',
+        'code' => 'string',
         'message' => 'string',
-        'reason' => 'string'
+        'localizationKey' => 'string',
+        'correlationId' => 'string',
+        'detail' => 'string',
+        'fields' => '\CyberSource\Model\InlineResponse4001Fields[]'
     ];
 
     /**
@@ -65,11 +67,12 @@ class InlineResponse4001 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'correlationId' => null,
-        'details' => null,
-        'informationLink' => null,
+        'code' => null,
         'message' => null,
-        'reason' => null
+        'localizationKey' => null,
+        'correlationId' => null,
+        'detail' => null,
+        'fields' => null
     ];
 
     public static function swaggerTypes()
@@ -87,11 +90,12 @@ class InlineResponse4001 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'correlationId' => 'correlationId',
-        'details' => 'details',
-        'informationLink' => 'informationLink',
+        'code' => 'code',
         'message' => 'message',
-        'reason' => 'reason'
+        'localizationKey' => 'localizationKey',
+        'correlationId' => 'correlationId',
+        'detail' => 'detail',
+        'fields' => 'fields'
     ];
 
 
@@ -100,11 +104,12 @@ class InlineResponse4001 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'correlationId' => 'setCorrelationId',
-        'details' => 'setDetails',
-        'informationLink' => 'setInformationLink',
+        'code' => 'setCode',
         'message' => 'setMessage',
-        'reason' => 'setReason'
+        'localizationKey' => 'setLocalizationKey',
+        'correlationId' => 'setCorrelationId',
+        'detail' => 'setDetail',
+        'fields' => 'setFields'
     ];
 
 
@@ -113,11 +118,12 @@ class InlineResponse4001 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'correlationId' => 'getCorrelationId',
-        'details' => 'getDetails',
-        'informationLink' => 'getInformationLink',
+        'code' => 'getCode',
         'message' => 'getMessage',
-        'reason' => 'getReason'
+        'localizationKey' => 'getLocalizationKey',
+        'correlationId' => 'getCorrelationId',
+        'detail' => 'getDetail',
+        'fields' => 'getFields'
     ];
 
     public static function attributeMap()
@@ -151,11 +157,12 @@ class InlineResponse4001 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
-        $this->container['informationLink'] = isset($data['informationLink']) ? $data['informationLink'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['localizationKey'] = isset($data['localizationKey']) ? $data['localizationKey'] : null;
+        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
+        $this->container['detail'] = isset($data['detail']) ? $data['detail'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
     }
 
     /**
@@ -167,11 +174,11 @@ class InlineResponse4001 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['code'] === null) {
+            $invalid_properties[] = "'code' can't be null";
+        }
         if ($this->container['message'] === null) {
             $invalid_properties[] = "'message' can't be null";
-        }
-        if ($this->container['reason'] === null) {
-            $invalid_properties[] = "'reason' can't be null";
         }
         return $invalid_properties;
     }
@@ -185,10 +192,10 @@ class InlineResponse4001 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['message'] === null) {
+        if ($this->container['code'] === null) {
             return false;
         }
-        if ($this->container['reason'] === null) {
+        if ($this->container['message'] === null) {
             return false;
         }
         return true;
@@ -196,64 +203,22 @@ class InlineResponse4001 implements ArrayAccess
 
 
     /**
-     * Gets correlationId
+     * Gets code
      * @return string
      */
-    public function getCorrelationId()
+    public function getCode()
     {
-        return $this->container['correlationId'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets correlationId
-     * @param string $correlationId
+     * Sets code
+     * @param string $code Error code
      * @return $this
      */
-    public function setCorrelationId($correlationId)
+    public function setCode($code)
     {
-        $this->container['correlationId'] = $correlationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     * @return \CyberSource\Model\InlineResponse4001Details[]
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     * @param \CyberSource\Model\InlineResponse4001Details[] $details
-     * @return $this
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
-
-        return $this;
-    }
-
-    /**
-     * Gets informationLink
-     * @return string
-     */
-    public function getInformationLink()
-    {
-        return $this->container['informationLink'];
-    }
-
-    /**
-     * Sets informationLink
-     * @param string $informationLink
-     * @return $this
-     */
-    public function setInformationLink($informationLink)
-    {
-        $this->container['informationLink'] = $informationLink;
+        $this->container['code'] = $code;
 
         return $this;
     }
@@ -269,7 +234,7 @@ class InlineResponse4001 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message
+     * @param string $message Error message
      * @return $this
      */
     public function setMessage($message)
@@ -280,22 +245,85 @@ class InlineResponse4001 implements ArrayAccess
     }
 
     /**
-     * Gets reason
+     * Gets localizationKey
      * @return string
      */
-    public function getReason()
+    public function getLocalizationKey()
     {
-        return $this->container['reason'];
+        return $this->container['localizationKey'];
     }
 
     /**
-     * Sets reason
-     * @param string $reason Possible values: - INVALID_APIKEY - INVALID_SHIPPING_INPUT_PARAMS - CAPTURE_CONTEXT_INVALID - CAPTURE_CONTEXT_EXPIRED - SDK_XHR_ERROR - UNIFIEDPAYMENTS_VALIDATION_PARAMS - UNIFIEDPAYMENTS_VALIDATION_FIELDS - UNIFIEDPAYMENT_PAYMENT_PARAMITERS - CREATE_TOKEN_TIMEOUT - CREATE_TOKEN_XHR_ERROR - SHOW_LOAD_CONTAINER_SELECTOR - SHOW_LOAD_INVALID_CONTAINER - SHOW_TOKEN_TIMEOUT - SHOW_TOKEN_XHR_ERROR - SHOW_PAYMENT_TIMEOUT
+     * Sets localizationKey
+     * @param string $localizationKey Localization Key Name
      * @return $this
      */
-    public function setReason($reason)
+    public function setLocalizationKey($localizationKey)
     {
-        $this->container['reason'] = $reason;
+        $this->container['localizationKey'] = $localizationKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets correlationId
+     * @return string
+     */
+    public function getCorrelationId()
+    {
+        return $this->container['correlationId'];
+    }
+
+    /**
+     * Sets correlationId
+     * @param string $correlationId Correlation Id
+     * @return $this
+     */
+    public function setCorrelationId($correlationId)
+    {
+        $this->container['correlationId'] = $correlationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets detail
+     * @return string
+     */
+    public function getDetail()
+    {
+        return $this->container['detail'];
+    }
+
+    /**
+     * Sets detail
+     * @param string $detail Error Detail
+     * @return $this
+     */
+    public function setDetail($detail)
+    {
+        $this->container['detail'] = $detail;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     * @return \CyberSource\Model\InlineResponse4001Fields[]
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     * @param \CyberSource\Model\InlineResponse4001Fields[] $fields Error fields List
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
 
         return $this;
     }

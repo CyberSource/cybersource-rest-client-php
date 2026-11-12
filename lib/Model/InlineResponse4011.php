@@ -53,9 +53,12 @@ class InlineResponse4011 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'submitTimeStampUtc' => 'string',
-        'reason' => 'string',
+        'links' => '\CyberSource\Model\InlineResponse4011Links',
+        'code' => 'string',
+        'correlationId' => 'string',
+        'detail' => 'string',
+        'fields' => '\CyberSource\Model\InlineResponse4011Fields[]',
+        'localizationKey' => 'string',
         'message' => 'string'
     ];
 
@@ -64,9 +67,12 @@ class InlineResponse4011 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'submitTimeStampUtc' => null,
-        'reason' => null,
+        'links' => null,
+        'code' => null,
+        'correlationId' => null,
+        'detail' => null,
+        'fields' => null,
+        'localizationKey' => null,
         'message' => null
     ];
 
@@ -85,9 +91,12 @@ class InlineResponse4011 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'submitTimeStampUtc' => 'submitTimeStampUtc',
-        'reason' => 'reason',
+        'links' => '_links',
+        'code' => 'code',
+        'correlationId' => 'correlationId',
+        'detail' => 'detail',
+        'fields' => 'fields',
+        'localizationKey' => 'localizationKey',
         'message' => 'message'
     ];
 
@@ -97,9 +106,12 @@ class InlineResponse4011 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'submitTimeStampUtc' => 'setSubmitTimeStampUtc',
-        'reason' => 'setReason',
+        'links' => 'setLinks',
+        'code' => 'setCode',
+        'correlationId' => 'setCorrelationId',
+        'detail' => 'setDetail',
+        'fields' => 'setFields',
+        'localizationKey' => 'setLocalizationKey',
         'message' => 'setMessage'
     ];
 
@@ -109,9 +121,12 @@ class InlineResponse4011 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'submitTimeStampUtc' => 'getSubmitTimeStampUtc',
-        'reason' => 'getReason',
+        'links' => 'getLinks',
+        'code' => 'getCode',
+        'correlationId' => 'getCorrelationId',
+        'detail' => 'getDetail',
+        'fields' => 'getFields',
+        'localizationKey' => 'getLocalizationKey',
         'message' => 'getMessage'
     ];
 
@@ -146,9 +161,12 @@ class InlineResponse4011 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['submitTimeStampUtc'] = isset($data['submitTimeStampUtc']) ? $data['submitTimeStampUtc'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['correlationId'] = isset($data['correlationId']) ? $data['correlationId'] : null;
+        $this->container['detail'] = isset($data['detail']) ? $data['detail'] : null;
+        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
+        $this->container['localizationKey'] = isset($data['localizationKey']) ? $data['localizationKey'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
@@ -178,64 +196,127 @@ class InlineResponse4011 implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets links
+     * @return \CyberSource\Model\InlineResponse4011Links
      */
-    public function getId()
+    public function getLinks()
     {
-        return $this->container['id'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets id
-     * @param string $id A unique identification number to identify the submitted request. It is also appended to the endpoint of the resource.
+     * Sets links
+     * @param \CyberSource\Model\InlineResponse4011Links $links
      * @return $this
      */
-    public function setId($id)
+    public function setLinks($links)
     {
-        $this->container['id'] = $id;
+        $this->container['links'] = $links;
 
         return $this;
     }
 
     /**
-     * Gets submitTimeStampUtc
+     * Gets code
      * @return string
      */
-    public function getSubmitTimeStampUtc()
+    public function getCode()
     {
-        return $this->container['submitTimeStampUtc'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets submitTimeStampUtc
-     * @param string $submitTimeStampUtc Time of request in UTC. Format: `YYYY-MM-DD'T'HH:mm:ssZ`  Example: `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * Sets code
+     * @param string $code Valid Values:   * FORBIDDEN_RESPONSE   * VALIDATION_ERROR   * UNSUPPORTED_MEDIA_TYPE   * MALFORMED_PAYLOAD_ERROR   * SERVER_ERROR
      * @return $this
      */
-    public function setSubmitTimeStampUtc($submitTimeStampUtc)
+    public function setCode($code)
     {
-        $this->container['submitTimeStampUtc'] = $submitTimeStampUtc;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets reason
+     * Gets correlationId
      * @return string
      */
-    public function getReason()
+    public function getCorrelationId()
     {
-        return $this->container['reason'];
+        return $this->container['correlationId'];
     }
 
     /**
-     * Sets reason
-     * @param string $reason The reason of the status.  Possible values: - UNAUTHORIZED
+     * Sets correlationId
+     * @param string $correlationId
      * @return $this
      */
-    public function setReason($reason)
+    public function setCorrelationId($correlationId)
     {
-        $this->container['reason'] = $reason;
+        $this->container['correlationId'] = $correlationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets detail
+     * @return string
+     */
+    public function getDetail()
+    {
+        return $this->container['detail'];
+    }
+
+    /**
+     * Sets detail
+     * @param string $detail
+     * @return $this
+     */
+    public function setDetail($detail)
+    {
+        $this->container['detail'] = $detail;
+
+        return $this;
+    }
+
+    /**
+     * Gets fields
+     * @return \CyberSource\Model\InlineResponse4011Fields[]
+     */
+    public function getFields()
+    {
+        return $this->container['fields'];
+    }
+
+    /**
+     * Sets fields
+     * @param \CyberSource\Model\InlineResponse4011Fields[] $fields
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets localizationKey
+     * @return string
+     */
+    public function getLocalizationKey()
+    {
+        return $this->container['localizationKey'];
+    }
+
+    /**
+     * Sets localizationKey
+     * @param string $localizationKey Valid Values:   * cybsapi.forbidden.response   * cybsapi.validation.error   * cybsapi.media.notsupported
+     * @return $this
+     */
+    public function setLocalizationKey($localizationKey)
+    {
+        $this->container['localizationKey'] = $localizationKey;
 
         return $this;
     }
@@ -251,7 +332,7 @@ class InlineResponse4011 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message
      * @return $this
      */
     public function setMessage($message)

@@ -47,7 +47,7 @@ class UnifiedriskRiskAssessmentBuyerHistoryCustomerAccountAlertnateAuthenticatio
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_riskAssessment_buyerHistory_customerAccount_alertnateAuthentication';
+    protected static $swaggerModelName = 'UnifiedriskRiskAssessmentBuyerHistoryCustomerAccountAlertnateAuthentication';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

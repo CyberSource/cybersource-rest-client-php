@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting i
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_processorInformation_multiProcessorRouting';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseProcessorInformationMultiProcessorRouting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

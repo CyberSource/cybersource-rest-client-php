@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **defaultPaymentInstrument** | [**\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument**](Tmsv2tokenizeTokenInformationCustomerDefaultPaymentInstrument.md) |  | [optional] 
 **defaultShippingAddress** | [**\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress**](Tmsv2tokenizeTokenInformationCustomerDefaultShippingAddress.md) |  | [optional] 
 **metadata** | [**\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerMetadata**](Tmsv2tokenizeTokenInformationCustomerMetadata.md) |  | [optional] 
-**embedded** | [**\CyberSource\Model\Tmsv2customersEmbedded**](Tmsv2customersEmbedded.md) |  | [optional] 
+**embedded** | [**\CyberSource\Model\Tmsv2tokenizeTokenInformationCustomerEmbedded1**](Tmsv2tokenizeTokenInformationCustomerEmbedded1.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

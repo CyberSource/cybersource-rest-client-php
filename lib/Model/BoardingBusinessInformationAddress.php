@@ -46,7 +46,7 @@ class BoardingBusinessInformationAddress implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingBusinessInformation_address';
+    protected static $swaggerModelName = 'BoardingBusinessInformationAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class VasV2PaymentsPost201ResponseOrderInformationTaxDetails implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasV2PaymentsPost201Response_orderInformation_taxDetails';
+    protected static $swaggerModelName = 'VasV2PaymentsPost201ResponseOrderInformationTaxDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

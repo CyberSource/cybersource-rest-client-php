@@ -34,6 +34,7 @@ use \ArrayAccess;
  * InlineResponse4007 Class Doc Comment
  *
  * @category    Class
+ * @description Standard error response returned for all 4xx and 5xx status codes.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -53,11 +54,11 @@ class InlineResponse4007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
-        'status' => 'string',
-        'reason' => 'string',
+        'error' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
+        'status' => 'int',
+        'timestamp' => '\DateTime',
+        'path' => 'string'
     ];
 
     /**
@@ -65,11 +66,11 @@ class InlineResponse4007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
-        'status' => null,
-        'reason' => null,
+        'error' => null,
         'message' => null,
-        'details' => null
+        'status' => null,
+        'timestamp' => 'date-time',
+        'path' => null
     ];
 
     public static function swaggerTypes()
@@ -87,11 +88,11 @@ class InlineResponse4007 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
-        'status' => 'status',
-        'reason' => 'reason',
+        'error' => 'error',
         'message' => 'message',
-        'details' => 'details'
+        'status' => 'status',
+        'timestamp' => 'timestamp',
+        'path' => 'path'
     ];
 
 
@@ -100,11 +101,11 @@ class InlineResponse4007 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
-        'status' => 'setStatus',
-        'reason' => 'setReason',
+        'error' => 'setError',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'status' => 'setStatus',
+        'timestamp' => 'setTimestamp',
+        'path' => 'setPath'
     ];
 
 
@@ -113,11 +114,11 @@ class InlineResponse4007 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
-        'status' => 'getStatus',
-        'reason' => 'getReason',
+        'error' => 'getError',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'status' => 'getStatus',
+        'timestamp' => 'getTimestamp',
+        'path' => 'getPath'
     ];
 
     public static function attributeMap()
@@ -151,11 +152,11 @@ class InlineResponse4007 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
+        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
     }
 
     /**
@@ -184,64 +185,22 @@ class InlineResponse4007 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
+     * Gets error
      * @return string
      */
-    public function getSubmitTimeUtc()
+    public function getError()
     {
-        return $this->container['submitTimeUtc'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * Sets error
+     * @param string $error Machine-readable error code (e.g. `BAD_REQUEST`, `NOT_FOUND`, `INTERNAL_ERROR`).
      * @return $this
      */
-    public function setSubmitTimeUtc($submitTimeUtc)
+    public function setError($error)
     {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     * @param string $status The status of the submitted transaction.  Possible values:  - INVALID_REQUEST
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status.  Possible values:  - MISSING_FIELD  - INVALID_DATA  - DUPLICATE_REQUEST  - INVALID_MERCHANT_CONFIGURATION  - PROCESSOR_UNAVAILABLE  - INVALID_FOLLOW_ON_TRANSACTION_STATUS
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
+        $this->container['error'] = $error;
 
         return $this;
     }
@@ -257,7 +216,7 @@ class InlineResponse4007 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The detail message related to the status and reason listed above.
+     * @param string $message Human-readable description of what went wrong and how to fix it.
      * @return $this
      */
     public function setMessage($message)
@@ -268,22 +227,64 @@ class InlineResponse4007 implements ArrayAccess
     }
 
     /**
-     * Gets details
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
+     * Gets status
+     * @return int
      */
-    public function getDetails()
+    public function getStatus()
     {
-        return $this->container['details'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets details
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
+     * Sets status
+     * @param int $status HTTP status code.
      * @return $this
      */
-    public function setDetails($details)
+    public function setStatus($status)
     {
-        $this->container['details'] = $details;
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets timestamp
+     * @return \DateTime
+     */
+    public function getTimestamp()
+    {
+        return $this->container['timestamp'];
+    }
+
+    /**
+     * Sets timestamp
+     * @param \DateTime $timestamp ISO 8601 timestamp when the error occurred.
+     * @return $this
+     */
+    public function setTimestamp($timestamp)
+    {
+        $this->container['timestamp'] = $timestamp;
+
+        return $this;
+    }
+
+    /**
+     * Gets path
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->container['path'];
+    }
+
+    /**
+     * Sets path
+     * @param string $path The request path that produced this error.
+     * @return $this
+     */
+    public function setPath($path)
+    {
+        $this->container['path'] = $path;
 
         return $this;
     }

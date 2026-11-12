@@ -46,7 +46,7 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_riskInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsRiskInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         'profile' => '\CyberSource\Model\Ptsv2paymentsRiskInformationProfile',
         'eventType' => 'string',
         'buyerHistory' => '\CyberSource\Model\Ptsv2paymentsRiskInformationBuyerHistory',
-        'auxiliaryData' => '\CyberSource\Model\Ptsv2paymentsRiskInformationAuxiliaryData[]'
+        'auxiliaryData' => '\CyberSource\Model\Ptsv2paymentsRiskInformationAuxiliaryData[]',
+        'store' => '\CyberSource\Model\Ptsv2paymentsRiskInformationStore',
+        'authenticationType' => 'string',
+        'pickupDays' => 'float',
+        'externalScore' => '\CyberSource\Model\Ptsv2paymentsRiskInformationExternalScore'
     ];
 
     /**
@@ -67,7 +71,11 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         'profile' => null,
         'eventType' => null,
         'buyerHistory' => null,
-        'auxiliaryData' => null
+        'auxiliaryData' => null,
+        'store' => null,
+        'authenticationType' => null,
+        'pickupDays' => null,
+        'externalScore' => null
     ];
 
     public static function swaggerTypes()
@@ -88,7 +96,11 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         'profile' => 'profile',
         'eventType' => 'eventType',
         'buyerHistory' => 'buyerHistory',
-        'auxiliaryData' => 'auxiliaryData'
+        'auxiliaryData' => 'auxiliaryData',
+        'store' => 'store',
+        'authenticationType' => 'authenticationType',
+        'pickupDays' => 'pickupDays',
+        'externalScore' => 'externalScore'
     ];
 
 
@@ -100,7 +112,11 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         'profile' => 'setProfile',
         'eventType' => 'setEventType',
         'buyerHistory' => 'setBuyerHistory',
-        'auxiliaryData' => 'setAuxiliaryData'
+        'auxiliaryData' => 'setAuxiliaryData',
+        'store' => 'setStore',
+        'authenticationType' => 'setAuthenticationType',
+        'pickupDays' => 'setPickupDays',
+        'externalScore' => 'setExternalScore'
     ];
 
 
@@ -112,7 +128,11 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         'profile' => 'getProfile',
         'eventType' => 'getEventType',
         'buyerHistory' => 'getBuyerHistory',
-        'auxiliaryData' => 'getAuxiliaryData'
+        'auxiliaryData' => 'getAuxiliaryData',
+        'store' => 'getStore',
+        'authenticationType' => 'getAuthenticationType',
+        'pickupDays' => 'getPickupDays',
+        'externalScore' => 'getExternalScore'
     ];
 
     public static function attributeMap()
@@ -150,6 +170,10 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
         $this->container['eventType'] = isset($data['eventType']) ? $data['eventType'] : null;
         $this->container['buyerHistory'] = isset($data['buyerHistory']) ? $data['buyerHistory'] : null;
         $this->container['auxiliaryData'] = isset($data['auxiliaryData']) ? $data['auxiliaryData'] : null;
+        $this->container['store'] = isset($data['store']) ? $data['store'] : null;
+        $this->container['authenticationType'] = isset($data['authenticationType']) ? $data['authenticationType'] : null;
+        $this->container['pickupDays'] = isset($data['pickupDays']) ? $data['pickupDays'] : null;
+        $this->container['externalScore'] = isset($data['externalScore']) ? $data['externalScore'] : null;
     }
 
     /**
@@ -257,6 +281,90 @@ class Riskv1decisionsRiskInformation implements ArrayAccess
     public function setAuxiliaryData($auxiliaryData)
     {
         $this->container['auxiliaryData'] = $auxiliaryData;
+
+        return $this;
+    }
+
+    /**
+     * Gets store
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationStore
+     */
+    public function getStore()
+    {
+        return $this->container['store'];
+    }
+
+    /**
+     * Sets store
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationStore $store
+     * @return $this
+     */
+    public function setStore($store)
+    {
+        $this->container['store'] = $store;
+
+        return $this;
+    }
+
+    /**
+     * Gets authenticationType
+     * @return string
+     */
+    public function getAuthenticationType()
+    {
+        return $this->container['authenticationType'];
+    }
+
+    /**
+     * Sets authenticationType
+     * @param string $authenticationType • 01 = Static Passcode • 02 = SMS OTP • 03 = Key fob or EMV card reader OTP • 04 = App OTP • 05 = OTP Other • 07 = OOB Biometrics • 08 = OOB Login • 09 = OOB Other • 10 = Other • 11 = Push Confirmation • 12 = Decoupled • 13 = WebAuthn • 14 = SPC • 15 = Behavioural biometrics
+     * @return $this
+     */
+    public function setAuthenticationType($authenticationType)
+    {
+        $this->container['authenticationType'] = $authenticationType;
+
+        return $this;
+    }
+
+    /**
+     * Gets pickupDays
+     * @return float
+     */
+    public function getPickupDays()
+    {
+        return $this->container['pickupDays'];
+    }
+
+    /**
+     * Sets pickupDays
+     * @param float $pickupDays Number of days between transaction date and rental pickup date
+     * @return $this
+     */
+    public function setPickupDays($pickupDays)
+    {
+        $this->container['pickupDays'] = $pickupDays;
+
+        return $this;
+    }
+
+    /**
+     * Gets externalScore
+     * @return \CyberSource\Model\Ptsv2paymentsRiskInformationExternalScore
+     */
+    public function getExternalScore()
+    {
+        return $this->container['externalScore'];
+    }
+
+    /**
+     * Sets externalScore
+     * @param \CyberSource\Model\Ptsv2paymentsRiskInformationExternalScore $externalScore
+     * @return $this
+     */
+    public function setExternalScore($externalScore)
+    {
+        $this->container['externalScore'] = $externalScore;
 
         return $this;
     }

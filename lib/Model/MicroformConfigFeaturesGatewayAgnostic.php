@@ -46,7 +46,7 @@ class MicroformConfigFeaturesGatewayAgnostic implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'microformConfigFeatures_gatewayAgnostic';
+    protected static $swaggerModelName = 'MicroformConfigFeaturesGatewayAgnostic';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

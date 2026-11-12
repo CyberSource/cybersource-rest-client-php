@@ -47,7 +47,7 @@ class ECheckConfigCommonInternalOnlyProcessors implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_common_internalOnly_processors';
+    protected static $swaggerModelName = 'ECheckConfigCommonInternalOnlyProcessors';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

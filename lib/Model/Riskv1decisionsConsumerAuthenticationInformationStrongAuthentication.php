@@ -46,7 +46,7 @@ class Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication imple
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_consumerAuthenticationInformation_strongAuthentication';
+    protected static $swaggerModelName = 'Riskv1decisionsConsumerAuthenticationInformationStrongAuthentication';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

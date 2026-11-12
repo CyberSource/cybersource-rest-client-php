@@ -46,7 +46,7 @@ class Ptsv2paymentsMerchantInformationServiceFeeDescriptor implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_merchantInformation_serviceFeeDescriptor';
+    protected static $swaggerModelName = 'Ptsv2paymentsMerchantInformationServiceFeeDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class Ptsv2paymentsRecurringPaymentInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_recurringPaymentInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsRecurringPaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

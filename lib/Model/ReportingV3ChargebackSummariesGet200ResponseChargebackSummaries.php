@@ -46,7 +46,7 @@ class ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ChargebackSummariesGet200Response_chargebackSummaries';
+    protected static $swaggerModelName = 'ReportingV3ChargebackSummariesGet200ResponseChargebackSummaries';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

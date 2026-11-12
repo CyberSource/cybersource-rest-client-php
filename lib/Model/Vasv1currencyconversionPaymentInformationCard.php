@@ -46,7 +46,7 @@ class Vasv1currencyconversionPaymentInformationCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasv1currencyconversion_paymentInformation_card';
+    protected static $swaggerModelName = 'Vasv1currencyconversionPaymentInformationCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

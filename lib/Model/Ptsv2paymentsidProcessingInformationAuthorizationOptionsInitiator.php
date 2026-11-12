@@ -46,7 +46,7 @@ class Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsid_processingInformation_authorizationOptions_initiator';
+    protected static $swaggerModelName = 'Ptsv2paymentsidProcessingInformationAuthorizationOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

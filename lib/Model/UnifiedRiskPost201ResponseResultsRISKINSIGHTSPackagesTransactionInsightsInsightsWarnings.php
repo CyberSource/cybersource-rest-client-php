@@ -47,7 +47,7 @@ class UnifiedRiskPost201ResponseResultsRISKINSIGHTSPackagesTransactionInsightsIn
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedRiskPost201Response_results_RISK_INSIGHTS_packages_transactionInsights_insights_warnings';
+    protected static $swaggerModelName = 'UnifiedRiskPost201ResponseResultsRISKINSIGHTSPackagesTransactionInsightsInsightsWarnings';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

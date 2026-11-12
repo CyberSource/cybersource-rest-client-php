@@ -46,7 +46,7 @@ class UnifiedriskPaymentBankAccountCreditLimit implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_payment_bankAccount_creditLimit';
+    protected static $swaggerModelName = 'UnifiedriskPaymentBankAccountCreditLimit';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

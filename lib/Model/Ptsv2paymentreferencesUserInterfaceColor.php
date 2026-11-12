@@ -46,7 +46,7 @@ class Ptsv2paymentreferencesUserInterfaceColor implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentreferences_userInterface_color';
+    protected static $swaggerModelName = 'Ptsv2paymentreferencesUserInterfaceColor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

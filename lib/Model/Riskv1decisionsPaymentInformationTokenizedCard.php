@@ -47,7 +47,7 @@ class Riskv1decisionsPaymentInformationTokenizedCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_paymentInformation_tokenizedCard';
+    protected static $swaggerModelName = 'Riskv1decisionsPaymentInformationTokenizedCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

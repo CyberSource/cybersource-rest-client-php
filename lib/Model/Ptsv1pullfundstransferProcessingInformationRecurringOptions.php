@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferProcessingInformationRecurringOptions implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransfer_processingInformation_recurringOptions';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferProcessingInformationRecurringOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

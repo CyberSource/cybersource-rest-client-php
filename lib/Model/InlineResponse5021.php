@@ -55,9 +55,8 @@ class InlineResponse5021 implements ArrayAccess
     protected static $swaggerTypes = [
         'submitTimeUtc' => 'string',
         'status' => 'string',
-        'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
+        'reason' => 'string'
     ];
 
     /**
@@ -67,9 +66,8 @@ class InlineResponse5021 implements ArrayAccess
     protected static $swaggerFormats = [
         'submitTimeUtc' => null,
         'status' => null,
-        'reason' => null,
         'message' => null,
-        'details' => null
+        'reason' => null
     ];
 
     public static function swaggerTypes()
@@ -89,9 +87,8 @@ class InlineResponse5021 implements ArrayAccess
     protected static $attributeMap = [
         'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
-        'reason' => 'reason',
         'message' => 'message',
-        'details' => 'details'
+        'reason' => 'reason'
     ];
 
 
@@ -102,9 +99,8 @@ class InlineResponse5021 implements ArrayAccess
     protected static $setters = [
         'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
-        'reason' => 'setReason',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'reason' => 'setReason'
     ];
 
 
@@ -115,9 +111,8 @@ class InlineResponse5021 implements ArrayAccess
     protected static $getters = [
         'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
-        'reason' => 'getReason',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'reason' => 'getReason'
     ];
 
     public static function attributeMap()
@@ -153,9 +148,8 @@ class InlineResponse5021 implements ArrayAccess
     {
         $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
 
     /**
@@ -194,7 +188,7 @@ class InlineResponse5021 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * @param string $submitTimeUtc Time verification was requested  Format: `YYYY-MM-DDThhmmssZ`, where: - `T`:  Separates the date and the time - `Z`:  Indicates Coordinated Universal Time (UTC), also known as Greenwich Mean Time (GMT)  Example:  `2020-01-11T224757Z` equals January 11, 2020, at 22:47:57 (10:47:57 p.m.)
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -215,33 +209,12 @@ class InlineResponse5021 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction. Possible values: - `SERVER_ERROR`
+     * @param string $status The status of the submitted transaction. Possible values:   - `SERVER_ERROR`
      * @return $this
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status. Possible Values: - `INTERNAL_SERVICE_ERROR`
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -257,7 +230,7 @@ class InlineResponse5021 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message Application failed.
+     * @param string $message The detail message related to the status and reason
      * @return $this
      */
     public function setMessage($message)
@@ -268,22 +241,22 @@ class InlineResponse5021 implements ArrayAccess
     }
 
     /**
-     * Gets details
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
+     * Gets reason
+     * @return string
      */
-    public function getDetails()
+    public function getReason()
     {
-        return $this->container['details'];
+        return $this->container['reason'];
     }
 
     /**
-     * Sets details
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
+     * Sets reason
+     * @param string $reason The reason of the status.  Possible values:   - `SYSTEM_ERROR`   - `SERVER_TIMEOUT`   - `SERVICE_TIMEOUT`
      * @return $this
      */
-    public function setDetails($details)
+    public function setReason($reason)
     {
-        $this->container['details'] = $details;
+        $this->container['reason'] = $reason;
 
         return $this;
     }

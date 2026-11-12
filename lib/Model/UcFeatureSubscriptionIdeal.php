@@ -47,7 +47,7 @@ class UcFeatureSubscriptionIdeal implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_ideal';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionIdeal';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

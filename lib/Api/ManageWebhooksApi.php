@@ -142,7 +142,8 @@ class ManageWebhooksApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($webhookId !== null) {
@@ -159,6 +160,14 @@ class ManageWebhooksApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -167,7 +176,7 @@ class ManageWebhooksApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "deleteWebhookSubscription,deleteWebhookSubscriptionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -224,7 +233,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The webhook Identifier (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreateWebhookSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionById($webhookId)
     {
@@ -242,7 +251,7 @@ class ManageWebhooksApi
      *
      * @param string $webhookId The webhook Identifier (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreateWebhookSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionByIdWithHttpInfo($webhookId)
     {
@@ -263,7 +272,8 @@ class ManageWebhooksApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($webhookId !== null) {
@@ -280,6 +290,14 @@ class ManageWebhooksApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -288,7 +306,7 @@ class ManageWebhooksApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getWebhookSubscriptionById,getWebhookSubscriptionByIdWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -308,7 +326,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2018");
+        self::$logger->debug("Return Type : \CyberSource\Model\CreateWebhookSubscriptionResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getWebhookSubscriptionById,getWebhookSubscriptionByIdWithHttpInfo");
@@ -321,18 +339,18 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2018',
+                '\CyberSource\Model\CreateWebhookSubscriptionResponse',
                 '/notification-subscriptions/v2/webhooks/{webhookId}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2018', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CreateWebhookSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2018', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CreateWebhookSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -351,7 +369,7 @@ class ManageWebhooksApi
      * @param string $productId The Product Identifier. (optional)
      * @param string $eventType The Event Type. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2007[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\WebhookSubscription[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionsByOrg($organizationId, $productId = null, $eventType = null)
     {
@@ -371,7 +389,7 @@ class ManageWebhooksApi
      * @param string $productId The Product Identifier. (optional)
      * @param string $eventType The Event Type. (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2007[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\WebhookSubscription[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookSubscriptionsByOrgWithHttpInfo($organizationId, $productId = null, $eventType = null)
     {
@@ -392,7 +410,8 @@ class ManageWebhooksApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // query params
         if ($organizationId !== null) {
@@ -413,6 +432,14 @@ class ManageWebhooksApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -421,7 +448,7 @@ class ManageWebhooksApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getWebhookSubscriptionsByOrg,getWebhookSubscriptionsByOrgWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -444,7 +471,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2007[]");
+        self::$logger->debug("Return Type : \CyberSource\Model\WebhookSubscription[]");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getWebhookSubscriptionsByOrg,getWebhookSubscriptionsByOrgWithHttpInfo");
@@ -457,281 +484,18 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2007[]',
+                '\CyberSource\Model\WebhookSubscription[]',
                 '/notification-subscriptions/v2/webhooks',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2007[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\WebhookSubscription[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2007[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            self::$logger->error("ApiException : $e");
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation notificationSubscriptionsV1WebhooksWebhookIdPost
-     *
-     * Test a Webhook Configuration
-     *
-     * @param string $webhookId The Webhook Identifier. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2019, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
-    {
-        self::$logger->info('CALL TO METHOD notificationSubscriptionsV1WebhooksWebhookIdPost STARTED');
-        list($response, $statusCode, $httpHeader) = $this->notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo($webhookId);
-        self::$logger->info('CALL TO METHOD notificationSubscriptionsV1WebhooksWebhookIdPost ENDED');
-        self::$logger->close();
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo
-     *
-     * Test a Webhook Configuration
-     *
-     * @param string $webhookId The Webhook Identifier. (required)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2019, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo($webhookId)
-    {
-        // verify the required parameter 'webhookId' is set
-        if ($webhookId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling notificationSubscriptionsV1WebhooksWebhookIdPost");
-            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling notificationSubscriptionsV1WebhooksWebhookIdPost');
-        }
-        // parse inputs
-        $resourcePath = "/notification-subscriptions/v1/webhooks/{webhookId}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
-
-        // path params
-        if ($webhookId !== null) {
-            $resourcePath = str_replace(
-                "{" . "webhookId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($webhookId),
-                $resourcePath
-            );
-        }
-        if ('POST' == 'POST') {
-            $_tempBody = '{}';
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody) and count($formParams) <= 0) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
-        }
-
-        //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo")) {
-            try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
-            } catch (Exception $e) {
-                self::$logger->error("Failed to encrypt request body:  $e");
-                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
-            }
-        }
-
-        
-        // Logging
-        self::$logger->debug("Resource : POST $resourcePath");
-        if (isset($httpBody) and count($formParams) <= 0) {
-            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
-                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
-            } else {
-                $printHttpBody = $httpBody;
-            }
-            
-            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
-        }
-
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2019");
-        
-        // Response MLE check
-        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "notificationSubscriptionsV1WebhooksWebhookIdPost,notificationSubscriptionsV1WebhooksWebhookIdPostWithHttpInfo");
-        
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\CyberSource\Model\InlineResponse2019',
-                '/notification-subscriptions/v1/webhooks/{webhookId}',
-                $isResponseMLEForAPI
-            );
-            
-            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2019', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2019', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            self::$logger->error("ApiException : $e");
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation notificationSubscriptionsV2WebhooksWebhookIdPatch
-     *
-     * Update a Webhook Subscription
-     *
-     * @param string $webhookId The Webhook Identifier. (required)
-     * @param \CyberSource\Model\UpdateWebhook $updateWebhook The webhook payload or changes to apply. (optional)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook = null)
-    {
-        self::$logger->info('CALL TO METHOD notificationSubscriptionsV2WebhooksWebhookIdPatch STARTED');
-        list($response, $statusCode, $httpHeader) = $this->notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo($webhookId, $updateWebhook);
-        self::$logger->info('CALL TO METHOD notificationSubscriptionsV2WebhooksWebhookIdPatch ENDED');
-        self::$logger->close();
-        return [$response, $statusCode, $httpHeader];
-    }
-
-    /**
-     * Operation notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo
-     *
-     * Update a Webhook Subscription
-     *
-     * @param string $webhookId The Webhook Identifier. (required)
-     * @param \CyberSource\Model\UpdateWebhook $updateWebhook The webhook payload or changes to apply. (optional)
-     * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo($webhookId, $updateWebhook = null)
-    {
-        // verify the required parameter 'webhookId' is set
-        if ($webhookId === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling notificationSubscriptionsV2WebhooksWebhookIdPatch");
-            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling notificationSubscriptionsV2WebhooksWebhookIdPatch');
-        }
-        // parse inputs
-        $resourcePath = "/notification-subscriptions/v2/webhooks/{webhookId}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
-
-        // path params
-        if ($webhookId !== null) {
-            $resourcePath = str_replace(
-                "{" . "webhookId" . "}",
-                $this->apiClient->getSerializer()->toPathValue($webhookId),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($updateWebhook)) {
-            $_tempBody = $updateWebhook;
-        }
-        
-        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\UpdateWebhook');
-
-        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
-
-        // for model (json/xml)
-        if (isset($_tempBody) and count($formParams) <= 0) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
-        }
-
-        //MLE check and mle encryption for req body
-        $inboundMLEStatus = 'false';
-        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV2WebhooksWebhookIdPatch,notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo")) {
-            try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
-            } catch (Exception $e) {
-                self::$logger->error("Failed to encrypt request body:  $e");
-                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
-            }
-        }
-
-        
-        // Logging
-        self::$logger->debug("Resource : PATCH $resourcePath");
-        if (isset($httpBody) and count($formParams) <= 0) {
-            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
-                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
-            } else {
-                $printHttpBody = $httpBody;
-            }
-            
-            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
-        }
-
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2008");
-        
-        // Response MLE check
-        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "notificationSubscriptionsV2WebhooksWebhookIdPatch,notificationSubscriptionsV2WebhooksWebhookIdPatchWithHttpInfo");
-        
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PATCH',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\CyberSource\Model\InlineResponse2008',
-                '/notification-subscriptions/v2/webhooks/{webhookId}',
-                $isResponseMLEForAPI
-            );
-            
-            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2008', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4044', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\WebhookSubscription[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -789,7 +553,8 @@ class ManageWebhooksApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($webhookId !== null) {
@@ -813,6 +578,14 @@ class ManageWebhooksApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -821,7 +594,7 @@ class ManageWebhooksApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "notificationSubscriptionsV2WebhooksWebhookIdStatusPut,notificationSubscriptionsV2WebhooksWebhookIdStatusPutWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -865,7 +638,7 @@ class ManageWebhooksApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4044', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4043', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -885,7 +658,7 @@ class ManageWebhooksApi
      * @param string $vCSenderOrganizationId Sender organization id (optional)
      * @param string $vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20110, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\SaveAsymEgressKeyResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveAsymEgressKey($saveAsymEgressKey, $vCCorrelationId = null, $vCSenderOrganizationId = null, $vCPermissions = null)
     {
@@ -906,7 +679,7 @@ class ManageWebhooksApi
      * @param string $vCSenderOrganizationId Sender organization id (optional)
      * @param string $vCPermissions Encoded user permissions returned by the CGK, for the entity user who initiated the boarding (optional)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse20110, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\SaveAsymEgressKeyResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveAsymEgressKeyWithHttpInfo($saveAsymEgressKey, $vCCorrelationId = null, $vCSenderOrganizationId = null, $vCPermissions = null)
     {
@@ -927,7 +700,8 @@ class ManageWebhooksApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($vCCorrelationId !== null) {
@@ -955,6 +729,14 @@ class ManageWebhooksApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -963,7 +745,7 @@ class ManageWebhooksApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "saveAsymEgressKey,saveAsymEgressKeyWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -983,7 +765,7 @@ class ManageWebhooksApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse20110");
+        self::$logger->debug("Return Type : \CyberSource\Model\SaveAsymEgressKeyResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "saveAsymEgressKey,saveAsymEgressKeyWithHttpInfo");
@@ -996,18 +778,299 @@ class ManageWebhooksApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse20110',
+                '\CyberSource\Model\SaveAsymEgressKeyResponse',
                 '/kms/egress/v2/keys-asym',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse20110', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\SaveAsymEgressKeyResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse20110', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\SaveAsymEgressKeyResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation testWebhookSubscription
+     *
+     * Test a Webhook Configuration
+     *
+     * @param string $webhookId The Webhook Identifier. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\TestWebhookSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function testWebhookSubscription($webhookId)
+    {
+        self::$logger->info('CALL TO METHOD testWebhookSubscription STARTED');
+        list($response, $statusCode, $httpHeader) = $this->testWebhookSubscriptionWithHttpInfo($webhookId);
+        self::$logger->info('CALL TO METHOD testWebhookSubscription ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation testWebhookSubscriptionWithHttpInfo
+     *
+     * Test a Webhook Configuration
+     *
+     * @param string $webhookId The Webhook Identifier. (required)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\TestWebhookSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function testWebhookSubscriptionWithHttpInfo($webhookId)
+    {
+        // verify the required parameter 'webhookId' is set
+        if ($webhookId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling testWebhookSubscription");
+            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling testWebhookSubscription');
+        }
+        // parse inputs
+        $resourcePath = "/notification-subscriptions/v1/webhooks/{webhookId}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
+
+        // path params
+        if ($webhookId !== null) {
+            $resourcePath = str_replace(
+                "{" . "webhookId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($webhookId),
+                $resourcePath
+            );
+        }
+        if ('POST' == 'POST') {
+            $_tempBody = '{}';
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody) and count($formParams) <= 0) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+        } elseif (count($formParams) > 0) {
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
+        }
+
+        //MLE check and mle encryption for req body
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "testWebhookSubscription,testWebhookSubscriptionWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
+        
+        // Logging
+        self::$logger->debug("Resource : POST $resourcePath");
+        if (isset($httpBody) and count($formParams) <= 0) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\TestWebhookSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "testWebhookSubscription,testWebhookSubscriptionWithHttpInfo");
+        
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\TestWebhookSubscriptionResponse',
+                '/notification-subscriptions/v1/webhooks/{webhookId}',
+                $isResponseMLEForAPI
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\TestWebhookSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\TestWebhookSubscriptionResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            self::$logger->error("ApiException : $e");
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateWebhookSubscription
+     *
+     * Update a Webhook Subscription
+     *
+     * @param string $webhookId The Webhook Identifier. (required)
+     * @param \CyberSource\Model\UpdateWebhook $updateWebhook The webhook payload or changes to apply. (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\UpdateWebhookSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateWebhookSubscription($webhookId, $updateWebhook = null)
+    {
+        self::$logger->info('CALL TO METHOD updateWebhookSubscription STARTED');
+        list($response, $statusCode, $httpHeader) = $this->updateWebhookSubscriptionWithHttpInfo($webhookId, $updateWebhook);
+        self::$logger->info('CALL TO METHOD updateWebhookSubscription ENDED');
+        self::$logger->close();
+        return [$response, $statusCode, $httpHeader];
+    }
+
+    /**
+     * Operation updateWebhookSubscriptionWithHttpInfo
+     *
+     * Update a Webhook Subscription
+     *
+     * @param string $webhookId The Webhook Identifier. (required)
+     * @param \CyberSource\Model\UpdateWebhook $updateWebhook The webhook payload or changes to apply. (optional)
+     * @throws \CyberSource\ApiException on non-2xx response
+     * @return array of \CyberSource\Model\UpdateWebhookSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateWebhookSubscriptionWithHttpInfo($webhookId, $updateWebhook = null)
+    {
+        // verify the required parameter 'webhookId' is set
+        if ($webhookId === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $webhookId when calling updateWebhookSubscription");
+            throw new \InvalidArgumentException('Missing the required parameter $webhookId when calling updateWebhookSubscription');
+        }
+        // parse inputs
+        $resourcePath = "/notification-subscriptions/v2/webhooks/{webhookId}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json;charset=utf-8']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
+
+        // path params
+        if ($webhookId !== null) {
+            $resourcePath = str_replace(
+                "{" . "webhookId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($webhookId),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($updateWebhook)) {
+            $_tempBody = $updateWebhook;
+        }
+        
+        $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
+        $modelClassLocation = explode('\\', '\CyberSource\Model\UpdateWebhook');
+
+        $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
+
+        // for model (json/xml)
+        if (isset($_tempBody) and count($formParams) <= 0) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+        } elseif (count($formParams) > 0) {
+            $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
+        }
+
+        //MLE check and mle encryption for req body
+        $inboundMLEStatus = 'false';
+        if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "updateWebhookSubscription,updateWebhookSubscriptionWithHttpInfo")) {
+            try {
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
+            } catch (Exception $e) {
+                self::$logger->error("Failed to encrypt request body:  $e");
+                throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
+            }
+        }
+
+        
+        // Logging
+        self::$logger->debug("Resource : PATCH $resourcePath");
+        if (isset($httpBody) and count($formParams) <= 0) {
+            if ($this->apiClient->merchantConfig->getLogConfiguration()->isMaskingEnabled()) {
+                $printHttpBody = \CyberSource\Utilities\Helpers\DataMasker::maskData($httpBody);
+            } else {
+                $printHttpBody = $httpBody;
+            }
+            
+            self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
+        }
+
+        self::$logger->debug("Return Type : \CyberSource\Model\UpdateWebhookSubscriptionResponse");
+        
+        // Response MLE check
+        $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "updateWebhookSubscription,updateWebhookSubscriptionWithHttpInfo");
+        
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\CyberSource\Model\UpdateWebhookSubscriptionResponse',
+                '/notification-subscriptions/v2/webhooks/{webhookId}',
+                $isResponseMLEForAPI
+            );
+            
+            self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\UpdateWebhookSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\UpdateWebhookSubscriptionResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4043', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -46,7 +46,7 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_riskInformation_buyerHistory';
+    protected static $swaggerModelName = 'Ptsv2paymentsRiskInformationBuyerHistory';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,8 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
         'paymentAccountHistory' => 'string',
         'paymentAccountDate' => 'int',
         'transactionCountDay' => 'int',
-        'transactionCountYear' => 'int'
+        'transactionCountYear' => 'int',
+        'failedPaymentAttemptsCount' => 'float'
     ];
 
     /**
@@ -77,7 +78,8 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
         'paymentAccountHistory' => null,
         'paymentAccountDate' => null,
         'transactionCountDay' => null,
-        'transactionCountYear' => null
+        'transactionCountYear' => null,
+        'failedPaymentAttemptsCount' => null
     ];
 
     public static function swaggerTypes()
@@ -103,7 +105,8 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
         'paymentAccountHistory' => 'paymentAccountHistory',
         'paymentAccountDate' => 'paymentAccountDate',
         'transactionCountDay' => 'transactionCountDay',
-        'transactionCountYear' => 'transactionCountYear'
+        'transactionCountYear' => 'transactionCountYear',
+        'failedPaymentAttemptsCount' => 'failedPaymentAttemptsCount'
     ];
 
 
@@ -120,7 +123,8 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
         'paymentAccountHistory' => 'setPaymentAccountHistory',
         'paymentAccountDate' => 'setPaymentAccountDate',
         'transactionCountDay' => 'setTransactionCountDay',
-        'transactionCountYear' => 'setTransactionCountYear'
+        'transactionCountYear' => 'setTransactionCountYear',
+        'failedPaymentAttemptsCount' => 'setFailedPaymentAttemptsCount'
     ];
 
 
@@ -137,7 +141,8 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
         'paymentAccountHistory' => 'getPaymentAccountHistory',
         'paymentAccountDate' => 'getPaymentAccountDate',
         'transactionCountDay' => 'getTransactionCountDay',
-        'transactionCountYear' => 'getTransactionCountYear'
+        'transactionCountYear' => 'getTransactionCountYear',
+        'failedPaymentAttemptsCount' => 'getFailedPaymentAttemptsCount'
     ];
 
     public static function attributeMap()
@@ -180,6 +185,7 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
         $this->container['paymentAccountDate'] = isset($data['paymentAccountDate']) ? $data['paymentAccountDate'] : null;
         $this->container['transactionCountDay'] = isset($data['transactionCountDay']) ? $data['transactionCountDay'] : null;
         $this->container['transactionCountYear'] = isset($data['transactionCountYear']) ? $data['transactionCountYear'] : null;
+        $this->container['failedPaymentAttemptsCount'] = isset($data['failedPaymentAttemptsCount']) ? $data['failedPaymentAttemptsCount'] : null;
     }
 
     /**
@@ -392,6 +398,27 @@ class Ptsv2paymentsRiskInformationBuyerHistory implements ArrayAccess
     public function setTransactionCountYear($transactionCountYear)
     {
         $this->container['transactionCountYear'] = $transactionCountYear;
+
+        return $this;
+    }
+
+    /**
+     * Gets failedPaymentAttemptsCount
+     * @return float
+     */
+    public function getFailedPaymentAttemptsCount()
+    {
+        return $this->container['failedPaymentAttemptsCount'];
+    }
+
+    /**
+     * Sets failedPaymentAttemptsCount
+     * @param float $failedPaymentAttemptsCount Number of failed payment attempts linked to order
+     * @return $this
+     */
+    public function setFailedPaymentAttemptsCount($failedPaymentAttemptsCount)
+    {
+        $this->container['failedPaymentAttemptsCount'] = $failedPaymentAttemptsCount;
 
         return $this;
     }

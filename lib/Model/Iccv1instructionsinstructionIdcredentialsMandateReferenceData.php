@@ -46,7 +46,7 @@ class Iccv1instructionsinstructionIdcredentialsMandateReferenceData implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdcredentials_mandateReferenceData';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdcredentialsMandateReferenceData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

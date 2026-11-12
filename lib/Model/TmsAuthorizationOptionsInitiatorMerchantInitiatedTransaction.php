@@ -46,7 +46,7 @@ class TmsAuthorizationOptionsInitiatorMerchantInitiatedTransaction implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsAuthorizationOptions_initiator_merchantInitiatedTransaction';
+    protected static $swaggerModelName = 'TmsAuthorizationOptionsInitiatorMerchantInitiatedTransaction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

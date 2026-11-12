@@ -46,7 +46,7 @@ class PaymentsProductsAlternativePaymentMethodsSubscriptionInformation implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_alternativePaymentMethods_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsAlternativePaymentMethodsSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

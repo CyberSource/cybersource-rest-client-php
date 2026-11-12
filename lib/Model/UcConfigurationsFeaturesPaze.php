@@ -47,7 +47,7 @@ class UcConfigurationsFeaturesPaze implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucConfigurations_features_paze';
+    protected static $swaggerModelName = 'UcConfigurationsFeaturesPaze';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

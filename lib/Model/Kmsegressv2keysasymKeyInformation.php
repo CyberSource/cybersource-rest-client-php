@@ -47,7 +47,7 @@ class Kmsegressv2keysasymKeyInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'kmsegressv2keysasym_keyInformation';
+    protected static $swaggerModelName = 'Kmsegressv2keysasymKeyInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

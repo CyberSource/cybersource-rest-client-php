@@ -91,16 +91,16 @@ class InlineResponse4005Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "reason"
+     * Test attribute "message"
      */
-    public function testPropertyReason()
+    public function testPropertyMessage()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "reason"
      */
-    public function testPropertyMessage()
+    public function testPropertyReason()
     {
     }
 

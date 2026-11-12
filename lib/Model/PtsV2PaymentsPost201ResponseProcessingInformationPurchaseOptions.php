@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_processingInformation_purchaseOptions';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseProcessingInformationPurchaseOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

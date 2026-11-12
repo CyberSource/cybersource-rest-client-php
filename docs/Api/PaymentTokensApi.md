@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **retrieveOrDeletePaymentToken**
-> \CyberSource\Model\InlineResponse201 retrieveOrDeletePaymentToken($request)
+> \CyberSource\Model\RetrieveOrDeletePaymentTokenResponse retrieveOrDeletePaymentToken($paymentTokenRequest)
 
 Retrieve or Delete Payment Token
 
@@ -20,10 +20,10 @@ This API can be used in two flavours - for retrieval or deletion of vault id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\PaymentTokensApi();
-$request = new \CyberSource\Model\Request(); // \CyberSource\Model\Request | 
+$paymentTokenRequest = new \CyberSource\Model\PaymentTokenRequest(); // \CyberSource\Model\PaymentTokenRequest | 
 
 try {
-    $result = $api_instance->retrieveOrDeletePaymentToken($request);
+    $result = $api_instance->retrieveOrDeletePaymentToken($paymentTokenRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentTokensApi->retrieveOrDeletePaymentToken: ', $e->getMessage(), PHP_EOL;
@@ -35,11 +35,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\CyberSource\Model\Request**](../Model/Request.md)|  |
+ **paymentTokenRequest** | [**\CyberSource\Model\PaymentTokenRequest**](../Model/PaymentTokenRequest.md)|  |
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse201**](../Model/InlineResponse201.md)
+[**\CyberSource\Model\RetrieveOrDeletePaymentTokenResponse**](../Model/RetrieveOrDeletePaymentTokenResponse.md)
 
 ### Authorization
 

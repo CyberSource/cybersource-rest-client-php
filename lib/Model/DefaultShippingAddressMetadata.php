@@ -46,7 +46,7 @@ class DefaultShippingAddressMetadata implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultShippingAddress_metadata';
+    protected static $swaggerModelName = 'DefaultShippingAddressMetadata';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

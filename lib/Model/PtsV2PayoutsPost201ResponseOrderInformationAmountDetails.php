@@ -46,7 +46,7 @@ class PtsV2PayoutsPost201ResponseOrderInformationAmountDetails implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PayoutsPost201Response_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'PtsV2PayoutsPost201ResponseOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

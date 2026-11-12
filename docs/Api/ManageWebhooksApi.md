@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**deleteWebhookSubscription**](ManageWebhooksApi.md#deleteWebhookSubscription) | **DELETE** /notification-subscriptions/v2/webhooks/{webhookId} | Delete a Webhook Subscription
 [**getWebhookSubscriptionById**](ManageWebhooksApi.md#getWebhookSubscriptionById) | **GET** /notification-subscriptions/v2/webhooks/{webhookId} | Get Details On a Single Webhook
 [**getWebhookSubscriptionsByOrg**](ManageWebhooksApi.md#getWebhookSubscriptionsByOrg) | **GET** /notification-subscriptions/v2/webhooks | Get Details On All Created Webhooks
-[**notificationSubscriptionsV1WebhooksWebhookIdPost**](ManageWebhooksApi.md#notificationSubscriptionsV1WebhooksWebhookIdPost) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
-[**notificationSubscriptionsV2WebhooksWebhookIdPatch**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdPatch) | **PATCH** /notification-subscriptions/v2/webhooks/{webhookId} | Update a Webhook Subscription
 [**notificationSubscriptionsV2WebhooksWebhookIdStatusPut**](ManageWebhooksApi.md#notificationSubscriptionsV2WebhooksWebhookIdStatusPut) | **PUT** /notification-subscriptions/v2/webhooks/{webhookId}/status | Update a Webhook Status
 [**saveAsymEgressKey**](ManageWebhooksApi.md#saveAsymEgressKey) | **POST** /kms/egress/v2/keys-asym | Message Level Encryption
+[**testWebhookSubscription**](ManageWebhooksApi.md#testWebhookSubscription) | **POST** /notification-subscriptions/v1/webhooks/{webhookId} | Test a Webhook Configuration
+[**updateWebhookSubscription**](ManageWebhooksApi.md#updateWebhookSubscription) | **PATCH** /notification-subscriptions/v2/webhooks/{webhookId} | Update a Webhook Subscription
 
 
 # **deleteWebhookSubscription**
@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionById**
-> \CyberSource\Model\InlineResponse2018 getWebhookSubscriptionById($webhookId)
+> \CyberSource\Model\CreateWebhookSubscriptionResponse getWebhookSubscriptionById($webhookId)
 
 Get Details On a Single Webhook
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2018**](../Model/InlineResponse2018.md)
+[**\CyberSource\Model\CreateWebhookSubscriptionResponse**](../Model/CreateWebhookSubscriptionResponse.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSubscriptionsByOrg**
-> \CyberSource\Model\InlineResponse2007[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
+> \CyberSource\Model\WebhookSubscription[] getWebhookSubscriptionsByOrg($organizationId, $productId, $eventType)
 
 Get Details On All Created Webhooks
 
@@ -138,99 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2007[]**](../Model/InlineResponse2007.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **notificationSubscriptionsV1WebhooksWebhookIdPost**
-> \CyberSource\Model\InlineResponse2019 notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId)
-
-Test a Webhook Configuration
-
-Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The Webhook Identifier.
-
-try {
-    $result = $api_instance->notificationSubscriptionsV1WebhooksWebhookIdPost($webhookId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->notificationSubscriptionsV1WebhooksWebhookIdPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The Webhook Identifier. |
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2019**](../Model/InlineResponse2019.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **notificationSubscriptionsV2WebhooksWebhookIdPatch**
-> \CyberSource\Model\InlineResponse2008 notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook)
-
-Update a Webhook Subscription
-
-Update a Webhook Subscription.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\ManageWebhooksApi();
-$webhookId = "webhookId_example"; // string | The Webhook Identifier.
-$updateWebhook = new \CyberSource\Model\UpdateWebhook(); // \CyberSource\Model\UpdateWebhook | The webhook payload or changes to apply.
-
-try {
-    $result = $api_instance->notificationSubscriptionsV2WebhooksWebhookIdPatch($webhookId, $updateWebhook);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ManageWebhooksApi->notificationSubscriptionsV2WebhooksWebhookIdPatch: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | **string**| The Webhook Identifier. |
- **updateWebhook** | [**\CyberSource\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\CyberSource\Model\WebhookSubscription[]**](../Model/WebhookSubscription.md)
 
 ### Authorization
 
@@ -290,7 +198,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **saveAsymEgressKey**
-> \CyberSource\Model\InlineResponse20110 saveAsymEgressKey($saveAsymEgressKey, $vCCorrelationId, $vCSenderOrganizationId, $vCPermissions)
+> \CyberSource\Model\SaveAsymEgressKeyResponse saveAsymEgressKey($saveAsymEgressKey, $vCCorrelationId, $vCSenderOrganizationId, $vCPermissions)
 
 Message Level Encryption
 
@@ -327,7 +235,99 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20110**](../Model/InlineResponse20110.md)
+[**\CyberSource\Model\SaveAsymEgressKeyResponse**](../Model/SaveAsymEgressKeyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **testWebhookSubscription**
+> \CyberSource\Model\TestWebhookSubscriptionResponse testWebhookSubscription($webhookId)
+
+Test a Webhook Configuration
+
+Test the webhook configuration by sending a sample webhook. Calling this endpoint sends a sample webhook to the endpoint identified in the user's subscription.   It will contain sample values for the product & eventType based on values present in your subscription along with a sample message in the payload.   Based on the webhook response users can make any necessary modifications or rest assured knowing their setup is configured correctly.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The Webhook Identifier.
+
+try {
+    $result = $api_instance->testWebhookSubscription($webhookId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->testWebhookSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The Webhook Identifier. |
+
+### Return type
+
+[**\CyberSource\Model\TestWebhookSubscriptionResponse**](../Model/TestWebhookSubscriptionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateWebhookSubscription**
+> \CyberSource\Model\UpdateWebhookSubscriptionResponse updateWebhookSubscription($webhookId, $updateWebhook)
+
+Update a Webhook Subscription
+
+Update a Webhook Subscription.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\ManageWebhooksApi();
+$webhookId = "webhookId_example"; // string | The Webhook Identifier.
+$updateWebhook = new \CyberSource\Model\UpdateWebhook(); // \CyberSource\Model\UpdateWebhook | The webhook payload or changes to apply.
+
+try {
+    $result = $api_instance->updateWebhookSubscription($webhookId, $updateWebhook);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ManageWebhooksApi->updateWebhookSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **string**| The Webhook Identifier. |
+ **updateWebhook** | [**\CyberSource\Model\UpdateWebhook**](../Model/UpdateWebhook.md)| The webhook payload or changes to apply. | [optional]
+
+### Return type
+
+[**\CyberSource\Model\UpdateWebhookSubscriptionResponse**](../Model/UpdateWebhookSubscriptionResponse.md)
 
 ### Authorization
 

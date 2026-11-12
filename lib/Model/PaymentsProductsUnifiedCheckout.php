@@ -46,7 +46,7 @@ class PaymentsProductsUnifiedCheckout implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_unifiedCheckout';
+    protected static $swaggerModelName = 'PaymentsProductsUnifiedCheckout';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

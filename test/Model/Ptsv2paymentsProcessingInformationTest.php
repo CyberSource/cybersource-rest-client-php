@@ -418,4 +418,18 @@ class Ptsv2paymentsProcessingInformationTest extends \PHPUnit\Framework\TestCase
     public function testPropertyInquiryType()
     {
     }
+
+    /**
+     * Test attribute "preAuthStatus"
+     */
+    public function testPropertyPreAuthStatus()
+    {
+    }
+
+    /**
+     * Test attribute "preAuthResponseCode"
+     */
+    public function testPropertyPreAuthResponseCode()
+    {
+    }
 }

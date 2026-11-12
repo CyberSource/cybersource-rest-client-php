@@ -47,7 +47,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_buyerInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsBuyerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,8 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         'username' => 'string',
         'hashedPassword' => 'string',
         'dateOfBirth' => 'string',
-        'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]'
+        'personalIdentification' => '\CyberSource\Model\Ptsv2paymentsBuyerInformationPersonalIdentification[]',
+        'loyalty' => '\CyberSource\Model\Riskv1decisionsBuyerInformationLoyalty'
     ];
 
     /**
@@ -70,7 +71,8 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         'username' => null,
         'hashedPassword' => null,
         'dateOfBirth' => null,
-        'personalIdentification' => null
+        'personalIdentification' => null,
+        'loyalty' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +94,8 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         'username' => 'username',
         'hashedPassword' => 'hashedPassword',
         'dateOfBirth' => 'dateOfBirth',
-        'personalIdentification' => 'personalIdentification'
+        'personalIdentification' => 'personalIdentification',
+        'loyalty' => 'loyalty'
     ];
 
 
@@ -105,7 +108,8 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         'username' => 'setUsername',
         'hashedPassword' => 'setHashedPassword',
         'dateOfBirth' => 'setDateOfBirth',
-        'personalIdentification' => 'setPersonalIdentification'
+        'personalIdentification' => 'setPersonalIdentification',
+        'loyalty' => 'setLoyalty'
     ];
 
 
@@ -118,7 +122,8 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         'username' => 'getUsername',
         'hashedPassword' => 'getHashedPassword',
         'dateOfBirth' => 'getDateOfBirth',
-        'personalIdentification' => 'getPersonalIdentification'
+        'personalIdentification' => 'getPersonalIdentification',
+        'loyalty' => 'getLoyalty'
     ];
 
     public static function attributeMap()
@@ -157,6 +162,7 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
         $this->container['hashedPassword'] = isset($data['hashedPassword']) ? $data['hashedPassword'] : null;
         $this->container['dateOfBirth'] = isset($data['dateOfBirth']) ? $data['dateOfBirth'] : null;
         $this->container['personalIdentification'] = isset($data['personalIdentification']) ? $data['personalIdentification'] : null;
+        $this->container['loyalty'] = isset($data['loyalty']) ? $data['loyalty'] : null;
     }
 
     /**
@@ -285,6 +291,27 @@ class Riskv1decisionsBuyerInformation implements ArrayAccess
     public function setPersonalIdentification($personalIdentification)
     {
         $this->container['personalIdentification'] = $personalIdentification;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyalty
+     * @return \CyberSource\Model\Riskv1decisionsBuyerInformationLoyalty
+     */
+    public function getLoyalty()
+    {
+        return $this->container['loyalty'];
+    }
+
+    /**
+     * Sets loyalty
+     * @param \CyberSource\Model\Riskv1decisionsBuyerInformationLoyalty $loyalty
+     * @return $this
+     */
+    public function setLoyalty($loyalty)
+    {
+        $this->container['loyalty'] = $loyalty;
 
         return $this;
     }

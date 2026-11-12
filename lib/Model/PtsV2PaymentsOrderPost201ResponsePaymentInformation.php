@@ -46,7 +46,7 @@ class PtsV2PaymentsOrderPost201ResponsePaymentInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsOrderPost201Response_paymentInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsOrderPost201ResponsePaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

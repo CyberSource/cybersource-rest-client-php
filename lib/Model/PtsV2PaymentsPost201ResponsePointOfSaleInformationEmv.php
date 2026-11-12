@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_pointOfSaleInformation_emv';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponsePointOfSaleInformationEmv';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

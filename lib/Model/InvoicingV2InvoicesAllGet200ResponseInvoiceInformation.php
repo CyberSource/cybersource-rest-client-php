@@ -46,7 +46,7 @@ class InvoicingV2InvoicesAllGet200ResponseInvoiceInformation implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingV2InvoicesAllGet200Response_invoiceInformation';
+    protected static $swaggerModelName = 'InvoicingV2InvoicesAllGet200ResponseInvoiceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

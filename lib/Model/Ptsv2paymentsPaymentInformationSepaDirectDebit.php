@@ -46,7 +46,7 @@ class Ptsv2paymentsPaymentInformationSepaDirectDebit implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_sepa_directDebit';
+    protected static $swaggerModelName = 'Ptsv2paymentsPaymentInformationSepaDirectDebit';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

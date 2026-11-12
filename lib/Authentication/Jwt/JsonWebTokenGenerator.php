@@ -108,6 +108,7 @@ class JsonWebTokenGenerator implements TokenGenerator
 
         if (!empty($isResponseMLEForAPI)) {
             $jwtPayload['v-c-response-mle-kid'] = MLEUtility::validateAndAutoExtractResponseMleKid($merchantConfig);
+            $jwtPayload['v-c-response-mle-algo'] = GlobalParameter::RESPONSE_MLE_ALGORITHM;
         }
 
         return $jwtPayload;

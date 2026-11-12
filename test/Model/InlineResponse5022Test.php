@@ -84,9 +84,9 @@ class InlineResponse5022Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "submitTimeStampUtc"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertySubmitTimeStampUtc()
+    public function testPropertySubmitTimeUtc()
     {
     }
 

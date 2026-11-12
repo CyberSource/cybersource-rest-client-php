@@ -46,7 +46,7 @@ class CancelSubscriptionResponseSubscriptionInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'cancelSubscriptionResponse_subscriptionInformation';
+    protected static $swaggerModelName = 'CancelSubscriptionResponseSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

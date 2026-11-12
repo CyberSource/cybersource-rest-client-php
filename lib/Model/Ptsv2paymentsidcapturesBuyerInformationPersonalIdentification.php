@@ -46,7 +46,7 @@ class Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidcaptures_buyerInformation_personalIdentification';
+    protected static $swaggerModelName = 'Ptsv2paymentsidcapturesBuyerInformationPersonalIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

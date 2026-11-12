@@ -47,7 +47,7 @@ class Riskv1authenticationsOrderInformationAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1authentications_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Riskv1authenticationsOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

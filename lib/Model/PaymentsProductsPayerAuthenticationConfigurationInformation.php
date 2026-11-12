@@ -46,7 +46,7 @@ class PaymentsProductsPayerAuthenticationConfigurationInformation implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_payerAuthentication_configurationInformation';
+    protected static $swaggerModelName = 'PaymentsProductsPayerAuthenticationConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

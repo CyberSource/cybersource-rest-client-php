@@ -46,7 +46,7 @@ class PaymentsConfigurationSetupAlternativePaymentMethods implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsConfigurationSetup_alternativePaymentMethods';
+    protected static $swaggerModelName = 'PaymentsConfigurationSetupAlternativePaymentMethods';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

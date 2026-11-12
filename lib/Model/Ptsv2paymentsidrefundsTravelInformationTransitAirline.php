@@ -46,7 +46,7 @@ class Ptsv2paymentsidrefundsTravelInformationTransitAirline implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidrefunds_travelInformation_transit_airline';
+    protected static $swaggerModelName = 'Ptsv2paymentsidrefundsTravelInformationTransitAirline';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -91,7 +91,7 @@ class Ptsv2paymentsidrefundsTravelInformationTransitAirline implements ArrayAcce
         'reservationType' => 'string',
         'boardingFeeAmount' => 'string',
         'legs' => '\CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineLegs[]',
-        'ancillaryInformation' => '\CyberSource\Model\Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation',
+        'ancillaryInformation' => '\CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation',
         'flightType' => 'string',
         'insuranceAmount' => 'string',
         'frequentFlyerNumber' => 'string',
@@ -1223,7 +1223,7 @@ class Ptsv2paymentsidrefundsTravelInformationTransitAirline implements ArrayAcce
 
     /**
      * Gets ancillaryInformation
-     * @return \CyberSource\Model\Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation
+     * @return \CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation
      */
     public function getAncillaryInformation()
     {
@@ -1232,7 +1232,7 @@ class Ptsv2paymentsidrefundsTravelInformationTransitAirline implements ArrayAcce
 
     /**
      * Sets ancillaryInformation
-     * @param \CyberSource\Model\Ptsv2paymentsidrefundsTravelInformationTransitAirlineAncillaryInformation $ancillaryInformation
+     * @param \CyberSource\Model\Ptsv2paymentsTravelInformationTransitAirlineAncillaryInformation $ancillaryInformation
      * @return $this
      */
     public function setAncillaryInformation($ancillaryInformation)

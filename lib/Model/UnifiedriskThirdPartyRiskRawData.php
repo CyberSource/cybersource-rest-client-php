@@ -46,7 +46,7 @@ class UnifiedriskThirdPartyRiskRawData implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_thirdPartyRisk_rawData';
+    protected static $swaggerModelName = 'UnifiedriskThirdPartyRiskRawData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

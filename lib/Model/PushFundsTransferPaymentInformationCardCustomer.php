@@ -46,7 +46,7 @@ class PushFundsTransferPaymentInformationCardCustomer implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFundsTransferPaymentInformation_card_customer';
+    protected static $swaggerModelName = 'PushFundsTransferPaymentInformationCardCustomer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

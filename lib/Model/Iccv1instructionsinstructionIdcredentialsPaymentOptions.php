@@ -47,7 +47,7 @@ class Iccv1instructionsinstructionIdcredentialsPaymentOptions implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdcredentials_paymentOptions';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdcredentialsPaymentOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

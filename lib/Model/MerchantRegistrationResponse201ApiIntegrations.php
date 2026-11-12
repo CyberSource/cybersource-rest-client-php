@@ -47,7 +47,7 @@ class MerchantRegistrationResponse201ApiIntegrations implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'merchantRegistrationResponse201_apiIntegrations';
+    protected static $swaggerModelName = 'merchantRegistrationResponse201ApiIntegrations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PtsV2PaymentsVoidsPost201ResponseProcessorInformation implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsVoidsPost201Response_processorInformation';
+    protected static $swaggerModelName = 'PtsV2PaymentsVoidsPost201ResponseProcessorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_paymentInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsPaymentInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
         'tokenizedCard' => '\CyberSource\Model\Riskv1decisionsPaymentInformationTokenizedCard',
         'customer' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationCustomer',
         'bank' => '\CyberSource\Model\Ptsv2paymentsPaymentInformationBank',
-        'method' => 'string'
+        'method' => 'string',
+        'paymentType' => '\CyberSource\Model\Ptsv2refreshpaymentstatusidPaymentInformationPaymentType',
+        'paymentAccountReference' => '\CyberSource\Model\Riskv1decisionsPaymentInformationPaymentAccountReference'
     ];
 
     /**
@@ -70,7 +72,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
         'tokenizedCard' => null,
         'customer' => null,
         'bank' => null,
-        'method' => null
+        'method' => null,
+        'paymentType' => null,
+        'paymentAccountReference' => null
     ];
 
     public static function swaggerTypes()
@@ -92,7 +96,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'tokenizedCard',
         'customer' => 'customer',
         'bank' => 'bank',
-        'method' => 'method'
+        'method' => 'method',
+        'paymentType' => 'paymentType',
+        'paymentAccountReference' => 'paymentAccountReference'
     ];
 
 
@@ -105,7 +111,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'setTokenizedCard',
         'customer' => 'setCustomer',
         'bank' => 'setBank',
-        'method' => 'setMethod'
+        'method' => 'setMethod',
+        'paymentType' => 'setPaymentType',
+        'paymentAccountReference' => 'setPaymentAccountReference'
     ];
 
 
@@ -118,7 +126,9 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
         'tokenizedCard' => 'getTokenizedCard',
         'customer' => 'getCustomer',
         'bank' => 'getBank',
-        'method' => 'getMethod'
+        'method' => 'getMethod',
+        'paymentType' => 'getPaymentType',
+        'paymentAccountReference' => 'getPaymentAccountReference'
     ];
 
     public static function attributeMap()
@@ -157,6 +167,8 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['bank'] = isset($data['bank']) ? $data['bank'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
+        $this->container['paymentType'] = isset($data['paymentType']) ? $data['paymentType'] : null;
+        $this->container['paymentAccountReference'] = isset($data['paymentAccountReference']) ? $data['paymentAccountReference'] : null;
     }
 
     /**
@@ -285,6 +297,48 @@ class Riskv1decisionsPaymentInformation implements ArrayAccess
     public function setMethod($method)
     {
         $this->container['method'] = $method;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentType
+     * @return \CyberSource\Model\Ptsv2refreshpaymentstatusidPaymentInformationPaymentType
+     */
+    public function getPaymentType()
+    {
+        return $this->container['paymentType'];
+    }
+
+    /**
+     * Sets paymentType
+     * @param \CyberSource\Model\Ptsv2refreshpaymentstatusidPaymentInformationPaymentType $paymentType
+     * @return $this
+     */
+    public function setPaymentType($paymentType)
+    {
+        $this->container['paymentType'] = $paymentType;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentAccountReference
+     * @return \CyberSource\Model\Riskv1decisionsPaymentInformationPaymentAccountReference
+     */
+    public function getPaymentAccountReference()
+    {
+        return $this->container['paymentAccountReference'];
+    }
+
+    /**
+     * Sets paymentAccountReference
+     * @param \CyberSource\Model\Riskv1decisionsPaymentInformationPaymentAccountReference $paymentAccountReference
+     * @return $this
+     */
+    public function setPaymentAccountReference($paymentAccountReference)
+    {
+        $this->container['paymentAccountReference'] = $paymentAccountReference;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class VirtualTerminalGlobalPaymentSettingsBasicInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'virtualTerminalGlobalPaymentSettings_basicInformation';
+    protected static $swaggerModelName = 'VirtualTerminalGlobalPaymentSettingsBasicInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

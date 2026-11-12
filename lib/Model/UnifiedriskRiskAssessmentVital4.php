@@ -47,7 +47,7 @@ class UnifiedriskRiskAssessmentVital4 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_riskAssessment_vital4';
+    protected static $swaggerModelName = 'UnifiedriskRiskAssessmentVital4';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

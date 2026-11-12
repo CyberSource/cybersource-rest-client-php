@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions impleme
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_processingInformation_captureOptions';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseProcessingInformationCaptureOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

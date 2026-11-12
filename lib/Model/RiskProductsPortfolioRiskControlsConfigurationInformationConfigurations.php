@@ -46,7 +46,7 @@ class RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations im
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskProducts_portfolioRiskControls_configurationInformation_configurations';
+    protected static $swaggerModelName = 'RiskProductsPortfolioRiskControlsConfigurationInformationConfigurations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

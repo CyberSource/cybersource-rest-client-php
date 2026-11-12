@@ -47,7 +47,7 @@ class Iccv1merchantsEncryptionKey implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1merchants_encryptionKey';
+    protected static $swaggerModelName = 'Iccv1merchantsEncryptionKey';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

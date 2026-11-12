@@ -46,7 +46,7 @@ class Upv1capturecontextsDataConsumerAuthenticationInformation implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_consumerAuthenticationInformation';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataConsumerAuthenticationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

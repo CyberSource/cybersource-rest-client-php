@@ -46,7 +46,7 @@ class CommerceSolutionsProductsBinLookupConfigurationInformation implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'commerceSolutionsProducts_binLookup_configurationInformation';
+    protected static $swaggerModelName = 'CommerceSolutionsProductsBinLookupConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class TmsNetworkTokenServicesSynchronousProvisioning implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsNetworkTokenServices_synchronousProvisioning';
+    protected static $swaggerModelName = 'TmsNetworkTokenServicesSynchronousProvisioning';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

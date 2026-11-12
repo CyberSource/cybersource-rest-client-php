@@ -46,7 +46,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_processingInformation';
+    protected static $swaggerModelName = 'Ptsv2paymentsProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -101,7 +101,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'walletTransactionIntent' => 'float',
         'destinationType' => 'float',
         'programIndicators' => '\CyberSource\Model\Ptsv2paymentsProcessingInformationProgramIndicators',
-        'inquiryType' => 'string'
+        'inquiryType' => 'string',
+        'preAuthStatus' => 'string',
+        'preAuthResponseCode' => 'string'
     ];
 
     /**
@@ -157,7 +159,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'walletTransactionIntent' => null,
         'destinationType' => null,
         'programIndicators' => null,
-        'inquiryType' => null
+        'inquiryType' => null,
+        'preAuthStatus' => null,
+        'preAuthResponseCode' => null
     ];
 
     public static function swaggerTypes()
@@ -223,7 +227,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'walletTransactionIntent' => 'walletTransactionIntent',
         'destinationType' => 'destinationType',
         'programIndicators' => 'programIndicators',
-        'inquiryType' => 'inquiryType'
+        'inquiryType' => 'inquiryType',
+        'preAuthStatus' => 'preAuthStatus',
+        'preAuthResponseCode' => 'preAuthResponseCode'
     ];
 
 
@@ -280,7 +286,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'walletTransactionIntent' => 'setWalletTransactionIntent',
         'destinationType' => 'setDestinationType',
         'programIndicators' => 'setProgramIndicators',
-        'inquiryType' => 'setInquiryType'
+        'inquiryType' => 'setInquiryType',
+        'preAuthStatus' => 'setPreAuthStatus',
+        'preAuthResponseCode' => 'setPreAuthResponseCode'
     ];
 
 
@@ -337,7 +345,9 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         'walletTransactionIntent' => 'getWalletTransactionIntent',
         'destinationType' => 'getDestinationType',
         'programIndicators' => 'getProgramIndicators',
-        'inquiryType' => 'getInquiryType'
+        'inquiryType' => 'getInquiryType',
+        'preAuthStatus' => 'getPreAuthStatus',
+        'preAuthResponseCode' => 'getPreAuthResponseCode'
     ];
 
     public static function attributeMap()
@@ -420,6 +430,8 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
         $this->container['destinationType'] = isset($data['destinationType']) ? $data['destinationType'] : null;
         $this->container['programIndicators'] = isset($data['programIndicators']) ? $data['programIndicators'] : null;
         $this->container['inquiryType'] = isset($data['inquiryType']) ? $data['inquiryType'] : null;
+        $this->container['preAuthStatus'] = isset($data['preAuthStatus']) ? $data['preAuthStatus'] : null;
+        $this->container['preAuthResponseCode'] = isset($data['preAuthResponseCode']) ? $data['preAuthResponseCode'] : null;
     }
 
     /**
@@ -1472,6 +1484,48 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setInquiryType($inquiryType)
     {
         $this->container['inquiryType'] = $inquiryType;
+
+        return $this;
+    }
+
+    /**
+     * Gets preAuthStatus
+     * @return string
+     */
+    public function getPreAuthStatus()
+    {
+        return $this->container['preAuthStatus'];
+    }
+
+    /**
+     * Sets preAuthStatus
+     * @param string $preAuthStatus Outcome of a pre-authorization process. Used when processing payment outside of CyberSource and sent to Decision Manager post-authorisation.  Possible values: Approved, Rejected, Hold.
+     * @return $this
+     */
+    public function setPreAuthStatus($preAuthStatus)
+    {
+        $this->container['preAuthStatus'] = $preAuthStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets preAuthResponseCode
+     * @return string
+     */
+    public function getPreAuthResponseCode()
+    {
+        return $this->container['preAuthResponseCode'];
+    }
+
+    /**
+     * Sets preAuthResponseCode
+     * @param string $preAuthResponseCode Alphanumeric code returned by the issuer or payment gateway during the pre-authorization stage of a transaction.
+     * @return $this
+     */
+    public function setPreAuthResponseCode($preAuthResponseCode)
+    {
+        $this->container['preAuthResponseCode'] = $preAuthResponseCode;
 
         return $this;
     }

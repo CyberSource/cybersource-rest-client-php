@@ -46,7 +46,7 @@ class Ptsv2billingagreementsPaymentInformationBankAccountAlias implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2billingagreements_paymentInformation_bank_accountAlias';
+    protected static $swaggerModelName = 'Ptsv2billingagreementsPaymentInformationBankAccountAlias';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

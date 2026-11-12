@@ -46,7 +46,7 @@ class Ucv1sessionsCaptureMandateCPF implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_captureMandate_CPF';
+    protected static $swaggerModelName = 'Ucv1sessionsCaptureMandateCPF';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

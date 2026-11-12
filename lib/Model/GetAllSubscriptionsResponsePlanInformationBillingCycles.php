@@ -46,7 +46,7 @@ class GetAllSubscriptionsResponsePlanInformationBillingCycles implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getAllSubscriptionsResponse_planInformation_billingCycles';
+    protected static $swaggerModelName = 'GetAllSubscriptionsResponsePlanInformationBillingCycles';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

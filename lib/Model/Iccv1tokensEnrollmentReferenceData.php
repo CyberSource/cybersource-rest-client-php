@@ -47,7 +47,7 @@ class Iccv1tokensEnrollmentReferenceData implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1tokens_enrollmentReferenceData';
+    protected static $swaggerModelName = 'Iccv1tokensEnrollmentReferenceData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

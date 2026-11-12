@@ -46,7 +46,7 @@ class Upv1capturecontextsDataPaymentInformationCard implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_paymentInformation_card';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataPaymentInformationCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

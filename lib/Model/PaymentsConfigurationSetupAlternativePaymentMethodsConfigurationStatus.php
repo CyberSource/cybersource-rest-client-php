@@ -46,7 +46,7 @@ class PaymentsConfigurationSetupAlternativePaymentMethodsConfigurationStatus imp
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsConfigurationSetup_alternativePaymentMethods_configurationStatus';
+    protected static $swaggerModelName = 'PaymentsConfigurationSetupAlternativePaymentMethodsConfigurationStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

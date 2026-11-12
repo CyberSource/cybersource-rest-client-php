@@ -46,7 +46,7 @@ class PaymentsProductsPayoutsConfigurationInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_payouts_configurationInformation';
+    protected static $swaggerModelName = 'PaymentsProductsPayoutsConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

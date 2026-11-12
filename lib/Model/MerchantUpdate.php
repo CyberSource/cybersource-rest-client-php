@@ -60,8 +60,8 @@ class MerchantUpdate implements ArrayAccess
         'paymentPayloadType' => 'string',
         'acceptanceRelationships' => 'string[]',
         'protocolInteractions' => '\CyberSource\Model\Iccv1merchantsProtocolInteractions[]',
-        'webIntegrations' => '\CyberSource\Model\MerchantRegistrationResponse201WebIntegrations',
-        'apiIntegrations' => '\CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations'
+        'webIntegrations' => '\CyberSource\Model\Iccv1merchantsWebIntegrations',
+        'apiIntegrations' => '\CyberSource\Model\Iccv1merchantsApiIntegrations'
     ];
 
     /**
@@ -330,7 +330,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Gets webIntegrations
-     * @return \CyberSource\Model\MerchantRegistrationResponse201WebIntegrations
+     * @return \CyberSource\Model\Iccv1merchantsWebIntegrations
      */
     public function getWebIntegrations()
     {
@@ -339,7 +339,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets webIntegrations
-     * @param \CyberSource\Model\MerchantRegistrationResponse201WebIntegrations $webIntegrations
+     * @param \CyberSource\Model\Iccv1merchantsWebIntegrations $webIntegrations
      * @return $this
      */
     public function setWebIntegrations($webIntegrations)
@@ -351,7 +351,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Gets apiIntegrations
-     * @return \CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations
+     * @return \CyberSource\Model\Iccv1merchantsApiIntegrations
      */
     public function getApiIntegrations()
     {
@@ -360,7 +360,7 @@ class MerchantUpdate implements ArrayAccess
 
     /**
      * Sets apiIntegrations
-     * @param \CyberSource\Model\MerchantRegistrationResponse201ApiIntegrations $apiIntegrations
+     * @param \CyberSource\Model\Iccv1merchantsApiIntegrations $apiIntegrations
      * @return $this
      */
     public function setApiIntegrations($apiIntegrations)

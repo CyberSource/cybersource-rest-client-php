@@ -46,7 +46,7 @@ class Ptsv2paymentsPaymentInformationTokenizedPaymentMethod implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_paymentInformation_tokenizedPaymentMethod';
+    protected static $swaggerModelName = 'Ptsv2paymentsPaymentInformationTokenizedPaymentMethod';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

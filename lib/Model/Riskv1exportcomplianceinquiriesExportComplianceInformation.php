@@ -46,7 +46,7 @@ class Riskv1exportcomplianceinquiriesExportComplianceInformation implements Arra
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1exportcomplianceinquiries_exportComplianceInformation';
+    protected static $swaggerModelName = 'Riskv1exportcomplianceinquiriesExportComplianceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

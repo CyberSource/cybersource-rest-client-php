@@ -46,7 +46,7 @@ class AftFundingOptionsInitiatorOriginatorInitiatedTransaction implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'aftFundingOptions_initiator_originatorInitiatedTransaction';
+    protected static $swaggerModelName = 'AftFundingOptionsInitiatorOriginatorInitiatedTransaction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

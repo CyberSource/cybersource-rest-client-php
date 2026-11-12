@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponsePaymentInformationBrands implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_paymentInformation_brands';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponsePaymentInformationBrands';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

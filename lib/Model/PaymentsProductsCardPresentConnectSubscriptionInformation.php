@@ -46,7 +46,7 @@ class PaymentsProductsCardPresentConnectSubscriptionInformation implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_cardPresentConnect_subscriptionInformation';
+    protected static $swaggerModelName = 'PaymentsProductsCardPresentConnectSubscriptionInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

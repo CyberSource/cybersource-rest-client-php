@@ -46,7 +46,7 @@ class PaymentsProductsUnifiedCheckoutConfigurationInformation implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_unifiedCheckout_configurationInformation';
+    protected static $swaggerModelName = 'PaymentsProductsUnifiedCheckoutConfigurationInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

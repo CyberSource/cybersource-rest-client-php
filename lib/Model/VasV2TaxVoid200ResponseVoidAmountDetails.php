@@ -46,7 +46,7 @@ class VasV2TaxVoid200ResponseVoidAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasV2TaxVoid200Response_voidAmountDetails';
+    protected static $swaggerModelName = 'VasV2TaxVoid200ResponseVoidAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

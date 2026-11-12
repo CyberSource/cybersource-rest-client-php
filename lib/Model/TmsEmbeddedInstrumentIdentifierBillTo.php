@@ -47,7 +47,7 @@ class TmsEmbeddedInstrumentIdentifierBillTo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsEmbeddedInstrumentIdentifier_billTo';
+    protected static $swaggerModelName = 'TmsEmbeddedInstrumentIdentifierBillTo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

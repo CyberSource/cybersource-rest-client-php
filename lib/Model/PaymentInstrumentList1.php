@@ -53,12 +53,12 @@ class PaymentInstrumentList1 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\CyberSource\Model\PaymentInstrumentListLinks',
+        'links' => '\CyberSource\Model\InstrumentIdentifierPaymentInstrumentListLinks',
         'offset' => 'int',
         'limit' => 'int',
         'count' => 'int',
         'total' => 'int',
-        'embedded' => '\CyberSource\Model\PaymentInstrumentList1Embedded'
+        'embedded' => '\CyberSource\Model\InstrumentIdentifierPaymentInstrumentListEmbedded1'
     ];
 
     /**
@@ -191,7 +191,7 @@ class PaymentInstrumentList1 implements ArrayAccess
 
     /**
      * Gets links
-     * @return \CyberSource\Model\PaymentInstrumentListLinks
+     * @return \CyberSource\Model\InstrumentIdentifierPaymentInstrumentListLinks
      */
     public function getLinks()
     {
@@ -200,7 +200,7 @@ class PaymentInstrumentList1 implements ArrayAccess
 
     /**
      * Sets links
-     * @param \CyberSource\Model\PaymentInstrumentListLinks $links
+     * @param \CyberSource\Model\InstrumentIdentifierPaymentInstrumentListLinks $links
      * @return $this
      */
     public function setLinks($links)
@@ -296,7 +296,7 @@ class PaymentInstrumentList1 implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\PaymentInstrumentList1Embedded
+     * @return \CyberSource\Model\InstrumentIdentifierPaymentInstrumentListEmbedded1
      */
     public function getEmbedded()
     {
@@ -305,7 +305,7 @@ class PaymentInstrumentList1 implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\PaymentInstrumentList1Embedded $embedded
+     * @param \CyberSource\Model\InstrumentIdentifierPaymentInstrumentListEmbedded1 $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

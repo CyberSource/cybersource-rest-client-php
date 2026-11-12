@@ -46,7 +46,7 @@ class Ptsv2paymentsTokenInformationTokenAuthenticationInformationAuthenticatedId
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_tokenInformation_tokenAuthenticationInformation_authenticatedIdentities';
+    protected static $swaggerModelName = 'Ptsv2paymentsTokenInformationTokenAuthenticationInformationAuthenticatedIdentities';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -101,7 +101,7 @@ class ForeignExchangeRatesApi
      *
      * Retrieve Foreign Exchange Rates
      *
-     * @param \CyberSource\Model\Body $body  (required)
+     * @param \CyberSource\Model\CreateFxRatesRequest $createFxRatesRequest  (required)
      * @param string $contentType  (required)
      * @param string $xRequestid  (required)
      * @param string $vCMerchantId  (required)
@@ -109,12 +109,12 @@ class ForeignExchangeRatesApi
      * @param string $vCCorrelationId  (required)
      * @param string $vCOrganizationId  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreateFxRatesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFxRates($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
+    public function createFxRates($createFxRatesRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
     {
         self::$logger->info('CALL TO METHOD createFxRates STARTED');
-        list($response, $statusCode, $httpHeader) = $this->createFxRatesWithHttpInfo($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId);
+        list($response, $statusCode, $httpHeader) = $this->createFxRatesWithHttpInfo($createFxRatesRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId);
         self::$logger->info('CALL TO METHOD createFxRates ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -125,7 +125,7 @@ class ForeignExchangeRatesApi
      *
      * Retrieve Foreign Exchange Rates
      *
-     * @param \CyberSource\Model\Body $body  (required)
+     * @param \CyberSource\Model\CreateFxRatesRequest $createFxRatesRequest  (required)
      * @param string $contentType  (required)
      * @param string $xRequestid  (required)
      * @param string $vCMerchantId  (required)
@@ -133,14 +133,14 @@ class ForeignExchangeRatesApi
      * @param string $vCCorrelationId  (required)
      * @param string $vCOrganizationId  (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\InlineResponse2013, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\CreateFxRatesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFxRatesWithHttpInfo($body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
+    public function createFxRatesWithHttpInfo($createFxRatesRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId)
     {
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $body when calling createFxRates");
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createFxRates');
+        // verify the required parameter 'createFxRatesRequest' is set
+        if ($createFxRatesRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createFxRatesRequest when calling createFxRates");
+            throw new \InvalidArgumentException('Missing the required parameter $createFxRatesRequest when calling createFxRates');
         }
         // verify the required parameter 'contentType' is set
         if ($contentType === null) {
@@ -184,7 +184,8 @@ class ForeignExchangeRatesApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // header params
         if ($contentType !== null) {
@@ -212,18 +213,26 @@ class ForeignExchangeRatesApi
         }
         // body params
         $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
+        if (isset($createFxRatesRequest)) {
+            $_tempBody = $createFxRatesRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\Body');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\CreateFxRatesRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -232,7 +241,7 @@ class ForeignExchangeRatesApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createFxRates,createFxRatesWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -252,7 +261,7 @@ class ForeignExchangeRatesApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\InlineResponse2013");
+        self::$logger->debug("Return Type : \CyberSource\Model\CreateFxRatesResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "createFxRates,createFxRatesWithHttpInfo");
@@ -265,30 +274,30 @@ class ForeignExchangeRatesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\InlineResponse2013',
+                '\CyberSource\Model\CreateFxRatesResponse',
                 '/pts/v2/payouts/fx-rates',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\InlineResponse2013', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\CreateFxRatesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse2013', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\CreateFxRatesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4003', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MmFxRates400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 401:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse401', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MmFxRates401ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse5022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\MmFxRates502ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

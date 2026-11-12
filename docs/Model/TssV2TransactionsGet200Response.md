@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **installmentInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseInstallmentInformation**](TssV2TransactionsGet200ResponseInstallmentInformation.md) |  | [optional] 
 **fraudMarkingInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseFraudMarkingInformation**](TssV2TransactionsGet200ResponseFraudMarkingInformation.md) |  | [optional] 
 **healthCareInformation** | [**\CyberSource\Model\Ptsv2paymentsHealthCareInformation**](Ptsv2paymentsHealthCareInformation.md) |  | [optional] 
+**travelInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseTravelInformation**](TssV2TransactionsGet200ResponseTravelInformation.md) |  | [optional] 
 **merchantDefinedInformation** | [**\CyberSource\Model\Ptsv2paymentsMerchantDefinedInformation[]**](Ptsv2paymentsMerchantDefinedInformation.md) | The object containing the custom data that the merchant defines. | [optional] 
 **merchantInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseMerchantInformation**](TssV2TransactionsGet200ResponseMerchantInformation.md) |  | [optional] 
 **orderInformation** | [**\CyberSource\Model\TssV2TransactionsGet200ResponseOrderInformation**](TssV2TransactionsGet200ResponseOrderInformation.md) |  | [optional] 

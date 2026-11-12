@@ -46,14 +46,15 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_paymentConfigurations_CLICKTOPAY';
+    protected static $swaggerModelName = 'Ucv1sessionsPaymentConfigurationsCLICKTOPAY';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'autoCheckEnrollment' => 'bool'
+        'autoCheckEnrollment' => 'bool',
+        'allowedCardNetworks' => 'string[]'
     ];
 
     /**
@@ -61,7 +62,8 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'autoCheckEnrollment' => null
+        'autoCheckEnrollment' => null,
+        'allowedCardNetworks' => null
     ];
 
     public static function swaggerTypes()
@@ -79,7 +81,8 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'autoCheckEnrollment' => 'autoCheckEnrollment'
+        'autoCheckEnrollment' => 'autoCheckEnrollment',
+        'allowedCardNetworks' => 'allowedCardNetworks'
     ];
 
 
@@ -88,7 +91,8 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'autoCheckEnrollment' => 'setAutoCheckEnrollment'
+        'autoCheckEnrollment' => 'setAutoCheckEnrollment',
+        'allowedCardNetworks' => 'setAllowedCardNetworks'
     ];
 
 
@@ -97,7 +101,8 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'autoCheckEnrollment' => 'getAutoCheckEnrollment'
+        'autoCheckEnrollment' => 'getAutoCheckEnrollment',
+        'allowedCardNetworks' => 'getAllowedCardNetworks'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,7 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['autoCheckEnrollment'] = isset($data['autoCheckEnrollment']) ? $data['autoCheckEnrollment'] : null;
+        $this->container['allowedCardNetworks'] = isset($data['allowedCardNetworks']) ? $data['allowedCardNetworks'] : null;
     }
 
     /**
@@ -176,6 +182,27 @@ class Ucv1sessionsPaymentConfigurationsCLICKTOPAY implements ArrayAccess
     public function setAutoCheckEnrollment($autoCheckEnrollment)
     {
         $this->container['autoCheckEnrollment'] = $autoCheckEnrollment;
+
+        return $this;
+    }
+
+    /**
+     * Gets allowedCardNetworks
+     * @return string[]
+     */
+    public function getAllowedCardNetworks()
+    {
+        return $this->container['allowedCardNetworks'];
+    }
+
+    /**
+     * Sets allowedCardNetworks
+     * @param string[] $allowedCardNetworks allowedCardNetworks (optional): Specifies the card networks eligible for Click to Pay. When provided, only the listed networks invoke Click to Pay; when omitted, all Click to Pay–supported networks in the top-level allowedCardNetworks configuration are eligible.<br><br>  Optional field: This field can be configured through the Merchant Experience Screens in the Business Center.  The configured value may be overridden on a per transaction basis in the uc/v1/sessions API request.
+     * @return $this
+     */
+    public function setAllowedCardNetworks($allowedCardNetworks)
+    {
+        $this->container['allowedCardNetworks'] = $allowedCardNetworks;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard impl
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulations_card';
+    protected static $swaggerModelName = 'Tmsv2tokenizedcardstokenizedCardIdissuerlifecycleeventsimulationsCard';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

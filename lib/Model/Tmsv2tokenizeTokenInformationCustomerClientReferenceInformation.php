@@ -46,7 +46,7 @@ class Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsv2tokenize_tokenInformation_customer_clientReferenceInformation';
+    protected static $swaggerModelName = 'Tmsv2tokenizeTokenInformationCustomerClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

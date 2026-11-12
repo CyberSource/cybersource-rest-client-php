@@ -47,7 +47,7 @@ class Invoicingv2invoicesOrderInformationLineItems implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingv2invoices_orderInformation_lineItems';
+    protected static $swaggerModelName = 'Invoicingv2invoicesOrderInformationLineItems';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

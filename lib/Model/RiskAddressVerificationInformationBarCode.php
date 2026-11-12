@@ -46,7 +46,7 @@ class RiskAddressVerificationInformationBarCode implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskAddressVerificationInformation_barCode';
+    protected static $swaggerModelName = 'RiskAddressVerificationInformationBarCode';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

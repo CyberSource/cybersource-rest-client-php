@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferAggregatorInformationSubMerchant implements ArrayAcc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransfer_aggregatorInformation_subMerchant';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferAggregatorInformationSubMerchant';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

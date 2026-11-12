@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights imp
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_paymentInsightsInformation_responseInsights';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponsePaymentInsightsInformationResponseInsights';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

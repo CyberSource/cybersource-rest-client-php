@@ -46,7 +46,7 @@ class TssV2TransactionsGet200ResponseOrderInformationLineItems implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tssV2TransactionsGet200Response_orderInformation_lineItems';
+    protected static $swaggerModelName = 'TssV2TransactionsGet200ResponseOrderInformationLineItems';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

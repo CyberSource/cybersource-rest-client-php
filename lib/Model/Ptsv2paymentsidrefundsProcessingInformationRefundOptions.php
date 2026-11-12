@@ -46,7 +46,7 @@ class Ptsv2paymentsidrefundsProcessingInformationRefundOptions implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidrefunds_processingInformation_refundOptions';
+    protected static $swaggerModelName = 'Ptsv2paymentsidrefundsProcessingInformationRefundOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

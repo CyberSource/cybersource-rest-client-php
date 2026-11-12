@@ -46,7 +46,7 @@ class PaymentsProductsTax implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsProducts_tax';
+    protected static $swaggerModelName = 'PaymentsProductsTax';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

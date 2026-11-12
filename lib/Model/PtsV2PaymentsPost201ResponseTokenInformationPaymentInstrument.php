@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_tokenInformation_paymentInstrument';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseTokenInformationPaymentInstrument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

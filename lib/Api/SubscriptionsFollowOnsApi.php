@@ -102,14 +102,14 @@ class SubscriptionsFollowOnsApi
      * Create a Follow-On Subscription
      *
      * @param string $requestId Request Id of an existing successful Transaction (required)
-     * @param \CyberSource\Model\CreateSubscriptionRequest1 $createSubscriptionRequest  (required)
+     * @param \CyberSource\Model\CreateFollowOnSubscriptionRequest $createFollowOnSubscriptionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFollowOnSubscription($requestId, $createSubscriptionRequest)
+    public function createFollowOnSubscription($requestId, $createFollowOnSubscriptionRequest)
     {
         self::$logger->info('CALL TO METHOD createFollowOnSubscription STARTED');
-        list($response, $statusCode, $httpHeader) = $this->createFollowOnSubscriptionWithHttpInfo($requestId, $createSubscriptionRequest);
+        list($response, $statusCode, $httpHeader) = $this->createFollowOnSubscriptionWithHttpInfo($requestId, $createFollowOnSubscriptionRequest);
         self::$logger->info('CALL TO METHOD createFollowOnSubscription ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -121,21 +121,21 @@ class SubscriptionsFollowOnsApi
      * Create a Follow-On Subscription
      *
      * @param string $requestId Request Id of an existing successful Transaction (required)
-     * @param \CyberSource\Model\CreateSubscriptionRequest1 $createSubscriptionRequest  (required)
+     * @param \CyberSource\Model\CreateFollowOnSubscriptionRequest $createFollowOnSubscriptionRequest  (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFollowOnSubscriptionWithHttpInfo($requestId, $createSubscriptionRequest)
+    public function createFollowOnSubscriptionWithHttpInfo($requestId, $createFollowOnSubscriptionRequest)
     {
         // verify the required parameter 'requestId' is set
         if ($requestId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $requestId when calling createFollowOnSubscription");
             throw new \InvalidArgumentException('Missing the required parameter $requestId when calling createFollowOnSubscription');
         }
-        // verify the required parameter 'createSubscriptionRequest' is set
-        if ($createSubscriptionRequest === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $createSubscriptionRequest when calling createFollowOnSubscription");
-            throw new \InvalidArgumentException('Missing the required parameter $createSubscriptionRequest when calling createFollowOnSubscription');
+        // verify the required parameter 'createFollowOnSubscriptionRequest' is set
+        if ($createFollowOnSubscriptionRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $createFollowOnSubscriptionRequest when calling createFollowOnSubscription");
+            throw new \InvalidArgumentException('Missing the required parameter $createFollowOnSubscriptionRequest when calling createFollowOnSubscription');
         }
         // parse inputs
         $resourcePath = "/rbs/v1/subscriptions/follow-ons/{requestId}";
@@ -149,7 +149,8 @@ class SubscriptionsFollowOnsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($requestId !== null) {
@@ -161,18 +162,26 @@ class SubscriptionsFollowOnsApi
         }
         // body params
         $_tempBody = null;
-        if (isset($createSubscriptionRequest)) {
-            $_tempBody = $createSubscriptionRequest;
+        if (isset($createFollowOnSubscriptionRequest)) {
+            $_tempBody = $createFollowOnSubscriptionRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\CreateSubscriptionRequest1');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\CreateFollowOnSubscriptionRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -181,7 +190,7 @@ class SubscriptionsFollowOnsApi
         $inboundMLEStatus = 'optional';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "createFollowOnSubscription,createFollowOnSubscriptionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -229,7 +238,7 @@ class SubscriptionsFollowOnsApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RbsFollowOnSubscription400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:
@@ -250,7 +259,7 @@ class SubscriptionsFollowOnsApi
      *
      * @param string $requestId Request Id of an existing successful Transaction (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\GetSubscriptionResponse1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetFollowOnSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFollowOnSubscription($requestId)
     {
@@ -268,7 +277,7 @@ class SubscriptionsFollowOnsApi
      *
      * @param string $requestId Request Id of an existing successful Transaction (required)
      * @throws \CyberSource\ApiException on non-2xx response
-     * @return array of \CyberSource\Model\GetSubscriptionResponse1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \CyberSource\Model\GetFollowOnSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFollowOnSubscriptionWithHttpInfo($requestId)
     {
@@ -289,7 +298,8 @@ class SubscriptionsFollowOnsApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($requestId !== null) {
@@ -306,6 +316,14 @@ class SubscriptionsFollowOnsApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -314,7 +332,7 @@ class SubscriptionsFollowOnsApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getFollowOnSubscription,getFollowOnSubscriptionWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -334,7 +352,7 @@ class SubscriptionsFollowOnsApi
             self::$logger->debug("Body Parameter :\n" . $printHttpBody); 
         }
 
-        self::$logger->debug("Return Type : \CyberSource\Model\GetSubscriptionResponse1");
+        self::$logger->debug("Return Type : \CyberSource\Model\GetFollowOnSubscriptionResponse");
         
         // Response MLE check
         $isResponseMLEForAPI = MLEUtility::checkIsResponseMLEForAPI($this->apiClient->merchantConfig, "getFollowOnSubscription,getFollowOnSubscriptionWithHttpInfo");
@@ -347,26 +365,26 @@ class SubscriptionsFollowOnsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CyberSource\Model\GetSubscriptionResponse1',
+                '\CyberSource\Model\GetFollowOnSubscriptionResponse',
                 '/rbs/v1/subscriptions/follow-ons/{requestId}',
                 $isResponseMLEForAPI
             );
             
             self::$logger->debug("Response Headers :\n" . \CyberSource\Utilities\Helpers\ListHelper::toString($httpHeader));
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetSubscriptionResponse1', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\CyberSource\Model\GetFollowOnSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetSubscriptionResponse1', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\GetFollowOnSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4007', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\RbsFollowOnSubscription400ErrorResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse4041', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CyberSource\Model\InlineResponse404', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 502:

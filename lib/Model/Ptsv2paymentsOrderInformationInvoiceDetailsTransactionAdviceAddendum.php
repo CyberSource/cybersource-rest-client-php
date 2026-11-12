@@ -46,7 +46,7 @@ class Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum imple
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_orderInformation_invoiceDetails_transactionAdviceAddendum';
+    protected static $swaggerModelName = 'Ptsv2paymentsOrderInformationInvoiceDetailsTransactionAdviceAddendum';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

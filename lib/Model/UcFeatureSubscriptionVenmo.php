@@ -47,7 +47,7 @@ class UcFeatureSubscriptionVenmo implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_venmo';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionVenmo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

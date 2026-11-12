@@ -46,7 +46,7 @@ class RiskProductsFraudManagementEssentials implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskProducts_fraudManagementEssentials';
+    protected static $swaggerModelName = 'RiskProductsFraudManagementEssentials';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -4,13 +4,58 @@ All URIs are relative to *https://apitest.cybersource.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createWebhookSubscription**](CreateNewWebhooksApi.md#createWebhookSubscription) | **POST** /notification-subscriptions/v2/webhooks | Create a New Webhook Subscription
 [**findProductsToSubscribe**](CreateNewWebhooksApi.md#findProductsToSubscribe) | **GET** /notification-subscriptions/v2/products/{organizationId} | Find Products You Can Subscribe To
-[**notificationSubscriptionsV2WebhooksPost**](CreateNewWebhooksApi.md#notificationSubscriptionsV2WebhooksPost) | **POST** /notification-subscriptions/v2/webhooks | Create a New Webhook Subscription
 [**saveSymEgressKey**](CreateNewWebhooksApi.md#saveSymEgressKey) | **POST** /kms/egress/v2/keys-sym | Create Webhook Security Keys
 
 
+# **createWebhookSubscription**
+> \CyberSource\Model\CreateWebhookSubscriptionResponse createWebhookSubscription($createWebhook)
+
+Create a New Webhook Subscription
+
+Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \"Create Webhook using oAuth with Client Credentials\" - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \"Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\" to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \"Create Webhook using oAuth with JWT\"
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new CyberSource\Api\CreateNewWebhooksApi();
+$createWebhook = new \CyberSource\Model\CreateWebhook(); // \CyberSource\Model\CreateWebhook | The webhook payload
+
+try {
+    $result = $api_instance->createWebhookSubscription($createWebhook);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CreateNewWebhooksApi->createWebhookSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createWebhook** | [**\CyberSource\Model\CreateWebhook**](../Model/CreateWebhook.md)| The webhook payload | [optional]
+
+### Return type
+
+[**\CyberSource\Model\CreateWebhookSubscriptionResponse**](../Model/CreateWebhookSubscriptionResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=utf-8
+ - **Accept**: application/json;charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **findProductsToSubscribe**
-> \CyberSource\Model\InlineResponse2006[] findProductsToSubscribe($organizationId)
+> \CyberSource\Model\ProductCatalogProduct[] findProductsToSubscribe($organizationId)
 
 Find Products You Can Subscribe To
 
@@ -41,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2006[]**](../Model/InlineResponse2006.md)
+[**\CyberSource\Model\ProductCatalogProduct[]**](../Model/ProductCatalogProduct.md)
 
 ### Authorization
 
@@ -54,53 +99,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **notificationSubscriptionsV2WebhooksPost**
-> \CyberSource\Model\InlineResponse2018 notificationSubscriptionsV2WebhooksPost($createWebhook)
-
-Create a New Webhook Subscription
-
-Create a new webhook subscription. Before creating a webhook, ensure that a signature key has been created.  For the example \"Create Webhook using oAuth with Client Credentials\" - for clients who have more than one oAuth Provider and have different client secrets that they would like to config for a given webhook, they may do so by overriding the keyId inside security config of webhook subscription. See the Developer Center examples section titled \"Webhook Security - Create or Store Egress Symmetric Key - Store oAuth Credentials For Symmetric Key\" to store these oAuth credentials that CYBS will need for oAuth.  For JWT authentication, attach your oAuth details to the webhook subscription. See the example \"Create Webhook using oAuth with JWT\"
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new CyberSource\Api\CreateNewWebhooksApi();
-$createWebhook = new \CyberSource\Model\CreateWebhook(); // \CyberSource\Model\CreateWebhook | The webhook payload
-
-try {
-    $result = $api_instance->notificationSubscriptionsV2WebhooksPost($createWebhook);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CreateNewWebhooksApi->notificationSubscriptionsV2WebhooksPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createWebhook** | [**\CyberSource\Model\CreateWebhook**](../Model/CreateWebhook.md)| The webhook payload | [optional]
-
-### Return type
-
-[**\CyberSource\Model\InlineResponse2018**](../Model/InlineResponse2018.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json;charset=utf-8
- - **Accept**: application/json;charset=utf-8
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **saveSymEgressKey**
-> \CyberSource\Model\InlineResponse2017 saveSymEgressKey($vCCorrelationId, $vCSenderOrganizationId, $vCPermissions, $saveSymEgressKey)
+> \CyberSource\Model\SaveSymEgressKeyResponse saveSymEgressKey($vCCorrelationId, $vCSenderOrganizationId, $vCPermissions, $saveSymEgressKey)
 
 Create Webhook Security Keys
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2017**](../Model/InlineResponse2017.md)
+[**\CyberSource\Model\SaveSymEgressKeyResponse**](../Model/SaveSymEgressKeyResponse.md)
 
 ### Authorization
 

@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addAgentKey**
-> \CyberSource\Model\AddAgentKeyResponse201 addAgentKey($agentId, $keyRequest)
+> \CyberSource\Model\AddAgentKeyResponse201 addAgentKey($agentId, $addAgentKeyRequest)
 
 Add a key to an agent
 
@@ -75,10 +75,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\AgentRegistrationApi();
 $agentId = "agentId_example"; // string | Unique agent identifier
-$keyRequest = new \CyberSource\Model\KeyRequest(); // \CyberSource\Model\KeyRequest | Key creation request
+$addAgentKeyRequest = new \CyberSource\Model\AddAgentKeyRequest(); // \CyberSource\Model\AddAgentKeyRequest | Key creation request
 
 try {
-    $result = $api_instance->addAgentKey($agentId, $keyRequest);
+    $result = $api_instance->addAgentKey($agentId, $addAgentKeyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgentRegistrationApi->addAgentKey: ', $e->getMessage(), PHP_EOL;
@@ -91,7 +91,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **string**| Unique agent identifier |
- **keyRequest** | [**\CyberSource\Model\KeyRequest**](../Model/KeyRequest.md)| Key creation request |
+ **addAgentKeyRequest** | [**\CyberSource\Model\AddAgentKeyRequest**](../Model/AddAgentKeyRequest.md)| Key creation request |
 
 ### Return type
 
@@ -342,7 +342,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAgentKey**
-> \CyberSource\Model\AddAgentKeyResponse201 updateAgentKey($agentId, $keyId, $keyUpdate)
+> \CyberSource\Model\AddAgentKeyResponse201 updateAgentKey($agentId, $keyId, $updateAgentKeyRequest)
 
 Update a key
 
@@ -356,10 +356,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\AgentRegistrationApi();
 $agentId = "agentId_example"; // string | Unique agent identifier
 $keyId = "keyId_example"; // string | Unique key identifier
-$keyUpdate = new \CyberSource\Model\KeyUpdate(); // \CyberSource\Model\KeyUpdate | Key update request
+$updateAgentKeyRequest = new \CyberSource\Model\UpdateAgentKeyRequest(); // \CyberSource\Model\UpdateAgentKeyRequest | Key update request
 
 try {
-    $result = $api_instance->updateAgentKey($agentId, $keyId, $keyUpdate);
+    $result = $api_instance->updateAgentKey($agentId, $keyId, $updateAgentKeyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgentRegistrationApi->updateAgentKey: ', $e->getMessage(), PHP_EOL;
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **string**| Unique agent identifier |
  **keyId** | **string**| Unique key identifier |
- **keyUpdate** | [**\CyberSource\Model\KeyUpdate**](../Model/KeyUpdate.md)| Key update request |
+ **updateAgentKeyRequest** | [**\CyberSource\Model\UpdateAgentKeyRequest**](../Model/UpdateAgentKeyRequest.md)| Key update request |
 
 ### Return type
 

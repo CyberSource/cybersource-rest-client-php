@@ -46,7 +46,7 @@ class Upv1capturecontextsDataClientReferenceInformationPartner implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_clientReferenceInformation_partner';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataClientReferenceInformationPartner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

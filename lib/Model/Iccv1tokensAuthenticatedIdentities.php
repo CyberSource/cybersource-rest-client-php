@@ -47,7 +47,7 @@ class Iccv1tokensAuthenticatedIdentities implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1tokens_authenticatedIdentities';
+    protected static $swaggerModelName = 'Iccv1tokensAuthenticatedIdentities';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class Iccv1productsfeedProducts implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1productsfeed_products';
+    protected static $swaggerModelName = 'Iccv1productsfeedProducts';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

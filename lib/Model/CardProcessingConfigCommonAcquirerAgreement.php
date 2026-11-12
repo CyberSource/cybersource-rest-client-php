@@ -47,7 +47,7 @@ class CardProcessingConfigCommonAcquirerAgreement implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CardProcessingConfig_common_acquirerAgreement';
+    protected static $swaggerModelName = 'CardProcessingConfigCommonAcquirerAgreement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

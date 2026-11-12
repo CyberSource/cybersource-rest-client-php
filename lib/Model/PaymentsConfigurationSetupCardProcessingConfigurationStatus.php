@@ -46,7 +46,7 @@ class PaymentsConfigurationSetupCardProcessingConfigurationStatus implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'paymentsConfigurationSetup_cardProcessing_configurationStatus';
+    protected static $swaggerModelName = 'PaymentsConfigurationSetupCardProcessingConfigurationStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

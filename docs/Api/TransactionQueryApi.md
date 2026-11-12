@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **createQueryApi**
-> \CyberSource\Model\InlineResponse2014 createQueryApi($id, $body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit, $offset)
+> \CyberSource\Model\CreateQueryApiResponse createQueryApi($id, $createQueryApiRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit, $offset)
 
 Query Transaction Details
 
@@ -21,7 +21,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\TransactionQueryApi();
 $id = "id_example"; // string | This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried.
-$body = new \CyberSource\Model\Body1(); // \CyberSource\Model\Body1 | 
+$createQueryApiRequest = new \CyberSource\Model\CreateQueryApiRequest(); // \CyberSource\Model\CreateQueryApiRequest | 
 $contentType = "contentType_example"; // string | 
 $xRequestid = "xRequestid_example"; // string | 
 $vCMerchantId = "vCMerchantId_example"; // string | 
@@ -32,7 +32,7 @@ $limit = 56; // int | The maximum number of options to be retrieved from the pro
 $offset = 56; // int | Offset from the first item in the list of options received from the processor. If you want to display the options in multiple lists, this number represents the first option displayed in each list.
 
 try {
-    $result = $api_instance->createQueryApi($id, $body, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit, $offset);
+    $result = $api_instance->createQueryApi($id, $createQueryApiRequest, $contentType, $xRequestid, $vCMerchantId, $vCPermissions, $vCCorrelationId, $vCOrganizationId, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionQueryApi->createQueryApi: ', $e->getMessage(), PHP_EOL;
@@ -45,7 +45,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| This is the CyberSource Request ID generated for successfully processed AFT/OCT that needs to be queried. |
- **body** | [**\CyberSource\Model\Body1**](../Model/Body1.md)|  |
+ **createQueryApiRequest** | [**\CyberSource\Model\CreateQueryApiRequest**](../Model/CreateQueryApiRequest.md)|  |
  **contentType** | **string**|  |
  **xRequestid** | **string**|  |
  **vCMerchantId** | **string**|  |
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2014**](../Model/InlineResponse2014.md)
+[**\CyberSource\Model\CreateQueryApiResponse**](../Model/CreateQueryApiResponse.md)
 
 ### Authorization
 

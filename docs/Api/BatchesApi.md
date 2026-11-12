@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getBatchReport**
-> \CyberSource\Model\InlineResponse20014 getBatchReport($batchId)
+> \CyberSource\Model\BatchReportResponse getBatchReport($batchId)
 
 Retrieve a Batch Report
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\CyberSource\Model\BatchReportResponse**](../Model/BatchReportResponse.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchStatus**
-> \CyberSource\Model\InlineResponse20013 getBatchStatus($batchId)
+> \CyberSource\Model\BatchStatusResponse getBatchStatus($batchId)
 
 Retrieve a Batch Status
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\CyberSource\Model\BatchStatusResponse**](../Model/BatchStatusResponse.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBatchesList**
-> \CyberSource\Model\InlineResponse20012 getBatchesList($offset, $limit, $fromDate, $toDate)
+> \CyberSource\Model\BatchesListResponse getBatchesList($offset, $limit, $fromDate, $toDate)
 
 List Batches
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\CyberSource\Model\BatchesListResponse**](../Model/BatchesListResponse.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postBatch**
-> \CyberSource\Model\InlineResponse202 postBatch($body)
+> \CyberSource\Model\BatchCreateResponse postBatch($postBatchRequest)
 
 Create a Batch
 
@@ -164,10 +164,10 @@ Create a Batch
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\BatchesApi();
-$body = new \CyberSource\Model\Body(); // \CyberSource\Model\Body | 
+$postBatchRequest = new \CyberSource\Model\PostBatchRequest(); // \CyberSource\Model\PostBatchRequest | 
 
 try {
-    $result = $api_instance->postBatch($body);
+    $result = $api_instance->postBatch($postBatchRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BatchesApi->postBatch: ', $e->getMessage(), PHP_EOL;
@@ -179,11 +179,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\CyberSource\Model\Body**](../Model/Body.md)|  |
+ **postBatchRequest** | [**\CyberSource\Model\PostBatchRequest**](../Model/PostBatchRequest.md)|  |
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse202**](../Model/InlineResponse202.md)
+[**\CyberSource\Model\BatchCreateResponse**](../Model/BatchCreateResponse.md)
 
 ### Authorization
 

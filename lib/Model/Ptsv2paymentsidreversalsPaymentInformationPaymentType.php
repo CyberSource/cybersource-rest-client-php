@@ -46,7 +46,7 @@ class Ptsv2paymentsidreversalsPaymentInformationPaymentType implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidreversals_paymentInformation_paymentType';
+    protected static $swaggerModelName = 'Ptsv2paymentsidreversalsPaymentInformationPaymentType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

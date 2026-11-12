@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getRegistration**
-> \CyberSource\Model\InlineResponse2005 getRegistration($registrationId)
+> \CyberSource\Model\BoardingRegistrationGetResponse getRegistration($registrationId)
 
 Gets all the information on a boarding registration
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\CyberSource\Model\BoardingRegistrationGetResponse**](../Model/BoardingRegistrationGetResponse.md)
 
 ### Authorization
 
@@ -55,7 +55,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchRegistration**
-> \CyberSource\Model\InlineResponse2005 patchRegistration($registrationId, $patchRegistrationBody, $vCIdempotencyId)
+> \CyberSource\Model\BoardingRegistrationGetResponse patchRegistration($registrationId, $patchRegistrationBody, $vCIdempotencyId)
 
 Updates the information on a boarding registration
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\CyberSource\Model\BoardingRegistrationGetResponse**](../Model/BoardingRegistrationGetResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postRegistration**
-> \CyberSource\Model\InlineResponse2016 postRegistration($postRegistrationBody, $vCIdempotencyId)
+> \CyberSource\Model\BoardingRegistrationCreateResponse postRegistration($postRegistrationBody, $vCIdempotencyId)
 
 Create a boarding registration
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2016**](../Model/InlineResponse2016.md)
+[**\CyberSource\Model\BoardingRegistrationCreateResponse**](../Model/BoardingRegistrationCreateResponse.md)
 
 ### Authorization
 

@@ -46,7 +46,7 @@ class Ptsv2creditsRecipientInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2credits_recipientInformation';
+    protected static $swaggerModelName = 'Ptsv2creditsRecipientInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

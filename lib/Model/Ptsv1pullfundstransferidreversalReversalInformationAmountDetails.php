@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferidreversalReversalInformationAmountDetails implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransferidreversal_reversalInformation_amountDetails';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferidreversalReversalInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

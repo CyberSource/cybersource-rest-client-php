@@ -46,7 +46,7 @@ class PtsV2CreateBillingAgreementPost201ResponseRiskInformation implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2CreateBillingAgreementPost201Response_riskInformation';
+    protected static $swaggerModelName = 'PtsV2CreateBillingAgreementPost201ResponseRiskInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

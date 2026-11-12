@@ -46,7 +46,7 @@ class UnifiedriskRiskAssessmentBuyerHistoryAccountHistory implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_riskAssessment_buyerHistory_accountHistory';
+    protected static $swaggerModelName = 'UnifiedriskRiskAssessmentBuyerHistoryAccountHistory';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

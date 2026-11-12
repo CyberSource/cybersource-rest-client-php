@@ -47,7 +47,7 @@ class Iccv1instructionsinstructionIdconfirmationsMerchantInformation implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdconfirmations_merchantInformation';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdconfirmationsMerchantInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

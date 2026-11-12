@@ -77,9 +77,16 @@ class TmsMerchantInformationMerchantDescriptorTest extends \PHPUnit\Framework\Te
     }
 
     /**
-     * Test attribute "alternateName"
+     * Test attribute "name"
      */
-    public function testPropertyAlternateName()
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
     {
     }
 }

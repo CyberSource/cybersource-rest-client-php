@@ -46,17 +46,17 @@ class PushFunds201ResponseLinks implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'pushFunds201Response__links';
+    protected static $swaggerModelName = 'PushFunds201ResponseLinks';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'self' => '\CyberSource\Model\PushFunds201ResponseLinksSelf',
-        'customer' => '\CyberSource\Model\PushFunds201ResponseLinksCustomer',
-        'paymentInstrument' => '\CyberSource\Model\PushFunds201ResponseLinksPaymentInstrument',
-        'instrumentIdentifier' => '\CyberSource\Model\PushFunds201ResponseLinksInstrumentIdentifier'
+        'self' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf1',
+        'customer' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf2',
+        'paymentInstrument' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf3',
+        'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf4'
     ];
 
     /**
@@ -179,7 +179,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets self
-     * @return \CyberSource\Model\PushFunds201ResponseLinksSelf
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf1
      */
     public function getSelf()
     {
@@ -188,7 +188,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets self
-     * @param \CyberSource\Model\PushFunds201ResponseLinksSelf $self
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf1 $self
      * @return $this
      */
     public function setSelf($self)
@@ -200,7 +200,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets customer
-     * @return \CyberSource\Model\PushFunds201ResponseLinksCustomer
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf2
      */
     public function getCustomer()
     {
@@ -209,7 +209,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \CyberSource\Model\PushFunds201ResponseLinksCustomer $customer
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf2 $customer
      * @return $this
      */
     public function setCustomer($customer)
@@ -221,7 +221,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets paymentInstrument
-     * @return \CyberSource\Model\PushFunds201ResponseLinksPaymentInstrument
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf3
      */
     public function getPaymentInstrument()
     {
@@ -230,7 +230,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets paymentInstrument
-     * @param \CyberSource\Model\PushFunds201ResponseLinksPaymentInstrument $paymentInstrument
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf3 $paymentInstrument
      * @return $this
      */
     public function setPaymentInstrument($paymentInstrument)
@@ -242,7 +242,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Gets instrumentIdentifier
-     * @return \CyberSource\Model\PushFunds201ResponseLinksInstrumentIdentifier
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf4
      */
     public function getInstrumentIdentifier()
     {
@@ -251,7 +251,7 @@ class PushFunds201ResponseLinks implements ArrayAccess
 
     /**
      * Sets instrumentIdentifier
-     * @param \CyberSource\Model\PushFunds201ResponseLinksInstrumentIdentifier $instrumentIdentifier
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseLinksSelf4 $instrumentIdentifier
      * @return $this
      */
     public function setInstrumentIdentifier($instrumentIdentifier)

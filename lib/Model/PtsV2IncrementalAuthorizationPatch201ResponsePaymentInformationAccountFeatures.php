@@ -46,7 +46,7 @@ class PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeat
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2IncrementalAuthorizationPatch201Response_paymentInformation_accountFeatures';
+    protected static $swaggerModelName = 'PtsV2IncrementalAuthorizationPatch201ResponsePaymentInformationAccountFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

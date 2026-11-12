@@ -46,7 +46,7 @@ class GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'getAllSubscriptionsResponse_orderInformation_amountDetails_surcharge';
+    protected static $swaggerModelName = 'GetAllSubscriptionsResponseOrderInformationAmountDetailsSurcharge';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getAccountInfo**
-> \CyberSource\Model\InlineResponse2015 getAccountInfo($createBinLookupRequest)
+> \CyberSource\Model\GetAccountInfoResponse getAccountInfo($createBinLookupRequest)
 
 BIN Lookup API
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2015**](../Model/InlineResponse2015.md)
+[**\CyberSource\Model\GetAccountInfoResponse**](../Model/GetAccountInfoResponse.md)
 
 ### Authorization
 

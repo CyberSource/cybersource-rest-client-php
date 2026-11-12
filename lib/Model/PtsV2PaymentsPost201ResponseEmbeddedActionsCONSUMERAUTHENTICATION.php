@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_embeddedActions_CONSUMER_AUTHENTICATION';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseEmbeddedActionsCONSUMERAUTHENTICATION';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

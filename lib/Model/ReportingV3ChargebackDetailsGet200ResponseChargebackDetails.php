@@ -46,7 +46,7 @@ class ReportingV3ChargebackDetailsGet200ResponseChargebackDetails implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ChargebackDetailsGet200Response_chargebackDetails';
+    protected static $swaggerModelName = 'ReportingV3ChargebackDetailsGet200ResponseChargebackDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

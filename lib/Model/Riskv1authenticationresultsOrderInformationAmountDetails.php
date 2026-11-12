@@ -47,7 +47,7 @@ class Riskv1authenticationresultsOrderInformationAmountDetails implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1authenticationresults_orderInformation_amountDetails';
+    protected static $swaggerModelName = 'Riskv1authenticationresultsOrderInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

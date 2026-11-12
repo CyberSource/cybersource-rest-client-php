@@ -60,7 +60,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
         'tokenInformation' => '\CyberSource\Model\Riskv1authenticationsetupsTokenInformation',
         'buyerInformation' => '\CyberSource\Model\Riskv1authenticationsBuyerInformation',
         'deviceInformation' => '\CyberSource\Model\Riskv1authenticationsDeviceInformation',
-        'merchantInformation' => '\CyberSource\Model\Riskv1decisionsMerchantInformation',
+        'merchantInformation' => '\CyberSource\Model\Riskv1authenticationsMerchantInformation',
         'acquirerInformation' => '\CyberSource\Model\Riskv1decisionsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
         'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation',
@@ -386,7 +386,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Gets merchantInformation
-     * @return \CyberSource\Model\Riskv1decisionsMerchantInformation
+     * @return \CyberSource\Model\Riskv1authenticationsMerchantInformation
      */
     public function getMerchantInformation()
     {
@@ -395,7 +395,7 @@ class CheckPayerAuthEnrollmentRequest implements ArrayAccess
 
     /**
      * Sets merchantInformation
-     * @param \CyberSource\Model\Riskv1decisionsMerchantInformation $merchantInformation
+     * @param \CyberSource\Model\Riskv1authenticationsMerchantInformation $merchantInformation
      * @return $this
      */
     public function setMerchantInformation($merchantInformation)

@@ -46,14 +46,14 @@ class PtsV2PayoutsPost201ResponseMerchantInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PayoutsPost201Response_merchantInformation';
+    protected static $swaggerModelName = 'PtsV2PayoutsPost201ResponseMerchantInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'merchantDescriptor' => '\CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor'
+        'merchantDescriptor' => '\CyberSource\Model\RefreshPaymentStatusResponseOrderInformationMerchantDescriptor'
     ];
 
     /**
@@ -161,7 +161,7 @@ class PtsV2PayoutsPost201ResponseMerchantInformation implements ArrayAccess
 
     /**
      * Gets merchantDescriptor
-     * @return \CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor
+     * @return \CyberSource\Model\RefreshPaymentStatusResponseOrderInformationMerchantDescriptor
      */
     public function getMerchantDescriptor()
     {
@@ -170,7 +170,7 @@ class PtsV2PayoutsPost201ResponseMerchantInformation implements ArrayAccess
 
     /**
      * Sets merchantDescriptor
-     * @param \CyberSource\Model\PtsV2PaymentsPost201Response1OrderInformationMerchantDescriptor $merchantDescriptor
+     * @param \CyberSource\Model\RefreshPaymentStatusResponseOrderInformationMerchantDescriptor $merchantDescriptor
      * @return $this
      */
     public function setMerchantDescriptor($merchantDescriptor)

@@ -46,7 +46,7 @@ class Flexv2sessionsFields implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'flexv2sessions_fields';
+    protected static $swaggerModelName = 'Flexv2sessionsFields';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

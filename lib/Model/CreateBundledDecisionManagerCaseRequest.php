@@ -62,11 +62,14 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'deviceInformation' => '\CyberSource\Model\Riskv1decisionsDeviceInformation',
         'riskInformation' => '\CyberSource\Model\Riskv1decisionsRiskInformation',
         'travelInformation' => '\CyberSource\Model\Riskv1decisionsTravelInformation',
+        'recipientInformation' => '\CyberSource\Model\Riskv1decisionsRecipientInformation',
+        'senderInformation' => '\CyberSource\Model\Riskv1decisionsSenderInformation',
+        'aggregatorInformation' => '\CyberSource\Model\Riskv1decisionsAggregatorInformation',
         'merchantDefinedInformation' => '\CyberSource\Model\Riskv1decisionsMerchantDefinedInformation[]',
         'merchantInformation' => '\CyberSource\Model\Riskv1decisionsMerchantInformation',
         'acquirerInformation' => '\CyberSource\Model\Riskv1decisionsAcquirerInformation',
         'recurringPaymentInformation' => '\CyberSource\Model\Ptsv2paymentsRecurringPaymentInformation',
-        'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation',
+        'consumerAuthenticationInformation' => '\CyberSource\Model\Riskv1decisionsBundledConsumerAuthenticationInformation',
         'watchlistScreeningInformation' => '\CyberSource\Model\Ptsv2paymentsWatchlistScreeningInformation',
         'tokenInformation' => '\CyberSource\Model\Riskv1decisionsTokenInformation'
     ];
@@ -85,6 +88,9 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'deviceInformation' => null,
         'riskInformation' => null,
         'travelInformation' => null,
+        'recipientInformation' => null,
+        'senderInformation' => null,
+        'aggregatorInformation' => null,
         'merchantDefinedInformation' => null,
         'merchantInformation' => null,
         'acquirerInformation' => null,
@@ -118,6 +124,9 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'deviceInformation' => 'deviceInformation',
         'riskInformation' => 'riskInformation',
         'travelInformation' => 'travelInformation',
+        'recipientInformation' => 'recipientInformation',
+        'senderInformation' => 'senderInformation',
+        'aggregatorInformation' => 'aggregatorInformation',
         'merchantDefinedInformation' => 'merchantDefinedInformation',
         'merchantInformation' => 'merchantInformation',
         'acquirerInformation' => 'acquirerInformation',
@@ -142,6 +151,9 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'deviceInformation' => 'setDeviceInformation',
         'riskInformation' => 'setRiskInformation',
         'travelInformation' => 'setTravelInformation',
+        'recipientInformation' => 'setRecipientInformation',
+        'senderInformation' => 'setSenderInformation',
+        'aggregatorInformation' => 'setAggregatorInformation',
         'merchantDefinedInformation' => 'setMerchantDefinedInformation',
         'merchantInformation' => 'setMerchantInformation',
         'acquirerInformation' => 'setAcquirerInformation',
@@ -166,6 +178,9 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         'deviceInformation' => 'getDeviceInformation',
         'riskInformation' => 'getRiskInformation',
         'travelInformation' => 'getTravelInformation',
+        'recipientInformation' => 'getRecipientInformation',
+        'senderInformation' => 'getSenderInformation',
+        'aggregatorInformation' => 'getAggregatorInformation',
         'merchantDefinedInformation' => 'getMerchantDefinedInformation',
         'merchantInformation' => 'getMerchantInformation',
         'acquirerInformation' => 'getAcquirerInformation',
@@ -215,6 +230,9 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
         $this->container['deviceInformation'] = isset($data['deviceInformation']) ? $data['deviceInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['travelInformation'] = isset($data['travelInformation']) ? $data['travelInformation'] : null;
+        $this->container['recipientInformation'] = isset($data['recipientInformation']) ? $data['recipientInformation'] : null;
+        $this->container['senderInformation'] = isset($data['senderInformation']) ? $data['senderInformation'] : null;
+        $this->container['aggregatorInformation'] = isset($data['aggregatorInformation']) ? $data['aggregatorInformation'] : null;
         $this->container['merchantDefinedInformation'] = isset($data['merchantDefinedInformation']) ? $data['merchantDefinedInformation'] : null;
         $this->container['merchantInformation'] = isset($data['merchantInformation']) ? $data['merchantInformation'] : null;
         $this->container['acquirerInformation'] = isset($data['acquirerInformation']) ? $data['acquirerInformation'] : null;
@@ -445,6 +463,69 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
     }
 
     /**
+     * Gets recipientInformation
+     * @return \CyberSource\Model\Riskv1decisionsRecipientInformation
+     */
+    public function getRecipientInformation()
+    {
+        return $this->container['recipientInformation'];
+    }
+
+    /**
+     * Sets recipientInformation
+     * @param \CyberSource\Model\Riskv1decisionsRecipientInformation $recipientInformation
+     * @return $this
+     */
+    public function setRecipientInformation($recipientInformation)
+    {
+        $this->container['recipientInformation'] = $recipientInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets senderInformation
+     * @return \CyberSource\Model\Riskv1decisionsSenderInformation
+     */
+    public function getSenderInformation()
+    {
+        return $this->container['senderInformation'];
+    }
+
+    /**
+     * Sets senderInformation
+     * @param \CyberSource\Model\Riskv1decisionsSenderInformation $senderInformation
+     * @return $this
+     */
+    public function setSenderInformation($senderInformation)
+    {
+        $this->container['senderInformation'] = $senderInformation;
+
+        return $this;
+    }
+
+    /**
+     * Gets aggregatorInformation
+     * @return \CyberSource\Model\Riskv1decisionsAggregatorInformation
+     */
+    public function getAggregatorInformation()
+    {
+        return $this->container['aggregatorInformation'];
+    }
+
+    /**
+     * Sets aggregatorInformation
+     * @param \CyberSource\Model\Riskv1decisionsAggregatorInformation $aggregatorInformation
+     * @return $this
+     */
+    public function setAggregatorInformation($aggregatorInformation)
+    {
+        $this->container['aggregatorInformation'] = $aggregatorInformation;
+
+        return $this;
+    }
+
+    /**
      * Gets merchantDefinedInformation
      * @return \CyberSource\Model\Riskv1decisionsMerchantDefinedInformation[]
      */
@@ -530,7 +611,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
 
     /**
      * Gets consumerAuthenticationInformation
-     * @return \CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation
+     * @return \CyberSource\Model\Riskv1decisionsBundledConsumerAuthenticationInformation
      */
     public function getConsumerAuthenticationInformation()
     {
@@ -539,7 +620,7 @@ class CreateBundledDecisionManagerCaseRequest implements ArrayAccess
 
     /**
      * Sets consumerAuthenticationInformation
-     * @param \CyberSource\Model\Riskv1decisionsConsumerAuthenticationInformation $consumerAuthenticationInformation
+     * @param \CyberSource\Model\Riskv1decisionsBundledConsumerAuthenticationInformation $consumerAuthenticationInformation
      * @return $this
      */
     public function setConsumerAuthenticationInformation($consumerAuthenticationInformation)

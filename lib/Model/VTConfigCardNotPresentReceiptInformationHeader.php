@@ -46,7 +46,7 @@ class VTConfigCardNotPresentReceiptInformationHeader implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'VTConfig_cardNotPresent_receiptInformation_header';
+    protected static $swaggerModelName = 'VTConfigCardNotPresentReceiptInformationHeader';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

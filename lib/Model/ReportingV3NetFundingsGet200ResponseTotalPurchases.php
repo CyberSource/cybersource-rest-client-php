@@ -46,7 +46,7 @@ class ReportingV3NetFundingsGet200ResponseTotalPurchases implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3NetFundingsGet200Response_totalPurchases';
+    protected static $swaggerModelName = 'ReportingV3NetFundingsGet200ResponseTotalPurchases';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

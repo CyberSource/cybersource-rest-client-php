@@ -46,7 +46,7 @@ class Riskv1exportcomplianceinquiriesDeviceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1exportcomplianceinquiries_deviceInformation';
+    protected static $swaggerModelName = 'Riskv1exportcomplianceinquiriesDeviceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_travelInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsTravelInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'completeRoute' => 'string',
         'departureTime' => 'string',
         'journeyType' => 'string',
-        'legs' => '\CyberSource\Model\Riskv1decisionsTravelInformationLegs[]',
+        'legs' => '\CyberSource\Model\Riskv1decisionsBundledTravelInformationLegs[]',
         'numberOfPassengers' => 'int',
-        'passengers' => '\CyberSource\Model\Riskv1decisionsTravelInformationPassengers[]'
+        'passengers' => '\CyberSource\Model\Riskv1decisionsTravelInformationPassengers[]',
+        'lodging' => '\CyberSource\Model\Riskv1decisionsTravelInformationLodging'
     ];
 
     /**
@@ -73,7 +74,8 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'journeyType' => null,
         'legs' => null,
         'numberOfPassengers' => null,
-        'passengers' => null
+        'passengers' => null,
+        'lodging' => null
     ];
 
     public static function swaggerTypes()
@@ -97,7 +99,8 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'journeyType' => 'journeyType',
         'legs' => 'legs',
         'numberOfPassengers' => 'numberOfPassengers',
-        'passengers' => 'passengers'
+        'passengers' => 'passengers',
+        'lodging' => 'lodging'
     ];
 
 
@@ -112,7 +115,8 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'journeyType' => 'setJourneyType',
         'legs' => 'setLegs',
         'numberOfPassengers' => 'setNumberOfPassengers',
-        'passengers' => 'setPassengers'
+        'passengers' => 'setPassengers',
+        'lodging' => 'setLodging'
     ];
 
 
@@ -127,7 +131,8 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         'journeyType' => 'getJourneyType',
         'legs' => 'getLegs',
         'numberOfPassengers' => 'getNumberOfPassengers',
-        'passengers' => 'getPassengers'
+        'passengers' => 'getPassengers',
+        'lodging' => 'getLodging'
     ];
 
     public static function attributeMap()
@@ -168,6 +173,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
         $this->container['legs'] = isset($data['legs']) ? $data['legs'] : null;
         $this->container['numberOfPassengers'] = isset($data['numberOfPassengers']) ? $data['numberOfPassengers'] : null;
         $this->container['passengers'] = isset($data['passengers']) ? $data['passengers'] : null;
+        $this->container['lodging'] = isset($data['lodging']) ? $data['lodging'] : null;
     }
 
     /**
@@ -281,7 +287,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
 
     /**
      * Gets legs
-     * @return \CyberSource\Model\Riskv1decisionsTravelInformationLegs[]
+     * @return \CyberSource\Model\Riskv1decisionsBundledTravelInformationLegs[]
      */
     public function getLegs()
     {
@@ -290,7 +296,7 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
 
     /**
      * Sets legs
-     * @param \CyberSource\Model\Riskv1decisionsTravelInformationLegs[] $legs
+     * @param \CyberSource\Model\Riskv1decisionsBundledTravelInformationLegs[] $legs
      * @return $this
      */
     public function setLegs($legs)
@@ -338,6 +344,27 @@ class Riskv1decisionsTravelInformation implements ArrayAccess
     public function setPassengers($passengers)
     {
         $this->container['passengers'] = $passengers;
+
+        return $this;
+    }
+
+    /**
+     * Gets lodging
+     * @return \CyberSource\Model\Riskv1decisionsTravelInformationLodging
+     */
+    public function getLodging()
+    {
+        return $this->container['lodging'];
+    }
+
+    /**
+     * Sets lodging
+     * @param \CyberSource\Model\Riskv1decisionsTravelInformationLodging $lodging
+     * @return $this
+     */
+    public function setLodging($lodging)
+    {
+        $this->container['lodging'] = $lodging;
 
         return $this;
     }

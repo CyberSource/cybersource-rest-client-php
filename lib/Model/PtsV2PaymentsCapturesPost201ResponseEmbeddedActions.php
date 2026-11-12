@@ -46,7 +46,7 @@ class PtsV2PaymentsCapturesPost201ResponseEmbeddedActions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsCapturesPost201Response_embeddedActions';
+    protected static $swaggerModelName = 'PtsV2PaymentsCapturesPost201ResponseEmbeddedActions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions implement
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2paymentsidcaptures_processingInformation_authorizationOptions';
+    protected static $swaggerModelName = 'Ptsv2paymentsidcapturesProcessingInformationAuthorizationOptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

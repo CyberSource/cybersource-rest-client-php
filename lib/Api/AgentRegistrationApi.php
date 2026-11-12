@@ -149,7 +149,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($agentId !== null) {
@@ -174,6 +175,14 @@ class AgentRegistrationApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -182,7 +191,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "activateAgentKey,activateAgentKeyWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -250,14 +259,14 @@ class AgentRegistrationApi
      * Add a key to an agent
      *
      * @param string $agentId Unique agent identifier (required)
-     * @param \CyberSource\Model\KeyRequest $keyRequest Key creation request (required)
+     * @param \CyberSource\Model\AddAgentKeyRequest $addAgentKeyRequest Key creation request (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\AddAgentKeyResponse201, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addAgentKey($agentId, $keyRequest)
+    public function addAgentKey($agentId, $addAgentKeyRequest)
     {
         self::$logger->info('CALL TO METHOD addAgentKey STARTED');
-        list($response, $statusCode, $httpHeader) = $this->addAgentKeyWithHttpInfo($agentId, $keyRequest);
+        list($response, $statusCode, $httpHeader) = $this->addAgentKeyWithHttpInfo($agentId, $addAgentKeyRequest);
         self::$logger->info('CALL TO METHOD addAgentKey ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -269,21 +278,21 @@ class AgentRegistrationApi
      * Add a key to an agent
      *
      * @param string $agentId Unique agent identifier (required)
-     * @param \CyberSource\Model\KeyRequest $keyRequest Key creation request (required)
+     * @param \CyberSource\Model\AddAgentKeyRequest $addAgentKeyRequest Key creation request (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\AddAgentKeyResponse201, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addAgentKeyWithHttpInfo($agentId, $keyRequest)
+    public function addAgentKeyWithHttpInfo($agentId, $addAgentKeyRequest)
     {
         // verify the required parameter 'agentId' is set
         if ($agentId === null) {
             self::$logger->error("InvalidArgumentException : Missing the required parameter $agentId when calling addAgentKey");
             throw new \InvalidArgumentException('Missing the required parameter $agentId when calling addAgentKey');
         }
-        // verify the required parameter 'keyRequest' is set
-        if ($keyRequest === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $keyRequest when calling addAgentKey");
-            throw new \InvalidArgumentException('Missing the required parameter $keyRequest when calling addAgentKey');
+        // verify the required parameter 'addAgentKeyRequest' is set
+        if ($addAgentKeyRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $addAgentKeyRequest when calling addAgentKey");
+            throw new \InvalidArgumentException('Missing the required parameter $addAgentKeyRequest when calling addAgentKey');
         }
         // parse inputs
         $resourcePath = "/icc/v1/agents/{agentId}/keys";
@@ -297,7 +306,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($agentId !== null) {
@@ -309,18 +319,26 @@ class AgentRegistrationApi
         }
         // body params
         $_tempBody = null;
-        if (isset($keyRequest)) {
-            $_tempBody = $keyRequest;
+        if (isset($addAgentKeyRequest)) {
+            $_tempBody = $addAgentKeyRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\KeyRequest');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\AddAgentKeyRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -329,7 +347,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "addAgentKey,addAgentKeyWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -441,7 +459,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($agentId !== null) {
@@ -458,6 +477,14 @@ class AgentRegistrationApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -466,7 +493,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getAgent,getAgentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -577,7 +604,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($agentId !== null) {
@@ -602,6 +630,14 @@ class AgentRegistrationApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -610,7 +646,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "getAgentKey,getAgentKeyWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -718,7 +754,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // query params
         if ($page !== null) {
@@ -743,6 +780,14 @@ class AgentRegistrationApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -751,7 +796,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'false';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "listAgentKeys,listAgentKeysWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -857,7 +902,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // body params
         $_tempBody = null;
@@ -873,6 +919,14 @@ class AgentRegistrationApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -881,7 +935,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "registerAgent,registerAgentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -996,7 +1050,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($agentId !== null) {
@@ -1020,6 +1075,14 @@ class AgentRegistrationApi
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -1028,7 +1091,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "updateAgent,updateAgentWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());
@@ -1105,14 +1168,14 @@ class AgentRegistrationApi
      *
      * @param string $agentId Unique agent identifier (required)
      * @param string $keyId Unique key identifier (required)
-     * @param \CyberSource\Model\KeyUpdate $keyUpdate Key update request (required)
+     * @param \CyberSource\Model\UpdateAgentKeyRequest $updateAgentKeyRequest Key update request (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\AddAgentKeyResponse201, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAgentKey($agentId, $keyId, $keyUpdate)
+    public function updateAgentKey($agentId, $keyId, $updateAgentKeyRequest)
     {
         self::$logger->info('CALL TO METHOD updateAgentKey STARTED');
-        list($response, $statusCode, $httpHeader) = $this->updateAgentKeyWithHttpInfo($agentId, $keyId, $keyUpdate);
+        list($response, $statusCode, $httpHeader) = $this->updateAgentKeyWithHttpInfo($agentId, $keyId, $updateAgentKeyRequest);
         self::$logger->info('CALL TO METHOD updateAgentKey ENDED');
         self::$logger->close();
         return [$response, $statusCode, $httpHeader];
@@ -1125,11 +1188,11 @@ class AgentRegistrationApi
      *
      * @param string $agentId Unique agent identifier (required)
      * @param string $keyId Unique key identifier (required)
-     * @param \CyberSource\Model\KeyUpdate $keyUpdate Key update request (required)
+     * @param \CyberSource\Model\UpdateAgentKeyRequest $updateAgentKeyRequest Key update request (required)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\AddAgentKeyResponse201, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateAgentKeyWithHttpInfo($agentId, $keyId, $keyUpdate)
+    public function updateAgentKeyWithHttpInfo($agentId, $keyId, $updateAgentKeyRequest)
     {
         // verify the required parameter 'agentId' is set
         if ($agentId === null) {
@@ -1141,10 +1204,10 @@ class AgentRegistrationApi
             self::$logger->error("InvalidArgumentException : Missing the required parameter $keyId when calling updateAgentKey");
             throw new \InvalidArgumentException('Missing the required parameter $keyId when calling updateAgentKey');
         }
-        // verify the required parameter 'keyUpdate' is set
-        if ($keyUpdate === null) {
-            self::$logger->error("InvalidArgumentException : Missing the required parameter $keyUpdate when calling updateAgentKey");
-            throw new \InvalidArgumentException('Missing the required parameter $keyUpdate when calling updateAgentKey');
+        // verify the required parameter 'updateAgentKeyRequest' is set
+        if ($updateAgentKeyRequest === null) {
+            self::$logger->error("InvalidArgumentException : Missing the required parameter $updateAgentKeyRequest when calling updateAgentKey");
+            throw new \InvalidArgumentException('Missing the required parameter $updateAgentKeyRequest when calling updateAgentKey');
         }
         // parse inputs
         $resourcePath = "/icc/v1/agents/{agentId}/keys/{keyId}";
@@ -1158,7 +1221,8 @@ class AgentRegistrationApi
             $headerParams['Accept'] = $_header_accept;
         }
         
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $_localHeaderContentType = $this->apiClient->selectHeaderContentType(['application/json;charset=utf-8']);
+        $headerParams['Content-Type'] = $_localHeaderContentType;
 
         // path params
         if ($agentId !== null) {
@@ -1178,18 +1242,26 @@ class AgentRegistrationApi
         }
         // body params
         $_tempBody = null;
-        if (isset($keyUpdate)) {
-            $_tempBody = $keyUpdate;
+        if (isset($updateAgentKeyRequest)) {
+            $_tempBody = $updateAgentKeyRequest;
         }
         
         $sdkTracker = new \CyberSource\Utilities\Tracking\SdkTracker();
-        $modelClassLocation = explode('\\', '\CyberSource\Model\KeyUpdate');
+        $modelClassLocation = explode('\\', '\CyberSource\Model\UpdateAgentKeyRequest');
 
         $_tempBody = $sdkTracker->insertDeveloperIdTracker($_tempBody, end($modelClassLocation), $this->apiClient->merchantConfig->getRunEnvironment(), $this->apiClient->merchantConfig->getDefaultDeveloperId());
 
         // for model (json/xml)
         if (isset($_tempBody) and count($formParams) <= 0) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+            if ($_localHeaderContentType !== 'application/x-www-form-urlencoded' and (is_object($httpBody) or is_array($httpBody))) {
+                // Serialize once, via the SDK's configured serializer, so the exact same
+                // plaintext bytes are used whether or not MLE is applied (ApiClient::callApi()
+                // would otherwise perform this same serialization later for the non-MLE path).
+                // Form-urlencoded bodies are left as an array for ApiClient::callApi()'s
+                // http_build_query() handling, matching existing (non-MLE) behavior.
+                $httpBody = json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
         } elseif (count($formParams) > 0) {
             $httpBody = MultipartHelper::build_data_files($boundary, $formParams); // for HTTP post (form)
         }
@@ -1198,7 +1270,7 @@ class AgentRegistrationApi
         $inboundMLEStatus = 'mandatory';
         if (MLEUtility::checkIsMLEForAPI($this->apiClient->merchantConfig, $inboundMLEStatus, "updateAgentKey,updateAgentKeyWithHttpInfo")) {
             try {
-                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody);
+                $httpBody = MLEUtility::encryptRequestPayload($this->apiClient->merchantConfig, $httpBody, $_localHeaderContentType);
             } catch (Exception $e) {
                 self::$logger->error("Failed to encrypt request body:  $e");
                 throw new ApiException("Failed to encrypt request body : " . $e->getMessage());

@@ -46,7 +46,7 @@ class Ptsv2intentsTravelInformationAgency implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2intents_travelInformation_agency';
+    protected static $swaggerModelName = 'Ptsv2intentsTravelInformationAgency';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

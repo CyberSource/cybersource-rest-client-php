@@ -53,10 +53,10 @@ class InlineResponse5002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => '\DateTime',
         'status' => 'string',
-        'reason' => 'string',
-        'message' => 'string'
+        'message' => 'string',
+        'code' => 'string',
+        'submitTimeUtc' => 'string'
     ];
 
     /**
@@ -64,10 +64,10 @@ class InlineResponse5002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => 'date-time',
         'status' => null,
-        'reason' => null,
-        'message' => null
+        'message' => null,
+        'code' => null,
+        'submitTimeUtc' => null
     ];
 
     public static function swaggerTypes()
@@ -85,10 +85,10 @@ class InlineResponse5002 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
-        'reason' => 'reason',
-        'message' => 'message'
+        'message' => 'message',
+        'code' => 'code',
+        'submitTimeUtc' => 'submitTimeUtc'
     ];
 
 
@@ -97,10 +97,10 @@ class InlineResponse5002 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
-        'reason' => 'setReason',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'code' => 'setCode',
+        'submitTimeUtc' => 'setSubmitTimeUtc'
     ];
 
 
@@ -109,10 +109,10 @@ class InlineResponse5002 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
-        'reason' => 'getReason',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'code' => 'getCode',
+        'submitTimeUtc' => 'getSubmitTimeUtc'
     ];
 
     public static function attributeMap()
@@ -146,10 +146,10 @@ class InlineResponse5002 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
     }
 
     /**
@@ -178,27 +178,6 @@ class InlineResponse5002 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return \DateTime
-     */
-    public function getSubmitTimeUtc()
-    {
-        return $this->container['submitTimeUtc'];
-    }
-
-    /**
-     * Sets submitTimeUtc
-     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
-     * @return $this
-     */
-    public function setSubmitTimeUtc($submitTimeUtc)
-    {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      * @return string
      */
@@ -209,33 +188,12 @@ class InlineResponse5002 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The http status description of the submitted request.
+     * @param string $status The status of the submitted request.   Possible values: - INTERNAL_SERVER_ERROR
      * @return $this
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'SYSTEM_ERROR'
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -251,12 +209,54 @@ class InlineResponse5002 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message Descriptive message for the error.
+     * @param string $message The detail message related to the status and reason listed above.
      * @return $this
      */
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code An optional short string which identifies the exact error.
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return string
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }

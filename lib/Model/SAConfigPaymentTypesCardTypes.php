@@ -46,7 +46,7 @@ class SAConfigPaymentTypesCardTypes implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'SAConfig_paymentTypes_cardTypes';
+    protected static $swaggerModelName = 'SAConfigPaymentTypesCardTypes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

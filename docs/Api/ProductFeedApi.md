@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getAllProducts**
-> \CyberSource\Model\InlineResponse20020 getAllProducts($getAllProductsRequest, $page, $size)
+> \CyberSource\Model\ProductCatalogResponse getAllProducts($getAllProductsRequest, $page, $size)
 
 Get All Products
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\CyberSource\Model\ProductCatalogResponse**](../Model/ProductCatalogResponse.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFeedJobStatus**
-> \CyberSource\Model\InlineResponse20019 getFeedJobStatus($jobId, $getFeedJobStatusRequest)
+> \CyberSource\Model\FeedJobStatusResponse getFeedJobStatus($jobId, $getFeedJobStatusRequest)
 
 Get Feed Job Status
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\CyberSource\Model\FeedJobStatusResponse**](../Model/FeedJobStatusResponse.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProduct**
-> \CyberSource\Model\InlineResponse20021 getProduct($productId, $getProductRequest)
+> \CyberSource\Model\ProductDetailResponse getProduct($productId, $getProductRequest)
 
 Get Product by ID
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\CyberSource\Model\ProductDetailResponse**](../Model/ProductDetailResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **submitProductFeedJson**
-> \CyberSource\Model\InlineResponse2021 submitProductFeedJson($productFeedRequest)
+> \CyberSource\Model\ProductAcceptedFeedResponse submitProductFeedJson($productFeedRequest)
 
 Ingest Product Feed
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\InlineResponse2021**](../Model/InlineResponse2021.md)
+[**\CyberSource\Model\ProductAcceptedFeedResponse**](../Model/ProductAcceptedFeedResponse.md)
 
 ### Authorization
 

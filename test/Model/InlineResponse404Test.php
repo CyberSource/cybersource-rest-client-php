@@ -77,9 +77,16 @@ class InlineResponse404Test extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test attribute "errors"
+     * Test attribute "submitTimeUtc"
      */
-    public function testPropertyErrors()
+    public function testPropertySubmitTimeUtc()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
     {
     }
 }

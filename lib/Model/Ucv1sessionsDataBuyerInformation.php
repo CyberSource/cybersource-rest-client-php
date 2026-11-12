@@ -46,7 +46,7 @@ class Ucv1sessionsDataBuyerInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_data_buyerInformation';
+    protected static $swaggerModelName = 'Ucv1sessionsDataBuyerInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

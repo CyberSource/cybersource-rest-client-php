@@ -46,7 +46,7 @@ class Ptsv2billingagreementsidProcessingInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2billingagreementsid_processingInformation';
+    protected static $swaggerModelName = 'Ptsv2billingagreementsidProcessingInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

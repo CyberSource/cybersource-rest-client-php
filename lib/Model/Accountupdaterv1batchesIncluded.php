@@ -46,7 +46,7 @@ class Accountupdaterv1batchesIncluded implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'accountupdaterv1batches_included';
+    protected static $swaggerModelName = 'Accountupdaterv1batchesIncluded';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

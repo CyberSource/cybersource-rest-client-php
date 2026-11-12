@@ -46,7 +46,7 @@ class Boardingv1registrationsIntegrationInformationTenantConfigurations implemen
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'boardingv1registrations_integrationInformation_tenantConfigurations';
+    protected static $swaggerModelName = 'Boardingv1registrationsIntegrationInformationTenantConfigurations';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

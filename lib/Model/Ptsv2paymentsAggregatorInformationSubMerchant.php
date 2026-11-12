@@ -46,7 +46,7 @@ class Ptsv2paymentsAggregatorInformationSubMerchant implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_aggregatorInformation_subMerchant';
+    protected static $swaggerModelName = 'Ptsv2paymentsAggregatorInformationSubMerchant';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

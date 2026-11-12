@@ -46,7 +46,7 @@ class Ptsv1pullfundstransferSenderInformationConsumerAuthentication implements A
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pullfundstransfer_senderInformation_consumerAuthentication';
+    protected static $swaggerModelName = 'Ptsv1pullfundstransferSenderInformationConsumerAuthentication';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class Ptsv2billingagreementsMerchantInformationMerchantDescriptor implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2billingagreements_merchantInformation_merchantDescriptor';
+    protected static $swaggerModelName = 'Ptsv2billingagreementsMerchantInformationMerchantDescriptor';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

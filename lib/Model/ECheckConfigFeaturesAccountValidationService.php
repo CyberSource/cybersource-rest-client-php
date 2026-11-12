@@ -46,7 +46,7 @@ class ECheckConfigFeaturesAccountValidationService implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ECheckConfig_features_accountValidationService';
+    protected static $swaggerModelName = 'ECheckConfigFeaturesAccountValidationService';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

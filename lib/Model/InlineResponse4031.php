@@ -53,11 +53,10 @@ class InlineResponse4031 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
         'status' => 'string',
-        'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
+        'code' => 'string',
+        'submitTimeUtc' => 'string'
     ];
 
     /**
@@ -65,11 +64,10 @@ class InlineResponse4031 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
         'status' => null,
-        'reason' => null,
         'message' => null,
-        'details' => null
+        'code' => null,
+        'submitTimeUtc' => null
     ];
 
     public static function swaggerTypes()
@@ -87,11 +85,10 @@ class InlineResponse4031 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'submitTimeUtc' => 'submitTimeUtc',
         'status' => 'status',
-        'reason' => 'reason',
         'message' => 'message',
-        'details' => 'details'
+        'code' => 'code',
+        'submitTimeUtc' => 'submitTimeUtc'
     ];
 
 
@@ -100,11 +97,10 @@ class InlineResponse4031 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'submitTimeUtc' => 'setSubmitTimeUtc',
         'status' => 'setStatus',
-        'reason' => 'setReason',
         'message' => 'setMessage',
-        'details' => 'setDetails'
+        'code' => 'setCode',
+        'submitTimeUtc' => 'setSubmitTimeUtc'
     ];
 
 
@@ -113,11 +109,10 @@ class InlineResponse4031 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'submitTimeUtc' => 'getSubmitTimeUtc',
         'status' => 'getStatus',
-        'reason' => 'getReason',
         'message' => 'getMessage',
-        'details' => 'getDetails'
+        'code' => 'getCode',
+        'submitTimeUtc' => 'getSubmitTimeUtc'
     ];
 
     public static function attributeMap()
@@ -151,11 +146,10 @@ class InlineResponse4031 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['submitTimeUtc'] = isset($data['submitTimeUtc']) ? $data['submitTimeUtc'] : null;
     }
 
     /**
@@ -184,27 +178,6 @@ class InlineResponse4031 implements ArrayAccess
 
 
     /**
-     * Gets submitTimeUtc
-     * @return string
-     */
-    public function getSubmitTimeUtc()
-    {
-        return $this->container['submitTimeUtc'];
-    }
-
-    /**
-     * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
-     * @return $this
-     */
-    public function setSubmitTimeUtc($submitTimeUtc)
-    {
-        $this->container['submitTimeUtc'] = $submitTimeUtc;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      * @return string
      */
@@ -215,33 +188,12 @@ class InlineResponse4031 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction. Possible values: - `INVALID_REQUEST`
+     * @param string $status The status of the submitted request.   Possible values: - FORBIDDEN
      * @return $this
      */
     public function setStatus($status)
     {
         $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets reason
-     * @return string
-     */
-    public function getReason()
-    {
-        return $this->container['reason'];
-    }
-
-    /**
-     * Sets reason
-     * @param string $reason The reason of the status. Possible Values: - `ACCESS_DENIED`
-     * @return $this
-     */
-    public function setReason($reason)
-    {
-        $this->container['reason'] = $reason;
 
         return $this;
     }
@@ -257,7 +209,7 @@ class InlineResponse4031 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message The request has an authorization failure.
+     * @param string $message The detail message related to the status and reason listed above.
      * @return $this
      */
     public function setMessage($message)
@@ -268,22 +220,43 @@ class InlineResponse4031 implements ArrayAccess
     }
 
     /**
-     * Gets details
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
+     * Gets code
+     * @return string
      */
-    public function getDetails()
+    public function getCode()
     {
-        return $this->container['details'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets details
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
+     * Sets code
+     * @param string $code An optional short string which identifies the exact error.
      * @return $this
      */
-    public function setDetails($details)
+    public function setCode($code)
     {
-        $this->container['details'] = $details;
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitTimeUtc
+     * @return string
+     */
+    public function getSubmitTimeUtc()
+    {
+        return $this->container['submitTimeUtc'];
+    }
+
+    /**
+     * Sets submitTimeUtc
+     * @param string $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
+     * @return $this
+     */
+    public function setSubmitTimeUtc($submitTimeUtc)
+    {
+        $this->container['submitTimeUtc'] = $submitTimeUtc;
 
         return $this;
     }

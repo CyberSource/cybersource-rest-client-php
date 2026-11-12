@@ -47,7 +47,7 @@ class UcFeatureSubscriptionUnifiedClickToPaySDK implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucFeatureSubscription_unifiedClickToPaySDK';
+    protected static $swaggerModelName = 'UcFeatureSubscriptionUnifiedClickToPaySDK';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

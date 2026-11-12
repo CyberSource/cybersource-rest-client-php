@@ -46,7 +46,7 @@ class Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails implements 
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'upv1capturecontexts_data_orderInformation_amountDetails_taxDetails';
+    protected static $swaggerModelName = 'Upv1capturecontextsDataOrderInformationAmountDetailsTaxDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

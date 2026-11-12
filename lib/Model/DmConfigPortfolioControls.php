@@ -46,7 +46,7 @@ class DmConfigPortfolioControls implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'DmConfig_portfolioControls';
+    protected static $swaggerModelName = 'DmConfigPortfolioControls';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

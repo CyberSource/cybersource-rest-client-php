@@ -46,7 +46,7 @@ class DefaultPaymentInstrumentLinksSelf implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'defaultPaymentInstrument__links_self';
+    protected static $swaggerModelName = 'DefaultPaymentInstrumentLinksSelf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -47,7 +47,7 @@ class UnifiedriskOrderShippingStoreAddress implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'unifiedrisk_order_shipping_storeAddress';
+    protected static $swaggerModelName = 'UnifiedriskOrderShippingStoreAddress';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

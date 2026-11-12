@@ -46,7 +46,7 @@ class TmsBusinessInformationAcquirer implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'tmsBusinessInformation_acquirer';
+    protected static $swaggerModelName = 'TmsBusinessInformationAcquirer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

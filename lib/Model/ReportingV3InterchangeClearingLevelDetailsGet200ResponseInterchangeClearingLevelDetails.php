@@ -46,7 +46,7 @@ class ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchangeClearin
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3InterchangeClearingLevelDetailsGet200Response_interchangeClearingLevelDetails';
+    protected static $swaggerModelName = 'ReportingV3InterchangeClearingLevelDetailsGet200ResponseInterchangeClearingLevelDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

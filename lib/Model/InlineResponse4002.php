@@ -53,11 +53,11 @@ class InlineResponse4002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'submitTimeUtc' => 'string',
+        'submitTimeUtc' => '\DateTime',
         'status' => 'string',
         'reason' => 'string',
         'message' => 'string',
-        'details' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]'
+        'details' => '\CyberSource\Model\InlineResponse4002Details[]'
     ];
 
     /**
@@ -65,7 +65,7 @@ class InlineResponse4002 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'submitTimeUtc' => null,
+        'submitTimeUtc' => 'date-time',
         'status' => null,
         'reason' => null,
         'message' => null,
@@ -185,7 +185,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Gets submitTimeUtc
-     * @return string
+     * @return \DateTime
      */
     public function getSubmitTimeUtc()
     {
@@ -194,7 +194,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets submitTimeUtc
-     * @param string $submitTimeUtc Time of request in UTC. Format: `YYYY-MM-DDThh:mm:ssZ` **Example** `2016-08-11T22:47:57Z` equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The `T` separates the date and the time. The `Z` indicates UTC.  Returned by Cybersource for all services.
+     * @param \DateTime $submitTimeUtc Time of request in UTC. `Format: YYYY-MM-DDThh:mm:ssZ`  Example 2016-08-11T22:47:57Z equals August 11, 2016, at 22:47:57 (10:47:57 p.m.). The T separates the date and the time. The Z indicates UTC.
      * @return $this
      */
     public function setSubmitTimeUtc($submitTimeUtc)
@@ -215,7 +215,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets status
-     * @param string $status The status of the submitted transaction. Possible values: - `INVALID_REQUEST`
+     * @param string $status The http status description of the submitted request.
      * @return $this
      */
     public function setStatus($status)
@@ -236,7 +236,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets reason
-     * @param string $reason The reason of the status. Possible Values: - `INVALID_DATA`
+     * @param string $reason Documented reason codes. Client should be able to use the key for generating their own error message Possible Values:   - 'INVALID_DATA'   - 'SYSTEM_ERROR'   - 'RESOURCE_NOT_FOUND'
      * @return $this
      */
     public function setReason($reason)
@@ -257,7 +257,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets message
-     * @param string $message Input request error.
+     * @param string $message Descriptive message for the error.
      * @return $this
      */
     public function setMessage($message)
@@ -269,7 +269,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Gets details
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[]
+     * @return \CyberSource\Model\InlineResponse4002Details[]
      */
     public function getDetails()
     {
@@ -278,7 +278,7 @@ class InlineResponse4002 implements ArrayAccess
 
     /**
      * Sets details
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseErrorInformationDetails[] $details
+     * @param \CyberSource\Model\InlineResponse4002Details[] $details
      * @return $this
      */
     public function setDetails($details)

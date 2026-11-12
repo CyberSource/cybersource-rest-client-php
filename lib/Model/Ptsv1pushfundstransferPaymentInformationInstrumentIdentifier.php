@@ -46,7 +46,7 @@ class Ptsv1pushfundstransferPaymentInformationInstrumentIdentifier implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pushfundstransfer_paymentInformation_instrumentIdentifier';
+    protected static $swaggerModelName = 'Ptsv1pushfundstransferPaymentInformationInstrumentIdentifier';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_tokenInformation_thirdPartyToken';
+    protected static $swaggerModelName = 'PtsV2PaymentsPost201ResponseTokenInformationThirdPartyToken';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

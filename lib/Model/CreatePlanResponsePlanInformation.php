@@ -46,7 +46,7 @@ class CreatePlanResponsePlanInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'createPlanResponse_planInformation';
+    protected static $swaggerModelName = 'CreatePlanResponsePlanInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

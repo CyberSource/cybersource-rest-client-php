@@ -46,7 +46,7 @@ class Ptsv1pushfundstransferPaymentInformationPaymentInstrument implements Array
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv1pushfundstransfer_paymentInformation_paymentInstrument';
+    protected static $swaggerModelName = 'Ptsv1pushfundstransferPaymentInformationPaymentInstrument';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

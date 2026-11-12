@@ -46,7 +46,7 @@ class PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures implements Ar
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2CreditsPost201Response_paymentInformation_accountFeatures';
+    protected static $swaggerModelName = 'PtsV2CreditsPost201ResponsePaymentInformationAccountFeatures';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

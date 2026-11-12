@@ -46,7 +46,7 @@ class Ucv1sessionsPaymentConfigurationsTMSTOKENPaymentInstruments implements Arr
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucv1sessions_paymentConfigurations_TMS_TOKEN_paymentInstruments';
+    protected static $swaggerModelName = 'Ucv1sessionsPaymentConfigurationsTMSTOKENPaymentInstruments';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

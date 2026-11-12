@@ -47,7 +47,7 @@ class Iccv1instructionsinstructionIdconfirmationsProcessorInformation implements
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'iccv1instructionsinstructionIdconfirmations_processorInformation';
+    protected static $swaggerModelName = 'Iccv1instructionsinstructionIdconfirmationsProcessorInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

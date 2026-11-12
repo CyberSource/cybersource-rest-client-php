@@ -47,7 +47,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_orderInformation';
+    protected static $swaggerModelName = 'Riskv1decisionsOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +60,11 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'cutoffDateTime' => 'string',
         'reordered' => 'bool',
         'shippingDetails' => '\CyberSource\Model\Riskv1decisionsOrderInformationShippingDetails',
-        'shipTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationShipTo',
+        'shipTo' => '\CyberSource\Model\Riskv1decisionsBundledOrderInformationShipTo',
         'returnsAccepted' => 'bool',
         'lineItems' => '\CyberSource\Model\Riskv1decisionsOrderInformationLineItems[]',
         'billTo' => '\CyberSource\Model\Riskv1decisionsOrderInformationBillTo',
+        'vouchers' => '\CyberSource\Model\Riskv1decisionsOrderInformationVouchers[]',
         'totalOffersCount' => 'string'
     ];
 
@@ -82,6 +83,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'returnsAccepted' => null,
         'lineItems' => null,
         'billTo' => null,
+        'vouchers' => null,
         'totalOffersCount' => null
     ];
 
@@ -110,6 +112,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'returnsAccepted' => 'returnsAccepted',
         'lineItems' => 'lineItems',
         'billTo' => 'billTo',
+        'vouchers' => 'vouchers',
         'totalOffersCount' => 'totalOffersCount'
     ];
 
@@ -129,6 +132,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'returnsAccepted' => 'setReturnsAccepted',
         'lineItems' => 'setLineItems',
         'billTo' => 'setBillTo',
+        'vouchers' => 'setVouchers',
         'totalOffersCount' => 'setTotalOffersCount'
     ];
 
@@ -148,6 +152,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         'returnsAccepted' => 'getReturnsAccepted',
         'lineItems' => 'getLineItems',
         'billTo' => 'getBillTo',
+        'vouchers' => 'getVouchers',
         'totalOffersCount' => 'getTotalOffersCount'
     ];
 
@@ -192,6 +197,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
         $this->container['returnsAccepted'] = isset($data['returnsAccepted']) ? $data['returnsAccepted'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['billTo'] = isset($data['billTo']) ? $data['billTo'] : null;
+        $this->container['vouchers'] = isset($data['vouchers']) ? $data['vouchers'] : null;
         $this->container['totalOffersCount'] = isset($data['totalOffersCount']) ? $data['totalOffersCount'] : null;
     }
 
@@ -348,7 +354,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
 
     /**
      * Gets shipTo
-     * @return \CyberSource\Model\Riskv1decisionsOrderInformationShipTo
+     * @return \CyberSource\Model\Riskv1decisionsBundledOrderInformationShipTo
      */
     public function getShipTo()
     {
@@ -357,7 +363,7 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
 
     /**
      * Sets shipTo
-     * @param \CyberSource\Model\Riskv1decisionsOrderInformationShipTo $shipTo
+     * @param \CyberSource\Model\Riskv1decisionsBundledOrderInformationShipTo $shipTo
      * @return $this
      */
     public function setShipTo($shipTo)
@@ -426,6 +432,27 @@ class Riskv1decisionsOrderInformation implements ArrayAccess
     public function setBillTo($billTo)
     {
         $this->container['billTo'] = $billTo;
+
+        return $this;
+    }
+
+    /**
+     * Gets vouchers
+     * @return \CyberSource\Model\Riskv1decisionsOrderInformationVouchers[]
+     */
+    public function getVouchers()
+    {
+        return $this->container['vouchers'];
+    }
+
+    /**
+     * Sets vouchers
+     * @param \CyberSource\Model\Riskv1decisionsOrderInformationVouchers[] $vouchers Array of voucher/coupon information used in the order
+     * @return $this
+     */
+    public function setVouchers($vouchers)
+    {
+        $this->container['vouchers'] = $vouchers;
 
         return $this;
     }

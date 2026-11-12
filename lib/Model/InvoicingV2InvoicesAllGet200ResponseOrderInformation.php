@@ -47,7 +47,7 @@ class InvoicingV2InvoicesAllGet200ResponseOrderInformation implements ArrayAcces
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingV2InvoicesAllGet200Response_orderInformation';
+    protected static $swaggerModelName = 'InvoicingV2InvoicesAllGet200ResponseOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

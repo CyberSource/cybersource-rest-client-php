@@ -46,7 +46,7 @@ class UcConfigurationsFeaturesClickToPay implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ucConfigurations_features_clickToPay';
+    protected static $swaggerModelName = 'UcConfigurationsFeaturesClickToPay';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

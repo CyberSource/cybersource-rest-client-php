@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addMerchantKey**
-> \CyberSource\Model\ActivateMerchantKeyResponse200 addMerchantKey($merchantId, $keyRequest)
+> \CyberSource\Model\ActivateMerchantKeyResponse200 addMerchantKey($merchantId, $addMerchantKeyRequest)
 
 Add a key to a merchant
 
@@ -75,10 +75,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new CyberSource\Api\MerchantRegistrationApi();
 $merchantId = "merchantId_example"; // string | Unique merchant identifier (UUID)
-$keyRequest = new \CyberSource\Model\KeyRequest1(); // \CyberSource\Model\KeyRequest1 | Key creation request
+$addMerchantKeyRequest = new \CyberSource\Model\AddMerchantKeyRequest(); // \CyberSource\Model\AddMerchantKeyRequest | Key creation request
 
 try {
-    $result = $api_instance->addMerchantKey($merchantId, $keyRequest);
+    $result = $api_instance->addMerchantKey($merchantId, $addMerchantKeyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantRegistrationApi->addMerchantKey: ', $e->getMessage(), PHP_EOL;
@@ -91,7 +91,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchantId** | **string**| Unique merchant identifier (UUID) |
- **keyRequest** | [**\CyberSource\Model\KeyRequest1**](../Model/KeyRequest1.md)| Key creation request |
+ **addMerchantKeyRequest** | [**\CyberSource\Model\AddMerchantKeyRequest**](../Model/AddMerchantKeyRequest.md)| Key creation request |
 
 ### Return type
 
@@ -340,7 +340,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMerchantKey**
-> \CyberSource\Model\ActivateMerchantKeyResponse200 updateMerchantKey($merchantId, $keyId, $keyUpdate)
+> \CyberSource\Model\ActivateMerchantKeyResponse200 updateMerchantKey($merchantId, $keyId, $updateMerchantKeyRequest)
 
 Update a merchant key
 
@@ -354,10 +354,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new CyberSource\Api\MerchantRegistrationApi();
 $merchantId = "merchantId_example"; // string | Unique merchant identifier (UUID)
 $keyId = "keyId_example"; // string | Unique key identifier (UUID)
-$keyUpdate = new \CyberSource\Model\KeyUpdate1(); // \CyberSource\Model\KeyUpdate1 | Key update request
+$updateMerchantKeyRequest = new \CyberSource\Model\UpdateMerchantKeyRequest(); // \CyberSource\Model\UpdateMerchantKeyRequest | Key update request
 
 try {
-    $result = $api_instance->updateMerchantKey($merchantId, $keyId, $keyUpdate);
+    $result = $api_instance->updateMerchantKey($merchantId, $keyId, $updateMerchantKeyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantRegistrationApi->updateMerchantKey: ', $e->getMessage(), PHP_EOL;
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchantId** | **string**| Unique merchant identifier (UUID) |
  **keyId** | **string**| Unique key identifier (UUID) |
- **keyUpdate** | [**\CyberSource\Model\KeyUpdate1**](../Model/KeyUpdate1.md)| Key update request |
+ **updateMerchantKeyRequest** | [**\CyberSource\Model\UpdateMerchantKeyRequest**](../Model/UpdateMerchantKeyRequest.md)| Key update request |
 
 ### Return type
 

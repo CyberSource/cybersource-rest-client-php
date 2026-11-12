@@ -46,7 +46,7 @@ class Ptsv2paymentsHealthCareInformationAmountDetails implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payments_healthCareInformation_amountDetails';
+    protected static $swaggerModelName = 'Ptsv2paymentsHealthCareInformationAmountDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

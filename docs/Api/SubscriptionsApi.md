@@ -346,7 +346,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionsIdPaymentsPut**
-> \CyberSource\Model\GetSubscriptionsPaymentsResponse1 subscriptionsIdPaymentsPut($id, $updatePayments)
+> \CyberSource\Model\UpdateSubscriptionsPaymentsResponse subscriptionsIdPaymentsPut($id, $updatePayments)
 
 Update Payments for a subscription
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\CyberSource\Model\GetSubscriptionsPaymentsResponse1**](../Model/GetSubscriptionsPaymentsResponse1.md)
+[**\CyberSource\Model\UpdateSubscriptionsPaymentsResponse**](../Model/UpdateSubscriptionsPaymentsResponse.md)
 
 ### Authorization
 

@@ -46,7 +46,7 @@ class Ptsv2payoutsProcessingInformationFundingOptionsInitiator implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsv2payouts_processingInformation_fundingOptions_initiator';
+    protected static $swaggerModelName = 'Ptsv2payoutsProcessingInformationFundingOptionsInitiator';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

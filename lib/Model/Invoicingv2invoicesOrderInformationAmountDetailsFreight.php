@@ -47,7 +47,7 @@ class Invoicingv2invoicesOrderInformationAmountDetailsFreight implements ArrayAc
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'invoicingv2invoices_orderInformation_amountDetails_freight';
+    protected static $swaggerModelName = 'Invoicingv2invoicesOrderInformationAmountDetailsFreight';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

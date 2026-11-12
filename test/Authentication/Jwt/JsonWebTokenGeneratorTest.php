@@ -191,6 +191,30 @@ class JsonWebTokenGeneratorTest extends TestCase
     }
 
     // -----------------------------------------------------------------------
+    // Response MLE — v-c-response-mle-algo claim
+    // -----------------------------------------------------------------------
+
+    public function testTokenOmitsResponseMleAlgClaimWhenResponseMleNotRequested(): void
+    {
+        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig, $this->date, false);
+        $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
+
+        $this->assertObjectNotHasProperty('v-c-response-mle-kid', $decoded);
+        $this->assertObjectNotHasProperty('v-c-response-mle-algo', $decoded);
+    }
+
+    public function testTokenContainsResponseMleAlgClaimWhenResponseMleRequested(): void
+    {
+        $this->merchantConfig->setResponseMleKID('test_response_mle_kid');
+
+        $token = $this->generator->generateToken('/pts/v2/payments', '{}', 'POST', $this->merchantConfig, $this->date, true);
+        $decoded = JWT::decode(substr($token, 7), new Key(base64_decode($this->testSecret), 'HS256'));
+
+        $this->assertSame('test_response_mle_kid', $decoded->{'v-c-response-mle-kid'});
+        $this->assertSame('RSA-OAEP-256', $decoded->{'v-c-response-mle-algo'});
+    }
+
+    // -----------------------------------------------------------------------
     // P12 path — missing .p12 file should throw
     // -----------------------------------------------------------------------
 

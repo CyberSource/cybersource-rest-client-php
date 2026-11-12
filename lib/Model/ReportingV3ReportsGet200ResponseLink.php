@@ -46,7 +46,7 @@ class ReportingV3ReportsGet200ResponseLink implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'reportingV3ReportsGet200Response__link';
+    protected static $swaggerModelName = 'ReportingV3ReportsGet200ResponseLink';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

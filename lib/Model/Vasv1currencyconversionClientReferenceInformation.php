@@ -46,7 +46,7 @@ class Vasv1currencyconversionClientReferenceInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'vasv1currencyconversion_clientReferenceInformation';
+    protected static $swaggerModelName = 'Vasv1currencyconversionClientReferenceInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

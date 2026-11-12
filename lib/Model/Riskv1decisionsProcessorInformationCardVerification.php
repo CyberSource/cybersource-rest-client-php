@@ -46,7 +46,7 @@ class Riskv1decisionsProcessorInformationCardVerification implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1decisions_processorInformation_cardVerification';
+    protected static $swaggerModelName = 'Riskv1decisionsProcessorInformationCardVerification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -46,7 +46,7 @@ class VTConfigCardNotPresentReceiptInformationOrderInformation implements ArrayA
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'VTConfig_cardNotPresent_receiptInformation_orderInformation';
+    protected static $swaggerModelName = 'VTConfigCardNotPresentReceiptInformationOrderInformation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

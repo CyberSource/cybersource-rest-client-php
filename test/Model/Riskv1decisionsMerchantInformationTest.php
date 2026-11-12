@@ -77,6 +77,13 @@ class Riskv1decisionsMerchantInformationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test attribute "categoryCode"
+     */
+    public function testPropertyCategoryCode()
+    {
+    }
+
+    /**
      * Test attribute "merchantDescriptor"
      */
     public function testPropertyMerchantDescriptor()

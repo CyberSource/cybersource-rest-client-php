@@ -67,7 +67,7 @@ class DefaultPaymentInstrument implements ArrayAccess
         'merchantInformation' => '\CyberSource\Model\TmsMerchantInformation',
         'instrumentIdentifier' => '\CyberSource\Model\DefaultPaymentInstrumentInstrumentIdentifier',
         'metadata' => '\CyberSource\Model\DefaultPaymentInstrumentMetadata',
-        'embedded' => '\CyberSource\Model\DefaultPaymentInstrumentEmbedded'
+        'embedded' => '\CyberSource\Model\PaymentInstrumentEmbedded'
     ];
 
     /**
@@ -539,7 +539,7 @@ class DefaultPaymentInstrument implements ArrayAccess
 
     /**
      * Gets embedded
-     * @return \CyberSource\Model\DefaultPaymentInstrumentEmbedded
+     * @return \CyberSource\Model\PaymentInstrumentEmbedded
      */
     public function getEmbedded()
     {
@@ -548,7 +548,7 @@ class DefaultPaymentInstrument implements ArrayAccess
 
     /**
      * Sets embedded
-     * @param \CyberSource\Model\DefaultPaymentInstrumentEmbedded $embedded
+     * @param \CyberSource\Model\PaymentInstrumentEmbedded $embedded
      * @return $this
      */
     public function setEmbedded($embedded)

@@ -46,7 +46,7 @@ class Riskv1authenticationsetupsPaymentInformationFluidData implements ArrayAcce
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'riskv1authenticationsetups_paymentInformation_fluidData';
+    protected static $swaggerModelName = 'Riskv1authenticationsetupsPaymentInformationFluidData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
